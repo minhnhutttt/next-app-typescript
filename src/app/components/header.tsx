@@ -6,12 +6,13 @@ type NavLink = {
   id: number;
   link: string;
   text: string;
+  target?: string,
 };
 
 const links: NavLink[] = [
   {
     id: 1,
-    link: "#introduction",
+    link: "/",
     text: "メンエスバズーカとは？",
   },
   {
@@ -31,8 +32,9 @@ const links: NavLink[] = [
   },
   {
     id: 5,
-    link: "#application",
+    link: "https://lin.ee/f4F3Xa4",
     text: "お申し込み",
+    target: "_blank"
   },
 ];
 
@@ -78,14 +80,15 @@ export default function Header() {
       >
         <nav>
           <ul className="flex gap-8 max-xl:flex-col xl:gap-14">
-            {links.map(({ id, link, text }) => (
+            {links.map(({ id, link, text, target }) => (
               <li key={id}>
-                <Link
+                <a
                   href={link}
+                  target={target}
                   className="py-3 text-[18px] font-bold duration-150 hover:opacity-75 max-xl:text-white xl:text-[22px]"
                 >
                   {text}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

@@ -19,8 +19,7 @@ const pointData: PointItemPropsType[] = [
     title: "充実した管理画面",
     content: (
       <>
-        世界基準の読み込み速度 Instagram、Netflix 等の世界の大企業の
-        ホームページに採用されているライブラリ「React」で制作します。
+        店舗のオフィシャルサイト制作運営に特化した便利な機能がスマホで簡単に管理できます。
       </>
     ),
   },
@@ -54,19 +53,19 @@ export default function Points() {
   return (
     <div className="px-5 bg-[linear-gradient(180deg,_#F4F4F4_0%,_rgba(244,_244,_244,_0.00)_100%)] py-[74px]">
       <div className="w-full lg:max-w-[1200px] md:max-w-[595px] max-w-[400px] mx-auto">
-        <h3 className="text-center lg:text-[80px] md:text-[50px] text-[32px] font-bold leading-none whitespace-nowrap">
+        <h3 className="text-center lg:text-[80px] md:text-[50px] text-[30px] font-bold leading-none whitespace-nowrap">
           <p>
             <span className="text-[#112E77]">メンエスバズーカ</span>
-            <span className="lg:text-[64px] md:text-[40px] text-[24px]">
+            <span className="lg:text-[64px] md:text-[40px] text-[20px]">
               が
             </span>
           </p>
           <p className="">
             <span>選ばれる</span>
-            <span className="lg:text-[125px] md:text-[80px] text-[40px] text-[#0F367C] font-hiragino">
+            <span className="lg:text-[125px] md:text-[80px] text-[36px] text-[#0F367C] font-hiragino">
               4
             </span>
-            <span className="lg:text-[64px] md:text-[40px] text-[24px]">
+            <span className="lg:text-[64px] md:text-[40px] text-[20px]">
               つの
             </span>
             <span className="text-[#112E77]">ポイント</span>

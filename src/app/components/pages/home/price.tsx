@@ -1,6 +1,6 @@
 export default function Price() {
   return (
-    <div className="bg-[#EDEDED]">
+    <div id="price" className="bg-[#EDEDED]">
       <div className="flex justify-center md:text-[50px] text-[28px] text-white text-center bg-[#184E97] font-bold p-5">
         今が最安値！｜制作費
       </div>

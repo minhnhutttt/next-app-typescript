@@ -22,11 +22,6 @@ const contactTimeOptions = [
   { value: "19:00", label: "19:00" },
 ];
 
-const options = [
-  { value: "option1", label: "Option 1" },
-  { value: "option2", label: "Option 2" },
-  { value: "option3", label: "Option 3" },
-];
 export default function Contact() {
   const [formData, setFormData] = useState({
     nameStore: "",
@@ -37,7 +32,6 @@ export default function Contact() {
     address: "",
     contactMethod: "",
     contactTime: "",
-    selectedOption: "",
     content: "",
   });
   const handleInputChange = (name: string, value: string) => {
@@ -54,7 +48,7 @@ export default function Contact() {
     }));
   };
   return (
-    <div className="relative px-5 pt-[82px] md:pt-[70px] bg-[#F4F4F4]">
+    <div id="contact" className="relative px-5 pt-[82px] md:pt-[70px] bg-[#F4F4F4]">
       <div className="w-full max-w-[1200px] mx-auto">
         <h5 className="text-center md:text-[50px] text-[32px] font-bold">
           お問い合わせ
@@ -156,10 +150,13 @@ export default function Contact() {
               label="お問い合わせ内容"
               name="content"
               value={formData.content}
-              placeholder=""
+              placeholder="例:導入に向けた資料を希望します。"
               onChange={handleInputChange}
             />
           </div>
+        </div>
+        <div className="flex justify-center py-8 md:py-[50px]">
+          <button type="button" className="md:text-[36px] text-[20px] font-bold w-[240px] h-[64px] md:w-[594px] md:h-[100px] flex items-center justify-center rounded-[20px] text-white bg-[#112E77] [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)]">送信する</button>
         </div>
       </div>
     </div>
