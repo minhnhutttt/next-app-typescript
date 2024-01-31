@@ -4,6 +4,9 @@ import AllInOne from "./components/pages/home/allInOne";
 import Points from "./components/pages/home/points/points";
 import Features from "./components/pages/home/features";
 import Price from "./components/pages/home/price";
+import Comparison from "./components/pages/home/comparison";
+import Steps from "./components/pages/home/steps/steps";
+import FAQ from "./components/pages/home/faq/faq";
 
 export default function Home() {
   return (
@@ -13,6 +16,9 @@ export default function Home() {
       <Points />
       <Features />
       <Price />
+      <Comparison />
+      <Steps />
+      <FAQ />
     </main>
   );
 }

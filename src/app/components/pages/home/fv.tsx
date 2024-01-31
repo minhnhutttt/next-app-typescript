@@ -2,7 +2,7 @@ export default function FV() {
   return (
     <div className="relative px-5 pt-[82px] md:pt-[158px] bg-[#DFE3F7] z-10">
         <div className="w-full md:max-w-[1440px] max-w-[440px] h-full mx-auto flex max-md:flex-col">
-            <div className="md:pl-[7.292vw] min-[1440px]:pl-[105px] md:py-[115px] pt-10 pb-6">
+            <div className="md:pl-[7.292vw] min-[1440px]:pl-[105px] md:py-[7.986vw] xl:py-[115px] pt-10 pb-6">
               <div className="flex max-md:justify-center">
                 <h2 className="font-bold min-[1440px]:text-[80px] md:text-[5.4vw] text-[7vw] relative -ml-2">集客<span className="min-[1440px]:text-[62px] text-[5.5vw] md:text-[4.306vw]">の</span>最終兵器<span className="font-hiragino font-semibold min-[1440px]:text-[94px] text-[8vw] md:text-[6.4vw] absolute min-[1440px]:-right-16 md:right-[-4.5vw] right-[-6vw] -top-1 rotate-[6.49deg]">！</span></h2>
                 </div>
