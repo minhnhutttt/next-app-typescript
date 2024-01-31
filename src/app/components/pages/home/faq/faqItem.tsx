@@ -5,19 +5,17 @@ import { gsap } from "gsap";
 import { ReactNode } from "react";
 
 export type FaqItemPropsType = {
-    id: string,
-    question: ReactNode,
-    answer: ReactNode,
+  id: string;
+  question: ReactNode;
+  answer: ReactNode;
 };
 
-export default function StepItem({
-    id, question, answer
-    }: FaqItemPropsType) {
-    const animateRefs = useScrollAnimation("fadeUp");
-    const contentRef = useRef<HTMLDivElement | null>(null);
-    const arrowRef = useRef<HTMLDivElement | null>(null);
-    const isClosedRef = useRef<boolean>(true);
-    const [isClosed, setIsClosed] = useState<boolean>(true);
+export default function StepItem({ id, question, answer }: FaqItemPropsType) {
+  const animateRefs = useScrollAnimation("fadeUp");
+  const contentRef = useRef<HTMLDivElement | null>(null);
+  const arrowRef = useRef<HTMLDivElement | null>(null);
+  const isClosedRef = useRef<boolean>(true);
+  const [isClosed, setIsClosed] = useState<boolean>(true);
 
   const handleExpanderClick = () => {
     const $content = contentRef.current;
@@ -54,14 +52,34 @@ export default function StepItem({
           ref={arrowRef}
           className="relative ml-2 flex h-8 w-8 items-center justify-center duration-150 md:h-[60px] md:w-[60px]"
         >
-            <svg className={`duration-150 ${isClosed ? "rotate-180 opacity-0" : ""}`} width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M60 30C60 46.5685 46.5685 60 30 60C13.4315 60 0 46.5685 0 30C0 13.4315 13.4315 0 30 0C46.5685 0 60 13.4315 60 30Z" fill="#9A9BAB"/>
-                <rect x="21" y="28" width="18" height="5" fill="white"/>
-            </svg>
-            <svg className={`absolute inset-0 w-full h-full duration-150 ${!isClosed ? "rotate-180 opacity-0" : ""}`} width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="30" cy="30" r="30" fill="#184E97"/>
-                <path d="M31.92 27.76H38.92V32.04H31.92V39.56H27.44V32.04H20.48V27.76H27.44V20.16H31.92V27.76Z" fill="white"/>
-            </svg>
+          <svg
+            className={`duration-150 ${isClosed ? "rotate-180 opacity-0" : ""}`}
+            width="60"
+            height="60"
+            viewBox="0 0 60 60"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M60 30C60 46.5685 46.5685 60 30 60C13.4315 60 0 46.5685 0 30C0 13.4315 13.4315 0 30 0C46.5685 0 60 13.4315 60 30Z"
+              fill="#9A9BAB"
+            />
+            <rect x="21" y="28" width="18" height="5" fill="white" />
+          </svg>
+          <svg
+            className={`absolute inset-0 w-full h-full duration-150 ${!isClosed ? "rotate-180 opacity-0" : ""}`}
+            width="60"
+            height="60"
+            viewBox="0 0 60 60"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="30" cy="30" r="30" fill="#184E97" />
+            <path
+              d="M31.92 27.76H38.92V32.04H31.92V39.56H27.44V32.04H20.48V27.76H27.44V20.16H31.92V27.76Z"
+              fill="white"
+            />
+          </svg>
         </div>
       </button>
       <div ref={contentRef} className="h-0 overflow-hidden">

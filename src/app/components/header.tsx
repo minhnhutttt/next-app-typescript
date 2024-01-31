@@ -3,10 +3,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type NavLink = {
-    id: number;
-    link: string;
-    text: string;
-  }
+  id: number;
+  link: string;
+  text: string;
+};
 
 const links: NavLink[] = [
   {
@@ -56,11 +56,12 @@ export default function Header() {
   }, []);
   return (
     <div className="absolute inset-x-0 top-[20px] md:top-[48px] z-50 flex h-[62px] md:h-[110px] items-center justify-between px-6 md:px-[50px]">
-      <Link
-        href="/"
-        className="block duration-150 hover:opacity-75"
-      >
-        <img className="max-md:max-w-[180px]" src="/images/logo.png" alt="Men's Esthe BAZOOKA" />
+      <Link href="/" className="block duration-150 hover:opacity-75">
+        <img
+          className="max-md:max-w-[180px]"
+          src="/images/logo.png"
+          alt="Men's Esthe BAZOOKA"
+        />
       </Link>
       {open && (
         <div

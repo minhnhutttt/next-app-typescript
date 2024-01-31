@@ -8,7 +8,7 @@ type AnimationType = "fadeUp" | "slideLeft" | "slideRight" | "zoom" | "default";
 
 const useScrollAnimation = (
   animationType: AnimationType,
-  delay: number = 0
+  delay: number = 0,
 ): ((el: HTMLElement | null) => void) => {
   const elements = useRef<Array<HTMLElement>>([]);
 
@@ -35,25 +35,21 @@ const useScrollAnimation = (
             break;
         }
 
-        gsap.fromTo(
-          el,
-          animation,
-          {
-            y: 0,
-            x: 0,
-            opacity: 1,
-            duration: 0.5,
-            scaleX: 1,
-            scaleY: 1,
-            delay,
-            ease: Power2.easeInOut,
-            scrollTrigger: {
-              trigger: el,
-              start: "top bottom-=60",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
+        gsap.fromTo(el, animation, {
+          y: 0,
+          x: 0,
+          opacity: 1,
+          duration: 0.5,
+          scaleX: 1,
+          scaleY: 1,
+          delay,
+          ease: Power2.easeInOut,
+          scrollTrigger: {
+            trigger: el,
+            start: "top bottom-=60",
+            toggleActions: "play none none reverse",
+          },
+        });
       });
     };
 
