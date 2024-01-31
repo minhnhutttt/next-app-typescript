@@ -25,6 +25,7 @@ const contactTimeOptions = [
 
 export default function Contact() {
   const animateRefs = useScrollAnimation("fadeUp");
+  const [success, setSuccess] = useState(false);
   const [formData, setFormData] = useState({
     nameStore: "",
     name: "",
@@ -49,6 +50,33 @@ export default function Contact() {
       [name]: value,
     }));
   };
+
+  const submitForm = async (e: any) => {
+    e.preventDefault();
+    const response = await fetch('/api/sendEmail', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        nameStore: formData.nameStore,
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        prefectures: formData.prefectures,
+        address: formData.address,
+        contactMethod: formData.contactMethod,
+        contactTime: formData.contactTime,
+        content: formData.content
+      })
+    })
+    if (response.ok) {
+        setSuccess(true)
+    } else {
+        setSuccess(false)
+    }
+
+  }
   return (
     <div id="contact" className="relative px-5 pt-[82px] md:pt-[70px] bg-[#F4F4F4]">
       <div className="w-full max-w-[1200px] mx-auto">
@@ -60,106 +88,108 @@ export default function Contact() {
           <br />
           下記に必要事項をご記入の上、お問い合わせください。
         </p>
-        <div ref={animateRefs} className="bg-white border border-[#E1E1DC] [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] mt-5 px-5 py-7 md:px-[75px] md:py-[70px] rounded-[20px] md:space-y-11 space-y-6">
-          <div>
-            <FormInput
-              type="text"
-              label="店舗名"
-              name="nameStore"
-              value={formData.nameStore}
-              placeholder="メンエスバズーカ"
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="flex md:gap-[46px] max-md:flex-col gap-6">
-            <div className="md:w-1/2">
+        <form onSubmit={submitForm}>
+          <div ref={animateRefs} className="bg-white border border-[#E1E1DC] [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] mt-5 px-5 py-7 md:px-[75px] md:py-[70px] rounded-[20px] md:space-y-11 space-y-6">
+            <div>
               <FormInput
                 type="text"
-                label="担当者名"
-                name="name"
-                value={formData.name}
-                placeholder="例）山田太郎"
+                label="店舗名"
+                name="nameStore"
+                value={formData.nameStore}
+                placeholder="メンエスバズーカ"
                 onChange={handleInputChange}
               />
             </div>
-            <div className="md:w-1/2">
-              <FormInput
-                type="text"
-                label="電話番号"
-                name="phone"
-                value={formData.phone}
-                placeholder="0433126905"
+            <div className="flex md:gap-[46px] max-md:flex-col gap-6">
+              <div className="md:w-1/2">
+                <FormInput
+                  type="text"
+                  label="担当者名"
+                  name="name"
+                  value={formData.name}
+                  placeholder="例）山田太郎"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="md:w-1/2">
+                <FormInput
+                  type="text"
+                  label="電話番号"
+                  name="phone"
+                  value={formData.phone}
+                  placeholder="0433126905"
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+            <div className="flex md:gap-[46px] max-md:flex-col gap-6">
+              <div className="md:w-1/2">
+                <FormInput
+                  type="email"
+                  label="メールアドレス"
+                  name="email"
+                  value={formData.email}
+                  placeholder="info@esthe-bazooka.com"
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+            <div className="flex md:gap-[46px] max-md:flex-col gap-6">
+              <div className="md:w-[250px]">
+                <FormInput
+                  type="text"
+                  label="都道府県"
+                  name="prefectures"
+                  value={formData.prefectures}
+                  placeholder="東京都"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="flex-1">
+                <FormInput
+                  type="text"
+                  label="住所"
+                  name="address"
+                  value={formData.address}
+                  placeholder="住所を入力してください"
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+            <div className="flex md:gap-[46px] max-md:flex-col gap-6">
+              <div className="md:w-[304px]">
+                <FormSelect
+                  label="連絡方法（メールor電話）"
+                  name="contactMethod"
+                  options={contactMethodOptions}
+                  selectedValue={formData.contactMethod}
+                  onChange={handleSelectChange}
+                />
+              </div>
+              <div className="md:w-[304px]">
+                <FormSelect
+                  label="希望連絡時間"
+                  name="contactTime"
+                  options={contactTimeOptions}
+                  selectedValue={formData.contactTime}
+                  onChange={handleSelectChange}
+                />
+              </div>
+            </div>
+            <div className="">
+              <FormTextArea
+                label="お問い合わせ内容"
+                name="content"
+                value={formData.content}
+                placeholder="例:導入に向けた資料を希望します。"
                 onChange={handleInputChange}
               />
             </div>
           </div>
-          <div className="flex md:gap-[46px] max-md:flex-col gap-6">
-            <div className="md:w-1/2">
-              <FormInput
-                type="email"
-                label="メールアドレス"
-                name="email"
-                value={formData.email}
-                placeholder="info@esthe-bazooka.com"
-                onChange={handleInputChange}
-              />
-            </div>
+          <div className="flex justify-center py-8 md:py-[50px]">
+            <button type="submit" className="md:text-[36px] text-[20px] font-bold w-[240px] h-[64px] md:w-[594px] md:h-[100px] flex items-center justify-center rounded-[20px] text-white bg-[#112E77] [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)]">送信する</button>
           </div>
-          <div className="flex md:gap-[46px] max-md:flex-col gap-6">
-            <div className="md:w-[250px]">
-              <FormInput
-                type="text"
-                label="都道府県"
-                name="prefectures"
-                value={formData.prefectures}
-                placeholder="東京都"
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="flex-1">
-              <FormInput
-                type="text"
-                label="住所"
-                name="address"
-                value={formData.address}
-                placeholder="住所を入力してください"
-                onChange={handleInputChange}
-              />
-            </div>
-          </div>
-          <div className="flex md:gap-[46px] max-md:flex-col gap-6">
-            <div className="md:w-[304px]">
-              <FormSelect
-                label="連絡方法（メールor電話）"
-                name="contactMethod"
-                options={contactMethodOptions}
-                selectedValue={formData.contactMethod}
-                onChange={handleSelectChange}
-              />
-            </div>
-            <div className="md:w-[304px]">
-              <FormSelect
-                label="希望連絡時間"
-                name="contactTime"
-                options={contactTimeOptions}
-                selectedValue={formData.contactTime}
-                onChange={handleSelectChange}
-              />
-            </div>
-          </div>
-          <div className="">
-            <FormTextArea
-              label="お問い合わせ内容"
-              name="content"
-              value={formData.content}
-              placeholder="例:導入に向けた資料を希望します。"
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <div className="flex justify-center py-8 md:py-[50px]">
-          <button type="button" className="md:text-[36px] text-[20px] font-bold w-[240px] h-[64px] md:w-[594px] md:h-[100px] flex items-center justify-center rounded-[20px] text-white bg-[#112E77] [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)]">送信する</button>
-        </div>
+        </form>
       </div>
     </div>
   );

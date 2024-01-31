@@ -9,7 +9,7 @@ export default function Company() {
   return (
     <PageContainer>
       <PageTitle>運営会社</PageTitle>
-      <div className="w-full max-w-[484px] px-5 mx-auto font-worksans md:text-[20px] text-[18px] pt-20 md:pt-[134px] pb-32 md:pb-[224px]">
+      <div ref={animateRefs} className="w-full max-w-[484px] px-5 mx-auto font-worksans md:text-[20px] text-[18px] pt-20 md:pt-[134px] pb-32 md:pb-[224px]">
         会社名<br />
         株式会社ジャパントータルコミュニケーションズ<br />
         <br />
