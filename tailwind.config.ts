@@ -17,6 +17,7 @@ const config: Config = {
     fontFamily: {
       hiragino: ["Hiragino Mincho Pro", "sans-serif"],
       inter: ["Inter", "sans-serif"],
+      worksans: ["Work Sans", "sans-serif"],
     },
   },
   plugins: [],

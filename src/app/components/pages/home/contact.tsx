@@ -1,4 +1,5 @@
 "use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import { useState } from "react";
 import FormSelect from "../../form/formSelect";
 import FormInput from "../../form/formInput";
@@ -23,6 +24,7 @@ const contactTimeOptions = [
 ];
 
 export default function Contact() {
+  const animateRefs = useScrollAnimation("fadeUp");
   const [formData, setFormData] = useState({
     nameStore: "",
     name: "",
@@ -50,15 +52,15 @@ export default function Contact() {
   return (
     <div id="contact" className="relative px-5 pt-[82px] md:pt-[70px] bg-[#F4F4F4]">
       <div className="w-full max-w-[1200px] mx-auto">
-        <h5 className="text-center md:text-[50px] text-[32px] font-bold">
+        <h5 ref={animateRefs} className="text-center md:text-[50px] text-[32px] font-bold">
           お問い合わせ
         </h5>
-        <p className="text-center md:text-[24px] text-[18px] font-medium mt-10">
+        <p ref={animateRefs} className="text-center md:text-[24px] text-[18px] font-medium mt-10">
           当社へのお問い合わせはこちらからお願い致します。
           <br />
           下記に必要事項をご記入の上、お問い合わせください。
         </p>
-        <div className="bg-white border border-[#E1E1DC] [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] mt-5 px-5 py-7 md:px-[75px] md:py-[70px] rounded-[20px] md:space-y-11 space-y-6">
+        <div ref={animateRefs} className="bg-white border border-[#E1E1DC] [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] mt-5 px-5 py-7 md:px-[75px] md:py-[70px] rounded-[20px] md:space-y-11 space-y-6">
           <div>
             <FormInput
               type="text"

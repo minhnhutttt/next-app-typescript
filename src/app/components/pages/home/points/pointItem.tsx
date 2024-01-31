@@ -1,3 +1,5 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import { ReactNode } from "react";
 
 export type PointItemPropsType = {
@@ -13,8 +15,9 @@ export default function PointItem({
   title,
   content,
 }: PointItemPropsType) {
+  const animateRefs = useScrollAnimation("fadeUp");
   return (
-    <div className="bg-white max-w-[595px] rounded-[20px] [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] pl-5 md:pl-12 pr-2 pb-3 pt-2 md:min-h-[250px] min-h-[215px]">
+    <div ref={animateRefs} className="bg-white max-w-[595px] rounded-[20px] [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] pl-5 md:pl-12 pr-2 pb-3 pt-2 md:min-h-[250px] min-h-[215px]">
       <div className="flex items-end justify-between">
         <div className="text-[#112E77]">
           <p className="xl:text-[20px] md:text-[16px] text-[15px] font-bold">

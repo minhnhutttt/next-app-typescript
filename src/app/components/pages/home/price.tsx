@@ -1,4 +1,7 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 export default function Price() {
+  const animateRefs = useScrollAnimation("fadeUp");
   return (
     <div id="price" className="bg-[#EDEDED]">
       <div className="flex justify-center md:text-[50px] text-[28px] text-white text-center bg-[#184E97] font-bold p-5">
@@ -8,7 +11,7 @@ export default function Price() {
         <div className="flex md:items-end justify-between">
           <div className="md:mt-20 mt-6 md:px-6 relative z-10 pb-4 md:pb-6">
             <div className="max-md:flex">
-              <div className="max-md:space-y-5 relative z-10 max-md:w-1/2">
+              <div ref={animateRefs} className="max-md:space-y-5 relative z-10 max-md:w-1/2">
                 <div>
                   <p className="xl:text-[45px] md:text-[3.125vw] text-[24px] font-bold leading-snug">
                     初期費用
@@ -32,31 +35,31 @@ export default function Price() {
                   </p>
                 </div>
               </div>
-              <figure className="ml-[-3vw] relative md:hidden">
+              <figure ref={animateRefs} className="ml-[-3vw] relative md:hidden">
                 <img src="/images/img-price.png" alt="" />
               </figure>
             </div>
-            <p className="xl:text-[30px] md:text-[2.083vw] [font-size:_clamp(16px,3.2vw,18px)] pt-1">
+            <p ref={animateRefs} className="xl:text-[30px] md:text-[2.083vw] [font-size:_clamp(16px,3.2vw,18px)] pt-1">
               価格は全て税抜です
               <br />
               6ヶ月以上のご契約が必要です
             </p>
           </div>
-          <figure className="md:ml-[-84px] ml-[-5vw] relative max-md:hidden">
+          <figure ref={animateRefs} className="md:ml-[-84px] ml-[-5vw] relative max-md:hidden">
             <img src="/images/img-price.png" alt="" />
           </figure>
         </div>
-        <p className="text-center font-bold md:text-[2.431vw] xl:text-[35px] [font-size:_clamp(18px,3.4vw,20px)] pt-4 pb-9">
+        <p ref={animateRefs} className="text-center font-bold md:text-[2.431vw] xl:text-[35px] [font-size:_clamp(18px,3.4vw,20px)] pt-4 pb-9">
           アップデートに伴う機能の追加により、 将来的に販売価格が上昇します。
           <br />
           今ご契約頂ければ、ずっと現在価格でご利用頂けます。
         </p>
       </div>
       <div className="w-full md:max-w-[1240px] max-w-[480px] mx-auto px-5 mt-8 pb-[60px] md:pb-[110px] md:mt-12">
-        <h5 className="text-center md:text-[50px] text-[32px] font-bold">
+        <h5 ref={animateRefs} className="text-center md:text-[50px] text-[32px] font-bold">
           オプション料金
         </h5>
-        <div className="bg-white rounded-[20px] lg:px-[50px] px-6 py-5 md:pt-3 md:pb-8 mt-10 [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)]">
+        <div ref={animateRefs} className="bg-white rounded-[20px] lg:px-[50px] px-6 py-5 md:pt-3 md:pb-8 mt-10 [box-shadow:0px_4px_4px_0px_rgba(0,_0,_0,_0.25)]">
           <div className="flex items-center justify-between border-b border-[#D9D9D9] px-2 md:px-4 pb-1 pt-3 gap-3 md:gap-5 md:pt-6">
             <p className="xl:text-[40px] md:text-[24px] font-bold break-keep [font-size:_clamp(14px,3.4vw,18px)]">
               修正（月3回まで）

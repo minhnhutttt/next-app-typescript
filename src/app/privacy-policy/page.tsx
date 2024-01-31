@@ -46,112 +46,33 @@ export default function PrivacyPolicy() {
           </TextBlock>
           <TextBlock>
             当社は、お客様の個人情報を、次に掲げる利用目的（以下、「本利用目的」といいます。）の範囲内において、取得及び利用いたします。
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                1.
-              </span>
-              サービスへの登録及びサービス利用時の本人確認並びにお客様の管理のため
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                2.
-              </span>
-              商品等のお届け、ご提供、アフターサービスのため
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                3.
-              </span>
-              商品等及びサービスの対価のご請求のため
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                4.
-              </span>
-              不正行為等の防止及び対応のため
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                5.
-              </span>
-              サービスの保守、管理のため
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                6.
-              </span>
-              マーケティングデータの調査及び分析、並びに、マーケティング施策の検討及び実施のため
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                7.
-              </span>
-              当社又は第三者の媒体において、お客様の属性・行動履歴の分析に基づく興味及び関心等に合わせ、当社又は第三者の商品等及びサービスの提供、勧誘、広告その他のマーケティングをするため
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                8.
-              </span>
-              キャンペーン、懸賞企画、アンケートの実施のため
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                9.
-              </span>
-              商品等及びサービスの改善のため、並びに、新たな商品等及びサービスの企画、研究及び開発のため
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                10.
-              </span>
-              お問い合わせ対応及びお客様へのご連絡のため
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                11.
-              </span>
-              本ポリシー記載の方法による、第三者に対する提供
-            </p>
+            <ol className="list-decimal ml-5">
+                    <li>サービスへの登録及びサービス利用時の本人確認並びにお客様の管理のため</li>
+                    <li>商品等のお届け、ご提供、アフターサービスのため</li>
+                    <li>商品等及びサービスの対価のご請求のため</li>
+                    <li>不正行為等の防止及び対応のため</li>
+                    <li>サービスの保守、管理のため</li>
+                    <li>マーケティングデータの調査及び分析、並びに、マーケティング施策の検討及び実施のため</li>
+                    <li>当社又は第三者の媒体において、お客様の属性・行動履歴の分析に基づく興味及び関心等に合わせ、当社又は第三者の商品等及びサービスの提供、勧誘、広告その他のマーケティングをするため</li>
+                    <li>キャンペーン、懸賞企画、アンケートの実施のため</li>
+                    <li>商品等及びサービスの改善のため、並びに、新たな商品等及びサービスの企画、研究及び開発のため</li>
+                    <li>お問い合わせ対応及びお客様へのご連絡のため</li>
+                    <li>本ポリシー記載の方法による、第三者に対する提供</li>
+                </ol>
           </TextBlock>
           <TextBlock>
             （1）当社は、次に掲げる場合を除き、当社が取り扱う個人情報を、あらかじめお客様の同意を得ないで、第三者に提供いたしません。
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                1.
-              </span>
-              法令に基づく場合
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                2.
-              </span>
-              人の生命、身体又は財産の保護のために必要がある場合であって、お客様の同意を得ることが困難であるとき
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                3.
-              </span>
-              公衆衛生の向上又は児童の健全な育成の推進のために特に必要がある場合であって、お客様の同意を得ることが困難であるとき
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                4.
-              </span>
-              国の機関若しくは地方公共団体又はその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、お客様の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                5.
-              </span>
-              その他法令で認められる場合
-            </p>
+            <ol className="list-decimal ml-5">
+                <li>法令に基づく場合</li>
+                <li>人の生命、身体又は財産の保護のために必要がある場合であって、お客様の同意を得ることが困難であるとき</li>
+                <li>公衆衛生の向上又は児童の健全な育成の推進のために特に必要がある場合であって、お客様の同意を得ることが困難であるとき</li>
+                <li>国の機関若しくは地方公共団体又はその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、お客様の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+                <li>その他法令で認められる場合</li>
+            </ol>
             （2）上記（1）にかかわらず、当社は、次に掲げる場合には、当社が取り扱う個人情報を第三者に提供することがあります。
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                1.
-              </span>
-              お客様の興味・関心等に合わせた広告の配信及びその成果確認並びにサービスの提供のために、それ自体では特定の個人を識別できないようにした情報を当社と提携している広告配信事業者に提供する場合
-            </p>
+            <ol className="list-decimal ml-5">
+              <li>お客様の興味・関心等に合わせた広告の配信及びその成果確認並びにサービスの提供のために、それ自体では特定の個人を識別できないようにした情報を当社と提携している広告配信事業者に提供する場合</li>
+            </ol>
           </TextBlock>
           <TextBlock>
             当社は、その取り扱う個人情報の漏洩、滅失又は毀損の防止その他個人情報の安全管理のために、必要かつ適切な措置を講じます。当社が講じる安全管理措置については、第１０項記載のお問い合わせ窓口までお問い合わせください。
@@ -160,30 +81,12 @@ export default function PrivacyPolicy() {
           当社は、次に定めるとおり開示後の請求（利用目的の通知、個人情報又は第三者提供記録の開示、訂正・追加・削除、利用の停止・第三者提供の停止の請求をいいます。）に対応します。<br />
 （1）利用目的の通知又は個人情報若しくは第三者提供記録の開示<br />
 お客様は、当社に対し、下記（4）に定める手続に従って、個人情報保護法において認められる範囲内において、利用目的の通知を求め、又は、個人情報若しくは第三者提供記録の開示を請求することができます。ただし、当社は、次の各号のいずれかに該当する場合は、閉示を行わないことがあります。<br />
-<p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                1.
-              </span>
-              開示することでご本人様又は第三者の生命、身体、財産その他の権利利益を害するおそれがある場合
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                2.
-              </span>
-              開示することで当社の業務の適正な実施に著しい支障を及ぼすおそれがある場合
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                3.
-              </span>
-              開示することが法令に違反することとなる場合
-            </p>
-            <p className="flex">
-              <span className="mr-1 flex-[0_0_20px] break-keep text-right">
-                4.
-              </span>
-              開示の請求がご本人様からであることが確認できない場合
-            </p>
+              <ol className="list-decimal ml-5">
+                <li>開示することでご本人様又は第三者の生命、身体、財産その他の権利利益を害するおそれがある場合</li>
+                <li>開示することで当社の業務の適正な実施に著しい支障を及ぼすおそれがある場合</li>
+                <li>開示することが法令に違反することとなる場合</li>
+                <li>開示の請求がご本人様からであることが確認できない場合</li>
+              </ol>
             なお、利用目的の通知又は個人情報若しくは第三者提供記録の開示を請求される場合には、下記（4）に定める開示手数料をいただきます。<br />
             （2）訂正・追加・削除<br />
             お客様は、下記（4）に定める手続に従って、個人情報の訂正・追加・削除を請求することができます。その場合、当社は、利用目的の達成に必要な範囲内で遅滞なく調査を行い、その結果に基づき、個人情報保護法において認められる範囲内において、当該個人情報の訂正・追加・削除を行います。<br />

@@ -1,3 +1,5 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import { ReactNode } from "react";
 
 export type StepItemPropsType = {
@@ -7,8 +9,9 @@ export type StepItemPropsType = {
 };
 
 export default function StepItem({ step, title, content }: StepItemPropsType) {
+  const animateRefs = useScrollAnimation("fadeUp");
   return (
-    <div className="flex gap-6 lg:gap-11 max-md:flex-col">
+    <div ref={animateRefs} className="flex gap-6 lg:gap-11 max-md:flex-col">
       <div className="lg:flex-[0_0_277px] md:flex-[0_0_200px] max-md:mx-10 h-10 md:h-[50px] flex items-center justify-center bg-[#6898CC] text-white lg:text-[32px] md:text-[24px] text-[18px] relative after:absolute after:w-[17px] after:aspect-[17/20] after:bg-[url('/images/step-arrow.png')] after:bg-cover md:after:left-[calc(100%-3px)] after:left-1/2 max-md:after:top-[calc(100%-5px)] max-md:after:rotate-90 max-md:after:-translate-x-1/2">
         STEP {step}
       </div>

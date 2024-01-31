@@ -1,20 +1,23 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 export default function Comparison() {
+  const animateRefs = useScrollAnimation("fadeUp");
   return (
     <div className="bg-[#F5F5F5] px-5">
       <div className="w-full max-w-[1440px] mx-auto relative">
         <div className="w-full md:max-w-[1200px] max-w-[480px] mx-auto pt-12 md:pt-[116px] md:pb-[156px] pb-[100px] relative">
-          <h5 className="min-[1440px]:text-[50px] md:text-[44px] text-[30px] font-bold text-center">
+          <h5 ref={animateRefs} className="min-[1440px]:text-[50px] md:text-[44px] text-[30px] font-bold text-center">
             他社サービスとの比較
           </h5>
           <div className="mt-[190px] md:mt-[88px] relative">
-            <figure className="absolute left-0 min-[1440px]:left-[-90px] min-[1440px]:bottom-[calc(100%-190px)] md:bottom-[calc(100%-15vw)] bottom-[calc(100%-80px)]">
+            <figure ref={animateRefs} className="absolute left-0 min-[1440px]:left-[-90px] min-[1440px]:bottom-[calc(100%-190px)] md:bottom-[calc(100%-15vw)] bottom-[calc(100%-80px)]">
               <img
                 className="w-[280px] md:w-[34.375vw] min-[1440px]:w-[495px]"
                 src="/images/img-gun-02.png"
                 alt=""
               />
             </figure>
-            <table className="w-full border-collapse table-fixed relative">
+            <table ref={animateRefs} className="w-full border-collapse table-fixed relative">
               <tbody>
                 <tr>
                   <th className="max-md:w-[110px]"></th>

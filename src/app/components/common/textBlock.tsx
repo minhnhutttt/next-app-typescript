@@ -10,7 +10,7 @@ export type PageTitlePropsType = {
   return (
     <div ref={animateRefs} className="opacity-0">
       {title && (
-        <p className="font-worksans text-[18px] font-bold md:text-[20px]">
+        <p className="font-worksans text-[14px] font-bold md:text-[16px]">
           {title}
         </p>
       )}
