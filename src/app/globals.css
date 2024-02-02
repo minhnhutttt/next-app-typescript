@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,5 +8,74 @@ html {
 }
 body {
   color: #000;
-  font-family: "Noto Sans", sans-serif;
+  cursor: none;
+  font-family: "Aldrich", sans-serif;
+}
+a {
+  cursor: none;
+}
+
+@font-face {
+  font-family: Solaris;
+  src: url(/fonts/Solaris.woff) format('woff'),url(/fonts/Solaris.woff2) format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap
+}
+
+/* utilities */
+
+.text-gradient {
+  background: -webkit-linear-gradient(45deg, rgba(255,132,200,1) 0%, rgba(181,228,255,1) 49%, rgba(14,255,255,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animation */
+
+@keyframes r {
+  to {rotate: 1turn}
+}
+
+
+#ball {
+  position: fixed;
+  opacity: .6;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle,#706ab6 15%,#000 70%);
+  pointer-events: none;
+  mix-blend-mode: color-dodge
+}
+
+#cursor {
+  position: fixed;
+  display: block;
+  z-index: 150;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: transform 30ms linear;
+  -webkit-transition: transform 30ms linear;
+  -moz-transition: transform 30ms linear;
+  -o-transition: transform 30ms linear
+}
+
+@media only screen and (max-width: 768px) {
+  #ball,#cursor {
+      display:none
+  }
+
+  * {
+      cursor: auto
+  }
 }
