@@ -19,6 +19,7 @@ export default function RootLayout({
         <Cursor />
         <Header />
         {children}
+        <a href="/" className="w-20 h-20 block bg-red-600"></a>
         </body>
     </html>
   );

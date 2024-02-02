@@ -60,16 +60,16 @@ export default function Header() {
         }`}
       >
         <nav>
-          <ul className="flex gap-8 max-xl:flex-col xl:gap-10">
+          <ul className="flex gap-8 max-xl:flex-col">
             <li>
-                <a href="/" className="text-[18px] text-gradient">Home</a>
+                <a href="/" className="block text-[18px] duration-300 hover:scale-125 px-2.5 text-gradient">Home</a>
             </li>
             {links.map(({ id, link, text, target }) => (
               <li key={id}>
                 <a
                   href={link}
                   target={target}
-                  className="text-[18px] text-white"
+                  className="block text-[18px] text-white duration-300 hover:scale-125 px-2.5"
                 >
                   {text}
                 </a>

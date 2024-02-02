@@ -8,13 +8,17 @@ html {
 }
 body {
   color: #000;
-  cursor: none;
   font-family: "Aldrich", sans-serif;
 }
-a {
+
+* {
   cursor: none;
 }
-
+@media only screen and (max-width: 768px) {
+  * {
+      cursor: auto
+  }
+}
 @font-face {
   font-family: Solaris;
   src: url(/fonts/Solaris.woff) format('woff'),url(/fonts/Solaris.woff2) format('woff2');
@@ -32,50 +36,6 @@ a {
 }
 
 /* Animation */
-
 @keyframes r {
   to {rotate: 1turn}
-}
-
-
-#ball {
-  position: fixed;
-  opacity: .6;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle,#706ab6 15%,#000 70%);
-  pointer-events: none;
-  mix-blend-mode: color-dodge
-}
-
-#cursor {
-  position: fixed;
-  display: block;
-  z-index: 150;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: #fff;
-  pointer-events: none;
-  mix-blend-mode: difference;
-  transition: transform 30ms linear;
-  -webkit-transition: transform 30ms linear;
-  -moz-transition: transform 30ms linear;
-  -o-transition: transform 30ms linear
-}
-
-@media only screen and (max-width: 768px) {
-  #ball,#cursor {
-      display:none
-  }
-
-  * {
-      cursor: auto
-  }
 }
