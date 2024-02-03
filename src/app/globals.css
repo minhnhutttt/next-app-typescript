@@ -41,7 +41,7 @@ body {
 }
 
 /* Animation */
-/* @keyframes r {
+@keyframes r {
   to {rotate: 1turn}
 }
 
@@ -65,11 +65,11 @@ body {
 
 @keyframes scaling {
   0% {
-    transform: scale(.65) translateY(65px);
+    transform: scale(.65);
   }
 
   15% {
-    transform: scale(.5) translateY(100px);
+    transform: scale(.5);
   }
 
   65% {
@@ -77,6 +77,7 @@ body {
   }
 
   100% {
-    transform: scale(.65) translateY(65px);
+    transform: scale(.65);
   }
-} */
+}
+
