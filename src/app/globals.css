@@ -41,52 +41,42 @@ body {
 }
 
 /* Animation */
-@keyframes r {
+/* @keyframes r {
   to {rotate: 1turn}
 }
+
 @keyframes rotate {
-  0% {
-    transform: rotate(0);
+  from {
+    transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 
-html {
-	overflow-y: scroll;
-	height: 100%;
-	-webkit-overflow-scrolling: touch;
-	overflow-scrolling: touch;
-}
-body {
-	overflow-y: visible;
-	position: relative;
-  height: unset;
-}
-html, body {
-	overflow-x: hidden;
-	margin: 0;
+@keyframes backwards-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
-.container {
-	width: 400%;
-	height: 100vh;
-	display: flex;
-	flex-wrap: nowrap;
-}
+@keyframes scaling {
+  0% {
+    transform: scale(.65) translateY(65px);
+  }
 
-.firstContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: yellow;
-}
+  15% {
+    transform: scale(.5) translateY(100px);
+  }
 
-.lastContainer {
-  display: flex;
-  height: 100vh;
-  background: yellow;
-}
+  65% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(.65) translateY(65px);
+  }
+} */

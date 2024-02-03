@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html>
       <body className="h-[20000px]">
-        {/* <Cursor /> */}
+        <Cursor />
         <Header />
         {children}
         </body>
