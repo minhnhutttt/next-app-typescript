@@ -15,11 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body>
-        <Cursor />
+      <body className="h-[20000px]">
+        {/* <Cursor /> */}
         <Header />
         {children}
-        <a href="/" className="w-20 h-20 block bg-red-600"></a>
         </body>
     </html>
   );

@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type NavLink = {
@@ -49,9 +50,9 @@ export default function Header() {
     }, []);
     return (
       <header className="absolute top-0 inset-x-0 flex justify-between items-center px-10 md:px-16 h-[102px]">
-        <a href="/" className="block relative z-10">
+        <Link href="/" className="block relative z-10">
             <img src="/images/logo.png" alt="fliQt" />
-        </a>
+        </Link>
         <div
         className={`z-50 flex items-center gap-8 overflow-hidden duration-500 max-xl:pointer-events-none max-xl:fixed max-xl:inset-y-0 max-xl:right-0 max-xl:h-screen max-xl:flex-col max-xl:justify-center max-xl:bg-black/90 max-xl:opacity-0 xl:gap-2 xl:py-4 ease-in-out ${
           open
