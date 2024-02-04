@@ -1,17 +1,16 @@
 "use client"
 import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react';
+import useIsMobile from '../_hooks/useIsMobile';
 
-function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
 
 export default function Cursor()  {
     const ballRef = useRef<HTMLDivElement>(null);
     const cursorRef = useRef<HTMLDivElement>(null);
+    const isMobile = useIsMobile();
   
     useEffect(() => {
-      if (isMobile()) {
+      if (isMobile) {
         gsap.to([ballRef.current, cursorRef.current], {
           display: 'none',
         });

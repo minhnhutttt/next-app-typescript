@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import useSplitTextAnimation from "@/app/_hooks/useSplitTextAnimation";
 import useScrollAnimation from "@/app/_hooks/useScrollAnimation";
 import useMarquise from "@/app/_hooks/useMarquise";
@@ -13,15 +13,19 @@ export default function Service() {
 
     const marquiseContainer = useRef<HTMLDivElement>(null);
     useMarquise(marquiseContainer);
+    
+    const marquiseContainer2 = useRef<HTMLDivElement>(null);
+    useMarquise(marquiseContainer2);
 
     const containerRef = useRef<HTMLDivElement >(null);
-  const sliderRef = useRef<HTMLDivElement>(null);
+    const sliderRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       let panels = gsap.utils.toArray(".panel");
       const sliderContainer = sliderRef.current;
       if (sliderContainer) {
+
       gsap.to(panels, {
         xPercent: -100 * (panels.length - 1),
         ease: "none",
@@ -38,17 +42,18 @@ export default function Service() {
     return () => ctx.revert();
   });
 
+
   return (
     <div>
         <div ref={containerRef} className="relative mt-[20vw] md:mt-[8vw] overflow-hidden">
-            <div ref={animateRefs} className="relative">
+            <div ref={animateRefs} className="relative opacity-0">
                 <div className="flex absolute top-0 left-0 right-0 overflow-hidden">
                     <p ref={marquiseContainer} className="flex break-keep whitespace-nowrap  [font-size:_clamp(80px,35vw,200px)] md:[font-size:_clamp(80px,20.833vw,300px)] font-solaris text-[#1C1B1B] leading-[0.75]">
                     MOVEMENT MOVEMENT MOVEMENT
                     </p>
                 </div>
             </div>
-            <div className="px-[3.75vw] max-md:mb-6">
+            <div ref={animateRefs} className="px-[3.75vw] max-md:mb-6 opacity-0">
                 <div className="w-full max-w-[1340px] mx-auto">
                     <div className="flex max-md:flex-col items-end pt-[16vw] md:pt-[3vw]">
                         <div className="md:w-[53.472vw] pb-[6vw]">
@@ -77,9 +82,9 @@ export default function Service() {
                     </div>
                 </div>
             </div>
-            <div className="relative z-10">
-                <div className="overflow-hidden" ref={sliderRef}>
-                <div className="flex gap-[4vw] md:gap-11 ml-[30vw] w-[200vw] md:w-[140vw]" >
+            <div ref={animateRefs} className="relative z-10 opacity-0">
+                <div className="overflow-hidden">
+                <div  ref={sliderRef} className="flex gap-[4vw] md:gap-11 ml-[30vw] w-[200vw] md:w-[140vw]" >
                     <div className="w-[50vw] md:w-[40vw] flex justify-center panel">
                         <div className="flex items-center justify-center p-[2vw] md:p-10 gap-2 md:gap-8 border border-[#939393] rounded-xl">
                             <figure className="md:flex-[0_0_56px] flex-[0_0_40px] flex justify-center">
@@ -123,10 +128,10 @@ export default function Service() {
                 </div>
                 </div>
             </div>
-            <div className="relative flex items-center justify-center pt-[4vw]">
-            <div className="bg-[url('/images/deco.png')] bg-[length:70.139vw_auto] bg-right-top bg-no-repeat min-[1440px]:top-[-100px] top-[-6.944vw] absolute w-full h-full"></div>
-            <div className="relative -rotate-[25deg] md:w-[59vw] w-[88vw] aspect-square max-w-[850px] overflow-hidden">
-                <div className="relative w-full h-full animate-[rotate_20s_infinite_linear]">
+            <div  ref={animateRefs} className="relative flex items-center justify-center pt-[4vw] opacity-0">
+                <div className="bg-[url('/images/deco.png')] bg-[length:70.139vw_auto] bg-right-top bg-no-repeat min-[1440px]:top-[-100px] top-[-6.944vw] absolute w-full h-full"></div>
+                <div className="relative -rotate-[25deg] md:w-[59vw] w-[88vw] aspect-square max-w-[850px] overflow-hidden">
+                    <div className="relative w-full h-full animate-[rotate_20s_infinite_linear]">
                     <div className="absolute top-2/4 left-[0] w-full flex justify-between items-center -translate-y-1/2">
                         <div className="animate-[backwards-rotation_20s_infinite_linear]">
                             <a href="#" className="md:w-[16.667vw] w-[24vw] aspect-square max-w-[240px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:[font-size:_clamp(16px,1.806vw,26px)] [font-size:_clamp(12px,2vw,20px)] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-17.5s]"><span className="rotate-[25deg]">ROBUST</span></a>
@@ -159,13 +164,25 @@ export default function Service() {
                             <a href="#" className="md:w-[16.667vw] w-[24vw] aspect-square max-w-[240px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:[font-size:_clamp(16px,1.806vw,26px)] [font-size:_clamp(12px,2vw,20px)] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-35s]"><span className="rotate-[-110deg]">FUTURISTIC</span></a>
                         </div>
                     </div>
-                </div>
-                <div className="rotate-[25deg] absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                    <p data-split-text data-delay="1" className="text-white text-center leading-none font-solaris [font-size:_clamp(30px,10vw,90px)] md:[font-size:_clamp(60px,8.333vw,120px)]"><span className="opacity-0">WE</span></p>
-                    <p data-split-text data-delay="1" className="text-white text-center leading-none font-solaris [font-size:_clamp(30px,10vw,90px)] md:[font-size:_clamp(60px,8.333vw,120px)]"><span className="opacity-0">ARE</span></p>
+                    </div>
+                    <div className="rotate-[25deg] absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                        <p data-split-text data-delay="1" className="text-white text-center leading-none font-solaris [font-size:_clamp(30px,10vw,90px)] md:[font-size:_clamp(60px,8.333vw,120px)]"><span className="opacity-0">WE</span></p>
+                        <p data-split-text data-delay="1" className="text-white text-center leading-none font-solaris [font-size:_clamp(30px,10vw,90px)] md:[font-size:_clamp(60px,8.333vw,120px)]"><span className="opacity-0">ARE</span></p>
+                    </div>
                 </div>
             </div>
         </div>
+        <div ref={animateRefs} className="relative opacity-0 mt-12">
+                <div className="flex max-md:flex-col relative overflow-hidden">
+                    <p ref={marquiseContainer2}  className="flex break-keep whitespace-nowrap [font-size:_clamp(44px,28vw,160px)] md:[font-size:_clamp(64px,18.056vw,260px)] font-solaris text-[#1C1B1B] leading-[0.75]">
+                    VISIONARIES VISIONARIES VISIONARIES
+                    </p>
+                    <div className="md:absolute inset-0 flex items-center justify-center px-[3.75vw]">
+                        <p className="[font-size:_clamp(14px,1vw,18px)] md:[font-size:_clamp(14px,1.25vw,18px)] text-white w-full max-w-[770px]">
+                        fliQt CONTINUES TO FORGE STRONG ALLIANCES WITH PIONEERS AND <br className="max-md:hidden" />VISIONARIES ACROSS VARIOUS TECHNOLOGY SECTORS INCLUDING BLOCKCHAIN, WEB, APPLICATION, AND AI DEVELOPMENT.
+                        </p>
+                    </div>
+                </div>
         </div>
     </div>
   );

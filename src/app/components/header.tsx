@@ -53,6 +53,7 @@ export default function Header() {
         <Link href="/" className="block relative z-10">
             <img src="/images/logo.png" alt="fliQt" />
         </Link>
+        <div className="fixed inset-0 z-40" onClick={() => setOpen(false)}></div>
         <div
         className={`z-50 flex items-center gap-8 overflow-hidden duration-500 max-xl:pointer-events-none max-xl:fixed max-xl:inset-y-0 max-xl:right-0 max-xl:h-screen max-xl:flex-col max-xl:justify-center max-xl:bg-black/90 max-xl:opacity-0 xl:gap-2 xl:py-4 ease-in-out ${
           open

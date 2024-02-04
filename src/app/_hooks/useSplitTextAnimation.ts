@@ -21,12 +21,7 @@ const useSplitTextAnimation = () => {
         .map((char, index) => `<span class="relative inline-block char-${refIndex}-${index}">${char === " " ? "&nbsp;" : char}</span>`)
         .join('');
 
-        const splitText2 = characters.map((char, index) => `${char === " " ? "ok" : ''}`)
-        .join('');
-
       target.innerHTML = splitText;
-      
-      console.log(splitText2);
       characters.forEach((char, index) => {
         gsap.set(`.char-${refIndex}-${index}`, {
             transformOrigin: "0% 100%",
@@ -53,7 +48,6 @@ const useSplitTextAnimation = () => {
     });
   }, []);
 
-  // No need to return anything in this case
 };
 
 export default useSplitTextAnimation;

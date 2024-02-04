@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,7 +9,7 @@ const useMarquise = (containerRef: React.RefObject<HTMLDivElement> | null) => {
     const container = containerRef?.current;
 
     if (container) {
-      gsap.timeline({
+     var ctx = gsap.timeline({
         scrollTrigger: {
           trigger: container,
           start: "top bottom",
@@ -22,7 +22,11 @@ const useMarquise = (containerRef: React.RefObject<HTMLDivElement> | null) => {
         ease: "linear",
       });
     }
-  }, [containerRef]);
+    
+    return () => {
+      ctx.revert();
+    };
+  }, []);
 };
 
 export default useMarquise;
