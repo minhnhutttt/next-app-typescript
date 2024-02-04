@@ -77,7 +77,7 @@ export default function Service() {
                     </div>
                 </div>
             </div>
-            <div className="bg-[url('/images/deco.png')] bg-[length:70.139vw_auto] bg-right bg-no-repeat">
+            <div className="relative z-10">
                 <div className="overflow-hidden" ref={sliderRef}>
                 <div className="flex gap-[4vw] md:gap-11 ml-[30vw] w-[200vw] md:w-[140vw]" >
                     <div className="w-[50vw] md:w-[40vw] flex justify-center panel">
@@ -123,51 +123,49 @@ export default function Service() {
                 </div>
                 </div>
             </div>
+            <div className="relative flex items-center justify-center pt-[4vw]">
+            <div className="bg-[url('/images/deco.png')] bg-[length:70.139vw_auto] bg-right-top bg-no-repeat min-[1440px]:top-[-100px] top-[-6.944vw] absolute w-full h-full"></div>
+            <div className="relative -rotate-[25deg] md:w-[59vw] w-[88vw] aspect-square max-w-[850px] overflow-hidden">
+                <div className="relative w-full h-full animate-[rotate_20s_infinite_linear]">
+                    <div className="absolute top-2/4 left-[0] w-full flex justify-between items-center -translate-y-1/2">
+                        <div className="animate-[backwards-rotation_20s_infinite_linear]">
+                            <a href="#" className="md:w-[16.667vw] w-[24vw] aspect-square max-w-[240px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:[font-size:_clamp(16px,1.806vw,26px)] [font-size:_clamp(12px,2vw,20px)] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-17.5s]"><span className="rotate-[25deg]">ROBUST</span></a>
+                        </div>
+                        <div className="animate-[backwards-rotation_20s_infinite_linear]">
+                            <a href="#" className="md:w-[16.667vw] w-[24vw] aspect-square max-w-[240px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:[font-size:_clamp(16px,1.806vw,26px)] [font-size:_clamp(12px,2vw,20px)] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-27.5s]"><span className="rotate-[25deg]">VERSATILE</span></a>
+                        </div>
+                    </div>
+                    <div className="absolute top-2/4 left-[0] w-full flex justify-between items-center -translate-y-1/2 rotate-45">
+                        <div className="animate-[backwards-rotation_20s_infinite_linear]">
+                            <a href="#" className="md:w-[16.667vw] w-[24vw] aspect-square max-w-[240px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:[font-size:_clamp(16px,1.806vw,26px)] [font-size:_clamp(10px,1.6vw,18px)] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-20s]"><span className="rotate-[-20deg]">PROFESSIONAL</span></a>
+                        </div>
+                        <div className="animate-[backwards-rotation_20s_infinite_linear]">
+                            <a href="#" className="md:w-[16.667vw] w-[24vw] aspect-square max-w-[240px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:[font-size:_clamp(16px,1.806vw,26px)] [font-size:_clamp(12px,2vw,20px)] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-30s]"><span className="rotate-[-20deg]">RELIABLE</span></a>
+                        </div>
+                    </div>
+                    <div className="absolute top-2/4 left-[0] w-full flex justify-between items-center -translate-y-1/2 rotate-90">
+                        <div className="animate-[backwards-rotation_20s_infinite_linear]">
+                            <a href="#" className="md:w-[16.667vw] w-[24vw] aspect-square max-w-[240px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:[font-size:_clamp(16px,1.806vw,26px)] [font-size:_clamp(12px,2vw,20px)] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-22.5s]"><span className="rotate-[-65deg]">STRATEGIC</span></a>
+                        </div>
+                        <div className="animate-[backwards-rotation_20s_infinite_linear]">
+                            <a href="#" className="md:w-[16.667vw] w-[24vw] aspect-square max-w-[240px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:[font-size:_clamp(16px,1.806vw,26px)] [font-size:_clamp(12px,2vw,20px)] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-32.5s]"><span className="rotate-[-65deg]">AGILE</span></a>
+                        </div>
+                    </div>
+                    <div className="absolute top-2/4 left-[0] w-full flex justify-between items-center -translate-y-1/2 rotate-[135deg]">
+                        <div className="animate-[backwards-rotation_20s_infinite_linear]">
+                            <a href="#" className="md:w-[16.667vw] w-[24vw] aspect-square max-w-[240px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:[font-size:_clamp(16px,1.806vw,26px)] [font-size:_clamp(12px,2vw,20px)] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-25s]"><span className="rotate-[-110deg]">INTEGRATIVE</span></a>
+                        </div>
+                        <div className="animate-[backwards-rotation_20s_infinite_linear]">
+                            <a href="#" className="md:w-[16.667vw] w-[24vw] aspect-square max-w-[240px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:[font-size:_clamp(16px,1.806vw,26px)] [font-size:_clamp(12px,2vw,20px)] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-35s]"><span className="rotate-[-110deg]">FUTURISTIC</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div className="rotate-[25deg] absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                    <p data-split-text data-delay="1" className="text-white text-center leading-none font-solaris [font-size:_clamp(30px,10vw,90px)] md:[font-size:_clamp(60px,8.333vw,120px)]"><span className="opacity-0">WE</span></p>
+                    <p data-split-text data-delay="1" className="text-white text-center leading-none font-solaris [font-size:_clamp(30px,10vw,90px)] md:[font-size:_clamp(60px,8.333vw,120px)]"><span className="opacity-0">ARE</span></p>
+                </div>
+            </div>
         </div>
-        <div className="relative flex items-center justify-center mt-[20vw]">
-            {/* <div className="relative w-[400px] h-[400px] rotate-90 animate-[rotate_20s_infinite_linear]">
-                <div className="flex flex-col">
-                    <p data-split-text data-delay="1" className="text-white [font-size:_clamp(30px,10vw,90px)] md:[font-size:_clamp(60px,8.333vw,120px)] font-solaris"><span className="opacity-0">WE</span></p>
-                    <p data-split-text data-delay="2"className="text-white [font-size:_clamp(30px,10vw,90px)] md:[font-size:_clamp(60px,8.333vw,120px)] font-solaris"><span className="opacity-0">ARE</span></p>
-                </div>
-                
-            </div> */}
-            <div className="-rotate-[25deg]">
-            <div className="w-[41.666vw] aspect-square relative animate-[rotate_20s_infinite_linear]">
-                <div className="absolute top-2/4 left-[0] w-full flex justify-between items-center -translate-y-1/2">
-                    <div className="animate-[backwards-rotation_20s_infinite_linear]">
-                        <a href="#" className="md:w-[200px] w-[120px] md:h-[200px] h-[120px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:text-[26px] text-[14px] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-17.5s]"><span className="rotate-[25deg]">ROBUST</span></a>
-                    </div>
-                    <div className="animate-[backwards-rotation_20s_infinite_linear]">
-                        <a href="#" className="md:w-[200px] w-[120px] md:h-[200px] h-[120px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:text-[26px] text-[14px] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-27.5s]"><span className="rotate-[25deg]">VERSATILE</span></a>
-                    </div>
-                </div>
-                <div className="absolute top-2/4 left-[0] w-full flex justify-between items-center -translate-y-1/2 rotate-45">
-                    <div className="animate-[backwards-rotation_20s_infinite_linear]">
-                        <a href="#" className="md:w-[200px] w-[120px] md:h-[200px] h-[120px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:text-[26px] text-[14px] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-20s]"><span className="rotate-[-20deg]">PROFESSIONAL</span></a>
-                    </div>
-                    <div className="animate-[backwards-rotation_20s_infinite_linear]">
-                        <a href="#" className="md:w-[200px] w-[120px] md:h-[200px] h-[120px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:text-[26px] text-[14px] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-30s]"><span className="rotate-[-20deg]">RELIABLE</span></a>
-                    </div>
-                </div>
-                <div className="absolute top-2/4 left-[0] w-full flex justify-between items-center -translate-y-1/2 rotate-90">
-                    <div className="animate-[backwards-rotation_20s_infinite_linear]">
-                        <a href="#" className="md:w-[200px] w-[120px] md:h-[200px] h-[120px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:text-[26px] text-[14px] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-22.5s]"><span className="rotate-[-65deg]">STRATEGIC</span></a>
-                    </div>
-                    <div className="animate-[backwards-rotation_20s_infinite_linear]">
-                        <a href="#" className="md:w-[200px] w-[120px] md:h-[200px] h-[120px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:text-[26px] text-[14px] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-32.5s]"><span className="rotate-[-65deg]">AGILE</span></a>
-                    </div>
-                </div>
-                <div className="absolute top-2/4 left-[0] w-full flex justify-between items-center -translate-y-1/2 rotate-[135deg]">
-                    <div className="animate-[backwards-rotation_20s_infinite_linear]">
-                        <a href="#" className="md:w-[200px] w-[120px] md:h-[200px] h-[120px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:text-[26px] text-[14px] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-25s]"><span className="rotate-[-110deg]">INTEGRATIVE</span></a>
-                    </div>
-                    <div className="animate-[backwards-rotation_20s_infinite_linear]">
-                        <a href="#" className="md:w-[200px] w-[120px] md:h-[200px] h-[120px] rounded-full bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.20)_0%,_rgba(0,_0,_0,_0.20)_100%),_linear-gradient(94deg,_rgba(255,_132,_200,_0.20)_1.81%,_rgba(181,_228,_255,_0.20)_50.4%,_rgba(14,_255,_255,_0.20)_99%)] text-white md:text-[26px] text-[14px] flex items-center justify-center border border-[#0EFFFF] animate-[scaling_20s_infinite_linear] [animation-delay:-35s]"><span className="rotate-[-110deg]">FUTURISTIC</span></a>
-                    </div>
-                </div>
-            </div>
-            </div>
         </div>
     </div>
   );
