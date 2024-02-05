@@ -4,7 +4,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-type AnimationType = "fadeUp" | "fadeDown" | "slideLeft" | "slideRight" | "zoom" | "default";
+type AnimationType =
+  | "fadeUp"
+  | "fadeDown"
+  | "slideLeft"
+  | "slideRight"
+  | "zoom"
+  | "default";
 
 const useScrollAnimation = (
   animationType: AnimationType,

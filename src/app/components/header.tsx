@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Header() {
-    const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
   useEffect(() => {
     const handleLinksClick = () => {
       setOpen(false);
@@ -45,11 +45,11 @@ export default function Header() {
               </ul>
             </nav>
             <a
-                href="https://lin.ee/6PgmBNE"
-                target="_blank"
-                className="flex items-center justify-center w-[240px] h-[59px] rounded-[60px] border-2 border-black bg-[#FF66CC] font-bold duration-150 [box-shadow:0px_5px_0px_0px_#000] hover:opacity-75 "
-                >
-                LINEでお問い合わせ
+              href="https://lin.ee/6PgmBNE"
+              target="_blank"
+              className="flex items-center justify-center w-[240px] h-[59px] rounded-[60px] border-2 border-black bg-[#FF66CC] font-bold duration-150 [box-shadow:0px_5px_0px_0px_#000] hover:opacity-75 "
+            >
+              LINEでお問い合わせ
             </a>
           </div>
         </div>
