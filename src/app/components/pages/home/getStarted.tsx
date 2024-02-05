@@ -10,7 +10,7 @@ export default function GetStarted() {
     <div className="px-[3.75vw]">
         <div className="mt-[7.222vw] w-full max-w-[1330px] mx-auto">
             <div className="font-solaris text-white [font-size:_clamp(28px,12vw,80px)] md:[font-size:_clamp(40px,8.889vw,128px)] leading-none overflow-hidden" data-split-text data-delay="1">
-                <span className="opacity-0">WE'RE</span>
+                <span className="opacity-0">WE&apos;RE</span>
             </div>
             <div className="md:flex relative">
                 <div data-split-text data-delay="1" className="u-outline font-solaris [font-size:_clamp(80px,35vw,200px)] md:[font-size:_clamp(80px,20.833vw,300px)] leading-[.65]">

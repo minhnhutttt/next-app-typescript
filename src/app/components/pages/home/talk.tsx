@@ -9,7 +9,7 @@ export default function Talk() {
     <div className="px-[3.75vw] mt-[14vw] overflow-hidden">
         <div className="w-full max-w-[848px] mx-auto">
             <div data-split-text data-delay="1" className="text-center md:mt-10 mt-6 font-solaris [font-size:_clamp(30px,10vw,90px)] md:[font-size:_clamp(60px,8.333vw,120px)] text-white leading-[0.55]">
-                <span className="opacity-0">LER'S TALK</span>
+                <span className="opacity-0">LER&apos;S TALK</span>
             </div>
             <div ref={animateRefs} className="opacity-0 flex max-md:flex-col items-center mt-[32px] md:mt-[70px] lg:mt-[110px] md:gap-20 gap-10">
                 <div className="flex items-center flex-1 md:gap-20 gap-10">
