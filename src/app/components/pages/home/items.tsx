@@ -1,3 +1,5 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import { ReactNode } from "react";
 
 type CouponItemPropsType = {
@@ -6,8 +8,10 @@ type CouponItemPropsType = {
   children: ReactNode;
 };
 function CouponItem({ image, title, children }: CouponItemPropsType) {
+  const animateRefs = useScrollAnimation("fadeUp");
+
   return (
-    <div className="max-w-[430px] bg-[#FFFAF1] bg-[linear-gradient(-135deg,_#FF4CB0_40px,_transparent_0),_linear-gradient(45deg,_#FF4CB0_40px,_transparent_0)] md:bg-[linear-gradient(-135deg,_#FF4CB0_70px,_transparent_0),_linear-gradient(45deg,_#FF4CB0_70px,_transparent_0)] rounded-2xl [box-shadow:0px_4px_40px_0px_rgba(0,_0,_0,_0.08)] overflow-hidden flex flex-col items-center justify-center md:min-h-[320px] p-10">
+    <div ref={animateRefs} className="opacity-0 max-w-[430px] bg-[#FFFAF1] bg-[linear-gradient(-135deg,_#FF4CB0_40px,_transparent_0),_linear-gradient(45deg,_#FF4CB0_40px,_transparent_0)] md:bg-[linear-gradient(-135deg,_#FF4CB0_70px,_transparent_0),_linear-gradient(45deg,_#FF4CB0_70px,_transparent_0)] rounded-2xl [box-shadow:0px_4px_40px_0px_rgba(0,_0,_0,_0.08)] overflow-hidden flex flex-col items-center justify-center md:min-h-[320px] p-10">
       <figure>
         <img className="max-md:w-[80px]" src={image} alt={title} />
       </figure>
@@ -22,14 +26,15 @@ function CouponItem({ image, title, children }: CouponItemPropsType) {
 }
 
 export default function Items() {
+  const animateRefs = useScrollAnimation("fadeUp");
   return (
     <section className="md:py-[100px] py-[50px] px-5">
       <div className="w-full max-w-[1260px] mx-auto bg-[url('/images/bg-05.png')] border-[10px] border-[#FFCBEB] md:rounded-[60px] rounded-[32px] pt-[7vw] md:pt-[90px] md:pb-[133px] pb-[10vw] px-5">
         <div className="flex justify-center flex-col items-center">
-          <h5 className="text-center bg-[url('/images/line.png')] max-md:bg-[length:auto_16px] bg-no-repeat bg-bottom md:text-[24px] [font-size:_clamp(12px,4.2vw,20px)] font-bold py-6 md:py-9 md:px-10 tracking-widest">
+          <h5 ref={animateRefs} className="opacity-0 text-center bg-[url('/images/line.png')] max-md:bg-[length:auto_16px] bg-no-repeat bg-bottom md:text-[24px] [font-size:_clamp(12px,4.2vw,20px)] font-bold py-6 md:py-9 md:px-10 tracking-widest">
             とってもかんたん、とっても便利
           </h5>
-          <h4 className="lg:text-[48px] md:text-[36px] [font-size:_clamp(20px,4.6vw,28px)] font-bold tracking-widest">
+          <h4 ref={animateRefs} className="opacity-0 lg:text-[48px] md:text-[36px] [font-size:_clamp(20px,4.6vw,28px)] font-bold tracking-widest">
             <p>次世代クーポンなら</p>
             <p className="ml-[10vw] md:ml-[200px]">こんなことができます</p>
           </h4>

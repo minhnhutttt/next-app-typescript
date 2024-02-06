@@ -4,6 +4,7 @@ import Experience from "./components/pages/home/experience";
 import Coupon from "./components/pages/home/coupon";
 import Items from "./components/pages/home/items";
 import Guide from "./components/pages/home/guide";
+import FAQ from "./components/pages/home/faq/faq";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Coupon />
       <Items />
       <Guide />
+      <FAQ />
     </main>
   );
 }

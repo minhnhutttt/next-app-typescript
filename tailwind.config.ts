@@ -19,6 +19,7 @@ const config: Config = {
       noto: ["Noto Sans JP", "sans-serif"],
       lato: ["Lato", "sans-serif"],
       notoCJK: ["Noto Sans CJK JP", "sans-serif"],
+      roboto: ["Roboto", "sans-serif"],
     },
   },
   plugins: [],

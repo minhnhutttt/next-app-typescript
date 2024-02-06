@@ -37,7 +37,7 @@ const useScrollAnimation = (
             animation = { x: 30, opacity: 0 };
             break;
           case "zoom":
-            animation = { opacity: 0, scaleX: 0.9, scaleY: 0.9 };
+            animation = { opacity: 0, scaleX: 0.9, scaleY: 0.9, };
             break;
           default:
             animation = { autoAlpha: 0 };
