@@ -7,7 +7,7 @@ export type PageTitlePropsType = {
 export default function PageTitle({ children }: PageTitlePropsType) {
   const animateRefs = useScrollAnimation("fadeUp");
   return (
-    <div className="pt-[180px] flex h-[100px] items-center justify-center px-5 md:pt-[290px] md:h-[172px]">
+    <div className="pt-[180px] flex items-center justify-center px-5 md:pt-[290px]">
       <p
         ref={animateRefs}
         className="font-zen text-[7vw] font-bold opacity-0 md:text-[50px]"
