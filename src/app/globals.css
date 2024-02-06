@@ -12,14 +12,14 @@ body {
   font-family: "Aldrich", sans-serif;
 }
 
-* {
+/* * {
   cursor: none;
 }
 @media only screen and (max-width: 768px) {
   * {
       cursor: auto
   }
-}
+} */
 @font-face {
   font-family: Solaris;
   src: url(/fonts/Solaris.woff) format('woff'),url(/fonts/Solaris.woff2) format('woff2');

@@ -11,7 +11,7 @@ type NavLink = {
 const links: NavLink[] = [
     {
         id: 1,
-        link: "/",
+        link: "/service",
         text: "SERVICE",
     },
     {
