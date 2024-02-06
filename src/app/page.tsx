@@ -11,7 +11,6 @@ export default function Home() {
       <GetStarted />
       <Service />
       <WorkFlow />
-      <Talk />
     </main>
   );
 }

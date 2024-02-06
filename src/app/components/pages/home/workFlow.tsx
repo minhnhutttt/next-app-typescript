@@ -19,7 +19,7 @@ export default function WorkFlow() {
           let panels = gsap.utils.toArray(".panel");
           const sliderContainer = sliderRef.current;
           if (sliderContainer) {
-    
+    console.log(sliderContainer.offsetWidth);
           gsap.to(panels, {
             xPercent: -100 * (panels.length - 1),
             ease: "none",
@@ -57,14 +57,7 @@ export default function WorkFlow() {
             </div>
             <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-10">
                 <div className="overflow-hidden">
-                <div ref={sliderRef} className="flex gap-[4vw] md:gap-[6.944vw] ml-[30vw] w-[300vw] md:w-[240vw]">
-                    <div className="w-[60vw] md:w-[40vw] flex justify-center panel">
-                        <div className="w-full flex items-center justify-center md:p-px h-[60px] md:h-[102px] gap-2 md:gap-8 p-px rounded-[10px] bg-[linear-gradient(90deg,_rgba(255,132,200,1)_0%,_rgba(181,228,255,1)_49%,_rgba(14,255,255,1)_100%)]">
-                            <div className="bg-black w-full h-full flex items-center justify-center [font-size:_clamp(10px,1.2vw,20px)] rounded-[10px]  md:[font-size:_clamp(16px,1.667vw,24px)] text-white uppercase leading-none  px-[100px] whitespace-nowrap">
-                            PROJECT PROPOSAL PRESENTATION
-                            </div>
-                        </div>
-                    </div>
+                <div  ref={sliderRef} className="flex gap-[4vw] md:gap-[6.944vw] mx-[30vw] w-[300vw] md:w-[400vw]">
                     <div className="w-[60vw] md:w-[40vw] flex justify-center panel">
                         <div className="w-full flex items-center justify-center md:p-px h-[60px] md:h-[102px] gap-2 md:gap-8 p-px rounded-[10px] bg-[linear-gradient(90deg,_rgba(255,132,200,1)_0%,_rgba(181,228,255,1)_49%,_rgba(14,255,255,1)_100%)]">
                             <div className="bg-black w-full h-full flex items-center justify-center [font-size:_clamp(10px,1.2vw,20px)] rounded-[10px]  md:[font-size:_clamp(16px,1.667vw,24px)] text-white uppercase leading-none  px-[100px] whitespace-nowrap">
@@ -85,6 +78,50 @@ export default function WorkFlow() {
                             SOLUTION PLANNING
                             </div>
                         </div>
+                    </div>
+                    <div className="w-[60vw] md:w-[40vw] flex justify-center panel">
+                        <div className="w-full flex items-center justify-center md:p-px h-[60px] md:h-[102px] gap-2 md:gap-8 p-px rounded-[10px] bg-[linear-gradient(90deg,_rgba(255,132,200,1)_0%,_rgba(181,228,255,1)_49%,_rgba(14,255,255,1)_100%)]">
+                            <div className="bg-black w-full h-full flex items-center justify-center [font-size:_clamp(10px,1.2vw,20px)] rounded-[10px]  md:[font-size:_clamp(16px,1.667vw,24px)] text-white uppercase leading-none  px-[100px] whitespace-nowrap">
+                            PROPOSAL PRESENTATION
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-[60vw] md:w-[40vw] flex justify-center panel">
+                        <div className="w-full flex items-center justify-center md:p-px h-[60px] md:h-[102px] gap-2 md:gap-8 p-px rounded-[10px] bg-[linear-gradient(90deg,_rgba(255,132,200,1)_0%,_rgba(181,228,255,1)_49%,_rgba(14,255,255,1)_100%)]">
+                            <div className="bg-black w-full h-full flex items-center justify-center [font-size:_clamp(10px,1.2vw,20px)] rounded-[10px]  md:[font-size:_clamp(16px,1.667vw,24px)] text-white uppercase leading-none  px-[100px] whitespace-nowrap">
+                            AGREEMENT FINALIZATION
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-[60vw] md:w-[40vw] flex justify-center panel">
+                        <div className="w-full flex items-center justify-center md:p-px h-[60px] md:h-[102px] gap-2 md:gap-8 p-px rounded-[10px] bg-[linear-gradient(90deg,_rgba(255,132,200,1)_0%,_rgba(181,228,255,1)_49%,_rgba(14,255,255,1)_100%)]">
+                            <div className="bg-black w-full h-full flex items-center justify-center [font-size:_clamp(10px,1.2vw,20px)] rounded-[10px]  md:[font-size:_clamp(16px,1.667vw,24px)] text-white uppercase leading-none  px-[100px] whitespace-nowrap">
+                            DEVELOPMENT PHASE
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-[60vw] md:w-[40vw] flex justify-center panel">
+                        <div className="w-full flex items-center justify-center md:p-px h-[60px] md:h-[102px] gap-2 md:gap-8 p-px rounded-[10px] bg-[linear-gradient(90deg,_rgba(255,132,200,1)_0%,_rgba(181,228,255,1)_49%,_rgba(14,255,255,1)_100%)]">
+                            <div className="bg-black w-full h-full flex items-center justify-center [font-size:_clamp(10px,1.2vw,20px)] rounded-[10px]  md:[font-size:_clamp(16px,1.667vw,24px)] text-white uppercase leading-none  px-[100px] whitespace-nowrap">
+                            QUALITY ASSURANCE
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-[60vw] md:w-[40vw] flex justify-center panel">
+                        <div className="w-full flex items-center justify-center md:p-px h-[60px] md:h-[102px] gap-2 md:gap-8 p-px rounded-[10px] bg-[linear-gradient(90deg,_rgba(255,132,200,1)_0%,_rgba(181,228,255,1)_49%,_rgba(14,255,255,1)_100%)]">
+                            <div className="bg-black w-full h-full flex items-center justify-center [font-size:_clamp(10px,1.2vw,20px)] rounded-[10px]  md:[font-size:_clamp(16px,1.667vw,24px)] text-white uppercase leading-none  px-[100px] whitespace-nowrap">
+                            DELIVERY & IMPLEMENTATION
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-[60vw] md:w-[40vw] flex justify-center panel">
+                        <div className="w-full flex items-center justify-center md:p-px h-[60px] md:h-[102px] gap-2 md:gap-8 p-px rounded-[10px] bg-[linear-gradient(90deg,_rgba(255,132,200,1)_0%,_rgba(181,228,255,1)_49%,_rgba(14,255,255,1)_100%)]">
+                            <div className="bg-black w-full h-full flex items-center justify-center [font-size:_clamp(10px,1.2vw,20px)] rounded-[10px]  md:[font-size:_clamp(16px,1.667vw,24px)] text-white uppercase leading-none  px-[100px] whitespace-nowrap">
+                            PROJECT CLOSURE
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-[60vw] md:w-[40vw] flex justify-center panel">
                     </div>
                 </div>
                 </div>

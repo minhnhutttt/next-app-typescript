@@ -80,3 +80,210 @@ body {
     transform: scale(.65);
   }
 }
+
+
+.svg-title {
+  left: 50%;
+  top: 50%;
+}
+.svg-title .text-path {
+  display: block;
+  fill: #fff;
+  fill-opacity: 0;
+  stroke: url(#gradation-1);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.svg-title .text-path {
+  /* 日本語の10文字に適用するアニメーション */
+  /* 英語の26文字に適用するアニメーション */
+}
+.svg-title .text-path:nth-child(1) {
+  -webkit-animation: dash1 2s linear forwards;
+          animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(2) {
+  -webkit-animation: dash1 2s linear forwards;
+          animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(3) {
+  -webkit-animation: dash1 2s linear forwards;
+          animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(4) {
+  -webkit-animation: dash1 2s linear forwards;
+          animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(5) {
+  -webkit-animation: dash1 2s linear forwards;
+          animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(6) {
+  -webkit-animation: dash1_en 2s linear forwards;
+          animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(7) {
+  -webkit-animation: dash1_en 2s linear forwards;
+          animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(8) {
+  -webkit-animation: dash1_en 2s linear forwards;
+          animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(9) {
+  -webkit-animation: dash1_en 2s linear forwards;
+          animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(10) {
+  -webkit-animation: dash1_en 2s linear forwards;
+          animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(11) {
+  -webkit-animation: dash1_en 2s linear forwards;
+          animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  stroke-dasharray: 200;
+}
+@-webkit-keyframes dash1 {
+  0% {
+    stroke-dashoffset: 800;
+    stroke-width: 3px;
+  }
+  50% {
+    stroke-dashoffset: 1600;
+    stroke-width: 0.1px;
+  }
+  50.1% {
+    stroke-dashoffset: 800;
+  }
+  80% {
+    stroke-width: 2px;
+    fill: #0EFFFF;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #fff;
+    stroke-width: 0;
+    fill: #fff;
+    fill-opacity: 1;
+    stroke-dasharray: 400;
+  }
+}
+@keyframes dash1 {
+  0% {
+    stroke-dashoffset: 800;
+    stroke-width: 3px;
+  }
+  50% {
+    stroke-dashoffset: 1600;
+    stroke-width: 0.1px;
+  }
+  50.1% {
+    stroke-dashoffset: 800;
+  }
+  80% {
+    stroke-width: 2px;
+    fill: #0EFFFF;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #fff;
+    stroke-width: 0;
+    fill: #fff;
+    fill-opacity: 1;
+    stroke-dasharray: 400;
+  }
+}
+@-webkit-keyframes dash1_en {
+  0% {
+    stroke-dashoffset: 200;
+    stroke-width: 2px;
+  }
+  50% {
+    stroke-dashoffset: 400;
+    stroke-width: 0.1px;
+  }
+  50.1% {
+    stroke-dashoffset: 200;
+  }
+  80% {
+    stroke-width: 1px;
+    fill: #0EFFFF;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #fff;
+    stroke-width: 0;
+    fill: #fff;
+    fill-opacity: 1;
+  }
+}
+@keyframes dash1_en {
+  0% {
+    stroke-dashoffset: 200;
+    stroke-width: 2px;
+  }
+  50% {
+    stroke-dashoffset: 400;
+    stroke-width: 0.1px;
+  }
+  50.1% {
+    stroke-dashoffset: 200;
+  }
+  80% {
+    stroke-width: 1px;
+    fill: #0EFFFF;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #fff;
+    stroke-width: 0;
+    fill: #fff;
+    fill-opacity: 1;
+  }
+}

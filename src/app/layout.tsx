@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/header";
 import Cursor from "./components/cursor";
 import Footer from "./components/footer";
+import Talk from "./components/pages/home/talk";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <Cursor />
         <Header />
         {children}
+        <Talk />
         <Footer />
         </body>
     </html>
