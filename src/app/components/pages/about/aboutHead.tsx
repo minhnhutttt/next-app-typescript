@@ -1,14 +1,13 @@
 "use client";
 import useScrollAnimation from "@/app/_hooks/useScrollAnimation";
-import useSplitTextAnimation from "@/app/_hooks/useSplitTextAnimation";
+import AboutTextSVG from "./aboutTextSVG";
 
 export default function AboutHead() {
   const animateRefs = useScrollAnimation("fadeDown");
-  useSplitTextAnimation();
   return (
     <div className="px-[3.75vw] pb-8">
-        <div className="text-center md:mt-10 mt-6 font-solaris [font-size:_clamp(30px,10vw,90px)] md:[font-size:_clamp(70px,9.028vw,130px)] text-white leading-[1.1]">
-            <p data-split-text data-delay="1"><span className="opacity-0">OUR COMPANY</span></p>
+        <div className="text-center md:mt-10 mt-6">
+            <AboutTextSVG />
         </div>
         <p ref={animateRefs} className="opacity-0 md:text-[16px] text-[13px] text-white w-full max-w-[603px] mx-auto max-md:px-5 md:mt-8 mt-6">
         fliQt is where innovation meets execution. Our expertise spans blockchain, web, app, and AI development, each tailored to revolutionize and streamline business operations. Committed to delivering excellence, we fuse technology with vision to propel your business into the future.

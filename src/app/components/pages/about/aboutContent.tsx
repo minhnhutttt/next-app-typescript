@@ -4,12 +4,11 @@ import useSplitTextAnimation from "@/app/_hooks/useSplitTextAnimation";
 
 export default function AboutContent() {
   const animateRefs = useScrollAnimation("fadeDown");
-  useSplitTextAnimation();
   return (
     <div className="px-[3.75vw]">
         <div className="w-full max-w-[1250px] mx-auto">
             <div className="space-y-[50px]">
-                <div className="flex lg:pr-[125px] max-md:items-center max-md:flex-col">
+                <div ref={animateRefs} className="opacity-0 flex lg:pr-[125px] max-md:items-center max-md:flex-col">
                     <figure className="md:flex-[0_0_250px] flex-[0_0_200px] relative">
                         <img src="/images/image-about-01.png" alt="" />
                     </figure>
@@ -17,7 +16,7 @@ export default function AboutContent() {
                     In a world where digital innovation is the heartbeat of progress, fliQt was founded to lead the charge. Our story is one of pioneering technology across multiple domains: blockchain, web, app, and AI. We began with the vision to not just participate in the digital era but to define it, shaping solutions that resonate with efficiency, creativity, and integrity. <br /><br />At fliQt, we've always been more than a development hub. We are visionaries, thinkers, and creators. Our team, an ensemble of experts in their respective fields, shares a common passion for transforming complex challenges into elegant, user-friendly solutions. We believe in the power of technology to connect, empower, and drive businesses and individuals forward.
                     </div>
                 </div>
-                <div className="flex flex-row-reverse lg:pl-[125px] max-md:items-center max-md:flex-col">
+                <div ref={animateRefs} className="opacity-0 flex flex-row-reverse lg:pl-[125px] max-md:items-center max-md:flex-col">
                     <figure className="md:flex-[0_0_250px] flex-[0_0_200px] relative">
                         <img src="/images/image-about-02.png" alt="" />
                     </figure>
@@ -28,7 +27,7 @@ export default function AboutContent() {
                     </div>
                 </div>
             </div>
-            <div className="flex md:items-end items-center max-md:flex-col max-md:gap-6 justify-center mt-20 md:mt-[150px]">
+            <div ref={animateRefs} className="opacity-0 flex md:items-end items-center max-md:flex-col max-md:gap-6 justify-center mt-20 md:mt-[150px]">
                 <figure className="">
                     <img src="/images/image-about-03.png" alt="" />
                 </figure>
@@ -36,7 +35,7 @@ export default function AboutContent() {
                 AS WE ADVANCE IN THE DIGITAL ERA, OUR MISSION ENDURES: TO ELEVATE YOUR BUSINESS WITH COMPREHENSIVE SOLUTIONS IN BLOCKCHAIN, WEB, APP, AND AI, ENSURING OPERATIONAL EXCELLENCE, SECURITY, AND SEAMLESS INTEGRATION.
                 </p>
             </div>
-            <div className="flex max-md:flex-col-reverse items-center w-full max-w-[1100px] mx-auto lg:gap-[128px] md:gap-[40px] md:mt-[200px] mt-[100px]">
+            <div ref={animateRefs} className="opacity-0 flex max-md:flex-col-reverse items-center w-full max-w-[1100px] mx-auto lg:gap-[128px] md:gap-[40px] md:mt-[200px] mt-[100px]">
                 <div className="text-white">
                     <p className="text-[24px] md:text-[40px] mb-3 md:mb-5">COMPANY OVERVIEW</p>
                     <p className="text-[18px] md:text-[32px] md:mb-4">FLIQT Pte Ltd</p>

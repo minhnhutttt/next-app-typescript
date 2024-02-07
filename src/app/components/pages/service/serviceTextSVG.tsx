@@ -2,7 +2,7 @@
 import useSplitTextAnimation from "@/app/_hooks/useSplitTextAnimation";
 import useScrollAnimation from "@/app/_hooks/useScrollAnimation";
 
-export default function TextSVG() {
+export default function ServiceTextSVG() {
   const animateRefs = useScrollAnimation("fadeDown");
   useSplitTextAnimation();
   return (
