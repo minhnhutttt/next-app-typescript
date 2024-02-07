@@ -1,10 +1,11 @@
 "use client";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import useSplitTextAnimation from "@/app/_hooks/useSplitTextAnimation";
 import useScrollAnimation from "@/app/_hooks/useScrollAnimation";
 import useMarquise from "@/app/_hooks/useMarquise";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Card from "./card";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Service() {
@@ -17,35 +18,11 @@ export default function Service() {
     const marquiseContainer2 = useRef<HTMLDivElement>(null);
     useMarquise(marquiseContainer2);
 
-    const containerRef = useRef<HTMLDivElement >(null);
-    const sliderRef = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      let panels = gsap.utils.toArray(".panel");
-      const sliderContainer = sliderRef.current;
-      if (sliderContainer) {
-
-      gsap.to(panels, {
-        xPercent: -100 * (panels.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          pin: true,
-          scrub: 1,
-          snap: 1 / (panels.length - 1),
-          end: () => "+=" + sliderContainer.offsetWidth
-        }
-      });
-    }
-    }, containerRef);
-    return () => ctx.revert();
-  });
 
 
   return (
     <div>
-        <div ref={containerRef} className="relative mt-[20vw] md:mt-[8vw] overflow-hidden">
+        <div className="relative mt-[20vw] md:mt-[8vw] overflow-hidden">
             <div ref={animateRefs} className="relative opacity-0">
                 <div className="flex absolute top-0 left-0 right-0 overflow-hidden">
                     <p ref={marquiseContainer} className="flex break-keep whitespace-nowrap  [font-size:_clamp(80px,35vw,200px)] md:[font-size:_clamp(80px,20.833vw,300px)] font-solaris text-[#1C1B1B] leading-[0.75]">
@@ -57,7 +34,7 @@ export default function Service() {
                 <div className="w-full max-w-[1340px] mx-auto">
                     <div className="flex max-md:flex-col items-end pt-[16vw] md:pt-[3vw]">
                         <div className="md:w-[53.472vw] pb-[6vw]">
-                            <p ref={animateRefs} className="[font-size:_clamp(14px,1vw,18px)] md:[font-size:_clamp(14px,1.25vw,18px)] text-white leading-snug">
+                            <p className="[font-size:_clamp(14px,1vw,18px)] md:[font-size:_clamp(14px,1.25vw,18px)] text-white leading-snug">
                                 LEADING IN TECH INNOVATION, WE DELIVER COMPREHENSIVE SOLUTIONS IN BLOCKCHAIN, WEB, APP, AND AI DEVELOPMENT, ENHANCING DATA MANAGEMENT, DIGITAL EXPERIENCES, AND BUSINESS OPERATIONS IN THE MODERN WORLD.
                             </p>
                             <div data-split-text data-delay="1" className="md:mt-10 mt-6 max-md:text-left font-solaris [font-size:_clamp(30px,10vw,90px)] md:[font-size:_clamp(60px,8.333vw,120px)] text-white leading-[0.55]">
@@ -65,7 +42,7 @@ export default function Service() {
                             </div>
                         </div>
                         <div className="md:flex-1 max-md:w-full flex justify-center md:justify-end md:pr-[60px]">
-                            <div ref={animateRefs} className="opacity-0 w-[240px] md:w-[27.5vw] max-w-[396px]">
+                            <div className="w-[240px] md:w-[27.5vw] max-w-[396px]">
                                 <a href="/" className="block relative md:mb-5 group hover:duration-100">
                                     <div className="">
                                         <img src="/images/circle-fliqt.png" alt="" className="animate-[r_linear_infinite_10s,_r_linear_infinite_15s_reverse_paused] group-hover:[animation-play-state:running] [animation-composition:add] group-hover:scale-90 duration-300" />
@@ -82,53 +59,53 @@ export default function Service() {
                     </div>
                 </div>
             </div>
-            <div ref={animateRefs} className="relative z-10 opacity-0">
-                <div className="overflow-hidden">
-                <div  ref={sliderRef} className="flex gap-[4vw] md:gap-11 ml-[30vw] w-[200vw] md:w-[140vw]" >
-                    <div className="w-[50vw] md:w-[40vw] flex justify-center panel">
-                        <div className="flex items-center justify-center p-[2vw] md:p-10 gap-2 md:gap-8 border border-[#939393] rounded-xl">
-                            <figure className="md:flex-[0_0_56px] flex-[0_0_40px] flex justify-center">
-                                <img src="/images/service-development-01.png" alt="" />
+            </div>
+            <div className="px-5 overflow-hidden">
+                <div className="flex justify-center max-md:flex-wrap max-md:gap-y-5">
+                    <Card>
+                        <div className="flex flex-col items-center justify-center p-[2vw] md:p-10 gap-2 md:gap-8 ">
+                            <figure className="max-md:w-[40px] flex justify-center">
+                                <img className="w-full" src="/images/service-development-01.png" alt="" />
                             </figure>
-                            <div className="[font-size:_clamp(12px,2.2vw,24px)] md:[font-size:_clamp(20px,2.222vw,32px)] text-white uppercase leading-none">
+                            <div className="[font-size:_clamp(12px,2.2vw,24px)] md:[font-size:_clamp(18px,2.222vw,32px)] text-white uppercase leading-none text-center">
                             BLOCKCHAIN <br />DEVELOPMENT
                             </div>
                         </div>
-                    </div>
-                    <div className="w-[50vw] md:w-[40vw] flex justify-center panel">
-                        <div className="flex items-center justify-center p-[2vw] md:p-10 gap-2 md:gap-8 border border-[#939393] rounded-xl">
-                            <figure className="md:flex-[0_0_45px] flex-[0_0_30px] flex justify-center">
-                                <img src="/images/service-development-02.png" alt="" />
+                    </Card>
+                    <Card>
+                        <div className="flex flex-col items-center justify-center p-[2vw] md:p-10 gap-2 md:gap-8 ">
+                            <figure className="max-md:w-[36px] flex justify-center">
+                                <img className="w-full" src="/images/service-development-02.png" alt="" />
                             </figure>
-                            <div className="[font-size:_clamp(12px,2.2vw,24px)] md:[font-size:_clamp(20px,2.222vw,32px)] text-white uppercase leading-none">
+                            <div className="[font-size:_clamp(12px,2.2vw,24px)] md:[font-size:_clamp(18px,2.222vw,32px)] text-white uppercase leading-none text-center">
                             WEBSITE <br />DEVELOPMENT
                             </div>
                         </div>
-                    </div>
-                    <div className="w-[50vw] md:w-[40vw] flex justify-center panel">
-                        <div className="flex items-center justify-center p-[2vw] md:p-10 gap-2 md:gap-8 border border-[#939393] rounded-xl">
-                            <figure className="md:flex-[0_0_66px] flex-[0_0_40px] flex justify-center">
-                                <img src="/images/service-development-03.png" alt="" />
+                    </Card>
+                    <Card>
+                        <div className="flex flex-col items-center justify-center p-[2vw] md:p-10 gap-2 md:gap-8 ">
+                            <figure className="max-md:w-[44px] flex justify-center">
+                                <img className="w-full" src="/images/service-development-03.png" alt="" />
                             </figure>
-                            <div className="[font-size:_clamp(12px,2.2vw,24px)] md:[font-size:_clamp(20px,2.222vw,32px)] text-white uppercase leading-none">
+                            <div className="[font-size:_clamp(12px,2.2vw,24px)] md:[font-size:_clamp(18px,2.222vw,32px)] text-white uppercase leading-none text-center">
                             APPLICATION <br />DEVELOPMENT
                             </div>
                         </div>
-                    </div>
-                    <div className="w-[50vw] md:w-[40vw] flex justify-center panel">
-                        <div className="flex items-center justify-center p-[2vw] md:p-10 gap-2 md:gap-8 border border-[#939393] rounded-xl">
-                            <figure className="md:flex-[0_0_66px] flex-[0_0_40px] flex justify-center">
-                                <img src="/images/service-development-03.png" alt="" />
+                    </Card>
+                    <Card>
+                        <div className="flex flex-col items-center justify-center p-[2vw] md:p-10 gap-2 md:gap-8 ">
+                            <figure className="max-md:w-[44px] flex justify-center">
+                                <img className="w-full" src="/images/service-development-04.png" alt="" />
                             </figure>
-                            <div className="[font-size:_clamp(12px,2.2vw,24px)] md:[font-size:_clamp(20px,2.222vw,30px)] text-white uppercase leading-none">
-                            AI DEVELOPMENT
+                            <div className="[font-size:_clamp(12px,2.2vw,24px)] md:[font-size:_clamp(18px,2.222vw,32px)] text-white uppercase leading-none text-center">
+                            AI <br />DEVELOPMENT
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </Card>
                 </div>
             </div>
-            <div  ref={animateRefs} className="relative flex items-center justify-center pt-[4vw] opacity-0">
+            <div>
+            <div ref={animateRefs} className="relative flex items-center justify-center pt-[4vw] opacity-0 overflow-hidden">
                 <div className="bg-[url('/images/deco.png')] bg-[length:70.139vw_auto] bg-right-top bg-no-repeat min-[1440px]:top-[-100px] top-[-6.944vw] absolute w-full h-full"></div>
                 <div className="relative -rotate-[25deg] md:w-[59vw] w-[88vw] aspect-square max-w-[850px] overflow-hidden">
                     <div className="relative w-full h-full animate-[rotate_20s_infinite_linear]">

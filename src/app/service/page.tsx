@@ -1,4 +1,5 @@
 import PageContainer from "../components/common/pageContainer";
+import Talk from "../components/pages/home/talk";
 import ServiceArticle from "../components/pages/service/serviceArticle";
 import ServiceHead from "../components/pages/service/serviceHead";
 import ServiceSolutions from "../components/pages/service/serviceSolutions";
@@ -28,6 +29,7 @@ export default function Service() {
           </div>
           <ServiceSolutions />
       </PageContainer>
+      <Talk />
     </main>
   );
 }

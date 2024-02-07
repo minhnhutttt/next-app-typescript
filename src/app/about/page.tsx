@@ -1,7 +1,6 @@
-import PageContainer from "../components/common/pageContainer";
 import AboutContent from "../components/pages/about/aboutContent";
 import AboutHead from "../components/pages/about/aboutHead";
-import ServiceHead from "../components/pages/service/serviceHead";
+import Talk from "../components/pages/home/talk";
 
 export default function About() {
   return (
@@ -10,6 +9,7 @@ export default function About() {
           <AboutHead />
           <AboutContent />
       </div>
+      <Talk />
     </main>
   );
 }

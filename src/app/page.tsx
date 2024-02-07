@@ -1,3 +1,4 @@
+import Card from "./components/pages/home/card";
 import FV from "./components/pages/home/fv";
 import GetStarted from "./components/pages/home/getStarted";
 import Service from "./components/pages/home/service";
@@ -11,6 +12,7 @@ export default function Home() {
       <GetStarted />
       <Service />
       <WorkFlow />
+      
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import Map from "../components/common/map";
 import PageContainer from "../components/common/pageContainer";
+import Talk from "../components/pages/home/talk";
 import WorkFlowArticle from "../components/pages/workflow/workFlowArticle";
 import WorkflowHead from "../components/pages/workflow/workflowHead";
 
@@ -77,6 +78,7 @@ export default function Workflow() {
             </div>
             <Map />
         </PageContainer>
+        <Talk />
     </main>
   );
 }

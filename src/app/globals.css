@@ -12,14 +12,14 @@ body {
   font-family: "Aldrich", sans-serif;
 }
 
-/* * {
+* {
   cursor: none;
 }
 @media only screen and (max-width: 768px) {
   * {
       cursor: auto
   }
-} */
+}
 @font-face {
   font-family: Solaris;
   src: url(/fonts/Solaris.woff) format('woff'),url(/fonts/Solaris.woff2) format('woff2');
@@ -97,10 +97,6 @@ body {
   stroke: url(#gradation-1);
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-.svg-title .text-path {
-  /* 日本語の10文字に適用するアニメーション */
-  /* 英語の26文字に適用するアニメーション */
 }
 .svg-title .text-path:nth-child(1) {
   -webkit-animation: dash1 2s linear forwards;
@@ -291,3 +287,4 @@ body {
     fill-opacity: 1;
   }
 }
+
