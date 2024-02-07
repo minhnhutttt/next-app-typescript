@@ -1,11 +1,9 @@
 "use client";
-import useSplitTextAnimation from "@/app/_hooks/useSplitTextAnimation";
 import useScrollAnimation from "@/app/_hooks/useScrollAnimation";
-import TextSVG from "./textSVG";
 import CircleNumber from "../../common/circleNumber";
 import { ReactNode } from "react";
 
-export type ArticlePropsType = {
+type ArticlePropsType = {
   number: string;
   type: string;
   title: string;

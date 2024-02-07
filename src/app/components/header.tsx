@@ -16,17 +16,17 @@ const links: NavLink[] = [
     },
     {
         id: 2,
-        link: "/",
+        link: "/workflow",
         text: "WORKFLOW",
     },
     {
         id: 3,
-        link: "/",
+        link: "/about",
         text: "ABOUT",
     },
     {
         id: 4,
-        link: "/",
+        link: "/contact",
         text: "CONTACT",
     },
 ];

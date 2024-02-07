@@ -1,6 +1,5 @@
 "use client"
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 type NavLink = {
     id: number;
@@ -9,26 +8,26 @@ type NavLink = {
     target?: string,
   };
 const links: NavLink[] = [
-    {
-        id: 1,
-        link: "/service",
-        text: "SERVICE",
-    },
-    {
-        id: 2,
-        link: "/",
-        text: "WORKFLOW",
-    },
-    {
-        id: 3,
-        link: "/",
-        text: "ABOUT",
-    },
-    {
-        id: 4,
-        link: "/",
-        text: "CONTACT",
-    },
+  {
+    id: 1,
+    link: "/service",
+    text: "SERVICE",
+  },
+  {
+      id: 2,
+      link: "/workflow",
+      text: "WORKFLOW",
+  },
+  {
+      id: 3,
+      link: "/about",
+      text: "ABOUT",
+  },
+  {
+      id: 4,
+      link: "/contact",
+      text: "CONTACT",
+  },
 ];
 export default function Footer() {
     return (
