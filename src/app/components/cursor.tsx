@@ -91,7 +91,6 @@ export default function Cursor()  {
   
         const handleLinkHover = () => {
           const links = document.querySelectorAll('a');
-        //   const teamArticles = document.querySelectorAll('.team-list article');
           links.forEach(link => {
             link.addEventListener('mouseenter', () => {
               gsap.to(cursor, {
@@ -109,24 +108,6 @@ export default function Cursor()  {
               });
             });
           });
-  
-        //   teamArticles.forEach(article => {
-        //     article.addEventListener('mouseenter', () => {
-        //       gsap.to(cursor, {
-        //         scale: 4,
-        //         duration: 0.25,
-        //         ease: 'power4',
-        //       });
-        //     });
-  
-        //     article.addEventListener('mouseleave', () => {
-        //       gsap.to(cursor, {
-        //         scale: 1,
-        //         duration: 0.25,
-        //         ease: 'power4',
-        //       });
-        //     });
-        //   });
         };
         handleLinkHover();
         window.addEventListener('load', () => {

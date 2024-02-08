@@ -3,9 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth !important;
-}
 body {
   color: #000;
   background-color: #000;
@@ -26,6 +23,28 @@ body {
   font-weight: 700;
   font-style: normal;
   font-display: swap
+}
+
+/* Smooth Scroll */
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 /* utilities */
@@ -377,4 +396,3 @@ body {
     fill-opacity: 1;
   }
 }
-

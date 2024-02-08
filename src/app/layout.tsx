@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/header";
 import Cursor from "./components/cursor";
 import Footer from "./components/footer";
+import SmoothScroll from "./components/smoothSCroll";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,10 +18,12 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <Cursor />
-        <Header />
-        {children}
-        <Footer />
+        <SmoothScroll>
+          <Cursor />
+          <Header />
+          {children}
+          <Footer />
+        </SmoothScroll>
         </body>
     </html>
   );
