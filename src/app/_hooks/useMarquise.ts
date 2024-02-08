@@ -26,7 +26,7 @@ const useMarquise = (containerRef: React.RefObject<HTMLDivElement> | null) => {
     return () => {
       ctx.revert();
     };
-  }, []);
+  }, [containerRef]);
 };
 
 export default useMarquise;

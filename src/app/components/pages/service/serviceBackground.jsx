@@ -143,7 +143,6 @@ class ServiceBackground extends Component {
         this.options.y = this.midY;
 
         this.circle = new Circle(this.options);
-        console.log(noise);
         noise.seed(Math.random());
         this.redraw();
         this.loop();

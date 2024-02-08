@@ -9,7 +9,6 @@ export default function Map() {
     const isMobile = useIsMobile();
 
   useEffect(() => {
-    console.log(isMobile)
     if (panzoomRef.current && isMobile) {
       const pz = panzoom(panzoomRef.current, {
         smoothScroll: false,

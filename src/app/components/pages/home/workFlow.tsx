@@ -19,7 +19,6 @@ export default function WorkFlow() {
           let panels = gsap.utils.toArray(".panel");
           const sliderContainer = sliderRef.current;
           if (sliderContainer) {
-    console.log(sliderContainer.offsetWidth);
           gsap.to(panels, {
             xPercent: -100 * (panels.length - 1),
             ease: "none",
