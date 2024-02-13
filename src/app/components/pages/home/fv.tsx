@@ -1,7 +1,7 @@
 export default function FV() {
   return (
-    <div className="relative pl-5 pt-[82px] md:pt-[150px] bg-[#DFE3F7] z-10">
-      <div className="w-full md:max-w-[1440px] h-full mx-auto flex max-md:flex-col">
+    <div className="relative pl-5 pt-[82px] md:pt-[150px] bg-[#DFE3F7] z-30">
+      <div className="w-full h-full mx-auto md:justify-end flex max-md:flex-col">
         <div className="md:pl-[7.292vw] min-[1440px]:pl-[80px] md:py-[7.986vw] xl:py-[90px] pt-10 pb-6 relative z-10 max-md:pr-5">
         <div className="font-semibold px-5 md:px-[1.389vw] min-[1440px]:px-5 mb-2">
             <p className="min-[1440px]:text-[26px] md:text-[1.75vw] [font-size:_clamp(12px,3.8vw,20px)] break-keep max-md:text-center">
@@ -33,7 +33,7 @@ export default function FV() {
             <img className="max-md:w-4/5" src="/images/fv-logo.png" alt="" />
           </figure>
         </div>
-        <figure className="flex max-md:justify-center items-end ml-[-22px] relative">
+        <figure className="flex max-md:justify-center items-end ml-[-22px] relative z-0">
           <img
             className="min-[1440px]:-mb-14 -md:mb-[3.889vw] -mb-[5vw] -md:ml-2"
             src="/images/fv-img.png"
