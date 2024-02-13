@@ -5,7 +5,7 @@ export default function Price() {
   return (
     <div id="price" className="bg-[#EDEDED]">
       <div className="flex justify-center md:text-[50px] text-[28px] text-white text-center bg-[#184E97] font-bold p-5">
-        今が最安値！｜制作費
+        集客できてこの金額？
       </div>
       <div className="w-full md:max-w-[1240px] max-w-[480px] mx-auto px-5">
         <div className="flex md:items-end justify-between">
@@ -50,9 +50,8 @@ export default function Price() {
           </figure>
         </div>
         <p ref={animateRefs} className="text-center font-bold md:text-[2.431vw] xl:text-[35px] [font-size:_clamp(18px,3.4vw,20px)] pt-4 pb-9">
-          アップデートに伴う機能の追加により、 将来的に販売価格が上昇します。
-          <br />
-          今ご契約頂ければ、ずっと現在価格でご利用頂けます。
+          今ご契約頂ければ集客できる広告媒体が、<br />
+          ずっと現在価格でご利用頂けます。
         </p>
       </div>
       <div className="w-full md:max-w-[1240px] max-w-[480px] mx-auto px-5 mt-8 pb-[60px] md:pb-[110px] md:mt-12">
@@ -124,7 +123,7 @@ export default function Price() {
           </div>
           <div className="flex items-center justify-between border-b border-[#D9D9D9] px-2 md:px-4 pb-1 pt-3 gap-3 md:gap-5 md:pt-6">
             <p className="xl:text-[40px] md:text-[24px] font-bold break-keep [font-size:_clamp(14px,3.4vw,18px)]">
-              広告運用・SEO 対策
+              SEO対策
             </p>
             <p className="text-[#B71313] xl:text-[36px] md:text-[22px] [font-size:_clamp(14px,4vw,20px)] font-semibold">
               ￥50,000~

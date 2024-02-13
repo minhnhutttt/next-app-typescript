@@ -23,7 +23,7 @@ export default function PointItem({
           <p className="xl:text-[20px] md:text-[16px] text-[15px] font-bold">
             {subTitle}
           </p>
-          <p className="xl:text-[40px] md:text-[32px] text-[22px] font-bold">
+          <p className="xl:text-[40px] md:text-[32px] text-[22px] font-bold md:break-keep">
             {title}
           </p>
         </div>

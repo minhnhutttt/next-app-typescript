@@ -15,7 +15,10 @@ export default function Steps() {
           <StepItem
             step="1"
             title="お申し込み "
-            content={<>LINEよりご連絡ください </>}
+            content={<>
+            ぜひLINEでお話ししましょう！<br />ご質問やお問い合わせだけでも大歓迎です。
+            <a href="https://lin.ee/f4F3Xa4へ" target="_blank" className="block mt-4 md:mt-8 max-md:w-[200px]"><img src="/images/btn-line.png" alt="" /></a>
+             </>}
           />
           <StepItem
             step="2"

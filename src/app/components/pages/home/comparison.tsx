@@ -9,10 +9,10 @@ export default function Comparison() {
           <h5 ref={animateRefs} className="min-[1440px]:text-[50px] md:text-[44px] text-[30px] font-bold text-center">
             他社サービスとの比較
           </h5>
-          <div className="mt-[190px] md:mt-[88px] relative">
-            <figure ref={animateRefs} className="absolute left-0 min-[1440px]:left-[-90px] min-[1440px]:bottom-[calc(100%-190px)] md:bottom-[calc(100%-15vw)] bottom-[calc(100%-80px)]">
+          <div className="mt-[250px] md:mt-[88px] relative">
+            <figure ref={animateRefs} className="absolute left-0 min-[1440px]:left-[-80px] min-[1440px]:bottom-[calc(100%-220px)] md:bottom-[calc(100%-15vw)] bottom-[calc(100%-80px)]">
               <img
-                className="w-[280px] md:w-[34.375vw] min-[1440px]:w-[495px]"
+                className="w-[280px] md:w-[34.375vw] min-[1440px]:w-[422px]"
                 src="/images/img-gun-02.png"
                 alt=""
               />
@@ -69,7 +69,7 @@ export default function Comparison() {
                     <figure className="flex justify-center">
                       <img
                         className="max-md:w-[32px] max-lg:w-[54px]"
-                        src="/images/ic-triangle.png"
+                        src="/images/ic-x.png"
                         alt=""
                       />
                     </figure>
@@ -92,7 +92,7 @@ export default function Comparison() {
                     <figure className="flex justify-center">
                       <img
                         className="max-md:w-[32px] max-lg:w-[54px]"
-                        src="/images/ic-triangle.png"
+                        src="/images/ic-x.png"
                         alt=""
                       />
                     </figure>
@@ -100,8 +100,8 @@ export default function Comparison() {
                   <td className="align-middle px-2 md:px-4 border border-[#D9D9D9] bg-white">
                     <figure className="flex justify-center">
                       <img
-                        className="max-md:w-[28px] max-lg:w-[48px]"
-                        src="/images/ic-x.png"
+                        className="max-md:w-[32px] max-lg:w-[54px]"
+                        src="/images/ic-triangle.png"
                         alt=""
                       />
                     </figure>
@@ -123,8 +123,8 @@ export default function Comparison() {
                   <td className="align-middle px-2 md:px-4 border border-[#D9D9D9] bg-white">
                     <figure className="flex justify-center">
                       <img
-                        className="max-md:w-[28px] max-lg:w-[48px]"
-                        src="/images/ic-x.png"
+                        className="max-md:w-[32px] max-lg:w-[54px]"
+                        src="/images/ic-triangle.png"
                         alt=""
                       />
                     </figure>
@@ -133,7 +133,7 @@ export default function Comparison() {
                     <figure className="flex justify-center">
                       <img
                         className="max-md:w-[32px] max-lg:w-[54px]"
-                        src="/images/ic-triangle.png"
+                        src="/images/ic-x.png"
                         alt=""
                       />
                     </figure>
@@ -156,7 +156,7 @@ export default function Comparison() {
                     <figure className="flex justify-center">
                       <img
                         className="max-md:w-[32px] max-lg:w-[54px]"
-                        src="/images/ic-triangle.png"
+                        src="/images/ic-x.png"
                         alt=""
                       />
                     </figure>
@@ -165,7 +165,7 @@ export default function Comparison() {
                     <figure className="flex justify-center">
                       <img
                         className="max-md:w-[32px] max-lg:w-[54px]"
-                        src="/images/ic-triangle.png"
+                        src="/images/ic-x.png"
                         alt=""
                       />
                     </figure>
