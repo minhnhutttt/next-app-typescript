@@ -4,7 +4,7 @@ import type { FaqItemPropsType } from "./faqItem";
 const faqData: FaqItemPropsType[] = [
   {
     id: "1",
-    question: "スマホから管理できますか？",
+    question: "スマホから管理はできますか？",
     answer: <>はい、できます。</>,
   },
   {
@@ -42,7 +42,7 @@ const faqData: FaqItemPropsType[] = [
         <br />
         こちらからご確認ください。
         <br />
-        デモサイトへ
+        <a href="/" className="inline-flex p-2 w-[240px] justify-center rounded-lg bg-[#112E77] text-white md:mt-5 mt-2">デモサイトへ</a>
       </>
     ),
   },
@@ -55,7 +55,7 @@ const faqData: FaqItemPropsType[] = [
         <br />
         公式LINEからお気軽にお問い合わせいただければ幸いです。
         <br />
-        公式LINEへ
+        <a href="/" className="inline-flex p-2 w-[240px] justify-center rounded-lg bg-[#06C755] text-white md:mt-5 mt-2">公式LINEへ</a>
       </>
     ),
   },
