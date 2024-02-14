@@ -24,3 +24,10 @@ body {
 .js-slider .slick-slide.slick-center a img {
   transform: translateY(-20px);
 }
+
+
+/* Animate */
+@keyframes pulse {
+  from { transform: scale(0.98); }
+  to { transform: scale(1.02); }
+}

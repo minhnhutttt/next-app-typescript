@@ -30,8 +30,8 @@ export default function Coupon() {
           </h3>
         </div>
         <div ref={animateRefs} className="opacity-0 flex justify-center mt-10 md:mt-16">
-          <div className="bg-white py-6 md:py-10 px-8 md:px-[60px] rounded-[20px] md:text-[18px] text-[14px] leading-snug tracking-wider max-w-[614px]">
-            次世代クーポンは、NFTを活用し、大幅割引とコスト還元を実現するデジタルクーポンです。
+          <div className="bg-white py-6 md:py-10 px-8 md:px-[50px] rounded-[20px] md:text-[18px] text-[14px] leading-snug tracking-wider max-w-[614px]">
+            次世代クーポンは、NFTを活用し、デジタルだからこそできる大幅割引とコスト還元を実現するデジタルクーポンです。
           </div>
         </div>
       </div>
@@ -93,8 +93,8 @@ export default function Coupon() {
             </div>
           </div>
         </Slider>
-        <p className="text-center w-[295px] mx-auto px-7 text-[13px] font-medium">
-          従来の紙のコストを削減して、その分をお客様に還元しています。
+        <p className="text-center w-[295px] mx-auto px-1.5 text-[13px] font-medium">
+        トレーディングクーポンはchainpinで生成されるため、受け取りはQRコードやURLとなります。
         </p>
       </div>
     </section>
