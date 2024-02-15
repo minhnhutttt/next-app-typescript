@@ -53,7 +53,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className="flex justify-center items-center mt-10 md:mt-[30px] md:mb-[90px] mb-8">
-          <a href="" className="text-white text-[14px]">PRIVACY POLICY</a>
+          <a href="/privacy-policy" className="text-white text-[14px]">PRIVACY POLICY</a>
         </div>
         <p className="text-center text-[13px] text-white">Copyright © 2024 fliQt.</p>
       </footer>
