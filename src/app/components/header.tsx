@@ -3,16 +3,16 @@ export default function Header() {
     <header className="absolute top-0 left-0 right-0 z-10 px-5 md:px-10">
       <div className="mx-auto flex h-20 w-full items-center justify-between md:h-[120px]">
         <a href="/" className="duration-150 hover:opacity-75">
-          <p className="font-dela text-white text-[32px] md:text-[42px]">次世代名刺</p>
+          <p className="font-dela text-white [font-size:_clamp(20px,6vw,32px)] md:text-[42px]">次世代名刺</p>
         </a>
         <div className="flex items-center justify-end">
-            
-        <a
-              href="https://lin.ee/6PgmBNE"
+          <a
+              href=""
               target="_blank"
-              className="flex items-center justify-center w-[240px] h-[59px] rounded-[60px] border-2 border-black bg-[#FF66CC] font-bold duration-150 [box-shadow:0px_5px_0px_0px_#000] hover:opacity-75 "
+              className="flex items-center justify-center border-[3px] border-black md:px-[27px] md:py-[17px] px-5 py-3 gap-2.5 tracking-widest leading-snug font-bold [font-size:_clamp(11px,3.2vw,14px)] md:text-[20px] bg-[#F4F844] text-black rounded-2xl md:rounded-[44px] duration-300 hover:opacity-75"
             >
-              LINEでお問い合わせ
+              <img className="max-md:w-6" src="/images/ic-card.svg" alt="" />
+              <span className="">無料で200枚つくる</span>
             </a>
         </div>
       </div>
