@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="flex max-md:flex-col max-[899px]:justify-center items-center gap-7 md:gap-11 mt-8">
                 <a href="/" className="md:text-[24px] text-[16px] font-bold">メンエスバズーカ </a>
                 <div className="flex flex-wrap max-md:justify-center flex-1 gap-x-6 gap-y-6 md:gap-x-11">
-                    <a href="https://lin.ee/f4F3Xa4へ" target="_blank" className="md:text-[15px] text-[13px] font-semibold">公式LINE </a>
+                    <a href="https://lin.ee/f4F3Xa4" target="_blank" className="md:text-[15px] text-[13px] font-semibold">公式LINE </a>
                     <a href="/terms-of-service" className="md:text-[15px] text-[13px] font-semibold">利用規約 </a>
                     <a href="/company" className="md:text-[15px] text-[13px] font-semibold">運営会社 </a>
                     <a href="/privacy-policy" className="md:text-[15px] text-[13px] font-semibold">プライバシーポリシー </a>

@@ -17,7 +17,7 @@ export default function Steps() {
             title="お申し込み "
             content={<>
             ぜひLINEでお話ししましょう！<br />ご質問やお問い合わせだけでも大歓迎です。
-            <a href="https://lin.ee/f4F3Xa4へ" target="_blank" className="block mt-4 md:mt-8 max-md:w-[200px]"><img src="/images/btn-line.png" alt="" /></a>
+            <a href="https://lin.ee/f4F3Xa4" target="_blank" className="block mt-4 md:mt-8 max-md:w-[200px]"><img src="/images/btn-line.png" alt="" /></a>
              </>}
           />
           <StepItem

@@ -55,7 +55,7 @@ const faqData: FaqItemPropsType[] = [
         <br />
         公式LINEからお気軽にお問い合わせいただければ幸いです。
         <br />
-        <a href="/" className="inline-flex p-2 w-[240px] justify-center rounded-lg bg-[#06C755] text-white md:mt-5 mt-2">公式LINEへ</a>
+        <a href="https://lin.ee/f4F3Xa4" target="_blank" className="inline-flex p-2 w-[240px] justify-center rounded-lg bg-[#06C755] text-white md:mt-5 mt-2">公式LINEへ</a>
       </>
     ),
   },
