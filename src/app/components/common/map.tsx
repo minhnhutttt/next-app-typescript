@@ -30,8 +30,8 @@ export default function Map() {
     setActivePin(location);
     if (mapRef.current) {
       mapRef.current.scrollIntoView({ behavior: 'smooth' });
-  }
-};
+    }
+  };
   return (
     <>
     <div ref={mapRef} className="relative overflow-hidden aspect-[1435/875]">
