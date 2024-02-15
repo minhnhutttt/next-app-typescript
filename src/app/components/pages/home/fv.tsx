@@ -1,7 +1,7 @@
 export default function FV() {
   return (
     <div className="relative pl-5 pt-[82px] md:pt-[150px] bg-[#DFE3F7] z-30">
-      <div className="w-full h-full mx-auto md:justify-end flex max-md:flex-col">
+      <div className="w-full md:max-w-[1440px] h-full mx-auto md:justify-end flex max-md:flex-col">
         <div className="md:pl-[7.292vw] min-[1440px]:pl-[80px] md:py-[7.986vw] xl:py-[90px] pt-10 pb-6 relative z-10 max-md:pr-5">
         <div className="font-semibold px-5 md:px-[1.389vw] min-[1440px]:px-5 mb-2">
             <p className="min-[1440px]:text-[26px] md:text-[1.75vw] [font-size:_clamp(12px,3.8vw,20px)] break-keep max-md:text-center">
