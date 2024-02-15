@@ -15,7 +15,12 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      dela: ["Dela Gothic One", "sans-serif"],
+      noto: ["Noto Sans JP", "sans-serif"],
+      lato: ["Lato", "sans-serif"],
+      notoCJK: ["Noto Sans CJK JP", "sans-serif"],
+      roboto: ["Roboto", "sans-serif"],
+      zenOld: ["Zen Old Mincho", "sans-serif"],
     },
   },
   plugins: [],
