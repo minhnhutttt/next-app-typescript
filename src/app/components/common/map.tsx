@@ -7,7 +7,7 @@ import Pin from './pin';
 export default function Map() {
     const panzoomRef = useRef<HTMLDivElement>(null);
     const isMobile = useIsMobile();
-
+    const mapRef = useRef<HTMLDivElement>(null);
     const [activePin, setActivePin] = useState<string | null>(null);
 
   useEffect(() => {
@@ -28,10 +28,13 @@ export default function Map() {
 
   const handleButtonClick = (location: string) => {
     setActivePin(location);
+    if (mapRef.current) {
+      mapRef.current.scrollIntoView({ behavior: 'smooth' });
+  }
 };
   return (
     <>
-    <div className="relative overflow-hidden aspect-[1435/875]">
+    <div ref={mapRef} className="relative overflow-hidden aspect-[1435/875]">
         <div ref={panzoomRef} style={{ width: '100%', height: '100%' }} className="absolute">
             <Pin active={activePin === "Tokyo"} href="/" x="83.8" y="43">Tokyo</Pin>
             <Pin active={activePin === "Taipei"} href="/" x="78" y="49.5">Taipei</Pin>
