@@ -21,7 +21,7 @@ export default function Talk() {
                     </p>
                 </div>
                 <div className="w-[200px] lg:w-[293px]">
-                    <a href="/" className="block relative md:mb-5 group hover:duration-100">
+                    <a href="/contact" className="block relative md:mb-5 group hover:duration-100">
                         <div className="">
                             <img src="/images/circle-fliqt.png" alt="" className="animate-[r_linear_infinite_10s,_r_linear_infinite_15s_reverse_paused] group-hover:[animation-play-state:running] [animation-composition:add] group-hover:scale-90 duration-300" />
                             <div className="absolute inset-0 flex items-center justify-center flex-col">

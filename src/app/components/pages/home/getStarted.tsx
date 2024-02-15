@@ -26,7 +26,7 @@ export default function GetStarted() {
                         Expanding Technological Horizons: We are not just a development company; we are visionaries driving progress across multiple domains including blockchain, web, app, and AI. Our commitment lies in crafting state-of-the-art solutions that redefine how the world interacts, transacts, and evolves. Join us in shaping a future where technology creates unprecedented opportunities for growth and innovation.
                     </p>
                     <div className="flex justify-end mt-6 md:mt-12 mr-4">
-                        <Button href="/">GET STARTED</Button>
+                        <Button href="/about">OUR COMPANY</Button>
                     </div>
                 </div>
             </div>

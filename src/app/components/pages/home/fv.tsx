@@ -34,7 +34,7 @@ export default function FV() {
             </h1>
         </div>
         <div ref={animateRefs} className="opacity-0 w-[200px] md:w-[20vw] max-md:ml-auto">
-            <a href="/" className="block relative md:mb-5 group hover:duration-100">
+            <a href="/contact" className="block relative md:mb-5 group hover:duration-100">
                 <div className="">
                     <img src="/images/circle-fliqt.png" alt="" className="animate-[r_linear_infinite_10s,_r_linear_infinite_15s_reverse_paused] group-hover:[animation-play-state:running] [animation-composition:add] group-hover:scale-90 duration-300" />
                     <div className="absolute inset-0 flex items-center justify-center flex-col pt-8 md:pt-14">

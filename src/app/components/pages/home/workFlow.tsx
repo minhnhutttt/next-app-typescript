@@ -127,7 +127,7 @@ export default function WorkFlow() {
             </div>
         </div>
         <div className="flex justify-center mt-[40px] md:mt-[64px]">
-            <Button href="/">VIEW WORKFLOW DETAILS</Button>
+            <Button href="/workflow">VIEW WORKFLOW DETAILS</Button>
         </div>
     </div>
     </div>
