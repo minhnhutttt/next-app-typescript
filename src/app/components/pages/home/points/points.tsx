@@ -22,7 +22,7 @@ const pointData: PointItemPropsType[] = [
     content: (
       <>
         文章変更 <br />
-        "店舗のオフィシャルサイト制作運営に特化した便利な機能がスマホで簡単に管理できます。"
+        &quot;店舗のオフィシャルサイト制作運営に特化した便利な機能がスマホで簡単に管理できます。&quot;
       </>
     ),
   },
@@ -62,7 +62,7 @@ export default function Points() {
             <span className="min-[1440px]:text-[70px] md:text-[4.861vw] [font-size:_clamp(14px,6.5vw,22px)]">
               顧客の
             </span>
-            <span className="text-[#112E77]">"行きたい"</span>
+            <span className="text-[#112E77]">&quot;行きたい&quot;</span>
             <span className="min-[1440px]:text-[70px] md:text-[4.861vw] [font-size:_clamp(14px,6.5vw,22px)]">
               が爆発する
             </span>
