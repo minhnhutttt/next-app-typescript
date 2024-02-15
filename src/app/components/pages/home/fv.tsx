@@ -10,7 +10,7 @@ export default function FV() {
       <div className="">
         <div className="pt-[127px] bg-[url('/images/deco.png')] bg-[center_top_127px] max-[1439px]:bg-[length:85.278vw_auto] bg-no-repeat px-[1.389vw] min-[1440px]:px-5 pb-10">
           <div className="w-full max-w-[88.056vw] min-[1440px]:max-w-[1268px] mx-auto flex justify-center bg-cover pt-[6.25vw] pb-[15.347vw] min-[1440px]:pt-[90px] min-[1440px]:pb-[221px] relative">
-            <figure ref={animateRefs02} className="opacity-0 absolute w-[34.792vw] min-[1440px]:w-[501px] top-1 min-[1440px]:left-[50%] -translate-x-1/2 left-[9.722vw] z-10">
+            <figure ref={animateRefs02} className="opacity-0 absolute w-[36vw] min-[1440px]:w-[501px] top-0 md:top-1 left-[50%] -translate-x-1/2 z-10">
               <img className="w-full animate-[pulse_1s_infinite_ease-in-out_alternate]" src="/images/fv-bubble.png" alt="" />
             </figure>
             <h1 ref={animateRefs01} className="opacity-0">
