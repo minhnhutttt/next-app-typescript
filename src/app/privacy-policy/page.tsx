@@ -26,8 +26,7 @@ export default function PrivacyPolicy() {
             When you register for an Account, we may ask for your contact information, including items such as name, company name, address, email address, and telephone number.
           </TextBlock>
           <TextBlock title="How we use your information">
-            当社は、次に掲げる場合を除き、当社が取り扱う個人情報を、あらかじめお客様の同意を得ないで、第三者に提供いたしません。
-            上記1にかかわらず、当社は、次に掲げる場合には、当社が取り扱う個人情報を第三者に提供することがあります。
+            We use the information we collect in various ways, including to:
             <ol className="list-disc ml-5">
               <li>Provide, operate, and maintain our website</li>
               <li>Improve, personalize, and expand our website</li>

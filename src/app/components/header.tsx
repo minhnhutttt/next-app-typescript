@@ -50,7 +50,7 @@ export default function Header() {
     }, []);
     return (
       <header className="absolute top-0 inset-x-0 flex justify-between items-center px-10 md:px-16 h-[102px]">
-        <Link href="/" className="block relative z-10">
+        <Link href="/" className="block relative z-40">
             <img src="/images/logo.png" alt="fliQt" />
         </Link>
         {open && <div className="fixed inset-0 z-40" onClick={() => setOpen(false)}></div>}

@@ -6,9 +6,9 @@ export default function AboutContent() {
   const animateRefs = useScrollAnimation("fadeDown");
   return (
     <div className="px-[3.75vw]">
-        <div className="w-full max-w-[1250px] mx-auto">
-            <div className="space-y-[50px]">
-                <div ref={animateRefs} className="opacity-0 flex lg:pr-[125px] max-md:items-center max-md:flex-col">
+        <div className="w-full max-w-[1250px] mx-auto pt-5" id="story">
+            <div className="md:space-y-[50px]">
+                <div ref={animateRefs} className="opacity-0 flex lg:pr-[125px] max-md:items-start max-md:flex-col">
                     <figure className="md:flex-[0_0_250px] flex-[0_0_200px] relative">
                         <img src="/images/image-about-01.png" alt="" />
                     </figure>
@@ -16,7 +16,7 @@ export default function AboutContent() {
                     In a world where digital innovation is the heartbeat of progress, fliQt was founded to lead the charge. Our story is one of pioneering technology across multiple domains: blockchain, web, app, and AI. We began with the vision to not just participate in the digital era but to define it, shaping solutions that resonate with efficiency, creativity, and integrity. <br /><br />At fliQt, we&apos;ve always been more than a development hub. We are visionaries, thinkers, and creators. Our team, an ensemble of experts in their respective fields, shares a common passion for transforming complex challenges into elegant, user-friendly solutions. We believe in the power of technology to connect, empower, and drive businesses and individuals forward.
                     </div>
                 </div>
-                <div ref={animateRefs} className="opacity-0 flex flex-row-reverse lg:pl-[125px] max-md:items-center max-md:flex-col">
+                <div ref={animateRefs} className="opacity-0 flex flex-row-reverse lg:pl-[125px] max-md:items-end max-md:flex-col max-md:-mt-5">
                     <figure className="md:flex-[0_0_250px] flex-[0_0_200px] relative">
                         <img src="/images/image-about-02.png" alt="" />
                     </figure>

@@ -17,12 +17,13 @@ export default function FV() {
         ref={videoRef}
         muted
         loop
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 z-10 h-full w-full object-cover"
       >
         <source src="/videos/fv.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="relative pb-20 pt-[140px] md:py-[153px] z-0 text-white flex md:items-end justify-between w-full gap-8 md:gap-5 mx-auto px-[5vw] md:px-[12.5vw] max-md:flex-col">
+      <span className="absolute inset-0 z-20 bg-[url('/images/fv-gradient.png')] bg-cover"></span>
+      <div className="relative pb-20 pt-[140px] md:py-[153px] z-30 text-white flex md:items-end justify-between w-full gap-8 md:gap-5 mx-auto px-[5vw] md:px-[12.5vw] max-md:flex-col">
         <div className="font-solaris">
             <p ref={animateRefs} className="opacity-0 text-[6.4vw] md:[font-size:_clamp(20px,5.078vw,52px)] leading-none">
             EMPOWERING YOUR <br />VISION WITH
