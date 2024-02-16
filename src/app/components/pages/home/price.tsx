@@ -5,7 +5,7 @@ export default function Price() {
   return (
     <div id="price" className="bg-[#EDEDED]">
       <div className="flex justify-center md:text-[50px] text-[28px] text-white text-center bg-[#184E97] font-bold p-5">
-        集客できてこの金額？
+      集客できてこの金額？！
       </div>
       <div className="w-full md:max-w-[1240px] max-w-[480px] mx-auto px-5">
         <div className="flex md:items-end justify-between">
@@ -50,8 +50,8 @@ export default function Price() {
           </figure>
         </div>
         <p ref={animateRefs} className="text-center font-bold md:text-[2.431vw] xl:text-[35px] [font-size:_clamp(18px,3.4vw,20px)] pt-4 pb-9">
-          今ご契約頂ければ集客できる広告媒体が、<br />
-          ずっと現在価格でご利用頂けます。
+          <span className="text-[#FF0000]">今ご契約</span>頂ければ集客できる広告媒体が、<br />
+          <span className="text-[#FF0000]">ずっと現在価格</span>でご利用頂けます。
         </p>
       </div>
       <div className="w-full md:max-w-[1240px] max-w-[480px] mx-auto px-5 mt-8 pb-[60px] md:pb-[110px] md:mt-12">

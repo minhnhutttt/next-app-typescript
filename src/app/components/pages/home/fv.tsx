@@ -1,9 +1,9 @@
 export default function FV() {
   return (
     <div className="relative pl-5 pt-[82px] md:pt-[150px] bg-[#DFE3F7] z-30">
-      <div className="w-full md:max-w-[1440px] h-full mx-auto md:justify-end flex max-md:flex-col">
-        <div className="md:pl-[7.292vw] min-[1440px]:pl-[80px] md:py-[7.986vw] xl:py-[90px] pt-10 pb-6 relative z-10 max-md:pr-5">
-        <div className="font-semibold px-5 md:px-[1.389vw] min-[1440px]:px-5 mb-2">
+      <div className="w-full h-full mx-auto md:justify-end min-[1440px]:justify-between flex max-md:flex-col">
+        <div className="md:pl-[7.292vw] min-[1440px]:flex-1 min-[1440px]:flex-col min-[1440px]:justify-center min-[1440px]:flex min-[1440px]:pl-[80px] md:py-[7.986vw] xl:py-[90px] pt-10 pb-6 relative z-10 max-md:pr-5">
+          <div className="font-semibold px-5 md:px-[1.389vw] min-[1440px]:px-5 mb-2 text-center">
             <p className="min-[1440px]:text-[26px] md:text-[1.75vw] [font-size:_clamp(12px,3.8vw,20px)] break-keep max-md:text-center">
               メンズエステ・リラクゼーションサロン向け
             </p>
@@ -29,7 +29,7 @@ export default function FV() {
               最終兵器
             </h2>
           </div>
-          <figure className="flex max-md:justify-center">
+          <figure className="flex justify-center">
             <img className="max-md:w-4/5" src="/images/fv-logo.png" alt="" />
           </figure>
         </div>

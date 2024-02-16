@@ -113,9 +113,7 @@ export default function PrivacyPolicy() {
             住所　千葉県千葉市若葉区多部田町２５６番地４<br />
             株式会社ジャパントータルコミュニケーションズ　個人情報開示請求窓口
           </TextBlock>
-          <TextBlock title="6. Cookie の取扱い">
-            （1）Cookieの利用について
-            <br />
+          <TextBlock>
             当社のウェブサイトでは、お客様により適切なサービスをご提供するためCookie（クッキー）その他のトラッキング又は解析を行うための類似技術（以下、総称して「Cookie」といいます。）を使用しております。
             <br />
             <p className="flex">
@@ -142,7 +140,7 @@ export default function PrivacyPolicy() {
             GOOGLE：
             <a
               href="https://policies.google.com/technologies/partner-sites"
-              target="_blank"
+              target="_blank" className="underline"
             >
               https://policies.google.com/technologies/partner-sites
             </a>
@@ -150,13 +148,13 @@ export default function PrivacyPolicy() {
             Meta：
             <a
               href="https://www.facebook.com/legal/technology_terms"
-              target="_blank"
+              target="_blank" className="underline"
             >
               https://www.facebook.com/legal/technology_terms　
             </a>
             <br />
             株式会社Faber Company：
-            <a href="https://mieru-ca.com/privacy-policy/" target="_blank">
+            <a href="https://mieru-ca.com/privacy-policy/" target="_blank" className="underline">
               https://mieru-ca.com/privacy-policy/　
             </a>
             <br />

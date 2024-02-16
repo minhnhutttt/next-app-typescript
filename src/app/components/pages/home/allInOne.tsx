@@ -93,7 +93,7 @@ export default function AllInOne() {
                 </li>
               </ul>
             </div>
-            <span className="absolute bottom-0 left-0 z-0 max-md:w-[30vw] max-[1439px]:w-[42.292vw]">
+            <span className="absolute bottom-0 left-0 z-0 max-md:w-[74vw] max-md:max-w-[500px] max-[1439px]:w-[42.292vw] max-md:opacity-20">
               <img src="/images/bg-all-in-one.png" alt="" />
             </span>
             <div ref={animateRefs} className="flex justify-center items-center flex-col mt-[20vw] md:mt-16 gap-4 relative z-10">
