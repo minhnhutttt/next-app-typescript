@@ -21,6 +21,7 @@ const config: Config = {
       notoCJK: ["Noto Sans CJK JP", "sans-serif"],
       roboto: ["Roboto", "sans-serif"],
       zenOld: ["Zen Old Mincho", "sans-serif"],
+      zenMaru: ["Zen Maru Gothic", "sans-serif"],
     },
   },
   plugins: [],
