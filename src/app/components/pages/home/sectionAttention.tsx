@@ -5,7 +5,7 @@ import SectionTitle from "../../common/sectionTitle";
 export default function SectionAttention() {
   const animateRefs = useScrollAnimation("fadeUp");
   return (
-    <section className="pt-[30px] relative">
+    <section className="pt-[30px] relative mb-28 md:mb-[210px]">
       <SectionTitle type={<span className="[font-size:_clamp(60px,13.333vw,100px)] md:text-[6.944vw] xl:text-[100px] md:leading-[1.8]">Attention</span>} title="ちょっと待って！">
         <div className="w-full pt-10 md:pt-[90px] md:pl-10 lg:pl-[80px]">
             <div className="px-3 xl:px-6 pb-10 md:pb-[10vw] w-full flex items-center md:max-w-[640px] max-w-[440px] max-md:mx-auto">
@@ -18,13 +18,13 @@ export default function SectionAttention() {
             </div>
         </div>
       </SectionTitle>
-      <div className="mt-20 md:mt-4 w-full md:max-w-[1092px] max-w-[480px] mx-auto px-5">
+      <div ref={animateRefs} className="opacity-0 mt-20 md:mt-4 w-full md:max-w-[1092px] max-w-[480px] mx-auto px-5">
         <div className="flex justify-center">
             <p className="md:text-[24px] text-[20px] font-bold max-w-[545px]">
             次世代名刺なら、アドレスをスキャンされても名刺情報が丸見えになりません。
             </p>
         </div>
-        <div className="flex max-md:flex-col max-md:items-center mt-9 md:mt-[60px] md:pl-8">
+        <div  className="flex max-md:flex-col max-md:items-center mt-9 md:mt-[60px] md:pl-8">
             <figure className="px-6">
                 <img className="max-md:w-[240px]" src="/images/image-phone-security.png" alt="" />
             </figure>
