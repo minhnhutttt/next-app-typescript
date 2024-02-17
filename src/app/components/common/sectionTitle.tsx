@@ -1,6 +1,6 @@
 "use client";
 import { ReactNode } from "react";
-
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 type SectionTitlePropsType = {
     type: ReactNode;
     title: ReactNode;
@@ -10,9 +10,10 @@ type SectionTitlePropsType = {
 };
 
 export default function SectionTitle({ type, title, content, children, reverse }: SectionTitlePropsType) {
+    const animateRefs = useScrollAnimation("zoom");
   return (
-    <div className={`relative max-md:bg-white ${reverse ? 'skew-y-[7deg]' : 'skew-y-[-7deg]'}`}>
-        <div className="flex max-md:flex-col md:absolute top-0 inset-x-0 ">
+    <div className={`relative max-md:bg-white md:min-h-[472px] ${reverse ? 'skew-y-[7deg]' : 'skew-y-[-7deg]'}`}>
+        <div ref={animateRefs} className="opacity-0 flex max-md:flex-col md:absolute top-0 inset-x-0 ">
             <div className="md:w-[38.75%] bg-[#22ABF3] flex items-center flex-col justify-center py-12 md:py-14 md:min-h-[470px] px-5">
                 <div className={`${reverse ? 'skew-y-[-7deg]' : 'skew-y-[7deg]'}`}>
                     <div className="text-white/40 font-bold font-zenOld text-center leading-none">{type}</div>
@@ -22,11 +23,11 @@ export default function SectionTitle({ type, title, content, children, reverse }
                     </div>
                 </div>
             </div>
-            <div className="flex-1 bg-white relative">
+            <div ref={animateRefs} className="opacity-0 flex-1 bg-white relative">
             </div>
         </div>
-        <div className={`flex justify-center relative w-full md:w-[61.25%] ml-auto ${reverse ? 'skew-y-[-7deg]' : 'skew-y-[7deg]'}`}>
-            <div className="">
+        <div className={`relative w-full md:w-[61.25%] ml-auto ${reverse ? 'skew-y-[-7deg]' : 'skew-y-[7deg]'}`}>
+            <div ref={animateRefs} className="opacity-0 flex justify-center">
                 {children}
             </div>
         </div>

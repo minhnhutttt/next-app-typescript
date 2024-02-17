@@ -1,7 +1,8 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import SectionTitle from "../../common/sectionTitle";
-import { ReactNode, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
+import { gsap } from "gsap";
 
 type methodCardType = {
   number: string;
@@ -26,6 +27,8 @@ function MethodCard({number, title, content, children} : methodCardType) {
 export default function SectionHow() {
   const animateRefs = useScrollAnimation("fadeUp");
   const [currdeg, setCurrdeg] = useState(0);
+  const contentRef = useRef<HTMLDivElement | null>(null);
+  const [isClosed, setIsClosed] = useState<boolean>(true);
 
   const rotate = (direction: string) => {
     if (direction === 'n') {
@@ -34,8 +37,17 @@ export default function SectionHow() {
       setCurrdeg(currdeg + 90);
     }
   };
+
+  const handleExpanderClick = () => {
+    const $content = contentRef.current;
+    if (isClosed) {
+      gsap.set($content, { height: "auto" });
+      gsap.from($content, { duration: 0.2, height: 0 });
+      setIsClosed(false);
+    }
+  };
   return (
-    <section className="pt-[30px] relative pb-[120px] md:pb-[220px]">
+    <section className="pt-[30px] relative pb-[50px] md:pb-[220px]">
       <SectionTitle type={<span className="[font-size:_clamp(100px,21.333vw,160px)] md:text-[15.278vw] xl:text-[220px]">How</span>} title="次世代名刺の作成・受け取り方法" content="次世代名刺は「自分で作る」方法と「サポートに依頼して作る」方法があります。">
         <div className="flex max-lg:flex-wrap justify-center gap-6 xl:gap-9 pt-10 md:pt-[132px] px-6 xl:px-12">
           <div className="lg:w-1/2 max-w-[380px] bg-white border botder-[#DBF9FF] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] rounded-[20px] p-6 xl:p-10">
@@ -68,71 +80,82 @@ export default function SectionHow() {
           </div>
         </div>
       </SectionTitle>
-      <div className="w-full max-w-[1324px] mx-auto relative overflow-hidden px-5 max-md:mt-24">
-        <h3 className="md:text-[80px] text-[40px] font-bold leading-none">受取方法</h3>
-        <div className="mt-12 relative w-[70vw] md:w-[380px] h-[540px] md:h-[610px] mx-auto [perspective:1000px]">
-          <button className="bg-white/30 h-full w-[10vw] md:w-[100px] z-10 absolute top-1/2 -translate-y-1/2 flex justify-center items-center right-[-15%] md:right-[-120px]" onClick={() => rotate('n')}>
-            <svg className="-rotate-90" xmlns="http://www.w3.org/2000/svg" width="53" height="28" viewBox="0 0 53 28" fill="none">
-              <path d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335" stroke="#22ABF3" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          <button className="bg-white/30 h-full w-[10vw] md:w-[100px] z-10 absolute top-1/2 -translate-y-1/2 flex justify-center items-center left-[-15%] md:left-[-120px]" onClick={() => rotate('p')}>
-            <svg className="rotate-90" xmlns="http://www.w3.org/2000/svg" width="53" height="28" viewBox="0 0 53 28" fill="none">
-              <path d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335" stroke="#22ABF3" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          <div className="h-full w-full absolute [transform-style:preserve-3d] [transition:transform_1s]" style={{ transform: `rotateY(${currdeg}deg)` }}>
-            <div className="absolute [transform:rotateY(0deg)_translateZ(40vw)] md:[transform:rotateY(0deg)_translateZ(250px)]">
-              <MethodCard number="01" title="アプリをダウンロード" content="アプリDIVER Bizのダウンロードおよび初期設定が完了後、受信用アドレスをご確認ください。デジ名刺申し込み時に入力する必要があります。">
-                <div className="flex flex-col items-center justify-center py-5">
-                  <figure className="py-5">
-                    <img src="/images/logo-diver-biz.png" alt="DIVER BIZ" />
-                  </figure>
-                  <div className="space-y-7">
-                    <a href="http://" target="_blank" rel="noopener noreferrer" className="block">
-                      <img src="/images/appstore.png" alt="" />
-                    </a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer" className="block">
-                      <img src="/images/google-play.png" alt="" />
-                    </a>
-                  </div>
+      <div className="relative overflow-hidden max-md:mt-24">
+        <div className="w-full max-w-[1324px] mx-auto px-5 ">
+          <h4 ref={animateRefs} className="opacity-0 md:text-[80px] text-[40px] font-bold leading-none">受取方法</h4>
+        </div>
+        <div ref={contentRef} className="h-[240px] overflow-hidden relative">
+          {isClosed &&
+            <button type="button" onClick={handleExpanderClick} className="bg-[linear-gradient(0deg,_rgba(255,255,255,1)_0%,_rgba(14,255,255,0)_100%)] absolute inset-0 z-10 flex items-end p-5 justify-center">
+              <img className="animate-[fade-in-down_2s_ease_infinite]" src="/images/arrow-down.png" alt="" />
+            </button>
+          }
+          <div className="w-full max-w-[1324px] mx-auto px-5 ">
+            <div className="mt-12 relative w-[70vw] md:w-[380px] h-[540px] md:h-[610px] mx-auto [perspective:1000px]">
+              <button className="bg-white/30 h-full w-[10vw] md:w-[100px] z-10 absolute top-1/2 -translate-y-1/2 flex justify-center items-center right-[-15%] md:right-[-120px]" onClick={() => rotate('n')}>
+                <svg className="-rotate-90" xmlns="http://www.w3.org/2000/svg" width="53" height="28" viewBox="0 0 53 28" fill="none">
+                  <path d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335" stroke="#22ABF3" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <button className="bg-white/30 h-full w-[10vw] md:w-[100px] z-10 absolute top-1/2 -translate-y-1/2 flex justify-center items-center left-[-15%] md:left-[-120px]" onClick={() => rotate('p')}>
+                <svg className="rotate-90" xmlns="http://www.w3.org/2000/svg" width="53" height="28" viewBox="0 0 53 28" fill="none">
+                  <path d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335" stroke="#22ABF3" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className="h-full w-full absolute [transform-style:preserve-3d] [transition:transform_1s]" style={{ transform: `rotateY(${currdeg}deg)` }}>
+                <div className="absolute [transform:rotateY(0deg)_translateZ(40vw)] md:[transform:rotateY(0deg)_translateZ(250px)]">
+                  <MethodCard number="01" title="アプリをダウンロード" content="アプリDIVER Bizのダウンロードおよび初期設定が完了後、受信用アドレスをご確認ください。デジ名刺申し込み時に入力する必要があります。">
+                    <div className="flex flex-col items-center justify-center py-5">
+                      <figure className="py-5">
+                        <img src="/images/logo-diver-biz.png" alt="DIVER BIZ" />
+                      </figure>
+                      <div className="space-y-7">
+                        <a href="http://" target="_blank" rel="noopener noreferrer" className="block">
+                          <img src="/images/appstore.png" alt="" />
+                        </a>
+                        <a href="http://" target="_blank" rel="noopener noreferrer" className="block">
+                          <img src="/images/google-play.png" alt="" />
+                        </a>
+                      </div>
+                    </div>
+                  </MethodCard>
                 </div>
-              </MethodCard>
-            </div>
-            <div className="absolute md:[transform:rotateY(90deg)_translateZ(250px)] [transform:rotateY(90deg)_translateZ(40vw)]">
-              <MethodCard number="02" title="フォームを入力" content={<>以下の「次世代名刺を作る」ボタンを押すと次世代名刺作成フォームが開きます。<br /><br />ボタンを押して作成に必要な項目をご確認ください。</>}>
-                <div className="flex flex-col items-center justify-center py-5">
-                  <a href="/" className="block mt-10">
-                    <img src="/images/button-cards.png" alt="" />
-                  </a>
+                <div className="absolute md:[transform:rotateY(90deg)_translateZ(250px)] [transform:rotateY(90deg)_translateZ(40vw)]">
+                  <MethodCard number="02" title="フォームを入力" content={<>以下の「次世代名刺を作る」ボタンを押すと次世代名刺作成フォームが開きます。<br /><br />ボタンを押して作成に必要な項目をご確認ください。</>}>
+                    <div className="flex flex-col items-center justify-center py-5">
+                      <a href="/" className="block mt-10">
+                        <img src="/images/button-cards.png" alt="" />
+                      </a>
+                    </div>
+                  </MethodCard>
                 </div>
-              </MethodCard>
-            </div>
-            <div className="absolute md:[transform:rotateY(180deg)_translateZ(250px)] [transform:rotateY(180deg)_translateZ(40vw)]">
-              <MethodCard number="03" title="NFT名刺を確認" content="フォームに入力したアドレス宛にNFT名刺が発行されます。アプリDIVER Bizを開いてご確認ください。">
-                <div className="flex flex-col items-center justify-center py-5">
-                  <figure className="py-5">
-                    <img src="/images/logo-diver-biz.png" alt="DIVER BIZ" />
-                  </figure>
-                  <div className="space-y-7">
-                    <a href="http://" target="_blank" rel="noopener noreferrer" className="block">
-                      <img src="/images/appstore.png" alt="" />
-                    </a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer" className="block">
-                      <img src="/images/google-play.png" alt="" />
-                    </a>
-                  </div>
+                <div className="absolute md:[transform:rotateY(180deg)_translateZ(250px)] [transform:rotateY(180deg)_translateZ(40vw)]">
+                  <MethodCard number="03" title="NFT名刺を確認" content="フォームに入力したアドレス宛にNFT名刺が発行されます。アプリDIVER Bizを開いてご確認ください。">
+                    <div className="flex flex-col items-center justify-center py-5">
+                      <figure className="py-5">
+                        <img src="/images/logo-diver-biz.png" alt="DIVER BIZ" />
+                      </figure>
+                      <div className="space-y-7">
+                        <a href="http://" target="_blank" rel="noopener noreferrer" className="block">
+                          <img src="/images/appstore.png" alt="" />
+                        </a>
+                        <a href="http://" target="_blank" rel="noopener noreferrer" className="block">
+                          <img src="/images/google-play.png" alt="" />
+                        </a>
+                      </div>
+                    </div>
+                  </MethodCard>
                 </div>
-              </MethodCard>
-            </div>
-            <div className="absolute md:[transform:rotateY(270deg)_translateZ(250px)] [transform:rotateY(270deg)_translateZ(40vw)]">
-              <MethodCard number="04" title="NFT名刺をシェアする" content="DIVER Bizから、あなたのNFT名刺をシェアしましょう。">
-                <div className="flex flex-col items-center h-full justify-end pt-5">
-                  <figure className="">
-                    <img src="/images/img-phone-card.png" alt="" />
-                  </figure>
+                <div className="absolute md:[transform:rotateY(270deg)_translateZ(250px)] [transform:rotateY(270deg)_translateZ(40vw)]">
+                  <MethodCard number="04" title="NFT名刺をシェアする" content="DIVER Bizから、あなたのNFT名刺をシェアしましょう。">
+                    <div className="flex flex-col items-center h-full justify-end pt-5">
+                      <figure className="">
+                        <img src="/images/img-phone-card.png" alt="" />
+                      </figure>
+                    </div>
+                  </MethodCard>
                 </div>
-              </MethodCard>
+              </div>
             </div>
           </div>
         </div>
