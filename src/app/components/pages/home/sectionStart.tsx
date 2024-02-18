@@ -7,7 +7,7 @@ export default function SectionStart() {
   return (
     <section className="pt-[30px] relative pb-[100px] md:pb-[220px]">
       <SectionTitle type={<span className="[font-size:_clamp(100px,21.333vw,160px)] md:text-[12.5vw] xl:text-[180px]">Start</span>} title={<>次世代名刺でビジネスを<br />飛躍させよう</>}>
-            <div className="flex max-lg:flex-col-reverse items-center max-lg:gap-4 w-full max-w-[728px] mx-auto pt-10 max-md:pb-10 lg:pt-[140px] md:pb-[150px] px-5">
+            <div className="flex max-lg:flex-col-reverse items-center max-lg:gap-4 w-full max-w-[400px] md:max-w-[728px] mx-auto pt-10 max-md:pb-10 lg:pt-[140px] md:pb-[150px] px-5">
                 <div className="flex-1">
                     <h5 className="md:text-[32px] text-[20px] font-bold">
                         次世代名刺 <br />

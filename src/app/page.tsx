@@ -1,3 +1,4 @@
+import FAQ from "./components/pages/home/faq/faq";
 import FV from "./components/pages/home/fv";
 import Introduction from "./components/pages/home/introduction";
 import SectionAttention from "./components/pages/home/sectionAttention";
@@ -20,6 +21,7 @@ export default function Home() {
       <SectionStart />
       <SectionInformation />
       <SectionCampaign />
+      <FAQ />
     </main>
   );
 }
