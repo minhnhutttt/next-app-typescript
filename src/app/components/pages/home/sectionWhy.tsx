@@ -50,8 +50,8 @@ export default function SectionWhy() {
             </figure>
             <div className="relative flex-1">
                 <div className="flex justify-end">
-                    <div className="bg-[url('/images/wrap-text.png')] bg-cover bg-no-repeat xl:text-[18px] font-bold text-[14px] xl:w-[370px] w-[300px] h-[65px] xl:h-[80px] flex items-center justify-center">
-                        <span className="rotate-[6deg] pb-2">実際のユーザーに聞いてみたらわかった</span>
+                    <div className="xl:w-[370px] w-[300px] h-[65px] xl:h-[80px] flex items-center justify-center">
+                        <img src="/images/image-why-sub.png" alt="" />
                     </div>
                 </div>
                 <h5 className="xl:text-[40px] md:text-[30px] text-[24px] font-bold xl:-mt-3 tracking-widest">

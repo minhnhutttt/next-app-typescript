@@ -6,7 +6,7 @@ export default function SectionAttention() {
   const animateRefs = useScrollAnimation("fadeUp");
   return (
     <section className="pt-[30px] relative mb-28 md:mb-[210px]">
-      <SectionTitle type={<span className="[font-size:_clamp(60px,13.333vw,100px)] md:text-[6.944vw] xl:text-[100px] md:leading-[1.8]">Attention</span>} title="ちょっと待って！">
+      <SectionTitle type={<span className="[font-size:_clamp(60px,13.333vw,100px)] md:text-[6.944vw] xl:text-[100px] md:leading-[1.3]">Attention</span>} title="ちょっと待って！">
         <div className="w-full pt-10 md:pt-[90px]">
             <div className="px-3 xl:px-6 pb-10 md:pb-[10vw] w-full flex items-center md:max-w-[640px] max-w-[440px] mx-auto">
             <p className="block lg:text-[32px] md:text-[24px] text-[20px] font-bold flex-1">
