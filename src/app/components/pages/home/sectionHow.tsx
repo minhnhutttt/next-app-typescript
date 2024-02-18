@@ -92,12 +92,12 @@ export default function SectionHow() {
           }
           <div className="w-full max-w-[1324px] mx-auto px-5 ">
             <div className="mt-12 relative w-[70vw] md:w-[380px] h-[540px] md:h-[610px] mx-auto [perspective:1000px]">
-              <button className="bg-white/30 h-full w-[10vw] md:w-[100px] z-10 absolute top-1/2 -translate-y-1/2 flex justify-center items-center right-[-15%] md:right-[-120px]" onClick={() => rotate('n')}>
+              <button className="h-full w-[10vw] md:w-[100px] z-10 absolute top-1/2 -translate-y-1/2 flex justify-center items-center right-[-15%] md:right-[-120px]" onClick={() => rotate('n')}>
                 <svg className="-rotate-90" xmlns="http://www.w3.org/2000/svg" width="53" height="28" viewBox="0 0 53 28" fill="none">
                   <path d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335" stroke="#22ABF3" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-              <button className="bg-white/30 h-full w-[10vw] md:w-[100px] z-10 absolute top-1/2 -translate-y-1/2 flex justify-center items-center left-[-15%] md:left-[-120px]" onClick={() => rotate('p')}>
+              <button className="h-full w-[10vw] md:w-[100px] z-10 absolute top-1/2 -translate-y-1/2 flex justify-center items-center left-[-15%] md:left-[-120px]" onClick={() => rotate('p')}>
                 <svg className="rotate-90" xmlns="http://www.w3.org/2000/svg" width="53" height="28" viewBox="0 0 53 28" fill="none">
                   <path d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335" stroke="#22ABF3" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
