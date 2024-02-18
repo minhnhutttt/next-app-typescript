@@ -1,9 +1,15 @@
+'use client';
+import { usePathname } from 'next/navigation';
+
 export default function Header() {
+  const pathname = usePathname();
+
+  const isHomePage = pathname === "/";
   return (
     <header className="absolute top-0 left-0 right-0 z-10 px-5 md:px-10">
       <div className="mx-auto flex h-20 w-full items-center justify-between md:h-[120px]">
         <a href="/" className="duration-150 hover:opacity-75">
-          <p className="font-dela text-white [font-size:_clamp(20px,6vw,32px)] md:text-[42px]">次世代名刺</p>
+          <p className={`font-dela [font-size:_clamp(20px,6vw,32px)] md:text-[42px] ${isHomePage ? 'text-white' : 'text-black'}`}>次世代名刺</p>
         </a>
         <div className="flex items-center justify-end">
           <a

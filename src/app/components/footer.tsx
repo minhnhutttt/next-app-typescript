@@ -19,8 +19,8 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="/company" className="block duration-150 hover:opacity-75">
-              運営会社
+              <a href="/admin" className="block duration-150 hover:opacity-75">
+              運営者
               </a>
             </li>
             <li>

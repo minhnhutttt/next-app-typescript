@@ -22,6 +22,7 @@ const config: Config = {
       roboto: ["Roboto", "sans-serif"],
       zenOld: ["Zen Old Mincho", "sans-serif"],
       zenMaru: ["Zen Maru Gothic", "sans-serif"],
+      dm: ["DM Sans", "sans-serif"],
     },
   },
   plugins: [],
