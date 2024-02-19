@@ -1,8 +1,18 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import FormCheckbox from "../../form/formCheckbox";
+import { useState } from "react";
 export default function CancellationForm() {
   const animateRefs = useScrollAnimation("zoom");
+  const [text, setText] = useState<string>('');
+  const maxLength = 500;
+
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const newText = event.target.value;
+    if (newText.length <= maxLength) {
+      setText(newText);
+    }
+  };
   return (
     <div className="px-5 md:mb-[100px] mb-12">
         <div className="w-full max-w-[1000px] mx-auto">
@@ -53,8 +63,9 @@ export default function CancellationForm() {
                             (500文字以内)</p>
                         </div>
                         <div className="flex justify-center md:mt-7 mt-5">
-                            <div className="w-full max-w-[662px] mx-auto rounded-[10px]">
-                                <textarea name="" className="w-full bg-[#F3F3F3] md:h-[210px] h-[140px] p-5"></textarea>
+                            <div className="w-full max-w-[662px] mx-auto rounded-[10px] relative">
+                                <textarea name="" className="w-full bg-[#F3F3F3] md:h-[210px] h-[140px] p-5" maxLength={maxLength} onChange={handleChange}></textarea>
+                                <div className="absolute md:text-[14px] text-[12px] text-[#818087] right-5 bottom-5">{text.length}/{maxLength}</div>
                             </div>
                         </div>
                     </div>

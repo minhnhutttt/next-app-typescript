@@ -4,7 +4,7 @@ import type { HandleStepProps } from "./contactPlan";
 export default function ContactCard({handleStep}: HandleStepProps) {
   const animateRefs = useScrollAnimation("zoom");
   return (
-    <div className="px-5 md:mb-[100px] mb-12 font-noto">
+    <div className="px-5 md:mb-[100px] mb-12 font-noto" id="top">
         <div ref={animateRefs} className="opacity-0 w-full max-w-[1080px] mx-auto">
             <div className="bg-white md:pt-[60px] md:pb-[72px] pt-[30px] pb-10  px-5">
                 <p className="text-center md:text-[28px] text-[18px] font-black tracking-widest ">メディアと名刺受取りアドレスのご提出</p>
@@ -29,7 +29,7 @@ export default function ContactCard({handleStep}: HandleStepProps) {
                     </div>
                     <input type="text" className="flex-1 w-full md:h-[70px] h-[60px] bg-[#EFF2F6] md:text-[18px] font-bold px-4 md:px-[30px] py-4" placeholder="例：0x1ffur8je32rjfi9wufoflk6969e0olsjeG" />
                 <div className="flex justify-center md:mt-10 mt-6">
-                    <button type="button" onClick={handleStep} className="bg-[#000748] border-[3px] border-white rounded-[44px] font-bold md:px-16 leading-none px-10 md:py-4 py-3 flex items-center justify-center gap-1.5 md:gap-2.5 text-white md:text-[20px] text-[16px]">
+                    <button type="button" onClick={handleStep} className="bg-[#000748] w-[240px] h-[60px] md:w-[300px] md:h-[70px] border-[3px] border-white rounded-[44px] font-bold md:px-16 leading-none px-10 md:py-4 py-3 flex items-center justify-center gap-1.5 md:gap-2.5 text-white md:text-[20px] text-[16px]">
                         <span>STEP3へ進む</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                             <path d="M4.79995 14.9998C4.79995 9.3598 9.35995 4.7998 15 4.7998C20.64 4.7998 25.2 9.3598 25.2 14.9998C25.2 20.6398 20.64 25.1998 15 25.1998C9.35995 25.1998 4.79995 20.6398 4.79995 14.9998ZM24 14.9998C24 10.0198 19.98 5.9998 15 5.9998C10.02 5.9998 5.99995 10.0198 5.99995 14.9998C5.99995 19.9798 10.02 23.9998 15 23.9998C19.98 23.9998 24 19.9798 24 14.9998Z" fill="white" stroke="white"/>
@@ -40,7 +40,7 @@ export default function ContactCard({handleStep}: HandleStepProps) {
                 </div>
                 <div className="mt-[70px]">
                     <p className="md:text-[20px] text-[16px] font-bold"><span className="text-[#22ABF3]">■</span>アドレスの入力は以下の手順で完了させてください。</p>
-                    <div className="flex items-center md:justify-between px-5 pt-4 pb-6 md:pt-5 md:pb-10 max-md:flex-wrap justify-center border-b border-black">
+                    <div className="flex items-center md:justify-between px-5 pt-4 pb-6 md:pt-5 md:pb-10 max-md:flex-col justify-center border-b border-black">
                         <p className="md:text-[18px] text-[16px] font-bold max-w-[350px] flex-1">
                             ① アプリ「DIVER Biz」のダウンロードしてください。
                         </p>
@@ -58,39 +58,39 @@ export default function ContactCard({handleStep}: HandleStepProps) {
                             </div>
                         </div>
                     </div>
-                    <div className="flex items-center px-5 pt-4 pb-6 md:pt-10 md:pb-5 max-md:flex-wrap border-b border-black md:gap-[82px]">
+                    <div className="flex items-center px-3 md:px-5 pt-4 pb-6 md:pt-10 md:pb-5 max-md:flex-col border-b border-black gap-5 md:gap-[82px]">
                         <p className="md:text-[18px] text-[16px] font-bold max-w-[350px] flex-1">
                             ② 初期設定を完了させてください。
                         </p>
                         <div className="">
                             <figure className="flex justify-center">
-                                <img src="/images/guide-01.png" alt="" />
+                                <img className="max-md:w-[160px]" src="/images/guide-01.png" alt="" />
                             </figure>
                         </div>
                     </div>
-                    <div className="flex items-center px-5 pt-4 pb-6 md:pt-10 md:pb-5 max-md:flex-wrap border-b border-black md:gap-[82px]">
+                    <div className="flex items-center px-3 md:px-5 pt-4 pb-6 md:pt-10 md:pb-5 max-md:flex-col border-b border-black gap-5 md:gap-[82px]">
                         <p className="md:text-[18px] text-[16px] font-bold max-w-[350px] flex-1">
                         ③ アプリを開き下のメニュー「受け取る」のコピーボタンをタップしアドレスをコピーしてください。
                         </p>
                         <div className="">
                             <figure className="flex justify-center">
-                                <img src="/images/guide-02.png" alt="" />
+                                <img className="max-md:w-[160px]" src="/images/guide-02.png" alt="" />
                             </figure>
                         </div>
                     </div>
-                    <div className="flex items-center px-5 pt-8 pb-5 md:pt-12 md:pb-7 max-md:flex-wrap border-b border-black md:gap-[82px]">
+                    <div className="flex max-lg:flex-col lg:items-center px-3 md:px-5 pt-8 pb-5 md:pt-12 md:pb-7 max-md:flex-col border-b border-black gap-5 lg:gap-[82px]">
                         <p className="md:text-[18px] text-[16px] font-bold max-w-[350px] flex-1">
                         ④ 上記「NFT名刺受取用ウォレットアドレス」の入力欄に③でコピーしたアドレスを貼り付けてください。
                         </p>
-                        <div className="">
+                        <div className="max-lg:flex max-lg:justify-end">
                             <figure className="flex justify-center">
                                 <img src="/images/guide-03.png" alt="" />
                             </figure>
                         </div>
                     </div>
-                    <div className="flex items-center px-5 pt-8 pb-5 md:pt-12 md:pb-7 max-md:flex-wrap border-b border-black md:gap-[82px]">
+                    <div className="flex items-center px-3 md:px-5 pt-8 pb-5 md:pt-12 md:pb-7 max-md:flex-col border-b border-black gap-5 md:gap-[82px]">
                         <div className="max-w-[350px] flex-1">
-                            <p className="font-black md:text-[24px] text-[20px] text-[#22ABF3] mb-3 md:mb-5 md:pl-4 border-l-[5px] border-[#22ABF3]">
+                            <p className="font-black md:text-[24px] text-[20px] text-[#22ABF3] mb-3 md:mb-5 pl-2 md:pl-4 md:border-l-[5px] border-l-[3px] border-[#22ABF3]">
                                 DIVER Walletのアドレスを利用したい方
                             </p>
                             <p className="md:text-[18px] text-[16px] font-bold">
@@ -100,19 +100,29 @@ export default function ContactCard({handleStep}: HandleStepProps) {
                         </div>
                         <div className="">
                             <figure className="flex justify-center">
-                                <img src="/images/guide-04.png" alt="" />
+                                <img className="max-md:w-[160px]" src="/images/guide-04.png" alt="" />
                             </figure>
                         </div>
                     </div>
-                    <div className="flex items-center px-5 pt-8 pb-5 md:pt-12 md:pb-7 max-md:flex-wrap border-b border-black md:gap-[82px]">
+                    <div className="flex items-center px-3 md:px-5 pt-8 pb-5 md:pt-12 md:pb-7 max-md:flex-col border-b border-black gap-5 md:gap-[82px]">
                         <p className="md:text-[18px] text-[16px] font-bold max-w-[350px] flex-1">
                         ② アプリを開き下のメニュー「受け取る」のコピーボタンをタップしアドレスをコピーしてください。
                         </p>
                         <div className="">
                             <figure className="flex justify-center">
-                                <img src="/images/guide-05.png" alt="" />
+                                <img className="max-md:w-[160px]" src="/images/guide-05.png" alt="" />
                             </figure>
                         </div>
+                    </div>
+                    <div className="flex justify-center md:mt-[50px] mt-8">
+                    <a href="#top" className="bg-[#000748] w-[240px] h-[60px] md:w-[300px] md:h-[70px] border-[3px] border-white rounded-[44px] font-bold md:px-16 leading-none px-10 md:py-4 py-3 flex items-center justify-center gap-1.5 md:gap-2.5 text-white md:text-[20px] text-[16px]">
+                        <span>上へ戻る</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                            <path d="M14.9998 25.2C9.3598 25.2 4.7998 20.64 4.7998 15C4.7998 9.36005 9.3598 4.80005 14.9998 4.80005C20.6398 4.80005 25.1998 9.36005 25.1998 15C25.1998 20.64 20.6398 25.2 14.9998 25.2ZM14.9998 6.00005C10.0198 6.00005 5.9998 10.02 5.9998 15C5.9998 19.98 10.0198 24 14.9998 24C19.9798 24 23.9998 19.98 23.9998 15C23.9998 10.02 19.9798 6.00005 14.9998 6.00005Z" fill="white" stroke="white"/>
+                            <path d="M19.9802 16.0201L15.0002 11.0401L10.0202 16.0201L9.18018 15.1801L15.0002 9.36011L20.8202 15.1801L19.9802 16.0201Z" fill="white" stroke="white"/>
+                            <path d="M14.3999 10.2H15.5999L15.5999 20.4H14.3999L14.3999 10.2Z" fill="white" stroke="white"/>
+                            </svg>
+                    </a>
                     </div>
                 </div>
                 </div>
