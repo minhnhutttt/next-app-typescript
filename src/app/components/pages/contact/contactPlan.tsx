@@ -24,7 +24,7 @@ export default function ContactPlan({ handleStep }: HandleStepProps) {
           <p className="text-center md:text-[28px] text-[18px] font-bold">
             プラン選択
           </p>
-          <div className="flex justify-center md:pt-[72px] pt-10 w-full max-w-[540px] mx-auto md:pb-[72px] ">
+          <div className="flex justify-center md:pt-[72px] pt-10 w-full max-w-[240px] md:max-w-[540px] mx-auto md:pb-[72px] mb-8">
             <FormRadio
               options={[
                 { label: "サンプル作成(1枚)", value: "サンプル作成(1枚)" },

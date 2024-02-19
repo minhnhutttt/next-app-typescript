@@ -16,20 +16,19 @@ export default function ContactHead({ step }: StepPropsType) {
         >
           次世代名刺作成フォーム
         </h3>
-        <div ref={animateRefs} className="opacity-0 md:mt-[70px] mt-10 px-5">
-          <div className="w-full max-w-[1080px] mx-auto flex max-md:flex-col justify-center">
-            <div
-              className={`text-center md:flex-[0_0_26.389vw] min-[1440px]:flex-[0_0_380px] md:h-[100px] max-md:bg-bottom max-md:p-8 md:px-5 bg-[length:100%_100%] flex flex-col items-center justify-center relative z-30 ${step === 1 ? "md:bg-[url('/images/step-01-active.png')] bg-[url('/images/step-01-active-sp.png')] text-white" : "max-md:bg-[#F5F5F5] md:bg-[url('/images/step-01.png')] text-[#999]"}`}
+        <div ref={animateRefs} className="opacity-0 md:mt-[70px] mt-10">
+          <div className="w-full max-w-[1100px] mx-auto flex flex-wrap max-md:flex-col justify-center overflow-hidden">
+          <div
+              className={`h-[80px] md:h-[100px] relative w-full md:w-[33%] text-center flex flex-col items-center justify-center px-10 py-[13px] bg-[#F5F5F5] text-[#999999] after:absolute after:top-[0] after:bottom-[0] after:left-full after:z-[2] after:border-[60px] after:border-solid after:border-transparent after:border-l-[30px] after:border-l-[#F5F5F5] after:m-auto before:absolute before:top-[0] before:bottom-[0] before:left-full before:content-[''] before:border-[60px] before:border-solid before:border-transparent before:border-l-[30px] before:z-[2] before:m-auto before:ml-0.5 before:border-l-white [&.active]:bg-[#22ABF3] [&.active]:text-white [&.active]:after:border-l-[#22ABF3] [&.active]:before:border-l-0 ${step === 1 && 'active'}`}
             >
-              <p className="md:text-[22px] text-[16px] font-bold max-md:mt-2">
+              <p className="md:text-[22px] text-[16px] font-bold">
                 STEP 1
               </p>
               <p className="md:text-[14px] text-[12px]">プラン選択</p>
             </div>
             <div
-              className={`text-center md:flex-[0_0_26.389vw] min-[1440px]:flex-[0_0_380px] md:h-[100px] max-md:bg-bottom max-md:p-8 md:px-5 bg-[length:100%_100%] flex flex-col items-center justify-center relative max-md:mt-[-20px] md:ml-[-1.875vw] min-[1440px]:ml-[-27px]z-20 ${step === 2 ? "md:bg-[url('/images/step-02-active.png')] bg-[url('/images/step-02-active-sp.png')] text-white z-50" : "max-md:bg-[#F5F5F5] md:bg-[url('/images/step-02.png')] text-[#999]"}`}
-            >
-              <p className="md:text-[22px] text-[16px] font-bold max-md:mt-2">
+              className={`h-[80px] md:h-[100px] relative w-full md:w-[33%] text-center flex flex-col items-center justify-center px-10 py-[13px] bg-[#F5F5F5] text-[#999999] after:absolute after:top-[0] after:bottom-[0] after:left-full after:z-[2] after:border-[60px] after:border-solid after:border-transparent after:border-l-[30px] after:border-l-[#F5F5F5] after:m-auto before:absolute before:top-[0] before:bottom-[0] before:left-full before:content-[''] before:border-[60px] before:border-solid before:border-transparent before:border-l-[30px] before:z-[2] before:m-auto before:ml-0.5 before:border-l-white [&.active]:bg-[#22ABF3] [&.active]:text-white [&.active]:after:border-l-[#22ABF3] [&.active]:before:border-l-0 ${step === 2 && 'active'}`}>
+                <p className="md:text-[22px] text-[16px] font-bold">
                 STEP 2
               </p>
               <p className="md:text-[14px] text-[12px]">
@@ -37,9 +36,8 @@ export default function ContactHead({ step }: StepPropsType) {
               </p>
             </div>
             <div
-              className={`text-center md:flex-[0_0_26.389vw] min-[1440px]:flex-[0_0_380px] md:h-[100px] max-md:bg-top max-md:p-8 md:px-5 bg-[length:100%_100%] flex flex-col items-center justify-center relative max-md:mt-[-20px] md:ml-[-1.875vw] min-[1440px]:ml-[-27px] ${step === 3 ? "md:bg-[url('/images/step-03-active.png')] bg-[url('/images/step-03-active-sp.png')] text-white z-40" : "max-md:bg-[#F5F5F5] md:bg-[url('/images/step-03.png')] text-[#999] z-10"}`}
-            >
-              <p className="md:text-[22px] text-[16px] font-bold max-md:mt-2">
+              className={`h-[80px] md:h-[100px] relative w-full md:w-[33%] text-center flex flex-col items-center justify-center px-10 py-[13px] bg-[#F5F5F5] text-[#999999] [&.active]:bg-[#22ABF3] [&.active]:text-white ${step === 3 && 'active'}`}>
+              <p className="md:text-[22px] text-[16px] font-bold">
                 STEP 3
               </p>
               <p className="md:text-[14px] text-[12px]">名刺情報の入力</p>
