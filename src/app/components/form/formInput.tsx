@@ -18,11 +18,17 @@ export default function FormInput({
   value,
   placeholder,
 }: InputFormProps) {
-
   return (
     <div>
-      <p className="md:text-[20px] text-[16px] font-bold">{label}{required && <span className="md:text-[26px] text-[20px] font-bold relative ml-1 top-1 text-[#ED002B]">*</span>}</p>
-      <div className={`mt-2 ${sm && 'w-[170px]'}`}>
+      <p className="md:text-[20px] text-[16px] font-bold">
+        {label}
+        {required && (
+          <span className="md:text-[26px] text-[20px] font-bold relative ml-1 top-1 text-[#ED002B]">
+            *
+          </span>
+        )}
+      </p>
+      <div className={`mt-2 ${sm && "w-[170px]"}`}>
         <input
           type={type}
           name={name}
