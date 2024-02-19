@@ -25,7 +25,7 @@ export default function SectionWhat() {
             <span className="inline bg-[linear-gradient(to_top,_#F4F844_40%,_transparent_40%)]">
               NFTは「世界にひとつだけの証明番号」を画像やビデオ、3D、音楽、音声などに付与する技術を活用して発行されるものです。
             </span>
-            証明番号は第三者から書き換えられたりするリスクがなく、デジタルの世界に"ひとつだけ"であることを証明するために使われています。
+            証明番号は第三者から書き換えられたりするリスクがなく、デジタルの世界に&quot;ひとつだけ&quot;であることを証明するために使われています。
           </p>
         </div>
       </SectionTitle>
