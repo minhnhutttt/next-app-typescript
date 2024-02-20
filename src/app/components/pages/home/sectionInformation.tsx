@@ -44,10 +44,10 @@ export default function SectionInformation() {
               alt=""
             />
           </figure>
-          <p className="md:text-[16px] text-[13px] font-bold">
-            ※NFT名刺受け取り用ウォレット
+          <p className="md:text-[16px] text-[12px] font-bold">
+            ※任意の情報はすべて入力されることを推奨しています。
             <br />
-            アドレスの取得（コピー）画面
+            というテキストの下です。
           </p>
         </div>
         <div className="flex-1">

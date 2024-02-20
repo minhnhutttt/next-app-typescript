@@ -81,8 +81,8 @@ export default function Introduction() {
             />
           </figure>
           <div className="flex-1">
-            <h5 className="md:text-[31px] text-[24px] font-bold mb-7">
-              受け取り後はボタンひとつで <br className="max-md:hidden" />
+            <h5 className="md:text-[31px] text-[24px] font-bold mb-7 max-md:text-center">
+              受け取り後はボタンひとつで <br />
               名刺交換を完了！
             </h5>
             <p className="md:text-[18px] text-[14px] font-medium leading-relaxed">
@@ -105,11 +105,11 @@ export default function Introduction() {
               />
             </div>
             <p className="text-[16px] md:text-[20px] lg:text-[24px] font-bold mt-2 md:mt-1 tracking-[0.4em]">
-              全てのビジネスマンに未来を実装！
+              全てのビジネスマンに<br className="md:hidden" />未来を実装！
             </p>
             <p className="lg:text-[34px] md:text-[24px] text-[20px] font-black tracking-[0.2em] leading-tight max-md:mt-3">
               <span className=" border-b-2 border-[#323232]">
-                あなたの次世代名刺
+                あなたの次世代名刺 <br className="md:hidden" />
                 <span className="md:text-[48px] text-[32px] lg:text-[74px]">
                   200
                 </span>

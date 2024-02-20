@@ -1,19 +1,20 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import SectionTitle from "../../common/sectionTitle";
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 type methodCardType = {
   number: string;
   title: string;
+  active: boolean;
   content: ReactNode;
   children: ReactNode;
 };
 
-function MethodCard({ number, title, content, children }: methodCardType) {
+function MethodCard({ number, title, active, content, children }: methodCardType) {
   return (
-    <div className="bg-white scale-75 border w-[70vw] h-[500px] md:h-[597px] md:w-full md:max-w-[380px] border-[#DBF9FF] rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] px-5 md:px-10 pt-5 md:pt-10 flex flex-col items-center justify-start">
+    <div className={`bg-white scale-75 border w-[70vw] h-[500px] md:h-[597px] md:w-full md:max-w-[380px] border-[#DBF9FF] rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] px-5 md:px-10 pt-5 md:pt-10 flex flex-col items-center justify-start duration-500 ${!active && 'pointer-events-none'}`}>
       <div className="flex items-center justify-center flex-col max-md:max-w-[320px]">
         <div className="md:w-[112px] w-20 aspect-square flex items-center justify-center rounded-full bg-[#B1DDFC] font-zenMaru font-black md:text-[64px] text-[32px] mb-6 md:mb-10">
           {number}
@@ -28,24 +29,49 @@ function MethodCard({ number, title, content, children }: methodCardType) {
 
 export default function SectionHow() {
   const animateRefs = useScrollAnimation("fadeUp");
-  const [currdeg, setCurrdeg] = useState(0);
+  const [currdeg, setCurrdeg] = useState<number>(0);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [isClosed, setIsClosed] = useState<boolean>(true);
+  const arrowRef = useRef<SVGSVGElement | null>(null);
+  const [startX, setStartX] = useState<number>(0);
+  const [endX, setEndX] = useState<number>(0);
+
+  const [activeSlide, setActiveSlide] = useState<number>(1)
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    setStartX(event.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const deltaX = endX - startX;
+    const sensitivity = 50;
+    if (deltaX > sensitivity) {
+      rotate('p');
+
+    } else if (deltaX < -sensitivity) {
+      rotate('n');
+    }
+  };
 
   const rotate = (direction: string) => {
-    if (direction === "n") {
-      setCurrdeg(currdeg - 90);
-    } else if (direction === "p") {
-      setCurrdeg(currdeg + 90);
-    }
+    const newCurrdeg = direction === "n" ? currdeg - 90 : currdeg + 90;
+    const newActiveSlide = direction === "n" ? (activeSlide < 4 ? activeSlide + 1 : 1) : (activeSlide === 1 ? 4 : activeSlide - 1);
+    setCurrdeg(newCurrdeg);
+    setActiveSlide(newActiveSlide);
   };
 
   const handleExpanderClick = () => {
     const $content = contentRef.current;
+    const $arrow = arrowRef.current;
     if (isClosed) {
       gsap.set($content, { height: "auto" });
       gsap.from($content, { duration: 0.2, height: 0 });
+      gsap.to($arrow, { duration: 0.1, rotation: -180 });
       setIsClosed(false);
+    } else {
+      gsap.to($content, { duration: 0.2, height: 0 });
+      gsap.to($arrow, { duration: 0.1, rotation: 0 });
+      setIsClosed(true);
     }
   };
   return (
@@ -98,11 +124,11 @@ export default function SectionHow() {
             </p>
             <div className="flex justify-center">
               <p className="md:text-[16px] text-[14px] pt-4 leading-snug">
-                紙の名刺があるので全て丸投げしたい
+              ● 紙の名刺があるので全て丸投げしたい
                 <br />
-                少しの日数なら待てる
+                ● 少しの日数なら待てる
                 <br />
-                フォームの入力が面倒
+                ● フォームの入力が面倒
               </p>
             </div>
           </div>
@@ -110,71 +136,79 @@ export default function SectionHow() {
       </SectionTitle>
       <div className="relative overflow-hidden max-md:mt-24">
         <div className="w-full max-w-[1324px] mx-auto px-5 ">
-          <h4
+          <button type="button"
             ref={animateRefs}
-            className="opacity-0 md:text-[80px] text-[40px] font-bold leading-none"
+            onClick={handleExpanderClick}
+            className="opacity-0 md:text-[80px] text-[40px] font-bold leading-none flex items-center gap-4"
           >
-            受取方法
-          </h4>
+            <span>受取方法</span>
+            <svg ref={arrowRef}
+                  className="max-md:w-[40px]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="53"
+                  height="28"
+                  viewBox="0 0 53 28"
+                  fill="none"
+                >
+                  <path
+                    d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
+                    stroke="#22ABF3"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+          </button>
         </div>
-        <div ref={contentRef} className="h-[240px] overflow-hidden relative">
-          {isClosed && (
+        <div ref={contentRef} className="h-0 overflow-hidden relative">
             <button
-              type="button"
-              onClick={handleExpanderClick}
-              className="bg-[linear-gradient(0deg,_rgba(255,255,255,1)_0%,_rgba(14,255,255,0)_100%)] absolute inset-0 z-10 flex items-end p-5 justify-center"
+              className="w-[50px] aspect-square rounded-full bg-white md:w-[100px]  [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] z-50 absolute border-2 border-[#22ABF3] top-1/2 -translate-y-1/2 flex justify-center items-center right-4 md:right-[calc(50%-310px)]"
+              onClick={() => rotate("n")}
             >
-              <img
-                className="animate-[fade-in-down_2s_ease_infinite]"
-                src="/images/arrow-down.png"
-                alt=""
-              />
+              <svg
+                className="-rotate-90 max-md:w-7"
+                xmlns="http://www.w3.org/2000/svg"
+                width="53"
+                height="28"
+                viewBox="0 0 53 28"
+                fill="none"
+              >
+                <path
+                  d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
+                  stroke="#22ABF3"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </button>
-          )}
-          <div className="w-full max-w-[1324px] mx-auto px-5 ">
+            <button
+              className="w-[50px] aspect-square rounded-full bg-white [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:w-[100px] border-2 border-[#22ABF3] z-50 absolute top-1/2 -translate-y-1/2 flex justify-center items-center left-4 md:left-[calc(50%-300px)]"
+              onClick={() => rotate("p")}
+            >
+              <svg
+                className="rotate-90 max-md:w-7"
+                xmlns="http://www.w3.org/2000/svg"
+                width="53"
+                height="28"
+                viewBox="0 0 53 28"
+                fill="none"
+              >
+                <path
+                  d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
+                  stroke="#22ABF3"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          <div
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                onTouchMove={(event) => setEndX(event.touches[0].clientX)} className="w-full max-w-[1324px] mx-auto px-5 ">
             <div className="mt-12 relative w-[70vw] md:w-[380px] h-[540px] md:h-[610px] mx-auto [perspective:1000px]">
-              <button
-                className="h-full w-[10vw] md:w-[100px] z-10 absolute top-1/2 -translate-y-1/2 flex justify-center items-center right-[-15%] md:right-[-120px]"
-                onClick={() => rotate("n")}
-              >
-                <svg
-                  className="-rotate-90"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="53"
-                  height="28"
-                  viewBox="0 0 53 28"
-                  fill="none"
-                >
-                  <path
-                    d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
-                    stroke="#22ABF3"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-              <button
-                className="h-full w-[10vw] md:w-[100px] z-10 absolute top-1/2 -translate-y-1/2 flex justify-center items-center left-[-15%] md:left-[-120px]"
-                onClick={() => rotate("p")}
-              >
-                <svg
-                  className="rotate-90"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="53"
-                  height="28"
-                  viewBox="0 0 53 28"
-                  fill="none"
-                >
-                  <path
-                    d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
-                    stroke="#22ABF3"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+              
               <div
                 className="h-full w-full absolute [transform-style:preserve-3d] [transition:transform_1s]"
                 style={{ transform: `rotateY(${currdeg}deg)` }}
@@ -182,6 +216,7 @@ export default function SectionHow() {
                 <div className="absolute [transform:rotateY(0deg)_translateZ(40vw)] md:[transform:rotateY(0deg)_translateZ(250px)]">
                   <MethodCard
                     number="01"
+                    active={activeSlide === 1}
                     title="アプリをダウンロード"
                     content="アプリDIVER Bizのダウンロードおよび初期設定が完了後、受信用アドレスをご確認ください。デジ名刺申し込み時に入力する必要があります。"
                   >
@@ -213,6 +248,7 @@ export default function SectionHow() {
                 <div className="absolute md:[transform:rotateY(90deg)_translateZ(250px)] [transform:rotateY(90deg)_translateZ(40vw)]">
                   <MethodCard
                     number="02"
+                    active={activeSlide === 2}
                     title="フォームを入力"
                     content={
                       <>
@@ -233,6 +269,7 @@ export default function SectionHow() {
                 <div className="absolute md:[transform:rotateY(180deg)_translateZ(250px)] [transform:rotateY(180deg)_translateZ(40vw)]">
                   <MethodCard
                     number="03"
+                    active={activeSlide === 3}
                     title="NFT名刺を確認"
                     content="フォームに入力したアドレス宛にNFT名刺が発行されます。アプリDIVER Bizを開いてご確認ください。"
                   >
@@ -264,6 +301,7 @@ export default function SectionHow() {
                 <div className="absolute md:[transform:rotateY(270deg)_translateZ(250px)] [transform:rotateY(270deg)_translateZ(40vw)]">
                   <MethodCard
                     number="04"
+                    active={activeSlide === 4}
                     title="NFT名刺をシェアする"
                     content="DIVER Bizから、あなたのNFT名刺をシェアしましょう。"
                   >
