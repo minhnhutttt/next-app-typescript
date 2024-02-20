@@ -6,7 +6,6 @@ interface InputFormProps {
   sm?: boolean;
   type: string;
   name: string;
-  value: string;
   placeholder?: string;
 }
 export default function FormInput({
@@ -15,7 +14,6 @@ export default function FormInput({
   sm,
   type,
   name,
-  value,
   placeholder,
 }: InputFormProps) {
   return (
@@ -32,7 +30,6 @@ export default function FormInput({
         <input
           type={type}
           name={name}
-          value={value}
           placeholder={placeholder}
           className="w-full h-[50px] md:h-[70px] rounded-[10px] px-4 md:px-7 md:text-[18px] text-[14px] placeholder-[#B9B9B9] bg-[#EFF2F6]"
         />

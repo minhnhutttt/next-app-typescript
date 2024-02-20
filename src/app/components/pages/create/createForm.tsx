@@ -2,7 +2,7 @@
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import FormInput from "../../form/formInput";
 import FormArea from "../../form/formArea";
-export default function ContactForm() {
+export default function CreateForm() {
   const animateRefs = useScrollAnimation("zoom");
   return (
     <div className="px-5 md:mb-[160px] mb-16 font-noto" id="top">
@@ -26,28 +26,24 @@ export default function ContactForm() {
               label="名前"
               required
               name=""
-              value=""
               placeholder="例：山田　太郎"
             />
             <FormInput
               type="text"
               label="ふりがな"
               name=""
-              value=""
               placeholder="例：やまだ　たろう"
             />
             <FormInput
               type="text"
               label="会社名"
               name=""
-              value=""
               placeholder="例：株式会社○○○○○○"
             />
             <FormInput
               type="text"
               label="部署・役職"
               name=""
-              value=""
               placeholder="例：代表取締役"
             />
             <FormInput
@@ -55,68 +51,58 @@ export default function ContactForm() {
               label="郵便番号"
               sm
               name=""
-              value=""
               placeholder="123-4567"
             />
             <FormInput
               type="text"
               label="住所"
               name=""
-              value=""
               placeholder="新宿区品川１丁目２−３"
             />
             <FormInput
               type="text"
               label="電話番号"
               name=""
-              value=""
               placeholder="例：03-1234-5678"
             />
             <FormInput
               type="text"
               label="携帯番号"
               name=""
-              value=""
               placeholder="例：090-1234-5678"
             />
             <FormInput
               type="text"
               label="メールアドレス"
               name=""
-              value=""
               placeholder="例：abc@sample.com"
             />
             <FormInput
               type="text"
               label="営業時間"
               name=""
-              value=""
               placeholder="マンション名101"
             />
             <FormInput
               type="text"
               label="ウェブサイト"
               name=""
-              value=""
               placeholder="マンション名101"
             />
             <FormInput
               type="text"
               label="SNS"
               name=""
-              value=""
               placeholder="マンション名101"
             />
             <FormArea
               label="事業内容/業務内容"
               name=""
-              value=""
               placeholder="事業内容やご自身が担当する業務内容など、相手に伝えたいことを自由にご記入ください。"
             />
             <FormArea
               label="その他"
               name=""
-              value=""
               placeholder="会社概要や、追加情報などがあればご記入ください。"
             />
           </div>

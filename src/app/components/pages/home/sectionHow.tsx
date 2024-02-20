@@ -12,9 +12,17 @@ type methodCardType = {
   children: ReactNode;
 };
 
-function MethodCard({ number, title, active, content, children }: methodCardType) {
+function MethodCard({
+  number,
+  title,
+  active,
+  content,
+  children,
+}: methodCardType) {
   return (
-    <div className={`bg-white scale-75 border w-[70vw] h-[500px] md:h-[597px] md:w-full md:max-w-[380px] border-[#DBF9FF] rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] px-5 md:px-10 pt-5 md:pt-10 flex flex-col items-center justify-start duration-500 ${!active && 'pointer-events-none'}`}>
+    <div
+      className={`bg-white scale-75 border w-[70vw] h-[500px] md:h-[597px] md:w-full md:max-w-[380px] border-[#DBF9FF] rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] px-5 md:px-10 pt-5 md:pt-10 flex flex-col items-center justify-start duration-500 ${!active && "pointer-events-none"}`}
+    >
       <div className="flex items-center justify-center flex-col max-md:max-w-[320px]">
         <div className="md:w-[112px] w-20 aspect-square flex items-center justify-center rounded-full bg-[#B1DDFC] font-zenMaru font-black md:text-[64px] text-[32px] mb-6 md:mb-10">
           {number}
@@ -36,7 +44,7 @@ export default function SectionHow() {
   const [startX, setStartX] = useState<number>(0);
   const [endX, setEndX] = useState<number>(0);
 
-  const [activeSlide, setActiveSlide] = useState<number>(1)
+  const [activeSlide, setActiveSlide] = useState<number>(1);
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     setStartX(event.touches[0].clientX);
@@ -46,16 +54,22 @@ export default function SectionHow() {
     const deltaX = endX - startX;
     const sensitivity = 50;
     if (deltaX > sensitivity) {
-      rotate('p');
-
+      rotate("p");
     } else if (deltaX < -sensitivity) {
-      rotate('n');
+      rotate("n");
     }
   };
 
   const rotate = (direction: string) => {
     const newCurrdeg = direction === "n" ? currdeg - 90 : currdeg + 90;
-    const newActiveSlide = direction === "n" ? (activeSlide < 4 ? activeSlide + 1 : 1) : (activeSlide === 1 ? 4 : activeSlide - 1);
+    const newActiveSlide =
+      direction === "n"
+        ? activeSlide < 4
+          ? activeSlide + 1
+          : 1
+        : activeSlide === 1
+          ? 4
+          : activeSlide - 1;
     setCurrdeg(newCurrdeg);
     setActiveSlide(newActiveSlide);
   };
@@ -124,11 +138,10 @@ export default function SectionHow() {
             </p>
             <div className="flex justify-center">
               <p className="md:text-[16px] text-[14px] pt-4 leading-snug">
-              ● 紙の名刺があるので全て丸投げしたい
+                ● 紙の名刺があるので全て丸投げしたい
                 <br />
                 ● 少しの日数なら待てる
-                <br />
-                ● フォームの入力が面倒
+                <br />● フォームの入力が面倒
               </p>
             </div>
           </div>
@@ -136,79 +149,82 @@ export default function SectionHow() {
       </SectionTitle>
       <div className="relative overflow-hidden max-md:mt-24">
         <div className="w-full max-w-[1324px] mx-auto px-5 ">
-          <button type="button"
+          <button
+            type="button"
             ref={animateRefs}
             onClick={handleExpanderClick}
             className="opacity-0 md:text-[80px] text-[40px] font-bold leading-none flex items-center gap-4"
           >
             <span>受取方法</span>
-            <svg ref={arrowRef}
-                  className="max-md:w-[40px]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="53"
-                  height="28"
-                  viewBox="0 0 53 28"
-                  fill="none"
-                >
-                  <path
-                    d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
-                    stroke="#22ABF3"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+            <svg
+              ref={arrowRef}
+              className="max-md:w-[40px]"
+              xmlns="http://www.w3.org/2000/svg"
+              width="53"
+              height="28"
+              viewBox="0 0 53 28"
+              fill="none"
+            >
+              <path
+                d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
+                stroke="#22ABF3"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
         </div>
         <div ref={contentRef} className="h-0 overflow-hidden relative">
-            <button
-              className="w-[50px] aspect-square rounded-full bg-white md:w-[100px]  [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] z-50 absolute border-2 border-[#22ABF3] top-1/2 -translate-y-1/2 flex justify-center items-center right-4 md:right-[calc(50%-310px)]"
-              onClick={() => rotate("n")}
+          <button
+            className="w-[50px] aspect-square rounded-full bg-white md:w-[100px]  [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] z-50 absolute border-2 border-[#22ABF3] top-1/2 -translate-y-1/2 flex justify-center items-center right-4 md:right-[calc(50%-310px)]"
+            onClick={() => rotate("n")}
+          >
+            <svg
+              className="-rotate-90 max-md:w-7"
+              xmlns="http://www.w3.org/2000/svg"
+              width="53"
+              height="28"
+              viewBox="0 0 53 28"
+              fill="none"
             >
-              <svg
-                className="-rotate-90 max-md:w-7"
-                xmlns="http://www.w3.org/2000/svg"
-                width="53"
-                height="28"
-                viewBox="0 0 53 28"
-                fill="none"
-              >
-                <path
-                  d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
-                  stroke="#22ABF3"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-            <button
-              className="w-[50px] aspect-square rounded-full bg-white [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:w-[100px] border-2 border-[#22ABF3] z-50 absolute top-1/2 -translate-y-1/2 flex justify-center items-center left-4 md:left-[calc(50%-300px)]"
-              onClick={() => rotate("p")}
+              <path
+                d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
+                stroke="#22ABF3"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            className="w-[50px] aspect-square rounded-full bg-white [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:w-[100px] border-2 border-[#22ABF3] z-50 absolute top-1/2 -translate-y-1/2 flex justify-center items-center left-4 md:left-[calc(50%-300px)]"
+            onClick={() => rotate("p")}
+          >
+            <svg
+              className="rotate-90 max-md:w-7"
+              xmlns="http://www.w3.org/2000/svg"
+              width="53"
+              height="28"
+              viewBox="0 0 53 28"
+              fill="none"
             >
-              <svg
-                className="rotate-90 max-md:w-7"
-                xmlns="http://www.w3.org/2000/svg"
-                width="53"
-                height="28"
-                viewBox="0 0 53 28"
-                fill="none"
-              >
-                <path
-                  d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
-                  stroke="#22ABF3"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+              <path
+                d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
+                stroke="#22ABF3"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
           <div
-                onTouchStart={handleTouchStart}
-                onTouchEnd={handleTouchEnd}
-                onTouchMove={(event) => setEndX(event.touches[0].clientX)} className="w-full max-w-[1324px] mx-auto px-5 ">
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            onTouchMove={(event) => setEndX(event.touches[0].clientX)}
+            className="w-full max-w-[1324px] mx-auto px-5 "
+          >
             <div className="mt-12 relative w-[70vw] md:w-[380px] h-[540px] md:h-[610px] mx-auto [perspective:1000px]">
-              
               <div
                 className="h-full w-full absolute [transform-style:preserve-3d] [transition:transform_1s]"
                 style={{ transform: `rotateY(${currdeg}deg)` }}

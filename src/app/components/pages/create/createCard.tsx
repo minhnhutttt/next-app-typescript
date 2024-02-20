@@ -1,7 +1,7 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
-import type { HandleStepProps } from "./contactPlan";
-export default function ContactCard({ handleStep }: HandleStepProps) {
+import type { HandleStepProps } from "./createPlan";
+export default function CreateCard({ handleStep }: HandleStepProps) {
   const animateRefs = useScrollAnimation("zoom");
   return (
     <div className="px-5 md:mb-[100px] mb-12 font-noto" id="top">

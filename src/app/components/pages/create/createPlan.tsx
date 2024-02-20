@@ -6,7 +6,7 @@ import { useState } from "react";
 export interface HandleStepProps {
   handleStep: () => void;
 }
-export default function ContactPlan({ handleStep }: HandleStepProps) {
+export default function Createlan({ handleStep }: HandleStepProps) {
   const animateRefs = useScrollAnimation("zoom");
   const [selectedOption, setSelectedOption] = useState("");
 

@@ -17,8 +17,7 @@ export default function Header() {
         </a>
         <div className="flex items-center justify-end">
           <a
-            href=""
-            target="_blank"
+            href="/create"
             className="flex items-center justify-center border-[3px] border-black md:px-[27px] md:py-[17px] px-5 py-3 gap-2.5 tracking-widest leading-snug font-bold [font-size:_clamp(11px,3.2vw,14px)] md:text-[20px] bg-[#F4F844] text-black rounded-2xl md:rounded-[44px] duration-300 hover:opacity-75"
           >
             <img className="max-md:w-6" src="/images/ic-card.svg" alt="" />

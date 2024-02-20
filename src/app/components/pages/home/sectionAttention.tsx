@@ -17,9 +17,10 @@ export default function SectionAttention() {
         <div className="w-full pt-8 md:pt-[70px]">
           <div className="px-3 md:px-5 xl:px-6 pb-14 max-md:flex-col-reverse md:pb-[10vw] w-full flex items-center md:max-w-[640px] max-w-[440px] mx-auto">
             <p className="block lg:text-[32px] md:text-[24px] text-[20px] font-bold flex-1">
-              NFT名刺が保管されたアドレスをスキャンされると大事な名刺情報が丸見えにならないの？<br />
+              NFT名刺が保管されたアドレスをスキャンされると大事な名刺情報が丸見えにならないの？
+              <br />
               <span className="md:text-[16px] text-[13px] leading-snug inline-block mt-4">
-              ※アドレススキャン：NFTはブロックチェーンという技術を活用しており、ブロックチェーンの特徴に「透明性」というものがあります。透明性を確保する方法がアドレススキャンでであり、誰でもアドレスを検索するだけでそのアドレスで管理されているNFTや暗号通貨の取引履歴や残高を閲覧することができます。
+                ※アドレススキャン：NFTはブロックチェーンという技術を活用しており、ブロックチェーンの特徴に「透明性」というものがあります。透明性を確保する方法がアドレススキャンでであり、誰でもアドレスを検索するだけでそのアドレスで管理されているNFTや暗号通貨の取引履歴や残高を閲覧することができます。
               </span>
             </p>
             <figure>

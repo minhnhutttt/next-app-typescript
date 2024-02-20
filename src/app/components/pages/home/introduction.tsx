@@ -105,7 +105,9 @@ export default function Introduction() {
               />
             </div>
             <p className="text-[16px] md:text-[20px] lg:text-[24px] font-bold mt-2 md:mt-1 tracking-[0.4em]">
-              全てのビジネスマンに<br className="md:hidden" />未来を実装！
+              全てのビジネスマンに
+              <br className="md:hidden" />
+              未来を実装！
             </p>
             <p className="lg:text-[34px] md:text-[24px] text-[20px] font-black tracking-[0.2em] leading-tight max-md:mt-3">
               <span className=" border-b-2 border-[#323232]">
@@ -121,7 +123,7 @@ export default function Introduction() {
             </p>
             <div className="flex justify-center">
               <a
-                href="/"
+                href="/create"
                 className="md:w-[426px] md:h-[85px] w-[260px] h-[48px] flex items-center justify-center rounded-[44px] bg-[#F4EA00] md:border-4 border-2 border-black md:text-[31px] text-[17px] md:gap-2.5 gap-1.5 font-bold tracking-widest"
               >
                 <span>無料で200枚つくる</span>
