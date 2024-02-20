@@ -128,7 +128,7 @@ export default function SectionWhy() {
       >
         <div className="overflow-hidden relative">
           <button
-            className="w-[50px] aspect-square rounded-full bg-white [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:w-[200px] z-10 absolute border-2 border-[#22ABF3] top-1/2 -translate-y-1/2 flex justify-center items-center right-4 md:right-[calc(50%-450px)] lg:right-[calc(50%-500px)]"
+            className="w-[50px] aspect-square rounded-full bg-white [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:w-[100px] z-10 absolute border-2 border-[#22ABF3] top-1/2 -translate-y-1/2 flex justify-center items-center right-4 md:right-[calc(50%-450px)] lg:right-[calc(50%-400px)]"
             onClick={() => rotate("n")}
           >
             <svg
@@ -149,7 +149,7 @@ export default function SectionWhy() {
             </svg>
           </button>
           <button
-            className="w-[50px] aspect-square rounded-full bg-white [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:w-[200px] z-10 absolute border-2 border-[#22ABF3] top-1/2 -translate-y-1/2 flex justify-center items-center left-4 md:left-[calc(50%-450px)] lg:left-[calc(50%-500px)]"
+            className="w-[50px] aspect-square rounded-full bg-white [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:w-[100px] z-10 absolute border-2 border-[#22ABF3] top-1/2 -translate-y-1/2 flex justify-center items-center left-4 md:left-[calc(50%-450px)] lg:left-[calc(50%-400px)]"
             onClick={() => rotate("p")}
           >
             <svg

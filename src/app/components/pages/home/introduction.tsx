@@ -123,7 +123,7 @@ export default function Introduction() {
             </p>
             <div className="flex justify-center">
               <a
-                href="/create"
+                href="/form"
                 className="md:w-[426px] md:h-[85px] w-[260px] h-[48px] flex items-center justify-center rounded-[44px] bg-[#F4EA00] md:border-4 border-2 border-black md:text-[31px] text-[17px] md:gap-2.5 gap-1.5 font-bold tracking-widest"
               >
                 <span>無料で200枚つくる</span>

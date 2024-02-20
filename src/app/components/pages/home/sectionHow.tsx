@@ -198,7 +198,7 @@ export default function SectionHow() {
             </svg>
           </button>
           <button
-            className="w-[50px] aspect-square rounded-full bg-white [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:w-[100px] border-2 border-[#22ABF3] z-50 absolute top-1/2 -translate-y-1/2 flex justify-center items-center left-4 md:left-[calc(50%-300px)]"
+            className="w-[50px] aspect-square rounded-full bg-white [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:w-[100px] border-2 border-[#22ABF3] z-50 absolute top-1/2 -translate-y-1/2 flex justify-center items-center left-4 md:left-[calc(50%-310px)]"
             onClick={() => rotate("p")}
           >
             <svg
