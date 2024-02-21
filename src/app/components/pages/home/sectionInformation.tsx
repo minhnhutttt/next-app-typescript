@@ -34,7 +34,7 @@ export default function SectionInformation() {
       </SectionTitle>
       <div
         ref={animateRefs}
-        className="opacity-0 w-full max-w-[1035px] mx-auto flex max-md:flex-col items-center justify-center mt-8 px-5 lg:gap-[90px] gap-10"
+        className="opacity-0 w-full max-w-[1035px] mx-auto flex max-md:flex-col-reverse items-center justify-center mt-8 px-5 lg:gap-[90px] gap-10"
       >
         <div className="flex flex-col items-center">
           <figure>
@@ -44,10 +44,10 @@ export default function SectionInformation() {
               alt=""
             />
           </figure>
-          <p className="md:text-[16px] text-[12px] font-bold">
-            ※任意の情報はすべて入力されることを推奨しています。
+          <p className="md:text-[16px] text-[13px] font-bold">
+            ※NFT名刺受け取り用ウォレット
             <br />
-            というテキストの下です。
+            アドレスの取得（コピー）画面
           </p>
         </div>
         <div className="flex-1">

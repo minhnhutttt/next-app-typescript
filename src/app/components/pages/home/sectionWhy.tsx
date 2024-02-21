@@ -77,7 +77,6 @@ export default function SectionWhy() {
     setCurrdeg(newCurrdeg);
     setActiveSlide(newActiveSlide);
     getAdjacentNumbers(newActiveSlide);
-    console.log(activeSlide);
   };
 
   function getAdjacentNumbers(active: number) {
