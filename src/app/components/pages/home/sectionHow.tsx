@@ -21,7 +21,7 @@ function MethodCard({
 }: methodCardType) {
   return (
     <div
-      className={`bg-white scale-75 border w-[70vw] h-[500px] md:h-[597px] md:w-full md:max-w-[380px] border-[#DBF9FF] rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] px-5 md:px-10 pt-5 md:pt-10 flex flex-col items-center justify-start duration-500 ${!active && "pointer-events-none"}`}
+      className={`bg-white scale-75 border w-[70vw] h-[500px] md:h-[597px] md:w-full md:max-w-[380px] border-[#DBF9FF] rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] px-5 md:px-10 pt-5 md:pt-10 flex flex-col items-center justify-start duration-500 ${!active && "blur-sm opacity-40 pointer-events-none"}`}
     >
       <div className="flex items-center justify-center flex-col max-md:max-w-[320px]">
         <div className="md:w-[112px] w-20 aspect-square flex items-center justify-center rounded-full bg-[#B1DDFC] font-zenMaru font-black md:text-[64px] text-[32px] mb-6 md:mb-10">
@@ -40,11 +40,11 @@ export default function SectionHow() {
   const [currdeg, setCurrdeg] = useState<number>(0);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [isClosed, setIsClosed] = useState<boolean>(true);
-  const arrowRef = useRef<SVGSVGElement | null>(null);
   const [startX, setStartX] = useState<number>(0);
   const [endX, setEndX] = useState<number>(0);
 
   const [activeSlide, setActiveSlide] = useState<number>(1);
+  const [arrSlide, setArrSlide] = useState<number[]>([4, 1, 2]);
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     setStartX(event.touches[0].clientX);
@@ -70,21 +70,28 @@ export default function SectionHow() {
         : activeSlide === 1
           ? 4
           : activeSlide - 1;
-    setCurrdeg(newCurrdeg);
-    setActiveSlide(newActiveSlide);
+      setCurrdeg(newCurrdeg);
+      setActiveSlide(newActiveSlide);
+      getAdjacentNumbers(newActiveSlide);
   };
+
+  function getAdjacentNumbers(active: number) {
+    const totalNumbers = 4;
+    const adjacentNumbers = [];
+    adjacentNumbers.push(((active - 2 + totalNumbers) % totalNumbers) + 1);
+    adjacentNumbers.push(active);
+    adjacentNumbers.push((active % totalNumbers) + 1);
+    setArrSlide(adjacentNumbers);
+  }
 
   const handleExpanderClick = () => {
     const $content = contentRef.current;
-    const $arrow = arrowRef.current;
     if (isClosed) {
       gsap.set($content, { height: "auto" });
       gsap.from($content, { duration: 0.2, height: 0 });
-      gsap.to($arrow, { duration: 0.1, rotation: -180 });
       setIsClosed(false);
     } else {
       gsap.to($content, { duration: 0.2, height: 0 });
-      gsap.to($arrow, { duration: 0.1, rotation: 0 });
       setIsClosed(true);
     }
   };
@@ -156,23 +163,11 @@ export default function SectionHow() {
             className="opacity-0 md:text-[80px] text-[40px] font-bold leading-none flex items-center gap-4"
           >
             <span>受取方法</span>
-            <svg
-              ref={arrowRef}
-              className="max-md:w-[40px]"
-              xmlns="http://www.w3.org/2000/svg"
-              width="53"
-              height="28"
-              viewBox="0 0 53 28"
-              fill="none"
-            >
-              <path
-                d="M49.6667 3.3335L26.5 24.6668L3.33331 3.3335"
-                stroke="#22ABF3"
-                strokeWidth="6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            {isClosed ?
+              <span className={`before:cursor-pointer before:border-[solid] before:border-[#d8d8d8] before:p-[5px] before:text-[16px] md:before:text-[28px] md:before:ml-[5px] before:rounded-[5px] before:border-0 before:text-[#999] before:content-['［_▲_CLOSE］']`}></span>
+              :
+              <span className={`before:cursor-pointer before:border-[solid] before:border-[#d8d8d8] before:p-[5px] before:text-[16px] md:before:text-[28px] md:before:ml-[5px] before:rounded-[5px] before:border-0 before:text-[#999] before:content-['［_▼_OPEN］']`}></span>
+            }
           </button>
         </div>
         <div ref={contentRef} className="h-0 overflow-hidden relative">
@@ -232,7 +227,7 @@ export default function SectionHow() {
                 <div className="absolute [transform:rotateY(0deg)_translateZ(40vw)] md:[transform:rotateY(0deg)_translateZ(250px)]">
                   <MethodCard
                     number="01"
-                    active={activeSlide === 1}
+                    active={arrSlide.includes(1)}
                     title="アプリをダウンロード"
                     content="アプリDIVER Bizのダウンロードおよび初期設定が完了後、受信用アドレスをご確認ください。デジ名刺申し込み時に入力する必要があります。"
                   >
@@ -264,7 +259,7 @@ export default function SectionHow() {
                 <div className="absolute md:[transform:rotateY(90deg)_translateZ(250px)] [transform:rotateY(90deg)_translateZ(40vw)]">
                   <MethodCard
                     number="02"
-                    active={activeSlide === 2}
+                    active={arrSlide.includes(2)}
                     title="フォームを入力"
                     content={
                       <>
@@ -285,7 +280,7 @@ export default function SectionHow() {
                 <div className="absolute md:[transform:rotateY(180deg)_translateZ(250px)] [transform:rotateY(180deg)_translateZ(40vw)]">
                   <MethodCard
                     number="03"
-                    active={activeSlide === 3}
+                    active={arrSlide.includes(3)}
                     title="NFT名刺を確認"
                     content="フォームに入力したアドレス宛にNFT名刺が発行されます。アプリDIVER Bizを開いてご確認ください。"
                   >
@@ -317,7 +312,7 @@ export default function SectionHow() {
                 <div className="absolute md:[transform:rotateY(270deg)_translateZ(250px)] [transform:rotateY(270deg)_translateZ(40vw)]">
                   <MethodCard
                     number="04"
-                    active={activeSlide === 4}
+                    active={arrSlide.includes(4)}
                     title="NFT名刺をシェアする"
                     content="DIVER Bizから、あなたのNFT名刺をシェアしましょう。"
                   >
