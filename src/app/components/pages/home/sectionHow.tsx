@@ -164,9 +164,9 @@ export default function SectionHow() {
           >
             <span>受取方法</span>
             {isClosed ?
-              <span className={`before:cursor-pointer before:border-[solid] before:border-[#d8d8d8] before:p-[5px] before:text-[16px] md:before:text-[28px] md:before:ml-[5px] before:rounded-[5px] before:border-0 before:text-[#999] before:content-['［_▲_CLOSE］']`}></span>
-              :
               <span className={`before:cursor-pointer before:border-[solid] before:border-[#d8d8d8] before:p-[5px] before:text-[16px] md:before:text-[28px] md:before:ml-[5px] before:rounded-[5px] before:border-0 before:text-[#999] before:content-['［_▼_OPEN］']`}></span>
+              :
+              <span className={`before:cursor-pointer before:border-[solid] before:border-[#d8d8d8] before:p-[5px] before:text-[16px] md:before:text-[28px] md:before:ml-[5px] before:rounded-[5px] before:border-0 before:text-[#999] before:content-['［_▲_CLOSE］']`}></span>
             }
           </button>
         </div>
