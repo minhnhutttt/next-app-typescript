@@ -15,6 +15,7 @@ type AnimationType =
 const useScrollAnimation = (
   animationType: AnimationType,
   delay: number = 0,
+  duration: number = 0.5,
 ): ((el: HTMLElement | null) => void) => {
   const elements = useRef<Array<HTMLElement>>([]);
 
@@ -49,7 +50,7 @@ const useScrollAnimation = (
           x: 0,
           xPercent: 0,
           opacity: 1,
-          duration: 0.5,
+          duration,
           scaleX: 1,
           scaleY: 1,
           delay,

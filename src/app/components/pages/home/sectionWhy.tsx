@@ -24,7 +24,7 @@ function ReasonCard({
     >
       <div className="relative w-full flex justify-center">
         <img className="max-md:h-[80px]" src={number} alt="" />
-        <div className="absolute flex items-center justify-center inset-0 md:text-[20px] text-[15.5px] font-bold text-center [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)]">
+        <div className="absolute flex items-center justify-center inset-0 md:text-[20px] text-[14px] font-bold text-center [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)]">
           {title}
         </div>
       </div>

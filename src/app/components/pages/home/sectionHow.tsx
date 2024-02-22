@@ -124,7 +124,7 @@ export default function SectionHow() {
             <span className="glider absolute flex h-[54px] w-[30vw] bg-[#e6eef9] rounded-[99px] [transition:0.25s_ease-out]"></span>
           </div>
           </div>
-          <div className="flex max-lg:flex-wrap justify-center gap-6 xl:gap-9 pt-10 md:pt-[132px] px-6 xl:px-12">
+          <div className={`flex max-lg:flex-wrap justify-center gap-6 xl:gap-9 pt-10 md:pt-[132px] px-6 xl:px-12 ${tabActive === 3 ? 'max-md:hidden' : 'max-md:flex'}`}>
             <div className={`lg:w-1/2 max-w-[380px] bg-white border botder-[#DBF9FF] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] rounded-[20px] p-6 xl:p-10 duration-150 ${tabActive === 1 ? 'max-md:block' : 'max-md:hidden'}`}>
               <figure className="flex justify-center">
                 <img src="/images/image-how-01.png" alt="自分で作る" />
@@ -174,7 +174,7 @@ export default function SectionHow() {
         </div>
       </SectionTitle>
       <div className={`relative overflow-hidden ${tabActive === 3 ? 'max-md:block' : 'max-md:hidden'}`}>
-        <div className="w-full max-w-[1324px] mx-auto px-5 ">
+        <div className="w-full max-w-[1324px] mx-auto px-5 max-md:hidden">
           <button
             type="button"
             ref={animateRefs}
@@ -240,7 +240,7 @@ export default function SectionHow() {
             onTouchMove={(event) => setEndX(event.touches[0].clientX)}
             className="w-full max-w-[1324px] mx-auto px-5 "
           >
-            <div className="mt-12 relative w-[70vw] md:w-[380px] h-[540px] md:h-[610px] mx-auto [perspective:1000px]">
+            <div className="mt-[10vw] md:mt-12 relative w-[70vw] md:w-[380px] h-[540px] md:h-[610px] mx-auto [perspective:1000px]">
               <div
                 className="h-full w-full absolute [transform-style:preserve-3d] [transition:transform_1s]"
                 style={{ transform: `rotateY(${currdeg}deg)` }}
