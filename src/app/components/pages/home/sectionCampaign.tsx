@@ -20,23 +20,23 @@ export default function SectionCampaign() {
           </>
         }
       >
-        <div className="lg:px-[56px] px-8 w-full pt-[80px] lg:pt-[120px] md:pb-[130px] pb-[10vw]">
-          <div className="flex max-lg:flex-col justify-center items-center w-full md:max-w-[682px] max-w-[400px] mx-auto gap-4">
-            <div className="relative">
-              <div className="flex md:ml-10">
-                <div className="xl:w-[392px] w-[320px] h-[82px] xl:h-[100px] flex items-center justify-center">
+        <div className="lg:px-[56px] pl-8 w-full pt-[80px] xl:pt-[120px] md:pt-[150px] md:pb-[130px] pb-[15vw] overflow-hidden">
+          <div className="flex justify-center md:justify-start items-center w-full md:max-w-[682px] max-w-[500px] mx-auto gap-4">
+            <div className="relative max-md:flex max-md:flex-col max-md:items-end">
+              <div className="flex ml-10">
+                <div className="w-[70vw] md:w-[38.281vw] lg:w-[392px] flex items-center md:justify-center justify-end">
                   <img src="/images/image-campaign-sub.png" alt="" />
                 </div>
               </div>
-              <h5 className="xl:text-[40px] lg:text-[32px] text-[28px] font-bold xl:-mt-5 tracking-widest">
+              <h5 className="lg:text-[40px] max-md:text-center md:text-[3.906vw] [font-size:_clamp(20px,6vw,32px)] font-bold -mt-2 md:-mt-5 tracking-widest max-md:mr-[6vw]">
                 全てのビジネスマン
                 <br />
                 に未来を実装！
               </h5>
             </div>
-            <figure className="lg:ml-[-60px] max-lg:w-full max-lg:flex max-lg:justify-end max-md:mt-0 max-lg:mt-[-70px]">
+            <figure className="md:ml-[-5.859vw] ml-[-10vw] lg:ml-[-60px] max-md:flex-[0_0_40vw] max-lg:flex-[0_0_180px] max-xl:flex-[0_0_260px] max-lg:w-full max-lg:flex max-lg:justify-end max-lg:mt-[-3.836vw]">
               <img
-                className="max-lg:max-w-[18vw] max-md:max-w-[200px]"
+                className="max-md:max-w-[40vw]"
                 src="/images/image-campaign.png"
                 alt=""
               />
@@ -54,7 +54,7 @@ export default function SectionCampaign() {
           <span className="md:text-[100px] text-[50px]">で</span>
         </div>
         <div className="text-center md:text-[100px] text-[45px] font-bold leading-none tracking-widest">
-          <span className="md:text-[155px] text-[64px] font-black">200</span>
+          <span className="md:text-[155px] text-[64px] font-black">500</span>
           枚つくる
         </div>
         <p className="text-center md:text-[20px] text-[14px] font-bold mt-2 tracking-widest">
@@ -96,7 +96,7 @@ export default function SectionCampaign() {
         <div className="flex max-md:flex-col md:gap-[60px] gap-8">
           <div className="md:w-1/2 md:border-[6px] border-[3px] border-[#22ABF3] bg-white p-8 rounded-[30px]">
             <p className="md:text-[36px] text-[24px] font-bold py-5 md:py-10 border-b border-[#22ABF3]">
-              200枚以上必要な方へ
+              500枚以上必要な方へ
             </p>
             <p className="md:text-[18px] text-[14px] font-medium py-4 md:py-7">
               公式LINEにてサポート対応中です！お友だち登録後、お気軽にメッセージをお送りください。その他ご質問やご相談も受け付けております！

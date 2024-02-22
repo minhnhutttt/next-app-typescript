@@ -45,6 +45,11 @@ export default function SectionHow() {
 
   const [activeSlide, setActiveSlide] = useState<number>(1);
   const [arrSlide, setArrSlide] = useState<number[]>([4, 1, 2]);
+  const [tabActive, setTabActive] = useState<number>(1);
+
+  const handleTabChange = (tabNumber: number) => {
+    setTabActive(tabNumber);
+  };
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     setStartX(event.touches[0].clientX);
@@ -105,72 +110,88 @@ export default function SectionHow() {
         }
         title="次世代名刺の作成・受け取り方法"
         content="次世代名刺は「自分で作る」方法と「サポートに依頼して作る」方法があります。"
+        noBg
       >
-        <div className="flex max-lg:flex-wrap justify-center gap-6 xl:gap-9 pt-10 md:pt-[132px] px-6 xl:px-12">
-          <div className="lg:w-1/2 max-w-[380px] bg-white border botder-[#DBF9FF] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] rounded-[20px] p-6 xl:p-10">
-            <figure className="flex justify-center">
-              <img src="/images/image-how-01.png" alt="自分で作る" />
-            </figure>
-            <h4 className="text-center text-[20px] md:text-[28px] font-medium mt-5 md:mt-9 tracking-widest min-h-[72px]">
-              自分で作る
-            </h4>
-            <p className="text-[14px] md:text-[16px] mt-3 md:mt-2">
-              「次世代名刺の作成・受け取りの流れ」をご確認ください。
-            </p>
-            <p className="text-center text-[18px] md:text-[20px] font-medium border-b-[3px] border-[#22ABF3] mt-3 md:mt-5 pb-2">
-              こんな人におすすめ！
-            </p>
-            <div className="flex justify-center">
-              <p className="md:text-[16px] text-[14px] pt-4 leading-snug">
-                ● フォーム入力が手間ではない
-                <br />
-                ● すぐに名刺が必要
-                <br />● 少しの日数も待てない
-              </p>
-            </div>
+        <div className="">
+          <div className="flex items-center justify-center md:hidden">
+            <div className="flex relative bg-[#fff] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] p-3 rounded-[99px]">
+            <input type="radio" id="radio-1" name="tabs" defaultChecked={tabActive === 1} onChange={() => handleTabChange(1)} className="hidden" />
+            <label className="z-10 flex items-center justify-center [font-size:_clamp(13px,3vw,20px)] h-[54px] w-[30vw] font-medium rounded-[99px] cursor-pointer [transition:color_0.15s_ease-in]" htmlFor="radio-1">自分で作る</label>
+            <input type="radio" id="radio-2" name="tabs" defaultChecked={tabActive === 2} onChange={() => handleTabChange(2)} className="hidden" />
+            <label className="z-10 flex items-center justify-center [font-size:_clamp(13px,3vw,20px)] h-[54px] w-[30vw] font-medium rounded-[99px] cursor-pointer [transition:color_0.15s_ease-in]" htmlFor="radio-2">サポートに依頼</label>
+            <input type="radio" id="radio-3" name="tabs" defaultChecked={tabActive === 3} onChange={() => handleTabChange(3)} className="hidden" />
+            <label className="z-10 flex items-center justify-center [font-size:_clamp(13px,3vw,20px)] h-[54px] w-[30vw] font-medium rounded-[99px] cursor-pointer [transition:color_0.15s_ease-in]" htmlFor="radio-3">受取方法を見る</label>
+            <span className="glider absolute flex h-[54px] w-[30vw] bg-[#e6eef9] rounded-[99px] [transition:0.25s_ease-out]"></span>
           </div>
-          <div className="lg:w-1/2 max-w-[380px] bg-white border botder-[#DBF9FF] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] rounded-[20px] p-6 xl:p-10">
-            <figure className="flex justify-center">
-              <img src="/images/image-how-02.png" alt="自分で作る" />
-            </figure>
-            <h4 className="text-center text-[20px] md:text-[28px] font-medium mt-5 md:mt-9 tracking-widest min-h-[72px] leading-tight">
-              サポートに <br />
-              依頼して作る
-            </h4>
-            <p className="text-[14px] md:text-[16px] mt-3 md:mt-2">
-              サポートLINEにて名刺に必要な情報をご確認後、1営業日以内にお届けします。
-            </p>
-            <p className="text-center text-[18px] md:text-[20px] font-medium border-b-[3px] border-[#22ABF3] mt-3 md:mt-5 pb-2">
-              こんな人におすすめ！
-            </p>
-            <div className="flex justify-center">
-              <p className="md:text-[16px] text-[14px] pt-4 leading-snug">
-                ● 紙の名刺があるので全て丸投げしたい
-                <br />
-                ● 少しの日数なら待てる
-                <br />● フォームの入力が面倒
+          </div>
+          <div className="flex max-lg:flex-wrap justify-center gap-6 xl:gap-9 pt-10 md:pt-[132px] px-6 xl:px-12">
+            <div className={`lg:w-1/2 max-w-[380px] bg-white border botder-[#DBF9FF] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] rounded-[20px] p-6 xl:p-10 duration-150 ${tabActive === 1 ? 'max-md:block' : 'max-md:hidden'}`}>
+              <figure className="flex justify-center">
+                <img src="/images/image-how-01.png" alt="自分で作る" />
+              </figure>
+              <h4 className="text-center text-[20px] md:text-[28px] font-medium mt-5 md:mt-9 tracking-widest min-h-[72px]">
+                自分で作る
+              </h4>
+              <p className="text-[14px] md:text-[16px] mt-3 md:mt-2">
+              「受取方法」タブをタップして受け取りの流れをご確認ください。
               </p>
+              <p className="text-center text-[18px] md:text-[20px] font-medium border-b-[3px] border-[#22ABF3] mt-3 md:mt-5 pb-2">
+                こんな人におすすめ！
+              </p>
+              <div className="flex justify-center">
+                <p className="md:text-[16px] text-[14px] pt-4 leading-snug">
+                  ● フォーム入力が手間ではない
+                  <br />
+                  ● すぐに名刺が必要
+                  <br />● 少しの日数も待てない
+                </p>
+              </div>
+            </div>
+            <div className={`lg:w-1/2 max-w-[380px] bg-white border botder-[#DBF9FF] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] rounded-[20px] p-6 xl:p-10  ${tabActive === 2 ? 'max-md:block' : 'max-md:hidden'}`}>
+              <figure className="flex justify-center">
+                <img src="/images/image-how-02.png" alt="自分で作る" />
+              </figure>
+              <h4 className="text-center text-[20px] md:text-[28px] font-medium mt-5 md:mt-9 tracking-widest min-h-[72px] leading-tight">
+                サポートに <br />
+                依頼して作る
+              </h4>
+              <p className="text-[14px] md:text-[16px] mt-3 md:mt-2">
+                サポートLINEにて名刺に必要な情報をご確認後、1営業日以内にお届けします。
+              </p>
+              <p className="text-center text-[18px] md:text-[20px] font-medium border-b-[3px] border-[#22ABF3] mt-3 md:mt-5 pb-2">
+                こんな人におすすめ！
+              </p>
+              <div className="flex justify-center">
+                <p className="md:text-[16px] text-[14px] pt-4 leading-snug">
+                  ● 紙の名刺があるので全て丸投げしたい
+                  <br />
+                  ● 少しの日数なら待てる
+                  <br />● フォームの入力が面倒
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </SectionTitle>
-      <div className="relative overflow-hidden max-md:mt-24">
+      <div className={`relative overflow-hidden ${tabActive === 3 ? 'max-md:block' : 'max-md:hidden'}`}>
         <div className="w-full max-w-[1324px] mx-auto px-5 ">
           <button
             type="button"
             ref={animateRefs}
             onClick={handleExpanderClick}
-            className="opacity-0 md:text-[80px] text-[40px] font-bold leading-none flex items-center gap-4"
+            className="opacity-0 md:text-[80px] text-[40px] font-bold leading-none flex items-center gap-4 max-md:pointer-events-none"
           >
             <span>受取方法</span>
+            <span className="max-md:hidden">
             {isClosed ?
               <span className={`before:cursor-pointer before:border-[solid] before:border-[#d8d8d8] before:p-[5px] before:text-[16px] md:before:text-[28px] md:before:ml-[5px] before:rounded-[5px] before:border-0 before:text-[#999] before:content-['［_▼_OPEN］']`}></span>
               :
               <span className={`before:cursor-pointer before:border-[solid] before:border-[#d8d8d8] before:p-[5px] before:text-[16px] md:before:text-[28px] md:before:ml-[5px] before:rounded-[5px] before:border-0 before:text-[#999] before:content-['［_▲_CLOSE］']`}></span>
             }
+            </span>
           </button>
         </div>
-        <div ref={contentRef} className="h-0 overflow-hidden relative">
+        <div ref={contentRef} className="md:h-0 max-md:!h-auto overflow-hidden relative">
           <button
             className="w-[50px] aspect-square rounded-full bg-white md:w-[100px]  [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] z-50 absolute border-2 border-[#22ABF3] top-1/2 -translate-y-1/2 flex justify-center items-center right-4 md:right-[calc(50%-310px)]"
             onClick={() => rotate("n")}

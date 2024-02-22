@@ -29,7 +29,7 @@ export default function FormRadio({
   };
 
   return (
-    <div className="mt-3 w-full flex justify-between md:mt-6 md:gap-10 max-md:flex-col justify-center">
+    <div className="mt-3 w-full flex md:mt-6 md:gap-10 max-md:flex-col justify-center">
       {options.map((option, index) => (
         <div className="inline-flex items-center" key={index}>
           <label

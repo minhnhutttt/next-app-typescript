@@ -21,7 +21,7 @@ export default function Header() {
             className="flex items-center justify-center border-[3px] border-black md:px-[27px] md:py-[17px] px-5 py-3 gap-2.5 tracking-widest leading-snug font-bold [font-size:_clamp(11px,3.2vw,14px)] md:text-[20px] bg-[#F4F844] text-black rounded-2xl md:rounded-[44px] duration-300 hover:opacity-75"
           >
             <img className="max-md:w-6" src="/images/ic-card.svg" alt="" />
-            <span className="">無料で200枚つくる</span>
+            <span className="">無料で500枚つくる</span>
           </a>
         </div>
       </div>

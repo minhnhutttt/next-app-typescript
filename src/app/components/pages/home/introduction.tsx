@@ -74,7 +74,7 @@ export default function Introduction() {
         className="opacity-0 bg-[url('/images/bg-01.png')] bg-center bg-no-repeat bg-[length:100%_auto] md:mt-[58px] mt-[30px] md:mb-[61px] mb-8"
       >
         <div className="flex max-md:flex-col px-4 items-center gap-7 md:gap-[60px] w-full max-w-[1188px] mx-auto md:pl-[57px]">
-          <figure>
+          <figure className="max-lg:w-1/2 max-md:w-auto">
             <img
               src="/images/image-intro.jpg"
               alt="受け取り後はボタンひとつで名刺交換を完了！"
@@ -113,20 +113,20 @@ export default function Introduction() {
               <span className=" border-b-2 border-[#323232]">
                 あなたの次世代名刺 <br className="md:hidden" />
                 <span className="md:text-[48px] text-[32px] lg:text-[74px]">
-                  200
+                  500
                 </span>
                 枚プレゼント
               </span>
             </p>
             <p className="font-bold lg:text-[28px] md:text-[22px] text-[18px] my-4">
-              さぁ、今すぐ画像を用意してNFT名刺を手に入れよう！
+              さぁ、今すぐ画像を用意して<br className="md:hidden" />NFT名刺を手に入れよう！
             </p>
             <div className="flex justify-center">
               <a
                 href="/form"
                 className="md:w-[426px] md:h-[85px] w-[260px] h-[48px] flex items-center justify-center rounded-[44px] bg-[#F4EA00] md:border-4 border-2 border-black md:text-[31px] text-[17px] md:gap-2.5 gap-1.5 font-bold tracking-widest"
               >
-                <span>無料で200枚つくる</span>
+                <span>無料で500枚つくる</span>
                 <svg
                   className="max-md:w-8"
                   xmlns="http://www.w3.org/2000/svg"

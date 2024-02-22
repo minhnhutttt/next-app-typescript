@@ -31,10 +31,10 @@ const useScrollAnimation = (
             animation = { y: -30, opacity: 0 };
             break;
           case "slideLeft":
-            animation = { x: -30, opacity: 0 };
+            animation = { xPercent: -50, opacity: 0 };
             break;
           case "slideRight":
-            animation = { x: 30, opacity: 0 };
+            animation = { xPercent: 50, opacity: 0 };
             break;
           case "zoom":
             animation = { opacity: 0, scaleX: 0.9, scaleY: 0.9 };
@@ -47,6 +47,7 @@ const useScrollAnimation = (
         gsap.fromTo(el, animation, {
           y: 0,
           x: 0,
+          xPercent: 0,
           opacity: 1,
           duration: 0.5,
           scaleX: 1,

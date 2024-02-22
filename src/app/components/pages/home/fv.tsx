@@ -2,15 +2,17 @@
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 export default function FV() {
   const animateRefs = useScrollAnimation("zoom");
+  const animateLeftRefs = useScrollAnimation("slideLeft");
+  const animateRightRefs = useScrollAnimation("slideRight");
   return (
     <section className="md:bg-[url('/images/bg.png')] bg-[url('/images/bg-sp.png')] md:bg-cover bg-[length:100%_auto] bg-black bg-bottom bg-no-repeat px-5 md:pb-[50px] pb-10 md:pt-[124px] pt-20">
       <div
-        ref={animateRefs}
         className="w-full max-w-[1340px] mx-auto flex max-md:gap-6 max-md:flex-col justify-center max-md:items-center md:justify-between pl-[1.667vw] min-[1440px]:pl-6"
       >
         <div className="font-zenOld text-white max-md:text-center [font-size:_clamp(20px,9.2vw,58px)] md:text-[6.597vw] min-[1440px]:text-[94px] font-black leading-tight mt-8 md:mt-14 tracking-wide">
-          紙の制約を超えろ <br />
-          デジタルの自由を <br />
+          <span ref={animateRightRefs} className="inline-block opacity-0">紙の制約を超えろ</span> <br />
+          <span ref={animateLeftRefs} className="inline-block opacity-0">デジタルの自由を</span> <br />
+          <span ref={animateRefs} className="inline-block opacity-0">
           <span className="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:top-full after:aspect-square after:bg-[#E3E800] after:w-[1.806vw] xl:after:w-[26px]">
             実
           </span>
@@ -18,8 +20,9 @@ export default function FV() {
             装
           </span>
           せよ
+          </span>
         </div>
-        <div className="max-md:w-auto max-[1439px]:w-[37.222vw]">
+        <div ref={animateRefs} className="max-md:w-auto max-[1439px]:w-[37.222vw] opacity-0">
           <figure>
             <img
               src="/images/fv-phones.png"

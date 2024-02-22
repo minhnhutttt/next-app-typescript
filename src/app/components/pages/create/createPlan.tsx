@@ -27,10 +27,9 @@ export default function Createlan({ handleStep }: HandleStepProps) {
           <div className="flex justify-center md:pt-[72px] pt-10 w-full max-w-[240px] md:max-w-[540px] mx-auto md:pb-[72px] mb-8">
             <FormRadio
               options={[
-                { label: "サンプル作成(1枚)", value: "サンプル作成(1枚)" },
-                { label: "200枚無料プレゼント", value: "200枚無料プレゼント" },
+                { label: "500枚無料プレゼント", value: "500枚無料プレゼント" },
               ]}
-              checkedValue={selectedOption}
+              checkedValue={"500枚無料プレゼント"}
               onChange={handleChange}
             />
           </div>
@@ -66,6 +65,14 @@ export default function Createlan({ handleStep }: HandleStepProps) {
               </svg>
             </button>
           </div>
+          <div className="flex justify-center md:text-[16px] text-[13px] py-5 md:py-6 leading-loose">
+              <p>
+                ※以下の方はサポートLINEにお問い合わせ下さい。 <br />
+                ☑️次世代名刺のサンプルを見たい方<br />
+                ☑️500枚を超える枚数が必要な方<br />
+                ☑️サポートに依頼して名刺を作成したい方
+              </p>
+            </div>
         </div>
       </div>
     </div>

@@ -20,11 +20,11 @@ function ReasonCard({
 }: ReasonCardType) {
   return (
     <div
-      className={`bg-white scale-[0.6] w-[300px] h-[600px] max-md:aspect-[380/545] md:h-[700px] md:w-full md:max-w-[400px] rounded-[40px] px-5 md:px-4 pt-5 md:pt-10 flex flex-col items-center justify-start border-8 border-[#3F3F3F] duration-500 ${!active && "blur-sm opacity-40 pointer-events-none"}`}
+      className={`bg-white scale-[0.6] w-[300px] h-[600px] max-md:aspect-[380/545] md:h-[700px] md:w-full md:max-w-[400px] rounded-[40px] px-4 md:px-4 pt-5 md:pt-10 flex flex-col items-center justify-start border-8 border-[#3F3F3F] duration-500 ${!active && "blur-sm opacity-40 pointer-events-none"}`}
     >
       <div className="relative w-full flex justify-center">
         <img className="max-md:h-[80px]" src={number} alt="" />
-        <div className="absolute flex items-center justify-center inset-0 md:text-[20px] text-[16px] font-bold text-center [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)]">
+        <div className="absolute flex items-center justify-center inset-0 md:text-[20px] text-[15.5px] font-bold text-center [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)]">
           {title}
         </div>
       </div>

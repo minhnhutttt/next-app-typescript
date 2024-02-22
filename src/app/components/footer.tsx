@@ -16,13 +16,14 @@ export default function Footer() {
             </a>
           </li>
           <li>
-            <a href="/admin" className="block duration-150 hover:opacity-75">
+            <a href="https://new-generation.app/company/" target="_blank" className="block duration-150 hover:opacity-75">
               運営者
             </a>
           </li>
           <li>
             <a
-              href="/privacy-policy"
+              href="https://new-generation.app/privacy-policy/"
+              target="_blank"
               className="block duration-150 hover:opacity-75"
             >
               プライバシーポリシー
