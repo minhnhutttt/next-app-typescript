@@ -119,8 +119,8 @@ export default function SectionHow() {
               <h4 className="text-center text-[20px] md:text-[28px] font-medium mt-5 md:mt-9 tracking-widest min-h-[72px]">
                 自分で作る
               </h4>
-              <p className="text-[14px] md:text-[16px] mt-3 md:mt-2">
-              「受取方法」タブをタップして受け取りの流れをご確認ください。
+              <p className="text-[14px] md:text-[16px] mt-3 md:mt-2 tracking-tight">
+              「受取方法」を確認して、次世代名刺の作成・受取方法の流れをご確認ください。
               </p>
               <p className="text-center text-[18px] md:text-[20px] font-medium border-b-[3px] border-[#22ABF3] mt-3 md:mt-5 pb-2">
                 こんな人におすすめ！
