@@ -6,29 +6,29 @@ const faqData: FaqItemPropsType[] = [
     question: "NFTとは何ですか？",
     answer: (
       <>
-        NFTは、デジタルデータに対して付与される特別な証明書です。<br />
-        従来のデジタルデータは容易にコピーできるため、それらに独自の価値を付加することは<br />
-        困難でした。しかし、NFTの導入により、デジタルアイテムのオリジナリティが保証され、<br />
-        それにより新たな価値が生まれています。 
+        NFTは、デジタルデータに対して付与される特別な証明書です。
+        <br />
+        従来のデジタルデータは容易にコピーできるため、それらに独自の価値を付加することは
+        <br />
+        困難でした。しかし、NFTの導入により、デジタルアイテムのオリジナリティが保証され、
+        <br />
+        それにより新たな価値が生まれています。
       </>
     ),
   },
   {
     id: "2",
     question: "受け取ったNFTはどうやったら見れますか？",
-    answer: (
-      <>
-        ダイバーウォレットのNFTタグから見ることができます。
-      </>
-    ),
+    answer: <>ダイバーウォレットのNFTタグから見ることができます。</>,
   },
   {
     id: "3",
-    question:
-      "ダイバーウォレットとは何ですか？",
-      answer: (
+    question: "ダイバーウォレットとは何ですか？",
+    answer: (
       <>
-        暗号資産の管理やNFTを無料で送受信できる暗号資産ウォレットです。<br />Web3.0型チャットアプリ「Knock(ノック)」、次世代のトレカ&クーポンサービス「トレクー」、NFTと位置情報をQRコードにセットできる「ChainPin（チェインピン)」などのサービスでご利用頂けます。
+        暗号資産の管理やNFTを無料で送受信できる暗号資産ウォレットです。
+        <br />
+        Web3.0型チャットアプリ「Knock(ノック)」、次世代のトレカ&クーポンサービス「トレクー」、NFTと位置情報をQRコードにセットできる「ChainPin（チェインピン)」などのサービスでご利用頂けます。
       </>
     ),
   },
@@ -37,7 +37,8 @@ const faqData: FaqItemPropsType[] = [
     question: "受け取ったNFTを他の人に転送できますか？",
     answer: (
       <>
-        はい、できます。<br />
+        はい、できます。
+        <br />
         ただし、NFTに転送ができる設定がされている場合に限ります。
       </>
     ),
@@ -47,7 +48,8 @@ const faqData: FaqItemPropsType[] = [
     question: "NFTを受け取るのにお金はかかりますか？",
     answer: (
       <>
-        いいえ、かかりません。<br />
+        いいえ、かかりません。
+        <br />
         ダイバーウォレットを使ったNFTの送受信はずっと無料でお使い頂けます。
       </>
     ),
@@ -56,7 +58,10 @@ const faqData: FaqItemPropsType[] = [
 
 export default function FAQ() {
   return (
-    <div id="faq" className="px-5 pb-12 pt-10 mb-[30px] md:mb-[80px] md:pb-[55px] md:pt-[200px]  bg-cover">
+    <div
+      id="faq"
+      className="px-5 pb-12 pt-10 mb-[30px] md:mb-[80px] md:pb-[55px] md:pt-[200px]  bg-cover"
+    >
       <div className="mx-auto w-full max-w-[920px]">
         <h4 className="text-center font-roboto text-[28px] font-bold md:text-[48px]">
           FAQ

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@400;700&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@400;700&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,5 +31,3 @@ body {
   stop-color: var(--shadow-colour);
   stop-opacity: 0;
 }
-
-
