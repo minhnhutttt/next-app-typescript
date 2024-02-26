@@ -1,5 +1,6 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
+import FVText from "./fvText";
 
 export default function FV() {
     const animateRefs = useScrollAnimation("fadeUp");
@@ -18,9 +19,9 @@ export default function FV() {
                         <img src="/images/btn-line.png" alt="お問い合わせ" />
                     </a>
                 </div>
-                <div ref={animateZoomRefs} className="opacity-0 mt-[140px] md:mt-8">
+                <div className="mt-[140px] md:mt-8">
                     <div className="flex justify-center items-center">
-                        <h1 className="max-md:w-4/5"><img src="/images/nft-link.png" alt="NFT LINK" /></h1>
+                        <FVText />
                     </div>
                     <div className="flex max-md:flex-col md:gap-[6.111vw] min-[1440px]:gap-[88px] gap-10 mt-16 md:mt-[96px]">
                         <div className="min-[1440px]:w-auto md:w-[43.056vw]">

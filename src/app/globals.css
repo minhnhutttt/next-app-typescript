@@ -10,3 +10,26 @@ body {
   color: #000;
   font-family: "Zen Maru Gothic", sans-serif;
 }
+
+:root {
+  --primary-colour: #e50914;
+  --shadow-intensity: 0.6;
+}
+
+/* ---------- Netflix SVG ---------- */
+
+.base {
+  fill: var(--primary-colour);
+  transition: fill 0.4s;
+}
+
+.shadow-start {
+  stop-color: var(--shadow-colour);
+  stop-opacity: var(--shadow-intensity);
+}
+.shadow-end {
+  stop-color: var(--shadow-colour);
+  stop-opacity: 0;
+}
+
+
