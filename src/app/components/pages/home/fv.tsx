@@ -1,19 +1,24 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
+
 export default function FV() {
+    const animateRefs = useScrollAnimation("fadeUp");
+    const animateZoomRefs = useScrollAnimation("zoom");
     return (
         <div className="md:pb-[100px] pb-[60px] px-5 md:px-8">
             <div className="w-full md:max-w-[1400px] max-w-[640px] mx-auto max-md:flex max-md:flex-col-reverse">
-                <div className="flex md:h-[110px] justify-center md:justify-end items-center gap-4 md:gap-5 max-md:flex-wrap max-md:mt-10">
-                    <a href="http://" target="_blank" rel="noopener noreferrer" className="max-md:w-[40vw] max-md:max-w-[200px] max-lg:max-w-[160px] lg:max-w-[205px] duration-150 hover:opacity-75">
+                <div ref={animateRefs} className="opacity-0 flex md:h-[110px] justify-center md:justify-end items-center gap-4 md:gap-5 max-md:flex-wrap max-md:mt-10">
+                    <a href="https://apps.apple.com/jp/app/diver-wallet/id6444421722" target="_blank" rel="noopener noreferrer" className="max-md:w-[40vw] max-md:max-w-[200px] max-lg:max-w-[160px] lg:max-w-[205px] duration-150 hover:opacity-75">
                         <img src="/images/btn-appstore.png" alt="App Store" />
                     </a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer" className="max-md:w-[40vw] max-md:max-w-[200px] max-lg:max-w-[160px] lg:max-w-[205px] duration-150 hover:opacity-75">
+                    <a href="ttps://play.google.com/store/apps/details?id=com.hyerdesign.diver.wallet&pli=1" target="_blank" rel="noopener noreferrer" className="max-md:w-[40vw] max-md:max-w-[200px] max-lg:max-w-[160px] lg:max-w-[205px] duration-150 hover:opacity-75">
                         <img src="/images/btn-googleplay.png" alt="Google Play" />
                     </a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer" className="max-md:w-[40vw] max-md:max-w-[200px] max-lg:max-w-[160px] duration-150 hover:opacity-75">
+                    <a href="https://lin.ee/XiDBioJ" target="_blank" rel="noopener noreferrer" className="max-md:w-[40vw] max-md:max-w-[200px] max-lg:max-w-[160px] duration-150 hover:opacity-75">
                         <img src="/images/btn-line.png" alt="お問い合わせ" />
                     </a>
                 </div>
-                <div className="mt-[140px] md:mt-8">
+                <div ref={animateZoomRefs} className="opacity-0 mt-[140px] md:mt-8">
                     <div className="flex justify-center items-center">
                         <h1 className="max-md:w-4/5"><img src="/images/nft-link.png" alt="NFT LINK" /></h1>
                     </div>

@@ -17,13 +17,13 @@ export default function NFTLink() {
                                 <div className="flex max-md:flex-wrap max-md:justify-center gap-5 lg:gap-[60px] px-2">
                                     <div className="max-md:w-[220px]">
                                         <p className="text-center font-noto md:text-[28px] text-[18px] font-bold mb-4 md:mb-6">ios 版</p>
-                                        <a href="/" target="_blank">
+                                        <a href="https://apps.apple.com/jp/app/diver-wallet/id6444421722" target="_blank">
                                             <img src="/images/btn-appstore.png" alt="App Store" />
                                         </a>
                                     </div>
                                     <div className="max-md:w-[220px]">
                                         <p className="text-center font-noto md:text-[28px] text-[18px] font-bold mb-4 md:mb-6">Android 版</p>
-                                        <a href="/" target="_blank">
+                                        <a href="https://play.google.com/store/apps/details?id=com.hyerdesign.diver.wallet&pli=1" target="_blank">
                                             <img src="/images/btn-googleplay.png" alt="Google Play" />
                                         </a>
                                     </div>

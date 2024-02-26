@@ -1,3 +1,4 @@
+import FAQ from "./components/pages/home/faq/faq";
 import FV from "./components/pages/home/fv";
 import Introduction from "./components/pages/home/introduction";
 import NFTLink from "./components/pages/home/nftLink";
@@ -10,6 +11,7 @@ export default function Home() {
       <NFTLink />
       <Introduction />
       <NFTSlider />
+      <FAQ />
     </main>
   );
 }

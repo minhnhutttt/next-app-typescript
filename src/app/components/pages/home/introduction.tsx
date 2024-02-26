@@ -68,11 +68,10 @@ export default function Introduction() {
                         <figure className="max-md:rotate-[55deg]">
                             <img className="max-md:w-[100px]" src="/images/arrow-sm.png" alt="" />
                         </figure>
-                        <p className="font-bold flex md:gap-2 md:mt-5 max-md:relative max-md:left-[-58px] max-md:flex-col max-md:items-center">
-                            <span className="lg:text-[28px] md:text-[24px] text-[18px]">②</span>
+                        <p className="font-bold flex md:gap-2 md:mt-5 max-md:relative max-md:left-[-58px] max-md:flex-col max-md:items-center max-md:mt-[-16px]">
+                            <span className="lg:text-[28px] md:text-[24px] text-[18px]">①</span>
                             <span className="lg:text-[18px] md:text-[16px] text-[13px] mt-1 md:mt-2">
-                                発行されたURLを読み <br />
-                                込みNFTを受け取る
+                            NFTをセットする
                             </span>
                         </p>
                     </div>
@@ -83,10 +82,11 @@ export default function Introduction() {
                         <figure className="max-md:-rotate-[55deg]">
                             <img className="max-md:w-[100px] rotate-180" src="/images/arrow-sm.png" alt="" />
                         </figure>
-                        <p className="font-bold flex md:gap-2 md:mt-5 max-md:relative max-md:right-[-58px] max-md:flex-col max-md:items-center">
-                            <span className="lg:text-[28px] md:text-[24px] text-[18px]">①</span>
+                        <p className="font-bold flex md:gap-2 md:mt-5 max-md:relative max-md:right-[-58px] max-md:flex-col max-md:items-center max-md:mt-[-16px]">
+                            <span className="lg:text-[28px] md:text-[24px] text-[18px]">②</span>
                             <span className="lg:text-[18px] md:text-[16px] text-[13px] mt-1 md:mt-2">
-                            NFTをセットする
+                                発行されたURLを読み<br />
+                                込みNFTを受け取る
                             </span>
                         </p>
                     </div>
