@@ -62,7 +62,7 @@ export default function SectionCampaign() {
         </p>
         <div className="flex justify-center max-md:flex-col md:gap-[38px] gap-5 mt-10 md:mt-[95px]">
           <a
-            href="/"
+            href="/form"
             className="w-full h-[60px] md:w-[371px] md:h-[75px] flex items-center justify-center border-[3px] border-black bg-[#F4EA00] rounded-[44px] md:text-[24px] text-[16px] font-bold gap-2.5 tracking-[0.3em]"
           >
             <span>名刺作成こちら</span>

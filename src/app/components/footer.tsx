@@ -32,7 +32,7 @@ export default function Footer() {
         </ul>
         <div className="mt-3">
           <a
-            href="/"
+            href="https://lin.ee/1uP5iTM"
             target="_blank"
             className="flex h-[44px] w-[160px] items-center justify-center gap-2 rounded-[7px] bg-[#01B202] text-[13px] text-white duration-150 hover:opacity-75 md:h-[51px] md:w-[207px] md:text-[15px]"
           >

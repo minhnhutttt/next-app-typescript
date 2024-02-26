@@ -38,8 +38,6 @@ function MethodCard({
 export default function SectionHow() {
   const animateRefs = useScrollAnimation("fadeUp");
   const [currdeg, setCurrdeg] = useState<number>(0);
-  const contentRef = useRef<HTMLDivElement | null>(null);
-  const [isClosed, setIsClosed] = useState<boolean>(true);
   const [startX, setStartX] = useState<number>(0);
   const [endX, setEndX] = useState<number>(0);
 
@@ -89,17 +87,6 @@ export default function SectionHow() {
     setArrSlide(adjacentNumbers);
   }
 
-  const handleExpanderClick = () => {
-    const $content = contentRef.current;
-    if (isClosed) {
-      gsap.set($content, { height: "auto" });
-      gsap.from($content, { duration: 0.2, height: 0 });
-      setIsClosed(false);
-    } else {
-      gsap.to($content, { duration: 0.2, height: 0 });
-      setIsClosed(true);
-    }
-  };
   return (
     <section className="pt-[30px] relative pb-[50px] md:pb-[220px]">
       <SectionTitle
@@ -175,23 +162,14 @@ export default function SectionHow() {
       </SectionTitle>
       <div className={`relative overflow-hidden ${tabActive === 3 ? 'max-md:block' : 'max-md:hidden'}`}>
         <div className="w-full max-w-[1324px] mx-auto px-5 max-md:hidden">
-          <button
-            type="button"
+          <div
             ref={animateRefs}
-            onClick={handleExpanderClick}
             className="opacity-0 md:text-[80px] text-[40px] font-bold leading-none flex items-center gap-4 max-md:pointer-events-none"
           >
             <span>受取方法</span>
-            <span className="max-md:hidden">
-            {isClosed ?
-              <span className={`before:cursor-pointer before:border-[solid] before:border-[#d8d8d8] before:p-[5px] before:text-[16px] md:before:text-[28px] md:before:ml-[5px] before:rounded-[5px] before:border-0 before:text-[#999] before:content-['［_▼_OPEN］']`}></span>
-              :
-              <span className={`before:cursor-pointer before:border-[solid] before:border-[#d8d8d8] before:p-[5px] before:text-[16px] md:before:text-[28px] md:before:ml-[5px] before:rounded-[5px] before:border-0 before:text-[#999] before:content-['［_▲_CLOSE］']`}></span>
-            }
-            </span>
-          </button>
+          </div>
         </div>
-        <div ref={contentRef} className="md:h-0 max-md:!h-auto overflow-hidden relative">
+        <div ref={animateRefs} className="opacity-0 overflow-hidden relative">
           <button
             className="w-[50px] aspect-square rounded-full bg-white md:w-[100px]  [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] z-50 absolute border-2 border-[#22ABF3] top-1/2 -translate-y-1/2 flex justify-center items-center right-4 md:right-[calc(50%-310px)]"
             onClick={() => rotate("n")}

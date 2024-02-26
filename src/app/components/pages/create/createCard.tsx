@@ -61,7 +61,7 @@ export default function CreateCard({ handleStep }: HandleStepProps) {
                 </span>
               </div>
               <p className="md:text-[16px] text-[13px] font-bold md:ml-2">
-                ※以下の手順をご確認ください。
+                ※「<a href="#procedure" className="underline">アドレス入力の手順</a>」をご確認ください。
               </p>
             </div>
             <input
@@ -101,10 +101,10 @@ export default function CreateCard({ handleStep }: HandleStepProps) {
                 </svg>
               </button>
             </div>
-            <div className="mt-[70px]">
+            <div className="mt-[70px] scroll-m-5" id="procedure">
               <p className="md:text-[20px] text-[16px] font-bold">
                 <span className="text-[#22ABF3]">■</span>
-                アドレスの入力は以下の手順で完了させてください。
+                アドレス入力の手順
               </p>
               <div className="flex items-center md:justify-between px-5 pt-4 pb-6 md:pt-5 md:pb-10 max-md:flex-col justify-center border-b border-black">
                 <p className="md:text-[18px] text-[16px] font-bold max-w-[350px] flex-1">
