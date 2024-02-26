@@ -73,9 +73,9 @@ export default function SectionHow() {
         : activeSlide === 1
           ? 4
           : activeSlide - 1;
-      setCurrdeg(newCurrdeg);
-      setActiveSlide(newActiveSlide);
-      getAdjacentNumbers(newActiveSlide);
+    setCurrdeg(newCurrdeg);
+    setActiveSlide(newActiveSlide);
+    getAdjacentNumbers(newActiveSlide);
   };
 
   function getAdjacentNumbers(active: number) {
@@ -102,17 +102,57 @@ export default function SectionHow() {
         <div className="">
           <div className="flex items-center justify-center md:hidden">
             <div className="flex relative bg-[#fff] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] p-3 rounded-[99px]">
-            <input type="radio" id="radio-1" name="tabs" defaultChecked={tabActive === 1} onChange={() => handleTabChange(1)} className="hidden" />
-            <label className="z-10 flex items-center justify-center [font-size:_clamp(13px,3vw,20px)] h-[54px] w-[30vw] font-medium rounded-[99px] cursor-pointer [transition:color_0.15s_ease-in]" htmlFor="radio-1">自分で作る</label>
-            <input type="radio" id="radio-2" name="tabs" defaultChecked={tabActive === 2} onChange={() => handleTabChange(2)} className="hidden" />
-            <label className="z-10 flex items-center justify-center [font-size:_clamp(13px,3vw,20px)] h-[54px] w-[30vw] font-medium rounded-[99px] cursor-pointer [transition:color_0.15s_ease-in]" htmlFor="radio-2">サポートに依頼</label>
-            <input type="radio" id="radio-3" name="tabs" defaultChecked={tabActive === 3} onChange={() => handleTabChange(3)} className="hidden" />
-            <label className="z-10 flex items-center justify-center [font-size:_clamp(13px,3vw,20px)] h-[54px] w-[30vw] font-medium rounded-[99px] cursor-pointer [transition:color_0.15s_ease-in]" htmlFor="radio-3">受取方法を見る</label>
-            <span className="glider absolute flex h-[54px] w-[30vw] bg-[#e6eef9] rounded-[99px] [transition:0.25s_ease-out]"></span>
+              <input
+                type="radio"
+                id="radio-1"
+                name="tabs"
+                defaultChecked={tabActive === 1}
+                onChange={() => handleTabChange(1)}
+                className="hidden"
+              />
+              <label
+                className="z-10 flex items-center justify-center [font-size:_clamp(13px,3vw,20px)] h-[54px] w-[30vw] font-medium rounded-[99px] cursor-pointer [transition:color_0.15s_ease-in]"
+                htmlFor="radio-1"
+              >
+                自分で作る
+              </label>
+              <input
+                type="radio"
+                id="radio-2"
+                name="tabs"
+                defaultChecked={tabActive === 2}
+                onChange={() => handleTabChange(2)}
+                className="hidden"
+              />
+              <label
+                className="z-10 flex items-center justify-center [font-size:_clamp(13px,3vw,20px)] h-[54px] w-[30vw] font-medium rounded-[99px] cursor-pointer [transition:color_0.15s_ease-in]"
+                htmlFor="radio-2"
+              >
+                サポートに依頼
+              </label>
+              <input
+                type="radio"
+                id="radio-3"
+                name="tabs"
+                defaultChecked={tabActive === 3}
+                onChange={() => handleTabChange(3)}
+                className="hidden"
+              />
+              <label
+                className="z-10 flex items-center justify-center [font-size:_clamp(13px,3vw,20px)] h-[54px] w-[30vw] font-medium rounded-[99px] cursor-pointer [transition:color_0.15s_ease-in]"
+                htmlFor="radio-3"
+              >
+                受取方法を見る
+              </label>
+              <span className="glider absolute flex h-[54px] w-[30vw] bg-[#e6eef9] rounded-[99px] [transition:0.25s_ease-out]"></span>
+            </div>
           </div>
-          </div>
-          <div className={`flex max-lg:flex-wrap justify-center gap-6 xl:gap-9 pt-10 md:pt-[132px] px-6 xl:px-12 ${tabActive === 3 ? 'max-md:hidden' : 'max-md:flex'}`}>
-            <div className={`lg:w-1/2 max-w-[380px] bg-white border botder-[#DBF9FF] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] rounded-[20px] p-6 xl:p-10 duration-150 ${tabActive === 1 ? 'max-md:block' : 'max-md:hidden'}`}>
+          <div
+            className={`flex max-lg:flex-wrap justify-center gap-6 xl:gap-9 pt-10 md:pt-[132px] px-6 xl:px-12 ${tabActive === 3 ? "max-md:hidden" : "max-md:flex"}`}
+          >
+            <div
+              className={`lg:w-1/2 max-w-[380px] bg-white border botder-[#DBF9FF] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] rounded-[20px] p-6 xl:p-10 duration-150 ${tabActive === 1 ? "max-md:block" : "max-md:hidden"}`}
+            >
               <figure className="flex justify-center">
                 <img src="/images/image-how-01.png" alt="自分で作る" />
               </figure>
@@ -120,7 +160,7 @@ export default function SectionHow() {
                 自分で作る
               </h4>
               <p className="text-[14px] md:text-[16px] mt-3 md:mt-2 tracking-tight">
-              「受取方法」を確認して、次世代名刺の作成・受取方法の流れをご確認ください。
+                「受取方法」を確認して、次世代名刺の作成・受取方法の流れをご確認ください。
               </p>
               <p className="text-center text-[18px] md:text-[20px] font-medium border-b-[3px] border-[#22ABF3] mt-3 md:mt-5 pb-2">
                 こんな人におすすめ！
@@ -134,7 +174,9 @@ export default function SectionHow() {
                 </p>
               </div>
             </div>
-            <div className={`lg:w-1/2 max-w-[380px] bg-white border botder-[#DBF9FF] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] rounded-[20px] p-6 xl:p-10  ${tabActive === 2 ? 'max-md:block' : 'max-md:hidden'}`}>
+            <div
+              className={`lg:w-1/2 max-w-[380px] bg-white border botder-[#DBF9FF] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] rounded-[20px] p-6 xl:p-10  ${tabActive === 2 ? "max-md:block" : "max-md:hidden"}`}
+            >
               <figure className="flex justify-center">
                 <img src="/images/image-how-02.png" alt="自分で作る" />
               </figure>
@@ -160,7 +202,9 @@ export default function SectionHow() {
           </div>
         </div>
       </SectionTitle>
-      <div className={`relative overflow-hidden ${tabActive === 3 ? 'max-md:block' : 'max-md:hidden'}`}>
+      <div
+        className={`relative overflow-hidden ${tabActive === 3 ? "max-md:block" : "max-md:hidden"}`}
+      >
         <div className="w-full max-w-[1324px] mx-auto px-5 max-md:hidden">
           <div
             ref={animateRefs}

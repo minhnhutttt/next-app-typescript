@@ -119,7 +119,9 @@ export default function Introduction() {
               </span>
             </p>
             <p className="font-bold lg:text-[28px] md:text-[22px] text-[18px] my-4">
-              さぁ、今すぐ画像を用意して<br className="md:hidden" />NFT名刺を手に入れよう！
+              さぁ、今すぐ画像を用意して
+              <br className="md:hidden" />
+              NFT名刺を手に入れよう！
             </p>
             <div className="flex justify-center">
               <a

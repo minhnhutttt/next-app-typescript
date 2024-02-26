@@ -66,13 +66,15 @@ export default function Createlan({ handleStep }: HandleStepProps) {
             </button>
           </div>
           <div className="flex justify-center md:text-[16px] text-[13px] py-5 md:py-6 leading-loose">
-              <p>
-                ※以下の方はサポートLINEにお問い合わせ下さい。 <br />
-                ☑️次世代名刺のサンプルを見たい方<br />
-                ☑️500枚を超える枚数が必要な方<br />
-                ☑️サポートに依頼して名刺を作成したい方
-              </p>
-            </div>
+            <p>
+              ※以下の方はサポートLINEにお問い合わせ下さい。 <br />
+              ☑️次世代名刺のサンプルを見たい方
+              <br />
+              ☑️500枚を超える枚数が必要な方
+              <br />
+              ☑️サポートに依頼して名刺を作成したい方
+            </p>
+          </div>
         </div>
       </div>
     </div>

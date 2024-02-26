@@ -21,8 +21,22 @@ export default function Create() {
     <main>
       <CreateHead step={step} />
       <div ref={formRef}>
-        {step === 1 && <CreatePlan handleStep={() => { nextStep(); handleStepChange(); }} />}
-        {step === 2 && <CreateCard handleStep={() => { nextStep(); handleStepChange(); }} />}
+        {step === 1 && (
+          <CreatePlan
+            handleStep={() => {
+              nextStep();
+              handleStepChange();
+            }}
+          />
+        )}
+        {step === 2 && (
+          <CreateCard
+            handleStep={() => {
+              nextStep();
+              handleStepChange();
+            }}
+          />
+        )}
         {step === 3 && <CreateForm />}
       </div>
     </main>

@@ -13,19 +13,19 @@ body {
 }
 
 /* Tab */
-input[type=radio]:checked + label {
-  color: #22ABF3;
+input[type="radio"]:checked + label {
+  color: #22abf3;
 }
 
-input[id=radio-1]:checked ~ .glider {
+input[id="radio-1"]:checked ~ .glider {
   transform: translateX(0);
 }
 
-input[id=radio-2]:checked ~ .glider {
+input[id="radio-2"]:checked ~ .glider {
   transform: translateX(100%);
 }
 
-input[id=radio-3]:checked ~ .glider {
+input[id="radio-3"]:checked ~ .glider {
   transform: translateX(200%);
 }
 

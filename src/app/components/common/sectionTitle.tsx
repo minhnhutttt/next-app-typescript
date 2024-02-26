@@ -7,7 +7,7 @@ type SectionTitlePropsType = {
   content?: ReactNode;
   children: ReactNode;
   reverse?: boolean;
-  noBg?: boolean
+  noBg?: boolean;
 };
 
 export default function SectionTitle({
@@ -16,12 +16,12 @@ export default function SectionTitle({
   content,
   children,
   reverse,
-  noBg
+  noBg,
 }: SectionTitlePropsType) {
   const animateRefs = useScrollAnimation("zoom");
   return (
     <div
-      className={`relative md:min-h-[472px] ${reverse ? "skew-y-[7deg]" : "skew-y-[-7deg]"} ${!noBg && 'max-md:bg-white'}`}
+      className={`relative md:min-h-[472px] ${reverse ? "skew-y-[7deg]" : "skew-y-[-7deg]"} ${!noBg && "max-md:bg-white"}`}
     >
       <div
         ref={animateRefs}
