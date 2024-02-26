@@ -21,7 +21,7 @@ export default function FV() {
             <img src="/images/btn-appstore.png" alt="App Store" />
           </a>
           <a
-            href="ttps://play.google.com/store/apps/details?id=com.hyerdesign.diver.wallet&pli=1"
+            href="https://play.google.com/store/apps/details?id=com.hyerdesign.diver.wallet&pli=1"
             target="_blank"
             rel="noopener noreferrer"
             className="max-md:w-[40vw] max-md:max-w-[200px] max-lg:max-w-[160px] lg:max-w-[205px] duration-150 hover:opacity-75"
