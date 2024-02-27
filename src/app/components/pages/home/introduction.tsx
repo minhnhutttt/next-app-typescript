@@ -75,7 +75,7 @@ export default function Introduction() {
           className="opacity-0 flex justify-center mt-8 md:mt-[70px] relative max-md:gap-5"
         >
           <figure className="max-md:flex-[0_0_90px]">
-            <img src="/images/image-guide-01.png" alt="" />
+            <img src="/images/image-guide-03.png" alt="" />
           </figure>
           <div className="md:w-[235px] md:mt-14 flex flex-col items-center max-md:absolute max-md:left-[calc(50%-160px)] max-md:top-[48%] w-[240px]">
             <figure className="max-md:rotate-[55deg]">
@@ -117,7 +117,7 @@ export default function Introduction() {
             </p>
           </div>
           <figure className="max-md:flex-[0_0_90px]">
-            <img src="/images/image-guide-03.png" alt="" />
+            <img src="/images/image-guide-01.png" alt="" />
           </figure>
         </div>
         <div
