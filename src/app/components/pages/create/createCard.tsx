@@ -150,11 +150,10 @@ export default function CreateCard({ handleStep }: HandleStepProps) {
                 <div
                   className={`w-full md:w-1/2 md:pr-5 ${tabActive === 1 ? "max-md:block" : "max-md:hidden"}`}
                 >
-                  
                   <div className="flex items-center gap-5 md:justify-between px-5 pb-6 md:pb-10 flex-col justify-center border-b border-black">
-                  <p className="min-h-[60px] md:min-h-[72px] flex items-center font-black md:text-[24px] text-[20px] text-[#22ABF3] mb-5 md:mb-8 pl-2 md:pl-4 md:border-l-[5px] border-l-[3px] border-[#22ABF3] w-full max-md:max-w-[350px]">
-                  アドレス入力の手順
-                      </p>
+                    <p className="min-h-[60px] md:min-h-[72px] flex items-center font-black md:text-[24px] text-[20px] text-[#22ABF3] mb-5 md:mb-8 pl-2 md:pl-4 md:border-l-[5px] border-l-[3px] border-[#22ABF3] w-full max-md:max-w-[350px]">
+                      アドレス入力の手順
+                    </p>
                     <p className="md:text-[18px] text-[16px] font-bold max-w-[350px] flex-1">
                       ① アプリ「DIVER Biz」のダウンロードしてください。
                     </p>
@@ -229,7 +228,9 @@ export default function CreateCard({ handleStep }: HandleStepProps) {
                   <div className="flex items-center px-3 md:px-5 pb-5 md:pb-7 flex-col border-b border-black gap-5 md:gap-8">
                     <div className="max-w-[350px] flex-1">
                       <p className="min-h-[60px] md:min-h-[72px] flex items-center font-black md:text-[24px] text-[20px] text-[#22ABF3] mb-5 md:mb-8 pl-2 md:pl-4 md:border-l-[5px] border-l-[3px] border-[#22ABF3]">
-                        DIVER Walletアドレスを<br className="md:hidden" />利用する方法
+                        DIVER Walletアドレスを
+                        <br className="md:hidden" />
+                        利用する方法
                       </p>
                       <p className="md:text-[18px] text-[16px] font-bold">
                         ①アプリ「DIVER Biz」にDIVER
