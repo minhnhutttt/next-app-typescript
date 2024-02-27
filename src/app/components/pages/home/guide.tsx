@@ -1,7 +1,17 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
+import { useState } from "react";
 export default function Guide() {
     const animateRefs = useScrollAnimation("zoom");
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const openModal = () => {
+      setModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setModalOpen(false);
+    };
     return (
         <section className="mt-16 md:mt-[80px]">
             <div className="w-full">
@@ -78,12 +88,12 @@ export default function Guide() {
                             </div>
                             <div className="flex items-center justify-center gap-5 md:gap-7 md:mt-9 mt-6">
                                 <div className="w-full flex justify-center h-[80px] md:h-[98px]">
-                                    <a href="/" target="_blank" className="w-full max-w-[280px] md:max-w-[330px] h-[74px] md:h-[92px] gap-4 relative rounded-[30px] md:text-[18px] text-[16px] font-black bg-white flex items-center justify-center hover:border-b border-[5px] hover:mt-[6px] border-[#0055A3] duration-200 [box-shadow:0px_6px_0px_0px_#0055A3]">
+                                    <button type="button" onClick={openModal} className="w-full max-w-[280px] md:max-w-[330px] h-[74px] md:h-[92px] gap-4 relative rounded-[30px] md:text-[18px] text-[16px] font-black bg-white flex items-center justify-center hover:border-b border-[5px] hover:mt-[6px] border-[#0055A3] duration-200 [box-shadow:0px_6px_0px_0px_#0055A3]">
                                         <figure>
                                             <img className="max-md:w-[36px]" src="/images/ic-card.png" alt="" />
                                         </figure>
                                         <span>RWA Tagシールを購入</span>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                             <div className="flex justify-center mt-4">
@@ -91,6 +101,61 @@ export default function Guide() {
                                 RWA Tagに格納可能なNFTは、DIVER Chainシステムを使用しています。これによりDIVER TagとRWA Tagは実質同じものです。
                                 </p>
                             </div>
+                        </div>
+                        {isModalOpen && (
+                            <div
+                            className="absolute inset-0 z-40 absolute-0 bg-[#344054]/[0.7] backdrop-filter backdrop-blur"
+                            onClick={() => closeModal()}
+                            ></div>
+                        )}
+                            <div className={`z-50 w-full lg:max-w-[400px] max-w-[320px] mx-auto inset-x-0 top-1/2 -translate-y-1/2 bg-white absolute opacity-0 duration-300 rounded-[10px] flex items-center justify-center flex-col pointer-events-none ${isModalOpen ? "pointer-events-auto opacity-100" : ""}`}>
+                                <button className="absolute w-11 h-11 top-4 right-4" onClick={() => closeModal()}>
+                                    <svg width="44" height="45" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M28 16.3345L16 28.3345M16 16.3345L28 28.3345" stroke="#667085" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                </button>
+                                <div className="w-full pt-[50px] flex flex-col items-center justify-center px-6 pb-9">
+                                   <figure>
+                                    <img className="max-md:w-[120px]" src="/images/d.png" alt="" />
+                                   </figure>
+                                   <div className="w-full max-w-[350px] mx-auto md:mt-[30px] mt-5">
+                                    <a href="/" target="_blank" className="h-[60px] flex justify-center items-center bg-[#18539E] rounded-[5px] text-white text-[14px] md:text-[18px] font-bold gap-3">
+                                        <figure>
+                                            <img src="/images/ic-d.png" alt="" />
+                                        </figure>
+                                        <span>DIVERコインで購入</span>
+                                    </a>
+                                    <div className="flex items-center justify-center gap-2 md:py-5 py-4">
+                                        <span className="h-px bg-[#E4E7EC] flex-1"></span><span className="md:text-[14px] text-[12px]">OR</span><span className="h-px bg-[#E4E7EC] flex-1"></span>
+                                    </div>
+                                    <a href="/" target="_blank" className="h-[60px] flex justify-center items-center border-black border-2 rounded-[8px] text-[14px] md:text-[18px] font-bold gap-2">
+                                        <figure>
+                                            <img src="/images/ic-wallet.png" alt="" />
+                                        </figure>
+                                        <span>クレジットカードで購入</span>
+                                    </a>
+                                   </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div className="flex justify-center md:mt-[140px] mt-[60px] px-5">
+                    <div className="w-full md:max-w-[630px] max-w-[380px] md:rounded-[50px] rounded-[32px] border-[5px] border-[#0055A3] py-4 px-5 md:pt-6 md:pb-5 flex justify-center">
+                        <div className="w-full max-w-[300px] md:max-w-[470px] flex max-md:flex-col-reverse max-md:items-center max-md:gap-6">
+                            <div className="flex-1">
+                                <p className="font-zenkaku md:text-[20px] text-[16px] font-bold text-center py-2 border-b border-[#1E2D7D] leading-none">お問い合わせ</p>
+                                <p className="md:text-[16px] text-[14px] p-3 leading-tight">
+                                ご不明な点がございましたら、お気軽にお問い合わせください。
+                                </p>
+                                <div className="flex justify-center">
+                                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                                        <img className="max-md:w-[240px]" src="/images/btn-line.png" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                            <figure>
+                                <img className="max-md:w-[120px]" src="/images/img-line.png" alt="" />
+                            </figure>
                         </div>
                     </div>
                 </div>

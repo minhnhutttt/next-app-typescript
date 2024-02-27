@@ -15,7 +15,8 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      zenkaku: ["Zen Kaku Gothic New", "sans-serif"],
+      work: ["Work Sans", "sans-serif"],
     },
   },
   plugins: [],

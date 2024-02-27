@@ -12,7 +12,7 @@ export default function Header() {
                     {isHomePage ?
                         <img src="/images/logo.png" alt="RWA Tag" />
                         :
-                        <img src="/images/logo.png" alt="RWA Tag" />
+                        <img src="/images/logo-black.png" alt="RWA Tag" />
                     }
                 </a>
                 <div className="flex items-center justify-end gap-3 md:gap-5 max-md:flex-wrap">

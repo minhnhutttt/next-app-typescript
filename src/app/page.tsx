@@ -1,4 +1,5 @@
 import Experience from "./components/pages/home/experience";
+import FAQ from "./components/pages/home/faq/faq";
 import FV from "./components/pages/home/fv";
 import Guide from "./components/pages/home/guide";
 import Introduction from "./components/pages/home/introduction";
@@ -14,6 +15,7 @@ export default function Home() {
       <Uses />
       <Recommend />
       <Guide />
+      <FAQ />
     </main>
   );
 }
