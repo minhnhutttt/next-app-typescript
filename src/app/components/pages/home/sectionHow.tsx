@@ -314,7 +314,7 @@ export default function SectionHow() {
                     }
                   >
                     <div className="flex flex-col items-center justify-center py-5">
-                      <a href="/" className="block mt-10">
+                      <a href="/form" className="block mt-10">
                         <img src="/images/button-cards.png" alt="" />
                       </a>
                     </div>
