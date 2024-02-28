@@ -8,8 +8,8 @@ export default function Footer() {
             </a>
           </div>
           <div className="flex items-center justify-end gap-3 md:gap-5 max-md:flex-wrap">
-                    <a href="http://" target="_blank" rel="noopener noreferrer" className="duration-150 hover:opacity-75"><img className="max-md:w-[140px]" src="/images/btn-appstore.png" alt="App Store" /></a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer" className="duration-150 hover:opacity-75"><img className="max-md:w-[140px]" src="/images/btn-google-play.png" alt="Google Play" /></a>
+                    <a href="https://apps.apple.com/jp/app/diver-tag/id6449664504" target="_blank" rel="noopener noreferrer" className="duration-150 hover:opacity-75"><img className="max-md:w-[140px]" src="/images/btn-appstore.png" alt="App Store" /></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.world.scan.project.tag&hl=ja&gl=US" target="_blank" rel="noopener noreferrer" className="duration-150 hover:opacity-75"><img className="max-md:w-[140px]" src="/images/btn-google-play.png" alt="Google Play" /></a>
                 </div>
         </div>
         <ul className="mt-3 flex justify-center text-[15px] font-bold md:text-[16px] gap-7 mb-12 max-md:flex-wrap md:mb-[75px]">
@@ -36,7 +36,8 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="/contact"
+                href="https://lin.ee/1zNROviH"
+                target="_blank"
                 className="block duration-150 hover:opacity-75"
               >
                 お問い合わせ
