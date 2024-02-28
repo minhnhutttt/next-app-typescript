@@ -19,7 +19,7 @@ const faqData: FaqItemPropsType[] = [
   {
     id: "2",
     question: "受け取ったNFTはどうやったら見れますか？",
-    answer: <>ダイバーウォレットのNFTタグから見ることができます。</>,
+    answer: <>ダイバーウォレットのNFTタブから見ることができます。</>,
   },
   {
     id: "3",

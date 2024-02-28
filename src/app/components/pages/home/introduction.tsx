@@ -19,7 +19,7 @@ const cardData: CardProp[] = [
     id: "2",
     title: "NFTをもらいに行く",
     imageSrc: "/images/image-guide-card-02.png",
-    content: <>マップに表示されるNFTを受け取りに行こう！</>,
+    content: <>マップ(開発中)に表示されるNFTを受け取りに行こう！</>,
   },
   {
     id: "3",
