@@ -15,7 +15,9 @@ export default function NFTLink() {
               1分で準備完了！
             </p>
             <h3 className="min-[1440px]:text-[62px] md:text-[4.306vw] [font-size:_clamp(20px,7.5vw,32px)] font-bold tracking-[0.15em]">
-              NFT-Linkで<br className="md:hidden" />NFTを受け取る前に
+              NFT-Linkで
+              <br className="md:hidden" />
+              NFTを受け取る前に
             </h3>
           </div>
           <div
@@ -172,7 +174,8 @@ export default function NFTLink() {
             className="opacity-0 text-center relative mb-2.5 px-2.5 pb-6 md:pb-9 bg-[repeating-linear-gradient(-45deg,_transparent_0_6px,_#0055A3_6px_8px)] bg-no-repeat md:[background-size:100%_20px] [background-size:100%_12px] bg-bottom"
           >
             <p className="md:text-[24px] [font-size:_clamp(14px,4.8vw,18px)] tracking-widest">
-              準備ができたら！<br />
+              準備ができたら！
+              <br />
               NFT-LinkでNFTを受け取ろう
             </p>
             <h3 className="md:text-[62px] [font-size:_clamp(20px,7.5vw,32px)] font-bold tracking-[0.15em]">
@@ -204,8 +207,7 @@ export default function NFTLink() {
           >
             <div className="w-full max-w-[1060px] mx-auto pb-8 md:pb-14">
               <h5 className="text-center font-bold font-noto lg:text-[32px] md:text-[28px] [font-size:_clamp(18px,6.4vw,24px)] mt-8 md:mt-16">
-              受け取りパターン1:表示されてるURLに
-                アクセスする
+                受け取りパターン1:表示されてるURLに アクセスする
               </h5>
               <div className="flex items-center justify-center max-md:flex-wrap mt-8 md:mt-12">
                 <figure className="max-md:w-[29vw]">
@@ -236,7 +238,7 @@ export default function NFTLink() {
           >
             <div className="w-full max-w-[1060px] mx-auto pb-8 md:pb-14">
               <h5 className="text-center font-bold font-noto lg:text-[32px] md:text-[28px] [font-size:_clamp(18px,6.4vw,24px)] mt-8 md:mt-16">
-              受け取りパターン2:NFTを確認して受け取る
+                受け取りパターン2:NFTを確認して受け取る
               </h5>
               <div className="flex items-center justify-center max-md:flex-wrap mt-8 md:mt-12">
                 <figure className="max-md:w-[29vw]">
