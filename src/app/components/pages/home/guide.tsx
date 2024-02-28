@@ -14,7 +14,7 @@ export default function Guide() {
       setModalOpen(false);
     };
     return (
-        <section className="mt-16 md:mt-[80px]">
+        <section className="mt-16 md:mt-[80px] overflow-hidden">
             <div className="w-full">
                 <div ref={animateRefs} className="opacity-0 flex justify-center items-center relative z-10">
                     <h3 className="tracking-[0.25em] text-center">
@@ -149,7 +149,7 @@ export default function Guide() {
                                 ご不明な点がございましたら、お気軽にお問い合わせください。
                                 </p>
                                 <div className="flex justify-center">
-                                    <a href="https://lin.ee/1zNROviH" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://lin.ee/1zNROviH" target="_blank" rel="noopener noreferrer" className="duration-150 hover:opacity-75">
                                         <img className="max-md:w-[240px]" src="/images/btn-line.png" alt="" />
                                     </a>
                                 </div>
