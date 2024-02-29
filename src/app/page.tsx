@@ -27,11 +27,12 @@ export default function Home() {
       <div className="pl-8 pr-6 md:pl-[40px] md:pr-[30px] pt-4 md:pt-6">
         <div className="flex items-start">
           <Sidebar />
+          <div className="flex sticky top-10 justify-center w-[30px] mx-3 max-md:hidden z-10">
+            <figure className=""><img src="/images/ic-circle.png" alt="" /></figure>
+          </div>
+          
           <div className="flex flex-1 relative">
-            <div className="flex justify-center w-[30px] mx-3 max-md:hidden sticky top-10">
-              <figure className="absolute"><img src="/images/ic-circle.png" alt="" /></figure>
-              <span className="h-full w-px bg-white/40"></span>
-            </div>
+            <div className="absolute h-full w-px bg-white/40 left-[-27px]"></div>
             <div className="w-full">
               <div className="rounded-[23px] w-full md:min-h-[45px] min-h-[38px] flex items-center border border-[#B5B5B5]/[0.85] bg-[linear-gradient(90deg,_#0B0B0B_28.57%,_rgba(11,_11,_11,_0.46)_50%)] px-5 md:px-[38px] text-[15px] md:text-[23px] font-bold text-white/70">What is ARDOREX?</div>
               <div className="md:rounded-[20px] rounded-[16px] border border-[#C4C4C4]/[0.5] bg-[#101010]/[0.65] mt-3 md:mt-10 px-4 md:px-9 py-3 md:py-7 space-y-14 min-h-[1050px]">
@@ -61,10 +62,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center w-[30px] mx-3 max-md:hidden sticky top-10">
-              <figure className="absolute"><img src="/images/ic-circle.png" alt="" /></figure>
-              <span className="h-full w-px bg-white/40"></span>
-            </div>
+            <div className="absolute h-full w-px bg-white/40 right-[-27px]"></div>
+          </div>
+          <div className="flex sticky top-10 justify-center w-[30px] mx-3 max-md:hidden z-10">
+            <figure className=""><img src="/images/ic-circle.png" alt="" /></figure>
           </div>
           <div className="w-[260px] max-xl:hidden sticky top-10">
             <a href="/" className="block duration-150 hover:opacity-75">
