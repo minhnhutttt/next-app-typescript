@@ -25,31 +25,57 @@ body {
 @property --x {
   syntax: '<percentage>';
   inherits: false;
-  initial-value: 0%;
+  initial-value: 40%;
 }
 @property --y {
   syntax: '<percentage>';
   inherits: false;
-  initial-value: 0%;
+  initial-value: 5%;
 }
-.b2 {
+.circle {
   background: radial-gradient(circle at var(--x) var(--y) , #FFDCD9 1%, #FCA283 15%, #EE9163 35%, #CCA033 55%, #84651B 80%, #654F14 100%);  
-  animation: colorChange 3s infinite ease-in-out;
+  animation: colorChange 2.5s linear;
+
 }
 @keyframes colorChange {
   0% {
-    --x:5%;
-    --y: 15%;
+    --x: 30%;
+    --y: 5%;
   }
-  50% {
-    --x:150%;
-    --y: 50%;
+  10% {
+    --x: 90%;
+    --y: 20%;
   }
-  75% {
+  20% {
+    --x: 95%;
+    --y: 45%;
+  }
+  30% {
+    --x: 85%;
+    --y: 85%;
+  }
+  40% {
+    --x: 50%;
     --y: 95%;
   }
-  100% {
-    --x:5%;
+  50% {
+    --x: 10%;
+    --y: 85%;
+  }
+  60% {
+    --x: -5%;
+    --y: 55%;
+  }
+  70% {
+    --x: -10%;
     --y: 15%;
+  }
+  85% {
+    --x: 30%;
+    --y: 10%;
+  }
+  100% {
+    --x: 40%;
+    --y: 5%;
   }
 }

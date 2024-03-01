@@ -28,7 +28,7 @@ export default function Home() {
         <div className="flex items-start">
           <Sidebar />
           <div className="flex sticky top-10 justify-center w-[30px] mx-3 max-md:hidden z-10 h-[30px] overflow-hidden rounded-full">
-            <figure className=""><img src="/images/ic-circle.png" alt="" /></figure>
+          <div className="circle w-[30px] h-[30px] drop-shadow-2xl rounded-full"></div>
           </div>
           
           <div className="flex flex-1 relative">
@@ -65,8 +65,7 @@ export default function Home() {
             <div className="absolute h-full w-px bg-white/40 right-[-27px] max-md:hidden"></div>
           </div>
           <div className="flex sticky top-10 justify-center w-[30px] mx-3 max-md:hidden z-10 h-[30px] overflow-hidden">
-            {/* <div className="bg-[radial-gradient(circle_at_75%_25%,_#FFDCD9_1%,_#FCA283_12%,_#E68470_40%,_#DFBF3B_65%,_#DDBA38_70%,_#DDBA38_85%,_#C3A32E_100%)] [filter:drop-shadow(0_25px_25px_rgb(0_0_0_/_0.5))] w-[30px] h-[30px] rounded-full"></div> */}
-            <div className="b2 w-[30px] h-[30px] rounded-full"></div>
+            <div className="circle w-[30px] h-[30px] drop-shadow-2xl rounded-full"></div>
           </div>
           <div className="w-[260px] max-xl:hidden sticky top-10">
             <a href="/" className="block duration-150 hover:opacity-75">

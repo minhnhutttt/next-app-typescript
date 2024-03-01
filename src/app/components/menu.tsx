@@ -35,7 +35,7 @@ export default function Menu() {
                 <div className="flex">
                     <button onClick={toggleExpand} className="flex flex-col items-center pl-2 pr-3.5 gap-2.5">
                         <figure>
-                            <img src="/images/ic-circle.png" alt="" />
+                            <div className="circle w-[30px] h-[30px] drop-shadow-2xl rounded-full"></div>
                         </figure>
                         <figure>
                             <img className="w-[9.5px]" src="/images/menu.png" alt="" />
