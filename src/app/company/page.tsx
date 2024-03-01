@@ -10,12 +10,12 @@ export default function Company() {
       <div className="my-[70px] px-5 md:my-10">
         <div
           ref={animateRefs}
-          className="mx-auto w-full max-w-[1350px] bg-black bg-[url('/images/company-bg.jpg')] max-md:bg-[length:140%_auto] bg-no-repeat bg-right bg-cover px-5 py-12 opacity-0 md:py-16"
+          className="mx-auto w-full max-w-[1350px] bg-black max-md:bg-[length:140%_auto] bg-no-repeat bg-right bg-cover px-5 py-12 opacity-0 md:py-16"
         >
           <div className="flex justify-center">
             <img
-              className="max-md:w-[130px]"
-              src="/images/logo-zexaverse.png"
+              className="max-md:w-[150px] md:w-[238px]"
+              src="/images/logo-wsp.png"
               alt="ZEXAVERSE    "
             />
           </div>
