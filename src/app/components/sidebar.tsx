@@ -5,13 +5,11 @@ import { ReactNode } from "react";
 
 type ItemType = {
   href: string;
-  active?: boolean;
   children: ReactNode;
 };
 
 function Item({
     href,
-    active,
     children,
 }: ItemType) {
   const pathname = usePathname();

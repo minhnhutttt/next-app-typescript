@@ -6,7 +6,7 @@ export default function Home() {
     <main className="bg-[url('/images/bg.png')] bg-top bg-cover relative">
       <div className="absolute left-3 md:left-5 bg-[linear-gradient(180deg,_#F44343_0%,_#FF8719_37.5%,_#FFE819_75%)] w-1 md:w-[5px] h-full top-0 bottom-0"></div>
       <div className="max-md:px-[28px] md:pl-[66px]">
-        <div className="flex max-md:flex-col md:gap-[170px] pt-7 md:pt-[86px]">
+        <div className="flex max-md:flex-col md:gap-20 lg:gap-[170px] pt-7 md:pt-[86px]">
           <div className="mt-3">
             <figure className="md:pb-5 pb-3 md:pr-6">
               <img className="w-full max-w-[558px]" src="/images/fv-text.png" alt="" />
@@ -27,25 +27,25 @@ export default function Home() {
       <div className="pl-8 pr-6 md:pl-[40px] md:pr-[30px] pt-4 md:pt-6">
         <div className="flex items-start">
           <Sidebar />
-          <div className="flex sticky top-10 justify-center w-[30px] mx-3 max-md:hidden z-10">
+          <div className="flex sticky top-10 justify-center w-[30px] mx-3 max-md:hidden z-10 h-[30px] overflow-hidden rounded-full">
             <figure className=""><img src="/images/ic-circle.png" alt="" /></figure>
           </div>
           
           <div className="flex flex-1 relative">
-            <div className="absolute h-full w-px bg-white/40 left-[-27px]"></div>
+            <div className="absolute h-full w-px bg-white/40 left-[-27px] max-md:hidden"></div>
             <div className="w-full">
               <div className="rounded-[23px] w-full md:min-h-[45px] min-h-[38px] flex items-center border border-[#B5B5B5]/[0.85] bg-[linear-gradient(90deg,_#0B0B0B_28.57%,_rgba(11,_11,_11,_0.46)_50%)] px-5 md:px-[38px] text-[15px] md:text-[23px] font-bold text-white/70">What is ARDOREX?</div>
               <div className="md:rounded-[20px] rounded-[16px] border border-[#C4C4C4]/[0.5] bg-[#101010]/[0.65] mt-3 md:mt-10 px-4 md:px-9 py-3 md:py-7 space-y-14 min-h-[1050px]">
                 <div id="essence">
                   <div className="text-white font-bold text-[13px] md:text-[21px]">The Essence of ARDOREX</div>
                   <p className="text-white text-[13px] md:text-[17px] md:leading-[2.47] mt-5 md:pl-10">
-                    ARDOREX is an innovative platform at the core of shaping the future of business through passion and transcendence. Our mission is to turn clients' ambitions into reality by harnessing the power of technology. We embrace new challenges without fear and step into uncharted territories.
+                    ARDOREX is an innovative platform at the core of shaping the future of business through passion and transcendence. Our mission is to turn clients&apos; ambitions into reality by harnessing the power of technology. We embrace new challenges without fear and step into uncharted territories.
                   </p>
                 </div>
                 <div id="fuelled">
                   <div className="text-white font-bold text-[13px] md:text-[21px]">Fuelled by Passion</div>
                   <p className="text-white text-[13px] md:text-[17px] md:leading-[2.47] mt-5 md:pl-10">
-                    At ARDOREX, everything starts with passion. We spare no effort in exceeding limits to realize our clients' dreams, turning this passion into innovative ideas and solutions that lead to business success.
+                    At ARDOREX, everything starts with passion. We spare no effort in exceeding limits to realize our clients&apos; dreams, turning this passion into innovative ideas and solutions that lead to business success.
                   </p>
                 </div>
                 <div id="aiming">
@@ -57,15 +57,16 @@ export default function Home() {
                 <div id="adapting">
                   <div className="text-white font-bold text-[13px] md:text-[21px]">Adapting to Modern Business Complexities</div>
                   <p className="text-white text-[13px] md:text-[17px] md:leading-[2.47] mt-5 md:pl-10">
-                    The modern business environment is evolving at an unprecedented pace, expanding its scope. To address this complexity, we have successfully dismantled traditional business scopes while integrating synergistic fields to maximize our clients' success through a unified strategy.
+                    The modern business environment is evolving at an unprecedented pace, expanding its scope. To address this complexity, we have successfully dismantled traditional business scopes while integrating synergistic fields to maximize our clients&apos; success through a unified strategy.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="absolute h-full w-px bg-white/40 right-[-27px]"></div>
+            <div className="absolute h-full w-px bg-white/40 right-[-27px] max-md:hidden"></div>
           </div>
-          <div className="flex sticky top-10 justify-center w-[30px] mx-3 max-md:hidden z-10">
-            <figure className=""><img src="/images/ic-circle.png" alt="" /></figure>
+          <div className="flex sticky top-10 justify-center w-[30px] mx-3 max-md:hidden z-10 h-[30px] overflow-hidden">
+            {/* <div className="bg-[radial-gradient(circle_at_75%_25%,_#FFDCD9_1%,_#FCA283_12%,_#E68470_40%,_#DFBF3B_65%,_#DDBA38_70%,_#DDBA38_85%,_#C3A32E_100%)] [filter:drop-shadow(0_25px_25px_rgb(0_0_0_/_0.5))] w-[30px] h-[30px] rounded-full"></div> */}
+            <div className="b2 w-[30px] h-[30px] rounded-full"></div>
           </div>
           <div className="w-[260px] max-xl:hidden sticky top-10">
             <a href="/" className="block duration-150 hover:opacity-75">

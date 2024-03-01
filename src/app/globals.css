@@ -14,3 +14,42 @@ body {
   scroll-margin-top: 40px;
 }
 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@property --x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+@property --y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+.b2 {
+  background: radial-gradient(circle at var(--x) var(--y) , #FFDCD9 1%, #FCA283 15%, #EE9163 35%, #CCA033 55%, #84651B 80%, #654F14 100%);  
+  animation: colorChange 3s infinite ease-in-out;
+}
+@keyframes colorChange {
+  0% {
+    --x:5%;
+    --y: 15%;
+  }
+  50% {
+    --x:150%;
+    --y: 50%;
+  }
+  75% {
+    --y: 95%;
+  }
+  100% {
+    --x:5%;
+    --y: 15%;
+  }
+}

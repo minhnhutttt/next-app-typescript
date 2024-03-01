@@ -1,7 +1,6 @@
 "use client";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 
 export default function Menu() {
@@ -10,23 +9,23 @@ export default function Menu() {
     window.location.href = `mailto:${emailAddress}`;
   };
   const [expanded, setExpanded] = useState(false);
-  const buttonRef = useRef(null);
+  const boxRef = useRef(null);
 
   const toggleExpand = () => {
     setExpanded(!expanded);
-    const button = buttonRef.current;
+    const box = boxRef.current;
 
     if (expanded) {
-      gsap.to(button, { height: 46, xPercent: 100, x: -46, duration: 0.3 });
+      gsap.to(box, { height: 46, xPercent: 100, x: -46, duration: 0.3 });
     } else {
-      gsap.to(button, { height: 200, duration: 0.3 });
-      gsap.to(button, { height: "auto", xPercent: 0, x: 0, duration: 0.3, delay: 0.3 });
+      gsap.to(box, { height: 200, duration: 0.3 });
+      gsap.to(box, { height: "auto", xPercent: 0, x: 0, duration: 0.3, delay: 0.3 });
     }
   };
   return (
     <div className="md:hidden">
         <div className="fixed top-[10%] right-0 overflow-hidden flex justify-end">
-            <div ref={buttonRef} className="bg-[linear-gradient(180deg,_#FFC700_0%,_#FF8719_100%)] rounded-l-[22px] py-2 origin-right">
+            <div ref={boxRef} className="h-[46px] translate-x-[calc(100%-46px)] bg-[linear-gradient(180deg,_#FFC700_0%,_#FF8719_100%)] rounded-l-[22px] py-2 origin-right">
                 <button onClick={toggleExpand} className="absolute w-[54px] right-4 top-4 z-10">
                         <svg className="" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 107 47" fill="none">
                         <line x1="1.20064" y1="0.542021" x2="106.201" y2="46.542" stroke="black"/>
