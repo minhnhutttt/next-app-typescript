@@ -25,8 +25,6 @@ function FeatureCard({ image, title, children, color }: FeatureCardPropsType) {
 }
 
 export default function Feature() {
-  const animateRefs = useScrollAnimation("zoom");
-  const animateRightRefs = useScrollAnimation("slideRight");
   return (
     <section className="bg-[#F7F7F7] px-5 pt-10 pb-14 md:pt-16 md:pb-20">
         <div className="w-full max-w-[420px] md:max-w-[1320px] mx-auto">
