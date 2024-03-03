@@ -4,7 +4,7 @@ export default function Introduction() {
   const animateLeftRefs = useScrollAnimation("slideLeft");
   const animateRightRefs = useScrollAnimation("slideRight");
   return (
-    <section className="px-5 mt-8 md:pb-[100px] overflow-hidden">
+    <section className="px-5 mt-8 pb-[60px] md:pb-[100px] overflow-hidden">
         <div className="w-full md:max-w-[1320px] max-w-[440px] mx-auto flex max-md:flex-col max-md:items-center gap-6 lg:gap-[54px]">
             <div ref={animateLeftRefs} className="opacity-0 flex items-end max-md:-ml-2">
                 <figure className="relative md:w-[16.319vw] min-[1440px]:w-auto w-[110px]">

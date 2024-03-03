@@ -29,7 +29,7 @@ export default function Use() {
   const animateRightRefs = useScrollAnimation("slideRight");
   return (
     <section className="px-5 pt-10 md:pt-16 pb-24 md:pb-[155px]">
-        <div className="w-full max-w-[420px] md:max-w-[1195px] mx-auto">
+        <div className="w-full max-w-[380px] md:max-w-[1195px] mx-auto">
             <SectionTitle subTitle="現物資産×NFT">
             RWAタグでできること
             </SectionTitle>
@@ -38,7 +38,7 @@ export default function Use() {
                     シーズンパス券などの所有権や譲渡履歴を明確に記録できるため、盗難や偽造からの保護にも効果的です。
                 </UseItem>
             </div>
-            <div className="flex max-md:flex-wrap justify-between md:mt-[-4.444vw] min-[1440px]:mt-[-64px] mt-6 max-md:space-y-6">
+            <div className="flex max-md:flex-wrap justify-between md:mt-[-4.444vw] min-[1440px]:mt-[-64px] mt-6 max-md:gap-y-6">
                 <UseItem image="/images/use-02.png" title="所有権を証明する" color="#BADFFF">
                     現物資産の所有権を簡単かつ確実に証明することが可能です。
                 </UseItem>
