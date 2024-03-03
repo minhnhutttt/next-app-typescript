@@ -4,7 +4,7 @@ export default function Introduction() {
   const animateLeftRefs = useScrollAnimation("slideLeft");
   const animateRightRefs = useScrollAnimation("slideRight");
   return (
-    <section className="px-5 mt-8 md:pb-[100px]">
+    <section className="px-5 mt-8 md:pb-[100px] overflow-hidden">
         <div className="w-full md:max-w-[1320px] max-w-[440px] mx-auto flex max-md:flex-col max-md:items-center gap-6 lg:gap-[54px]">
             <div ref={animateLeftRefs} className="opacity-0 flex items-end max-md:-ml-2">
                 <figure className="relative md:w-[16.319vw] min-[1440px]:w-auto w-[110px]">
@@ -30,19 +30,19 @@ export default function Introduction() {
                     </p>
                     </div>
                     <div className="flex max-md:justify-center mt-8 md:mt-14 gap-4 md:gap-6 lg:gap-10">
-                        <div className="aspect-square w-[100px] md:w-[110px] lg:w-[140px] rounded-full border-2 border-[#0055A3] flex flex-col justify-end items-center pb-6 md:pb-6 lg:pb-8">
+                        <div className="aspect-square w-[30%] max-md:max-w-[100px] md:w-[110px] lg:w-[140px] rounded-full border-2 border-[#0055A3] flex flex-col justify-end items-center pb-6 md:pb-6 lg:pb-8">
                             <div className="text-[14px] md:text-[18px] text-center font-bold pb-1 md:pb-[0.833vw] min-[1440px]:pb-3"><span className="text-[20px] md:text-[24px]">NFT</span>とは</div>
                             <figure>
                                 <img className="max-md:w-[44px]" src="/images/arrow.svg" alt="" />
                             </figure>
                         </div>
-                        <div className="aspect-square w-[100px] md:w-[110px] lg:w-[140px] rounded-full border-2 border-[#0055A3] flex flex-col justify-end items-center pb-6 md:pb-6 lg:pb-8">
+                        <div className="aspect-square w-[30%] max-md:max-w-[100px] md:w-[110px] lg:w-[140px] rounded-full border-2 border-[#0055A3] flex flex-col justify-end items-center pb-6 md:pb-6 lg:pb-8">
                             <div className="text-[14px] md:text-[18px] text-center font-bold pb-1 md:pb-[0.833vw] min-[1440px]:pb-3"><span className="text-[20px] md:text-[24px]">NFC</span>とは</div>
                             <figure>
                                 <img className="max-md:w-[44px]" src="/images/arrow.svg" alt="" />
                             </figure>
                         </div>
-                        <div className="aspect-square w-[100px] md:w-[110px] lg:w-[140px] rounded-full border-2 border-[#0055A3] flex flex-col justify-end items-center pb-6 md:pb-6 lg:pb-8">
+                        <div className="aspect-square w-[30%] max-md:max-w-[100px] md:w-[110px] lg:w-[140px] rounded-full border-2 border-[#0055A3] flex flex-col justify-end items-center pb-6 md:pb-6 lg:pb-8">
                             <div className="text-[14px] md:text-[18px] text-center font-bold pb-1 md:pb-[0.833vw] min-[1440px]:pb-3"><span className="text-[20px] md:text-[24px]">RWA</span>とは</div>
                             <figure>
                                 <img className="max-md:w-[44px]" src="/images/arrow.svg" alt="" />

@@ -28,7 +28,7 @@ export default function Use() {
   const animateRefs = useScrollAnimation("zoom");
   const animateRightRefs = useScrollAnimation("slideRight");
   return (
-    <section className="px-5 py-16">
+    <section className="px-5 pt-10 md:pt-16 pb-24 md:pb-[155px]">
         <div className="w-full max-w-[420px] md:max-w-[1195px] mx-auto">
             <SectionTitle subTitle="現物資産×NFT">
             RWAタグでできること
