@@ -18,13 +18,13 @@ export default function FV() {
             />
           </h3>
           <div className="text-center font-bold tracking-[0.65em] leading-[1.3] mt-5">
-            <p className="text-[12.2vw] md:text-[7.431vw] min-[1440px]:text-[107px]">
-              <span className="text-[11.5vw] md:text-[7.292vw] min-[1440px]:text-[105px]">
+            <p className="text-[11.5vw] md:text-[7.431vw] min-[1440px]:text-[107px]">
+              <span className="text-[11.2vw] md:text-[7.292vw] min-[1440px]:text-[105px]">
                 と
               </span>
               貼るだけ
             </p>
-            <p className="text-[15vw] md:text-[9.097vw] min-[1440px]:text-[131px]">
+            <p className="text-[14.5vw] md:text-[9.097vw] min-[1440px]:text-[131px]">
               簡単証明
             </p>
           </div>
