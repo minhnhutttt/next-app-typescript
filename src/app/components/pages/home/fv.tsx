@@ -11,8 +11,8 @@ export default function FV() {
                     <img className="md:w-[44.375vw] w-[80vw] min-[1440px]:w-auto" src="/images/fv-text.png" alt="" />
                 </h3>
                 <div className="flex justify-end md:mt-[-2.778vw] min-[1440px]:mt-[-40px]">
-                    <h1 className="text-white font-black [font-size:_clamp(24px,12vw,60px)] md:text-[8.681vw] min-[1440px]:text-[125px] leading-tight text-center whitespace-nowrap">
-                        <span className="[font-size:_clamp(20px,11vw,50px)] md:text-[7.917vw] min-[1440px]:text-[114px] tracking-wide">と</span>貼るだけ<br />
+                    <h1 className="text-white font-black text-[15vw] md:text-[8.681vw] min-[1440px]:text-[125px] leading-tight text-center whitespace-nowrap">
+                        <span className="text-[14vw] md:text-[7.917vw] min-[1440px]:text-[114px] tracking-wide">と</span>貼るだけ<br />
                         <span className="tracking-[0.23em] mr-[-24px]">簡単証明</span>
                     </h1>
                 </div>

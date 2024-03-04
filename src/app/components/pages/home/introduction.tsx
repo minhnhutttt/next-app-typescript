@@ -10,9 +10,9 @@ export default function Introduction() {
                 <figure>
                     <img className="min-[1440px]:w-auto w-[22.917vw]" src="/images/logo-d.png" alt="" />
                 </figure>
-                <h3 className="min-[1440px]:-ml-[100px] -ml-[6.944vw] tracking-[0.25em]">
-                    <span className="text-[5.556vw] min-[1440px]:text-[80px] font-black leading-tight">誰のものかすぐ分かる！</span><br />
-                    <span className="text-[3vw] md:text-[1.389vw] min-[1440px]:text-[20px] font-black relative top-[1.111vw] min-[1440px]:top-[16px] tracking-[0.12em]">アールダブリューエー　タグ</span> <br />
+                <h3 className="min-[1440px]:-ml-[100px] -ml-[6.944vw] tracking-[0.25em] max-md:leading-none">
+                    <span className="text-[5.556vw] min-[1440px]:text-[80px] font-black md:leading-tight">誰のものかすぐ分かる！</span><br />
+                    <span className="text-[1.6vw] md:text-[1.389vw] min-[1440px]:text-[20px] font-black relative md:top-[1.111vw] min-[1440px]:top-[16px] tracking-[0.12em]">アールダブリューエー　タグ</span> <br />
                     <span className="text-[5.556vw] min-[1440px]:text-[80px] font-black leading-tight">RWA Tagとは？</span>
                 </h3>
             </div>
@@ -29,7 +29,7 @@ export default function Introduction() {
                     <div className="w-full max-w-[478px]">
                         <h5 className="md:text-[32px] text-[20px] font-black">どうやって証明するの？</h5>
                         <p className="md:text-[20px] text-[16px] font-black mt-4 md:mt-6 leading-[1.8]">
-                        RWA Tagを<span className="bg-[linear-gradient(to_top,_#FEBB08_40%,_transparent_40%)]">スマートフォンで読み取る</span>ことにより、あらかじめ設定しておいたNFT<span className="bg-[linear-gradient(to_top,_#FEBB08_40%,_transparent_40%)]">が表示され</span>ることで、自<span className="bg-[linear-gradient(to_top,_#FEBB08_40%,_transparent_40%)]">身の所有物を証明す</span>ることができます。
+                        RWA Tagを<span className="bg-[linear-gradient(to_top,_#FEBB08_40%,_transparent_40%)]">スマートフォンで読み取る</span>ことにより、あらかじめ設定しておいた<span className="bg-[linear-gradient(to_top,_#FEBB08_40%,_transparent_40%)]">NFTが表示される</span>ことで、<span className="bg-[linear-gradient(to_top,_#FEBB08_40%,_transparent_40%)]">自身の所有物を証明する</span>ことができます。
                         </p>
                     </div>
                 </div>

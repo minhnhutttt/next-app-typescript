@@ -1,7 +1,9 @@
 "use client";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
+    const [open, setOpen] = useState<boolean>(false);
     const pathname = usePathname();
 
     const isHomePage = pathname === "/";
@@ -15,10 +17,28 @@ export default function Header() {
                         <img src="/images/logo-black.png" alt="RWA Tag" />
                     }
                 </a>
-                <div className="flex items-center justify-end gap-3 md:gap-5 max-md:flex-wrap">
+                <div className="flex h-[28px] w-[50px] items-center justify-center md:w-[70px] md:hidden">
+                    <button
+                        className={`group relative block h-[22px] w-8 cursor-pointer border-[none] p-0 max-md:z-[99] md:w-10 max-md:[&.active]:absolute ${
+                        open ? "active" : ""
+                        }`}
+                        onClick={() => setOpen(!open)}
+                    >
+                        <span className="absolute left-0 top-0 block h-0.5 w-full bg-white transition-transform duration-[0.3s] ease-[ease] group-[.active]:top-[42%] group-[.active]:rotate-45"></span>
+                        <span className="absolute left-0 top-2/4 block h-0.5 w-full -translate-y-2/4 bg-white transition-transform duration-[0.3s] ease-[ease] group-[.active]:opacity-0"></span>
+                        <span className="absolute bottom-0 left-0 block h-0.5 w-full bg-white transition-transform duration-[0.3s] ease-[ease] group-[.active]:bottom-2/4 group-[.active]:-rotate-45"></span>
+                    </button>
+                    </div>
+                    <div
+            className={`z-[99] flex items-end justify-center gap-6 duration-300 max-md:pointer-events-none max-md:absolute max-md:top-full max-md:left-0 max-md:right-0 max-md:flex-col max-md:opacity-0 ${
+              open ? "max-md:pointer-events-auto max-md:opacity-100" : ""
+            }`}
+          >
+                <div className="flex items-center justify-end gap-3 md:gap-5 max-md:px-6 max-md:flex-wrap">
                     <a href="https://apps.apple.com/jp/app/diver-tag/id6449664504" target="_blank" rel="noopener noreferrer" className="duration-150 hover:opacity-75"><img className="max-md:w-[140px]" src="/images/btn-appstore.png" alt="App Store" /></a>
                     <a href="https://play.google.com/store/apps/details?id=com.world.scan.project.tag&hl=ja&gl=US" target="_blank" rel="noopener noreferrer" className="duration-150 hover:opacity-75"><img className="max-md:w-[140px]" src="/images/btn-google-play.png" alt="Google Play" /></a>
                 </div>
+            </div>
             </div>
         </header>
     );
