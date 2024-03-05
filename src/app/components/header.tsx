@@ -30,13 +30,13 @@ export default function Header() {
                     </button>
                     </div>
                     <div
-            className={`z-[99] flex items-end justify-center gap-6 duration-300 max-md:pointer-events-none max-md:absolute max-md:top-full max-md:left-0 max-md:right-0 max-md:flex-col max-md:opacity-0 ${
+            className={`z-[98] flex items-center justify-center gap-6 duration-300 max-xl:pointer-events-none max-xl:fixed max-xl:inset-0 max-xl:flex-col max-xl:bg-[#0055A3]/[0.9] max-xl:opacity-0 md:gap-8 xl:gap-9  ${
               open ? "max-md:pointer-events-auto max-md:opacity-100" : ""
             }`}
           >
-                <div className="flex items-center justify-end gap-3 md:gap-5 max-md:px-6 max-md:flex-wrap">
-                    <a href="https://apps.apple.com/jp/app/diver-tag/id6449664504" target="_blank" rel="noopener noreferrer" className="duration-150 hover:opacity-75"><img className="max-md:w-[140px]" src="/images/btn-appstore.png" alt="App Store" /></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.world.scan.project.tag&hl=ja&gl=US" target="_blank" rel="noopener noreferrer" className="duration-150 hover:opacity-75"><img className="max-md:w-[140px]" src="/images/btn-google-play.png" alt="Google Play" /></a>
+                <div className="flex items-center justify-center md:justify-end gap-3 md:gap-5 max-md:px-6 max-md:flex-wrap">
+                    <a href="https://apps.apple.com/jp/app/diver-tag/id6449664504" target="_blank" rel="noopener noreferrer" className="duration-150 hover:opacity-75"><img className="max-md:w-[170px]" src="/images/btn-appstore.png" alt="App Store" /></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.world.scan.project.tag&hl=ja&gl=US" target="_blank" rel="noopener noreferrer" className="duration-150 hover:opacity-75"><img className="max-md:w-[170px]" src="/images/btn-google-play.png" alt="Google Play" /></a>
                 </div>
             </div>
             </div>
