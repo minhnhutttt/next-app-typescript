@@ -1,3 +1,4 @@
+import FAQ from "./components/pages/home/faq/faq";
 import Feature from "./components/pages/home/feature";
 import FV from "./components/pages/home/fv";
 import Guide from "./components/pages/home/guide";
@@ -18,6 +19,7 @@ export default function Home() {
       <Setup />
       <Sticker />
       <Receive />
+      <FAQ />
     </main>
   );
 }

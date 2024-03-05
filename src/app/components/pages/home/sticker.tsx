@@ -7,7 +7,6 @@ export default function Sticker() {
 
   const openModal = () => {
     setModalOpen(true);
-    console.log("a");
   };
 
   const closeModal = () => {

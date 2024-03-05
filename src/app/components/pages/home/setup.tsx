@@ -6,7 +6,7 @@ export default function Setup() {
   const animateRefs = useScrollAnimation("zoom");
   const animateUpRefs = useScrollAnimation("fadeUp");
   return (
-    <section className="px-5 pt-16 pb-12 md:pt-[115px] md:pb-[130px]">
+    <section className="px-5 pt-16 pb-10 md:pt-[115px] md:pb-[50px]">
       <div className="w-full md:max-w-[1320px] max-w-[540px] mx-auto">
         <HeadTitle>NFTをセットする方法</HeadTitle>
         <div
@@ -51,8 +51,7 @@ export default function Setup() {
             </div>
             <div className="flex justify-center mt-5">
               <p className="w-full max-w-[413px] font-['Inter'] md:text-[15px] text-[12px]">
-                ※RWAタグに格納可能なNFTは、DIVERというシステムを使用しています。これによりDIVER
-                TagとRWA Tagは実質同じものです。
+              ※RWAタグに格納可能なNFTは、DIVERというシステムを使用しています。これによりDIVER TagとRWA Tagは同じものです。
               </p>
             </div>
           </div>
@@ -177,7 +176,8 @@ export default function Setup() {
         </div>
         <div ref={animateUpRefs} className="opacity-0 flex justify-center">
           <a
-            href="/"
+            href="https://www.diver-help.space/tutorial/diver-tag-set-nft"
+            target="_blank"
             className="w-full md:max-w-[440px] max-w-[340px] h-[64px] md:h-[85px] flex items-center justify-center bg-[#0055A3] rounded-[90px] text-white relative font-bold md:text-[22px] text-[17px] px-5"
           >
             <span>NFTをセットする方法の動画を見る</span>
@@ -198,6 +198,10 @@ export default function Setup() {
             </figure>
           </a>
         </div>
+        <p className="text-center md:text-[18px] text-[15px] font-medium text-[#6F6E6E] mt-2.5 leading-relaxed">
+          DIVER Help Centerへ移動します。<br />
+          ※RWA TagとDIVER Tagは同じものです。
+        </p>
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ export default function Receive() {
   const animateRefs = useScrollAnimation("zoom");
   const animateUpRefs = useScrollAnimation("fadeUp");
   return (
-    <section className="px-5 pt-16 pb-20 md:pt-[115px] md:pb-[275px]">
+    <section className="px-5 pt-16 md:pt-[115px]">
       <div className="w-full md:max-w-[1320px] max-w-[540px] mx-auto">
         <HeadTitle>NFTの受け取り方法</HeadTitle>
         <div
@@ -83,7 +83,8 @@ export default function Receive() {
                 </p>
                 <div className="flex mt-1">
                   <a
-                    href="/"
+                    href="https://www.diver-help.space/tutorial/diver-wallet-setup"
+                    target="_blank"
                     className="flex items-center text-[14px] border-b border-[#1853A0] text-[#1853A0] gap-1"
                   >
                     <svg
@@ -175,7 +176,8 @@ export default function Receive() {
         </div>
         <div ref={animateUpRefs} className="opacity-0 flex justify-center">
           <a
-            href="/"
+            href="https://www.diver-help.space/tutorial/diver-tag-transfer-nft"
+            target="_blank"
             className="w-full md:max-w-[440px] max-w-[340px] h-[64px] md:h-[85px] flex items-center justify-center bg-[#0055A3] rounded-[90px] text-white relative font-bold md:text-[22px] text-[17px] px-5"
           >
             <span>NFTの転送方法の動画を見る</span>
@@ -196,6 +198,10 @@ export default function Receive() {
             </figure>
           </a>
         </div>
+        <p className="text-center md:text-[18px] text-[15px] font-medium text-[#6F6E6E] mt-2.5 leading-relaxed">
+          DIVER Help Centerへ移動します。<br />
+          RWA TagとDIVER Tagは同じものです。
+        </p>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
+import PopupButton from "./components/popupButton";
 export default function Introduction() {
   const animateLeftRefs = useScrollAnimation("slideLeft");
   const animateRightRefs = useScrollAnimation("slideRight");
@@ -56,7 +57,7 @@ export default function Introduction() {
             </div>
           </div>
         </div>
-        <div ref={animateRightRefs} className="opacity-0 pt-2 flex-1">
+        <div className="pt-2 flex-1">
           <div className="md:w-[45vw] xl:w-[510px]">
             <div className="md:pl-4">
               <h3 className="text-[32px] md:text-[40px] min-[1440px]:text-[64px] font-black tracking-wider">
@@ -72,42 +73,21 @@ export default function Introduction() {
               </p>
             </div>
             <div className="flex max-md:justify-center mt-8 md:mt-14 gap-4 md:gap-6 lg:gap-10">
-              <div className="aspect-square w-[30%] max-md:max-w-[100px] md:w-[110px] lg:w-[140px] rounded-full border-2 border-[#0055A3] flex flex-col justify-end items-center pb-6 md:pb-6 lg:pb-8">
-                <div className="text-[14px] md:text-[18px] text-center font-bold pb-1 md:pb-[0.833vw] min-[1440px]:pb-3">
-                  <span className="text-[20px] md:text-[24px]">NFT</span>とは
-                </div>
-                <figure>
-                  <img
-                    className="max-md:w-[44px]"
-                    src="/images/arrow.svg"
-                    alt=""
-                  />
-                </figure>
-              </div>
-              <div className="aspect-square w-[30%] max-md:max-w-[100px] md:w-[110px] lg:w-[140px] rounded-full border-2 border-[#0055A3] flex flex-col justify-end items-center pb-6 md:pb-6 lg:pb-8">
-                <div className="text-[14px] md:text-[18px] text-center font-bold pb-1 md:pb-[0.833vw] min-[1440px]:pb-3">
-                  <span className="text-[20px] md:text-[24px]">NFC</span>とは
-                </div>
-                <figure>
-                  <img
-                    className="max-md:w-[44px]"
-                    src="/images/arrow.svg"
-                    alt=""
-                  />
-                </figure>
-              </div>
-              <div className="aspect-square w-[30%] max-md:max-w-[100px] md:w-[110px] lg:w-[140px] rounded-full border-2 border-[#0055A3] flex flex-col justify-end items-center pb-6 md:pb-6 lg:pb-8">
-                <div className="text-[14px] md:text-[18px] text-center font-bold pb-1 md:pb-[0.833vw] min-[1440px]:pb-3">
-                  <span className="text-[20px] md:text-[24px]">RWA</span>とは
-                </div>
-                <figure>
-                  <img
-                    className="max-md:w-[44px]"
-                    src="/images/arrow.svg"
-                    alt=""
-                  />
-                </figure>
-              </div>
+              <PopupButton
+                title="NFT"
+                popupLogo="/images/logo-popup-01.png"
+                popupContent="NFCは「近距離無線通信」の略で、デバイス間の短距離データ交換を可能にする技術です。スマートフォンや決済端末などで用いられ、タッチするだけで情報の送受信が行えます。"
+              />
+              <PopupButton
+                title="NFC"
+                popupLogo="/images/logo-popup-02.png"
+                popupContent="NFCは「近距離無線通信」の略で、デバイス間の短距離データ交換を可能にする技術です。スマートフォンや決済端末などで用いられ、タッチするだけで情報の送受信が行えます。"
+              />
+              <PopupButton
+                title="RWA"
+                popupLogo="/images/logo-popup-03.png"
+                popupContent="RWA（Real World Assets）は、不動産や企業の株式など、デジタルではない現実世界の資産を指します。これらをデジタル化することで、ブロックチェーン上で取引が可能になります。"
+              />
             </div>
           </div>
         </div>

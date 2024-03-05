@@ -18,7 +18,7 @@ export default function Header() {
         </a>
         <div className="flex h-[28px] w-[50px] items-center justify-center md:w-[70px] md:hidden">
           <button
-            className={`group relative block h-[22px] w-8 cursor-pointer border-[none] p-0 max-md:z-[99] md:w-10 max-md:[&.active]:absolute ${
+            className={`group relative block h-[22px] w-8 cursor-pointer border-[none] p-0 max-md:z-[99] md:w-10 max-md:[&.active]:fixed ${
               open ? "active" : ""
             }`}
             onClick={() => setOpen(!open)}
@@ -29,11 +29,11 @@ export default function Header() {
           </button>
         </div>
         <div
-            className={`z-[99] flex items-end justify-center gap-6 duration-300 max-md:pointer-events-none max-md:absolute max-md:top-full max-md:left-0 max-md:right-0 max-md:flex-col max-md:opacity-0 ${
+            className={`z-[98] flex items-center justify-center gap-6 duration-300 max-xl:pointer-events-none max-xl:fixed max-xl:inset-0 max-xl:flex-col max-xl:bg-[#E0F3FF]/[0.9] max-xl:opacity-0 md:gap-8 xl:gap-9 ${
               open ? "max-md:pointer-events-auto max-md:opacity-100" : ""
             }`}
           >
-        <div className="flex items-center justify-end gap-3 max-md:px-6 md:gap-5 max-md:flex-wrap">
+        <div className="flex items-center justify-center md:justify-end gap-6 max-md:px-6 md:gap-5 max-md:flex-wrap">
           <a
             href="https://apps.apple.com/jp/app/diver-tag/id6449664504"
             target="_blank"
@@ -41,7 +41,7 @@ export default function Header() {
             className="duration-150 hover:opacity-75"
           >
             <img
-              className="max-md:w-[140px]"
+              className="max-md:w-[170px]"
               src="/images/btn-appstore.png"
               alt="App Store"
             />
@@ -53,7 +53,7 @@ export default function Header() {
             className="duration-150 hover:opacity-75"
           >
             <img
-              className="max-md:w-[140px]"
+              className="max-md:w-[170px]"
               src="/images/btn-google-play.png"
               alt="Google Play"
             />
