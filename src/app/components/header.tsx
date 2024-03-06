@@ -3,6 +3,22 @@ import { useEffect, useState } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState<boolean>(false);
+  useEffect(() => {
+    const handleLinksClick = () => {
+      setOpen(false);
+    };
+
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      link.addEventListener("click", handleLinksClick);
+    });
+
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener("click", handleLinksClick);
+      });
+    };
+  }, []);
   return (
     <header className="absolute top-0 left-0 right-0 z-10 px-5 md:px-[60px]">
       <div className="mx-auto max-md:py-6 w-full flex md:items-center justify-between md:justify-start md:h-[106px] md:gap-10 gap-5">

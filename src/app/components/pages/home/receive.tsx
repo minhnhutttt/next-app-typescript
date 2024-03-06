@@ -48,7 +48,7 @@ export default function Receive() {
                 </figure>
                 <div className="space-y-5">
                   <a
-                    href="https://apps.apple.com/jp/app/diver-tag/id6449664504"
+                    href="https://apps.apple.com/jp/app/diver-wallet/id6444421722"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block duration-150 hover:opacity-75"
@@ -60,7 +60,7 @@ export default function Receive() {
                     />
                   </a>
                   <a
-                    href="https://play.google.com/store/apps/details?id=com.world.scan.project.tag&hl=ja&gl=US"
+                    href="https://play.google.com/store/apps/details?id=com.hyerdesign.diver.wallet&hl=en_US"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block duration-150 hover:opacity-75"
