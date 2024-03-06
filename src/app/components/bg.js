@@ -1206,30 +1206,29 @@ filter = (filterFuncs = 'none') => {
     let yCount = 80;
     let iXCount = 1 / (xCount - 1);
     let iYCount = 1 / (yCount - 1);
-    let time = e * 0.001;
+    let time = e * 0.000008;
     let timeStep = 0.01;
 
     this.ctx.clearRect(0, 0, width, height);
 
     let grad = this.ctx.createLinearGradient(-width, 0, width, height);
+    let gradBg = this.ctx.createLinearGradient(-width, 0, width, height);
     let t = time % 1;
     let tSide = Math.floor(time % 2) === 0;
-    let hueA = tSide ? 340 : 210;
-    let hueB = !tSide ? 340 : 210;
-    let colorA = `hsl(${hueA}, 100%, 50%)`;
-    let colorB = `hsl(${hueB}, 100%, 50%)`;
-    // grad.addColorStop(t * THIRD, colorA);
-    // grad.addColorStop(t * TWO_THIRDS, colorB);
-    // grad.addColorStop(t * ONE, colorA);
+    let colorA = `hsla(9, 66%, 47%, 1)`;
+    let colorB = `hsla(240, 60%, 36%, 1)`;
+    let colorC = `hsla(287, 47%, 19%,  1)`;
+    
 
     grad.addColorStop(this.map(t, 0, 1, THIRD, ZERO), colorA);
-	grad.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), colorB);
-	grad.addColorStop(this.map(t, 0, 1, ONE, TWO_THIRDS), colorA);
-	this.ctx.globalAlpha = this.map(this.cos(time), -1, 1, 0.15, 0.3);
-    this.background(grad);
-    this.ctx.globalAlpha = Math.cos(time) < 0 ? 0.15 : 0.3;
-    this.ctx.fillStyle = grad;
-    this.ctx.fillRect(0, 0, width, height);
+    grad.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), colorB);
+    grad.addColorStop(this.map(t, 0, 1, ONE, TWO_THIRDS), colorC);
+    gradBg.addColorStop(this.map(t, 0, 1, THIRD, ZERO), `hsla(9, 66%, 47%, 0.3)`);
+    gradBg.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), `hsla(240, 60%, 36%, 0.3)`);
+    gradBg.addColorStop(this.map(t, 0, 1, ONE, TWO_THIRDS), `hsla(287, 47%, 19%, 0.3)`);
+    this.background(gradBg);
+    this.ctx.globalAlpha = this.map(this.cos(time) < 0 ? 0.15 : 0.3);
+    this.ctx.fillStyle = `hsla(0, 0%, 0%, 1)`;
     this.ctx.globalAlpha = 1;
 
     this.ctx.beginPath();
@@ -1242,32 +1241,27 @@ filter = (filterFuncs = 'none') => {
             let y = n * height_half;
             let x = t * (width + 20) - width_half - 10;
             if (i === 0) {
-                this.ctx.moveTo(x, y); // Gọi moveTo một lần khi bắt đầu đường path mới
+                this.ctx.moveTo(x, y);
             } else {
-                this.ctx.lineTo(x, y); // Gọi lineTo cho các điểm tiếp theo
+                this.ctx.lineTo(x, y);
             }
         }
         time += timeStep;
     }
     this.ctx.globalCompositeOperation = 'lighter';
-    this.ctx.filter = 'blur(2px)';
+    this.ctx.filter = 'blur(0px)';
     this.ctx.strokeStyle = grad;
     this.ctx.lineWidth = 5;
     this.ctx.stroke();
-    this.ctx.filter = 'blur(2px)';
-    this.ctx.strokeStyle = `hsl(0, 0%, 100%, 0.8)`;
+    this.ctx.filter = 'blur(0px)';
+    this.ctx.strokeStyle = `hsl(0, 0%, 100%, 1)`;
     this.ctx.lineWidth = 2;
-    this.ctx.stroke();
 };
 
 
-    animate = () => {
-        this.draw(Date.now());
-        this.requestID = requestAnimationFrame(this.animate);
-    };
 
     render() {
-        return <canvas id="canvas" ref={this.canvasRef} width={1920} height={800} />;
+        return <canvas id="canvas" />;
     }
 }
 

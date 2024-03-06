@@ -3,12 +3,12 @@ import Sidebar from "./components/sidebar";
 import NoiseCanvas from "./components/bg"
 export default function Home() {
   return (
-    <main className="bg-black bg-top bg-cover relative">
-      <div className="fixed inset-0">
+    <main className="h-screen bg-top bg-cover relative">
+      <div className="fixed inset-0 z-0">
         <NoiseCanvas />
       </div>
-      <div className="absolute left-3 md:left-5 bg-[linear-gradient(180deg,_#F44343_0%,_#FF8719_37.5%,_#FFE819_75%)] w-1 md:w-[5px] h-full top-0 bottom-0"></div>
-      <div className="max-md:px-[28px] md:pl-[66px]">
+      <div className="absolute z-10 left-3 md:left-5 bg-[linear-gradient(180deg,_#F44343_0%,_#FF8719_37.5%,_#FFE819_75%)] w-1 md:w-[5px] h-full top-0 bottom-0"></div>
+      <div className="relative max-md:px-[28px] md:pl-[66px]">
         <div className="flex max-md:flex-col md:gap-20 lg:gap-[170px] pt-7 md:pt-[86px]">
           <div className="mt-3">
             <figure className="md:pb-5 pb-3 md:pr-6">
@@ -27,7 +27,7 @@ export default function Home() {
             </figure>
         </div>
       </div>
-      <div className="pl-8 pr-6 md:pl-[40px] md:pr-[30px] pt-4 md:pt-6">
+      <div className="relativep l-8 pr-6 md:pl-[40px] md:pr-[30px] pt-4 md:pt-6">
         <div className="flex items-start">
           <Sidebar />
           <div className="flex sticky top-10 justify-center w-[30px] mx-3 max-md:hidden z-10 h-[30px] overflow-hidden rounded-full">
@@ -87,7 +87,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="mt-10 md:mt-[60px]">
+      <div className="relative mt-10 md:mt-[60px]">
         <div className="w-[90%] border-t border-r rounded-tr-[102px] border-white/50 pl-14 lg:pl-[360px]">
           <div className="flex gap-6 pr-8 items-start">
             <div className="border-b border-white/50 flex-1">
