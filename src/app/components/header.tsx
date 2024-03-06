@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
@@ -7,6 +7,23 @@ export default function Header() {
     const pathname = usePathname();
 
     const isHomePage = pathname === "/";
+
+    useEffect(() => {
+      const handleLinksClick = () => {
+        setOpen(false);
+      };
+  
+      const links = document.querySelectorAll("a");
+      links.forEach((link) => {
+        link.addEventListener("click", handleLinksClick);
+      });
+  
+      return () => {
+        links.forEach((link) => {
+          link.removeEventListener("click", handleLinksClick);
+        });
+      };
+    }, []);
     return (
         <header className="absolute top-0 left-0 right-0 z-10 px-5 md:px-16">
             <div className="mx-auto max-md:py-6 w-full flex md:items-center justify-between md:h-[106px] max-md:gap-5">
