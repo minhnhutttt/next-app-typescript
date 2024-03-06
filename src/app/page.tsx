@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Sidebar from "./components/sidebar";
-
+import NoiseCanvas from "./components/bg"
 export default function Home() {
   return (
-    <main className="bg-[url('/images/bg.png')] bg-top bg-cover relative">
+    <main className="bg-black bg-top bg-cover relative">
+      <div className="fixed inset-0">
+        <NoiseCanvas />
+      </div>
       <div className="absolute left-3 md:left-5 bg-[linear-gradient(180deg,_#F44343_0%,_#FF8719_37.5%,_#FFE819_75%)] w-1 md:w-[5px] h-full top-0 bottom-0"></div>
       <div className="max-md:px-[28px] md:pl-[66px]">
         <div className="flex max-md:flex-col md:gap-20 lg:gap-[170px] pt-7 md:pt-[86px]">
