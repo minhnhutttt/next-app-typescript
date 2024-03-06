@@ -49,8 +49,8 @@ export default function PopupButton({ title, popupLogo, popupContent }: PopupBut
             onClick={() => closeModal()}
           >
             <svg className="max-md:w-5 max-md:h-5" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 27L27 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M27 27L1 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1 27L27 1" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M27 27L1 1" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
           <div className="w-full pt-[50px] md:pt-[100px] flex flex-col items-center justify-center px-6 pb-[60px] md:pb-[110px] max-w-[493px]">

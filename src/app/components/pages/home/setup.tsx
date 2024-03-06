@@ -2,9 +2,21 @@
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import HeadTitle from "./components/headTitle";
 import Step from "./components/step";
+import { useState } from "react";
+import PurchasePopup from "./purchasePopup";
 export default function Setup() {
   const animateRefs = useScrollAnimation("zoom");
   const animateUpRefs = useScrollAnimation("fadeUp");
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
   return (
     <section className="px-5 pt-16 pb-10 md:pt-[115px] md:pb-[50px]">
       <div className="w-full md:max-w-[1320px] max-w-[540px] mx-auto">
@@ -59,7 +71,7 @@ export default function Setup() {
         <div className="grid md:grid-cols-2 gap-y-8 md:gap-y-[60px] gap-x-5 md:gap-x-[70px] w-full md:max-w-[690px] max-w-[310px] mx-auto my-8 md:my-14">
           <Step step="01">
             <div className="md:min-h-[470px] min-h-[400px] flex flex-col items-center justify-end">
-              <div className="flex-1 flex flex-col items-center justify-center gap-4">
+              <button type="button" onClick={openModal} className="flex-1 flex flex-col items-center justify-center gap-4 duration-300 hover:opacity-75">
                 <figure>
                   <img
                     className="max-md:max-w-[130px]"
@@ -67,14 +79,14 @@ export default function Setup() {
                     alt=""
                   />
                 </figure>
-                <a href="/" target="_blank">
+                <p>
                   <img
                     className="max-md:max-w-[120px]"
                     src="/images/btn-cart.png"
                     alt="購入"
                   />
-                </a>
-              </div>
+                </p>
+              </button>
               <div className="h-[78px]">
                 <p className="text-center text-[16px] font-medium">
                   RWA Tagシールを購入
@@ -202,6 +214,43 @@ export default function Setup() {
           DIVER Help Centerへ移動します。<br />
           ※RWA TagとDIVER Tagは同じものです。
         </p>
+      </div>
+      {isModalOpen && (
+        <div
+          className="absolute inset-0 z-40 absolute-0 bg-[#344054]/[0.7] backdrop-filter backdrop-blur"
+          onClick={() => closeModal()}
+        ></div>
+      )}
+      <div
+        className={`z-50 inset-0 fixed pointer-events-none flex justify-center items-center opacity-0 ${isModalOpen ? "pointer-events-auto opacity-100" : ""}`}
+      >
+        <div
+          className="absolute inset-0 blur-[8px] bg-[#344054]/[0.7]"
+          onClick={() => closeModal()}
+        ></div>
+        <div className="w-full lg:max-w-[400px] max-w-[320px] mx-auto inset-x-0 top-1/2 -translate-y-1/2 bg-white absolute  duration-300 rounded-[10px] flex items-center justify-center flex-col [box-shadow:0px_8px_8px_-4px_rgba(16,_24,_40,_0.04),_0px_20px_24px_-4px_rgba(16,_24,_40,_0.10)]">
+          <button
+            className="absolute w-11 h-11 top-4 right-4"
+            onClick={() => closeModal()}
+          >
+            <svg
+              width="44"
+              height="45"
+              viewBox="0 0 44 45"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28 16.3345L16 28.3345M16 16.3345L28 28.3345"
+                stroke="#667085"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <PurchasePopup />
+        </div>
       </div>
     </section>
   );
