@@ -5,7 +5,7 @@ export default function FV() {
   const animateRightRefs = useScrollAnimation("slideRight");
   return (
     <section className="bg-[url('/images/fv-bg.png')] bg-cover">
-        <div className="flex max-md:flex-col w-full md:max-w-[90.278vw] min-[1440px]:max-w-[1300px] mx-auto gap-8 pt-[150px] md:pt-[105px]">
+        <div className="flex max-md:flex-col w-full md:max-w-[90.278vw] min-[1440px]:max-w-[1300px] mx-auto gap-8 pt-[90px] md:pt-[105px]">
             <div ref={animateRefs} className="opacity-0 flex-1 md:pl-3 max-md:max-w-[80vw] max-md:flex max-md:items-center max-md:flex-col max-md:mx-auto">
                 <h3 className="">
                     <img className="md:w-[44.375vw] w-[80vw] min-[1440px]:w-auto" src="/images/fv-text.png" alt="" />
