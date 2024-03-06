@@ -1249,13 +1249,13 @@ filter = (filterFuncs = 'none') => {
         time += timeStep;
     }
     this.ctx.globalCompositeOperation = 'lighter';
-    this.ctx.filter = 'blur(0px)';
+    this.ctx.filter = 'blur(1px)';
     this.ctx.strokeStyle = grad;
-    this.ctx.lineWidth = 5;
-    this.ctx.stroke();
-    this.ctx.filter = 'blur(0px)';
-    this.ctx.strokeStyle = `hsl(0, 0%, 100%, 1)`;
     this.ctx.lineWidth = 2;
+    this.ctx.stroke();
+    this.ctx.filter = 'blur(2px)';
+    this.ctx.strokeStyle = `hsl(0, 0%, 100%, 1)`;
+    this.ctx.lineWidth = 1;
 };
 
 
