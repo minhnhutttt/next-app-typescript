@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 export default function Menu() {
@@ -11,29 +11,44 @@ export default function Menu() {
   const [expanded, setExpanded] = useState(false);
   const boxRef = useRef(null);
 
-  const toggleExpand = () => {
-    setExpanded(!expanded);
+  const openExpand = () => {
     const box = boxRef.current;
-
-    if (expanded) {
-      gsap.to(box, { height: 46, xPercent: 100, x: -46, duration: 0.3 });
-    } else {
-      gsap.to(box, { height: 200, duration: 0.3 });
-      gsap.to(box, { height: "auto", xPercent: 0, x: 0, duration: 0.3, delay: 0.3 });
-    }
+    gsap.to(box, { height: 200, duration: 0.3 });
+    gsap.to(box, { height: "auto", xPercent: 0, x: 0, duration: 0.3, delay: 0.3 });
   };
+  
+  const closeExpand = () => {
+    const box = boxRef.current;
+    gsap.to(box, { height: 46, xPercent: 100, x: -46, duration: 0.3 });
+  };
+  useEffect(() => {
+    const handleLinksClick = () => {
+        closeExpand();
+    };
+
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      link.addEventListener("click", handleLinksClick);
+    });
+
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener("click", handleLinksClick);
+      });
+    };
+  }, []);
   return (
     <div className="md:hidden">
         <div className="fixed top-[10%] right-0 overflow-hidden flex justify-end">
             <div ref={boxRef} className="h-[46px] translate-x-[calc(100%-46px)] bg-[linear-gradient(180deg,_#FFC700_0%,_#FF8719_100%)] rounded-l-[22px] py-2 origin-right">
-                <button onClick={toggleExpand} className="absolute w-[54px] right-4 top-4 z-10">
+                <button onClick={closeExpand} className="absolute w-[54px] right-4 top-4 z-10">
                         <svg className="" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 107 47" fill="none">
                         <line x1="1.20064" y1="0.542021" x2="106.201" y2="46.542" stroke="black"/>
                         <line x1="0.68285" y1="46.2675" x2="105.921" y2="0.814274" stroke="black"/>
                         </svg>
                 </button>
                 <div className="flex">
-                    <button onClick={toggleExpand} className="flex flex-col items-center pl-2 pr-3.5 gap-2.5">
+                    <button onClick={openExpand} className="flex flex-col items-center pl-2 pr-3.5 gap-2.5">
                         <figure>
                             <div className="circle w-[30px] h-[30px] drop-shadow-2xl rounded-full"></div>
                         </figure>

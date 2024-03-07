@@ -1188,6 +1188,9 @@ filter = (filterFuncs = 'none') => {
     let height_half = height / 2;
     let THIRD = 1 / 3;
     let TWO_THIRDS = 2 / 3;
+    let THIRDS_FOUR = 3 / 4;
+    let TWO_FOUR = 2 / 4;
+    let ONE_FOUR = 1 / 4;
     let ONE = 1;
 
     let xCount = 35;
@@ -1203,21 +1206,24 @@ filter = (filterFuncs = 'none') => {
     let gradBg = this.ctx.createLinearGradient(-width, 0, width, height);
     let t = time % 1;
     let tSide = Math.floor(time % 2) === 0;
-    let colorA = `hsla(9, 66%, 47%, 1)`;
-    let colorB = `hsla(240, 60%, 36%, 1)`;
-    let colorC = `hsla(287, 47%, 19%,  1)`;
-    
+    let hueA = tSide ? 24 : 240;
+	let hueB = !tSide ? 24 : 240;
+	let colorA = this.hsl(hueA, 100, 50);
+	let colorB = this.hsl(hueB, 100, 50);
+
+  let colorAbg = this.hsl(hueA, 100, 50, 0.2);
+	let colorBbg = this.hsl(hueB, 100, 50, 0.2);
 
     grad.addColorStop(this.map(t, 0, 1, THIRD, ZERO), colorA);
-    grad.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), colorB);
-    grad.addColorStop(this.map(t, 0, 1, ONE, TWO_THIRDS), colorC);
-    gradBg.addColorStop(this.map(t, 0, 1, THIRD, ZERO), `hsla(9, 66%, 47%, 0.3)`);
-    gradBg.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), `hsla(240, 60%, 36%, 0.3)`);
-    gradBg.addColorStop(this.map(t, 0, 1, ONE, TWO_THIRDS), `hsla(287, 47%, 19%, 0.3)`);
+	grad.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), colorB);
+	grad.addColorStop(this.map(t, 0, 1, ONE, TWO_THIRDS), colorA);
+
+  gradBg.addColorStop(this.map(t, 0, 1, THIRD, ZERO), colorAbg);
+	gradBg.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), colorBbg);
+	gradBg.addColorStop(this.map(t, 0, 1, ONE, TWO_THIRDS), colorAbg);
+
     this.background(gradBg);
     this.ctx.globalAlpha = this.map(this.cos(time) < 0 ? 0.15 : 0.3);
-    this.ctx.fillStyle = `hsla(0, 0%, 0%, 1)`;
-    this.ctx.globalAlpha = 1;
 
     this.ctx.beginPath();
     for (let j = 0; j < yCount; j++) {
@@ -1237,11 +1243,11 @@ filter = (filterFuncs = 'none') => {
         time += timeStep;
     }
     this.ctx.globalCompositeOperation = 'lighter';
-    this.ctx.filter = 'blur(1px)';
+    this.ctx.filter = 'blur(4px)';
     this.ctx.strokeStyle = grad;
     this.ctx.lineWidth = 2;
     this.ctx.stroke();
-    this.ctx.filter = 'blur(2px)';
+    this.ctx.filter = 'blur(5px)';
     this.ctx.strokeStyle = `hsl(0, 0%, 100%, 1)`;
     this.ctx.lineWidth = 1;
 };
