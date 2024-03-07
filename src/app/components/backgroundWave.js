@@ -2,25 +2,13 @@
 import React from 'react';
 import SimplexNoise from 'simplex-noise';
 
-// Định nghĩa hằng số TAU nếu không có sẵn
-const {
-    E, LN10, LN2, LOG10E, LOG2E, PI, SQRT1_2, SQRT2,
-    abs, acos, acosh, asin, asinh, atan, atan2, atanh, cbrt, ceil, clz32,
-    cosh, exp, expm1, floor, fround, hypot, imul, log, log10, log1p, log2, max,
-    min, pow, round, sign, sinh, sqrt, tan, tanh, trunc } =
-  Math;
+const { PI, abs, atan2, ceil, floor, max, min, round, sqrt } = Math;
   
-  
-  // Why not?
   const ZERO = 0.0;
   const ONE = 1.0;
   const TWO = 2.0;
-  const THREE = 3.0;
   
   const HALF = ONE / TWO;
-  const THIRD = ONE / THREE;
-  const TWO_THIRDS = THIRD * TWO;
-  
   
   const TAU = PI * TWO;
 
@@ -941,7 +929,7 @@ class Vector {
   }
   
 
-class NoiseCanvas extends React.Component {
+class BackgroundWave extends React.Component {
     constructor(props) {
         super(props);
         this.canvasRef = React.createRef();
@@ -1258,11 +1246,9 @@ filter = (filterFuncs = 'none') => {
     this.ctx.lineWidth = 1;
 };
 
-
-
     render() {
         return <canvas id="canvas" />;
     }
 }
 
-export default NoiseCanvas;
+export default BackgroundWave;
