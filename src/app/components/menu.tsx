@@ -38,7 +38,7 @@ export default function Menu() {
     };
   }, []);
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
         <div className="fixed top-[10%] right-0 overflow-hidden flex justify-end">
             <div ref={boxRef} className="h-[46px] translate-x-[calc(100%-46px)] bg-[linear-gradient(180deg,_#FFC700_0%,_#FF8719_100%)] rounded-l-[22px] py-2 origin-right">
                 <button onClick={closeExpand} className="absolute w-[54px] right-4 top-4 z-10">

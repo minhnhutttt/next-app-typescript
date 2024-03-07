@@ -20,15 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <div className="fixed inset-0 z-0">
-          <BackgroundWave />
-        </div>
-        <div className="fixed z-10 left-3 md:left-5 bg-[linear-gradient(180deg,_#F44343_0%,_#FF8719_37.5%,_#FFE819_75%)] w-1 md:w-[5px] h-full top-0 bottom-0"></div>
-        {children}
-        <Menu />
-        <Ardrex />
-        <Footer />
+          <Header />
+          <div className="fixed inset-0 z-0">
+            <BackgroundWave />
+          </div>
+          <div className="fixed z-10 left-3 md:left-5 bg-[linear-gradient(180deg,_#F44343_0%,_#FF8719_37.5%,_#FFE819_75%)] w-1 md:w-[5px] h-full top-0 bottom-0"></div>
+          {children}
+          <Menu />
+          <Footer />
         </body>
     </html>
   );

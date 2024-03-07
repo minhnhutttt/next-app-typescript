@@ -46,8 +46,8 @@ export default function Container({title, anchors, children}: ContainerPropType)
             </a>
             <div className="md:mt-10 mt-7 space-y-7">
               <ul className="space-y-5">
-                {anchors && anchors.map((item) => {
-                    return <li><Link href={`/#${item.link}`} className="md:text-[20px] text-[16px] font-bold">{item.text}</Link></li>
+                {anchors && anchors.map((item, index) => {
+                    return <li key={index}><Link href={`/#${item.link}`} className="md:text-[20px] text-[16px] font-bold">{item.text}</Link></li>
                 })}
                 
               </ul>
