@@ -41,7 +41,7 @@ export default function OrderingFlow() {
         >
           <div className="w-full border-l border-[#FFC01D]/[0.2] md:pl-6 pl-3 space-y-6">
             <OrderStep step="/images/number-01.png" image="/images/order-01.png" title="Needs Analysis & Hearing">
-            Conduct detailed discussions to understand the client's needs, requirements, and business goals. Share the project overview, objectives, and expected outcomes.
+            Conduct detailed discussions to understand the client&apos;s needs, requirements, and business goals. Share the project overview, objectives, and expected outcomes.
             </OrderStep>
             <OrderStep step="/images/number-02.png" image="/images/order-02.png" title="Proposal & Estimation">
             Based on the hearing, create a proposal and estimate that includes the project scope, planned functionalities, timeline, and ROI. This step is crucial for laying the groundwork for the project.

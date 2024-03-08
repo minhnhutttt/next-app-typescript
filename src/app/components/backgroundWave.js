@@ -1193,12 +1193,12 @@ filter = (filterFuncs = 'none') => {
     let ONE_FOUR = 1 / 4;
     let ONE = 1;
 
-    let xCount = 35;
-    let yCount = 80;
+    let xCount = 100;
+    let yCount = 240;
     let iXCount = 1 / (xCount - 1);
     let iYCount = 1 / (yCount - 1);
-    let time = e * 0.000008;
-    let timeStep = 0.01;
+    let time = e * 0.00002;
+    let timeStep = 0.003;
 
     this.ctx.clearRect(0, 0, width, height);
 
@@ -1207,23 +1207,22 @@ filter = (filterFuncs = 'none') => {
     let t = time % 1;
     let tSide = Math.floor(time % 2) === 0;
     let hueA = tSide ? 24 : 240;
-	let hueB = !tSide ? 24 : 240;
-	let colorA = this.hsl(hueA, 100, 50);
-	let colorB = this.hsl(hueB, 100, 50);
+    let hueB = !tSide ? 24 : 240;
+    let colorA = this.hsl(hueA, 100, 50);
+    let colorB = this.hsl(hueB, 100, 50);
 
   let colorAbg = this.hsl(hueA, 100, 50, 0.2);
 	let colorBbg = this.hsl(hueB, 100, 50, 0.2);
 
     grad.addColorStop(this.map(t, 0, 1, THIRD, ZERO), colorA);
-	grad.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), colorB);
-	grad.addColorStop(this.map(t, 0, 1, ONE, TWO_THIRDS), colorA);
+    grad.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), colorB);
+    grad.addColorStop(this.map(t, 0, 1, ONE, TWO_THIRDS), colorA);
 
-  gradBg.addColorStop(this.map(t, 0, 1, THIRD, ZERO), colorAbg);
-	gradBg.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), colorBbg);
+    gradBg.addColorStop(this.map(t, 0, 1, THIRD, ZERO), colorAbg);
+    gradBg.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), colorBbg);
 	gradBg.addColorStop(this.map(t, 0, 1, ONE, TWO_THIRDS), colorAbg);
 
     this.background(gradBg);
-    this.ctx.globalAlpha = this.map(this.cos(time) < 0 ? 0.15 : 0.3);
 
     this.ctx.beginPath();
     for (let j = 0; j < yCount; j++) {
@@ -1235,7 +1234,7 @@ filter = (filterFuncs = 'none') => {
             let y = n * height_half;
             let x = t * (width + 20) - width_half - 10;
             if (i === 0) {
-                this.ctx.moveTo(x, y);
+                this.ctx.moveTo(x*20, y/20);
             } else {
                 this.ctx.lineTo(x, y);
             }
@@ -1243,13 +1242,9 @@ filter = (filterFuncs = 'none') => {
         time += timeStep;
     }
     this.ctx.globalCompositeOperation = 'lighter';
-    this.ctx.filter = 'blur(4px)';
     this.ctx.strokeStyle = grad;
-    this.ctx.lineWidth = 2;
+    this.ctx.lineWidth = 0.5;
     this.ctx.stroke();
-    this.ctx.filter = 'blur(5px)';
-    this.ctx.strokeStyle = `hsl(0, 0%, 100%, 1)`;
-    this.ctx.lineWidth = 1;
 };
 
     render() {

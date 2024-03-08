@@ -30,7 +30,7 @@ export default function Disclaimer() {
           Clients acknowledge and accept the risks associated with cross-border transactions, including exchange rate fluctuations and differences in tax laws.
           </TextBlock>
           <TextBlock title="8.  Venturing into New Industries">
-          Clients understand and accept the risks associated with ARDOREX's venture into new industries through innovative technologies and services.
+          Clients understand and accept the risks associated with ARDOREX&apos;s venture into new industries through innovative technologies and services.
           </TextBlock>
           <TextBlock title="9.  Legal Jurisdiction">
           This disclaimer shall be interpreted in accordance with the laws of Singapore. In the event of a dispute, the courts of Singapore shall have exclusive jurisdiction.

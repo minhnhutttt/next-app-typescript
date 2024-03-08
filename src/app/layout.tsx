@@ -4,7 +4,6 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Menu from "./components/menu";
 import BackgroundWave from "./components/backgroundWave";
-import Ardrex from "./components/ardrex";
 
 
 export const metadata: Metadata = {

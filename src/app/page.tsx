@@ -1,5 +1,3 @@
-import Link from "next/link";
-import Sidebar from "./components/sidebar";
 import Container from "./components/container";
 import TextBlock from "./components/common/textBlock";
 export default function Home() {
