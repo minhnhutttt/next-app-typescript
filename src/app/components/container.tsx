@@ -14,9 +14,6 @@ type ContainerPropType = {
     children: ReactNode;
   };
 export default function Container({title, anchors, children}: ContainerPropType) {
-    useEffect(() => {
-        console.log(anchors)
-    })
     return (
         <div className="relativep pl-8 pr-6 md:pl-[40px] md:pr-[30px] pt-4 md:pt-6">
         <div className="flex items-start">
