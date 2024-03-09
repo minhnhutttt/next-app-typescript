@@ -67,7 +67,7 @@ export default function Menu() {
                         <div>
                             <p className="text-[14px] font-bold">The forte</p>
                             <ul className="space-y-1 mt-1">
-                                <li><Link href="/globarity" className="tblock ext-[14px] pl-4">Globarity</Link></li>
+                                <li><Link href="/globality" className="tblock ext-[14px] pl-4">Globality</Link></li>
                                 <li><Link href="/flextegrity" className="block text-[14px] pl-4">Flextegrity</Link></li>
                                 <li><Link href="/innovity" className="block text-[14px] pl-4">Innovity</Link></li>
                             </ul>

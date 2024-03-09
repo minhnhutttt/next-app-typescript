@@ -40,7 +40,7 @@ export default function Sidebar() {
               <div className="font-bold text-[19px] px-2.5 py-[14px] border-b border-white [text-shadow:2px_2px_8px_#000]">The forte</div>
               <div className="py-4">
                 <ul className="space-y-8">
-                    <Item href="/globarity">Globarity</Item>
+                    <Item href="/globality">Globality</Item>
                     <Item href="/flextegrity">Flextegrity</Item>
                     <Item href="/innovity">Innovity</Item>
                 </ul>
