@@ -1211,8 +1211,8 @@ filter = (filterFuncs = 'none') => {
     let colorA = this.hsl(hueA, 100, 50);
     let colorB = this.hsl(hueB, 100, 50);
 
-  let colorAbg = this.hsl(hueA, 100, 50, 0.2);
-	let colorBbg = this.hsl(hueB, 100, 50, 0.2);
+  let colorAbg = this.hsl(hueA, 100, 50, 0.15);
+	let colorBbg = this.hsl(hueB, 100, 50, 0.15);
 
     grad.addColorStop(this.map(t, 0, 1, THIRD, ZERO), colorA);
     grad.addColorStop(this.map(t, 0, 1, TWO_THIRDS, THIRD), colorB);
