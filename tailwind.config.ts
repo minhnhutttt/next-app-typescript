@@ -16,6 +16,7 @@ const config: Config = {
     },
     fontFamily: {
       kiwi: ["Kiwi Maru", "sans-serif"],
+      dela: ["Dela Gothic One", "sans-serif"],
     },
   },
   plugins: [],
