@@ -15,7 +15,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      kiwi: ["Kiwi Maru", "sans-serif"],
     },
   },
   plugins: [],
