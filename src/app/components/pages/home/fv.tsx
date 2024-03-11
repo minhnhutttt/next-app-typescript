@@ -3,7 +3,7 @@ export default function FV() {
     <section className="relative">
         <div className="bg-[#FF9B9B] max-md:p-5 py-8 md:py-10">
             <div className="flex max-md:flex-col max-md:items-center">
-                <div className="relative md:max-[1439px]:w-[52.083vw] rounded-[32px] md:rounded-s-[60px] overflow-hidden">
+                <div className="relative md:max-[1439px]:w-[52.083vw] max-md:rounded-[32px] md:rounded-e-[60px] overflow-hidden">
                     <img className="max-md:w-full max-md:max-w-[440px]" src="/images/fv-image.png" alt="" />
                 </div>
                 <div className="text-white pt-5 md:pt-[2.222vw] min-[1440px]:pt-8 px-[2.5vw] min-[1440px]:px-10 flex-1 ">
