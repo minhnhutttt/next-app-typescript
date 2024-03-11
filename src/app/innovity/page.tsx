@@ -12,7 +12,7 @@ export default function Innovity() {
           Innovity represents our pursuit of the latest technologies and ideas, leading industry trends while maintaining consistent quality and approach, ensuring long-term trust and stable results.
           </TextBlock>
           <TextBlock title="Continual Evolution">
-          We continuously evolve to meet the changing business environment, providing services that consistently exceed our clients' expectations.
+          We continuously evolve to meet the changing business environment, providing services that consistently exceed our clients&apos; expectations.
           </TextBlock>
           <TextBlock title="Assurance of Quality">
           Even amidst change, we uphold the quality of our services, valuing a consistent approach to achieve sustainable outcomes and long-term partnerships.
