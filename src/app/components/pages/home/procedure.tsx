@@ -30,7 +30,7 @@ export default function Procedure() {
                 </div>
                 <div ref={animateZoomRefs} className="opacity-0 bg-[url('/images/bg-procedure.png')] bg-cover bg-no-repeat bg-center min-h-[370px] relative flex flex-col items-center pt-[80px] md:pt-[90px]">
                     <div className="md:text-[24px] text-[16px] text-center font-bold mb-5 md:mb-8 tracking-widest">
-                        <p className="inline-block bg-[linear-gradient(to_top,_#F9E636_40%,_transparent_40%)]">デジタル化応援キャンペーン実施中！</p>
+                        <p className="inline-block bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]">デジタル化応援キャンペーン実施中！</p>
                         <p>お得に証明書をデジタル化しよう♪</p>
                     </div>
                     <a href="/" className="md:w-[392px] w-[300px] h-[60px] md:h-[84px] rounded-[16px] bg-[#FE4848] flex items-center justify-center md:text-[22px] text-[17px] font-black text-white gap-2">
