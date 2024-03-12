@@ -29,9 +29,9 @@ export default function Campaign() {
                     <p className="absolute top-2 md:top-[16px] tracking-[0.15em] md:text-[28px] lg:text-[36px] text-[24px] font-medium text-center">次世代証明書のサポートはこちら</p>
                 </div>
                 <div className="flex items-center justify-center overflow-hidden mt-5 md:mt-8">
-                    <a href="#_" className="w-[300px] h-[60px] md:w-[487px] md:h-[92px] flex items-center justify-center bg-[#FE4848] text-white rounded-[10px] gap-0.5 md:text-[22px] text-[14px] font-bold tracking-widest group overflow-hidden relative">
+                    <a href="#_" className="px-6 md:px-[70px] h-[60px] md:h-[92px] flex items-center justify-center bg-[#FE4848] text-white rounded-[10px] md:text-[22px] text-[14px] font-bold tracking-widest group overflow-hidden relative">
                         <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#FF9B9B] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
-                        <p className="relative flex items-center">
+                        <p className="relative flex items-center gap-2">
                             <span>まるなげサポートに相談する</span>
                             <img className="max-md:w-5" src="/images/ic-chat.svg" alt="" />
                         </p>

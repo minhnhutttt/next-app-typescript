@@ -11,6 +11,10 @@ import Suggestion from "./components/pages/home/suggestion";
 import Introduction from "./components/pages/home/introduction";
 import Preparation from "./components/pages/home/preparation";
 import Voice from "./components/pages/home/voice";
+import Use from "./components/pages/home/use";
+import Mind from "./components/pages/home/mind";
+import Line from "./components/pages/home/line";
+import FAQ from "./components/pages/home/faq/faq";
 
 export default function Home() {
   return (
@@ -27,6 +31,10 @@ export default function Home() {
       <Introduction />
       <Preparation />
       <Voice />
+      <Use />
+      <Mind />
+      <Line />
+      <FAQ />
     </main>
   );
 }

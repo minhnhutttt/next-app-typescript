@@ -1,3 +1,6 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
+
 export default function Talk() {
     return (
       <section className="relative md:pt-9 pt-6 md:mb-[45px] mb-8 px-4">

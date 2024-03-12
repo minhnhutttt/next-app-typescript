@@ -33,9 +33,12 @@ export default function Procedure() {
                         <p className="inline-block bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]">デジタル化応援キャンペーン実施中！</p>
                         <p>お得に証明書をデジタル化しよう♪</p>
                     </div>
-                    <a href="/" className="md:w-[392px] w-[300px] h-[60px] md:h-[84px] rounded-[16px] bg-[#FE4848] flex items-center justify-center md:text-[22px] text-[17px] font-black text-white gap-2">
-                        <span>サポートをお願いする</span>
-                        <img src="/images/ic-d.svg" alt="" />
+                    <a href="#_" className="md:w-[392px] w-[300px] h-[60px] md:h-[84px] rounded-[16px] bg-[#FE4848] flex items-center justify-center md:text-[22px] text-[17px] font-black text-white gap-2 group overflow-hidden relative">
+                        <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#FF9B9B] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
+                        <p className="relative flex items-center gap-2">
+                            <span>サポートをお願いする</span>
+                            <img src="/images/ic-d.svg" alt="" />
+                        </p>
                     </a>
                     <p className="text-center md:text-[14px] text-[12px] font-['Inter'] pt-1">※キャンペーン詳細はLINEにてお伝えしています。</p>
                 </div>

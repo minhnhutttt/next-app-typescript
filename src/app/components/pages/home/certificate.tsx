@@ -54,7 +54,6 @@ type SliderProp = {
   ];
 export default function Certificate() {
     const animateRefs = useScrollAnimation("fadeUp");
-    const animateZoomRefs = useScrollAnimation("zoom");
     const sliderRef = useRef<Slider>(null);
     const sliderSettings = {
         dots: false,
