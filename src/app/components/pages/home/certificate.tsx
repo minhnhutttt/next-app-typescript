@@ -1,9 +1,9 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
-import { ReactNode, useRef } from "react";
-// @ts-ignore
-import { Splide, SplideSlide } from "splide-nextjs/react-splide";
-import "splide-nextjs/splide/dist/css/themes/splide-default.min.css";
+import { ReactNode, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
 type SliderProp = {
   id: string;
   imageSrc: string;
@@ -65,10 +65,12 @@ const sliderData: SliderProp[] = [
 ];
 export default function Certificate() {
   const animateRefs = useScrollAnimation("fadeUp");
-  const sliderRef = useRef<any>(null);
+  const [swiper, setSwiper] = useState<any>(null);
+
   const handlePrev = () => {
-    if (!sliderRef.current) return;
-    sliderRef.current.splide.go("+1");
+    if (swiper !== null) {
+      swiper.slideNext();
+    }
   };
   return (
     <section className="relative md:pl-[5.556vw] pl-8 min-[1440px]:pl-20 mb-[100px]">
@@ -135,26 +137,17 @@ export default function Certificate() {
                 />
               </svg>
             </button>
-            <Splide
-              ref={sliderRef}
-              aria-label=""
-              options={{
-                perPage: 3,
-                perMove: 1,
-                gap: "0",
-                type: "loop",
-                autoWidth: true,
-                arrows: false,
-                pagination: false,
-                breakpoints: {
-                  768: {},
-                },
-              }}
+            <Swiper
+              slidesPerView={"auto"}
+              spaceBetween={20}
+              loop={true}
+              autoplay={true}
+              onSwiper={setSwiper}
             >
               {sliderData.map(({ id, imageSrc, content }) => (
-                <SplideSlide key={id}>
-                  <div className="relative mr-5">
-                    <div className="pt-5 pb-10 bg-[url('/images/bg-ertificate.png')] bg-cover w-[240px] h-[224px] md:w-[300px] md:h-[280px] flex flex-col items-center justify-center leading-tight rounded-[20px] overflow-hidden relative ">
+                <SwiperSlide key={id} className="md:!w-[300px] !w-[240px]">
+                  <div className="relative">
+                    <div className="pt-5 pb-10 bg-[url('/images/bg-ertificate.png')] bg-cover h-[224px] md:w-[300px] md:h-[280px] flex flex-col items-center justify-center leading-tight rounded-[20px] overflow-hidden relative ">
                       <p className="md:text-[22px] text-[16px] font-bold text-center leading-snug h-[64px] flex items-end">
                         <span>{content}</span>
                       </p>
@@ -163,9 +156,9 @@ export default function Certificate() {
                       </div>
                     </div>
                   </div>
-                </SplideSlide>
+                </SwiperSlide>
               ))}
-            </Splide>
+            </Swiper>
           </div>
         </div>
       </div>
