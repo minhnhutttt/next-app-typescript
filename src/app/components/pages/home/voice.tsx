@@ -1,14 +1,18 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
+
 export default function Voice() {
+    const animateRefs = useScrollAnimation("fadeUp");
     return (
       <section className="relative md:pt-[74px] pt-16 md:mb-20 mb-12 px-4">
           <div className="w-full max-w-[1340px] mx-auto">
-            <h4 className="flex items-center justify-center gap-2 md:gap-[30px] md:px-8">
+            <h4  ref={animateRefs} className="opacity-0 flex items-center justify-center gap-2 md:gap-[30px] md:px-8">
                 <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
                 <p className="md:text-[48px] text-[24px] font-medium tracking-widest text-center">お客様の声</p>
                 <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
             </h4>
             <div className="mt-12 md:mt-[132px] flex-wrap justify-center flex max-lg:gap-16">
-                <div className="relative aspect-[506/388] max-md:max-w-[400px] md:w-[506px]">
+                <div ref={animateRefs} className="opacity-0 relative aspect-[506/388] max-md:max-w-[400px] md:w-[506px]">
                     <figure>
                         <img src="/images/voice-01.png" alt="" />
                     </figure>
@@ -22,7 +26,7 @@ export default function Voice() {
                         <p className="text-center md:text-[16px] text-[12px]">大学の事務局長、57歳 女性</p>
                     </div>
                 </div>
-                <div className="relative aspect-[454/397] max-md:max-w-[360px] md:w-[454px] lg:mt-[250px] md:ml-[-40px]">
+                <div ref={animateRefs} className="opacity-0 relative aspect-[454/397] max-md:max-w-[360px] md:w-[454px] lg:mt-[250px] md:ml-[-40px]">
                     <figure>
                         <img src="/images/voice-02.png" alt="" />
                     </figure>
@@ -36,7 +40,7 @@ export default function Voice() {
                         <p className="text-center md:text-[16px] text-[12px]">製造業の技術者、38歳 男性</p>
                     </div>
                 </div>
-                <div className="relative aspect-[452/418] max-md:max-w-[355px] md:w-[452px] md:-ml-10">
+                <div ref={animateRefs} className="opacity-0 relative aspect-[452/418] max-md:max-w-[355px] md:w-[452px] md:-ml-10">
                     <figure>
                         <img src="/images/voice-03.png" alt="" />
                     </figure>

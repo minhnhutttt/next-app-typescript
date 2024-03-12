@@ -1,15 +1,17 @@
-import { ReactNode } from "react";
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 
 export default function Power() {
+    const animateRefs = useScrollAnimation("fadeUp");
     return (
       <section className="relative px-5 md:mb-20 mb-16">
           <div className="w-full md:max-w-[1220px] max-w-[480px] mx-auto">
-            <h4 className="flex items-center justify-center gap-2 md:gap-[30px] max-w-[1013px] mx-auto">
+            <h4 ref={animateRefs} className="opacity-0 flex items-center justify-center gap-2 md:gap-[30px] max-w-[1013px] mx-auto">
                 <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
                 <p className="md:text-[48px] text-[24px] font-medium tracking-widest text-center"><span className="bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]">「即時証明力」</span>を実現する<span className="text-[#FE4848] font-black">NFT</span></p>
                 <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
             </h4>
-            <div className="bg-[#F7F3F3] md:rounded-[50px] rounded-[32px] md:py-[60px] py-[32px] md:mt-[30px] mt-3 px-5">
+            <div ref={animateRefs} className="opacity-0 bg-[#F7F3F3] md:rounded-[50px] rounded-[32px] md:py-[60px] py-[32px] md:mt-[30px] mt-3 px-5">
                 <div className="w-full max-w-[817px] mx-auto">
                     <h5 className="md:text-[32px] text-[20px] font-medium text-center">次世代証明書は、<span className="text-[#FE4848] font-bold">NFT</span>を活用したデジタル証明書です。</h5>
                     <div className="flex justify-center mt-6 md:mt-10">

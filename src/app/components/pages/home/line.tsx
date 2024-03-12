@@ -1,9 +1,12 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 
 export default function Line() {
+    const animateRefs = useScrollAnimation("fadeUp");
     return (
       <section className="relative px-4">
           <div className="w-full max-w-[730px] mx-auto">
-            <div className="flex max-md:flex-col bg-[#00B900] rounded-[20px] py-5 md:px-10 px-8">
+            <div ref={animateRefs} className="opacity-0 flex max-md:flex-col bg-[#00B900] rounded-[20px] py-5 md:px-10 px-8">
                 <div className="md:w-[255px] md:py-8">
                     <figure className="flex justify-center">
                         <img src="/images/girl.png" alt="" />
@@ -18,11 +21,11 @@ export default function Line() {
                 証明書のデジタル化には取り組みたいけど不明点があったり、質問や相談をしながら進めたい場合はサポート専用LINEをご利用ください！
                 </div>
             </div>
-            <div className="flex justify-center md:my-7 my-6">
+            <div ref={animateRefs} className="opacity-0 flex justify-center md:my-7 my-6">
                 <img src="/images/line-deco.png" alt="" />
             </div>
-            <div className="rounded-[30px] overflow-hidden border border-[#00B900]">
-                <p className="bg-[#00B900] md:px-10 px-5 text-white md:text-[18px] text-[14px] flex items-center md:py-4">
+            <div ref={animateRefs} className="opacity-0 rounded-[30px] overflow-hidden border border-[#00B900]">
+                <p className="bg-[#00B900] md:px-10 px-5 text-white md:text-[18px] text-[14px] py-3 flex items-center md:py-4">
                     LINEなら気軽にやりとりができるので、スピーディーに話が進みます。 <br />
                     メールのように堅苦しい文章は不要です。自由にメッセージを送ってください！
                 </p>
@@ -37,7 +40,7 @@ export default function Line() {
                 </div>
             </div>
           </div>
-          <div className="flex items-center justify-center overflow-hidden mt-10 md:mt-8">
+          <div ref={animateRefs} className="opacity-0 flex items-center justify-center overflow-hidden mt-10 md:mt-8">
             <a href="#_" className="px-6 md:px-[70px] h-[60px] md:h-[92px] flex items-center justify-center bg-[#00B900] text-white rounded-[10px] md:text-[22px] text-[14px] font-bold tracking-widest group overflow-hidden relative">
                 <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#164C1E] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
                 <p className="relative flex items-center gap-2">

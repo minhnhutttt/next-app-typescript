@@ -1,10 +1,9 @@
 "use client"
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import { ReactNode, useRef } from "react";
-
+// @ts-ignore
+import { Splide, SplideSlide } from 'splide-nextjs/react-splide';
+import "splide-nextjs/splide/dist/css/themes/splide-default.min.css";
 type SliderProp = {
     id: string;
     imageSrc: string;
@@ -54,21 +53,10 @@ type SliderProp = {
   ];
 export default function Certificate() {
     const animateRefs = useScrollAnimation("fadeUp");
-    const sliderRef = useRef<Slider>(null);
-    const sliderSettings = {
-        dots: false,
-        infinite: true,
-        slidesToScroll: 1,
-        focusOnSelect: false,
-        arrows: false,
-        autoplay: false,
-        autoplaySpeed: 1500,
-        variableWidth: true,
-        adaptiveHeight: true,
-    };
+    const sliderRef = useRef<any>(null);
     const handlePrev = () => {
         if (!sliderRef.current) return
-        sliderRef.current.slickNext();
+        sliderRef.current.splide.go('+1');
       };
     return (
       <section className="relative md:pl-[5.556vw] pl-8 min-[1440px]:pl-20 mb-[100px]">
@@ -94,9 +82,25 @@ export default function Certificate() {
                             <path d="M34.5 16L21 29.5L34.5 43" stroke="#5C5C5C" strokeWidth="2" strokeLinecap="round"/>
                         </svg>
                     </button>
-                <Slider ref={sliderRef} {...sliderSettings} className="w-full">
+                <Splide
+                ref={sliderRef}
+                aria-label=""
+                options={{
+                    perPage: 3,
+                    perMove: 1,
+                    gap: "0",
+                    type: "loop",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: false,
+                    breakpoints: {
+                    768: {},
+                    },
+                }}
+                >
                     {sliderData.map(({ id, imageSrc, content }) => (
-                        <div className="relative mr-5" key={id}>
+                        <SplideSlide key={id}>
+                        <div className="relative mr-5">
                             <div className="pt-5 pb-10 bg-[url('/images/bg-ertificate.png')] bg-cover w-[240px] h-[224px] md:w-[300px] md:h-[280px] flex flex-col items-center justify-center leading-tight rounded-[20px] overflow-hidden relative ">
                                 <p className="md:text-[22px] text-[16px] font-bold text-center leading-snug h-[64px] flex items-end"><span>{content}</span></p>
                                 <div className="mt-10">
@@ -104,8 +108,9 @@ export default function Certificate() {
                                 </div>
                             </div>
                         </div>
+                        </SplideSlide>
                     ))}
-                </Slider>
+                </Splide>
                 </div>
             </div>
         </div>

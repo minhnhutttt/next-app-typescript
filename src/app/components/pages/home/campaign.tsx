@@ -1,14 +1,18 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
+
 export default function Campaign() {
+    const animateRefs = useScrollAnimation("fadeUp");
     return (
       <section className="relative md:mb-[110px] mb-[70px]">
           <div className="w-full md:max-w-[1226px] max-w-[540px] mx-auto relative px-10 md:px-[124px] pt-[60px] md:pt-[120px]">
             <figure className="absolute top-0 left-0">
-                <img className="max-md:max-w-[280px]" src="/images/campaign-ribon.png" alt="" />
+                <img ref={animateRefs} className="opacity-0 max-md:max-w-[280px]" src="/images/campaign-ribon.png" alt="" />
             </figure>
             <div className="w-full max-w-[978px] mx-auto bg-[linear-gradient(90deg,_#FE4848_-2.68%,_#FF9B9B_99.85%)] pb-8 md:pb-[76px] pt-[60px] md:pt-[80px] lg:pt-[60px] px-5">
                 <div className="w-full max-w-[810px] mx-auto">
-                    <h5 className="text-center text-white md:text-[36px] lg:text-[48px] text-[20px] font-bold tracking-widest">じゃあどうすれば...？</h5>
-                    <div className="bg-white rounded-[30px] flex max-md:flex-col items-center px-4 md:px-[34px] py-5 md:py-10 gap-5 md:mt-8 mt-4">
+                    <h5 ref={animateRefs} className="opacity-0 text-center text-white md:text-[36px] lg:text-[48px] text-[20px] font-bold tracking-widest">じゃあどうすれば...？</h5>
+                    <div ref={animateRefs} className="opacity-0 bg-white rounded-[30px] flex max-md:flex-col items-center px-4 md:px-[34px] py-5 md:py-10 gap-5 md:mt-8 mt-4">
                         <figure>
                             <img className="max-md:w-[100px]" src="/images/campaign-teacher.png" alt="" />
                         </figure>
@@ -21,7 +25,7 @@ export default function Campaign() {
                     </div>
                 </div>
             </div>
-            <div className="md:mt-9 mt-6">
+            <div ref={animateRefs} className="opacity-0 md:mt-9 mt-6">
                 <div className="flex justify-center relative">
                     <figure>
                         <img className="max-md:w-[120px]" src="/images/campaign-deco.png" alt="" />

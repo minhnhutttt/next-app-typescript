@@ -2,6 +2,7 @@
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 
 export default function Talk() {
+  const animateRefs = useScrollAnimation("fadeUp");
     return (
       <section className="relative md:pt-9 pt-6 md:mb-[45px] mb-8 px-4">
           <div className="w-full md:max-w-[790px] max-w-[440px] mx-auto md:border-[8px] border-[4px] border-[#FE4848] bg-[#F7F3F3] rounded-[40px] px-4 relative">
@@ -11,7 +12,7 @@ export default function Talk() {
               </svg>
             </div>
             <div className="w-full max-w-[625px] mx-auto md:pb-10 md:pt-[70px] py-[32px] space-y-10">
-              <div className="flex items-start gap-3 md:gap-5">
+              <div ref={animateRefs} className="opacity-0 flex items-start gap-3 md:gap-5">
                 <figure>
                   <img className="max-md:w-[80px]" src="/images/avatar-penguin-01.png" alt="" />
                 </figure>
@@ -23,7 +24,7 @@ export default function Talk() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-start gap-3 md:gap-5">
+              <div ref={animateRefs} className="opacity-0 flex items-start gap-3 md:gap-5">
                 <div className="flex-1 max-w-[464px] space-y-2">
                   <div className="bg-[#FFD4D4] rounded-[20px] md:mt-5 px-4 md:px-[30px] py-4 relative after:absolute after:w-[36px] after:h-[25px] md:after:w-[49px] md:after:h-[34px] after:bg-[url('/images/ic-bubble-right.svg')] after:bg-cover md:after:right-[-20px] after:right-[-14px] md:after:top-[-8px] after:top-[-4px]">
                     <p className="md:text-[16px] text-[13px] font-medium">
@@ -41,7 +42,7 @@ export default function Talk() {
                   <img className="max-md:w-[80px]" src="/images/avatar-teacher-01.png" alt="" />
                 </figure>
               </div>
-              <div className="flex items-start gap-3 md:gap-5">
+              <div ref={animateRefs} className="opacity-0 flex items-start gap-3 md:gap-5">
                 <figure>
                   <img className="max-md:w-[80px]" src="/images/avatar-penguin-02.png" alt="" />
                 </figure>
@@ -54,7 +55,7 @@ export default function Talk() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-start gap-3 md:gap-5">
+              <div ref={animateRefs} className="opacity-0 flex items-start gap-3 md:gap-5">
                 <div className="flex-1 max-w-[464px] space-y-2">
                   <div className="bg-[#FFD4D4] rounded-[20px] md:mt-5 px-4 md:px-[30px] py-4 md:py-9 relative after:absolute after:w-[36px] after:h-[25px] md:after:w-[49px] md:after:h-[34px] after:bg-[url('/images/ic-bubble-right.svg')] after:bg-cover md:after:right-[-20px] after:right-[-14px] md:after:top-[-8px] after:top-[-4px]">
                     <p className="md:text-[16px] text-[13px] font-medium">

@@ -1,13 +1,18 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
+
 export default function Reason() {
+    const animateRefs = useScrollAnimation("fadeUp");
+
     return (
       <section className="relative px-4 md:mb-[71px] mb-9">
           <div className="w-full max-w-[1200px] mx-auto bg-[#F7F3F3] md:rounded-[50px] rounded-[32px] md:pt-[60px] md:pb-[96px] pb-12 pt-8">
-                <h5 className="text-center font-medium md:text-[48px] text-[28px]">
+                <h5 ref={animateRefs} className="opacity-0 text-center font-medium md:text-[48px] text-[28px]">
                     証明書のデジタル化が <br />
                     進まない意外な理由
                 </h5>
                 <div className="mt-[72px] px-5 md:space-y-[120px] space-y-[60px]">
-                    <div className="relative">
+                    <div ref={animateRefs} className="opacity-0 relative">
                         <div className="w-full min-[1440px]:max-w-[670px] md:max-w-[46.528vw] mx-auto rounded-[30px] overflow-hidden bg-white">
                             <p className="flex items-center justify-center text-center md:text-[20px] text-[14px] font-bold py-2 px-6 min-h-[63px] bg-[#FF9B9B]">理由その１ : デジタル化ってなんか難しそうだから...</p>
                             <div className="px-4 md:px-[34px]">
@@ -31,7 +36,7 @@ export default function Reason() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative">
+                    <div ref={animateRefs} className="opacity-0 relative">
                         <div className="w-full min-[1440px]:max-w-[670px] md:max-w-[46.528vw] mx-auto rounded-[30px] overflow-hidden bg-white">
                             <p className="flex items-center justify-center text-center md:text-[20px] text-[14px] font-bold py-2 px-6 min-h-[63px] bg-[#FF9B9B]">理由その２ : 一人または自分たちだけでなんとかしようとするから...</p>
                             <div className="px-4 md:px-[34px]">

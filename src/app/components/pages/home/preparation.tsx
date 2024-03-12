@@ -1,7 +1,11 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
+
 export default function Preparation() {
+    const animateZoomRefs = useScrollAnimation("zoom");
     return (
       <section className="relative px-5 md:mb-20 mb-16">
-         <div className="w-full max-w-[1123px] mx-auto p-3 md:p-[22px] bg-[repeating-linear-gradient(_-60deg,_#FFE178,_#FFE178_20px,_#000_20px,_#000_40px_)] rounded-[40px]">
+         <div ref={animateZoomRefs} className="opacity-0 w-full max-w-[1123px] mx-auto p-3 md:p-[22px] bg-[repeating-linear-gradient(_-60deg,_#FFE178,_#FFE178_20px,_#000_20px,_#000_40px_)] rounded-[40px]">
             <div className="w-full h-full bg-[#FFD900] lg:px-[60px] md:px-10 px-6 py-5 rounded-[40px]">
                 <div className="flex justify-center mb-2"><img className="max-md:w-10" src="/images/ic-2.png " alt="" /></div>
                 <h5 className="md:text-[48px] text-[24px] font-bold md:border-b-[10px] border-b-[5px] max-md:pb-1 border-black text-center tracking-wider">不測の事態への備え、できていますか？</h5>

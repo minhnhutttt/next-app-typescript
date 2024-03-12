@@ -1,3 +1,5 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import { ReactNode } from "react";
 
 type ExplanationItemPropsType = {
@@ -20,15 +22,16 @@ type ExplanationItemPropsType = {
   }
   
 export default function Explanation() {
+    const animateRefs = useScrollAnimation("fadeUp");
     return (
       <section className="relative px-5 md:mb-20 mb-16">
           <div className="w-full md:max-w-[1220px] max-w-[480px] mx-auto">
-            <h4 className="flex items-center justify-center gap-2 md:gap-[30px] md:px-8">
+            <h4 ref={animateRefs} className="opacity-0 flex items-center justify-center gap-2 md:gap-[30px] md:px-8">
                 <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
                 <p className="md:text-[48px] text-[24px] font-medium tracking-widest text-center">次世代証明書って何が次世代なの？</p>
                 <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
             </h4>
-            <div className="flex md:rounded-[50px] rounded-[32px] max-md:flex-wrap overflow-hidden mt-8 md:mt-10">
+            <div ref={animateRefs} className="opacity-0 flex md:rounded-[50px] rounded-[32px] max-md:flex-wrap overflow-hidden mt-8 md:mt-10">
                 <div className="w-full md:w-1/2 bg-[#FFE8D3] px-5 pt-8 md:pt-12 md:pb-[62px] pb-8">
                     <div className="w-full max-w-[385px] mx-auto">
                         <p className="text-center md:text-[32px] text-[20px] font-medium">発行側</p>
@@ -75,7 +78,7 @@ export default function Explanation() {
                 </div>
             </div>
           </div>
-          <div className="w-full max-w-[770px] mx-auto md:text-[18px] text-[14px] font-medium px-5 md:px-[35px] py-[22px] mt-11 relative">
+          <div ref={animateRefs} className="opacity-0 w-full max-w-[770px] mx-auto md:text-[18px] text-[14px] font-medium px-5 md:px-[35px] py-[22px] mt-11 relative">
             <span className="absolute left-0 top-0 bottom-0 w-[64px] md:border-[3px] border-[2px] border-[#FE4848] !border-r-0"></span>
           次世代証明書を「次世代」と定義づける中心的な機能は、その<span className="bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]">「即時証明力」</span>です。<br /><br />
           認証も、検証も、その場で完結できるその「即時証明力」は、証明書運用をより簡単に、効率的に実現します。<br />

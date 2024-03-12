@@ -1,3 +1,5 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import { ReactNode } from "react";
 
 type UseItemPropsType = {
@@ -5,8 +7,9 @@ type UseItemPropsType = {
     children: ReactNode;
   };
   function UseItem({ title, children }: UseItemPropsType) {
+    const animateRefs = useScrollAnimation("fadeUp");
     return (
-      <div className="w-[300px] md:min-h-[170px] min-h-[140px] bg-[#F7F3F3] rounded-[20px] p-5 [box-shadow:4px_4px_30px_0px_rgba(0,_0,_0,_0.25)]">
+      <div ref={animateRefs} className="opacity-0 w-[300px] md:min-h-[170px] min-h-[140px] bg-[#F7F3F3] rounded-[20px] p-5 [box-shadow:4px_4px_30px_0px_rgba(0,_0,_0,_0.25)]">
         <div className="flex justify-center items-start md:h-[60px] h-[50px]">
             <p className="md:text-[22px] text-[16px] font-bold border-b-[6px] border-[#FE4848] text-center leading-[1.1] pb-1">{title}</p>
         </div>
@@ -16,11 +19,12 @@ type UseItemPropsType = {
   }
 
 export default function Use() {
+  const animateRefs = useScrollAnimation("fadeUp");
     return (
       <section className="md:mb-[160px] mb-20">
         <div className="relative px-5 bg-[#F7F7F7] md:pt-[100px] md:pb-[160px] py-[60px]">
           <div className="w-full max-w-[1360px] mx-auto">
-            <div className="flex justify-center">
+            <div ref={animateRefs} className="opacity-0 flex justify-center">
                 <div className="bg-[#FFD900] rounded-[24px] w-full max-w-[1120px] mx-auto relative text-center md:text-[48px] text-[24px] font-medium md:px-5 p-4 md:py-8 leading-tight after:absolute after:aspect-[102/59] after:left-[55%] md:after:w-[102px] after:w-[50px] after:top-full after:bg-[url('/images/use-bubble.png')] after:bg-cover">
                 次世代証明書で発行されたデジタル証明書は <br />
                 <p className="flex justify-center items-center">『<span className="md:text-[68px] text-[30px] font-black"> 10,000通 </span>』を突破！<img className="max-md:w-7" src="/images/ic-like.svg" alt="" /></p>
@@ -58,7 +62,7 @@ export default function Use() {
             </div>
           </div>
         </div>
-        <div className="px-3">
+        <div ref={animateRefs} className="opacity-0 px-3">
           <div className="flex justify-center relative mt-6">
             <figure>
                 <img className="max-md:w-[120px]" src="/images/campaign-deco.png" alt="" />

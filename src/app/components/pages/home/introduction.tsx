@@ -1,3 +1,5 @@
+"use client";
+import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import { ReactNode } from "react";
 
 type IntroductionItemPropsType = {
@@ -7,8 +9,9 @@ type IntroductionItemPropsType = {
     children: ReactNode;
   };
   function IntroductionItem({ number, image,title, children }: IntroductionItemPropsType) {
+    const animateRefs = useScrollAnimation("fadeUp");
     return (
-      <div className="relative bg-[url('/images/introduction-bg.png')] bg-[length:100%_100%] bg-center max-w-[400px] px-10 md:px-[50px] pb-[40px] pt-[30px]">
+      <div ref={animateRefs} className="opacity-0 relative bg-[url('/images/introduction-bg.png')] bg-[length:100%_100%] bg-center max-w-[400px] px-10 md:px-[50px] pb-[40px] pt-[30px]">
         <figure>
             <img src={image} alt="" />
         </figure>
@@ -21,11 +24,12 @@ type IntroductionItemPropsType = {
   
 
 export default function Introduction() {
+  const animateRefs = useScrollAnimation("fadeUp");
     return (
       <section className="relative md:mb-[135px] mb-24">
         <div className="bg-[linear-gradient(1deg,_#FE4848_2.98%,_#FF9B9B_91.39%)] px-5">
           <div className="w-full max-w-[1320px] mx-auto pt-16 md:pt-[90px] md:pb-[128px] pb-20">
-            <div className="relative">
+            <div ref={animateRefs} className="opacity-0 relative">
                 <p className="absolute tracking-[0.18em] inset-0 text-center text-[24px] font-boldt text-white [-webkit-text-stroke:_10px_white] md:text-[48px]">次世代証明書が選ばれる理由</p>
                 <h3 className="relative tracking-[0.18em] text-center text-[24px] font-bold text-[#FE4848] md:text-[48px]">次世代証明書が選ばれる理由</h3>
             </div>
@@ -52,11 +56,11 @@ export default function Introduction() {
             </div>
           </div>
           </div>
-          <div className="px-3">
-          <div className="flex justify-center relative mt-10">
-            <figure>
-                <img className="max-md:w-[120px]" src="/images/campaign-deco.png" alt="" />
-            </figure>
+          <div ref={animateRefs} className="opacity-0 px-3">
+            <div className="flex justify-center relative mt-10">
+              <figure>
+                  <img className="max-md:w-[120px]" src="/images/campaign-deco.png" alt="" />
+              </figure>
             <div className="absolute top-2 md:top-[16px] tracking-[0.08em] md:text-[28px] lg:text-[36px] text-[24px] font-medium text-center">
                 <div className="flex justify-center items-center md:text-[24px] text-[15px] font-medium">
                     <figure>
@@ -70,7 +74,7 @@ export default function Introduction() {
                 <p className="md:text-[32px] text-[20px] max-md:mt-2 font-medium">今すぐ次世代証明書でデジタル化を始めましょう<span className="md:text-[24px] text-[16px]">！</span></p>
             </div>
         </div>
-        <div className="flex items-center justify-center overflow-hidden mt-10 md:mt-8">
+        <div ref={animateRefs} className="opacity-0 flex items-center justify-center overflow-hidden mt-10 md:mt-8">
             <a href="#_" className="px-6 md:px-[70px] h-[60px] md:h-[92px] flex items-center justify-center bg-[#FE4848] text-white rounded-[10px] md:text-[22px] text-[14px] font-bold tracking-widest group overflow-hidden relative">
                 <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#FF9B9B] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
                 <p className="relative flex items-center gap-2">
