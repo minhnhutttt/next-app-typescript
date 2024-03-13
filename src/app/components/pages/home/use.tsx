@@ -1,7 +1,10 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
-import { ReactNode } from "react";
-
+import { ReactNode, useState } from "react";
+import dynamic from "next/dynamic";
+const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
+  ssr: false,
+});
 type UseItemPropsType = {
   title: ReactNode;
   children: ReactNode;
@@ -27,6 +30,7 @@ export default function Use() {
   const animateRefs = useScrollAnimation("fadeUp");
   return (
     <section className="md:mb-[160px] mb-20">
+      
       <div className="relative px-5 bg-[#F7F7F7] md:pt-[100px] md:pb-[160px] py-[60px]">
         <div className="w-full max-w-[1360px] mx-auto">
           <div ref={animateRefs} className="opacity-0 flex justify-center">
@@ -34,9 +38,15 @@ export default function Use() {
               次世代証明書で発行されたデジタル証明書は <br />
               <p className="flex justify-center items-center">
                 『
-                <span className="md:text-[68px] text-[30px] font-black">
-                  {" "}
-                  10,000通{" "}
+                <span className="md:text-[68px] text-[30px] font-black flex">
+                <AnimatedNumbers
+                  includeComma
+                  transitions={(index) => ({
+                    type: "easeIn",
+                    duration: index,
+                  })}
+                  animateToNumber={10000}
+                />通
                 </span>
                 』を突破！
                 <img className="max-md:w-7" src="/images/ic-like.svg" alt="" />
@@ -122,7 +132,7 @@ export default function Use() {
             href="#_"
             className="px-6 md:px-[70px] h-[60px] md:h-[92px] flex items-center justify-center bg-[#FE4848] text-white rounded-[10px] md:text-[22px] text-[14px] font-bold tracking-widest group overflow-hidden relative"
           >
-            <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#FF9B9B] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
+            <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#01B202] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
             <p className="relative flex items-center gap-2">
               <span>導入について相談する</span>
               <img className="max-md:w-3" src="/images/ic-tri.svg" alt="" />

@@ -1,7 +1,7 @@
 "use client";
 import useBgText from "@/app/hooks/useBgText";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
-import gsap, { Power2 } from "gsap";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactNode, useEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
@@ -20,6 +20,26 @@ export default function Procedure() {
   const animateZoomRefs = useScrollAnimation("zoom");
   const spanRef = useBgText();
     
+
+  useEffect(() => {
+    const charRefs = document.querySelectorAll('.text-fade span');
+    charRefs.forEach((element, index) => {
+      gsap.set(element, { opacity: 0, y: 100, duration: 1 }); // Set initial opacity to 0
+  
+      gsap.to(element, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: index * 0.05,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+          toggleActions: "play none none none",
+          
+        },
+      });
+    });
+  }, []);
   return (
     <section className="relative px-5 mt-[60px] md:mt-[100px] md:mb-[110px]">
       <div className="w-full max-w-[980px] mx-auto">
@@ -28,13 +48,14 @@ export default function Procedure() {
             発行から導入まで徹底サポート！
           </p>
         </div>
-        <div ref={animateZoomRefs} className=" opacity-0flex justify-center">
-          <h3 className="md:text-[4.306vw] whitespace-nowrap min-[1440px]:text-[62px] [font-size:_clamp(22px,4.267vw,32px)] font-medium leading-tight tracking-[0.2em]">
-            デジタル証明書発行手続き <br />
-            <DotText>ま</DotText>
-            <DotText>る</DotText>
-            <DotText>ご</DotText>
-            <DotText>と</DotText>引き受けます。
+        <div className="flex justify-center">
+          <h3 className="text-fade md:text-[4.306vw] whitespace-nowrap min-[1440px]:text-[62px] [font-size:_clamp(22px,4.267vw,32px)] font-medium leading-tight tracking-[0.2em]">
+            <span>デ</span><span>ジ</span><span>タ</span><span>ル</span><span>証</span><span>明</span><span>書</span><span>発</span><span>行</span><span>手</span><span>続</span><span>き</span> <br />
+            <span><DotText>ま</DotText></span>
+            <span><DotText>る</DotText></span>
+            <span><DotText>ご</DotText></span>
+            <span><DotText>と</DotText></span><span>引</span><span>き</span><span>受</span><span>け</span><span>ま</span><span>す。</span>
+            
           </h3>
         </div>
         <div className="mt-10 md:mt-16">
@@ -73,7 +94,7 @@ export default function Procedure() {
               href="#_"
               className="md:w-[392px] w-[300px] h-[60px] md:h-[84px] rounded-[16px] bg-[#FE4848] flex items-center justify-center md:text-[22px] text-[17px] font-black text-white gap-2 group overflow-hidden relative"
             >
-              <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#FF9B9B] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
+              <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#01B202] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
               <p className="relative flex items-center gap-2">
                 <span>サポートをお願いする</span>
                 <img src="/images/ic-d.svg" alt="" />

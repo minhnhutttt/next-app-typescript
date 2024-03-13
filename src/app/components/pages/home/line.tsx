@@ -58,7 +58,7 @@ export default function Line() {
           href="#_"
           className="px-6 md:px-[70px] h-[60px] md:h-[92px] flex items-center justify-center bg-[#00B900] text-white rounded-[10px] md:text-[22px] text-[14px] font-bold tracking-widest group overflow-hidden relative"
         >
-          <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#164C1E] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
+          <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#FE4848] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
           <p className="relative flex items-center gap-2">
             <img className="max-md:w-3" src="/images/ic-line.png" alt="" />
             <span>メッセージを送る</span>

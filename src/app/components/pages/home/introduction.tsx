@@ -132,7 +132,7 @@ export default function Introduction() {
             href="#_"
             className="px-6 md:px-[70px] h-[60px] md:h-[92px] flex items-center justify-center bg-[#FE4848] text-white rounded-[10px] md:text-[22px] text-[14px] font-bold tracking-widest group overflow-hidden relative"
           >
-            <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#FF9B9B] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
+            <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#01B202] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>
             <p className="relative flex items-center gap-2">
               <span>今すぐデジタル化を始める</span>
               <img className="max-md:w-3" src="/images/ic-tri.svg" alt="" />
