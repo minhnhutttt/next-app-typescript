@@ -62,7 +62,7 @@ export default function FAQ() {
   return (
     <div
       id="faq"
-      className="px-5 pb-12 pt-10 mb-[90px] md:mb-[166px] md:pb-[75px] md:pt-[60px] bg-[url('/images/bg-07.png')] bg-cover"
+      className="px-5 pb-12 pt-10 mb-[90px] md:mb-[166px] md:pb-[75px] md:pt-[60px] bg-cover"
     >
       <div className="mx-auto w-full max-w-[920px]">
         <h4 className="text-center font-roboto text-[28px] font-bold md:text-[48px]">

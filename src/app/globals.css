@@ -55,3 +55,15 @@ body {
   40% { transform: rotateZ(0deg) }
   100% { transform: rotateZ(0deg) }
 }
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+    transform: translateX(0);
+  }
+  100% {
+    transform: rotate(359deg);
+    transform: translateX(-100vw);
+  }
+}

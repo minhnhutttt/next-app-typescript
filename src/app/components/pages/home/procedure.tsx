@@ -1,6 +1,10 @@
 "use client";
+import useBgText from "@/app/hooks/useBgText";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
-import { ReactNode } from "react";
+import gsap, { Power2 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ReactNode, useEffect, useRef } from "react";
+gsap.registerPlugin(ScrollTrigger);
 
 type dotType = {
   children: ReactNode;
@@ -14,6 +18,8 @@ function DotText({ children }: dotType) {
 }
 export default function Procedure() {
   const animateZoomRefs = useScrollAnimation("zoom");
+  const spanRef = useBgText();
+    
   return (
     <section className="relative px-5 mt-[60px] md:mt-[100px] md:mb-[110px]">
       <div className="w-full max-w-[980px] mx-auto">
@@ -57,7 +63,8 @@ export default function Procedure() {
             className="opacity-0 bg-[url('/images/bg-procedure.png')] bg-cover bg-no-repeat bg-center min-h-[370px] relative flex flex-col items-center pt-[80px] md:pt-[90px]"
           >
             <div className="md:text-[24px] text-[16px] text-center font-bold mb-5 md:mb-8 tracking-widest">
-              <p className="inline-block bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]">
+              <p className="inline-block relative overflow-hidden">
+                <span ref={spanRef} className="w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]"></span>
                 デジタル化応援キャンペーン実施中！
               </p>
               <p>お得に証明書をデジタル化しよう♪</p>

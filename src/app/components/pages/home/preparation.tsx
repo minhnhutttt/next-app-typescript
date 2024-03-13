@@ -7,9 +7,10 @@ export default function Preparation() {
     <section className="relative px-5 md:mb-20 mb-16">
       <div
         ref={animateZoomRefs}
-        className="opacity-0 w-full max-w-[1123px] mx-auto p-3 md:p-[22px] bg-[repeating-linear-gradient(_-60deg,_#FFE178,_#FFE178_20px,_#000_20px,_#000_40px_)] rounded-[40px]"
+        className="opacity-0 w-full max-w-[1123px] mx-auto p-3 md:p-[22px] relative rounded-[40px] overflow-hidden"
       >
-        <div className="w-full h-full bg-[#FFD900] lg:px-[60px] md:px-10 px-6 py-5 rounded-[40px]">
+        <span className="absolute md:animate-[rotate_15s_linear_infinite] animate-[rotate_10s_linear_infinite] w-[300vmax] -top-1/2 -left-1/2 aspect-square md:bg-[repeating-linear-gradient(_-60deg,_#FFE178,_#FFE178_20px,_#000_20px,_#000_40px_)] bg-[repeating-linear-gradient(_-60deg,_#FFE178,_#FFE178_15px,_#000_15px,_#000_30px_)]"></span>
+        <div className="w-full h-full bg-[#FFD900] lg:px-[60px] md:px-10 px-6 py-5 rounded-[40px] relative">
           <div className="flex justify-center mb-2">
             <img className="max-md:w-10" src="/images/ic-2.png " alt="" />
           </div>
