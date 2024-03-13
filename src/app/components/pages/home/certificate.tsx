@@ -65,13 +65,7 @@ const sliderData: SliderProp[] = [
 ];
 export default function Certificate() {
   const animateRefs = useScrollAnimation("fadeUp");
-  const [swiper, setSwiper] = useState<any>(null);
 
-  const handlePrev = () => {
-    if (swiper !== null) {
-      swiper.slideNext();
-    }
-  };
   return (
     <section className="relative md:pl-[5.556vw] pl-8 min-[1440px]:pl-20 mb-[100px]">
       <div className="bg-[linear-gradient(90deg,_#B1B1B1_-2.68%,_#8F8D8B_99.85%)] rounded-s-[50px] pl-8 pt-10 md:pl-[11.111vw] min-[1440px]:pl-[160px] md:pt-[72px]">
@@ -114,51 +108,36 @@ export default function Certificate() {
             </p>
           </div>
         </div>
-        <div className="relative bottom-[-40px] drop-shadow-[4px_4px_30px_rgba(0,0,0,0.25)]">
-          <div ref={animateRefs} className="opacity-0">
-            <button
-              onClick={handlePrev}
-              className="absolute top-1/2 md:left-[-6.944vw] left-[-54px] min-[1440px]:left-[-100px] -translate-y-1/2"
-            >
-              <svg
-                className="min-[1440px]:w-[59px] w-[36px] md:w-[4.097vw]"
-                xmlns="http://www.w3.org/2000/svg"
-                width="59"
-                height="59"
-                viewBox="0 0 59 59"
-                fill="none"
-              >
-                <circle cx="29.5" cy="29.5" r="29.5" fill="#F7F3F3" />
-                <path
-                  d="M34.5 16L21 29.5L34.5 43"
-                  stroke="#5C5C5C"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
-            <Swiper
-              slidesPerView={"auto"}
-              spaceBetween={20}
-              loop={true}
-              autoplay={true}
-              onSwiper={setSwiper}
-            >
+        <div className="relative bottom-[-40px] drop-shadow-[4px_4px_30px_rgba(0,0,0,0.25)] rounded-s-[20px] overflow-hidden">
+          <div ref={animateRefs} className="opacity-0 flex w-auto">
+            <div className="animate-[infinity-loop_18s_infinite_linear_1s_both] flex relative">
               {sliderData.map(({ id, imageSrc, content }) => (
-                <SwiperSlide key={id} className="md:!w-[300px] !w-[240px]">
-                  <div className="relative">
-                    <div className="pt-5 pb-10 bg-[url('/images/bg-ertificate.png')] bg-cover h-[224px] md:w-[300px] md:h-[280px] flex flex-col items-center justify-center leading-tight rounded-[20px] overflow-hidden relative ">
+                  <div className="relative px-2.5" key={id}>
+                    <div className="pt-5 pb-10 bg-[url('/images/bg-ertificate.png')] bg-cover w-[200px] h-[224px] md:w-[300px] md:h-[280px] flex flex-col items-center justify-center leading-tight rounded-[20px] overflow-hidden relative ">
                       <p className="md:text-[22px] text-[16px] font-bold text-center leading-snug h-[64px] flex items-end">
                         <span>{content}</span>
                       </p>
                       <div className="mt-10">
-                        <img src={imageSrc} alt="" />
+                        <img className="max-md:w-[80px]" src={imageSrc} alt="" />
                       </div>
                     </div>
                   </div>
-                </SwiperSlide>
               ))}
-            </Swiper>
+            </div>
+            <div className="animate-[infinity-loop_18s_infinite_linear_1s_both] flex relative">
+              {sliderData.map(({ id, imageSrc, content }) => (
+                  <div className="relative px-2.5" key={id}>
+                    <div className="pt-5 pb-10 bg-[url('/images/bg-ertificate.png')] bg-cover w-[200px] h-[224px] md:w-[300px] md:h-[280px] flex flex-col items-center justify-center leading-tight rounded-[20px] overflow-hidden relative ">
+                      <p className="md:text-[22px] text-[16px] font-bold text-center leading-snug h-[64px] flex items-end">
+                        <span>{content}</span>
+                      </p>
+                      <div className="mt-10">
+                        <img className="max-md:w-[80px]" src={imageSrc} alt="" />
+                      </div>
+                    </div>
+                  </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

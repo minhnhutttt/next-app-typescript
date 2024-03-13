@@ -34,11 +34,21 @@ export default function Procedure() {
         <div className="mt-10 md:mt-16">
           <div
             ref={animateZoomRefs}
-            className="opacity-0 flex justify-center md:mb-[-83px] mb-[-60px] relative z-10"
+            className="opacity-0 flex justify-center items-center md:mb-[-83px] mb-[-60px] relative z-10 gap-1"
           >
             <img
-              className="max-md:w-[240px]"
+              className="max-md:w-[60px]"
+              src="/images/title-procedure-pen.png"
+              alt=""
+            />
+            <img
+              className="max-md:w-[100px] animate-[shake_1.5s_linear_infinite]"
               src="/images/title-procedure.png"
+              alt=""
+            />
+            <img
+              className="max-md:w-[60px]"
+              src="/images/title-procedure-teacher.png"
               alt=""
             />
           </div>
