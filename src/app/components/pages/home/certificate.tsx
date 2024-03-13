@@ -1,9 +1,9 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import { ReactNode, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
 type SliderProp = {
   id: string;
   imageSrc: string;
@@ -112,30 +112,30 @@ export default function Certificate() {
           <div ref={animateRefs} className="opacity-0 flex w-auto">
             <div className="animate-[infinity-loop_18s_infinite_linear_1s_both] flex relative">
               {sliderData.map(({ id, imageSrc, content }) => (
-                  <div className="relative px-2.5" key={id}>
-                    <div className="pt-5 pb-10 bg-[url('/images/bg-ertificate.png')] bg-cover w-[200px] h-[224px] md:w-[300px] md:h-[280px] flex flex-col items-center justify-center leading-tight rounded-[20px] overflow-hidden relative ">
-                      <p className="md:text-[22px] text-[16px] font-bold text-center leading-snug h-[64px] flex items-end">
-                        <span>{content}</span>
-                      </p>
-                      <div className="mt-10">
-                        <img className="max-md:w-[80px]" src={imageSrc} alt="" />
-                      </div>
+                <div className="relative px-2.5" key={id}>
+                  <div className="pt-5 pb-10 bg-[url('/images/bg-ertificate.png')] bg-cover w-[200px] h-[224px] md:w-[300px] md:h-[280px] flex flex-col items-center justify-center leading-tight rounded-[20px] overflow-hidden relative ">
+                    <p className="md:text-[22px] text-[16px] font-bold text-center leading-snug h-[64px] flex items-end">
+                      <span>{content}</span>
+                    </p>
+                    <div className="mt-10">
+                      <img className="max-md:w-[80px]" src={imageSrc} alt="" />
                     </div>
                   </div>
+                </div>
               ))}
             </div>
             <div className="animate-[infinity-loop_18s_infinite_linear_1s_both] flex relative">
               {sliderData.map(({ id, imageSrc, content }) => (
-                  <div className="relative px-2.5" key={id}>
-                    <div className="pt-5 pb-10 bg-[url('/images/bg-ertificate.png')] bg-cover w-[200px] h-[224px] md:w-[300px] md:h-[280px] flex flex-col items-center justify-center leading-tight rounded-[20px] overflow-hidden relative ">
-                      <p className="md:text-[22px] text-[16px] font-bold text-center leading-snug h-[64px] flex items-end">
-                        <span>{content}</span>
-                      </p>
-                      <div className="mt-10">
-                        <img className="max-md:w-[80px]" src={imageSrc} alt="" />
-                      </div>
+                <div className="relative px-2.5" key={id}>
+                  <div className="pt-5 pb-10 bg-[url('/images/bg-ertificate.png')] bg-cover w-[200px] h-[224px] md:w-[300px] md:h-[280px] flex flex-col items-center justify-center leading-tight rounded-[20px] overflow-hidden relative ">
+                    <p className="md:text-[22px] text-[16px] font-bold text-center leading-snug h-[64px] flex items-end">
+                      <span>{content}</span>
+                    </p>
+                    <div className="mt-10">
+                      <img className="max-md:w-[80px]" src={imageSrc} alt="" />
                     </div>
                   </div>
+                </div>
               ))}
             </div>
           </div>

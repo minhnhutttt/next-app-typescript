@@ -15,9 +15,12 @@ export default function Power() {
           <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
           <p className="md:text-[48px] text-[24px] font-medium tracking-widest text-center">
             <span className="relative overflow-hidden">
-        <span ref={spanRef} className="w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]"></span>
-        「即時証明力」
-        </span>
+              <span
+                ref={spanRef}
+                className="w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]"
+              ></span>
+              「即時証明力」
+            </span>
             を実現する<span className="text-[#FE4848] font-black">NFT</span>
           </p>
           <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>

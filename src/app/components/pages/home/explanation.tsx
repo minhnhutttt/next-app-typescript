@@ -45,20 +45,31 @@ export default function Explanation() {
           </p>
           <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
         </h4>
-        
-        <div ref={animateRefs} className="flex opacity-0 rounded-t-[32px] overflow-hidden mt-8">
-            <button className="w-1/2 bg-[#FFE8D3] py-4 text-center md:text-[32px] text-[20px] font-medium md:hidden" onClick={()=> setTab(1)}>
-              発行側
-            </button>
-            <button className="w-1/2 bg-[#FFF7D9] py-4 text-center md:text-[32px] text-[20px] font-medium md:hidden" onClick={()=> setTab(2)}>
-              受け取り側
-              </button>
-          </div>
+
+        <div
+          ref={animateRefs}
+          className="flex opacity-0 rounded-t-[32px] overflow-hidden mt-8"
+        >
+          <button
+            className="w-1/2 bg-[#FFE8D3] py-4 text-center md:text-[32px] text-[20px] font-medium md:hidden"
+            onClick={() => setTab(1)}
+          >
+            発行側
+          </button>
+          <button
+            className="w-1/2 bg-[#FFF7D9] py-4 text-center md:text-[32px] text-[20px] font-medium md:hidden"
+            onClick={() => setTab(2)}
+          >
+            受け取り側
+          </button>
+        </div>
         <div
           ref={animateRefs}
           className="opacity-0 flex md:rounded-[50px] max-md:flex-wrap overflow-hidden md:mt-10"
         >
-          <div className={`w-full md:w-1/2 bg-[#FFE8D3] px-5 pt-8 md:pt-12 md:pb-[62px] pb-8 ${tab === 1 ? 'max-md:block' : 'max-md:hidden'}`}>
+          <div
+            className={`w-full md:w-1/2 bg-[#FFE8D3] px-5 pt-8 md:pt-12 md:pb-[62px] pb-8 ${tab === 1 ? "max-md:block" : "max-md:hidden"}`}
+          >
             <div className="w-full max-w-[385px] mx-auto">
               <p className="text-center md:text-[32px] text-[20px] font-medium max-md:hidden">
                 発行側
@@ -89,10 +100,12 @@ export default function Explanation() {
               </p>
             </div>
           </div>
-          <div className={`w-full md:w-1/2 bg-[#FFF7D9] px-5 pt-8 md:pt-12 md:pb-[62px] pb-8 ${tab === 2 ? 'max-md:block' : 'max-md:hidden'}`}>
+          <div
+            className={`w-full md:w-1/2 bg-[#FFF7D9] px-5 pt-8 md:pt-12 md:pb-[62px] pb-8 ${tab === 2 ? "max-md:block" : "max-md:hidden"}`}
+          >
             <div className="w-full max-w-[385px] mx-auto">
               <p className="text-center md:text-[32px] text-[20px] font-medium max-md:hidden">
-              受け取り側
+                受け取り側
               </p>
               <div className="md:mt-10">
                 <ExplanationItem number="01" image="/images/explanation-04.jpg">
@@ -129,7 +142,10 @@ export default function Explanation() {
         <span className="absolute left-0 top-0 bottom-0 w-[64px] md:border-[3px] border-[2px] border-[#FE4848] !border-r-0"></span>
         次世代証明書を「次世代」と定義づける中心的な機能は、その
         <span className="relative overflow-hidden">
-        <span ref={spanRef} className="w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]"></span>
+          <span
+            ref={spanRef}
+            className="w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]"
+          ></span>
           「即時証明力」
         </span>
         です。

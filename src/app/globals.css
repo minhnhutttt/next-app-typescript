@@ -49,13 +49,22 @@ body {
 }
 
 @keyframes shake {
-  0% { transform: rotateZ(0deg) }
-  10% { transform: rotateZ(-15deg) }
-  30% { transform: rotateZ(15deg) }
-  40% { transform: rotateZ(0deg) }
-  100% { transform: rotateZ(0deg) }
+  0% {
+    transform: rotateZ(0deg);
+  }
+  10% {
+    transform: rotateZ(-15deg);
+  }
+  30% {
+    transform: rotateZ(15deg);
+  }
+  40% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
 }
-
 
 @keyframes rotate {
   0% {

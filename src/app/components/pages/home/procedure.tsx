@@ -19,13 +19,12 @@ function DotText({ children }: dotType) {
 export default function Procedure() {
   const animateZoomRefs = useScrollAnimation("zoom");
   const spanRef = useBgText();
-    
 
   useEffect(() => {
-    const charRefs = document.querySelectorAll('.text-fade span');
+    const charRefs = document.querySelectorAll(".text-fade span");
     charRefs.forEach((element, index) => {
       gsap.set(element, { opacity: 0, y: 100, duration: 1 }); // Set initial opacity to 0
-  
+
       gsap.to(element, {
         opacity: 1,
         y: 0,
@@ -35,7 +34,6 @@ export default function Procedure() {
           trigger: element,
           start: "top 80%",
           toggleActions: "play none none none",
-          
         },
       });
     });
@@ -50,12 +48,36 @@ export default function Procedure() {
         </div>
         <div className="flex justify-center">
           <h3 className="text-fade md:text-[4.306vw] whitespace-nowrap min-[1440px]:text-[62px] [font-size:_clamp(22px,4.267vw,32px)] font-medium leading-tight tracking-[0.2em]">
-            <span>デ</span><span>ジ</span><span>タ</span><span>ル</span><span>証</span><span>明</span><span>書</span><span>発</span><span>行</span><span>手</span><span>続</span><span>き</span> <br />
-            <span><DotText>ま</DotText></span>
-            <span><DotText>る</DotText></span>
-            <span><DotText>ご</DotText></span>
-            <span><DotText>と</DotText></span><span>引</span><span>き</span><span>受</span><span>け</span><span>ま</span><span>す。</span>
-            
+            <span>デ</span>
+            <span>ジ</span>
+            <span>タ</span>
+            <span>ル</span>
+            <span>証</span>
+            <span>明</span>
+            <span>書</span>
+            <span>発</span>
+            <span>行</span>
+            <span>手</span>
+            <span>続</span>
+            <span>き</span> <br />
+            <span>
+              <DotText>ま</DotText>
+            </span>
+            <span>
+              <DotText>る</DotText>
+            </span>
+            <span>
+              <DotText>ご</DotText>
+            </span>
+            <span>
+              <DotText>と</DotText>
+            </span>
+            <span>引</span>
+            <span>き</span>
+            <span>受</span>
+            <span>け</span>
+            <span>ま</span>
+            <span>す。</span>
           </h3>
         </div>
         <div className="mt-10 md:mt-16">
@@ -85,7 +107,10 @@ export default function Procedure() {
           >
             <div className="md:text-[24px] text-[16px] text-center font-bold mb-5 md:mb-8 tracking-widest">
               <p className="inline-block relative overflow-hidden">
-                <span ref={spanRef} className="w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]"></span>
+                <span
+                  ref={spanRef}
+                  className="w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]"
+                ></span>
                 デジタル化応援キャンペーン実施中！
               </p>
               <p>お得に証明書をデジタル化しよう♪</p>

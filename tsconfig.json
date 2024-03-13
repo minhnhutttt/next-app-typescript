@@ -21,6 +21,12 @@
       "@/*": ["./src/*"],
     },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/pages/home/certificate.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/components/pages/home/certificate.js",
+  ],
   "exclude": ["node_modules"],
 }
