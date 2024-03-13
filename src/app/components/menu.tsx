@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Anime from "./common/anime";
 
 export default function Menu() {
   const handleSendEmail = () => {
@@ -39,7 +40,7 @@ export default function Menu() {
   }, []);
   return (
     <div className="lg:hidden">
-        <div className="fixed top-[10%] right-0 overflow-hidden flex justify-end">
+        <div className="fixed top-[15%] right-0 overflow-hidden flex justify-end">
             <div ref={boxRef} className="h-[46px] translate-x-[calc(100%-46px)] bg-[linear-gradient(180deg,_#FFC700_0%,_#FF8719_100%)] rounded-l-[22px] py-2 origin-right">
                 <button onClick={closeExpand} className="absolute w-[54px] right-4 top-4 z-10">
                         <svg className="" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 107 47" fill="none">
@@ -49,14 +50,14 @@ export default function Menu() {
                 </button>
                 <div className="flex">
                     <button onClick={openExpand} className="flex flex-col items-center pl-2 pr-3.5 gap-2.5">
-                        <figure>
-                            <div className="circle w-[30px] h-[30px] drop-shadow-2xl rounded-full"></div>
-                        </figure>
+                        <div className="flex justify-center w-[44px] h-[44px] -ml-2 -mt-2">
+                            <Anime />
+                        </div>
                         <figure>
                             <img className="w-[9.5px]" src="/images/menu.png" alt="" />
                         </figure>
                     </button>
-                    <div className="border-l border-[#9A4646] px-4 py-2 space-y-5 flex-1 relative">
+                    <div className="border-l border-[#9A4646] px-4 py-2 space-y-5 flex-1 relative overflow-auto">
                         <div>
                             <p className="text-[14px] font-bold">The Will</p>
                             <ul className="space-y-1 mt-1">

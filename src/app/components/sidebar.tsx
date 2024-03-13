@@ -15,7 +15,7 @@ function Item({
   const pathname = usePathname();
   return (
     <li>
-        <Link href={href} className={`flex [text-shadow:2px_2px_8px_#000] items-center relative text-[16px] pl-12 [&.active]:before:block before:hidden before:absolute before:left-0 before:content-[''] before:w-4 before:h-4 before:bg-[#FF8719] before:rounded-full ${pathname === href && "active"}`}>{children}</Link>
+        <Link href={href} className={`flex [text-shadow:2px_2px_8px_#000] items-center relative text-[16px] pl-12 [&.active]:text-[#FF9016] [&.active]:before:block before:hidden before:absolute before:left-0 before:content-[''] before:w-4 before:h-4 before:bg-[#FF8719] before:rounded-full ${pathname === href && "active"}`}>{children}</Link>
     </li>
   );
 }
