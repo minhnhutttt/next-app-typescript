@@ -43,6 +43,7 @@ export default function Use() {
                     transitions={(index) => ({
                       type: "easeIn",
                       duration: index,
+                      delay: 1
                     })}
                     animateToNumber={10000}
                   />

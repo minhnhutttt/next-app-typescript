@@ -10,7 +10,7 @@ const useBgText = () => {
       const spanTween = gsap.to(spanRef.current, {
         width: "100%",
         alpha: 1,
-        duration: 0.7,
+        duration: 1.6,
         ease: Power2.easeInOut,
         scrollTrigger: {
           trigger: spanRef.current,

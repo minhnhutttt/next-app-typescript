@@ -1,8 +1,10 @@
 "use client";
+import useBgText from "@/app/hooks/useBgText";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 
 export default function Campaign() {
   const animateRefs = useScrollAnimation("fadeUp");
+  const spanRef = useBgText();
   return (
     <section className="relative md:mb-[110px] mb-[70px]">
       <div className="w-full md:max-w-[1226px] max-w-[540px] mx-auto relative px-10 md:px-[124px] pt-[60px] md:pt-[120px]">
@@ -35,7 +37,13 @@ export default function Campaign() {
               </figure>
               <div className="flex-1">
                 <p className="text-center md:text-[24px] text-[14px] font-bold pb-3 border-b border-black w-full">
+                  <span className="inline-block relative overflow-hidden">
+                  <span
+                    ref={spanRef}
+                    className="w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]"
+                  ></span>
                   だから私たちを頼ってください！
+                </span>
                 </p>
                 <p className="md:text-[20px] text-[14px] font-medium pt-2 leading-snug">
                   まるなげももちろんOK。

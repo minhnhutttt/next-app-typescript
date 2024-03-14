@@ -23,7 +23,7 @@ export default function Procedure() {
   useEffect(() => {
     const charRefs = document.querySelectorAll(".text-fade span");
     charRefs.forEach((element, index) => {
-      gsap.set(element, { opacity: 0, y: 100, duration: 1 }); // Set initial opacity to 0
+      gsap.set(element, { opacity: 0, y: 100, duration: 1 });
 
       gsap.to(element, {
         opacity: 1,

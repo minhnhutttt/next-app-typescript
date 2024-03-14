@@ -37,8 +37,8 @@ export default function Talk() {
               <div className="bg-[#FFD4D4] rounded-[20px] md:mt-5 px-4 md:px-[30px] py-4 relative after:absolute after:w-[36px] after:h-[25px] md:after:w-[49px] md:after:h-[34px] after:bg-[url('/images/ic-bubble.svg')] after:bg-cover md:after:left-[-20px] after:left-[-14px] md:after:top-[-8px] after:top-[-4px]">
                 <p className="md:text-[16px] text-[13px] font-medium">
                   <span className="md:text-[22px] text-[16px] font-bold">
-                    あ！
-                  </span>
+                  あ！💡
+                  </span><br />
                   だからデジタル化なのか！証明書がデジタル化できれば、この作業をまるごとカットできるよねっ！
                 </p>
               </div>
@@ -52,15 +52,15 @@ export default function Talk() {
               <div className="bg-[#FFD4D4] rounded-[20px] md:mt-5 px-4 md:px-[30px] py-4 relative after:absolute after:w-[36px] after:h-[25px] md:after:w-[49px] md:after:h-[34px] after:bg-[url('/images/ic-bubble-right.svg')] after:bg-cover md:after:right-[-20px] after:right-[-14px] md:after:top-[-8px] after:top-[-4px]">
                 <p className="md:text-[16px] text-[13px] font-medium">
                   <span className="md:text-[22px] text-[16px] font-bold">
-                    ちょっとちょっと！
-                  </span>{" "}
+                  ちょっとちょっと！✋
+                  </span>
                   <br />
                   デジタル化すれば...って言いますが、そんなこと言われなくたってみんなよくわかってるんです。
                 </p>
               </div>
               <div className="bg-[#FFD4D4] rounded-[20px] md:mt-5 px-4 md:px-[30px] py-4 relative">
                 <p className="md:text-[16px] text-[13px] font-medium">
-                  でも、実際にはデジタル化できていない。
+                でも、実際にはデジタル化できていない。
                   <br />
                   その大きな理由って何なのか、わかりますか？
                 </p>
@@ -89,8 +89,8 @@ export default function Talk() {
               <div className="bg-[#FFD4D4] rounded-[20px] md:mt-5 px-4 md:px-[30px] py-4 relative after:absolute after:w-[36px] after:h-[25px] md:after:w-[49px] md:after:h-[34px] after:bg-[url('/images/ic-bubble.svg')] after:bg-cover md:after:left-[-20px] after:left-[-14px] md:after:top-[-8px] after:top-[-4px]">
                 <p className="md:text-[16px] text-[13px] font-medium">
                   <span className="md:text-[22px] text-[16px] font-bold">
-                    え？え〜と、え〜と。
-                  </span>{" "}
+                  え？え〜と、え〜と...💦
+                  </span>
                   <br />
                   そうだ！よくある予算的な問題でしょ！？
                 </p>
@@ -105,11 +105,11 @@ export default function Talk() {
               <div className="bg-[#FFD4D4] rounded-[20px] md:mt-5 px-4 md:px-[30px] py-4 md:py-9 relative after:absolute after:w-[36px] after:h-[25px] md:after:w-[49px] md:after:h-[34px] after:bg-[url('/images/ic-bubble-right.svg')] after:bg-cover md:after:right-[-20px] after:right-[-14px] md:after:top-[-8px] after:top-[-4px]">
                 <p className="md:text-[16px] text-[13px] font-medium">
                   <span className="md:text-[22px] text-[16px] font-bold flex gap-3">
-                    違います <img src="/images/ic-x.svg" alt="" />
+                  違います <img src="/images/ic-x.svg" alt="" />
                   </span>
                   デジタル化した方が採算は良くなるので、予算が問題だったならすでに実現されているはずなんです。
                   <br />
-                  もっと本質的でシンプルな理由があります。
+                  <span className="underline [text-decoration-style:wavy]">もっと本質的でシンプルな理由があります。</span>
                 </p>
               </div>
             </div>

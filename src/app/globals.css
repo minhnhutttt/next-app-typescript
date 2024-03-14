@@ -76,3 +76,15 @@ body {
     transform: translateX(-100vw);
   }
 }
+
+@keyframes block {
+  0% {
+    transform: translate(-110%, 0);
+  }
+  45%, 55% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(110%, 0);
+  }
+}
