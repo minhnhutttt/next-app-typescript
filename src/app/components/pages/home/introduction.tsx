@@ -42,10 +42,14 @@ export default function Introduction() {
         <div className="w-full max-w-[1320px] mx-auto pt-16 md:pt-[90px] md:pb-[128px] pb-20">
           <div ref={animateRefs} className="opacity-0 relative">
             <p className="absolute tracking-[0.18em] inset-0 text-center text-[24px] font-boldt text-white [-webkit-text-stroke:_10px_white] md:text-[48px]">
-              次世代証明書が<br className="md:hidden" />選ばれる理由
+              次世代証明書が
+              <br className="md:hidden" />
+              選ばれる理由
             </p>
             <h3 className="relative tracking-[0.18em] text-center text-[24px] font-bold text-[#FE4848] md:text-[48px]">
-              次世代証明書が<br className="md:hidden" />選ばれる理由
+              次世代証明書が
+              <br className="md:hidden" />
+              選ばれる理由
             </h3>
           </div>
           <div className="mt-10 md:mt-[74px]">

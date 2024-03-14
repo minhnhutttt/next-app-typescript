@@ -15,7 +15,9 @@ export default function Preparation() {
             <img className="max-md:w-10" src="/images/ic-2.png " alt="" />
           </div>
           <h5 className="md:text-[48px] text-[24px] font-bold md:border-b-[10px] border-b-[5px] max-md:pb-1 border-black text-center tracking-wider">
-            不測の事態への備え、<br className="md:hidden" />できていますか？
+            不測の事態への備え、
+            <br className="md:hidden" />
+            できていますか？
           </h5>
           <div className="flex justify-center mt-5">
             <p className="md:text-[18px] text-[14px] font-medium max-w-[801px]">
@@ -64,7 +66,11 @@ export default function Preparation() {
             </p>
           </div>
           <p className="text-center md:text-[28px] font-bold text-[18px] md:mt-6 mt-4">
-            次世代証明書で<br className="md:hidden" />組織運営者としての責任を<br className="md:hidden" />果たしましょう！
+            次世代証明書で
+            <br className="md:hidden" />
+            組織運営者としての責任を
+            <br className="md:hidden" />
+            果たしましょう！
           </p>
         </div>
       </div>

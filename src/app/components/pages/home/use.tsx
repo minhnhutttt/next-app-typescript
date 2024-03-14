@@ -1,11 +1,10 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
-import { ReactNode, useState } from "react";
-import CountUp from 'react-countup';
-import dynamic from "next/dynamic";
-const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
-  ssr: false,
-});
+import { ReactNode, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+import { useCountUp } from "react-countup";
 type UseItemPropsType = {
   title: ReactNode;
   children: ReactNode;
@@ -29,19 +28,42 @@ function UseItem({ title, children }: UseItemPropsType) {
 
 export default function Use() {
   const animateRefs = useScrollAnimation("fadeUp");
+  const containerRef = useRef<HTMLDivElement>(null);
+  const countUpRef = useRef(null);
+  const { pauseResume, start } = useCountUp({
+    ref: countUpRef,
+    start: 0,
+    end: 10000,
+    delay: 0.5,
+    duration: 2.8,
+    useEasing: true,
+  });
+  useEffect(() => {
+    gsap.to(containerRef.current, {
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top bottom-=60",
+        onEnter: () => {
+          start();
+          console.log(1);
+        },
+      },
+    });
+  }, []);
   return (
     <section className="md:mb-[160px] mb-20">
       <div className="relative px-5 bg-[#F7F7F7] md:pt-[100px] md:pb-[160px] py-[60px]">
         <div className="w-full max-w-[1360px] mx-auto">
           <div ref={animateRefs} className="opacity-0 flex justify-center">
-            <div className="bg-[#FFD900] rounded-[24px] w-full max-w-[1120px] mx-auto relative text-center md:text-[48px] text-[24px] font-medium md:px-5 p-4 md:py-8 leading-tight after:absolute after:aspect-[102/59] after:left-[55%] md:after:w-[102px] after:w-[50px] after:top-full after:bg-[url('/images/use-bubble.png')] after:bg-cover">
+            <div
+              ref={containerRef}
+              className="bg-[#FFD900] rounded-[24px] w-full max-w-[1120px] mx-auto relative text-center md:text-[48px] text-[24px] font-medium md:px-5 p-4 md:py-8 leading-tight after:absolute after:aspect-[102/59] after:left-[55%] md:after:w-[102px] after:w-[50px] after:top-full after:bg-[url('/images/use-bubble.png')] after:bg-cover"
+            >
               次世代証明書で発行されたデジタル証明書は <br />
               <p className="flex justify-center items-center">
                 『
                 <span className="md:text-[68px] text-[30px] font-black flex">
-                <CountUp end={10000} />
-
-                  通
+                  <span ref={countUpRef} />通
                 </span>
                 』を突破！
                 <img className="max-md:w-7" src="/images/ic-like.svg" alt="" />
@@ -50,7 +72,10 @@ export default function Use() {
           </div>
           <div className="bg-[linear-gradient(90deg,_#FE4848_-2.68%,_#FF9B9B_99.85%)] md:rounded-[50px] rounded-[32px] md:mt-8 mt-6 px-5">
             <div className="relative z-10 bottom-[-58px]">
-              <h4 className="md:text-[48px] text-[28px] font-medium text-center text-white">
+              <h4
+                ref={animateRefs}
+                className="opacity-0 md:text-[48px] text-[28px] font-medium text-center text-white"
+              >
                 導入する組織続々！
                 <br />
                 どんな組織で利用されているの？

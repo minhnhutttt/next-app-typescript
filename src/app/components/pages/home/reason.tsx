@@ -15,7 +15,7 @@ export default function Reason() {
         scrollTrigger: {
           trigger: element,
           start: "top bottom-=60",
-          onEnter: () => element.classList.add('active'),
+          onEnter: () => element.classList.add("active"),
         },
       });
     });
@@ -35,8 +35,11 @@ export default function Reason() {
           <div ref={animateRefs} className="opacity-0 relative">
             <div className="w-full min-[1440px]:max-w-[670px] md:max-w-[46.528vw] mx-auto rounded-[30px] overflow-hidden bg-white">
               <p className="text-block group flex flex-wrap items-center justify-center text-center md:text-[20px] text-[14px] font-bold py-2 px-6 min-h-[63px] bg-[#FF9B9B]">
-              理由その１ : <span className="relative overflow-hidden"><span className="h-full w-full absolute inset-0 bg-[#FF9B9B] z-10 group-[.active]:animate-[block_1s_0.5s_both]">
-                </span><span>デジタル化ってなんか難しそうだから...</span></span>
+                理由その１ :{" "}
+                <span className="relative overflow-hidden">
+                  <span className="h-full w-full absolute inset-0 bg-[#FF9B9B] z-10 group-[.active]:animate-[block_1s_0.5s_both]"></span>
+                  <span>デジタル化ってなんか難しそうだから...</span>
+                </span>
               </p>
               <div className="px-4 md:px-[34px]">
                 <div className="w-full max-w-[582px] ml-auto py-5 md:py-7">
@@ -53,8 +56,16 @@ export default function Reason() {
               </div>
               <div className="max-md:flex max-md:justify-between max-md:items-end max-md:px-4 gap-4 max-md:max-w-[440px] max-md:mx-auto">
                 <div className="md:absolute min-[1440px]:right-[calc(50%+264px)] right-[calc(50%+18.333vw)] -bottom-4 flex items-start max-md:w-[40%]">
-                  <img className="animate-[bounce_1s_0.3s_ease_infinite_alternate] w-[70%]" src="/images/penguin-03-text.png" alt="ええ〜っ！？" />
-                  <img className="mt-6 md:mt-11 w-[34.76%]" src="/images/penguin-03.png" alt="ええ〜っ！？" />
+                  <img
+                    className="animate-[bounce_1s_0.3s_ease_infinite_alternate] w-[70%]"
+                    src="/images/penguin-03-text.png"
+                    alt="ええ〜っ！？"
+                  />
+                  <img
+                    className="mt-6 md:mt-11 w-[34.76%]"
+                    src="/images/penguin-03.png"
+                    alt="ええ〜っ！？"
+                  />
                 </div>
                 <div className="md:absolute min-[1440px]:left-[calc(50%+280px)] left-[calc(50%+19.444vw)] -top-2 flex items-start max-md:w-[60%]">
                   <img
@@ -74,8 +85,13 @@ export default function Reason() {
           <div ref={animateRefs} className="opacity-0 relative">
             <div className="w-full min-[1440px]:max-w-[670px] md:max-w-[46.528vw] mx-auto rounded-[30px] overflow-hidden bg-white">
               <p className="text-block group flex-wrap flex items-center justify-center text-center md:text-[20px] text-[14px] font-bold py-2 px-6 min-h-[63px] bg-[#FF9B9B]">
-                理由その２ : <span className="relative overflow-hidden"><span className="h-full w-full absolute inset-0 bg-[#FF9B9B] z-10 group-[.active]:animate-[block_1s_0.5s_both]">
-                </span><span>一人または自分たちだけでなんとかしようとするから...</span></span>
+                理由その２ :{" "}
+                <span className="relative overflow-hidden">
+                  <span className="h-full w-full absolute inset-0 bg-[#FF9B9B] z-10 group-[.active]:animate-[block_1s_0.5s_both]"></span>
+                  <span>
+                    一人または自分たちだけでなんとかしようとするから...
+                  </span>
+                </span>
               </p>
               <div className="px-4 md:px-[34px]">
                 <div className="w-full max-w-[582px] ml-auto py-5 md:py-7">
@@ -92,12 +108,20 @@ export default function Reason() {
               </div>
               <div className="max-md:flex max-md:justify-between max-md:items-end max-md:px-4 gap-4 max-md:max-w-[440px] max-md:mx-auto">
                 <figure className="md:absolute min-[1440px]:right-[calc(50%+264px)] right-[calc(50%+18.333vw)] -bottom-16 flex items-start">
-                  <img className="animate-[bounce_1s_0.5s_ease_infinite_alternate] w-[70%]" src="/images/penguin-05-text.png" alt="今日も残業...?" />
-                  <img className="mt-6 md:mt-11 w-[34.76%]" src="/images/penguin-05.png" alt="今日も残業...?" />
+                  <img
+                    className="animate-[bounce_1s_0.5s_ease_infinite_alternate] w-[70%]"
+                    src="/images/penguin-05-text.png"
+                    alt="今日も残業...?"
+                  />
+                  <img
+                    className="mt-6 md:mt-11 w-[34.76%]"
+                    src="/images/penguin-05.png"
+                    alt="今日も残業...?"
+                  />
                 </figure>
                 <div className="md:absolute z-10 min-[1440px]:left-[calc(50%+280px)] left-[calc(50%+19.444vw)] -top-5 flex items-start">
                   <img
-                  className="mt-8 md:mt-16 w-[27.3%]"
+                    className="mt-8 md:mt-16 w-[27.3%]"
                     src="/images/penguin-04.png"
                     alt="わかる〜！なんか妙な責任感が出てくるんだよねえ..."
                   />

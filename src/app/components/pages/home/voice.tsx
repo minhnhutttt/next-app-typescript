@@ -23,7 +23,9 @@ export default function Voice() {
           >
             <figure className="relative">
               <img src="/images/voice-01.png" alt="" />
-              <span className="absolute bottom-0 left-0 animate-[shake_1.5s_linear_infinite]"><img src="/images/voice-avatar-01.png" alt="" /></span>
+              <span className="absolute bottom-0 left-0 animate-[shake_1.5s_linear_infinite]">
+                <img src="/images/voice-avatar-01.png" alt="" />
+              </span>
             </figure>
             <div className="absolute top-[18%] md:top-[67px] left-[25%] md:left-[110px] w-[60%] md:w-[333px]">
               <div className="md:text-[22px] text-[15px] font-bold flex justify-center border-b border-black leading-snug pb-1">
@@ -47,7 +49,9 @@ export default function Voice() {
           >
             <figure className="relative">
               <img src="/images/voice-02.png" alt="" />
-              <span className="absolute bottom-0 right-[3%] animate-[shake_1.5s_linear_infinite]"><img src="/images/voice-avatar-02.png" alt="" /></span>
+              <span className="absolute bottom-0 right-[3%] animate-[shake_1.5s_linear_infinite]">
+                <img src="/images/voice-avatar-02.png" alt="" />
+              </span>
             </figure>
             <div className="absolute top-[20%] md:top-[80px] left-[16%] md:left-[55px] w-[64%] md:w-[333px]">
               <div className="md:text-[22px] text-[15px] font-bold flex justify-center border-b border-black leading-snug pb-1">
@@ -67,7 +71,9 @@ export default function Voice() {
           >
             <figure className="relative">
               <img src="/images/voice-03.png" alt="" />
-              <span className="absolute bottom-0 right-0 animate-[shake_1.5s_linear_infinite]"><img src="/images/voice-avatar-03.png" alt="" /></span>
+              <span className="absolute bottom-0 right-0 animate-[shake_1.5s_linear_infinite]">
+                <img src="/images/voice-avatar-03.png" alt="" />
+              </span>
             </figure>
             <div className="absolute top-[12%] md:top-[60px] left-[15%] md:left-[60px] w-[64%] md:w-[333px]">
               <div className="md:text-[22px] text-[15px] font-bold flex justify-center border-b border-black leading-snug pb-1">

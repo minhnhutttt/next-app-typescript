@@ -38,12 +38,12 @@ export default function Campaign() {
               <div className="flex-1">
                 <p className="text-center md:text-[24px] text-[14px] font-bold pb-3 border-b border-black w-full">
                   <span className="inline-block relative overflow-hidden">
-                  <span
-                    ref={spanRef}
-                    className="w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]"
-                  ></span>
-                  だから私たちを頼ってください！
-                </span>
+                    <span
+                      ref={spanRef}
+                      className="w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]"
+                    ></span>
+                    だから私たちを頼ってください！
+                  </span>
                 </p>
                 <p className="md:text-[20px] text-[14px] font-medium pt-2 leading-snug">
                   まるなげももちろんOK。
