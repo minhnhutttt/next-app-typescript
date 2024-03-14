@@ -1,6 +1,7 @@
 "use client";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import { ReactNode, useState } from "react";
+import CountUp from 'react-countup';
 import dynamic from "next/dynamic";
 const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
   ssr: false,
@@ -38,15 +39,8 @@ export default function Use() {
               <p className="flex justify-center items-center">
                 『
                 <span className="md:text-[68px] text-[30px] font-black flex">
-                  <AnimatedNumbers
-                    includeComma
-                    transitions={(index) => ({
-                      type: "easeIn",
-                      duration: index,
-                      delay: 1
-                    })}
-                    animateToNumber={10000}
-                  />
+                <CountUp end={10000} />
+
                   通
                 </span>
                 』を突破！

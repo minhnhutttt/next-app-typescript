@@ -48,7 +48,7 @@ export default function Explanation() {
 
         <div
           ref={animateRefs}
-          className="flex opacity-0 rounded-t-[32px] overflow-hidden mt-8"
+          className="flex opacity-0 rounded-t-[32px] overflow-hidden max-md:mt-8 relative -bottom-1 z-10"
         >
           <button
             className="w-1/2 bg-[#FFE8D3] py-4 text-center md:text-[32px] text-[20px] font-medium md:hidden"

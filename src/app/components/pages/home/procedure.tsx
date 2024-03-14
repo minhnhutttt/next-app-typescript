@@ -18,36 +18,71 @@ function DotText({ children }: dotType) {
 }
 export default function Procedure() {
   const animateZoomRefs = useScrollAnimation("zoom");
-  const spanRef = useBgText();
+  const spanRef = useRef<HTMLDivElement>(null);;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const charRefs = document.querySelectorAll(".text-fade span");
-    charRefs.forEach((element, index) => {
-      gsap.set(element, { opacity: 0, y: 100, duration: 1 });
+    
+    gsap.set(charRefs, { opacity: 0, y: 100 });
 
-      gsap.to(element, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        delay: index * 0.05,
-        scrollTrigger: {
-          trigger: element,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top center',
+        end: 'bottom top',
+      },
+      defaults: {
+        ease: 'power4.inOut',
+        duration: 0.5,
+      },
     });
-  }, []);
+    
+    tl.staggerTo(charRefs, 1, {
+      opacity: 1,
+      y: 0,
+      delay: 0.05,
+    }, 0.05);
+
+    tl.to(
+      titleRef.current,
+      {
+        y: 0, opacity: 1,
+        duration: 0.5,
+      }, 2,
+    );
+    tl.to(
+      contentRef.current,
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.5,
+      }, ">",
+    );
+    tl.to(
+      spanRef.current,
+      {
+        width: "100%",
+        opacity: 1,
+        duration: 1.6,
+      }, ">",
+    );
+}, []); 
+
+
+
   return (
     <section className="relative px-5 mt-[60px] md:mt-[100px] md:mb-[110px]">
       <div className="w-full max-w-[980px] mx-auto">
-        <div ref={animateZoomRefs} className="opacity-0 flex justify-center">
-          <p className="font-medium md:text-[1.667vw] min-[1440px]:text-[24px] text-[16px] bg-[url('/images/title-line.png')] bg-no-repeat bg-bottom pb-4 px-2 tracking-[0.2em]">
+        <div ref={containerRef} className="flex justify-center">
+          <p ref={animateZoomRefs} className="opacity-0 font-medium md:text-[1.667vw] min-[1440px]:text-[24px] text-[16px] bg-[url('/images/title-line.png')] bg-no-repeat bg-bottom pb-4 px-2 tracking-[0.2em]">
             発行から導入まで徹底サポート！
           </p>
         </div>
         <div className="flex justify-center">
-          <h3 className="text-fade md:text-[4.306vw] whitespace-nowrap min-[1440px]:text-[62px] [font-size:_clamp(22px,4.267vw,32px)] font-medium leading-tight tracking-[0.2em]">
+          <h3 className="text-fade [&>*]:opacity-0 md:text-[4.306vw] whitespace-nowrap min-[1440px]:text-[62px] [font-size:_clamp(22px,4.267vw,32px)] font-medium leading-tight tracking-[0.2em]">
             <span>デ</span>
             <span>ジ</span>
             <span>タ</span>
@@ -82,8 +117,8 @@ export default function Procedure() {
         </div>
         <div className="mt-10 md:mt-16">
           <div
-            ref={animateZoomRefs}
-            className="opacity-0 flex justify-center items-center md:mb-[-83px] mb-[-60px] relative z-10 gap-1"
+            ref={titleRef}
+            className="flex justify-center items-center md:mb-[-83px] mb-[-60px] relative opacity-0 translate-y-[30px] z-10 gap-1"
           >
             <img
               className="max-md:w-[60px]"
@@ -101,9 +136,8 @@ export default function Procedure() {
               alt=""
             />
           </div>
-          <div
-            ref={animateZoomRefs}
-            className="opacity-0 bg-[url('/images/bg-procedure.png')] bg-cover bg-no-repeat bg-center min-h-[370px] relative flex flex-col items-center pt-[80px] md:pt-[90px]"
+          <div ref={contentRef}
+            className="opacity-0 scale-90 md:bg-[url('/images/bg-procedure.png')] bg-cover bg-no-repeat bg-center min-h-[370px] relative flex flex-col items-center pt-[80px] md:pt-[90px]"
           >
             <div className="md:text-[24px] text-[16px] text-center font-bold mb-5 md:mb-8 tracking-widest">
               <p className="inline-block relative overflow-hidden">

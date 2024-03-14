@@ -12,7 +12,7 @@ export default function Suggestion() {
         >
           <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
           <p className="md:text-[48px] text-[24px] font-medium tracking-widest text-center">
-            次世代証明書が提案するもの
+            次世代証明書が<br className="md:hidden" />提案するもの
           </p>
           <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
         </h4>

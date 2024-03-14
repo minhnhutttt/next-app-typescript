@@ -20,7 +20,7 @@ export default function Power() {
                 className="w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FFD900_40%,_transparent_40%)]"
               ></span>
               「即時証明力」
-            </span>
+            </span><br className="md:hidden" />
             を実現する<span className="text-[#FE4848] font-black">NFT</span>
           </p>
           <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
@@ -31,9 +31,9 @@ export default function Power() {
         >
           <div className="w-full max-w-[817px] mx-auto">
             <h5 className="md:text-[32px] text-[20px] font-medium text-center">
-              次世代証明書は、
+              次世代証明書は、<br className="md:hidden" />
               <span className="text-[#FE4848] font-bold">NFT</span>
-              を活用したデジタル証明書です。
+              を活用した<br className="md:hidden" />デジタル証明書です。
             </h5>
             <div className="flex justify-center mt-6 md:mt-10">
               <div className="md:text-[24px] text-[16px] font-medium space-y-5 py-3">
