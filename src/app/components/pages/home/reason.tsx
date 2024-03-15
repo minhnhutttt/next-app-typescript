@@ -4,24 +4,13 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useTextAnimation from "@/app/hooks/useTextAnimation";
+import useTextFolding from "@/app/hooks/useTextFolding";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Reason() {
   const animateRefs = useScrollAnimation("fadeUp");
-  const textAnimationRef = useTextAnimation();
+  const textFoldingnRef = useTextFolding();
 
-  useEffect(() => {
-    const charRefs = document.querySelectorAll(".text-block");
-    charRefs.forEach((element) => {
-      gsap.to(element, {
-        scrollTrigger: {
-          trigger: element,
-          start: "top bottom-=60",
-          onEnter: () => element.classList.add("active"),
-        },
-      });
-    });
-  }, []);
 
   return (
     <section className="relative px-4 md:mb-[71px] mb-9">
@@ -37,10 +26,9 @@ export default function Reason() {
           <div ref={animateRefs} className="opacity-0 relative">
             <div className="w-full min-[1440px]:max-w-[670px] md:max-w-[46.528vw] mx-auto rounded-[30px] overflow-hidden bg-white">
               <p className="text-block group flex flex-wrap items-center justify-center text-center md:text-[20px] text-[14px] font-bold py-2 px-6 min-h-[63px] bg-[#FF9B9B]">
-                理由その１ :{" "}
-                <span className="relative overflow-hidden">
-                  <span className="h-full w-full absolute inset-0 bg-[#FF9B9B] z-10 group-[.active]:animate-[block_1s_0.5s_both]"></span>
-                  <span>デジタル化ってなんか難しそうだから...</span>
+                理由その１ :
+                <span ref={textFoldingnRef} className="relative overflow-hidden">
+                デジタル化ってなんか難しそうだから
                 </span>
               </p>
               <div className="px-4 md:px-[34px]">
@@ -87,8 +75,8 @@ export default function Reason() {
           <div ref={animateRefs} className="opacity-0 relative">
             <div className="w-full min-[1440px]:max-w-[670px] md:max-w-[46.528vw] mx-auto rounded-[30px] overflow-hidden bg-white">
               <p className="text-block group flex-wrap flex items-center justify-center text-center md:text-[20px] text-[14px] font-bold py-2 px-6 min-h-[63px] bg-[#FF9B9B]">
-                理由その２ :{" "}
-                <span ref={textAnimationRef} className="relative overflow-hidden">
+                理由その２ :
+                <span ref={textFoldingnRef} className="relative overflow-hidden">
                     一人または自分たちだけでなんとかしようとするから...
                 </span>
               </p>
