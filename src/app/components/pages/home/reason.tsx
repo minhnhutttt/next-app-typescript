@@ -3,10 +3,12 @@ import useScrollAnimation from "@/app/hooks/useScrollAnimation";
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useTextAnimation from "@/app/hooks/useTextAnimation";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Reason() {
   const animateRefs = useScrollAnimation("fadeUp");
+  const textAnimationRef = useTextAnimation();
 
   useEffect(() => {
     const charRefs = document.querySelectorAll(".text-block");
@@ -86,11 +88,8 @@ export default function Reason() {
             <div className="w-full min-[1440px]:max-w-[670px] md:max-w-[46.528vw] mx-auto rounded-[30px] overflow-hidden bg-white">
               <p className="text-block group flex-wrap flex items-center justify-center text-center md:text-[20px] text-[14px] font-bold py-2 px-6 min-h-[63px] bg-[#FF9B9B]">
                 理由その２ :{" "}
-                <span className="relative overflow-hidden">
-                  <span className="h-full w-full absolute inset-0 bg-[#FF9B9B] z-10 group-[.active]:animate-[block_1s_0.5s_both]"></span>
-                  <span>
+                <span ref={textAnimationRef} className="relative overflow-hidden">
                     一人または自分たちだけでなんとかしようとするから...
-                  </span>
                 </span>
               </p>
               <div className="px-4 md:px-[34px]">

@@ -48,30 +48,13 @@ export default function Explanation() {
 
         <div
           ref={animateRefs}
-          className="flex opacity-0 rounded-t-[32px] overflow-hidden max-md:mt-8 relative -bottom-1 z-10"
-        >
-          <button
-            className="w-1/2 bg-[#FFE8D3] py-4 text-center md:text-[32px] text-[20px] font-medium md:hidden"
-            onClick={() => setTab(1)}
-          >
-            発行側
-          </button>
-          <button
-            className="w-1/2 bg-[#FFF7D9] py-4 text-center md:text-[32px] text-[20px] font-medium md:hidden"
-            onClick={() => setTab(2)}
-          >
-            受け取り側
-          </button>
-        </div>
-        <div
-          ref={animateRefs}
-          className="opacity-0 flex md:rounded-[50px] max-md:flex-wrap overflow-hidden md:mt-10"
+          className="opacity-0 flex md:rounded-[50px] rounded-[25px] max-md:flex-wrap overflow-hidden mt-8 md:mt-10"
         >
           <div
-            className={`w-full md:w-1/2 bg-[#FFE8D3] px-5 pt-8 md:pt-12 md:pb-[62px] pb-8 ${tab === 1 ? "max-md:block" : "max-md:hidden"}`}
+            className={`w-full md:w-1/2 bg-[#FFE8D3] px-5 pt-8 md:pt-12 md:pb-[62px] relative ${tab === 1 ? "max-md:block" : "max-md:hidden"}`}
           >
             <div className="w-full max-w-[385px] mx-auto">
-              <p className="text-center md:text-[32px] text-[20px] font-medium max-md:hidden">
+              <p className="text-center md:text-[32px] text-[20px] font-medium">
                 発行側
               </p>
               <div className="md:mt-10">
@@ -99,12 +82,23 @@ export default function Explanation() {
                 <span className="text-[#FE4848]">実現</span>
               </p>
             </div>
+            
+          <button
+            className="w-[180px] px-5 bg-[#FFF7D9] py-4 text-center md:text-[32px] text-[18px] rounded-tl-[25px] font-medium md:hidden ml-auto flex items-center gap-3 justify-center -mr-5"
+            onClick={() => setTab(2)}
+          >
+            <span>受け取り側</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12" fill="none">
+              <path d="M16.5825 6.18677L2.00003 6.18677" stroke="black" strokeWidth="3" strokeLinecap="round"/>
+              <path d="M13.342 10.3994C14.3066 10.2065 15.4472 8.51819 16.2585 7.87898C16.925 7.35386 18.1528 6.50345 17.3747 5.86264C16.2584 4.94337 15.2356 2.63869 13.9585 2.00012" stroke="black" strokeWidth="3" strokeLinecap="round"/>
+            </svg>
+          </button>
           </div>
           <div
-            className={`w-full md:w-1/2 bg-[#FFF7D9] px-5 pt-8 md:pt-12 md:pb-[62px] pb-8 ${tab === 2 ? "max-md:block" : "max-md:hidden"}`}
+            className={`w-full md:w-1/2 bg-[#FFF7D9] px-5 pt-8 md:pt-12 md:pb-[62px] relative ${tab === 2 ? "max-md:block" : "max-md:hidden"}`}
           >
             <div className="w-full max-w-[385px] mx-auto">
-              <p className="text-center md:text-[32px] text-[20px] font-medium max-md:hidden">
+              <p className="text-center md:text-[32px] text-[20px] font-medium">
                 受け取り側
               </p>
               <div className="md:mt-10">
@@ -132,6 +126,17 @@ export default function Explanation() {
                 <span className="text-[#FE4848]">適応</span>
               </p>
             </div>
+            
+          <button
+            className="w-[180px] px-5 bg-[#FFE8D3] py-4 text-center md:text-[32px] text-[18px] rounded-tr-[25px] font-medium md:hidden mr-auto flex items-center gap-3 justify-center -ml-5"
+            onClick={() => setTab(1)}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12" fill="none">
+              <path d="M3.04199 6.18665L17.6245 6.18665" stroke="black" strokeWidth="3" strokeLinecap="round"/>
+              <path d="M6.28253 10.3993C5.31794 10.2064 4.17733 8.51806 3.36603 7.87886C2.69953 7.35374 1.47171 6.50333 2.24984 5.86252C3.3661 4.94325 4.38888 2.63857 5.66602 2" stroke="black" strokeWidth="3" strokeLinecap="round"/>
+            </svg>
+            <span>発行側</span>
+          </button>
           </div>
         </div>
       </div>

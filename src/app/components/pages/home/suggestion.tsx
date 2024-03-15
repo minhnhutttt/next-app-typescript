@@ -1,8 +1,14 @@
-"use client";
+"use client"
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useTextAnimation from "@/app/hooks/useTextAnimation";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Suggestion() {
   const animateRefs = useScrollAnimation("fadeUp");
+  const containerRef = useTextAnimation();
   return (
     <section className="relative px-5 md:mb-[165px] mb-20">
       <div className="w-full md:max-w-[1220px] max-w-[480px] mx-auto">
@@ -19,11 +25,10 @@ export default function Suggestion() {
           <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
         </h4>
         <div
-          ref={animateRefs}
-          className="opacity-0 bg-[#F7F3F3] md:rounded-[50px] rounded-[32px] md:py-[60px] py-[32px] md:mt-[30px] mt-3 px-5"
+          className=" bg-[#F7F3F3] md:rounded-[50px] rounded-[32px] md:py-[60px] py-[32px] md:mt-[30px] mt-3 px-5"
         >
           <div className="w-full max-w-[764px] mx-auto">
-            <p className="md:text-[24px] text-[16px] font-medium leading-loose">
+            <p ref={containerRef} className="md:text-[24px] text-[16px] font-medium leading-loose text-fade">
               次世代証明書は、NFTを活用した証明書でデジタル化を加速し、発行する側も受け取る側もみんなハッピーになれる次世代のデジタル証明書のあり方を提案しています。
             </p>
           </div>
