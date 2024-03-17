@@ -15,7 +15,10 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      dela: ["Dela Gothic One", "sans-serif"],
+      ultra: ["Ultra", "sans-serif"],
+      rocknRoll: ["RocknRoll One", "sans-serif"],
+      dot: ["DotGothic16", "sans-serif"],
     },
   },
   plugins: [],
