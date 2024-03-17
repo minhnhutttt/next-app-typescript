@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&family=RocknRoll+One&family=Ultra&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&family=RocknRoll+One&family=Ultra&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,5 +8,19 @@ html {
 }
 body {
   color: #000;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
+.text-outline {
+  color: #F31558;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke-width: 5;
+  -webkit-text-stroke-color: #FFF;
+  font-family: "Dela Gothic One";
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 62px */
+  letter-spacing: 0.62px;
 }

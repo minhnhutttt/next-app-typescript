@@ -19,6 +19,7 @@ const config: Config = {
       ultra: ["Ultra", "sans-serif"],
       rocknRoll: ["RocknRoll One", "sans-serif"],
       dot: ["DotGothic16", "sans-serif"],
+      zen: ["Zen Kaku Gothic New", "sans-serif"],
     },
   },
   plugins: [],
