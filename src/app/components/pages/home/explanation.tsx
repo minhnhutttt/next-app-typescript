@@ -1,7 +1,7 @@
 "use client";
 import useBgText from "@/app/hooks/useBgText";
 import useScrollAnimation from "@/app/hooks/useScrollAnimation";
-import { ReactNode, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 
 type ExplanationItemPropsType = {
   number: string;
@@ -30,8 +30,17 @@ function ExplanationItem({
 
 export default function Explanation() {
   const animateRefs = useScrollAnimation("fadeUp");
+  const tabRef = useRef<HTMLDivElement>(null)
   const spanRef = useBgText();
   const [tab, setTab] = useState<number>(1);
+
+  const handleTab = (tab: number) => {
+    setTab(tab);
+    if (tabRef.current) {
+      tabRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative px-5 md:mb-20 mb-16">
       <div className="w-full md:max-w-[1220px] max-w-[480px] mx-auto">
@@ -45,10 +54,26 @@ export default function Explanation() {
           </p>
           <span className="flex-1 h-[3px] md:h-[5px] bg-black max-md:min-w-[24px] max-w-[110px]"></span>
         </h4>
-
+        <div
+          ref={tabRef}
+          className="flex rounded-t-[32px] overflow-hidden max-md:mt-8 relative -bottom-1 z-10"
+        >
+          <button ref={animateRefs}
+            className="opacity-0 w-1/2 bg-[#FFE8D3] py-4 text-center md:text-[32px] text-[20px] font-medium md:hidden"
+            onClick={() => setTab(1)}
+          >
+            発行側
+          </button>
+          <button ref={animateRefs}
+            className="opacity-0 w-1/2 bg-[#FFF7D9] py-4 text-center md:text-[32px] text-[20px] font-medium md:hidden"
+            onClick={() => setTab(2)}
+          >
+            受け取り側
+          </button>
+        </div>
         <div
           ref={animateRefs}
-          className="opacity-0 flex md:rounded-[50px] rounded-[25px] max-md:flex-wrap overflow-hidden mt-8 md:mt-10"
+          className="opacity-0 flex md:rounded-[50px] max-md:flex-wrap overflow-hidden md:mt-10"
         >
           <div
             className={`w-full md:w-1/2 bg-[#FFE8D3] px-5 pt-8 md:pt-12 md:pb-[62px] relative ${tab === 1 ? "max-md:block" : "max-md:hidden"}`}
@@ -82,10 +107,9 @@ export default function Explanation() {
                 <span className="text-[#FE4848]">実現</span>
               </p>
             </div>
-            
           <button
             className="w-[180px] px-5 bg-[#FFF7D9] py-4 text-center md:text-[32px] text-[18px] rounded-tl-[25px] font-medium md:hidden ml-auto flex items-center gap-3 justify-center -mr-5"
-            onClick={() => setTab(2)}
+            onClick={() => handleTab(2)}
           >
             <span>受け取り側</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12" fill="none">
@@ -129,7 +153,7 @@ export default function Explanation() {
             
           <button
             className="w-[180px] px-5 bg-[#FFE8D3] py-4 text-center md:text-[32px] text-[18px] rounded-tr-[25px] font-medium md:hidden mr-auto flex items-center gap-3 justify-center -ml-5"
-            onClick={() => setTab(1)}
+            onClick={() => handleTab(1)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12" fill="none">
               <path d="M3.04199 6.18665L17.6245 6.18665" stroke="black" strokeWidth="3" strokeLinecap="round"/>
