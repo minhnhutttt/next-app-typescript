@@ -86,7 +86,7 @@ export default function FV() {
                 </div>
             </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-5 md:gap-[4.444vw] min-[1440px]:gap-[64px] md:-mt-[80px] -mt-[40px] relative z-20">
+        <div className="flex flex-wrap justify-center gap-5 md:gap-[4.444vw] min-[1440px]:gap-[64px] md:absolute md:inset-x-0 md:-mt-[80px] -mt-[40px] relative z-20">
             <Price tag="大容量" gb="500" price="12,650" />
             <Price tag="コスパ" gb="100" price="3,410" />
             <Price tag="お試し" gb="2" price="1,100" />
