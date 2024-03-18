@@ -1,18 +1,33 @@
-"use client"
-import FV from "./components/pages/home/fv";
-import GetStarted from "./components/pages/home/getStarted";
-import Service from "./components/pages/home/service";
-import Talk from "./components/pages/home/talk";
-import WorkFlow from "./components/pages/home/workFlow";
+import type { Metadata } from 'next'
 
-export default function Home() {
+import { SITE_URL, OG } from '@/config/constants'
+import FV from './components/fv'
+import Intro from './components/intro'
+import Service from './components/service'
+import WorkFlow from './components/workFlow'
+import CTA from '@/components/cta'
+
+export const metadata: Metadata = {
+  openGraph: {
+    ...OG,
+    url: SITE_URL,
+    type: 'website',
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
+}
+
+const IndexPage = () => {
   return (
-    <main>
+    <>
       <FV />
-      <GetStarted />
+      <Intro />
       <Service />
       <WorkFlow />
-      <Talk />
-    </main>
-  );
+      <CTA />
+    </>
+  )
 }
+
+export default IndexPage

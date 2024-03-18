@@ -1,0 +1,416 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer utilities {
+  .text-gradient {
+    background: -webkit-linear-gradient(
+      45deg,
+      rgba(255, 132, 200, 1) 0%,
+      rgba(181, 228, 255, 1) 49%,
+      rgba(14, 255, 255, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .u-outline {
+    text-shadow: -1px 1px 0 #fff, 1px 1px 0 #fff, 1px -1px 0 #fff,
+      -1px -1px 0 #fff;
+  }
+
+  .u-outline-gray {
+    text-shadow: -1px 1px 0 #848484, 1px 1px 0 #848484, 1px -1px 0 #848484,
+      -1px -1px 0 #848484;
+  }
+
+  .default-gradient {
+    background: rgb(14, 255, 255);
+    background: linear-gradient(
+      135deg,
+      rgba(14, 255, 255, 1) 0%,
+      rgba(181, 228, 255, 1) 50%,
+      rgba(255, 132, 200, 1) 100%
+    );
+  }
+
+  .no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+}
+* {
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  color: #fff;
+  font-size: 18px;
+  background-color: #000;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Smooth Scroll */
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.svg-title {
+  left: 50%;
+  top: 50%;
+}
+.svg-title .text-path,
+.svg-title-en .text-path {
+  display: block;
+  fill: #fff;
+  fill-opacity: 0;
+  stroke: url(#gradation-1);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.svg-title .text-path:nth-child(1) {
+  -webkit-animation: dash1 2s linear forwards;
+  animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(2) {
+  -webkit-animation: dash1 2s linear forwards;
+  animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 1.1s;
+  animation-delay: 1.1s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(3) {
+  -webkit-animation: dash1 2s linear forwards;
+  animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(4) {
+  -webkit-animation: dash1 2s linear forwards;
+  animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(5) {
+  -webkit-animation: dash1 2s linear forwards;
+  animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 1.4s;
+  animation-delay: 1.4s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(6) {
+  -webkit-animation: dash1 2s linear forwards;
+  animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(7) {
+  -webkit-animation: dash1 2s linear forwards;
+  animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 1.6s;
+  animation-delay: 1.6s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(8) {
+  -webkit-animation: dash1 2s linear forwards;
+  animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 1.7s;
+  animation-delay: 1.7s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(9) {
+  -webkit-animation: dash1 2s linear forwards;
+  animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 1.8s;
+  animation-delay: 1.8s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(10) {
+  -webkit-animation: dash1 2s linear forwards;
+  animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 1.9s;
+  animation-delay: 1.9s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title .text-path:nth-child(11) {
+  -webkit-animation: dash1 2s linear forwards;
+  animation: dash1 2s linear forwards;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  stroke-dasharray: 200;
+}
+
+.svg-title-en .text-path:nth-child(1) {
+  -webkit-animation: dash1_en 2s linear forwards;
+  animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title-en .text-path:nth-child(2) {
+  -webkit-animation: dash1_en 2s linear forwards;
+  animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 1.1s;
+  animation-delay: 1.1s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title-en .text-path:nth-child(3) {
+  -webkit-animation: dash1_en 2s linear forwards;
+  animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title-en .text-path:nth-child(4) {
+  -webkit-animation: dash1_en 2s linear forwards;
+  animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title-en .text-path:nth-child(5) {
+  -webkit-animation: dash1_en 2s linear forwards;
+  animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 1.4s;
+  animation-delay: 1.4s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title-en .text-path:nth-child(6) {
+  -webkit-animation: dash1_en 2s linear forwards;
+  animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title-en .text-path:nth-child(7) {
+  -webkit-animation: dash1_en 2s linear forwards;
+  animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 1.6s;
+  animation-delay: 1.6s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title-en .text-path:nth-child(8) {
+  -webkit-animation: dash1_en 2s linear forwards;
+  animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 1.7s;
+  animation-delay: 1.7s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title-en .text-path:nth-child(9) {
+  -webkit-animation: dash1_en 2s linear forwards;
+  animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 1.8s;
+  animation-delay: 1.8s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title-en .text-path:nth-child(10) {
+  -webkit-animation: dash1_en 2s linear forwards;
+  animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 1.9s;
+  animation-delay: 1.9s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+}
+.svg-title-en .text-path:nth-child(11) {
+  -webkit-animation: dash1_en 2s linear forwards;
+  animation: dash1_en 2s linear forwards;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  stroke-dasharray: 200;
+}
+
+@-webkit-keyframes dash1 {
+  0% {
+    stroke-dashoffset: 800;
+    stroke-width: 3px;
+  }
+  50% {
+    stroke-dashoffset: 1600;
+    stroke-width: 0.1px;
+  }
+  50.1% {
+    stroke-dashoffset: 800;
+  }
+  80% {
+    stroke-width: 2px;
+    fill: #0effff;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #fff;
+    stroke-width: 0;
+    fill: #fff;
+    fill-opacity: 1;
+    stroke-dasharray: 400;
+  }
+}
+@keyframes dash1 {
+  0% {
+    stroke-dashoffset: 800;
+    stroke-width: 3px;
+  }
+  50% {
+    stroke-dashoffset: 1600;
+    stroke-width: 0.1px;
+  }
+  50.1% {
+    stroke-dashoffset: 800;
+  }
+  80% {
+    stroke-width: 2px;
+    fill: #0effff;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #fff;
+    stroke-width: 0;
+    fill: #fff;
+    fill-opacity: 1;
+    stroke-dasharray: 400;
+  }
+}
+@-webkit-keyframes dash1_en {
+  0% {
+    stroke-dashoffset: 200;
+    stroke-width: 2px;
+  }
+  50% {
+    stroke-dashoffset: 400;
+    stroke-width: 0.1px;
+  }
+  50.1% {
+    stroke-dashoffset: 200;
+  }
+  80% {
+    stroke-width: 1px;
+    fill: #0effff;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #fff;
+    stroke-width: 0;
+    fill: #fff;
+    fill-opacity: 1;
+  }
+}
+@keyframes dash1_en {
+  0% {
+    stroke-dashoffset: 200;
+    stroke-width: 2px;
+  }
+  50% {
+    stroke-dashoffset: 400;
+    stroke-width: 0.1px;
+  }
+  50.1% {
+    stroke-dashoffset: 200;
+  }
+  80% {
+    stroke-width: 1px;
+    fill: #0effff;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #fff;
+    stroke-width: 0;
+    fill: #fff;
+    fill-opacity: 1;
+  }
+}
+
+@keyframes r {
+  to {
+    rotate: 1turn;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes backwards-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes scaling {
+  0% {
+    transform: scale(0.65);
+  }
+
+  15% {
+    transform: scale(0.5);
+  }
+
+  65% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.65);
+  }
+}
