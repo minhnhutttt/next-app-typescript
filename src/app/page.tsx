@@ -3,6 +3,7 @@ import Fixed from "./components/pages/home/fixed";
 import FV from "./components/pages/home/fv";
 import Line from "./components/pages/home/line";
 import SectionError from "./components/pages/home/sectionError";
+import SectionFeatures from "./components/pages/home/sectionFeatures";
 
 export default function Home() {
   return (
@@ -11,8 +12,9 @@ export default function Home() {
       <Line />
       {/* <Fixed /> */}
       <Anchors />
-      <div className="bg-[url('/images/deco.png')] bg-[#FFF0A6] bg-[length:100%_auto] px-5 md:mt-[160px] mt-[80px] md:pt-[76px] pt-10">
+      <div className="bg-[url('/images/deco.png')] bg-[#FFF0A6] bg-[length:100%_auto] px-5 md:mt-[160px] mt-[80px] md:pt-[76px] pt-10 md:space-y-[100px] space-y-[60px]">
         <SectionError />
+        <SectionFeatures />
       </div>
     </main>
   );
