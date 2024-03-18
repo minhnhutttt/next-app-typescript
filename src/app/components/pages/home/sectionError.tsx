@@ -57,9 +57,16 @@ export default function SectionError() {
                         <img src="/images/boy-txt-01.png" alt="" />
                     </figure>
                 </div>
-                <div className="flex justify-center md:-mt-14 -mt-8 animate-[fadeInDown_2s_ease_infinite] ">
+                <div className="flex justify-center md:-mt-14 -mt-8 animate-[fadeInDown_2s_ease_infinite] mb-4 md:mb-5">
                     <img src="/images/arrow.svg" alt="" />
                 </div>
+                <p className="text-center md:text-[28px] text-[16px] font-bold underline [text-decoration-thickness:2px] [text-decoration-style:wavy] [text-decoration-color:#FDD300]">今の世界、生きるだけで無限にデータは増え続けます。</p>
+                <p className="text-center md:text-[24px] text-[14px] font-medium md:mt-4 leading-[1.8]">
+                    尽きることのない容量の悩み<br />
+                    自動で貯まる容量ストレス<br />
+                    <span className="font-bold">『貯まるのはお金だけにしてクレーーーっ！』</span><br />
+                    と叫びたくなりますね。
+                </p>
             </div>
         </SectionWrap>
     );
