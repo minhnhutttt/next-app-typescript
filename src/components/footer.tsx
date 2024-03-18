@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ButtonPopup from './buttonPopup'
 
 interface NavLink {
   link: string
@@ -29,7 +30,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="px-5 pb-24 pt-12 md:pt-24">
-        <div className="mx-auto flex w-full max-w-[840px] items-center justify-center gap-10 max-md:flex-col lg:gap-[100px]">
+        <div className="mx-auto flex w-full max-w-[1040px] items-center justify-center gap-10 max-lg:flex-col lg:gap-[100px]">
           <Link href="/" className="relative z-10 block">
             <img
               className="w-full max-w-[100px] md:max-w-[130px]"
@@ -38,7 +39,7 @@ const Footer = () => {
             />
           </Link>
           <nav>
-            <ul className="flex gap-6 font-solaris max-md:flex-wrap max-md:justify-center lg:gap-[100px]">
+            <ul className="flex gap-6 font-solaris items-center max-lg:flex-wrap max-lg:justify-center md:gap-10 lg:gap-[60px]">
               {links.map(({ link, text, target }, index) => (
                 <li key={index}>
                   <a
@@ -50,6 +51,9 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
+              <li className='max-lg:w-full max-lg:flex max-lg:justify-center'>
+              <ButtonPopup sm />
+              </li>
             </ul>
           </nav>
         </div>

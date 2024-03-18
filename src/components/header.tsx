@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
+import ButtonPopup from './buttonPopup'
 
 interface NavLink {
   link: string
@@ -54,7 +55,7 @@ const Header = () => {
               NavOpen ? '' : 'max-lg:invisible max-lg:opacity-0'
             }`}
           >
-            <ul className="flex gap-6 font-solaris max-lg:flex-col lg:gap-8">
+            <ul className="flex lg:items-center gap-6 font-solaris max-lg:flex-col lg:gap-8">
               {links.map(({ link, text, target }, index) => (
                 <li key={index}>
                   <Link
@@ -67,7 +68,12 @@ const Header = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <ButtonPopup navOpen={NavOpen} sm />
+              </li>
+
             </ul>
+
           </div>
           <button
             className={`group relative z-30 h-3 w-8 lg:hidden ${

@@ -6,6 +6,7 @@ import { useLenis } from '@studio-freight/react-lenis'
 
 import useScrollAnimations from '@/hooks/useScrollAnimations'
 import AboutTextSVG from './aboutTextSVG'
+import ButtonPopup from '@/components/buttonPopup'
 
 const AboutHead = () => {
   const ref = useScrollAnimations()
@@ -22,6 +23,10 @@ const AboutHead = () => {
         and streamline business operations. Committed to delivering excellence,
         we fuse technology with vision to propel your business into the future.
       </p>
+
+      <div className="flex justify-center md:mt-10 mt-7">
+        <ButtonPopup />
+      </div>
       <div className="fade-down mx-auto mt-10 w-[160px] md:mt-[70px] md:w-[200px]">
         <Link
           href="/about#story"
