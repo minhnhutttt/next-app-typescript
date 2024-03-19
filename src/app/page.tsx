@@ -1,4 +1,5 @@
 import Anchors from "./components/pages/home/anchors";
+import FAQ from "./components/pages/home/faq/faq";
 import Fixed from "./components/pages/home/fixed";
 import FV from "./components/pages/home/fv";
 import Line from "./components/pages/home/line";
@@ -14,7 +15,7 @@ export default function Home() {
     <main>
       <FV />
       <Line />
-      {/* <Fixed /> */}
+      <Fixed />
       <Anchors />
       <div className="bg-[#FFF0A6] md:pt-[160px] pt-[80px]">
         <div className="bg-[url('/images/deco.png')] bg-[length:100%_auto] px-5 md:pt-[76px] pt-10 md:space-y-[100px] space-y-[60px]">
@@ -24,6 +25,7 @@ export default function Home() {
           <SectionPopular />
           <SectionVoice />
           <SectionSupport />
+          <FAQ />
         </div>
       </div>
     </main>

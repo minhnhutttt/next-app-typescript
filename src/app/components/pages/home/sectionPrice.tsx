@@ -51,7 +51,7 @@ export default function SectionPrice() {
                                 (1200万画素の場合)
                             </div>
                             <div className="flex justify-center mt-6">
-                                <a href="/" className="text-[20px] font-black bg-white text-[#4285F4] w-[196px] h-[40px] flex items-center justify-center rounded-[10px]">
+                                <a href="/" className="duration-150 hover:opacity-75 text-[20px] font-black bg-white text-[#4285F4] w-[196px] h-[40px] flex items-center justify-center rounded-[10px]">
                                 購入する
                                 </a>
                             </div>
@@ -94,7 +94,7 @@ export default function SectionPrice() {
                                 (1200万画素の場合)
                             </div>
                             <div className="flex justify-center mt-6">
-                                <a href="/" className="text-[20px] font-black bg-black text-[#FDD300] w-[196px] h-[40px] flex items-center justify-center rounded-[10px]">
+                                <a href="/" className="duration-150 hover:opacity-75 text-[20px] font-black bg-black text-[#FDD300] w-[196px] h-[40px] flex items-center justify-center rounded-[10px]">
                                 購入する
                                 </a>
                             </div>
@@ -134,7 +134,7 @@ export default function SectionPrice() {
                                 (1200万画素の場合)
                             </div>
                             <div className="flex justify-center mt-6">
-                                <a href="/" className="text-[20px] font-black bg-white text-[#F77796] w-[196px] h-[40px] flex items-center justify-center rounded-[10px]">
+                                <a href="/" className="duration-150 hover:opacity-75 text-[20px] font-black bg-white text-[#F77796] w-[196px] h-[40px] flex items-center justify-center rounded-[10px]">
                                 購入する
                                 </a>
                             </div>

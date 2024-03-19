@@ -1,5 +1,26 @@
+"use client"
+import { ReactNode } from "react";
 import SectionWrap from "../common/sectionWrap";
-
+type MindItemPropsType = {
+    image: string;
+    title: ReactNode;
+    children: ReactNode;
+  };
+  function MindItem({ image, title, children }: MindItemPropsType) {
+    return (
+      <div
+        className="w-[282px] h-[280px] md:h-[320px] bg-white border border-[#FDD300] p-[30px] rounded-[30px] [box-shadow:4px_4px_30px_0px_rgba(0,_0,_0,_0.10)]"
+      >
+        <figure className="flex justify-center">
+          <img src={image} alt="" />
+        </figure>
+        <p className="md:text-[32px] text-[20px] font-bold py-[16px] text-center">
+          {title}
+        </p>
+        <p className="md:text-[18px] text-[14px] font-medium">{children}</p>
+      </div>
+    );
+  }
 export default function SectionSupport() {
     return (
         <SectionWrap anchor="support" number="6" title="LINE SUPPORT" content={<>ちょっと相談ヘルプミー<br />気軽にチャット！LINEサポート</>}>
@@ -18,11 +39,30 @@ export default function SectionSupport() {
                 </div>
                 <div className="border-t border-black pt-10">
                     <div className="flex justify-center">
-                        <h4 className="md:text-[36px] text-[20px] text-center font-black tracking-[0.2em]">
+                        <h4 className="md:text-[36px] text-[24px] text-center font-black tracking-[0.2em]">
                         サポート専用LINE <br />
-                        安心<span className="md:w-[73px] aspect-square inline-flex items-center justify-center rounded-full bg-[#FDD300] pl-2 pb-2 leading-[0] md:text-[80px] text-[40px]">5</span>つのお約束
+                        安心<span className="md:w-[73px] w-[44px] aspect-square inline-flex items-center justify-center rounded-full bg-[#FDD300] pl-1 md:pl-2 pb-2 leading-[0] md:text-[80px] text-[40px]">5</span>つのお約束
                         </h4>
                     </div>
+                    <div className="flex justify-center flex-wrap gap-4 md:gap-[50px] mt-10 md:mt-12">
+                        <MindItem image="/images/flag-01.png" title="売り込み">
+                            ご相談いただいく際は強引に導入を勧めることはいたしません。
+                        </MindItem>
+                        <MindItem image="/images/flag-01.png" title="追跡セールス">
+                            導入を見送る決定をされても、後追いの連絡は一切行ないません。
+                        </MindItem>
+                        </div>
+                        <div className="flex justify-center flex-wrap gap-4 md:gap-[20px] mt-6 md:mt-12">
+                        <MindItem image="/images/flag-02.png" title="情報厳守">
+                            サポート時にお伺いした情報は厳守し、外部に漏らすことはありません。
+                        </MindItem>
+                        <MindItem image="/images/flag-02.png" title="迅速丁寧">
+                            ご質問や不安には、迅速かつ丁寧に対応いたします。
+                        </MindItem>
+                        <MindItem image="/images/flag-02.png" title="継続サポート">
+                            導入後も不明点や問題があればいつでもサポートいたします。
+                        </MindItem>
+                        </div>
                 </div>
             </div>
         </SectionWrap>
