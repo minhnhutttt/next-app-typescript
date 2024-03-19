@@ -6,6 +6,7 @@ import SectionError from "./components/pages/home/sectionError";
 import SectionFeatures from "./components/pages/home/sectionFeatures";
 import SectionPopular from "./components/pages/home/sectionPopular";
 import SectionPrice from "./components/pages/home/sectionPrice";
+import SectionVoice from "./components/pages/home/sectionVoice";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <SectionFeatures />
         <SectionPrice />
         <SectionPopular />
+        <SectionVoice />
       </div>
     </main>
   );
