@@ -35,11 +35,11 @@ export default function Anchors() {
     return (
         <section className="flex flex-wrap">
             <AnchorItem anchor="#error" number="1" title="ERROR">容量ストレス蓄積中<br className="max-md:hidden"/>容量の悩みは尽きない...</AnchorItem>
-            <AnchorItem anchor="#error" number="2" title="５FEATURES">容量スッキリ開放感<br className="max-md:hidden"/>次世代ストレージって何？</AnchorItem>
-            <AnchorItem anchor="#error" number="3" title="PRICE">買い切り型でムダゼロ化<br className="max-md:hidden"/>料金プランをチェック！...</AnchorItem>
-            <AnchorItem anchor="#error" number="4" title="POPULAR">人気のプラン大解剖<br className="max-md:hidden"/>コスパが決め手！100GBプラン</AnchorItem>
-            <AnchorItem anchor="#error" number="5" title="USER VOICE">出会いは必然デスティニー<br className="max-md:hidden"/>きっかけは断捨離!?納得の理由...</AnchorItem>
-            <AnchorItem anchor="#error" number="6" title="LINE SUPPORT">ちょっと相談ヘルプミー<br className="max-md:hidden"/>気軽にチャット！LINEサポート...</AnchorItem>
+            <AnchorItem anchor="#features" number="2" title="５FEATURES">容量スッキリ開放感<br className="max-md:hidden"/>次世代ストレージって何？</AnchorItem>
+            <AnchorItem anchor="#price" number="3" title="PRICE">買い切り型でムダゼロ化<br className="max-md:hidden"/>料金プランをチェック！...</AnchorItem>
+            <AnchorItem anchor="#popular" number="4" title="POPULAR">人気のプラン大解剖<br className="max-md:hidden"/>コスパが決め手！100GBプラン</AnchorItem>
+            <AnchorItem anchor="#voice" number="5" title="USER VOICE">出会いは必然デスティニー<br className="max-md:hidden"/>きっかけは断捨離!?納得の理由...</AnchorItem>
+            <AnchorItem anchor="#support" number="6" title="LINE SUPPORT">ちょっと相談ヘルプミー<br className="max-md:hidden"/>気軽にチャット！LINEサポート...</AnchorItem>
         </section>
     );
   }

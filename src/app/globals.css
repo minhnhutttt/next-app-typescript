@@ -11,6 +11,12 @@ body {
   font-family: "Zen Maru Gothic", sans-serif;
 }
 
+.text-gradient {
+  background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(0px);
