@@ -1,6 +1,13 @@
 "use client"
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Aldrich } from 'next/font/google'
+const aldrich = Aldrich({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-aldrich',
+  display: 'swap',
+})
 export interface ButtonPopupPropsType {
     sm?: boolean,
     navOpen?: boolean; 
@@ -16,11 +23,11 @@ const ButtonPopup = ({sm, navOpen}: ButtonPopupPropsType) => {
   return (
     <>
     <button type="button" onClick={() => setModalOpen(true)}
-      className={`fade-up default-gradient flex items-center justify-center rounded-[40px] text-[16px] text-black duration-300 hover:tracking-widest md:text-[18px] ${sm ? 'h-12 px-6' : 'md:h-[64px] md:px-[60px] h-[50px] px-8'}`}
+      className={`${aldrich.className} fade-up default-gradient flex items-center justify-center rounded-[40px] text-black duration-300 hover:tracking-widest ${sm ? 'h-12 px-6 text-[16px]' : 'md:h-[64px] md:px-[60px] h-[50px] px-8 text-[16px] md:text-[18px]'}`}
     >
       fliQt NEEDs YOU
     </button>
-    <div className={`fixed inset-0 pointer-events-none opacity-0 p-6 flex items-center justify-center z-[90] ${modalOpen ? "pointer-events-auto opacity-100" : ""}`}  data-lenis-prevent>
+    <div className={`${aldrich.className} fixed inset-0 pointer-events-none opacity-0 p-6 flex items-center justify-center z-[90] ${modalOpen ? "pointer-events-auto opacity-100" : ""}`}  data-lenis-prevent>
         <div className="absolute inset-0 backdrop-blur backdrop-filter" onClick={() => setModalOpen(false)}></div>
         <div className="w-full lg:max-w-[862px] mx-auto h-[calc(100vh-160px)] lg:h-[96%] bg-black/90 rounded-xl relative [box-shadow:0px_8px_8px_-4px_rgba(16,_24,_40,_0.04),_0px_20px_24px_-4px_rgba(16,_24,_40,_0.10)] px-3 md:px-4  py-14">
         <div className="flex justify-end pt-3 md:pt-4 absolute top-0 right-5">
@@ -30,7 +37,7 @@ const ButtonPopup = ({sm, navOpen}: ButtonPopupPropsType) => {
                 </svg>
             </button>
             </div>
-          <div className="h-full relative overflow-auto">
+          <div className="h-full relative overflow-auto has-scroll">
             <div className="pb-3 md:pb-4 px-5 md:text-[16px] text-[14px]">
                 <div className="flex justify-center mb-6">
                 <Link
@@ -75,7 +82,7 @@ const ButtonPopup = ({sm, navOpen}: ButtonPopupPropsType) => {
             <br />
             The third reason is geographical advantage. Blockchain is almost synonymous with cryptocurrency, subject to strict regulations worldwide. Singapore has open regulations for blockchain and cryptocurrencies, making it ideal for business. Blockchain is a part of FinTech, a field where finance and IT merge. Adding AI to this can lead to phenomenal business growth, necessitating the establishment of fliQt in Singapore.<br />
             <br />
-            fliQt needs you.
+            <p className="text-center">fliQt needs you.</p>
             <div className="flex justify-center mt-6">
                 <Link
                     href="mailto:info@fliqt.io"
