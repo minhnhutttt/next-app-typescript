@@ -11,7 +11,7 @@ export default function Header() {
         </Link>
         <div className="flex items-center justify-end">
           <a
-            href="http://"
+            href="https://lin.ee/e8GHxTR"
             target="_blank"
             rel="noopener noreferrer"
             className="block"
