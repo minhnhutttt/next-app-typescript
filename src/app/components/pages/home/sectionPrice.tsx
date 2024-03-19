@@ -41,7 +41,7 @@ export default function SectionPrice() {
                                 <p className="font-black text-[67px] leading-none">
                                 12,650
                                 </p>
-                                <p className="font-black text-center leading-[1.4]">
+                                <p className="font-black text-center leading-[1.4] whitespace-nowrap">
                                     <span className="text-[24px]">円</span> <br />
                                     <span className="text-[16px]">(税込)</span>
                                 </p>
@@ -84,7 +84,7 @@ export default function SectionPrice() {
                                 <p className="font-black text-[67px] leading-none">
                                 3,410
                                 </p>
-                                <p className="font-black text-center leading-[1.4]">
+                                <p className="font-black text-center leading-[1.4] whitespace-nowrap">
                                     <span className="text-[24px]">円</span> <br />
                                     <span className="text-[16px]">(税込)</span>
                                 </p>
@@ -124,7 +124,7 @@ export default function SectionPrice() {
                                 <p className="font-black text-[67px] leading-none">
                                 1,100
                                 </p>
-                                <p className="font-black text-center leading-[1.4]">
+                                <p className="font-black text-center leading-[1.4] whitespace-nowrap">
                                     <span className="text-[24px]">円</span> <br />
                                     <span className="text-[16px]">(税込)</span>
                                 </p>

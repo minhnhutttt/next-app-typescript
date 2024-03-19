@@ -1,41 +1,3 @@
-import { ReactNode } from "react";
-
-type PriceItemPropsType = {
-    tag: string;
-    gb: string;
-    price: ReactNode;
-};
-function Price({
-    tag,
-    gb,
-    price,
-    }: PriceItemPropsType) {
-    return (
-        <div className="w-[300px] md:w-[26.389vw] min-[1440px]:w-[380px] relative bg-[#FFE870] md:border-[11px] border-[6px] border-[#FDD300] rounded-[30px] py-3 md:py-[1.944vw] px-[0.5vw] min-[1440px]:py-7 min-[1440px]:px-5 [box-shadow:0px_4px_30px_0px_rgba(0,_0,_0,_0.25)]">
-            <div className="flex items-center justify-center gap-[0.694vw] min-[1440px]:gap-2.5 font-black leading-none">
-                <div className="bg-white font-zen min-[1440px]:text-[20px] md:text-[1.389vw] text-[14px] rounded-[5px] p-2">{tag}</div>
-                <div className="center min-[1440px]:text-[32px] md:text-[2.222vw] text-[20px]"><span className="min-[1440px]:text-[52px] md:text-[3.611vw] text-[32px]">{gb}</span>GBプラン</div>
-            </div>
-            <div className="flex items-center justify-center leading-none max-md:mt-2">
-                <div className="relative font-dela">
-                    <p className="absolute inset-0 text-center min-[1440px]:text-[62px] md:text-[4.306vw] text-[36px] font-bold  text-white [-webkit-text-stroke:_8px_white]">{price}</p>
-                    <p className="min-[1440px]:text-[62px] md:text-[4.306vw] text-[36px] text-[#F31558] relative">{price}</p>
-                </div>
-                <div className="relative font-dela">
-                    <div className="relative text-center">
-                        <p className="absolute inset-0 text-center min-[1440px]:text-[32px] md:text-[2.222vw] text-[16px] font-bold  text-white [-webkit-text-stroke:_8px_white]">円</p>
-                        <p className="min-[1440px]:text-[32px] md:text-[2.222vw] text-[16px] text-[#F31558] relative">円</p>
-                    </div>
-                    <div className="relative text-center">
-                        <p className="absolute inset-0 text-center min-[1440px]:text-[14px] md:text-[0.972vw] text-[11px] font-bold  text-white [-webkit-text-stroke:_8px_white]">(税込)</p>
-                        <p className="min-[1440px]:text-[14px] md:text-[0.972vw] text-[11px] text-[#F31558] relative mt-2 whitespace-nowrap">(税込)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
-
 export default function FV() {
   return (
     <section className="relative">
@@ -86,10 +48,16 @@ export default function FV() {
                 </div>
             </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-5 md:gap-[4.444vw] min-[1440px]:gap-[64px] md:absolute md:inset-x-0 md:-mt-[80px] -mt-[40px] relative z-20">
-            <Price tag="大容量" gb="500" price="12,650" />
-            <Price tag="コスパ" gb="100" price="3,410" />
-            <Price tag="お試し" gb="2" price="1,100" />
+        <div className="flex justify-center gap-2 md:gap-[4.444vw] min-[1440px]:gap-[64px] md:absolute md:inset-x-0 md:-mt-[80px] -mt-[5vw] relative z-20 px-3">
+            <figure className="drop-shadow-[0_4px_3px_rgba(0,0,0,0.25)]">
+                <img src="/images/plan-01.png" alt="" />
+            </figure>
+            <figure className="drop-shadow-[0_4px_3px_rgba(0,0,0,0.25)]">
+                <img src="/images/plan-02.png" alt="" />
+            </figure>
+            <figure className="drop-shadow-[0_4px_3px_rgba(0,0,0,0.25)]">
+                <img src="/images/plan-03.png" alt="" />
+            </figure>
         </div>
     </section>
   );

@@ -15,10 +15,10 @@ function AnchorItem({
     return (
         <div className="w-1/2 md:w-1/3 bg-[#FDD300] max-md:[&:nth-of-type(2)]:bg-[#FFE870] overflow-hidden max-md:[&:nth-of-type(3)]:bg-[#FFE870] max-md:[&:nth-of-type(6)]:bg-[#FFE870] md:even:bg-[#FFE870]">
             <a href={anchor} className="flex flex-col items-center justify-center md:pt-9 md:pb-6 pb-4 pt-6 md:px-4 px-2 duration-300 hover:scale-105">
-                <p className="aspect-square min-[1440px]:w-[200px] md:w-[13.889vw] w-[100px] flex items-center justify-center bg-white rounded-full font-ultra [text-shadow:0px_7px_0px_#FDD300] min-[1440px]:text-[130px] md:text-[9.028vw] text-[50px]">
+                <p className="aspect-square min-[1440px]:w-[200px] md:w-[13.889vw] w-[70px] flex items-center justify-center bg-white rounded-full font-ultra [text-shadow:0px_7px_0px_#FDD300] min-[1440px]:text-[130px] md:text-[9.028vw] text-[36px]">
                     {number}
                 </p>
-                <p className="text-center min-[1440px]:text-[52px] md:text-[3.611vw] text-[22px] font-black tracking-widest my-2 md:my-3">{title}</p>
+                <p className="text-center min-[1440px]:text-[52px] md:text-[3.611vw] text-[20px] font-black tracking-widest my-2 md:my-3">{title}</p>
                 <p className="text-center min-[1440px]:text-[24px] md:text-[1.667vw] text-[12px] font-bold">
                     {children}
                 </p>
