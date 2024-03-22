@@ -2,7 +2,6 @@ import Anchors from "./components/pages/home/anchors";
 import FAQ from "./components/pages/home/faq/faq";
 import Fixed from "./components/pages/home/fixed";
 import FV from "./components/pages/home/fv";
-import Line from "./components/pages/home/line";
 import SectionError from "./components/pages/home/sectionError";
 import SectionFeatures from "./components/pages/home/sectionFeatures";
 import SectionPopular from "./components/pages/home/sectionPopular";
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <main>
       <FV />
-      <Line />
       <Fixed />
       <Anchors />
       <div className="bg-[#FFF0A6] md:pt-[160px] pt-[80px]">
