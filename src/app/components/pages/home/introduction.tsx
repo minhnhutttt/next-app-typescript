@@ -37,7 +37,7 @@ function IntroductionItem({
 export default function Introduction() {
   const animateRefs = useScrollAnimation("fadeUp");
   return (
-    <section className="relative md:mb-[135px] mb-24">
+    <section id="reason" className="relative md:mb-[135px] mb-24">
       <div className="bg-[linear-gradient(1deg,_#FE4848_2.98%,_#FF9B9B_91.39%)] px-5">
         <div className="w-full max-w-[1320px] mx-auto pt-16 md:pt-[90px] md:pb-[128px] pb-20">
           <div ref={animateRefs} className="opacity-0 relative">

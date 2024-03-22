@@ -42,7 +42,7 @@ export default function Explanation() {
   };
 
   return (
-    <section className="relative px-5 md:mb-20 mb-16">
+    <section className="relative px-5 md:mb-20 mb-16" id="certificate">
       <div className="w-full md:max-w-[1220px] max-w-[480px] mx-auto">
         <h4
           ref={animateRefs}

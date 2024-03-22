@@ -51,7 +51,7 @@ export default function Use() {
     });
   }, []);
   return (
-    <section className="md:mb-[160px] mb-20">
+    <section id="organization" className="md:mb-[160px] mb-20">
       <div className="relative px-5 bg-[#F7F7F7] md:pt-[100px] md:pb-[160px] py-[60px]">
         <div className="w-full max-w-[1360px] mx-auto">
           <div ref={animateRefs} className="opacity-0 flex justify-center">
