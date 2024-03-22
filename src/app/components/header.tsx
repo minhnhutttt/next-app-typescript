@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface NavLink {
   link: string
@@ -28,11 +28,24 @@ const links: NavLink[] = [
 ]
 
 export default function Header() {
-  const [NavOpen, setNavOpen] = useState(false)
+  const [open, setOpen] = useState<boolean>(false);
 
-  const close = useCallback(() => {
-    setNavOpen(false)
-  }, [])
+    useEffect(() => {
+      const handleLinksClick = () => {
+        setOpen(false);
+      };
+  
+      const links = document.querySelectorAll("a");
+      links.forEach((link) => {
+        link.addEventListener("click", handleLinksClick);
+      });
+  
+      return () => {
+        links.forEach((link) => {
+          link.removeEventListener("click", handleLinksClick);
+        });
+      };
+    }, []);
   return (
     <header className="px-5 md:px-14">
       <div className="mx-auto flex h-20 w-full items-center justify-between md:h-[100px]">
@@ -42,52 +55,51 @@ export default function Header() {
           </p>
         </Link>
         <div className="flex items-center">
-          <div
-              className={`max-xl:fixed z-[99] max-xl:inset-0 max-xl:h-screen max-xl:w-full max-xl:overflow-y-scroll max-xl:bg-neutral-900/90 max-xl:px-4 max-xl:pb-12 max-xl:pt-28 ${
-                NavOpen ? '' : 'max-xl:invisible max-xl:opacity-0'
+            <div className="flex h-[28px] w-[50px] items-center justify-center xl:w-[70px] xl:hidden">
+          <button
+            className={`group relative block h-[22px] w-8 cursor-pointer border-[none] p-0 max-xl:z-[99] xl:w-10 max-xl:[&.active]:fixed ${open ? "active" : ""
               }`}
-            >
-              <ul className="flex xl:items-center gap-6 font-solaris max-xl:flex-col xl:gap-8 md:mr-10">
+            onClick={() => setOpen(!open)}
+          >
+            <span className="absolute left-0 top-0 block h-0.5 w-full bg-black transition-transform duration-[0.3s] ease-[ease] group-[.active]:top-[42%] group-[.active]:rotate-45"></span>
+            <span className="absolute left-0 top-2/4 block h-0.5 w-full -translate-y-2/4 bg-black transition-transform duration-[0.3s] ease-[ease] group-[.active]:opacity-0"></span>
+            <span className="absolute bottom-0 left-0 block h-0.5 w-full bg-black transition-transform duration-[0.3s] ease-[ease] group-[.active]:bottom-2/4 group-[.active]:-rotate-45"></span>
+          </button>
+        </div>
+        <div
+          className={`z-[98] flex items-center justify-center gap-6 duration-300 max-xl:pointer-events-none max-xl:fixed max-xl:inset-0 max-xl:flex-col max-xl:bg-[#FF9B9B]/[0.9] max-xl:opacity-0 md:gap-8 xl:gap-9  ${open ? "max-xl:pointer-events-auto max-xl:opacity-100" : ""
+            }`}
+        >
+          <div className="flex items-center max-xl:flex-col justify-center xl:justify-end gap-3 md:gap-5 max-md:px-6 max-xl:flex-wrap">
+          <ul className="flex xl:items-center gap-10 max-md:flex-col xl:gap-8 xl:mr-10 max-xl:mb-6 text-center">
                 {links.map(({ link, text, target }, index) => (
                   <li key={index}>
                     <Link
                       href={link}
-                      className="inline-block text-[8vw] leading-none duration-300 xl:text-[21px] font-bold hover:opacity-70"
+                      className="inline-block text-[20px] md:text-[24px] leading-none duration-300 xl:text-[21px] font-bold hover:opacity-70"
                       target={target}
-                      onClick={close}
                     >
                       {text}
                     </Link>
                   </li>
                 ))}
-
               </ul>
-
+            <div className="flex items-center justify-end">
+              <a
+                href="https://lin.ee/e8GHxTR"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <img
+                  className="max-md:w-[200px]"
+                  src="/images/button-line.png"
+                  alt="LINE"
+                />
+              </a>
             </div>
-            <button
-              className={`group relative z-30 h-8 w-8 xl:hidden ${
-                NavOpen ? 'active' : ''
-              }`}
-              onClick={() => setNavOpen((prev) => !prev)}
-            >
-              <span className="absolute left-0 top-0 block h-0.5 w-full -translate-y-1/2 bg-black transition-transform duration-500 ease-in-out group-[.active]:top-1/2 group-[.active]:rotate-45"></span>
-              <span className="absolute top-1/2 -translate-y-1/2 left-0 block h-0.5 w-full bg-black transition-transform duration-500 ease-in-out group-[.active]:top-1/2 group-[.active]:-rotate-45"></span>
-              <span className="absolute bottom-0 left-0 block h-0.5 w-full -translate-y-1/2 bg-black transition-transform duration-500 ease-in-out group-[.active]:top-1/2 group-[.active]:-rotate-45"></span>
-            </button>
-          <div className="flex items-center justify-end">
-            <a
-              href="https://lin.ee/e8GHxTR"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <img
-                className="max-md:w-[140px]"
-                src="/images/button-line.png"
-                alt="LINE"
-              />
-            </a>
           </div>
+        </div>
         </div>
       </div>
     </header>
