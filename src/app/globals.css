@@ -185,3 +185,32 @@ body {
 		-webkit-transform: scale(1) translateY(0);
 	}
 }
+/* 
+.content-scroll {
+	--scroll-length: 1;
+	height: 100vh;
+}
+  
+  .content-scroll-wrap {
+	--scale: calc(.8 +
+	  (.2 * var(--scroll-length) * var(--visible-y))
+	);
+	position: sticky;
+	top: 0;
+	left: 0;
+	margin: 0;
+	display: block;
+	overflow: hidden;
+	will-change: transform;
+	transform: scale(var(--scale));
+  }
+  .content-scroll-wrap .content-scroll-inner {
+	display: block;
+	will-change: transform;
+	transform: scale(1);
+  }
+  .content-scroll-wrap .content-scroll-keep {
+	display: block;
+	will-change: transform;
+	transform: scale(calc(1 / var(--scale)));
+  } */
