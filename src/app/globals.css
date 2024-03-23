@@ -185,7 +185,7 @@ body {
 		-webkit-transform: scale(1) translateY(0);
 	}
 }
-/* 
+
 .content-scroll {
 	--scroll-length: 1;
 	height: 100vh;
@@ -213,4 +213,4 @@ body {
 	display: block;
 	will-change: transform;
 	transform: scale(calc(1 / var(--scale)));
-  } */
+  }

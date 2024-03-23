@@ -22,6 +22,8 @@ export default function Home() {
       <Service />
       <Team />
       <Tool />
+      <Service />
+      <Team />
     </main>
   );
 }
