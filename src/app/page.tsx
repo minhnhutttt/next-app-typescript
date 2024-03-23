@@ -1,7 +1,11 @@
-import Image from "next/image";
-
+"use client"
+import { useEffect } from "react";
+import FV from "./components/pages/home/fv";
 export default function Home() {
+  
   return (
-    <main></main>
+    <main>
+      <FV />
+    </main>
   );
 }
