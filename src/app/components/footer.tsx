@@ -13,7 +13,7 @@ export default function Footer() {
                         <a href="/" className="block">Top</a>
                     </li>
                     <li>
-                        <a href="/" className="block">プライバシーポリシー</a>
+                        <a href="/privacy-policy" className="block">プライバシーポリシー</a>
                     </li>
                     <li>
                         <a href="/" className="block">お問い合わせ</a>
