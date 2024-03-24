@@ -29,7 +29,7 @@ export default function Service() {
                 <h3 className="flex justify-end">
                     <img src="/images/our-service.png" alt="Our Service" />
                 </h3>
-                <div className="px-5 w-full md:max-w-[1080px] max-w-[370px] mx-auto mt-3 md:mt-5">
+                <div className="content-scroll-keep px-5 w-full md:max-w-[1080px] max-w-[370px] mx-auto mt-3 md:mt-5">
                     <h5 className="text-center md:text-[28px] text-[18px] font-mincho font-semibold text-white">
                         マーケット至上主義
                         <br />

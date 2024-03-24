@@ -7,7 +7,7 @@ export default function Team() {
                 <h3 className="">
                     <img src="/images/our-team.png" alt="Our Team" />
                 </h3>
-                <div className="px-5 w-full mx-auto mt-3 md:mt-10 pb-[120px] md:pb-[380px]">
+                <div className="content-scroll-keep px-5 w-full mx-auto mt-3 md:mt-10 pb-[120px] md:pb-[380px]">
                     <h5 className="text-center md:text-[28px] text-[18px] font-mincho font-semibold">
                         世界各国の精鋭が集う <br />
                         我々のチーム

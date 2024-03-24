@@ -185,15 +185,16 @@ body {
 		-webkit-transform: scale(1) translateY(0);
 	}
 }
-/* 
+
 .content-scroll {
-	--scroll-length: 1.5;
+	--scroll-length: 1.1;
 }
   
   .content-scroll-wrap {
 	--scale: calc(.8 +
 	  (.2 * var(--scroll-length) * var(--visible-y))
 	);
+	position: sticky;
 	top: 0;
 	left: 0;
 	margin: 0;
@@ -211,4 +212,4 @@ body {
 	display: block;
 	will-change: transform;
 	transform: scale(calc(1 / var(--scale)));
-  } */
+  }

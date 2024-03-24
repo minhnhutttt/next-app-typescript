@@ -16,9 +16,6 @@ export default function Home() {
       cssProps: {
         visibleY: true,
         viewportY: true,
-        offsetY: true,
-        elementHeight: true,
-        intersectY: true,
       }
     });
   },[])

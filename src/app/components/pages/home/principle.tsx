@@ -7,7 +7,7 @@ export default function Principle() {
                 <h3 className="">
                     <img src="/images/our-principle.png" alt="Our Principle" />
                 </h3>
-                <div className="px-5 w-full max-w-[860px] mx-auto mt-3 md:mt-5 pb-[120px] md:pb-[216px]">
+                <div className="content-scroll-keep px-5 w-full max-w-[860px] mx-auto mt-3 md:mt-5 pb-[120px] md:pb-[216px]">
                     <h5 className="text-center md:text-[28px] text-[18px] font-mincho font-semibold">
                         本物のアジャイル開発を行う <br />
                         我々の主義

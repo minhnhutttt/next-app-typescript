@@ -7,7 +7,7 @@ export default function Message() {
                 <h3 className="flex">
                     <img className="max-xl:w-[80%]" src="/images/our-message.png" alt="Our Message" />
                 </h3>
-                <div className="px-8 w-full md:max-w-[1160px] max-w-[600px] mx-auto mt-3 md:mt-2 relative pb-14 md:pb-[140px]">
+                <div className="content-scroll-keep px-8 w-full md:max-w-[1160px] max-w-[600px] mx-auto mt-3 md:mt-2 relative pb-14 md:pb-[140px]">
                     <div className="w-full max-w-[1096px] mx-auto flex max-md:flex-col-reverse gap-8 items-center md:pl-5 md:gap-[66px]">
                         <div className="text-white flex-1">
                             <p className="font-mincho md:text-[28px] text-[20px] font-semibold">メッセージ</p>

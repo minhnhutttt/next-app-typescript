@@ -49,7 +49,7 @@ export default function Flow() {
                 <h3 className="flex justify-end">
                     <img src="/images/workflow.png" alt="Workflow" />
                 </h3>
-                <div className="px-10 md:px-[52px] w-full max-w-[1160px] mx-auto mt-3 md:mt-5 relative pb-[70px]">
+                <div className="content-scroll-keep px-10 md:px-[52px] w-full max-w-[1160px] mx-auto mt-3 md:mt-5 relative pb-[70px]">
                     <h5 className="text-center md:text-[28px] text-[18px] font-mincho font-semibold">
                     即応と柔軟で変化を力にする<br />開発までの流れ
                     </h5>
