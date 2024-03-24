@@ -187,15 +187,13 @@ body {
 }
 
 .content-scroll {
-	--scroll-length: 1;
-	height: 100vh;
+	--scroll-length: 1.5;
 }
   
   .content-scroll-wrap {
 	--scale: calc(.8 +
 	  (.2 * var(--scroll-length) * var(--visible-y))
 	);
-	position: sticky;
 	top: 0;
 	left: 0;
 	margin: 0;

@@ -1,7 +1,7 @@
 import SectionContainer from "../../common/sectionContainer";
 
 
-const Articles = [
+const ServiceData = [
     {
         id: "01",
         imgae: '/images/img-service-01.png',
@@ -36,7 +36,7 @@ export default function Service() {
                         我々のサービス
                     </h5>
                     <div className="md:mt-12 mt-6 grid md:grid-cols-3 justify-center gap-8 md:gap-7">
-                        {Articles.map((item, index) => (
+                        {ServiceData.map((item, index) => (
                             <div
                                 className="text-white"
                                 key={index}
@@ -50,8 +50,8 @@ export default function Service() {
                         ))}
                     </div>
                 </div>
-                <div className="flex justify-end md:-mt-8 w-full max-w-[1340px] mx-auto">
-                    <img className="max-md:w-[50px]" src="/images/img-service.png" alt="SERVICE" />
+                <div className="flex justify-end md:-mt-8 w-full max-w-[1340px] mx-auto max-md:px-2">
+                    <img className="max-md:w-[32px]" src="/images/img-service.png" alt="SERVICE" />
                 </div>
             </div>
         </SectionContainer>
