@@ -51,7 +51,7 @@ export default function Request() {
                     <div className="md:mt-12 mt-6 divide-y max-w-[1080px] mx-auto md:pb-16 pb-10">
                         {requestData.map((item, index) => (
                             <div
-                                className="group text-white flex justify-center md:pb-28 pb-16 pt-14 md:[&:not(:first-of-type)]:pt-24"
+                                className="group text-white flex justify-center md:pb-28 pb-16 [&:not(:first-of-type)]:pt-14 md:[&:not(:first-of-type)]:pt-24"
                                 key={index}
                             >
                                 <div className="flex max-md:flex-col max-md:items-center md:group-even:justify-end w-full px-4 md:px-16 gap-8 md:gap-[50px] md:group-even:flex-row-reverse relative">

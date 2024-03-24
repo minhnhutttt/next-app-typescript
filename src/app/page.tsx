@@ -7,6 +7,9 @@ import Service from "./components/pages/home/service";
 import Team from "./components/pages/home/team";
 import Tool from "./components/pages/home/tool";
 import Request from "./components/pages/home/request";
+import Flow from "./components/pages/home/flow";
+import Message from "./components/pages/home/message";
+import Contact from "./components/pages/home/contact";
 export default function Home() {
   useEffect(()=>{
     ScrollOut({
@@ -27,6 +30,9 @@ export default function Home() {
       <Team />
       <Tool />
       <Request />
+      <Flow />
+      <Message />
+      <Contact />
     </main>
   );
 }
