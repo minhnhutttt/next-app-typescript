@@ -1,3 +1,5 @@
+import useScrollAnimations from "@/app/hooks/useScrollAnimations";
+
 const requestData = [
     {
         id: "01",
@@ -34,20 +36,21 @@ const requestData = [
 ]
 
 export default function Request() {
+    const ref = useScrollAnimations();
     return (
-        <div className="bg-black pb-6 md:pb-10 relative">
-            <h3 className="flex justify-end">
+        <div ref={ref} className="bg-black pb-6 md:pb-10 relative">
+            <h3 className="fade-down flex justify-end">
                 <img src="/images/our-request.png" alt="Our Service" />
             </h3>
             <div className="px-5 w-full max-w-[1440px] relative mx-auto mt-3 md:mt-5">
-                <h5 className="text-center md:text-[28px] text-[18px] font-mincho font-semibold text-white">
+                <h5 className="fade-down text-center md:text-[28px] text-[18px] font-mincho font-semibold text-white">
                     クライアントもプロジェクトを成功させるための一員です <br />
                     我々からあなたへの要求
                 </h5>
                 <div className="md:mt-12 mt-6 divide-y max-w-[1080px] mx-auto md:pb-16 pb-10">
                     {requestData.map((item, index) => (
                         <div
-                            className="group text-white flex justify-center md:pb-28 pb-16 [&:not(:first-of-type)]:pt-14 md:[&:not(:first-of-type)]:pt-24"
+                            className="fade-down group text-white flex justify-center md:pb-28 pb-16 [&:not(:first-of-type)]:pt-14 md:[&:not(:first-of-type)]:pt-24"
                             key={index}
                         >
                             <div className="flex max-md:flex-col max-md:items-center md:group-even:justify-end w-full px-4 md:px-16 gap-8 md:gap-[50px] md:group-even:flex-row-reverse relative">
@@ -68,7 +71,7 @@ export default function Request() {
                         </div>
                     ))}
                 </div>
-                <div className="flex absolute right-0 xl:right-20 bottom-0">
+                <div className="fade-down flex absolute right-0 xl:right-20 bottom-0">
                     <img className="max-md:w-[32px] max-xl:w-[60px]" src="/images/img-our-request.png" alt="request" />
                 </div>
             </div>

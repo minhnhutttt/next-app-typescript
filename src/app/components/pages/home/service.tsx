@@ -1,3 +1,4 @@
+import useScrollAnimations from "@/app/hooks/useScrollAnimations";
 import SectionContainer from "../../common/sectionContainer";
 
 
@@ -23,14 +24,15 @@ const ServiceData = [
 ]
 
 export default function Service() {
+    const ref = useScrollAnimations()
     return (
         <SectionContainer>
-            <div className="bg-black pb-6 md:pb-10">
-                <h3 className="flex justify-end">
+            <div ref={ref} className="bg-black pb-6 md:pb-10">
+                <h3 className="fade-down flex justify-end">
                     <img src="/images/our-service.png" alt="Our Service" />
                 </h3>
                 <div className="content-scroll-keep px-5 w-full md:max-w-[1080px] max-w-[370px] mx-auto mt-3 md:mt-5">
-                    <h5 className="text-center md:text-[28px] text-[18px] font-mincho font-semibold text-white">
+                    <h5 className="fade-down text-center md:text-[28px] text-[18px] font-mincho font-semibold text-white">
                         マーケット至上主義
                         <br />
                         我々のサービス
@@ -38,7 +40,7 @@ export default function Service() {
                     <div className="md:mt-12 mt-6 grid md:grid-cols-3 justify-center gap-8 md:gap-7">
                         {ServiceData.map((item, index) => (
                             <div
-                                className="text-white"
+                                className="fade-down text-white"
                                 key={index}
                             >
                                 <figure>
@@ -50,7 +52,7 @@ export default function Service() {
                         ))}
                     </div>
                 </div>
-                <div className="flex justify-end md:-mt-8 w-full max-w-[1340px] mx-auto max-md:px-2">
+                <div className="fade-down flex justify-end md:-mt-8 w-full max-w-[1340px] mx-auto max-md:px-2">
                     <img className="max-md:w-[32px]" src="/images/img-service.png" alt="SERVICE" />
                 </div>
             </div>

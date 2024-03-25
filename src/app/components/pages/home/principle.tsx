@@ -1,19 +1,21 @@
+import useScrollAnimations from "@/app/hooks/useScrollAnimations";
 import SectionContainer from "../../common/sectionContainer";
 
 export default function Principle() {
+    const ref = useScrollAnimations();
     return (
-        <div  id="principle">
+        <div id="principle">
             <SectionContainer>
-                <div>
-                    <h3 className="">
+                <div ref={ref}>
+                    <h3 className="fade-down">
                         <img src="/images/our-principle.png" alt="Our Principle" />
                     </h3>
                     <div className="content-scroll-keep px-5 w-full max-w-[860px] mx-auto mt-3 md:mt-5 pb-[120px] md:pb-[216px]">
-                        <h5 className="text-center md:text-[28px] text-[18px] font-mincho font-semibold">
+                        <h5 className="fade-down text-center md:text-[28px] text-[18px] font-mincho font-semibold">
                             本物のアジャイル開発を行う <br />
                             我々の主義
                         </h5>
-                        <div className="md:mt-10 mt-6 md:space-y-16 space-y-10 max-md:max-w-[327px] max-md:mx-auto">
+                        <div className="fade-down md:mt-10 mt-6 md:space-y-16 space-y-10 max-md:max-w-[327px] max-md:mx-auto">
                             <div className="flex max-md:flex-col md:gap-[38px] gap-6">
                                 <figure>
                                     <img src="/images/img-principle-01.png" alt="" />

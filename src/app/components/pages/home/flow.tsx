@@ -1,3 +1,4 @@
+import useScrollAnimations from "@/app/hooks/useScrollAnimations";
 import SectionContainer from "../../common/sectionContainer";
 
 const flowtData = [
@@ -43,25 +44,26 @@ const flowtData = [
     },
 ]
 export default function Flow() {
+    const ref = useScrollAnimations();
     return (
         <SectionContainer>
-            <div className="">
-                <h3 className="flex justify-end">
+            <div ref={ref} className="">
+                <h3 className="fade-down flex justify-end">
                     <img src="/images/workflow.png" alt="Workflow" />
                 </h3>
                 <div className="content-scroll-keep md:px-[52px] w-full max-w-[1160px] mx-auto mt-3 md:mt-5 relative pb-[70px]">
-                    <h5 className="text-center md:text-[28px] text-[18px] font-mincho font-semibold">
+                    <h5 className="fade-down text-center md:text-[28px] text-[18px] font-mincho font-semibold">
                     即応と柔軟で変化を力にする<br />開発までの流れ
                     </h5>
                     <div className="w-ful md:mt-20 mt-10 relative max-md:pl-14 max-md:pr-6">
                         <div className="absolute h-full bottom-0 left-1 md:-left-4 flex items-end border-r border-black/20 pb-20">
-                            <figure>
+                            <figure className="fade-down">
                                 <img className="max-md:w-7" src="/images/img-work-flow.png" alt="" />
                             </figure>
                         </div>
                         <div className="max-md:max-w-[323px] mx-auto md:space-y-[38px] space-y-7">
                             {flowtData.map((item, index) => (
-                                    <div className="bg-white pb-6 group flex max-md:flex-col gap-5 md:gap-[16px] relative md:[&:nth-of-type(2)]:ml-[10%] md:[&:nth-of-type(3)]:ml-[16%] md:[&:nth-of-type(4)]:ml-[22%] md:[&:nth-of-type(5)]:ml-[28%]" key={index}>
+                                    <div className="fade-down bg-white pb-6 group flex max-md:flex-col gap-5 md:gap-[16px] relative md:[&:nth-of-type(2)]:ml-[10%] md:[&:nth-of-type(3)]:ml-[16%] md:[&:nth-of-type(4)]:ml-[22%] md:[&:nth-of-type(5)]:ml-[28%]" key={index}>
                                         <figure className="relative z-10 max-md:flex max-md:justify-center max-md:w-full max-lg:w-1/3">
                                             <img className="border border-white" src={item.imgae} alt={item.title} />
                                             <div className="origin-bottom-left absolute bottom-0 left-0 font-helvetica md:text-[28px] text-[18px] font-bold text-[#E8E8E8] rotate-[-90deg]">{item.type}</div>

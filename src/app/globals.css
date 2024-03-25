@@ -223,14 +223,13 @@ body {
 
 @keyframes xfade{
 	0% {opacity: 0;}
-   20% {opacity: 1;}
-   33% {opacity: 1;}
-   40% {opacity: 0;}
+   16% {opacity: 1;}
+   33% {opacity: 0;}
+   66% {opacity: 0;}
    100% {opacity: 0;}
 }
 
-@media screen and (min-width: 769px) {
-	
+@media screen and (min-width: 1025px) {
 .content-scroll {
 	--scroll-length: 1.1;
 }

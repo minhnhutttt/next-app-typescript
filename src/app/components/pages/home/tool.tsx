@@ -1,4 +1,5 @@
 "use client"
+import useScrollAnimations from "@/app/hooks/useScrollAnimations";
 import SectionContainer from "../../common/sectionContainer";
 
 const ToolData = [
@@ -82,10 +83,11 @@ const ToolData = [
 ]
 
 export default function Tool() {
+    const ref = useScrollAnimations();
     return (
-        <div className="max-md:pl-0 px-5">
+        <div ref={ref} className="max-md:pl-0 px-5">
             <div className="flex relative w-full max-w-[1440px] mx-auto">
-                <div className="w-1/3 md:w-[39.86%]">
+                <div className="fade-down w-1/3 md:w-[39.86%]">
                     <div className="sticky top-0 left-0 flex justify-between max-md:flex-col-reverse min-h-screen">
                         <figure className="flex items-end">
                             <img className="max-md:w-[40px]" src="/images/tool-stack.png" alt="Tool Stack" />
@@ -97,12 +99,12 @@ export default function Tool() {
                 </div>
                 <div className="flex-1 pt-6 md:pt-11">
                     <div className="border-l border-black flex items-start relative w-full">
-                        <div className="flex items-end sticky top-0 left-0 min-h-screen py-10 px-1.5 md:px-2.5">
+                        <div className="fade-down flex items-end sticky top-0 left-0 min-h-screen py-10 px-1.5 md:px-2.5">
                             <img className="max-md:w-4" src="/images/scroll-down-arrow.png" alt="" />
                         </div>
                         <div className="flex-1 py-10 md:py-[75px] md:pl-10 max-w-[715px] max-xl:pb-10 max-xl:space-y-10">
                         {ToolData.map((item, index) => (
-                            <div className="flex even:justify-end w-full xl:even:-top-[36px] relative" key={index}>
+                            <div className="fade-down flex even:justify-end w-full xl:even:-top-[36px] relative" key={index}>
                                 <div
                                     className="text-[#6D6D6D]"
                                 >
