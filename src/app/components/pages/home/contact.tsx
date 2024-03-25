@@ -4,10 +4,10 @@ export default function Contact() {
     return (
         <SectionContainer>
             <div className="">
-                <h3 className="flex justify-end">
+                <h3 className="flex justify-end mt-5">
                     <img className="" src="/images/contact.png" alt="Contact" />
                 </h3>
-                <div className="px-8 w-full md:max-w-[1160px] max-w-[600px] mx-auto mt-3 md:mt-2 relative pb-14 md:pb-[180px]">
+                <div className="content-scroll-keep px-8 w-full md:max-w-[1160px] max-w-[600px] mx-auto mt-3 md:mt-2 relative pb-14 md:pb-[180px]">
                     <h5 className="text-center md:text-[28px] text-[18px] font-mincho font-semibold">
                         お問い合わせ
                     </h5>

@@ -20,7 +20,7 @@ export default function Footer() {
                     </li>
                 </ul>
             </div>
-            <p className="text-right text-white md:text-[16px] text-[12px] font-bold">Copyright © 2024 〇〇〇〇</p>
+            <p className="text-right text-white md:text-[16px] text-[12px] font-bold">Copyright © 2024 dxb.plus</p>
         </div>
      </footer>
     );
