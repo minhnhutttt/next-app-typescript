@@ -11,8 +11,17 @@ export default function SectionVoice() {
                 </div>
                 <div className="w-full max-w-[1320px] mx-auto md:mt-[70px] mt-16">
                     <div className="relative w-full max-w-[800px] mx-auto">
-                        <div className="absolute top-[-30px] md:left-[calc(50%-25px)] left-1/2 max-md:w-[45%] animate-[bounce_1s_0.3s_ease_infinite_alternate]">
+                        <div className="absolute top-[-30px] md:left-[calc(50%-25px)] left-1/2 max-md:w-[40vw] animate-[bounce_1s_0.3s_ease_infinite_alternate]">
                             <img src="/images/bubble-voice.png" alt="" />
+                            <div data-scroll="out" className="absolute inset-0 flex flex-col items-center justify-center pl-[9vw] pr-[5vw] pb-[2vw] md:pl-16 md:pr-10 md:pb-6">
+                                <p className="text-center md:text-[14px] text-[2.3vw] font-medium mb-1">40代主婦Y.I様</p>
+                                <p className="md:text-[20px] text-[2.5vw] font-bold">
+                                <span className="text--plitting">
+                                <span className="text--fading" data-splitting="">サブスク断ちしても <br />
+                                                                思い出はキープ。次世代ストレージで最高の断捨離できました！</span>
+                                </span>
+                                </p>
+                            </div>
                         </div>
                         <figure>
                             <img src="/images/user-image.png" alt="" />

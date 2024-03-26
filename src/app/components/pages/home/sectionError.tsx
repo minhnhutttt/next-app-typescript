@@ -97,10 +97,12 @@ export default function SectionError() {
                     <div className="relative">
                         <div className="w-full max-w-[630px] mx-auto md:border-[10px] border-[5px] border-[#FDD300] md:rounded-[40px] rounded-[28px] [box-shadow:0px_4px_30px_rgba(0,_0,_0,_0.10)] bg-[url('/images/bg-magic.jpg')] bg-cover bg-center py-7 md:py-9 px-5 md:px-6">
                             <p className="text-center font-black text-[18px] md:text-[28px] tracking-widest [text-shadow:2px_2px_0px_#FDD300] bg-[url('/images/border-magic.png')] bg-no-repeat bg-bottom pb-3">そんな希望を魔法のように叶えるのが</p>
-                            <p className="md:text-[24px] text-[14px] font-bold text-center tracking-widest leading-loose my-3 md:my-4">
-                                生きづらさの種の一つとして <br />
+                            <p data-scroll="out" className="md:text-[24px] text-[14px] font-bold text-center tracking-widest leading-loose my-3 md:my-4">
+                                <span className="text--plitting">
+                                <span className="text--fading" data-splitting="">生きづらさの種の一つとして <br />
                                 存在感を増す「容量」がもたらす <br />
-                                問題をまるごと解消に導く
+                                問題をまるごと解消に導く</span>
+                                </span>
                             </p>
                             <p className="flex justify-center mt-6"><img src="/images/next-generation-storage-text.png" alt="" /></p>
                         </div>

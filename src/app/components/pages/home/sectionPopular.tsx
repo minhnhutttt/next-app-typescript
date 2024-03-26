@@ -55,7 +55,7 @@ export default function SectionPopular() {
                                 <p className="text-center font-black md:text-[24px] text-[14px]">本当に必要かな？</p>
                             </div>
                             <figure className="absolute right-[calc(50%+85px)] bottom-[88px]">
-                                <img src="/images/deco-cloud-01.png" alt="" />
+                                <img className="animate-[bounce_1s_0.5s_ease_infinite_alternate]" src="/images/deco-cloud-01.png" alt="" />
                             </figure>
                         </div>
                         <div className="w-full md:w-1/2 bg-[url('/images/popular-bg-02.png')] bg-cover bg-center md:pt-16 md:pb-[75px] pt-10 pb-14 relative">
@@ -89,8 +89,8 @@ export default function SectionPopular() {
                                 </div>
                                 <p className="text-center font-black md:text-[24px] text-[14px]">これだけあれば十分だね！</p>
                             </div>
-                            <figure className="absolute left-[calc(50%+75px)] bottom-[90px]">
-                                <img src="/images/deco-cloud-02.png" alt="" />
+                            <figure className="absolute left-[calc(50%+75px)] bottom-[100px]">
+                                <img className="animate-[bounce_1s_0.2s_ease_infinite_alternate]" src="/images/deco-cloud-02.png" alt="" />
                             </figure>
                         </div>
                     </div>

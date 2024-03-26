@@ -1,3 +1,8 @@
+"use client"
+import { ReactNode, useEffect, useRef } from "react";
+import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
+import ScrollOut from "scroll-out";
 import Anchors from "./components/pages/home/anchors";
 import FAQ from "./components/pages/home/faq/faq";
 import Fixed from "./components/pages/home/fixed";
@@ -10,6 +15,16 @@ import SectionSupport from "./components/pages/home/sectionSupport";
 import SectionVoice from "./components/pages/home/sectionVoice";
 
 export default function Home() {
+    useEffect(()=>{
+        setTimeout(() => {
+        if ( window && document ) {
+                const Splitting = require('Splitting');
+                Splitting();
+            }
+        });
+        ScrollOut({
+          });
+    },[])
   return (
     <main>
       <FV />
