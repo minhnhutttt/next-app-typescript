@@ -52,13 +52,13 @@ export default function Flow() {
                     <img src="/images/workflow.png" alt="Workflow" />
                 </h3>
                 <div className="content-scroll-keep md:px-[52px] w-full max-w-[1160px] mx-auto mt-3 md:mt-5 relative pb-[70px]">
-                    <h5 className="fade-down text-center md:text-[28px] text-[18px] font-mincho font-semibold">
+                    <h5 className="fade-down text-center md:text-[28px] text-[24px] font-mincho font-semibold">
                     即応と柔軟で変化を力にする<br />開発までの流れ
                     </h5>
-                    <div className="w-ful md:mt-20 mt-10 relative max-md:pl-14 max-md:pr-6">
+                    <div className="w-ful md:mt-20 mt-10 relative max-md:pl-20 max-md:pr-6">
                         <div className="absolute h-full bottom-0 left-1 md:-left-4 flex items-end border-r border-black/20 pb-20">
                             <figure className="fade-down">
-                                <img className="max-md:w-7" src="/images/img-work-flow.png" alt="" />
+                                <img className="max-md:w-9" src="/images/img-work-flow.png" alt="" />
                             </figure>
                         </div>
                         <div className="max-md:max-w-[323px] mx-auto md:space-y-[38px] space-y-7">
@@ -71,12 +71,12 @@ export default function Flow() {
                                         <div className="flex-1 text-black max-w-[450px] flex flex-col justify-between">
                                             <div className="w-full max-md:pt-4 max-md:order-2">
                                                 <div className="flex gap-5 md:gap-8">
-                                                    <p className="md:text-[23px] text-[17px] font-bold leading-tight">{item.title}</p>
+                                                    <p className="md:text-[23px] text-[21px] font-bold leading-tight">{item.title}</p>
                                                 </div>
-                                                <p className="md:text-[17px] text-[13px] mt-3 md:mt-5">{item.content}</p>
+                                                <p className="md:text-[17px] text-[16px] mt-3 md:mt-5">{item.content}</p>
                                             </div>
                                             <div className="max-md:order-1 md:group-[:nth-of-type(3)]:ml-[30%] md:group-[:nth-of-type(4)]:ml-[46%] md:group-[:nth-of-type(5)]:ml-[70%]">
-                                                <img className="max-md:h-10 max-lg:h-[80px]" src={item.number} alt={item.id} />
+                                                <img className="max-md:h-12 max-lg:h-[80px]" src={item.number} alt={item.id} />
                                             </div>
 
                                         </div>

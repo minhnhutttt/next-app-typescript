@@ -90,9 +90,9 @@ export default function Tool() {
                 <div className="fade-down w-1/3 md:w-[39.86%]">
                     <div className="sticky top-0 left-0 flex justify-between max-md:flex-col-reverse min-h-screen">
                         <figure className="flex items-end">
-                            <img className="max-md:w-[40px]" src="/images/tool-stack.png" alt="Tool Stack" />
+                            <img className="max-md:w-[50px]" src="/images/tool-stack.png" alt="Tool Stack" />
                         </figure>
-                        <div className="flex items-center font-mincho font-semibold md:text-[28px] text-[16px] text-[#3B3B3B] max-md:py-10 md:px-8 text-center max-md:justify-center">
+                        <div className="flex items-center font-mincho font-semibold md:text-[28px] text-[24px] text-[#3B3B3B] max-md:py-10 md:px-8 text-center max-md:justify-center">
                             我々の<br className="md:hidden" />Tool Stack
                         </div>
                     </div>
@@ -100,7 +100,7 @@ export default function Tool() {
                 <div className="flex-1 pt-6 md:pt-11">
                     <div className="border-l border-black flex items-start relative w-full">
                         <div className="fade-down flex items-end sticky top-0 left-0 min-h-screen py-10 px-1.5 md:px-2.5">
-                            <img className="max-md:w-4" src="/images/scroll-down-arrow.png" alt="" />
+                            <img className="max-md:w-5" src="/images/scroll-down-arrow.png" alt="" />
                         </div>
                         <div className="flex-1 py-10 md:py-[75px] md:pl-10 max-w-[715px] max-xl:pb-10 max-xl:space-y-10">
                         {ToolData.map((item, index) => (
@@ -111,8 +111,8 @@ export default function Tool() {
                                     <figure>
                                         <img className="border border-white" src={item.imgae} alt={item.title} />
                                     </figure>
-                                    <h5 className="md:text-[21px] text-[17px] font-black py-3 md:py-3.5 border-b border-[#828282]">{item.title}</h5>
-                                    <div className="md:text-[17px] text-[13px] leading-[1.5] pt-2 text-black">{item.content}</div>
+                                    <h5 className="md:text-[21px] text-[19px] font-black py-3 md:py-3.5 border-b border-[#828282]">{item.title}</h5>
+                                    <div className="md:text-[17px] text-[16px] leading-[1.5] pt-2 text-black">{item.content}</div>
                                 </div>
                             </div>
                         ))}

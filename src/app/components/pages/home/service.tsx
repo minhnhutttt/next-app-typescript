@@ -32,7 +32,7 @@ export default function Service() {
                     <img src="/images/our-service.png" alt="Our Service" />
                 </h3>
                 <div className="content-scroll-keep px-5 w-full md:max-w-[1080px] max-w-[370px] mx-auto mt-3 md:mt-5">
-                    <h5 className="fade-down text-center md:text-[28px] text-[18px] font-mincho font-semibold text-white">
+                    <h5 className="fade-down text-center md:text-[28px] text-[24px] font-mincho font-semibold text-white">
                         マーケット至上主義
                         <br />
                         我々のサービス
@@ -46,14 +46,14 @@ export default function Service() {
                                 <figure>
                                     <img className="border border-white" src={item.imgae} alt={item.title} />
                                 </figure>
-                                <h5 className="md:text-[20px] text-[17px] font-bold py-3 md:py-4">{item.title}</h5>
-                                <p className="md:text-[17px] text-[13px] leading-[1.8]">{item.content}</p>
+                                <h5 className="md:text-[20px] text-[20px] font-bold py-3 md:py-4">{item.title}</h5>
+                                <p className="md:text-[17px] text-[16px] leading-[1.8]">{item.content}</p>
                             </div>
                         ))}
                     </div>
                 </div>
                 <div className="fade-down flex justify-end md:-mt-8 w-full max-w-[1340px] mx-auto max-md:px-2">
-                    <img className="max-md:w-[32px]" src="/images/img-service.png" alt="SERVICE" />
+                    <img className="max-md:w-[40px]" src="/images/img-service.png" alt="SERVICE" />
                 </div>
             </div>
         </SectionContainer>

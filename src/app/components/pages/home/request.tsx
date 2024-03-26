@@ -43,7 +43,7 @@ export default function Request() {
                 <img src="/images/our-request.png" alt="Our Service" />
             </h3>
             <div className="px-5 w-full max-w-[1440px] relative mx-auto mt-3 md:mt-5">
-                <h5 className="fade-down text-center md:text-[28px] text-[18px] font-mincho font-semibold text-white">
+                <h5 className="fade-down text-center md:text-[28px] text-[24px] font-mincho font-semibold text-white">
                     クライアントもプロジェクトを成功させるための一員です <br />
                     我々からあなたへの要求
                 </h5>
@@ -60,10 +60,10 @@ export default function Request() {
                                 <div className="flex-1 max-w-[480px]">
                                     <div className="w-full max-md:pb-4">
                                         <div className="flex gap-5 md:gap-8">
-                                            <p className=""><img className="max-md:h-8" src={item.number} alt="" /></p>
-                                            <p className="md:text-[23px] text-[17px] font-bold leading-tight">{item.title}</p>
+                                            <p className=""><img className="max-md:h-9" src={item.number} alt="" /></p>
+                                            <p className="md:text-[23px] text-[20px] font-bold leading-tight">{item.title}</p>
                                         </div>
-                                        <p className="md:text-[17px] text-[13px] mt-5">{item.content}</p>
+                                        <p className="md:text-[17px] text-[16px] mt-5">{item.content}</p>
                                     </div>
                                     {item.deco}
                                 </div>
@@ -72,7 +72,7 @@ export default function Request() {
                     ))}
                 </div>
                 <div className="fade-down flex absolute right-0 xl:right-20 bottom-0">
-                    <img className="max-md:w-[32px] max-xl:w-[60px]" src="/images/img-our-request.png" alt="request" />
+                    <img className="max-md:w-[40px] max-xl:w-[60px]" src="/images/img-our-request.png" alt="request" />
                 </div>
             </div>
         </div>

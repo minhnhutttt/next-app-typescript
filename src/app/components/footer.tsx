@@ -8,7 +8,7 @@ export default function Footer() {
                 </a>
             </div>
             <div className="flex justify-end mt-[100px] mb-7">
-                <ul className="flex items-center md:text-[17px] text-[13px] font-bold text-white gap-10">
+                <ul className="flex items-center md:text-[17px] text-[15px] font-bold text-white gap-6 md:gap-10">
                     <li>
                         <a href="/" className="block">Top</a>
                     </li>
@@ -20,7 +20,7 @@ export default function Footer() {
                     </li>
                 </ul>
             </div>
-            <p className="text-right text-white md:text-[16px] text-[12px] font-bold">Copyright © 2024 dxb.plus</p>
+            <p className="text-right text-white md:text-[16px] text-[14px] font-bold">Copyright © 2024 dxb.plus</p>
         </div>
      </footer>
     );

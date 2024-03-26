@@ -12,8 +12,8 @@ export default function Message() {
                 <div className="content-scroll-keep px-8 w-full md:max-w-[1160px] max-w-[600px] mx-auto mt-3 md:mt-2 relative pb-14 md:pb-[140px]">
                     <div className="w-full max-w-[1096px] mx-auto flex max-md:flex-col-reverse gap-8 items-center md:pl-5 md:gap-[66px]">
                         <div className="fade-down text-white flex-1">
-                            <p className="font-mincho md:text-[28px] text-[20px] font-semibold">メッセージ</p>
-                            <p className="md:text-[18px] text-[14px] font-bold leading-loose mt-4 md:mt-6">
+                            <p className="font-mincho md:text-[28px] text-[26px] font-semibold">メッセージ</p>
+                            <p className="md:text-[18px] text-[17px] font-bold leading-loose mt-4 md:mt-6">
                                 昨今のビジネス環境において、迅速な行動が何よりも重要視されると我々は考えております。<br />
                                 こだわりを追求し細部に完璧を求めるほど、スピードが鈍り、それによって生じる機会損失は避けがたいのが事実です。<br />
                                 <br />
