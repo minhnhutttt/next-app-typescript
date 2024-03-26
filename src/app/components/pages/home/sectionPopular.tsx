@@ -103,24 +103,24 @@ export default function SectionPopular() {
                                 ポイント！
                             </p>
                         </div>
-                        <h5 className="font-bold md:text-[20px] text-[14px] text-center md:pb-3 pb-2 md:border-b-[3px] border-b-[2px] border-black mt-4">コスパは必要性と合わせて考えるのが大事！</h5>
-                        <p className="text-center md:text-[16px] text-[13px] leading-tight md:mt-5 mt-4">
+                        <h5 className="font-bold md:text-[20px] text-[14px] text-center md:pb-3 pb-2 md:border-b-[3px] border-b-[2px] border-black mt-4">コスパは必要性と合わせて<br className="md:hidden" />考えるのが大事！</h5>
+                        <p className="md:text-center md:text-[16px] text-[13px] leading-tight md:mt-5 mt-4">
                         それに、容量問題は100GBあれば解決できることが多いんですね。<br /><br />もし将来的に足りなくなってもそのタイミングで追加購入すればOK！<br />もちろん将来を見越して初めから500GB確保しておくのも賢い買い方です。<br /><br />あなたのデジタルライフを快適にする容量を選びましょう！
                         </p>
                     </div>
                     <div className="flex justify-center md:mt-[88px] mt-16">
                         <div className="p-[3px] font-bold md:text-[32px] text-[20px] text-center bg-black [clip-path:polygon(0_2%,_100%_0,_98.5%_100%,_0_97.5%)]">
-                            <div className="bg-white py-4 px-6 md:px-10 w-full h-full inset-0 flex items-center justify-center [clip-path:polygon(0_2%,_100%_0,_98.5%_100%,_0_97.5%)]">100GBプラン1日あたりコストはいくら？
+                            <div className="bg-white py-4 px-6 md:px-10 w-full h-full inset-0 flex items-center justify-center [clip-path:polygon(0_2%,_100%_0,_98.5%_100%,_0_97.5%)]">100GBプラン<br className="md:hidden" />1日あたりコストはいくら？
                             </div>
                         </div>
                     </div>
                     <div className="md:mt-10 mt-7 md:mb-[60px] mb-16">
                         <h5 className="text-center md:text-[32px] text-[20px] font-bold">
-                        100GB購入後20年使用する場合<br />1日あたりのコストはなんと約0.47円！！
+                        100GB購入後20年使用する場合<br />1日あたりのコストは<br className="md:hidden" />なんと約0.47円！！
                         </h5>
                         <div className="flex justify-center">
-                            <p className="text-center md:text-[16px] text-[13px] mt-3 leading-snug bg-[#F5F5F5] rounded-[10px] py-2.5 px-[30px]">
-                            ※利用期間を日数で計算 (2024年1月1日から20年)<br />うるう年を考慮して、20年間の日数を計算<br />2024, 2028, 2032, 2036, 2040, 2044 はうるう年
+                            <p className="md:text-center md:text-[16px] text-[13px] mt-3 leading-snug bg-[#F5F5F5] rounded-[10px] py-2.5 px-[30px]">
+                            ※利用期間を日数で計算 (2024年1月1日から20年)<br className="max-md:hidden" />うるう年を考慮して、20年間の日数を計算<br className="max-md:hidden" />2024, 2028, 2032, 2036, 2040, 2044 はうるう年
                             </p>
                         </div>
                     </div>

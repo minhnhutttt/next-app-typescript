@@ -13,17 +13,17 @@ import SectionPopular from "./components/pages/home/sectionPopular";
 import SectionPrice from "./components/pages/home/sectionPrice";
 import SectionSupport from "./components/pages/home/sectionSupport";
 import SectionVoice from "./components/pages/home/sectionVoice";
-
+import Splitting from "splitting";
 export default function Home() {
+    
     useEffect(()=>{
+        ScrollOut();
         setTimeout(() => {
-        if ( window && document ) {
-                const Splitting = require('Splitting');
-                Splitting();
-            }
+          if ( window && document ) {
+              const splitting = require('splitting');
+              splitting();
+          }
         });
-        ScrollOut({
-          });
     },[])
   return (
     <main>
