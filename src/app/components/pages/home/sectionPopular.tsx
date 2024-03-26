@@ -142,7 +142,7 @@ export default function SectionPopular() {
                             </figure>
                             <div className="flex justify-center">
                                 <p className="font-bold md:text-[18px] text-[14px] text-center bg-[#FDD300] rounded-[40px] md:p-8 md:py-9 p-4">
-                                    サブスクで毎月数百円でも支払っているアナタ！<br />60年使えば、1ヶ月5円以下で使えますよ〜！
+                                    サブスクで毎月数百円でも<br className="md:hidden" />支払っているアナタ！<br />60年使えば、<br className="md:hidden" />1ヶ月5円以下で使えますよ〜！
                                 </p>
                             </div>
                         </div>
