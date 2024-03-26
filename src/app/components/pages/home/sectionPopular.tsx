@@ -110,7 +110,7 @@ export default function SectionPopular() {
                     </div>
                     <div className="flex justify-center md:mt-[88px] mt-16">
                         <div className="p-[3px] font-bold md:text-[32px] text-[20px] text-center bg-black [clip-path:polygon(0_2%,_100%_0,_98.5%_100%,_0_97.5%)]">
-                            <div className="bg-white py-4 px-6 md:px-10 w-full h-full inset-0 flex items-center justify-center [clip-path:polygon(0_2%,_100%_0,_98.5%_100%,_0_97.5%)]">100GBプラン<br className="md:hidden" />1日あたりコストはいくら？
+                            <div className="bg-white py-4 px-3 md:px-10 w-full h-full inset-0 flex items-center justify-center [clip-path:polygon(0_2%,_100%_0,_98.5%_100%,_0_97.5%)]">100GBプラン<br className="md:hidden" />1日あたりコストはいくら？
                             </div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@ export default function SectionPopular() {
                         100GB購入後20年使用する場合<br />1日あたりのコストは<br className="md:hidden" />なんと約0.47円！！
                         </h5>
                         <div className="flex justify-center">
-                            <p className="md:text-center md:text-[16px] text-[13px] mt-3 leading-snug bg-[#F5F5F5] rounded-[10px] py-2.5 px-[30px]">
+                            <p className="md:text-center md:text-[16px] text-[13px] mt-3 leading-snug bg-[#F5F5F5] rounded-[10px] py-2.5 px-5 md:px-[30px]">
                             ※利用期間を日数で計算 (2024年1月1日から20年)<br className="max-md:hidden" />うるう年を考慮して、20年間の日数を計算<br className="max-md:hidden" />2024, 2028, 2032, 2036, 2040, 2044 はうるう年
                             </p>
                         </div>
