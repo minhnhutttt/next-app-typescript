@@ -161,7 +161,8 @@ export default function Procedure() {
               <p>お得に証明書をデジタル化しよう♪</p>
             </div>
             <a
-              href="#_"
+              href="https://lin.ee/e8GHxTR"
+              target="_blank"
               className="md:w-[392px] w-[300px] h-[60px] md:h-[84px] rounded-[16px] bg-[#FE4848] flex items-center justify-center md:text-[22px] text-[17px] font-black text-white gap-2 group overflow-hidden relative"
             >
               <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-[#01B202] rounded-full group-hover:w-[500px] group-hover:h-[500px]"></span>

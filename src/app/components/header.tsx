@@ -47,7 +47,8 @@ export default function Header() {
       };
     }, []);
   return (
-    <header className="px-5 md:px-14">
+    <>
+    <header className="px-5 md:px-14 fixed inset-x-0 top-0 z-50 bg-white">
       <div className="mx-auto flex h-20 w-full items-center justify-between md:h-[100px]">
         <Link href="/" className="duration-150 hover:opacity-75">
           <p className="font-dela text-[24px] md:text-[38px] tracking-[0.2em]">
@@ -103,5 +104,7 @@ export default function Header() {
         </div>
       </div>
     </header>
+    <div className="h-[80px] md:h-[100px]"></div>
+    </>
   );
 }
