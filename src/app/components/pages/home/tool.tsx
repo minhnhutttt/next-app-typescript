@@ -7,20 +7,13 @@ const ToolData = [
         id: "01",
         imgae: '/images/img-tool-01.png',
         title: 'Front End',
-        content: <div className="grid grid-cols-2">
+        content: 
             <span>
                 ・React <br />
                 ・HTML<br />
                 ・CSS<br />
                 ・JavaScript
             </span>
-            <span>
-                ・React <br />
-                ・HTML<br />
-                ・CSS<br />
-                ・JavaScript
-            </span>
-        </div>
     },
     {
         id: "02",

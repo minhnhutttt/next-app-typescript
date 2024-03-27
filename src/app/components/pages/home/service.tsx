@@ -27,11 +27,11 @@ export default function Service() {
     const ref = useScrollAnimations()
     return (
         <SectionContainer>
-            <div ref={ref} className="bg-black pb-6 md:pb-10">
+            <div ref={ref} className="bg-black pb-32 md:pb-10 relative">
                 <h3 className="fade-down flex justify-end">
                     <img src="/images/our-service.png" alt="Our Service" />
                 </h3>
-                <div className="content-scroll-keep px-5 w-full md:max-w-[1080px] max-w-[370px] mx-auto mt-3 md:mt-5">
+                <div className="content-scroll-keep px-8 md:px-5 w-full md:max-w-[1080px] max-w-[370px] mx-auto mt-3 md:mt-5">
                     <h5 className="fade-down text-center md:text-[28px] text-[24px] font-mincho font-semibold text-white">
                         マーケット至上主義
                         <br />
@@ -52,7 +52,7 @@ export default function Service() {
                         ))}
                     </div>
                 </div>
-                <div className="fade-down flex justify-end md:-mt-8 w-full max-w-[1340px] mx-auto max-md:px-2">
+                <div className="fade-down max-md:absolute max-md:right-0 max-md:bottom-6 flex justify-end md:-mt-8 w-full max-w-[1340px] mx-auto max-md:px-2">
                     <img className="max-md:w-[40px]" src="/images/img-service.png" alt="SERVICE" />
                 </div>
             </div>
