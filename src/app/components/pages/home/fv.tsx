@@ -85,7 +85,7 @@ export default function FV() {
                     </div>
                     <p className="md:text-[48px] text-[27px] text-center text-white font-black tracking-widest max-md:mt-4">LINEで承ります</p>
                     <div className="flex justify-center mt-2 md:mt-5 md:h-[74px] h-[44px]">
-                        <a href="/" className="md:w-[340px] md:h-[70px] w-[195px] h-[40px] bg-white flex items-center justify-center md:rounded-[10px] rounded-[5px] [box-shadow:0px_5px_0px_0px_rgba(0,_88,_0,_0.70)] md:text-[22px] text-[12.6px] font-black gap-2 text-[#00B900] hover:mt-1 hover:[box-shadow:0px_1px_0px_0px_rgba(0,_88,_0,_0.70)] duration-300">
+                        <a href="https://lin.ee/Nj3eFy0" target="_blank" className="md:w-[340px] md:h-[70px] w-[195px] h-[40px] bg-white flex items-center justify-center md:rounded-[10px] rounded-[5px] [box-shadow:0px_5px_0px_0px_rgba(0,_88,_0,_0.70)] md:text-[22px] text-[12.6px] font-black gap-2 text-[#00B900] hover:mt-1 hover:[box-shadow:0px_1px_0px_0px_rgba(0,_88,_0,_0.70)] duration-300">
                             <img className="max-md:w-4" src="/images/ic-line.svg" alt="" />
                             <span>次世代ストレージを使う</span>
                         </a>

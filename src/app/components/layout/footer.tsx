@@ -39,7 +39,7 @@ export default function Footer() {
           </ul>
           <div className="mt-3">
             <a
-              href=""
+              href="https://lin.ee/Nj3eFy0"
               target="_blank"
               className="flex duration-150 hover:opacity-75"
             >

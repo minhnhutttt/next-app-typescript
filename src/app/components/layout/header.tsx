@@ -11,7 +11,7 @@ export default function Header() {
         </Link>
         <div className="hidden md:flex items-center justify-end">
           <a
-            href="http://"
+            href="https://lin.ee/Nj3eFy0"
             target="_blank"
             rel="noopener noreferrer"
             className="block"

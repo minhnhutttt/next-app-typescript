@@ -1,3 +1,4 @@
+"use client"
 import { ReactNode, useEffect } from "react";
 import SectionWrap from "../common/sectionWrap";
 
@@ -16,26 +17,6 @@ function Feature({
     text,
     note
 }: FeaturePropsType) {
-    useEffect(() => {
-        setTimeout(() => {
-            const articleFeatures = document.querySelectorAll('.article-feature');
-            articleFeatures.forEach((articleFeature) => {
-                const textFoldingElement = articleFeature.querySelector('.text--folding') as HTMLElement | null;
-
-                if (textFoldingElement) {
-                    const charTotalValue = getComputedStyle(textFoldingElement).getPropertyValue('--char-total');
-                    const lastCharElement = articleFeature.querySelector('.last-char') as HTMLElement | null;
-
-                    if (lastCharElement) {
-                        lastCharElement.style.setProperty('--char-total', charTotalValue);
-                    }
-                }
-            });
-        });
-
-    }, []);
-
-
     return (
         <div className="article-feature relative border-2 border-[#FDD300] [box-shadow:0px_4px_30px_0px_rgba(0,_0,_0,_0.10)] rounded-[20px] px-4 md:px-5 pt-4 md:pt-5 pb-5 md:pb-7">
             <div className="absolute md:w-[60px] w-[50px] h-[55px] md:h-[66px] bg-[url('/images/feature-label.png')] bg-cover top-0 left-4 flex flex-col items-center justify-center pb-2">
@@ -59,6 +40,24 @@ function Feature({
 }
 
 export default function SectionFeatures() {
+    useEffect(() => {
+        setTimeout(() => {
+            const articleFeatures = document.querySelectorAll('.article-feature');
+            articleFeatures.forEach((articleFeature) => {
+                const textFoldingElement = articleFeature.querySelector('.text--folding') as HTMLElement | null;
+
+                if (textFoldingElement) {
+                    const charTotalValue = getComputedStyle(textFoldingElement).getPropertyValue('--char-total');
+                    const lastCharElement = articleFeature.querySelector('.last-char') as HTMLElement | null;
+
+                    if (lastCharElement) {
+                        lastCharElement.style.setProperty('--char-total', charTotalValue);
+                    }
+                }
+            });
+        },1);
+
+    }, []);
     return (
         <SectionWrap anchor="features" number="2" title="５FEATURES" content={<>容量スッキリ開放感<br />次世代ストレージって何？</>}>
             <div className="md:pt-24 pt-8 px-5 md:pb-[64px] pb-10">
