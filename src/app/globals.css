@@ -10,3 +10,19 @@ body {
   color: #000;
   font-family: "Noto Sans", sans-serif;
 }
+
+[data-scroll="in"] .fixed-btn {
+  @apply opacity-100 duration-300;
+}
+[data-scroll="in"] .fixed-btn-circle {
+  @apply w-0 delay-300 duration-1000;
+}
+[data-scroll="in"] .fixed-btn-wrap {
+  @apply md:w-[380px] duration-500 delay-700;
+}
+[data-scroll="in"] .fixed-btn-text {
+  @apply opacity-100 delay-[1.2s] duration-500;
+}
+[data-scroll="in"] .fixed-btn-ic {
+  @apply rotate-180 delay-[1.2s] duration-500 right-3;
+}
