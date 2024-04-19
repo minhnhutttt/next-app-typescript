@@ -10,7 +10,7 @@ import { useEffect } from "react";
 export default function Home() {
   useEffect(()=>{
     ScrollOut({
-      threshold: 0.3
+      threshold: 0.4
     });
 },[])
   return (

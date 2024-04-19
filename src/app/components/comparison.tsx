@@ -31,7 +31,7 @@ const Comparison = () => {
                 </div>
                 <div className="fixed-btn opacity-0 flex justify-center sticky bottom-[80px]">
                     <div className="fixed-btn-circle rounded-full w-[140px] aspect-square bg-[#7FFF00] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-                    <a href="" className="fixed-btn-wrap relative w-[80px] h-[80px] flex items-center justify-center bg-white rounded-[70px] [box-shadow:0px_0px_10px_0px_rgba(255,_255,_255,_0.50)] outline-1 outline outline-[#000] md:outline-offset-[-5px] outline-offset-[-3px] md:text-[20px] text-[16px] font-black text-black gap-3 tracking-[0.25em]"><span className="block fixed-btn-text opacity-0">VS紙名刺の結果を見る</span><img className="fixed-btn-ic absolute right-[18px]" src="/images/ic.png" alt="" /></a>
+                    <a href="" className="fixed-btn-wrap relative w-[80px] h-[80px] flex items-center justify-center bg-white rounded-[70px] [box-shadow:0px_0px_10px_0px_rgba(255,_255,_255,_0.50)] outline-1 outline outline-[#000] md:outline-offset-[-5px] outline-offset-[-3px] md:text-[20px] text-[16px] font-black text-black gap-3 tracking-[0.25em]"><span className="block fixed-btn-text opacity-0">VS紙名刺の結果を見る</span><img className="fixed-btn-ic absolute right-[19px]" src="/images/ic.png" alt="" /></a>
                 </div>
             </div>
         </div>
