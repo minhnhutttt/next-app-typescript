@@ -84,6 +84,15 @@ const Comparison = () => {
                 </figure>
               </div>
             </div>
+            <p className="text-center text-white font-black md:text-[26px] text-[18px] tracking-[0.3em] mt-2 md:mt-4 md:mb-6 mb-4">忘れがちな顔と名前</p>
+            <figure>
+                <img src="/images/comparison-01.jpg" alt="忘れがちな顔と名前" />
+            </figure>
+            <div className="">
+                <div className="flex">
+                    <p className="text-white md:text-[18px] text-[13px]">紙</p>
+                </div>
+            </div>
           </div>
         </div>
       </Modal>
