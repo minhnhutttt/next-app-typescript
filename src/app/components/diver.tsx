@@ -104,44 +104,44 @@ const Diver = () => {
             <p className="text-center md:text-[52px] text-[26px] font-black tracking-[0.4em]">
             徹底比較！
             </p>
-            <div className="flex justify-center items-end xl:text-[42px] md:text-[32px] text-[20px] font-black tracking-[0.2em] mt-5 md:mt-9">
-            一般的な名刺管理アプリ
-              <span className="md:text-[28px] text-[14px] text-[#E40D2F] mx-5 leading-[1.7]">
+            <div className="flex max-md:flex-col max-md:text-center justify-center md:items-end xl:text-[42px] lg:text-[32px] md:text-[24px] text-[20px] font-black tracking-[0.2em] mt-5 md:mt-9">
+              <span>一般的な名刺管理アプリ</span>
+              <span className="md:text-[28px] text-[14px] text-[#E40D2F] m-2 md:mx-5 leading-[1.7]">
                 VS
               </span>
-              <p className="relative">
-                <span className="md:text-[24px] text-[14px] text-center absolute bottom-full inset-x-0">NFT名刺&アプリ</span>
-                <span className="md:text-[48px] text-[24px]">「DIVER Biz」</span>
+              <p className="relative max-md:mt-5">
+                <span className="lg:text-[24px] text-[14px] text-center absolute bottom-full inset-x-0">NFT名刺&アプリ</span>
+                <span className="lg:text-[48px] md:text-[28px] text-[20px] whitespace-nowrap">「DIVER Biz」</span>
               </p>
             </div>
             <p className="text-center md:text-[18px] text-[12px] font-bold tracking-[0.2em] md:mt-2 mt-1">
             名刺管理アプリで“効率化だけ”はできたかもしれません。でも...
             </p>
-            <div className="flex max-md:flex-col max-md:items-center md:mt-10 mt-5 gap-10 md:mb-12 mb-7">
+            <div className="flex max-lg:items-center max-md:flex-col max-md:items-center md:mt-10 mt-5 md:gap-7 lg:gap-10 md:mb-12 mb-7">
               <div className="text-white leading-tight">
                 <p className="lg:text-[98px] md:text-[60px] text-[32px] max-md:text-center font-black tracking-widest">
-                比較1
+                  比較1
                 </p>
-                <p className="lg:text-[24px] md:text-[20px] text-[14px] font-bold tracking-[0.5em] ml-2">
+                <p className="lg:text-[24px] md:text-[20px] text-[14px] font-bold lg:tracking-[0.5em] md:tracking-[0.3em] ml-2">
                   Comparison
                 </p>
               </div>
               <div className="flex items-center justify-between flex-1">
                 <figure>
-                    <svg className="max-md:w-8" xmlns="http://www.w3.org/2000/svg" width="57" height="132" viewBox="0 0 57 132" fill="none">
-                        <path d="M3.52838 127.48H52.5309" stroke="#00FFD1" stroke-width="7" stroke-linecap="round"/>
-                        <path d="M3.52838 4.40381V127.807" stroke="#00FFD1" stroke-width="7" stroke-linecap="round"/>
-                        <path d="M3.52838 4.40381H52.5309" stroke="#00FFD1" stroke-width="7" stroke-linecap="round"/>
+                    <svg className="max-md:w-8 max-lg:w-10" xmlns="http://www.w3.org/2000/svg" width="57" height="132" viewBox="0 0 57 132" fill="none">
+                        <path d="M3.52838 127.48H52.5309" stroke="#00FFD1" strokeWidth="7" strokeLinecap="round"/>
+                        <path d="M3.52838 4.40381V127.807" stroke="#00FFD1" strokeWidth="7" strokeLinecap="round"/>
+                        <path d="M3.52838 4.40381H52.5309" stroke="#00FFD1" strokeWidth="7" strokeLinecap="round"/>
                     </svg>
                 </figure>
-                <span className="lg:text-[48px] md:text-[32px] text-[20px] break-keep font-black text-white tracking-[0.2em]">
+                <span className="xl:text-[48px] md:text-[28px] text-[18px] break-keep font-black text-white tracking-[0.2em]">
                 情報の正確性:Accuracy
                 </span>
                 <figure>
-                    <svg className="max-md:w-8" xmlns="http://www.w3.org/2000/svg" width="57" height="131" viewBox="0 0 57 131" fill="none">
-                        <path d="M53.0271 4.32764L4.02454 4.32763" stroke="#00FFD1" stroke-width="7" stroke-linecap="round"/>
-                        <path d="M53.0271 127.404L53.0271 3.99994" stroke="#00FFD1" stroke-width="7" stroke-linecap="round"/>
-                        <path d="M53.0271 127.404L4.02454 127.404" stroke="#00FFD1" stroke-width="7" stroke-linecap="round"/>
+                    <svg className="max-md:w-8 max-lg:w-10" xmlns="http://www.w3.org/2000/svg" width="57" height="131" viewBox="0 0 57 131" fill="none">
+                        <path d="M53.0271 4.32764L4.02454 4.32763" stroke="#00FFD1" strokeWidth="7" strokeLinecap="round"/>
+                        <path d="M53.0271 127.404L53.0271 3.99994" stroke="#00FFD1" strokeWidth="7" strokeLinecap="round"/>
+                        <path d="M53.0271 127.404L4.02454 127.404" stroke="#00FFD1" strokeWidth="7" strokeLinecap="round"/>
                     </svg>
                 </figure>
               </div>
@@ -151,7 +151,7 @@ const Diver = () => {
               <button
                 type="button"
                 onClick={() => setModalOpen(true)}
-                className="fixed-btn-wrap relative w-full max-w-[320px] md:max-w-[460px] h-[60px] md:h-[80px] flex items-center justify-center bg-white rounded-[70px] [box-shadow:0px_0px_10px_0px_rgba(255,_255,_255,_0.50)] outline-1 outline outline-[#000] md:outline-offset-[-5px] outline-offset-[-3px] md:text-[20px] text-[16px] font-black text-black gap-3 tracking-[0.25em]"
+                className="fixed-btn-wrap relative w-full max-w-[320px] md:max-w-[460px] h-[60px] md:h-[80px] flex items-center justify-center bg-white rounded-[70px] [box-shadow:0px_0px_10px_0px_rgba(255,_255,_255,_0.50)] outline-1 outline outline-[#000] md:outline-offset-[-5px] outline-offset-[-3px] md:text-[20px] text-[13px] font-black text-black gap-3 md:tracking-[0.25em] tracking-[0.15em]"
               >
                 <span className="block fixed-btn-text opacity-0  mr-4">
                 vs名刺管理アプリの結果を見る
@@ -185,7 +185,7 @@ const Diver = () => {
             ref={videoRef}
             muted
             loop
-            className="object-cover w-full h-[518px]"
+            className="object-cover w-full h-[360px] md:h-[518px]"
             poster=""
           >
             <source src="/videos/diver.mp4" type="video/mp4" />
@@ -207,7 +207,7 @@ const Diver = () => {
                     <img src="/images/nl-01.png" alt="" />
                   </figure>
                   <p className="text-white font-black text-center lg:text-[24px] md:text-[20px] text-[16px] leading-tight">
-                    比較
+                  比較
                     <span className="md:text-[28px] text-[20px]">
                       {item.number}
                     </span>
@@ -242,7 +242,7 @@ const Diver = () => {
                   <p className="text-[#00FFD1] md:text-[18px] text-[13px] w-[50px] md:w-[70px] h-[40px] md:h-[50px] flex items-center justify-center border border-[#00FFD1] text-center leading-tight">
                   DIVER <br />Biz
                   </p>
-                  <p className="text-[#00FFD1] md:text-[18px] text-[13px] flex-1 tracking-widest">
+                  <p className="text-[#00FFD1] md:text-[18px] text-[13px] flex-1 tracking-wide">
                     {item.diver}
                   </p>
                 </div>

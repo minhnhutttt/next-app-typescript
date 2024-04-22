@@ -116,19 +116,19 @@ const Comparison = () => {
               <br />
               NFT名刺なら...
             </p>
-            <div className="flex max-md:flex-col max-md:items-center md:mt-10 mt-5 gap-10 md:mb-12 mb-7">
+            <div className="flex max-md:flex-col max-md:items-center md:mt-10 mt-5 md:gap-10 md:mb-12 mb-7">
               <div className="text-white leading-tight">
                 <p className="lg:text-[98px] md:text-[60px] text-[32px] max-md:text-center font-black tracking-widest">
                   比較1
                 </p>
-                <p className="lg:text-[24px] md:text-[20px] text-[14px] font-bold tracking-[0.5em] ml-2">
+                <p className="lg:text-[24px] md:text-[20px] text-[14px] font-bold lg:tracking-[0.5em] md:tracking-[0.3em] ml-2">
                   Comparison
                 </p>
               </div>
               <div className="flex items-center justify-between flex-1">
                 <figure>
                   <svg
-                    className="max-md:w-8"
+                    className="max-md:w-8 max-lg:w-10"
                     xmlns="http://www.w3.org/2000/svg"
                     width="57"
                     height="132"
@@ -138,20 +138,20 @@ const Comparison = () => {
                     <path
                       d="M3.52838 127.48H52.5309"
                       stroke="#7FFF00"
-                      stroke-width="7"
-                      stroke-linecap="round"
+                      strokeWidth="7"
+                      strokeLinecap="round"
                     />
                     <path
                       d="M3.52838 4.4043V127.808"
                       stroke="#7FFF00"
-                      stroke-width="7"
-                      stroke-linecap="round"
+                      strokeWidth="7"
+                      strokeLinecap="round"
                     />
                     <path
                       d="M3.52838 4.4043H52.5309"
                       stroke="#7FFF00"
-                      stroke-width="7"
-                      stroke-linecap="round"
+                      strokeWidth="7"
+                      strokeLinecap="round"
                     />
                   </svg>
                 </figure>
@@ -160,7 +160,7 @@ const Comparison = () => {
                 </span>
                 <figure>
                   <svg
-                    className="max-md:w-8"
+                    className="max-md:w-8 max-lg:w-10"
                     xmlns="http://www.w3.org/2000/svg"
                     width="57"
                     height="131"
@@ -170,20 +170,20 @@ const Comparison = () => {
                     <path
                       d="M53.0271 4.32715L4.02454 4.32714"
                       stroke="#7FFF00"
-                      stroke-width="7"
-                      stroke-linecap="round"
+                      strokeWidth="7"
+                      strokeLinecap="round"
                     />
                     <path
                       d="M53.0271 127.403L53.0271 3.9997"
                       stroke="#7FFF00"
-                      stroke-width="7"
-                      stroke-linecap="round"
+                      strokeWidth="7"
+                      strokeLinecap="round"
                     />
                     <path
                       d="M53.0271 127.403L4.02454 127.403"
                       stroke="#7FFF00"
-                      stroke-width="7"
-                      stroke-linecap="round"
+                      strokeWidth="7"
+                      strokeLinecap="round"
                     />
                   </svg>
                 </figure>
@@ -234,7 +234,7 @@ const Comparison = () => {
             ref={videoRef}
             muted
             loop
-            className="object-cover w-full h-[518px]"
+            className="object-cover w-full h-[360px] md:h-[518px]"
             poster=""
           >
             <source src="/videos/comparison.mp4" type="video/mp4" />
@@ -263,20 +263,20 @@ const Comparison = () => {
                       <path
                         d="M1.95865 60.8408H18"
                         stroke="#7FFF00"
-                        stroke-width="2"
-                        stroke-linecap="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
                       />
                       <path
                         d="M1.95865 1V61"
                         stroke="#7FFF00"
-                        stroke-width="2"
-                        stroke-linecap="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
                       />
                       <path
                         d="M1.95865 1H18"
                         stroke="#7FFF00"
-                        stroke-width="2"
-                        stroke-linecap="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
                       />
                     </svg>
                   </figure>
@@ -299,20 +299,20 @@ const Comparison = () => {
                       <path
                         d="M17.0414 1.15918L1.00001 1.15918"
                         stroke="#7FFF00"
-                        stroke-width="2"
-                        stroke-linecap="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
                       />
                       <path
                         d="M17.0414 61L17.0414 1"
                         stroke="#7FFF00"
-                        stroke-width="2"
-                        stroke-linecap="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
                       />
                       <path
                         d="M17.0414 61L1.00001 61"
                         stroke="#7FFF00"
-                        stroke-width="2"
-                        stroke-linecap="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
                       />
                     </svg>
                   </figure>

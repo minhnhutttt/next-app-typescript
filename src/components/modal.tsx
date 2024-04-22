@@ -30,10 +30,10 @@ export default function Modal({ isOpen, onClose, children, rect }: ModalProps) {
     return (
         <div className={`duration-500 fixed inset-0 overflow-auto z-50 ${rect} ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}>
             <div className="fixed inset-0" onClick={handleClose}></div>
-        <div className="w-full max-w-[1440px] mx-auto pt-[100px] relative z-0">
+        <div className="w-full max-w-[1440px] mx-auto pt-[50px] md:pt-[100px] relative z-0">
           <div className="bg-black/40 rounded-t-[60px] w-full">
-          <button onClick={handleClose} className='z-50 block sticky top-10 pt-5 ml-auto mr-6'>
-          <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <button onClick={handleClose} className='z-50 block sticky top-0 md:top-5 md:pt-5 pt-3 ml-auto mr-6'>
+          <svg className='max-md:w-9' width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="24.5" cy="24" r="23" stroke="white" strokeWidth="2"/>
             <path d="M16 33L34 15M34 33L16 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>

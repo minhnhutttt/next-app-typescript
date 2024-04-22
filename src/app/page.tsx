@@ -7,6 +7,7 @@ import Movie from "./components/movie";
 import Comparison from "./components/comparison";
 import { useEffect } from "react";
 import Diver from "./components/diver";
+import Approach from "./components/approach";
 
 export default function Home() {
   useEffect(()=>{
@@ -22,6 +23,7 @@ export default function Home() {
       <Movie />
       <Comparison />
       <Diver />
+      <Approach />
     </main>
   );
 }
