@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const noto = Noto_Sans_JP({
-  weight: ['400', '500', '700', '900'],
+  weight: ['400', '500', '700', '800', '900'],
   subsets: ['latin'],
   variable: '--font-noto',
   display: 'swap',

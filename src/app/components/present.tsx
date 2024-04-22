@@ -1,7 +1,7 @@
 const Present = () => {
 
   return (
-    <section className="pt-[70px] md:pt-[120px] bg-white md:pb-[78px] pb-[50px]">
+    <section className="pt-[70px] md:pt-[120px] bg-white md:pb-[78px] pb-[50px] overflow-hidden">
         <div className="relative">
             <div className="flex items-center justify-center">
                 <div className="flex justify-center md:text-[24px] text-[16px] font-black pt-2 md:pt-5 relative">
