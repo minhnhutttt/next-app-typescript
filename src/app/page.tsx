@@ -12,6 +12,8 @@ import GetNFT from "./components/getNFT";
 import Line from "./components/line";
 import Toppa from "./components/toppa";
 import Voice from "./components/voice";
+import Ready from "./components/ready";
+import FAQ from "./components/faq/faq";
 
 export default function Home() {
   useEffect(()=>{
@@ -23,15 +25,23 @@ export default function Home() {
     <main>
       <FV />
       <Introduction />
-      <Present />
+      <div className="bg-white">
+        <Present />
+      </div>
       <Movie />
       <Comparison />
       <Diver />
       <Approach />
+      <div className="bg-white">
       <GetNFT />
+      <Present />
+      </div>
       <Line />
       <Toppa />
       <Voice />
+      <Ready />
+      <Line />
+      <FAQ />
     </main>
   );
 }

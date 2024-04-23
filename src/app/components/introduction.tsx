@@ -1,3 +1,4 @@
+import useScrollAnimations from "@/hooks/useScrollAnimations"
 import { ReactNode } from "react"
 
 interface articleProps {
@@ -16,10 +17,11 @@ const Article = ({ title, text }: articleProps) => {
 }
 
 const Introduction = () => {
+    const ref = useScrollAnimations();
   return (
-    <section className="bg-[url(/images/bg-02.jpg)] bg-center">
+    <section ref={ref} className="bg-[url(/images/bg-02.jpg)] bg-center">
         <div className="bg-[url(/images/bg-01.png)] bg-bottom bg-cover md:py-[106px] py-[60px]">
-            <div className="flex justify-center">
+            <div className="fade-up flex justify-center">
                 <div className="relative text-white md:text-[52px] text-[24px] font-black tracking-[0.2em]">
                     <span className="absolute -top-8 -left-10 md:top-[-50px] md:left-[-70px]">
                         <img className="max-md:w-20" src="/images/dekiru.png" alt="デキる" />
@@ -28,10 +30,10 @@ const Introduction = () => {
                 </div>
             </div>
             <div className="mt-10">
-                <div className="flex justify-center">
+                <div className="fade-up flex justify-center">
                     <Article title="制作3分!" text={<>すぐに<br />使える</>} />
                 </div>
-                <div className="flex justify-center items-center my-[-16px]">
+                <div className="fade-up flex justify-center items-center my-[-16px]">
                     <Article title="合理的!" text={<>いつでも<br />どこでも</>} />
                     <div className="w-[80px] md:w-[175px] aspect-square relative flex items-center justify-center flex-col font-bold m-8">
                         <div className="absolute inset-0 bg-[#7FFF00] md:border-[11px] border-[5.5px] border-black rotate-45"></div>
@@ -40,24 +42,24 @@ const Introduction = () => {
                     </div>
                     <Article title="1タッチ!" text={<>即交換<br />即連絡</>} />
                 </div>
-                <div className="flex justify-center">
+                <div className="fade-up flex justify-center">
                     <Article title="最先端!" text={<>NFT名刺<br />で印象UP</>} />
                 </div>
             </div>
         </div>
         <div className="py-12 px-5 md:py-20">
-            <div className="flex justify-center">
+            <div className="fade-up flex justify-center">
                 <img className="[box-shadow:0px_0px_30px_0px_rgba(0,_0,_0,_0.10)] max-md:w-[140px]" src="/images/diver-biz.png" alt="DIVER Biz" />
             </div>
-            <div className="text-center mt-6 md:mt-12 max-md:space-y-2">
+            <div className="fade-up text-center mt-6 md:mt-12 max-md:space-y-2">
                 <p className="md:text-[24px] text-[14px] leading-none font-black">ダイバービズ</p>
                 <h3 className="md:text-[68px] text-[34px] font-black leading-none">DIVER Biz<span className="md:text-[42px] text-[21px]">を</span></h3>
                 <p className="md:text-[42px] text-[21px] font-black">今すぐインストール</p>
-                <p className="text-center md:text-[16px] text-[13px] max-md:leading-[2]">※NFT名刺の制作は<a href="/form" className="font-bold inline-block relative after:absolute after:top-full after:left-0 md:after:h-[3px] after:h-[2px] after:w-full after:bg-black after:rounded-3xl">フォーム</a>からの申請が必要です（アプリ内で制作はできません）</p>
+                <p className="text-center md:text-[16px] text-[13px] max-md:leading-[2] duration-300 hover:opacity-75">※NFT名刺の制作は<a href="/form" className="font-bold inline-block relative after:absolute after:top-full after:left-0 md:after:h-[3px] after:h-[2px] after:w-full after:bg-black after:rounded-3xl">フォーム</a>からの申請が必要です（アプリ内で制作はできません）</p>
             </div>
-            <div className="flex justify-center items-center gap-5 mt-7 md:mt-10">
-                <a href=""><img src="/images/btn-ios.png" alt="" /></a>
-                <a href=""><img src="/images/btn-android.png" alt="" /></a>
+            <div className="fade-up flex justify-center items-center gap-5 mt-7 md:mt-10">
+                <a href="" className="block duration-300 hover:opacity-75"><img src="/images/btn-ios.png" alt="" /></a>
+                <a href="" className="block duration-300 hover:opacity-75"><img src="/images/btn-android.png" alt="" /></a>
             </div>
         </div>
     </section>

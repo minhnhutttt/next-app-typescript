@@ -1,5 +1,6 @@
 import { ReactNode, useEffect } from "react";
 import Present from "./present";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 interface ArticleWrap {
   number: string;
@@ -30,8 +31,9 @@ function ArticleWrap({ number, title, content, children }: ArticleWrap) {
 }
 
 const GetNFT = () => {
+  const ref = useScrollAnimations();
   return (
-    <section className="bg-white  pt-[70px] md:pt-[130px] relative overflow-hidden">
+    <section ref={ref} className="bg-white  pt-[70px] md:pt-[130px] relative ">
       <div data-scroll="out" className="absolute top-0 left-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -69,13 +71,25 @@ const GetNFT = () => {
         </svg>
       </div>
 
-      <div data-scroll="out" className="absolute bottom-[22%] right-0">
-      <svg xmlns="http://www.w3.org/2000/svg" width="434" height="875" viewBox="0 0 434 875" fill="none">
-  <path className="duration-700" d="M19 17L771 858" stroke="#7FFF00" strokeWidth="50" strokeDasharray={1200}
-            strokeDashoffset={1200}/>
-</svg>
+      <div data-scroll="out" className="absolute bottom-[-36%] right-0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="434"
+          height="875"
+          viewBox="0 0 434 875"
+          fill="none"
+        >
+          <path
+            className="duration-700"
+            d="M19 17L771 858"
+            stroke="#7FFF00"
+            strokeWidth="50"
+            strokeDasharray={1200}
+            strokeDashoffset={1200}
+          />
+        </svg>
       </div>
-      <div data-scroll="out" className="absolute bottom-[14%] right-0">
+      <div data-scroll="out" className="absolute bottom-[-50%] right-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="268"
@@ -93,7 +107,7 @@ const GetNFT = () => {
           />
         </svg>
       </div>
-      <div className="w-full max-w-[835px] mx-auto relative z-10 px-5">
+      <div className="fade-up w-full max-w-[835px] mx-auto relative z-10 px-5">
         <div className="">
           <h3 className="md:text-[80px] text-[32px] font-bold text-center tracking-widest">
             GETまで一直線！
@@ -113,10 +127,10 @@ const GetNFT = () => {
                 <img src="/images/logo-diver-biz.png" alt="" />
               </figure>
               <div className="md:space-y-7 space-y-5 mt-4">
-                <a href="/" className="block max-md:w-[160px]">
+                <a href="/" className="block max-md:w-[160px] duration-300 hover:opacity-75">
                   <img src="/images/btn-ios.png" alt="" />
                 </a>
-                <a href="/" className="block max-md:w-[160px]">
+                <a href="/" className="block max-md:w-[160px] duration-300 hover:opacity-75">
                   <img src="/images/btn-android.png" alt="" />
                 </a>
               </div>
@@ -129,8 +143,8 @@ const GetNFT = () => {
           >
             <div className="md:mt-4 mt-3">
               <a
-                className="flex items-center justify-center mx-auto md:w-[300px] w-[200px] h-[44px] md:h-[70px] rounded-[50px] bg-[#101010] md:text-[20px] text-[15px] font-black text-[#7FFF00] outline-1 outline outline-[#7FFF00] md:outline-offset-[-5px] outline-offset-[-3px] [box-shadow:0px_0px_30px_0px_rgba(127,_255,_0,_0.30)] gap-2"
-                href="#"
+                className="flex items-center justify-center mx-auto md:w-[300px] w-[200px] h-[44px] md:h-[70px] rounded-[50px] bg-[#101010] md:text-[20px] text-[15px] font-black text-[#7FFF00] outline-1 outline outline-[#7FFF00] md:outline-offset-[-5px] outline-offset-[-3px] [box-shadow:0px_0px_30px_0px_rgba(127,_255,_0,_0.30)] gap-2 duration-300 hover:opacity-75"
+                href="/form"
               >
                 <span>NFT名刺を作る</span>
                 <svg
@@ -167,10 +181,10 @@ const GetNFT = () => {
                 <img src="/images/logo-diver-biz.png" alt="" />
               </figure>
               <div className="md:space-y-7 space-y-5 mt-4">
-                <a href="/" className="block max-md:w-[160px]">
+                <a href="/" className="block max-md:w-[160px] duration-300 hover:opacity-75">
                   <img src="/images/btn-ios.png" alt="" />
                 </a>
-                <a href="/" className="block max-md:w-[160px]">
+                <a href="/" className="block max-md:w-[160px] duration-300 hover:opacity-75">
                   <img src="/images/btn-android.png" alt="" />
                 </a>
               </div>
@@ -191,7 +205,6 @@ const GetNFT = () => {
           </ArticleWrap>
         </div>
       </div>
-      <Present />
     </section>
   );
 };

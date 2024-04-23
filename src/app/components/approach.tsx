@@ -1,5 +1,6 @@
 "use client";
 import Modal from "@/components/modal";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useEffect, useRef, useState } from "react";
 
 const Articles = [
@@ -38,6 +39,7 @@ const Articles = [
 ];
 
 const Approach = () => {
+  const ref = useScrollAnimations();
   const [modalOpen, setModalOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -46,7 +48,7 @@ const Approach = () => {
     videoRef.current.play();
   }, []);
   return (
-    <section className="bg-[#00F0FF] py-[60px] md:py-[120px]">
+    <section ref={ref} className="bg-[#00F0FF] py-[60px] md:py-[120px]">
       <div className="px-5">
         <div
           data-scroll="out"
@@ -106,7 +108,7 @@ const Approach = () => {
               <button
                 type="button"
                 onClick={() => setModalOpen(true)}
-                className="fixed-btn-wrap relative w-full max-w-[320px] md:max-w-[480px] h-[60px] md:h-[80px] flex items-center justify-center bg-white rounded-[70px] [box-shadow:0px_0px_10px_0px_rgba(255,_255,_255,_0.50)] outline-1 outline outline-[#000] md:outline-offset-[-5px] outline-offset-[-3px] md:text-[20px] text-[16px] font-black text-black gap-3 md:tracking-[0.25em]"
+                className="fixed-btn-wrap  relative w-full max-w-[320px] md:max-w-[480px] h-[60px] md:h-[80px] flex items-center justify-center bg-white rounded-[70px] [box-shadow:0px_0px_10px_0px_rgba(255,_255,_255,_0.50)] outline-1 outline outline-[#000] md:outline-offset-[-5px] outline-offset-[-3px] md:text-[20px] text-[16px] font-black text-black gap-3 md:tracking-[0.25em]"
               >
                 <span className="block fixed-btn-text opacity-0 max-md:mr-6">
                 4つのアプローチをさらに詳しく

@@ -17,7 +17,7 @@ body {
 [data-scroll="in"] .fixed-btn-circle {
   @apply w-0 delay-500 duration-1000 transition-[width] opacity-100;
 }
-[data-scroll="in"] .fixed-btn-wrap {
+[data-scroll="in"] .fixed-btn-wrap  {
   @apply w-full duration-300 delay-1000 scale-100;
 }
 [data-scroll="in"] .fixed-btn-text {

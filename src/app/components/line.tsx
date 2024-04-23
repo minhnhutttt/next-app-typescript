@@ -1,7 +1,10 @@
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+
 const Line = () => {
+const ref = useScrollAnimations();
   return (
-    <section className="bg-[#01B202] p-[50px] flex justify-center">
-        <div className="w-full max-w-[630px] mx-auto bg-white rounded-[30px] flex items-center px-7 py-[30px] gap-10 max-md:flex-col">
+    <section ref={ref} className="bg-[#01B202] p-5 md:p-[50px] flex justify-center">
+        <div className="fade-up w-full max-w-[630px] mx-auto bg-white rounded-[30px] flex items-center px-7 py-[30px] gap-10 max-md:flex-col">
             <figure>
                 <img src="/images/img-line.png" alt="" />
             </figure>
@@ -34,7 +37,7 @@ const Line = () => {
                     </div>
                 </div>
                 <div className="flex justify-center mt-3">
-                    <a href="/">
+                    <a href="https://lin.ee/QAw6RjL" target="_blank" className="duration-300 hover:opacity-75">
                         <img src="/images/btn-line.png" alt="" />
                     </a>
                 </div>

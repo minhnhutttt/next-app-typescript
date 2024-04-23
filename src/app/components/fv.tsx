@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 
 const FV = () => {
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (!videoRef.current) return

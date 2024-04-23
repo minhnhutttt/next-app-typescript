@@ -1,5 +1,6 @@
 "use client";
 import Modal from "@/components/modal";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useEffect, useRef, useState } from "react";
 
 const Articles = [
@@ -86,6 +87,7 @@ const Articles = [
 ];
 
 const Comparison = () => {
+  const ref = useScrollAnimations();
   const [modalOpen, setModalOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -94,7 +96,7 @@ const Comparison = () => {
     videoRef.current.play();
   }, []);
   return (
-    <section className="bg-[#7FFF00] pt-[60px] md:pt-[120px]">
+    <section ref={ref} className="bg-[#7FFF00] pt-[60px] md:pt-[120px]">
       <div className="px-5">
         <div
           data-scroll="out"
@@ -194,7 +196,7 @@ const Comparison = () => {
               <button
                 type="button"
                 onClick={() => setModalOpen(true)}
-                className="fixed-btn-wrap relative w-full max-w-[300px] md:max-w-[380px] h-[60px] md:h-[80px] flex items-center justify-center bg-white rounded-[70px] [box-shadow:0px_0px_10px_0px_rgba(255,_255,_255,_0.50)] outline-1 outline outline-[#000] md:outline-offset-[-5px] outline-offset-[-3px] md:text-[20px] text-[16px] font-black text-black gap-3 tracking-[0.25em]"
+                className="fixed-btn-wrap  relative w-full max-w-[300px] md:max-w-[380px] h-[60px] md:h-[80px] flex items-center justify-center bg-white rounded-[70px] [box-shadow:0px_0px_10px_0px_rgba(255,_255,_255,_0.50)] outline-1 outline outline-[#000] md:outline-offset-[-5px] outline-offset-[-3px] md:text-[20px] text-[16px] font-black text-black gap-3 tracking-[0.25em]"
               >
                 <span className="block fixed-btn-text opacity-0">
                   VS紙名刺の結果を見る
@@ -210,10 +212,10 @@ const Comparison = () => {
       </div>
 
       <div className="relative z-10 mt-16 md:mt-24">
-        <h3 className="flex items-center justify-center px-5">
+        <h3 className="fade-up flex items-center justify-center px-5">
           <img src="/images/message.png" alt="MESSAGE" />
         </h3>
-        <div className="relative">
+        <div className="fade-up relative">
           <div className="absolute inset-0 z-10 bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.80)_0%,_rgba(0,_0,_0,_0.80)_100%)] flex items-center justify-center px-5">
             <div className="relative w-full max-w-[583px] mx-auto text-white md:text-[18px] text-[14px] leading-[1.9]">
               <p className="absolute inset-0 text-white [-webkit-text-stroke:_4px_black] tracking-[0.36em]">

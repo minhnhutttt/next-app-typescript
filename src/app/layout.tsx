@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Noto_Sans_JP, Zen_Maru_Gothic } from 'next/font/google'
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 
 export const metadata: Metadata = {
@@ -30,9 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${noto.className} ${zen.variable}`}>
+      <body className={`${noto.className} ${zen.variable} bg-[#1E1E1E]`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
