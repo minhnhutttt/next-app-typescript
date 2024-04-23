@@ -11,18 +11,6 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 @layer utilities {
-  .u-text-stroke {
-    color: #FFF;
-
--webkit-text-stroke-width: 0.5px;
--webkit-text-stroke-color: #000;
-font-family: "Noto Sans CJK JP";
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 200%; /* 36px */
-letter-spacing: 7.2px;
-  }
 }
 
 [data-scroll="in"] .fixed-btn {
@@ -56,3 +44,15 @@ letter-spacing: 7.2px;
 [data-scroll="out"] .fixed-btn-circle {
   @apply w-[100px] md:w-[140px] delay-500 transition-[width] opacity-0;
 }
+
+[data-scroll="in"] path {
+  stroke-dashoffset: 0;
+}
+/* @keyframes dash {
+  from {
+    stroke-dashoffset: 822;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+} */

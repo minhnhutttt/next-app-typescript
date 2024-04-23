@@ -1,7 +1,7 @@
 const Present = () => {
 
   return (
-    <section className="pt-[70px] md:pt-[120px] bg-white md:pb-[78px] pb-[50px] overflow-hidden">
+    <section className="pt-[70px] relative md:pt-[120px] md:pb-[78px] pb-[50px] overflow-hidden">
         <div className="relative">
             <div className="flex items-center justify-center">
                 <div className="flex justify-center md:text-[24px] text-[16px] font-black pt-2 md:pt-5 relative">
@@ -10,7 +10,7 @@ const Present = () => {
                 </div>
             </div>
             <div className="relative">
-                <h4 className="text-center md:text-[32px] text-[20px] font-black tracking-widest">
+                <h4 className="text-center md:text-[32px] text-[18px] font-black tracking-widest">
                     新時代の名刺コミュニケーションを <br />
                     求めるあなたへ！
                 </h4>

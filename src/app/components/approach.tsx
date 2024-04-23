@@ -46,14 +46,14 @@ const Approach = () => {
     videoRef.current.play();
   }, []);
   return (
-    <section className="bg-[#00F0FF] pt-[60px] md:pt-[120px]">
+    <section className="bg-[#00F0FF] py-[60px] md:py-[120px]">
       <div className="px-5">
         <div
           data-scroll="out"
           className="w-full max-w-[1320px] mx-auto bg-[#101010] rounded-[30px] text-white pt-10 md:pt-14 pb-10 md:pb-[66px] relative px-5"
         >
           <div className="w-full max-w-[1130px] mx-auto">
-            <h3 className="text-center md:text-[48px] text-[24px] font-black tracking-[0.4em] md:leading-tight">
+            <h3 className="text-center md:text-[48px] text-[20px] font-black tracking-[0.4em] md:leading-tight">
                 デキるビジネスマンが選ぶ <br />
                 DIVER Biz<br />
                 4つの名刺革新アプローチ

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Noto_Sans_JP } from 'next/font/google'
+import { Noto_Sans_JP, Zen_Maru_Gothic } from 'next/font/google'
 import Header from "@/components/header";
 
 
@@ -16,6 +16,13 @@ const noto = Noto_Sans_JP({
   display: 'swap',
 })
 
+const zen = Zen_Maru_Gothic({
+  weight: ['400', '500', '700', '900'],
+  subsets: ['latin'],
+  variable: '--font-zen',
+  display: 'swap',
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${noto.className} bg-[#101010]`}>
+      <body className={`${noto.className} ${zen.variable}`}>
         <Header />
         {children}
       </body>

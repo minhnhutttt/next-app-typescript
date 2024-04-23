@@ -122,7 +122,7 @@ const Diver = () => {
                 <p className="lg:text-[98px] md:text-[60px] text-[32px] max-md:text-center font-black tracking-widest">
                   比較1
                 </p>
-                <p className="lg:text-[24px] md:text-[20px] text-[14px] font-bold lg:tracking-[0.5em] md:tracking-[0.3em] ml-2">
+                <p className="lg:text-[24px] md:text-[20px] text-[14px] font-bold lg:tracking-[0.5em] md:tracking-[0.3em] md:ml-2">
                   Comparison
                 </p>
               </div>

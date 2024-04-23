@@ -15,7 +15,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      zen: ['var(--font-zen)', 'sans-serif'],
     },
   },
   plugins: [],
