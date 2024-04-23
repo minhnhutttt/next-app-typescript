@@ -10,8 +10,6 @@ body {
   color: #000;
   font-family: "Noto Sans", sans-serif;
 }
-@layer utilities {
-}
 
 [data-scroll="in"] .fixed-btn {
   @apply opacity-100 duration-300 scale-100;

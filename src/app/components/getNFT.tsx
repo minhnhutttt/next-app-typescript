@@ -1,8 +1,5 @@
-"use client";
 import { ReactNode, useEffect } from "react";
-import ScrollOut from "scroll-out";
 import Present from "./present";
-import { once } from "events";
 
 interface ArticleWrap {
   number: string;
@@ -74,7 +71,7 @@ const GetNFT = () => {
 
       <div data-scroll="out" className="absolute bottom-[22%] right-0">
       <svg xmlns="http://www.w3.org/2000/svg" width="434" height="875" viewBox="0 0 434 875" fill="none">
-  <path className="duration-700" d="M19 17L771 858" stroke="#7FFF00" stroke-width="50" strokeDasharray={1200}
+  <path className="duration-700" d="M19 17L771 858" stroke="#7FFF00" strokeWidth="50" strokeDasharray={1200}
             strokeDashoffset={1200}/>
 </svg>
       </div>
@@ -90,7 +87,7 @@ const GetNFT = () => {
             className="duration-700"
             d="M8 7.5L678 756.5"
             stroke="#7FFF00"
-            stroke-width="20"
+            strokeWidth="20"
             strokeDasharray={1200}
             strokeDashoffset={1200}
           />
