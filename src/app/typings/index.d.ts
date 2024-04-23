@@ -1,1 +1,1 @@
-declare module 'scroll-out';
+declare module "scroll-out";

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import ScrollOut from "scroll-out";
 import FV from "./components/fv";
 import Introduction from "./components/introduction";
@@ -16,11 +16,11 @@ import Ready from "./components/ready";
 import FAQ from "./components/faq/faq";
 
 export default function Home() {
-  useEffect(()=>{
+  useEffect(() => {
     ScrollOut({
       threshold: 0.4,
     });
-},[])
+  }, []);
   return (
     <main>
       <FV />
@@ -33,8 +33,8 @@ export default function Home() {
       <Diver />
       <Approach />
       <div className="bg-white">
-      <GetNFT />
-      <Present />
+        <GetNFT />
+        <Present />
       </div>
       <Line />
       <Toppa />

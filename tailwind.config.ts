@@ -15,7 +15,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      zen: ['var(--font-zen)', 'sans-serif'],
+      zen: ["var(--font-zen)", "sans-serif"],
     },
   },
   plugins: [],

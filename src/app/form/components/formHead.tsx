@@ -10,9 +10,7 @@ export default function FormHead({ step }: StepPropsType) {
   return (
     <div className="md:mt-[200px] mt-[120px] px-5 md:mb-[80px] mb-[60px]">
       <div className="w-full md:max-w-[1106px] max-w-[480px] mx-auto">
-        <h3
-          className="text-center text-white md:text-[42px] text-[24px] font-bold"
-        >
+        <h3 className="text-center text-white md:text-[42px] text-[24px] font-bold">
           NFT名刺作成フォーム
         </h3>
         <div className="md:mt-[60px] mt-10">
@@ -24,7 +22,7 @@ export default function FormHead({ step }: StepPropsType) {
                 STEP 1
               </p>
               <p className="relative max-md:left-2 md:text-[14px] text-[10px]">
-              メディアと名刺受取りアドレスのご提出
+                メディアと名刺受取りアドレスのご提出
               </p>
             </div>
             <div

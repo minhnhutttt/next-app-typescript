@@ -56,52 +56,87 @@ const Approach = () => {
         >
           <div className="w-full max-w-[1130px] mx-auto">
             <h3 className="text-center md:text-[48px] text-[20px] font-black tracking-[0.4em] md:leading-tight">
-                デキるビジネスマンが選ぶ <br />
-                DIVER Biz<br />
-                4つの名刺革新アプローチ
+              デキるビジネスマンが選ぶ <br />
+              DIVER Biz
+              <br />
+              4つの名刺革新アプローチ
             </h3>
             <div className="flex items-center justify-center md:mt-20 mt-10">
-                <div className="space-y-6">
-                    <div className="flex items-center gap-2.5">
-                        <figure>
-                            <img className="max-md:w-8" src="/images/ic-check.svg" alt="" />
-                        </figure>
-                        <div className="flex-1 flex items-center gap-2.5">
-                        <p className="text-[#00F0FF] bg-black rounded-[10px] md:text-[18px] text-[13px] whitespace-nowrap font-black [text-shadow:0px_0px_15px_#00D1FF] px-1 md:p-2.5 tracking-[0.2em]">発行力</p>
-                        <p className="md:text-[20px] text-[15px] text-white font-bold tracking-[0.2em]">たった3分で制作</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-2.5">
-                        <figure>
-                            <img className="max-md:w-8" src="/images/ic-check.svg" alt="" />
-                        </figure>
-                        <div className="flex-1 flex items-center gap-2.5">
-                        <p className="text-[#00F0FF] bg-black rounded-[10px] md:text-[18px] text-[13px] whitespace-nowrap font-black [text-shadow:0px_0px_15px_#00D1FF] px-1 md:p-2.5 tracking-[0.2em]">交換力</p>
-                        <p className="md:text-[20px] text-[15px] text-white font-bold tracking-[0.2em]">ワンタッチで即交換、即連絡</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-2.5">
-                        <figure>
-                            <img className="max-md:w-8" src="/images/ic-check.svg" alt="" />
-                        </figure>
-                        <div className="flex-1 flex items-center gap-2.5">
-                        <p className="text-[#00F0FF] bg-black rounded-[10px] md:text-[18px] text-[13px] whitespace-nowrap font-black [text-shadow:0px_0px_15px_#00D1FF] px-1 md:p-2.5 tracking-[0.2em]">印象力</p>
-                        <p className="md:text-[20px] text-[15px] text-white font-bold tracking-[0.2em]">最先端のNFT名刺で印象強化</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-2.5">
-                        <figure>
-                            <img className="max-md:w-8" src="/images/ic-check.svg" alt="" />
-                        </figure>
-                        <div className="flex-1 flex items-center gap-2.5">
-                        <p className="text-[#00F0FF] bg-black rounded-[10px] md:text-[18px] text-[13px] whitespace-nowrap font-black [text-shadow:0px_0px_15px_#00D1FF] px-1 md:p-2.5 tracking-[0.2em]">効率力</p>
-                        <p className="md:text-[20px] text-[15px] text-white font-bold tracking-[0.2em]">合理性を重視した機能で時間と費用を削減</p>
-                        </div>
-                    </div>
+              <div className="space-y-6">
+                <div className="flex items-center gap-2.5">
+                  <figure>
+                    <img
+                      className="max-md:w-8"
+                      src="/images/ic-check.svg"
+                      alt=""
+                    />
+                  </figure>
+                  <div className="flex-1 flex items-center gap-2.5">
+                    <p className="text-[#00F0FF] bg-black rounded-[10px] md:text-[18px] text-[13px] whitespace-nowrap font-black [text-shadow:0px_0px_15px_#00D1FF] px-1 md:p-2.5 tracking-[0.2em]">
+                      発行力
+                    </p>
+                    <p className="md:text-[20px] text-[15px] text-white font-bold tracking-[0.2em]">
+                      たった3分で制作
+                    </p>
+                  </div>
                 </div>
+                <div className="flex items-center gap-2.5">
+                  <figure>
+                    <img
+                      className="max-md:w-8"
+                      src="/images/ic-check.svg"
+                      alt=""
+                    />
+                  </figure>
+                  <div className="flex-1 flex items-center gap-2.5">
+                    <p className="text-[#00F0FF] bg-black rounded-[10px] md:text-[18px] text-[13px] whitespace-nowrap font-black [text-shadow:0px_0px_15px_#00D1FF] px-1 md:p-2.5 tracking-[0.2em]">
+                      交換力
+                    </p>
+                    <p className="md:text-[20px] text-[15px] text-white font-bold tracking-[0.2em]">
+                      ワンタッチで即交換、即連絡
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <figure>
+                    <img
+                      className="max-md:w-8"
+                      src="/images/ic-check.svg"
+                      alt=""
+                    />
+                  </figure>
+                  <div className="flex-1 flex items-center gap-2.5">
+                    <p className="text-[#00F0FF] bg-black rounded-[10px] md:text-[18px] text-[13px] whitespace-nowrap font-black [text-shadow:0px_0px_15px_#00D1FF] px-1 md:p-2.5 tracking-[0.2em]">
+                      印象力
+                    </p>
+                    <p className="md:text-[20px] text-[15px] text-white font-bold tracking-[0.2em]">
+                      最先端のNFT名刺で印象強化
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <figure>
+                    <img
+                      className="max-md:w-8"
+                      src="/images/ic-check.svg"
+                      alt=""
+                    />
+                  </figure>
+                  <div className="flex-1 flex items-center gap-2.5">
+                    <p className="text-[#00F0FF] bg-black rounded-[10px] md:text-[18px] text-[13px] whitespace-nowrap font-black [text-shadow:0px_0px_15px_#00D1FF] px-1 md:p-2.5 tracking-[0.2em]">
+                      効率力
+                    </p>
+                    <p className="md:text-[20px] text-[15px] text-white font-bold tracking-[0.2em]">
+                      合理性を重視した機能で時間と費用を削減
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             <p className="text-center md:text-[16px] text-[13px] font-medium tracking-widest my-12">
-            相乗効果を発揮する発行力・交換力・印象力・効率力の<br />4つの名刺革新アプローチであなたを印象優位に導きます。
+              相乗効果を発揮する発行力・交換力・印象力・効率力の
+              <br />
+              4つの名刺革新アプローチであなたを印象優位に導きます。
             </p>
             <div className="fixed-btn opacity-0 flex justify-center sticky bottom-[80px]">
               <div className="fixed-btn-circle rounded-full w-[100px] md:w-[140px] aspect-square bg-[#00F0FF] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
@@ -111,19 +146,33 @@ const Approach = () => {
                 className="fixed-btn-wrap  relative w-full max-w-[320px] md:max-w-[480px] h-[60px] md:h-[80px] flex items-center justify-center bg-white rounded-[70px] [box-shadow:0px_0px_10px_0px_rgba(255,_255,_255,_0.50)] outline-1 outline outline-[#000] md:outline-offset-[-5px] outline-offset-[-3px] md:text-[20px] text-[16px] font-black text-black gap-3 md:tracking-[0.25em]"
               >
                 <span className="block fixed-btn-text opacity-0 max-md:mr-6">
-                4つのアプローチをさらに詳しく
+                  4つのアプローチをさらに詳しく
                 </span>
-<svg className="fixed-btn-ic absolute max-md:w-6 right-[17px] md:right-[19px]" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-  <circle cx="20" cy="20" r="20" fill="#00F0FF"/>
-  <path d="M30.2857 17.2812H22.5714V9.6875C22.5714 8.75568 21.8038 8 20.8571 8H19.1429C18.1962 8 17.4286 8.75568 17.4286 9.6875V17.2812H9.71429C8.76768 17.2812 8 18.0369 8 18.9688V20.6562C8 21.5881 8.76768 22.3438 9.71429 22.3438H17.4286V29.9375C17.4286 30.8693 18.1962 31.625 19.1429 31.625H20.8571C21.8038 31.625 22.5714 30.8693 22.5714 29.9375V22.3438H30.2857C31.2323 22.3438 32 21.5881 32 20.6562V18.9688C32 18.0369 31.2323 17.2812 30.2857 17.2812Z" fill="black"/>
-</svg>
+                <svg
+                  className="fixed-btn-ic absolute max-md:w-6 right-[17px] md:right-[19px]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                >
+                  <circle cx="20" cy="20" r="20" fill="#00F0FF" />
+                  <path
+                    d="M30.2857 17.2812H22.5714V9.6875C22.5714 8.75568 21.8038 8 20.8571 8H19.1429C18.1962 8 17.4286 8.75568 17.4286 9.6875V17.2812H9.71429C8.76768 17.2812 8 18.0369 8 18.9688V20.6562C8 21.5881 8.76768 22.3438 9.71429 22.3438H17.4286V29.9375C17.4286 30.8693 18.1962 31.625 19.1429 31.625H20.8571C21.8038 31.625 22.5714 30.8693 22.5714 29.9375V22.3438H30.2857C31.2323 22.3438 32 21.5881 32 20.6562V18.9688C32 18.0369 31.2323 17.2812 30.2857 17.2812Z"
+                    fill="black"
+                  />
+                </svg>
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} rect="bg-[#00F0FF]">
+      <Modal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        rect="bg-[#00F0FF]"
+      >
         <div className="flex flex-wrap max-md:justify-center gap-12 lg:gap-20 max-md:py-10 md:pt-[160px] px-5 md:pb-[95px] pb-[60px]">
           {Articles.map((item, index) => (
             <div
@@ -161,7 +210,7 @@ const Approach = () => {
                     </svg>
                   </figure>
                   <p className="text-white font-black text-center lg:text-[24px] md:text-[20px] text-[16px] leading-tight">
-                  Approach
+                    Approach
                     <span className="md:text-[28px] text-[20px]">
                       {item.number}
                     </span>
@@ -205,7 +254,9 @@ const Approach = () => {
                 <img className="" src={item.image} alt={item.title} />
               </figure>
               <div className="mt-8">
-                <p className="md:text-[18px] text-[14px] font-medium text-white">{item.content}</p>
+                <p className="md:text-[18px] text-[14px] font-medium text-white">
+                  {item.content}
+                </p>
               </div>
             </div>
           ))}

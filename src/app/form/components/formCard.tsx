@@ -3,33 +3,43 @@ import { useState } from "react";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import Line from "@/app/components/line";
 export interface HandleStepProps {
-    handleStep: () => void;
-  }
+  handleStep: () => void;
+}
 export default function FormCard({ handleStep }: HandleStepProps) {
-    const [modalOpen, setModalOpen] = useState(false);
-    const [tabActive, setTabActive] = useState<number>(1);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [tabActive, setTabActive] = useState<number>(1);
 
-    const handleTabChange = (tabNumber: number) => {
-        setTabActive(tabNumber);
-    };
+  const handleTabChange = (tabNumber: number) => {
+    setTabActive(tabNumber);
+  };
 
   return (
     <div className="px-5 md:mb-[100px] mb-12 font-noto" id="top">
-      <div
-        className="w-full max-w-[1080px] mx-auto"
-      >
+      <div className="w-full max-w-[1080px] mx-auto">
         <div className="bg-white md:pt-[40px] md:pb-[72px] pt-[30px] pb-10  px-5">
-            
-        <div className="w-full max-w-[610px] mx-auto bg-[#7FFF00]/[0.1] border-2 border-[#7FFF00] rounded-[10px] pt-5 md:pb-10 pb-7 md:pt-7">
-            <h3 className="text-center md:text-[28px] text-[18px] font-black">プラン名</h3>
+          <div className="w-full max-w-[610px] mx-auto bg-[#7FFF00]/[0.1] border-2 border-[#7FFF00] rounded-[10px] pt-5 md:pb-10 pb-7 md:pt-7">
+            <h3 className="text-center md:text-[28px] text-[18px] font-black">
+              プラン名
+            </h3>
             <div className="flex md:text-[18px] text-[14px] font-bold justify-center items-center mt-6 md:mt-8 gap-4">
-                <span className="flex items-center justify-center rounded-full border-[3px] border-[#7FFF00] p-1 "><span className="bg-[#7FFF00] aspect-square w-[12px] md:w-[22px] rounded-full"></span></span>
-                200枚無料プレゼント
+              <span className="flex items-center justify-center rounded-full border-[3px] border-[#7FFF00] p-1 ">
+                <span className="bg-[#7FFF00] aspect-square w-[12px] md:w-[22px] rounded-full"></span>
+              </span>
+              200枚無料プレゼント
             </div>
             <p className="text-center md:text-[16px] text-[13px] mt-8">
-            200枚以上必要な方、その他お問い合わせは<br /><button type="button" className="font-bold inline-block border-b-[3px] border-[#01B202] text-[#01B202]"  onClick={() => setModalOpen(true)}>サポートLINE</button>までご連絡ください。
+              200枚以上必要な方、その他お問い合わせは
+              <br />
+              <button
+                type="button"
+                className="font-bold inline-block border-b-[3px] border-[#01B202] text-[#01B202]"
+                onClick={() => setModalOpen(true)}
+              >
+                サポートLINE
+              </button>
+              までご連絡ください。
             </p>
-        </div>
+          </div>
           <p className="text-center md:text-[28px] text-[18px] font-black tracking-widest mt-12">
             メディアと名刺受取りアドレスのご提出
           </p>
@@ -93,9 +103,9 @@ export default function FormCard({ handleStep }: HandleStepProps) {
               placeholder="例：0x1ffur8je32rjfi9wufoflk6969e0olsjeG"
             />
             <div className="flex justify-center md:mt-10 mt-6">
-            <button
-            type="button"
-            onClick={handleStep}
+              <button
+                type="button"
+                onClick={handleStep}
                 className="flex items-center justify-center mx-auto md:w-[300px] w-[200px] h-[44px] md:h-[70px] rounded-[50px] bg-[#101010] md:text-[20px] text-[15px] font-black text-[#7FFF00] outline-1 outline outline-[#7FFF00] md:outline-offset-[-5px] outline-offset-[-3px] tracking-widest [box-shadow:0px_0px_30px_0px_rgba(127,_255,_0,_0.30)] gap-2"
               >
                 <span>STEP3へ進む</span>
@@ -156,8 +166,8 @@ export default function FormCard({ handleStep }: HandleStepProps) {
                 >
                   <div className="flex items-center gap-5 md:justify-between px-5 pb-6 md:pb-10 flex-col justify-center border-b border-black">
                     <p className="min-h-[60px] md:min-h-[72px] flex items-center font-black md:text-[20px] text-[16px] mb-5 md:mb-8 pl-2 md:pl-4 w-full max-md:max-w-[350px]">
-                        <span className="text-[#7FFF00]">■</span>
-                    アドレスの入力は以下の手順で完了させてください
+                      <span className="text-[#7FFF00]">■</span>
+                      アドレスの入力は以下の手順で完了させてください
                     </p>
                     <p className="md:text-[18px] text-[16px] font-bold max-w-[350px] flex-1">
                       ① アプリ「DIVER Biz」のダウンロードしてください。
@@ -275,25 +285,46 @@ export default function FormCard({ handleStep }: HandleStepProps) {
             </div>
 
             <div className="flex justify-center md:mt-[50px] mt-8">
-            <a
+              <a
                 className="flex items-center justify-center mx-auto md:w-[300px] w-[200px] h-[44px] md:h-[70px] rounded-[50px] bg-[#101010] md:text-[20px] text-[15px] font-black text-[#7FFF00] outline-1 outline outline-[#7FFF00] md:outline-offset-[-5px] outline-offset-[-3px] [box-shadow:0px_0px_30px_0px_rgba(127,_255,_0,_0.30)] gap-2"
                 href="#"
               >
                 <span>上へ戻る</span>
-                <svg className="max-md:w-5" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-  <path d="M15 25.1998C9.36005 25.1998 4.80005 20.6398 4.80005 14.9998C4.80005 9.3598 9.36005 4.7998 15 4.7998C20.64 4.7998 25.2 9.3598 25.2 14.9998C25.2 20.6398 20.64 25.1998 15 25.1998ZM15 5.9998C10.02 5.9998 6.00005 10.0198 6.00005 14.9998C6.00005 19.9798 10.02 23.9998 15 23.9998C19.98 23.9998 24 19.9798 24 14.9998C24 10.0198 19.98 5.9998 15 5.9998Z" fill="#7FFF00"/>
-  <path d="M19.9802 16.0204L15.0002 11.0404L10.0202 16.0204L9.18018 15.1804L15.0002 9.36035L20.8202 15.1804L19.9802 16.0204Z" fill="#7FFF00"/>
-  <path d="M14.3999 10.2002H15.5999L15.5999 20.4002H14.3999L14.3999 10.2002Z" fill="#7FFF00"/>
-</svg>
+                <svg
+                  className="max-md:w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                >
+                  <path
+                    d="M15 25.1998C9.36005 25.1998 4.80005 20.6398 4.80005 14.9998C4.80005 9.3598 9.36005 4.7998 15 4.7998C20.64 4.7998 25.2 9.3598 25.2 14.9998C25.2 20.6398 20.64 25.1998 15 25.1998ZM15 5.9998C10.02 5.9998 6.00005 10.0198 6.00005 14.9998C6.00005 19.9798 10.02 23.9998 15 23.9998C19.98 23.9998 24 19.9798 24 14.9998C24 10.0198 19.98 5.9998 15 5.9998Z"
+                    fill="#7FFF00"
+                  />
+                  <path
+                    d="M19.9802 16.0204L15.0002 11.0404L10.0202 16.0204L9.18018 15.1804L15.0002 9.36035L20.8202 15.1804L19.9802 16.0204Z"
+                    fill="#7FFF00"
+                  />
+                  <path
+                    d="M14.3999 10.2002H15.5999L15.5999 20.4002H14.3999L14.3999 10.2002Z"
+                    fill="#7FFF00"
+                  />
+                </svg>
               </a>
             </div>
           </div>
         </div>
       </div>
-      <div className={`duration-500 flex items-center justify-center flex-col p-10 fixed inset-0 overflow-auto z-50 ${!modalOpen ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'}`}>
-        <div className="fixed inset-0 bg-black/50" onClick={() => setModalOpen(false)}></div>
+      <div
+        className={`duration-500 flex items-center justify-center flex-col p-10 fixed inset-0 overflow-auto z-50 ${!modalOpen ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"}`}
+      >
+        <div
+          className="fixed inset-0 bg-black/50"
+          onClick={() => setModalOpen(false)}
+        ></div>
         <div className="relative z-10 rounded-[30px] overflow-hidden">
-            <Line />
+          <Line />
         </div>
       </div>
     </div>

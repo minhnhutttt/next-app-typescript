@@ -127,10 +127,16 @@ const GetNFT = () => {
                 <img src="/images/logo-diver-biz.png" alt="" />
               </figure>
               <div className="md:space-y-7 space-y-5 mt-4">
-                <a href="/" className="block max-md:w-[160px] duration-300 hover:opacity-75">
+                <a
+                  href="/"
+                  className="block max-md:w-[160px] duration-300 hover:opacity-75"
+                >
                   <img src="/images/btn-ios.png" alt="" />
                 </a>
-                <a href="/" className="block max-md:w-[160px] duration-300 hover:opacity-75">
+                <a
+                  href="/"
+                  className="block max-md:w-[160px] duration-300 hover:opacity-75"
+                >
                   <img src="/images/btn-android.png" alt="" />
                 </a>
               </div>
@@ -181,10 +187,16 @@ const GetNFT = () => {
                 <img src="/images/logo-diver-biz.png" alt="" />
               </figure>
               <div className="md:space-y-7 space-y-5 mt-4">
-                <a href="/" className="block max-md:w-[160px] duration-300 hover:opacity-75">
+                <a
+                  href="/"
+                  className="block max-md:w-[160px] duration-300 hover:opacity-75"
+                >
                   <img src="/images/btn-ios.png" alt="" />
                 </a>
-                <a href="/" className="block max-md:w-[160px] duration-300 hover:opacity-75">
+                <a
+                  href="/"
+                  className="block max-md:w-[160px] duration-300 hover:opacity-75"
+                >
                   <img src="/images/btn-android.png" alt="" />
                 </a>
               </div>

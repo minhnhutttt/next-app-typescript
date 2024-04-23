@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Noto_Sans_JP, Zen_Maru_Gothic } from 'next/font/google'
+import { Noto_Sans_JP, Zen_Maru_Gothic } from "next/font/google";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,18 +10,18 @@ export const metadata: Metadata = {
 };
 
 const noto = Noto_Sans_JP({
-  weight: ['400', '500', '700', '800', '900'],
-  subsets: ['latin'],
-  variable: '--font-noto',
-  display: 'swap',
-})
+  weight: ["400", "500", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-noto",
+  display: "swap",
+});
 
 const zen = Zen_Maru_Gothic({
-  weight: ['400', '500', '700', '900'],
-  subsets: ['latin'],
-  variable: '--font-zen',
-  display: 'swap',
-})
+  weight: ["400", "500", "700", "900"],
+  subsets: ["latin"],
+  variable: "--font-zen",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,

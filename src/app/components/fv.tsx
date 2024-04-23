@@ -1,19 +1,17 @@
-'use client'
+"use client";
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from "react";
 
 const FV = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (!videoRef.current) return
-    videoRef.current.play()
-  }, [])
+    if (!videoRef.current) return;
+    videoRef.current.play();
+  }, []);
 
   return (
-    <div
-      className="relative flex w-full items-center justify-center overflow-hidden aspect-video"
-    >
+    <div className="relative flex w-full items-center justify-center overflow-hidden aspect-video">
       <video
         ref={videoRef}
         muted
@@ -25,7 +23,7 @@ const FV = () => {
         Your browser does not support the video tag.
       </video>
     </div>
-  )
-}
+  );
+};
 
-export default FV
+export default FV;

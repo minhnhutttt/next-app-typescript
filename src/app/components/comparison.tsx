@@ -201,10 +201,20 @@ const Comparison = () => {
                 <span className="block fixed-btn-text opacity-0">
                   VS紙名刺の結果を見る
                 </span>
-                <svg className="fixed-btn-ic absolute max-md:w-6 right-[17px] md:right-[19px]" xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
-  <circle cx="20.088" cy="20" r="20" fill="#7FFF00"/>
-  <path d="M30.3737 17.2812H22.6594V9.6875C22.6594 8.75568 21.8918 8 20.9452 8H19.2309C18.2843 8 17.5166 8.75568 17.5166 9.6875V17.2812H9.8023C8.85569 17.2812 8.08801 18.0369 8.08801 18.9688V20.6562C8.08801 21.5881 8.85569 22.3438 9.8023 22.3438H17.5166V29.9375C17.5166 30.8693 18.2843 31.625 19.2309 31.625H20.9452C21.8918 31.625 22.6594 30.8693 22.6594 29.9375V22.3438H30.3737C31.3203 22.3438 32.088 21.5881 32.088 20.6562V18.9688C32.088 18.0369 31.3203 17.2812 30.3737 17.2812Z" fill="black"/>
-</svg>
+                <svg
+                  className="fixed-btn-ic absolute max-md:w-6 right-[17px] md:right-[19px]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="41"
+                  height="40"
+                  viewBox="0 0 41 40"
+                  fill="none"
+                >
+                  <circle cx="20.088" cy="20" r="20" fill="#7FFF00" />
+                  <path
+                    d="M30.3737 17.2812H22.6594V9.6875C22.6594 8.75568 21.8918 8 20.9452 8H19.2309C18.2843 8 17.5166 8.75568 17.5166 9.6875V17.2812H9.8023C8.85569 17.2812 8.08801 18.0369 8.08801 18.9688V20.6562C8.08801 21.5881 8.85569 22.3438 9.8023 22.3438H17.5166V29.9375C17.5166 30.8693 18.2843 31.625 19.2309 31.625H20.9452C21.8918 31.625 22.6594 30.8693 22.6594 29.9375V22.3438H30.3737C31.3203 22.3438 32.088 21.5881 32.088 20.6562V18.9688C32.088 18.0369 31.3203 17.2812 30.3737 17.2812Z"
+                    fill="black"
+                  />
+                </svg>
               </button>
             </div>
           </div>
@@ -245,7 +255,11 @@ const Comparison = () => {
         </div>
       </div>
 
-      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} rect="bg-[#7FFF00]">
+      <Modal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        rect="bg-[#7FFF00]"
+      >
         <div className="flex flex-wrap max-md:justify-center gap-12 lg:gap-20 max-md:py-10 md:pt-[160px] px-5">
           {Articles.map((item, index) => (
             <div
