@@ -304,23 +304,72 @@ const Diver = () => {
             >
               <div className="flex justify-center">
                 <div className="flex items-center justify-between gap-5">
-                  <figure className="md:flex-[0_0_19px] flex-[0_0_14px]">
-                    <img src="/images/nl-01.png" alt="" />
-                  </figure>
-                  <p className="text-white font-black text-center lg:text-[24px] md:text-[20px] text-[16px] leading-tight">
+                <p className="text-white font-black text-center lg:text-[24px] md:text-[20px] text-[16px] leading-tight">
                     比較
                     <span className="md:text-[28px] text-[20px]">
                       {item.number}
                     </span>
-                    <br />
+                  </p>
+                  <figure className="md:w-[19px] w-[12px]">
+                    <svg
+                     className="md:w-[19px] w-[14px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19"
+                      height="62"
+                      viewBox="0 0 19 62"
+                      fill="none"
+                    >
+                      <path
+                        d="M1.95865 60.8408H18"
+                        stroke="#00FFD1"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M1.95865 1V61"
+                        stroke="#00FFD1"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M1.95865 1H18"
+                        stroke="#00FFD1"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </figure>
+                  <p className="text-white font-black text-center lg:text-[24px] md:text-[20px] text-[16px] leading-tight">
                     <span className="tracking-[0.16em]">{item.type}</span>
                   </p>
-                  <figure className="md:flex-[0_0_19px] flex-[0_0_14px]">
-                    <img
-                      className="rotate-180"
-                      src="/images/nl-01.png"
-                      alt=""
-                    />
+                  <figure className="md:w-[19px] w-[14px]">
+                    <svg
+                      className="md:w-[19px] w-[14px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19"
+                      height="62"
+                      viewBox="0 0 19 62"
+                      fill="none"
+                    >
+                      <path
+                        d="M17.0414 1.15918L1.00001 1.15918"
+                        stroke="#00FFD1"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M17.0414 61L17.0414 1"
+                        stroke="#00FFD1"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M17.0414 61L1.00001 61"
+                        stroke="#00FFD1"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
                   </figure>
                 </div>
               </div>

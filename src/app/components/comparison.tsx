@@ -268,8 +268,15 @@ const Comparison = () => {
             >
               <div className="flex justify-center">
                 <div className="flex items-center justify-between gap-5">
-                  <figure className="md:flex-[0_0_19px] flex-[0_0_14px]">
+                <p className="text-white font-black text-center lg:text-[24px] md:text-[20px] text-[16px] leading-tight">
+                    比較
+                    <span className="md:text-[28px] text-[20px]">
+                      {item.number}
+                    </span>
+                  </p>
+                  <figure className="md:w-[19px] w-[12px]">
                     <svg
+                     className="md:w-[19px] w-[14px]"
                       xmlns="http://www.w3.org/2000/svg"
                       width="19"
                       height="62"
@@ -297,15 +304,11 @@ const Comparison = () => {
                     </svg>
                   </figure>
                   <p className="text-white font-black text-center lg:text-[24px] md:text-[20px] text-[16px] leading-tight">
-                    比較
-                    <span className="md:text-[28px] text-[20px]">
-                      {item.number}
-                    </span>
-                    <br />
                     <span className="tracking-[0.16em]">{item.type}</span>
                   </p>
-                  <figure className="md:flex-[0_0_19px] flex-[0_0_14px]">
+                  <figure className="md:w-[19px] w-[14px]">
                     <svg
+                      className="md:w-[19px] w-[14px]"
                       xmlns="http://www.w3.org/2000/svg"
                       width="19"
                       height="62"
