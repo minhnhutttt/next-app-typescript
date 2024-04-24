@@ -31,8 +31,9 @@ export default function Modal({ isOpen, onClose, children, rect }: ModalProps) {
     <div
       className={`duration-500 fixed inset-0 overflow-auto z-50 ${rect} ${isOpen ? "translate-y-0" : "translate-y-full"}`}
     >
-      <div className="fixed inset-0" onClick={handleClose}></div>
-      <div className="w-full max-w-[1440px] mx-auto mt-[50px] md:mt-[100px] relative z-0">
+      <div className="w-full mx-auto relative z-0">
+      <div className="absolute top-[-50px] md:top-[-100px] inset-0" onClick={handleClose}></div>
+        <div className="w-full max-w-[1440px] mx-auto mt-[50px] md:mt-[100px] relative ">
         <div className="bg-black/40 rounded-t-[60px] w-full">
           <button
             onClick={handleClose}
@@ -57,6 +58,7 @@ export default function Modal({ isOpen, onClose, children, rect }: ModalProps) {
             </svg>
           </button>
           <div className="w-full max-w-[1240px] mx-auto">{children}</div>
+        </div>
         </div>
       </div>
     </div>
