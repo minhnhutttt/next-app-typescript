@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="text-center font-lato text-[13px] text-white md:text-[14px]">
-        Copyright © DEJIMEISHI
+        Copyright © NFT-MEISHI
       </div>
     </footer>
   );

@@ -11,8 +11,8 @@ const Ready = () => {
         <p className="fade-up text-white text-center md:text-[24px] text-[14px] font-bold tracking-widest mt-2">
           NFT名刺作成に必要な材料を用意
         </p>
-        <div className="fade-up grid max-md:max-w-[400px] max-md:mx-auto md:grid-cols-3 mt-10 md:mt-28 gap-5 md:gap-[30px]">
-          <div className="bg-white rounded-[40px] lg:p-10 p-5">
+        <div data-scroll="out" className="grid max-md:max-w-[400px] max-md:mx-auto md:grid-cols-3 mt-10 md:mt-28 gap-5 md:gap-[30px]">
+          <div className="border-ani duration-300 delay-150  border-2 translate-y-10 opacity-70 bg-white rounded-[40px] lg:p-10 p-5">
             <figure>
               <img
                 className="max-md:w-[90px]"
@@ -30,7 +30,7 @@ const Ready = () => {
               ※画像は200x200px以上(容量10Mまで)のjpg、pngが登録可能です。
             </p>
           </div>
-          <div className="bg-white rounded-[40px] lg:p-10 p-5">
+          <div className="border-ani duration-300 delay-300  border-2 translate-y-10 opacity-70 bg-white rounded-[40px] lg:p-10 p-5">
             <figure>
               <img
                 className="max-md:w-[90px]"
@@ -45,7 +45,7 @@ const Ready = () => {
               ※アプリの初期設定が完了後に最初に表示されます。
             </p>
           </div>
-          <div className="bg-white rounded-[40px] lg:p-10 p-5">
+          <div className="border-ani duration-300 delay-[0.45s]  border-2 translate-y-10 opacity-70 bg-white rounded-[40px] lg:p-10 p-5 ">
             <figure>
               <img
                 className="max-md:w-[90px]"

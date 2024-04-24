@@ -7,7 +7,7 @@ const Movie = () => {
       <div className="w-full max-w-[1320px] mx-auto flex max-md:flex-col gap-16 md:gap-20">
         <div className="fade-up w-full md:w-1/2">
           <div className="font-light md:text-[16px] text-[14px] text-center mb-5 md:mb-[30px] text-[#D9D9D9] tracking-[0.4em]">
-            MOVIE TITLE
+          動画で体験！DIVER Biz
           </div>
           <video muted loop controls className="aspect-[31/20]" poster="">
             <source src="/videos/fv.mp4" type="video/mp4" />
@@ -16,7 +16,7 @@ const Movie = () => {
         </div>
         <div className="fade-up w-full md:w-1/2">
           <div className="font-light md:text-[16px] text-[14px] text-center mb-5 md:mb-[30px] text-[#D9D9D9] tracking-[0.4em]">
-            MOVIE TITLE
+          すぐに作れる！NFT名刺制作ガイド
           </div>
           <video muted loop controls className="aspect-[31/20]" poster="">
             <source src="/videos/fv.mp4" type="video/mp4" />

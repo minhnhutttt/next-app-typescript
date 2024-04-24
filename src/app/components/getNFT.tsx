@@ -33,7 +33,7 @@ function ArticleWrap({ number, title, content, children }: ArticleWrap) {
 const GetNFT = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="bg-white  pt-[70px] md:pt-[130px] relative ">
+    <section ref={ref} className="bg-white  pt-[70px] md:pt-[130px] relative">
       <div data-scroll="out" className="absolute top-0 left-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ const GetNFT = () => {
         </svg>
       </div>
 
-      <div data-scroll="out" className="absolute bottom-[-36%] right-0">
+      <div data-scroll="out" className="absolute md:bottom-[-36%] bottom-[10%] right-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="434"
@@ -89,7 +89,7 @@ const GetNFT = () => {
           />
         </svg>
       </div>
-      <div data-scroll="out" className="absolute bottom-[-50%] right-0">
+      <div data-scroll="out" className="absolute md:bottom-[-50%] bottom-[0%] right-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="268"

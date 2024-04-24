@@ -32,7 +32,7 @@ export default function Modal({ isOpen, onClose, children, rect }: ModalProps) {
       className={`duration-500 fixed inset-0 overflow-auto z-50 ${rect} ${isOpen ? "translate-y-0" : "translate-y-full"}`}
     >
       <div className="fixed inset-0" onClick={handleClose}></div>
-      <div className="w-full max-w-[1440px] mx-auto pt-[50px] md:pt-[100px] relative z-0">
+      <div className="w-full max-w-[1440px] mx-auto mt-[50px] md:mt-[100px] relative z-0">
         <div className="bg-black/40 rounded-t-[60px] w-full">
           <button
             onClick={handleClose}

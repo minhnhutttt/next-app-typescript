@@ -32,7 +32,7 @@ export default function Home() {
       <Comparison />
       <Diver />
       <Approach />
-      <div className="bg-white">
+      <div className="bg-white overflow-hidden">
         <GetNFT />
         <Present />
       </div>

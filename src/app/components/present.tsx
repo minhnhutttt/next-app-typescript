@@ -73,7 +73,7 @@ const Present = () => {
             </a>
           </div>
           <div className="fade-up flex justify-center md:mt-8 mt-5 px-5">
-            <p className="md:text-[16px] text-[13px] text-center">
+            <p className="md:text-[16px] text-[13px] md:text-center">
               ※1:NFT名刺の画像とアプリ「DIVER
               Biz」のウォレットアドレスが必要です。
               <br />

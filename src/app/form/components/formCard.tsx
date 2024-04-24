@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 import Line from "@/app/components/line";
 export interface HandleStepProps {
   handleStep: () => void;
@@ -11,6 +10,30 @@ export default function FormCard({ handleStep }: HandleStepProps) {
 
   const handleTabChange = (tabNumber: number) => {
     setTabActive(tabNumber);
+  };
+
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [fileName, setFileName] = useState('');
+
+  const handleUpload = (file: File) => {
+    console.log('File uploaded:', file);
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file: any = event.target.files?.[0];
+    setSelectedFile(file);
+    if (file) {
+      setFileName(file.name);
+    } else {
+      setFileName('');
+    }
+  };
+
+  const handleClick = () => {
+    if (selectedFile) {
+      handleUpload(selectedFile);
+      setSelectedFile(null); // Clear selection after upload
+    }
   };
 
   return (
@@ -41,6 +64,7 @@ export default function FormCard({ handleStep }: HandleStepProps) {
             </p>
           </div>
           <p className="text-center md:text-[28px] text-[18px] font-black tracking-widest mt-12">
+          [STEP1] <br />
             メディアと名刺受取りアドレスのご提出
           </p>
           <p className="text-center md:text-[20px] text-[16px]">
@@ -68,18 +92,22 @@ export default function FormCard({ handleStep }: HandleStepProps) {
               </p>
             </div>
             <div className="py-2.5 flex gap-2.5 max-md:flex-wrap max-md:justify-end">
+            <label htmlFor="file-upload" className="flex-1 cursor-pointer">
               <input
-                type="text"
-                className="flex-1 md:h-[70px] h-[60px] border border-[#E4E4E4] md:text-[18px] font-bold px-4 md:px-[30px] py-4"
-                placeholder="画像を選択してください。"
+                id="file-upload"
+                type="file"
+                className="hidden"
+                onChange={handleChange}
               />
-              <button
-                type="button"
-                className="md:h-[70px] h-[60px] flex items-center justify-center bg-[#E2E2E2] md:flex-[0_0_173px] flex-[0_0_120px] md:text-[16px] text-[13px] font-bold font-dm rounded-[10px]"
-              >
-                ファイルを選択
+              <p className="w-full md:h-[70px] h-[60px] border border-[#E4E4E4] md:text-[18px] font-bold px-4 md:px-[30px] flex items-center py-4 text-[#999]">{fileName ? fileName : '画像をアップロードしてください。'}</p>
+            </label>
+              <button type="button" className="md:h-[70px] h-[60px] flex items-center justify-center bg-[#E2E2E2] md:flex-[0_0_173px] flex-[0_0_120px] md:text-[16px] text-[13px] font-bold font-dm rounded-[10px] cursor-pointer" onClick={handleClick}>
+                <p
+                >
+                  ファイルを選択
+                </p>
               </button>
-            </div>
+              </div>
             <div className="flex mt-5 md:mt-7 max-md:flex-wrap max-md:mb-3">
               <div className="flex">
                 <p className="font-bold md:text-[20px] text-[16px]">
@@ -108,7 +136,7 @@ export default function FormCard({ handleStep }: HandleStepProps) {
                 onClick={handleStep}
                 className="flex items-center justify-center mx-auto md:w-[300px] w-[200px] h-[44px] md:h-[70px] rounded-[50px] bg-[#101010] md:text-[20px] text-[15px] font-black text-[#7FFF00] outline-1 outline outline-[#7FFF00] md:outline-offset-[-5px] outline-offset-[-3px] tracking-widest [box-shadow:0px_0px_30px_0px_rgba(127,_255,_0,_0.30)] gap-2"
               >
-                <span>STEP3へ進む</span>
+                <span>STEP2へ進む</span>
                 <svg
                   className="max-md:w-5"
                   width="38"
@@ -165,8 +193,7 @@ export default function FormCard({ handleStep }: HandleStepProps) {
                   className={`w-full md:w-1/2 md:pr-5 ${tabActive === 1 ? "max-md:block" : "max-md:hidden"}`}
                 >
                   <div className="flex items-center gap-5 md:justify-between px-5 pb-6 md:pb-10 flex-col justify-center border-b border-black">
-                    <p className="min-h-[60px] md:min-h-[72px] flex items-center font-black md:text-[20px] text-[16px] mb-5 md:mb-8 pl-2 md:pl-4 w-full max-md:max-w-[350px]">
-                      <span className="text-[#7FFF00]">■</span>
+                    <p className="min-h-[60px] md:min-h-[72px] flex items-center font-black md:text-[24px] text-[20px] text-black mb-5 md:mb-8 pl-2 md:pl-4 md:border-l-[5px] border-l-[3px] border-[#7FFF00]">
                       アドレスの入力は以下の手順で完了させてください
                     </p>
                     <p className="md:text-[18px] text-[16px] font-bold max-w-[350px] flex-1">
@@ -242,7 +269,7 @@ export default function FormCard({ handleStep }: HandleStepProps) {
                 >
                   <div className="flex items-center px-3 md:px-5 pb-5 md:pb-7 flex-col border-b border-black gap-5 md:gap-8">
                     <div className="max-w-[350px] flex-1">
-                      <p className="min-h-[60px] md:min-h-[72px] flex items-center font-black md:text-[24px] text-[20px] text-[#22ABF3] mb-5 md:mb-8 pl-2 md:pl-4 md:border-l-[5px] border-l-[3px] border-[#22ABF3]">
+                      <p className="min-h-[60px] md:min-h-[72px] flex items-center font-black md:text-[24px] text-[20px] text-black mb-5 md:mb-8 pl-2 md:pl-4 md:border-l-[5px] border-l-[3px] border-[#7FFF00]">
                         DIVER Walletアドレスを
                         <br className="md:hidden" />
                         利用する方法
