@@ -294,7 +294,7 @@ const Diver = () => {
       <Modal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
-        rect="bg-[#00FFD1]"
+        rect="#00FFD1"
       >
         <div className="flex flex-wrap max-md:justify-center gap-12 lg:gap-20 max-md:py-10 md:pt-[160px] px-5">
           {Articles.map((item, index) => (
@@ -303,74 +303,76 @@ const Diver = () => {
               key={index}
             >
               <div className="flex justify-center">
-                <div className="flex items-center justify-between gap-5">
+                <div className="flex items-center justify-between max-md:flex-col md:gap-5">
                 <p className="text-white font-black text-center lg:text-[24px] md:text-[20px] text-[16px] leading-tight">
                     比較
                     <span className="md:text-[28px] text-[20px]">
                       {item.number}
                     </span>
                   </p>
-                  <figure className="md:w-[19px] w-[12px]">
-                    <svg
-                     className="md:w-[19px] w-[14px]"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="19"
-                      height="62"
-                      viewBox="0 0 19 62"
-                      fill="none"
-                    >
-                      <path
-                        d="M1.95865 60.8408H18"
-                        stroke="#00FFD1"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M1.95865 1V61"
-                        stroke="#00FFD1"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M1.95865 1H18"
-                        stroke="#00FFD1"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </figure>
-                  <p className="text-white font-black text-center lg:text-[24px] md:text-[20px] text-[16px] leading-tight">
-                    <span className="tracking-[0.16em]">{item.type}</span>
-                  </p>
-                  <figure className="md:w-[19px] w-[14px]">
-                    <svg
-                      className="md:w-[19px] w-[14px]"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="19"
-                      height="62"
-                      viewBox="0 0 19 62"
-                      fill="none"
-                    >
-                      <path
-                        d="M17.0414 1.15918L1.00001 1.15918"
-                        stroke="#00FFD1"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M17.0414 61L17.0414 1"
-                        stroke="#00FFD1"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M17.0414 61L1.00001 61"
-                        stroke="#00FFD1"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </figure>
+                  <div className="flex items-center gap-5">
+                    <figure className="md:w-[19px] w-[12px]">
+                      <svg
+                      className="md:w-[19px] w-[12px]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="62"
+                        viewBox="0 0 19 62"
+                        fill="none"
+                      >
+                        <path
+                          d="M1.95865 60.8408H18"
+                          stroke="#00FFD1"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M1.95865 1V61"
+                          stroke="#00FFD1"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M1.95865 1H18"
+                          stroke="#00FFD1"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </figure>
+                    <p className="text-white font-black text-center lg:text-[24px] md:text-[20px] text-[16px] leading-tight">
+                      <span className="tracking-[0.16em]">{item.type}</span>
+                    </p>
+                    <figure className="md:w-[19px] w-[12px]">
+                      <svg
+                        className="md:w-[19px] w-[12px]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="62"
+                        viewBox="0 0 19 62"
+                        fill="none"
+                      >
+                        <path
+                          d="M17.0414 1.15918L1.00001 1.15918"
+                          stroke="#00FFD1"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M17.0414 61L17.0414 1"
+                          stroke="#00FFD1"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M17.0414 61L1.00001 61"
+                          stroke="#00FFD1"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </figure>
+                  </div>
                 </div>
               </div>
               <p className="text-center text-white font-black lg:text-[26px] md:text-[22px] text-[18px] tracking-[0.3em] mt-2 md:mt-4 md:mb-6 mb-4">

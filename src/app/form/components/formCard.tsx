@@ -92,21 +92,22 @@ export default function FormCard({ handleStep }: HandleStepProps) {
               </p>
             </div>
             <div className="py-2.5 flex gap-2.5 max-md:flex-wrap max-md:justify-end">
-            <label htmlFor="file-upload" className="flex-1 cursor-pointer">
+            <div className="flex-1">
+              <p className="w-full md:h-[70px] h-[60px] border border-[#E4E4E4] md:text-[18px] font-bold px-4 md:px-[30px] flex items-center py-4 text-[#999]">{fileName ? fileName : '画像をアップロードしてください。'}</p>
+            </div>
+            <label htmlFor="file-upload" className="md:h-[70px] h-[60px] flex items-center justify-center bg-[#E2E2E2] md:flex-[0_0_173px] flex-[0_0_120px] md:text-[16px] text-[13px] font-bold font-dm rounded-[10px] cursor-pointer cursor-pointer">
               <input
                 id="file-upload"
                 type="file"
                 className="hidden"
                 onChange={handleChange}
               />
-              <p className="w-full md:h-[70px] h-[60px] border border-[#E4E4E4] md:text-[18px] font-bold px-4 md:px-[30px] flex items-center py-4 text-[#999]">{fileName ? fileName : '画像をアップロードしてください。'}</p>
-            </label>
-              <button type="button" className="md:h-[70px] h-[60px] flex items-center justify-center bg-[#E2E2E2] md:flex-[0_0_173px] flex-[0_0_120px] md:text-[16px] text-[13px] font-bold font-dm rounded-[10px] cursor-pointer" onClick={handleClick}>
-                <p
+              
+              <p
                 >
                   ファイルを選択
                 </p>
-              </button>
+              </label>
               </div>
             <div className="flex mt-5 md:mt-7 max-md:flex-wrap max-md:mb-3">
               <div className="flex">

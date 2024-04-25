@@ -171,7 +171,7 @@ const Approach = () => {
       <Modal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
-        rect="bg-[#00F0FF]"
+        rect="#00F0FF"
       >
         <div className="flex flex-wrap max-md:justify-center gap-12 lg:gap-20 max-md:py-10 md:pt-[160px] px-5 md:pb-[95px] pb-[60px]">
           {Articles.map((item, index) => (

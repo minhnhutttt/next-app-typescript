@@ -158,7 +158,7 @@ const Voice = () => {
       <Modal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
-        rect="bg-[#EDFFDC]"
+        rect="#EDFFDC"
       >
         <div className="grid md:grid-cols-2 max-md:justify-center gap-12 lg:gap-20 max-md:py-10 md:pt-[160px] px-5 md:pb-[95px] pb-[60px]">
           {Voices.map((item, index) => (

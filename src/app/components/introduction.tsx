@@ -65,7 +65,7 @@ const Introduction = () => {
                 </>
               }
             />
-            <div className="w-[80px] md:w-[175px] aspect-square relative flex items-center justify-center flex-col font-bold m-[26px] md:m-8">
+            <div className="w-[80px] md:w-[175px] aspect-square relative flex items-center justify-center flex-col font-bold m-[26px] md:my-8 md:mx-9">
               <div className="absolute inset-0 bg-[#7FFF00] md:border-[11px] border-[5.5px] border-black rotate-45"></div>
               <div className="relative md:text-[32px] text-[16px]">
                 <span className="md:text-[66px] text-[33px] font-bold leading-none">
