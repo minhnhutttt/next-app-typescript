@@ -3,17 +3,19 @@
 import { useEffect, useRef } from "react";
 
 const FV = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoPCRef = useRef<HTMLVideoElement>(null);
+  const videoSPRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (!videoRef.current) return;
-    videoRef.current.play();
+    if (!videoPCRef.current || !videoSPRef.current) return;
+    videoPCRef.current.play();
+    videoSPRef.current.play();
   }, []);
 
   return (
     <div className="relative flex w-full items-center justify-center overflow-hidden aspect-[4/5] md:aspect-video">
       <video
-        ref={videoRef}
+        ref={videoPCRef}
         muted
         loop
         className="absolute inset-0 z-10 h-full w-full object-cover max-md:hidden"
@@ -23,7 +25,7 @@ const FV = () => {
         Your browser does not support the video tag.
       </video>
       <video
-        ref={videoRef}
+        ref={videoSPRef}
         muted
         loop
         className="absolute inset-0 z-10 h-full w-full object-cover md:hidden"

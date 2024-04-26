@@ -8,13 +8,15 @@ interface articleProps {
 
 const Article = ({ title, text }: articleProps) => {
   return (
-    <div className="aspect-square w-[88px] md:w-[200px] relative flex itemss-center flex-col pt-4 md:pt-12 text-white m-2 md:m-10">
-      <div className="absolute inset-0 rotate-45 md:border-[10px] border-[5px] border-black bg-[#252525]/[0.5] [box-shadow:0px_0px_60px_0px_#7FFF00]"></div>
-      <div className="relative md:text-[32px] text-[16px] font-bold text-center">
-        {title}
-      </div>
-      <div className="relative md:text-[20px] text-[12px] font-bold text-center md:mt-5 mt-1">
-        {text}
+    <div className="md:w-[283px] md:flex-[0_0_283px] w-[125px] flex-[0_0_125px] aspect-square flex items-center justify-center">
+      <div className="aspect-square w-[88px] md:w-[200px] relative flex itemss-center flex-col pt-4 md:pt-12 text-white m-2 md:m-10">
+        <div className="absolute inset-0 rotate-45 md:border-[10px] border-[5px] border-black bg-[#252525]/[0.5] [box-shadow:0px_0px_60px_0px_#7FFF00]"></div>
+        <div className="relative md:text-[32px] text-[16px] font-bold text-center">
+          {title}
+        </div>
+        <div className="relative md:text-[20px] text-[12px] font-bold text-center md:mt-5 mt-1">
+          {text}
+        </div>
       </div>
     </div>
   );
@@ -54,7 +56,7 @@ const Introduction = () => {
               }
             />
           </div>
-          <div className="fade-up flex justify-center items-center md:my-[-16px]">
+          <div className="fade-up flex justify-center items-center my-[-6px] md:my-[-18px]">
             <Article
               title="合理的!"
               text={
@@ -65,15 +67,17 @@ const Introduction = () => {
                 </>
               }
             />
-            <div className="w-[80px] md:w-[175px] aspect-square relative flex items-center justify-center flex-col font-bold m-[26px] md:my-8 md:mx-9">
-              <div className="absolute inset-0 bg-[#7FFF00] md:border-[11px] border-[5.5px] border-black rotate-45"></div>
-              <div className="relative md:text-[32px] text-[16px]">
-                <span className="md:text-[66px] text-[33px] font-bold leading-none">
-                  4
-                </span>
-                つ
+            <div className="md:w-[247px] md:flex-[0_0_247px] w-[113px] flex-[0_0_113px] aspect-square flex items-center justify-center">
+              <div className="w-[80px] md:w-[175px] aspect-square relative flex items-center justify-center flex-col font-bold">
+                <div className="absolute inset-0 bg-[#7FFF00] md:border-[11px] border-[5.5px] border-black rotate-45"></div>
+                <div className="relative md:text-[32px] text-[16px]">
+                  <span className="md:text-[66px] text-[33px] font-bold leading-none">
+                    4
+                  </span>
+                  つ
+                </div>
+                <div className="relative md:text-[28px] text-[14px]">の特徴</div>
               </div>
-              <div className="relative md:text-[28px] text-[14px]">の特徴</div>
             </div>
             <Article
               title="1タッチ!"
