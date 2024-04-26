@@ -157,9 +157,38 @@ const Comparison = () => {
                     />
                   </svg>
                 </figure>
-                <span className="lg:text-[48px] md:text-[32px] text-[20px] break-keep font-black text-white tracking-[0.2em]">
-                  印象:Impression
-                </span>
+                <div className="md:h-[70px] overflow-hidden">
+                  <div className="text-center leading-[70px] min-[1440px]:text-[48px] md:text-[3.333vw] text-[20px] break-keep font-black text-white tracking-[0.2em] animate-[20s_normal_infinite_running_scroll]">
+                    <p>
+                      印象:Impression
+                    </p>
+                    <p>
+                    コスト:Cost
+                    </p>
+                    <p>
+                    不足:Shortage
+                    </p>
+                    <p>
+                    アクセス:Accessibility
+                    </p>
+
+                    <p>
+                    管理:Management
+                    </p>
+                    <p>
+                    プライバシーPrivacy
+                    </p>
+                    <p>
+                    セキュリティ:Security
+                    </p>
+                    <p>
+                    トレンド:Trend
+                    </p>
+                    <p>
+                    サスティナビリティ: <br />Sustainability
+                    </p>
+                  </div>
+                </div>
                 <figure>
                   <svg
                     className="max-md:w-8 max-lg:w-10"
