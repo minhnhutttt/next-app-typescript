@@ -1,4 +1,6 @@
+import Delivered from "./components/delivered";
 import FV from "./components/fv";
+import Habit from "./components/habit";
 import Ichifuku from "./components/ichifuku";
 import Introduction from "./components/introduction";
 import Workshop from "./components/workshop";
@@ -10,6 +12,8 @@ export default function Home() {
       <Introduction />
       <Ichifuku />
       <Workshop />
+      <Delivered />
+      <Habit />
     </main>
   );
 }

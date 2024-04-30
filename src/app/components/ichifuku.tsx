@@ -6,7 +6,7 @@ const Ichifuku = () => {
   const ref = useScrollAnimations();
 
   return (
-    <section ref={ref} className="bg-[url('/assets/images/bg-ichifuku.png')] bg-bottom bg-no-repeat bg-[#76A406] md:pb-[84px] pb-10 border-b-2 border-white">
+    <section ref={ref} className="bg-[url('/assets/images/bg-ichifuku.png')] bg-[length:100%_auto] bg-bottom bg-no-repeat bg-[#76A406] md:pb-[84px] pb-10 border-b-2 border-white">
         <div className="w-full">
             <img className='w-full' src="/assets/images/wave.png" alt="" />
         </div>
