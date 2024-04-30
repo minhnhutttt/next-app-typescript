@@ -148,7 +148,7 @@ const Diver = () => {
             </p>
             <div className="flex max-lg:items-center max-md:flex-col max-md:items-center md:mt-10 mt-5 md:gap-7 lg:gap-10 md:mb-12 mb-7">
               <div className="text-white leading-tight">
-                <p className="lg:text-[98px] md:text-[60px] text-[32px] max-md:text-center font-black tracking-widest">
+                <p className="lg:text-[98px] md:text-[60px] text-[32px] max-md:text-center font-black tracking-widest whitespace-nowrap">
                   比較1
                 </p>
                 <p className="lg:text-[24px] md:text-[20px] text-[14px] font-bold lg:tracking-[0.5em] md:tracking-[0.3em] md:ml-2">
@@ -158,7 +158,7 @@ const Diver = () => {
               <div className="flex items-center justify-between flex-1">
                 <figure>
                   <svg
-                    className="max-md:w-8 max-lg:w-10"
+                    className="max-md:w-7 "
                     xmlns="http://www.w3.org/2000/svg"
                     width="57"
                     height="132"
@@ -185,12 +185,22 @@ const Diver = () => {
                     />
                   </svg>
                 </figure>
-                <span className="xl:text-[48px] md:text-[28px] text-[18px] break-keep font-black text-white tracking-[0.2em]">
-                  情報の正確性:Accuracy
-                </span>
+                <div className="h-[60px] md:h-[130px] overflow-hidden">
+                <div className="text-center md:leading-[130px] leading-[60px] min-[1440px]:text-[48px] md:text-[3.333vw] text-[clamp(16px,4.8vw,24px)] break-keep font-black text-white tracking-[0.2em] md:animate-[18s_normal_infinite_running_scroll] animate-[18s_normal_infinite_running_scrollSP]">
+                  <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">情報の正確性:Accuracy</p>
+                  <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">交換の即時性:<br />Immediacy</p>
+                  <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">情報の拡張性:<br />Expandability</p>
+                  <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">真正性保証:<br />Authenticity</p>
+                  <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">デザイン性:<br />Customizability</p>
+                  <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">情報の保護:<br />Confidentiality</p>
+                  <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">セキュリティ:<br />Security</p>
+                  <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">サスティナビリティ:<br />Sustainability</p>
+                  <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">ビジネスシーンでの印象:<br />Impression</p>
+                  </div>
+                </div>
                 <figure>
                   <svg
-                    className="max-md:w-8 max-lg:w-10"
+                    className="max-md:w-7"
                     xmlns="http://www.w3.org/2000/svg"
                     width="57"
                     height="131"

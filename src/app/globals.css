@@ -185,13 +185,26 @@ body {
 
   @keyframes scroll {
     0%   { margin-top: 0px; }
-    11.11% { margin-top: -70px; } 
-    22.22% { margin-top: -140px; } 
-    33.33% { margin-top: -210px; }
-    44.44% { margin-top: -280px; }
-    55.55% { margin-top: -350px; }
-    66.66% { margin-top: -420px; }
-    77.77% { margin-top: -490px; }
-    88.88% { margin-top: -560px; } 
+    11.11% { margin-top: -130px; } 
+    22.22% { margin-top: -260px; } 
+    33.33% { margin-top: -390px; }
+    44.44% { margin-top: -520px; }
+    55.55% { margin-top: -650px; }
+    66.66% { margin-top: -780px; }
+    77.77% { margin-top: -910px; }
+    88.88% { margin-top: -1040px; } 
+    100% { margin-top: 0px; }
+  }
+
+  @keyframes scrollSP {
+    0%   { margin-top: 0px; }
+    11.11% { margin-top: -60px; } 
+    22.22% { margin-top: -120px; } 
+    33.33% { margin-top: -180px; }
+    44.44% { margin-top: -240px; }
+    55.55% { margin-top: -300px; }
+    66.66% { margin-top: -360px; }
+    77.77% { margin-top: -420px; }
+    88.88% { margin-top: -480px; } 
     100% { margin-top: 0px; }
   }

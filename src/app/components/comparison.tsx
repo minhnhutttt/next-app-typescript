@@ -120,7 +120,7 @@ const Comparison = () => {
             </p>
             <div className="flex max-md:flex-col max-md:items-center md:mt-10 mt-5 md:gap-10 md:mb-12 mb-7">
               <div className="text-white leading-tight">
-                <p className="lg:text-[98px] md:text-[60px] text-[32px] max-md:text-center font-black tracking-widest">
+                <p className="lg:text-[98px] md:text-[60px] text-[32px] max-md:text-center font-black tracking-widest whitespace-nowrap">
                   比較1
                 </p>
                 <p className="lg:text-[24px] md:text-[20px] text-[14px] font-bold lg:tracking-[0.5em] md:tracking-[0.3em] md:ml-2">
@@ -130,7 +130,7 @@ const Comparison = () => {
               <div className="flex items-center justify-between flex-1">
                 <figure>
                   <svg
-                    className="max-md:w-8 max-lg:w-10"
+                    className="max-md:w-7 max-lg:w-10"
                     xmlns="http://www.w3.org/2000/svg"
                     width="57"
                     height="132"
@@ -157,41 +157,40 @@ const Comparison = () => {
                     />
                   </svg>
                 </figure>
-                <div className="md:h-[70px] overflow-hidden">
-                  <div className="text-center leading-[70px] min-[1440px]:text-[48px] md:text-[3.333vw] text-[20px] break-keep font-black text-white tracking-[0.2em] animate-[20s_normal_infinite_running_scroll]">
-                    <p>
+                <div className="h-[60px] md:h-[130px] overflow-hidden">
+                  <div className="text-center md:leading-[130px] leading-[60px] min-[1440px]:text-[48px] md:text-[3.333vw] text-[clamp(16px,4.8vw,24px)] break-keep font-black text-white tracking-[0.2em] md:animate-[18s_normal_infinite_running_scroll] animate-[18s_normal_infinite_running_scrollSP]">
+                    <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">
                       印象:Impression
                     </p>
-                    <p>
+                    <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">
                     コスト:Cost
                     </p>
-                    <p>
+                    <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">
                     不足:Shortage
                     </p>
-                    <p>
+                    <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">
                     アクセス:Accessibility
                     </p>
-
-                    <p>
+                    <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">
                     管理:Management
                     </p>
-                    <p>
-                    プライバシーPrivacy
+                    <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">
+                    プライバシー:Privacy
                     </p>
-                    <p>
+                    <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">
                     セキュリティ:Security
                     </p>
-                    <p>
+                    <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">
                     トレンド:Trend
                     </p>
-                    <p>
-                    サスティナビリティ: <br />Sustainability
+                    <p className="leading-none md:h-[130px] h-[60px] flex items-center justify-center">
+                    サスティナビリティ:<br />Sustainability
                     </p>
                   </div>
                 </div>
                 <figure>
                   <svg
-                    className="max-md:w-8 max-lg:w-10"
+                    className="max-md:w-7 max-lg:w-10"
                     xmlns="http://www.w3.org/2000/svg"
                     width="57"
                     height="131"
