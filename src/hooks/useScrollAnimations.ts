@@ -29,6 +29,14 @@ const useScrollAnimations = () => {
           ease: 'Power2.easeInOut',
           scrollTrigger: { trigger: el },
         }),
+        'zoom-out': (el: HTMLElement) =>
+          gsap.from(el, {
+            autoAlpha: 0,
+            scale: 0.8,
+            duration: 0.5,
+            ease: 'Power2.easeInOut',
+            scrollTrigger: { trigger: el },
+          }),
     }
 
     let ctx = gsap.context(() => {

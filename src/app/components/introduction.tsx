@@ -24,13 +24,13 @@ const Introduction = () => {
 
   return (
     <section ref={ref} className="mt-[-19.531vw] xl:mt-[-250px] px-5 pb-[60px] md:pb-[100px]">
-        <div className="flex justify-center">
+        <div className="fade-up flex justify-center">
             <h3 className="flex items-center justify-center text-center xl:text-[29px] md:text-[2.266vw] text-[18px] font-hiragino font-semibold bg-white border border-black min-h-[7.109vw] md:min-h-[91px] px-5 md:px-[50px] max-md:p-5">一福の「ドライキウイ」には<br className="md:hidden" />こんな効果が期待できます</h3>
         </div>
         <div className="grid md:grid-cols-3 gap-10 md:gap-5 w-full md:max-w-[1400px] max-w-[360px] mx-auto md:mt-10 mt-6">
           {data.map((item, index) => {
             return (
-              <div className="flex flex-col items-center" key={index}>
+              <div className="fade-up flex flex-col items-center" key={index}>
                 <figure className="xl:h-[319px] md:h-[24.922vw] flex items-end">
                   <img src={item.image} alt="" />
                 </figure>
