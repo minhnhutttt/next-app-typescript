@@ -3,6 +3,7 @@ import FV from "./components/fv";
 import Habit from "./components/habit";
 import Ichifuku from "./components/ichifuku";
 import Introduction from "./components/introduction";
+import Voice from "./components/voice";
 import Workshop from "./components/workshop";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <Workshop />
       <Delivered />
       <Habit />
+      <Voice />
     </main>
   );
 }

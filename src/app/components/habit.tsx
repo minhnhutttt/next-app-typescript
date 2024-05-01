@@ -6,7 +6,7 @@ const Habit = () => {
   const ref = useScrollAnimations();
 
   return (
-    <section ref={ref} className="bg-[#E0DDCF] md:pt-[134px] pt-[70px] px-5">
+    <section ref={ref} className="bg-[#E0DDCF] md:pt-[134px] pt-[70px] px-5 md:pb-[90px] pb-[50px]">
         <div className="w-full max-w-[1080px] mx-auto bg-white/50 md:px-[50px] px-5 pt-10 md:pt-[68px] md:pb-[252px] pb-[160px]">
             <h3 className="text-center md:text-[38px] text-[19px] font-hiragino font-semibold border-b border-black md:pb-7 pb-4">
                 一福のドライキウイで <br />
