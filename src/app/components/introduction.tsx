@@ -134,10 +134,10 @@ const Introduction = () => {
           </p>
         </div>
         <div className="fade-up flex justify-center items-center gap-5 mt-7 md:mt-10">
-          <a href="" className="block duration-300 hover:opacity-75">
+          <a href="https://apps.apple.com/jp/app/diver-biz/id6473737351" target="_blank" className="block duration-300 hover:opacity-75">
             <img src="/images/btn-ios.png" alt="" />
           </a>
-          <a href="" className="block duration-300 hover:opacity-75">
+          <a href="https://play.google.com/store/apps/details?id=com.ideal.strategy.limited.biz&pcampaignid=web_share" target="_blank" className="block duration-300 hover:opacity-75">
             <img src="/images/btn-android.png" alt="" />
           </a>
         </div>

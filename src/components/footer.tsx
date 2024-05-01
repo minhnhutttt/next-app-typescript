@@ -40,14 +40,14 @@ export default function Footer() {
             <img src="/images/btn-line-footer.png" alt="" />
           </a>
           <a
-            href=""
+            href="https://apps.apple.com/jp/app/diver-biz/id6473737351"
             target="_blank"
             className="block w-[140px] md:w-[180px] duration-150 hover:opacity-75"
           >
             <img src="/images/btn-ios.png" alt="" />
           </a>
           <a
-            href=""
+            href="https://play.google.com/store/apps/details?id=com.ideal.strategy.limited.biz&pcampaignid=web_share"
             target="_blank"
             className="block w-[140px] md:w-[180px] duration-150 hover:opacity-75"
           >

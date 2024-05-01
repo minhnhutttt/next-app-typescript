@@ -20,7 +20,7 @@ const Articles = [
     image: "/images/comparison-02.jpg",
     paper:
       "安っぽい名刺は印象が薄く、高級な名刺はコストの割に印象に残るか不透明です。",
-    nft: "NFT名刺なら、圧倒的な低コストで作成できます。印象に残る名刺を手軽に作成できます。",
+    nft: "NFT名刺なら、圧倒的な低コストだから印象に残る名刺を手軽に制作できます。",
   },
   {
     number: "3",
@@ -120,9 +120,20 @@ const Comparison = () => {
             </p>
             <div className="flex max-md:flex-col max-md:items-center md:mt-10 mt-5 md:gap-10 md:mb-12 mb-7">
               <div className="text-white leading-tight">
-                <p className="lg:text-[98px] md:text-[60px] text-[32px] max-md:text-center font-black tracking-widest whitespace-nowrap">
-                  比較1
-                </p>
+                <div className="lg:text-[98px] md:text-[60px] text-[32px] max-md:text-center font-black tracking-widest whitespace-nowrap h-[60px] md:h-[130px] overflow-hidden md:leading-[130px] leading-[60px] flex">
+                  <p>比較</p>
+                  <div className="md:animate-[18s_normal_infinite_running_scroll] animate-[18s_normal_infinite_running_scrollSP]">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                    <p>8</p>
+                    <p>9</p>
+                  </div>
+                </div>
                 <p className="lg:text-[24px] md:text-[20px] text-[14px] font-bold lg:tracking-[0.5em] md:tracking-[0.3em] md:ml-2">
                   Comparison
                 </p>

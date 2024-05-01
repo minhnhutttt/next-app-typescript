@@ -95,7 +95,7 @@ export default function FormCard({ handleStep }: HandleStepProps) {
             <div className="flex-1">
               <p className="w-full md:h-[70px] h-[60px] border border-[#E4E4E4] md:text-[18px] font-bold px-4 md:px-[30px] flex items-center py-4 text-[#999]">{fileName ? fileName : '画像をアップロードしてください。'}</p>
             </div>
-            <label htmlFor="file-upload" className="md:h-[70px] h-[60px] flex items-center justify-center bg-[#E2E2E2] md:flex-[0_0_173px] flex-[0_0_120px] md:text-[16px] text-[13px] font-bold font-dm rounded-[10px] cursor-pointer cursor-pointer">
+            <label htmlFor="file-upload" className="md:h-[70px] h-[60px] flex items-center justify-center  md:flex-[0_0_173px] flex-[0_0_120px] md:text-[16px] text-[13px] font-bold font-dm rounded-[10px] cursor-pointer bg-[#7FFF00]/[0.1] border-2 border-[#7FFF00]">
               <input
                 id="file-upload"
                 type="file"
@@ -186,7 +186,7 @@ export default function FormCard({ handleStep }: HandleStepProps) {
                   >
                     DIVER Walletを利用
                   </label>
-                  <span className="glider absolute flex h-[54px] w-[38vw] bg-[#e6eef9] rounded-[99px] [transition:0.25s_ease-out]"></span>
+                  <span className="glider absolute flex h-[54px] w-[38vw] bg-[#7FFF00]/[0.1] border-2 border-[#7FFF00] rounded-[99px] [transition:0.25s_ease-out]"></span>
                 </div>
               </div>
               <div className="flex max-md:mt-8 md:divide-x divide-black">
@@ -206,7 +206,7 @@ export default function FormCard({ handleStep }: HandleStepProps) {
                       </figure>
                       <div className="flex max-md:flex-col gap-4 md:gap-7">
                         <a
-                          href="http://"
+                          href="https://apps.apple.com/jp/app/diver-biz/id6473737351"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="block"
@@ -214,7 +214,7 @@ export default function FormCard({ handleStep }: HandleStepProps) {
                           <img src="/images/appstore.png" alt="" />
                         </a>
                         <a
-                          href="http://"
+                          href="https://play.google.com/store/apps/details?id=com.ideal.strategy.limited.biz&pcampaignid=web_share"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="block"

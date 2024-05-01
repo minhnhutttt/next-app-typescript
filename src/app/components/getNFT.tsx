@@ -128,13 +128,13 @@ const GetNFT = () => {
               </figure>
               <div className="md:space-y-7 space-y-5 mt-4">
                 <a
-                  href="/"
+                  href="https://apps.apple.com/jp/app/diver-biz/id6473737351" target="_blank"
                   className="block max-md:w-[160px] duration-300 hover:opacity-75"
                 >
                   <img src="/images/btn-ios.png" alt="" />
                 </a>
                 <a
-                  href="/"
+                  href="https://play.google.com/store/apps/details?id=com.ideal.strategy.limited.biz&pcampaignid=web_share" target="_blank"
                   className="block max-md:w-[160px] duration-300 hover:opacity-75"
                 >
                   <img src="/images/btn-android.png" alt="" />
@@ -145,7 +145,7 @@ const GetNFT = () => {
           <ArticleWrap
             number="02"
             title="フォームを入力"
-            content="以下の「NFT名刺を作る」ボタンを押すとNFT代名刺作成フォームが開きます。ボタンを押して作成に必要な項目をご確認ください。"
+            content="以下の「NFT名刺を作る」ボタンを押すとNFT代名刺制作フォームが開きます。ボタンを押して制作に必要な項目をご確認ください。"
           >
             <div className="md:mt-4 mt-3">
               <a
@@ -188,13 +188,13 @@ const GetNFT = () => {
               </figure>
               <div className="md:space-y-7 space-y-5 mt-4">
                 <a
-                  href="/"
+                  href="https://apps.apple.com/jp/app/diver-biz/id6473737351" target="_blank"
                   className="block max-md:w-[160px] duration-300 hover:opacity-75"
                 >
                   <img src="/images/btn-ios.png" alt="" />
                 </a>
                 <a
-                  href="/"
+                  href="https://play.google.com/store/apps/details?id=com.ideal.strategy.limited.biz&pcampaignid=web_share" target="_blank"
                   className="block max-md:w-[160px] duration-300 hover:opacity-75"
                 >
                   <img src="/images/btn-android.png" alt="" />
