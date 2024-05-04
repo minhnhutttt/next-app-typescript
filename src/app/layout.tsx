@@ -3,7 +3,7 @@ import { Noto_Sans_Gujarati } from "next/font/google";
 import "./globals.css";
 
 const noto = Noto_Sans_Gujarati({
-  weight: ["400", "500", "700", "800", "900"],
+  weight: ["300","400", "500", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-noto",
   display: "swap",
