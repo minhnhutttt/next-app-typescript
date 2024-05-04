@@ -12,16 +12,11 @@ body {
 }
 
 .splide__track--nav>.splide__list>.splide__slide.is-active {
-  border: 0 !important;
+  @apply !border-0;
 }
-.splide__pagination__page {
-  width: 19px !important;
-  height: 19px !important;
-  border: 1px solid #8F8F8F !important;
-  background-color: #fff !important;
-  margin: 6px !important;
+.js-slider .splide__pagination__page {
+  @apply md:!w-[19px] md:!h-[19px] !w-3 !h-3 !border !border-solid !border-[#8F8F8F] !bg-[#fff] !m-[6px];
 }
 .splide__pagination__page.is-active {
-  background: #FFCA43 !important;
-  transform: scale(1) !important;
+  @apply !bg-[#FFCA43] !scale-100;
 }
