@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Gujarati } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/footer";
 
 const noto = Noto_Sans_Gujarati({
   weight: ["300","400", "500", "700", "800", "900"],
@@ -23,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${noto.className}`}>{children}</body>
+      <body className={`${noto.className}`}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

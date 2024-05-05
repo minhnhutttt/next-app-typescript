@@ -3,8 +3,11 @@ import { Splide, SplideSlide, SplideTrack } from "react-splide-ts";
 import "@splidejs/splide/css";
 import "@splidejs/splide/css/core";
 import { useEffect, useRef } from "react";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const FV = () => {
+
+  const ref = useScrollAnimations();
 
   const mainRef = useRef<Splide>(null);
   const thumbsRef = useRef<Splide>(null);
@@ -23,7 +26,7 @@ const FV = () => {
   });
 
   return (
-    <section className="relative bg-white">
+    <section ref={ref} className="relative bg-white">
       <a href="/" className="absolute xl:left-[96px] left-0 md:left-[7%] top-[30px] max-md:w-[20%] max-xl:w-[100px] max-w-[145px]">
         <img className="" src="/images/logo.png" alt="" />
       </a>
@@ -142,7 +145,7 @@ const FV = () => {
           <ul className="splide__pagination md:!bottom-[-44px] !bottom-[-32px]"></ul>
         </Splide>
       </div>
-      <div className="px-8 md:pt-[100px] md:pb-[140px] pt-[50px] pb-[70px]">
+      <div className="fade-up px-8 md:pt-[100px] md:pb-[140px] pt-[50px] pb-[70px]">
         <h2 className="flex justify-center items-center">
           <img className="max-md:hidden" src="/images/title.png" alt="" />
           <img className="md:hidden" src="/images/title-sp.png" alt="" />

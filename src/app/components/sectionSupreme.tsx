@@ -5,10 +5,9 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const SectionSupreme = () => {
   const ref = useScrollAnimations();
 
-
   return (
-    <section className="bg-[url('/images/bg-02.png')] bg-cover max-md:bg-bottom pt-8 md:pt-16 pb-[70px] md:pb-[152px]">
-        <div className="w-full md:max-w-[1240px] max-w-[440px] mx-auto flex max-md:justify-center items-center md:gap-[60px] gap-5 px-5 pb-5 md:pb-8">
+    <section ref={ref} className="bg-[url('/images/bg-02.png')] bg-cover max-md:bg-bottom pt-8 md:pt-16 pb-[70px] md:pb-[152px]">
+        <div className="fade-up w-full md:max-w-[1240px] max-w-[440px] mx-auto flex max-md:justify-center items-center md:gap-[60px] gap-5 px-5 pb-5 md:pb-8">
             <p className="">
                 <svg className="md:h-[122px] h-[50px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154 122" fill="none">
                     <path d="M64.724 94.8991C54.2855 112.382 42.0094 121.136 27.9213 121.136C20.1881 121.136 13.6035 117.588 8.16727 110.518C2.73109 103.449 0.000244141 94.2355 0.000244141 82.8782C0.000244141 63.0732 5.15568 44.5953 15.4921 27.4445C26.2879 9.45151 38.6915 0.467773 52.6265 0.467773C61.0998 0.467773 67.71 4.09189 72.4826 11.3401C77.2552 18.5884 79.6288 28.2357 79.6288 40.231C79.6288 60.0871 74.652 78.3098 64.724 94.8991ZM39.7635 103.781C42.0094 99.1612 44.8934 90.9431 48.3899 79.1265C52.5755 65.0128 55.8423 52.3539 58.2159 41.1498C60.5894 29.9456 61.7634 22.3656 61.7634 18.4097C61.7634 14.9132 61.3295 12.1824 60.4873 10.1916C59.1857 7.02692 56.8121 5.44456 53.3667 5.44456C48.5686 5.44456 43.9746 10.2172 39.5593 19.7624C37.0837 25.173 34.1486 33.6719 30.7542 45.2588C27.7681 55.3145 24.8586 66.3144 22.0257 78.2842C19.1928 90.2541 17.7891 99.1102 17.7891 104.878C17.7891 108.655 18.7078 111.412 20.5709 113.147C22.4341 114.857 24.4248 115.725 26.5686 115.725C31.4178 115.725 35.782 111.744 39.6869 103.781H39.7635Z" fill="white"/>
@@ -18,9 +17,9 @@ const SectionSupreme = () => {
             <h5 className="font-hiragino md:text-[30px] text-[18px] font-semibold">「至高」のほしいもに<br className="md:hidden" />たどり着くまで…</h5>
         </div>
         <div className="md:pl-[15%] max-md:px-5">
-            <div className="bg-white/80 bg-cover px-5 md:pl-[4.5vw] border-[#75C875] border-2 md:border-r-0 pt-8 md:pb-24 md:pt-7 relative max-md:max-w-[440px] max-md:mx-auto">
+            <div className="fade-up bg-white/80 bg-cover px-5 md:pl-[4.5vw] border-[#75C875] border-2 md:border-r-0 pt-8 md:pb-24 md:pt-7 relative max-md:max-w-[440px] max-md:mx-auto">
                 <div className="w-full max-w-[1280px] md:mr-auto max-md:pb-10">
-                    <div className="flex max-xl:flex-col">
+                    <div className="fade-up flex max-xl:flex-col">
                         <div className="flex max-md:flex-col md:mt-10 gap-6">
                             <figure className="max-md:w-full max-xl:w-1/3">
                                 <img className="max-md:w-full" src="/images/img-supreme-01.png" alt="" />
@@ -37,7 +36,7 @@ const SectionSupreme = () => {
                             <img className="max-xl:w-[200px]" src="/images/img-supreme-map.png" alt="" />
                         </figure>
                     </div>
-                    <div className="flex justify-start max-md:mt-5 min-[1600px]:mt-[-28px]">
+                    <div className="fade-up flex justify-start max-md:mt-5 min-[1600px]:mt-[-28px]">
                         <div className="flex max-md:flex-col md:mt-10 gap-6 md:flex-row-reverse">
                             <figure className="max-md:w-full max-xl:w-1/3">
                                 <img src="/images/img-supreme-02.png" alt="" />
@@ -53,7 +52,7 @@ const SectionSupreme = () => {
                         </div>
                     </div>
                 </div>
-                <div className="md:absolute right-full bottom-0 font-hiragino md:text-[58px] text-[30px] text-white font-semibold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] md:rotate-180">Development story </div>
+                <div className="fade-up md:absolute right-full bottom-0 font-hiragino md:text-[58px] text-[30px] text-white font-semibold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] md:rotate-180">Development story </div>
             </div>
         </div>
     </section>
