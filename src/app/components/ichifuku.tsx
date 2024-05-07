@@ -34,7 +34,7 @@ const Ichifuku = () => {
                 「果物そのもの」<span className="md:text-[28px] text-[14px]">の</span>甘味<span className="md:text-[28px] text-[14px]">と</span>健康に良い栄養分<span className="md:text-[30px] text-[15px]">が</span><span className="md:text-[36px] text-[18px]">詰まった</span><br />
                 ドライキウイ<span className="md:text-[28px] text-[14px]">を</span>作り上げました。
             </div>
-            <div className="fade-up flex justify-center md:mt-9 mt-6">
+            <div className="fade-up flex justify-center md:mt-[52px] mt-6">
                 <img className='max-md:w-[240px]' src="/assets/images/package-kiwi-02.png" alt="" />
             </div>
         </div>

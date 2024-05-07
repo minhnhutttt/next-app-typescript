@@ -23,7 +23,13 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
-            <p className="md:text-[20px] text-[12px] text-white text-right">©︎ 2024 Copy Rights ippuku All Reserve.</p>
+            <div className="flex items-center justify-end w-full max-w-[1334px] mx-auto md:gap-x-[12%] gap-x-10 gap-y-7 max-xl:flex-col max-md:mt-3">
+                <div className="flex items-center justify-center md:justify-end xl:gap-x-[20%] gap-x-10 gap-y-7 flex-1 max-md:flex-wrap">
+                    <a href="https://kanmi.ippuku.store/pages/%E7%89%B9%E5%AE%9A%E5%95%86%E5%93%81%E5%8F%96%E5%BC%95%E6%B3%95%E3%81%AB%E3%82%88%E3%82%8B%E8%A1%A8%E8%A8%98" target="_blank" className="md:text-[20px] text-[16px] text-white duration-300 hover:opacity-70">特定商取引法に基づく表記</a>
+                    <a href="https://kanmi.ippuku.store/pages/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC" target="_blank" className="md:text-[20px] text-[16px] text-white duration-300 hover:opacity-70">プライバシーポリシー</a>
+                </div>
+                <p className="md:text-[20px] text-[12px] text-white text-right">©︎ 2024 Copy Rights ippuku All Reserve.</p>
+            </div>
             </div>
         </div>
     </footer>
