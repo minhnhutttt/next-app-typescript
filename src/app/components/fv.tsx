@@ -27,7 +27,7 @@ const FV = () => {
 
   return (
     <section ref={ref} className="relative bg-white">
-      <a href="/" className="absolute xl:left-[96px] left-0 md:left-[7%] top-[30px] max-md:w-[20%] max-xl:w-[100px] max-w-[145px]">
+      <a href="/" className="absolute xl:left-[96px] left-0 md:left-[7%] top-[30px] max-md:w-[20%] max-xl:w-[100px] max-w-[145px] z-20">
         <img className="" src="/images/logo.png" alt="" />
       </a>
       <div className="pt-[10%] xl:pt-[120px] relative bg-[url('/images/fv-bg.png')] bg-bottom md:bg-[length:100%_auto] bg-[length:auto_40%] bg-no-repeat">
