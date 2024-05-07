@@ -35,7 +35,7 @@ const Ichifuku = () => {
                 ドライキウイ<span className="md:text-[28px] text-[14px]">を</span>作り上げました。
             </div>
             <div className="fade-up flex justify-center md:mt-[52px] mt-6">
-                <img className='max-md:w-[240px]' src="/assets/images/package-kiwi-02.png" alt="" />
+                <img className='max-md:w-[200px]' src="/assets/images/package-kiwi-02.png" alt="" />
             </div>
         </div>
     </section>
