@@ -52,7 +52,7 @@ const SectionSupreme = () => {
                         </div>
                     </div>
                 </div>
-                <div className="fade-up md:absolute right-full bottom-0 font-hiragino md:text-[58px] text-[30px] text-white font-semibold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] md:rotate-180">Development story </div>
+                <div className="fade-up md:absolute right-full bottom-0 font-hiragino md:text-[58px] text-[30px] text-white font-semibold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] md:rotate-180 max-md:!rotate-0">Development story </div>
             </div>
         </div>
     </section>

@@ -56,7 +56,7 @@ const SectionComparison = () => {
                     })}
                     
                 </div>
-                <div className="fade-up md:absolute left-full bottom-0 font-hiragino md:text-[58px] text-[30px] text-white font-semibold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] md:rotate-180">Characteristics</div>
+                <div className="fade-up md:absolute left-full bottom-0 font-hiragino md:text-[58px] text-[30px] text-white font-semibold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] md:rotate-180 max-md:!rotate-0">Characteristics</div>
             </div>
         </div>
     </section>

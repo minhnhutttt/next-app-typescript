@@ -58,7 +58,7 @@ const SectionHealth = () => {
                     })}
                     
                 </div>
-                <div className="fade-up md:absolute left-full bottom-0 font-hiragino md:text-[58px] text-[30px] text-[#C84E4E] font-semibold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] md:rotate-180">Good for health</div>
+                <div className="fade-up md:absolute left-full bottom-0 font-hiragino md:text-[58px] text-[30px] text-[#C84E4E] font-semibold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] md:rotate-180 max-md:!rotate-0">Good for health</div>
             </div>
         </div>
     </section>
