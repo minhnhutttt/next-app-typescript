@@ -1,5 +1,6 @@
 import FV from "./components/fv";
 import GoldenRatio from "./components/goldenRatio";
+import Guarantee from "./components/guarantee";
 import Reasons from "./components/reasons";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <FV />
       <GoldenRatio />
       <Reasons />
+      <Guarantee />
     </main>
   );
 }

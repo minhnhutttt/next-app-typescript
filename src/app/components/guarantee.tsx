@@ -1,4 +1,4 @@
-export default function Reasons() {
+export default function Guarantee() {
     return (
       <section className="px-5 max-md:mt-10 bg-[url('/assets/images/reason-bg.png')] bg-no-repeat bg-left-topt">
         <div className="w-full max-w-[1260px] mx-auto bg-[#FCEECA] md:rounded-[97px] rounded-[50px] xl:p-[38px] p-5 max-xl:px-[10vw] relative">
