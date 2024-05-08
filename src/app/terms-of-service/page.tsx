@@ -96,7 +96,7 @@ export default function TermsOfService() {
             <TextBlock title="第14条 (お問い合わせ)">
                 本サービスに関するお問い合わせは、以下の窓口にご連絡ください。<br />
                 株式会社ワールドスキャンプロジェクト<br />
-                お問い合わせ先：<a href="info@world-scan-project.com" className="underline">info@world-scan-project.com</a>
+                お問い合わせ先：<a href="https://info@world-scan-project.com" target="_blank" className="underline">info@world-scan-project.com</a>
             </TextBlock>
         </div>
       </div>
