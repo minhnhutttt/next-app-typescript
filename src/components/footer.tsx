@@ -15,7 +15,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="flex-1 max-lg:w-full max-lg:flex max-lg:justify-center max-lg:mt-10 md:ml-[38px]">
-                    <a href="https://kanmi.ippuku.store/" target="_blank" className="relative w-full md:max-w-[590px] max-w-[360px] h-16 md:h-[114px] bg-[#FF0E0E] flex justify-center items-center font-hiragino font-semibold md:text-[28px] text-[16px] text-white duration-300 hover:opacity-75">
+                    <a href="https://kanmi.ippuku.store/collections/%E3%81%BE%E3%82%8B%E3%81%94%E3%81%A8%E5%B9%B2%E3%81%97%E6%9E%9C%E5%AE%9F" target="_blank" className="relative w-full md:max-w-[590px] max-w-[360px] h-16 md:h-[114px] bg-[#FF0E0E] flex justify-center items-center font-hiragino font-semibold md:text-[28px] text-[16px] text-white duration-300 hover:opacity-75">
                         <svg className="absolute left-4 max-md:w-5 md:left-7" xmlns="http://www.w3.org/2000/svg" width="33" height="41" viewBox="0 0 33 41" fill="none">
                             <path d="M33 20.5L0.75 40.8516V0.148403L33 20.5Z" fill="white"/>
                         </svg>
