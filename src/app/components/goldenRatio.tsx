@@ -1,4 +1,4 @@
-export default function FV() {
+export default function GoldenRatio() {
     return (
       <section className="bg-[url('/assets/images/fv-bg.png')] bg-bottom bg-[length:100%_100%] pt-7 md:pt-[70px] pb-[44vw] md:pb-[310px] px-5">
         <div className="w-full max-w-[1556px] mx-auto relative">
