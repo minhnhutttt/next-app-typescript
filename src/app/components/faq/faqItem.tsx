@@ -30,8 +30,8 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
   };
 
   return (
-    <div ref={ref}>
-      <div className="fade-up space-y-2 rounded-[20px] border border-[#7FFF00] bg-white/90 p-4 md:px-8 md:pb-8 md:pt-10">
+    <div>
+      <div className="space-y-2 rounded-[20px] border border-[#7FFF00] bg-white/90 p-4 md:px-8 md:pb-8 md:pt-10">
         <button
           type="button"
           className="flex w-full items-center justify-between duration-200 hover:opacity-75"

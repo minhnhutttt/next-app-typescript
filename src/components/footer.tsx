@@ -14,7 +14,7 @@ export default function Footer() {
         <ul className="space-y-[20px] text-[15px] font-bold text-white md:space-y-[30px] md:text-[16px]">
           <li>
             <a
-              href=""
+              href="/terms-of-service"
               target="_blank"
               className="block duration-150 hover:opacity-75"
             >
