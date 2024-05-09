@@ -17,6 +17,7 @@ const config: Config = {
     fontFamily: {
       mincho: ["Hiragino Mincho ProN", "sans-serif"],
       gothic: ["Hiragino Kaku Gothic Pro", "sans-serif"],
+      gothicSdt: ["Hiragino Kaku Gothic Sdt", "sans-serif"],
     },
   },
   plugins: [],

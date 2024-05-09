@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Serif_JP } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/footer";
 
 
 const noto = Noto_Serif_JP({
@@ -22,7 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={noto.className}>{children}</body>
+      <body className={noto.className}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -1,73 +1,39 @@
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+import Title from "@/components/title";
+
 export default function Guarantee() {
+  const ref = useScrollAnimations();
     return (
-      <section className="px-5 max-md:mt-10 bg-[url('/assets/images/reason-bg.png')] bg-no-repeat bg-left-topt">
-        <div className="w-full max-w-[1260px] mx-auto bg-[#FCEECA] md:rounded-[97px] rounded-[50px] xl:p-[38px] p-5 max-xl:px-[10vw] relative">
-          <div className="absolute max-xl:w-[6vw] md:right-5 right-2 md:top-[250px] top-[20vw]">
-            <img src="/assets/images/reason-text.png" alt="" />
-          </div>
-            <div className="w-full max-w-[950px] mx-auto">
-                <h4 className="flex justify-center items-center">
-                    <img src="/assets/images/reason-title.png" alt="一福米を選ぶ5つの理由" />
-                </h4>
-                <div className="divide-y divide-black divide-dashed">
-                    <div className="xl:pl-[80px] max-xl:justify-center flex md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
-                      <figure>
-                        <img src="/assets/images/reason-01.png" alt="" />
-                      </figure>
-                      <div className="max-w-[372px]">
-                        <h5 className="font-mincho font-semibold md:text-[23px] text-[18px]">低カロリー低糖質！糖質34％オフ</h5>
-                        <p className="font-gothic md:text-[19px] text-[14px] max-w-[332px] md:mt-7 mt-4">
-                        独自の配合と製法で栄養価が保持され、同量のお米に比べ、<span className="text-[#FF0000] font-semibold">糖質を34％カット！ダイエットにオススメです！</span>
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex md:flex-row-reverse justify-center md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
-                      <figure>
-                        <img src="/assets/images/reason-02.png" alt="" />
-                      </figure>
-                      <div className="max-w-[372px]">
-                        <h5 className="font-mincho font-semibold md:text-[23px] text-[18px]">糖質制限食にも！</h5>
-                        <p className="font-gothic md:text-[19px] text-[14px] max-w-[332px] md:mt-7 mt-4">
-                        糖尿病などの糖質制限食や介護食にも適しています。<span className="font-semibold">ポッコリお腹、健康管理が目的の方</span>にもピッタリ。
-                        </p>
-                      </div>
-                    </div>
-                    <div className="xl:pl-[80px] max-xl:justify-center flex md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
-                      <figure>
-                        <img src="/assets/images/reason-03.png" alt="" />
-                      </figure>
-                      <div className="max-w-[372px]">
-                        <h5 className="font-mincho font-semibold md:text-[23px] text-[18px]">簡単・美味しい・栄養満点！</h5>
-                        <p className="font-gothic md:text-[19px] text-[14px] max-w-[332px] md:mt-7 mt-4">
-                        お湯を注いで<span className="font-semibold">15分！</span>放置している間に完成！味や食感も<span className="text-[#FF0000] font-semibold">まるで炊きたてのご飯</span>のようです。
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex md:flex-row-reverse justify-center md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
-                      <figure>
-                        <img src="/assets/images/reason-04.png" alt="" />
-                      </figure>
-                      <div className="max-w-[372px]">
-                        <h5 className="font-mincho font-semibold md:text-[23px] text-[18px]">アレルギー特定原材料 <br />28品目不使用</h5>
-                        <p className="font-gothic md:text-[19px] text-[14px] max-w-[332px] md:mt-7 mt-4">
-                        <span className="font-semibold">乳幼児や妊婦さん</span>にも安心してお召し上がり頂けます。また<span className="font-semibold">介護食</span>にも対応しています。
-                        </p>
-                      </div>
-                    </div>
-                    <div className="xl:pl-[80px] max-xl:justify-center flex md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
-                      <figure>
-                        <img src="/assets/images/reason-05.png" alt="" />
-                      </figure>
-                      <div className="max-w-[372px]">
-                        <h5 className="font-mincho font-semibold md:text-[23px] text-[18px]">長期保存可能</h5>
-                        <p className="font-gothic md:text-[19px] text-[14px] max-w-[332px] md:mt-7 mt-4">
-                          賞味期限はなんと<span className="text-[#FF0000] font-semibold">5年。</span>
-                          保存食、非常食として最適です。常温保存で保管いただけます。
-                        </p>
-                      </div>
-                    </div>
-                </div>
+      <section ref={ref} className="px-5 bg-[url(/assets/images/guarantee-bg-01.png),_url(/assets/images/guarantee-bg-02.png)] bg-no-repeat max-md:[background-size:30%_auto,_30%_auto] max-lg:[background-size:20%_auto,_20%_auto] [background-position:_top_left,_right_bottom] md:pt-[140px] pt-20 md:pb-[74px] pb-10">
+        <div className="w-full max-w-[988px] mx-auto">
+          <Title>5年保証の一福米だから出来る事</Title>
+          <div className="md:mt-20 mt-10 space-y-[60px]">
+            <div className="fade-up flex max-md:flex-col max-md:items-center w-full max-md:mx-auto max-w-[400px] md:max-w-[600px] lg:max-w-[705px] md:gap-10 gap-5 md:ml-[66px]">
+              <figure>
+                <img src="/assets/images/guarantee-01.png" alt="" />
+              </figure>
+              <div className="font-gothic md:text-[19px] text-[14px] flex-1">
+                地震などの災害時に一福米はとても最適です。糖質制限がある方は特に日頃から食品の制限があるので<span className="font-semibold">低糖質防災備蓄として常備しておくといざという時に安心</span>です。
+              </div>
             </div>
+            <div className="fade-up flex max-md:flex-col max-md:items-center w-full max-md:mx-auto max-w-[400px] md:max-w-[600px] lg:max-w-[705px] md:gap-10 gap-5 md:ml-[100px] lg:ml-[180px]">
+              <figure>
+                <img src="/assets/images/guarantee-02.png" alt="" />
+              </figure>
+              <div className="font-gothic md:text-[19px] text-[14px] flex-1">
+              <span className="font-semibold">軽量でコンパクト</span>なため、<span className="font-semibold">持ち運びに便利</span>です。お湯のみで温かいご飯がいただけるのでアウトドアなどのレジャーに最適です。ごみもパックとスプーンのみで洗い物も不要です。
+              </div>
+            </div>
+            <div className="fade-up flex max-md:flex-col max-md:items-center w-full max-md:mx-auto max-w-[400px] md:max-w-[600px] lg:max-w-[705px] md:gap-10 gap-5 md:ml-[130px] lg:ml-[290px]">
+              <figure>
+                <img src="/assets/images/guarantee-03.png" alt="" />
+              </figure>
+              <div className="font-gothic md:text-[19px] text-[14px] flex-1">
+              <span className="font-semibold">体調不良で買い物も料理も無理。</span>でも栄養を取って早く治したい。そんな時に一福米は、水分量の調整のみで、おかゆや雑炊としても<span className="font-semibold">簡単に美味しくお召し上がり頂けます。</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     );

@@ -1,10 +1,14 @@
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+
 export default function GoldenRatio() {
+    const ref = useScrollAnimations();
     return (
-      <section className="px-5 max-md:mt-10 md:mb-[52px] mb-10">
+      <section ref={ref} className="px-5 max-md:mt-10 md:mb-[52px] mb-10">
         <div className="w-full md:max-w-[1320px] max-w-[400px] mx-auto">
-            <div className="border border-[#17A9E7] md:rounded-[90px] rounded-[45px]">
-                <div className="border border-[#C566FF] relative -top-1.5 md:top-[-13px] -right-2 md:right-[-16px] md:rounded-[90px] rounded-[45px] pb-6 md:pb-10">
-                    <div className="flex justify-center items-center mt-[-36px]">
+            <div className="fade-up border border-[#17A9E7] md:rounded-[90px] rounded-[45px]">
+                <div className="fade-up border border-[#C566FF] relative -top-1.5 md:top-[-13px] -right-2 md:right-[-16px] md:rounded-[90px] rounded-[45px] pb-6 md:pb-10">
+                    <div className="fade-up flex justify-center items-center mt-[-36px]">
                         <div className="flex  bg-white md:px-9 px-4 gap-5">
                             <figure>
                                 <img className="max-md:w-[50px] max-lg:w-[80px]" src="/assets/images/rice.png" alt="美味しさと健康の黄金比" />
@@ -13,7 +17,7 @@ export default function GoldenRatio() {
                         </div>
                     </div>
                     <div className="flex max-md:flex-col md:px-9 px-5 max-md:relative max-md:-left-2 max-md:pt-4">
-                        <div className=" max-md:flex max-md:flex-col max-md:items-center max-md:justify-center">
+                        <div className="fade-up max-md:flex max-md:flex-col max-md:items-center max-md:justify-center">
                             <figure>
                                 <img className="max-md:w-[220px]" src="/assets/images/ratio-01.png" alt="" />
                             </figure>
@@ -24,10 +28,10 @@ export default function GoldenRatio() {
                                 </p>
                             </div>
                         </div>
-                        <figure className="md:pt-24 pt-4 lg:px-8 px-4 flex justify-center items-start">
+                        <figure className="fade-up md:pt-24 pt-4 lg:px-8 px-4 flex justify-center items-start">
                             <img className="max-md:w-8" src="/assets/images/x.png" alt="" />
                         </figure>
-                        <div className=" max-md:flex max-md:flex-col max-md:items-center max-md:justify-center">
+                        <div className="fade-up max-md:flex max-md:flex-col max-md:items-center max-md:justify-center">
                             <figure>
                                 <img className="max-md:w-[220px]" src="/assets/images/ratio-02.png" alt="" />
                             </figure>
@@ -38,10 +42,10 @@ export default function GoldenRatio() {
                                 </p>
                             </div>
                         </div>
-                        <figure className="md:pt-24 pt-6 lg:px-8 px-4 flex justify-center items-start">
+                        <figure className="fade-up md:pt-24 pt-6 lg:px-8 px-4 flex justify-center items-start">
                             <img className="max-md:w-8" src="/assets/images/equal.png" alt="" />
                         </figure>
-                        <div className="md:-mt-5 mt-5 max-md:px-5 max-md:flex max-md:flex-col max-md:items-center max-md:justify-center">
+                        <div className="fade-up md:-mt-5 mt-5 max-md:px-5 max-md:flex max-md:flex-col max-md:items-center max-md:justify-center">
                             <figure>
                                 <img className="max-md:w-[220px]" src="/assets//images/ratio-03.png" alt="" />
                             </figure>

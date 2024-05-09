@@ -1,16 +1,19 @@
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+import Title from "@/components/title";
+
 export default function Reasons() {
+  const ref = useScrollAnimations();
     return (
-      <section className="px-5 max-md:mt-10 bg-[url('/assets/images/reason-bg.png')] bg-no-repeat bg-left-topt">
+      <section ref={ref} className="px-5 max-md:mt-10 bg-[url('/assets/images/reason-bg.png')] bg-no-repeat bg-left-top md:mb-16 mb-7">
         <div className="w-full max-w-[1260px] mx-auto bg-[#FCEECA] md:rounded-[97px] rounded-[50px] xl:p-[38px] p-5 max-xl:px-[10vw] relative">
           <div className="absolute max-xl:w-[6vw] md:right-5 right-2 md:top-[250px] top-[20vw]">
-            <img src="/assets/images/reason-text.png" alt="" />
+            <img className="fade-up" src="/assets/images/reason-text.png" alt="" />
           </div>
             <div className="w-full max-w-[950px] mx-auto">
-                <h4 className="flex justify-center items-center">
-                    <img src="/assets/images/reason-title.png" alt="一福米を選ぶ5つの理由" />
-                </h4>
+                <Title>一福米を選ぶ5つの理由</Title>
                 <div className="divide-y divide-black divide-dashed">
-                    <div className="xl:pl-[80px] max-xl:justify-center flex md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
+                    <div className="fade-up xl:pl-[80px] max-xl:justify-center flex md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
                       <figure>
                         <img src="/assets/images/reason-01.png" alt="" />
                       </figure>
@@ -21,7 +24,7 @@ export default function Reasons() {
                         </p>
                       </div>
                     </div>
-                    <div className="flex md:flex-row-reverse justify-center md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
+                    <div className="fade-up flex md:flex-row-reverse justify-center md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
                       <figure>
                         <img src="/assets/images/reason-02.png" alt="" />
                       </figure>
@@ -32,7 +35,7 @@ export default function Reasons() {
                         </p>
                       </div>
                     </div>
-                    <div className="xl:pl-[80px] max-xl:justify-center flex md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
+                    <div className="fade-up xl:pl-[80px] max-xl:justify-center flex md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
                       <figure>
                         <img src="/assets/images/reason-03.png" alt="" />
                       </figure>
@@ -43,7 +46,7 @@ export default function Reasons() {
                         </p>
                       </div>
                     </div>
-                    <div className="flex md:flex-row-reverse justify-center md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
+                    <div className="fade-up flex md:flex-row-reverse justify-center md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
                       <figure>
                         <img src="/assets/images/reason-04.png" alt="" />
                       </figure>
@@ -54,7 +57,7 @@ export default function Reasons() {
                         </p>
                       </div>
                     </div>
-                    <div className="xl:pl-[80px] max-xl:justify-center flex md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
+                    <div className="fade-up xl:pl-[80px] max-xl:justify-center flex md:py-[60px] py-[30px] md:gap-10 max-md:flex-col gap-5 items-center">
                       <figure>
                         <img src="/assets/images/reason-05.png" alt="" />
                       </figure>
