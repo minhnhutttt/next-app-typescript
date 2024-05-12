@@ -15,7 +15,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      mincho: ["Hiragino Mincho ProN", "sans-serif"],
     },
   },
   plugins: [],
