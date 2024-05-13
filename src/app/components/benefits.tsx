@@ -1,4 +1,5 @@
-import Title from "@/components/title";
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const data = [
     {
@@ -22,10 +23,12 @@ const data = [
 ]
 
   export default function Benefits() {
+    const ref = useScrollAnimations();
+
     return (
-        <div className="px-4 pt-10 md:pt-[120px] pb-16">
+        <div ref={ref} className="px-4 pt-10 md:pt-[120px] pb-16">
       <div className="w-full max-w-[1150px] mx-auto">
-        <div className="flex items-center justify-center border-b border-black pb-6">
+        <div className="fade-up flex items-center justify-center border-b border-black pb-6">
           <h2 className="font-bold font-mincho text-[4.8vw] md:text-[36px] text-black leading-tight">
             柿の葉茶の <br className="md:hidden" />
             <span className="text-[#ED3636]">「あまり</span>
@@ -42,7 +45,7 @@ const data = [
         </div>
         <div className="md:mt-20 mt-6 md:space-y-[84px] space-y-[60px] max-md:max-w-[440px] mx-auto">
           {data.map((item, index) => (
-            <div className="flex items-center md:gap-[60px] gap-[30px] max-md:flex-col md:[&:nth-child(2)]:flex-row-reverse md:[&:nth-child(2)]:pl-[100px]" key={index}>
+            <div className="fade-up flex items-center md:gap-[60px] gap-[30px] max-md:flex-col md:[&:nth-child(2)]:flex-row-reverse md:[&:nth-child(2)]:pl-[100px]" key={index}>
             <figure className="flex justify-center items-center">
               <img
                 className="max-md:max-w-[233px]"
