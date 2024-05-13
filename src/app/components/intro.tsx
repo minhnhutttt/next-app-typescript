@@ -8,8 +8,8 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
         <div ref={ref} className="md:bg-[url('/assets/images/bg-01.png')] bg-[url('/assets/images/bg-01_sp.png')] bg-[length:100%_100%] px-5 pb-[170px] md:pb-[320px] md:pt-[165px] pt-[80px]">
         <div className="w-full md:max-w-[1344px] max-w-[440px] mx-auto max-md:flex-col flex md:pl-[66px] max-md:items-center md:justify-end">
           <Title>一福の柿の葉茶とは？</Title>
-          <div className="flex-1 md:ml-[8%] max-md:flex-col-reverse flex max-md:items-center max-md:mt-4">
-            <p className="fade-up text-[17px] md:text-[21px] font-light text-white flex-1">
+          <div className="flex-1 md:ml-[8%] max-md:flex-col-reverse flex max-md:items-center max-md:mt-4 md:mt-3">
+            <p className="fade-up text-[17px] md:text-[21px] font-light text-white flex-1 leading-[1.55]">
               柿の葉茶（かきのはちゃ）は、日本の伝統的な茶の一種で、柿の葉を乾燥させて作られるお茶です。
               <br />
               <br />

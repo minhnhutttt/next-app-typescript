@@ -86,13 +86,13 @@ const data = [
         <div className="fade-up flex items-center justify-center border-b border-black pb-5">
           <h2 className="font-bold font-mincho text-[5.333vw] md:text-[40px] text-black leading-tight max-md:tracking-[-0.08em]">
             <span className="text-[7.2vw] md:text-[54px]">
-              一福の柿の葉茶は
+            一福の柿の葉茶は
             </span>
             <br />
             <span className="text-[7.2vw] md:text-[54px] text-[#ED3636]  md:pl-[185px] pl-[100px]">
               様々な味
             </span>
-            を楽しめます
+            を楽しめます。
           </h2>
         </div>
         <div className="fade-up flex justify-center mt-5 md:mt-12">
@@ -107,7 +107,7 @@ const data = [
           <div className="w-full md:max-w-[1010px] max-w-[400px] mx-auto md:space-y-[86px] space-y-[40px]">
             {data.map((item, index) => (
                 <div
-                className={`p-[18px] md:p-[70px] bg-[url('/assets/images/img-flavors-${item.id}.png')] bg-cover`} key={index}
+                className={`p-[18px] md:p-[70px] bg-cover`} style={{backgroundImage:`url(/assets/images/img-flavors-${item.id}.png)`}} key={index}
               >
                 <div className="md:border-8 border-4 border-[#D2BF1F] py-5 md:py-[30px] px-3 md:px-8 bg-white">
                   <div className="flex justify-between pb-2 md:pb-3.5 border-b-[3px] border-[#D2BF1F]">

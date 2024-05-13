@@ -18,7 +18,6 @@ const data = [
         image: "/assets/images/img-step-03.png",
         body: "しっかりと感想させ、丁寧に揉みこみ完成"
     }
-    
 ]
 
   export default function Work() {
@@ -65,7 +64,7 @@ const data = [
           </div>
           <div className="fade-up flex justify-center mt-9 md:mt-16">
             <p className="md:text-[20px] text-[17px] font-light max-w-[960px] leading-relaxed  px-4">
-              一福「柿の葉茶」の生産者は「加藤とし」さんです。
+            一福「柿の葉茶」の生産者は「加藤とし」さんです。
               南房総に住居を構える加藤としさんは今年94歳、驚くほどの健康体を維持しています。
               <br />
               <br />
@@ -78,7 +77,7 @@ const data = [
                 <img src="/assets/images/img-avatar.png" alt="" />
               </figure>
               <p className="md:text-[22px] text-[18px] font-light text-center mt-5">
-                加藤としさん　94歳
+              加藤としさん　94歳
               </p>
             </div>
             <div className="flex-1">
