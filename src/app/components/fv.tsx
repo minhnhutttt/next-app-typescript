@@ -12,18 +12,6 @@ const FV = () => {
   const mainRef = useRef<Splide>(null);
   const thumbsRef = useRef<Splide>(null);
   const thumbsRef2 = useRef<Splide>(null);
-  useEffect(() => {
-    if (
-      mainRef.current &&
-      thumbsRef.current &&
-      thumbsRef.current.splide &&
-      thumbsRef2.current &&
-      thumbsRef2.current.splide
-    ) {
-      mainRef.current.sync(thumbsRef.current.splide);
-      mainRef.current.sync(thumbsRef2.current.splide);
-    }
-  });
 
   return (
     <section ref={ref} className="relative bg-white overflow-hidden">
@@ -41,26 +29,29 @@ const FV = () => {
               type: "fade",
               arrows: false,
               pagination: false,
-              isNavigation: true,
-              speed: 1000
+              speed: 3000,
+              interval: 2000,
+              drag: false,
+              pauseOnHover: false,
+              pauseOnFocus: false,
             }}
             className="bg-white"
           >
-            <SplideSlide>
+            <SplideSlide data-splide-interval="6000">
               <img
                 className="w-full"
                 src="/images/fv-img-01-circle.png"
                 alt=""
               />
             </SplideSlide>
-            <SplideSlide>
+            <SplideSlide data-splide-interval="4000">
               <img
                 className="w-full"
                 src="/images/fv-img-02-circle.png"
                 alt=""
               />
             </SplideSlide>
-            <SplideSlide>
+            <SplideSlide data-splide-interval="5000">
               <img
                 className="w-full"
                 src="/images/fv-img-03-circle.png"
@@ -78,26 +69,29 @@ const FV = () => {
               type: "fade",
               arrows: false,
               pagination: false,
-              isNavigation: true,
-              speed: 1000
+              speed: 3000,
+              interval: 3000,
+              drag: false,
+              pauseOnHover: false,
+              pauseOnFocus: false,
             }}
             className=""
           >
-            <SplideSlide>
+            <SplideSlide data-splide-interval="6000">
               <img
                 className="w-full"
                 src="/images/fv-img-01-lb.png"
                 alt=""
               />
             </SplideSlide>
-            <SplideSlide>
+            <SplideSlide data-splide-interval="4000">
               <img
                 className="w-full"
                 src="/images/fv-img-02-lb.png"
                 alt=""
               />
             </SplideSlide>
-            <SplideSlide>
+            <SplideSlide data-splide-interval="5000">
               <img
                 className="w-full"
                 src="/images/fv-img-03-lb.png"
@@ -114,20 +108,24 @@ const FV = () => {
             type: "fade",
             rewind: true,
             arrows: false,
-            speed: 1000
+            speed: 3000,
+            interval: 4000,
+            drag: false,
+            pauseOnHover: false,
+              pauseOnFocus: false,
           }}
           className="w-full flex justify-end js-slider fade-right"
         >
           <div className="w-[80%] md:w-[70%] relative md:pb-[60px] pb-[40px]">
             <div className="w-full bg-white  aspect-[590/630] md:aspect-[1175/634]">
               <SplideTrack>
-                <SplideSlide>
+                <SplideSlide data-splide-interval="6000">
                   <img className="w-full object-cover aspect-[590/630] md:aspect-[1175/634]" src="/images/fv-img-01.png" alt="" />
                 </SplideSlide>
-                <SplideSlide>
+                <SplideSlide data-splide-interval="4000">
                   <img className="w-full object-cover aspect-[590/630] md:aspect-[1175/634]" src="/images/fv-img-02.png" alt="" />
                 </SplideSlide>
-                <SplideSlide>
+                <SplideSlide data-splide-interval="5000">
                   <img className="w-full object-cover aspect-[590/630] md:aspect-[1175/634]" src="/images/fv-img-03.png" alt="" />
                 </SplideSlide>
               </SplideTrack>
