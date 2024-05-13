@@ -18,7 +18,7 @@ const Delivered = () => {
             </div>
             <div className="fade-up bg-white border-[6px] border-[#88B450] rounded-[32px] py-4 px-5 md:px-[44px]">
                 <div className="fade-up text-center md:text-[45px] text-[22px] font-hiragino font-semibold">
-                    <span className="md:text-[36px] text-[18px]">果肉だけでは手に入らない、</span><br className="md:hidden" />まるごと干し林檎<span className="md:text-[36px] text-[18px]">なら、</span> <br />
+                    <span className="md:text-[36px] text-[18px]">果肉だけでは手に入らない、</span><br className="min-[1080px]:hidden" />まるごとドライキウイ <br /><span className="md:text-[36px] text-[18px]">なら、</span>
                     こんなに栄養価が高い！
                 </div>
                 <div className="fade-up grid md:grid-cols-3 font-hiragino font-semibold text-white gap-2 md:gap-8 w-full max-md:max-w-[340px] max-md:mx-auto max-md:mt-4">
