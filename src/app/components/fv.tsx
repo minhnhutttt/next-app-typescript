@@ -70,7 +70,7 @@ export default function FV() {
       <div className="md:mt-[-19.8%] mt-[-8.5%] mb-16 md:mb-[7.5%] relative px-7">
         <div className="flex items-center justify-center">
           <h2 className="fade-up text-[18px] md:text-[29px] font-mincho font-semibold  bg-white border border-black md:px-10 p-3.5 md:py-7 leading-[1.13]">
-            一福の「柿の葉茶」には
+          一福の「柿の葉茶」には
             <br className="md:hidden" />
             こんな効果が期待できます
           </h2>

@@ -43,8 +43,9 @@ const data = [
   export default function Habit() {
     const ref = useScrollAnimations();
     return (
-        <div ref={ref} className="bg-[url('/assets/images/bg-habit.png')] bg-cover md:mt-[210px] bg-[center_top_15rem] px-5 pb-[500px]">
-        <div className="w-full max-w-[1200px] mx-auto max-md:max-w-[440px]">
+        <div ref={ref} className="bg-[url('/assets/images/bg-habit.png')] bg-[length:100%_100%] md:mt-[210px] bg-[center_top_15rem] px-5 pb-[280px] relative">
+          <span className="absolute right-0 bottom-[500px]"><img src="/assets/images/habit-deco.png" alt="" /></span>
+        <div className="w-full max-w-[1200px] mx-auto max-md:max-w-[440px] relative">
           <div className="flex items-start max-md:flex-col-reverse">
             <figure className="fade-up relative max-md:w-full max-xl:w-[45%] max-md:mt-10 md:mt-16">
               <img src="/assets/images/img-habit-01.png" alt="" />
@@ -67,8 +68,8 @@ const data = [
               </p>
             </div>
           </div>
-          <div className="xl:-mt-[15%] max-md:mt-16">
-            <div className="fade-up flex justify-center">
+          <div className="xl:-mt-[10%] md:mt-14 max-md:mt-24">
+            <div className="fade-up flex max-md:ml-0 max-lg:ml-[8%] max-md:justify-center lg:justify-center">
               <div className="relative md:ml-[2%]">
                 <figure>
                   <img src="/assets/images/img-habit-02.png" alt="" />
@@ -78,7 +79,7 @@ const data = [
                 </figure>
               </div>
             </div>
-            <div className="fade-up flex max-md:mt-16 md:mt-5">
+            <div className="fade-up flex max-md:justify-center max-md:mt-24 md:mt-16">
               <div className="relative md:ml-[18.5%] md:-mt-[8%]">
                 <figure className="">
                   <img src="/assets/images/img-habit-03.png" alt="" />
@@ -174,7 +175,7 @@ const data = [
             >
               <path d="M33 20.5L0.75 40.8516V0.148403L33 20.5Z" fill="white" />
             </svg>
-            柿の葉茶を購入する
+            心ととのう柿の葉茶を購入する
           </a>
         </div>
         </div>
