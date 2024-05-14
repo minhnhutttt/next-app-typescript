@@ -32,9 +32,8 @@ export default function Tutorial() {
                 <figure className="md:h-[249px] flex justify-center items-center md:mt-4 mt-3">
                     <img className="max-md:max-w-[250px]" src="/assets/images/tutorial-03.png" alt="" />
                 </figure>
-                <div className="flex justify-center md:mt-7 mt-6">
-                    <p className="font-['Inter'] md:text-[19px] text-[15px]">袋のチャックを閉めて、あとは
-待つだけ！
+                <div className="flex justify-center md:mt-7 mt-6 md:max-w-[250px]">
+                    <p className="font-['Inter'] md:text-[19px] text-[15px]">袋のチャックを閉めて、あとは待つだけ！
    （お水で60分、お湯で15分）</p>
                 </div>
             </div>

@@ -19,7 +19,7 @@ export default function Reasons() {
                       </figure>
                       <div className="max-w-[372px]">
                         <h5 className="font-mincho font-semibold md:text-[23px] text-[18px]">低カロリー低糖質！糖質34％オフ</h5>
-                        <p className="font-gothic md:text-[19px] text-[14px] max-w-[332px] md:mt-7 mt-4">
+                        <p className="font-gothic md:text-[19px] text-[14px] max-w-[325px] md:mt-7 mt-4">
                         独自の配合と製法で栄養価が保持され、同量のお米に比べ、<span className="text-[#FF0000] font-semibold">糖質を34％カット！ダイエットにオススメです！</span>
                         </p>
                       </div>

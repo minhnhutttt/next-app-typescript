@@ -14,7 +14,7 @@ export default function Guarantee() {
                 <img src="/assets/images/guarantee-01.png" alt="" />
               </figure>
               <div className="font-gothic md:text-[19px] text-[14px] flex-1">
-                地震などの災害時に一福米はとても最適です。糖質制限がある方は特に日頃から食品の制限があるので<span className="font-semibold">低糖質防災備蓄として常備しておくといざという時に安心</span>です。
+              地震などの災害時に一福米はとても最適です。特に糖質制限がある方は日頃から食品の制限があるため、<span className="font-semibold">低糖質防災備蓄として常備しておくといざという時に安心</span>です。
               </div>
             </div>
             <div className="fade-up flex max-md:flex-col max-md:items-center w-full max-md:mx-auto max-w-[400px] md:max-w-[600px] lg:max-w-[705px] md:gap-10 gap-5 md:ml-[100px] lg:ml-[180px]">
@@ -22,7 +22,7 @@ export default function Guarantee() {
                 <img src="/assets/images/guarantee-02.png" alt="" />
               </figure>
               <div className="font-gothic md:text-[19px] text-[14px] flex-1">
-              <span className="font-semibold">軽量でコンパクト</span>なため、<span className="font-semibold">持ち運びに便利</span>です。お湯のみで温かいご飯がいただけるのでアウトドアなどのレジャーに最適です。ごみもパックとスプーンのみで洗い物も不要です。
+              <span className="font-semibold">軽量でコンパクト</span>なため、<span className="font-semibold">持ち運びに便利</span>です。お湯のみで温かいご飯が楽しめるので、アウトドアなどのレジャーに最適です。ごみもパックとスプーンのみで洗い物も不要です。
               </div>
             </div>
             <div className="fade-up flex max-md:flex-col max-md:items-center w-full max-md:mx-auto max-w-[400px] md:max-w-[600px] lg:max-w-[705px] md:gap-10 gap-5 md:ml-[130px] lg:ml-[290px]">
