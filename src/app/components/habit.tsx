@@ -43,7 +43,7 @@ const data = [
   export default function Habit() {
     const ref = useScrollAnimations();
     return (
-        <div ref={ref} className="bg-[url('/assets/images/bg-habit.png')] md:bg-[length:100%_100%] bg-[length:auto_100%] md:mt-[210px] bg-[center_top_15rem] px-5 md:pb-[280px] pb-[280px] relative">
+        <div ref={ref} className="bg-[url('/assets/images/bg-habit.png')] md:bg-[length:100%_100%] bg-[length:auto_100%] md:mt-[210px] bg-[center_top_15rem] px-5 pb-[280px] relative">
           <span className="absolute right-0 bottom-[500px]"><img src="/assets/images/habit-deco.png" alt="" /></span>
         <div className="w-full max-w-[1200px] mx-auto max-md:max-w-[440px] relative">
           <div className="flex items-start max-md:flex-col-reverse">
@@ -160,14 +160,14 @@ const data = [
                 ))}
           </div>
         </div>
-        <div className="fade-up flex justify-center md:mt-[293px] mt-[120px]">
+        <div className="fade-up flex justify-center md:mt-[293px] mt-[80px]">
           <a
             href="https://kanmi.ippuku.store/collections/%E6%9F%BF%E3%81%AE%E8%91%89%E8%8C%B6/%E6%9F%BF%E3%81%AE%E8%91%89%E8%8C%B6"
             target="_blank"
-            className="flex items-center justify-center w-full md:max-w-[590px] max-w-[290px] md:h-[114px] h-[80px] bg-[#FF0E0E] text-white md:text-[28px] text-[16px] relative"
+            className="flex items-center justify-center w-full md:max-w-[590px] max-w-[330px] md:h-[114px] h-[80px] bg-[#FF0E0E] text-white md:text-[28px] text-[16px] relative"
           >
             <svg
-              className="absolute left-[30px] max-md:w-[18px]"
+              className="absolute md:left-[30px] left-[20px] max-md:w-[18px]"
               width="33"
               height="41"
               viewBox="0 0 33 41"
