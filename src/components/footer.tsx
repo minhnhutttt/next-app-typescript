@@ -13,7 +13,7 @@ const Footer = () => {
                   </p>
               </div>
               <div className="">
-                  <a href="https://kanmi.ippuku.store/collections/shikounohosiimo" target="_blank" className="bg-[#FF0000] flex items-center justify-center w-[300px] md:w-[368px] h-[60px] md:h-[85px] text-white md:text-[26px] text-[18px] font-hiragino font-semibold">
+                  <a href="https://kanmi.ippuku.store/collections/%E4%B8%80%E7%A6%8F%E7%B1%B3" target="_blank" className="bg-[#FF0000] flex items-center justify-center w-[300px] md:w-[368px] h-[60px] md:h-[85px] text-white md:text-[26px] text-[18px] font-hiragino font-semibold">
                       商品一覧はこちら
                   </a>
               </div>
