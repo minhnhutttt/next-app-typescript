@@ -24,26 +24,26 @@ const data = [
   const dataVoice = [
     {
       title: "30代　松本様　スポーツインストラクター",
-      body: "仕事柄、どんな時でも身体を動かさなければいけないので、朝一の栄養補給に欠かせません。特に、熱しても壊れないビタミン（プロビタミン）が豊富なのは助かりますね！",
+      body: <>仕事柄、どんな時でも身体を動かさなければいけないので、<span className="font-semibold">朝一の栄養補給に欠かせません</span>。特に、熱しても壊れないビタミン（プロビタミン）が豊富なのは助かりますね！</>,
       image: "/assets/images/img-voice-01.png",
     },
     {
       id: "2",
       title: "30代　Ｍ様　エステ講師",
-      body: "知人に勧められて最初は美味しくたまに飲む程度でしたが、調べるとこれでもかってくらい栄養が詰まってる事を知り、今では欠かせないものになりました！特に、肌の劣化を防止してくれる成分も豊富なので、生徒にも勧めてます。",
+      body: <>知人に勧められて最初は美味しくたまに飲む程度でしたが、調べると<span className="font-semibold">これでもかってくらい栄養が詰まってる</span>事を知り、今では欠かせないものになりました！特に、肌の劣化を防止してくれる成分も豊富なので、生徒にも勧めてます。</>,
       image: "/assets/images/img-voice-02.png",
     },
     {
       id: "3",
       title: "40代　中山様　飲食店経営",
-      body: "最初は癖のある味に慣れなかったけど、今では文字通り「癖」になっており、毎日飲むようになりました。コンビニでお茶を買う事もやめて、毎日淹れてます。苦い味が苦手な人でも独特の甘みがあっておすすめできると思います！",
+      body: <>最初は癖のある味に慣れなかったけど、今では文字通り「癖」になっており、毎日飲むようになりました。コンビニでお茶を買う事もやめて、毎日淹れてます。苦い味が苦手な人でも<span className="font-semibold">独特の甘みがあっておすすめ</span>できると思います！</>,
       image: "/assets/images/img-voice-03.png",
     },
   ];
   export default function Habit() {
     const ref = useScrollAnimations();
     return (
-        <div ref={ref} className="bg-[url('/assets/images/bg-habit.png')] bg-[length:100%_100%] md:mt-[210px] bg-[center_top_15rem] px-5 pb-[280px] relative">
+        <div ref={ref} className="bg-[url('/assets/images/bg-habit.png')] md:bg-[length:100%_100%] bg-[length:auto_100%] md:mt-[210px] bg-[center_top_15rem] px-5 md:pb-[280px] pb-[280px] relative">
           <span className="absolute right-0 bottom-[500px]"><img src="/assets/images/habit-deco.png" alt="" /></span>
         <div className="w-full max-w-[1200px] mx-auto max-md:max-w-[440px] relative">
           <div className="flex items-start max-md:flex-col-reverse">
@@ -127,9 +127,9 @@ const data = [
               <p className="text-[17px] md:text-[23px] font-medium w-full max-w-[852px] mx-auto">
                 ※冷やす場合、粗熱が取れたら、
                 冷蔵庫で冷やすと香りを逃がさずおいしい柿の葉茶が出来上がります。
-                <br />
+                <br /><br />
                 ※ホットでもアイスでもおいしくお飲みいただけます
-                <br />
+                <br /><br />
                 ※香りや渋みの成分を感じたい方⇒100℃に近い熱湯を注ぐのがポイントです。渋みを抑えて旨味成分を最大限に引き出したい方⇒80℃前後のお湯を使用するとまろやかな味になります。柿の葉茶に含まれているタンニンは、お湯の温度が高いほど多く抽出されます。
               </p>
             </div>
@@ -148,11 +148,11 @@ const data = [
                         alt={item.title}
                       />
                     </figure>
-                    <div className="flex-1 max-w-[644px] bg-[#FBF5BD] md:rounded-[54px] rounded-[27px] border-[#708713] border p-5 md:p-10 md:min-h-[320px]">
+                    <div className="flex-1 max-w-[644px] bg-[#FBF5BD] md:rounded-[54px] rounded-[27px] border-[#708713] border p-5 md:p-10 md:min-h-[320px] text-[#5E5E5E]">
                       <h5 className="md:text-[28px] max-md:text-center text-[18px] font-bold">
                         {item.title}
                       </h5>
-                      <p className="md:text-[21px] text-[15px] font-light mt-5 md:mt-8">
+                      <p className="md:text-[21px] text-[15px] font-light mt-5 md:mt-8 text-[#5E5E5E]">
                         {item.body}
                       </p>
                     </div>
@@ -162,7 +162,8 @@ const data = [
         </div>
         <div className="fade-up flex justify-center md:mt-[293px] mt-[120px]">
           <a
-            href="#"
+            href="https://kanmi.ippuku.store/collections/%E6%9F%BF%E3%81%AE%E8%91%89%E8%8C%B6/%E6%9F%BF%E3%81%AE%E8%91%89%E8%8C%B6"
+            target="_blank"
             className="flex items-center justify-center w-full md:max-w-[590px] max-w-[290px] md:h-[114px] h-[80px] bg-[#FF0E0E] text-white md:text-[28px] text-[16px] relative"
           >
             <svg

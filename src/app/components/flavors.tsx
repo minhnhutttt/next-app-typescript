@@ -33,7 +33,7 @@ const data = [
         image: "/assets/images/img-flavors-card-ome.jpg",
         body: (
         <>
-            肉厚で柔らかな草のような香りと独自の風味を持っています。風味は柿の葉特有の苦味や草の風味を含み、一般的にはやや甘さも感じられます。
+            肉厚で柔らかな香りと独特の風味を持っています。その風味には、柿の葉特有のほのかな苦味が含まれ、一般的にはわずかな甘みも感じられます。
         </>
         ),
         details: {
@@ -65,7 +65,7 @@ const data = [
                 degree: '浅煎り',
               },
               footer: (
-                <div className="absolute bottom-0 -left-10 text-[44px] md:text-[95px] font-mincho italic text-[#2D971C]/[0.25] font-light leading-[0.4]">
+                <div className="absolute bottom-0 -left-10 text-[30px] md:text-[95px] font-mincho italic text-[#2D971C]/[0.25] font-light leading-[0.4]">
                   <span className="md:text-[120px] text-[50px]">W</span>akayama
                 </div>
               )

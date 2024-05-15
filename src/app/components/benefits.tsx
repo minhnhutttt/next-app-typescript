@@ -5,19 +5,19 @@ const data = [
     {
         "id": "1",
         "title": "抗菌化作用",
-        "body": "柿の葉茶には豊富なカリウムが含まれており、高血圧や骨粗しょう症を予防するのに最適です。ポリフェノールやカテキンといった抗酸化物質が豊富に含まれており、老化防止に寄与する可能性が高いです。",
+        "body": <>柿の葉茶には豊富なカリウムが含まれており、高血圧や骨粗しょう症を予防するのに最適です。ポリフェノールやカテキンといった<span className="font-bold">抗酸化物質が豊富に含まれており、老化防止に寄与する可能性が高い</span>です。</>,
         "image": "/assets/images/img-benefits-01.png"
       },
       {
         "id": "2",
         "title": "ノンカフェイン",
-        "body": "カフェインはカルシウムの吸収を妨げることがあります。柿の葉茶はノンカフェインであり、妊婦や子供でも安心して飲むことができます。日頃の水分補給で健康維持に寄与できることは大きなメリットです。",
+        "body": <>カフェインはカルシウムの吸収を妨げることがあります。柿の葉茶はノンカフェインであり、<span className="font-bold">妊婦や子供でも安心して飲むことができます</span>。日頃の水分補給で健康維持に寄与できることは大きなメリットです。</>,
         "image": "/assets/images/img-benefits-02.png"
       },
       {
         "id": "3",
         "title": "免疫力向上",
-        "body": "カテキン・タンニンなどの成分により、血糖値の抑制や糖尿病の予防・管理に期待できます。他にもポリフェノール・ビタミンC・β-カロテンなど、免疫機能をサポートする成分が豊富なため、柿の葉茶は健康的な生活に寄与できると言えます。",
+        "body": <>カテキン・タンニンなどの成分により、血糖値の抑制や糖尿病の予防・管理に期待できます。他にもポリフェノール・ビタミンC・β-カロテンなど、<span className="font-bold">免疫機能をサポートする成分が豊富</span>なため、柿の葉茶は健康的な生活に寄与できると言えます。</>,
         "image": "/assets/images/img-benefits-03.png"
       }
 ]
@@ -27,7 +27,7 @@ const data = [
 
     return (
         <div ref={ref} className="px-4 pt-10 md:pt-[120px] pb-16">
-      <div className="w-full max-w-[1150px] mx-auto">
+      <div className="w-full max-w-[1160px] mx-auto">
         <div className="fade-up flex items-center justify-center border-b border-black pb-6">
           <h2 className="font-bold font-mincho text-[4.8vw] md:text-[36px] text-black leading-tight">
             柿の葉茶の <br className="md:hidden" />
@@ -54,7 +54,7 @@ const data = [
               />
             </figure>
             <div className="flex-1">
-              <div className="max-w-[630px]">
+              <div className="max-w-[640px]">
                 <h5 className="md:text-[36px] max-md:text-center text-[23px] font-bold font-mincho">
                   {item.title}
                 </h5>
