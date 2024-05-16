@@ -3,11 +3,14 @@ import { useRef } from "react";
 import { Splide, SplideSlide } from "react-splide-ts";
 import "@splidejs/splide/css";
 import "@splidejs/splide/css/core";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 export default function Sliders() {
     const mainRef = useRef<Splide>(null);
+    const ref = useScrollAnimations();
     return (
-        <section>
+        <section ref={ref}>
+          <div className="fade-up">
             <Splide
             ref={mainRef}
             options={{
@@ -33,6 +36,7 @@ export default function Sliders() {
                 </SplideSlide>
             ))}
           </Splide>
+          </div>
         </section>
     );
 }

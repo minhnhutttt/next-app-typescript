@@ -1,3 +1,6 @@
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+
 const data = [
     {
         image: '/assets/images/img-01.png',
@@ -32,10 +35,11 @@ const data = [
 ]
 
 export default function Introduction() {
+    const ref = useScrollAnimations();
     return (
-        <section className="pb-5 pt-8 md:pt-12 px-5 md:px-14">
+        <section ref={ref} className="pb-5 pt-8 md:pt-12 px-5 md:px-14">
             <div className="w-full max-w-[1200px] mx-auto md:pt-3 md:pb-20 md:border-r border-white relative px-5">
-                <div className="flex justify-center">
+                <div className="fade-up flex justify-center">
                     <h3 className="text-white font-semibold md:text-[26px] text-[18px] text-center leading-[2]">
                         昔ながらの素材で日本を元気にする<br />
                         自然からの贈り物<br />
@@ -45,7 +49,7 @@ export default function Introduction() {
                 <div className="mt-12">
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 md:gap-x-[54px] md:gap-y-[80px] justify-center gap-12 max-w-[1060px] mx-auto">
                         {data.map((item, index) => (
-                            <div className="max-w-[310px]" key={index}>
+                            <div className="fade-up max-w-[310px]" key={index}>
                                 <figure>
                                     <img src={item.image} alt={item.title} />
                                 </figure>
@@ -59,7 +63,7 @@ export default function Introduction() {
                         ))}
                     </div>
                 </div>
-                <p className="max-md:border-t max-md:my-10 max-md:border-white top-[50%] md:[writing-mode:vertical-rl] md:[text-orientation:mixed] md:text-[25px] text-[16px] font-semibold text-white/50 md:absolute h-full left-full p-2 max-md:text-center">Ippuku brand, a gift from nature</p>
+                <p className="max-md:border-t max-md:my-10 max-md:border-white top-[50%] md:[writing-mode:vertical-rl] md:[text-orientation:mixed] md:text-[25px] text-[16px] font-semibold text-white/50 md:absolute h-full left-full p-2 max-md:text-center"><span className="fade-up">Ippuku brand, a gift from nature</span></p>
             </div>
         </section>
     );
