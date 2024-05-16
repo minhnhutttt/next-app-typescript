@@ -54,7 +54,7 @@ export default function Introduction() {
                                     <img src={item.image} alt={item.title} />
                                 </figure>
                                 <div className="text-white mt-4 md:mt-6">
-                                    <h5 className="md:text-[19px] text-[15px] font-semibold">{item.title}</h5>
+                                    <h5 className="md:text-[19px] text-[16px] font-semibold">{item.title}</h5>
                                     <p className="md:text-[16px] text-[13px] font-semibold leading-[1.4] mt-3">
                                         {item.text}
                                     </p>
