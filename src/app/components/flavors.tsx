@@ -65,8 +65,8 @@ const data = [
                 degree: '浅煎り',
               },
               footer: (
-                <div className="absolute bottom-0 -left-10 text-[30px] md:text-[95px] font-mincho italic text-[#2D971C]/[0.25] font-light leading-[0.4]">
-                  <span className="md:text-[120px] text-[50px]">W</span>akayama
+                <div className="absolute bottom-0 -md:left-10 -left-4 text-[27.5px] md:text-[95px] font-mincho italic text-[#2D971C]/[0.25] font-light leading-[0.4]">
+                  <span className="md:text-[120px] text-[45px]">W</span>akayama
                 </div>
               )
     }
