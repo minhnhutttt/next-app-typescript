@@ -15,7 +15,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      gothic: ["Hiragino Kaku Gothic Pro", "sans-serif"],
     },
   },
   plugins: [],
