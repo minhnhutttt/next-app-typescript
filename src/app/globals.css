@@ -16,7 +16,6 @@ body {
   height: 100vh;
   position: absolute;
   left: 50%;
-  top: 28%;
   transform: translate(-50%);
   user-select: none;
 }
