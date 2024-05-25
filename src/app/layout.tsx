@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="font-gothic bg-[#F4F9FD]">
         <Header />
         {children}
       </body>

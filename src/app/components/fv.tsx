@@ -1,6 +1,5 @@
 "use client";
 
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useEffect } from "react";
 import gsap from "gsap";
 
@@ -101,7 +100,7 @@ const FV = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section className="relative pt-3 md:pt-5 md:pb-[80px] pb-[100px] overflow-hidden px-5">
+    <section className="relative pt-3 md:pt-5 md:pb-[80px] pb-5 overflow-hidden px-5">
       <span className="absolute top-0 inset-x-0 bg-[#0D0A8E] w-full md:h-[410px] h-[240px]"></span>
       <div className="w-full max-w-[1380px] mx-auto bg-white [box-shadow:0px_4px_60px_0px_rgba(0,_0,_0,_0.10)] rounded-[30px] relative z-10 md:h-[560px] h-[360px]">
         <div className="absolute inset-0 flex items-center justify-center">
@@ -115,7 +114,7 @@ const FV = () => {
           </p>
         </div>
       </div>
-      <div className="container-card w-[100vw] md:h-[610px] h-[300px] absolute left-0 bottom-0 z-10 select-none opacity-0">
+      <div className="container-card w-[100vw] md:h-[610px] h-[300px] absolute left-0 md:bottom-0 bottom-10 z-10 select-none opacity-0">
         <div className="md:h-[690px] h-[380px] absolute left-2/4 -translate-x-1/2 select-none">
           <div className="origin-[center_100vh] rotate-[0] select-none flex">
           {images.map((src, index) => (
@@ -128,9 +127,9 @@ const FV = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center mt-16 relative z-20">
-        <a href="/" className="group flex items-center justify-center w-[100px] aspect-square border border-[#0D0A8E] hover:bg-[#0D0A8E] rounded-full animate-[move-y_.5s_infinite_alternate_ease-in-out] duration-200 hover:[box-shadow:0px_2px_10px_rgba(0,_0,_0,_0.5)]">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="28" viewBox="0 0 18 28" fill="none" className="relative z-20">
+      <div className="flex items-center justify-center md:mt-16 mt-10 relative z-20">
+        <a href="/" className="group flex items-center justify-center md:w-[100px] w-[64px] aspect-square border border-[#0D0A8E] hover:bg-[#0D0A8E] rounded-full animate-[move-y_.5s_infinite_alternate_ease-in-out] duration-200 hover:[box-shadow:0px_2px_10px_rgba(0,_0,_0,_0.5)]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="28" viewBox="0 0 18 28" fill="none" className="relative z-20  md:w-[18px] md:h-[28px] w-[12px] h-[19px]">
             <path d="M9 26.7131V1M1 19.2286L9 26.7796L17 19.2286" className="duration-200 stroke-[#0D0A8E] group-hover:stroke-white" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
           <div className="absolute w-full h-full inset-0 group-hover:duration-500 duration-200 group-hover:bg-[#0D0A8E] rounded-full z-10 group-hover:opacity-0 group-hover:scale-[2]"></div>
