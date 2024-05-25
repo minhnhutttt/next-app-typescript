@@ -12,45 +12,13 @@ body {
 }
 
 
-.center {
-  height: 100vh;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  user-select: none;
-}
+/* Animation */
+@keyframes move-y {
+  from {
+      transform: translateY(0);
+  }
 
-.items {
-  transform-origin: center 100vh;
-  transform: rotate(0);
-  user-select: none;
-  display: flex;
-}
-
-.item {
-  position: absolute;
-  user-select: none;
-  cursor: pointer;
-  transform: translateX(-50%);
-}
-
-.card {
-  display: block;
-  width: 279px;
-  height: 386px;
-  color: #fff;
-  user-select: none;
-  overflow: hidden;
-  cursor: grab;
-  position: relative;
-}
-
-.image {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
+  to {
+      transform: translateY(10px);
+  }
 }
