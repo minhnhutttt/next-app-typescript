@@ -58,13 +58,13 @@ const Solution = () => {
                 <img src="/assets/images/img-solution-line.png" alt="" />
             </div>
         </div>
-        <div className="mt-[10px] md:pt-20 pt-10 bg-white rounded-[40px]">
+        <div className="mt-[10px] md:py-20 py-12 bg-white rounded-[40px]">
             <div className="fade-up flex justify-center">
                 <h5 className="text-center md:text-[32px] text-[4.4vw] font-semibold border-b-2 border-[#0D0A8E]">デジタルドキュメント（NFT）とは？</h5>
             </div>
             <div className="grid md:grid-cols-2 md:gap-10 gap-8 px-5 md:px-[30px] md:mt-20 mt-12">
                 <div className="fade-up">
-                    <figure>
+                    <figure className="fade-up">
                         <img className="[box-shadow:0px_0px_60px_0px_rgba(0,_0,_0,_0.10)] rounded-[10px]" src="/assets/images/img-solution-01.png" alt="デジタルドキュメントをNFT化！" />
                     </figure>
                     <div className="px-3 md:px-5">
@@ -92,23 +92,23 @@ const Solution = () => {
             </div>
 
             <div className="md:mt-[90px] mt-14 md:px-[30px] px-5">
-                <p className="text-center md:text-[24px] text-[16px] font-semibold">従来の問題を解決！！</p>
-                <div className="md:mt-[60px] mt-9 grid grid-cols-2 md:gap-10 gap-8">
-                    <figure>
+                <p className="text-center md:text-[24px] text-[3.5vw] font-semibold">従来の問題を解決！！</p>
+                <div className="md:mt-[60px] mt-6 grid md:grid-cols-2">
+                    <figure className="md:pr-[38px]">
                         <img className="[box-shadow:0px_0px_60px_0px_rgba(0,_0,_0,_0.10)] rounded-[10px]" src="/assets/images/img-solution.png" alt="従来の問題を解決！！" />
                     </figure>
-                    <div className="border-l-[4px] border-[#060B8E] md:pl-[30px]">
+                    <div className="md:border-l-[4px] border-[#060B8E] md:pl-[30px] max-md:px-2 max-md:mt-8 md:space-y-10 space-y-8">
                     {Articles.map((item, index) => (
                             <div
-                            className="fade-down group "
+                            className="fade-down"
                             ref={ref}
                             key={index}
                             >
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-center md:gap-4 gap-3">
                                     <figure>
-                                        <img src={item.image} alt={item.title} />
+                                        <img className="max-md:w-10" src={item.image} alt={item.title} />
                                     </figure>
-                                    <p className="md:text-[18px] text-[15px] font-semibold">{item.title}</p>
+                                    <p className="flex-1 md:text-[18px] text-[15px] font-semibold">{item.title}</p>
                                 </div>
                                 <p className="md:mt-2.5 mt-1.5 md:text-[16px] text-[14px]">{item.text}</p>
                             </div>

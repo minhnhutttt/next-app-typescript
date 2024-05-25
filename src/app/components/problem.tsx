@@ -42,7 +42,7 @@ const Problem = () => {
     <section ref={ref} className="md:mt-[140px] mt-[12vw] px-5">
       <div className="w-full max-w-[1000px] mx-auto">
         <Title sub="Problem">従来の重要書類管理の問題</Title>
-        <div className="grid grid-cols-2 gap-4 md:gap-10 mt-8">
+        <div className="grid grid-cols-2 gap-4 md:gap-10 md:mt-8 mt-6">
           {Articles.map((item, index) => (
             <div
               className="fade-down group bg-white rounded-[30px] md:min-h-[450px] flex flex-col items-center max-md:py-10 md:pt-[82px] md:px-5 px-3"
