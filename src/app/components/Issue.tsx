@@ -16,7 +16,7 @@ const Issue = () => {
           </span>
         </Title>
         <div className="flex flex-wrap justify-center gap-6 md:gap-[30px] mt-5">
-            <div className="bg-white w-[420px] rounded-[30px] md:pt-[60px] md:pb-11 pt-8 pb-6 md:px-7 px-5">
+            <div className="fade-up bg-white w-[420px] rounded-[30px] md:pt-[60px] md:pb-11 pt-8 pb-6 md:px-7 px-5">
                 <div className="flex justify-center">
                     <p className="text-center md:text-[22px] text-[17px] font-semibold">DIVER Bizアプリをインストール</p>
                 </div>
@@ -34,7 +34,7 @@ const Issue = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-white w-[420px] rounded-[30px] md:pt-[60px] md:pb-11 pt-8 pb-6 md:px-7 px-5">
+            <div className="fade-up bg-white w-[420px] rounded-[30px] md:pt-[60px] md:pb-11 pt-8 pb-6 md:px-7 px-5">
                 <div className="flex justify-center">
                     <p className="md:text-[22px] text-[17px] font-semibold">メールで証明書にしたい項目、内容を記載、ファイルを添付</p>
                 </div>
@@ -44,7 +44,7 @@ const Issue = () => {
                     </figure>
                 </div>
             </div>
-            <div className="bg-white w-[420px] rounded-[30px] md:pt-[60px] md:pb-11 pt-8 pb-6 md:px-7 px-5">
+            <div className="fade-up bg-white w-[420px] rounded-[30px] md:pt-[60px] md:pb-11 pt-8 pb-6 md:px-7 px-5">
                 <div className="flex justify-center items-center">
                     <p className="md:text-[22px] text-[17px] font-semibold">発行されたNFTは指定いただいたDIVER Bizアプリで確認できる！</p>
                 </div>

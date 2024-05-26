@@ -1,4 +1,5 @@
 import Issue from "./components/Issue";
+import UseCase from "./components/UseCase";
 import FV from "./components/fv";
 import Introduction from "./components/introduction";
 import Problem from "./components/problem";
@@ -12,6 +13,7 @@ export default function Home() {
       <Problem />
       <Solution />
       <Issue />
+      <UseCase />
     </main>
   );
 }
