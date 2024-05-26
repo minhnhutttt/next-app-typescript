@@ -73,8 +73,8 @@ const UseCase = () => {
                 className="w-full h-full object-cover [transition:all_1s_ease-in-out] filter grayscale-[100%] filter group-hover:grayscale-0"
                 src={item.image}
               />
-              <div className="">
-                <div className="group-hover:text-center group-hover:top-[calc(100% - 60px)] group-hover:w-full group-hover:text-[white] group-hover:rotate-0 group-hover:-skew-x-3 min-w-[320px] w-full h-[60px] bg-[rgba(13,_10,_142,_0.8)] -rotate-90 origin-[0%_0%] [transition:all_0.5s_ease-in-out] text-center absolute bottom-[0] left-[0] whitespace-nowrap flex items-center justify-center">
+              <div className="absolute bottom-0 left-0 group-hover:w-full group-hover:bottom-4">
+                <div className="group-hover:text-center  group-hover:text-[white] group-hover:rotate-0 group-hover:-skew-x-3 min-w-[320px] w-full h-[60px] bg-[rgba(13,_10,_142,_0.8)] -rotate-90 origin-[0%_0%] [transition:all_0.5s_ease-in-out] text-center  whitespace-nowrap flex items-center justify-center">
                     <img
                     className="skew-x-[-3deg] group-hover:hidden rotate-90"
                     src={item.title01}
@@ -85,6 +85,9 @@ const UseCase = () => {
                     src={item.title02}
                     alt=""
                     />
+                </div>
+                <div className="bg-black/80 opacity-0 w-0 group-hover:w-full group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto h-0 group-hover:h-auto flex items-center justify-center md:p-[30px] p-5 duration-150">
+                    <p className="font-gothic w-full max-w-[556px] opacity-0 group-hover:opacity-100 delay-500 duration-300 text-white md:text-[18px] text-[14px] font-light">{item.text}</p>
                 </div>
               </div>
             </div>
