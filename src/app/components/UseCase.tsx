@@ -62,32 +62,32 @@ const UseCase = () => {
   return (
     <section ref={ref} className="md:mt-[200px] mt-[110px]">
       <Title sub="UseCase">使用事例</Title>
-      <div className="bg-black py-4 md:mt-16">
-        <div className="flex items-center gap-5 justify-center mx-[5vmin] overflow-hidden skew-x-[3deg]">
+      <div className="bg-black py-4 md:mt-16 mt-8">
+        <div className="flex max-md:flex-col items-center gap-5 justify-center mx-5 md:mx-[5vmin] overflow-hidden md:skew-x-[3deg]">
           {Articles.map((item, index) => (
             <div
-              className="group hover:flex-grow-[10] flex-1 [transition:all_1s_ease-in-out] h-[75vmin] relative"
+              className="group md:hover:flex-grow-[10] md:flex-1 [transition:all_1s_ease-in-out] md:h-[75vmin] h-[400px] relative"
               key={index}
             >
               <img
-                className="w-full h-full object-cover [transition:all_1s_ease-in-out] filter grayscale-[100%] filter group-hover:grayscale-0"
+                className="w-full h-full object-cover [transition:all_1s_ease-in-out] filter grayscale-[100%] filter md:group-hover:grayscale-0 max-md:grayscale-0"
                 src={item.image}
               />
-              <div className="absolute bottom-0 left-0 group-hover:w-full group-hover:bottom-4">
-                <div className="group-hover:text-center  group-hover:text-[white] group-hover:rotate-0 group-hover:-skew-x-3 min-w-[320px] w-full h-[60px] bg-[rgba(13,_10,_142,_0.8)] -rotate-90 origin-[0%_0%] [transition:all_0.5s_ease-in-out] text-center  whitespace-nowrap flex items-center justify-center">
+              <div className="absolute bottom-0 left-0 md:group-hover:w-full max-md:w-full group-hover:bottom-4">
+                <div className="md:group-hover:text-center md:group-hover:rotate-0 max-md:rotate-0 md:group-hover:-skew-x-3 min-w-[320px] w-full h-[40px] bg-[rgba(13,_10,_142,_0.8)] -rotate-90 origin-[0%_0%] [transition:all_0.5s_ease-in-out] text-center  whitespace-nowrap flex items-center justify-center max-md:px-5">
                     <img
-                    className="skew-x-[-3deg] group-hover:hidden rotate-90"
+                    className="skew-x-[-3deg] max-md:hidden md:group-hover:hidden rotate-90"
                     src={item.title01}
                     alt=""
                     />
                     <img
-                    className="group-hover:block hidden"
+                    className="md:group-hover:block md:hidden max-md:max-w-[100%]"
                     src={item.title02}
                     alt=""
                     />
                 </div>
-                <div className="bg-black/80 opacity-0 w-0 group-hover:w-full group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto h-0 group-hover:h-auto flex items-center justify-center md:p-[30px] p-5 duration-150">
-                    <p className="font-gothic w-full max-w-[556px] opacity-0 group-hover:opacity-100 delay-500 duration-300 text-white md:text-[18px] text-[14px] font-light">{item.text}</p>
+                <div className="md:group-hover:bg-black/80 max-md:bg-black/80 md:opacity-0 md:group-hover:opacity-100 md:pointer-events-none md:group-hover:pointer-events-auto md:translate-y-full md:absolute md:group-hover:relative md:group-hover:translate-y-0 flex items-center justify-center md:p-[30px] p-5 duration-150 delay-500">
+                    <p className="font-gothic w-full max-w-[556px] md:opacity-0 md:group-hover:opacity-100 delay-500 duration-300 text-white md:text-[18px] text-[14px] font-light">{item.text}</p>
                 </div>
               </div>
             </div>

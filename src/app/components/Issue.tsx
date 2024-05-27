@@ -6,12 +6,12 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Issue = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="md:mt-[55px] mt-[10px] relative md:pt-[110px] pt-[60px] md:pb-[180px] pb-[100px] px-5">
+    <section ref={ref} className="md:mt-[55px] mt-[32px] relative md:pt-[110px] pt-[60px] md:pb-[180px] pb-[100px] px-5">
       <span className="absolute inset-0 bg-[#0D0A8E] -skew-y-[3.5deg]"></span>
       <div className="w-full max-w-[1320px] mx-auto relative">
         <Title sub={<span className="text-[#1E78FF]">Sample issue</span>}>
           <span className="text-white">
-            簡単サンプル発行{" "}
+            簡単サンプル発行
             <span className="md:text-[60px] text-[8vw]">3</span>ステップ
           </span>
         </Title>

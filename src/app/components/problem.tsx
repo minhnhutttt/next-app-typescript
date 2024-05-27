@@ -45,7 +45,7 @@ const Problem = () => {
         <div className="grid grid-cols-2 gap-4 md:gap-10 md:mt-8 mt-6">
           {Articles.map((item, index) => (
             <div
-              className="fade-down group bg-white rounded-[30px] md:min-h-[450px] flex flex-col items-center max-md:py-10 md:pt-[82px] md:px-5 px-3"
+              className="fade-up group bg-white rounded-[30px] md:min-h-[450px] flex flex-col items-center max-md:py-10 md:pt-[82px] md:px-5 px-3"
               ref={ref}
               key={index}
             >
