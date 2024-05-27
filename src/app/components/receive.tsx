@@ -11,6 +11,7 @@ const Receive = () => {
         <Title sub="Receive">
         デジタルをドキュメント受け取る準備
         </Title>
+        <div className="flex"></div>
       </div>
     </section>
   );
