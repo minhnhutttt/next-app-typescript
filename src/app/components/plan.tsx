@@ -23,7 +23,7 @@ const Plan = () => {
                         </p>
                     </div>
                     <div className="flex justify-center md:pt-[30px] pt-5">
-                        <a href="/" className="relative md:w-[270px] w-[240px] md:h-[70px] h-[55px] flex items-center justify-center bg-[#F5CF06] rounded-[10px] font-semibold md:text-[18px] text-[15px]">
+                        <a href="/" className="relative md:w-[270px] w-[240px] md:h-[70px] h-[55px] flex items-center justify-center bg-[#F5CF06] rounded-[10px] font-semibold md:text-[18px] text-[15px] duration-200 hover:opacity-75">
                             <span>お問い合わせください</span>
                             <img className="absolute right-0" src="/assets/images/arrow.svg" alt="" />
                         </a>
@@ -44,7 +44,7 @@ const Plan = () => {
                         </p>
                     </div>
                     <div className="flex justify-center md:pt-[30px] pt-5">
-                        <a href="/" className="relative md:w-[270px] w-[240px] md:h-[70px] h-[55px] flex items-center justify-center bg-[#F5CF06] rounded-[10px] font-semibold md:text-[18px] text-[15px]">
+                        <a href="/" className="relative md:w-[270px] w-[240px] md:h-[70px] h-[55px] flex items-center justify-center bg-[#F5CF06] rounded-[10px] font-semibold md:text-[18px] text-[15px] duration-200 hover:opacity-75">
                             <span>お問い合わせください</span>
                             <img className="absolute right-0" src="/assets/images/arrow.svg" alt="" />
                         </a>
@@ -62,7 +62,7 @@ const Plan = () => {
                         </p>
                     </div>
                     <div className="flex justify-center md:pt-[30px] pt-5">
-                        <a href="/" className="relative md:w-[270px] w-[240px] md:h-[70px] h-[55px] flex items-center justify-center bg-[#F5CF06] rounded-[10px] font-semibold md:text-[18px] text-[15px]">
+                        <a href="/" className="relative md:w-[270px] w-[240px] md:h-[70px] h-[55px] flex items-center justify-center bg-[#F5CF06] rounded-[10px] font-semibold md:text-[18px] text-[15px] duration-200 hover:opacity-75">
                             <span>お問い合わせください</span>
                             <img className="absolute right-0" src="/assets/images/arrow.svg" alt="" />
                         </a>

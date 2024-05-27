@@ -6,6 +6,7 @@ import Solution from "./components/solution";
 import UseCase from "./components/useCase";
 import Plan from "./components/plan";
 import Receive from "./components/receive";
+import FAQ from "./components/faq/faq";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <UseCase />
       <Plan />
       <Receive />
+      <FAQ />
     </main>
   );
 }

@@ -15,7 +15,7 @@ const Receive = () => {
             <div className="fade-up w-full max-w-[380px] md:w-[380px] bg-white rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:py-10 py-6 px-5">
                 <div className="w-full max-w-[300px] mx-auto md:pb-[27px] pb-5">
                     <figure className="flex justify-center items-center">
-                        <img src="/assets/images/receive-01.png" alt="" />
+                        <img className="max-md:w-[60px]" src="/assets/images/receive-01.png" alt="" />
                     </figure>
                     <h5 className="text-center md:text-[28px] text-[20px] font-semibold md:mt-8 mt-5">アプリをダウンロード</h5>
                     <p className="font-light text-[16px] md:mt-4 mt-3">DIVER Bizのアプリをスマートフォンへインストール</p>
@@ -35,7 +35,7 @@ const Receive = () => {
             <div className="fade-up w-full max-w-[380px] md:w-[380px] bg-white rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:pt-10 pt-6 px-5">
                 <div className="w-full max-w-[300px] mx-auto">
                     <figure className="flex justify-center items-center">
-                        <img src="/assets/images/receive-02.png" alt="" />
+                        <img className="max-md:w-[60px]" src="/assets/images/receive-02.png" alt="" />
                     </figure>
                     <h5 className="text-center md:text-[28px] text-[20px] font-semibold md:mt-8 mt-5">新規アカウント作成</h5>
                     <p className="font-light text-[16px] md:mt-4 mt-3">アプリで新規アカウントの作成を行ってください。</p>
@@ -49,7 +49,7 @@ const Receive = () => {
             <div className="fade-up w-full max-w-[380px] md:w-[380px] bg-white rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:py-10 py-6 px-5">
                 <div className="w-full max-w-[300px] mx-auto md:pb-[27px] pb-5">
                     <figure className="flex justify-center items-center">
-                        <img src="/assets/images/receive-03.png" alt="" />
+                        <img className="max-md:w-[60px]" src="/assets/images/receive-03.png" alt="" />
                     </figure>
                     <h5 className="text-center md:text-[28px] text-[20px] font-semibold md:mt-8 mt-5">安心サポート</h5>
                     <p className="font-light text-[16px] md:mt-4 mt-3">ご不明点はお問い合わせよりご連絡ください。</p>
