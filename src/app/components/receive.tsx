@@ -12,7 +12,7 @@ const Receive = () => {
         デジタルをドキュメント受け取る準備
         </Title>
         <div className="flex flex-wrap justify-center md:gap-[35px] gap-6 my-8 md:my-16">
-            <div className="w-full max-w-[380px] md:w-[380px] bg-white rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:py-10 py-6 px-5">
+            <div className="fade-up w-full max-w-[380px] md:w-[380px] bg-white rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:py-10 py-6 px-5">
                 <div className="w-full max-w-[300px] mx-auto md:pb-[27px] pb-5">
                     <figure className="flex justify-center items-center">
                         <img src="/assets/images/receive-01.png" alt="" />
@@ -32,7 +32,7 @@ const Receive = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full max-w-[380px] md:w-[380px] bg-white rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:pt-10 pt-6 px-5">
+            <div className="fade-up w-full max-w-[380px] md:w-[380px] bg-white rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:pt-10 pt-6 px-5">
                 <div className="w-full max-w-[300px] mx-auto">
                     <figure className="flex justify-center items-center">
                         <img src="/assets/images/receive-02.png" alt="" />
@@ -46,7 +46,7 @@ const Receive = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full max-w-[380px] md:w-[380px] bg-white rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:py-10 py-6 px-5">
+            <div className="fade-up w-full max-w-[380px] md:w-[380px] bg-white rounded-[20px] [box-shadow:0px_4px_34px_0px_rgba(0,_0,_0,_0.10)] md:py-10 py-6 px-5">
                 <div className="w-full max-w-[300px] mx-auto md:pb-[27px] pb-5">
                     <figure className="flex justify-center items-center">
                         <img src="/assets/images/receive-03.png" alt="" />
@@ -64,7 +64,7 @@ const Receive = () => {
                 </div>
             </div>
         </div>
-        <div className="w-full max-w-[1000px] mx-auto bg-[#F3F3F3] rounded-[30px] border border-[#0D0A8E] px-5 min-h-[428px] md:pt-[90px] pt-10 pb-10">
+        <div className="fade-up w-full max-w-[1000px] mx-auto bg-[#F3F3F3] rounded-[30px] border border-[#0D0A8E] px-5 min-h-[428px] md:pt-[90px] pt-10 pb-10">
             <div className="w-full max-w-[896px] mx-auto flex gap-6 max-md:flex-col max-md:items-center md:gap-8">
                 <figure>
                     <img className="max-md:w-[200px]" src="/assets/images/img-note.png" alt="" />
