@@ -1,13 +1,12 @@
-import Issue from "./components/issue";
 import FV from "./components/fv";
 import Introduction from "./components/introduction";
 import Problem from "./components/problem";
 import Solution from "./components/solution";
-import UseCase from "./components/useCase";
 import Plan from "./components/plan";
 import Receive from "./components/receive";
 import FAQ from "./components/faq/faq";
-
+import Issue from "./components/issue";
+import UseCase from "./components/useCase";
 export default function Home() {
   return (
     <main>
