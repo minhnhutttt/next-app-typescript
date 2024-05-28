@@ -3,6 +3,7 @@ import FeaturesReasons from "./components/featuresReasons";
 import FV from "./components/fv";
 import Introduction from "./components/introduction";
 import Overseas from "./components/overseas";
+import Plan from "./components/plan";
 import Report from "./components/report";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <FeaturesReasons />
       <Report />
       <Case />
+      <Plan />
     </main>
   );
 }
