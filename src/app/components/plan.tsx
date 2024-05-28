@@ -4,7 +4,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const Plan = () => {
   return (
-    <section className="md:mt-[145px] mt-20 px-5">
+    <section className="md:mt-[145px] mt-20 md:pb-[110px] px-5">
       <div className="flex justify-center">
                 <div className="flex justify-center items-center relative flex-col">
                     <h3 className="lg:text-[48px] md:text-[3vw] text-[6vw] font-black tracking-[0.2em] px-5 max-md:pt-2">料金プラン</h3>

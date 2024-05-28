@@ -4,6 +4,7 @@ import FV from "./components/fv";
 import Introduction from "./components/introduction";
 import Overseas from "./components/overseas";
 import Plan from "./components/plan";
+import Recruitment from "./components/recruitment";
 import Report from "./components/report";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Report />
       <Case />
       <Plan />
+      <Recruitment />
     </main>
   );
 }
