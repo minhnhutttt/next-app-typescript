@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 const Header = () => {
   const [NavOpen, setNavOpen] = useState(false);
@@ -10,15 +10,14 @@ const Header = () => {
   }, []);
   return (
     <header className="flex items-center justify-between md:h-[100px] h-[80px] absolute top-0 inset-x-0 max-lg:pr-5">
-      <div className="w-1/2 flex items-center justify-between pl-4 pr-4 md:pr-10">
+      <div className="md:w-1/2 flex items-center justify-between pl-4 pr-4 md:pr-10">
         <a href="/" className="">
           <img
-            className="max-md:w-[260px] max-[1300px]:w-[20.923vw]"
+            className="max-md:w-[200px] max-lg:w-[260px] max-[1300px]:w-[20.923vw]"
             src="/assets/images/logo.png"
             alt=""
           />
         </a>
-
         <div className="max-lg:hidden">
           <p className="text-right text-white font-bold xl:text-[16px] md:text-[1.231vw] text-[14px]">
             平日10:00〜19:00
@@ -30,7 +29,7 @@ const Header = () => {
         </div>
       </div>
       <div
-        className={`max-lg:fixed lg:w-1/2 gap-5 px-5 max-lg:left-0 max-lg:top-0 max-lg:h-screen max-lg:w-full max-lg:bg-[#F77F7F]/[0.6] max-lg:overflow-y-scroll flex items-center justify-center max-lg:flex-col ${
+        className={`max-lg:fixed lg:w-1/2 gap-5 px-5 max-lg:left-0 max-lg:top-0 max-lg:h-screen max-lg:w-full max-lg:bg-[#F77F7F]/[0.90] z-10 max-lg:overflow-y-scroll flex items-center justify-center max-lg:flex-col ${
           NavOpen ? "" : "max-lg:invisible max-lg:opacity-0"
         }`}
       >

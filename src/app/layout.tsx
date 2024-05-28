@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={noto.className}>
+      <body className={`${noto.className} bg-[#FDF3F4]`}>
         <Header />
         {children}
       </body>
