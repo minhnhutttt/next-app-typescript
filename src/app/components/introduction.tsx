@@ -71,18 +71,24 @@ const Introduction = () => {
                 </div>
             </div>
         </div>
-        <div className="w-full max-w-[1260px] mx-auto">
-            <div className="flex">
-                <figure>
+        <div className="w-full max-w-[1260px] mx-auto relative mt-8">
+            <div className="flex relative pb-[10vw] md:pb-[60px] max-md:flex-wrap">
+                <figure className="max-xl:w-[21.016vw] max-md:pt-[4vw]">
                     <img src="/assets/images/img-intro-03.png" alt="" />
                 </figure>
-                <div className="">
-                    <div className="flex md:text-[28px] text-[20px] font-bold">
-                        <div className="flex">
-                            <figure><img src="/assets/images/logo-sm.png" alt="" /></figure>は、外国人材の採用・活用に</div>
+                <div className="pt-2 max-md:pl-2 md:-ml-4 flex-1 max-w-[760px] max-md:w-[78.984vw]">
+                    <h5 className="md:text-[28px] text-[4.5vw] font-bold tracking-widest leading-relaxed">
+                        <div className="flex items-center flex-wrap">
+                            <figure><img className="max-md:w-[55vw]" src="/assets/images/logo-sm.png" alt="" /></figure>は、外国人材の採用・活用に</div>
                         ともなう多様なリスクを徹底的に排除します。
-                    </div>
+                    </h5>
+                    <p className="md:text-[18px] text-[14px] mt-6 md:mt-8 leading-[1.8] tracking-widest max-md:ml-[-21.016vw]">
+                    最新のAI技術と人力での調査を駆使し、採用候補者や雇用済み外国人材の経歴や適性を多角的に調査。学歴・職歴の真偽、ビザ取得可否、語学力、適性、犯罪歴、薬物使用歴、テロ関連、健康状態などを正確かつ効率的に確認し、貴社に最適な人材を見極めます。<br /><br />採用後のトラブルリスクを最小限に抑えられることから、安心して外国人材を採用・活用できるという事業優位性を手に入れられます。
+                    </p>
                 </div>
+                <figure className="flex max-md:justify-end items-end mb-[-12vw] md:mb-[-100px] pl-4 max-md:w-full">
+                    <img className="max-xl:w-[14.688vw]" src="/assets/images/img-intro-04.png" alt="" />
+                </figure>
             </div>
         </div>
     </section>

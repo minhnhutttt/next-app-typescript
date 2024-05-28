@@ -19,7 +19,7 @@ const config: Config = {
     },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      lime: ['var(--font-lime)', 'sans-serif'],
     },
   },
   plugins: [],

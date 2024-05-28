@@ -31,7 +31,7 @@ const FV = () => {
           </figure>
         </div>
       </div>
-      <div className="md:w-1/2 bg-white md:pt-[100px] pt-14 px-5">
+      <div className="md:w-1/2 bg-white md:pt-[100px] pt-14 px-5 pb-10">
         <div className="w-full max-w-[534px] mx-auto xl:pt-[66px] md:pt-[5.156vw]">
           <div className="flex justify-center">
             <h4 className="xl:text-[26px] md:text-[2.031vw] text-[16px] font-medium border-b-[7px] border-[#F77F7F] px-2.5 tracking-widest">まずは資料請求 (無料)</h4>
