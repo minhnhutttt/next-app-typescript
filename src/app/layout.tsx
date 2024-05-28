@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP, Limelight } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import { config } from "@fortawesome/fontawesome-svg-core";
-config.autoAddCss = false;
 
 const noto = Noto_Sans_JP({
   weight: ['400','500','600','700','900'],

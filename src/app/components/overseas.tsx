@@ -15,9 +15,9 @@ const Overseas = () => {
                     </p>
                 </div>
             </div>
-            <div className="flex justify-center mt-6 md:mt-8">
+            <div className="flex justify-center mt-6 md:mt-8 w-full max-w-[762px] mx-auto">
                 <span className="w-[25px] border border-[#EB001C] border-r-0"></span>
-                <p className="md:text-[18px] text-[13px] font-bold md:py-5 py-4">当社のAI搭載バックグラウンド調査サービスを活用し、外国人材採用を安心・安全に。<br />海外基準の徹底調査で、貴社の外国人材採用を強力にバックアップします。</p>
+                <p className="md:text-[18px] text-[13px] font-bold md:py-5 py-4 flex-1">当社のAI搭載バックグラウンド調査サービスを活用し、外国人材採用を安心・安全に。<br />海外基準の徹底調査で、貴社の外国人材採用を強力にバックアップします。</p>
                 <span className="w-[25px] border border-[#EB001C] border-l-0"></span>
             </div>
         </div>
