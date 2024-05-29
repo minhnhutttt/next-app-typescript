@@ -1,5 +1,7 @@
 "use client";
 
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+
 const data = [
     {
         step: '1',
@@ -28,24 +30,26 @@ const data = [
 ]
 
 const FeaturesReasons = () => {
+    const ref = useScrollAnimations();
+
   return (
-    <section>
+    <section ref={ref}>
         <figure>
             <img className="w-full" src="/assets/images/bg-deco.png" alt="" />
         </figure>
         <div className="bg-white md:pt-[90px] pt-10 md:pb-[230px] pb-[100px] px-[30px]">
-            <div className="flex justify-center">
+            <div className="fade-up flex justify-center">
                 <div className="flex justify-center items-center relative max-md:flex-col">
                     <span className="md:absolute left-[-24.512vw] lg:left-[-251px] max-md:w-full">
                         <img className="max-md:w-[40vw] max-lg:w-[24.512vw]" src="/assets/images/fr-bubble.png" alt="導入の決め手は何？Research Shield+AIの特徴をご紹介" />
                     </span>
-                    <h3 className="lg:text-[48px] md:text-[3vw] text-[6vw] font-black tracking-[0.2em] px-5 max-md:pt-2">特徴・選ばれる理由</h3>
+                    <h3 className="lg:text-[48px] md:text-[3vw] text-[clamp(20px,5.4vw,32px)] font-black tracking-[0.2em] px-5 max-md:pt-2">特徴・選ばれる理由</h3>
                 </div>
              </div>
              <div className="md:mt-[160px] mt-[90px] md:space-y-[171px] space-y-[90px] max-w-[1440px] mx-auto">
              {data.map((item, index) => (
                   <div
-                    className="relative flex even:justify-end md:odd:md:pr-10 md:even:pl-10"
+                    className="fade-up relative flex even:justify-end md:odd:md:pr-10 md:even:pl-10"
                     key={index}
                   >
                     <div className="w-full max-w-[1120px] border border-[#EB001C] bg-[#FDF3F4] md:px-[45px] px-5 md:py-16 py-12 relative rounded-[10px]">

@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { Splide, SplideSlide } from "react-splide-ts";
 import "@splidejs/splide/css";
 import "@splidejs/splide/css/core";
@@ -49,9 +48,10 @@ const data = [
 ];
 
 const Case = () => {
+  const ref = useScrollAnimations();
   return (
-    <section className="md:mt-[200px] mt-[100px]">
-      <div className="flex justify-center">
+    <section ref={ref} className="md:mt-[200px] mt-[100px]">
+      <div className="fade-up flex justify-center">
         <div className="flex justify-center items-center relative flex-col">
           <span className="md:absolute left-[-24.512vw] lg:left-[-256px] max-md:w-full md:top-[-60px] max-md:ml-[-20vw]">
             <img
@@ -60,7 +60,7 @@ const Case = () => {
               alt="導入の決め手は何？Research Shield+AIの特徴をご紹介"
             />
           </span>
-          <h3 className="lg:text-[48px] md:text-[3vw] text-[6vw] font-black tracking-[0.2em] px-5 max-md:pt-2">
+          <h3 className="lg:text-[48px] md:text-[3vw] text-[clamp(20px,5.4vw,32px)] font-black tracking-[0.2em] px-5 max-md:pt-2">
             導入事例
           </h3>
         </div>

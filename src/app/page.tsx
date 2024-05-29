@@ -1,4 +1,6 @@
 import Case from "./components/case";
+import Contact from "./components/contact";
+import FAQ from "./components/faq/faq";
 import FeaturesReasons from "./components/featuresReasons";
 import FV from "./components/fv";
 import Introduction from "./components/introduction";
@@ -18,6 +20,8 @@ export default function Home() {
       <Case />
       <Plan />
       <Recruitment />
+      <Contact />
+      <FAQ />
     </main>
   );
 }

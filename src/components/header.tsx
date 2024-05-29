@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import Button from "./button";
 
 const Header = () => {
   const [NavOpen, setNavOpen] = useState(false);
@@ -33,30 +34,9 @@ const Header = () => {
           NavOpen ? "" : "max-lg:invisible max-lg:opacity-0"
         }`}
       >
-        <a
-          href="/"
-          className="flex items-center justify-center gap-2 max-lg:w-[240px] max-[1300px]:w-[30%] w-[200px] h-[50px] bg-[#F25B54] rounded-[5px] border border-white md:text-[16px] text-[14px] font-bold text-white"
-          onClick={close}
-        >
-          <img src="/assets/images/ic-document.svg" alt="" />
-          <span>資料請求</span>
-        </a>
-        <a
-          href="/"
-          className="flex items-center justify-center gap-2 max-lg:w-[240px] max-[1300px]:w-[30%] w-[200px] h-[50px] bg-black rounded-[5px] border border-white md:text-[16px] text-[14px] font-bold text-white"
-          onClick={close}
-        >
-          <img src="/assets/images/ic-building.svg" alt="" />
-          <span>代理店募集</span>
-        </a>
-        <a
-          href="/"
-          className="flex items-center justify-center gap-2 max-lg:w-[240px] max-[1300px]:w-[30%] w-[200px] h-[50px] bg-[#01B202] rounded-[5px] border border-white md:text-[16px] text-[14px] font-bold text-white"
-          onClick={close}
-        >
-          <img src="/assets/images/ic-line.svg" alt="" />
-          <span>お問い合わせ</span>
-        </a>
+        <Button href="/" text="資料請求" imgSrc="/assets/images/ic-document.svg" onClick={close} rect="bg-[#F25B54]" />
+        <Button href="/" text="代理店募集" imgSrc="/assets/images/ic-building.svg" onClick={close} rect="bg-black" />
+        <Button href="/" text="お問い合わせ" imgSrc="/assets/images/ic-line.svg" onClick={close} rect="bg-[#01B202]" />
         <div className="lg:hidden">
           <p className="text-right text-white font-bold md:text-[16px] text-[14px]">平日10:00〜19:00</p>
           <p className="flex items-center md:text-[28px] text-[20px] font-bold gap-2 leading-none">

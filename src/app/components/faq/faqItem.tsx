@@ -28,14 +28,14 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
   };
 
   return (
-    <div className="fade up space-y-2 rounded-[20px] border border-[#0D0A8E] bg-white/90 p-4 md:px-8 md:pb-8 md:pt-10">
+    <div className="fade-up space-y-2 rounded-[20px] border border-[#EB001C] bg-white/90 p-4 md:px-8 md:pb-8 md:pt-10">
       <button
         type="button"
         className="flex w-full items-center justify-between duration-200 hover:opacity-75"
         onClick={handleExpanderClick}
       >
         <div className="flex items-center gap-4 md:gap-8">
-          <p className="font-roboto text-[18px] font-bold text-[#0D0A8E] uppercase tracking-widest md:text-[32px]">
+          <p className="font-roboto text-[18px] font-bold text-[#EB001C] uppercase tracking-widest md:text-[32px]">
             q
           </p>
           <p className="text-left text-[16px] font-bold md:text-[22px]">
@@ -59,11 +59,11 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
               cy="24"
               r="23.5"
               transform="rotate(-180 24 24)"
-              stroke="#0D0A8E"
+              stroke="#EB001C"
             />
             <path
               d="M28.2667 21.8667L24 26.1334L19.7333 21.8667"
-              stroke="#0D0A8E"
+              stroke="#EB001C"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"

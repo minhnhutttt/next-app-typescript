@@ -3,16 +3,17 @@
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const Plan = () => {
+    const ref = useScrollAnimations();
   return (
-    <section className="md:mt-[145px] mt-20 md:pb-[110px] px-5">
-      <div className="flex justify-center">
+    <section ref={ref} className="md:mt-[145px] mt-20 md:pb-[110px] px-5">
+      <div className="fade-up flex justify-center">
                 <div className="flex justify-center items-center relative flex-col">
-                    <h3 className="lg:text-[48px] md:text-[3vw] text-[6vw] font-black tracking-[0.2em] px-5 max-md:pt-2">料金プラン</h3>
+                    <h3 className="lg:text-[48px] md:text-[3vw] text-[clamp(20px,5.4vw,32px)] font-black tracking-[0.2em] px-5 max-md:pt-2">料金プラン</h3>
                     <p className="text-center md:text-[16px] text-[13px] font-bold mt-3">明朗な会計でニーズに合わせて選べる3つのプラン</p>
                 </div>
              </div>
              <div className="w-full max-w-[1280px] mx-auto flex flex-wrap justify-center text-white md:mt-14 mt-10 md:gap-2.5 gap-3">
-                <div className="md:w-[420px] w-full max-w-[420px] bg-[linear-gradient(180deg,_#FDC624_0%,_#E6C434_99.36%)] pt-10 md:pb-[67px] pb-9 relative">
+                <div className="fade-up md:w-[420px] w-full max-w-[420px] bg-[linear-gradient(180deg,_#FDC624_0%,_#E6C434_99.36%)] pt-10 md:pb-[67px] pb-9 relative">
                     <div className="max-md:max-w-[300px] w-full mx-auto">
                         <figure className="md:w-[240px] md:h-[256px] w-[200px] h-[213px] flex items-center justify-center mx-auto">
                             <img src="/assets/images/plan-01.png" alt="" />
@@ -34,7 +35,7 @@ const Plan = () => {
                         </div>
                     </div>
                 </div>
-                <div className="md:w-[420px] w-full max-w-[420px] bg-[#4BD5DF] pt-10 md:pb-[67px] pb-9 relative">
+                <div className="fade-up md:w-[420px] w-full max-w-[420px] bg-[#4BD5DF] pt-10 md:pb-[67px] pb-9 relative">
                     <div className="absolute top-0 inset-x-0 flex items-center justify-center md:text-[22px] text-[15px] font-black h-[49px] bg-[#3FC7D0]">
                         <img src="/assets/images/ic-star.svg" alt="" />
                         一番人気！
@@ -60,7 +61,7 @@ const Plan = () => {
                         </div>
                     </div>
                 </div>
-                <div className="md:w-[420px] w-full max-w-[420px] bg-[#34CEFF] pt-10 md:pb-[67px] pb-9 relative">
+                <div className="fade-up md:w-[420px] w-full max-w-[420px] bg-[#34CEFF] pt-10 md:pb-[67px] pb-9 relative">
                 <div className="max-md:max-w-[300px] w-full mx-auto">
                     <figure className="md:w-[240px] md:h-[256px] w-[200px] h-[213px] flex items-center justify-center mx-auto">
                         <img src="/assets/images/plan-03.png" alt="" />

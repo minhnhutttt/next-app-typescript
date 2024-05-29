@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const data = [
     {
@@ -67,24 +67,25 @@ const data = [
 
 
 const Report = () => {
+    const ref = useScrollAnimations();
   return (
-    <section className="md:my-[120px] my-16 px-5 relative">
+    <section ref={ref} className="md:my-[120px] my-16 px-5 relative">
         <span className="absolute top-10 inset-0 bg-white -skew-y-[3.5deg] z-0"></span>
         <div className="md:pt-[145px] pt-20 md:pb-[120px] pb-16 relative">
-            <div className="flex justify-center">
+            <div className="fade-up flex justify-center">
                 <div className="flex justify-center items-center relative flex-col">
                     <span className="md:absolute right-[-24.512vw] lg:right-[-256px] max-md:w-full md:top-[-40px]">
                         <img className="max-md:w-[40vw] max-lg:w-[24.512vw] max-md:ml-auto" src="/assets/images/report-bubble.png" alt="導入の決め手は何？Research Shield+AIの特徴をご紹介" />
                     </span>
-                    <h3 className="lg:text-[48px] md:text-[3vw] text-[6vw] font-black tracking-[0.2em] px-5 max-md:pt-2">調査レポート紹介</h3>
+                    <h3 className="lg:text-[48px] md:text-[3vw] text-[clamp(20px,5.4vw,32px)] font-black tracking-[0.2em] px-5 max-md:pt-2">調査レポート紹介</h3>
                     <p className="text-center md:text-[16px] text-[13px] font-bold mt-3">※お客様の依頼により調査項目は変動いたします。</p>
                 </div>
              </div>
-             <div className="w-full max-w-[928px] mx-auto bg-[#EDEDED] border border-[#F77F7F] rounded-[20px] md:pt-[75px] md:pb-[65px] pt-10 pb-8 md:pr-11 md:pl-10 pl-3 pr-3 md:mt-[65px] mt-10">
+             <div className="fade-up w-full max-w-[928px] mx-auto bg-[#EDEDED] border border-[#F77F7F] rounded-[20px] md:pt-[75px] md:pb-[65px] pt-10 pb-8 md:pr-11 md:pl-10 pl-3 pr-3 md:mt-[65px] mt-10">
                 <div className="border border-[#E2E3E3] divide-y divide-[#E2E3E3]">
                 {data.map((item, index) => (
                     <div
-                        className="flex min-h-[70px] odd:bg-white even:bg-[#FFEDED] max-md:flex-wrap"
+                        className="fade-up flex min-h-[70px] odd:bg-white even:bg-[#FFEDED] max-md:flex-wrap"
                         key={index}
                     >
                         <div className="md:text-[18px] text-[13px] md:w-10 w-6 bg-black flex items-center justify-center text-white p-1">
@@ -96,7 +97,7 @@ const Report = () => {
                     ))}
                 </div>
              </div>
-             <div className="flex justify-center mt-8 md:mt-12 w-full max-w-[822px] mx-auto">
+             <div className="fade-up flex justify-center mt-8 md:mt-12 w-full max-w-[822px] mx-auto">
                 <span className="w-[25px] border border-[#EB001C] border-r-0"></span>
                 <p className="flex-1 md:text-[18px] text-[14px] md:py-5 py-4 md:px-[34px]">Research Shield+AIではこれらの項目を調査し、レポートとしてご提供いたします。外国人材の採用・雇用に伴う潜在的なリスクを洗い出し、貴社の安全で効果的な外国人材活用に役立つ情報をお届けいたします。</p>
                 <span className="w-[25px] border border-[#EB001C] border-l-0"></span>

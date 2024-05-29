@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP, Limelight } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const noto = Noto_Sans_JP({
   weight: ['400','500','600','700','900'],
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={`${noto.className} ${lime.variable} bg-[#FDF3F4]`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
