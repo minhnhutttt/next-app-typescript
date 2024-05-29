@@ -67,7 +67,7 @@ const FV = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <button type="button" className="flex justify-center items-center w-[284px] md:h-[70px] h-[60px] bg-[#F25B54] gap-2 border border-white rounded-[5px] md:text-[16px] text-[14px] font-bold text-white">
+              <button type="button" className="flex justify-center items-center w-[284px] md:h-[70px] h-[60px] bg-[#F25B54] gap-2 border border-white rounded-[5px] md:text-[16px] text-[14px] font-bold text-white duration-200 hover:opacity-75">
                 <img src="/assets/images/ic-document.svg" alt="" />
                 <span>資料をダウンロード</span>
               </button>

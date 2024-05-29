@@ -30,9 +30,9 @@ const Plan = () => {
                             <img src="/assets/images/ic-check.svg" alt="" />
                             単発の調査に最適
                         </div>
-                        <div className="flex justify-center md:mt-10 mt-7">
+                        <a href="/" className="flex justify-center md:mt-10 mt-7">
                             <div className="md:w-[310px] w-[280px] h-[60px] md:h-[70px] flex items-center justify-center bg-white text-[#ECC531] md:text-[22px] text-[16px] font-black tracking-[0.4em]">申し込む</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div className="fade-up md:w-[420px] w-full max-w-[420px] bg-[#4BD5DF] pt-10 md:pb-[67px] pb-9 relative">
@@ -56,9 +56,9 @@ const Plan = () => {
                             <img src="/assets/images/ic-check.svg" alt="" />
                             定期的な調査に最適
                         </div>
-                        <div className="flex justify-center md:mt-10 mt-7">
+                        <a href="/" className="flex justify-center md:mt-10 mt-7">
                             <div className="md:w-[310px] w-[280px] h-[60px] md:h-[70px] flex items-center justify-center bg-white text-[#4BD5DF] md:text-[22px] text-[16px] font-black tracking-[0.4em]">申し込む</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div className="fade-up md:w-[420px] w-full max-w-[420px] bg-[#34CEFF] pt-10 md:pb-[67px] pb-9 relative">
@@ -80,7 +80,7 @@ const Plan = () => {
                         代理店としての事業化に最適
                     </div>
                     <div className="flex justify-center md:mt-9 mt-7">
-                        <div className="md:w-[310px] w-[280px] h-[60px] md:h-[70px] flex items-center justify-center bg-white text-[#67DAFF] md:text-[22px] text-[16px] font-black tracking-[0.4em]">申し込む</div>
+                        <a href="/" className="md:w-[310px] w-[280px] h-[60px] md:h-[70px] flex items-center justify-center bg-white text-[#67DAFF] md:text-[22px] text-[16px] font-black tracking-[0.4em]">申し込む</a>
                     </div>
                 </div>
                 </div>

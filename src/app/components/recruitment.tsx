@@ -29,7 +29,7 @@ const Recruitment = () => {
                     </div>
                 </div>
                 <div className="fade-up flex justify-center md:mt-16 mt-10 relative">
-                    <a href="/" className="md:w-[400px] w-[300px] h-16 md:h-20 flex items-center justify-center bg-[#F25B54] rounded md:text-[22px] text-[16px] font-bold text-white">代理店について詳しく知る</a>
+                    <a href="/" className="md:w-[400px] w-[300px] h-16 md:h-20 flex items-center justify-center bg-[#F25B54] rounded md:text-[22px] text-[16px] font-bold text-white duration-200 hover:opacity-75">代理店について詳しく知る</a>
                 </div>
             </div>
         </div>
