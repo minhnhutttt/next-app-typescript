@@ -57,7 +57,7 @@ const Receive = () => {
                         <figure>
                             <img src="/assets/images/img-receive-03.png" alt="" />
                         </figure>
-                        <a href="http://" target="_blank" rel="noopener noreferrer" className="block duration-200 hover:opacity-75">
+                        <a href="https://lin.ee/L78hjIW" target="_blank" rel="noopener noreferrer" className="block duration-200 hover:opacity-75">
                             <img className="max-md:w-[200px]" src="/assets/images/img-receive-line.png" alt="" />
                         </a>
                     </div>

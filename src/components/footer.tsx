@@ -15,7 +15,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://new-generation.app/company/"
+                href="https://world-scan-project.com/about-us/#overview"
                 target="_blank"
                 className="block duration-150 hover:opacity-75"
               >
@@ -24,7 +24,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://new-generation.app/privacy-policy/"
+                href="https://world-scan-project.com/privacy-policy/"
                 target="_blank"
                 className="block duration-150 hover:opacity-75"
               >
@@ -34,7 +34,7 @@ export default function Footer() {
           </ul>
           <div className="mt-3">
             <a
-              href=""
+              href="https://lin.ee/L78hjIW"
               target="_blank"
               className="flex duration-150 hover:opacity-75"
             >

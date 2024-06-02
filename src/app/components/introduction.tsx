@@ -49,7 +49,7 @@ const Introduction = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section ref={ref} className="md:mt-[150px] mt-[12vw]">
+    <section ref={ref} className="md:mt-[150px] mt-[12vw]" id="introduction">
       <div className="">
         <p className="fade-up text-center md:text-[32px] text-[4.3vw] font-bold font-gothic leading-loose">
           強力なセキュリティで重要書類を安全に管理。<br />

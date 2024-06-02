@@ -82,7 +82,7 @@ const FV = () => {
             duration: 1,
             ease: "power1.out",
           },
-          0.15 * (imageSize / 2 - 1) + 4.5
+          0.15 * (imageSize / 2 - 1) + 8.5
         );
       });
       animeWidth.forEach((span) => {
@@ -90,7 +90,7 @@ const FV = () => {
           span,
           {
             width: "100%",
-            duration: 1,
+            duration: 0.6,
             ease: "power1.out",
           },
         );
@@ -128,7 +128,7 @@ const FV = () => {
         </div>
       </div>
       <div className="flex items-center justify-center md:mt-16 mt-10 relative z-20">
-        <a href="/" className="group flex items-center justify-center md:w-[100px] w-[64px] aspect-square border border-[#0D0A8E] hover:bg-[#0D0A8E] rounded-full animate-[move-y_.5s_infinite_alternate_ease-in-out] duration-200 hover:[box-shadow:0px_2px_10px_rgba(0,_0,_0,_0.5)]">
+        <a href="#introduction" className="group flex items-center justify-center md:w-[100px] w-[64px] aspect-square border border-[#0D0A8E] hover:bg-[#0D0A8E] rounded-full animate-[move-y_.5s_infinite_alternate_ease-in-out] duration-200 hover:[box-shadow:0px_2px_10px_rgba(0,_0,_0,_0.5)]">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="28" viewBox="0 0 18 28" fill="none" className="relative z-20  md:w-[18px] md:h-[28px] w-[12px] h-[19px]">
             <path d="M9 26.7131V1M1 19.2286L9 26.7796L17 19.2286" className="duration-200 stroke-[#0D0A8E] group-hover:stroke-white" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
