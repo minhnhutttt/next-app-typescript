@@ -10,3 +10,56 @@ body {
   color: #000;
   font-family: "Noto Sans", sans-serif;
 }
+
+button {
+  color: currentColor
+}
+* {
+  --button-stroke: #C985FF;
+  --button-hoverColor: #0e100f;
+}
+
+.button.button--stroke:hover {
+  color: var(--button-hoverColor,var(--button-stroke))
+}
+.button--fill {
+  background: var(--button-fill)
+}
+
+.button--fill:after {
+  border-color: transparent
+}
+
+.button__flair {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0
+}
+
+.button--stroke .button__flair {
+  transform: scale(0);
+  transform-origin: 0 0;
+  will-change: transform
+}
+
+.button--fill .button__flair {
+  opacity: 0;
+  will-change: opacity
+}
+
+.button__flair:before {
+  aspect-ratio: 1;
+  background: var(--button-stroke);
+  border-radius: 50%;
+  content: "";
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%,-50%);
+  width: 170%
+}
