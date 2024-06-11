@@ -2,7 +2,7 @@
 
 const tags = ['日本初','会える','話せる','散歩できる','供養する','宮古島','現実の供養所','メタバースの供養所','ペットロス','2D','3D','供養の新たな選択肢','遺品預かり','散骨代行','僧侶読経','産官学連携']
 const AnimatedTagRow = () => (
-    <div className="animate-[infinity-loop_18s_infinite_linear_1s_both] flex relative group-hover:[animation-play-state:paused] [animation-direction:reverse]">
+    <div className="animate-[infinity-loop_28s_infinite_linear_1s_both] flex relative group-hover:[animation-play-state:paused] [animation-direction:reverse]">
           {tags.map((tag, index) => (
             <div key={index} className="px-[15px]">
                 <p className="px-[15px] py-2 bg-[linear-gradient(122deg,_rgba(142,_197,_252,_0.40)_10.27%,_rgba(224,_195,_252,_0.40)_100.14%)] rounded-[10px] whitespace-nowrap text-[18px] font-medium">
@@ -13,7 +13,7 @@ const AnimatedTagRow = () => (
     </div>
 );
 const AnimatedImageRow = () => (
-    <div className="animate-[infinity-loop_18s_infinite_linear_1s_both] flex relative group-hover:[animation-play-state:paused]">
+    <div className="animate-[infinity-loop_28s_infinite_linear_1s_both] flex relative group-hover:[animation-play-state:paused]">
           {[...Array(10)].map((_, index) => (
             <div key={index}  className="w-[160px] px-2.5">
                 <img
@@ -27,28 +27,28 @@ const AnimatedImageRow = () => (
 const FV = () => {
   return (
     <section>
-      <div className="bg-[url('/assets/images/fv.png')] bg-cover h-[940px] pt-[90px]">
+      <div className="bg-[url('/assets/images/fv.png')] bg-cover dt:h-[940px] pt-[90px] pb-7">
         <div className="w-full max-w-[1420px] mx-auto relative h-full">
           <figure>
-            <img src="/assets/images/fv-pet.png" alt="" />
+            <img className="w-[75.625vw] dt:w-[1089px]" src="/assets/images/fv-pet.png" alt="" />
           </figure>
           <div className="absolute font-bold inset-0 flex justify-end items-end">
-            <div className="w-[53%] pb-14 leading-[1.4]">
-              <p className="md:text-[77px]">
-                <span className="text-[107px] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
+            <div className="w-[53%] pb-10 leading-[1.4]">
+              <p className="md:text-[5.347vw] dt:text-[77px]">
+                <span className="md:text-[7.431vw] dt:text-[107px] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
                   今
                 </span>
                 も愛する
               </p>
-              <p className="md:text-[77px]">
+              <p className="md:text-[5.347vw] dt:text-[77px]">
                 ペットとの
-                <span className="text-[107px] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
+                <span className="md:text-[7.431vw] dt:text-[107px] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
                   絆
                 </span>
               </p>
-              <p className="md:text-[77px]">デジタルの力で</p>
-              <p className="md:text-[77px]">
-                <span className="text-[107px] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
+              <p className="md:text-[5.347vw] dt:text-[77px]">デジタルの力で</p>
+              <p className="md:text-[5.347vw] dt:text-[77px]">
+                <span className="md:text-[7.431vw] dt:text-[107px] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
                   復活
                 </span>
                 しませんか？
@@ -124,13 +124,13 @@ const FV = () => {
           </div>
         </div>
       </div>
-      <div className="relative bottom-[-40px] drop-shadow-[4px_4px_30px_rgba(0,0,0,0.25)] rounded-s-[20px] overflow-hidden">
+      <div className="relative overflow-hidden mt-4">
       <div className="flex w-auto group">
         <AnimatedImageRow />
         <AnimatedImageRow />
         <AnimatedImageRow />
       </div>
-      <div className="flex w-auto group">
+      <div className="flex w-auto group bg-[url('/assets/images/bg-text-meta.png')] bg-[length:100%_auto] bg-[center_top_10px] h-[125px] pt-8 bg-no-repeat mt-3">
          <AnimatedTagRow />
          <AnimatedTagRow />
          <AnimatedTagRow />
