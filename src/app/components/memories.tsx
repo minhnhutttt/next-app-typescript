@@ -42,7 +42,6 @@ const Memories = () => {
                     <br />
                     まだペットがご健在の方も、いずれ訪れるその時を真剣に想像してみてください...
                 </div>
-
                 <div className="w-full max-w-[913px] mx-auto md:mt-[75px] mt-10">
                     <div>
                         <h5 className="md:text-[28px] text-[18px] font-medium text-center">悲しみに暮れるあなた様は、<br className="md:hidden" />こんな風に思っているかもしれません。</h5>

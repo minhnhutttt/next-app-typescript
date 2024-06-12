@@ -1,6 +1,6 @@
 const Moshimo = () => {
   return (
-    <section>
+    <section className="md:pb-[82px] pb-16">
       <div className="gradient-03 px-5 md:h-[255px] h-[180px] flex items-center justify-center gap-5 text-white font-bold">
         <figure>
           <img
@@ -61,16 +61,79 @@ const Moshimo = () => {
           </div>
           <div className="w-full max-w-[736px] mx-auto bg-white/70 rounded-[10px] bg-[url('/assets/images/bg-01.png')] bg-no-repeat bg-center bg-cover md:py-11 py-6 px-5 md:px-20 md:mt-[34px] mt-5">
             <p className="md:text-[18px] text-[14px] font-medium leading-[1.8]">
-                メタバース空間には、<span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">あなた様のペットだけの特別な場所</span>があります。<br className="max-md:hidden" />
-                そこでは、愛するペットの姿があなた様を出迎えてくれます。
+              メタバース空間には、
+              <span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">
+                あなた様のペットだけの特別な場所
+              </span>
+              があります。
+              <br className="max-md:hidden" />
+              そこでは、愛するペットの姿があなた様を出迎えてくれます。
             </p>
             <p className="md:text-[24px] text-[18px] text-gradient-03 font-medium my-7 md:my-10">
-                愛くるしい仕草で話しかけてくる姿<br /> 一緒に歩いた思い出の散歩道
+              愛くるしい仕草で話しかけてくる姿
+              <br /> 一緒に歩いた思い出の散歩道
             </p>
             <p className="md:text-[18px] text-[14px] font-medium leading-[1.8]">
-                今は亡きペットとの何気ない日常が、あざやかによみがえります。
+              今は亡きペットとの何気ない日常が、あざやかによみがえります。
             </p>
           </div>
+        </div>
+      </div>
+      <div className="px-5">
+        <div className="w-full md:max-w-[930px] max-w-[540px] mx-auto pt-[80px]">
+          <div>
+            <div className="flex gap-[18px] pl-2">
+              <figure>
+                <img
+                  className="max-md:w-12"
+                  src="/assets/images/quote-left-blue.png"
+                  alt=""
+                />
+              </figure>
+              <span className="flex-1 bg-[#C8AEE0] h-0.5"></span>
+            </div>
+            <div className="flex justify-center md:px-[84px] py-4">
+              <p className="md:text-[20px] text-[16px] leading-loose font-medium">
+                まるで生き返ったみたい…。
+                <span className="bg-[linear-gradient(to_top,_#8EC5FC_40%,_transparent_40%)]">こんな供養の仕方があったなんて、そして愛するこの子との再会ができるなんて</span>信じられません。本当に良かった…
+              </p>
+            </div>
+            <div className="flex items-end gap-[18px] pr-2">
+              <span className="flex-1 bg-[#C8AEE0] h-0.5"></span>
+              <figure>
+                <img
+                  className="max-md:w-12"
+                  src="/assets/images/quote-right-blue.png"
+                  alt=""
+                />
+              </figure>
+            </div>
+          </div>
+          <div className="md:mt-20 mt-8 w-full max-w-[865px] mx-auto bg-[url('/assets/images/bg-memories-02.png')] bg-no-repeat bg-right-bottom bg-[#F5F5F5] rounded-[20px] md:px-[30px] md:py-[34px] p-5 md:text-[18px] text-[14px] font-medium leading-[1.8]">
+            メタでペット供養は、<span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">時間や場所に縛られることなく、スマートフォンひとつあればいつでもペットに会いに行けます。</span>話すことも、散歩することさえできます。<br /><br />そこはまさに、悲しみを癒やし、絆を確かめ合える特別な空間なのです。
+          </div>
+          <div className="relative flex justify-center items-center md:mt-[88px] mt-10">
+            <figure>
+              <img
+                className="max-md:w-[300px]"
+                src="/assets/images/ic-triangle.png"
+                alt=""
+              />
+            </figure>
+            <div className="absolute inset-0 md:text-[22px] text-[15px] font-medium flex justify-center md:pt-10 pt-6 leading-[1.8]">
+              <span className="max-w-[714px] w-full">
+              私たちは、日本中のペットオーナーが抱えている、<span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">「ペットロスの悲しみ」や「記憶が薄れていく恐怖心」</span>に寄り添い、メタでペット供養を通じて新しいペット供養のカタチを提案しています。
+              </span>
+            </div>
+          </div>
+          <div className="w-full max-w-[700px] mx-auto md:-mt-6 -mt-3">
+              <span className="block h-[3px] gradient-02"></span>
+              <p className="text-center text-gradient-03 md:text-[34px] text-[18px] font-bold py-3 leading-[1.8]">
+                おもいで風化、する前に。<br />
+                ぜひ、あなた様が愛するあの子にも。
+              </p>
+              <span className="block h-[3px] gradient-03"></span>
+            </div>
         </div>
       </div>
     </section>
