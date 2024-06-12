@@ -19,6 +19,7 @@ const config: Config = {
     },
     fontFamily: {
       noto: ['var(--font-noto)', 'sans-serif'],
+      mplus: ['var(--font-mplus)', 'sans-serif'],
     },
   },
   plugins: [],
