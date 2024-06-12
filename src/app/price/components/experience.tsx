@@ -1,13 +1,261 @@
-
+const data = [
+  {
+    number: "1",
+    title: "現実の供養所「KARIMATA供養所」初期費用通常60,000円(税抜)",
+    arrow: true,
+    text: <span className="text-gradient-03">2万円オフ クーポンご進呈</span>,
+  },
+  {
+    number: "2",
+    title: "現実の供養所「KARIMATA供養所」来訪時の空き家民泊利用,000円(税抜)",
+    arrow: true,
+    text: (
+      <span className="text-[#1B0220]">
+        3泊まで半額クーポンご進呈(10,000円相当)
+      </span>
+    ),
+  },
+  {
+    number: "3",
+    title: "メタバース供養所初期費用通常250,000円(税抜)",
+    arrow: true,
+    text: <span className="!text-[#1B0220]">10万円オフクーポンご進呈</span>,
+  },
+  {
+    number: "4",
+    title: "愛するペットの2Dアバター制作費用通常50,000円(税抜)",
+    arrow: true,
+    text: <span className="text-[#1B0220]">2万円オフクーポンご進呈</span>,
+  },
+  {
+    number: "5",
+    title: "メタバース内に配置可能な2Dアイテム",
+    arrow: false,
+    text: (
+      <span className="text-gradient-03">
+        1アイテムプレゼント
+        <br />
+        ※5つのアイテムからお選びいただけます。(2万円相当)
+      </span>
+    ),
+  },
+  {
+    number: "6",
+    title: "メタバース内専用個別スペース",
+    arrow: false,
+    text: <span className="text-gradient-03">プレミアムカスタマイズ権(3万円相当)</span>,
+  },
+  {
+    number: "7",
+    title: "メタバース内の共通ペット霊園「おもいでの庭」",
+    arrow: false,
+    text: (
+      <span className="text-gradient-03">
+        優先アクセス権(2万円相当) <br />
+        ※3Dアバター保有者の方のみ適用
+      </span>
+    ),
+  },
+  {
+    number: "8",
+    title: "AI僧侶による毎月の個別法要",
+    arrow: false,
+    text: (
+      <span className="text-gradient-03">
+        無料参加権(24万円相当) <br />
+        ※先着申し込み10名様特典
+      </span>
+    ),
+  },
+  {
+    number: "9",
+    title: "事前相談(対面/Web)通常5,000円",
+    arrow: true,
+    text: (
+      <span className="text-gradient-03">
+        無料クーポンご進呈 <br />
+        ※先着申し込み50名様
+      </span>
+    ),
+  },
+  {
+    number: "10",
+    title: "事前相談(対面/Web)通常5,000円",
+    arrow: true,
+    text: (
+      <span className="text-gradient-03">
+        30％オフクーポンご進呈 <br />
+        ※一緒のお墓で供養できるようになりました！
+      </span>
+    ),
+  },
+  {
+    number: "11",
+    title: "没後1年以上経過しているペット",
+    arrow: false,
+    text: (
+      <span className="text-gradient-03">
+        ご供養お申し込みOK特典 <br />
+        ※昔飼っていたペットを供養したいという要望に対応できるようになりました！
+        <br />
+        (写真が1枚以上必要です)
+      </span>
+    ),
+  },
+  {
+    number: "12",
+    title: "ペットロスの悩み相談",
+    arrow: false,
+    text: (
+      <span className="text-gradient-03">
+        専用ご相談窓口利用可能 <br />
+        ※ペットロスの悲しみを吐き出せる場所です。ひとりで溜め込まないでください。
+        <br />
+        (プライスレス)
+      </span>
+    ),
+  },
+  {
+    number: "13",
+    title: "ペットの気になるアレコレ相談",
+    arrow: false,
+    text: (
+      <span className="text-gradient-03">
+        専用ご相談窓口利用可能
+        <br />
+        ※生前から没後まで、普段の悩みから緊急時の対応までなんでもご相談ください！
+        <br />
+        (プライスレス)
+      </span>
+    ),
+  },
+  {
+    number: "14",
+    title: "ペットの終活応援特典",
+    arrow: false,
+    text: (
+      <span className="text-gradient-03">
+        生前から枠を確保OK！
+        <br />
+        ※年間でかかる費用は実際にサービスを利用するまでずっと無料なので安心！
+        <br />
+        (プライスレス)
+      </span>
+    ),
+  },
+  {
+    number: "15",
+    title: "ギフト用お申し込み特典",
+    arrow: false,
+    text: (
+      <span className="text-gradient-03">
+        専用ご相談窓口利用可能
+        <br />
+        ※ペットロスの悲しみを吐き出せる場所です。ひとりで溜め込まないでください。
+        <br />
+        (プライスレス)
+      </span>
+    ),
+  },
+  {
+    number: "16",
+    title: "永代供養特典",
+    arrow: false,
+    text: (
+      <span className="text-gradient-03">
+        希望者OK！
+        <br />
+        (プライスレス)
+      </span>
+    ),
+  },
+  {
+    number: "17",
+    title: "海外在住ペットオーナー様特典",
+    arrow: false,
+    text: (
+      <span className="text-gradient-03">
+        海外からのお申し込みOK！
+        <br />
+        ※海外のペットオーナー様の声にお応えして対応できるようになりました！
+        <br />
+        (プライスレス)
+      </span>
+    ),
+  },
+  {
+    number: "18",
+    title: (
+      <>
+        エキゾチックペット特典<span className="text-[#FF2E00]">*</span>
+      </>
+    ),
+    arrow: false,
+    text: (
+      <span className="text-gradient-03 md:text-[16px] text-[13px] !leading-[1.2]">
+        犬猫以外のエキゾチックペット受付OK <br />
+※多くのペットオーナー様の声にお応えして対応できるようになりました！記載のないペットちゃんもご相談ください！<br />
+（プライスレス）
+      </span>
+    ),
+  },
+];
 const Experience = () => {
-    return (
-      <section className="overflow-hidden md:pt-[106px] pt-[60px] px-5">
-        <div className="text-center md:text-[48px] text-[28px]">
+  return (
+    <section className="overflow-hidden md:pt-[160px] pt-[100px]">
+      <div className="text-center md:text-[48px] text-[28px] font-medium">
         メモリアルモニターだけの、特別な体験
+      </div>
+      <span className="block gradient-04 h-1.5 md:h-2.5"></span>
+      <p className="text-center md:text-[16px] text-[13px] pt-8">
+        メモリアルモニターとして参加いただくあなた様には、以下の特典をご用意しております。
+      </p>
+      <div className="w-[577px] mx-auto md:mt-16">
+        <div className="w-[344px] h-[108px] bg-[url('/assets/images/bubble.png')] bg-cover mx-auto">
+          <p className="font-bold text-[18px] text-center pt-[15px] px-6">
+            最大32万円相当＋プライスレスな <br />
+            今回限定特典パッケージです！
+          </p>
         </div>
-      </section>
-    );
-  };
-  
-  export default Experience;
-  
+        <div className="flex items-center justify-center gap-3">
+          <p className="text-gradient-03 font-medium md:text-[36px] text-[24px]">
+            『メタでペット供養』 <br />
+            メモリアルモニター
+          </p>
+          <div className="size-[170px] flex items-center text-center flex-col gradient-04 rounded-full leading-none">
+            <span className="md:text-[109px] font-black">18</span>
+            <span className="md:text-[37px] font-medium">大特典</span>
+          </div>
+        </div>
+      </div>
+      <div className="bg-[url('/assets/images/bg-experience.png')] bg-cover px-5 md:pt-[110px] pt-14">
+        <div className="flex flex-wrap w-full justify-center max-w-[1324px] mx-auto gap-x-[32px] gap-y-[84px]">
+            {data.map((item, index) => (
+                <div className="w-[420px] md:h-[250px] h-[220px] border-[4px] border-[#1B0220] rounded-[30px] relative px-5 md:pt-14 pt-10" key={index}>
+                    <div className="md:size-[113px] size-[90px] gradient-04 rounded-full flex items-center justify-center flex-col leading-none text-center absolute left-1/2 -translate-x-1/2 top-[-60px]">
+                        <span className="md:text-[24px] text-[18px] font-medium">特典</span>
+                        <span className="md:text-[76px] text-[50px] font-black">{item.number}</span>
+                    </div>
+                    <p className="md:text-[18px] text-[14px] font-medium text-center pb-2.5">{item.title}</p>
+                    {item.arrow &&
+                        <div className="flex justify-center items-center pb-2.5">
+                            <img src="/assets/images/arrow-down.svg" alt="" />
+                        </div>
+                    }
+                    <div className="relative">
+                        <span className="gradient-03 absolute inset-0 opacity-10"></span>
+                        <span className="block h-[3px] gradient-03"></span>
+                        <p className="p-2.5 flex text-center justify-center md:text-[18px] text-[14px] font-bold leading-[1.4]">
+                            {item.text}
+                        </p>
+                        <span className="block h-[3px] gradient-03"></span>
+                    </div>
+                </div>
+            ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;

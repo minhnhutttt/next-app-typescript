@@ -22,9 +22,6 @@ body {
 .gradient-04 {
   background: linear-gradient(122deg, #8EC5FC 10.27%, #E0C3FC 100.14%);
 }
-.gradient-05 {
-  background: linear-gradient(122deg, #8EC5FC 10.27%, #E0C3FC 100.14%);
-}
 
 .text-gradient-02 {
   background: -webkit-linear-gradient(122deg, #44A1FF 10.27%, #D1A2FF 100.14%);

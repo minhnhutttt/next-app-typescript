@@ -30,7 +30,7 @@ interface NavLink {
   ];
 export default function Footer() {
     return (
-      <footer className="px-5 gradient-05 md:pt-[85px] pt-16 md:pb-9 pb-7">
+      <footer className="px-5 gradient-04 md:pt-[85px] pt-16 md:pb-9 pb-7">
         <div className="w-full md:max-w-[750px] max-w-[400px] mx-auto flex max-md:flex-col max-md:justify-center max-md:items-center gap-6 justify-between mb-8">
             <div className="">
                 <div className="pb-10">
