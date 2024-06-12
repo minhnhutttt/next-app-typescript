@@ -3,6 +3,7 @@
 import { Splide, SplideSlide, SplideTrack } from "react-splide-ts";
 import "@splidejs/splide/css";
 import "@splidejs/splide/css/core";
+import Button from "@/components/button";
 
 const data = [
   {
@@ -69,8 +70,8 @@ const data = [
 
 const Slider = () => {
   return (
-    <section className="">
-        <div className="bg-[url('/assets/images/bg-slider.png')] bg-cover bg-top md:pt-[366px] pt-[200px] md:pb-[88px] pb-16">
+    <section className="md:pb-[160px] pb-24">
+        <div className="bg-[url('/assets/images/bg-slider.png')] bg-cover bg-right-top md:pt-[366px] pt-[140px] md:pb-[88px] pb-16">
       <div className="w-full mx-auto">
         <div className="gradient-03 xl:text-[42px] md:text-[clamp(16px,2.4vw,30px)] text-[clamp(13px,3.2vw,28px)] text-white font-bold md:w-[calc(100%-254px)] w-[calc(100%-40px)] flex md:pl-[105px] pl-5 tracking-widest leading-[1.6] py-5 pr-3">
           <p>
@@ -151,12 +152,12 @@ const Slider = () => {
       </div>
       </div>
       <div className="px-5">
-        <div className="w-full max-w-[1141px] mx-auto xl:pt-[90px] pt-8 relative md:pb-12 pb-8">
+        <div className="w-full max-w-[1141px] mx-auto xl:pt-[90px] pt-8 relative md:pb-12 pb-4">
             <span className="xl:absolute top-12 left-[50px] w-[109px]">
                 <img className="max-md:w-[80px]" src="/assets/images/slider-animal-01.png" alt="" />
             </span>
-            <div className="w-full max-w-[800px] mx-auto md:bg-[url('/assets/images/line.png')] bg-repeat-y bg-bottom">
-                <p className="md:text-[20px] text-[16px] font-medium md:leading-[2.7] leading-[2]">
+            <div className="w-full max-w-[800px] mx-auto md:bg-[url('/assets/images/line.png')] bg-[url('/assets/images/line-sp.png')] bg-repeat-y bg-bottom">
+                <p className="md:text-[20px] text-[16px] font-medium md:leading-[2.7] leading-[2.2]">
                 『メタでペット供養』は、ペットとの再会の喜びと死への向き合いのバランスを大切にしています。そのどちらもが、ペットとの真の絆を育む上で欠かせない要素だと考えているからです。<br />ペットロスに悩む方々に寄り添い、家族同然のペットとの絆を永遠に大切にする。それが、私たちの使命です。もしあなた様が、愛するペットとの絆を、新たな形で紡ぎなおしたいと願うのなら、<br />ぜひ「メタでペット供養」をご利用ください。
                 </p>
             </div>
@@ -166,20 +167,23 @@ const Slider = () => {
         </div>
       </div>
       <div className="px-5">
-      <div className="w-full max-w-[1141px] mx-auto flex items-center md:gap-[35px] gap-7 max-md:flex-col mt-[24px] relative">
-      <span className="absolute block bottom-2 -right-2 w-[148px] max-md:ml-auto">
-                <img src="/assets/images/slider-animal-03.png" alt="" />
-            </span>
+      <div className="w-full max-w-[1141px] mx-auto flex items-center md:gap-[35px] gap-7 max-md:flex-col pt-4 relative ">
                 <figure>
-                    <img className="max-md:w-[240px]" src="/assets/images/img-staff.png" alt="" />
+                    <img className="max-md:w-[200px]" src="/assets/images/img-staff.png" alt="" />
                 </figure>
                 <div className="w-full max-w-[747px] flex-1">
                     <div className="rounded-[40px] border-2 border-[#C985FF] bg-white/40 bg-[url('/assets/images/bg-memories-03.png')] bg-no-repeat bg-right-bottom md:text-[20px] text-[18px] font-medium md:p-[51px] p-6 leading-[1.8] tracking-wide">
-                    私たちは、あなた様とペットの“おもいで”に心を込めて向き合い、 ペットとの絆を深める特別な体験を、全力でサポートいたします。
+                    私たちは、あなた様とペットの“おもいで”に心を込めて向き合い、ペットとの絆を深める特別な体験を、全力でサポートいたします。
                     </div>
                 </div>
+                <span className="absolute block lg:bottom-2 md:-bottom-4 -bottom-20 -right-2 md:w-[148px] w-[120px] max-md:ml-auto">
+                <img src="/assets/images/slider-animal-03.png" alt="" />
+            </span>
             </div>
-        </div>
+      </div>
+      <div className="flex justify-center md:mt-11 mt-7">
+        <Button href="#" rect="md:w-[410px] w-[310px] h-20 md:text-[20px] text-[16px]">価格・キャンペーンを確認する</Button>
+      </div>
     </section>
   );
 };

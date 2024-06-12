@@ -94,8 +94,8 @@ const FV = () => {
                   y2="36.1067"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#8EC5FC" />
-                  <stop offset="1" stop-color="#E0C3FC" />
+                  <stop stopColor="#8EC5FC" />
+                  <stop offset="1" stopColor="#E0C3FC" />
                 </linearGradient>
                 <linearGradient
                   id="paint1_linear_1_1067"
@@ -105,8 +105,8 @@ const FV = () => {
                   y2="20.4974"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#8EC5FC" />
-                  <stop offset="1" stop-color="#E0C3FC" />
+                  <stop stopColor="#8EC5FC" />
+                  <stop offset="1" stopColor="#E0C3FC" />
                 </linearGradient>
                 <linearGradient
                   id="paint2_linear_1_1067"
@@ -116,8 +116,8 @@ const FV = () => {
                   y2="51.8392"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#8EC5FC" />
-                  <stop offset="1" stop-color="#E0C3FC" />
+                  <stop stopColor="#8EC5FC" />
+                  <stop offset="1" stopColor="#E0C3FC" />
                 </linearGradient>
               </defs>
             </svg>

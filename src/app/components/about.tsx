@@ -76,7 +76,7 @@ const About = () => {
             </div>
             <div className="w-full max-w-[1191px] mx-auto flex items-center md:gap-[35px] gap-7 max-md:flex-col mt-[24px] md:pb-[69px] pb-10">
                 <figure>
-                    <img className="max-md:w-[240px]" src="/assets/images/img-staff.png" alt="" />
+                    <img className="max-md:w-[200px]" src="/assets/images/img-staff.png" alt="" />
                 </figure>
                 <div className="w-full max-w-[747px] flex-1">
                     <div className="rounded-[40px] border-2 border-[#C985FF] bg-white/40 bg-[url('/assets/images/bg-memories-03.png')] bg-no-repeat bg-right-bottom md:text-[22px] text-[18px] font-medium md:p-[51px] p-6 leading-[1.8] tracking-wide">
