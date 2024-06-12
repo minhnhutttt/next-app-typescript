@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Zen_Kaku_Gothic_Antique } from "next/font/google";
+import { Zen_Kaku_Gothic_Antique, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 
 const zen = Zen_Kaku_Gothic_Antique({
   weight: ["300", "400", "500", "700", "900"],
   subsets: ["latin"],
+});
+
+const noto = Noto_Sans_JP({
+  weight: ["300", "400", "500", "700", "900"],
+  subsets: ["latin"],
+  variable: '--font-noto',
 });
 
 export const metadata: Metadata = {
@@ -20,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={zen.className}>
+      <body className={`${zen.className} ${noto.variable}`}>
         <Header />
         {children}
         </body>

@@ -63,7 +63,12 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          <Button>お問い合わせ</Button>
+          <Button rect=" md:text-[18px] text-[16px] w-[230px] h-[66px]">
+            お問い合わせ
+            <svg className="absolute right-2 z-10" xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="none">
+                <path d="M0 14.6665L6.18084 8.47217L0 2.27783L1.90283 0.375L10 8.47217L1.90283 16.5693L0 14.6665Z" fill="white"/>
+            </svg>
+          </Button>
         </div>
         <button
           className={`group relative z-30 h-6 w-8 xl:hidden mr-6 ${

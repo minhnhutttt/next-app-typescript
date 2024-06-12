@@ -9,6 +9,24 @@ body {
   color: #1B0220;
 }
 
+.gradient {
+  background: linear-gradient(122deg, rgba(168, 213, 255, 0.30) 10.27%, rgba(234, 201, 255, 0.30) 100.14%);
+}
+
+.gradient-02 {
+  background: linear-gradient(122deg, #44A1FF 10.27%, #D1A2FF 100.14%);
+}
+.gradient-03 {
+  background: linear-gradient(122deg, #2C87E3 10.27%, #7E22D7 100.14%);
+}
+
+.text-gradient-03 {
+  background: -webkit-linear-gradient(122deg, #2C87E3 10.27%, #7E22D7 100.14%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Button header */
 
 .button__flair {
