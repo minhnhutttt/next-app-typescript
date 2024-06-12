@@ -22,6 +22,9 @@ body {
 .gradient-04 {
   background: linear-gradient(122deg, #8EC5FC 10.27%, #E0C3FC 100.14%);
 }
+.gradient-05 {
+  background: linear-gradient(122deg, #8EC5FC 10.27%, #E0C3FC 100.14%);
+}
 
 .text-gradient-02 {
   background: -webkit-linear-gradient(122deg, #44A1FF 10.27%, #D1A2FF 100.14%);
@@ -134,5 +137,22 @@ body {
   }
   to {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes floating-x {
+  0% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(5%);
+  }
+}
+@keyframes floating-y {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(10%);
   }
 }

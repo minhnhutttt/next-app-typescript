@@ -14,15 +14,15 @@ const links: NavLink[] = [
     text: "メタでペット供養とは？",
   },
   {
-    link: "/service",
+    link: "/",
     text: "産官学連携",
   },
   {
-    link: "/workflow",
+    link: "/price",
     text: "料金",
   },
   {
-    link: "/about",
+    link: "#faq",
     text: "FAQ",
   },
 ];
@@ -33,10 +33,10 @@ const Header = () => {
     setNavOpen(false);
   }, []);
   return (
-    <header className="flex items-center absolute top-0 inset-x-0 px-3 md:pt-8 pt-3">
+    <header className="flex items-center absolute top-0 inset-x-0 px-3 md:pt-8 pt-3 z-10">
       <div className="w-full flex items-center justify-between h-[66px]">
         <div className="flex items-center justify-between pl-4 pr-4 md:pr-10">
-          <a href="/" className="">
+          <a href="/" className="block relative">
             <img
               className="max-md:w-[200px] max-xl:w-[260px] max-[1300px]:w-[20.923vw]"
               src="/assets/images/logo.png"

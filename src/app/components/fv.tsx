@@ -27,36 +27,35 @@ const AnimatedImageRow = () => (
 const FV = () => {
   return (
     <section>
-      <div className="bg-[url('/assets/images/fv.png')] bg-cover dt:h-[940px] pt-[90px] pb-7">
+      <div className="bg-[url('/assets/images/fv.png')] bg-cover dt:h-[940px] max-md:h-[90vw] max-md:min-h-[460px] pt-[90px] md:pb-7 pb-2">
         <div className="w-full max-w-[1420px] mx-auto relative h-full">
           <figure>
             <img className="w-[75.625vw] dt:w-[1089px]" src="/assets/images/fv-pet.png" alt="" />
           </figure>
           <div className="absolute font-bold inset-0 flex justify-end items-end">
-            <div className="w-[53%] pb-10 leading-[1.4]">
-              <p className="md:text-[5.347vw] dt:text-[77px]">
-                <span className="md:text-[7.431vw] dt:text-[107px] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
+            <div className="md:w-[53%] w-[64%] md:pb-10 pb-20 md:leading-[1.4] leading-[1.8]">
+              <p className="md:text-[5.347vw] dt:text-[77px] text-[6vw]">
+                <span className="md:text-[7.431vw] dt:text-[107px] text-[8vw] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
                   今
                 </span>
                 も愛する
               </p>
-              <p className="md:text-[5.347vw] dt:text-[77px]">
+              <p className="md:text-[5.347vw] dt:text-[77px] text-[6vw]">
                 ペットとの
-                <span className="md:text-[7.431vw] dt:text-[107px] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
+                <span className="md:text-[7.431vw] dt:text-[107px] text-[8vw] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
                   絆
                 </span>
               </p>
-              <p className="md:text-[5.347vw] dt:text-[77px]">デジタルの力で</p>
-              <p className="md:text-[5.347vw] dt:text-[77px]">
-                <span className="md:text-[7.431vw] dt:text-[107px] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
+              <p className="md:text-[5.347vw] dt:text-[77px] text-[6vw]">デジタルの力で</p>
+              <p className="md:text-[5.347vw] dt:text-[77px] text-[6vw]">
+                <span className="md:text-[7.431vw] dt:text-[107px] text-[8vw] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
                   復活
                 </span>
                 しませんか？
               </p>
             </div>
           </div>
-
-          <div className="scrolldown-btn w-[23px] h-[50px] absolute z-10 left-1/2 -translate-x-1/2 bottom-2">
+          <div className="scrolldown-btn w-[23px] h-[50px] absolute z-10 left-1/2 -translate-x-1/2 md:-bottom-4 bottom-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="23"

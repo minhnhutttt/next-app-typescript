@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Zen_Kaku_Gothic_Antique, Noto_Sans_JP, M_PLUS_1p } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const zen = Zen_Kaku_Gothic_Antique({
   weight: ["300", "400", "500", "700", "900"],
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body className={`${zen.className} ${noto.variable} ${mplus.variable}`}>
         <Header />
         {children}
+        <Footer />
         </body>
     </html>
   );
