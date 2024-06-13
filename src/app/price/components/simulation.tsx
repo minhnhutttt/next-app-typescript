@@ -1,31 +1,34 @@
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
   const Simulation = () => {
+    const ref = useScrollAnimations();
     return (
-      <section className="overflow-hidden md:pt-[84px] pt-[60px] relative md:pb-[235px] pb-[140px]">
-        <div className="text-center md:text-[48px] text-[24px] font-medium">
+      <section ref={ref} className="overflow-hidden md:pt-[84px] pt-[60px] relative md:pb-[235px] pb-[140px]">
+        <div className="fade-up text-center md:text-[48px] text-[24px] font-medium">
             供養料比較シミュレーション
         </div>
-        <span className="block gradient-04 h-1.5 md:h-2.5"></span>
+        <span className="fade-up block gradient-04 h-1.5 md:h-2.5"></span>
         <div className="flex flex-wrap justify-center gap-3 w-full md:max-w-[1440px] max-w-[540px] mx-auto px-4 md:mt-[65px] mt-9">
-            <div className="w-[460px] rounded-[3px] flex flex-col">
+            <div className="fade-up w-[460px] rounded-[3px] flex flex-col">
                 <p className="h-[78px] flex items-center justify-center text-white md:text-[26px] text-[20px] font-bold bg-[#2E2E2E]">定 価</p>
                 <div className="divide-y divide-white flex-1">
                     <div className="bg-[#8EC5FC] flex items-center justify-center flex-col md:py-12 py-8">
-                        <p className="flex items-center gap-2">
+                        <div className="flex items-center gap-2">
                             <figure>
                                 <img src="/assets/images/ic-01.svg" alt="" />
                             </figure>
                             <span className="md:text-[20px] text-[16px] font-medium">メタバースペット供養</span>
-                        </p>
+                        </div>
                         <p className="md:text-[26px] text-[20px] font-bold">初期費用 : <span className="md:text-[42px] text-[24px]">250,000</span>円<span className="md:text-[20px] text-[16px]">(税抜)</span></p>
                     </div>
                     <div className="bg-[#8EC5FC]/[0.7] flex items-center justify-center flex-col md:py-12 py-8">
-                        <p className="flex items-center gap-2">
+                        <div className="flex items-center gap-2">
                             <figure>
                                 <img src="/assets/images/ic-02.svg" alt="" />
                             </figure>
                             <span className="md:text-[20px] text-[16px] font-medium">2Dアバター</span>
-                        </p>
+                        </div>
                         <p className="md:text-[26px] text-[20px] font-bold">制作費 : <span className="md:text-[42px] text-[24px]">50,000</span>円<span className="md:text-[20px] text-[16px]">(税抜)</span></p>
                     </div>
                     <div className="bg-[#D8EBFF] flex items-center justify-center flex-col md:py-10 py-8">
@@ -33,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div className="w-[460px] rounded-[3px] flex flex-col">
+            <div className="fade-up w-[460px] rounded-[3px] flex flex-col">
                 <p className="h-[78px] flex items-center justify-center text-white md:text-[26px] text-[20px] font-bold gradient-03">メモリアルモニター価格</p>
                 <div className="relative md:pt-10 pt-7 px-5 flex-1 pb-5">
                     <span className="absolute inset-0 gradient-02 opacity-30"></span>
@@ -60,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div className="w-[460px] rounded-[3px] flex flex-col">
+            <div className="fade-up w-[460px] rounded-[3px] flex flex-col">
                 <p className="h-[78px] flex items-center justify-center text-white md:text-[26px] text-[20px] font-bold bg-[#2E2E2E]">2年目以降継続費用</p>
                 <div className="relative md:pt-10 pt-7 px-5 flex-1 bg-[#8EC5FC]/[0.3] pb-5">
                     <p className="text-center md:text-[32px] text-[24px] font-bold">総 額</p>
@@ -88,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <div className="px-5">
+        <div className="fade-up px-5">
             <div className="w-full md:max-w-[980px] max-w-[440px] mx-auto relative md:mt-[70px] mt-12">
                 <span className="absolute top-0 left-0"><img className="max-md:max-w-[100px]" src="/assets/images/frame.png" alt="" /></span>
                 <p className="md:text-[22px] text-[16px] font-bold py-6 px-7 lg:py-[53px] lg:px-[64px] leading-[2]">
@@ -98,7 +101,7 @@
             </div>
         </div>
         <span className="absolute bottom-0 right-0 max-md:w-[55vw]">
-            <img className="" src="/assets/images/simulation-animal.png" alt="" />
+            <img className="fade-up " src="/assets/images/simulation-animal.png" alt="" />
         </span>
       </section>
     );

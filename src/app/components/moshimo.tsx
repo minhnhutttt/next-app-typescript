@@ -1,7 +1,18 @@
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { useEffect, useRef } from "react";
+
 const Moshimo = () => {
+  const ref = useScrollAnimations();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    videoRef.current.play();
+  }, []);
   return (
-    <section className="md:pb-[82px] pb-16">
-      <div className="gradient-03 px-5 md:h-[255px] h-[180px] flex items-center justify-center gap-5 text-white font-bold">
+    <section ref={ref} className="md:pb-[82px] pb-16">
+      <div className="fade-up gradient-03 px-5 md:h-[255px] h-[180px] flex items-center justify-center gap-5 text-white font-bold">
         <figure>
           <img
             className="max-md:w-[20vw] max-md:max-w-[100px]"
@@ -18,9 +29,21 @@ const Moshimo = () => {
           </h3>
         </div>
       </div>
-      <div className="px-5 bg-[url('/assets/images/bg-moshimo.png')] bg-cover pb-10">
-        <div className="w-full md:max-w-[1316px] max-w-[540px] mx-auto pt-10 md:pt-[70px]">
-          <div className="w-full max-w-[914px] mx-auto flex items-center gap-3 md:gap-10">
+      <div className="px-5 relative pb-10">
+      <div className="absolute flex w-full items-center justify-center overflow-hidden inset-0">
+        <video
+          ref={videoRef}
+          muted
+          loop
+          className="absolute inset-0 h-full w-full object-cover opacity-30"
+          poster=""
+        >
+          <source src="/assets/videos/moshimo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+        <div className="w-full md:max-w-[1316px] max-w-[540px] mx-auto pt-10 md:pt-[70px] relative">
+          <div className="fade-up w-full max-w-[914px] mx-auto flex items-center gap-3 md:gap-10">
             <span className="flex-1 h-px gradient-03"></span>
             <span className="md:text-[24px] text-[18px] text-gradient-03 text-center">
               愛するペットとの絆を紡いでいく
@@ -29,7 +52,7 @@ const Moshimo = () => {
             </span>
             <span className="flex-1 h-px gradient-03"></span>
           </div>
-          <div className="flex md:mt-[70px] mt-10 md:gap-11 gap-8 max-md:flex-col">
+          <div className="fade-up flex md:mt-[70px] mt-10 md:gap-11 gap-8 max-md:flex-col">
             <figure className="max-md:w-auto max-xl:w-[50%] drop-shadow">
               <img src="/assets/images/img-moshimo.png" alt="" />
             </figure>
@@ -59,7 +82,7 @@ const Moshimo = () => {
               </p>
             </div>
           </div>
-          <div className="w-full max-w-[736px] mx-auto bg-white/70 rounded-[10px] bg-[url('/assets/images/bg-01.png')] bg-no-repeat bg-center bg-cover md:py-11 py-6 px-5 md:px-20 md:mt-[34px] mt-5">
+          <div className="fade-up w-full max-w-[736px] mx-auto bg-white/70 rounded-[10px] bg-[url('/assets/images/bg-01.png')] bg-no-repeat bg-center bg-cover md:py-11 py-6 px-5 md:px-20 md:mt-[34px] mt-5">
             <p className="md:text-[18px] text-[14px] font-medium leading-[1.8]">
               メタバース空間には、
               <span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">
@@ -81,7 +104,7 @@ const Moshimo = () => {
       </div>
       <div className="px-5">
         <div className="w-full md:max-w-[930px] max-w-[540px] mx-auto pt-[80px]">
-          <div>
+          <div className="fade-up">
             <div className="flex gap-[18px] pl-2">
               <figure>
                 <img
@@ -109,10 +132,10 @@ const Moshimo = () => {
               </figure>
             </div>
           </div>
-          <div className="md:mt-20 mt-8 w-full max-w-[865px] mx-auto bg-[url('/assets/images/bg-memories-02.png')] bg-no-repeat bg-right-bottom bg-[#F5F5F5] rounded-[20px] md:px-[30px] md:py-[34px] p-5 md:text-[18px] text-[14px] font-medium leading-[1.8]">
+          <div className="fade-up md:mt-20 mt-8 w-full max-w-[865px] mx-auto bg-[url('/assets/images/bg-memories-02.png')] bg-no-repeat bg-right-bottom bg-[#F5F5F5] rounded-[20px] md:px-[30px] md:py-[34px] p-5 md:text-[18px] text-[14px] font-medium leading-[1.8]">
             メタでペット供養は、<span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">時間や場所に縛られることなく、スマートフォンひとつあればいつでもペットに会いに行けます。</span>話すことも、散歩することさえできます。<br /><br />そこはまさに、悲しみを癒やし、絆を確かめ合える特別な空間なのです。
           </div>
-          <div className="relative flex justify-center items-center md:mt-[88px] mt-10">
+          <div className="fade-up relative flex justify-center items-center md:mt-[88px] mt-10">
             <figure>
               <img
                 className="max-md:w-[300px]"
@@ -126,7 +149,7 @@ const Moshimo = () => {
               </span>
             </div>
           </div>
-          <div className="w-full max-w-[700px] mx-auto md:-mt-6 -mt-3">
+          <div className="fade-up w-full max-w-[700px] mx-auto md:-mt-6 -mt-3">
               <span className="block h-[3px] gradient-02"></span>
               <p className="text-center text-gradient-03 md:text-[34px] text-[18px] font-bold py-3 leading-[1.8]">
                 おもいで風化、する前に。<br />

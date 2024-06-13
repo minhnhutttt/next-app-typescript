@@ -1,3 +1,6 @@
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+
 const data = [
   {
     number: "1",
@@ -206,16 +209,17 @@ const data = [
   },
 ];
 const Experience = () => {
+  const ref = useScrollAnimations();
   return (
-    <section className="overflow-hidden md:pt-[160px] pt-[100px]">
-      <div className="text-center md:text-[48px] text-[28px] font-medium">
+    <section ref={ref} className="overflow-hidden md:pt-[160px] pt-[100px]">
+      <div className="fade-up text-center md:text-[48px] text-[28px] font-medium">
         メモリアルモニターだけの、<br className="md:hidden" />特別な体験
       </div>
-      <span className="block gradient-04 h-1.5 md:h-2.5"></span>
-      <p className="text-center md:text-[16px] text-[13px] pt-8 px-4">
+      <span className="fade-up block gradient-04 h-1.5 md:h-2.5"></span>
+      <p className="fade-up text-center md:text-[16px] text-[13px] pt-8 px-4">
         メモリアルモニターとして参加いただくあなた様には、以下の特典をご用意しております。
       </p>
-      <div className="md:w-[577px] mx-auto mt-10 md:mt-16">
+      <div className="fade-up md:w-[577px] mx-auto mt-10 md:mt-16">
         <div className="w-[344px] h-[108px] bg-[url('/assets/images/bubble.png')] bg-cover mx-auto">
           <p className="font-bold md:text-[18px] text-[16px] text-center pt-[15px] px-6">
             最大32万円相当＋プライスレスな <br />
@@ -237,7 +241,7 @@ const Experience = () => {
         <div className="flex flex-wrap w-full justify-center max-w-[1324px] mx-auto gap-x-[32px] gap-y-[84px] md:mb-24 mb-16">
           {data.map((item, index) => (
             <div
-              className="w-[420px] md:h-[250px] h-[220px] border-[4px] border-[#1B0220] rounded-[30px] relative px-5 md:pt-14 pt-10 bg-white/80"
+              className="fade-up w-[420px] md:h-[250px] h-[220px] border-[4px] border-[#1B0220] rounded-[30px] relative px-5 md:pt-14 pt-10 bg-white/80"
               key={index}
             >
               <div className="md:size-[113px] size-[90px] gradient-04 rounded-full flex items-center justify-center flex-col leading-none text-center absolute left-1/2 -translate-x-1/2 top-[-60px]">
@@ -268,7 +272,7 @@ const Experience = () => {
           ))}
         </div>
         <div className="w-full md:max-w-[771px] max-w-[400px] mx-auto">
-          <div className="bg-white/70 xl:py-10 py-5 xl:px-[50px] px-6 rounded-[20px]">
+          <div className="fade-up bg-white/70 xl:py-10 py-5 xl:px-[50px] px-6 rounded-[20px]">
             <p className="md:text-[16px] text-[13px] font-bold border-b border-[#1B0220]">
               *エキゾチックペットご参考
             </p>
@@ -276,7 +280,7 @@ const Experience = () => {
               犬猫以外の哺乳類（ハムスター、モルモット、ウサギ、フェレット、ハリネズミ、モモンガ、チンチラ、ミーアキャット、リス、デグー）魚類（金魚、熱帯魚）昆虫（カブトムシ、クワガタ）爬虫類（亀、ヘビ、トカゲ、イグアナ、カメレオン）鳥類（インコ、オウム、文鳥）、ザリガニ...etc
             </p>
           </div>
-          <div className="flex gap-1.5 md:mt-8 mt-6">
+          <div className="fade-up flex gap-1.5 md:mt-8 mt-6">
             <figure><img src="/assets/images/img-other-01.png" alt="" /></figure>
             <figure><img src="/assets/images/img-other-02.png" alt="" /></figure>
             <figure><img src="/assets/images/img-other-03.png" alt="" /></figure>
@@ -284,7 +288,7 @@ const Experience = () => {
             <figure><img src="/assets/images/img-other-05.png" alt="" /></figure>
           </div>
         </div>
-        <div className="w-full md:max-w-[929px] max-w-[440px] mx-auto md:p-[7px] p-1 gradient-03 md:mt-[70px] mt-9 rounded-[10px]">
+        <div className="fade-up w-full md:max-w-[929px] max-w-[440px] mx-auto md:p-[7px] p-1 gradient-03 md:mt-[70px] mt-9 rounded-[10px]">
           <div className="bg-white md:p-6 p-5 md:text-[15px] text-[12px] font-medium tracking-widest space-y-4 leading-[1.4]">
             <div className="flex md:gap-5 gap-3">
             <span className="md:size-[15px] size-[10px] rounded-full bg-[#1B0220] mt-1"></span>

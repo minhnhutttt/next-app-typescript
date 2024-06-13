@@ -4,6 +4,7 @@ import { Splide, SplideSlide, SplideTrack } from "react-splide-ts";
 import "@splidejs/splide/css";
 import "@splidejs/splide/css/core";
 import Button from "@/components/button";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const data = [
   {
@@ -69,11 +70,12 @@ const data = [
 ];
 
 const Slider = () => {
+  const ref = useScrollAnimations();
   return (
-    <section className="md:pb-[160px] pb-24">
+    <section ref={ref} className="md:pb-[160px] pb-24">
         <div className="bg-[url('/assets/images/bg-slider.png')] bg-cover bg-right-top md:pt-[366px] pt-[140px] md:pb-[88px] pb-16">
       <div className="w-full mx-auto">
-        <div className="gradient-03 xl:text-[42px] md:text-[clamp(16px,2.4vw,30px)] text-[clamp(13px,3.2vw,28px)] text-white font-bold md:w-[calc(100%-254px)] w-[calc(100%-40px)] flex md:pl-[105px] pl-5 tracking-widest leading-[1.6] py-5 pr-3">
+        <div className="fade-up gradient-03 xl:text-[42px] md:text-[clamp(16px,2.4vw,30px)] text-[clamp(13px,3.2vw,28px)] text-white font-bold md:w-[calc(100%-254px)] w-[calc(100%-40px)] flex md:pl-[105px] pl-5 tracking-widest leading-[1.6] py-5 pr-3">
           <p>
             ペットとの絆を深める特別な体験がここに。
             <br />
@@ -151,7 +153,7 @@ const Slider = () => {
         </div>
       </div>
       </div>
-      <div className="px-5">
+      <div className="fade-up px-5">
         <div className="w-full max-w-[1141px] mx-auto xl:pt-[90px] pt-8 relative md:pb-12 pb-4">
             <span className="xl:absolute top-12 left-[50px] w-[109px]">
                 <img className="max-md:w-[80px]" src="/assets/images/slider-animal-01.png" alt="" />
@@ -166,7 +168,7 @@ const Slider = () => {
             </span>
         </div>
       </div>
-      <div className="px-5">
+      <div className="fade-up px-5">
       <div className="w-full max-w-[1141px] mx-auto flex items-center md:gap-[35px] gap-7 max-md:flex-col pt-4 relative ">
                 <figure>
                     <img className="max-md:w-[200px]" src="/assets/images/img-staff.png" alt="" />
@@ -181,7 +183,7 @@ const Slider = () => {
             </span>
             </div>
       </div>
-      <div className="flex justify-center md:mt-11 mt-7">
+      <div className="fade-up flex justify-center md:mt-11 mt-7">
         <Button href="#" rect="md:w-[410px] w-[310px] h-20 md:text-[20px] text-[16px]">価格・キャンペーンを確認する</Button>
       </div>
     </section>

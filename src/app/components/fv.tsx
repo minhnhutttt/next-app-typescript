@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 const tags = ['日本初','会える','話せる','散歩できる','供養する','宮古島','現実の供養所','メタバースの供養所','ペットロス','2D','3D','供養の新たな選択肢','遺品預かり','散骨代行','僧侶読経','産官学連携']
 const AnimatedTagRow = () => (
     <div className="animate-[infinity-loop_28s_infinite_linear_1s_both] flex relative group-hover:[animation-play-state:paused] [animation-direction:reverse]">
@@ -25,10 +27,29 @@ const AnimatedImageRow = () => (
     </div>
 );
 const FV = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    videoRef.current.play();
+  }, []);
   return (
     <section>
-      <div className="bg-[url('/assets/images/fv.png')] bg-cover dt:h-[940px] max-md:h-[90vw] max-md:min-h-[460px] pt-[90px] md:pb-7 pb-2">
-        <div className="w-full max-w-[1420px] mx-auto relative h-full">
+      <div className="dt:h-[940px] max-md:h-[90vw] max-md:min-h-[460px] pt-[90px] md:pb-7 pb-2">
+      <div className="absolute flex w-full items-center justify-center overflow-hidden inset-0">
+        <video
+          ref={videoRef}
+          muted
+          loop
+          className="absolute inset-0 h-full w-full object-cover"
+          poster=""
+        >
+          <source src="/assets/videos/fv.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div className="bg-[url('/assets/images/fv.png')] bg-cover absolute inset-0 z-10"></div>
+        <div className="w-full max-w-[1420px] mx-auto relative h-full z-20">
           <figure>
             <img className="w-[75.625vw] dt:w-[1089px]" src="/assets/images/fv-pet.png" alt="" />
           </figure>

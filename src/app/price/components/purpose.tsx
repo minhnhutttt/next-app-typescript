@@ -1,14 +1,17 @@
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const Purpose = () => {
+    const ref = useScrollAnimations();
     return (
-      <section className="overflow-hidden md:pt-[106px] pt-[60px] px-5">
+      <section ref={ref} className="overflow-hidden md:pt-[106px] pt-[60px] px-5">
         <div className="w-full max-w-[1030px] mx-auto">
-            <div className="flex justify-center">
+            <div className="fade-up flex justify-center">
                 <h4 className="flex items-center justify-center w-full max-w-[956px] h-[100px] bg-[url('/assets/images/bg-purpose.png')] bg-center bg-cover text-white md:text-[32px] text-[18px] font-bold text-center md:tracking-[0.2em]">
                 メモリアルモニター募集の目的
                 </h4>
             </div>
-            <div className="flex items-center justify-center max-md:flex-col">
+            <div className="fade-up flex items-center justify-center max-md:flex-col">
                 <div className="lg:size-[424px] md:size-[330px] size-[300px] bg-[url('/assets/images/bg-circle-01.png')] bg-cover bg-center flex items-center justify-center lg:text-[22px] md:text-[17px] font-bold leading-loose animate-[floating-x_6.2s_ease-in-out_infinite_alternate-reverse]">
                     <p className="animate-[floating-y_2.8s_ease-in-out_infinite_alternate-reverse]">今回の特別なご縁への<br />感謝の気持ちを示す</p>
                 </div>
@@ -19,7 +22,7 @@ const Purpose = () => {
                     </p>
                 </div>
             </div>
-            <div className="p-[3px] gradient-02 relative">
+            <div className="fade-up p-[3px] gradient-02 relative">
                 <span className="absolute top-0 left-0"><img src="/assets/images/purpose-tri.png" alt="" /></span>
                 <div className="bg-white md:px-[58px] px-[20px] md:pt-[66px] pt-[32px] pb-[32px]">
                     <p className="md:text-[20px] text-[16px] font-medium">

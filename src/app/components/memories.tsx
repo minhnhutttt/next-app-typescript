@@ -1,13 +1,17 @@
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+
 const Memories = () => {
+    const ref = useScrollAnimations();
   return (
-    <section>
-        <div className="gradient-03 px-5 text-center md:h-[255px] h-[180px] flex items-center justify-center text-white font-bold xl:text-[62px] text-[clamp(20px,5.5vw,36px)] md:text-[clamp(40px,4.306vw,62px)]">
+    <section ref={ref}>
+        <div className="fade-up gradient-03 px-5 text-center md:h-[255px] h-[180px] flex items-center justify-center text-white font-bold xl:text-[62px] text-[clamp(20px,5.5vw,36px)] md:text-[clamp(40px,4.306vw,62px)]">
             愛するペットとの 『 おもいで 』が <br />
             少しずつ風化していく恐怖…
         </div>
         <div className="px-5 md:pb-[190px] pb-[100px]">
             <div className="w-full md:max-w-[1305px] max-w-[540px] mx-auto md:pt-[100px] pt-12">
-                <div className="flex max-md:flex-col max-md:items-center gap-[30px]">
+                <div className="fade-up flex max-md:flex-col max-md:items-center gap-[30px]">
                     <figure className="max-md:w-auto max-xl:w-[40%]">
                         <img src="/assets/images/memories-01.png" alt="" />
                     </figure>
@@ -18,7 +22,7 @@ const Memories = () => {
                         <span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">何気ない日常のひとコマひとコマが、</span>今は悲しみに変わって胸を締め付けます。
                     </div>
                 </div>
-                <div className="w-full max-w-[930px] mx-auto pt-[70px]">
+                <div className="fade-up w-full max-w-[930px] mx-auto pt-[70px]">
                     <div className="flex gap-[18px] pl-2">
                         <figure>
                             <img className="max-md:w-12" src="/assets/images/quote-left.png" alt="" />
@@ -37,12 +41,12 @@ const Memories = () => {
                         </figure>
                     </div>
                 </div>
-                <div className="md:mt-10 mt-8 w-full max-w-[732px] mx-auto bg-[url('/assets/images/bg-memories.png')] bg-no-repeat bg-right-bottom bg-[#F5F5F5] rounded-[20px] md:px-[30px] md:py-[34px] p-5 md:text-[18px] text-[14px] font-medium leading-[1.8]">
+                <div className="fade-up md:mt-10 mt-8 w-full max-w-[732px] mx-auto bg-[url('/assets/images/bg-memories.png')] bg-no-repeat bg-right-bottom bg-[#F5F5F5] rounded-[20px] md:px-[30px] md:py-[34px] p-5 md:text-[18px] text-[14px] font-medium leading-[1.8]">
                     ペットを亡くしたあなた様は、今このような喪失感や悲しみ、そして大切な“おもいで”を失うことへの恐怖心を抱えているのではないでしょうか。<br />
                     <br />
                     まだペットがご健在の方も、いずれ訪れるその時を真剣に想像してみてください...
                 </div>
-                <div className="w-full max-w-[913px] mx-auto md:mt-[75px] mt-10">
+                <div className="fade-up w-full max-w-[913px] mx-auto md:mt-[75px] mt-10">
                     <div>
                         <h5 className="md:text-[28px] text-[18px] font-medium text-center">悲しみに暮れるあなた様は、<br className="md:hidden" />こんな風に思っているかもしれません。</h5>
                         <figure className="mt-4">
@@ -76,7 +80,7 @@ const Memories = () => {
                         </div>
                     </div>
                 </div>
-                <div className="relative flex justify-center items-center md:mt-[56px] mt-10">
+                <div className="fade-up relative flex justify-center items-center md:mt-[56px] mt-10">
                     <figure>
                         <img className="max-md:w-[300px]" src="/assets/images/ic-triangle.png" alt="" />
                     </figure>

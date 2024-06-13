@@ -46,7 +46,7 @@ export default function Footer() {
             <li key={index}>
                 <a
                 href={link}
-                className="inline-block text-[16px] md:text-[18px] xl:text-[18px] text-white font-bold [text-shadow:1px_1px_0px_rgba(0,_0,_0,_0.50)]"
+                className="inline-block text-[16px] md:text-[18px] xl:text-[18px] text-white font-bold [text-shadow:1px_1px_0px_rgba(0,_0,_0,_0.50)] duration-150 hover:opacity-75"
                 target={target}
                 >
                 {text}

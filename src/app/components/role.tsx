@@ -1,9 +1,12 @@
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const Role = () => {
+  const ref = useScrollAnimations();
     return (
-      <section className="overflow-hidden bg-[#F2F5F8] md:pb-[168px] pb-24">
+      <section ref={ref} className="overflow-hidden bg-[#F2F5F8] md:pb-[168px] pb-24">
         <div className="bg-[url('/assets/images/deco.png')] bg-[length:100%_auto] bg-no-repeat md:pt-[177px] pt-[100px]">
-            <div className="px-5">
+            <div className="fade-up px-5">
                 <div className="w-full max-w-[1280px] mx-auto md:mb-[93px] mb-[60px]">
                     <div className="relative h-[276px] flex items-center justify-center xl:text-[48px] text-[clamp(20px,5.5vw,36px)] md:text-[clamp(32px,3.8vw,48px)] text-white text-center font-medium">
                         <span className="absolute inset-0 gradient-03 opacity-80"></span>
@@ -49,8 +52,8 @@ const Role = () => {
                     </div>
                 </div>
             </div>
-            <div className="md:h-[738px] h-[300px] bg-[url('/assets/images/img-role.png')] bg-right bg-[length:auto_100%] bg-no-repeat flex md:pt-24 pt-16 pl-3">
-            <div className="leading-[1.8] font-bold tracking-[0.8em] w-full max-w-[1440px] mx-auto">
+            <div className="fade-up md:h-[738px] h-[300px] bg-[url('/assets/images/img-role.png')] bg-right bg-[length:auto_100%] bg-no-repeat flex md:pt-24 pt-16 pl-3">
+            <div className="fade-up leading-[1.8] font-bold tracking-[0.8em] w-full max-w-[1440px] mx-auto">
               <p className="md:text-[4.306vw] dt:text-[62px] text-[24px]">
                 <span className="text-white text-center leading-none pb-3 px-5 tracking-normal mr-3 pt-1 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
                   今
@@ -72,8 +75,8 @@ const Role = () => {
               </p>
             </div>
             </div>
-            <div className="flex justify-center md:gap-9 gap-7 md:mt-[90px] mt-5 max-md:flex-col max-md:items-center">
-                        <a href="/" className="flex items-center justify-center md:w-[382px] w-[320px] h-20 md:h-[114px] bg-[#2E8DEC] [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)] border border-white rounded-[70px] md:text-[22px] text-[17px] font-bold text-white gap-3">
+            <div className="fade-up flex justify-center md:gap-9 gap-7 md:mt-[90px] mt-5 max-md:flex-col max-md:items-center">
+                        <a href="/" className="flex items-center justify-center md:w-[382px] w-[320px] h-20 md:h-[114px] bg-[#2E8DEC] [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)] border border-white rounded-[70px] md:text-[22px] text-[17px] font-bold text-white gap-3 duration-150 hover:opacity-75">
                             <figure>
                                 <img className="md:size-[73px] size-[50px]" src="/assets/images/ic-btn-01.png" alt="" />
                             </figure>
@@ -82,7 +85,7 @@ const Role = () => {
                             として参加する
                             </span>
                         </a>
-                        <a href="/" className="flex items-center justify-center md:w-[382px] w-[320px] h-20 md:h-[114px] bg-[#C985FF] [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)] border border-white rounded-[70px] md:text-[22px] text-[17px] font-bold text-white gap-3">
+                        <a href="/" className="flex items-center justify-center md:w-[382px] w-[320px] h-20 md:h-[114px] bg-[#C985FF] [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)] border border-white rounded-[70px] md:text-[22px] text-[17px] font-bold text-white gap-3 duration-150 hover:opacity-75">
                             <figure>
                                 <img className="md:size-[73px] size-[50px]" src="/assets/images/ic-btn-02.png" alt="" />
                             </figure>

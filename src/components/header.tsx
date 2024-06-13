@@ -33,10 +33,10 @@ const Header = () => {
     setNavOpen(false);
   }, []);
   return (
-    <header className="flex items-center absolute top-0 inset-x-0 px-3 md:pt-8 pt-3 z-10">
+    <header className="flex items-center absolute top-0 inset-x-0 px-3 md:pt-8 pt-3 z-40">
       <div className="w-full flex items-center justify-between h-[66px]">
         <div className="flex items-center justify-between pl-4 pr-4 md:pr-10">
-          <a href="/" className="block relative">
+          <a href="/" className="block relative duration-150 hover:opacity-75">
             <img
               className="max-md:w-[200px] max-xl:w-[260px] max-[1300px]:w-[20.923vw]"
               src="/assets/images/logo.png"
@@ -54,7 +54,7 @@ const Header = () => {
               <li key={index}>
                 <a
                   href={link}
-                  className="inline-block text-[20px] md:text-[24px] xl:text-[18px] text-white font-bold [text-shadow:1px_1px_0px_rgba(0,_0,_0,_0.50)]"
+                  className="inline-block text-[20px] md:text-[24px] xl:text-[18px] text-white font-bold [text-shadow:1px_1px_0px_rgba(0,_0,_0,_0.50)] duration-150 hover:opacity-75"
                   target={target}
                   onClick={close}
                 >

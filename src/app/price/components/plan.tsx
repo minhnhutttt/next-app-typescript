@@ -1,3 +1,5 @@
+"use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode } from "react";
 
 interface ItemPropsType {
@@ -13,15 +15,16 @@ interface ItemPropsType {
     )
   }
   const Plan = () => {
+    const ref = useScrollAnimations();
     return (
-      <section className="overflow-hidden md:pt-[135px] pt-[100px]">
-        <div className="text-center md:text-[48px] text-[28px] font-medium">
+      <section ref={ref} className="overflow-hidden md:pt-[135px] pt-[100px]">
+        <div className="fade-up text-center md:text-[48px] text-[28px] font-medium">
         プランのご案内
         </div>
-        <span className="block gradient-04 h-1.5 md:h-2.5"></span>
+        <span className="fade-up block gradient-04 h-1.5 md:h-2.5"></span>
         <div className="bg-[url('/assets/images/bg-plan.png')] bg-no-repeat bg-top md:bg-[length:100%_595px] bg-[length:100%_1200px] md:pt-[100px] pt-14">
         <div className="w-full dt:max-w-[1440px] max-w-[700px] mx-auto flex items-start flex-wrap gap-10 px-6 justify-center">
-            <div className="w-full dt:w-[419px] rounded-t-[40px] dt:mt-[193px] overflow-hidden [box-shadow:0px_4px_60px_0px_rgba(0,_0,_0,_0.10)]">
+            <div className="fade-up w-full dt:w-[419px] rounded-t-[40px] dt:mt-[193px] overflow-hidden [box-shadow:0px_4px_60px_0px_rgba(0,_0,_0,_0.10)]">
                 <div className="bg-[#E5C9FF] pt-[43px] pb-7 flex flex-wrap">
                     <div className="w-[346px] mx-auto">
                         <div className="bg-white/40 p-2 leading-[1.4]">
@@ -41,13 +44,13 @@ interface ItemPropsType {
                         <Item>AI僧侶による法要(指定日に一度のみ、2回目以降は2万円/回)</Item>
                     </div>
                     <div className="flex justify-center">
-                        <a href="/" className="w-[280px] h-[60px] rounded-[60px] bg-black flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold relative">エントリープランに申し込む
+                        <a href="/" className="w-[280px] h-[60px] rounded-[60px] bg-black flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold relative duration-150 hover:opacity-75">エントリープランに申し込む
                         <figure className="absolute right-2"><img src="/assets/images/ic-arrow.png" alt="" /></figure>
                         </a>
                     </div>
                 </div>
             </div>
-            <div className="w-full dt:w-[459px] rounded-t-[40px] overflow-hidden gradient-02 md:p-[9px] p-[6px] relative [box-shadow:0px_4px_60px_0px_rgba(0,_0,_0,_0.10)]">
+            <div className="fade-up w-full dt:w-[459px] rounded-t-[40px] overflow-hidden gradient-02 md:p-[9px] p-[6px] relative [box-shadow:0px_4px_60px_0px_rgba(0,_0,_0,_0.10)]">
                 <figure className="absolute top-0 left-0">
                     <img className="max-md:w-[120px]" src="/assets/images/ribbon.png" alt="" />
                 </figure>
@@ -78,13 +81,13 @@ interface ItemPropsType {
                         <Item>new! AIによるペットアバターとの会話(性格などを学習させればペットと話せるようになりました)</Item>
                     </div>
                     <div className="flex justify-center">
-                        <a href="/" className="w-[340px] h-[60px] gradient-03 rounded-[60px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative">メモリアルモニタープランに応募する
+                        <a href="/" className="w-[340px] h-[60px] gradient-03 rounded-[60px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative duration-150 hover:opacity-75">メモリアルモニタープランに応募する
                         <figure className="absolute right-2"><img src="/assets/images/ic-arrow.png" alt="" /></figure>
                         </a>
                     </div>
                 </div>
             </div>
-            <div className="w-full dt:w-[419px] rounded-t-[40px] dt:mt-[193px] overflow-hidden [box-shadow:0px_4px_60px_0px_rgba(0,_0,_0,_0.10)]">
+            <div className="fade-up w-full dt:w-[419px] rounded-t-[40px] dt:mt-[193px] overflow-hidden [box-shadow:0px_4px_60px_0px_rgba(0,_0,_0,_0.10)]">
                 <div className="bg-[#8EC5FC] pt-[43px] pb-7 flex flex-wrap">
                     <div className="w-[346px] mx-auto">
                         <div className="bg-white/40 p-2 leading-[1.4]">
@@ -111,7 +114,7 @@ interface ItemPropsType {
                         <Item>new! AIによるペットアバターとの会話(性格などを学習させればペットと話せるようになりました)</Item>
                     </div>
                     <div className="flex justify-center">
-                        <a href="/" className="w-[280px] h-[60px] rounded-[60px] bg-black flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold relative">スタンダードプランに申し込む
+                        <a href="/" className="w-[280px] h-[60px] rounded-[60px] bg-black flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold relative  duration-150 hover:opacity-75">スタンダードプランに申し込む
                         <figure className="absolute right-2"><img src="/assets/images/ic-arrow.png" alt="" /></figure>
                         </a>
                     </div>
@@ -119,7 +122,7 @@ interface ItemPropsType {
             </div>
             </div>
         </div>
-        <div className="px-5">
+        <div className="fade-up px-5">
             <div className="w-full md:max-w-[880px] max-w-[440px] mx-auto relative md:mt-[50px] mt-12">
                 <span className="absolute top-0 left-0"><img className="max-md:max-w-[100px]" src="/assets/images/frame.png" alt="" /></span>
                 <div className="py-6 px-7 lg:py-[53px] lg:px-[64px] leading-[2]">

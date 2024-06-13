@@ -1,5 +1,6 @@
 "use client"
 import Button from "@/components/button";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useState } from "react";
 
 const data = [
@@ -110,14 +111,15 @@ const data = [
   },
 ];
 const Voice = () => {
+  const ref = useScrollAnimations();
     const [expanded, setExpanded] = useState<boolean[]>(new Array(data.length).fill(false));
 
   const toggleExpand = (index: number) => {
     setExpanded(expanded.map((exp, i) => (i === index ? !exp : exp)));
   };
   return (
-    <section className="md:pb-[151px] pb-20 overflow-hidden">
-      <div className="gradient-03 px-5 text-center md:h-[255px] h-[180px] flex items-center justify-center text-white font-bold xl:text-[48px] text-[clamp(20px,5.5vw,36px)] md:text-[clamp(32px,3.8vw,48px)]">
+    <section ref={ref} className="md:pb-[151px] pb-20 overflow-hidden">
+      <div className="fade-up gradient-03 px-5 text-center md:h-[255px] h-[180px] flex items-center justify-center text-white font-bold xl:text-[48px] text-[clamp(20px,5.5vw,36px)] md:text-[clamp(32px,3.8vw,48px)]">
         「メタでペット供養」が紡いだ <br />
         ペットとの新たな絆の物語
       </div>
@@ -126,7 +128,7 @@ const Voice = () => {
           {data.map((item, index) => (
             <div key={index}>
               <div
-            className={`relative md:w-[460px] max-md:max-w-[400px] w-full duration-200 ${expanded[index] ? 'md:h-auto' : 'md:h-[967px]'} ${expanded[index] ? 'md:h-auto' : 'md:h-[800px]'} overflow-hidden bg-white rounded-[10px] [box-shadow:0px_0px_50px_0px_rgba(142,_197,_252,_0.40)]`}
+            className={`fade-up relative md:w-[460px] max-md:max-w-[400px] w-full duration-200 ${expanded[index] ? 'md:h-auto' : 'md:h-[967px]'} ${expanded[index] ? 'md:h-auto' : 'md:h-[800px]'} overflow-hidden bg-white rounded-[10px] [box-shadow:0px_0px_50px_0px_rgba(142,_197,_252,_0.40)]`}
           >
                 <figure>
                   <img src={item.image} alt="" />
@@ -177,7 +179,7 @@ const Voice = () => {
                   </div>
                   {!expanded[index] &&
                   <div className="absolute bottom-0 inset-x-0 bg-[linear-gradient(180deg,_rgba(255,_255,_255,_0.70)_0%,_#FFF_100%)] flex justify-center py-9">
-                    <button className="w-[240px] h-10 flex items-center justify-center rounded-[50px] gradient-03 md:text-[16px] text-[13px] gap-2 text-white" onClick={() => toggleExpand(index)}>
+                    <button className="w-[240px] h-10 flex items-center justify-center rounded-[50px] gradient-03 md:text-[16px] text-[13px] gap-2 text-white duration-150 hover:opacity-75" onClick={() => toggleExpand(index)}>
                      <figure>
                         <img src="/assets/images/ic-btn-expand.svg" alt="" />
                      </figure>
@@ -191,7 +193,7 @@ const Voice = () => {
           ))}
         </div>
       </div>
-      <div className="px-5">
+      <div className="fade-up px-5">
         <div className="w-full max-w-[1141px] mx-auto xl:pt-[90px] pt-8 relative md:pb-6 pb-4">
             <span className="xl:absolute top-2 left-[90px]">
                 <img className="max-md:w-[120px]" src="/assets/images/slider-animal-04.png" alt="" />
@@ -206,8 +208,8 @@ const Voice = () => {
             </span>
         </div>
       </div>
-      <div className="px-5 pt-2">
-      <div className="w-full max-w-[1141px] mx-auto flex items-center md:gap-[35px] gap-7 max-md:flex-col relative ">
+      <div className="fade-up px-5 pt-2">
+      <div className="fade-up w-full max-w-[1141px] mx-auto flex items-center md:gap-[35px] gap-7 max-md:flex-col relative ">
                 <figure>
                     <img className="max-md:w-[200px]" src="/assets/images/img-staff.png" alt="" />
                 </figure>
@@ -221,7 +223,7 @@ const Voice = () => {
             </span>
             </div>
       </div>
-      <div className="flex justify-center md:mt-20 mt-7">
+      <div className="fade-up flex justify-center md:mt-20 mt-7">
         <Button href="#" rect="md:w-[410px] w-[310px] h-20 md:text-[20px] text-[16px]">価格・キャンペーンを確認する</Button>
       </div>
     </section>

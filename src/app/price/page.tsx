@@ -5,6 +5,7 @@ import Experience from "./components/experience";
 import Simulation from "./components/simulation";
 import Plan from "./components/plan";
 import Goen from "./components/goen";
+import Message from "./components/message";
 
 export default function Price() {
   return (
@@ -15,7 +16,10 @@ export default function Price() {
         <Experience />
         <Simulation />
         <Plan />
-        <Goen />
+        <div className=" bg-[url('/assets/images/bg-goen.png')] bg-[length:100%_auto] bg-no-repeat bg-[center_top_100px]">
+          <Goen />
+          <Message />
+        </div>
     </main>
   );
 }
