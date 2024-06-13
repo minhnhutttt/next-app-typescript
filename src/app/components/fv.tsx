@@ -9,6 +9,16 @@ const images = [
   "/assets/images/img-fv-03.png",
   "/assets/images/img-fv-04.png",
   "/assets/images/img-fv-05.png",
+  "/assets/images/img-fv-01.png",
+  "/assets/images/img-fv-02.png",
+  "/assets/images/img-fv-03.png",
+  "/assets/images/img-fv-04.png",
+  "/assets/images/img-fv-05.png",
+  "/assets/images/img-fv-01.png",
+  "/assets/images/img-fv-02.png",
+  "/assets/images/img-fv-03.png",
+  "/assets/images/img-fv-04.png",
+  "/assets/images/img-fv-05.png",
 ];
 
 const FV = () => {
@@ -18,6 +28,8 @@ const FV = () => {
     const images = gsap.utils.toArray<HTMLElement>(".item");
     const animeWidth = gsap.utils.toArray<HTMLElement>(".anime-width");
     const imageSize = images.length;
+    const total = images.length;
+    const degree = 360 / total;
     const rotations = [0, 23, 46, -46, -23];
 
     const containerHeight = container ? container.clientHeight : 0;
@@ -54,6 +66,7 @@ const FV = () => {
           1.5
         );
 
+        let rotationAngle = index * degree;
         timeline.to(
           image,
           {
@@ -67,7 +80,8 @@ const FV = () => {
           image,
           {
             transformOrigin: `center ${containerHeight*1.3}px`,
-            rotation: rotations[index],
+            rotation: 
+            index > imageSize / 2 ? -degree * (imageSize - index) : rotationAngle,
             duration: 1,
             ease: "power1.out",
           },
@@ -82,7 +96,7 @@ const FV = () => {
             duration: 1,
             ease: "power1.out",
           },
-          0.15 * (imageSize / 2 - 1) + 8.5
+          0.15 * (imageSize / 2 - 1) + 5.5
         );
       });
       animeWidth.forEach((span) => {
