@@ -12,7 +12,6 @@ body {
 .gradient {
   background: linear-gradient(122deg, rgba(168, 213, 255, 0.30) 10.27%, rgba(234, 201, 255, 0.30) 100.14%);
 }
-
 .gradient-02 {
   background: linear-gradient(122deg, #44A1FF 10.27%, #D1A2FF 100.14%);
 }

@@ -14,7 +14,7 @@ const Monitor = () => {
           『メタでペット供養』メモリアルモニター <br />
           <span className="bg-[linear-gradient(to_top,_#8EC5FC_30%,_transparent_30%)] tracking-[0.25em]">期間限定ご案内</span>
           </h4>
-        </div>
+          
         <div className="flex items-center md:gap-[56px] gap-[32px] md:mt-14 mt-8 max-md:flex-col">
             <figure className="md:w-[53.75%]">
                 <img src="/assets/images/img-monitor.png" alt="" />
@@ -31,6 +31,7 @@ const Monitor = () => {
                     <br />私たちは、あなた様のその想いに真摯に寄り添うことをお約束します。
                 </p>
             </div>
+        </div>
         </div>
       </section>
     );

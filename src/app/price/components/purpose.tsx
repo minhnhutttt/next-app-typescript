@@ -28,7 +28,7 @@ const Purpose = () => {
                     <div className="flex justify-center py-6">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" viewBox="0 0 20 30" fill="none">
                             <path opacity="0.6" fillRule="evenodd" clipRule="evenodd" d="M-0.000244141 -8.74228e-07L9.99976 8.01196L19.9998 0L19.9998 7.41405L9.99976 15.426L-0.000244465 7.41405L-0.000244141 -8.74228e-07Z" fill="#1B0220"/>
-                            <path fill-rule="evenodd" clipRule="evenodd" d="M-0.000244141 14.4019L9.99976 22.4138L19.9998 14.4019L19.9998 21.8159L9.99976 29.8279L-0.000244465 21.8159L-0.000244141 14.4019Z" fill="#1B0220"/>
+                            <path fillRule="evenodd" clipRule="evenodd" d="M-0.000244141 14.4019L9.99976 22.4138L19.9998 14.4019L19.9998 21.8159L9.99976 29.8279L-0.000244465 21.8159L-0.000244141 14.4019Z" fill="#1B0220"/>
                         </svg>
                     </div>
                     <p className="text-gradient-03 md:text-[32px] text-[20px] font-medium">
