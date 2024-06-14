@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_JP } from "next/font/google";
+import { Inter, Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
-const noto = Noto_Sans_JP({
+const sans = Noto_Sans_JP({
   subsets: ["latin"]
+});
+
+const serif = Noto_Serif_JP({
+  weight: ['400', '500', '700'],
+  subsets: ["latin"],
+  variable: '--font-serif'
 });
 
 const inter = Inter({
@@ -25,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${noto.className} ${inter.variable}`}>
+      <body className={`${sans.className} ${inter.variable} ${serif.variable}`}>
         <Header />
         {children}
         <Footer />

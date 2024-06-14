@@ -77,7 +77,7 @@ const Case = () => {
 
   return (
     <section ref={ref} className="relative overflow-hidden md:pt-[193px] pt-[100px]">
-        <div className="bg-white rounded-t-[140px] relative">
+        <div className="bg-white md:rounded-t-[140px] rounded-t-[80px] relative md:pb-[55px] pb-[35px]">
             <span className="block h-px"></span>
             <div className="fade-up">
                 <h4 className="text-center text-main text-inter md:text-[64px] text-[36px] font-medium tracking-wider md:-mt-[53px] -mt-6">Case studies</h4>
