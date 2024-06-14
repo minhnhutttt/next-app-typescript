@@ -8,5 +8,12 @@ html {
 }
 body {
   color: #000;
-  font-family: "Noto Sans", sans-serif;
+  background-color: #F6F6F6;
+}
+
+.text-gradient {
+  background: linear-gradient(0deg, #2334C8 0%, #218DFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

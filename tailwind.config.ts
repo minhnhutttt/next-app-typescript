@@ -13,9 +13,18 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        'dt': '1440px',
+      },
+      boxShadow: {
+        'base': '0px 0px 20px 0px rgba(0, 0, 0, 0.05)',
+      },
+      colors: {
+        'main': '#0D0D0D',
+      },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      inter: ["var(--font-inter)", "sans-serif"],
     },
   },
   plugins: [],
