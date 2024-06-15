@@ -1,8 +1,11 @@
 import Case from "./components/case";
+import Contact from "./components/contact";
+import Flow from "./components/flow";
 import Functionality from "./components/functionality";
 import FV from "./components/fv";
 import Introduction from "./components/introduction";
 import Other from "./components/other";
+import PlansPricing from "./components/plansPricing";
 import Service from "./components/service";
 import Tracou from "./components/tracou";
 
@@ -18,6 +21,9 @@ export default function Home() {
         <Other />
         <Tracou />
       </div>
+      <PlansPricing />
+      <Flow />
+      <Contact />
     </main>
   );
 }
