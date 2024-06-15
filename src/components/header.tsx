@@ -44,11 +44,7 @@ const Header = () => {
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="block relative duration-150 hover:opacity-75">
-            <img
-              className=""
-              src="/assets/images/logo.png"
-              alt=""
-            />
+            <img className="" src="/assets/images/logo.png" alt="" />
           </a>
         </div>
         <div

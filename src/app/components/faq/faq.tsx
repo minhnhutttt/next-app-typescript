@@ -15,7 +15,11 @@ const faqData: FaqItemPropsType[] = [
   {
     id: "2",
     question: "コンソールとはなんですか？",
-    answer: <>詳細テキストが入ります。詳細テキストが入ります。詳細テキストが入ります。詳細テキストが入ります。詳細テキストが入ります。詳細テキストが入ります。詳細テキストが入ります。</>,
+    answer: (
+      <>
+        詳細テキストが入ります。詳細テキストが入ります。詳細テキストが入ります。詳細テキストが入ります。詳細テキストが入ります。詳細テキストが入ります。詳細テキストが入ります。
+      </>
+    ),
   },
   {
     id: "3",
@@ -60,7 +64,7 @@ export default function FAQ() {
 
   return (
     <div
-    ref={ref}
+      ref={ref}
       id="faq"
       className="px-5 pb-12 pt-14 mb-[30px] md:mb-[70px] md:pb-[55px] md:pt-[120px]"
     >

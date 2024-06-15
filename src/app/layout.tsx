@@ -5,24 +5,24 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 const sans = Noto_Sans_JP({
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 const serif = Noto_Serif_JP({
-  weight: ['400', '500', '700'],
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
-  variable: '--font-serif'
+  variable: "--font-serif",
 });
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: '--font-inter'
+  variable: "--font-inter",
 });
 
 const roboto = Roboto({
-  weight: ['400', '500', '700'],
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
-  variable: '--font-roboto'
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sans.className} ${inter.variable} ${serif.variable} ${roboto.variable}`}>
+      <body
+        className={`${sans.className} ${inter.variable} ${serif.variable} ${roboto.variable}`}
+      >
         <Header />
         {children}
         <Footer />

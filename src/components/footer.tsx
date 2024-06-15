@@ -39,13 +39,13 @@ const links: NavLink[] = [
   },
 ];
 export default function Footer() {
-    return (
-      <footer className="px-5 pb-10 bg-[#CEE4FF] md:pt-16 pt-10">
-        <div className="w-full max-w-[1232px] mx-auto flex items-center justify-center flex-col border-b border-[#2639A6]">
-          <a href="/" className="block duration-150 hover:opacity-75">
-            <img src="/assets/images/logo-footer.png" alt="" />
-          </a>
-          <div className="md:py-10 py-7">
+  return (
+    <footer className="px-5 pb-10 bg-[#CEE4FF] md:pt-16 pt-10">
+      <div className="w-full max-w-[1232px] mx-auto flex items-center justify-center flex-col border-b border-[#2639A6]">
+        <a href="/" className="block duration-150 hover:opacity-75">
+          <img src="/assets/images/logo-footer.png" alt="" />
+        </a>
+        <div className="md:py-10 py-7">
           <ul className="flex md:gap-8 gap-6 flex-wrap justify-center">
             {links.map(({ link, text, target }, index) => (
               <li key={index}>
@@ -59,12 +59,11 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          </div>
         </div>
-        <div className="text-center text-[13px] text-[#2639A6] md:text-[16px] pt-6 md:pt-9">
+      </div>
+      <div className="text-center text-[13px] text-[#2639A6] md:text-[16px] pt-6 md:pt-9">
         Copyright © 2024 NFT-MAP
-        </div>
-      </footer>
-    );
-  }
-  
+      </div>
+    </footer>
+  );
+}

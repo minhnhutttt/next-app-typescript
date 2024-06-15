@@ -14,13 +14,13 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       screens: {
-        'dt': '1440px',
+        dt: "1440px",
       },
       boxShadow: {
-        'base': '0px 0px 20px 0px rgba(0, 0, 0, 0.05)',
+        base: "0px 0px 20px 0px rgba(0, 0, 0, 0.05)",
       },
       colors: {
-        'main': '#0D0D0D',
+        main: "#0D0D0D",
       },
     },
     fontFamily: {
