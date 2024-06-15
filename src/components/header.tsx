@@ -49,7 +49,7 @@ const Header = () => {
             NavOpen ? "" : "max-xl:invisible max-xl:opacity-0"
           }`}
         >
-          <ul className="flex xl:items-center gap-8 font-solaris max-xl:flex-col xl:gap-[60px] md:mr-[60px] max-xl:mb-10">
+          <ul className="flex xl:items-center gap-8 max-xl:flex-col xl:gap-[60px] md:mr-[60px] max-xl:mb-10">
             {links.map(({ link, text, target }, index) => (
               <li key={index}>
                 <a
