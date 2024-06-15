@@ -1,5 +1,6 @@
 import Case from "./components/case";
 import Contact from "./components/contact";
+import FAQ from "./components/faq/faq";
 import Flow from "./components/flow";
 import Functionality from "./components/functionality";
 import FV from "./components/fv";
@@ -24,6 +25,7 @@ export default function Home() {
       <PlansPricing />
       <Flow />
       <Contact />
+      <FAQ />
     </main>
   );
 }

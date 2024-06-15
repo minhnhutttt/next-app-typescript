@@ -76,7 +76,7 @@ const Case = () => {
   const ref = useScrollAnimations();
 
   return (
-    <section ref={ref} className="relative overflow-hidden md:pt-[193px] pt-[100px]">
+    <section id="case-studies" ref={ref} className="relative overflow-hidden md:pt-[193px] pt-[100px]">
         <div className="bg-white md:rounded-t-[140px] rounded-t-[80px] relative md:pb-[55px] pb-[35px]">
             <span className="block h-px"></span>
             <div className="fade-up">

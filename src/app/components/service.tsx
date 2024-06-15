@@ -26,9 +26,9 @@ const Service = () => {
   const ref = useScrollAnimations();
 
   return (
-    <section ref={ref} className="relative overflow-hidden md:pr-10 pr-5">
+    <section id="service" ref={ref} className="relative overflow-hidden md:pr-10 pr-5">
         <div className="fade-up bg-[#2639A6] pl-10 md:pr-8 pr-5 md:py-20 py-12 rounded-r-[60px]">
-            <div className="w-full max-w-[1360px] mx-auto flex gap-10 flex-wrap-reverse">
+            <div className="w-full md:max-w-[1360px] max-w-[540px] mx-auto flex gap-10 flex-wrap-reverse">
                 <div className="w-full max-w-[1050px] flex gap-[30px] max-lg:flex-wrap justify-center">
                     {data.map((item, index)=> (
                         <div className="fade-up w-[330px] bg-white rounded-[20px] border border-[#CEE4FF] pt-3 pb-9 px-[25px]" key={index}>

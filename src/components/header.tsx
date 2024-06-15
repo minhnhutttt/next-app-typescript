@@ -9,27 +9,27 @@ interface NavLink {
 
 const links: NavLink[] = [
   {
-    link: "/",
+    link: "#functionality",
     text: "機能性",
   },
   {
-    link: "/",
+    link: "#service",
     text: "サービス内容",
   },
   {
-    link: "/",
+    link: "#case-studies",
     text: "導入事例",
   },
   {
-    link: "/",
+    link: "#plan",
     text: "料金・プラン",
   },
   {
-    link: "/",
+    link: "#flow",
     text: "導入フロー",
   },
   {
-    link: "/",
+    link: "#faq",
     text: "FAQ",
   },
 ];

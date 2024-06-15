@@ -32,8 +32,8 @@ const Flow = () => {
   const ref = useScrollAnimations();
 
   return (
-    <section ref={ref} className="relative overflow-hidden px-5 md:pt-[90px] pt-10 md:pb-[50px] pb-[30px]">
-        <div className="w-full max-w-[1360px] mx-auto md:gap-[60px] gap-5 flex max-md:flex-wrap xl:justify-start justify-center">
+    <section id="flow" ref={ref} className="relative overflow-hidden px-5 md:pt-[90px] pt-10 md:pb-[50px] pb-[30px]">
+        <div className="w-full md:max-w-[1360px] max-w-[540px] mx-auto md:gap-[60px] gap-5 flex max-md:flex-wrap xl:justify-start justify-center">
             <div className="fade-up max-xl:w-full flex-1">
                 <h3 className="md:text-[64px] text-[40px] font-inter font-medium tracking-wide leading-tight">Flow</h3>
                 <p className="md:text-[24px] text-[18px] font-medium tracking-[0.3em] whitespace-nowrap">導入フロー</p>

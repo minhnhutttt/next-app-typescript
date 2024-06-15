@@ -26,6 +26,7 @@ const config: Config = {
     fontFamily: {
       inter: ["var(--font-inter)", "sans-serif"],
       serif: ["var(--font-serif)", "sans-serif"],
+      roboto: ["var(--font-roboto)", "sans-serif"],
     },
   },
   plugins: [],

@@ -5,7 +5,7 @@ const PlansPricing = () => {
   const ref = useScrollAnimations();
 
   return (
-    <section ref={ref} className="relative overflow-hidden md:pt-[193px] pt-[100px]">
+    <section id="plan" ref={ref} className="relative overflow-hidden md:pt-[193px] pt-[100px]">
     <div className="bg-white md:rounded-[40px] rounded-[24px] relative md:pb-[100px] pb-[60px] px-5">
         <span className="block h-px"></span>
         <div className="fade-up">
@@ -13,8 +13,8 @@ const PlansPricing = () => {
             <p className="text-center md:text-[24px] text-[18px] font-medium tracking-widest">料金プラン</p>
         </div>
         <div className="w-full max-w-[1360px] mx-auto flex flex-wrap md:my-10 my-8 gap-5 justify-center">
-            <div className="w-[440px] rounded-[40px] bg-white overflow-hidden border border-[#FFC328]">
-                <div className="md:h-[123px] h-[100px] px-5 flex items-center justify-center bg-[#FFC328] text-white font-bold md:text-[32px] text-[24px]">
+            <div className="fade-up w-[440px] rounded-[40px] bg-white overflow-hidden border border-[#FFC328]">
+                <div className="md:h-[123px] h-[100px] px-5 flex items-center justify-center bg-[#FFC328] text-white font-bold md:text-[32px] text-[20px]">
                     ベーシックプラン
                 </div>
                 <div className="py-6 md:pb-[58px] pb-10 px-5">
@@ -35,11 +35,11 @@ const PlansPricing = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[440px] rounded-[40px] bg-white overflow-hidden border border-[#04C50C] relative">
+            <div className="fade-up w-[440px] rounded-[40px] bg-white overflow-hidden border border-[#04C50C] relative">
                 <span className="absolute top-0 left-0">
-                    <img className="max-md:w-[140px]" src="/assets/images/ribbon.png" alt="" />
+                    <img className="max-md:w-[120px]" src="/assets/images/ribbon.png" alt="" />
                 </span>
-                <div className="md:h-[123px] h-[100px] px-5 flex items-center justify-center bg-[#04C50C] text-white font-bold md:text-[32px] text-[24px]">
+                <div className="md:h-[123px] h-[100px] px-5 flex items-center justify-center bg-[#04C50C] text-white font-bold md:text-[32px] text-[20px]">
                 スタートアッププラン
                 </div>
                 <div className="py-6 md:pb-[58px] pb-10 px-5">
@@ -56,8 +56,8 @@ const PlansPricing = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[440px] rounded-[40px] bg-white overflow-hidden border border-[#2639A6] relative">
-                <div className="md:h-[123px] h-[100px] px-5 flex items-center justify-center bg-[#2639A6] text-white font-bold md:text-[32px] text-[24px]">
+            <div className="fade-up w-[440px] rounded-[40px] bg-white overflow-hidden border border-[#2639A6] relative">
+                <div className="md:h-[123px] h-[100px] px-5 flex items-center justify-center bg-[#2639A6] text-white font-bold md:text-[32px] text-[20px]">
                 プロフェッショナルプラン
                 </div>
                 <div className="py-6 md:pb-[58px] pb-10 px-5">
@@ -75,7 +75,7 @@ const PlansPricing = () => {
                 </div>
             </div>
         </div>
-        <p className="text-center md:text-[16px] text-[13px] font-medium text-inter text-[#646464]">※NFTの発行枚数やアクセス数に応じて料金が異なります</p>
+        <p className="fade-up text-center md:text-[16px] text-[13px] font-medium text-inter max-md:tracking-tight text-[#646464]">※NFTの発行枚数やアクセス数に応じて料金が異なります</p>
     </div>
 </section>
   );
