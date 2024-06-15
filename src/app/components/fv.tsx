@@ -2,29 +2,43 @@
 
 import { useEffect, useRef } from "react";
 
-const tags = ['日本初','会える','話せる','散歩できる','供養する','宮古島','現実の供養所','メタバースの供養所','ペットロス','2D','3D','供養の新たな選択肢','遺品預かり','散骨代行','僧侶読経','産官学連携']
+const tags = [
+  "日本初",
+  "会える",
+  "話せる",
+  "散歩できる",
+  "供養する",
+  "宮古島",
+  "現実の供養所",
+  "メタバースの供養所",
+  "ペットロス",
+  "2D",
+  "3D",
+  "供養の新たな選択肢",
+  "遺品預かり",
+  "散骨代行",
+  "僧侶読経",
+  "産官学連携",
+];
 const AnimatedTagRow = () => (
-    <div className="animate-[infinity-loop_28s_infinite_linear_1s_both] flex relative group-hover:[animation-play-state:paused] [animation-direction:reverse]">
-          {tags.map((tag, index) => (
-            <div key={index} className="px-[15px]">
-                <p className="px-[15px] py-2 bg-[linear-gradient(122deg,_rgba(142,_197,_252,_0.40)_10.27%,_rgba(224,_195,_252,_0.40)_100.14%)] rounded-[10px] whitespace-nowrap text-[18px] font-medium">
-                {tag}
-                </p>
-            </div>
-          ))}
-    </div>
+  <div className="animate-[infinity-loop_28s_infinite_linear_1s_both] flex relative group-hover:[animation-play-state:paused] [animation-direction:reverse]">
+    {tags.map((tag, index) => (
+      <div key={index} className="px-[15px]">
+        <p className="px-[15px] py-2 bg-[linear-gradient(122deg,_rgba(142,_197,_252,_0.40)_10.27%,_rgba(224,_195,_252,_0.40)_100.14%)] rounded-[10px] whitespace-nowrap text-[18px] font-medium">
+          {tag}
+        </p>
+      </div>
+    ))}
+  </div>
 );
 const AnimatedImageRow = () => (
-    <div className="animate-[infinity-loop_28s_infinite_linear_1s_both] flex relative group-hover:[animation-play-state:paused]">
-          {[...Array(10)].map((_, index) => (
-            <div key={index}  className="w-[160px] px-2.5">
-                <img
-                  src={`/assets/images/mv-pet-${index + 1}.png`}
-                  alt=""
-                />
-            </div>
-          ))}
-    </div>
+  <div className="animate-[infinity-loop_28s_infinite_linear_1s_both] flex relative group-hover:[animation-play-state:paused]">
+    {[...Array(10)].map((_, index) => (
+      <div key={index} className="w-[160px] px-2.5">
+        <img src={`/assets/images/mv-pet-${index + 1}.png`} alt="" />
+      </div>
+    ))}
+  </div>
 );
 const FV = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -36,40 +50,46 @@ const FV = () => {
   return (
     <section>
       <div className="dt:h-[940px] max-md:h-[90vw] max-md:min-h-[460px] pt-[90px] md:pb-7 pb-2">
-      <div className="absolute flex w-full items-center justify-center overflow-hidden inset-0">
-        <video
-          ref={videoRef}
-          muted
-          loop
-          className="absolute inset-0 h-full w-full object-cover"
-          poster=""
-        >
-          <source src="/assets/videos/fv.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <div className="bg-[url('/assets/images/fv.png')] bg-cover absolute inset-0 z-10"></div>
+        <div className="absolute flex w-full items-center justify-center overflow-hidden inset-0">
+          <video
+            ref={videoRef}
+            muted
+            loop
+            className="absolute inset-0 h-full w-full object-cover"
+            poster=""
+          >
+            <source src="/assets/videos/fv.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="bg-[url('/assets/images/fv.png')] bg-cover absolute inset-0 z-10"></div>
         <div className="w-full max-w-[1420px] mx-auto relative h-full z-20">
           <figure>
-            <img className="w-[75.625vw] dt:w-[1089px]" src="/assets/images/fv-pet.png" alt="" />
+            <img
+              className="w-[75.625vw] dt:w-[1089px]"
+              src="/assets/images/fv-pet.png"
+              alt=""
+            />
           </figure>
           <div className="absolute font-bold inset-0 flex justify-end items-end">
             <div className="md:w-[53%] w-[64%] md:pb-10 pb-20 md:leading-[1.4] leading-[1.8]">
               <p className="md:text-[5.347vw] dt:text-[77px] text-[6vw]">
-                <span className="md:text-[7.431vw] dt:text-[107px] text-[8vw] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
+                <span className="md:text-[7.431vw] dt:text-[107px] text-[8vw] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] gradient-03">
                   今
                 </span>
                 も愛する
               </p>
               <p className="md:text-[5.347vw] dt:text-[77px] text-[6vw]">
                 ペットとの
-                <span className="md:text-[7.431vw] dt:text-[107px] text-[8vw] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
+                <span className="md:text-[7.431vw] dt:text-[107px] text-[8vw] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] gradient-03">
                   絆
                 </span>
               </p>
-              <p className="md:text-[5.347vw] dt:text-[77px] text-[6vw]">デジタルの力で</p>
               <p className="md:text-[5.347vw] dt:text-[77px] text-[6vw]">
-                <span className="md:text-[7.431vw] dt:text-[107px] text-[8vw] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)]">
+                デジタルの力で
+              </p>
+              <p className="md:text-[5.347vw] dt:text-[77px] text-[6vw]">
+                <span className="md:text-[7.431vw] dt:text-[107px] text-[8vw] text-white leading-none pb-2 px-2 font-bold inline-block rounded-[20px] gradient-03">
                   復活
                 </span>
                 しませんか？
@@ -145,16 +165,16 @@ const FV = () => {
         </div>
       </div>
       <div className="relative overflow-hidden mt-4">
-      <div className="flex w-auto group">
-        <AnimatedImageRow />
-        <AnimatedImageRow />
-        <AnimatedImageRow />
-      </div>
-      <div className="flex w-auto group bg-[url('/assets/images/bg-text-meta.png')] bg-[length:100%_auto] bg-[center_top_10px] h-[125px] pt-8 bg-no-repeat mt-3">
-         <AnimatedTagRow />
-         <AnimatedTagRow />
-         <AnimatedTagRow />
-      </div>
+        <div className="flex w-auto group">
+          <AnimatedImageRow />
+          <AnimatedImageRow />
+          <AnimatedImageRow />
+        </div>
+        <div className="flex w-auto group bg-[url('/assets/images/bg-text-meta.png')] bg-[length:100%_auto] bg-[center_top_10px] h-[125px] pt-8 bg-no-repeat mt-3">
+          <AnimatedTagRow />
+          <AnimatedTagRow />
+          <AnimatedTagRow />
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useEffect, useRef } from "react";
 
@@ -30,22 +30,22 @@ const Moshimo = () => {
         </div>
       </div>
       <div className="px-5 relative pb-10">
-      <div className="absolute flex w-full items-center justify-center overflow-hidden inset-0">
-        <video
-          ref={videoRef}
-          muted
-          loop
-          className="absolute inset-0 h-full w-full object-cover opacity-30"
-          poster=""
-        >
-          <source src="/assets/videos/moshimo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+        <div className="absolute flex w-full items-center justify-center overflow-hidden inset-0">
+          <video
+            ref={videoRef}
+            muted
+            loop
+            className="absolute inset-0 h-full w-full object-cover opacity-30"
+            poster=""
+          >
+            <source src="/assets/videos/moshimo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
         <div className="w-full md:max-w-[1316px] max-w-[540px] mx-auto pt-10 md:pt-[70px] relative">
           <div className="fade-up w-full max-w-[914px] mx-auto flex items-center gap-3 md:gap-10">
             <span className="flex-1 h-px gradient-03"></span>
-            <span className="md:text-[24px] text-[18px] text-gradient-03 text-center">
+            <span className="md:text-[24px] text-[18px] text-gradient-01 text-center">
               愛するペットとの絆を紡いでいく
               <br className="md:hidden" />
               日常を、デジタルの力で復活
@@ -92,7 +92,7 @@ const Moshimo = () => {
               <br className="max-md:hidden" />
               そこでは、愛するペットの姿があなた様を出迎えてくれます。
             </p>
-            <p className="md:text-[24px] text-[18px] text-gradient-03 font-medium my-7 md:my-10">
+            <p className="md:text-[24px] text-[18px] text-gradient-01 font-medium my-7 md:my-10">
               愛くるしい仕草で話しかけてくる姿
               <br /> 一緒に歩いた思い出の散歩道
             </p>
@@ -118,7 +118,10 @@ const Moshimo = () => {
             <div className="flex justify-center md:px-[84px] py-4">
               <p className="md:text-[20px] text-[16px] leading-loose font-medium">
                 まるで生き返ったみたい…。
-                <span className="bg-[linear-gradient(to_top,_#8EC5FC_40%,_transparent_40%)]">こんな供養の仕方があったなんて、そして愛するこの子との再会ができるなんて</span>信じられません。本当に良かった…
+                <span className="bg-[linear-gradient(to_top,_#8EC5FC_40%,_transparent_40%)]">
+                  こんな供養の仕方があったなんて、そして愛するこの子との再会ができるなんて
+                </span>
+                信じられません。本当に良かった…
               </p>
             </div>
             <div className="flex items-end gap-[18px] pr-2">
@@ -133,7 +136,14 @@ const Moshimo = () => {
             </div>
           </div>
           <div className="fade-up md:mt-20 mt-8 w-full max-w-[865px] mx-auto bg-[url('/assets/images/bg-memories-02.png')] bg-no-repeat bg-right-bottom bg-[#F5F5F5] rounded-[20px] md:px-[30px] md:py-[34px] p-5 md:text-[18px] text-[14px] font-medium leading-[1.8]">
-            メタでペット供養は、<span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">時間や場所に縛られることなく、スマートフォンひとつあればいつでもペットに会いに行けます。</span>話すことも、散歩することさえできます。<br /><br />そこはまさに、悲しみを癒やし、絆を確かめ合える特別な空間なのです。
+            メタでペット供養は、
+            <span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">
+              時間や場所に縛られることなく、スマートフォンひとつあればいつでもペットに会いに行けます。
+            </span>
+            話すことも、散歩することさえできます。
+            <br />
+            <br />
+            そこはまさに、悲しみを癒やし、絆を確かめ合える特別な空間なのです。
           </div>
           <div className="fade-up relative flex justify-center items-center md:mt-[88px] mt-10">
             <figure>
@@ -145,18 +155,23 @@ const Moshimo = () => {
             </figure>
             <div className="absolute inset-0 md:text-[22px] text-[15px] font-medium flex justify-center md:pt-10 pt-6 leading-[1.8]">
               <span className="max-w-[714px] w-full">
-              私たちは、日本中のペットオーナーが抱えている、<span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">「ペットロスの悲しみ」や「記憶が薄れていく恐怖心」</span>に寄り添い、メタでペット供養を通じて新しいペット供養のカタチを提案しています。
+                私たちは、日本中のペットオーナーが抱えている、
+                <span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">
+                  「ペットロスの悲しみ」や「記憶が薄れていく恐怖心」
+                </span>
+                に寄り添い、メタでペット供養を通じて新しいペット供養のカタチを提案しています。
               </span>
             </div>
           </div>
           <div className="fade-up w-full max-w-[700px] mx-auto md:-mt-6 -mt-3">
-              <span className="block h-[3px] gradient-02"></span>
-              <p className="text-center text-gradient-03 md:text-[34px] text-[18px] font-bold py-3 leading-[1.8]">
-                おもいで風化、する前に。<br />
-                ぜひ、あなた様が愛するあの子にも。
-              </p>
-              <span className="block h-[3px] gradient-03"></span>
-            </div>
+            <span className="block h-[3px] gradient-02"></span>
+            <p className="text-center text-gradient-01 md:text-[34px] text-[18px] font-bold py-3 leading-[1.8]">
+              おもいで風化、する前に。
+              <br />
+              ぜひ、あなた様が愛するあの子にも。
+            </p>
+            <span className="block h-[3px] gradient-03"></span>
+          </div>
         </div>
       </div>
     </section>

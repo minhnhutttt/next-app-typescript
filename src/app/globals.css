@@ -6,30 +6,34 @@ html {
   scroll-behavior: smooth !important;
 }
 body {
-  color: #1B0220;
+  color: #1b0220;
 }
 
 .gradient {
-  background: linear-gradient(122deg, rgba(168, 213, 255, 0.30) 10.27%, rgba(234, 201, 255, 0.30) 100.14%);
+  background: linear-gradient(
+    122deg,
+    rgba(168, 213, 255, 0.3) 10.27%,
+    rgba(234, 201, 255, 0.3) 100.14%
+  );
 }
 .gradient-02 {
-  background: linear-gradient(122deg, #44A1FF 10.27%, #D1A2FF 100.14%);
+  background: linear-gradient(122deg, #44a1ff 10.27%, #d1a2ff 100.14%);
 }
 .gradient-03 {
-  background: linear-gradient(122deg, #2C87E3 10.27%, #7E22D7 100.14%);
+  background: linear-gradient(122deg, #2c87e3 10.27%, #7e22d7 100.14%);
 }
 .gradient-04 {
-  background: linear-gradient(122deg, #8EC5FC 10.27%, #E0C3FC 100.14%);
+  background: linear-gradient(122deg, #8ec5fc 10.27%, #e0c3fc 100.14%);
 }
 
 .text-gradient-02 {
-  background: -webkit-linear-gradient(122deg, #44A1FF 10.27%, #D1A2FF 100.14%);
+  background: -webkit-linear-gradient(122deg, #44a1ff 10.27%, #d1a2ff 100.14%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.text-gradient-03 {
-  background: -webkit-linear-gradient(122deg, #2C87E3 10.27%, #7E22D7 100.14%);
+.text-gradient-01 {
+  background: -webkit-linear-gradient(122deg, #2c87e3 10.27%, #7e22d7 100.14%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -43,18 +47,18 @@ body {
   pointer-events: none;
   position: absolute;
   right: 0;
-  top: 0
+  top: 0;
 }
 
 .button--stroke .button__flair {
   transform: scale(0);
   transform-origin: 0 0;
-  will-change: transform
+  will-change: transform;
 }
 
 .button__flair:before {
   aspect-ratio: 1;
-  background: linear-gradient(122deg, #44A1FF 10.27%, #D1A2FF 100.14%);
+  background: linear-gradient(122deg, #44a1ff 10.27%, #d1a2ff 100.14%);
   border-radius: 50%;
   content: "";
   display: block;
@@ -62,8 +66,8 @@ body {
   pointer-events: none;
   position: absolute;
   top: 0;
-  transform: translate(-50%,-50%);
-  width: 170%
+  transform: translate(-50%, -50%);
+  width: 170%;
 }
 
 @-webkit-keyframes scrollanim {
