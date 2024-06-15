@@ -29,7 +29,7 @@ const PlansPricing = () => {
                         <div className="md:text-[20px] text-[16px] px-4 mt-4 mb-5">
                         コンソール＋APIだけで、クライアントが柔軟に対応
                         </div>
-                        <a href="/" className="w-full md:h-[70px] h-[60px] flex items-center justify-center border-[3px] border-[#FFC328] rounded-[20px] bg-[#FFFCF4] md:text-[20px] text-[16px] font-bold text-main">
+                        <a href="/" className="w-full md:h-[70px] h-[60px] flex items-center justify-center border-[3px] border-[#FFC328] rounded-[20px] bg-[#FFFCF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75">
                             このプランでお申し込み
                         </a>
                     </div>
@@ -50,7 +50,7 @@ const PlansPricing = () => {
                         <div className="md:text-[20px] text-[16px] mt-4 mb-5">
                         コンソール＋API＋マップ＋サービスサイトで、すぐに始められるプラン
                         </div>
-                        <a href="/" className="w-full md:h-[70px] h-[60px] flex items-center justify-center border-[3px] border-[#04C50C] rounded-[20px] bg-[#F4FFF4] md:text-[20px] text-[16px] font-bold text-main">
+                        <a href="/" className="w-full md:h-[70px] h-[60px] flex items-center justify-center border-[3px] border-[#04C50C] rounded-[20px] bg-[#F4FFF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75">
                         このプランでお申し込み
                         </a>
                     </div>
@@ -68,7 +68,7 @@ const PlansPricing = () => {
                         <div className="md:text-[20px] text-[16px] mt-4 mb-5">
                         スタートアッププランに加えて、広告出稿による収益化も可能
                         </div>
-                        <a href="/" className="w-full md:h-[70px] h-[60px] flex items-center justify-center border-[3px] border-[#2639A6] rounded-[20px] bg-[#F4FFF4] md:text-[20px] text-[16px] font-bold text-main">
+                        <a href="/" className="w-full md:h-[70px] h-[60px] flex items-center justify-center border-[3px] border-[#2639A6] rounded-[20px] bg-[#F4FFF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75">
                         このプランでお申し込み
                         </a>
                     </div>
