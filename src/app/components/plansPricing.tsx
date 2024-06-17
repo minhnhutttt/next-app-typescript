@@ -65,13 +65,19 @@ const PlansPricing = () => {
             </div>
             <div className="py-6 md:pb-[58px] pb-10 px-5">
               <div className="max-w-[350px] w-full mx-auto">
-                <div className="flex items-center justify-center font-bold text-[#111C59] text-center">
-                  <span className="md:text-[70px] text-[40px] tracking-widest">
-                    ASK
+                <div className="flex items-center justify-center font-bold text-[#111C59] text-center flex-col">
+                  <div className="flex items-center justify-center font-bold text-[#111C59] text-center">
+                    <span className="md:text-[70px] text-[40px] tracking-[-0.28em] mr-2">
+                      ８ ０,０００
+                      <span className="ml-2">円</span>
+                    </span>
+                  </div>
+                  <span className="block md:text-[70px] text-[40px] tracking">
+                    (税込)
                   </span>
                 </div>
                 <div className="md:text-[20px] text-[16px] mt-4 mb-5">
-                  コンソール＋API＋マップ＋サービスサイトで、すぐに始められるプラン
+                  コンソール＋API＋NFT作成サポート(NFTは当社で作成)で、すぐに始められるプラン
                 </div>
                 <a
                   href="/"
@@ -88,9 +94,14 @@ const PlansPricing = () => {
             </div>
             <div className="py-6 md:pb-[58px] pb-10 px-5">
               <div className="max-w-[350px] w-full mx-auto">
-                <div className="flex items-center justify-center font-bold text-[#111C59] text-center">
-                  <span className="md:text-[70px] text-[40px] tracking-widest">
-                    ASK
+                <div className="flex items-center justify-center font-bold text-[#111C59] text-center flex-col">
+                  <div className="flex items-center justify-center font-bold text-[#111C59] text-center">
+                    <span className="md:text-[70px] text-[40px] tracking-[-0.28em] mr-2">
+                      ２ ０ ０,０００
+                    </span>
+                  </div>
+                  <span className="block md:text-[70px] text-[40px] tracking">
+                    円 (税込)
                   </span>
                 </div>
                 <div className="md:text-[20px] text-[16px] mt-4 mb-5">
@@ -107,7 +118,7 @@ const PlansPricing = () => {
           </div>
         </div>
         <p className="fade-up text-center md:text-[16px] text-[13px] font-medium text-inter max-md:tracking-tight text-[#646464]">
-          ※NFTの発行枚数やアクセス数に応じて料金が異なります
+          ※初期費用込み、月々の利用料金です。
         </p>
       </div>
     </section>

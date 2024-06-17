@@ -9,13 +9,11 @@ const FV = () => {
       ref={ref}
       className="relative md:pb-[80px] overflow-hidden md:h-[790px] bg-[url('/assets/images/fv.jpg')] bg-cover pt-[80px] md:pt-[116px]"
     >
-      <div className="w-full max-w-[1240px] mx-auto px-5">
+      <div className="w-full max-w-[1240px] mx-auto">
         <div className="fade-up md:pt-[66px] pt-9 md:w-[55vw] dt:w-[720px]">
           <h2 className="dt:text-[72px] md:text-[5vw] font-medium text-[32px] md:leading-none leading-[1.1] space-y-4 max-md:text-center">
             <p className="bg-white inline-block px-2">地球の裏側まで</p> <br />
-            <p className="bg-white inline-block px-2">
-              あなたのビジネスで
-            </p>{" "}
+            <p className="bg-white inline-block px-2">あなたのビジネスで</p>
             <br />
             <p className="bg-white inline-block px-2">
               埋め尽くします
@@ -24,7 +22,14 @@ const FV = () => {
               </span>
             </p>
           </h2>
-          <div className="bg-[#111C59]/[0.6] flex max-md:flex-col p-6 md:mt-14 mt-10 md:h-[251px]">
+          <div className="flex items-end justify-end max-md:w-full md:hidden ml-auto">
+            <img
+              className="fade-up max-md:w-[60vw]"
+              src="/assets/images/fv-map.png"
+              alt=""
+            />
+          </div>
+          <div className="bg-[#111C59]/[0.6] flex max-md:flex-col p-6 md:mt-14 max-md:mb-10 md:h-[251px]">
             <p className="flex items-center text-white md:text-[1.389vw] dt:text-[20px] text-[16px] font-medium dt:w-[220px] md:w-[15.278vw] max-md:justify-center max-md:text-center">
               マップ機能がついた <br className="max-md:hidden" />
               NFTクーポンが顧客を
@@ -94,7 +99,7 @@ const FV = () => {
           </div>
         </div>
       </div>
-      <div className="max-dt:w-[39.861vw] md:absolute right-0 bottom-0 flex items-end justify-end max-md:w-full">
+      <div className="max-dt:w-[39.861vw] md:absolute right-0 bottom-0 flex items-end justify-end max-md:w-full max-md:hidden">
         <img
           className="fade-up max-md:w-[60vw]"
           src="/assets/images/fv-map.png"

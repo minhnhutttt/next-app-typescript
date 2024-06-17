@@ -10,32 +10,44 @@ const links: NavLink[] = [
     text: "Home",
   },
   {
-    link: "#functionality",
+    link: "/#functionality",
     text: "機能性",
   },
   {
-    link: "#service",
+    link: "/#service",
     text: "サービス内容",
   },
   {
-    link: "#case-studies",
+    link: "/#case-studies",
     text: "導入事例",
   },
   {
-    link: "#plan",
+    link: "/#plan",
     text: "料金・プラン",
   },
   {
-    link: "#flow",
+    link: "/#flow",
     text: "導入フロー",
   },
   {
-    link: "#FAQ",
+    link: "/#FAQ",
     text: "FAQ",
   },
   {
-    link: "",
+    link: "/",
     text: "お問い合わせ",
+  },
+  {
+    link: "/company",
+    text: "運営会社",
+  },
+  {
+    link: "/privacy-policy",
+    text: "プライバシーポリシー",
+  },
+  {
+    link: "/commerce-law",
+    text: "特定商取引法に基づく表記",
   },
 ];
 export default function Footer() {

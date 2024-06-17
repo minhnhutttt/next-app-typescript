@@ -28,7 +28,8 @@ const Tracou = () => {
             </figure>
             <div className="pt-[18px]">
               <a
-                href="/"
+                href="https://tracouhunter.com/"
+                target="_blank"
                 className="flex justify-center items-center flex-col w-[294px] h-[92px] bg-[url('/assets/images/traacou-hunter-link.png')] bg-cover font-serif md:text-[20px] font-medium text-white text-[18px] duration hover:opacity-75"
               >
                 <p>Tracou Hunter</p>

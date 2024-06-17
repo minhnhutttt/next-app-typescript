@@ -12,17 +12,13 @@ const data = [
     step: "2",
     image: "/assets/images/img-flow-02.png",
     title: "料金のお支払い",
-    text: (
-      <>
-        NFTの発行枚数やアクセス数に応じて複数のプランをご用意しておりますので、お気軽にお問い合わせください。
-      </>
-    ),
+    text: <>銀行振込でお願いします。</>,
   },
   {
     step: "3",
     image: "/assets/images/img-flow-03.png",
     title: "アカウント作成",
-    text: <>管理コンソールとAPIを提供します</>,
+    text: <>管理コンソールとAPIを提供します。</>,
   },
   {
     step: "4",
