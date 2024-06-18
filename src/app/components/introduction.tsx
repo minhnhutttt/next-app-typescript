@@ -31,7 +31,7 @@ const Introduction = () => {
                 <span className="text-gradient font-bold">1</span>
               </figure>
               <span className="flex-1 md:text-[18px] text-[14px] font-medium">
-                NFTクーポンを作成して、貴社専用のNFT Mapに掲載できます。
+                NFTクーポンを作成して、貴社専用のNFT MAPに掲載できます。
               </span>
             </div>
             <div className="fade-up flex items-center gap-2">
@@ -50,6 +50,11 @@ const Introduction = () => {
                 クーポンの取得場所を限定したり、取得できる期間を定めたりと使い方は無限大です。
               </span>
             </div>
+            <p className="fade-up md:text-center text-[11px]">
+              ※NFTとは、画像、ビデオ、3D、音楽、音声などに「世界にひとつだけの証明番号」を付与する技術を活用して発行されるものです。
+              <br />
+              この証明番号は第三者によって書き換えられるリスクがなく、デジタルの世界で唯一無二であることを証明するために使われます。
+            </p>
           </div>
         </div>
       </div>

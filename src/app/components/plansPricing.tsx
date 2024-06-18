@@ -45,7 +45,7 @@ const PlansPricing = () => {
                 </div>
                 <a
                   href="/"
-                  className="w-full md:h-[70px] h-[60px] flex items-center justify-center border-[3px] border-[#FFC328] rounded-[20px] bg-[#FFFCF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75"
+                  className="w-full md:h-[70px] h-[60px] flex items-center max-w-[350px] mx-auto justify-center border-[3px] border-[#FFC328] rounded-[20px] bg-[#FFFCF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75"
                 >
                   このプランでお申し込み
                 </a>
@@ -65,23 +65,25 @@ const PlansPricing = () => {
             </div>
             <div className="py-6 md:pb-[58px] pb-10 px-5">
               <div className="max-w-[350px] w-full mx-auto">
-                <div className="flex items-center justify-center font-bold text-[#111C59] text-center flex-col">
-                  <div className="flex items-center justify-center font-bold text-[#111C59] text-center">
-                    <span className="md:text-[70px] text-[40px] tracking-[-0.28em] mr-2">
-                      ８ ０,０００
-                      <span className="ml-2">円</span>
-                    </span>
-                  </div>
-                  <span className="block md:text-[70px] text-[40px] tracking">
-                    (税込)
+                <div className="flex items-center justify-center font-bold text-[#111C59] text-center">
+                  <span className="md:text-[70px] text-[40px] tracking-[-0.28em] mr-2">
+                    ８０,０００
                   </span>
+                  <p>
+                    <span className="block md:text-[40px] text-[24px] leading-none mt-3">
+                      円
+                    </span>
+                    <span className="block md:text-[20px] text-[16px]">
+                      (税込)
+                    </span>
+                  </p>
                 </div>
                 <div className="md:text-[20px] text-[16px] mt-4 mb-5">
                   コンソール＋API＋NFT作成サポート(NFTは当社で作成)で、すぐに始められるプラン
                 </div>
                 <a
                   href="/"
-                  className="w-full md:h-[70px] h-[60px] flex items-center justify-center border-[3px] border-[#04C50C] rounded-[20px] bg-[#F4FFF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75"
+                  className="w-full md:h-[70px] h-[60px] flex items-center max-w-[350px] mx-auto justify-center border-[3px] border-[#04C50C] rounded-[20px] bg-[#F4FFF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75"
                 >
                   このプランでお申し込み
                 </a>
@@ -93,23 +95,26 @@ const PlansPricing = () => {
               プロフェッショナルプラン
             </div>
             <div className="py-6 md:pb-[58px] pb-10 px-5">
-              <div className="max-w-[350px] w-full mx-auto">
-                <div className="flex items-center justify-center font-bold text-[#111C59] text-center flex-col">
-                  <div className="flex items-center justify-center font-bold text-[#111C59] text-center">
-                    <span className="md:text-[70px] text-[40px] tracking-[-0.28em] mr-2">
-                      ２ ０ ０,０００
-                    </span>
-                  </div>
-                  <span className="block md:text-[70px] text-[40px] tracking">
-                    円 (税込)
+              <div className="max-w-[370px] w-full mx-auto">
+                <div className="flex items-center justify-center font-bold text-[#111C59] text-center">
+                  <span className="md:text-[70px] text-[40px] tracking-[-0.28em] mr-2 whitespace-nowrap">
+                    ２ ００,０００
                   </span>
+                  <p>
+                    <span className="block md:text-[40px] text-[24px] leading-none mt-3">
+                      円
+                    </span>
+                    <span className="block md:text-[20px] text-[16px]">
+                      (税込)
+                    </span>
+                  </p>
                 </div>
                 <div className="md:text-[20px] text-[16px] mt-4 mb-5">
                   スタートアッププランに加えて、広告出稿による収益化も可能
                 </div>
                 <a
                   href="/"
-                  className="w-full md:h-[70px] h-[60px] flex items-center justify-center border-[3px] border-[#2639A6] rounded-[20px] bg-[#F4FFF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75"
+                  className="w-full md:h-[70px] h-[60px] flex items-center max-w-[350px] mx-auto justify-center border-[3px] border-[#2639A6] rounded-[20px] bg-[#F4FFF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75"
                 >
                   このプランでお申し込み
                 </a>

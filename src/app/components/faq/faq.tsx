@@ -40,7 +40,7 @@ const faqData: FaqItemPropsType[] = [
     question: "DIVERとはなんですか？",
     answer: (
       <>
-        DIVERとは、ブロックチェーン技術を活用して開発されたDIVERというプロジェクト名称です。DIVERが開発するアプリは、セキュリティが高く、プライバシーが完全に守られた状態で各アプリの機能を利用できる点が特徴的です。一般的なアプリの場合、利用者の個人情報や利用履歴などが運営会社のサーバーに蓄積されるため、なんらかの事情で情報が流出したり、盗み見られたりするリスクと隣り合わせです。DIVERはそのようなリスクとは無縁です。安心して利用ができます。DIVERは、ブロックチェーンの世界でビットコインの思想とイーサリアムの利便性をベースにさらに進化させたグローバルプロジェクトであり、世界で唯一、取引手数料が完全フリーであらゆるアプリが使える次世代のプラットフォームです。私たちはDIVERから生まれる次世代のアプリケーションを活用して、他にもサービスを展開しています。詳細はポータルサイトをご参照ください。
+        DIVERとは、ブロックチェーン技術を活用して開発されたDIVERというプロジェクト名称です。DIVERは、ブロックチェーンの世界でビットコインの思想とイーサリアムの利便性をベースにさらに進化させたグローバルプロジェクトであり、世界で唯一、取引手数料が完全フリーであらゆるアプリが使える次世代のプラットフォームです。
       </>
     ),
   },
@@ -56,7 +56,7 @@ const faqData: FaqItemPropsType[] = [
   },
   {
     id: "6",
-    question: "初期費用は？",
+    question: "初期費用はかかりますか？",
     answer: <>ありません。全てのプランは初期費用込みの料金です。</>,
   },
   {
@@ -64,25 +64,18 @@ const faqData: FaqItemPropsType[] = [
     question: "NFTはどのようにして作成しますか？",
     answer: (
       <>
-        TR-D1でNFTを作成し、ChainPinで位置情報を設定します。
-        <br />
-        <br />
-        TR-D1({" "}
         <a
           href="https://trading-coupon.com/"
           target="_blank"
           className="underline"
         >
-          https://trading-coupon.com/...
+          TR-D1
         </a>
-        )
-        <br />
-        <br />
-        ChainPin(
+        でNFTを作成し、
         <a href="https://chainpin.link/" target="_blank" className="underline">
-          https://chainpin.link/
+          ChainPin
         </a>
-        へリンクさ...)
+        で位置情報を設定します。
       </>
     ),
   },

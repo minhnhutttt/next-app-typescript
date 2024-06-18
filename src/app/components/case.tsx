@@ -76,7 +76,7 @@ const data = [
           <>
             <span className="underline">
               店舗専用のNFT
-              Mapを活用し、他の飲食店にはないユニークな顧客体験を提供。
+              MAPを活用し、他の飲食店にはないユニークな顧客体験を提供。
             </span>
             独自のクーポンや特典で差別化が図れた。
           </>
@@ -174,7 +174,7 @@ const Case = () => {
               </div>
               <div className="bg-[#CEE4FF] pt-5">
                 <p className="text-center md:text-[22px] text-[17px] font-bold border-b border-[#949494] pb-1">
-                  導入後
+                  導入後の効果
                 </p>
                 <div className="px-5 py-2.5">
                   {item.after.map(({ role, describe }, index) => (

@@ -67,7 +67,7 @@ const FV = () => {
                     />
                   </figure>
                   <span className="flex-1 dt:text-[18px] md:text-[1.25vw] text-[14px]">
-                    割引率の高いクーポンを使うことができる
+                    NFTを受け取るため、顧客を指定の場所まで導くことができる
                   </span>
                 </div>
                 <div className="flex gap-2">
