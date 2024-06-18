@@ -41,7 +41,7 @@ const PlansPricing = () => {
                   </p>
                 </div>
                 <div className="md:text-[20px] text-[16px] px-4 mt-4 mb-5">
-                  コンソール＋APIだけで、クライアントが柔軟に対応
+                  コンソール＋APIニーズに応じたカスタマイズが可能で、柔軟に利用できるプランです。
                 </div>
                 <a
                   href="/"
@@ -79,7 +79,7 @@ const PlansPricing = () => {
                   </p>
                 </div>
                 <div className="md:text-[20px] text-[16px] mt-4 mb-5">
-                  コンソール＋API＋NFT作成サポート(NFTは当社で作成)で、すぐに始められるプラン
+                  コンソール＋API＋NFT作成サポートコンソールとAPIに加え、当社が作成するNFTのサポートも含まれており、すぐに始められるプランです。
                 </div>
                 <a
                   href="/"
@@ -110,7 +110,7 @@ const PlansPricing = () => {
                   </p>
                 </div>
                 <div className="md:text-[20px] text-[16px] mt-4 mb-5">
-                  スタートアッププランに加えて、広告出稿による収益化も可能
+                  スタートアッププラン＋収益化サポートスタートアッププランに加えて、広告出稿による収益化も可能なプランです。
                 </div>
                 <a
                   href="/"
