@@ -1,9 +1,18 @@
 "use client";
+import { useFrontChatBoot } from "@/hooks/use-front-chat-boot";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const PlansPricing = () => {
   const ref = useScrollAnimations();
 
+  const { frontChat } = useFrontChatBoot();
+
+  function openFrontChat() {
+    if (!frontChat) {
+      return;
+    }
+    frontChat("show");
+  }
   return (
     <section
       id="plan"
@@ -43,12 +52,12 @@ const PlansPricing = () => {
                 <div className="md:text-[20px] text-[16px] px-4 mt-4 mb-5">
                   コンソール＋APIニーズに応じたカスタマイズが可能で、柔軟に利用できるプランです。
                 </div>
-                <a
-                  href="/"
+                <button
+                  onClick={openFrontChat}
                   className="w-full md:h-[70px] h-[60px] flex items-center max-w-[350px] mx-auto justify-center border-[3px] border-[#FFC328] rounded-[20px] bg-[#FFFCF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75"
                 >
                   このプランでお申し込み
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -81,12 +90,12 @@ const PlansPricing = () => {
                 <div className="md:text-[20px] text-[16px] mt-4 mb-5">
                   コンソール＋API＋NFT作成サポートコンソールとAPIに加え、当社が作成するNFTのサポートも含まれており、すぐに始められるプランです。
                 </div>
-                <a
-                  href="/"
+                <button
+                  onClick={openFrontChat}
                   className="w-full md:h-[70px] h-[60px] flex items-center max-w-[350px] mx-auto justify-center border-[3px] border-[#04C50C] rounded-[20px] bg-[#F4FFF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75"
                 >
                   このプランでお申し込み
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -112,12 +121,12 @@ const PlansPricing = () => {
                 <div className="md:text-[20px] text-[16px] mt-4 mb-5">
                   スタートアッププラン＋収益化サポートスタートアッププランに加えて、広告出稿による収益化も可能なプランです。
                 </div>
-                <a
-                  href="/"
+                <button
+                  onClick={openFrontChat}
                   className="w-full md:h-[70px] h-[60px] flex items-center max-w-[350px] mx-auto justify-center border-[3px] border-[#2639A6] rounded-[20px] bg-[#F4FFF4] md:text-[20px] text-[16px] font-bold text-main duration-150 hover:opacity-75"
                 >
                   このプランでお申し込み
-                </a>
+                </button>
               </div>
             </div>
           </div>

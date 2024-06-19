@@ -7,7 +7,7 @@ const FV = () => {
   return (
     <section
       ref={ref}
-      className="relative md:pb-[80px] overflow-hidden md:h-[790px] bg-[url('/assets/images/fv.jpg')] bg-cover pt-[80px] md:pt-[116px]"
+      className="relative md:pb-[80px] overflow-hidden md:h-[790px] bg-[url('/assets/images/fv.jpg')] bg-cover pt-[80px] md:pt-[116px] md:px-5"
     >
       <div className="w-full max-w-[1240px] mx-auto">
         <div className="fade-up md:pt-[66px] pt-9 md:w-[55vw] dt:w-[720px]">
@@ -39,7 +39,7 @@ const FV = () => {
               ご案内します。
             </p>
             <div className="bg-white w-full max-md:h-px md:w-px max-md:my-5 md:mx-5"></div>
-            <div className="flex justify-center flex-col max-md:items-center">
+            <div className="flex justify-center flex-col max-md:items-center flex-1">
               <h5 className="dt:text-[20px] md:text-[1.389vw] text-[16px] font-bold text-[#FFFF54] max-md:text-center">
                 「位置情報付きNFTクーポン」
                 <br className="md:hidden" />

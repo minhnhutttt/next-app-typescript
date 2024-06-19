@@ -1,4 +1,5 @@
 "use client";
+import { useFrontChatBoot } from "@/hooks/use-front-chat-boot";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const Contact = () => {
@@ -7,8 +8,9 @@ const Contact = () => {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden px-7 md:pt-[30px] pt-5 pb-[100px] pb-20"
+      className="relative overflow-hidden px-7 md:pt-[30px] pt-5 md:pb-[100px] pb-20"
     >
+      {" "}
       <div className="fade-up relative w-full md:max-w-[960px] max-w-[500px] mx-auto bg-white rounded-[20px] md:border-[4px] border-2 border-[#2334C8] px-5 flex md:pt-14 pt-10 pb-16 md:pb-[90px]">
         <div className="fade-up w-full md:max-w-[730px] max-w-[400px] mx-auto flex items-center max-md:flex-col md:gap-[90px] gap-10">
           <div className="leading-none">
