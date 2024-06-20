@@ -26,8 +26,8 @@ const FV = () => {
           </div>
         </div>
       </div>
-      <div className=" md:-mt-20 -mt-10 px-5 max-dt:px-[8vw]">
-        <div className="w-full md:max-w-[910px] max-w-[440px] mx-auto md:border-[6px] border-[3px] border-white md:rounded-[63px] rounded-[32px] bg-[url('/assets/images/bg-01.png')] bg-cover md:pb-[34px] pb-5">
+      <div className="md:-mt-20 -mt-10 px-5 max-dt:px-[8vw] md:mb-[70px] mb-12">
+        <div className="fade-up w-full md:max-w-[910px] max-w-[440px] mx-auto md:border-[6px] border-[3px] border-white md:rounded-[63px] rounded-[32px] bg-[url('/assets/images/bg-01.png')] bg-cover md:pb-[34px] pb-5">
           <div className="flex px-4 gap-2 max-md:flex-col">
             <figure className="md:-mt-12 -mt-8">
               <img
@@ -100,7 +100,7 @@ const FV = () => {
               <br />『 メタでペット供養 』が永遠に。
             </p>
           </div>
-          <div className="md:mt-16 mt-10 md:mb-[62px] mb-10">
+          <div className="fade-up md:mt-16 mt-10 md:mb-[62px] mb-10">
             <span className="block w-full h-1 bg-[linear-gradient(0deg,_#B69318_-21.4%,_#B69419_-19.25%,_#CEB342_2.33%,_#E0CB62_23.91%,_#EDDC79_43.33%,_#F5E787_62.74%,_#F8EB8C_80.01%,_#F2E483_97.27%,_#E5D16A_125.32%,_#CEB343_157.68%,_#B69318_190.05%)]"></span>
             <div className="md:px-5 px-3 md:py-6 py-5 md:space-y-[30px] space-y-4">
               <div className="flex md:gap-[30px] gap-5">
@@ -142,7 +142,7 @@ const FV = () => {
             </div>
             <span className="block w-full h-1 bg-[linear-gradient(0deg,_#B69318_-21.4%,_#B69419_-19.25%,_#CEB342_2.33%,_#E0CB62_23.91%,_#EDDC79_43.33%,_#F5E787_62.74%,_#F8EB8C_80.01%,_#F2E483_97.27%,_#E5D16A_125.32%,_#CEB343_157.68%,_#B69318_190.05%)]"></span>
           </div>
-          <div className="w-full max-w-[870px] border border-black rounded-[22px] min-h-[110px] px-8 pt-4 pb-2 md:text-[18px] text-[14px] font-sans">
+          <div className="fade-up w-full max-w-[870px] border border-black rounded-[22px] min-h-[110px] px-8 pt-4 pb-2 md:text-[18px] text-[14px] font-sans">
             あなた様がいずれかにあてはまるなら、
             <br />
             ペット供養の新たな選択肢として『メタでペット供養』をご検討ください。
