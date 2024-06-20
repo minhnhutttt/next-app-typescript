@@ -10,3 +10,42 @@ body {
   color: #000;
   font-family: "Noto Sans", sans-serif;
 }
+
+.u-text-gradient {
+  background: linear-gradient(122deg, #2C87E3 10.27%, #7E22D7 100.14%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button header */
+
+.button__flair {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.button--stroke .button__flair {
+  transform: scale(0);
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.button__flair:before {
+  aspect-ratio: 1;
+  background: white;
+  opacity: 0.4;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 170%;
+}

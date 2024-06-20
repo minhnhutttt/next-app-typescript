@@ -1,0 +1,156 @@
+"use client";
+
+import Button from "@/components/button";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+
+const FV = () => {
+  const ref = useScrollAnimations();
+  return (
+    <section ref={ref} className="relative">
+      <div className="absolute right-[2vw] dt:right-7 dt:top-[570px] md:top-[39.583vw] top-[55vw]">
+        <img
+          className="fade-up max-md:w-8 max-dt:w-[7.5vw]"
+          src="/assets/images/meta-text.png"
+          alt=""
+        />
+      </div>
+      <div className="bg-[url(/assets/images/fv.jpg)] bg-cover pt-16 md:pt-6 pb-16 md:pb-[96px]">
+        <div className="w-full max-w-[1440px] mx-auto relative flex justify-center pb-14 md:pb-3">
+          <figure className="dt:pl-11 pl-[3.056vw]">
+            <img src="/assets/images/fv-main.png" alt="" />
+          </figure>
+          <div className="absolute w-[80vw] md:w-[59.861vw] dt:w-[862px] bottom-0 left-1/2 -translate-x-1/2">
+            <h1>
+              <img src="/assets/images/fv-text.png" alt="" />
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div className=" md:-mt-20 -mt-10 px-5 max-dt:px-[8vw]">
+        <div className="w-full md:max-w-[910px] max-w-[440px] mx-auto md:border-[6px] border-[3px] border-white md:rounded-[63px] rounded-[32px] bg-[url('/assets/images/bg-01.png')] bg-cover md:pb-[34px] pb-5">
+          <div className="flex px-4 gap-2 max-md:flex-col">
+            <figure className="md:-mt-12 -mt-8">
+              <img
+                className="max-md:w-[130px]"
+                src="/assets/images/circle.png"
+                alt=""
+              />
+            </figure>
+            <div className="flex-1 md:pt-9 pt-2">
+              <h3 className="">
+                <img
+                  className="max-md:w-full max-md:max-w-[400px]"
+                  src="/assets/images/title.png"
+                  alt="メモリアルモニター受付中 !!"
+                />
+              </h3>
+              <p className="md:text-[20px] text-[16px] font-black md:pt-5 pt-3">
+                今ならモニターとしての参加で、先行利用特典や初期費用・
+                年会費の割引クーポンをご提供！供養の新たな選択肢に魅力を感じるあなたを全面的にバックアップいたします。
+              </p>
+            </div>
+          </div>
+          <div className="flex justify-center md:gap-8 gap-5 md:mt-7 mt-5 max-md:flex-col items-center px-4">
+            <Button
+              href="#"
+              rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#0176FF] items-center justify-center"
+            >
+              <span>
+                <img
+                  className="max-md:w-14"
+                  src="/assets/images/ic-btn-01.png"
+                  alt=""
+                />
+              </span>
+              <span className="md:text-[19px] text-[16px] font-extrabold font-sans">
+                メモリアルモニター <br />
+                として参加する
+              </span>
+            </Button>
+            <Button
+              href="#"
+              rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#BB66FF] items-center justify-center"
+            >
+              <span>
+                <img
+                  className="max-md:w-14"
+                  src="/assets/images/ic-btn-02.png"
+                  alt=""
+                />
+              </span>
+              <span className="md:text-[19px] text-[16px] font-extrabold font-sans">
+                メモリアルモニター <br />
+                の詳細が知りたい
+              </span>
+            </Button>
+          </div>
+        </div>
+        <div className="w-full max-w-[920px] mx-auto mt-10 md:mt-14">
+          <div className="fade-up flex items-center justify-center md:gap-8 gap-4">
+            <figure>
+              <img
+                className="max-md:w-[27vw]"
+                src="/assets/images/img-main.png"
+                alt=""
+              />
+            </figure>
+            <p className="md:text-[22px] text-[clamp(12px,3vw,18px)] font-bold u-text-gradient leading-[2.2]">
+              まぶたを閉じれば <br />
+              浮かんでくる愛らしい姿を、
+              <br />『 メタでペット供養 』が永遠に。
+            </p>
+          </div>
+          <div className="md:mt-16 mt-10 md:mb-[62px] mb-10">
+            <span className="block w-full h-1 bg-[linear-gradient(0deg,_#B69318_-21.4%,_#B69419_-19.25%,_#CEB342_2.33%,_#E0CB62_23.91%,_#EDDC79_43.33%,_#F5E787_62.74%,_#F8EB8C_80.01%,_#F2E483_97.27%,_#E5D16A_125.32%,_#CEB343_157.68%,_#B69318_190.05%)]"></span>
+            <div className="md:px-5 px-3 md:py-6 py-5 md:space-y-[30px] space-y-4">
+              <div className="flex md:gap-[30px] gap-5">
+                <figure>
+                  <img
+                    className="max-md:w-8"
+                    src="/assets/images/ic-check.png"
+                    alt=""
+                  />
+                </figure>
+                <p className="flex-1 md:text-[26px] text-[18px] font-sans font-extrabold">
+                  愛するペットとの別れを経験された方
+                </p>
+              </div>
+              <div className="flex md:gap-[30px] gap-5">
+                <figure>
+                  <img
+                    className="max-md:w-8"
+                    src="/assets/images/ic-check.png"
+                    alt=""
+                  />
+                </figure>
+                <p className="flex-1 md:text-[26px] text-[18px] font-sans font-extrabold">
+                  ペットの供養方法を調べている方
+                </p>
+              </div>
+              <div className="flex md:gap-[30px] gap-5">
+                <figure>
+                  <img
+                    className="max-md:w-8"
+                    src="/assets/images/ic-check.png"
+                    alt=""
+                  />
+                </figure>
+                <p className="flex-1 md:text-[26px] text-[18px] font-sans font-extrabold">
+                  心をこめた供養をしてあげたいけど、どうしたらいいかわからない方
+                </p>
+              </div>
+            </div>
+            <span className="block w-full h-1 bg-[linear-gradient(0deg,_#B69318_-21.4%,_#B69419_-19.25%,_#CEB342_2.33%,_#E0CB62_23.91%,_#EDDC79_43.33%,_#F5E787_62.74%,_#F8EB8C_80.01%,_#F2E483_97.27%,_#E5D16A_125.32%,_#CEB343_157.68%,_#B69318_190.05%)]"></span>
+          </div>
+          <div className="w-full max-w-[870px] border border-black rounded-[22px] min-h-[110px] px-8 pt-4 pb-2 md:text-[18px] text-[14px] font-sans">
+            あなた様がいずれかにあてはまるなら、
+            <br />
+            ペット供養の新たな選択肢として『メタでペット供養』をご検討ください。
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FV;

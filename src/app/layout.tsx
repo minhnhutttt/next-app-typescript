@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans_JP, Zen_Kaku_Gothic_Antique, Noto_Serif_JP } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const zen = Zen_Kaku_Gothic_Antique({
+  weight: ["300", "400", "500", "700", "900"],
+  subsets: ["latin"],
+});
+const sans = Noto_Sans_JP({
+  weight: ["300", "400", "500", "700", "900"],
+  subsets: ["latin"],
+  variable: '--font-noto',
+});
+const serif = Noto_Serif_JP({
+  weight: ["300", "400", "500", "700", "900"],
+  subsets: ["latin"],
+  variable: '--font-serif',
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${zen.className} ${sans.variable} ${serif.variable}`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
