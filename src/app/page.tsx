@@ -1,5 +1,6 @@
 import Fear from "./components/fear";
 import FV from "./components/fv";
+import Introduction from "./components/introduction";
 import Recover from "./components/recover";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <FV />
       <Fear />
       <Recover />
+      <Introduction />
     </main>
   );
 }

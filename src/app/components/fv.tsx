@@ -135,7 +135,7 @@ const FV = () => {
                     alt=""
                   />
                 </figure>
-                <p className="flex-1 md:text-[26px] text-[18px] font-sans font-extrabold">
+                <p className="flex-1 md:text-[26px] text-[18px] font-sans font-extrabold tracking-tighter">
                   心をこめた供養をしてあげたいけど、どうしたらいいかわからない方
                 </p>
               </div>

@@ -4,7 +4,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Recover = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="overflow-hidden md:pb-[88px] pb-12">
+    <section ref={ref} className="overflow-hidden md:pb-[64px] pb-12">
       <div className="md:bg-[url('/assets/images/bg-title-02.png')] md:bg-cover bg-no-repeat bg-center md:h-[197px] bg-[#FF8C5A] relative flex items-center justify-center max-md:px-5 max-md:flex-col max-md:py-10">
         <div className="w-full max-w-[520px]">
           <p className="font-serif text-white font-black md:text-[28px] text-[4.5vw]">
@@ -23,7 +23,7 @@ const Recover = () => {
         </span>
       </div>
       <div className="w-full max-w-[1440px] mx-auto mt-4 md:pl-7 pl-4">
-        <div className="bg-[#FFE1C6] pb-[50vw] md:pb-[537px]">
+        <div className="bg-[#FFE1C6] pb-[50vw] md:pb-[180px]  bg-[url('/assets/images/bg-recover-02.png')] bg-no-repeat bg-left-bottom  max-md:bg-[length:100%_auto]">
           <div className="w-full max-w-[1000px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[17px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-24">
           愛するペットとの絆を紡いでいく日常を、
             <br className="lg:hidden" />
@@ -60,11 +60,11 @@ const Recover = () => {
                 <img className="max-md:w-full max-xl:w-[50.972vw]" src="/assets/images/img-recover-01.png" alt="" />
               </figure>
             </div>
-            <div className="w-full md:max-w-[1080px] max-w-[640px] mx-auto mt-16 relative">
-              <div className="w-full max-w-[911px] md:h-[394px] bg-[url('/assets/images/frame-recover.png')] bg-[length:100%_100%]">
-              <div className="w-full h-full bg-[url('/assets/images/frame-recover-pet.png')] bg-right-bottom max-md:bg-[length:100%_auto] bg-no-repeat md:px-8 px-5 pt-12 max-md:pb-36">
+            <div className="w-full md:max-w-[1080px] max-w-[640px] mx-auto md:mt-16 mt-36 relative">
+              <div className="relative w-full max-w-[911px] md:h-[394px] bg-[url('/assets/images/frame-recover.png')] bg-[length:100%_100%]">
+                  <div className="w-full h-full md:px-8 px-5 pt-12 max-md:pb-36 relative z-10">
                 <div className="flex justify-center mb-4">
-                  <h5 className="font-serif md:text-[23px] text-[17px] font-semibold text-[#8B1D1D]">
+                  <h5 className="font-serif lg:text-[23px] md:text-[20px] text-[17px] font-semibold text-[#8B1D1D] max-md:text-center">
                   メタバース空間には、あなた様のペットだけの特別な場所があります。 <br />
                   そこでは、愛するペットの姿があなた様を出迎えてくれます。
                   </h5>
@@ -77,8 +77,42 @@ const Recover = () => {
                 今は亡きペットとの気ない日常が、あざやかによみがえります。
                   </h5>
                   </div>
+                  <span className="absolute bottom-0 right-0 max-md:w-[100vw] max-md:max-w-[400px]"><img src="/assets/images/frame-recover-pet.png" alt="" /></span>
               </div>
             </div>
+            
+            <div className="w-full md:max-w-[1160px] max-w-[440px] mx-auto md:pt-12 pt-9 md:px-[50px]">
+                <div className="flex justify-end md:pr-6">
+                  <div className="fade-up border-2 border-[#7895EA]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[760px] pt-6 md:pt-10 md:pb-10 pb-6 md:px-9 px-4 mb-3 max-md:flex-col items-center">
+                    <figure>
+                      <img
+                        className="max-md:w-[100px]"
+                        src="/assets/images/img-recover-02.png"
+                        alt=""
+                      />
+                    </figure>
+                    <p className="md:text-[18px] text-[15px] font-sans flex-1">
+                    まるで生き返ったみたい…。こんな供養の仕方があったなんて、そして愛するこの子との再会ができるなんて信じられません。本当に良かった…
+                    </p>
+                  </div>
+                </div>
+                <div className="flex justify-end">
+                  <div className="fade-up relative border-2 border-[#F1A819]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[700px] pt-6 md:pb-9 pb-32 pl-4 md:pl-8 md:pr-24 pr-4 text-[#903400]">
+                    <p className="md:text-[18px] text-[15px] font-sans flex-1 tracking-tighter">
+                    メタでペット供養は、時間や場所に縛られることなく、スマートフォンひとつあればいつでもペットに会いに行けます。話すことも、散歩することさえできます。
+                    <br /><br />
+                    そこはまさに、悲しみを癒やし、絆を確かめ合える特別な空間なのです。
+                    </p>
+                    <figure className="absolute bottom-0 md:right-[-60px] right-[-20px]">
+                      <img
+                        className="[filter:drop-shadow(4px_4px_4px_rgba(0,_0,_0,_0.25))] max-md:w-[130px]"
+                        src="/assets/images/people.png"
+                        alt=""
+                      />
+                    </figure>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -91,13 +125,9 @@ const Recover = () => {
               alt=""
             />
           </figure>
-          <div className="absolute inset-0 md:text-[22px] text-[16px] font-medium justify-center text-center md:pt-20 pt-10">
-            <p>
-              もしも愛するペットとの絆を永遠に紡ぐ方法があったら…
-              <br />
-              <span className="underline">
-                そんな悲痛な想いに寄り添う、新しい供養のカタチがあります
-              </span>
+          <div className="absolute inset-0 md:text-[22px] text-[16px] flex justify-center font-sans font-semibold md:pt-6 pt-4 leading-[1.8]">
+            <p className="max-w-[550px]">
+            私たちは、日本中のペットオーナーが抱えている、「ペットロスの悲しみ」や「記憶が薄れていく恐怖心」に寄り添い、メタでペット供養を通じて新しいペット供養のカタチを提案しています。
             </p>
           </div>
         </div>

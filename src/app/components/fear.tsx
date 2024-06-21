@@ -4,8 +4,8 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Fear = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="overflow-hidden md:pb-[88px] pb-12">
-      <div className="md:bg-[url('/assets/images/bg-title-01.png')]  md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#657FD8] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+    <section ref={ref} className="overflow-hidden md:pb-[88px] pb-14">
+      <div className="md:bg-[url('/assets/images/bg-title-01.png')] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#657FD8] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
         <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[5vw] w-full md:max-w-[51.389vw] dt:max-w-[740px]">
           愛するペットとの 『 おもいで 』が <br />
           少しずつ風化していく恐怖…
@@ -144,7 +144,7 @@ const Fear = () => {
               alt=""
             />
           </figure>
-          <div className="absolute inset-0 md:text-[22px] text-[16px] font-medium justify-center text-center md:pt-20 pt-10">
+          <div className="absolute inset-0 md:text-[22px] text-[16px] font-medium font-sans justify-center text-center md:pt-20 pt-10">
             <p>
               もしも愛するペットとの絆を永遠に紡ぐ方法があったら…
               <br />
