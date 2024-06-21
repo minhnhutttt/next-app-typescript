@@ -62,7 +62,7 @@ const Recover = () => {
             </div>
             <div className="w-full md:max-w-[1080px] max-w-[640px] mx-auto mt-16 relative">
               <div className="w-full max-w-[911px] md:h-[394px] bg-[url('/assets/images/frame-recover.png')] bg-[length:100%_100%]">
-              <div className="w-full h-full bg-[url('/assets/images/frame-recover-pet.png')] bg-right-bottom max-md:bg-[length:100%_auto] bg-no-repeat md:px-8 px-5 pt-12 max-md:pb-32">
+              <div className="w-full h-full bg-[url('/assets/images/frame-recover-pet.png')] bg-right-bottom max-md:bg-[length:100%_auto] bg-no-repeat md:px-8 px-5 pt-12 max-md:pb-36">
                 <div className="flex justify-center mb-4">
                   <h5 className="font-serif md:text-[23px] text-[17px] font-semibold text-[#8B1D1D]">
                   メタバース空間には、あなた様のペットだけの特別な場所があります。 <br />
