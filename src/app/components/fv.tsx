@@ -106,7 +106,7 @@ const FV = () => {
               <div className="flex md:gap-[30px] gap-5">
                 <figure>
                   <img
-                    className="max-md:w-8"
+                    className="w-8 md:w-[45px]"
                     src="/assets/images/ic-check.png"
                     alt=""
                   />
@@ -118,7 +118,7 @@ const FV = () => {
               <div className="flex md:gap-[30px] gap-5">
                 <figure>
                   <img
-                    className="max-md:w-8"
+                    className="w-8 md:w-[45px]"
                     src="/assets/images/ic-check.png"
                     alt=""
                   />
@@ -130,7 +130,7 @@ const FV = () => {
               <div className="flex md:gap-[30px] gap-5">
                 <figure>
                   <img
-                    className="max-md:w-8"
+                    className="w-8 md:w-[45px]"
                     src="/assets/images/ic-check.png"
                     alt=""
                   />
