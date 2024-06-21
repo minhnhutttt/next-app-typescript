@@ -23,20 +23,60 @@ const Recover = () => {
         </span>
       </div>
       <div className="w-full max-w-[1440px] mx-auto mt-4 md:pl-7 pl-4">
-        <div className="bg-[#FFE1C6] bg-[url('/assets/images/bg-fear.png')] bg-no-repeat bg-left-bottom pb-[50vw] max-md:bg-[length:100%_auto] md:pb-[537px]">
-          <div className="w-full max-w-[1000px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-24">
+        <div className="bg-[#FFE1C6] pb-[50vw] md:pb-[537px]">
+          <div className="w-full max-w-[1000px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[17px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-24">
           愛するペットとの絆を紡いでいく日常を、
             <br className="lg:hidden" />
             デジタルの力で復活
           </div>
-          <div className="px-5 pt-8">
-            <div className="w-full md:max-w-[1220px] max-w-[540px] mx-auto">
-              <div className="fade-up flex md:items-end max-md:flex-col max-md:justify-center items-center">
-                <figure className="pb-6 max-lg:w-1/2 max-md:w-auto">
-                  <img src="/assets/images/img-recover-01.png" alt="" />
+          <div className="px-5 pt-8 relative">
+          <span className="absolute right-0 md:top-[650px] top-[740px] xl:top-[130px]"><img className="max-xl:w-[72.431vw]" src="/assets/images/bg-recover-01.png" alt="" /></span>
+            <div className="w-full md:max-w-[1200px] max-w-[540px] mx-auto relative">
+              <div className="fade-up flex xl:items-start max-xl:flex-col max-xl:justify-center items-center">
+                <figure className="pt-6">
+                  <img src="/assets/images/img-recover.png" alt="" />
                 </figure>
                 <div className="flex-1">
+                  <div className="max-w-[636px] w-full md:-ml-5">
+                    <div className="bg-white/70 md:px-8 px-4 pt-5 md:pb-10 pb-6">
+                      <h5 className="font-serif md:text-[28px] text-[20px] font-bold text-center text-[#5F5F5F] border-b border-black">「もしも、愛するペットに再会できたら… 」</h5>
+                      <p className="text-center md:text-[18px] text-[14px] font-bold font-sans pt-5">そんな奇跡を「メタでペット供養」が実現します。</p>
+                      <p className="md:text-[17px] text-[14px] md:pt-10 pt-7 leading-snug">
+                        現実の世界では叶えられなかった、ペットとの永遠の絆。<br />
+                        その絆を、メタバースという新しい世界で紡ぎなおすことができる時代になりました。
+                      </p>
+                    </div>
+                    <div className="flex justify-center pt-4 px-2 md:px-10">
+                      <p className="md:text-[15px] text-[13px] font-sans max-w-[555px] leading-tight">
+                        ※メタバースとは、インターネット上のバーチャルワールドのことを指します。当サービスは、ペットとの大切な“おもいで”をデジタル化技術で再現し、スマートフォン一つあればいつでもペットのお墓を含めた特別な場所を訪れることを可能にします。
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+            <div className="w-full md:max-w-[1024px] max-w-[640px] mx-auto mt-9 relative">
+              <figure>
+                <img className="max-md:w-full max-xl:w-[50.972vw]" src="/assets/images/img-recover-01.png" alt="" />
+              </figure>
+            </div>
+            <div className="w-full md:max-w-[1080px] max-w-[640px] mx-auto mt-16 relative">
+              <div className="w-full max-w-[911px] md:h-[394px] bg-[url('/assets/images/frame-recover.png')] bg-[length:100%_100%]">
+              <div className="w-full h-full bg-[url('/assets/images/frame-recover-pet.png')] bg-right-bottom max-md:bg-[length:100%_auto] bg-no-repeat md:px-8 px-5 pt-12 max-md:pb-32">
+                <div className="flex justify-center mb-4">
+                  <h5 className="font-serif md:text-[23px] text-[17px] font-semibold text-[#8B1D1D]">
+                  メタバース空間には、あなた様のペットだけの特別な場所があります。 <br />
+                  そこでは、愛するペットの姿があなた様を出迎えてくれます。
+                  </h5>
+                </div>
+                <div className="w-full max-w-[530px] mx-auto border-y-2 border-white text-center font-serif md:text-[23px] text-[17px] font-semibold text-white py-6">
+                      愛くるしい仕草で話しかけてくる姿 <br />
+                      一緒に歩いた思い出の散歩道
+                </div>
+                <h5 className="text-center font-serif md:text-[23px] text-[17px] font-semibold text-[#8B1D1D] mt-4">
+                今は亡きペットとの気ない日常が、あざやかによみがえります。
+                  </h5>
+                  </div>
               </div>
             </div>
           </div>
