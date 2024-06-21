@@ -128,7 +128,7 @@ const Introduction = () => {
         </span>
       </div>
       <div className="w-full max-w-[1440px] mx-auto mt-4 md:pr-7 pr-4">
-        <div className="bg-[url('/assets/images/bg-intro.png')]">
+        <div className="bg-[url('/assets/images/bg-intro.png')] bg-cover bg-no-repeat">
           <div className="w-full max-w-[1280px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-16">
             「メタでペット供養」は、現実とメタバースでの供養が織りなす、新しい供養のカタチです
           </div>
@@ -169,10 +169,12 @@ const Introduction = () => {
                 ))}
               </div>
             </div>
-            <div className="w-full max-w-[664px] mx-auto border-2 border-[#F1A819]/[50] bg-white/50 rounded-[36px] min-h-[131px] px-[50px] py-8 md:text-[17px] text-[#903400] font-sans">
-              「メタでペット供養」は、ペットロスに悩む方々に寄り添い、ペットとの絆を永遠に大切にするお手伝いをします。。
+            <div className="px-5">
+                <div className="w-full max-w-[664px] mx-auto border-2 border-[#F1A819]/[50] bg-white/50 rounded-[36px] min-h-[131px] px-[50px] py-8 md:text-[17px] text-[#903400] font-sans">
+                「メタでペット供養」は、ペットロスに悩む方々に寄り添い、ペットとの絆を永遠に大切にするお手伝いをします。。
+                </div>
             </div>
-            <div className="md:pl-[125px] pl-6 mt-10 md:mt-[145px]">
+            <div className="md:pl-[125px] pl-6 mt-10 md:mt-[145px] mb-10 md:-mr-7 -mr-4">
               <div className="bg-[linear-gradient(94deg,_#DD6B5C_21.94%,_#B72E2E_92.77%)] md:text-[26px] text-[20px] text-white font-bold font-sans md:pl-[85px] pl-10 py-6">
                 ペットとの絆を深める特別な体験がここに。
                 <br />
@@ -193,7 +195,7 @@ const Introduction = () => {
                     <SplideTrack>
                       {dataSlider.map((item, index) => (
                         <SplideSlide key={index}>
-                          <div className="md:w-[421px] w-[320px] md:h-[763px] h-[800px] bg-white border border-[#707070] mr-4 md:mr-[35px] p-5">
+                          <div className="md:w-[421px] w-[320px] md:h-[763px] h-[630px] bg-white border border-[#707070] mr-4 md:mr-[35px] p-5">
                             <figure>
                               <img src={item.image} alt="" />
                             </figure>
@@ -250,7 +252,28 @@ const Introduction = () => {
                 </Splide>
               </div>
             </div>
-            <div className="w-full max-w-[1050px] mx-auto"></div>
+            <div className="px-5">
+                <div className="w-full max-w-[1050px] mx-auto bg-[#FDFDF5] border border-[#A5A5A5] pt-5 bg-[url('/assets/images/bg-girl.png')] bg-no-repeat bg-right-bottom max-md:bg-[length:70vw_auto] md:pb-9 pb-[30vw] px-5">
+                    <p className="text-center md:text-[23px] text-[18px] font-semibold font-mincho mb-1">私たちの信念</p>
+                    <div className="flex justify-center items-center"><img src="/assets/images/our-belief.png" alt="" /></div>
+                    <div className="w-full max-w-[886px] mx-auto md:my-12 my-8">
+                        <p className="font-semibold md:text-[19px] text-[15px] font-serif leading-[2]">
+                         「メタでペット供養」は、ペットとの再会の喜びと死への向き合いのバランスを大切にしています。<br />
+                        そのどちらもが、ペットとの真の絆を育む上で欠かせない要素だと考えているからです。<br />
+                        <span className="text-[#F12929] font-black">ペットロスに悩む方々に寄り添い、家族同然のペットとの絆</span>を永遠に大切にする。
+                        </p>
+                        <div className="md:pr-[130px]">
+                            <p className="max-w-[706px] font-semibold md:text-[19px] text-[15px] font-mincho leading-[2] mt-5">
+                                それが、私たちの使命です。もしあなた様が、愛するペットとの絆を、新たな形で紡ぎなおしたいと願うのなら、ぜひ「メタでペット供養」をご利用ください。
+                            </p>
+                        </div>
+                    </div>
+                    <div className="bg-white/80 border border-[#BBB]/[0.8] w-full max-w-[628px] font-mincho font-semibold md:text-[19px] text-[15px] leading-[2.2] mx-auto md:p-6 p-4 md:pb-10 pb-7">
+                        私たちは、あなた様とペットの“おもいで”に心を込めて向き合い、<br className="max-md:hidden" />
+                        ペットとの絆を深める特別な体験を、全力でサポートいたします。
+                    </div>
+                </div>
+            </div>
           </div>
         </div>
       </div>

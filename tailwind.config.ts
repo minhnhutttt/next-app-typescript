@@ -21,6 +21,7 @@ const config: Config = {
       sans: ["var(--font-noto)", "sans-serif"],
       serif: ["var(--font-serif)", "sans-serif"],
       inter: ["var(--font-inter)", "sans-serif"],
+      mincho: ["Hiragino Mincho ProN", "sans-serif"],
     },
   },
   plugins: [],
