@@ -8,5 +8,76 @@ html {
 }
 body {
   color: #000;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
 }
+
+.container {
+  width: 100%
+}
+
+@media (min-width: 640px) {
+  .container {
+      max-width:640px
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      max-width:768px
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+      max-width:1024px
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+      max-width:1300px
+  }
+}
+
+
+.container {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto
+}
+
+@media screen and (max-width: 1952px) {
+  .container {
+      padding-left:16px;
+      padding-right: 16px
+  }
+}
+
+.stroke {
+  color: transparent!important;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000
+}
+
+.hover-underline {
+  position: relative
+}
+
+.hover-underline:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  transform: scaleX(0);
+  transform-origin: left top;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  transition: transform .3s
+}
+
+.hover-underline:hover:after {
+  transform: scale(1)
+}
+
+

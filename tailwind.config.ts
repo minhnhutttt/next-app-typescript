@@ -15,7 +15,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      anton: ["var(--font-anton)", "sans-serif"],
     },
   },
   plugins: [],
