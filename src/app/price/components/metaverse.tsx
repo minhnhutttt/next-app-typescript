@@ -5,10 +5,10 @@ const Metaverse = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="overflow-hidden md:pb-[88px] pb-14">
-        <h4 className="fade-up text-center md:text-[39px] text-[28px] font-black font-serif text-[#0B1096] pb-4 border-b-2 border-[#0B1096] flex justify-center px-4">
+        <h4 className="fade-up text-center md:text-[39px] text-[28px] font-black font-serif text-[#0B1096] pb-4 flex justify-center px-4">
             <span>＼</span> <span>このページからお申し込みいただいた方限定 </span><span>／</span>
         </h4>
-        <div className="fade-up md:bg-[url('/assets/images/bg-title-01.png')] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#657FD8] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+        <div className="fade-up md:bg-[url('/assets/images/bg-title-01.png')] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#657FD8] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10 border-t-2 border-[#0B1096]">
             <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[5vw] w-full md:max-w-[51.389vw] dt:max-w-[740px] text-center">
             メタバース空間で使える <br />
             お線香アイテムが一生涯無料
