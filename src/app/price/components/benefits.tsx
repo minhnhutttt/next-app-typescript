@@ -6,7 +6,7 @@ const Benefits = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="relative md:mt-24 mt-14 px-5">
-        <div className="w-full max-w-[1300px] mx-auto  bg-[linear-gradient(116deg,_#A1DA29_-23.69%,_#47A40F_116.67%)] md:rounded-[61px] rounded-[40px] border-2 border-[#8EC21D]">
+        <div className="fade-up w-full max-w-[1300px] mx-auto  bg-[linear-gradient(116deg,_#A1DA29_-23.69%,_#47A40F_116.67%)] md:rounded-[61px] rounded-[40px] border-2 border-[#8EC21D]">
             <div className="md:h-[134px] flex items-end">
                 <div className="w-[202px]">
                     <img src="/assets/images/price/animal-01.png" alt="" />

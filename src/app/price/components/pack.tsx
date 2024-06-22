@@ -8,7 +8,7 @@ const Pack = () => {
     <section ref={ref} className="relative md:mt-10 px-5">
       <div className="w-full max-w-[1257px] mx-auto">
         <div className="flex max-xl:flex-wrap justify-center gap-[35px]">
-            <div className="w-[350px] md:w-[611px] bg-white rounded-[26px] border-[3px] border-[#9C37DF] overflow-hidden">
+            <div className="fade-up w-[350px] md:w-[611px] bg-white rounded-[26px] border-[3px] border-[#9C37DF] overflow-hidden">
                 <div className="md:h-[72px] h-[44px] flex items-center justify-center bg-[url('/assets/images/price/pack-01.png')] bg-cover">
                     <img className="max-md:h-8" src="/assets/images/price/pack-title-01.png" alt="" />
                 </div>
@@ -22,7 +22,7 @@ const Pack = () => {
                     </figure>
                 </div>
             </div>
-            <div className="w-[350px] md:w-[611px] bg-white rounded-[26px] border-[3px] border-[#9C37DF] overflow-hidden">
+            <div className="fade-up w-[350px] md:w-[611px] bg-white rounded-[26px] border-[3px] border-[#9C37DF] overflow-hidden">
             <div className="md:h-[72px] h-[44px] flex items-center justify-center bg-[url('/assets/images/price/pack-01.png')] bg-cover">
                     <img className="max-md:h-8" src="/assets/images/price/pack-title-02.png" alt="" />
                 </div>
@@ -39,7 +39,7 @@ const Pack = () => {
             </div>
         </div>
         <div className="flex flex-wrap justify-center mt-[30px] gap-x-5 gap-y-7">
-            <div className="w-[350px] md:w-[405px] bg-white rounded-[26px] overflow-auto border-[3px] border-[#9C37DF]">
+            <div className="fade-up w-[350px] md:w-[405px] bg-white rounded-[26px] overflow-auto border-[3px] border-[#9C37DF]">
                 <div className="bg-[#9C37DF] md:h-[58px] h-10 flex items-center justify-center">
                     <img className="max-md:h-7" src="/assets/images/price/pack-title-03.png" alt="" />
                 </div>
@@ -57,7 +57,7 @@ const Pack = () => {
                     </p>
                 </div>
             </div>
-            <div className="w-[350px] md:w-[405px] bg-white rounded-[26px] overflow-auto border-[3px] border-[#9C37DF]">
+            <div className="fade-up w-[350px] md:w-[405px] bg-white rounded-[26px] overflow-auto border-[3px] border-[#9C37DF]">
                 <div className="bg-[#9C37DF] md:h-[58px] h-10 flex items-center justify-center">
                     <img className="max-md:h-7" src="/assets/images/price/pack-title-04.png" alt="" />
                 </div>
@@ -75,7 +75,7 @@ const Pack = () => {
                     </p>
                 </div>
             </div>
-            <div className="w-[350px] md:w-[405px] bg-white rounded-[26px] overflow-auto border-[3px] border-[#9C37DF]">
+            <div className="fade-up w-[350px] md:w-[405px] bg-white rounded-[26px] overflow-auto border-[3px] border-[#9C37DF]">
                 <div className="bg-[#9C37DF] md:h-[58px] h-10 flex items-center justify-center">
                     <img className="max-md:h-7" src="/assets/images/price/pack-title-05.png" alt="" />
                 </div>
@@ -93,7 +93,7 @@ const Pack = () => {
                     </p>
                 </div>
             </div>
-            <div className="w-[350px] md:w-[405px] bg-white rounded-[26px] overflow-auto border-[3px] border-[#9C37DF]">
+            <div className="fade-up w-[350px] md:w-[405px] bg-white rounded-[26px] overflow-auto border-[3px] border-[#9C37DF]">
                 <div className="bg-[#9C37DF] md:h-[58px] h-10 flex items-center justify-center">
                     <img className="max-md:h-7" src="/assets/images/price/pack-title-06.png" alt="" />
                 </div>
@@ -110,7 +110,7 @@ const Pack = () => {
                     </p>
                 </div>
             </div>
-            <div className="w-[350px] md:w-[405px] bg-white rounded-[26px] overflow-auto border-[3px] border-[#9C37DF]">
+            <div className="fade-up w-[350px] md:w-[405px] bg-white rounded-[26px] overflow-auto border-[3px] border-[#9C37DF]">
                 <div className="bg-[#9C37DF] md:h-[58px] h-10 flex items-center justify-center">
                     <img className="max-md:h-7" src="/assets/images/price/pack-title-07.png" alt="" />
                 </div>
@@ -129,7 +129,7 @@ const Pack = () => {
             </div>
         </div>
         <div className="mt-[74px]">
-            <div className="h-[71px] bg-[#9C37DF] flex items-center justify-center">
+            <div className="fade-up h-[71px] bg-[#9C37DF] flex items-center justify-center">
                 <div className="md:text-[39px] text-[24px] font-black text-white relative h-full flex items-center justify-center">
                     <span>特典があります！</span>
                     <figure className="absolute md:top-[-50px] top-[-30px] md:right-full right-[80%] md:w-[224px] w-[130px]">
@@ -138,61 +138,61 @@ const Pack = () => {
                 </div>
             </div>
             <div className="w-full max-w-[1195px] mx-auto mt-[45px] space-y-6">
-                <div className="flex md:gap-8 gap-4">
+                <div className="fade-up flex md:gap-8 gap-4">
                     <span className="font-bold md:text-[39px] text-[24px] text-[#9C37DF] w-[30px] text-right">8</span>
                     <span className="md:text-[39px] text-[24px] font-bold text-[#F54A25] flex-1">
                     2体目<span className="text-black md:text-[24px] text-[18px]">以降のペットを</span>同じお墓<span className="text-black">で</span><span className="text-black md:text-[24px] text-[18px]">供養OK&費用</span>30％<span className="md:text-[24px] text-[18px]">オフ</span>
                     </span>
                 </div>
-                <div className="flex md:gap-8 gap-4">
+                <div className="fade-up flex md:gap-8 gap-4">
                     <span className="font-bold md:text-[39px] text-[24px] text-[#9C37DF] w-[30px] text-right">9</span>
                     <span className="md:text-[39px] text-[24px] font-bold text-[#F54A25] flex-1">
                         <span className="text-black">ペットの</span>気に<span className="text-black">なる</span><span className="text-black md:text-[24px] text-[18px]">アレコレ</span>相談<span className="text-black md:text-[24px] text-[18px]">通常</span><span className="text-black">5,000円</span><span className="text-black md:text-[24px] text-[18px]">(税抜)</span><span className="text-[#9C37DF]">▶️</span>無料<span className="md:text-[24px] text-[18px]"><span className="text-black">（先着</span>10名<span className="text-black">様）</span></span>
                     </span>
                 </div>
-                <div className="flex md:gap-8 gap-4">
+                <div className="fade-up flex md:gap-8 gap-4">
                     <span className="font-bold md:text-[39px] text-[24px] text-[#9C37DF] w-[30px] text-right">10</span>
                     <span className="md:text-[39px] text-[24px] font-bold text-[#F54A25] flex-1">
                     <span className="text-black md:text-[24px] text-[18px]">誰かに</span>話し<span className="md:text-[24px] text-[18px]">たい</span><span className="text-black md:text-[24px] text-[18px]">...</span>ペットロス相談<span className="text-black md:text-[24px] text-[18px]">通常</span><span className="text-black">5,000円</span><span className="text-black md:text-[24px] text-[18px]">(税抜)</span><span className="text-[#9C37DF]">▶️</span>無料<span className="md:text-[24px] text-[18px]"><span className="text-black">（先着</span>10名<span className="text-black">様）</span></span>
                     </span>
                 </div>
-                <div className="flex md:gap-8 gap-4">
+                <div className="fade-up flex md:gap-8 gap-4">
                     <span className="font-bold md:text-[39px] text-[24px] text-[#9C37DF] w-[30px] text-right">11</span>
                     <span className="md:text-[39px] text-[24px] font-bold text-[#F54A25] flex-1">
                         今回<span className="text-black">のキャンペーン</span><span className="md:text-[24px] text-[18px]">だけ<span className="text-black"></span>！</span>ギフト<span className="text-black">用<span className="md:text-[24px] text-[18px]">のお申し込み</span></span>OK<span className="md:text-[24px] text-[18px] text-black">特典</span>
                     </span>
                 </div>
-                <div className="flex md:gap-8 gap-4">
+                <div className="fade-up flex md:gap-8 gap-4">
                     <span className="font-bold md:text-[39px] text-[24px] text-[#9C37DF] w-[30px] text-right">12</span>
                     <span className="md:text-[39px] text-[24px] font-bold text-[#F54A25] flex-1">
                     海外在住ペ<span className="text-black">ットオーナー様<span className="md:text-[24px] text-[18px]">からのお申し込み</span></span>OK<span className="md:text-[24px] text-[18px] text-black">特典</span>
                     </span>
                 </div>
-                <div className="flex md:gap-8 gap-4">
+                <div className="fade-up flex md:gap-8 gap-4">
                     <span className="font-bold md:text-[39px] text-[24px] text-[#9C37DF] w-[30px] text-right">13</span>
                     <span className="md:text-[39px] text-[24px] font-bold text-[#F54A25] flex-1">
                     事前<span className="text-black">相談<span className="md:text-[24px] text-[18px]">(対面/Web)通常</span>5,000円<span className="md:text-[24px] text-[18px]">(税抜)</span></span><span className="text-[#9C37DF]">▶️</span>無料<span className="md:text-[24px] text-[18px]"><span className="text-black">（先着</span>50名<span className="text-black">様）</span></span>
                     </span>
                 </div>
-                <div className="flex md:gap-8 gap-4">
+                <div className="fade-up flex md:gap-8 gap-4">
                     <span className="font-bold md:text-[39px] text-[24px] text-[#9C37DF] w-[30px] text-right">14</span>
                     <span className="md:text-[39px] text-[24px] font-bold text-[#F54A25] flex-1">
                     <span className="md:text-[24px] text-[18px] text-black">希望者は</span>永代<span className="text-black">供養<span className="md:text-[24px] text-[18px] text-black">可能！</span></span>
                     </span>
                 </div>
-                <div className="flex md:gap-8 gap-4">
+                <div className="fade-up flex md:gap-8 gap-4">
                     <span className="font-bold md:text-[39px] text-[24px] text-[#9C37DF] w-[30px] text-right">15</span>
                     <span className="md:text-[39px] text-[24px] font-bold text-[#F54A25] flex-1">
                     3D<span className="text-black">アバター<span className="md:text-[24px] text-[18px] text-black">があればメタバース空間の</span></span><span className="md:text-[24px] text-[18px]">共通エリア<span className="text-black">「おもいでの庭」に</span></span><span className="text-black">アクセス<span className="md:text-[24px] text-[18px]">可能！</span></span>
                     </span>
                 </div>
-                <div className="flex md:gap-8 gap-4">
+                <div className="fade-up flex md:gap-8 gap-4">
                     <span className="font-bold md:text-[39px] text-[24px] text-[#9C37DF] w-[30px] text-right">16</span>
                     <span className="md:text-[39px] text-[24px] font-bold text-[#F54A25] flex-1">
                         <span className="text-black">現実の供養所</span><span className="md:text-[24px] text-[18px]">初期費用<span className="text-black">通常</span></span><span className="text-black">60,000円</span><span className="md:text-[24px] text-[18px] text-black">(税抜)</span><span className="text-[#9C37DF]">▶️</span>2万円オフ<span className="md:text-[24px] text-[18px] text-black">クーポンご進呈</span>
                     </span>
                 </div>
-                <div className="flex md:gap-8 gap-4">
+                <div className="fade-up flex md:gap-8 gap-4">
                     <span className="font-bold md:text-[39px] text-[24px] text-[#9C37DF] w-[30px] text-right">17</span>
                     <span className="md:text-[39px] text-[24px] font-bold text-[#F54A25] flex-1">
                         <span className="text-black"><span className="md:text-[24px] text-[18px]">現実の供養所</span>来訪時の</span>狩俣空き家民泊<span className="md:text-[24px] text-[18px] text-black">利用</span><span className="text-[#9C37DF]">▶️</span>3泊<span className="md:text-[24px] text-[18px]">まで</span>半額ク<span className="text-black md:text-[24px] text-[18px]">ーポンご進呈</span>

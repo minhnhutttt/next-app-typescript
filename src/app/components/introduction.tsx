@@ -9,60 +9,60 @@ const dataSlider = [
     title: "美しい自然に囲まれた、厳かなリアル供養所",
     text: (
       <>
-        <span className="bg-[linear-gradient(to_top,_#8EC5FC_30%,_transparent_30%)]">
-          沖縄県宮古島の美しい自然に囲まれた「KARIMATA
-        </span>
-        (狩俣)供養所」。青い海と白い砂浜、そよ風が運ぶハイビスカスの香り。その静謐な空間に佇む供養所は、まるでペットたちに安らぎを与えているかのようです。ここで過ごす時間は、愛するペットへの感謝の気持ちを捧げる大切なひとときとなるでしょう。
+        沖縄県宮古島の美しい自然に囲まれた狩俣供養所。青い海と白い砂浜、そよ風が運ぶハイビスカスの香り。その静謐な空間に佇む供養所は、まるでペットたちに安らぎを与えているかのようです。ここで過ごす時間は、愛するペットへの感謝の気持ちを捧げる大切なひとときとなるでしょう。
       </>
     ),
     quote: (
       <>
-        こんなに美しい場所で、愛する我が子のために手を合わせられるなんて…。
-        <br />
-        KARIMATA(狩俣)供養所での時間は、悲しみを乗り越える力をくれるんです。
+        こんなに美しい場所で、愛するあの子のために手を合わせられるなんて…。頻繁には来れないけど、私には大切な時間となっています。狩俣供養所での時間は、悲しみを乗り越える力をくれるんです。
       </>
     ),
-    sign: "(60代女性)",
+    sign: "(40代女性)",
   },
   {
-    image: "/assets/images/slider-01.png",
-    title: "美しい自然に囲まれた、厳かなリアル供養所",
+    image: "/assets/images/slider-02.png",
+    title: " メタバースならではの特別な体験",
     text: (
       <>
-        <span className="bg-[linear-gradient(to_top,_#8EC5FC_30%,_transparent_30%)]">
-          沖縄県宮古島の美しい自然に囲まれた「KARIMATA
-        </span>
-        (狩俣)供養所」。青い海と白い砂浜、そよ風が運ぶハイビスカスの香り。その静謐な空間に佇む供養所は、まるでペットたちに安らぎを与えているかのようです。ここで過ごす時間は、愛するペットへの感謝の気持ちを捧げる大切なひとときとなるでしょう。
+        画面の中に映し出されるペットの姿や鳴き声は、まるで本当にそこにいるかのよう。ペットとの楽しい会話、一緒に過ごした部屋、思い出のおもちゃなど、大切な瞬間がデジタルの世界で鮮やかによみがえります。メタバースでのペットとの再会は、悲しみを癒し、絆を確かめ合う特別な体験となるでしょう。
       </>
     ),
     quote: (
       <>
-        こんなに美しい場所で、愛する我が子のために手を合わせられるなんて…。
-        <br />
-        KARIMATA(狩俣)供養所での時間は、悲しみを乗り越える力をくれるんです。
+        メタバース上のあの子は、リアルに再現されていて驚きました。あの子との“おもいで”の風化を止め、メタバースを通じて心の中で生き続けさせる大切さを実感しました。
       </>
     ),
-    sign: "(60代女性)",
+    sign: "(50代女性)",
   },
   {
-    image: "/assets/images/slider-01.png",
-    title: "美しい自然に囲まれた、厳かなリアル供養所",
+    image: "/assets/images/slider-03.png",
+    title: "大切な“おもいで”を風化させないために",
     text: (
       <>
-        <span className="bg-[linear-gradient(to_top,_#8EC5FC_30%,_transparent_30%)]">
-          沖縄県宮古島の美しい自然に囲まれた「KARIMATA
-        </span>
-        (狩俣)供養所」。青い海と白い砂浜、そよ風が運ぶハイビスカスの香り。その静謐な空間に佇む供養所は、まるでペットたちに安らぎを与えているかのようです。ここで過ごす時間は、愛するペットへの感謝の気持ちを捧げる大切なひとときとなるでしょう。
+        メタバース空間には、3Dデータ化された思い出のアイテムを自由に展示できる機能も。ペットが愛用していたおもちゃや首輪、写真など、あの子との大切な思い出の品々を、美しく飾ることができます。それらはペットとの絆を象徴する大切な宝物。“おもいで”の品を通して、ペットとの絆を永遠のものにしていく助けとなるでしょう。
       </>
     ),
     quote: (
       <>
-        こんなに美しい場所で、愛する我が子のために手を合わせられるなんて…。
-        <br />
-        KARIMATA(狩俣)供養所での時間は、悲しみを乗り越える力をくれるんです。
+        亡くなったペットの思い出の品を、デジタルの形で残せるのは本当に嬉しい。あの子はもういないけれど、こうして思い出の品を通した体験がペットロスを乗り越える原動力になっているんだと思います。
       </>
     ),
-    sign: "(60代女性)",
+    sign: "(30代女性)",
+  },
+  {
+    image: "/assets/images/slider-04.png",
+    title: "AI僧侶による読経と定期的な供養で、安らぎを",
+    text: (
+      <>
+        『メタでペット供養』では、AI僧侶による厳かな読経も行われます。故人を弔う際と同じように、ペットのために心を込めて供養を捧げる姿に、深い安らぎを覚えずにはいられません。定期的な法要は、ペットの死を受け止め、前に進む力を与えてくれます。ペットとの再会を喜ぶ一方で、死と向き合うことの大切さを教えてくれるのです。
+      </>
+    ),
+    quote: (
+      <>
+        AI僧侶の読経は自然で荘厳。読経にあいつも喜んでいるような気がして、定期的に法要をするようになりました。読経を聞いていると、不思議と自分の悩みも和らぐので、毎月の日課となっています。
+      </>
+    ),
+    sign: "(30代女性)",
   },
 ];
 const data = [
@@ -195,18 +195,18 @@ const Introduction = () => {
                     <SplideTrack>
                       {dataSlider.map((item, index) => (
                         <SplideSlide key={index}>
-                          <div className="md:w-[421px] w-[320px] md:h-[763px] h-[630px] bg-white border border-[#707070] mr-4 md:mr-[25px] p-5">
+                          <div className="md:w-[421px] w-[320px] md:h-[790px] h-[690px] bg-white border border-[#707070] mr-4 md:mr-[25px] p-5">
                             <figure>
                               <img src={item.image} alt="" />
                             </figure>
                             <div className="md:mt-[28px] mt-5">
-                              <h5 className="md:text-[18px] text-[16px] font-bold ">
+                              <h5 className="md:text-[18px] text-[16px] font-bold underline">
                                 <span>{item.title}</span>
                               </h5>
-                              <p className="md:text-[16px] text-[13px] text-[#1B0220] mt-6 font-medium leading-[1.65] break-all ">
+                              <p className="md:text-[16px] text-[13px] text-[#1B0220] mt-6 font-medium leading-[1.65] break-all min-h-[184px]">
                                 {item.text}
                               </p>
-                              <div className="w-full border border-[#6F9D23] bg-[#F7FCEC] md:mt-7 mt-5">
+                              <div className="w-full border border-[#6F9D23] bg-[#F7FCEC] md:mt-7 mt-5 md:min-h-[230px]">
                                 <div className="flex pl-1">
                                   <figure>
                                     <img
@@ -274,7 +274,7 @@ const Introduction = () => {
                     </div>
                 </div>
                 <div className="fade-up flex justify-center">
-                  <a href="/" className="md:w-[700px] md:h-[118px] w-[320px] h-20 font-sns text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929]">
+                  <a href="/" className="md:w-[700px] md:h-[118px] w-[320px] h-20 font-sns text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929] duration-150 hover:opacity-75">
                   価格・キャンペーンを確認する
                   </a>
                 </div>

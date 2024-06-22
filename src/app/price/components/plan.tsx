@@ -19,7 +19,7 @@ const Item = ({ children }: ItemPropsType) => {
 const Plan = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="overflow-hidden md:pt-[145px] pt-[100px]">
+    <section ref={ref} className="overflow-hidden md:pt-[145px] pt-[100px] md:pb-[150px] pb-20">
       <div className="fade-up md:bg-[url('/assets/images/bg-title-05.png'),linear-gradient(90deg,_#FF5A78_0%,_#7E1373_100%)] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
         <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[5vw] w-full md:max-w-[51.389vw] dt:max-w-[740px] text-center">
         プランのご案内
@@ -35,7 +35,7 @@ const Plan = () => {
       <div className="md:pt-[60px] pt-14 font-zen">
         <div className="w-full dt:max-w-[1440px] max-w-[700px] mx-auto flex items-start flex-wrap gap-10 px-6 justify-center">
           <div className="fade-up w-full dt:w-[419px] rounded-t-[40px] dt:mt-[193px] overflow-hidden border-2 border-[#20232F]">
-            <div className="bg-[#E5C9FF] pt-[43px] pb-7 flex flex-wrap">
+            <div className="bg-[#E5C9FF] pt-[43px] pb-7 flex flex-wrap border-b-2 border-[#20232F]">
               <div className="w-[346px] mx-auto">
                 <div className="bg-white/40 p-2 leading-[1.4]">
                   <p className="text-center font-noto md:text-[15px] text-[12px] font-semibold">
@@ -75,15 +75,15 @@ const Plan = () => {
               </div>
             </div>
           </div>
-          <div className="fade-up w-full dt:w-[459px] rounded-t-[40px] overflow-hidden gradient-02 md:p-[9px] p-[6px] relative">
+          <div className="fade-up w-full dt:w-[459px] rounded-t-[40px] overflow-hidden border-[10px] border-[#F59F3A] relative [box-shadow:0px_4px_60px_0px_rgba(0,_0,_0,_0.10)]">
             <figure className="absolute top-0 left-0">
               <img
                 className="max-md:w-[120px]"
-                src="/assets/images/ribbon.png"
+                src="/assets/images/price/ribbon.png"
                 alt=""
               />
             </figure>
-            <div className="pt-[50px] pb-7 flex flex-wrap gradient-02 rounded-t-[40px]">
+            <div className="pt-[50px] pb-7 flex flex-wrap bg-[linear-gradient(122deg,_#F59F3A_10.27%,_#EA3800_100.14%)] ">
               <div className="w-[346px] mx-auto">
                 <div className="bg-white/40 p-2 leading-[1.4]">
                   <p className="text-center font-noto md:text-[15px] text-[12px] font-semibold">
@@ -99,7 +99,7 @@ const Plan = () => {
               </div>
             </div>
             <div className="bg-white md:px-[45px] px-6 md:pt-6 md:pb-12 pt-4 pb-8">
-              <p className="text-center md:text-[24px] text-[18px] font-bold border-b border-[#001C80] md:pb-5 pb-3 text-gradient-01">
+              <p className="text-center md:text-[24px] text-[18px] font-bold border-b border-[#001C80] md:pb-5 pb-3 text-[#F59F3A]">
                 <span className="md:text-[58px] text-[30px]">180,000</span>
                 円(税抜)
               </p>
@@ -137,7 +137,7 @@ const Plan = () => {
               <div className="flex justify-center">
                 <a
                   href="/"
-                  className="w-[340px] h-[60px] gradient-03 rounded-[60px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative duration-150 hover:opacity-75"
+                  className="w-[347px] h-[64px] bg-[#FF1B1B] rounded-[32px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative duration-150 hover:opacity-75"
                 >
                   メモリアルモニタープランに応募する
                   <figure className="absolute right-2">
@@ -148,7 +148,7 @@ const Plan = () => {
             </div>
           </div>
           <div className="fade-up w-full dt:w-[419px] rounded-t-[40px] dt:mt-[193px] overflow-hidden border-2 border-[#20232F]">
-            <div className="bg-[#8EC5FC] pt-[43px] pb-7 flex flex-wrap">
+            <div className="bg-[#8EC5FC] pt-[43px] pb-7 flex flex-wrap border-b-2 border-[#20232F]">
               <div className="w-[346px] mx-auto">
                 <div className="bg-white/40 p-2 leading-[1.4]">
                   <p className="text-center font-noto md:text-[15px] text-[12px] font-semibold">
@@ -190,12 +190,10 @@ const Plan = () => {
                   個別空間の背景を任意に変更(おもいでの場所を背景にできます)
                 </Item>
                 <Item>
-                  new!
-                  AIによるペットアバターの鳴き声再現(鳴き声データが必要です)
+                  new! AIによるペットアバターの鳴き声再現(鳴き声データが必要です)
                 </Item>
                 <Item>
-                  new!
-                  AIによるペットアバターとの会話(性格などを学習させればペットと話せるようになりました)
+                  new! AIによるペットアバターとの会話(性格などを学習させればペットと話せるようになりました)
                 </Item>
               </div>
               <div className="flex justify-center">
@@ -214,11 +212,11 @@ const Plan = () => {
         </div>
       </div>
       <div className="fade-up px-5">
-        <div className="w-full md:max-w-[880px] max-w-[440px] mx-auto relative md:mt-[50px] mt-12">
+        <div className="w-full md:max-w-[880px] max-w-[440px] mx-auto relative md:mt-[40px] mt-12">
           <span className="absolute top-0 left-0">
             <img
               className="max-md:max-w-[100px]"
-              src="/assets/images/frame.png"
+              src="/assets/images/price/frame.png"
               alt=""
             />
           </span>
@@ -237,7 +235,7 @@ const Plan = () => {
           <span className="absolute bottom-0 right-0">
             <img
               className="max-md:max-w-[100px] rotate-180"
-              src="/assets/images/frame.png"
+              src="/assets/images/price/frame.png"
               alt=""
             />
           </span>

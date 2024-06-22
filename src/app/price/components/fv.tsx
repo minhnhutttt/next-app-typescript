@@ -30,7 +30,7 @@ const FV = () => {
                         <div className=" md:w-[39.583vw] dt:w-[570px] ">
                         <p className="dt:text-[18px] md:text-[1.25vw] text-[14px] font-bold text-white text-center mb-1 max-md:text-black">＼多くの方にお問い合わせいただいています／
                         </p>
-                        <a href="/" className="flex items-center justify-center w-full md:h-[6.528vw] dt:h-[94px] h-[60px] bg-[#F12929] border-2 border-white rounded-[59px] text-white md:text-[1.736vw] dt:text-[25px] text-[14px] font-bold">
+                        <a href="/" className="flex items-center justify-center w-full md:h-[6.528vw] dt:h-[94px] h-[60px] bg-[#F12929] border-2 border-white rounded-[59px] text-white md:text-[1.736vw] dt:text-[25px] text-[14px] font-bold duration-150 hover:opacity-75">
                             メモリアルモニターの枠を今すぐおさえる
                         </a>
                         <p className="w-full max-w-[320px] md:max-w-[25.417vw] dt:max-w-[366px] ml-auto md:text-[0.833vw] dt:text-[12px] text-[10px] md:mr-5 md:mt-6 mt-2">
