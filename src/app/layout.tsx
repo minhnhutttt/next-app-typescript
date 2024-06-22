@@ -11,6 +11,7 @@ import Header from "@/components/header";
 const zen = Zen_Kaku_Gothic_Antique({
   weight: ["300", "400", "500", "700", "900"],
   subsets: ["latin"],
+  variable: "--font-zen",
 });
 const sans = Noto_Sans_JP({
   weight: ["300", "400", "500", "700", "900"],
@@ -40,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${zen.className} ${sans.variable} ${serif.variable} ${inter.variable}`}
+        className={`${sans.className} ${zen.variable} ${serif.variable} ${inter.variable}`}
       >
         <Header />
         {children}

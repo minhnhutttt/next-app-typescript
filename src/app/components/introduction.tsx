@@ -114,8 +114,8 @@ const data = [
 const Introduction = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="overflow-hidden md:pb-[88px] pb-12">
-      <div className="md:bg-[url('/assets/images/bg-title-03.png')] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+    <section ref={ref} className="overflow-hidden md:pb-[135px] pb-20">
+      <div className="fade-up md:bg-[url('/assets/images/bg-title-03.png')] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
         <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[5vw] w-full md:max-w-[51.389vw] dt:max-w-[740px]">
           「メタでペット供養」とは？
         </p>
@@ -127,13 +127,13 @@ const Introduction = () => {
           />
         </span>
       </div>
-      <div className="w-full max-w-[1440px] mx-auto mt-4 md:pr-7 pr-4">
+      <div className="w-full max-w-[1440px] mx-auto mt-4 md:pr-7">
         <div className="bg-[url('/assets/images/bg-intro.png')] bg-cover bg-no-repeat">
-          <div className="w-full max-w-[1280px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-16">
+          <div className="fade-up w-full max-w-[1280px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-16">
             「メタでペット供養」は、現実とメタバースでの供養が織りなす、新しい供養のカタチです
           </div>
           <div className="">
-            <div className="flex items-start mt-6 max-md:px-4 pr-4 max-md:flex-col max-md:items-center max-md:justify-center">
+            <div className="fade-up flex items-start mt-6 max-md:px-4 pr-4 max-md:flex-col max-md:items-center max-md:justify-center">
               <figure className="md:-ml-4 max-md:w-auto max-xl:w-1/2">
                 <img
                   className="max-md:max-w-[400px]"
@@ -141,7 +141,7 @@ const Introduction = () => {
                   alt=""
                 />
               </figure>
-              <div className="bg-white/60 max-w-[636px] md:min-h-[205px] flex-1 px-9 py-8 font-sans font-medium md:text-[20px] text-[16px] md:mt-8 md:-ml-6 max-md:mt-5">
+              <div className="bg-white/60 max-w-[636px] md:min-h-[205px] flex-1 px-9 py-8  font-medium md:text-[20px] text-[16px] md:mt-8 md:-ml-6 max-md:mt-5">
                 現実の供養所である「KARIMATA(狩俣)供養所」とメタバース供養所が融合することで、ペットとの再会の喜びと死への向き合いをバランス良く体験可能です。あなた様とペットだけの特別な空間がそこには広がっています。
               </div>
             </div>
@@ -149,7 +149,7 @@ const Introduction = () => {
               <div className="flex flex-wrap justify-center w-full max-w-[1040px] gap-x-[52px] gap-y-6">
                 {data.map((item, index) => (
                   <div
-                    className="size-[312px] relative rounded-full overflow-hidden"
+                    className="fade-up size-[312px] relative rounded-full overflow-hidden"
                     key={index}
                   >
                     <figure>
@@ -157,7 +157,7 @@ const Introduction = () => {
                     </figure>
                     <div className="absolute inset-0">
                       <div className="w-[225px] mx-auto pt-12">
-                        <p className="h-[67px] flex items-center justify-center text-[22px] font-sans text-center font-bold text-[#367A6E]">
+                        <p className="h-[67px] flex items-center justify-center text-[22px]  text-center font-bold text-[#367A6E]">
                           {item.title}
                         </p>
                         <div className="border-t border-black mt-2 text-[#113931] px-4 text-[17px] font-medium pt-4">
@@ -169,13 +169,13 @@ const Introduction = () => {
                 ))}
               </div>
             </div>
-            <div className="px-5">
-                <div className="w-full max-w-[664px] mx-auto border-2 border-[#F1A819]/[50] bg-white/50 rounded-[36px] min-h-[131px] px-[50px] py-8 md:text-[17px] text-[#903400] font-sans">
+            <div className="fade-up px-5">
+                <div className="w-full max-w-[664px] mx-auto border-2 border-[#F1A819]/[50] bg-white/50 rounded-[36px] min-h-[131px] px-[50px] py-8 md:text-[17px] text-[#903400] ">
                 「メタでペット供養」は、ペットロスに悩む方々に寄り添い、ペットとの絆を永遠に大切にするお手伝いをします。。
                 </div>
             </div>
-            <div className="md:pl-[125px] pl-6 mt-10 md:mt-[145px] mb-10 md:-mr-7 -mr-4">
-              <div className="bg-[linear-gradient(94deg,_#DD6B5C_21.94%,_#B72E2E_92.77%)] md:text-[26px] text-[20px] text-white font-bold font-sans md:pl-[85px] pl-10 py-6">
+            <div className="md:pl-[125px] pl-6 mt-10 md:mt-[145px] mb-10 md:-mr-7 ">
+              <div className="fade-up bg-[linear-gradient(94deg,_#DD6B5C_21.94%,_#B72E2E_92.77%)] md:text-[26px] text-[18px] text-white font-bold  md:pl-[85px] pl-8 py-6">
                 ペットとの絆を深める特別な体験がここに。
                 <br />
                 再会を喜び、冥福を祈る新たなペット供養の選択肢
@@ -195,12 +195,12 @@ const Introduction = () => {
                     <SplideTrack>
                       {dataSlider.map((item, index) => (
                         <SplideSlide key={index}>
-                          <div className="md:w-[421px] w-[320px] md:h-[763px] h-[630px] bg-white border border-[#707070] mr-4 md:mr-[35px] p-5">
+                          <div className="md:w-[421px] w-[320px] md:h-[763px] h-[630px] bg-white border border-[#707070] mr-4 md:mr-[25px] p-5">
                             <figure>
                               <img src={item.image} alt="" />
                             </figure>
                             <div className="md:mt-[28px] mt-5">
-                              <h5 className="md:text-[18px] text-[16px] font-bold font-sans">
+                              <h5 className="md:text-[18px] text-[16px] font-bold ">
                                 <span>{item.title}</span>
                               </h5>
                               <p className="md:text-[16px] text-[13px] text-[#1B0220] mt-6 font-medium leading-[1.65] break-all ">
@@ -253,7 +253,7 @@ const Introduction = () => {
               </div>
             </div>
             <div className="px-5">
-                <div className="w-full max-w-[1050px] mx-auto bg-[#FDFDF5] border border-[#A5A5A5] pt-5 bg-[url('/assets/images/bg-girl.png')] bg-no-repeat bg-right-bottom max-md:bg-[length:70vw_auto] md:pb-9 pb-[30vw] px-5">
+                <div className="fade-up w-full max-w-[1050px] mx-auto md:mb-[66px] mb-9 bg-[#FDFDF5] border border-[#A5A5A5] pt-5 bg-[url('/assets/images/bg-girl.png')] bg-no-repeat bg-right-bottom max-md:bg-[length:70vw_auto] md:pb-9 pb-[30vw] px-5">
                     <p className="text-center md:text-[23px] text-[18px] font-semibold font-mincho mb-1">私たちの信念</p>
                     <div className="flex justify-center items-center"><img src="/assets/images/our-belief.png" alt="" /></div>
                     <div className="w-full max-w-[886px] mx-auto md:my-12 my-8">
@@ -272,6 +272,11 @@ const Introduction = () => {
                         私たちは、あなた様とペットの“おもいで”に心を込めて向き合い、<br className="max-md:hidden" />
                         ペットとの絆を深める特別な体験を、全力でサポートいたします。
                     </div>
+                </div>
+                <div className="fade-up flex justify-center">
+                  <a href="/" className="md:w-[700px] md:h-[118px] w-[320px] h-20 font-sns text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929]">
+                  価格・キャンペーンを確認する
+                  </a>
                 </div>
             </div>
           </div>

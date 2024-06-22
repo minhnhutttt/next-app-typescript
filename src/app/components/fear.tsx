@@ -5,7 +5,7 @@ const Fear = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="overflow-hidden md:pb-[88px] pb-14">
-      <div className="md:bg-[url('/assets/images/bg-title-01.png')] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#657FD8] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+      <div className="fade-up md:bg-[url('/assets/images/bg-title-01.png')] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#657FD8] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
         <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[5vw] w-full md:max-w-[51.389vw] dt:max-w-[740px]">
           愛するペットとの 『 おもいで 』が <br />
           少しずつ風化していく恐怖…
@@ -18,9 +18,9 @@ const Fear = () => {
           />
         </span>
       </div>
-      <div className="w-full max-w-[1440px] mx-auto mt-4 md:pr-7 pr-4">
+      <div className="w-full max-w-[1440px] mx-auto mt-4 md:pr-7">
         <div className="bg-[#DBF3FF] bg-[url('/assets/images/bg-fear.png')] bg-no-repeat bg-left-bottom pb-[50vw] max-md:bg-[length:100%_auto] md:pb-[537px]">
-          <div className="w-full max-w-[1000px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-24">
+          <div className="fade-up w-full max-w-[1000px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-24">
             ペットを亡くした悲しみは、
             <br className="lg:hidden" />
             言葉では表せないほど深いものです。
@@ -49,14 +49,14 @@ const Fear = () => {
                       alt=""
                     />
                   </figure>
-                  <p className="md:text-[18px] text-[15px] font-sans flex-1">
+                  <p className="md:text-[18px] text-[15px]  flex-1">
                     私も、3年前に最愛の愛犬を亡くしました。あれから一日たりとも、彼女のことを思わない日はありません。でも、月日が経つにつれ、少しずつ記憶があやふやになっていくんです。それが本当に怖いんです。
                     <br />
                     (40代女性)
                   </p>
                 </div>
                 <div className="fade-up relative border-2 border-[#15B325]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[700px] mx-auto pt-6 md:pb-9 pb-32 pl-4 md:pl-9 md:pr-24 pr-4">
-                  <p className="md:text-[18px] text-[15px] font-sans flex-1">
+                  <p className="md:text-[18px] text-[15px]  flex-1">
                     ペットを亡くしたあなた様は、今このような喪失感や悲しみ、そして大切な“おもいで”を失うことへの恐怖心を抱えているのではないでしょうか。
                     <br />
                     まだペットがご健在の方も、いずれ訪れるその時を真剣に想像してみてください...
@@ -89,7 +89,7 @@ const Fear = () => {
                           alt=""
                         />
                       </figure>
-                      <p className="md:text-[18px] text-[14px] font-medium flex-1">
+                      <p className="md:text-[18px] text-[14px] font-medium flex-1 font-zen">
                         この子のために、
                         <span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">
                           心を込めた供養をしてあげたい。
@@ -105,7 +105,7 @@ const Fear = () => {
                           alt=""
                         />
                       </figure>
-                      <p className="md:text-[18px] text-[14px] font-medium flex-1">
+                      <p className="md:text-[18px] text-[14px] font-medium flex-1 font-zen">
                         ペットとの
                         <span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">
                           “おもいで”が、風化してしまう前に形に残しておきたい。
@@ -121,7 +121,7 @@ const Fear = () => {
                           alt=""
                         />
                       </figure>
-                      <p className="md:text-[18px] text-[14px] font-medium flex-1">
+                      <p className="md:text-[18px] text-[14px] font-medium flex-1 font-zen">
                         あの時、もっとあの子のためにできたことがあったのに。なんで私はほかの事を優先しちゃったんだろう。
                         <span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">
                           あの頃に戻れるなら戻りたい...
@@ -144,7 +144,7 @@ const Fear = () => {
               alt=""
             />
           </figure>
-          <div className="absolute inset-0 md:text-[22px] text-[16px] font-medium font-sans justify-center text-center md:pt-20 pt-10">
+          <div className="absolute inset-0 md:text-[22px] text-[16px] font-medium  justify-center text-center md:pt-20 pt-10">
             <p>
               もしも愛するペットとの絆を永遠に紡ぐ方法があったら…
               <br />

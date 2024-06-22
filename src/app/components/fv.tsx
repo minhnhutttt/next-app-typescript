@@ -16,11 +16,11 @@ const FV = () => {
       </div>
       <div className="bg-[url(/assets/images/fv.jpg)] bg-cover pt-16 md:pt-6 pb-16 md:pb-[96px]">
         <div className="w-full max-w-[1440px] mx-auto relative flex justify-center pb-14 md:pb-3">
-          <figure className="dt:pl-11 pl-[3.056vw]">
+          <figure className="fade-up  dt:pl-11 pl-[3.056vw]">
             <img src="/assets/images/fv-main.png" alt="" />
           </figure>
           <div className="absolute w-[80vw] md:w-[59.861vw] dt:w-[862px] bottom-0 left-1/2 -translate-x-1/2">
-            <h1>
+            <h1 className="fade-up">
               <img src="/assets/images/fv-text.png" alt="" />
             </h1>
           </div>
@@ -44,7 +44,7 @@ const FV = () => {
                   alt="メモリアルモニター受付中 !!"
                 />
               </h3>
-              <p className="md:text-[20px] text-[16px] font-black md:pt-5 pt-3">
+              <p className="md:text-[20px] text-[16px] font-black md:pt-5 pt-3 font-zen">
                 今ならモニターとしての参加で、先行利用特典や初期費用・
                 年会費の割引クーポンをご提供！供養の新たな選択肢に魅力を感じるあなたを全面的にバックアップいたします。
               </p>
@@ -62,7 +62,7 @@ const FV = () => {
                   alt=""
                 />
               </span>
-              <span className="md:text-[19px] text-[16px] font-extrabold font-sans">
+              <span className="md:text-[19px] text-[16px] font-extrabold ">
                 メモリアルモニター <br />
                 として参加する
               </span>
@@ -78,7 +78,7 @@ const FV = () => {
                   alt=""
                 />
               </span>
-              <span className="md:text-[19px] text-[16px] font-extrabold font-sans">
+              <span className="md:text-[19px] text-[16px] font-extrabold ">
                 メモリアルモニター <br />
                 の詳細が知りたい
               </span>
@@ -94,7 +94,7 @@ const FV = () => {
                 alt=""
               />
             </figure>
-            <p className="md:text-[22px] text-[clamp(12px,3vw,18px)] font-bold u-text-gradient leading-[2.2]">
+            <p className="md:text-[22px] text-[clamp(12px,3vw,18px)] font-bold u-text-gradient leading-[2.2] font-zen">
               まぶたを閉じれば <br />
               浮かんでくる愛らしい姿を、
               <br />『 メタでペット供養 』が永遠に。
@@ -111,7 +111,7 @@ const FV = () => {
                     alt=""
                   />
                 </figure>
-                <p className="flex-1 md:text-[26px] text-[18px] font-sans font-extrabold">
+                <p className="flex-1 md:text-[26px] text-[18px]  font-extrabold">
                   愛するペットとの別れを経験された方
                 </p>
               </div>
@@ -123,7 +123,7 @@ const FV = () => {
                     alt=""
                   />
                 </figure>
-                <p className="flex-1 md:text-[26px] text-[18px] font-sans font-extrabold">
+                <p className="flex-1 md:text-[26px] text-[18px]  font-extrabold">
                   ペットの供養方法を調べている方
                 </p>
               </div>
@@ -135,14 +135,14 @@ const FV = () => {
                     alt=""
                   />
                 </figure>
-                <p className="flex-1 md:text-[26px] text-[18px] font-sans font-extrabold tracking-tighter">
+                <p className="flex-1 md:text-[26px] text-[18px]  font-extrabold tracking-tighter">
                   心をこめた供養をしてあげたいけど、どうしたらいいかわからない方
                 </p>
               </div>
             </div>
             <span className="block w-full h-1 bg-[linear-gradient(0deg,_#B69318_-21.4%,_#B69419_-19.25%,_#CEB342_2.33%,_#E0CB62_23.91%,_#EDDC79_43.33%,_#F5E787_62.74%,_#F8EB8C_80.01%,_#F2E483_97.27%,_#E5D16A_125.32%,_#CEB343_157.68%,_#B69318_190.05%)]"></span>
           </div>
-          <div className="fade-up w-full max-w-[870px] border border-black rounded-[22px] min-h-[110px] px-8 pt-4 pb-2 md:text-[18px] text-[14px] font-sans">
+          <div className="fade-up w-full max-w-[870px] border border-black rounded-[22px] min-h-[110px] px-8 pt-4 pb-2 md:text-[18px] text-[14px] ">
             あなた様がいずれかにあてはまるなら、
             <br />
             ペット供養の新たな選択肢として『メタでペット供養』をご検討ください。
