@@ -18,7 +18,7 @@ const links: NavLink[] = [
     text: "産官学連携",
   },
   {
-    link: "/",
+    link: "/price",
     text: "料金",
   },
   {
