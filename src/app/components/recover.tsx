@@ -24,19 +24,20 @@ const Recover = () => {
       </div>
       <div className="w-full max-w-[1440px] mx-auto mt-4 md:pl-7">
         <div className="bg-[#FFE1C6] pb-[50vw] md:pb-[180px]  bg-[url('/assets/images/bg-recover-02.png')] bg-no-repeat bg-left-bottom  max-md:bg-[length:100%_auto]">
-          <div className="fade-up w-full max-w-[1000px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[17px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-24">
-          愛するペットとの絆を紡いでいく日常を、
+          <div data-scroll="out" className="has-animation animation-ltr before:bg-[#FDBB74] after:bg-[#EF7C43] w-full max-w-[1000px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[17px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-24">
+          <p>愛するペットとの絆を紡いでいく日常を、
             <br className="lg:hidden" />
             デジタルの力で復活
+            </p>
           </div>
           <div className="px-5 pt-8 relative">
           <span className="absolute right-0 md:top-[650px] top-[740px] xl:top-[130px]"><img className="fade-up max-xl:w-[72.431vw]" src="/assets/images/bg-recover-01.png" alt="" /></span>
             <div className="w-full md:max-w-[1200px] max-w-[540px] mx-auto relative">
               <div className="fade-up flex xl:items-start max-xl:flex-col max-xl:justify-center items-center">
-                <figure className="fade-up pt-6">
+                <figure data-scroll="out" className="has-animation animation-ltr before:bg-[#FDBB74] after:bg-[#EF7C43] pt-6">
                   <img src="/assets/images/img-recover.png" alt="" />
                 </figure>
-                <div className="flex-1">
+                <div data-scroll="out" className="has-animation animation-ltr before:bg-[#FDBB74] after:bg-[#EF7C43] flex-1 relative">
                   <div className="max-w-[636px] w-full md:-ml-5">
                     <div className="bg-white/70 md:px-8 px-4 pt-5 md:pb-10 pb-6">
                       <h5 className="font-serif md:text-[28px] text-[20px] font-bold text-center text-[#5F5F5F] border-b border-black">「もしも、愛するペットに再会できたら… 」</h5>

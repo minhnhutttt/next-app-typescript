@@ -1,3 +1,4 @@
+"use client"
 import Header from "@/components/header";
 import FAQ from "./components/faq/faq";
 import Fear from "./components/fear";
@@ -7,8 +8,15 @@ import Memories from "./components/memories";
 import Recover from "./components/recover";
 import Story from "./components/story";
 import Trust from "./components/trust";
+import { useEffect } from "react";
+import ScrollOut from "scroll-out";
 
 export default function Home() {
+  useEffect(()=>{
+    ScrollOut({
+      once: true
+    });
+  },[])
   return (
     <main>
       <Header />
