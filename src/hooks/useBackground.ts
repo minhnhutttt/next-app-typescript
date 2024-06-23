@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react';
-import gsap from 'gsap';
+import gsap, { Power0 } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,11 +18,11 @@ const useBackground = () => {
         });
 
         tl.fromTo(container, {
-          yPercent: -7,
+          y: 0,
           ease: 'none'
         }, {
-          yPercent: 20,
-          ease: 'none'
+          y: -100,
+          ease: Power0.easeIn
         });
       });
     });

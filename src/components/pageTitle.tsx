@@ -1,7 +1,7 @@
 "use client";
 import gsap from 'gsap';
 import { ReactNode, useLayoutEffect } from "react";
-export type PageTitlePropsType = {
+type PageTitlePropsType = {
   children: ReactNode;
 };
 const PageTitle = ({ children }: PageTitlePropsType) => {
