@@ -22,12 +22,6 @@ const Banner = ({ image, children }: BannerPropsType) => {
         <div className="container">
           <div className="text-[24px] max-md:text-[16px] max-w-[1200px] mx-auto leading-[1.6]">
             {children}
-            Web design is the face of the company or brand, and it performs to
-            an overwhelmingly large number of unspecified people in a short time
-            and at a low cost. That is why it is necessary to have an optimal
-            design that is in line with the business type and target audience.
-            We are able to exceed our clients&apos; expectations based on the
-            knowledge and experience we have acquired over the years.
           </div>
         </div>
       </section>
