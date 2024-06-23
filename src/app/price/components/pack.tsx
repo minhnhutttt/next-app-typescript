@@ -195,7 +195,7 @@ const Pack = () => {
                 <div className="fade-up flex md:gap-8 gap-4">
                     <span className="font-bold md:text-[39px] text-[24px] text-[#9C37DF] w-[30px] text-right">17</span>
                     <span className="md:text-[39px] text-[24px] font-bold text-[#F54A25] flex-1">
-                        <span className="text-black"><span className="md:text-[24px] text-[18px]">現実の供養所</span>来訪時の</span>狩俣空き家民泊<span className="md:text-[24px] text-[18px] text-black">利用</span><span className="text-[#9C37DF]">▶️</span>3泊<span className="md:text-[24px] text-[18px]">まで</span>半額ク<span className="text-black md:text-[24px] text-[18px]">ーポンご進呈</span>
+                        <span className="text-black"><span className="md:text-[24px] text-[18px]">現実の供養所</span>来訪時の</span>狩俣空き家民泊<span className="md:text-[24px] text-[18px] text-black">利用</span><span className="text-[#9C37DF]">▶️</span>3泊<span className="md:text-[24px] text-[18px]">まで</span>半額<span className="text-black md:text-[24px] text-[18px]">クーポンご進呈</span>
                     </span>
                 </div>
             </div>

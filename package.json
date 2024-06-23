@@ -17,6 +17,7 @@
     "react-dom": "^18",
     "react-splide-ts": "^0.7.14",
     "scroll-out": "^2.2.12",
+    "splitting": "^1.0.6",
     "swiper": "^11.1.4"
   },
   "devDependencies": {

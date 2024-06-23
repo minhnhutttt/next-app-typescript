@@ -32,7 +32,7 @@ const Memories = () => {
             ペットロスの悲しみを和らげ、<br />
             癒しをもたらしてくれる方法があったら..
         </div>
-        <div className="text-center font-serif md:text-[52px] text-[28px] font-bold md:mt-[90px] mt-16 leading-[1.7] u-text-gradient">
+        <div className="text-center font-serif md:text-[52px] text-[28px] font-bold md:mt-[90px] mt-16 leading-[1.7] u-text-gradient animate-[hue_10s_infinite_linear]">
             そんな奇跡を <br />
             『メタでペット供養』 <br />
             が実現します。
@@ -46,13 +46,18 @@ const Memories = () => {
             </h3>
             <div className="relative md:bottom-[-120px] bottom-[-60px] fade-up w-full md:max-w-[910px] max-w-[440px] mx-auto md:border-[6px] border-[3px] border-white md:rounded-[63px] rounded-[32px] bg-[linear-gradient(155deg,_#CFE449_-20.55%,_#53A63E_119.29%)] md:pb-[34px] pb-5">
             <div className="flex px-4 gap-2 max-md:flex-col">
-                <figure className="md:-mt-12 -mt-8">
-                <img
-                    className="max-md:w-[130px]"
-                    src="/assets/images/circle.png"
-                    alt=""
-                />
-                </figure>
+            <figure className="md:-mt-12 -mt-8 relative">
+              <img
+                className="max-md:w-[130px]"
+                src="/assets/images/circle.png"
+                alt=""
+              />
+              <img
+                className="max-md:w-[130px] absolute inset-0 animate-[fadeIn_1s_ease_infinite]"
+                src="/assets/images/circle-c.png"
+                alt=""
+              />
+            </figure>
                 <div className="flex-1 md:pt-9 pt-2">
                 <h3 className="">
                     <img
@@ -85,7 +90,7 @@ const Memories = () => {
                 </span>
                 </Button>
                 <Button
-                href="#"
+                href="/price"
                 rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#BB66FF] items-center justify-center"
                 >
                 <span>

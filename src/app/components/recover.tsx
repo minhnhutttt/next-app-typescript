@@ -37,9 +37,9 @@ const Recover = () => {
                 <figure data-scroll="out" className="has-animation animation-ltr before:bg-[#FDBB74] after:bg-[#EF7C43] pt-6">
                   <img src="/assets/images/img-recover.png" alt="" />
                 </figure>
-                <div data-scroll="out" className="has-animation animation-ltr before:bg-[#FDBB74] after:bg-[#EF7C43] flex-1 relative">
+                <div className="flex-1 relative">
                   <div className="max-w-[636px] w-full md:-ml-5">
-                    <div className="bg-white/70 md:px-8 px-4 pt-5 md:pb-10 pb-6">
+                    <div data-scroll="out" className="has-animation animation-ltr before:bg-[#FDBB74] after:bg-[#EF7C43] bg-white/70 md:px-8 px-4 pt-5 md:pb-10 pb-6">
                       <h5 className="font-serif md:text-[28px] text-[20px] font-bold text-center text-[#5F5F5F] border-b border-black">「もしも、愛するペットに再会できたら… 」</h5>
                       <p className="text-center md:text-[18px] text-[14px] font-bold  pt-5">そんな奇跡を「メタでペット供養」が実現します。</p>
                       <p className="md:text-[17px] text-[14px] md:pt-10 pt-7 leading-snug">
@@ -47,7 +47,7 @@ const Recover = () => {
                         その絆を、メタバースという新しい世界で紡ぎなおすことができる時代になりました。
                       </p>
                     </div>
-                    <div className="flex justify-center pt-4 px-2 md:px-10">
+                    <div data-scroll="out" className="has-animation animation-ltr before:bg-[#FDBB74] after:bg-[#EF7C43] flex justify-center pt-4 px-2 md:px-10">
                       <p className="md:text-[15px] text-[13px]  max-w-[555px] leading-tight">
                         ※メタバースとは、インターネット上のバーチャルワールドのことを指します。当サービスは、ペットとの大切な“おもいで”をデジタル化技術で再現し、スマートフォン一つあればいつでもペットのお墓を含めた特別な場所を訪れることを可能にします。
                       </p>
@@ -62,20 +62,20 @@ const Recover = () => {
               </figure>
             </div>
             <div className="fade-up w-full md:max-w-[1080px] max-w-[640px] mx-auto md:mt-16 mt-36 relative">
-              <div className="relative w-full max-w-[911px] md:h-[394px] bg-[url('/assets/images/frame-recover.png')] bg-[length:100%_100%]">
+              <div data-scroll="out" className="relative w-full max-w-[911px] md:h-[394px] bg-[url('/assets/images/frame-recover.png')] bg-[length:100%_100%]">
                   <div className="w-full h-full md:px-8 px-5 pt-12 max-md:pb-36 relative z-10">
                 <div className="flex justify-center mb-4">
                   <h5 className="font-serif lg:text-[23px] md:text-[20px] text-[17px] font-semibold text-[#8B1D1D] max-md:text-center">
-                  メタバース空間には、あなた様のペットだけの特別な場所があります。 <br />
-                  そこでは、愛するペットの姿があなた様を出迎えてくれます。
+                  <span className="text--fading" data-splitting="">メタバース空間には、あなた様のペットだけの特別な場所があります。</span> <br />
+                  <span className="text--fading" data-splitting="">そこでは、愛するペットの姿があなた様を出迎えてくれます。</span>
                   </h5>
                 </div>
                 <div className="w-full max-w-[530px] mx-auto border-y-2 border-white text-center font-serif md:text-[23px] text-[17px] font-semibold text-white py-6">
-                      愛くるしい仕草で話しかけてくる姿 <br />
-                      一緒に歩いた思い出の散歩道
+                      <span className="text--fading" data-splitting="">愛くるしい仕草で話しかけてくる姿 <br />
+                      一緒に歩いた思い出の散歩道</span>
                 </div>
                 <h5 className="text-center font-serif md:text-[23px] text-[17px] font-semibold text-[#8B1D1D] mt-4">
-                今は亡きペットとの気ない日常が、あざやかによみがえります。
+                  <span className="text--fading" data-splitting="">今は亡きペットとの気ない日常が、あざやかによみがえります。</span>
                   </h5>
                   </div>
                   <span className="absolute bottom-0 right-0 max-md:w-[100vw] max-md:max-w-[400px]"><img src="/assets/images/frame-recover-pet.png" alt="" /></span>
@@ -126,7 +126,7 @@ const Recover = () => {
               alt=""
             />
           </figure>
-          <div className="absolute inset-0 md:text-[22px] text-[16px] flex justify-center  font-semibold md:pt-6 pt-4 leading-[1.8]">
+          <div className="absolute inset-0 md:text-[22px] text-[16px] flex justify-center u-text-gradient animate-[hue_10s_infinite_linear] font-semibold md:pt-6 pt-4 leading-[1.8]">
             <p className="max-w-[550px]">
             私たちは、日本中のペットオーナーが抱えている、「ペットロスの悲しみ」や「記憶が薄れていく恐怖心」に寄り添い、メタでペット供養を通じて新しいペット供養のカタチを提案しています。
             </p>

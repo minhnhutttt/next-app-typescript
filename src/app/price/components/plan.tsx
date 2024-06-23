@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/button";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode } from "react";
 
@@ -63,15 +64,9 @@ const Plan = () => {
                 </Item>
               </div>
               <div className="flex justify-center">
-                <a
-                  href="/"
-                  className="w-[280px] h-[60px] rounded-[60px] bg-black flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold relative duration-150 hover:opacity-75"
-                >
-                  エントリープランに申し込む
-                  <figure className="absolute right-2">
-                    <img src="/assets/images/ic-arrow.png" alt="" />
-                  </figure>
-                </a>
+                <Button href="/" rect="w-[280px] h-[60px] bg-black  md:text-[16px] text-[14px] text-white font-bold relative">
+                エントリープランに申し込む
+                  </Button>
               </div>
             </div>
           </div>
@@ -135,15 +130,9 @@ const Plan = () => {
                 </Item>
               </div>
               <div className="flex justify-center">
-                <a
-                  href="/"
-                  className="w-[347px] h-[64px] bg-[#FF1B1B] rounded-[32px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative duration-150 hover:opacity-75"
-                >
-                  メモリアルモニタープランに応募する
-                  <figure className="absolute right-2">
-                    <img src="/assets/images/ic-arrow.png" alt="" />
-                  </figure>
-                </a>
+                <Button href="/" rect="w-[347px] h-[64px] bg-[#FF1B1B] rounded-[32px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative ">
+                メモリアルモニタープランに応募する
+                  </Button>
               </div>
             </div>
           </div>
@@ -197,15 +186,9 @@ const Plan = () => {
                 </Item>
               </div>
               <div className="flex justify-center">
-                <a
-                  href="/"
-                  className="w-[280px] h-[60px] rounded-[60px] bg-black flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold relative  duration-150 hover:opacity-75"
-                >
+                  <Button href="/" rect="w-[280px] h-[60px] bg-black overflow-hidden border border-white flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold">
                   スタンダードプランに申し込む
-                  <figure className="absolute right-2">
-                    <img src="/assets/images/ic-arrow.png" alt="" />
-                  </figure>
-                </a>
+                  </Button>
               </div>
             </div>
           </div>

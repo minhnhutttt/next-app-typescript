@@ -40,8 +40,7 @@ body {
 .button__flair:before {
   aspect-ratio: 1;
   background: white;
-  mix-blend-mode: difference;
-  border-radius: 50%;
+  border-radius: 100%;
   content: "";
   display: block;
   left: 0;
@@ -51,6 +50,15 @@ body {
   transform: translate(-50%, -50%);
   width: 170%;
 }
+
+.text--fading .char {
+  animation-timing-function: ease-out;
+  transition: all 1s calc(0.25s + var(--char-index) * 0.1s);
+}
+[data-scroll='out'] .text--fading .char {
+  opacity: 0;
+}
+
 
 .swiper-slide {
   border-radius: 30px;
@@ -144,4 +152,11 @@ body {
   to {
     -webkit-filter: hue-rotate(-360deg);
   }
+}
+
+
+@keyframes floating {
+  from { transform: translate(0, 0px); }
+  55% { transform: translate(0, 15px); }
+  to { transform: translate(0, 0px); }
 }

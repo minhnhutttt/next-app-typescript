@@ -274,7 +274,7 @@ const Introduction = () => {
                     </div>
                 </div>
                 <div className="fade-up flex justify-center">
-                  <a href="/" className="md:w-[700px] md:h-[118px] w-[320px] h-20 font-sns text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929] duration-150 hover:opacity-75">
+                  <a href="/price" className="md:w-[700px] md:h-[118px] w-[320px] h-20 font-sns text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929] duration-150 hover:opacity-75">
                   価格・キャンペーンを確認する
                   </a>
                 </div>

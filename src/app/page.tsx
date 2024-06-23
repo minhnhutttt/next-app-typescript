@@ -12,11 +12,18 @@ import { useEffect } from "react";
 import ScrollOut from "scroll-out";
 
 export default function Home() {
+  
   useEffect(()=>{
     ScrollOut({
       once: true
     });
-  },[])
+    setTimeout(() => {
+      if ( window && document ) {
+          const splitting = require('splitting');
+          splitting();
+      }
+    });
+},[])
   return (
     <main>
       <Header />

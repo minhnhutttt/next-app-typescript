@@ -23,7 +23,7 @@ const Story = () => {
         </span>
       </div>
       <div className="px-7 md:px-20">
-        <div className="w-full md:max-w-[1216px] max-w-[480px] mx-auto md:mt-[100px] mt-10 relative flex mb-[80px] md:mb-[140px]">
+        <div className="w-full md:max-w-[1216px] max-w-[480px] mx-auto md:mt-[100px] mt-10 relative flex mb-[80px] md:mb-[80px]">
           <div className="relative w-full">
             <Swiper
               effect={"cards"}
@@ -250,14 +250,8 @@ const Story = () => {
             </Swiper>
           </div>
         </div>
-        <div className="fade-up flex justify-center">
-          <a
-            href="/"
-            className="md:w-[700px] md:h-[118px] w-[320px] h-20 font-sns text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929] duration-150 hover:opacity-75"
-          >
-            価格・キャンペーンを確認する
-          </a>
-        </div>
+        <div className="w-full max-w-[1028px] mx-auto border-2 border-[#F1A819]/[50] bg-white/50 min-h-[131px] px-[50px] py-8 md:text-[17px] text-[#903400]">『メタでペット供養』が紡いだ、ペットとの新たな絆の物語。これらの体験談は、ほんの一例に過ぎません。
+        あなた様が実際に体験すると、また別の感じ方・捉え方をされるかもしれません。それもまた、あなた様とペットとの絆を紡ぐ、かけがえのない物語の一部です。</div>
       </div>
     </section>
   );

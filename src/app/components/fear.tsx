@@ -20,7 +20,7 @@ const Fear = () => {
       </div>
       <div className="w-full max-w-[1440px] mx-auto mt-4 md:pr-7">
         <div className="bg-[#DBF3FF] bg-[url('/assets/images/bg-fear.png')] bg-no-repeat bg-left-bottom pb-[50vw] max-md:bg-[length:100%_auto] md:pb-[537px]">
-          <div data-scroll="out" className="has-animation animation-ltr before:bg-[#2C87E3] after:bg-[#7E22D7] w-full max-w-[1000px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-24">
+          <div data-scroll="out" className="has-animation animation-ltr before:bg-[#819EF3] after:bg-[#6680D8] w-full max-w-[1000px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-24">
             <p>ペットを亡くした悲しみは、
             <br className="lg:hidden" />
             言葉では表せないほど深いものです。
@@ -29,10 +29,10 @@ const Fear = () => {
           <div className="px-5 pt-8">
             <div className="w-full md:max-w-[1220px] max-w-[540px] mx-auto">
               <div className="fade-up flex md:items-end max-md:flex-col max-md:justify-center items-center">
-                <figure data-scroll="out" className="has-animation animation-ltr before:bg-[#2C87E3] after:bg-[#7E22D7] pb-6 max-lg:w-1/2 max-md:w-auto">
+                <figure data-scroll="out" className="has-animation animation-ltr before:bg-[#819EF3] after:bg-[#6680D8] pb-6 max-lg:w-1/2 max-md:w-auto">
                   <img src="/assets/images/img-fear-01.png" alt="" />
                 </figure>
-                <div data-scroll="out" className="has-animation animation-ltr before:bg-[#2C87E3] after:bg-[#7E22D7] flex-1 relative">
+                <div data-scroll="out" className="has-animation animation-ltr before:bg-[#819EF3] after:bg-[#6680D8] flex-1 relative">
                   <p className="max-w-[672px] font-inter md:text-[17px] text-[14px] text-[#333] bg-white/90 md:-ml-16 py-6 md:px-10 px-5 md:min-h-[190px] flex items-center">
                     自宅や一緒に行った場所でふと思い出す、あの子の「声」「吐息」「仕草」「体温」「柔らかな毛並」。
                     <br />
@@ -154,7 +154,7 @@ const Fear = () => {
               alt=""
             />
           </figure>
-          <div className="absolute inset-0 md:text-[22px] text-[16px] font-medium  justify-center text-center md:pt-20 pt-10">
+          <div className="absolute inset-0 md:text-[22px] text-[16px] font-medium u-text-gradient animate-[hue_10s_infinite_linear] justify-center text-center md:pt-20 pt-10">
             <p>
               もしも愛するペットとの絆を永遠に紡ぐ方法があったら…
               <br />
