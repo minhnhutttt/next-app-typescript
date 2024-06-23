@@ -129,20 +129,20 @@ const Introduction = () => {
       </div>
       <div className="w-full max-w-[1440px] mx-auto mt-4 md:pr-7">
         <div className="bg-[url('/assets/images/bg-intro.png')] bg-cover bg-no-repeat">
-          <div className="fade-up w-full max-w-[1280px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-16">
+          <div data-scroll="out" className="has-animation animation-ltr before:bg-[#4EA4E3] after:bg-[#51BDE4] w-full max-w-[1280px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-16">
             「メタでペット供養」は、現実とメタバースでの供養が織りなす、新しい供養のカタチです
           </div>
           <div className="">
             <div className="fade-up flex items-start mt-6 max-md:px-4 pr-4 max-md:flex-col max-md:items-center max-md:justify-center">
-              <figure className="md:-ml-4 max-md:w-auto max-xl:w-1/2">
+              <figure data-scroll="out" className="has-animation animation-ltr before:bg-[#4EA4E3] after:bg-[#51BDE4] md:-ml-4 max-md:w-auto max-xl:w-1/2">
                 <img
                   className="max-md:max-w-[400px]"
                   src="/assets/images/img-intro-01.png"
                   alt=""
                 />
               </figure>
-              <div className="bg-white/60 max-w-[636px] md:min-h-[205px] flex-1 px-9 py-8  font-medium md:text-[20px] text-[16px] md:mt-8 md:-ml-6 max-md:mt-5">
-                現実の供養所である「KARIMATA(狩俣)供養所」とメタバース供養所が融合することで、ペットとの再会の喜びと死への向き合いをバランス良く体験可能です。あなた様とペットだけの特別な空間がそこには広がっています。
+              <div data-scroll="out" className="has-animation animation-ltr before:bg-[#4EA4E3] after:bg-[#51BDE4] bg-white/60 max-w-[636px] md:min-h-[205px] flex-1 px-9 py-8  font-medium md:text-[20px] text-[16px] md:mt-8 md:-ml-6 max-md:mt-5">
+                <p>現実の供養所である「KARIMATA(狩俣)供養所」とメタバース供養所が融合することで、ペットとの再会の喜びと死への向き合いをバランス良く体験可能です。あなた様とペットだけの特別な空間がそこには広がっています。</p>
               </div>
             </div>
             <div className="w-full max-w-[1220px] mx-auto mt-9 mb-20">

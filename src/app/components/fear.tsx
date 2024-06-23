@@ -90,9 +90,12 @@ const Fear = () => {
                           alt=""
                         />
                       </figure>
-                      <p className="md:text-[18px] text-[14px] font-medium flex-1 font-zen">
+                      <p className="md:text-[18px] text-[14px] font-medium flex-1 font-zen ">
                         この子のために、
-                        <span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">
+                        <span className="inline-block relative">
+                          <span
+                            className="bgtext w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]"
+                          ></span>
                           心を込めた供養をしてあげたい。
                         </span>
                         でも、仕事や家庭の事情で、思うような供養やお墓参りができない…
@@ -108,7 +111,10 @@ const Fear = () => {
                       </figure>
                       <p className="md:text-[18px] text-[14px] font-medium flex-1 font-zen">
                         ペットとの
-                        <span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">
+                        <span className="inline-block relative">
+                          <span
+                            className="bgtext w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]"
+                          ></span>
                           “おもいで”が、風化してしまう前に形に残しておきたい。
                         </span>
                         でも、どうすればいいのかわからない…
@@ -124,7 +130,10 @@ const Fear = () => {
                       </figure>
                       <p className="md:text-[18px] text-[14px] font-medium flex-1 font-zen">
                         あの時、もっとあの子のためにできたことがあったのに。なんで私はほかの事を優先しちゃったんだろう。
-                        <span className="bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]">
+                        <span className="inline-block relative">
+                          <span
+                            className="bgtext w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]"
+                          ></span>
                           あの頃に戻れるなら戻りたい...
                         </span>
                       </p>
