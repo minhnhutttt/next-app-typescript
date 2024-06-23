@@ -6,8 +6,7 @@ const Service = () => {
       <section className="mb-[256px] max-md:mb-[82px]">
         <div className="container">
           <div className="max-w-[1200px] mx-auto text-[calc(18px_+_2vw)] text-center leading-[1.2] uppercase">
-            WEB DESIGN / APP DESIGN / UX / UI / WEB application / marketing /
-            iOS Android App / System development
+          各種調査 / 各種代行 / デジタルマーケティング / 海外人材採用支援 / ブロックチェーン解析支援 / 販売プラットフォーム出品支援
           </div>
         </div>
       </section>
@@ -21,32 +20,30 @@ const Service = () => {
           <div className="flex flex-col gap-[16px]">
             <a
               className="sticky top-[10rem] block w-full p-[8%] bg-[#c9b5ab]"
-              href="/web-design/"
+              href="/research/"
             >
               <div
                 className="font-anton text-[calc(24px_+_2vw)] uppercase"
                 translate="no"
               >
-                Web Design
+                Research
               </div>
               <div className="text-[21px] max-md:text-[18px] max-w-[600px]">
-                We design a variety of systems from corporate websites to web
-                applications. iOS Android app design is also available.
+              私たちはお客様のビジネスに必要不可欠な情報の収集・分析を行い、最適なソリューションを提供します。企業分析から海外人材のバックグラウンド調査、ブロックチェーン解析など、幅広い分野に対応しています。
               </div>
             </a>
             <a
               className="sticky top-[10rem] block w-full p-[8%] bg-[#ab9247]"
-              href="/development/"
+              href="/agency/"
             >
               <div
                 className="font-anton text-[calc(24px_+_2vw)] uppercase"
                 translate="no"
               >
-                Development
+                Agency
               </div>
               <div className="text-[21px] max-md:text-[18px] max-w-[600px]">
-                We develop various systems from web applications to app
-                development.
+              私たちは代理店としての機能を持ち、Google、MetaをはじめとするWeb広告の運用代行や営業活動の代行、ECプラットフォームへの出品など、お客様の業務を代行することで、効率的かつ効果的なビジネス運営をサポートします。
               </div>
             </a>
             <a
@@ -60,25 +57,21 @@ const Service = () => {
                 Digital marketing
               </div>
               <div className="text-[21px] max-md:text-[18px] max-w-[600px]">
-                We build and execute promotion strategies that logically capture
-                the essence of your business by utilizing various channels in
-                the digital domain.
+              私たちはデジタル領域における様々なチャネルを活用し、お客様のビジネスの本質を論理的に捉えたプロモーション戦略を構築・実行します。
               </div>
             </a>
             <a
               className="sticky top-[10rem] block w-full p-[8%] bg-[#cbc7b7]"
-              href="/hosting/"
+              href="/research-shield-ai/"
             >
               <div
                 className="font-anton text-[calc(24px_+_2vw)] uppercase"
                 translate="no"
               >
-                Hosting
+                Research shield+AI
               </div>
               <div className="text-[21px] max-md:text-[18px] max-w-[600px]">
-                We select and adjust the optimal hosting environment for
-                providing different services from corporate websites to web
-                applications.
+              設立から9年間経験・蓄積してきた調査力を活用した新サービスです。業界を絞り、AIのパワーを加えることで、属人的なリサーチアウトプットの再現性を高めた特化型サービス「海外人材のバックグラウンド調査：Research Shield+AI」をリリースいたしました。
               </div>
             </a>
           </div>

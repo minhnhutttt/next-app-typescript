@@ -7,18 +7,10 @@ const Partnership = () => {
         <div className="max-w-[1200px] mx-auto p-[6%] bg-[#eee] rounded-[12px]">
           <div>Partnership</div>
           <div className="font-anton text-[calc(24px_+_2vw)]">
-            Would you like to invite us to your project?
+            私たちのリソースをプロジェクトで活用しませんか？
           </div>
           <div className="mb-[24px]">
-            We have participated in projects not only in Taiwan, but also in
-            Vietnam, Cambodia, Japan, Canada, and other European regions for
-            various companies. Our advantage is not only in terms of cost, but
-            also in our technical capabilities in software development. This is
-            because Taiwan itself is a country that demands high technical
-            skills from its engineers. For example, in the development and
-            release of an application, it is not possible to release it unless
-            it meets Taiwan&apos;s security standards in addition to the usual
-            screening process.
+          私たちは日本だけでなく、ベトナム、台湾、米国、英国など、様々な国の企業のプロジェクトに参加してきました。私たちの強みはコストだけでなく、デジタルマーケティングにおける支援実績と設立から積み上げてきた調査や代理店としての経験です。それは、私たちがデジタル領域や調査・代行領域における最新のトレンドや技術を探求し、お客様のビジネスに活かしているからです。そしてAIのパワーをビジネスに取り入れることに成功したことで、お客様の課題解決のサポートを一層効率的に精度高く行えるリソースへと進化しています。
           </div>
           <a
             className="max-w-[200px] flex items-center gap-[16px] uppercase leading-none"

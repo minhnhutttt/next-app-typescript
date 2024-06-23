@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import gsap from "gsap";
+import gsap, { Power0 } from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -26,7 +26,7 @@ const GlobalDigitalAgency = () => {
         })
         .to(marquiseLeft, {
           xPercent: 10,
-          ease: 'linear',
+          ease: Power0.easeInOut,
         })
         gsap
         .timeline({
@@ -40,7 +40,7 @@ const GlobalDigitalAgency = () => {
         })
         .to(marquiseRight, {
           xPercent: -10,
-          ease: 'linear',
+          ease: Power0.easeInOut,
         })
     });
 
@@ -60,50 +60,31 @@ const GlobalDigitalAgency = () => {
               </div>
             </div>
             <div className="text-[24px] max-md:text-[16px] mb-[32px] pb-[32px] leading-[1.6] border-b border-solid border-b-[rgba(172,172,172,0.3)]">
-              Various companies from various countries request us not only
-              because of our cost advantage, but also because of the high level
-              of our engineers. This is because Taiwan itself is a country that
-              demands a high level of technical skills from its engineers. For
-              example, in the development and release of an application, it
-              cannot be released unless it clears Taiwan&apos;s security
-              standards in addition to the usual screening process. Also, in
-              Taiwan, engineers are connected like GitHub, and there is a
-              culture of cooperation when there is something that is unclear.
-              Our team includes some of the best engineers in the world,
-              including a GAFAM graduate and a professor from a university in a
-              certain country.
+            TECHNO LLCは、テクノロジーを駆使し、お客様のビジネスの成長と革新をサポートするグローバルなパートナーです。私たちは、調査、代行、デジタルマーケティングの3つの領域において、豊富な経験と高い専門性を持つプロフェッショナルチームを擁しています。お客様のニーズに合わせたカスタマイズされたソリューションを提供し、ビジネスの効率化と最適化を実現します。AIをはじめとして、常に最新のテクノロジーとトレンドを取り入れ、お客様の競争力強化に貢献します。TECHNO LLCは、お客様との長期的なパートナーシップを大切にし、共に成長することを目指しています。
             </div>
             <div className="grid grid-cols-3 max-md:grid-cols-1 gap-[32px]">
               <div>
                 <div className="font-anton text-[calc(21px_+_2vw)] uppercase">
-                  Scrum
+                調査力と分析力
                 </div>
                 <div className="text-[18px] max-md:text-[16px] leading-[1.6]">
-                  Almost all of our work is done in the Scrum approach to Agile
-                  development, which means that we work with our clients to
-                  develop a project that meets their needs, often with a strong
-                  emphasis on the needs of the client. In many cases, this is
-                  because of the strong needs of our clients.
+                ビジネスの意思決定を支える調査と分析私たちは、お客様のビジネスに必要な情報を収集し、専門的な視点から分析します。市場動向、競合他社、顧客ニーズなど、あらゆる角度からデータを収集し、意思決定に役立つ洞察を提供します。
                 </div>
               </div>
               <div>
                 <div className="font-anton text-[calc(21px_+_2vw)] uppercase">
-                  security
+                代行の効率性と効果
                 </div>
                 <div className="text-[18px] max-md:text-[16px] leading-[1.6]">
-                  Security is one of the most important aspects of system
-                  development. It provides privacy and various other peace of
-                  mind.
+                専門性と経験を活かした業務代行サービス私たちは、広告運用、営業活動、ECプラットフォームへの出品など、様々な業務を代行します。豊富な経験と専門知識を活かし、効率的かつ効果的にお客様の業務を遂行します。これにより、お客様は本業に集中し、ビジネスの成長に注力できます。
                 </div>
               </div>
               <div>
                 <div className="font-anton text-[calc(21px_+_2vw)] uppercase">
-                  Marketing
+                デジタル領域の革新性
                 </div>
                 <div className="text-[18px] max-md:text-[16px] leading-[1.6]">
-                  Our marketing is specialized in the web. We place importance
-                  on uniqueness and not being bound by common and conventional
-                  measures.
+                最新のデジタルマーケティング戦略で競争力を強化私たちは、デジタル領域における最新のトレンドと技術を常に取り入れ、お客様のビジネスに活用します。データ分析に基づいたターゲティング、クリエイティブな広告制作、最適なチャネル選択など、効果的なデジタルマーケティング戦略を立案・実行します。
                 </div>
               </div>
             </div>
@@ -120,7 +101,7 @@ const GlobalDigitalAgency = () => {
         </div>
         <div className="mb-[256px] max-md:mb-[82px] overflow-hidden">
           <div>
-            <div className="marquise-left font-anton text-[calc(24px_+_12vw)] whitespace-nowrap stroke leading-none">
+            <div className="marquise-left font-anton text-[calc(24px_+_12vw)] whitespace-nowrap stroke leading-none relative left-[-20%]">
               GLOBAL DIGITAL AGENCY GLOBAL DIGITAL AGENCY GLOBAL DIGITAL AGENCY
             </div>
           </div>

@@ -12,9 +12,9 @@ const List = () => {
         <div>
           <a
             className="font-anton text-[calc(16px_+_4vw)] text-white mb-[64px] p-[3%] flex items-end block bg-[#eee] rounded-[12px] aspect-[2.4/1] max-md:aspect-[1.7/1] relative z-20 overflow-hidden"
-            href="/web-design/"
+            href="/research/"
           >
-            Web Design
+            Research
             <div className="text-[21px] absolute top-[5%] right-[2%] bg-white w-[2em] block flex justify-center items-center rounded-full aspect-square">
               <img
                 src="/assets/images/arrow.svg"
@@ -26,9 +26,9 @@ const List = () => {
           </a>
           <a
             className="font-anton text-[calc(16px_+_4vw)] text-white mb-[64px] p-[3%] flex items-end block bg-[#eee] rounded-[12px] aspect-[2.4/1] max-md:aspect-[1.7/1] relative z-20 overflow-hidden"
-            href="/development/"
+            href="/agency/"
           >
-            Development
+            Agency
             <div className="text-[21px] absolute top-[5%] right-[2%] bg-white w-[2em] block flex justify-center items-center rounded-full aspect-square">
               <img
                 src="/assets/images/arrow.svg"
@@ -54,9 +54,9 @@ const List = () => {
           </a>
           <a
             className="font-anton text-[calc(16px_+_4vw)] text-white mb-[64px] p-[3%] flex items-end block bg-[#eee] rounded-[12px] aspect-[2.4/1] max-md:aspect-[1.7/1] relative z-20 overflow-hidden"
-            href="/hosting/"
+            href="/research-shield-ai/"
           >
-            Hosting
+            Research Shield+AI
             <div className="text-[21px] absolute top-[5%] right-[2%] bg-white w-[2em] block flex justify-center items-center rounded-full aspect-square">
               <img
                 src="/assets/images/arrow.svg"

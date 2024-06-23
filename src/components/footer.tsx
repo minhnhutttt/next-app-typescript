@@ -16,7 +16,7 @@ export default function Footer() {
                   translate="no"
                   href="/"
                 >
-                  The First Confidence
+                  TECHNO Inc
                 </a>
               </div>
               <div className="max-md:mb-[24px]">
@@ -28,13 +28,13 @@ export default function Footer() {
                       </a>
                     </li>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/web-design/">
-                        Web Design
+                      <a className="hover-underline" href="/research/">
+                      Research
                       </a>
                     </li>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/development/">
-                        Development
+                      <a className="hover-underline" href="/agency/">
+                      Agency
                       </a>
                     </li>
                     <li className="py-[8px]">
@@ -43,8 +43,8 @@ export default function Footer() {
                       </a>
                     </li>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/hosting/">
-                        Hosting
+                      <a className="hover-underline" href="/research-shield-ai/">
+                      Research Shield+AI
                       </a>
                     </li>
                   </ul>
@@ -52,11 +52,6 @@ export default function Footer() {
                     <li className="py-[8px]">
                       <a className="hover-underline" href="/about/">
                         About us
-                      </a>
-                    </li>
-                    <li className="py-[8px]">
-                      <a className="hover-underline" href="/tech-stack/">
-                        Our Tech Stack
                       </a>
                     </li>
                     <li className="py-[8px]">

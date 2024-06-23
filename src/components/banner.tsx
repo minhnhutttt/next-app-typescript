@@ -14,7 +14,7 @@ const Banner = ({ image, children }: BannerPropsType) => {
       <div className="mb-[256px] max-md:mb-[82px]">
         <div>
           <div className="mb-[-24px] max-md:mb-[-2.5em] relative overflow-hidden aspect-[2.4/1] max-md:aspect-[4/3]">
-            <div className="img-container absolute bottom-[-100px] left-0 h-[calc(100%_+_100px)] w-[calc(100%_+_100px)] bg-center bg-cover bg-[url('/assets/images/design.jpg')]" style={{ backgroundImage: image }}></div>
+            <div className="img-container absolute bottom-[-100px] left-0 h-[calc(100%_+_100px)] w-[calc(100%_+_100px)] bg-center bg-cover"style={{ backgroundImage: `url(${image})`}}></div>
           </div>
         </div>
       </div>

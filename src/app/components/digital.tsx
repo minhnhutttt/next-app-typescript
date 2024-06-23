@@ -14,8 +14,7 @@ const Digital = () => {
       <div>
         <div className="font-anton text-[calc(18px_+_8vw)] mb-[-.7em] relative z-10 container">
           <h2 className="uppercase leading-[1.25]">
-            <span className="stroke">Digital</span> agency born and raised in
-            Taiwan
+            <span className="stroke">FACILITATING</span> BUSINESS GROWTH THROUGH GLOBAL TALENT ACQUISITION.
           </h2>
         </div>
         <div className="relative overflow-hidden aspect-[2.4/1] max-md:aspect-[4/3]">
