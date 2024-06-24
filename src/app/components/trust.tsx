@@ -55,12 +55,14 @@ const Trust = () => {
                 狩俣自治会の地域に根差した活動、琉球大学島嶼地域科学研究所の学術的な裏付け、そしてメタロポリス社の技術力が融合することで、時代が変わっても色褪せない価値を提供し続けます。
                 </p>
             </div>
-            <div className="fade-up text-center font-serif md:text-[18px] text-[14px] font-semibold md:mt-24 mt-14 leading-[2]">
-            <span className="md:text-[25px] text-[17px]">愛するペットとの絆の復活。</span><br />
-                それを紡ぎなおすもう一つの人生に心をゆだねる<br />あなた様が不安にかられることのないように。<br /><br />『メタでペット供養』は<br />
-                日本初の<span className="md:text-[25px] text-[17px]">産官学連携</span>による英知を結集し、<br />
-                <span className="md:text-[25px] text-[17px]">信頼</span>のおけるサービスとして<br />
-                あなた様と前に進んでいきます。
+            <div data-scroll="out">
+              <div data-splitting="" className="text--fading text-center font-serif md:text-[18px] text-[14px] font-semibold md:mt-24 mt-14 leading-[2]">
+                <span className="md:text-[25px] text-[17px]">愛するペットとの絆の復活。</span><br />
+                  それを紡ぎなおすもう一つの人生に心をゆだねる<br />あなた様が不安にかられることのないように。<br /><br />『メタでペット供養』は<br />
+                  日本初の<span className="md:text-[25px] text-[17px]">産官学連携</span>による英知を結集し、<br />
+                  <span className="md:text-[25px] text-[17px]">信頼</span>のおけるサービスとして<br />
+                  あなた様と前に進んでいきます。
+              </div>
             </div>
           </div>
         </div>

@@ -66,9 +66,11 @@ const Plan = () => {
                 </Item>
               </div>
               <div className="flex justify-center">
-                <Button href="/" rect="w-[280px] h-[60px] bg-black  md:text-[16px] text-[14px] text-white font-bold relative">
-                エントリープランに申し込む
+                <div className="relative w-[280px] h-[60px] rounded-[60px]">
+                  <Button href="/" rect="w-[280px] h-[60px] bg-black md:text-[16px] text-[14px] text-white font-bold relative rounded-[60px]">
+                    エントリープランに申し込む
                   </Button>
+                  </div>
               </div>
             </div>
           </div>
@@ -132,8 +134,8 @@ const Plan = () => {
                 </Item>
               </div>
               <div className="flex justify-center">
-                <Button href="/" rect="w-[347px] h-[64px] bg-[#FF1B1B] rounded-[32px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative ">
-                メモリアルモニタープランに応募する
+                <Button href="/" rect="w-[347px] h-[64px] bg-[#FF1B1B] rounded-[32px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative group">
+                  <span className="group-hover:text-black">メモリアルモニタープランに応募する</span>
                   </Button>
               </div>
             </div>
@@ -188,7 +190,7 @@ const Plan = () => {
                 </Item>
               </div>
               <div className="flex justify-center">
-                  <Button href="/" rect="w-[280px] h-[60px] bg-black overflow-hidden border border-white flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold">
+                  <Button href="/" rect="w-[280px] h-[60px] bg-black overflow-hidden border border-white flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold  rounded-[60px]">
                   スタンダードプランに申し込む
                   </Button>
               </div>

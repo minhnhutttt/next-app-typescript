@@ -113,7 +113,7 @@ const Button: React.FC<ButtonProps> = ({ rect, children, href = "#" }) => {
   }, []);
 
   return (
-    <a href={href} ref={buttonRef} className={`group button flex items-center justify-center rounded-[60px] border-2 border-white [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)] relative text-white font-bold overflow-hidden button--stroke border-box ${rect}`} data-block="button">
+    <a href={href} ref={buttonRef} className={`button flex items-center justify-center [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)] relative text-white font-bold overflow-hidden button--stroke border-box ${rect}`} data-block="button">
       <span className="button__flair">
         </span>
         <span className="absolute inset-0 z-20 flex items-center justify-center gap-2.5 text-white">{children}</span>

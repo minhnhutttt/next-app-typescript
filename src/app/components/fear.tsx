@@ -56,11 +56,11 @@ const Fear = () => {
                     (40代女性)
                   </p>
                 </div>
-                <div className="fade-up relative border-2 border-[#15B325]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[700px] mx-auto pt-6 md:pb-9 pb-32 pl-4 md:pl-9 md:pr-24 pr-4">
-                  <p className="md:text-[18px] text-[15px]  flex-1">
+                <div className="fade-up relative border-2 border-[#15B325]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[700px] mx-auto pt-6 md:pb-9 pb-16 pl-4 md:pl-9 md:pr-24 pr-4">
+                  <p className="md:text-[18px] text-[15px] flex-1">
                     ペットを亡くしたあなた様は、今このような喪失感や悲しみ、そして大切な“おもいで”を失うことへの恐怖心を抱えているのではないでしょうか。
                     <br />
-                    まだペットがご健在の方も、いずれ訪れるその時を真剣に想像してみてください...
+                    <span className="inline-block max-md:pr-20">まだペットがご健在の方も、いずれ訪れるその時を真剣に想像してみてください...</span>
                   </p>
                   <figure className="absolute bottom-0 md:right-[-60px] right-[-20px]">
                     <img

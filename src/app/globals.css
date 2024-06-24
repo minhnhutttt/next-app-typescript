@@ -53,11 +53,20 @@ body {
 
 .text--fading .char {
   animation-timing-function: ease-out;
-  transition: all 1s calc(0.25s + var(--char-index) * 0.1s);
+  transition: all 0.2s calc(0.25s + var(--char-index) * 0.1s);
 }
+.text--fading.i01 .char {
+  transition: all 0.2s calc(6s + 0.25s + var(--char-index) * 0.1s);
+}
+
+.text--fading.i02 .char {
+  transition: all 0.2s calc(9.2s + 0.25s + var(--char-index) * 0.1s);
+}
+
 [data-scroll='out'] .text--fading .char {
   opacity: 0;
 }
+
 
 
 .swiper-slide {

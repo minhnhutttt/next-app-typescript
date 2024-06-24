@@ -21,7 +21,7 @@ const Memories = () => {
         </span>
       </div>
       <div className="px-5 md:pt-[190px] pt-[100px] pb-5">
-        <div className="flex justify-center flex-col">
+        <div className="flex justify-center items-center flex-col">
             <figure className="fade-up">
                 <img src="/assets/images/memories-text_01.png" alt="" />
             </figure>
@@ -54,37 +54,42 @@ const Memories = () => {
                 <img className="max-md:w-[400px] max-md:w-full" src="/assets/images/memories-title.png" alt="" />
             </h3>
             <div className="relative md:bottom-[-120px] bottom-[-60px] fade-up w-full md:max-w-[910px] max-w-[440px] mx-auto md:border-[6px] border-[3px] border-white md:rounded-[63px] rounded-[32px] bg-[linear-gradient(155deg,_#CFE449_-20.55%,_#53A63E_119.29%)] md:pb-[34px] pb-5">
-            <div className="flex px-4 gap-2 max-md:flex-col">
+            <div className="flex px-4 gap-2 max-md:ml-[-40px] max-md:justify-center">
             <figure className="md:-mt-12 -mt-8 relative">
               <img
-                className="max-md:w-[130px]"
+                className="max-md:w-[110px]"
                 src="/assets/images/circle.png"
                 alt=""
               />
               <img
-                className="max-md:w-[130px] absolute inset-0 animate-[fadeIn_1s_ease_infinite]"
+                className="max-md:w-[110px] absolute inset-0 animate-[fadeIn_1s_ease_infinite]"
                 src="/assets/images/circle-c.png"
                 alt=""
               />
             </figure>
-                <div className="flex-1 md:pt-9 pt-2">
-                <h3 className="">
-                    <img
-                    className="max-md:w-full max-md:max-w-[400px]"
-                    src="/assets/images/title.png"
-                    alt="メモリアルモニター受付中 !!"
-                    />
-                </h3>
-                <p className="md:text-[20px] text-[16px] font-black md:pt-5 pt-3 font-zen">
-                    今ならモニターとしての参加で、先行利用特典や初期費用・
-                    年会費の割引クーポンをご提供！供養の新たな選択肢に魅力を感じるあなたを全面的にバックアップいたします。
-                </p>
-                </div>
+            <div className="flex-1 md:pt-9 pt-2">
+              <h3 className="">
+                <img
+                  className="max-md:w-full max-md:max-w-[400px] max-md:hidden"
+                  src="/assets/images/title.png"
+                  alt="メモリアルモニター受付中 !!"
+                />
+                <img
+                  className="max-md:w-full max-md:max-w-[240px] md:hidden"
+                  src="/assets/images/title-sp.png"
+                  alt="メモリアルモニター受付中 !!"
+                />
+              </h3>
+              <p className="md:text-[20px] text-[16px] font-black md:pt-5 pt-3 font-zen">
+                今ならモニターとしての参加で、先行利用特典や初期費用・
+                年会費の割引クーポンをご提供！供養の新たな選択肢に魅力を感じるあなたを全面的にバックアップいたします。
+              </p>
             </div>
+          </div>
             <div className="flex justify-center md:gap-8 gap-5 md:mt-7 mt-5 max-md:flex-col items-center px-4">
                 <Button
                 href="#"
-                rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#0176FF] items-center justify-center"
+                rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#0176FF] items-center justify-center rounded-[60px] border-2 border-white"
                 >
                 <span>
                     <img
@@ -100,7 +105,7 @@ const Memories = () => {
                 </Button>
                 <Button
                 href="/price"
-                rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#BB66FF] items-center justify-center"
+                rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#BB66FF] items-center justify-center rounded-[60px] border-2 border-white"
                 >
                 <span>
                     <img

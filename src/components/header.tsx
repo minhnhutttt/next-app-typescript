@@ -63,7 +63,7 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          <Button href="#" rect="md:text-[18px] text-[16px] w-[230px] h-[66px] bg-[#EB6642]">
+          <Button href="#" rect="md:text-[18px] text-[16px] w-[230px] h-[66px] bg-[#EB6642] rounded-[60px] border-2 border-white">
             お問い合わせ
           </Button>
         </div>

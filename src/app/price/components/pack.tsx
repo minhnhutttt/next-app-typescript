@@ -5,7 +5,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Pack = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative md:mt-10 px-5">
+    <section ref={ref} className="relative md:mt-10 px-5 mt-[50px]">
       <div className="w-full max-w-[1257px] mx-auto">
         <div className="flex max-xl:flex-wrap justify-center gap-[35px]">
             <div className="fade-up w-[350px] md:w-[611px] bg-white rounded-[26px] border-[3px] border-[#9C37DF] overflow-hidden">

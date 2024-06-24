@@ -9,7 +9,7 @@ const Story = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="overflow-hidden md:pb-[150px] pb-24">
-      <div className="fade-up bg-[url('/assets/images/bg-title-03.png')] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[center_left_-50px] md:bg-left-bottom h-[100px] md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+      <div className="fade-up bg-[url('/assets/images/bg-title-07.png'),linear-gradient(96deg,_#47770A_28.64%,_#3A7BDD_77.21%)] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[center_left_-50px] md:bg-left-bottom h-[100px] md:h-[197px] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
         <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[clamp(14px,3.8vw,20px)] w-full md:max-w-[51.389vw] dt:max-w-[740px] max-md:text-center">
           「メタでペット供養」が紡いだ <br />
           ペットとの新たな物語

@@ -1,5 +1,6 @@
 "use client";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import Button from "@/components/button";
 import { Splide, SplideSlide, SplideTrack } from "react-splide-ts";
 import "@splidejs/splide/css";
 import "@splidejs/splide/css/core";
@@ -115,7 +116,7 @@ const Introduction = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="overflow-hidden md:pb-[135px] pb-20">
-      <div className="fade-up bg-[url('/assets/images/bg-title-03.png')] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[center_left_-45px] md:bg-left-bottom h-[100px] md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+      <div className="fade-up bg-[url('/assets/images/bg-title-08.png'),linear-gradient(96deg,_#47770A_28.64%,_#3A7BDD_77.21%)] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[center_left_-45px] md:bg-left-bottom h-[100px] md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
         <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[clamp(14px,4vw,22px)] w-full max-md:text-center md:max-w-[51.389vw] dt:max-w-[740px]">
           「メタでペット供養」とは？
         </p>
@@ -274,9 +275,9 @@ const Introduction = () => {
                     </div>
                 </div>
                 <div className="fade-up flex justify-center">
-                  <a href="/price" className="md:w-[700px] md:h-[118px] w-[320px] h-20 font-sns text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929] duration-150 hover:opacity-75">
+                  <Button href="#" rect="md:w-[700px] md:h-[118px] w-[320px] h-20 font-sans text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929]">
                   価格・キャンペーンを確認する
-                  </a>
+                  </Button>
                 </div>
             </div>
           </div>

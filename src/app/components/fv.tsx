@@ -82,7 +82,7 @@ const FV = () => {
           <div className="flex justify-center md:gap-8 gap-5 md:mt-7 mt-5 max-md:flex-col items-center px-4">
             <Button
               href="#"
-              rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#0176FF] items-center justify-center"
+              rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#0176FF] items-center justify-center rounded-[60px] border-2 border-white"
             >
               <span>
                 <img
@@ -98,7 +98,7 @@ const FV = () => {
             </Button>
             <Button
               href="/price"
-              rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#BB66FF] items-center justify-center"
+              rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#BB66FF] items-center justify-center rounded-[60px] border-2 border-white"
             >
               <span>
                 <img

@@ -6,6 +6,7 @@ import {
   Inter,
 } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/footer";
 
 const zen = Zen_Kaku_Gothic_Antique({
   weight: ["300", "400", "500", "700", "900"],
@@ -43,6 +44,7 @@ export default function RootLayout({
         className={`${sans.className} ${zen.variable} ${serif.variable} ${inter.variable}`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );

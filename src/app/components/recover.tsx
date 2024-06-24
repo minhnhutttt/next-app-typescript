@@ -66,22 +66,20 @@ const Recover = () => {
                   <div className="w-full h-full md:px-8 px-5 pt-12 max-md:pb-36 relative z-10">
                 <div className="flex justify-center mb-4">
                   <h5 className="font-serif lg:text-[23px] md:text-[20px] text-[17px] font-semibold text-[#8B1D1D] max-md:text-center">
-                  <span className="text--fading" data-splitting="">メタバース空間には、あなた様のペットだけの特別な場所があります。</span> <br />
-                  <span className="text--fading" data-splitting="">そこでは、愛するペットの姿があなた様を出迎えてくれます。</span>
+                  <span className="text--fading" data-splitting="">メタバース空間には、あなた様のペットだけの特別な場所があります。<br />そこでは、愛するペットの姿があなた様を出迎えてくれます。</span>
                   </h5>
                 </div>
                 <div className="w-full max-w-[530px] mx-auto border-y-2 border-white text-center font-serif md:text-[23px] text-[17px] font-semibold text-white py-6">
-                      <span className="text--fading" data-splitting="">愛くるしい仕草で話しかけてくる姿 <br />
+                      <span className="text--fading i01" data-splitting="">愛くるしい仕草で話しかけてくる姿 <br />
                       一緒に歩いた思い出の散歩道</span>
                 </div>
                 <h5 className="text-center font-serif md:text-[23px] text-[17px] font-semibold text-[#8B1D1D] mt-4">
-                  <span className="text--fading" data-splitting="">今は亡きペットとの気ない日常が、あざやかによみがえります。</span>
+                  <span className="text--fading i02" data-splitting="">今は亡きペットとの気ない日常が、あざやかによみがえります。</span>
                   </h5>
                   </div>
                   <span className="absolute bottom-0 right-0 max-md:w-[100vw] max-md:max-w-[400px]"><img src="/assets/images/frame-recover-pet.png" alt="" /></span>
               </div>
             </div>
-            
             <div className="w-full md:max-w-[1160px] max-w-[440px] mx-auto md:pt-12 pt-9 md:px-[50px]">
                 <div className="flex justify-end md:pr-6">
                   <div className="fade-up border-2 border-[#7895EA]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[760px] pt-6 md:pt-10 md:pb-10 pb-6 md:px-9 px-4 mb-3 max-md:flex-col items-center">
@@ -98,11 +96,11 @@ const Recover = () => {
                   </div>
                 </div>
                 <div className="flex justify-end">
-                  <div className="fade-up relative border-2 border-[#F1A819]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[700px] pt-6 md:pb-9 pb-32 pl-4 md:pl-8 md:pr-24 pr-4 text-[#903400]">
-                    <p className="md:text-[18px] text-[15px]  flex-1 tracking-tighter">
+                  <div className="fade-up relative border-2 border-[#F1A819]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[700px] pt-6 md:pb-9 pb-14 pl-4 md:pl-8 md:pr-24 pr-4 text-[#903400]">
+                    <p className="md:text-[18px] text-[15px] flex-1 tracking-tighter">
                     メタでペット供養は、時間や場所に縛られることなく、スマートフォンひとつあればいつでもペットに会いに行けます。話すことも、散歩することさえできます。
                     <br /><br />
-                    そこはまさに、悲しみを癒やし、絆を確かめ合える特別な空間なのです。
+                    <span className="inline-block max-md:pr-24">そこはまさに、悲しみを癒やし、絆を確かめ合える特別な空間なのです。</span>
                     </p>
                     <figure className="absolute bottom-0 md:right-[-60px] right-[-20px]">
                       <img
