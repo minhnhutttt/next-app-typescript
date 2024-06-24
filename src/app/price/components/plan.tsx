@@ -21,17 +21,19 @@ const Plan = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="overflow-hidden md:pt-[145px] pt-[100px] md:pb-[150px] pb-20">
-      <div className="fade-up md:bg-[url('/assets/images/bg-title-05.png'),linear-gradient(90deg,_#FF5A78_0%,_#7E1373_100%)] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
-        <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[5vw] w-full md:max-w-[51.389vw] dt:max-w-[740px] text-center">
+      <div className="bg-[url('/assets/images/bg-memories.png')] bg-[length:100%_auto] bg-top bg-no-repeat">
+      <div className="fade-up bg-[url('/assets/images/bg-title-05.png'),linear-gradient(90deg,_#FF5A78_0%,_#7E1373_100%)] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[position:center_left_-70px,center] md:bg-left-bottom h-[130px] md:h-[197px] relative flex items-center  max-md:justify-center justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+        <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[clamp(14px,3.8vw,20px)] w-full md:max-w-[51.389vw] dt:max-w-[740px] text-center">
         プランのご案内
         </p>
-        <span className="md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5">
+        <span className="md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5 max-md:hidden">
           <img
             className="dt:w-[361px] md:w-[25.069vw] w-[50vw] ml-auto"
             src="/assets/images/sign-title-01.png"
             alt=""
           />
         </span>
+      </div>
       </div>
       <div className="md:pt-[60px] pt-14 font-zen">
         <div className="w-full dt:max-w-[1440px] max-w-[700px] mx-auto flex items-start flex-wrap gap-10 px-6 justify-center">

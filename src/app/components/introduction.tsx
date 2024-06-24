@@ -171,7 +171,7 @@ const Introduction = () => {
             </div>
             <div className="fade-up px-5">
                 <div className="w-full max-w-[664px] mx-auto border-2 border-[#F1A819]/[50] bg-white/50 rounded-[36px] min-h-[131px] px-[50px] py-8 md:text-[17px] text-[#903400] ">
-                「メタでペット供養」は、ペットロスに悩む方々に寄り添い、ペットとの絆を永遠に大切にするお手伝いをします。。
+                「メタでペット供養」は、ペットロスに悩む方々に寄り添い、ペットとの絆を永遠に大切にするお手伝いをします。
                 </div>
             </div>
             <div className="md:pl-[125px] pl-6 mt-10 md:mt-[145px] mb-10 md:-mr-7 ">

@@ -5,11 +5,11 @@ const Trust = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="overflow-hidden pb-5">
-      <div className="fade-up md:bg-[url('/assets/images/bg-title-04.png')] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#092FB3]/[0.7] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
-        <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[5vw] w-full md:max-w-[51.389vw] dt:max-w-[740px]">
-          日本初「産官学」で支える信頼の絆
+      <div className="fade-up bg-[url('/assets/images/bg-title-04.png')] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[center_left_-60px] md:bg-left-bottom h-[100px] md:h-[197px] bg-[#092FB3]/[0.7] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+        <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[clamp(14px,4vw,22px)] w-full md:max-w-[51.389vw] dt:max-w-[740px] max-md:text-center">
+          日本初「産官学」<br className="md:hidden" />で支える信頼の絆
         </p>
-        <span className="md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5">
+        <span className="md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5 max-md:hidden">
           <img
             className="dt:w-[361px] md:w-[25.069vw] w-[50vw] ml-auto"
             src="/assets/images/sign-title-01.png"
