@@ -23,17 +23,17 @@ const Header = () => {
             <nav className={`max-lg:absolute max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:h-screen max-lg:bg-[#eee] max-lg:z-50 max-lg:overflow-y-scroll ${NavOpen ? ' max-lg:opacity-100 max-lg:visible' : 'max-lg:opacity-0 max-lg:invisible'}`}>
               <ul className="max-lg:font-anton text-[21px] max-lg:text-[calc(16px_+_6vw)] flex gap-[8px] max-lg:flex-col max-lg:px-[5%] max-lg:pt-[20%] max-lg:pb-[10%]">
                 <li className="p-[8px]">
-                  <a className="hover-underline" href="/about/" onClick={close}>
+                  <a className="hover-underline" href="/about" onClick={close}>
                     About us
                   </a>
                 </li>
                 <li className="p-[8px]">
-                  <a className="hover-underline" href="/solutions/" onClick={close}>
+                  <a className="hover-underline" href="/solutions" onClick={close}>
                     Solutions
                   </a>
                 </li>
                 <li className="p-[8px]">
-                  <a href="mailto:info@1stcon.co" className="hover-underline" onClick={close}>
+                  <a href="/" className="hover-underline" onClick={close}>
                     Contact
                   </a>
                 </li>

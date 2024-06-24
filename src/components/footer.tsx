@@ -23,46 +23,46 @@ export default function Footer() {
                 <nav className="grid grid-cols-[0.45fr_0.55fr] gap-[16px]">
                   <ul>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/solutions/">
+                      <a className="hover-underline" href="/solutions">
                         Solutions
                       </a>
                     </li>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/research/">
+                      <a className="hover-underline" href="/research">
                       Research
                       </a>
                     </li>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/agency/">
+                      <a className="hover-underline" href="/agency">
                       Agency
                       </a>
                     </li>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/digital-marketing/">
+                      <a className="hover-underline" href="/digital-marketing">
                         Digital marketing
                       </a>
                     </li>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/research-shield-ai/">
+                      <a className="hover-underline" href="/research-shield-ai">
                       Research Shield+AI
                       </a>
                     </li>
                   </ul>
                   <ul>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/about/">
+                      <a className="hover-underline" href="/about">
                         About us
                       </a>
                     </li>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/sitemap/">
+                      <a className="hover-underline" href="/sitemap">
                         Sitemap
                       </a>
                     </li>
                     <li className="py-[8px]">
                       <a
                         className="hover-underline"
-                        href="mailto:info@1stcon.co"
+                        href="/"
                       >
                         Contact
                       </a>
@@ -98,13 +98,13 @@ export default function Footer() {
                 <div className="flex gap-[16px]">
                   <a
                     className="hover-underline uppercase"
-                    href="/privacy-policy/"
+                    href="/privacy-policy"
                   >
                     Privacy Policy
                   </a>
                   <a
                     className="hover-underline uppercase"
-                    href="/cookie-policy/"
+                    href="/cookie-policy"
                   >
                     Cookie Policy
                   </a>
