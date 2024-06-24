@@ -49,7 +49,7 @@ const Metaverse = () => {
                   <a href="/" className="md:w-[700px] md:h-[118px] w-[320px] h-20 font-sns text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929]  duration-150 hover:opacity-75">
                   お線香特典付きで申し込む
                   </a>
-                </div>
+            </div>
         </div>
     </section>
   );
