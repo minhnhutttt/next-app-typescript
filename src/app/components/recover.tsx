@@ -5,16 +5,16 @@ const Recover = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="overflow-hidden md:pb-[64px] pb-12">
-      <div className="fade-up md:bg-[url('/assets/images/bg-title-02.png')] md:bg-cover bg-no-repeat bg-center md:h-[197px] bg-[#FF8C5A] relative flex items-center justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+      <div className="fade-up bg-[url('/assets/images/bg-title-02.png')] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[bottom_left_-95px] md:bg-[bottom_left_-200px] xl:bg-center h-[100px] md:h-[197px] bg-[#FF8C5A] relative flex items-center justify-center max-md:px-5 max-md:flex-col max-md:py-10">
         <div className="w-full max-w-[520px]">
-          <p className="font-serif text-white font-black md:text-[28px] text-[4.5vw]">
+          <p className="font-serif text-white font-black md:text-[28px] text-[clamp(14px,3.8vw,20px)] text-center">
             『 おもいで 』が風化する前に…
           </p>
-          <p className="pt-4 pl-20">
-            <img src="/assets/images/recover-title.png" alt="" />
+          <p className="pt-4 md:pl-20 max-md:flex max-md:justify-center">
+            <img className="max-md:w-[40vw] max-md:max-w-[240px]" src="/assets/images/recover-title.png" alt="" />
           </p>
         </div>
-        <span className="md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5">
+        <span className="max-md:hidden md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5">
           <img
             className="dt:w-[361px] md:w-[25.069vw] w-[50vw] ml-auto"
             src="/assets/images/sign-title-01.png"

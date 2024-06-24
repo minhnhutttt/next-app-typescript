@@ -115,11 +115,11 @@ const Introduction = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="overflow-hidden md:pb-[135px] pb-20">
-      <div className="fade-up md:bg-[url('/assets/images/bg-title-03.png')] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
-        <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[5vw] w-full md:max-w-[51.389vw] dt:max-w-[740px]">
+      <div className="fade-up bg-[url('/assets/images/bg-title-03.png')] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[center_left_-45px] md:bg-left-bottom h-[100px] md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+        <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[clamp(14px,4vw,22px)] w-full max-md:text-center md:max-w-[51.389vw] dt:max-w-[740px]">
           「メタでペット供養」とは？
         </p>
-        <span className="md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5">
+        <span className="max-md:hidden md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5">
           <img
             className="dt:w-[361px] md:w-[25.069vw] w-[50vw] ml-auto"
             src="/assets/images/sign-title-01.png"
@@ -232,17 +232,17 @@ const Introduction = () => {
                         </SplideSlide>
                       ))}
                     </SplideTrack>
-                    <div className="splide__arrows flex gap-4 justify-center mt-8">
-                      <button className=" splide__arrow--prev hover:opacity-50 duration-150">
+                    <div className="splide__arrows flex gap-4 justify-center md:mt-8">
+                      <button className="splide__arrow--prev hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!left-[-20px]">
                         <img
-                          className="max-md:w-12"
+                          className="max-md:w-9"
                           src="/assets/images/arrow-prev.png"
                           alt=""
                         />
                       </button>
-                      <button className=" splide__arrow--next hover:opacity-50 duration-150">
+                      <button className=" splide__arrow--next hover:opacity-50 duration-150 max-md:absolute max-md:top-[calc(50%-24px)] max-md:right-[-20px]">
                         <img
-                          className="max-md:w-12"
+                          className="max-md:w-9"
                           src="/assets/images/arrow-next.png"
                           alt=""
                         />

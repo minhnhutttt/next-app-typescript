@@ -47,15 +47,15 @@ const FV = () => {
       </div>
       <div className="md:-mt-20 -mt-10 px-5 max-dt:px-[8vw] md:mb-[70px] mb-12">
         <div className="fade-up w-full md:max-w-[910px] max-w-[440px] mx-auto md:border-[6px] border-[3px] border-white md:rounded-[63px] rounded-[32px] bg-[url('/assets/images/bg-01.png')] bg-cover md:pb-[34px] pb-5">
-          <div className="flex px-4 gap-2 max-md:flex-col">
+          <div className="flex px-4 gap-2 max-md:ml-[-40px] max-md:justify-center">
             <figure className="md:-mt-12 -mt-8 relative">
               <img
-                className="max-md:w-[130px]"
+                className="max-md:w-[110px]"
                 src="/assets/images/circle.png"
                 alt=""
               />
               <img
-                className="max-md:w-[130px] absolute inset-0 animate-[fadeIn_1s_ease_infinite]"
+                className="max-md:w-[110px] absolute inset-0 animate-[fadeIn_1s_ease_infinite]"
                 src="/assets/images/circle-c.png"
                 alt=""
               />
@@ -63,8 +63,13 @@ const FV = () => {
             <div className="flex-1 md:pt-9 pt-2">
               <h3 className="">
                 <img
-                  className="max-md:w-full max-md:max-w-[400px]"
+                  className="max-md:w-full max-md:max-w-[400px] max-md:hidden"
                   src="/assets/images/title.png"
+                  alt="メモリアルモニター受付中 !!"
+                />
+                <img
+                  className="max-md:w-full max-md:max-w-[240px] md:hidden"
+                  src="/assets/images/title-sp.png"
                   alt="メモリアルモニター受付中 !!"
                 />
               </h3>

@@ -5,12 +5,12 @@ const Fear = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="overflow-hidden md:pb-[88px] pb-14">
-      <div className="fade-up md:bg-[url('/assets/images/bg-title-01.png')] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#657FD8] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
-        <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[5vw] w-full md:max-w-[51.389vw] dt:max-w-[740px]">
-          愛するペットとの 『 おもいで 』が <br />
+      <div className="fade-up bg-[url('/assets/images/bg-title-01.png')] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[center_left_-60px] md:bg-left-bottom h-[100px] md:h-[197px] bg-[#657FD8] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+        <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[clamp(14px,3.8vw,20px)] w-full md:max-w-[51.389vw] dt:max-w-[740px] max-md:text-center">
+          愛するペットとの<br className="md:hidden" /> 『 おもいで 』が <br />
           少しずつ風化していく恐怖…
         </p>
-        <span className="md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5">
+        <span className="max-md:hidden md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5">
           <img
             className="dt:w-[361px] md:w-[25.069vw] w-[50vw] ml-auto"
             src="/assets/images/sign-title-01.png"
@@ -70,7 +70,7 @@ const Fear = () => {
                     />
                   </figure>
                 </div>
-                <div className="fade-up w-full max-w-[913px] mx-auto md:mt-[30px] mt-10">
+                <div className="fade-up w-full md:max-w-[913px] max-w-[335px] mx-auto md:mt-[30px] mt-10">
                   <div>
                     <h5 className="md:text-[28px] text-[18px] font-medium text-center font-serif">
                       悲しみに暮れるあなた様は、
@@ -111,12 +111,25 @@ const Fear = () => {
                       </figure>
                       <p className="md:text-[18px] text-[14px] font-medium flex-1 font-zen">
                         ペットとの
-                        <span className="inline-block relative">
+                        <span className="inline-block relative max-md:hidden">
                           <span
                             className="bgtext w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]"
                           ></span>
                           “おもいで”が、風化してしまう前に形に残しておきたい。
                         </span>
+                        <span className="inline-block relative md:hidden">
+                          <span
+                            className="bgtext w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]"
+                          ></span>
+                          “おもいで”が、風化してしまう前に形に残し
+                        </span>
+                        <span className="inline-block relative md:hidden">
+                          <span
+                            className="bgtext w-0 opacity-0 absolute inset-0 z-[-1] bg-[linear-gradient(to_top,_#FBC70F_40%,_transparent_40%)]"
+                          ></span>
+                          ておきたい。
+                        </span>
+                        
                         でも、どうすればいいのかわからない…
                       </p>
                     </div>

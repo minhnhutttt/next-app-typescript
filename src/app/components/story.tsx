@@ -9,12 +9,12 @@ const Story = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="overflow-hidden md:pb-[150px] pb-24">
-      <div className="fade-up md:bg-[url('/assets/images/bg-title-03.png')] md:bg-cover bg-no-repeat bg-left-bottom md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
-        <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[5vw] w-full md:max-w-[51.389vw] dt:max-w-[740px]">
+      <div className="fade-up bg-[url('/assets/images/bg-title-03.png')] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[center_left_-50px] md:bg-left-bottom h-[100px] md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
+        <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[clamp(14px,3.8vw,20px)] w-full md:max-w-[51.389vw] dt:max-w-[740px] max-md:text-center">
           「メタでペット供養」が紡いだ <br />
           ペットとの新たな物語
         </p>
-        <span className="md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5">
+        <span className="max-md:hidden md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5">
           <img
             className="dt:w-[361px] md:w-[25.069vw] w-[50vw] ml-auto"
             src="/assets/images/sign-title-01.png"
@@ -47,7 +47,7 @@ const Story = () => {
                 <div className=" w-full max-w-[1216px] border border-[#046DA8] bg-[#F0FBFB] relative md:pt-5 pt-3 pb-4 md:px-9 px-5 rounded-[30px]">
                   <span className="absolute md:right-5 right-4 md:top-6 top-3">
                     <img
-                      className="max-md:h-8"
+                      className="max-md:h-8 w-full h-full object-cover"
                       src="/assets/images/number-1.png"
                       alt=""
                     />
@@ -61,8 +61,8 @@ const Story = () => {
                     </p>
                   </div>
                   <div className="flex gap-8 max-lg:flex-col max-lg:items-center md:mt-6 mt-3">
-                    <figure>
-                      <img className="max-md:w-[180px]" src="/assets/images/img-story-01.png" alt="" />
+                    <figure className="md:w-[248px] md:h-[313px]">
+                      <img className="max-md:w-[220px] w-full h-full object-cover" src="/assets/images/img-story-01.png" alt="" />
                     </figure>
                     <div className="flex-1 flex md:gap-8 gap-4 max-md:flex-col">
                       <div className="w-full h-full max-w-[410px] border border-[#6F9D23] bg-[#F7FCEC] relative pb-6">
@@ -129,8 +129,8 @@ const Story = () => {
                     </p>
                   </div>
                   <div className="flex gap-8 max-lg:flex-col max-lg:items-center md:mt-6 mt-3">
-                    <figure>
-                      <img className="max-md:w-[180px]" src="/assets/images/img-story-02.png" alt="" />
+                  <figure className="md:w-[248px] md:h-[313px]">
+                      <img className="max-md:w-[220px] w-full h-full object-cover" src="/assets/images/img-story-02.png" alt="" />
                     </figure>
                     <div className="flex-1 flex md:gap-8 gap-4 max-md:flex-col">
                       <div className="w-full h-full max-w-[410px] border border-[#6F9D23] bg-[#F7FCEC] relative pb-6">
@@ -197,8 +197,8 @@ const Story = () => {
                     </p>
                   </div>
                   <div className="flex gap-8 max-lg:flex-col max-lg:items-center md:mt-6 mt-3">
-                    <figure>
-                      <img className="max-md:w-[180px]" src="/assets/images/img-story-03.png" alt="" />
+                    <figure className="md:w-[248px] md:h-[313px]">
+                      <img className="max-md:w-[220px] w-full h-full object-cover" src="/assets/images/img-story-03.png" alt="" />
                     </figure>
                     <div className="flex-1 flex md:gap-8 gap-4 max-md:flex-col">
                       <div className="w-full h-full max-w-[410px] border border-[#6F9D23] bg-[#F7FCEC] relative pb-6">
