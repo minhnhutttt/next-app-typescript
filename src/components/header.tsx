@@ -17,7 +17,7 @@ const Header = () => {
             translate="no"
             href="/"
           >
-            TECHNO Inc
+            TECHNO LLC
           </a>
           <div className="flex justify-center items-center">
             <nav className={`max-lg:absolute max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:h-screen max-lg:bg-[#eee] max-lg:z-50 max-lg:overflow-y-scroll ${NavOpen ? ' max-lg:opacity-100 max-lg:visible' : 'max-lg:opacity-0 max-lg:invisible'}`}>

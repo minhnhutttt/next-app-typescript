@@ -16,7 +16,7 @@ export default function Footer() {
                   translate="no"
                   href="/"
                 >
-                  TECHNO Inc
+                  TECHNO LLC
                 </a>
               </div>
               <div className="max-md:mb-[24px]">
