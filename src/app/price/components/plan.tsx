@@ -66,11 +66,9 @@ const Plan = () => {
                 </Item>
               </div>
               <div className="flex justify-center">
-                <div className="relative w-[280px] h-[60px] rounded-[60px]">
-                  <Button href="/" rect="w-[280px] h-[60px] bg-black md:text-[16px] text-[14px] text-white font-bold relative rounded-[60px]">
-                    エントリープランに申し込む
+                  <Button href="/" rect="w-[280px] h-[60px] bg-black overflow-hidden border hover:border-black border-white flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold rounded-[60px]">
+                  エントリープランに申し込む
                   </Button>
-                  </div>
               </div>
             </div>
           </div>
@@ -133,10 +131,12 @@ const Plan = () => {
                   AIによるペットアバターとの会話(性格などを学習させればペットと話せるようになりました)
                 </Item>
               </div>
-              <div className="flex justify-center">
-                <Button href="/" rect="w-[347px] h-[64px] bg-[#FF1B1B] rounded-[32px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative group">
-                  <span className="group-hover:text-black">メモリアルモニタープランに応募する</span>
-                </Button>
+              <div className="flex justify-center bg-white">
+                <div className="w-[345px] h-[62px] relative overflow-hidden rounded-[32px] [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)]">
+                  <Button href="/" rect="w-[347px] h-[64px] bg-[#FF1B1B] rounded-[32px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative group !absolute top-[-1px] left-[-1px]">
+                    <span className="group-hover:text-black">メモリアルモニタープランに応募する</span>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -190,7 +190,7 @@ const Plan = () => {
                 </Item>
               </div>
               <div className="flex justify-center">
-                  <Button href="/" rect="w-[280px] h-[60px] bg-black overflow-hidden border border-white flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold  rounded-[60px]">
+                  <Button href="/" rect="w-[280px] h-[60px] bg-black overflow-hidden border hover:border-black border-white flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold rounded-[60px]">
                   スタンダードプランに申し込む
                   </Button>
               </div>
