@@ -63,7 +63,7 @@ const dataSlider = [
         AI僧侶の読経は自然で荘厳。読経にあいつも喜んでいるような気がして、定期的に法要をするようになりました。読経を聞いていると、不思議と自分の悩みも和らぐので、毎月の日課となっています。
       </>
     ),
-    sign: "(30代女性)",
+    sign: "(60代男性)",
   },
 ];
 const data = [
@@ -241,7 +241,7 @@ const Introduction = () => {
                           alt=""
                         />
                       </button>
-                      <button className=" splide__arrow--next hover:opacity-50 duration-150 max-md:absolute max-md:top-[calc(50%-24px)] max-md:right-[-20px]">
+                      <button className="splide__arrow--next hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!right-[4px]">
                         <img
                           className="max-md:w-9"
                           src="/assets/images/arrow-next.png"

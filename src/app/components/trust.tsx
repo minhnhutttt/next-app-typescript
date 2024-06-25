@@ -35,7 +35,8 @@ const Trust = () => {
             </div>
             <div className="bg-white md:pt-[88px] pt-12 md:px-10 px-5 md:pb-[70px] pb-10 md:mt-[100px] mt-16">
                 <figure className="fade-up md:mb-[88px] mb-[50px]">
-                    <img src="/assets/images/sanzu.png" alt="" />
+                    <img className="max-md:hidden" src="/assets/images/sanzu.png" alt="" />
+                    <img className="md:hidden max-md:max-w-[400px] max-md:w-full max-md:mx-auto" src="/assets/images/sanzu-sp.png" alt="" />
                 </figure>
                 <div className="fade-up w-full max-w-[966px] mx-auto bg-[#FFF4CD] border border-[#CDA474] rounded-[35px] flex items-center md:py-[37px] md:px-[55px] py-6 px-8 max-md:flex-col md:gap-[65px] gap-7">
                     <figure>

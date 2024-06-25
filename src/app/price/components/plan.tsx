@@ -136,7 +136,7 @@ const Plan = () => {
               <div className="flex justify-center">
                 <Button href="/" rect="w-[347px] h-[64px] bg-[#FF1B1B] rounded-[32px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative group">
                   <span className="group-hover:text-black">メモリアルモニタープランに応募する</span>
-                  </Button>
+                </Button>
               </div>
             </div>
           </div>

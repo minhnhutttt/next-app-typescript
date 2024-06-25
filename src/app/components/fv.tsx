@@ -2,6 +2,7 @@
 
 import Button from "@/components/button";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { David_Libre } from "next/font/google";
 
 const FV = () => {
   const ref = useScrollAnimations();
@@ -171,10 +172,14 @@ const FV = () => {
             </div>
             <span className="block w-full h-1 bg-[linear-gradient(0deg,_#B69318_-21.4%,_#B69419_-19.25%,_#CEB342_2.33%,_#E0CB62_23.91%,_#EDDC79_43.33%,_#F5E787_62.74%,_#F8EB8C_80.01%,_#F2E483_97.27%,_#E5D16A_125.32%,_#CEB343_157.68%,_#B69318_190.05%)]"></span>
           </div>
-          <div className="fade-up w-full max-w-[870px] border border-black rounded-[22px] min-h-[110px] px-8 pt-4 pb-2 md:text-[18px] text-[14px] u-text-gradient animate-[hue_10s_infinite_linear]">
-            あなた様がいずれかにあてはまるなら、
-            <br />
-            ペット供養の新たな選択肢として『メタでペット供養』をご検討ください。
+          <div className="bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)] bg-cover animate-[hue_10s_infinite_linear] p-0.5 max-w-[420px] mx-auto rounded-[22px] overflow-hidden">
+          <div className="bg-white w-full min-h-[110px] rounded-[22px]">
+              <div className="fade-up w-full text-center mx-auto px-8 pt-4 pb-2 md:text-[18px] text-[14px] u-text-gradient animate-[hue_10s_infinite_linear]">
+                  あなた様がいずれかにあてはまるなら、
+                  <br />
+                  ペット供養の新たな選択肢として <br />『メタでペット供養』をご検討ください。
+              </div>
+            </div>
           </div>
         </div>
       </div>

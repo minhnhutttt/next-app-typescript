@@ -31,11 +31,14 @@ const Memories = () => {
             <figure className="fade-up">
                 <img src="/assets/images/memories-text_03.png" alt="" />
             </figure>
-            <figure className="fade-up">
-                <img src="/assets/images/memories-text_04.png" alt="" />
+            <figure className="fade-up relative">
+                <span className="absolute top-[20px] left-[70px] md:left-[160px]">
+                  <img className="max-md:w-full max-md:max-w-[440px]" src="/assets/images/bg-memories-text.png" alt="" />
+                </span>
+                <img className="relative" src="/assets/images/memories-text_04.png" alt="" />
             </figure>
         </div>
-        <div className="text-center font-serif md:text-[24px] text-[16px] font-bold text-[#333] mt-[120px] md:mt-[270px] leading-[1.7]">
+        <div className="relative text-center font-serif md:text-[24px] text-[16px] font-bold text-[#333] mt-[120px] md:mt-[270px] leading-[1.7]">
             ペットとの“おもいで”を <br />
             もっと生き生きと残せる方法があったら...<br />
             ペットロスの悲しみを和らげ、<br />

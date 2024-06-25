@@ -42,18 +42,18 @@ const Fear = () => {
                 </div>
               </div>
               <div className="w-full md:max-w-[914px] max-w-[440px] mx-auto md:pl-2 pt-6">
-                <div className="fade-up border-2 border-[#7895EA]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[760px] pt-6 md:pt-10 pb-5 md:px-9 px-4 mb-3 max-md:flex-col">
-                  <figure>
+                <div data-scroll="out" className="fade-up border-2 border-[#7895EA]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[760px] pt-6 md:pt-10 pb-5 md:px-9 px-4 mb-3 max-md:flex-col">
+                  <figure className="max-md:hidden">
                     <img
                       className="max-md:w-[100px]"
                       src="/assets/images/img-fear-02.png"
                       alt=""
                     />
                   </figure>
-                  <p className="md:text-[18px] text-[15px]  flex-1">
+                  <p data-splitting="" className="text--fading md:text-[18px] text-[15px] flex-1">
                     私も、3年前に最愛の愛犬を亡くしました。あれから一日たりとも、彼女のことを思わない日はありません。でも、月日が経つにつれ、少しずつ記憶があやふやになっていくんです。それが本当に怖いんです。
                     <br />
-                    (40代女性)
+                    <span className="block text-right">(40代女性)</span>
                   </p>
                 </div>
                 <div className="fade-up relative border-2 border-[#15B325]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[700px] mx-auto pt-6 md:pb-9 pb-16 pl-4 md:pl-9 md:pr-24 pr-4">

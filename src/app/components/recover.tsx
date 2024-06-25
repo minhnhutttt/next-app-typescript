@@ -82,15 +82,15 @@ const Recover = () => {
             </div>
             <div className="w-full md:max-w-[1160px] max-w-[440px] mx-auto md:pt-12 pt-9 md:px-[50px]">
                 <div className="flex justify-end md:pr-6">
-                  <div className="fade-up border-2 border-[#7895EA]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[760px] pt-6 md:pt-10 md:pb-10 pb-6 md:px-9 px-4 mb-3 max-md:flex-col items-center">
-                    <figure>
+                  <div data-scroll="out" className="fade-up border-2 border-[#7895EA]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[760px] pt-6 md:pt-10 md:pb-10 pb-6 md:px-9 px-4 mb-3 max-md:flex-col items-center">
+                    <figure className="max-md:hidden">
                       <img
                         className="max-md:w-[100px]"
                         src="/assets/images/img-recover-02.png"
                         alt=""
                       />
                     </figure>
-                    <p className="md:text-[18px] text-[15px]  flex-1">
+                    <p data-splitting="" className="text--fading md:text-[18px] text-[15px]  flex-1">
                     まるで生き返ったみたい…。こんな供養の仕方があったなんて、そして愛するこの子との再会ができるなんて信じられません。本当に良かった…
                     </p>
                   </div>
