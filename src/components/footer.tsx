@@ -37,9 +37,9 @@ const Footer = () => {
                         <img src="/assets/images/logo-footer.png" alt="" />
                     </a>
                     <div className="md:pt-9 pt-6 space-y-5">
-                        <a href="/" className="text-[16px] text-white block text-center md:text-right">利用規約</a>
-                        <a href="/" className="text-[16px] text-white block text-center md:text-right">特定商取引法に基づく表記</a>
-                        <a href="/" className="text-[16px] text-white block text-center md:text-right">プライバシーポリシー</a>
+                        <a href="/terms-of-service" className="text-[16px] text-white block text-center md:text-right">利用規約</a>
+                        <a href="/specified-commercial-transactions-act" className="text-[16px] text-white block text-center md:text-right">特定商取引法に基づく表記</a>
+                        <a href="/privacy-policy" className="text-[16px] text-white block text-center md:text-right">プライバシーポリシー</a>
                     </div>
                 </div>
                 <div className="md:flex-1 md:pl-6 flex flex-col justify-between max-md:mt-8">
