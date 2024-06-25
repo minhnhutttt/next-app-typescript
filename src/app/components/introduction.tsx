@@ -108,7 +108,7 @@ const data = [
         を祈る
       </>
     ),
-    content: "AI僧侶による定期的な読経やお線香をあげる体験でペットの冥福を祈る",
+    content: "AI僧侶による定期的な読経やお線香をあげる体験（開発中）でペットの冥福を祈る",
   },
 ];
 
@@ -201,7 +201,7 @@ const Introduction = () => {
                               <img src={item.image} alt="" />
                             </figure>
                             <div className="md:mt-[28px] mt-5">
-                              <h5 className="md:text-[18px] text-[16px] font-bold underline">
+                              <h5 className="md:text-[18px] text-[16px] font-bold underline  tracking-tight">
                                 <span>{item.title}</span>
                               </h5>
                               <p className="md:text-[16px] text-[13px] text-[#1B0220] mt-6 font-medium leading-[1.65] break-all min-h-[184px]">
