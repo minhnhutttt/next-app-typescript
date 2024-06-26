@@ -1,9 +1,30 @@
 "use client";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
+
+const SwiperButtonPrev = () => {
+  const swiper = useSwiper();
+  return (
+  <button
+    onClick={() => swiper.slidePrev()}
+    className="hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!left-[-20px] z-[99]"
+  >
+    <img className="max-md:w-9" src="/assets/images/arrow-prev.png" alt="" />
+  </button>);
+};
+const SwiperButtonNext = () => {
+  const swiper = useSwiper();
+  return (
+  <button
+    onClick={() => swiper.slideNext()}
+    className="hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!right-[-20px] z-[99]"
+  >
+    <img className="max-md:w-9" src="/assets/images/arrow-next.png" alt="" />
+  </button>);
+};
 
 const Story = () => {
   const ref = useScrollAnimations();
@@ -24,7 +45,7 @@ const Story = () => {
       </div>
       <div className="px-7 md:px-20">
         <div className="w-full md:max-w-[1216px] max-w-[480px] mx-auto md:mt-[100px] mt-10 relative flex mb-[80px] md:mb-[80px]">
-          <div className="relative w-full">
+          <div className="w-full">
             <Swiper
               effect={"cards"}
               grabCursor={true}
@@ -32,13 +53,13 @@ const Story = () => {
               cardsEffect={{
                 rotate: false,
                 slideShadows: false,
-                perSlideOffset: 16
+                perSlideOffset: 16,
               }}
               breakpoints={{
                 768: {
                   cardsEffect: {
-                    perSlideOffset: 10
-                  }
+                    perSlideOffset: 10,
+                  },
                 },
               }}
               className="mySwiper"
@@ -62,7 +83,11 @@ const Story = () => {
                   </div>
                   <div className="flex gap-8 max-lg:flex-col max-lg:items-center md:mt-6 mt-3">
                     <figure className="md:w-[248px] md:h-[313px]">
-                      <img className="max-md:w-[220px] w-full h-full object-cover" src="/assets/images/img-story-01.png" alt="" />
+                      <img
+                        className="max-md:w-[220px] w-full h-full object-cover"
+                        src="/assets/images/img-story-01.png"
+                        alt=""
+                      />
                     </figure>
                     <div className="flex-1 flex md:gap-8 gap-4 max-md:flex-col">
                       <div className="w-full h-full max-w-[410px] border border-[#6F9D23] bg-[#F7FCEC] relative pb-6">
@@ -122,15 +147,19 @@ const Story = () => {
                   </span>
                   <div className="w-full max-w-[700px]">
                     <h5 className="text-[#046DA8] font-bold text-[20px] md:text-[32px] md:leading-none pr-5">
-                    ペットとの絆が、メタバースで永遠に
+                      ペットとの絆が、メタバースで永遠に
                     </h5>
                     <p className="md:text-[17px] text-[14px] font-medium mt-4">
-                    『メタでペット供養』は大切なペットとの絆を、メタバースの中で新たな形で継続していくことを可能にします。
+                      『メタでペット供養』は大切なペットとの絆を、メタバースの中で新たな形で継続していくことを可能にします。
                     </p>
                   </div>
                   <div className="flex gap-8 max-lg:flex-col max-lg:items-center md:mt-6 mt-3">
-                  <figure className="md:w-[248px] md:h-[313px]">
-                      <img className="max-md:w-[220px] w-full h-full object-cover" src="/assets/images/img-story-02.png" alt="" />
+                    <figure className="md:w-[248px] md:h-[313px]">
+                      <img
+                        className="max-md:w-[220px] w-full h-full object-cover"
+                        src="/assets/images/img-story-02.png"
+                        alt=""
+                      />
                     </figure>
                     <div className="flex-1 flex md:gap-8 gap-4 max-md:flex-col">
                       <div className="w-full h-full max-w-[410px] border border-[#6F9D23] bg-[#F7FCEC] relative pb-6">
@@ -145,7 +174,7 @@ const Story = () => {
                         </div>
                         <div className="flex justify-center md:px-7 px-3 py-3 text-[#693109]">
                           <p className="md:text-[17px] text-[13px] leading-[1.7] font-medium">
-                          『メタでペット供養』に出会う前は、ペットとの思い出が薄れていくことが怖くて仕方なかった。でも今は、メタバース内のあの子と過ごす時間が、私とペットの絆を確かなものにしてくれています。メタバースと聞いた時、私には難しいかもと思ったけど、やってみるとスマホの操作だけで簡単なのもよかったです。
+                            『メタでペット供養』に出会う前は、ペットとの思い出が薄れていくことが怖くて仕方なかった。でも今は、メタバース内のあの子と過ごす時間が、私とペットの絆を確かなものにしてくれています。メタバースと聞いた時、私には難しいかもと思ったけど、やってみるとスマホの操作だけで簡単なのもよかったです。
                           </p>
                         </div>
                         <div className="text-right absolute bottom-0 inset-x-0">
@@ -166,7 +195,7 @@ const Story = () => {
                         </div>
                         <div className="flex justify-center md:px-7 px-3 py-3 text-[#693109]">
                           <p className="md:text-[17px] text-[13px] leading-[1.7] font-medium">
-                          亡くなったペットの思い出の品を、デジタルの形で残せるのは本当に嬉しい。メタバース上再現されたあの子に作ってあげたおもちゃを見るたび、私たちの絆は新たな形で続いていくんだと実感するんです。現実では、おもちゃとあの子を一緒に見れる機会はもうありませんから。
+                            亡くなったペットの思い出の品を、デジタルの形で残せるのは本当に嬉しい。メタバース上再現されたあの子に作ってあげたおもちゃを見るたび、私たちの絆は新たな形で続いていくんだと実感するんです。現実では、おもちゃとあの子を一緒に見れる機会はもうありませんから。
                           </p>
                         </div>
                         <div className="text-right absolute bottom-0 inset-x-0">
@@ -190,15 +219,19 @@ const Story = () => {
                   </span>
                   <div className="w-full max-w-[700px]">
                     <h5 className="text-[#046DA8] font-bold text-[20px] md:text-[32px] md:leading-none pr-5">
-                    ペットロスと向き合い、前を向く力をくれる
+                      ペットロスと向き合い、前を向く力をくれる
                     </h5>
                     <p className="md:text-[17px] text-[14px] font-medium mt-4">
-                    『メタでペット供養』はペットとの再会だけでなく、ペットロスの悲しみと向き合い、前を向く力も与えてくれます。
+                      『メタでペット供養』はペットとの再会だけでなく、ペットロスの悲しみと向き合い、前を向く力も与えてくれます。
                     </p>
                   </div>
                   <div className="flex gap-8 max-lg:flex-col max-lg:items-center md:mt-6 mt-3">
                     <figure className="md:w-[248px] md:h-[313px]">
-                      <img className="max-md:w-[220px] w-full h-full object-cover" src="/assets/images/img-story-03.png" alt="" />
+                      <img
+                        className="max-md:w-[220px] w-full h-full object-cover"
+                        src="/assets/images/img-story-03.png"
+                        alt=""
+                      />
                     </figure>
                     <div className="flex-1 flex md:gap-8 gap-4 max-md:flex-col">
                       <div className="w-full h-full max-w-[410px] border border-[#6F9D23] bg-[#F7FCEC] relative pb-6">
@@ -213,7 +246,7 @@ const Story = () => {
                         </div>
                         <div className="flex justify-center md:px-7 px-3 py-3 text-[#693109]">
                           <p className="md:text-[17px] text-[13px] leading-[1.7] font-medium">
-                          メタバースであの子に再会した時、あの子が亡くなったという現実に改めて向き合うことになりました。でも、AI僧侶の読経を聞いているうちに、少しずつ気持ちの整理がつき、前を向く勇気が湧いてきたんです。ああ、自分に足りなかったのは、
+                            メタバースであの子に再会した時、あの子が亡くなったという現実に改めて向き合うことになりました。でも、AI僧侶の読経を聞いているうちに、少しずつ気持ちの整理がつき、前を向く勇気が湧いてきたんです。ああ、自分に足りなかったのは、
                           </p>
                         </div>
                         <div className="text-right absolute bottom-0 inset-x-0">
@@ -234,7 +267,7 @@ const Story = () => {
                         </div>
                         <div className="flex justify-center md:px-7 px-3 py-3 text-[#693109]">
                           <p className="md:text-[17px] text-[13px] leading-[1.7] font-medium">
-                          ペットロスの悲しみと向き合うことは容易ではありませんでした。『メタでペット供養』は、そんな私に寄り添い、ペットの死を受け止める機会をくれました。あの子はもういないけれど、私の心の中で生き続けている。そう実感できたことで、前を向いて生きていこうと思えるようになったんです。
+                            ペットロスの悲しみと向き合うことは容易ではありませんでした。『メタでペット供養』は、そんな私に寄り添い、ペットの死を受け止める機会をくれました。あの子はもういないけれど、私の心の中で生き続けている。そう実感できたことで、前を向いて生きていこうと思えるようになったんです。
                           </p>
                         </div>
                         <div className="text-right absolute bottom-0 inset-x-0">
@@ -247,11 +280,17 @@ const Story = () => {
                   </div>
                 </div>
               </SwiperSlide>
+              <div className="flex gap-4 justify-center md:mt-8">
+                <SwiperButtonPrev />
+                <SwiperButtonNext />
+              </div>
             </Swiper>
           </div>
         </div>
-        <div className="w-full max-w-[1028px] mx-auto border-2 border-[#F1A819]/[50] bg-white/50 min-h-[131px] px-[50px] py-8 md:text-[17px] text-[#903400]">『メタでペット供養』が紡いだ、ペットとの新たな絆の物語。これらの体験談は、ほんの一例に過ぎません。
-        あなた様が実際に体験すると、また別の感じ方・捉え方をされるかもしれません。それもまた、あなた様とペットとの絆を紡ぐ、かけがえのない物語の一部です。</div>
+        <div className="w-full max-w-[1028px] mx-auto border-2 border-[#F1A819]/[50] bg-white/50 min-h-[131px] px-[50px] py-8 md:text-[17px] text-[#903400]">
+          『メタでペット供養』が紡いだ、ペットとの新たな絆の物語。これらの体験談は、ほんの一例に過ぎません。
+          あなた様が実際に体験すると、また別の感じ方・捉え方をされるかもしれません。それもまた、あなた様とペットとの絆を紡ぐ、かけがえのない物語の一部です。
+        </div>
       </div>
     </section>
   );

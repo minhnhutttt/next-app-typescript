@@ -4,12 +4,13 @@ import gsap from 'gsap';
 
 interface ButtonProps {
   rect?: string;
-  href: string;
-  children: ReactNode
+  href?: string;
+  children: ReactNode,
+  onclick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ rect, children, href = "#" }) => {
-  const buttonRef = useRef<HTMLAnchorElement | null>(null);
+const Button: React.FC<ButtonProps> = ({ rect, children, href = "#", onclick }) => {
+  const buttonRef = useRef<HTMLAnchorElement | any | null>(null);
 
   useEffect(() => {
     if (!buttonRef.current) return;
@@ -112,13 +113,22 @@ const Button: React.FC<ButtonProps> = ({ rect, children, href = "#" }) => {
     };
   }, []);
 
-  return (
-    <a href={href} ref={buttonRef} className={`button flex items-center justify-center [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)] relative text-white font-bold button--stroke border-box overflow-hidden -translate-x-[-3px] ${rect}`} data-block="button">
-      <span className="button__flair">
-        </span>
+  
+  if (onclick) {
+    return (
+      <button onClick={onclick} ref={buttonRef} className={`button flex items-center justify-center [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)] relative text-white font-bold button--stroke border-box overflow-hidden -translate-x-[-3px] ${rect}`}>
+        <span className="button__flair"></span>
         <span className="absolute inset-0 z-20 flex items-center justify-center gap-2.5 text-white">{children}</span>
-    </a>
-  );
+      </button>
+    );
+  } else {
+    return (
+      <a href={href} ref={buttonRef} className={`button flex items-center justify-center [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)] relative text-white font-bold button--stroke border-box overflow-hidden -translate-x-[-3px] ${rect}`} data-block="button">
+        <span className="button__flair"></span>
+        <span className="absolute inset-0 z-20 flex items-center justify-center gap-2.5 text-white">{children}</span>
+      </a>
+    );
+  }
 };
 
 export default Button;

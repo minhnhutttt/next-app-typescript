@@ -7,6 +7,8 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
+import { ModalProvider } from "@/context/ModalContext";
+import ModalForm from "@/components/modalForm";
 
 const zen = Zen_Kaku_Gothic_Antique({
   weight: ["300", "400", "500", "700", "900"],
@@ -39,13 +41,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${sans.className} ${zen.variable} ${serif.variable} ${inter.variable}`}
-      >
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ModalProvider>
+      <html lang="en">
+        <body
+          className={`${sans.className} ${zen.variable} ${serif.variable} ${inter.variable}`}
+        >
+          {children}
+          <Footer />
+          <ModalForm />
+        </body>
+      </html>
+      </ModalProvider>
   );
 }

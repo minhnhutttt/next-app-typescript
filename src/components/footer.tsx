@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useModal } from "@/context/ModalContext";
 import Button from "./button";
 
 interface NavLink {
@@ -11,11 +11,11 @@ interface NavLink {
 
 const links: NavLink[] = [
   {
-    link: "/",
+    link: "/#service",
     text: "メタでペット供養とは？",
   },
   {
-    link: "/",
+    link: "/#trust",
     text: "産官学連携",
   },
   {
@@ -28,6 +28,7 @@ const links: NavLink[] = [
   },
 ];
 const Footer = () => {
+    const { openModal } = useModal();
   return (
     <footer className="bg-[#4B4B4B] py-6 px-5">
         <div className="w-full max-w-[1440px] mx-auto px-5 border-b border-white pb-6">
@@ -57,7 +58,7 @@ const Footer = () => {
                             ))}
                         </ul>
                         <div className="md:flex-[0_0_230px]">
-                            <Button href="#" rect="md:text-[18px] text-[16px] w-[230px] h-[66px] bg-[#EB6642] border border-white rounded-[60px]">
+                            <Button onclick={openModal} rect="md:text-[18px] text-[16px] w-[230px] h-[66px] bg-[#EB6642] border border-white rounded-[60px]">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="none">
                                     <path d="M0 14.6665L6.18084 8.47217L0 2.27783L1.90283 0.375L10 8.47217L1.90283 16.5693L0 14.6665Z" fill="white"/>
                                 </svg>

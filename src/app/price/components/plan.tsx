@@ -2,6 +2,7 @@
 import Button from "@/components/button";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode } from "react";
+import { useModal } from "@/context/ModalContext";
 
 interface ItemPropsType {
   children: ReactNode;
@@ -19,6 +20,7 @@ const Item = ({ children }: ItemPropsType) => {
 };
 const Plan = () => {
   const ref = useScrollAnimations();
+  const { openModal } = useModal();
   return (
     <section ref={ref} className="overflow-hidden md:pt-[145px] pt-[100px] md:pb-[150px] pb-20">
       <div className="bg-[url('/assets/images/bg-memories.png')] bg-[length:100%_auto] bg-top bg-no-repeat">
@@ -66,7 +68,7 @@ const Plan = () => {
                 </Item>
               </div>
               <div className="flex justify-center">
-                  <Button href="/" rect="w-[280px] h-[60px] bg-black overflow-hidden border hover:border-black border-white flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold rounded-[60px]">
+                  <Button onclick={openModal} rect="w-[280px] h-[60px] bg-black overflow-hidden border hover:border-black border-white flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold rounded-[60px]">
                   エントリープランに申し込む
                   </Button>
               </div>
@@ -132,8 +134,8 @@ const Plan = () => {
                 </Item>
               </div>
               <div className="flex justify-center bg-white">
-                <div className="w-[345px] h-[62px] relative overflow-hidden rounded-[32px] [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)]">
-                  <Button href="/" rect="w-[347px] h-[64px] bg-[#FF1B1B] rounded-[32px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative group !absolute top-[-1px] left-[-1px]">
+                <div className="md:w-[345px] w-[258px] h-[62px] relative overflow-hidden rounded-[32px] [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)]">
+                  <Button onclick={openModal} rect="md:w-[347px] w-[260px] h-[64px] bg-[#FF1B1B] rounded-[32px] flex items-center justify-center md:text-[16px] text-[13px] text-white font-bold relative group !absolute top-[-1px] left-[-1px]">
                     <span className="group-hover:text-black">メモリアルモニタープランに応募する</span>
                   </Button>
                 </div>
@@ -190,7 +192,7 @@ const Plan = () => {
                 </Item>
               </div>
               <div className="flex justify-center">
-                  <Button href="/" rect="w-[280px] h-[60px] bg-black overflow-hidden border hover:border-black border-white flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold rounded-[60px]">
+                  <Button onclick={openModal} rect="w-[280px] h-[60px] bg-black overflow-hidden border hover:border-black border-white flex items-center justify-center md:text-[16px] text-[14px] text-white font-bold rounded-[60px]">
                   スタンダードプランに申し込む
                   </Button>
               </div>

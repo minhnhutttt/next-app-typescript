@@ -2,10 +2,11 @@
 
 import Button from "@/components/button";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { David_Libre } from "next/font/google";
+import { useModal } from "@/context/ModalContext";
 
 const FV = () => {
   const ref = useScrollAnimations();
+  const { openModal } = useModal();
   return (
     <section ref={ref} className="relative">
       <div className="absolute right-[2vw] dt:right-7 dt:top-[570px] md:top-[39.583vw] top-[55vw]">
@@ -74,7 +75,7 @@ const FV = () => {
                   alt="メモリアルモニター受付中 !!"
                 />
               </h3>
-              <p className="md:text-[20px] text-[16px] font-black md:pt-5 pt-3 font-zen">
+              <p className="md:text-[20px] text-[16px] font-black md:pt-5 pt-4 font-zen max-md:ml-[-75px]">
                 今ならモニターとしての参加で、先行利用特典や初期費用・
                 年会費の割引クーポンをご提供！供養の新たな選択肢に魅力を感じるあなたを全面的にバックアップいたします。
               </p>
@@ -82,7 +83,7 @@ const FV = () => {
           </div>
           <div className="flex justify-center md:gap-8 gap-5 md:mt-7 mt-5 max-md:flex-col items-center px-4">
             <Button
-              href="#"
+              onclick={openModal}
               rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#0176FF] items-center justify-center rounded-[60px] border-2 border-white"
             >
               <span>
@@ -173,8 +174,8 @@ const FV = () => {
             <span className="block w-full h-1 bg-[linear-gradient(0deg,_#B69318_-21.4%,_#B69419_-19.25%,_#CEB342_2.33%,_#E0CB62_23.91%,_#EDDC79_43.33%,_#F5E787_62.74%,_#F8EB8C_80.01%,_#F2E483_97.27%,_#E5D16A_125.32%,_#CEB343_157.68%,_#B69318_190.05%)]"></span>
           </div>
           <div className="bg-[linear-gradient(122deg,_#2C87E3_10.27%,_#7E22D7_100.14%)] bg-cover animate-[hue_10s_infinite_linear] p-0.5 max-w-[420px] mx-auto rounded-[22px] overflow-hidden">
-          <div className="bg-white w-full min-h-[110px] rounded-[22px]">
-              <div className="fade-up w-full text-center mx-auto px-8 pt-4 pb-2 md:text-[18px] text-[14px] u-text-gradient animate-[hue_10s_infinite_linear]">
+          <div className="bg-white w-full md:min-h-[110px] min-h-[100px] rounded-[22px]">
+              <div className="fade-up w-full text-center mx-auto px-2 md:px-8 pt-4 pb-2 md:text-[18px] text-[14px] u-text-gradient animate-[hue_10s_infinite_linear]">
                   あなた様がいずれかにあてはまるなら、
                   <br />
                   ペット供養の新たな選択肢として <br />『メタでペット供養』をご検討ください。

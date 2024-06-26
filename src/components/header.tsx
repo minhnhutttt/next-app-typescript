@@ -2,6 +2,8 @@
 
 import { useCallback, useState } from "react";
 import Button from "./button";
+import ModalForm from "./modalForm";
+import { useModal } from "@/context/ModalContext";
 interface NavLink {
   link: string;
   text: string;
@@ -10,11 +12,11 @@ interface NavLink {
 
 const links: NavLink[] = [
   {
-    link: "/",
+    link: "/#service",
     text: "メタでペット供養とは？",
   },
   {
-    link: "/",
+    link: "/#trust",
     text: "産官学連携",
   },
   {
@@ -32,6 +34,8 @@ const Header = () => {
   const close = useCallback(() => {
     setNavOpen(false);
   }, []);
+
+  const { openModal } = useModal();
   return (
     <header className="flex items-center absolute top-0 inset-x-0 px-3 z-40">
       <div className="w-full flex items-center justify-between">
@@ -63,7 +67,7 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          <Button href="#" rect="md:text-[18px] text-[16px] w-[230px] h-[66px] bg-[#EB6642] rounded-[60px] border-2 border-white">
+          <Button onclick={openModal} rect="md:text-[18px] text-[16px] w-[230px] h-[66px] bg-[#EB6642] rounded-[60px] border-2 border-white">
             お問い合わせ
           </Button>
         </div>

@@ -1,9 +1,11 @@
 "use client";
 import Button from "@/components/button";
+import { useModal } from "@/context/ModalContext";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const Memories = () => {
   const ref = useScrollAnimations();
+  const { openModal } = useModal();
   return (
     <section ref={ref} className="overflow-hidden md:pb-[150px] pb-24">
       <div className="bg-[url('/assets/images/bg-memories.png')] bg-[length:100%_auto] bg-top bg-no-repeat">
@@ -83,7 +85,7 @@ const Memories = () => {
                   alt="メモリアルモニター受付中 !!"
                 />
               </h3>
-              <p className="md:text-[20px] text-[16px] font-black md:pt-5 pt-3 font-zen">
+              <p className="md:text-[20px] text-[16px] font-black md:pt-5 pt-4 font-zen max-md:ml-[-75px]">
                 今ならモニターとしての参加で、先行利用特典や初期費用・
                 年会費の割引クーポンをご提供！供養の新たな選択肢に魅力を感じるあなたを全面的にバックアップいたします。
               </p>
@@ -91,7 +93,7 @@ const Memories = () => {
           </div>
             <div className="flex justify-center md:gap-8 gap-5 md:mt-7 mt-5 max-md:flex-col items-center px-4">
                 <Button
-                href="#"
+                onclick={openModal}
                 rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#0176FF] items-center justify-center rounded-[60px] border-2 border-white"
                 >
                 <span>
