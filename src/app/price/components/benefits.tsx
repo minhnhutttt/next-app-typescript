@@ -41,9 +41,9 @@ const Benefits = () => {
                             カメ　ヘビ　カメレオン　イグアナ　トカゲ　金魚　熱帯魚　etc
                             </p>
                         </div>
-                        <div className="md:pr-28 max-md:pb-12">
+                        <div className="md:pr-28 max-md:pb-12 max-md:mt-6">
                             <div className="max-w-[670px]">
-                                <p className="text-center md:text-[32px] text-[20px] font-bold text-[#52860B] leading-[1.4]">
+                                <p className="md:text-center md:text-[32px] text-[20px] font-bold text-[#52860B] leading-[1.4]">
                                     記載のないペットちゃんもご対応が可能です。
                                     お気軽にお問い合わせください！
                                 </p>

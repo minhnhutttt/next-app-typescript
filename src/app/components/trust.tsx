@@ -49,7 +49,7 @@ const Trust = () => {
                 </div>
             </div>
             <div className="fade-up w-full max-w-[916px] mx-auto bg-white/50 border-2 border-[#2C87E3] rounded-[36px] md:pt-[35px] md:mt-10 mt-7 pt-5 px-7 md:pb-12 pb-6 md:px-16">
-                <p className="md:text-[20px] text-[16px] font-semibold md:mb-5">安心と永続性を、未来へ</p>
+                <p className="md:text-[20px] text-[16px] font-semibold mb-5">安心と永続性を、未来へ</p>
                 <p className="md:text-[16px] text-[13px]">
                 産官学の連携によって生まれた『メタでペット供養』は、安心して利用できるサービスであると同時に、その先の未来も見据えて設計されています。
                 <br /><br />

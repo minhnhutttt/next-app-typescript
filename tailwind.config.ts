@@ -23,6 +23,7 @@ const config: Config = {
       inter: ["var(--font-inter)", "sans-serif"],
       mincho: ["Hiragino Mincho ProN", "sans-serif"],
       gothic: ["Hiragino Kaku Gothic Std", "sans-serif"],
+      serifHk: ["var(--font-serif-hk)", "sans-serif"],
     },
   },
   plugins: [],

@@ -12,9 +12,9 @@ const Pack = () => {
                 <div className="md:h-[72px] h-[44px] flex items-center justify-center bg-[url('/assets/images/price/pack-01.png')] bg-cover">
                     <img className="max-md:h-8" src="/assets/images/price/pack-title-01.png" alt="" />
                 </div>
-                <div className="pt-4 px-[18px] pb-5">
-                    <p className="text-center font-gothic md:text-[34px] text-[20px] font-extrabold">メタバース供養所 初期費用</p>
-                    <p className="text-center font-gothic md:text-[34px] text-[20px] font-extrabold">
+                <div className="pt-4 px-[18px] pb-5 font-serifHk">
+                    <p className="text-center md:text-[34px] text-[20px] font-extrabold">メタバース供養所 初期費用</p>
+                    <p className="text-center md:text-[34px] text-[20px] font-extrabold">
                     定価 <span className="md:text-[48px] text-[32px]">250,000</span> 円 <span className="md:text-[26px] text-[16px]">(税抜）</span>
                     </p>
                     <figure className="mt-3 flex justify-center items-center">
@@ -26,10 +26,10 @@ const Pack = () => {
             <div className="md:h-[72px] h-[44px] flex items-center justify-center bg-[url('/assets/images/price/pack-01.png')] bg-cover">
                     <img className="max-md:h-8" src="/assets/images/price/pack-title-02.png" alt="" />
                 </div>
-                <div className="pt-4 px-[18px] pb-5">
-                    <p className="text-center font-gothic md:text-[34px] text-[20px] font-extrabold">2Dアバター制作費用
+                <div className="pt-4 px-[18px] pb-5 font-serifHk">
+                    <p className="text-center md:text-[34px] text-[20px] font-extrabold">2Dアバター制作費用
                     </p>
-                    <p className="text-center font-gothic md:text-[34px] text-[20px] font-extrabold">
+                    <p className="text-center md:text-[34px] text-[20px] font-extrabold">
                     定価 <span className="md:text-[48px] text-[32px]">50,000</span> 円 <span className="md:text-[26px] text-[16px]">(税抜）</span>
                     </p>
                     <figure className="mt-3 flex justify-center items-center">

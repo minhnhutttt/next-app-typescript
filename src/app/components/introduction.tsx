@@ -118,7 +118,7 @@ const Introduction = () => {
     <section ref={ref} className="overflow-hidden md:pb-[135px] pb-20" id="service">
       <div className="fade-up bg-[url('/assets/images/bg-title-08.png'),linear-gradient(96deg,_#47770A_28.64%,_#3A7BDD_77.21%)] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[center_left_-45px] md:bg-left-bottom h-[100px] md:h-[197px] bg-[#2FB4AC] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
         <p className="font-serif text-white font-black md:text-[2.708vw] dt:text-[39px] text-[clamp(14px,4vw,22px)] w-full max-md:text-center md:max-w-[51.389vw] dt:max-w-[740px]">
-          「メタでペット供養」とは？
+        『メタでペット供養』とは？
         </p>
         <span className="max-md:hidden md:absolute bottom-4 right-4 dt:right-28 max-md:w-full max-md:mt-5">
           <img
@@ -131,7 +131,7 @@ const Introduction = () => {
       <div className="w-full max-w-[1440px] mx-auto mt-4 md:pr-7">
         <div className="bg-[url('/assets/images/bg-intro.png')] bg-cover bg-no-repeat">
           <div data-scroll="out" className="has-animation animation-ltr before:bg-[#4EA4E3] after:bg-[#51BDE4] w-full max-w-[1280px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-16">
-            「メタでペット供養」は、現実とメタバースでの供養が織りなす、新しい供養のカタチです
+          『メタでペット供養』は、現実とメタバースでの供養が織りなす新しい供養のカタチです
           </div>
           <div className="">
             <div className="fade-up flex items-start mt-6 max-md:px-4 pr-4 max-md:flex-col max-md:items-center max-md:justify-center">
@@ -186,10 +186,19 @@ const Introduction = () => {
                   hasTrack={false}
                   options={{
                     autoplay: false,
-                    type: "loop",
                     arrows: true,
                     pagination: false,
                     autoWidth: true,
+                    perPage: 3,
+                    perMove: 1,
+                    breakpoints: {
+                      1440: {
+                        perPage: 2,
+                      },
+                      1025: {
+                        perPage: 1,
+                      },
+                    },
                   }}
                 >
                   <div className="relative">
@@ -201,7 +210,7 @@ const Introduction = () => {
                               <img src={item.image} alt="" />
                             </figure>
                             <div className="md:mt-[28px] mt-5">
-                              <h5 className="md:text-[18px] text-[16px] font-bold underline  tracking-tight">
+                              <h5 className="md:text-[18px] text-[16px] font-bold underline tracking-tight max-md:h-12">
                                 <span>{item.title}</span>
                               </h5>
                               <p className="md:text-[16px] text-[13px] text-[#1B0220] mt-6 font-medium leading-[1.65] break-all min-h-[184px]">
@@ -234,14 +243,14 @@ const Introduction = () => {
                       ))}
                     </SplideTrack>
                     <div className="splide__arrows flex gap-4 justify-center md:mt-8">
-                      <button className="splide__arrow--prev hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!left-[-20px]">
+                      <button className="splide__arrow--prev hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!left-[-20px] disabled:opacity-0">
                         <img
                           className="max-md:w-9"
                           src="/assets/images/arrow-prev.png"
                           alt=""
                         />
                       </button>
-                      <button className="splide__arrow--next hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!right-[4px]">
+                      <button className="splide__arrow--next hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!right-[4px] disabled:opacity-0">
                         <img
                           className="max-md:w-9"
                           src="/assets/images/arrow-next.png"
@@ -255,10 +264,10 @@ const Introduction = () => {
             </div>
             <div className="px-5">
                 <div className="fade-up w-full max-w-[1050px] mx-auto md:mb-[66px] mb-9 bg-[#FDFDF5] border border-[#A5A5A5] pt-5 bg-[url('/assets/images/bg-girl.png')] bg-no-repeat bg-right-bottom max-md:bg-[length:70vw_auto] md:pb-9 pb-[30vw] px-5">
-                    <p className="text-center md:text-[23px] text-[18px] font-semibold font-mincho mb-1">私たちの信念</p>
+                    <p className="text-center md:text-[23px] text-[18px] font-semibold font-mincho mb-1 font-serifHk">私たちの信念</p>
                     <div className="flex justify-center items-center"><img src="/assets/images/our-belief.png" alt="" /></div>
                     <div className="w-full max-w-[886px] mx-auto md:my-12 my-8">
-                        <p className="font-semibold md:text-[19px] text-[15px] font-serif leading-[2]">
+                        <p className="font-semibold md:text-[19px] text-[15px] font-serif leading-[2] font-serifHk">
                          「メタでペット供養」は、ペットとの再会の喜びと死への向き合いのバランスを大切にしています。<br />
                         そのどちらもが、ペットとの真の絆を育む上で欠かせない要素だと考えているからです。<br />
                         <span className="text-[#F12929] font-black">ペットロスに悩む方々に寄り添い、家族同然のペットとの絆</span>を永遠に大切にする。
@@ -269,7 +278,7 @@ const Introduction = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="bg-white/80 border border-[#BBB]/[0.8] w-full max-w-[628px] font-mincho font-semibold md:text-[19px] text-[15px] leading-[2.2] mx-auto md:p-6 p-4 md:pb-10 pb-7">
+                    <div className="bg-white/80 border border-[#BBB]/[0.8] font-serifHk w-full max-w-[628px] font-mincho font-semibold md:text-[19px] text-[15px] leading-[2.2] mx-auto md:p-6 p-4 md:pb-10 pb-7 tracking-tight">
                         私たちは、あなた様とペットの“おもいで”に心を込めて向き合い、<br className="max-md:hidden" />
                         ペットとの絆を深める特別な体験を、全力でサポートいたします。
                     </div>

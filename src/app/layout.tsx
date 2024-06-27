@@ -3,6 +3,7 @@ import {
   Noto_Sans_JP,
   Zen_Kaku_Gothic_Antique,
   Noto_Serif_JP,
+  Noto_Serif_HK,
   Inter,
 } from "next/font/google";
 import "./globals.css";
@@ -25,6 +26,11 @@ const serif = Noto_Serif_JP({
   subsets: ["latin"],
   variable: "--font-serif",
 });
+const serifHK = Noto_Serif_HK({
+  weight: ["300", "400", "500", "700", "900"],
+  subsets: ["latin"],
+  variable: "--font-serif-hk",
+});
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -44,7 +50,7 @@ export default function RootLayout({
     <ModalProvider>
       <html lang="en">
         <body
-          className={`${sans.className} ${zen.variable} ${serif.variable} ${inter.variable}`}
+          className={`${sans.className} ${zen.variable} ${serif.variable} ${inter.variable} ${serifHK.variable}`}
         >
           {children}
           <Footer />
