@@ -9,7 +9,7 @@ const FV = () => {
   const { openModal } = useModal();
   return (
     <section ref={ref} className="relative">
-      <div className="absolute right-[2vw] dt:right-7 dt:top-[570px] md:top-[39.583vw] top-[55vw]">
+      <div className="absolute right-[2vw] dt:right-7 dt:top-[570px] md:top-[39.583vw] top-[90vw]">
         <img
           className="fade-up max-md:w-8 max-dt:w-[7.5vw]"
           src="/assets/images/meta-text.png"
@@ -17,7 +17,7 @@ const FV = () => {
         />
       </div>
       <div className="bg-[url(/assets/images/fv.jpg)] bg-cover pt-16 md:pt-6 pb-16 md:pb-[96px]">
-        <div className="w-full max-w-[1440px] mx-auto relative flex justify-center pb-14 md:pb-3">
+        <div className="w-full max-w-[1440px] mx-auto relative flex justify-center pb-[40vw] md:pb-3">
           <div className="fade-up dt:pl-11 pl-[3.056vw]">
             <div className="w-[96.319vw] dt:w-[1387px] aspect-[1387/631] relative">
               <div className="absolute dt:w-[375px] w-[26.042vw] left-0 bottom-0 animate-[floating_3s_0.2s_infinite_ease-in-out]">
@@ -40,10 +40,13 @@ const FV = () => {
               </div>
             </div>
           </div>
-          <div className="absolute w-[80vw] md:w-[59.861vw] dt:w-[862px] bottom-0 left-1/2 -translate-x-1/2">
+          <div className="absolute w-[96vw] md:w-[50.833vw] dt:w-[732px] bottom-0 md:left-[27.778vw] dt:left-[400px]">
             <h1 className="fade-up">
               <img src="/assets/images/fv-text.png" alt="" />
             </h1>
+          </div>
+          <div className="absolute w-[28vw] left-[2vw] md:w-[23.819vw] dt:w-[343px] bottom-[12vw] md:bottom-[4.167vw] dt:bottom-[60px] md:left-[19.444vw] dt:left-[280px]">
+            <img src="/assets/images/fv-sign.png" alt="" />
           </div>
         </div>
       </div>
@@ -117,15 +120,15 @@ const FV = () => {
           </div>
         </div>
         <div className="w-full max-w-[920px] mx-auto mt-10 md:mt-14">
-          <div className="fade-up flex items-center justify-center md:gap-8 gap-4">
+          <div className="fade-up max-md:flex-col flex items-center justify-center md:gap-8 gap-4">
             <figure>
               <img
-                className="max-md:w-[27vw]"
+                className="max-md:w-[42vw]"
                 src="/assets/images/img-main.png"
                 alt=""
               />
             </figure>
-            <p className="md:text-[22px] text-[clamp(12px,3vw,18px)] font-bold u-text-gradient leading-[2.2] font-zen animate-[hue_10s_infinite_linear]">
+            <p className="md:text-[22px] text-[clamp(12px,4vw,22px)] font-bold u-text-gradient leading-[2.2] font-zen animate-[hue_10s_infinite_linear]">
               まぶたを閉じれば <br />
               浮かんでくる愛らしい姿を、
               <br />『 メタでペット供養 』が永遠に。

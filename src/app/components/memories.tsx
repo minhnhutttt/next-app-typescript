@@ -24,29 +24,29 @@ const Memories = () => {
       </div>
       <div className="px-5 md:pt-[190px] pt-[100px] pb-5">
         <div className="flex justify-center items-center flex-col">
-            <figure className="fade-up">
+            <figure className="show">
                 <img src="/assets/images/memories-text_01.png" alt="" />
             </figure>
-            <figure className="fade-up">
+            <figure className="show">
                 <img src="/assets/images/memories-text_02.png" alt="" />
             </figure>
-            <figure className="fade-up">
+            <figure className="show">
                 <img src="/assets/images/memories-text_03.png" alt="" />
             </figure>
-            <figure className="fade-up relative">
+            <figure className="show relative">
                 <span className="absolute top-[20px] left-[70px] md:left-[160px]">
                   <img className="max-md:w-full max-md:max-w-[440px]" src="/assets/images/bg-memories-text.png" alt="" />
                 </span>
                 <img className="relative" src="/assets/images/memories-text_04.png" alt="" />
             </figure>
         </div>
-        <div className="relative text-center font-serif md:text-[24px] text-[16px] font-bold text-[#333] mt-[120px] md:mt-[270px] leading-[1.7]">
+        <div className="show relative text-center font-serif md:text-[24px] text-[16px] font-bold text-[#333] mt-[120px] md:mt-[270px] leading-[1.7]">
             ペットとの“おもいで”を <br />
             もっと生き生きと残せる方法があったら...<br />
             ペットロスの悲しみを和らげ、<br />
             癒しをもたらしてくれる方法があったら..
         </div>
-        <div className="text-center font-serif md:text-[52px] text-[28px] font-bold md:mt-[90px] mt-16 leading-[1.7] u-text-gradient animate-[hue_10s_infinite_linear]">
+        <div className="show text-center font-serif md:text-[52px] text-[28px] font-bold md:mt-[90px] mt-16 leading-[1.7] u-text-gradient animate-[hue_10s_infinite_linear]">
             そんな奇跡を <br />
             『メタでペット供養』 <br />
             が実現します。

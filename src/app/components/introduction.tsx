@@ -275,8 +275,8 @@ const Introduction = () => {
                     </div>
                 </div>
                 <div className="fade-up flex justify-center">
-                  <Button href="#" rect="md:w-[700px] md:h-[118px] w-[320px] h-20 font-sans text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929]">
-                  価格・キャンペーンを確認する
+                  <Button href="#" rect="group md:w-[700px] md:h-[118px] w-[320px] h-20 font-sans text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929]">
+                  <span className="group-hover:text-black">価格・キャンペーンを確認する</span>
                   </Button>
                 </div>
             </div>

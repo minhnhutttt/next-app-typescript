@@ -8,7 +8,7 @@ const Recover = () => {
       <div className="fade-up bg-[url('/assets/images/bg-title-02.png')] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[bottom_left_-95px] md:bg-[bottom_left_-200px] xl:bg-center h-[100px] md:h-[197px] bg-[#FF8C5A] relative flex items-center justify-center max-md:px-5 max-md:flex-col max-md:py-10">
         <div className="w-full max-w-[520px]">
           <p className="font-serif text-white font-black md:text-[28px] text-[clamp(14px,3.8vw,20px)] text-center">
-            『 おもいで 』が風化する前に…
+          おもいで風化、する前に。
           </p>
           <p className="pt-4 md:pl-20 max-md:flex max-md:justify-center">
             <img className="max-md:w-[40vw] max-md:max-w-[240px]" src="/assets/images/recover-title.png" alt="" />
@@ -31,7 +31,7 @@ const Recover = () => {
             </p>
           </div>
           <div className="px-5 pt-8 relative">
-          <span className="absolute right-0 md:top-[650px] top-[740px] xl:top-[130px]"><img className="fade-up max-xl:w-[72.431vw]" src="/assets/images/bg-recover-01.png" alt="" /></span>
+          <span className="absolute right-0 md:top-[600px] top-[685px] xl:top-[130px]"><img className="fade-up max-md:w-[120vw] max-xl:w-[72.431vw]" src="/assets/images/bg-recover-01.png" alt="" /></span>
             <div className="w-full md:max-w-[1200px] max-w-[540px] mx-auto relative">
               <div className="fade-up flex xl:items-start max-xl:flex-col max-xl:justify-center items-center">
                 <figure data-scroll="out" className="has-animation animation-ltr before:bg-[#FDBB74] after:bg-[#EF7C43] pt-6">
@@ -40,7 +40,7 @@ const Recover = () => {
                 <div className="flex-1 relative">
                   <div className="max-w-[636px] w-full md:-ml-5">
                     <div data-scroll="out" className="has-animation animation-ltr before:bg-[#FDBB74] after:bg-[#EF7C43] bg-white/70 md:px-8 px-4 pt-5 md:pb-10 pb-6">
-                      <h5 className="font-serif md:text-[28px] text-[20px] font-bold text-center text-[#5F5F5F] border-b border-black">「もしも、愛するペットに再会できたら… 」</h5>
+                      <h5 className="font-serif md:text-[28px] text-[20px] font-bold text-center text-[#5F5F5F] border-b border-black">もしも愛するペットに再会できたら...</h5>
                       <p className="text-center md:text-[18px] text-[14px] font-bold  pt-5">そんな奇跡を「メタでペット供養」が実現します。</p>
                       <p className="md:text-[17px] text-[14px] md:pt-10 pt-7 leading-snug">
                         現実の世界では叶えられなかった、ペットとの永遠の絆。<br />
@@ -82,7 +82,7 @@ const Recover = () => {
             </div>
             <div className="w-full md:max-w-[1160px] max-w-[440px] mx-auto md:pt-12 pt-9 md:px-[50px]">
                 <div className="flex justify-end md:pr-6">
-                  <div data-scroll="out" className="fade-up border-2 border-[#7895EA]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[760px] pt-6 md:pt-10 md:pb-10 pb-6 md:px-9 px-4 mb-3 max-md:flex-col items-center">
+                  <div data-scroll="out" className="border-2 border-[#7895EA]/[0.5] rounded-[36px] flex justify-center gap-6 bg-white/50 max-w-[760px] pt-6 md:pt-10 md:pb-10 pb-6 md:px-9 px-4 mb-3 max-md:flex-col items-center">
                     <figure className="max-md:hidden">
                       <img
                         className="max-md:w-[100px]"

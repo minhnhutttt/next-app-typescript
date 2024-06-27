@@ -27,31 +27,31 @@ const Metaverse = () => {
         </div>
         <div className="mt-9 bg-[url('/assets/images/price/bg-metaverse.png')] bg-[length:100%_auto] bg-top bg-no-repeat md:py-[100px] py-16 px-5">
             <div className="fade-up flex flex-col items-center md:mb-[150px] mb-20">
-                <figure className="fade-up">
+                <figure className="show">
                     <img src="/assets/images/price/metaverse-text_01.png" alt="" />
                 </figure>
-                <figure className="fade-up">
+                <figure className="show">
                     <img src="/assets/images/price/metaverse-text_02.png" alt="" />
                 </figure>
-                <figure className="fade-up">
+                <figure className="show">
                     <img src="/assets/images/price/metaverse-text_03.png" alt="" />
                 </figure>
-                <figure className="fade-up">
+                <figure className="show">
                     <img src="/assets/images/price/metaverse-text_04.png" alt="" />
                 </figure>
-                <figure className="fade-up">
+                <figure className="show">
                     <img src="/assets/images/price/metaverse-text_05.png" alt="" />
                 </figure>
-                <figure className="fade-up">
+                <figure className="show">
                     <img src="/assets/images/price/metaverse-text_06.png" alt="" />
                 </figure>
-                <figure className="fade-up">
+                <figure className="show">
                     <img src="/assets/images/price/metaverse-text_07.png" alt="" />
                 </figure>
             </div>
-            <div className="fade-up flex justify-center">
-                <Button onclick={openModal} rect="md:w-[700px] md:h-[118px] w-[320px] h-20 font-sns text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929]">
-                お線香特典付きで申し込む
+            <div className="show flex justify-center">
+                <Button onclick={openModal} rect="group md:w-[700px] md:h-[118px] w-[320px] h-20 font-sns text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929]">
+                <span className="group-hover:text-black">お線香特典付きで申し込む</span>
                 </Button>
             </div>
         </div>

@@ -31,12 +31,12 @@ const FV = () => {
                     <figure>
                         <img className="fade-up max-md:w-[75.429vw] max-dt:w-[57.222vw]" src="/assets/images/price/fv-banner-02.png" alt="" />
                     </figure>
-                    <div className="max-md:flex max-md:flex-col max-md:items-center max-md:justify-center max-md:w-[calc(100vw-20px)] max-md:pl-5 md:mr-[3.889vw] dt:mr-14 md:mt-[1vw] dt:mt-6 max-md:hidden">
+                    <div className="fade-up  max-md:flex-col max-md:items-center max-md:justify-center max-md:w-[calc(100vw-20px)] max-md:pl-5 md:mr-[3.889vw] dt:mr-14 md:mt-[1vw] dt:mt-6 max-md:hidden">
                         <div className=" md:w-[39.583vw] dt:w-[570px] ">
                         <p className="dt:text-[18px] md:text-[1.25vw] text-[14px] font-bold text-white text-center mb-1 max-md:text-black">＼多くの方にお問い合わせいただいています／
                         </p>
-                        <Button onclick={openModal} rect="flex items-center justify-center w-full md:h-[6.528vw] dt:h-[94px] h-[60px] bg-[#F12929] border-2 border-white rounded-[59px] text-white md:text-[1.736vw] dt:text-[25px] text-[14px] font-bold">
-                        メモリアルモニターの枠を今すぐおさえる
+                        <Button onclick={openModal} rect="group flex items-center justify-center w-full md:h-[6.528vw] dt:h-[94px] h-[60px] bg-[#F12929] border-2 border-white rounded-[59px] text-white md:text-[1.736vw] dt:text-[25px] text-[14px] font-bold">
+                        <span className="group-hover:text-black">メモリアルモニターの枠を今すぐおさえる</span>
                         </Button>  
                         <p className="w-full max-w-[320px] md:max-w-[25.417vw] dt:max-w-[366px] ml-auto md:text-[0.833vw] dt:text-[12px] text-[10px] md:mr-5 md:mt-6 mt-2">
                         モニターとして新たな供養体験へのフィードバックやSNS投稿にご協力いただく場合があります。ご協力いただけない方は、エントリープランまたはスタンダードプランをお選びください。
@@ -57,8 +57,8 @@ const FV = () => {
                 </div>
             <p className="dt:text-[18px] md:text-[1.25vw] text-[14px] font-bold text-white text-center mb-1 max-md:text-black">＼多くの方にお問い合わせいただいています／
             </p>
-            <Button onclick={openModal} rect="flex items-center justify-center w-full md:h-[6.528vw] dt:h-[94px] h-[60px] bg-[#F12929] border-2 border-white rounded-[59px] text-white md:text-[1.736vw] dt:text-[25px] text-[14px] font-bold">
-            メモリアルモニターの枠を今すぐおさえる
+            <Button onclick={openModal} rect="group flex items-center justify-center w-full md:h-[6.528vw] dt:h-[94px] h-[60px] bg-[#F12929] border-2 border-white rounded-[59px] text-white md:text-[1.736vw] dt:text-[25px] text-[14px] font-bold">
+            <span className="group-hover:text-black">メモリアルモニターの枠を今すぐおさえる</span>
             </Button>  
             <p className="w-full max-w-[320px] md:max-w-[25.417vw] dt:max-w-[366px] mx-auto md:text-[0.833vw] dt:text-[12px] text-[10px] md:mr-5 md:mt-6 mt-2">
             モニターとして新たな供養体験へのフィードバックやSNS投稿にご協力いただく場合があります。ご協力いただけない方は、エントリープランまたはスタンダードプランをお選びください。

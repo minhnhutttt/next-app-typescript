@@ -19,7 +19,7 @@ const Fear = () => {
         </span>
       </div>
       <div className="w-full max-w-[1440px] mx-auto mt-4 md:pr-7">
-        <div className="bg-[#DBF3FF] bg-[url('/assets/images/bg-fear.png')] bg-no-repeat bg-left-bottom pb-[50vw] max-md:bg-[length:100%_auto] md:pb-[537px]">
+        <div className="bg-[#DBF3FF] bg-[url('/assets/images/bg-fear.png')] bg-no-repeat bg-left-bottom pb-[50vw] max-md:bg-[length:170%_auto] md:pb-[537px]">
           <div data-scroll="out" className="has-animation animation-ltr before:bg-[#819EF3] after:bg-[#6680D8] w-full max-w-[1000px] py-8 border-b border-black/50 text-[#5F5F5F] md:text-[28px] text-[19px] font-semibold font-serif max-md:px-3 max-md:text-center md:pl-24">
             <p>ペットを亡くした悲しみは、
             <br className="lg:hidden" />
@@ -169,10 +169,10 @@ const Fear = () => {
           </figure>
           <div className="absolute inset-0 md:text-[22px] text-[16px] font-medium u-text-gradient animate-[hue_10s_infinite_linear] justify-center text-center md:pt-20 pt-10">
             <p>
-              もしも愛するペットとの絆を永遠に紡ぐ方法があったら…
+              もしも愛するペットとの絆を<br className="md:hidden" />永遠に紡ぐ方法があったら…
               <br />
               <span className="underline">
-                そんな悲痛な想いに寄り添う、新しい供養のカタチがあります
+                そんな悲痛な想いに寄り添う、<br className="md:hidden" />新しい供養のカタチがあります
               </span>
             </p>
           </div>
