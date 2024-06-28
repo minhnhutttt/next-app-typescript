@@ -2,11 +2,15 @@
 import FV from "./components/fv";
 import { useEffect } from "react";
 import ScrollOut from "scroll-out";
+import Philosophy from "./components/philosophy";
+import Slider from "./components/slider";
+import Allure from "./components/allure";
 
 export default function Home() {
   useEffect(()=>{
     ScrollOut({
-      once: true
+      once: true,
+      threshold: 0.5
     });
     setTimeout(() => {
       if ( window && document ) {
@@ -16,8 +20,11 @@ export default function Home() {
     });
 },[])
   return (
-    <main className="h-[10000px]">
+    <main>
       <FV />
+      <Philosophy />
+      <Slider />
+      <Allure />
     </main>
   );
 }

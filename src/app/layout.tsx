@@ -11,7 +11,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 const lato = Lato({
-  weight: ['400','700'],
+  weight: ['400','700', '900'],
   subsets: ["latin"],
   variable: "--font-lato",
 });
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${sans.className} ${inter.variable} ${lato.variable} ${anton.variable}`}
+        className={`${sans.className} ${inter.variable} ${lato.variable} ${anton.variable} [transition:background-color_200ms_linear] bg-[#99B4BF] [&.dark]:bg-black`}
       >
         <Header />
         {children}
