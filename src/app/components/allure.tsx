@@ -33,7 +33,7 @@ const data = [
 const Allure = () => {
     const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="px-5 md:pt-[180px] pt-20">
+    <section ref={ref} className="px-5 md:pt-[180px] pt-20 md:pb-[255px] pb-[80px]">
       <div className="w-full md:max-w-[1356px] max-w-[440px] mx-auto flex gap-12 lg:gap-[72px] max-md:flex-col">
         <div className="lg:w-1/2 md:max-w-[600px]">
             <div data-scroll="out" className="md:sticky top-0 max-md:flex max-md:justify-center">

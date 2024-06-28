@@ -5,6 +5,7 @@ import ScrollOut from "scroll-out";
 import Philosophy from "./components/philosophy";
 import Slider from "./components/slider";
 import Allure from "./components/allure";
+import Market from "./components/market";
 
 export default function Home() {
   useEffect(()=>{
@@ -25,6 +26,7 @@ export default function Home() {
       <Philosophy />
       <Slider />
       <Allure />
+      <Market />
     </main>
   );
 }

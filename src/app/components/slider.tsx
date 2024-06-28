@@ -6,29 +6,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import { FreeMode, Autoplay } from 'swiper/modules';
+import useDarkMode from '@/hooks/useDarkMode';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Slider = () => {
-  const triggerRef = useRef(null);
-
-  useEffect(() => {
-    const element = triggerRef.current;
-
-    ScrollTrigger.create({
-      trigger: element,
-      start: 'top center',
-      end: 'bottom center',
-      onEnter: () => document.body.classList.add('dark'),
-      onLeave: () => document.body.classList.remove('dark'),
-      onEnterBack: () => document.body.classList.add('dark'),
-      onLeaveBack: () => document.body.classList.remove('dark'),
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+    const triggerRef = useDarkMode();
 
   return (
     <section className="bg-[url('/assets/images/bg-slider.png')] bg-cover px-5">
