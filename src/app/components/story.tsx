@@ -4,23 +4,24 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
+import { useState } from "react";
 
-const SwiperButtonPrev = () => {
+const SwiperButtonPrev = ({disabled} : any) => {
   const swiper = useSwiper();
   return (
   <button
     onClick={() => swiper.slidePrev()}
-    className="hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!left-[-20px] z-[99]"
+    className={`hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!left-[-20px] z-[99] ${disabled ? 'opacity-0 point-event-none' : ''}`}
   >
     <img className="max-md:w-9" src="/assets/images/arrow-prev.png" alt="" />
   </button>);
 };
-const SwiperButtonNext = () => {
+const SwiperButtonNext = ({disabled} : any) => {
   const swiper = useSwiper();
   return (
   <button
     onClick={() => swiper.slideNext()}
-    className="hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!right-[-20px] z-[99]"
+    className={`hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!right-[-20px] z-[99]  ${disabled ? 'opacity-0 point-event-none' : ''}`}
   >
     <img className="max-md:w-9" src="/assets/images/arrow-next.png" alt="" />
   </button>);
@@ -28,6 +29,16 @@ const SwiperButtonNext = () => {
 
 const Story = () => {
   const ref = useScrollAnimations();
+  const [swiper, setSwiper] = useState<any>(null);
+const [isBeginning, setIsBeginning] = useState<boolean>(true);
+const [isEnd, setIsEnd] = useState<boolean>(false);
+
+  const handleSlideChange = () => {
+    if (swiper) {
+      setIsBeginning(swiper.isBeginning);
+      setIsEnd(swiper.isEnd);
+    }
+  };
   return (
     <section ref={ref} className="overflow-hidden md:pb-[150px] pb-24">
       <div className="fade-up bg-[url('/assets/images/bg-title-07.png'),linear-gradient(96deg,_#47770A_28.64%,_#3A7BDD_77.21%)] bg-[length:auto_100%] md:bg-cover bg-no-repeat bg-[center_left_-50px] md:bg-left-bottom h-[100px] md:h-[197px] relative flex items-center max-dt:pl-[361px] max-md:justify-center dt:justify-center max-md:px-5 max-md:flex-col max-md:py-10">
@@ -47,6 +58,7 @@ const Story = () => {
         <div className="w-full md:max-w-[1216px] max-w-[480px] mx-auto md:mt-[100px] mt-10 relative flex mb-[80px] md:mb-[80px]">
           <div className="w-full">
             <Swiper
+              onSwiper={setSwiper}
               effect={"cards"}
               grabCursor={true}
               modules={[EffectCards]}
@@ -62,6 +74,7 @@ const Story = () => {
                   },
                 },
               }}
+              onSlideChange={handleSlideChange}
               className="mySwiper"
             >
               <SwiperSlide>
@@ -281,8 +294,8 @@ const Story = () => {
                 </div>
               </SwiperSlide>
               <div className="flex gap-4 justify-center md:mt-8">
-                <SwiperButtonPrev />
-                <SwiperButtonNext />
+                <SwiperButtonPrev disabled={isBeginning} />
+                <SwiperButtonNext disabled={isEnd} />
               </div>
             </Swiper>
           </div>

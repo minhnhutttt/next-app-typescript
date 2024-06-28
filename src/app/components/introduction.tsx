@@ -243,14 +243,14 @@ const Introduction = () => {
                       ))}
                     </SplideTrack>
                     <div className="splide__arrows flex gap-4 justify-center md:mt-8">
-                      <button className="splide__arrow--prev hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!left-[-20px] disabled:opacity-0">
+                      <button className="splide__arrow--prev hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!left-[-20px] disabled:opacity-0 disabled:point-event-none">
                         <img
                           className="max-md:w-9"
                           src="/assets/images/arrow-prev.png"
                           alt=""
                         />
                       </button>
-                      <button className="splide__arrow--next hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!right-[4px] disabled:opacity-0">
+                      <button className="splide__arrow--next hover:opacity-50 duration-150 max-md:absolute max-md:!top-[calc(50%-20px)] max-md:!right-[4px] disabled:opacity-0 disabled:point-event-none">
                         <img
                           className="max-md:w-9"
                           src="/assets/images/arrow-next.png"
