@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,4 +8,35 @@ html {
 body {
   color: #000;
   font-family: "Noto Sans", sans-serif;
+}
+
+.button-splitting .char {
+  transition: transform 0.3s cubic-bezier(0.3, 0, 0.3, 1), opacity 0.3s linear;
+  transition-delay: calc( 20ms * var(--char-index) );
+}
+.button-splitting .char {
+  display: inline-block;
+}
+.button-splitting.clone .char {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+
+
+@keyframes floating-x {
+  0% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(5%);
+  }
+}
+@keyframes floating-y {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
 }
