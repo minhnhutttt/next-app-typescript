@@ -1,5 +1,4 @@
 "use client";
-import Title from "@/components/title";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const data = [
