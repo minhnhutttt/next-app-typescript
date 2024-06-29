@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import { usePathname } from "next/navigation";
 interface NavLink {
   link: string;
   text: string;
@@ -9,20 +10,21 @@ interface NavLink {
 
 const links: NavLink[] = [
   {
-    link: "/#about",
+    link: "/about",
     text: "About Us",
   },
   {
-    link: "/#potential",
+    link: "/potential",
     text: "RWA’s Potential",
   },
   {
-    link: "/#contact",
+    link: "/contact",
     text: "Contact Us",
   },
 ];
 const Header = () => {
   const [NavOpen, setNavOpen] = useState(false);
+  const pathname = usePathname()
 
   const close = useCallback(() => {
     setNavOpen(false);
@@ -36,7 +38,7 @@ const Header = () => {
           </a>
         </div>
         <div
-          className={`max-xl:fixed max-xl:left-0 max-xl:top-0 max-xl:h-screen max-xl:w-full max-xl:bg-black/90 z-10 max-xl:overflow-y-scroll flex items-center justify-center max-xl:flex-col ${
+          className={`max-xl:fixed max-xl:left-0 max-xl:top-0 max-xl:h-screen max-xl:w-full max-xl:bg-black/90 z-[99] max-xl:overflow-y-scroll flex items-center justify-center max-xl:flex-col ${
             NavOpen ? "" : "max-xl:invisible max-xl:opacity-0"
           }`}
         >
@@ -46,7 +48,9 @@ const Header = () => {
                 <span className="w-px h-10 bg-white block rotate-[30deg]"></span>
                 <a
                   href={link}
-                  className="text-[20px] md:text-[24px] xl:text-[18px] text-white font-medium duration-150 hover:opacity-75 px-12 h-[60px] flex items-center justify-center"
+                  className={`text-[20px] md:text-[24px] xl:text-[18px]  font-medium duration-150 hover:opacity-75 px-12 h-[60px] flex items-center justify-center ${
+                    pathname === link ? "text-[#D9B70D]" : "text-white"
+                  }`}
                   target={target}
                   onClick={close}
                 >

@@ -1,12 +1,12 @@
 "use client"
 import { ReactNode} from 'react';
 
-interface ButtonProps {
+interface TitleProps {
   rect?: string;
   children: ReactNode
 }
 
-const Title = ({ rect, children }: ButtonProps) => {
+const Title = ({ rect, children }: TitleProps) => {
 
   return (
     <div data-splitting className={`animation-title font-anton ${rect}`}>

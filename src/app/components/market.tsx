@@ -2,7 +2,6 @@
 import Button from "@/components/button";
 import Title from "@/components/title";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { useEffect, useRef } from "react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import useDarkMode from "@/hooks/useDarkMode";

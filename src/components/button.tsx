@@ -10,7 +10,7 @@ interface ButtonProps {
 const Button = ({ white = false, children, href = "#" }: ButtonProps) => {
 
   return (
-    <a href={href} className={`group md:w-[380px] w-[320px] h-16 md:h-20  flex items-center overflow-hidden ${white ? 'bg-white' : 'bg-black'}`}>
+    <a href={href} className={`group md:w-[380px] w-[320px] h-16 md:h-20 flex items-center overflow-hidden ${white ? 'bg-white' : 'bg-black'}`}>
       <div className="flex items-center h-full">
         <span className="px-2.5 scale-0 w-0 group-hover:w-[115px] group-hover:scale-100 duration-300 origin-left flex">
         <svg className="max-md:w-16" xmlns="http://www.w3.org/2000/svg" width="115" height="17" viewBox="0 0 115 17" fill="none">

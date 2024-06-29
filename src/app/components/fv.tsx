@@ -3,14 +3,13 @@ import Button from "@/components/button";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 const FV = () => {
   const ref = useScrollAnimations();
 
   useLayoutEffect(() => {
-
     let ctx = gsap.context(() => {
         const imagesLeft = gsap.utils.toArray('.scroll-img.scroll-left');
         imagesLeft.forEach((image: any) => {
@@ -60,7 +59,7 @@ const FV = () => {
                 RWA's Potentiality <br /> INSIGHT
                 </Button>
             </div>
-            <div className="max-md:hidden">
+            <div className="">
                 <div className="scroll-img scroll-left absolute max-dt:w-[6.042vw] top-[6.736vw] left-[22.222vw] dt:top-[97px] dt:left-[320px]">
                     <div className=" animate-[floating-x_3.2s_ease-in-out_infinite_alternate-reverse]">
                         <img className="animate-[floating-y_4.8s_ease-in-out_infinite_alternate-reverse]" src="/assets/images/fv-01.png" alt="" />

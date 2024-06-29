@@ -1,13 +1,9 @@
 "use client"
-import FV from "./components/fv";
+import Feature from "@/components/feature";
 import { useEffect } from "react";
 import ScrollOut from "scroll-out";
-import Philosophy from "./components/philosophy";
-import Slider from "./components/slider";
-import Allure from "./components/allure";
-import Market from "./components/market";
-import Strengths from "./components/strengths";
 import Contact from "@/components/contact";
+import Rwas from "./components/rwas";
 
 export default function Home() {
   useEffect(()=>{
@@ -24,12 +20,8 @@ export default function Home() {
 },[])
   return (
     <main>
-      <FV />
-      <Philosophy />
-      <Slider />
-      <Allure />
-      <Market />
-      <Strengths />
+      <Feature image="/assets/images/feature-potential-img.png">The Potential of Real World<br /> Assets (RWAs)</Feature>
+      <Rwas />
       <Contact />
     </main>
   );

@@ -44,7 +44,7 @@ const Allure = () => {
         </div>
         <div className="flex-1 lg:w-1/2 md:space-y-[60px] space-y-7 md:pt-6">
             {data.map((item, index)=>(
-                <div className="fade-up bg-[url('/assets/images/bg-allure.png')] bg-[length:100%_100%] lg:w-[600px] h-[240px] md:h-[356px] relative flex items-center justify-center p-6 px-10" key={index}>
+                <div className="fade-up bg-[url('/assets/images/bg-allure.png')] bg-[length:100%_100%] xl:w-[600px] h-[240px] md:h-[356px] relative flex items-center justify-center p-6 px-10" key={index}>
                     <p className="absolute top-0 left-0 font-anton md:text-[38px] text-[24px] leading-none">{item.id}</p>
                     <div className="w-full max-w-[400px] font-lato">
                         <p className="md:text-[24px] text-[17px] font-black">{item.title}</p>
