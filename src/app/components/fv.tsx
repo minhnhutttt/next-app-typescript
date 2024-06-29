@@ -47,7 +47,7 @@ const FV = () => {
       ref={ref}
       className="relative overflow-hidden bg-[url('/assets/images/bg-fv.png')] bg-cover md:px-5"
     >
-        <div className="containertriger w-full max-w-[1440px] mx-auto px-[20px] relative md:h-[830px]  py-[100px] md:pt-[200px]">
+        <div className="containertriger w-full max-w-[1440px] mx-auto px-[20px] relative md:h-[830px] py-[100px] md:pt-[200px]">
             <div className="relative z-10">
                 <h1 className="font-anton md:text-[82px] text-[32px] lg:w-[980px] text-white leading-none tracking-[0.015em]">
                 Preserving and connecting the value of <span className="text-[#D9B70D]">RWA</span> through the ages
@@ -90,27 +90,27 @@ const FV = () => {
                         <img className="animate-[floating-y_4.2s_ease-in-out_infinite_alternate-reverse]" src="/assets/images/fv-06.png" alt="" />
                     </div>
                 </div>
-                <div className="scroll-img scroll-right absolute max-dt:w-[6.944vw] top-[32.431vw] left-[68.125vw] dt:top-[467px] dt:left-[981px]">
+                <div className="scroll-img scroll-right absolute max-dt:w-[6.944vw] max-md:bottom-[32vw] md:top-[32.431vw] left-[68.125vw] dt:top-[467px] dt:left-[981px]">
                     <div className=" animate-[floating-x_5.2s_ease-in-out_infinite_alternate-reverse]">
                         <img className="animate-[floating-y_1.8s_ease-in-out_infinite_alternate-reverse]" src="/assets/images/fv-07.png" alt="" />
                     </div>
                 </div>
-                <div className="scroll-img scroll-right absolute max-dt:w-[6.944vw] top-[46.736vw] left-[35.069vw] dt:top-[673px] dt:left-[505px]">
+                <div className="scroll-img scroll-right absolute max-dt:w-[6.944vw] max-md:bottom-[5vw] md:top-[46.736vw] max-md:left-[15vw] md:left-[35.069vw] dt:top-[673px] dt:left-[505px]">
                     <div className=" animate-[floating-x_1.8s_ease-in-out_infinite_alternate-reverse]">
                         <img className="animate-[floating-y_4.8s_ease-in-out_infinite_alternate-reverse]" src="/assets/images/fv-08.png" alt="" />
                     </div>
                 </div>
-                <div className="scroll-img scroll-right absolute max-dt:w-[6.042vw] top-[40.833vw] left-[47.639vw] dt:top-[588px] dt:left-[686px]">
+                <div className="scroll-img scroll-right absolute max-dt:w-[6.042vw] max-md:bottom-[5vw] md:top-[40.833vw] left-[40vw] md:left-[47.639vw] dt:top-[588px] dt:left-[686px]">
                     <div className=" animate-[floating-x_3.6s_ease-in-out_infinite_alternate-reverse]">
                         <img className="animate-[floating-y_4.1s_ease-in-out_infinite_alternate-reverse]" src="/assets/images/fv-09.png" alt="" />
                     </div>
                 </div>
-                <div className="scroll-img scroll-right absolute max-dt:w-[8.889vw] top-[43.333vw] left-[59.306vw] dt:top-[624px] dt:left-[854px]">
+                <div className="scroll-img scroll-right absolute max-dt:w-[8.889vw] max-md:bottom-[10vw] md:top-[43.333vw] left-[59.306vw] dt:top-[624px] dt:left-[854px]">
                     <div className=" animate-[floating-x_5.9s_ease-in-out_infinite_alternate-reverse]">
                         <img className="animate-[floating-y_1.65s_ease-in-out_infinite_alternate-reverse]" src="/assets/images/fv-10.png" alt="" />
                     </div>
                 </div>
-                <div className="scroll-img scroll-right absolute max-dt:w-[6.042vw] top-[45.139vw] left-[83.333vw] dt:top-[650px] dt:left-[1200px]">
+                <div className="scroll-img scroll-right absolute max-dt:w-[6.042vw] max-md:bottom-[8vw] md:top-[45.139vw] left-[83.333vw] dt:top-[650px] dt:left-[1200px]">
                     <div className=" animate-[floating-x_6.2s_ease-in-out_infinite_alternate-reverse]">
                         <img className="animate-[floating-y_2.8s_ease-in-out_infinite_alternate-reverse]" src="/assets/images/fv-11.png" alt="" />
                     </div>

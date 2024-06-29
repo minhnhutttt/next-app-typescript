@@ -6,7 +6,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Company = () => {
     const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="px-5 md:pt-[70px] pt-12 md:pb-[135px] pb-14">
+    <section ref={ref} className="px-5 md:pt-[70px] pt-12 md:pb-[95px] pb-6">
         <div className="md:h-[734px] flex justify-center relative">
             <figure className="max-md:absolute max-md:inset-0 max-md:flex max-md:justify-center">
                 <img className="max-md:h-full object-contain" src="/assets/images/bg-company.png" alt="" />

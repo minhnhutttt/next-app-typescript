@@ -2,9 +2,9 @@
 import Feature from "@/components/feature";
 import { useEffect } from "react";
 import ScrollOut from "scroll-out";
-import Articles from "./articles";
 import Contact from "@/components/contact";
-import Company from "./company";
+import Articles from "./components/articles";
+import Company from "./components/company";
 
 export default function Home() {
   useEffect(()=>{

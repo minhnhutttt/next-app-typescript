@@ -18,7 +18,7 @@ const links: NavLink[] = [
     text: "RWA’s Potential",
   },
   {
-    link: "/contact",
+    link: "mailto:info@ultimate-holdings-group.com",
     text: "Contact Us",
   },
 ];

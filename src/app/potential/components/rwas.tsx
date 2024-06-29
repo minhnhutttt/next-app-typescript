@@ -43,13 +43,21 @@ const data = [
 const Rwas = () => {
     const ref = useScrollAnimations();
   return (
-    <section ref={ref}>
+    <section ref={ref} className="md:pt-[128px] pt-16 px-5 md:pb-[130px] pb-10">
         <div className="w-full md:max-w-[1260px] max-w-[440px] mx-auto">
-            {data.map((item, index)=>(
-                <div className="group odd:bg-white even:bg-black" key={index}>
-                    
-                </div>
-            ))}
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-[60px]">
+                {data.map((item, index)=>(
+                    <div className="fade-up group bg-white [&:nth-of-type(4n+2)]:bg-black [&:nth-of-type(4n+3)]:bg-black rounded-[10px] overflow-hidden odd:border-black even:border-[#D9B70D] border-t-[8px] md:border-t-[11px] md:min-h-[515px] p-5 md:p-[30px] relative" key={index}>
+                        <div className="absolute font-anton text-[100px] md:text-[198px] text-[#9B9B9B]/[0.3] leading-[0.85] bottom-0 right-0">{item.id}</div>
+                        <div className="font-anton md:text-[24px] text-[18px] border-b border-[#757575] group-[:nth-of-type(4n+2)]:text-white group-[:nth-of-type(4n+3)]:text-white md:pb-5 pb-3 tracking-wide">
+                            {item.title}
+                        </div>
+                        <p className="font-lato md:text-[16px] text-[13px] md:mt-8 mt-5 leading-[1.6] group-[:nth-of-type(4n+2)]:text-white group-[:nth-of-type(4n+3)]:text-white tracking-wide">
+                            {item.text}
+                        </p>
+                    </div>
+                ))}
+            </div>
         </div>
     </section>
   );

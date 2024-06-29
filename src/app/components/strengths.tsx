@@ -28,7 +28,7 @@ const data = [
 const Strengths = () => {
     const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="px-5 md:pt-[164px] pt-20 md:pb-[180px] pb-[60px]">
+    <section ref={ref} className="px-5 md:pt-[164px] pt-20 md:pb-[140px] pb-[30px]">
       <div className="w-full md:max-w-[1220px] max-w-[440px] mx-auto">
         <div data-scroll="out" className="flex justify-center">
             <Title rect="md:text-[128px] text-[50px] text-black dark:text-white">Our Strengths</Title>

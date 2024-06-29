@@ -18,7 +18,7 @@ const links: NavLink[] = [
     text: "Privacy policy",
   },
   {
-    link: "/contact",
+    link: "mailto:info@ultimate-holdings-group.com",
     text: "Contact Us",
   },
 ];
