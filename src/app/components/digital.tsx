@@ -21,7 +21,7 @@ const Digital = () => {
           <div className="img-container absolute bottom-[-100px] left-0 h-[calc(100%_+_100px)] w-[calc(100%_+_100px)] bg-center bg-cover bg-[url('/assets/images/about.jpg')]"></div>
         </div>
         <div className="overflow-hidden bg-[#eee] relative">
-          <a className="block" href="/about/">
+          <a className="block" href="/about">
             <div className="font-anton text-[calc(16px_+_3vw)] flex justify-end items-center py-[3%] pr-[16px]">
               <div className="flex items-center gap-[16px] uppercase leading-none">
                 More <span className="stroke">About</span> Us

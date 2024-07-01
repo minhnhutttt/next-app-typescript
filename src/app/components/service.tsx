@@ -20,7 +20,7 @@ const Service = () => {
           <div className="flex flex-col gap-[16px]">
             <a
               className="sticky top-[10rem] block w-full p-[8%] bg-[#c9b5ab]"
-              href="/research/"
+              href="/research"
             >
               <div
                 className="font-anton text-[calc(24px_+_2vw)] uppercase"
@@ -34,7 +34,7 @@ const Service = () => {
             </a>
             <a
               className="sticky top-[10rem] block w-full p-[8%] bg-[#ab9247]"
-              href="/agency/"
+              href="/agency"
             >
               <div
                 className="font-anton text-[calc(24px_+_2vw)] uppercase"
@@ -48,7 +48,7 @@ const Service = () => {
             </a>
             <a
               className="sticky top-[10rem] block w-full p-[8%] bg-[#97b0bd]"
-              href="/digital-marketing/"
+              href="/digital-marketing"
             >
               <div
                 className="font-anton text-[calc(24px_+_2vw)] uppercase"
@@ -62,7 +62,7 @@ const Service = () => {
             </a>
             <a
               className="sticky top-[10rem] block w-full p-[8%] bg-[#cbc7b7]"
-              href="/research-shield-ai/"
+              href="/research-shield-ai"
             >
               <div
                 className="font-anton text-[calc(24px_+_2vw)] uppercase"

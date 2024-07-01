@@ -14,7 +14,7 @@ const Partnership = () => {
           </div>
           <a
             className="max-w-[200px] flex items-center gap-[16px] uppercase leading-none"
-            href="/about/"
+            href="/about"
           >
             More About Us
             <div className="text-[21px] bg-white w-[2em] block flex justify-center items-center rounded-full aspect-square">

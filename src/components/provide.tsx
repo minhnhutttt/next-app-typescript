@@ -22,7 +22,7 @@ const Provide = ({ title, items }: ProvidePropsType) => {
               </h2>
               <a
                 className="max-w-[200px] flex items-center gap-[16px] uppercase leading-none"
-                href="/about/"
+                href="/about"
               >
                 About us
                 <div className="text-[21px] bg-black w-[2em] block flex justify-center items-center rounded-full aspect-square">

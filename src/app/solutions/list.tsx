@@ -12,7 +12,7 @@ const List = () => {
         <div>
           <a
             className="font-anton text-[calc(16px_+_4vw)] text-white mb-[64px] p-[3%] flex items-end block bg-[#eee] rounded-[12px] aspect-[2.4/1] max-md:aspect-[1.7/1] relative z-20 overflow-hidden"
-            href="/research/"
+            href="/research"
           >
             Research
             <div className="text-[21px] absolute top-[5%] right-[2%] bg-white w-[2em] block flex justify-center items-center rounded-full aspect-square">
@@ -26,7 +26,7 @@ const List = () => {
           </a>
           <a
             className="font-anton text-[calc(16px_+_4vw)] text-white mb-[64px] p-[3%] flex items-end block bg-[#eee] rounded-[12px] aspect-[2.4/1] max-md:aspect-[1.7/1] relative z-20 overflow-hidden"
-            href="/agency/"
+            href="/agency"
           >
             Agency
             <div className="text-[21px] absolute top-[5%] right-[2%] bg-white w-[2em] block flex justify-center items-center rounded-full aspect-square">
@@ -40,7 +40,7 @@ const List = () => {
           </a>
           <a
             className="font-anton text-[calc(16px_+_4vw)] text-white mb-[64px] p-[3%] flex items-end block bg-[#eee] rounded-[12px] aspect-[2.4/1] max-md:aspect-[1.7/1] relative z-20 overflow-hidden"
-            href="/digital-marketing/"
+            href="/digital-marketing"
           >
             DIGITAL MARKETING
             <div className="text-[21px] absolute top-[5%] right-[2%] bg-white w-[2em] block flex justify-center items-center rounded-full aspect-square">
@@ -54,7 +54,7 @@ const List = () => {
           </a>
           <a
             className="font-anton text-[calc(16px_+_4vw)] text-white mb-[64px] p-[3%] flex items-end block bg-[#eee] rounded-[12px] aspect-[2.4/1] max-md:aspect-[1.7/1] relative z-20 overflow-hidden"
-            href="/research-shield-ai/"
+            href="/research-shield-ai"
           >
             Research Shield+AI
             <div className="text-[21px] absolute top-[5%] right-[2%] bg-white w-[2em] block flex justify-center items-center rounded-full aspect-square">

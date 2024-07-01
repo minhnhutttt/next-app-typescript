@@ -76,11 +76,10 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col gap-[16px]">
                   <div>
-                    <a href="mailto:info@1stcon.co">info@1stcon.co</a>
+                    <a href="mailto:info@techno-agency.com">info@techno-agency.com</a>
                   </div>
                   <div>
-                    Rm. 5, 13F., No. 288, Nanjing W. Rd., Datong Dist., Taipei
-                    City&nbsp;103005&nbsp;, Taiwan (R.O.C.)
+                  〒150-0002 東京都渋谷区渋谷2-19-15宮益坂ビルディング609
                     <br />
                     <a
                       href="https://1stcon.co"
@@ -94,19 +93,13 @@ export default function Footer() {
             </div>
             <div className="border-t border-solid border-t-[rgba(172,172,172,0.3)]">
               <div className="text-[14px] flex justify-between py-[32px] max-md:flex-col-reverse">
-                <div translate="no">© 2023 The First Confidence Co., Ltd.</div>
+                <div translate="no">© 2024 TECHNO LLC</div>
                 <div className="flex gap-[16px]">
                   <a
                     className="hover-underline uppercase"
                     href="/privacy-policy"
                   >
                     Privacy Policy
-                  </a>
-                  <a
-                    className="hover-underline uppercase"
-                    href="/cookie-policy"
-                  >
-                    Cookie Policy
                   </a>
                 </div>
               </div>

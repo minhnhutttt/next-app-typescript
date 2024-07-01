@@ -13,7 +13,7 @@ const Info = () => {
               <div className="border-b border-solid border-b-[rgba(172,172,172,0.3)]">
                 <div className="py-[4%]">
                   <div className="text-[24px] max-md:text-[18px]">
-                    The First Confidence Co., Ltd.
+                  TECHNO合同会社
                     <br />
                   </div>
                 </div>
@@ -21,15 +21,14 @@ const Info = () => {
               <div className="border-b border-solid border-b-[rgba(172,172,172,0.3)]">
                 <div className="py-[4%]">
                   <div className="text-[24px] max-md:text-[18px]">
-                    Rm. 5, 13F., No. 288, Nanjing W. Rd., Datong Dist., Taipei
-                    City&nbsp;103005&nbsp;, Taiwan (R.O.C.)
+                  〒150-0002 東京都渋谷区渋谷2-19-15宮益坂ビルディング609
                   </div>
                 </div>
               </div>
               <div className="border-b border-solid border-b-[rgba(172,172,172,0.3)]">
                 <div className="py-[4%]">
                   <div className="text-[24px] max-md:text-[18px]">
-                    info@1stcon.co
+                  info@techno-agency.com
                   </div>
                 </div>
               </div>

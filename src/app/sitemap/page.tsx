@@ -37,10 +37,6 @@ const DataSitemap = [
         href: '/privacy-policy',
         text: 'Privacy Policy'
     },
-    {
-        href: '/cookie-policy',
-        text: 'Cookie Policy'
-    },
 ]
 
 export default function Sitemap() {

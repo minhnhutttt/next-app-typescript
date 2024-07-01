@@ -9,9 +9,9 @@ const Contact = ({ title, children }: ContactPropsType) => {
     <section className="mb-[256px] max-md:mb-[82px]">
       <div className="grid grid-cols-[.3fr_.7fr] max-md:grid-cols-1 gap-[3em] max-md:gap-[16px] container">
         <div>
-          <span className="text-white text-bold bg-black px-[16px] py-[8px] rounded-full">
+          <a href="mailto:info@techno-agency.com" className="text-white text-bold bg-black px-[16px] py-[8px] rounded-full hover:opacity-75 duration-150">
             Contact
-          </span>
+          </a>
         </div>
         <div>
           <div className="font-anton text-[calc(18px_+_2vw)] font-anton text-[calc(21px_+_4vw)] mb-[24px]">
