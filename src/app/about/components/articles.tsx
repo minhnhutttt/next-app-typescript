@@ -6,7 +6,7 @@ const data = [
     {
         image: '/assets/images/img-about-01.png',
         title: 'Our Journey',
-        text: (<>At Ultimate Holdings Group Inc(UHGI), we are driven by a passion for preserving and celebrating the world's most precious and rare assets. Our company was founded with the vision of unlocking the untapped potential of real world assets (RWAs) as a unique and valuable investment opportunity.</>)
+        text: (<>At Ultimate Holdings Group Inc(UHGI), we are driven by a passion for preserving and celebrating the world&apos;s most precious and rare assets. Our company was founded with the vision of unlocking the untapped potential of real world assets (RWAs) as a unique and valuable investment opportunity.</>)
     },
     {
         image: '/assets/images/img-about-02.png',

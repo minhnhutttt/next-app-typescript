@@ -1,5 +1,4 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -24,12 +23,15 @@ const Slider = () => {
             autoHeight={true}
             freeMode={true}
             loop={true}
+            preventInteractionOnTransition={true}
             autoplay={{
                 delay: 0,
                 disableOnInteraction: false,
+                pauseOnMouseEnter: false,
             }}
             speed={8000}
             modules={[FreeMode, Autoplay]}
+            allowTouchMove={false}
             className="mySwiper !h-screen"
         >
             <SwiperSlide><div className="my-3 md:my-[65px]"><img src="/assets/images/slider-01.png" alt="" /></div></SwiperSlide>
@@ -49,14 +51,17 @@ const Slider = () => {
             autoHeight={true}
             freeMode={true}
             loop={true}
+            preventInteractionOnTransition={true}
             autoplay={{
                 delay: 0,
                 reverseDirection: true,
                 disableOnInteraction: false,
+                pauseOnMouseEnter: false,
             }}
             speed={8000}
             modules={[FreeMode, Autoplay]}
             className="mySwiper !h-screen"
+            allowTouchMove={false}
         >
             <SwiperSlide><div className="my-3 md:my-[65px]"><img src="/assets/images/slider-01.png" alt="" /></div></SwiperSlide>
             <SwiperSlide><div className="my-3 md:my-[65px]"><img src="/assets/images/slider-02.png" alt="" /></div></SwiperSlide>

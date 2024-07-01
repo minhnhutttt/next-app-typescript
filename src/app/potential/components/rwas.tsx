@@ -1,5 +1,9 @@
 "use client";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation, HashNavigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const data = [
     {
@@ -10,7 +14,7 @@ const data = [
     {
         id: "02",
         title: 'The Enduring Value of RWAs',
-        text: (<>RWAs are more than just financial assets; they are tangible pieces of history, culture, and human creativity. Whether it's a rare whiskey, a vintage trading card, or a masterpiece of fine art, each RWA tells a story and embodies a legacy that transcends time. These assets are often imbued with a sense of rarity and exclusivity, making them highly sought-after by collectors and investors alike. By investing in RWAs, investors not only have the opportunity to own a piece of this legacy but also to preserve and protect these cultural treasures for future generations. In a world where digital assets dominate, the tangible nature of RWAs provides a unique and enduring value proposition.</>)
+        text: (<>RWAs are more than just financial assets; they are tangible pieces of history, culture, and human creativity. Whether it&apos;s a rare whiskey, a vintage trading card, or a masterpiece of fine art, each RWA tells a story and embodies a legacy that transcends time. These assets are often imbued with a sense of rarity and exclusivity, making them highly sought-after by collectors and investors alike. By investing in RWAs, investors not only have the opportunity to own a piece of this legacy but also to preserve and protect these cultural treasures for future generations. In a world where digital assets dominate, the tangible nature of RWAs provides a unique and enduring value proposition.</>)
     },
     {
         id: "03",
@@ -35,27 +39,66 @@ const data = [
     {
         id: "07",
         title: 'Has your curiosity been piqued?Welcome to the fascinating world of RWAs!',
-        text: (<>As you explore this unique investment opportunity, you'll discover a rich tapestry of history, culture, and creativity that spans generations. From rare whiskeys to vintage trading cards, the RWA market offers a diverse range of assets that are sure to captivate and inspire. While the journey may be complex and requires careful consideration, the rewards of preserving these cultural treasures and potentially realizing long-term value appreciation are undeniable. As you delve deeper into the world of RWAs, you'll find yourself not just an investor, but a custodian of history, playing a vital role in safeguarding these assets for generations to come. So, take a moment to immerse yourself in the stories behind these incredible assets and imagine the possibilities that await in the exciting world of RWA investment.</>)
+        text: (<>As you explore this unique investment opportunity, you&apos;ll discover a rich tapestry of history, culture, and creativity that spans generations. From rare whiskeys to vintage trading cards, the RWA market offers a diverse range of assets that are sure to captivate and inspire. While the journey may be complex and requires careful consideration, the rewards of preserving these cultural treasures and potentially realizing long-term value appreciation are undeniable. As you delve deeper into the world of RWAs, you&apos;ll find yourself not just an investor, but a custodian of history, playing a vital role in safeguarding these assets for generations to come. So, take a moment to immerse yourself in the stories behind these incredible assets and imagine the possibilities that await in the exciting world of RWA investment.</>)
     },
 ]
 
 const Rwas = () => {
     const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="md:pt-[128px] pt-16 px-5 md:pb-[130px] pb-10">
+    <section ref={ref} className="md:pt-[128px] pt-16 px-3 md:px-5 md:pb-[130px] pb-10">
         <div className="w-full md:max-w-[1260px] max-w-[440px] mx-auto">
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-[60px]">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-[60px] max-md:hidden">
                 {data.map((item, index)=>(
-                    <div className="fade-up group bg-white [&:nth-of-type(4n+2)]:bg-black [&:nth-of-type(4n+3)]:bg-black rounded-[10px] overflow-hidden odd:border-black even:border-[#D9B70D] border-t-[8px] md:border-t-[11px] md:min-h-[515px] p-5 md:p-[30px] relative" key={index}>
+                    <div className="fade-up group bg-black  rounded-[10px] overflow-hidden border-[#D9B70D] border-t-[8px] md:border-t-[11px] md:min-h-[515px] p-5 md:p-[30px] relative" key={index}>
                         <div className="absolute font-anton text-[100px] md:text-[198px] text-[#9B9B9B]/[0.3] leading-[0.85] bottom-0 right-0">{item.id}</div>
-                        <div className="font-anton md:text-[24px] text-[18px] border-b border-[#757575] group-[:nth-of-type(4n+2)]:text-white group-[:nth-of-type(4n+3)]:text-white md:pb-5 pb-3 tracking-wide">
+                        <div className="font-anton md:text-[24px] text-[18px] border-b border-[#757575] text-white md:pb-5 pb-3 tracking-wide">
                             {item.title}
                         </div>
-                        <p className="font-lato md:text-[16px] text-[13px] md:mt-8 mt-5 leading-[1.6] group-[:nth-of-type(4n+2)]:text-white group-[:nth-of-type(4n+3)]:text-white tracking-wide">
+                        <p className="font-lato md:text-[16px] text-[13px] md:mt-8 mt-5 leading-[1.6] text-white tracking-wide">
                             {item.text}
                         </p>
                     </div>
                 ))}
+            </div>
+            <div className="md:hidden">
+            <Swiper
+            slidesPerView={1}
+            spaceBetween={20}
+            effect="fade"
+            autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+            }}
+            pagination={{
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true
+            }}
+            hashNavigation={{
+                watchState: true,
+              }}
+              navigation={true}
+            modules={[Autoplay, Pagination, Navigation, HashNavigation]}
+            speed={300}
+            className="mySwiper"
+        >
+            {data.map((item, index)=>(
+                <SwiperSlide key={index} className="!flex flex-col !h-auto">
+                    <div className="bg-black rounded-[10px] h-full overflow-hidden border-[#D9B70D] border-t-[8px] md:border-t-[11px] pt-5 px-8 pb-[36px] relative" key={index}>
+                        <div className="absolute font-anton text-[100px] md:text-[198px] text-[#9B9B9B]/[0.3] leading-[0.85] bottom-0 right-0">{item.id}</div>
+                        <div className="font-anton md:text-[24px] text-[18px] border-b border-[#757575] text-white md:pb-5 pb-3 tracking-wide">
+                            {item.title}
+                        </div>
+                        <p className="font-lato md:text-[16px] text-[13px] md:mt-8 mt-5 leading-[1.6] text-white tracking-wide">
+                            {item.text}
+                        </p>
+                    </div>
+            </SwiperSlide>
+
+                ))}
+                <div className="swiper-pagination"></div>
+            </Swiper>
             </div>
         </div>
     </section>

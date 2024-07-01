@@ -24,7 +24,7 @@ const links: NavLink[] = [
 ];
 const Header = () => {
   const [NavOpen, setNavOpen] = useState(false);
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const close = useCallback(() => {
     setNavOpen(false);
