@@ -70,7 +70,7 @@ const Contact = () => {
   return (
     <section ref={ref} className="contacttriger px-5 overflow-x-hidden md:pb-[150px] pb-20 pt-10">
       <div className="w-full md:max-w-[1440px] mx-auto relative h-[51.181vw] dt:h-[737px] flex items-center justify-center">
-        <div className="scroll-img scroll-left absolute max-md:w-[14vw] max-dt:w-[10.139vw] top-[6.875vw] left-[3.542vw] dt:top-[99px] dt:left-[51px]">
+        <div className="scroll-img scroll-left absolute max-md:w-[14vw] max-md:top-[14vw] max-dt:w-[10.139vw] top-[6.875vw] left-[3.542vw] dt:top-[99px] dt:left-[51px]">
           <div className=" animate-[floating-x_3.2s_ease-in-out_infinite_alternate-reverse]">
             <img
               className="animate-[floating-y_4.8s_ease-in-out_infinite_alternate-reverse]"
@@ -79,7 +79,7 @@ const Contact = () => {
             />
           </div>
         </div>
-        <div className="scroll-img scroll-left absolute max-md:w-[12vw] max-dt:w-[8.542vw] top-[7.153vw] left-[21.528vw] dt:top-[103px] dt:left-[310px]">
+        <div className="scroll-img scroll-left absolute max-md:w-[12vw] max-md:left-[26vw] max-dt:w-[8.542vw] top-[7.153vw] left-[21.528vw] dt:top-[103px] dt:left-[310px]">
           <div className=" animate-[floating-x_2.5s_2s_ease-in-out_infinite_alternate-reverse]">
             <img
               className="animate-[floating-y_5.1s_2s_ease-in-out_infinite_alternate-reverse]"
@@ -88,7 +88,7 @@ const Contact = () => {
             />
           </div>
         </div>
-        <div className="scroll-img scroll-left absolute max-md:w-[11vw] max-md:top-[5vw] max-md:left-[42vw] max-dt:w-[7.431vw] left-[40.347vw] top-0 dt:left-[581px]">
+        <div className="scroll-img scroll-left absolute max-md:w-[11vw] max-md:top-[8vw] max-md:left-[50vw] max-dt:w-[7.431vw] left-[40.347vw] top-0 dt:left-[581px]">
           <div className=" animate-[floating-x_1.5s_ease-in-out_infinite_alternate-reverse]">
             <img
               className="animate-[floating-y_3.6s_ease-in-out_infinite_alternate-reverse]"
@@ -97,7 +97,7 @@ const Contact = () => {
             />
           </div>
         </div>
-        <div className="scroll-img scroll-right absolute max-md:w-[12.5vw] max-md:left-[50vw] max-dt:w-[8.542vw] top-[3.264vw] left-[58.056vw] dt:top-[47px] dt:left-[836px]">
+        <div className="scroll-img scroll-right absolute max-md:w-[12.5vw] max-md:top-[6vw] max-md:left-[50vw] max-dt:w-[8.542vw] top-[3.264vw] left-[58.056vw] dt:top-[47px] dt:left-[836px]">
           <div className=" animate-[floating-x_3.6s_ease-in-out_infinite_alternate-reverse]">
             <img
               className="animate-[floating-y_1.8s_ease-in-out_infinite_alternate-reverse]"
@@ -106,7 +106,7 @@ const Contact = () => {
             />
           </div>
         </div>
-        <div className="scroll-img scroll-right absolute max-md:w-[10.55vw] max-dt:w-[7.431vw] top-[10.208vw] left-[75.069vw] dt:top-[147px] dt:left-[1081px]">
+        <div className="scroll-img scroll-right absolute max-md:w-[10.55vw] max-dt:w-[7.431vw] top-[10.208vw] max-md:left-[80vw] left-[75.069vw] dt:top-[147px] dt:left-[1081px]">
           <div className=" animate-[floating-x_2.7s_ease-in-out_infinite_alternate-reverse]">
             <img
               className="animate-[floating-y_6.8s_ease-in-out_infinite_alternate-reverse]"
@@ -115,7 +115,7 @@ const Contact = () => {
             />
           </div>
         </div>
-        <div className="scroll-img scroll-bottom-left absolute max-md:w-[15.55vw] max-dt:w-[10.347vw] top-[26.597vw] left-[4.444vw] dt:top-[383px] dt:left-[64px]">
+        <div className="scroll-img scroll-bottom-left absolute max-md:w-[15.55vw] max-md:top-[18vw] max-md:left-[2vw] max-dt:w-[10.347vw] top-[26.597vw] left-[4.444vw] dt:top-[383px] dt:left-[64px]">
           <div className=" animate-[floating-x_3.4s_ease-in-out_infinite_alternate-reverse]">
             <img
               className="animate-[floating-y_4.2s_ease-in-out_infinite_alternate-reverse]"
@@ -124,7 +124,7 @@ const Contact = () => {
             />
           </div>
         </div>
-        <div className="scroll-img scroll-bottom-left absolute max-md:w-[12.6vw] max-dt:w-[7.361vw] top-[39.236vw] left-[20.278vw] dt:top-[565px] dt:left-[292px]">
+        <div className="scroll-img scroll-bottom-left absolute max-md:w-[12.6vw] max-md:top-[40vw] max-dt:w-[7.361vw] top-[39.236vw] max-md:left-[28.278vw] left-[20.278vw] dt:top-[565px] dt:left-[292px]">
           <div className=" animate-[floating-x_5.2s_ease-in-out_infinite_alternate-reverse]">
             <img
               className="animate-[floating-y_1.8s_ease-in-out_infinite_alternate-reverse]"
@@ -133,7 +133,7 @@ const Contact = () => {
             />
           </div>
         </div>
-        <div className="scroll-img scroll-bottom-left absolute max-md:w-[16.55vw] max-md:left-[44.55vw] max-dt:w-[11.042vw] top-[39.236vw] left-[37.083vw] dt:top-[565px] dt:left-[534px]">
+        <div className="scroll-img scroll-bottom-left absolute max-md:w-[16.55vw] max-md:left-[48.55vw] max-dt:w-[11.042vw] top-[39.236vw] left-[37.083vw] dt:top-[565px] dt:left-[534px]">
           <div className=" animate-[floating-x_1.8s_ease-in-out_infinite_alternate-reverse]">
             <img
               className="animate-[floating-y_4.8s_ease-in-out_infinite_alternate-reverse]"
@@ -142,7 +142,7 @@ const Contact = () => {
             />
           </div>
         </div>
-        <div className="scroll-img scroll-bottom-right absolute max-md:w-[11.55vw] max-md:left-[55.55vw] max-dt:w-[7.431vw] top-[39.236vw] left-[62.639vw] dt:top-[565px] dt:left-[902px]">
+        <div className="scroll-img scroll-bottom-right absolute max-md:w-[11.55vw] max-md:left-[46.55vw] max-md:top-[24.236vw] max-dt:w-[7.431vw] top-[39.236vw] left-[62.639vw] dt:top-[565px] dt:left-[902px]">
           <div className=" animate-[floating-x_3.6s_ease-in-out_infinite_alternate-reverse]">
             <img
               className="animate-[floating-y_4.1s_ease-in-out_infinite_alternate-reverse]"
@@ -151,7 +151,7 @@ const Contact = () => {
             />
           </div>
         </div>
-        <div className="scroll-img scroll-bottom-right absolute max-md:w-[13vw] max-dt:w-[10.833vw] top-[32.153vw] left-[80.625vw] dt:top-[463px] dt:left-[1161px]">
+        <div className="scroll-img scroll-bottom-right absolute max-md:w-[13vw] max-md:left-[70vw] max-dt:w-[10.833vw] top-[32.153vw] left-[80.625vw] dt:top-[463px] dt:left-[1161px]">
           <div className=" animate-[floating-x_5.9s_ease-in-out_infinite_alternate-reverse]">
             <img
               className="animate-[floating-y_1.65s_ease-in-out_infinite_alternate-reverse]"
