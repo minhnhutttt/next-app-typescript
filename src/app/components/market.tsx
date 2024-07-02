@@ -36,7 +36,7 @@ const Market = () => {
             Our insights aim to provide a fresh perspective on the world of RWAs and their role in a diversified portfolio.
             </div>
             <div className="fadein md:hidden pt-7 md:pt-12">
-                <Button href="#" white>RWA&apos;s Potential</Button>
+                <Button href="/potential" white>RWA&apos;s Potential</Button>
             </div>
         </div>
         <div data-scroll="out" className="relative max-md:w-auto max-dt:w-1/2">
@@ -47,7 +47,7 @@ const Market = () => {
                 <img src="/assets/images/img-market.png" alt="" />
             </figure>
             <div className="fadein max-md:hidden pt-7 md:pt-12">
-                <Button href="#" white>RWA&apos;s Potential</Button>
+                <Button href="/potential" white>RWA&apos;s Potential</Button>
             </div>
         </div>
       </div>

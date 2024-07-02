@@ -62,8 +62,8 @@ const Header = () => {
           </ul>
         </div>
         <button
-          className={`group relative z-30 h-6 w-8 xl:hidden  ${
-            NavOpen ? "active" : ""
+          className={`group relative z-[99] h-6 w-8 xl:hidden  ${
+            NavOpen ? "active fixed" : ""
           }`}
           onClick={() => setNavOpen((prev) => !prev)}
         >

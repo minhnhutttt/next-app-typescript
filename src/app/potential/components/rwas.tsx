@@ -67,7 +67,7 @@ const Rwas = () => {
             spaceBetween={20}
             effect="fade"
             autoplay={{
-                delay: 3000,
+                delay: 10000,
                 disableOnInteraction: false,
             }}
             pagination={{

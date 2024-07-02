@@ -55,7 +55,7 @@ const FV = () => {
                 <p className="font-lato md:text-[20px] text-[14px] md:w-[703px] text-white leading-tight mt-5 mb-12">
                 We invest in real world assets that have true scarcity value, such as whiskey and trading cards. Our mission is to protect these irreplaceable assets, which increase in value over time, and to pass them on to the next generation.
                 </p>
-                <Button href="#">
+                <Button href="/potential">
                 RWA&apos;s Potentiality <br /> INSIGHT
                 </Button>
             </div>

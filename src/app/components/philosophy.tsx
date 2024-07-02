@@ -21,7 +21,7 @@ const Philosophy = () => {
                         <img src="/assets/images/img-philosophy-01.png" alt="" />
                     </figure>
                     <div className="fadein max-md:hidden lg:pl-10 pl-5 pt-7 md:pt-10">
-                        <Button href="#">ABOUT</Button>
+                        <Button href="/about">ABOUT</Button>
                     </div>
                 </div>
                 <div data-scroll="out" className="font-lato flex-1 max-w-[598px] lg:pt-[270px] md:pt-[200px] max-md:px-5 md:pr-10 dark:text-white">
@@ -33,7 +33,7 @@ const Philosophy = () => {
                     </p>
                 </div>
                 <div className="fadein md:hidden px-5">
-                    <Button href="#">ABOUT</Button>
+                    <Button href="/about">ABOUT</Button>
                 </div>
             </div>
             <div className="flex flex-row-reverse gap-8 md:gap-14 lg:gap-[76px] max-md:flex-col">

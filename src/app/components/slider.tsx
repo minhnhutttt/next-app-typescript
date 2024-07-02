@@ -13,7 +13,8 @@ const Slider = () => {
     const triggerRef = useDarkMode();
 
   return (
-    <section className="bg-[url('/assets/images/bg-slider.png')] bg-cover px-5">
+    <section className="bg-[url('/assets/images/bg-slider.png')] bg-cover px-5 relative">
+      <span className="absolute inset-0 z-50"></span>
       <div ref={triggerRef} className="js-dark-trigger">
         <div className="w-full max-w-[1153px] mx-auto flex gap-10 md:gap-20">
             <div className="">
@@ -27,11 +28,9 @@ const Slider = () => {
             autoplay={{
                 delay: 0,
                 disableOnInteraction: false,
-                pauseOnMouseEnter: false,
             }}
             speed={8000}
             modules={[FreeMode, Autoplay]}
-            allowTouchMove={false}
             className="mySwiper !h-screen"
         >
             <SwiperSlide><div className="my-3 md:my-[65px]"><img src="/assets/images/slider-01.png" alt="" /></div></SwiperSlide>

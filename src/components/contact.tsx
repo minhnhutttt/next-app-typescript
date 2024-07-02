@@ -170,7 +170,7 @@ const Contact = () => {
           </div>
         </div>
         <a
-          href="/"
+          href="mailto:info@ultimate-holdings-group.com"
           className="group md:w-[560px] w-[320px] h-16 md:h-[150px] flex items-center justify-between overflow-hidden bg-black relative"
         >
           <span className="px-2.5 scale-0 group-hover:scale-100 duration-300 origin-left flex">
