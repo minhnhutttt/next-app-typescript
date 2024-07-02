@@ -5,7 +5,7 @@ const Service = () => {
     <>
       <section className="mb-[256px] max-md:mb-[82px]">
         <div className="container">
-          <div className="max-w-[1200px] mx-auto text-[calc(18px_+_2vw)] text-center leading-[1.2] uppercase">
+          <div className="max-w-[1200px] mx-auto text-[calc(18px_+_2vw)] text-center leading-[1.2] uppercase font-sans">
           各種調査 / 各種代行 / デジタルマーケティング / 海外人材採用支援 / ブロックチェーン解析支援 / 販売プラットフォーム出品支援
           </div>
         </div>
@@ -28,7 +28,7 @@ const Service = () => {
               >
                 Research
               </div>
-              <div className="text-[21px] max-md:text-[18px] max-w-[600px]">
+              <div className="text-[21px] max-md:text-[18px] max-w-[600px] font-sans">
               私たちはお客様のビジネスに必要不可欠な情報の収集・分析を行い、最適なソリューションを提供します。企業分析から海外人材のバックグラウンド調査、ブロックチェーン解析など、幅広い分野に対応しています。
               </div>
             </a>
@@ -42,7 +42,7 @@ const Service = () => {
               >
                 Agency
               </div>
-              <div className="text-[21px] max-md:text-[18px] max-w-[600px]">
+              <div className="text-[21px] max-md:text-[18px] max-w-[600px] font-sans">
               私たちは代理店としての機能を持ち、Google、MetaをはじめとするWeb広告の運用代行や営業活動の代行、ECプラットフォームへの出品など、お客様の業務を代行することで、効率的かつ効果的なビジネス運営をサポートします。
               </div>
             </a>
@@ -56,7 +56,7 @@ const Service = () => {
               >
                 Digital marketing
               </div>
-              <div className="text-[21px] max-md:text-[18px] max-w-[600px]">
+              <div className="text-[21px] max-md:text-[18px] max-w-[600px] font-sans">
               私たちはデジタル領域における様々なチャネルを活用し、お客様のビジネスの本質を論理的に捉えたプロモーション戦略を構築・実行します。
               </div>
             </a>
@@ -70,7 +70,7 @@ const Service = () => {
               >
                 Research shield+AI
               </div>
-              <div className="text-[21px] max-md:text-[18px] max-w-[600px]">
+              <div className="text-[21px] max-md:text-[18px] max-w-[600px] font-sans">
               設立から9年間経験・蓄積してきた調査力を活用した新サービスです。業界を絞り、AIのパワーを加えることで、属人的なリサーチアウトプットの再現性を高めた特化型サービス「海外人材のバックグラウンド調査：Research Shield+AI」をリリースいたしました。
               </div>
             </a>

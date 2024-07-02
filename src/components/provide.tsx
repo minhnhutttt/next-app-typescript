@@ -41,10 +41,10 @@ const Provide = ({ title, items }: ProvidePropsType) => {
               <div className="text-[21px] max-md:text-[16px] text-white flex items-center justify-center bg-black w-[3em] h-[3em] absolute top-[-1em] left-[-1em] rounded-full">
                 {item.id}
               </div>
-              <div className="font-anton text-[calc(16px_+_2vw)] uppercase mb-[24px]">
+              <div className="font-sans text-[calc(16px_+_2vw)] uppercase mb-[24px]">
                 {item.title}
               </div>
-              <div>
+              <div className="font-sans">
               {item.content}
               </div>
             </div>

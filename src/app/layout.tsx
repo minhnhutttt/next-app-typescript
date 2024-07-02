@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_TC, Anton } from "next/font/google";
+import { Noto_Sans_TC, Anton, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -9,6 +9,12 @@ const anton = Anton({
     weight: ["400"],
     subsets: ["latin"],
     variable: "--font-anton",
+});
+
+const sans = Noto_Sans_JP({
+  weight: ["400", '500', '700'],
+  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${noto.className} ${anton.variable}`}>
+      <body className={`${noto.className} ${anton.variable} ${sans.variable}`}>
         <Header />
         {children}
         <Footer />

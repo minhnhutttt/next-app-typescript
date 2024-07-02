@@ -14,10 +14,10 @@ const Contact = ({ title, children }: ContactPropsType) => {
           </a>
         </div>
         <div>
-          <div className="font-anton text-[calc(18px_+_2vw)] font-anton text-[calc(21px_+_4vw)] mb-[24px]">
+          <div className="font-sans text-[calc(18px_+_2vw)] text-[calc(21px_+_4vw)] mb-[24px]">
             {title}
           </div>
-          <div className="text-[24px] max-md:text-[18px] max-w-[800px] mb-[24px]">
+          <div className="text-[24px] max-md:text-[18px] max-w-[800px] mb-[24px] font-sans">
             {children}
           </div>
           <a

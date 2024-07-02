@@ -19,7 +19,7 @@ const Item = ({ title, content }: item) => {
         className="pr-[32px] py-[3%] max-md:py-[24px] cursor-pointer relative"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <div className="text-[24px] max-md:text-[18px] leading-none">
+        <div className="text-[24px] max-md:text-[18px] leading-none font-sans">
           {title}
           <div className="text-white text-[21px] bg-black w-[1.5em] block flex justify-center items-center rounded-full aspect-square absolute top-1/2 right-0 translate-y-[-50%] rotate-90">
             <img
@@ -31,7 +31,7 @@ const Item = ({ title, content }: item) => {
         </div>
       </div>
       <div
-        className={`text-[21px] max-md:text-[18px] overflow-hidden ${isOpen ? " bg-[#eee] px-[16px] py-[24px] h-auto border-t border-solid border-t-[rgba(172,172,172,0.3)]" : "h-[0px]"}`}
+        className={`text-[21px] max-md:text-[18px] overflow-hidden font-sans ${isOpen ? "bg-[#eee] px-[16px] py-[24px] h-auto border-t border-solid border-t-[rgba(172,172,172,0.3)]" : "h-[0px]"}`}
       >
         <p>{content}</p>
       </div>

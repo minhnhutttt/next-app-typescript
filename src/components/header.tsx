@@ -33,7 +33,7 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="p-[8px]">
-                  <a href="/" className="hover-underline" onClick={close}>
+                  <a href="mailto:info@techno-agency.com" className="hover-underline" onClick={close}>
                     Contact
                   </a>
                 </li>

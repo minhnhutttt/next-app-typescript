@@ -59,12 +59,12 @@ const GlobalDigitalAgency = () => {
                 GLOBAL DIGITAL AGENCY
               </div>
             </div>
-            <div className="text-[24px] max-md:text-[16px] mb-[32px] pb-[32px] leading-[1.6] border-b border-solid border-b-[rgba(172,172,172,0.3)]">
+            <div className="font-sans text-[24px] max-md:text-[16px] mb-[32px] pb-[32px] leading-[1.6] border-b border-solid border-b-[rgba(172,172,172,0.3)]">
             TECHNO LLCは、テクノロジーを駆使し、お客様のビジネスの成長と革新をサポートするグローバルなパートナーです。私たちは、調査、代行、デジタルマーケティングの3つの領域において、豊富な経験と高い専門性を持つプロフェッショナルチームを擁しています。お客様のニーズに合わせたカスタマイズされたソリューションを提供し、ビジネスの効率化と最適化を実現します。AIをはじめとして、常に最新のテクノロジーとトレンドを取り入れ、お客様の競争力強化に貢献します。TECHNO LLCは、お客様との長期的なパートナーシップを大切にし、共に成長することを目指しています。
             </div>
-            <div className="grid grid-cols-3 max-md:grid-cols-1 gap-[32px]">
+            <div className="grid grid-cols-3 max-md:grid-cols-1 gap-[32px] font-sans">
               <div>
-                <div className="font-anton text-[calc(21px_+_2vw)] uppercase">
+                <div className="text-[calc(21px_+_2vw)] uppercase">
                 調査力と分析力
                 </div>
                 <div className="text-[18px] max-md:text-[16px] leading-[1.6]">
@@ -72,7 +72,7 @@ const GlobalDigitalAgency = () => {
                 </div>
               </div>
               <div>
-                <div className="font-anton text-[calc(21px_+_2vw)] uppercase">
+                <div className="text-[calc(21px_+_2vw)] uppercase">
                 代行の効率性と効果
                 </div>
                 <div className="text-[18px] max-md:text-[16px] leading-[1.6]">
@@ -81,7 +81,7 @@ const GlobalDigitalAgency = () => {
                 </div>
               </div>
               <div>
-                <div className="font-anton text-[calc(21px_+_2vw)] uppercase">
+                <div className="text-[calc(21px_+_2vw)] uppercase">
                 デジタル領域の革新性
                 </div>
                 <div className="text-[18px] max-md:text-[16px] leading-[1.6]">

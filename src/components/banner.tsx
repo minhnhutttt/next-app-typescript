@@ -20,7 +20,7 @@ const Banner = ({ image, children }: BannerPropsType) => {
       </div>
       <section className="mb-[256px] max-md:mb-[82px]">
         <div className="container">
-          <div className="text-[24px] max-md:text-[16px] max-w-[1200px] mx-auto leading-[1.6]">
+          <div className="text-[24px] max-md:text-[16px] max-w-[1200px] mx-auto leading-[1.6] font-sans">
             {children}
           </div>
         </div>
