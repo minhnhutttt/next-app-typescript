@@ -53,7 +53,7 @@ const GlobalDigitalAgency = () => {
           <div>
             <div className="grid grid-cols-[.6fr_.4fr] items-end max-md:grid-cols-1 gap-[4vw] mb-[4vw]">
               <div>
-                <img src="/assets/images/about.jpg" alt="" />
+                <img src="/assets/images/techno_toppage.png" alt="" />
               </div>
               <div className="font-anton text-[calc(24px_+_8vw)] leading-none">
                 GLOBAL DIGITAL AGENCY

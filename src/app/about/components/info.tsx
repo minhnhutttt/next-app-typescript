@@ -35,7 +35,7 @@ const Info = () => {
             </div>
           </div>
           <div>
-            <img src="/assets/images/info.jpg" alt="" />
+            <img src="/assets/images/techno_about.png" alt="" />
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ const Digital = () => {
           </h2>
         </div>
         <div className="relative overflow-hidden aspect-[2.4/1] max-md:aspect-[4/3]">
-          <div className="img-container absolute bottom-[-100px] left-0 h-[calc(100%_+_100px)] w-[calc(100%_+_100px)] bg-center bg-cover bg-[url('/assets/images/about.jpg')]"></div>
+          <div className="img-container absolute bottom-[-100px] left-0 h-[calc(100%_+_100px)] w-[calc(100%_+_100px)] bg-center bg-cover bg-[url('/assets/images/techno_toppage.png')]"></div>
         </div>
         <div className="overflow-hidden bg-[#eee] relative">
           <a className="block" href="/about">

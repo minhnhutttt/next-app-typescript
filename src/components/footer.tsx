@@ -80,13 +80,6 @@ export default function Footer() {
                   </div>
                   <div>
                   <span className="font-sans">〒150-0002 東京都渋谷区渋谷2-19-15宮益坂ビルディング609</span>
-                    <br />
-                    <a
-                      href="https://"
-                      className="font-anton text-[18px] text-[#ddd] uppercase"
-                    >
-                      Google Map
-                    </a>
                   </div>
                 </div>
               </div>

@@ -49,7 +49,7 @@ export default function ResearchShieldAI() {
   return (
     <main>
         <PageTitle>Research shield+AI</PageTitle>
-        <Banner image="/assets/images/hosting.jpg">
+        <Banner image="/assets/images/techno_researchi_shield.png">
         Research Shield+AIは企業の人材採用における重要な意思決定をサポートするサービスであり、高い精度と効率性が求められます。だからこそ、業界特化型の調査設計とAIの活用による再現性の高い調査が必要です。私たちは、長年培った知識と経験をもとに、お客様の期待を超える提案をいたします。
         </Banner>
         <Provide title="We provide a background check service for overseas talent." items={DataProvide} />

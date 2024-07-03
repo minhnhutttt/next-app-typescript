@@ -64,7 +64,7 @@ const List = () => {
                 alt=""
               />
             </div>
-            <div className="img-container absolute bottom-[-100px] left-0 h-[calc(100%_+_100px)] w-[calc(100%_+_100px)] bg-center bg-cover z-[-1] bg-[url('/assets/images/hosting.jpg')]"></div>
+            <div className="img-container absolute bottom-[-100px] left-0 h-[calc(100%_+_100px)] w-[calc(100%_+_100px)] bg-center bg-cover z-[-1] bg-[url('/assets/images/techno_researchi_shield.png')]"></div>
           </a>
         </div>
       </div>
