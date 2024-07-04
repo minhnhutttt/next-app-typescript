@@ -10,19 +10,19 @@ interface NavLink {
 
 const links: NavLink[] = [
   {
-    link: "/about",
+    link: "/",
     text: "DIVER Agentとは？",
   },
   {
-    link: "/potential",
+    link: "/",
     text: "商品例",
   },
   {
-    link: "mailto:info@ultimate-holdings-group.com",
+    link: "/",
     text: "販売方法",
   },
   {
-    link: "mailto:info@ultimate-holdings-group.com",
+    link: "/",
     text: "登録・販売フロー",
   },
 ];
