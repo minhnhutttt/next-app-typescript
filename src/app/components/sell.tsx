@@ -23,7 +23,7 @@ const data = [
 const Sell = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative z-10">
+    <section id="sales" ref={ref} className="relative z-10">
         <div className="w-full mx-auto border-[10px] border-[#18539E] md:rounded-t-[70px] rounded-t-[40px] md:pt-[124px] pt-20 md:pb-[200px] pb-[100px] px-5">
             <div className="w-full max-w-[1360px] mx-auto">
                 <div className="fade-up">

@@ -116,7 +116,7 @@ function getBackground(id: string): string {
     return colorMap[id] || 'bg-[#18539E]';
 }
   return (
-    <section ref={ref} className="relative md:pt-[110px] pt-20 md:pb-[170px] pb-28">
+    <section id="product" ref={ref} className="relative md:pt-[110px] pt-20 md:pb-[170px] pb-28">
         <div className="fade-up text-center tracking-widest">
             <p className="md:text-[24px] text-[18px] text-[#00053A] font-inter">Product</p>
             <h3 className="font-medium md:text-[56px] text-[32px] tracking-[0.1em]">こんな商品を販売できます！</h3>

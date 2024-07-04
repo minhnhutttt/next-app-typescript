@@ -71,7 +71,7 @@ export type FlowPropsType = {
 const Flow = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative md:space-y-[193px] space-y-[100px]">
+    <section id="flow" ref={ref} className="relative md:space-y-[193px] space-y-[100px]">
        <div className="relative">
         <div className="bg-[#18539E] absolute h-[90%] md:h-[531px] inset-x-0 md:rounded-t-[70px] rounded-t-[40px]"></div>
         <div className="relative md:pt-[120px] pt-[70px] px-5">

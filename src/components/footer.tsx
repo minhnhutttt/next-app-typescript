@@ -6,27 +6,27 @@ interface NavLink {
 
 const links: NavLink[] = [
   {
-    link: "/",
+    link: "/#introduction",
     text: "DIVER Agentとは？",
   },
   {
-    link: "/",
+    link: "/#product",
     text: "商品例",
   },
   {
-    link: "/",
+    link: "/#sales",
     text: "販売方法",
   },
   {
-    link: "",
+    link: "/#flow",
     text: "登録・販売フロー",
   },
   {
-    link: "",
+    link: "/company",
     text: "運営会社",
   },
   {
-    link: "",
+    link: "/privacy-policy",
     text: "プライバシーポリシー",
   },
 ];

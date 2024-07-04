@@ -5,7 +5,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Introduction = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative bg-[url('/assets/images/bg-introduction.png')] bg-cover bg-top md:pt-[160px] md:pb-[140px] pb-16 pt-20 px-5">
+    <section id="introduction" ref={ref} className="relative bg-[url('/assets/images/bg-introduction.png')] bg-cover bg-top md:pt-[160px] md:pb-[140px] pb-16 pt-20 px-5">
         <div className="w-full max-w-[1360px] mx-auto">
             <div className="fade-up">
                 <p className="font-inter md:text-[24px] text-[18px] tracking-widest">What is Agent</p>
