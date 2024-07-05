@@ -21,9 +21,9 @@ const FV = () => {
             </div>
             </div>
         </div>
-        <div className="fixed right-3 bottom-3 z-40">
+        <a href="/" className="fixed right-3 bottom-3 z-40">
             <img className="max-md:w-[80px]  rounded-full [box-shadow:0px_0px_30px_0px_rgba(24,_83,_158,_0.20)]" src="/assets/images/logo-fixed.png" alt="" />
-        </div>
+        </a>
     </section>
   );
 };
