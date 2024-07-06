@@ -107,19 +107,16 @@ const Pack = () => {
             </div>
             <div className="px-5 pt-4">
               <p className="text-center text-[20px] font-bold md:text-[24px]">
-                AI僧侶による個別法要 <br />
-                毎月実施オプション
+              気持ちに寄り添う<br />供養応援特典
               </p>
               <p className="text-center text-[20px] font-bold text-[#F54A25] md:text-[24px]">
+                AI僧侶<span className="text-black">による</span>個別法要<span className="text-black">を</span><br />
                 <span className="text-[16px] md:text-[20px]">
-                  先着<span className="text-black">申し込みの</span>10名様
-                  <span className="text-black">は </span>
+                  初年度費用負担なし<span className="text-black">で</span>毎月<span className="text-black">実施！</span>
                 </span>
-                <br />
-                個別法要費無料
               </p>
               <p className="text-center text-[13px] font-bold leading-loose md:text-[16px]">
-                (12ヶ月分：24万円相当)
+              (6万円相当)
               </p>
             </div>
           </div>
