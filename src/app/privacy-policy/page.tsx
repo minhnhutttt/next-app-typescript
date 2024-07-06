@@ -166,8 +166,6 @@ export default function PrivacyPolicy() {
             　　〒906-0002 沖縄県宮古島市平良字狩俣３５８番地１
             <br />
             　　　　代表取締役会長　國仲義隆
-            <br />
-            　　　　代表取締役社長　羽多野想
           </TextBlock>
           <TextBlock title="5.安全管理措置">
             当社は、その取り扱う個人情報の漏洩、滅失又は毀損の防止その他個人情報の安全管理のために、必要かつ適切な措置を講じます。当社が講じる安全管理措置については、第１０項記載のお問い合わせ窓口までお問い合わせください。
@@ -324,7 +322,7 @@ export default function PrivacyPolicy() {
             <br />
             　　住所：沖縄県那覇市久茂地2丁目19番18号
             <br />
-            　　E-mail：info＠mp-inc.net
+            　　E-mail：pet@mp-inc.net
           </TextBlock>
         </div>
       </div>

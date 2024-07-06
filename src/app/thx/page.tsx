@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function TermsOfService() {
+export default function Thankyou() {
   return (
     <main>
       <div className="h-svh flex justify-center items-center">サンクスページ</div>
