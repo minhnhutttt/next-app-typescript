@@ -59,15 +59,16 @@ const Plan = () => {
               </div>
             </div>
             <div className="bg-white px-6 pb-6 pt-4 md:px-9 md:pb-10 md:pt-6">
-              <p className="border-b border-[#001C80] pb-3 text-center text-[18px] font-bold md:pb-4 md:text-[24px]">
-                <span className="text-[30px] md:text-[58px]">90,000</span>
-                円(税抜)
+              <p className="border-b border-[#001C80] text-center text-[18px] font-bold md:text-[24px]">
+                <span><span className="text-[30px] md:text-[58px]">90,000</span>
+                円(税抜)</span>
+                <span className="block text-center md:text-[16px] text-[14px] font-normal text-black">※税込99,000円となります。</span>
               </p>
               <div className="my-6 space-y-7 text-[13px] md:my-8 md:space-y-9 md:text-[16px]">
                 <Item>メタバース内のお墓(4種類から選べるようになりました)</Item>
                 <Item>2Dペットアバター制作(1枚以上の写真データが必要です)</Item>
                 <Item>
-                  AI僧侶による法要(指定日に一度のみ、2回目以降は2万円/回)
+                AI僧侶による法要(年に2回実施、以降は2万円/回)
                 </Item>
               </div>
               <div className="flex justify-center">
@@ -104,15 +105,16 @@ const Plan = () => {
               </div>
             </div>
             <div className="bg-white px-6 pb-8 pt-4 md:px-[45px] md:pb-12 md:pt-6">
-              <p className="border-b border-[#001C80] pb-3 text-center text-[18px] font-bold text-[#F59F3A] md:pb-5 md:text-[24px]">
-                <span className="text-[30px] md:text-[58px]">180,000</span>
-                円(税抜)
+              <p className="border-b border-[#001C80] text-center text-[18px] font-bold text-[#F59F3A] md:text-[24px]">
+                <span><span className="text-[30px] md:text-[58px]">180,000</span>
+                円(税抜)</span>
+                <span className="block text-center md:text-[16px] text-[14px] font-normal text-black">※税込198,000円となります。</span>
               </p>
               <div className="my-6 space-y-7 text-[13px] md:my-8 md:space-y-[21px] md:text-[16px]">
                 <Item>メタバース内のお墓(4種類から選べるようになりました)</Item>
                 <Item>2Dペットアバター制作(1枚以上の写真データが必要です)</Item>
                 <Item>
-                  AI僧侶による法要(指定日に一度のみ、2回目以降は2万円/回)
+                  AI僧侶による法要(年に2回実施、以降は2万円/回)
                 </Item>
                 <Item>AI僧侶による毎月の個別法要(先着10名様特典です)</Item>
                 <Item>
@@ -170,9 +172,10 @@ const Plan = () => {
               </div>
             </div>
             <div className="bg-white px-6 pb-6 pt-4 md:px-9 md:pb-10 md:pt-6">
-              <p className="border-b border-[#001C80] pb-3 text-center text-[18px] font-bold md:pb-4 md:text-[24px]">
-                <span className="text-[30px] md:text-[58px]">300,000</span>
-                円(税抜)
+              <p className="border-b border-[#001C80] text-center text-[18px] font-bold md:text-[24px]">
+                <span><span className="text-[30px] md:text-[58px]">300,000</span>
+                円(税抜)</span>
+                <span className="block text-center md:text-[16px] text-[14px] font-normal text-black">※税込330,000円となります。</span>
               </p>
               <div className="my-6 space-y-5 text-[13px] md:my-8 md:space-y-[21px] md:text-[16px]">
                 <Item>メタバース内のお墓(4種類から選べるようになりました)</Item>

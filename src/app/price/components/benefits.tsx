@@ -47,19 +47,19 @@ const Benefits = () => {
             <div className="border-b border-black pb-4 max-md:hidden">
               <img src="/assets/images/price/animal-04.png" alt="" />
             </div>
-            <div className="md:pl-10">
-              <div className="max-w-[670px]">
+            <div className="">
+              <div className="md:pl-10 max-w-[710px] md:mt-4">
                 <p className="text-[16px] font-bold md:text-[20px]">
                   ハムスター　モルモット　ウサギ　フェレット　ハリネズミ　モモンガ　
                   チンチラ　ミーアキャット　リス　デグー　インコ　オウム　文鳥　
                   カメ　ヘビ　カメレオン　イグアナ　トカゲ　金魚　熱帯魚　etc
                 </p>
               </div>
-              <div className="max-md:mt-6 max-md:pb-12 md:pr-28">
-                <div className="max-w-[670px]">
-                  <p className="text-[20px] font-bold leading-[1.4] text-[#52860B] md:text-center md:text-[32px]">
-                    記載のないペットちゃんもご対応が可能です。
-                    お気軽にお問い合わせください！
+              <div className="max-md:mt-6 max-md:pb-12 md:pr-28 md:pl-5 md:mt-4">
+                <div className="max-w-[700px]">
+                  <p className="text-[18px] font-bold leading-[1.4] text-[#52860B] md:text-center md:text-[24px]">
+                  記載のないペットちゃんもご対応が可能な場合がほとんどです。 <br />
+                  事前にお問い合わせください！
                   </p>
                 </div>
               </div>

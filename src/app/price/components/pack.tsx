@@ -253,21 +253,10 @@ const Pack = () => {
                 11
               </span>
               <span className="flex-1 text-[24px] font-bold text-[#F54A25] md:text-[39px]">
-                今回<span className="text-black">のキャンペーン</span>
-                <span className="text-[18px] md:text-[24px]">
-                  だけ<span className="text-black"></span>！
-                </span>
-                ギフト
-                <span className="text-black">
-                  用
-                  <span className="text-[18px] md:text-[24px]">
-                    のお申し込み
-                  </span>
-                </span>
-                OK
-                <span className="text-[18px] text-black md:text-[24px]">
-                  特典
-                </span>
+              <span className="text-[18px] md:text-[24px] text-black">
+              メタでペット供養を</span>大切なあの人<span className="text-[18px] md:text-[24px] text-black">
+              へ贈りたい！</span>ギフト<span className="text-black">用</span><span className="text-[18px] md:text-[24px] text-black">
+              のお申し込み</span>OK<span className="text-[18px] md:text-[24px] text-black">特典</span>
               </span>
             </div>
             <div className="fade-up flex gap-4 md:gap-8">
