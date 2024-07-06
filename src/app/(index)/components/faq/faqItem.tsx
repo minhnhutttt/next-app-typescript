@@ -1,31 +1,31 @@
-"use client";
-import { ReactNode, useRef } from "react";
-import { gsap } from "gsap";
+'use client'
+import { ReactNode, useRef } from 'react'
+import { gsap } from 'gsap'
 
 export type FaqItemPropsType = {
-  id: string;
-  question: ReactNode;
-  answer: ReactNode;
-};
+  id: string
+  question: ReactNode
+  answer: ReactNode
+}
 
 export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
-  const contentRef = useRef(null);
-  const arrowRef = useRef(null);
-  const isClosedRef = useRef(true);
+  const contentRef = useRef(null)
+  const arrowRef = useRef(null)
+  const isClosedRef = useRef(true)
 
   const handleExpanderClick = () => {
-    const $content = contentRef.current;
-    const $arrow = arrowRef.current;
+    const $content = contentRef.current
+    const $arrow = arrowRef.current
     if (isClosedRef.current) {
-      gsap.set($content, { height: "auto" });
-      gsap.from($content, { duration: 0.2, height: 0 });
-      gsap.to($arrow, { duration: 0.1, rotation: -180 });
+      gsap.set($content, { height: 'auto' })
+      gsap.from($content, { duration: 0.2, height: 0 })
+      gsap.to($arrow, { duration: 0.1, rotation: -180 })
     } else {
-      gsap.to($content, { duration: 0.2, height: 0 });
-      gsap.to($arrow, { duration: 0.1, rotation: 0 });
+      gsap.to($content, { duration: 0.2, height: 0 })
+      gsap.to($arrow, { duration: 0.1, rotation: 0 })
     }
-    isClosedRef.current = !isClosedRef.current;
-  };
+    isClosedRef.current = !isClosedRef.current
+  }
 
   return (
     <div className="fade-up space-y-2 rounded-[20px] border border-[#44A1FF] bg-white/90 p-4 md:px-8 md:pb-8 md:pt-10">
@@ -35,7 +35,7 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
         onClick={handleExpanderClick}
       >
         <div className="flex items-center gap-4 md:gap-8">
-          <p className="font-roboto text-[18px] font-bold text-[#44A1FF] uppercase tracking-widest md:text-[32px]">
+          <p className="font-roboto text-[18px] font-bold uppercase tracking-widest text-[#44A1FF] md:text-[32px]">
             q
           </p>
           <p className="text-left text-[16px] font-bold md:text-[22px]">
@@ -77,5 +77,5 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
         </p>
       </div>
     </div>
-  );
+  )
 }

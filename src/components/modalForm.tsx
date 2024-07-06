@@ -1,56 +1,127 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { useModal } from "@/context/ModalContext";
+'use client'
+
+import { useState, ChangeEvent } from 'react'
+import { Dialog, DialogPanel } from '@headlessui/react'
+
+import { useRouter } from 'next/navigation'
+
+import { z } from 'zod'
+
+import { useModal } from '@/context/ModalContext'
+import { contactSchema } from '@/lib/schemas'
+
+interface FormData {
+  name: string;
+  email: string;
+  tel: string;
+  interests: string[];
+}
+
+interface ErrorMag {
+  status: number
+  message?: string
+  issues?: z.ZodIssue[]
+}
 
 const ModalForm = () => {
-  const { isOpen, closeModal } = useModal();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    tel: "",
-    memorialMonitorPlan: '【先着50名様で締切】メモリアルモニタープランに申し込みたい',
-    entryPlan: 'エントリープランに申し込みたい',
-    standardPlan: 'スタンダードプランに申し込みたい',
-    realMemorialHome: '現実の供養所オプション希望',
-    otherQuestions: 'その他のご質問・お問い合わせ希望',
-  });
+  const router = useRouter()
 
-  useEffect(() => {
-    const savedData = JSON.parse(localStorage.getItem("formData") || "{}");
-    setFormData(savedData);
-  }, []);
+  const { isOpen, closeModal } = useModal()
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    tel: '',
+    interests: [],
+  })
+  const [error, setError] = useState<ErrorMag>()
 
-  const handleChange = (event: any) => {
-    const { name, value } = event.target;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = event.target;
     setFormData((prevData) => {
-      const newData = { ...prevData, [name]: value };
-      localStorage.setItem("formData", JSON.stringify(newData));
-      return newData;
+      if (type === 'checkbox') {
+        const interests = prevData.interests.includes(value)
+          ? prevData.interests.filter((interest) => interest !== value)
+          : [...prevData.interests, value];
+        return { ...prevData, interests };
+      } else {
+        return { ...prevData, [name]: value };
+      }
     });
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    localStorage.setItem("formData", JSON.stringify(formData));
-    alert("フォームが送信されました！");
-    closeModal();
-  };
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault()
+
+    try {
+      const parse = contactSchema.safeParse({
+        name: formData.name,
+        email: formData.email,
+        tel: formData.tel,
+        interests: formData.interests.join(',')
+      })
+
+      if (!parse.success) {
+        setError({
+          status: 400,
+          message: '送信に失敗しました',
+          issues: parse.error.issues,
+        })
+        return
+      }
+
+      const url = 'https://ssgform.com/s/0XYIAHf5TI8T'
+  
+      if (!url) throw new Error('必要な環境変数が設定されていません')
+
+      const fd = new FormData();
+      fd.append('お名前', formData.name);
+      fd.append('メールアドレス', formData.email);
+
+      if (formData.tel) {
+        fd.append('電話番号', formData.tel);
+      }
+
+      fd.append('お申し込みのご希望など', formData.interests.join(','));
+  
+      const res = await fetch(url, {
+        cache: 'no-store',
+        method: 'POST',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: fd
+      })
+
+      if (res.status == 200) {
+        router.push('/thx')
+        closeModal()
+      } else {
+        console.error(res)
+        alert('フォームの送信に失敗しました。')
+      }
+    } catch (e) {
+      console.error('Failed to send mail', e)
+      return false
+    } 
+  }
 
   return (
     <Dialog open={isOpen} onClose={closeModal} className="relative z-50">
       <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-        <DialogPanel className="max-w-[1040px] w-full relative border bg-white px-5 h-[90%] overflow-auto rounded-3xl py-10 [box-shadow:0px_4px_60px_0px_rgba(0,_0,_0,_0.10)]">
-          <button onClick={closeModal} className="active group absolute right-5 top-5 z-30 md:h-6 w-6 h-4 md:w-8">
+        <DialogPanel className="relative h-[90%] w-full max-w-[1040px] overflow-auto rounded-3xl border bg-white px-5 py-10 [box-shadow:0px_4px_60px_0px_rgba(0,_0,_0,_0.10)]">
+          <button
+            onClick={closeModal}
+            className="active group absolute right-5 top-5 z-30 h-4 w-6 md:h-6 md:w-8"
+          >
             <span className="absolute left-0 top-0 block h-0.5 w-full -translate-y-1/2 bg-black transition-transform duration-500 ease-in-out group-[.active]:top-1/2 group-[.active]:rotate-45"></span>
             <span className="absolute bottom-0 left-0 block h-0.5 w-full -translate-y-1/2 bg-black transition-transform duration-500 ease-in-out group-[.active]:top-1/2 group-[.active]:-rotate-45"></span>
           </button>
-          <form id="myForm" onSubmit={handleSubmit}>
-            <div className="border-b border-[#F12929] md:pb-10 pb-6">
-              <p className="text-center md:text-[60px] text-[30px] font-bold">
+          <form id="myForm" method="post">
+            <div className="border-b border-[#F12929] pb-6 md:pb-10">
+              <p className="text-center text-[30px] font-bold md:text-[60px]">
                 お申し込みフォーム
               </p>
-              <p className="text-center md:text-[16px] text-[13px] leading-[2] mt-4">
+              <p className="mt-4 text-center text-[13px] leading-[2] md:text-[16px]">
                 当サービスにご興味をもっていただきありがとうございます。
                 <br />
                 1営業日以内に担当者よりご連絡を差し上げます。
@@ -58,252 +129,291 @@ const ModalForm = () => {
                 ※お問い合わせ希望の方もこちらからフォームをご送信ください。
               </p>
             </div>
-            <div className="md:pt-10 pt-6 w-full max-w-[576px] mx-auto">
-              <p className="text-center md:text-[18px] text-[14px]">
-                <span className="font-bold md:text-[30px] text-[20px] text-[#C92D2D]">
+            <div className="mx-auto w-full max-w-[576px] pt-6 md:pt-10">
+              <p className="text-center text-[14px] md:text-[18px]">
+                <span className="text-[20px] font-bold text-[#C92D2D] md:text-[30px]">
                   *
                 </span>
                 印は、必須項目です。
               </p>
-              <div className="md:mt-5 mt-4 space-y-5">
+              <div className="mt-4 space-y-5 md:mt-5">
                 <div>
-                    <label
+                  <label
                     htmlFor="name"
-                    className="block md:text-[18px] text-[14px] mb-1"
-                    >
+                    className="mb-1 block text-[14px] md:text-[18px]"
+                  >
                     お名前
-                    <span className="font-bold md:text-[30px] text-[20px] text-[#C92D2D]">
-                        *
+                    <span className="text-[20px] font-bold text-[#C92D2D] md:text-[30px]">
+                      *
                     </span>
-                    </label>
-                    <div>
+                  </label>
+                  <div>
                     <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="block w-full md:h-[76px] h-[50px] rounded-[10px] px-7 bg-[#EFF2F6]"
-                        placeholder="山田　太郎"
-                        value={formData.name}
-                        onChange={handleChange}
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="block h-[50px] w-full rounded-[10px] bg-[#EFF2F6] px-7 md:h-[76px]"
+                      placeholder="山田　太郎"
+                      value={formData.name}
+                      onChange={handleChange}
                     />
-                    </div>
+                  </div>
+                  {error && <div className="text-[#C92D2D]">{error?.issues?.find((issue) => issue.path.includes('name'))?.message}</div>}
                 </div>
                 <div>
-                    <label
+                  <label
                     htmlFor="email"
-                    className="block md:text-[18px] text-[14px] mb-1"
-                    >
+                    className="mb-1 block text-[14px] md:text-[18px]"
+                  >
                     メールアドレス
-                    <span className="font-bold md:text-[30px] text-[20px] text-[#C92D2D]">
-                        *
+                    <span className="text-[20px] font-bold text-[#C92D2D] md:text-[30px]">
+                      *
                     </span>
-                    </label>
-                    <div>
+                  </label>
+                  <div>
                     <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="block w-full md:h-[76px] h-[50px] rounded-[10px] px-7 bg-[#EFF2F6]"
-                        placeholder="abc@gmail.com"
-                        value={formData.email}
-                        onChange={handleChange}
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="block h-[50px] w-full rounded-[10px] bg-[#EFF2F6] px-7 md:h-[76px]"
+                      placeholder="abc@gmail.com"
+                      value={formData.email}
+                      onChange={handleChange}
                     />
-                    </div>
-                    <span className="block pt-2 px-2 text-[12px]">
-                        携帯キャリアメールアドレスはメールが届きづらいため、Gmail、Yahoo!メールなどPCメールアドレスを推奨いたします。 <br />
-                        ※携帯キャリアメールアドレス：@docomo.ne.jp / @ezweb.ne.jp / @softbank.ne.jp など
-                        </span>
+                  </div>
+                  {error && <div className="text-[#C92D2D]">{error?.issues?.find((issue) => issue.path.includes('email'))?.message}</div>}
+                  <span className="block px-2 pt-2 text-[12px]">
+                    携帯キャリアメールアドレスはメールが届きづらいため、Gmail、Yahoo!メールなどPCメールアドレスを推奨いたします。{' '}
+                    <br />
+                    ※携帯キャリアメールアドレス：@docomo.ne.jp / @ezweb.ne.jp /
+                    @softbank.ne.jp など
+                  </span>
                 </div>
                 <div>
-                    <label
+                  <label
                     htmlFor="tel"
-                    className="block md:text-[18px] text-[14px] mb-1"
-                    >
+                    className="mb-1 block text-[14px] md:text-[18px]"
+                  >
                     電話番号
-                    </label>
-                    <div>
+                  </label>
+                  <div>
                     <input
-                        type="text"
-                        id="tel"
-                        name="tel"
-                        className="block w-full md:h-[76px] h-[50px] rounded-[10px] px-7 bg-[#EFF2F6]"
-                        placeholder="090-1234-5678"
-                        value={formData.tel}
-                        onChange={handleChange}
+                      type="text"
+                      id="tel"
+                      name="tel"
+                      className="block h-[50px] w-full rounded-[10px] bg-[#EFF2F6] px-7 md:h-[76px]"
+                      placeholder="090-1234-5678"
+                      value={formData.tel}
+                      onChange={handleChange}
                     />
-                    </div>
+                  </div>
+                  {error && <div className="text-[#C92D2D]">{error?.issues?.find((issue) => issue.path.includes('tel'))?.message}</div>}
                 </div>
                 <div>
-                    <p
-                    className="block md:text-[18px] text-[14px] mb-1"
-                    >
-                    お申し込みのご希望など <span className="font-bold md:text-[30px] text-[20px] text-[#C92D2D]">
-                        *
+                  <p className="mb-1 block text-[14px] md:text-[18px]">
+                    お申し込みのご希望など{' '}
+                    <span className="text-[20px] font-bold text-[#C92D2D] md:text-[30px]">
+                      *
                     </span>
-                    </p>
-                    <div className="md:space-y-6 space-y-3 md:mt-5 mt-3">
-                        <label htmlFor="plan1" className="flex items-center gap-3">
-                            <p>
-                                <span className="block md:size-[30px] size-5 relative">
-                                    <input
-                                        id="plan1"
-                                        name="memorialMonitorPlan"
-                                        type="checkbox"
-                                        value={formData.memorialMonitorPlan}
-                                        onChange={handleChange}
-                                        className="peer opacity-0 md:size-[30px] size-5 cursor-pointer z-20"
-                                    />
-                                    <span className="hidden peer-checked:block absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/checkbox.svg" alt="" />
-                                    </span>
-                                    <span className="peer-checked:hidden  absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/uncheckbox.svg" alt="" />
-                                    </span>
-                                </span>
-                            </p>
-                            <p className="md:text-[20px] text-[14px] md:whitespace-nowrap">【先着50名様で締切】メモリアルモニタープランに申し込みたい</p>
-                        </label>
-                        <label htmlFor="plan2" className="flex items-center gap-3">
-                            <p>
-                                <span className="block md:size-[30px] size-5 relative">
-                                    <input
-                                        id="plan2"
-                                        name="entryPlan"
-                                        type="checkbox"
-                                        value={formData.entryPlan}
-                                        onChange={handleChange}
-                                        className="peer opacity-0 md:size-[30px] size-5 cursor-pointer z-20"
-                                    />
-                                    <span className="hidden peer-checked:block absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/checkbox.svg" alt="" />
-                                    </span>
-                                    <span className="peer-checked:hidden  absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/uncheckbox.svg" alt="" />
-                                    </span>
-                                </span>
-                            </p>
-                            <p className="md:text-[20px] text-[14px] md:whitespace-nowrap">エントリープランに申し込みたい</p>
-                        </label>
-                        <label htmlFor="plan3" className="flex items-center gap-3">
-                            <p>
-                                <span className="block md:size-[30px] size-5 relative">
-                                    <input
-                                        id="plan3"
-                                        name="standardPlan"
-                                        type="checkbox"
-                                        value={formData.standardPlan}
-                                        onChange={handleChange}
-                                        className="peer opacity-0 md:size-[30px] size-5 cursor-pointer z-20"
-                                    />
-                                    <span className="hidden peer-checked:block absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/checkbox.svg" alt="" />
-                                    </span>
-                                    <span className="peer-checked:hidden  absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/uncheckbox.svg" alt="" />
-                                    </span>
-                                </span>
-                            </p>
-                            <p className="md:text-[20px] text-[14px] md:whitespace-nowrap">スタンダードプランに申し込みたい</p>
-                        </label>
-                        <label htmlFor="plan4" className="flex items-center gap-3">
-                            <p>
-                                <span className="block md:size-[30px] size-5 relative">
-                                    <input
-                                        id="plan4"
-                                        name="realMemorialHome"
-                                        type="checkbox"
-                                        value={formData.realMemorialHome}
-                                        onChange={handleChange}
-                                        className="peer opacity-0 md:size-[30px] size-5 cursor-pointer z-20"
-                                    />
-                                    <span className="hidden peer-checked:block absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/checkbox.svg" alt="" />
-                                    </span>
-                                    <span className="peer-checked:hidden  absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/uncheckbox.svg" alt="" />
-                                    </span>
-                                </span>
-                            </p>
-                            <p className="md:text-[20px] text-[14px] md:whitespace-nowrap">現実の供養所オプション希望</p>
-                        </label>
-                        <label htmlFor="plan5" className="flex items-center gap-3">
-                            <p>
-                                <span className="block md:size-[30px] size-5 relative">
-                                    <input
-                                        id="plan5"
-                                        name="otherQuestions"
-                                        type="checkbox"
-                                        value={formData.otherQuestions}
-                                        onChange={handleChange}
-                                        className="peer opacity-0 md:size-[30px] size-5 cursor-pointer z-20"
-                                    />
-                                    <span className="hidden peer-checked:block absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/checkbox.svg" alt="" />
-                                    </span>
-                                    <span className="peer-checked:hidden  absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/uncheckbox.svg" alt="" />
-                                    </span>
-                                </span>
-                            </p>
-                            <p className="md:text-[20px] text-[14px] md:whitespace-nowrap">その他のご質問・お問い合わせ希望</p>
-                        </label>
-                    </div>
+                  </p>
+                  <div className="mt-3 space-y-3 md:mt-5 md:space-y-6">
+                    <label htmlFor="plan1" className="flex items-center gap-3">
+                      <p>
+                        <span className="relative block size-5 md:size-[30px]">
+                          <input
+                            id="plan1"
+                            name="interests"
+                            type="checkbox"
+                            checked={formData.interests.includes("【先着50名様で締切】メモリアルモニタープランに申し込みたい")}
+                            value="【先着50名様で締切】メモリアルモニタープランに申し込みたい"
+                            onChange={handleChange}
+                            className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
+                          />
+                          <span className="absolute inset-0 hidden h-full w-full cursor-pointer peer-checked:block">
+                            <img src="/assets/images/checkbox.svg" alt="" />
+                          </span>
+                          <span className="absolute  inset-0 h-full w-full cursor-pointer peer-checked:hidden">
+                            <img src="/assets/images/uncheckbox.svg" alt="" />
+                          </span>
+                        </span>
+                      </p>
+                      <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
+                        【先着50名様で締切】メモリアルモニタープランに申し込みたい
+                      </p>
+                    </label>
+                    <label htmlFor="plan2" className="flex items-center gap-3">
+                      <p>
+                        <span className="relative block size-5 md:size-[30px]">
+                          <input
+                            id="plan2"
+                            name="interests"
+                            type="checkbox"
+                            checked={formData.interests.includes("エントリープランに申し込みたい")}
+                            value="エントリープランに申し込みたい"
+                            onChange={handleChange}
+                            className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
+                          />
+                          <span className="absolute inset-0 hidden h-full w-full cursor-pointer peer-checked:block">
+                            <img src="/assets/images/checkbox.svg" alt="" />
+                          </span>
+                          <span className="absolute  inset-0 h-full w-full cursor-pointer peer-checked:hidden">
+                            <img src="/assets/images/uncheckbox.svg" alt="" />
+                          </span>
+                        </span>
+                      </p>
+                      <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
+                        エントリープランに申し込みたい
+                      </p>
+                    </label>
+                    <label htmlFor="plan3" className="flex items-center gap-3">
+                      <p>
+                        <span className="relative block size-5 md:size-[30px]">
+                          <input
+                            id="plan3"
+                            name="interests"
+                            type="checkbox"
+                            checked={formData.interests.includes("スタンダードプランに申し込みたい")}
+                            value="スタンダードプランに申し込みたい"
+                            onChange={handleChange}
+                            className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
+                          />
+                          <span className="absolute inset-0 hidden h-full w-full cursor-pointer peer-checked:block">
+                            <img src="/assets/images/checkbox.svg" alt="" />
+                          </span>
+                          <span className="absolute  inset-0 h-full w-full cursor-pointer peer-checked:hidden">
+                            <img src="/assets/images/uncheckbox.svg" alt="" />
+                          </span>
+                        </span>
+                      </p>
+                      <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
+                        スタンダードプランに申し込みたい
+                      </p>
+                    </label>
+                    <label htmlFor="plan4" className="flex items-center gap-3">
+                      <p>
+                        <span className="relative block size-5 md:size-[30px]">
+                          <input
+                            id="plan4"
+                            name="interests"
+                            type="checkbox"
+                            checked={formData.interests.includes("現実の供養所オプション希望")}
+                            value="現実の供養所オプション希望"
+                            onChange={handleChange}
+                            className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
+                          />
+                          <span className="absolute inset-0 hidden h-full w-full cursor-pointer peer-checked:block">
+                            <img src="/assets/images/checkbox.svg" alt="" />
+                          </span>
+                          <span className="absolute  inset-0 h-full w-full cursor-pointer peer-checked:hidden">
+                            <img src="/assets/images/uncheckbox.svg" alt="" />
+                          </span>
+                        </span>
+                      </p>
+                      <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
+                        現実の供養所オプション希望
+                      </p>
+                    </label>
+                    <label htmlFor="plan5" className="flex items-center gap-3">
+                      <p>
+                        <span className="relative block size-5 md:size-[30px]">
+                          <input
+                            id="plan5"
+                            name="interests"
+                            type="checkbox"
+                            checked={formData.interests.includes("その他のご質問・お問い合わせ希望")}
+                            value="その他のご質問・お問い合わせ希望"
+                            onChange={handleChange}
+                            className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
+                          />
+                          <span className="absolute inset-0 hidden h-full w-full cursor-pointer peer-checked:block">
+                            <img src="/assets/images/checkbox.svg" alt="" />
+                          </span>
+                          <span className="absolute  inset-0 h-full w-full cursor-pointer peer-checked:hidden">
+                            <img src="/assets/images/uncheckbox.svg" alt="" />
+                          </span>
+                        </span>
+                      </p>
+                      <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
+                        その他のご質問・お問い合わせ希望
+                      </p>
+                    </label>
+                  </div>
+                  {error && <div className="text-[#C92D2D]">{error?.issues?.find((issue) => issue.path.includes('interests'))?.message}</div>}
                 </div>
               </div>
             </div>
-            
-            <div className="flex justify-center md:mt-14 mt-8">
-                    <div className="space-y-5">
-                        <label htmlFor="terms" className="flex items-center gap-3">
-                            <p>
-                                <span className="block md:size-[30px] size-5 relative">
-                                    <input
-                                        id="terms"
-                                        name="terms"
-                                        type="checkbox"
-                                        required
-                                        className="peer opacity-0 md:size-[30px] size-5 cursor-pointer z-20"
-                                    />
-                                    <span className="hidden peer-checked:block absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/checkbox.svg" alt="" />
-                                    </span>
-                                    <span className="peer-checked:hidden  absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/uncheckbox.svg" alt="" />
-                                    </span>
-                                </span>
-                            </p>
-                            <p className="md:text-[20px] text-[14px] md:whitespace-nowrap"><a href="/terms-of-service" className="">利用規約</a>に同意する</p>
-                        </label>
-                        <label htmlFor="policy" className="flex items-center gap-3">
-                            <p>
-                                <span className="block md:size-[30px] size-5 relative">
-                                    <input
-                                        id="policy"
-                                        name="policy"
-                                        type="checkbox"
-                                        required
-                                        className="peer opacity-0 md:size-[30px] size-5 cursor-pointer z-20"
-                                    />
-                                    <span className="hidden peer-checked:block absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/checkbox.svg" alt="" />
-                                    </span>
-                                    <span className="peer-checked:hidden  absolute w-full h-full inset-0 cursor-pointer">
-                                        <img src="/assets/images/uncheckbox.svg" alt="" />
-                                    </span>
-                                </span>
-                            </p>
-                            <p className="md:text-[20px] text-[14px] md:whitespace-nowrap"><a href="/privacy-policy" className="">プライバシーポリシーに同意する</a></p>
-                        </label>
-                    </div>
-                </div>
-            <div className="flex justify-center md:mt-10 mt-5">
-                <input type="submit" value="送信する" className="cursor-pointer flex items-cenrer justify-center font-bold w-[300px] md:h-[68px] h-[54px] md:text-[24px] text-[18px] text-white bg-[#F12929] rounded-[10px]"/>
+            {/* <div className="mt-8 flex justify-center md:mt-14">
+              <div className="space-y-5">
+                <label htmlFor="terms" className="flex items-center gap-3">
+                  <p>
+                    <span className="relative block size-5 md:size-[30px]">
+                      <input
+                        id="terms"
+                        name="terms"
+                        type="checkbox"
+                        required
+                        className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
+                      />
+                      <span className="absolute inset-0 hidden h-full w-full cursor-pointer peer-checked:block">
+                        <img src="/assets/images/checkbox.svg" alt="" />
+                      </span>
+                      <span className="absolute  inset-0 h-full w-full cursor-pointer peer-checked:hidden">
+                        <img src="/assets/images/uncheckbox.svg" alt="" />
+                      </span>
+                    </span>
+                  </p>
+                  <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
+                    <a href="/terms-of-service" className="underline">
+                      利用規約
+                    </a>
+                    に同意する
+                  </p>
+                </label>
+                <label htmlFor="policy" className="flex items-center gap-3">
+                  <p>
+                    <span className="relative block size-5 md:size-[30px]">
+                      <input
+                        id="policy"
+                        name="policy"
+                        type="checkbox"
+                        required
+                        className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
+                      />
+                      <span className="absolute inset-0 hidden h-full w-full cursor-pointer peer-checked:block">
+                        <img src="/assets/images/checkbox.svg" alt="" />
+                      </span>
+                      <span className="absolute  inset-0 h-full w-full cursor-pointer peer-checked:hidden">
+                        <img src="/assets/images/uncheckbox.svg" alt="" />
+                      </span>
+                    </span>
+                  </p>
+                  <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
+                    <a href="/privacy-policy" className="underline">
+                      プライバシーポリシー
+                    </a>
+                    に同意する
+                  </p>
+                </label>
+              </div>
+            </div> */}
+            <div className="mt-5 flex justify-center md:mt-10">
+              <input
+                type="button"
+                onClick={handleSubmit}
+                value="送信する"
+                className="items-cenrer flex h-[54px] w-[300px] cursor-pointer justify-center rounded-[10px] bg-[#F12929] text-[18px] font-bold text-white md:h-[68px] md:text-[24px]"
+              />
+            </div>
+            <div className="max-md:text-[14px] mt-5 flex justify-center md:mt-10">
+              <div>
+                <a href="/terms-of-service" className="underline">利用規約</a>と<a href="/privacy-policy" className="underline">プライバシーポリシー</a>にご同意の上送信ください。
+              </div>
             </div>
           </form>
         </DialogPanel>
       </div>
     </Dialog>
-  );
-};
+  )
+}
 
-export default ModalForm;
+export default ModalForm

@@ -29,36 +29,36 @@ const useScrollAnimations = () => {
           ease: 'Power2.easeInOut',
           scrollTrigger: { trigger: el },
         }),
-        'zoom-out': (el: HTMLElement) =>
-          gsap.from(el, {
-            autoAlpha: 0,
-            scale: 0.8,
-            duration: 0.5,
-            ease: 'Power2.easeInOut',
-            scrollTrigger: { trigger: el },
-          }),
-          'bgtext': (el: HTMLElement) =>
-            gsap.to(el, {
-              width: "100%",
-              alpha: 1,
-              duration: 1.4,
-              ease: 'Power2.easeInOut',
-              scrollTrigger: {
-                trigger: el,
-                toggleActions: "play none none none",
-              },
-          }),
-          'show': (el: HTMLElement) =>
-            gsap.from(el, {
-              autoAlpha: 0,
-              duration: 0.5,
-              ease: 'Power2.easeInOut',
-              scrollTrigger: {
-                trigger: el,
-                start: 'top 60%',
-                toggleActions: "play none none reverse",
-              },
-          }),
+      'zoom-out': (el: HTMLElement) =>
+        gsap.from(el, {
+          autoAlpha: 0,
+          scale: 0.8,
+          duration: 0.5,
+          ease: 'Power2.easeInOut',
+          scrollTrigger: { trigger: el },
+        }),
+      bgtext: (el: HTMLElement) =>
+        gsap.to(el, {
+          width: '100%',
+          alpha: 1,
+          duration: 1.4,
+          ease: 'Power2.easeInOut',
+          scrollTrigger: {
+            trigger: el,
+            toggleActions: 'play none none none',
+          },
+        }),
+      show: (el: HTMLElement) =>
+        gsap.from(el, {
+          autoAlpha: 0,
+          duration: 0.5,
+          ease: 'Power2.easeInOut',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 60%',
+            toggleActions: 'play none none reverse',
+          },
+        }),
     }
 
     let ctx = gsap.context(() => {
