@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 export default function Thankyou() {
   return (
     <main className="bg-[url('/assets/images/bg-thanks.png')] bg-cover">
+      <div className="bg-[url('/assets/images/bg-inu.png')] bg-right-top max-dt:bg-[length:64.861vw_auto] max-md:bg-[length:50%_auto] bg-no-repeat">
         <div className="px-5">
           <div className="w-full max-w-[1062px] mx-auto md:pt-[294px] pt-[150px]">
             <h3 className="text-center md:text-[128px] text-[64px] font-black leading-none">ARIGATO!</h3>
@@ -130,6 +131,7 @@ export default function Thankyou() {
             </p>
           </div>
         </div>
+      </div>
     </main>
   )
 }
