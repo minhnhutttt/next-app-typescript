@@ -8,7 +8,7 @@ const Introduction = () => {
     <section id="introduction" ref={ref} className="relative bg-[url('/assets/images/bg-introduction.png')] bg-cover bg-top md:pt-[160px] md:pb-[140px] pb-16 pt-20 px-5">
         <div className="w-full max-w-[1360px] mx-auto">
             <div className="fade-up">
-                <p className="font-inter md:text-[24px] text-[18px] tracking-widest">What is Agent</p>
+                <p className="font-inter md:text-[24px] text-[18px] tracking-widest">What is a DIVER Agent?</p>
                 <h3 className="md:text-[56px] text-[32px] font-medium tracking-widest">DIVER Agentとは？</h3>
             </div>
             <div className="flex justify-center items-center max-xl:flex-col md:mt-[60px] mt-8 gap-10 md:gap-20">

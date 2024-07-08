@@ -8,31 +8,31 @@ const data = [
         number: '/assets/images/product-01.svg', 
         image: '/assets/images/img-product-01.png',
         title: (<>軍事規格で作られた <br />最強のストレージ！<br />DIVER Storage</>),
-        news: (<>それは<span className="text-[#FEEF01] underline">軍事レベルで暗号化された分散型の最強オンラインストレージ</span>だから</>),
+        news: (<>それは<span className="text-[#FEEF01] underline underline-offset-4 decoration-2">軍事レベルで暗号化された分散型の最強オンラインストレージ</span>だから</>),
         articles: [
             {
                 imageArticle: '/assets/images/img-product-01-article-01.png',
                 titleArticle: '軍事レベルの暗号化',
-                textArticke: (<>データは、多くの国や組織によって認証され、<span className="underline">最も機密性の高いデータを保護できる暗号化アルゴリズムであるAES-256で暗号化</span>されています。<br />現在のコンピュータ技術では、実際的な時間内にAES-256を破ることはほぼ不可能です。</>)
+                textArticke: (<>データは、多くの国や組織によって認証され、<span className="underline underline-offset-4 decoration-2">最も機密性の高いデータを保護できる暗号化アルゴリズムであるAES-256で暗号化</span>されています。<br />現在のコンピュータ技術では、実際的な時間内にAES-256を破ることはほぼ不可能です。</>)
             },
             {
                 imageArticle: '/assets/images/img-product-01-article-02.png',
                 titleArticle: '分散型',
-                textArticke: (<>データは<span className="underline">地理的に分散した複数の拠点に保存</span>されます。<br />そのため<span className="underline">一箇所の拠点にトラブルが起きた場合も常に安定して稼働</span>します。</>)
+                textArticke: (<>データは<span className="underline underline-offset-4 decoration-2">地理的に分散した複数の拠点に保存</span>されます。<br />そのため<span className="underline underline-offset-4 decoration-2">一箇所の拠点にトラブルが起きた場合も常に安定して稼働</span>します。</>)
             },
         ],
         reasons: [
             {
-                reason: 'データ量の増加:デジタルデータの生成量が増加しており、企業や個人が保存するデータ量も増加しています。'
+                reason: (<>データ量の増加:デジタルデータの生成量が増加しており、<span className="font-bold">企業や個人が保存するデータ量も増加</span>しています。</>)
             },
             {
-                reason: '需要の増加:データの共有とアクセスが重要であり、オンラインストレージの需要が増加します。'
+                reason: (<>需要の増加:データの共有とアクセスが重要であり、<span className="font-bold">オンラインストレージの需要が増加</span>します。</>)
             },
             {
-                reason: '高セキュリティ:サイバー攻撃のリスクが高まる中で、安全にデータを保存できるオンラインストレージの需要が増加しています。'
+                reason: (<>高セキュリティ:サイバー攻撃のリスクが高まる中で、<span className="font-bold">安全にデータを保存できるオンラインストレージの需要が増加</span>しています。</>)
             },
             {
-                reason: 'コストパフォーマンス:壊れることがない買い切り型なので、早く使い始めるほどお得です。'
+                reason: (<>コストパフォーマンス:壊れることがない買い切り型なので、<span className="font-bold">早く使い始めるほどお得</span>です。</>)
             },
         ]
     },
@@ -41,12 +41,12 @@ const data = [
         number: '/assets/images/product-02.svg', 
         image: '/assets/images/img-product-02.png',
         title: (<>QRコードの次はこれ！触れるだけでNFTを<br />簡単取得！DIVER Tag</>),
-        news: (<>それは駅の改札の様に<span className="text-[#FEEF01] underline font-bold">スマートフォンでタッチするだけで、NFTの受け取りや現物資産の所有の証明ができる</span>から</>),
+        news: (<>それは駅の改札の様に<span className="text-[#FEEF01] underline font-bold underline-offset-4 decoration-2">スマートフォンでタッチするだけで、NFTの受け取りや現物資産の所有の証明ができる</span>から</>),
         articles: [
             {
                 imageArticle: '/assets/images/img-product-02-article-01.png',
                 titleArticle: '「触れるだけ」簡単アクション',
-                textArticke: (<>とても便利なQRコードですが、カメラアプリを立ち上げて撮影するのが手間です。<br />その点DIVER Tagはスマートフォンをタップするだけ！</>)
+                textArticke: (<>とても便利なQRコードですが、カメラアプリを立ち上げて撮影するのが手間です。<br />その点DIVER Tagは<span className="font-bold">スマートフォンをタップするだけ</span>！</>)
             },
             {
                 imageArticle: '/assets/images/img-product-02-article-02.png',
@@ -59,13 +59,13 @@ const data = [
                 reason: '多用途：DIVER TagはNFTの受け取りや、所有物の証明など、さまざまな用途に利用できます。'
             },
             {
-                reason: '高いセキュリティ：DIVER TagはNFC(短距離通信) 技術を採用しており、情報の漏洩リスクが低く、セキュリティが強化されているため、機密情報のやり取りにも適しています。'
+                reason: (<>高いセキュリティ：DIVER TagはNFC(短距離通信) 技術を採用しており、情報の漏洩リスクが低く、セキュリティが強化されているため、<span className="font-bold">機密情報のやり取りにも適しています。</span></>)
             },
             {
-                reason: 'NFCの普及：多くのスマートフォンがNFC機能を標準搭載しているため、ユーザーがすぐに利用できる環境が整っています。'
+                reason: (<>NFCの普及：多くのスマートフォンがNFC機能を標準搭載しているため、<span className="font-bold">ユーザーがすぐに利用できる環境が整っています。</span></>)
             },
             {
-                reason: 'ユーザーの積極的な関与：スマートフォンをタッチするだけという手軽さがユーザーの関心を引き、参加意欲を高める効果があります。'
+                reason: (<>ユーザーの積極的な関与：スマートフォンをタッチするだけという手軽さがユーザーの関心を引き、<span className="font-bold">参加意欲を高める効果</span>があります。</>)
             },
         ]
     },
@@ -74,7 +74,7 @@ const data = [
         number: '/assets/images/product-03.svg', 
         image: '/assets/images/img-product-03.png',
         title: (<>複雑なアドレスを <br />超絶簡単管理！<br />DIVER Domain</>),
-        news: (<>それは円周率3.1415...=「π」と呼ぶように、<span className="text-[#FEEF01] underline font-bold">複雑なウォレットアドレスを口頭で伝えられるくらい簡単な名前にできる</span>から</>),
+        news: (<>それは円周率3.1415...=「π」と呼ぶように、<span className="text-[#FEEF01] underline font-bold underline-offset-4 decoration-2">複雑なウォレットアドレスを口頭で伝えられるくらい簡単な名前にできる</span>から</>),
         articles: [
             {
                 imageArticle: '/assets/images/img-product-03-article-01.png',
@@ -89,16 +89,16 @@ const data = [
         ],
         reasons: [
             {
-                reason: '利便性:ユーザーがウォレットを使いやすくなります。'
+                reason: (<>利便性:ユーザーが<span className="font-bold">ウォレットを使いやすく</span>なります。</>)
             },
             {
-                reason: '安全性の向上:シンプルな名前にすることで、送金時のミスを減らせます。'
+                reason: (<>安全性の向上:シンプルな名前にすることで、<span className="font-bold">送金時のミスを減らせます。</span></>)
             },
             {
-                reason: '覚えやすさ：簡単な名前にすることで、ウォレットアドレスを覚えやすく、愛着の湧くものになります。'
+                reason: (<>覚えやすさ：簡単な名前にすることで、ウォレットアドレスを<span className="font-bold">覚えやすく、愛着の湧くものに</span>なります。</>)
             },
             {
-                reason: 'ユーザーの積極的な関与：スマートフォンをタッチするだけという手軽さがユーザーの関心を引き、参加意欲を高める効果があります。'
+                reason: (<>ユーザーの積極的な関与：スマートフォンをタッチするだけという手軽さがユーザーの関心を引き、<span className="font-bold">参加意欲を高める効果</span>があります。</>)
             },
         ]
     }
@@ -116,9 +116,9 @@ function getBackground(id: string): string {
     return colorMap[id] || 'bg-[#18539E]';
 }
   return (
-    <section id="product" ref={ref} className="relative md:pt-[110px] pt-20 md:pb-[170px] pb-28">
+    <section id="products" ref={ref} className="relative md:pt-[110px] pt-20 md:pb-[170px] pb-28">
         <div className="fade-up text-center tracking-widest">
-            <p className="md:text-[24px] text-[18px] text-[#00053A] font-inter">Product</p>
+            <p className="md:text-[24px] text-[18px] text-[#00053A] font-inter">Products</p>
             <h3 className="font-medium md:text-[56px] text-[32px] tracking-[0.1em]">こんな商品を販売できます！</h3>
         </div>
         <div className="md:mt-[80px] mt-12 pt-[66px]">
@@ -137,7 +137,9 @@ function getBackground(id: string): string {
                                 {item.title}
                             </h4>
                             <div className="fade-up pt-4 flex gap-5">
-                                <div className="md:w-[214px] w-[140px] h-[39px] md:h-[60px] bg-[url('/assets/images/product-news.png')] bg-[length:100%_100%] flex items-center justify-center md:text-[20px] text-[13px] text-white rotate-[-10deg] tracking-widest">どこが革新的？</div>
+                                <div className="slide-skew">
+                                    <div className="md:w-[214px] w-[140px] h-[39px] md:h-[60px] bg-[url('/assets/images/product-news.png')] bg-[length:100%_100%] flex items-center justify-center md:text-[20px] text-[13px] text-white rotate-[-10deg] tracking-widest">どこが革新的？</div>
+                                </div>
                                 <p className="flex-1 break-words md:text-[18px] text-[14px]">{item.news}</p>
                             </div>
                             <div className="flex xl:gap-[54px] gap-5 md:mt-12 mt-8">
@@ -184,7 +186,9 @@ function getBackground(id: string): string {
         <div className="flex items-center justify-center px-5 mt-9">
             <div className="fade-up w-full md:max-w-[921px] max-w-[440px] md:h-[257px] h-[200px] bg-[url('/assets/images/bg-box.png')] bg-cover flex items-center justify-center p-3">
             <div className="w-full h-full border border-white flex items-center justify-center">
-                <p className="md:text-[44px] text-[20px] font-bold text-white text-center leading-[2] tracking-widest">さらに<span className="md:text-[54px] text-[24px] text-[#00053A] bg-[#FEEF01] leading-[1.2] tracking-[0.1em] inline-block">革新的</span>で<span className="md:text-[54px] text-[24px] text-[#00053A] bg-[#FEEF01] leading-[1.2] tracking-[0.1em] inline-block">最先端</span>の<br />サービスを続々追加予定！</p>
+                <p className="md:text-[44px] text-[20px] font-bold text-white text-center leading-[2] tracking-widest">さらに<span className="md:text-[54px] text-[24px] text-[#00053A] leading-[1.2] tracking-[0.1em] inline-block relative">
+                    <span className="slide-gradient absolute inset-0 bg-[#FEEF01] z-[-1]"></span>
+                    革新的</span>で<span className="md:text-[54px] text-[24px] text-[#00053A] leading-[1.2] tracking-[0.1em] inline-block relative"><span className="slide-gradient absolute inset-0 bg-[#FEEF01] z-[-1]"></span>最先端</span>の<br />サービスを続々追加予定！</p>
             </div>
             </div>
         </div>

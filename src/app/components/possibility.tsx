@@ -6,12 +6,12 @@ const data = [
     {
         image: '/assets/images/img-possibility-01.png',
         title: (<>収益化できる<br />サービスの構築</>),
-        text: (<>ビジネスモデルは小売業！良いものを安く販売することによって収益を上げるだけです。<br />既存の商品ラインナップに手軽に追加できます！</>)
+        text: (<><span className="font-bold">ビジネスモデルは小売業</span>！良いものを安く販売することによって収益を上げるだけです。<br />既存の商品ラインナップに手軽に追加できます！</>)
     },
     {
         image: '/assets/images/img-possibility-02.png',
         title: (<>最新の技術を使った<br />サービスの提供</>),
-        text: '最新技術を駆使したソリューションを提案することで、顧客の満足度を高め、長期的な信頼関係を築くことができます。'
+        text: (<>最新技術を駆使したソリューションを提案することで、<span className="font-bold">顧客の満足度を高め、長期的な信頼関係を築く</span>ことができます。</>)
     },
     {
         image: '/assets/images/img-possibility-03.png',
@@ -27,7 +27,7 @@ const Possibility = () => {
         <div className="bg-[#00053A] md:rounded-t-[70px] rounded-t-[40px] md:pt-[150px] pt-20 md:pb-[135px] pb-16">
             <div className="w-full md:max-w-[1440px] max-w-[440px] mx-auto">
             <div className="fade-up text-center tracking-widest text-white">
-                <p className="md:text-[24px] text-[18px] font-inter">Possibility</p>
+                <p className="md:text-[24px] text-[18px] font-inter">Expanding Possibilities</p>
                 <h3 className="font-medium md:text-[56px] text-[32px] tracking-[0.1em]">広がる可能性</h3>
             </div>
             <div className="md:mt-[88px] mt-[50px] md:space-y-[60px] space-y-10">

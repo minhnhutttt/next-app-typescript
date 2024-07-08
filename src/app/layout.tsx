@@ -3,6 +3,7 @@ import { Inter, Noto_Sans_JP} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import FrontChat from "@/components/frontChat";
 
 const sans = Noto_Sans_JP({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <FrontChat />
       </body>
     </html>
   );

@@ -1,5 +1,8 @@
 "use client";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode } from "react";
 
@@ -53,7 +56,7 @@ export type FlowPropsType = {
 
   const Article = ({number, image, sales, text} : FlowPropsType) => {
     return (
-        <div className={`fade-up relative w-[280px] md:min-h-[403px] min-h-[330px] rounded-[20px] bg-white [filter:drop-shadow(4px_4px_30px_rgba(0,_78,_143,_0.20))] border-[5px] px-6 pb-7 ${sales ? 'border-[#E6022E]' : 'border-[#0055A3]'}`}>
+        <div className={`fade-up relative md:w-[280px] md:min-h-[403px] min-h-[330px] rounded-[20px] bg-white [filter:drop-shadow(4px_4px_30px_rgba(0,_78,_143,_0.20))] border-[5px] px-6 pb-7 ${sales ? 'border-[#E6022E]' : 'border-[#0055A3]'}`}>
             <div className="flex justify-center -mt-9">
                 <div className={`md:w-[76px] w-[60px] md:h-[76px] h-[60px] rounded-full flex items-center justify-center bg-white border-[4px] ${sales ? 'border-[#E6022E]' : 'border-[#0055A3]'}`}>
                     <img src={`/assets/images/flow-`+ number + '.svg'} />
@@ -77,12 +80,28 @@ const Flow = () => {
         <div className="relative md:pt-[120px] pt-[70px] px-5">
             <div className="fade-up text-center tracking-widest text-white">
                 <p className="md:text-[24px] text-[18px] font-inter">Registration Flow</p>
-                <h3 className="font-medium md:text-[56px] text-[32px] tracking-[0.1em]">エージェント登録フロー</h3>
+                <h3 className="font-medium md:text-[56px] text-[32px] tracking-[0.1em]">エージェント<br className="md:hidden" />登録フロー</h3>
             </div>
-            <div className="flex flex-wrap justify-center md:gap-[60px] gap-12 md:mt-[140px] mt-20">
+            <div className="hidden md:flex flex-wrap justify-center md:gap-[60px] gap-12 md:mt-[140px] mt-20">
                 {dataRegistration.map(({number, image, text})=>(
                     <Article number={number} image={image} text={text} key={number} />
                 ))}
+            </div>
+            <div className="md:hidden md:mt-[140px] mt-20 w-full max-w-[380px] mx-auto">
+                <Swiper
+                    slidesPerView={'auto'}
+                        loop={true}
+                        centeredSlides={true}
+                        modules={[Navigation]}
+                        navigation={true}
+                        className="articleSwiper relative"
+                    >
+                    {dataRegistration.map(({number, image, text}) => (
+                            <SwiperSlide className="!h-auto max-md:pt-9" key={number}>
+                        <Article number={number} image={image} text={text} key={number} />
+                    </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </div>
        </div>
@@ -93,10 +112,26 @@ const Flow = () => {
                 <p className="md:text-[24px] text-[18px] font-inter">Sales Flow</p>
                 <h3 className="font-medium md:text-[56px] text-[32px] tracking-[0.1em]">販売フロー</h3>
             </div>
-            <div className="flex flex-wrap justify-center md:gap-[60px] gap-12 md:mt-[140px] mt-20">
+            <div className="hidden md:flex flex-wrap justify-center md:gap-[60px] gap-12 md:mt-[140px] mt-20">
                 {dataSales.map(({number, image, text})=>(
                     <Article sales number={number} image={image} text={text} key={number} />
                 ))}
+            </div>
+            <div className="md:hidden md:mt-[140px] mt-20 w-full max-w-[380px] mx-auto">
+                <Swiper
+                    slidesPerView={'auto'}
+                        loop={true}
+                        centeredSlides={true}
+                        modules={[Navigation]}
+                        navigation={true}
+                        className="articleSwiper relative"
+                    >
+                    {dataSales.map(({number, image, text}) => (
+                            <SwiperSlide className="!h-auto max-md:pt-9" key={number}>
+                        <Article sales number={number} image={image} text={text} key={number} />
+                    </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </div>
        </div>

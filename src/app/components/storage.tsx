@@ -7,7 +7,7 @@ const Storage = () => {
   return (
     <section ref={ref} className="px-5 py-[60px] md:py-[80px]">
         <div className="w-full md:max-w-[1246px] max-w-[540px] max-md:flex-col mx-auto border-y border-[#18539E] md:py-[60px] py-8 md:px-5 flex items-center md:gap-[73px] gap-8">
-            <figure>
+            <figure className="animate-[poyopoyo_2s_ease-out_infinite]">
                 <img className="fade-up max-md:w-[320px]" src="/assets/images/img-storage.png" alt="" />
             </figure>
             <div className="fade-up ">

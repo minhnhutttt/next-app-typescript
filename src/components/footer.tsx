@@ -1,3 +1,6 @@
+"use client"
+import { frontOpen } from "@/lib/front";
+
 interface NavLink {
   link: string;
   text: string;
@@ -10,7 +13,7 @@ const links: NavLink[] = [
     text: "DIVER Agentとは？",
   },
   {
-    link: "/#product",
+    link: "/#products",
     text: "商品例",
   },
   {
@@ -51,6 +54,7 @@ const Footer = () => {
                     </a>
                 </li>
                 ))}
+                <li className="flex items-center"><button onClick={()=> frontOpen()} className="text-[16px] text-white font-medium duration-150 hover:opacity-75 px-8 lg:px-12 h-[60px] flex items-center justify-center">お問い合わせ</button></li>
             </ul>
         </div>
         <p className="text-center text-[14px] text-white font-lato">Copyright © 2024 DIVER Agent.</p>

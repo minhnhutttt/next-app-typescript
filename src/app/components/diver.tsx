@@ -1,5 +1,8 @@
 "use client";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const data = [
@@ -26,7 +29,7 @@ const Diver = () => {
     <section ref={ref} className="relative bg-[url('/assets/images/bg-diver.png')] bg-cover bg-bottom md:pt-[160px] pt-20 px-5 md:pb-[278px] pb-[150px]">
         <div className="w-full max-w-[1360px] mx-auto">
             <div className="fade-up text-white">
-                <p className="font-inter md:text-[24px] text-[18px] tracking-widest">What is DVER</p>
+                <p className="font-inter md:text-[24px] text-[18px] tracking-widest">What is a DIVER?</p>
                 <h3 className="md:text-[56px] text-[32px] font-medium tracking-widest">DIVERとは？</h3>
             </div>
             <div className="fade-up flex justify-center xl:justify-end items-center max-xl:flex-col md:mt-20 mt-12 gap-10 md:gap-20 xl:gap-[137px] xl:pr-[110px]">
@@ -37,7 +40,7 @@ const Diver = () => {
                     DIVERは、世界で唯一、取引手数料が完全無料であらゆるアプリが使える革新的なブロックチェーンです。ビットコインの思想とイーサリアムの利便性を基に、さらに進化させたグローバルプロジェクトです！
                 </div>
             </div>
-            <div className="flex xl:px-10 flex-wrap md:mt-[100px] mt-[60px] justify-center md:gap-10 gap-6">
+            <div className="hidden md:flex xl:px-10 flex-wrap md:mt-[100px] mt-[60px] justify-center md:gap-10 gap-6">
                 {data.map((item,index)=>(
                     <div className="fade-up w-[400px] bg-[#18539E]/[0.2] border border-[#18539E] flex flex-col items-center p-4 md:p-7" key={index}>
                         <figure>
@@ -50,6 +53,28 @@ const Diver = () => {
                     </div>
                 ))}
                 
+            </div>
+            <div className="md:mt-[100px] mt-[60px] w-full max-w-[440px] mx-auto md:hidden">
+            <Swiper
+                slidesPerView={'auto'}
+                loop={true}
+                centeredSlides={true}
+                modules={[Navigation]}
+                navigation={true}
+                className="mySwiper relative"
+            >
+                {data.map((item, index) => (
+                    <SwiperSlide className="w-[400px] !h-auto bg-[#18539E]/[0.2] border border-[#18539E] flex flex-col items-center justify-center p-5 md:p-7" key={index}>
+                        <figure className='flex justify-center items-center'>
+                            <img className="max-md:w-[80px]" src={item.image} alt={item.title} />
+                        </figure>
+                        <div className="text-white pt-4 md:pt-6 font-inter ">
+                            <h5 className="text-center md:text-[18px] text-[15px] font-semibold tracking-widest">{item.title}</h5>
+                            <p className="md:text-[16px] text-[13px] leading-[2] mt-3 md:mt-5 tracking-wide">{item.text}</p>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
             </div>
         </div>
     </section>

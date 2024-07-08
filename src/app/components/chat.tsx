@@ -1,6 +1,7 @@
 "use client";
 
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { frontOpen } from "@/lib/front";
 
 const Chat = () => {
   const ref = useScrollAnimations();
@@ -12,8 +13,8 @@ const Chat = () => {
                 <img src="/assets/images/img-contact.png" alt="" />
             </figure>
             <div className="flex justify-center items-center -mt-3 md:-mt-5">
-                <a href="/" className="duration-150 hover:opacity-75">
-                <img src="/assets/images/img-chat.png" alt="" /></a>
+                <button  onClick={()=> frontOpen()} className="duration-150 hover:opacity-75">
+                <img src="/assets/images/img-chat.png" alt="" /></button>
             </div>
         </div>
     </section>

@@ -9,3 +9,31 @@ body {
   color: #00053A;
   font-family: "Noto Sans", sans-serif;
 }
+
+
+:root {
+  --swiper-navigation-size: 28px !important;
+  --swiper-navigation-color: #fff;
+  --swiper-navigation-sides-offset: 0px;
+}
+
+.sellSwiper .swiper-button-prev, .sellSwiper .swiper-button-next {
+  color: #FEEF01 !important;
+  --swiper-navigation-size: 32px !important;
+}
+
+.articleSwiper .swiper-button-prev, .articleSwiper .swiper-button-next {
+  color: #000 !important;
+  --swiper-navigation-sides-offset: 8px;
+  --swiper-navigation-size: 32px !important;
+}
+
+
+@keyframes poyopoyo {
+  0%, 40%, 60%, 80% {
+    transform: scale(1.0);
+  }
+  50%, 70% {
+    transform: scale(0.95);
+  }
+}
