@@ -76,7 +76,7 @@ export default function Thankyou() {
         <div className="px-5">
           <div className="w-full md:max-w-[890px] max-w-[400px] mx-auto md:mt-16 mt-8">
             <div className="w-full rounded-t-[10px] overflow-hidden bg-white border-black border">
-              <p className="bg-black flex justify-center font-bold items-center text-center md:h-[50px] md:text-[24px] text-[18px] text-white font-serif px-5 py-2">ご希望のプラン名の右手ボタンからお支払いにお進みください</p>
+              <p className="bg-black flex justify-center font-bold items-center text-center md:h-[50px] md:text-[24px] text-[18px] text-white font-serif px-5 py-2"><span>ご希望のプラン名の<span className="max-md:hidden">右手</span><span className="md:hidden">下部</span>ボタンからお支払いにお進みください</span></p>
               <div className="divide-y divide-black">
                 <div className="flex items-center justify-between py-5 md:pt-8 md:pb-11 pl-2 pr-4 md:pr-[38px] gap-4 md:gap-2 max-md:flex-col">
                   <p className="md:text-[48px] text-[22px] font-bold leading-[1.1] text-center">
