@@ -56,7 +56,7 @@ const data = [
         ],
         reasons: [
             {
-                reason: (<><span className="font-bold">多用途</span>：DIVER TagはNFTの受け取りや、所有物の証明など、さまざまな用途に利用できます。</>)
+                reason: (<><span className="font-bold">多用途</span>：DIVER TagはNFTの受け取りや、所有物の証明など、<span className="font-bold">さまざまな用途に利用できます</span>。</>)
             },
             {
                 reason: (<><span className="font-bold">高いセキュリティ</span>：DIVER TagはNFC(短距離通信) 技術を採用しており、情報の漏洩リスクが低く、セキュリティが強化されているため、<span className="font-bold">機密情報のやり取りにも適しています。</span></>)
