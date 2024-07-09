@@ -134,7 +134,7 @@ const Introduction = () => {
         </span>
       </div>
       <div className="mx-auto mt-4 w-full max-w-[1440px] md:pr-7">
-        <div className="bg-[url('/assets/images/bg-intro.png')] bg-cover bg-no-repeat">
+        <div className="bg-[url('/assets/images/bg-intro.png')] bg-cover md:bg-[length:100%_auto] bg-no-repeat">
           <div
             data-scroll="out"
             className="has-animation animation-ltr w-full max-w-[1280px] border-b border-black/50 py-8 font-serif text-[19px] font-semibold text-[#5F5F5F] before:bg-[#4EA4E3] after:bg-[#51BDE4] max-md:px-3 max-md:text-center md:pl-16 md:text-[28px]"
@@ -145,7 +145,7 @@ const Introduction = () => {
             <div className="fade-up mt-6 flex items-start pr-4 max-md:flex-col max-md:items-center max-md:justify-center max-md:px-4">
               <figure
                 data-scroll="out"
-                className="has-animation animation-ltr before:bg-[#4EA4E3] after:bg-[#51BDE4] max-xl:w-1/2 max-md:w-auto md:-ml-4"
+                className="has-animation animation-ltr before:bg-[#4EA4E3] after:bg-[#51BDE4] max-xl:w-1/2 max-md:w-auto md:-ml-4 relative z-10"
               >
                 <img
                   className="max-md:max-w-[400px]"
@@ -155,11 +155,16 @@ const Introduction = () => {
               </figure>
               <div
                 data-scroll="out"
-                className="has-animation animation-ltr max-w-[636px] flex-1 bg-white/60 px-9 py-8 text-[16px] font-medium before:bg-[#4EA4E3]  after:bg-[#51BDE4] max-md:mt-5 md:-ml-6 md:mt-8 md:min-h-[205px] md:text-[20px]"
+                className="has-animation animation-ltr max-w-[636px] flex-1 bg-white/60 px-9 py-8 text-[16px] font-medium before:bg-[#4EA4E3]  after:bg-[#51BDE4] max-md:mt-5 md:-ml-6 md:mt-8 md:min-h-[205px] md:text-[20px] relative"
               >
                 <p>
                   現実の供養所である「KARIMATA(狩俣)供養所」とメタバース供養所が融合することで、ペットとの再会の喜びと死への向き合いをバランス良く体験可能です。あなた様とペットだけの特別な空間がそこには広がっています。
                 </p>
+                <div className="flex justify-center items-center mt-8">
+                  <a href="" className="hover:opacity-75 duration-150 drop-shadow-xl">
+                    <img src="/assets/images/btn-youtube.png" alt="" />
+                  </a>
+                </div>
               </div>
             </div>
             <div className="mx-auto mb-20 mt-9 w-full max-w-[1220px]">

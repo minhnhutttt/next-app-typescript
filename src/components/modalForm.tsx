@@ -224,8 +224,8 @@ const ModalForm = () => {
                             id="plan1"
                             name="interests"
                             type="checkbox"
-                            checked={formData.interests.includes("【先着50名様で締切】メモリアルモニタープランに申し込みたい")}
-                            value="【先着50名様で締切】メモリアルモニタープランに申し込みたい"
+                            checked={formData.interests.includes("【先着50名様で締切】メモリアルモニタープランに申し込む")}
+                            value="【先着50名様で締切】メモリアルモニタープランに申し込む"
                             onChange={handleChange}
                             className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
                           />
@@ -238,7 +238,7 @@ const ModalForm = () => {
                         </span>
                       </p>
                       <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
-                        【先着50名様で締切】メモリアルモニタープランに申し込みたい
+                        【先着50名様で締切】メモリアルモニタープランに申し込む
                       </p>
                     </label>
                     <label htmlFor="plan2" className="flex items-center gap-3">
@@ -248,8 +248,8 @@ const ModalForm = () => {
                             id="plan2"
                             name="interests"
                             type="checkbox"
-                            checked={formData.interests.includes("エントリープランに申し込みたい")}
-                            value="エントリープランに申し込みたい"
+                            checked={formData.interests.includes("エントリープランに申し込む")}
+                            value="エントリープランに申し込む"
                             onChange={handleChange}
                             className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
                           />
@@ -262,7 +262,7 @@ const ModalForm = () => {
                         </span>
                       </p>
                       <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
-                        エントリープランに申し込みたい
+                        エントリープランに申し込む
                       </p>
                     </label>
                     <label htmlFor="plan3" className="flex items-center gap-3">
@@ -272,8 +272,8 @@ const ModalForm = () => {
                             id="plan3"
                             name="interests"
                             type="checkbox"
-                            checked={formData.interests.includes("スタンダードプランに申し込みたい")}
-                            value="スタンダードプランに申し込みたい"
+                            checked={formData.interests.includes("スタンダードプランに申し込む")}
+                            value="スタンダードプランに申し込む"
                             onChange={handleChange}
                             className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
                           />
@@ -286,7 +286,7 @@ const ModalForm = () => {
                         </span>
                       </p>
                       <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
-                        スタンダードプランに申し込みたい
+                        スタンダードプランに申し込む
                       </p>
                     </label>
                     <label htmlFor="plan4" className="flex items-center gap-3">
@@ -400,13 +400,16 @@ const ModalForm = () => {
               <input
                 type="button"
                 onClick={handleSubmit}
-                value="送信する"
+                value="申し込む"
                 className="items-cenrer flex h-[54px] w-[300px] cursor-pointer justify-center rounded-[10px] bg-[#F12929] text-[18px] font-bold text-white md:h-[68px] md:text-[24px]"
               />
             </div>
             <div className="max-md:text-[14px] mt-5 flex justify-center md:mt-10">
               <div>
-                <a href="/terms-of-service" className="underline">利用規約</a>と<a href="/privacy-policy" className="underline">プライバシーポリシー</a>にご同意の上送信ください。
+                <p><a href="/terms-of-service" className="underline">利用規約</a>と<a href="/privacy-policy" className="underline">プライバシーポリシー</a>にご同意の上お申し込みください。
+                </p>
+                  <p className="md:text-[13px] text-[12px] mt-5">※お申し込み前に内容をご確認ください。<br />
+              お申し込みはあなた様の意思で行われたものとみなされます。</p>
               </div>
             </div>
           </form>
