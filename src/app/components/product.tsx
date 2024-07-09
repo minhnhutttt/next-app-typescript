@@ -8,17 +8,17 @@ const data = [
         number: '/assets/images/product-01.svg', 
         image: '/assets/images/img-product-01.png',
         title: (<>軍事規格で作られた <br />最強のストレージ！<br />DIVER Storage</>),
-        news: (<>それは<span className="text-[#FEEF01] underline underline-offset-4 decoration-2">軍事レベルで暗号化された分散型の最強オンラインストレージ</span>だから</>),
+        news: (<>それは<span className="text-[#FEEF01] underline underline-offset-4 decoration-2 font-bold">軍事レベルで暗号化された分散型の最強オンラインストレージ</span>だから</>),
         articles: [
             {
                 imageArticle: '/assets/images/img-product-01-article-01.png',
                 titleArticle: '軍事レベルの暗号化',
-                textArticke: (<>データは、多くの国や組織によって認証され、<span className="underline underline-offset-4 decoration-2">最も機密性の高いデータを保護できる暗号化アルゴリズムであるAES-256で暗号化</span>されています。<br />現在のコンピュータ技術では、実際的な時間内にAES-256を破ることはほぼ不可能です。</>)
+                textArticke: (<>データは、多くの国や組織によって認証され、<span className="underline font-bold underline-offset-4 decoration-2">最も機密性の高いデータを保護できる暗号化アルゴリズムであるAES-256で暗号化</span>されています。<br />現在のコンピュータ技術では、実際的な時間内にAES-256を破ることはほぼ不可能です。</>)
             },
             {
                 imageArticle: '/assets/images/img-product-01-article-02.png',
                 titleArticle: '分散型',
-                textArticke: (<>データは<span className="underline underline-offset-4 decoration-2">地理的に分散した複数の拠点に保存</span>されます。<br />そのため<span className="underline underline-offset-4 decoration-2">一箇所の拠点にトラブルが起きた場合も常に安定して稼働</span>します。</>)
+                textArticke: (<>データは<span className="underline underline-offset-4 decoration-2 font-bold">地理的に分散した複数の拠点に保存</span>されます。<br />そのため<span className="underline underline-offset-4 decoration-2 font-bold">一箇所の拠点にトラブルが起きた場合も常に安定して稼働</span>します。</>)
             },
         ],
         reasons: [
@@ -56,16 +56,16 @@ const data = [
         ],
         reasons: [
             {
-                reason: '多用途：DIVER TagはNFTの受け取りや、所有物の証明など、さまざまな用途に利用できます。'
+                reason: (<><span className="font-bold">多用途</span>：DIVER TagはNFTの受け取りや、所有物の証明など、さまざまな用途に利用できます。</>)
             },
             {
-                reason: (<>高いセキュリティ：DIVER TagはNFC(短距離通信) 技術を採用しており、情報の漏洩リスクが低く、セキュリティが強化されているため、<span className="font-bold">機密情報のやり取りにも適しています。</span></>)
+                reason: (<><span className="font-bold">高いセキュリティ</span>：DIVER TagはNFC(短距離通信) 技術を採用しており、情報の漏洩リスクが低く、セキュリティが強化されているため、<span className="font-bold">機密情報のやり取りにも適しています。</span></>)
             },
             {
-                reason: (<>NFCの普及：多くのスマートフォンがNFC機能を標準搭載しているため、<span className="font-bold">ユーザーがすぐに利用できる環境が整っています。</span></>)
+                reason: (<><span className="font-bold">NFCの普及</span>：多くのスマートフォンがNFC機能を標準搭載しているため、<span className="font-bold">ユーザーがすぐに利用できる環境が整っています。</span></>)
             },
             {
-                reason: (<>ユーザーの積極的な関与：スマートフォンをタッチするだけという手軽さがユーザーの関心を引き、<span className="font-bold">参加意欲を高める効果</span>があります。</>)
+                reason: (<><span className="font-bold">ユーザーの積極的な関与</span>：スマートフォンをタッチするだけという手軽さがユーザーの関心を引き、<span className="font-bold">参加意欲を高める効果</span>があります。</>)
             },
         ]
     },
@@ -89,16 +89,16 @@ const data = [
         ],
         reasons: [
             {
-                reason: (<>利便性:ユーザーが<span className="font-bold">ウォレットを使いやすく</span>なります。</>)
+                reason: (<><span className="font-bold">利便性</span>:ユーザーが<span className="font-bold">ウォレットを使いやすく</span>なります。</>)
             },
             {
-                reason: (<>安全性の向上:シンプルな名前にすることで、<span className="font-bold">送金時のミスを減らせます。</span></>)
+                reason: (<><span className="font-bold">安全性の向上</span>:シンプルな名前にすることで、<span className="font-bold">送金時のミスを減らせます。</span></>)
             },
             {
-                reason: (<>覚えやすさ：簡単な名前にすることで、ウォレットアドレスを<span className="font-bold">覚えやすく、愛着の湧くものに</span>なります。</>)
+                reason: (<><span className="font-bold">覚えやすさ</span>：簡単な名前にすることで、ウォレットアドレスを<span className="font-bold">覚えやすく、愛着の湧くものに</span>なります。</>)
             },
             {
-                reason: (<>ユーザーの積極的な関与：スマートフォンをタッチするだけという手軽さがユーザーの関心を引き、<span className="font-bold">参加意欲を高める効果</span>があります。</>)
+                reason: (<><span className="font-bold">ユーザーの積極的な関与</span>：スマートフォンをタッチするだけという手軽さがユーザーの関心を引き、<span className="font-bold">参加意欲を高める効果</span>があります。</>)
             },
         ]
     }
@@ -119,7 +119,7 @@ function getBackground(id: string): string {
     <section id="products" ref={ref} className="relative md:pt-[110px] pt-20 md:pb-[170px] pb-28">
         <div className="fade-up text-center tracking-widest">
             <p className="md:text-[24px] text-[18px] text-[#00053A] font-inter">Products</p>
-            <h3 className="font-medium md:text-[56px] text-[32px] tracking-[0.1em]">こんな商品を販売できます！</h3>
+            <h3 className="font-medium md:text-[56px] text-[32px] tracking-[0.1em]">こんな商品を<br className="md:hidden" />販売できます！</h3>
         </div>
         <div className="md:mt-[80px] mt-12 pt-[66px]">
         {data.map((item, index)=> (

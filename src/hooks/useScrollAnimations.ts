@@ -70,6 +70,7 @@ const useScrollAnimations = () => {
             scaleX: 1,
             opacity: 1,
             duration: 0.9,
+            delay: 0.3,
             ease: "cubic-bezier(0.22, 1, 0.36, 1)",
             scrollTrigger: { trigger: el },
           }

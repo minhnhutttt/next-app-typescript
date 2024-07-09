@@ -31,7 +31,7 @@ const Sell = () => {
             <div className="w-full max-w-[1360px] mx-auto">
                 <div className="fade-up">
                     <p className="font-inter md:text-[24px] text-[18px] tracking-widest">Selling is very easy!</p>
-                    <h3 className="md:text-[56px] text-[32px] font-medium tracking-widest">販売方法はとっても簡単</h3>
+                    <h3 className="md:text-[56px] text-[32px] font-medium tracking-widest">販売方法は<br className="md:hidden" />とっても簡単</h3>
                 </div>
                 <div className="hidden md:flex flex-wrap md:mt-[90px] mt-[60px] justify-center md:gap-[60px] gap-6">
                     {data.map((item,index)=>(

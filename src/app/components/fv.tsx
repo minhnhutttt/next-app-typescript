@@ -15,14 +15,20 @@ const FV = () => {
         </div>
         <div className="w-full max-w-[1440px] mx-auto md:pt-[70px] pt-10 pb-2">
             <h1 className="zoom-in"><img src="/assets/images/fv-main.png" alt="" /></h1>
-            <div className="w-full md:max-w-[1045px] max-w-[570px] mx-auto py-10 md:px-[50px] px-5">
+            <div className="w-full md:max-w-[1045px]  mx-auto py-10 lg:px-[50px] md:px-5 px-[3vw]">
             <div className="popup relative">
-                <p className="absolute inset-0 text-[24px] font-black tracking-widest text-white [-webkit-text-stroke:_6px_white] md:text-[42px] leading-[1.9]">
-                <span className="bg-[linear-gradient(to_top,_#FEEF01_30%,_transparent_30%)]">圧倒的な技術と革新的なサービスを仕入れて<br className="max-lg:hidden" />
+                <p className="absolute inset-0 text-[4vw] font-black tracking-widest text-white md:[-webkit-text-stroke:_6px_white] [-webkit-text-stroke:_3px_white] md:text-[4vw] lg:text-[42px] leading-[1.9]">
+                <span className="relative ">
+                    <span className="slide-gradient absolute top-0 left-0 right-0 bottom-0 bg-[linear-gradient(to_top,_#FEEF01_30%,_transparent_30%)] z-[-1]"></span>
+                        圧倒的な技術と革新的なサービスを仕入れて</span><br />
+                        <span className="relative ">
+                    <span className="slide-gradient absolute top-0 left-0 right-0 bottom-0 bg-[linear-gradient(to_top,_#FEEF01_30%,_transparent_30%)] z-[-1]"></span>
                     あなたの顧客に販売してみませんか？</span>
+                        
+                    
                 </p>
-                <h3 className="relative text-[24px] font-black tracking-widest md:text-[42px] text-[#00053A] leading-[1.9]">
-                    圧倒的な技術と革新的なサービスを仕入れて<br className="max-lg:hidden" />
+                <h3 className="relative text-[4vw] font-black tracking-widest md:text-[4vw] lg:text-[42px] text-[#00053A] leading-[1.9]">
+                    圧倒的な技術と革新的なサービスを仕入れて<br />
                     あなたの顧客に販売してみませんか？
                 </h3>
             </div>
