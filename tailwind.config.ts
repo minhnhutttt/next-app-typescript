@@ -8,14 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        sans: ["var(--font-sans)", "serif"],
+        inter: ["var(--font-inter)", "serif"],
+        serif: ["var(--font-serif)", "serif"],
       },
-    },
-    fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      screens: {
+        dt: "1440px",
+      },
     },
   },
   plugins: [],
