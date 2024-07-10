@@ -1,7 +1,13 @@
-import Image from "next/image";
+import FV from "./components/fv";
+import Sake from "./components/sake";
+import Vision from "./components/vision";
 
 export default function Home() {
   return (
-    <main></main>
+    <main>
+      <FV />
+      <Vision />
+      <Sake />
+    </main>
   );
 }
