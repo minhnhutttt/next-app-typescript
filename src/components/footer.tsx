@@ -1,5 +1,4 @@
 "use client"
-
 interface NavLink {
   link: string;
   text: string;
@@ -8,45 +7,42 @@ interface NavLink {
 
 const links: NavLink[] = [
   {
-    link: "/#introduction",
-    text: "DIVER Agentとは？",
+    link: "/",
+    text: "Top",
   },
   {
-    link: "/#products",
-    text: "商品例",
+    link: "/concept",
+    text: "Concept",
   },
   {
-    link: "/#sales",
-    text: "販売方法",
+    link: "/sake",
+    text: "日本の酒",
   },
   {
-    link: "/#flow",
-    text: "登録・販売フロー",
+    link: "/message",
+    text: "Message",
   },
   {
-    link: "/company",
-    text: "運営会社",
-  },
-  {
-    link: "/privacy-policy",
-    text: "プライバシーポリシー",
+    link: "https://lin.ee/bDgs0V3",
+    text: "お問い合わせ",
+    target: '_blank'
   },
 ];
 const Footer = () => {
   return (
-    <footer className="px-5 md:px-10 bg-black md:pt-[110px] pt-16 pb-5">
-        <div className="w-full max-w-[883px] mx-auto">
-            <div className="flex justify-center">
+    <footer className="bg-[#242424] md:pt-[60px] pt-10">
+        <div className="w-full max-w-[1440px] mx-auto flex px-5 md:px-[26px] bg-[url('/assets/images/bg-footer.png')] max-md:bg-[length:50vw_auto] bg-no-repeat bg-center md:bg-right-top pb-5">
+            <div className="flex justify-center w-[120px] md:w-[188px]">
                 <a href="/" className="hover:opacity-75 duration-150">
-                    <img className="max-md:w-[200px]" src="/assets/images/logo.png" alt="" />
+                    <img className="" src="/assets/images/logo-footer.png" alt="" />
                 </a>
             </div>
-            <ul className="flex md:justify-center items-center md:my-8 my-6 max-md:justify-center flex-wrap">
+            <ul className="flex flex-col gap-12 md:gap-16 border-l border-white/50 pb-[100px] md:pb-[160px]">
                 {links.map(({ link, text, target }, index) => (
                 <li key={index} className="flex items-center">
                     <a
                     href={link}
-                    className="text-[16px] text-white font-medium duration-150 hover:opacity-75 px-8 lg:px-12 h-[60px] flex items-center justify-center"
+                    className="text-[17px] font-inter text-white font-medium duration-150 hover:opacity-75 px-8 lg:px-12  flex items-center justify-center"
                     target={target}
                     >
                     {text}
@@ -55,7 +51,7 @@ const Footer = () => {
                 ))}
             </ul>
         </div>
-        <p className="text-center text-[14px] text-white font-lato">Copyright © 2024 DIVER Agent.</p>
+        <p className="text-center text-[14px] text-white border-t border-white/50 h-[77px] flex justify-end items-center px-10">Copyright ©</p>
     </footer>
   );
 };

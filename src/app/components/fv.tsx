@@ -6,7 +6,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const FV = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative pl-[90px] md:pl-[215px]">
+    <section ref={ref} className="relative pl-[80px] md:pl-[215px]">
         <div className="relative aspect-[1224/746]">
         <video
             muted
