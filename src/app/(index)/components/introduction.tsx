@@ -44,10 +44,10 @@ const Introduction = () => {
                 <span className="show">生成AIは<span className="md:text-[38px] text-[24px] text-[#FF9242]">アイデア</span>をひねりだす。<br />
                 人間の発想の10倍のスピードで。</span><br />
                 <br />
-                <span className="show">生成AIは<span className="md:text-[38px] text-[24px] text-[#FF9242]">あらゆる領域</span>で<span className="md:text-[38px] text-[24px] text-[#FF9242]">変化<span className="md:text-[30px] text-[22px]">を</span>起こす。</span><br />
+                <span className="show">生成AIは<span className="md:text-[38px] text-[24px] text-[#FF9242]">あらゆる領域</span>で<span className="md:text-[38px] text-[24px] text-[#FF9242]">変化<span className="md:text-[30px] text-[20px]">を</span>起こす。</span><br />
                 人間がAIを使いこなすことで。</span><br />
                 <br />
-                <span className="show">その両方を<span className="md:text-[38px] text-[24px] text-[#FF9242]">1<span className="md:text-[30px] text-[20px]">ヶ</span>月<span className="md:text-[30px] text-[22px]">で</span>実現</span>する。<br />
+                <span className="show">その両方を<span className="md:text-[38px] text-[24px] text-[#FF9242]">1<span className="md:text-[30px] text-[20px]">ヶ</span>月<span className="md:text-[30px] text-[20px]">で</span>実現</span>する。<br />
                 私たちのeラーニングで。</span>
             </p>
             <div className="text-center font-bold md:mt-28 mt-16">
@@ -56,7 +56,7 @@ const Introduction = () => {
                     社員のために、<br />
                     会社の未来のために。<br />
                 </p>
-                <p className="show md:text-[36px] text-[22px] mt-20">
+                <p className="show md:text-[36px] text-[20px] mt-20">
                     質の高い仕事を、最高効率に。
                 </p>
             </div>
