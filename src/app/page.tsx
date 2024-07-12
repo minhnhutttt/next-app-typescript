@@ -1,8 +1,8 @@
-import Image from "next/image";
 import FV from "./(index)/components/fv";
 import Introduction from "./(index)/components/introduction";
 import Skill from "./(index)/components/skill";
 import Reskilling from "./(index)/components/reskilling";
+import Training from "./(index)/components/training";
 
 export default function Home() {
   return (
@@ -13,6 +13,7 @@ export default function Home() {
       </div>
       <Skill />
       <Reskilling />
+      <Training />
     </main>
   );
 }

@@ -41,36 +41,36 @@ const Reskilling = () => {
                                         <span className="block w-full bg-[linear-gradient(103deg,_#FEF877_-63.17%,_#E22B00_41.36%)] h-[3px]"></span>
                                         <div className="w-full px-4 md:px-[3.125vw] xl:px-10 py-4 text-white divide-y divide-white/[0.44]">
                                             <div className="md:py-6 py-3">
-                                                <p className="xl:text-[20px] text-[16px] md:text-[1.563vw] font-bold"><span className="md:text-[22px]">1.</span>高度な情報処理能力</p>
-                                                <p className="xl:text-[17px] text-[14px] md:text-[1.328vw] font-medium pl-3 md:pl-5 pt-3 md:pt-5">
+                                                <p className="lg:text-[20px] text-[16px] md:text-[2vw] font-bold"><span className="md:text-[22px]">1.</span>高度な情報処理能力</p>
+                                                <p className="lg:text-[17px] text-[14px] md:text-[1.6vw] font-medium pl-3 md:pl-5 pt-3 md:pt-5">
                                                 大量のデータを迅速に分析し、関連情報を抽出 <br />
                                                 例：市場データから、近い将来のトレンドを予測支援
                                                 </p>
                                             </div>
                                             <div className="md:py-6 py-3">
-                                                <p className="xl:text-[20px] text-[16px] md:text-[1.563vw] font-bold"><span className="md:text-[22px]">2.</span>常時稼働の支援</p>
-                                                <p className="xl:text-[17px] text-[14px] md:text-[1.328vw] font-medium pl-3 md:pl-5 pt-3 md:pt-5">
+                                                <p className="lg:text-[20px] text-[16px] md:text-[2vw] font-bold"><span className="md:text-[22px]">2.</span>常時稼働の支援</p>
+                                                <p className="lg:text-[17px] text-[14px] md:text-[1.6vw] font-medium pl-3 md:pl-5 pt-3 md:pt-5">
                                                 24時間365日、一貫した品質でサポートを提供 <br />
                                                 例：時間外のカスタマーサポートも効率的に対応
                                                 </p>
                                             </div>
                                             <div className="md:py-6 py-3">
-                                                <p className="xl:text-[20px] text-[16px] md:text-[1.563vw] font-bold"><span className="md:text-[22px]">3.</span>高速・高精度z処理</p>
-                                                <p className="xl:text-[17px] text-[14px] md:text-[1.328vw] font-medium pl-3 md:pl-5 pt-3 md:pt-5">
+                                                <p className="lg:text-[20px] text-[16px] md:text-[2vw] font-bold"><span className="md:text-[22px]">3.</span>高速・高精度z処理</p>
+                                                <p className="lg:text-[17px] text-[14px] md:text-[1.6vw] font-medium pl-3 md:pl-5 pt-3 md:pt-5">
                                                 複雑な計算や分析を迅速に実行し、人的ミスを軽減 <br />
                                                     例：財務予測や在庫管理の精度向上
                                                 </p>
                                             </div>
                                             <div className="md:py-6 py-3">
-                                                <p className="xl:text-[20px] text-[16px] md:text-[1.563vw] font-bold"><span className="md:text-[22px]">4.</span>継続的な学習と更新</p>
-                                                <p className="xl:text-[17px] text-[14px] md:text-[1.328vw] font-medium pl-3 md:pl-5 pt-3 md:pt-5">
+                                                <p className="lg:text-[20px] text-[16px] md:text-[2vw] font-bold"><span className="md:text-[22px]">4.</span>継続的な学習と更新</p>
+                                                <p className="lg:text-[17px] text-[14px] md:text-[1.6vw] font-medium pl-3 md:pl-5 pt-3 md:pt-5">
                                                 新しいデータを学習し、定期的にスキルをアップデート <br />
                                                     例：最新の業界動向を反映した提案の質向上
                                                 </p>
                                             </div>
                                             <div className="md:py-6 py-3">
-                                                <p className="xl:text-[20px] text-[16px] md:text-[1.563vw] font-bold"><span className="md:text-[22px]">5.</span>複数タスクの同時処理</p>
-                                                <p className="xl:text-[17px] text-[14px] md:text-[1.328vw] font-medium pl-3 md:pl-5 pt-3 md:pt-5">
+                                                <p className="lg:text-[20px] text-[16px] md:text-[2vw] font-bold"><span className="md:text-[22px]">5.</span>複数タスクの同時処理</p>
+                                                <p className="lg:text-[17px] text-[14px] md:text-[1.6vw] font-medium pl-3 md:pl-5 pt-3 md:pt-5">
                                                 複数の業務を並行して効率的に処理 <br />
                                                 例：異なる部門の業務を同時に最適化し、全体効率を改善
                                                 </p>
@@ -84,7 +84,7 @@ const Reskilling = () => {
                 </div>
                 <span className="absolute bg-[linear-gradient(180deg,_#0CD0EE_0%,_#751DBD_64.5%,_#4525A2_100%)] opacity-[0.88] w-[150%] h-full -right-9 md:right-[-75px] md:bottom-[-75px] -bottom-9"></span>
             </div>
-            <div className="max-md:hidden absolute top-[270px] -right-[3.438vw] lg:-right-11 z-30">
+            <div className="max-md:hidden absolute top-[270px] -right-[3.438vw] right-0 xl:-right-11 z-30">
                 <img className='max-lg:w-[32.969vw]' src="/assets/images/img-rs-01.png" alt="" />
             </div>
             <div className="absolute w-9 md:w-[75px] right-0 bottom-[70px] flex items-center justify-center z-10">
