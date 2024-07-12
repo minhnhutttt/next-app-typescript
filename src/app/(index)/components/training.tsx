@@ -32,7 +32,7 @@ const Training = () => {
                           <p className="md:text-[18px] text-[15px] font-semibold">
                           このプログラムは、AIへの第一歩を踏み出すきっかけとなります。 短期間で学ぶAIの基礎と実践は、社員一人ひとりの中に新たな可能性の種を植え付けます。
                           </p>
-                          <div className="w-full max-w-[736px] mx-auto md:mt-14 mt-9 px-5">
+                          <div className="w-full max-w-[736px] mx-auto md:mt-14 mt-9 md:px-5">
                             <p className="text-center md:text-[24px] text-[16px] font-bold mb-6 md:mb-10">
                               最大の目的は、社員がAIの潜在力を理解し、<br />
                               日々の業務でその活用方法を積極的に考え始めること。
