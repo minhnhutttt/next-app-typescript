@@ -7,8 +7,8 @@ const Learning = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="relative px-5 mt-16 md:mt-[135px]">
-      <div className="w-full max-w-[1354px] mx-auto border-[5px] border-[#FD9898] rounded-[40px] md:rounded-[77px] bg-[linear-gradient(180deg,_#FFF_7.59%,_#FFE790_63.96%,_#FEDD9B_100%)] overflow-hidden pt-8 md:pt-[57px] px-5">
-        <div className="bg-[linear-gradient(278deg,_#FF2A2A_-5.11%,_#FF9B04_78.14%)] h-16 md:h-[91px] relative w-full max-w-[1096px] mx-auto rounded-[27px]">
+      <div className="w-full max-w-[1354px] mx-auto border-[5px] border-[#FD9898] rounded-[40px] md:rounded-[77px] bg-[linear-gradient(180deg,_#FFF_7.59%,_#FFE790_63.96%,_#FEDD9B_100%)] overflow-hidden pt-8 md:pt-[57px] px-5 md:pb-[93px] pb-12">
+        <div className="bg-[linear-gradient(278deg,_#FF2A2A_-5.11%,_#FF9B04_78.14%)] h-20 md:h-[91px] relative w-full max-w-[1096px] mx-auto rounded-[27px]">
             <div className="flex items-center py-2 gap-3">
                 <span className="flex-1 bg-white h-px"></span>
                 <p className="md:text-[24px] text-[16px] font-bold text-white text-center">なぜ当社のeラーニングが、<br className="md:hidden" />AIスキル習得の最適解なのか</p>
@@ -81,7 +81,7 @@ const Learning = () => {
                         </p>
                     </div>
                 </div>
-                <div className="flex items-start max-md:flex-col max-md:items-center gap-5 md:gap-9">
+                <div className="flex items-start max-md:flex-col max-md:items-center gap-5 md:gap-9 md:pl-4">
                     <div className="w-full md:w-1/2 max-w-[545px] rounded-[20px] border-[3px] border-[#FFBE5E] bg-white p-3 md:-mt-9">
                         <div className="flex items-center gap-2 border-b border-[#A8A7A7] pb-2.5">
                             <div className="flex items-center flex-1 gap-2">
@@ -114,6 +114,71 @@ const Learning = () => {
                         <p className="md:text-[17px] text-[14px] py-4 px-3">
                         業務への活用を第一に要点を絞ることで提供価格をおさえ、助成金活用で実質負担を大幅軽減
                         </p>
+                    </div>
+                </div>
+            </div>
+            <div className="flex justify-center md:mt-10 mt-6">
+                <img src="/assets/images/triagle-02.png" alt="" />
+            </div>
+            <div className="flex justify-center items-center mt-6">
+                <div className="w-[874px] bg-white md:p-10 p-5">
+                    <div className="w-full max-w-[600px] mx-auto">
+                        <p className="text-center md:text-[18px] text-[14px] text-[#7AAAFE] font-bold">Contact</p>
+                        <p className="text-center md:text-[32px] text-[18px] font-bold mt-3 md:mt-4">まずはご相談ください（無料）</p>
+                        <div className="md:mt-10 mt-8 md:space-y-8 space-y-6">
+                            <div>
+                                <label htmlFor="company" className='md:text-[18px] text-[14px] font-medium'>貴社名<span className="text-[#FA3131] relative -top-1 font-bold inline-block">※</span></label>
+                                <input type="text" name="company" className="w-full h-[40px] md:h-[50px] border border-[#AEAEAE] mt-2" />
+                            </div>
+                            <div>
+                                <label htmlFor="name" className='md:text-[18px] text-[14px] font-medium'>ご担当者氏名<span className="text-[#FA3131] relative -top-1 font-bold inline-block">※</span></label>
+                                <input type="text" name="name" className="w-full h-[40px] md:h-[50px] border border-[#AEAEAE] mt-2" />
+                            </div>
+                            <div>
+                                <label htmlFor="email" className='md:text-[18px] text-[14px] font-medium'>ご連絡用メールアドレス<span className="text-[#FA3131] relative -top-1 font-bold inline-block">※</span></label>
+                                <input type="email" name="email" className="w-full h-[40px] md:h-[50px] border border-[#AEAEAE] mt-2" />
+                            </div>
+                            <div>
+                                <label htmlFor="tel" className='md:text-[18px] text-[14px] font-medium'>お電話番号</label>
+                                <input type="tel" name="tel" className="w-full h-[40px] md:h-[50px] border border-[#AEAEAE] mt-2" />
+                            </div>
+                            <div>
+                                <div className='md:text-[18px] text-[14px] font-medium'>お問い合わせ項目<span className="text-[#FA3131] relative -top-1 font-bold inline-block">※</span></div>
+                                <div className="flex md:text-[16px] text-[14px] flex-col gap-2 mt-4">
+                                    <label className="flex gap-3">
+                                        <input type="radio" name="items" className="md:size-6 size-4" value="AI eラーニングに申し込みたい" />
+                                        <span>AI eラーニングに申し込みたい</span>
+                                    </label>
+                                    <label className="flex gap-3">
+                                        <input type="radio" name="items" className="md:size-6 size-4" value="オンラインでのご相談を希望" />
+                                        <span>オンラインでのご相談を希望</span>
+                                    </label>
+                                    <label className="flex gap-3">
+                                        <input type="radio" name="items" className="md:size-6 size-4" value="対面でのご相談を希望" />
+                                        <span>対面でのご相談を希望</span>
+                                    </label>
+                                    <label className="flex gap-3">
+                                        <input type="radio" name="items" className="md:size-6 size-4" value="資料のご請求" />
+                                        <span>資料のご請求</span>
+                                    </label>
+                                    <label className="flex gap-3">
+                                        <input type="radio" name="items" className="md:size-6 size-4" value="セミナー予定に関するお問い合わせ" />
+                                        <span>セミナー予定に関するお問い合わせ</span>
+                                    </label>
+                                    <label className="flex gap-3">
+                                        <input type="radio" name="items" className="md:size-6 size-4" value="その他ご相談・お問い合わせ" />
+                                        <span>その他ご相談・お問い合わせ</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label htmlFor="tel" className='md:text-[18px] text-[14px] font-medium'>ご希望の日時やご相談・お問い合わせの概要</label>
+                                <textarea className="w-full h-[150px] md:h-[240px] border border-[#AEAEAE] mt-2"></textarea>
+                            </div>
+                            <div className="flex justify-center items-center">
+                            <button className="w-[240px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">詳しく聞く</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
