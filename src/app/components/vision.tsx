@@ -5,7 +5,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Vision = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="md:-mt-[72px] -mt-4 border-t border-black ">
+    <section ref={ref} className="md:-mt-[72px] -mt-4 ">
       <div className="absolute flex justify-center items-center left-1/2 -translate-x-1/2 z-10 md:pt-16 pt-4">
         <div className="flex flex-col justify-center md:gap-[50px] gap-6 relative">
           <div className="ani-scale bottom-[-4.444vw] dt:bottom-[-64px] md:left-[-7.292vw] left-[-5.292vw] dt:-left-[105px] absolute bg-[url('/assets/images/bg-our-vision.png')] aspect-[610/345] bg-cover w-[54vw] md:w-[42.361vw] dt:w-[610px]"></div>
