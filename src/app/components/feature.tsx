@@ -9,7 +9,7 @@ const data = [
         name: 'Japanese rice wine',
         description: (<>透明感とともに広がる繊細な香り、口に含んだ瞬間に広がる芳醇な旨み。やさしい甘みとほんのりとした酸味が絶妙に調和し、心地よい余韻を残す。</>),
         content: (<>
-        日本酒は、無限の可能性を秘めた存在です。地域ごとの風土や文化を反映した多様な味わいが楽しめます。高品質な純米大吟醸酒は和食だけでなく、フルーツを使ったカクテルなど、幅広い料理とペアリングできる点が外国人に評価されており、健康志向の高まりや多様な飲み方の提案により海外市場でも受け入れられています。
+        日本酒は、無限の可能性を秘めた存在です。地域ごとの風土や文化を反映した多様な味わいが楽しめます。高品質な純米大吟醸酒は和食だけでなく、フルーツを使ったカクテルなど、幅広い料理とペアリングできる点が海外に評価されており、健康志向の高まりや多様な飲み方の提案により海外市場でも受け入れられています。
         </>)
     },
     {
@@ -18,7 +18,7 @@ const data = [
         name: 'Japanese Gin',
         description: (<>カットしたライムが爽やかな香りを放ち、シルキーな口当たりとともに、心地よい刺激が舌を踊らせる。これがジンの魔法。</>),
         content: (<>
-            日本産ジンは、柚子、桜、抹茶など日本特有の植物成分を使用したお酒で、柑橘系の爽やかな香り、桜の花の繊細な甘さ、抹茶の深い旨味と苦味が特徴です。この日本の風味や文化を感じられる点が特に外国人に人気の理由です。日本産クラフトジンのブランドは増加しており、国際的なコンテストや品評会でも多くの賞を受賞しているため外国人の間でも人気が高まっています。
+            日本産ジンは、柚子、桜、抹茶など日本特有の植物成分を使用したお酒で、柑橘系の爽やかな香り、桜の花の繊細な甘さ、抹茶の深い旨味と苦味が特徴です。この日本の風味や文化を感じられる点が特に海外で人気の理由です。日本産クラフトジンのブランドは増加しており、国際的なコンテストや品評会でも多くの賞を受賞し、海外での注目が高まっています。
         </>)
     },
     {
@@ -44,7 +44,7 @@ const data = [
 const Feature = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative">
+    <section id="sake" ref={ref} className="relative">
         <div className="w-full max-w-[1440px] mx-auto px-10 md:px-[100px] relative">
             <div className="md:absolute left-0 top-0 flex justify-center px-5 md:px-8 md:pt-14 pt-8">
                 <h3 className="fade-up lg:text-[88px] md:text-[66px] text-[44px] text-black/10 font-black md:[writing-mode:vertical-rl] md:[text-orientation:mixed] tracking-[0.2em]">FEATURE</h3>

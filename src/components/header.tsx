@@ -14,16 +14,20 @@ const links: NavLink[] = [
     text: "Top",
   },
   {
-    link: "/concept",
+    link: "/#concept",
     text: "Concept",
   },
   {
-    link: "/sake",
-    text: "日本の酒",
+    link: "/#sake",
+    text: "JAPANESE SAKE",
   },
   {
-    link: "/message",
+    link: "/#message",
     text: "Message",
+  },
+  {
+    link: "/company",
+    text: "Company",
   },
   {
     link: "https://lin.ee/bDgs0V3",

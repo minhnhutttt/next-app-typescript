@@ -11,16 +11,20 @@ const links: NavLink[] = [
     text: "Top",
   },
   {
-    link: "/concept",
+    link: "/#concept",
     text: "Concept",
   },
   {
-    link: "/sake",
-    text: "日本の酒",
+    link: "/#sake",
+    text: "JAPANESE SAKE",
   },
   {
-    link: "/message",
+    link: "/#message",
     text: "Message",
+  },
+  {
+    link: "/company",
+    text: "Company",
   },
   {
     link: "https://lin.ee/bDgs0V3",
@@ -51,7 +55,7 @@ const Footer = () => {
                 ))}
             </ul>
         </div>
-        <p className="text-center text-[14px] text-white border-t border-white/50 h-[77px] flex justify-end items-center px-10">Copyright ©</p>
+        <p className="text-center text-[14px] text-white border-t border-white/50 h-[77px] flex justify-end items-center px-10">Copyright © Sake Supreme Inc., 2024</p>
     </footer>
   );
 };

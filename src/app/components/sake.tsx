@@ -6,6 +6,7 @@ const Sake = () => {
   const ref = useScrollAnimations();
   return (
     <section
+    id="concept"
       ref={ref}
       className="bg-[url('/assets/images/bg-sake.png')] bg-cover bg-right-bottom"
     >
