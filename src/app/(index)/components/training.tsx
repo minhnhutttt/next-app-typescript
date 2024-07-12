@@ -5,7 +5,7 @@ import useScrollAnimations from '@/hooks/useScrollAnimations'
 const Training = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative pt-28 md:pt-[195px] overflow-hidden">
+    <section ref={ref} className="relative pt-20 md:pt-[110px] overflow-hidden">
       <div className="w-full max-w-[1440px] mx-auto">
         <div className="w-full max-w-[1284px] ml-auto relative md:pb-[70px] pb-9">
             <div className="w-full relative">
