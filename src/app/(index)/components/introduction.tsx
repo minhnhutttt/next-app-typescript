@@ -6,7 +6,7 @@ import useScrollAnimations from '@/hooks/useScrollAnimations'
 const Introduction = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative px-5 pt-6 md:pb-[300px] pb-[140px]">
+    <section ref={ref} className="relative px-5 pt-10 md:pb-[300px] pb-[140px]">
       <div className="relative z-10 w-full md:max-w-[762px] max-w-[400px] mx-auto border-[3px] border-[#FFABEC]/[80] md:rounded-[220px] rounded-[80px] pb-3 max-md:px-4 max-md:py-6">
         <p className="text-center md:text-[24px] text-[14px] font-bold">国が<span className="md:text-[32px] text-[17px]">1兆円投資中</span>の今が<span className="text-[17px] md:text-[32px]">チャンス</span>です！</p>
         <div className="flex justify-center max-md:mt-2">
@@ -21,7 +21,7 @@ const Introduction = () => {
       </div>
       <div className="relative z-20">
         <div className="relative md:pb-28 pb-16">
-            <div className="md:w-[552px] w-[320px] mx-auto flex md:mt-16 mt-10">
+            <div className="md:w-[552px] w-[320px] mx-auto flex mt-6">
                 <span className="bg-[linear-gradient(180deg,_rgba(128,128,128,1)_0%,_rgba(255,255,255,1)_100%)] w-px h-[280px] md:h-[369px]"></span>
                 <p className="flex-1 px-5 md:text-[21px] text-[16px] font-bold text-[#5B5B5B] text-center leading-[1.7]">
                     AIを活用できない企業は<br />
