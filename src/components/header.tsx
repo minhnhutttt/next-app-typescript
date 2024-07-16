@@ -169,19 +169,22 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="absolute top-0 inset-x-0 z-10 pt-[30px] px-9">
+    <header className="absolute top-0 inset-x-0 z-10 md:pt-[40px] pt-5 md:px-9 px-5">
       <div className=" flex items-center justify-between">
         <a href="/" className=""><img src="/assets/images/logo.png" alt="次世代NFT" /></a>
         <div className="w-full max-w-full inset-0 min-h-screen absolute overflow-hidden scale-100">
-      <span className="menu-trigger" ref={openTriggerRef}>
-        <i className="menu-trigger-bar top" ref={openTriggerTopRef}></i>
-        <i className="menu-trigger-bar middle" ref={openTriggerMiddleRef}></i>
-        <i className="menu-trigger-bar bottom" ref={openTriggerBottomRef}></i>
-      </span>
-      <span className="close-trigger" ref={closeTriggerRef}>
-        <i className="close-trigger-bar left" ref={closeTriggerLeftRef}></i>
-        <i className="close-trigger-bar right" ref={closeTriggerRightRef}></i>
-      </span>
+        <div className="">
+          <span className="font-mplus md:text-[30px] text-[24px] absolute right-[75px] md:top-[20px] top-[28px]">Menu</span>
+          <span className="menu-trigger" ref={openTriggerRef}>
+            <i className="menu-trigger-bar top" ref={openTriggerTopRef}></i>
+            <i className="menu-trigger-bar middle" ref={openTriggerMiddleRef}></i>
+            <i className="menu-trigger-bar bottom" ref={openTriggerBottomRef}></i>
+          </span>
+          <span className="close-trigger" ref={closeTriggerRef}>
+            <i className="close-trigger-bar left" ref={closeTriggerLeftRef}></i>
+            <i className="close-trigger-bar right" ref={closeTriggerRightRef}></i>
+          </span>
+        </div>
       <div className="inner-container">
         <i className="menu-bg middle" ref={menuMiddleRef}></i>
         <div className="menu-container" ref={menuContainerRef}>

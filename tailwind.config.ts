@@ -20,6 +20,7 @@ const config: Config = {
     },
     fontFamily: {
       inter: ["var(--font-inter)", "sans-serif"],
+      mplus: ["var(--font-mplus)", "sans-serif"],
     },
   },
   plugins: [],

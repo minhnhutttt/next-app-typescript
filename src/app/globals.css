@@ -26,7 +26,7 @@ body {
 }
 
 .menu-trigger-bar {
-  @apply block w-full h-1 bg-white mb-1.5 -rotate-45 relative;
+  @apply block w-full h-1 bg-black mb-1.5 -rotate-45 relative;
 }
 .menu-trigger-bar:before {
   @apply content-[''] absolute top-0 left-0 block w-0 h-full bg-black/20 [transition:all_0.3s_cubic-bezier(0.55,_0,_0.1,_1)]
