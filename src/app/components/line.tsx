@@ -7,7 +7,7 @@ const Line = () => {
   return (
     <section ref={ref} className="relative md:mt-[165px] mt-[100px] md:mb-[230px] mb-[150px] px-5">
         <div className="fade-up flex justify-center items-center flex-col">
-            <h3 className="md:text-[30px] text-[20px] font-serif font-black">お問い合わせ</h3>
+            <h3 className="md:text-[30px] text-[20px] font-serif font-black">Contact Us</h3>
             <p className="max-w-[623px] md:text-[20px] text-[16px] md:mt-14 mt-10 md:mb-24 mb-12">
             製品やサービスに関することなど、お気軽にお問い合わせください。後ほど、担当者よりご連絡させていただきます。
             </p>

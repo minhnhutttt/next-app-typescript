@@ -41,6 +41,19 @@ const useScrollAnimations = () => {
               },
             }
           );
+        },
+        "ani-height": (el: HTMLElement) => {
+          gsap.from(
+            el,
+            {
+              height: 0,
+              duration: 0.7,
+              scrollTrigger: { 
+                trigger: el,
+                start: "top center"
+              },
+            }
+          );
         }
     };
 

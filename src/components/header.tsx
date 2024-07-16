@@ -31,7 +31,7 @@ const links: NavLink[] = [
   },
   {
     link: "https://lin.ee/bDgs0V3",
-    text: "お問い合わせ",
+    text: "Contact Us",
     target: '_blank'
   },
 ];

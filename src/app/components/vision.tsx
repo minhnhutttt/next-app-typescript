@@ -15,7 +15,7 @@ const Vision = () => {
               VISION
             </p>
             <div className="h-10 md:h-[84px] w-px overflow-hidden mx-auto absolute md:top-[calc(100%+49px)] top-[calc(100%+20px)]">
-              <span className="w-full h-full block bg-[linear-gradient(to_bottom,_black_50%,_rgba(255,_255,_255,_0)_50%)] md:bg-[0_-84px] bg-[0_-40px] [background-size:100%_200%] md:animate-[scrolldown_2.2s_cubic-bezier(0.76,_0,_0.3,_1)_forwards_infinite] animate-[scrolldownSP_2.2s_cubic-bezier(0.76,_0,_0.3,_1)_forwards_infinite]"></span>
+              <span className="ani-height w-full h-full block bg-black/55"></span>
             </div>
           </div>
         </div>
