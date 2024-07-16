@@ -5,7 +5,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const FV = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative h-[800px] bg-[url('/assets/images/bg-fv.png')] bg-cover bg-no-repeat">
+    <section ref={ref} className="relative h-[80vw] md:h-[800px] bg-[url('/assets/images/bg-fv.png')] bg-cover bg-no-repeat">
         <div className="w-full max-w-[1440px] mx-auto relative md:py-10 py-20 px-5 md:px-11 flex">
           <div className="">
             <img className="max-dt:[54.722vw]" src="/assets/images/fv-rabbit.png" alt="" />

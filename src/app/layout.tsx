@@ -12,7 +12,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 const mplus = M_PLUS_1p({
-  weight: ['500','700'],
+  weight: ['400','500','700','800','900'],
   subsets: ["latin"],
   variable: "--font-mplus",
 });
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${sans.className} ${inter.variable} ${mplus.variable}`}
+        className={`${mplus.className} ${inter.variable} bg-[#050C9C] font-medium`}
       >
         <Header />
         {children}

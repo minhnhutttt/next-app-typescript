@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from 'react';
-import {  gsap } from 'gsap';
+import { gsap } from 'gsap';
+
 const Header = () => {
   const openTriggerRef = useRef<HTMLSpanElement>(null);
   const closeTriggerRef = useRef<HTMLSpanElement>(null);
@@ -12,6 +13,7 @@ const Header = () => {
   const openTriggerBottomRef = useRef<HTMLIFrameElement>(null);
   const closeTriggerLeftRef = useRef<HTMLIFrameElement>(null);
   const closeTriggerRightRef = useRef<HTMLIFrameElement>(null);
+  const innerContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const context = gsap.context(() => {
@@ -57,6 +59,16 @@ const Header = () => {
           visibility: 'visible',
           ease: "power4.out"
         }, "-=0.2")
+        .to(innerContainerRef.current, {
+          opacity: 1,
+          pointerEvents: 'all',
+          ease: "power4.out"
+        }, "open")
+        .to(menuContainerRef.current, {
+          opacity: 1,
+          pointerEvents: 'all',
+          ease: "power4.out"
+        }, "open")
         .add("preClose", "-=0.8")
         .to(closeTriggerLeftRef.current, {
           x: "-=100px",
@@ -93,6 +105,16 @@ const Header = () => {
           onComplete: () => {
             if (menuMiddleRef.current) menuMiddleRef.current.style.backgroundColor = '#ffffff';
           }
+        }, "close")
+        .to(innerContainerRef.current, {
+          opacity: 0,
+          pointerEvents: 'none',
+          ease: "power4.inOut"
+        }, "close")
+        .to(menuContainerRef.current, {
+          opacity: 0,
+          pointerEvents: 'none',
+          ease: "power4.inOut"
         }, "close")
         .to(closeTriggerLeftRef.current, {
           x: "+=100px",
@@ -170,43 +192,43 @@ const Header = () => {
 
   return (
     <header className="absolute top-0 inset-x-0 z-10 md:pt-[40px] pt-5 md:px-9 px-5">
-      <div className=" flex items-center justify-between">
-        <a href="/" className=""><img src="/assets/images/logo.png" alt="次世代NFT" /></a>
+      <div className="flex items-center justify-between">
+        <a href="/" className="relative block z-10">
+          <img className='max-md:w-[140px]' src="/assets/images/logo.png" alt="次世代NFT" />
+        </a>
         <div className="w-full max-w-full inset-0 min-h-screen absolute overflow-hidden scale-100">
-        <div className="">
-          <span className="font-mplus md:text-[30px] text-[24px] absolute right-[75px] md:top-[20px] top-[28px]">Menu</span>
-          <span className="menu-trigger" ref={openTriggerRef}>
-            <i className="menu-trigger-bar top" ref={openTriggerTopRef}></i>
-            <i className="menu-trigger-bar middle" ref={openTriggerMiddleRef}></i>
-            <i className="menu-trigger-bar bottom" ref={openTriggerBottomRef}></i>
-          </span>
-          <span className="close-trigger" ref={closeTriggerRef}>
-            <i className="close-trigger-bar left" ref={closeTriggerLeftRef}></i>
-            <i className="close-trigger-bar right" ref={closeTriggerRightRef}></i>
-          </span>
+          <div className="">
+            <span className="font-mplus md:text-[30px] text-[20px] absolute right-[75px] md:top-[20px] top-[28px]">Menu</span>
+            <span className="menu-trigger" ref={openTriggerRef}>
+              <i className="menu-trigger-bar top" ref={openTriggerTopRef}></i>
+              <i className="menu-trigger-bar middle" ref={openTriggerMiddleRef}></i>
+              <i className="menu-trigger-bar bottom" ref={openTriggerBottomRef}></i>
+            </span>
+            <span className="close-trigger" ref={closeTriggerRef}>
+              <i className="close-trigger-bar left" ref={closeTriggerLeftRef}></i>
+              <i className="close-trigger-bar right" ref={closeTriggerRightRef}></i>
+            </span>
+          </div>
+          <div className="inner-container" ref={innerContainerRef}>
+            <i className="menu-bg middle" ref={menuMiddleRef}></i>
+            <div className="menu-container" ref={menuContainerRef}>
+              <ul className="menu" ref={menuRef}>
+                <li>
+                  <a href="#">Login</a>
+                </li>
+                <li>
+                  <a href="#">Create account</a>
+                </li>
+                <li>
+                  <a href="#">Support</a>
+                </li>
+                <li>
+                  <a href="#">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      <div className="inner-container">
-        <i className="menu-bg middle" ref={menuMiddleRef}></i>
-        <div className="menu-container" ref={menuContainerRef}>
-          <ul className="menu" ref={menuRef}>
-            <li>
-              <a href="#">Login</a>
-            </li>
-            <li>
-              <a href="#">Create account</a>
-            </li>
-            <li>
-              <a href="#">Support</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-
       </div>
     </header>
   );
