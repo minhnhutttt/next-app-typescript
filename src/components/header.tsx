@@ -3,7 +3,7 @@ const Header = () => {
   return (
     <header className="px-5 bg-white flex items-center justify-between md:h-[66px] py-2 gap-4">
       <div className="">
-        <a href="" className="duration-150 hover:opacity-75">
+        <a href="/" className="duration-150 hover:opacity-75">
           <img className="max-md:w-[120px]" src="/assets/images/logo.png" alt="MARKK" />
         </a>
       </div>

@@ -6,7 +6,7 @@ import useScrollAnimations from '@/hooks/useScrollAnimations'
 const Reskilling = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative bg-[url('/assets/images/bg-reskilling.png')] bg-no-repeat bg-right-top pt-28 md:pt-[195px]">
+    <section ref={ref} className="relative bg-[url('/assets/images/bg-reskilling.png')] bg-no-repeat bg-right-top pt-28 md:pt-[195px] overflow-hidden">
       <div className="w-full max-w-[1440px] mx-auto">
         <div className="w-full max-w-[1210px] relative md:pr-[70px] pr-9 md:pb-[70px] pb-9">
             <div className="w-full relative">

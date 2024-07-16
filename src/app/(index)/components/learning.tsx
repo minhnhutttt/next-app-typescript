@@ -103,7 +103,7 @@ const Learning = () => {
             <div className="flex justify-center md:mt-10 mt-6">
                 <img src="/assets/images/triagle-02.png" alt="" />
             </div>
-            <div className="">
+            <div className="md:mt-10 mt-7">
                 <h3 className="text-center md:text-[24px] text-[18px] font-bold">
                     ＼ eラーニングで学ぶ ／<br />
                     当社のChatGPT研修へ
@@ -165,7 +165,7 @@ const Learning = () => {
                                 <textarea className="w-full h-[150px] md:h-[240px] border border-[#AEAEAE] mt-2"></textarea>
                             </div>
                             <div className="flex justify-center items-center">
-                            <button className="w-[240px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">詳しく聞く</button>
+                            <button className="w-[240px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">送信する</button>
                             </div>
                         </div>
                     </div>

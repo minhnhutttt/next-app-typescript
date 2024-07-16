@@ -1,27 +1,39 @@
 // components/AnimatedCanvas.tsx
 "use client";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const isMobile = () => {
-  return window.innerWidth <= 768; // Adjust the width threshold as needed
+const getIsMobile = () => {
+  return typeof window !== "undefined" && window.innerWidth <= 768; // Check if window is defined
 };
 
 const Skill = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isMobile, setIsMobile] = useState(getIsMobile());
+
+  useLayoutEffect(() => {
+    const updateIsMobile = () => {
+      setIsMobile(getIsMobile());
+    };
+
+    window.addEventListener("resize", updateIsMobile);
+    updateIsMobile();
+
+    return () => {
+      window.removeEventListener("resize", updateIsMobile);
+    };
+  }, []);
 
   useLayoutEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const context = canvas.getContext("2d")!;
-    const isMobileDevice = isMobile();
     
-    // Set canvas dimensions based on device type
-    if (isMobileDevice) {
+    if (isMobile) {
       canvas.width = 1170;
       canvas.height = 2352;
     } else {
@@ -29,10 +41,10 @@ const Skill = () => {
       canvas.height = 1024;
     }
 
-    const frameCount = isMobileDevice ? 540 : 480;
-    const imagePath = isMobileDevice ? "/assets/images/skill-sp/" : "/assets/images/skill/";
+    const frameCount = isMobile ? 540 : 480;
+    const imagePath = isMobile ? "/assets/images/skill-sp/" : "/assets/images/skill/";
     const currentFrame = (index: number) =>
-      isMobileDevice
+      isMobile
         ? `${imagePath}png-sequence-s_${index.toString().padStart(6, "0")}.png`
         : `${imagePath}png-sequence${index.toString().padStart(3, "0")}.png`;
 
@@ -73,7 +85,7 @@ const Skill = () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       ctx.revert();
     };
-  }, []);
+  }, [isMobile]); // Re-run effect when isMobile changes
 
   return (
     <div className="bg-[#174D59]">
@@ -82,7 +94,7 @@ const Skill = () => {
           <div className="canvas-container w-full h-screen flex justify-center items-center">
             <canvas
               ref={canvasRef}
-              className="max-w-[100vw] h-full md:aspect-[1440/1024] aspect-[1170/2352]"
+              className="max-w-[100vw] max-h-[100vh] md:aspect-[1440/1024] aspect-[1170/2352]"
             />
           </div>
         </div>
