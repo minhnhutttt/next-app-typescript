@@ -17,28 +17,3 @@ body {
   transition-property: clip-path;
 }
 
-/* Animation */
-
-@keyframes scrolldown {
-  0% {
-    background-position: 0 -84px;
-  }
-  75% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 84px;
-  }
-}
-
-@keyframes scrolldownSP {
-  0% {
-    background-position: 0 -40px;
-  }
-  75% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 40px;
-  }
-}
