@@ -61,7 +61,7 @@ const Learning = () => {
                             </figure>
                         </div>
                         <p className="md:text-[17px] text-[14px] py-4 px-3">
-                            業務への活用を第一に要点を絞ることで提供価格をおさえ、助成金活用で実質負担を大幅軽減
+                        ChatGPT研修に特化し、かつ業務への活用を第一に要点を絞ることで提供価格をおさえ、助成金活用で実質負担を大幅軽減
                         </p>
                     </div>
                     <div className="w-full md:w-1/2 max-w-[545px] rounded-[20px] border-[3px] border-[#FFBE5E] bg-white p-3 md:mt-9">
@@ -98,27 +98,16 @@ const Learning = () => {
                         業務を前提とした講義で社員に能動性が生まれ、学んだその日から業務に活用できるスキルを習得
                         </p>
                     </div>
-                    <div className="w-full md:w-1/2 max-w-[545px] rounded-[20px] border-[3px] border-[#FFBE5E] bg-white p-3">
-                        <div className="flex items-center gap-2 border-b border-[#A8A7A7] pb-2.5">
-                            <div className="flex items-center flex-1 gap-3">
-                                <figure>
-                                    <img className="max-md:h-8" src="/assets/images/learning-number-04.png" alt="" />
-                                </figure>
-                                <p className="font-bold lg:text-[22px] md:text-[19px] text-[16px] flex-1">継続的な学習と最新情報の
-                                アップデート</p>
-                            </div>
-                            <figure className="max-md:w-[60px] max-lg:w-[80px]">
-                                <img src="/assets/images/learning-bubble-04.png" alt="" />
-                            </figure>
-                        </div>
-                        <p className="md:text-[17px] text-[14px] py-4 px-3">
-                        業務への活用を第一に要点を絞ることで提供価格をおさえ、助成金活用で実質負担を大幅軽減
-                        </p>
-                    </div>
                 </div>
             </div>
             <div className="flex justify-center md:mt-10 mt-6">
                 <img src="/assets/images/triagle-02.png" alt="" />
+            </div>
+            <div className="">
+                <h3 className="text-center md:text-[24px] text-[18px] font-bold">
+                    ＼ eラーニングで学ぶ ／<br />
+                    当社のChatGPT研修へ
+                </h3>
             </div>
             <div className="flex justify-center items-center mt-6">
                 <div className="w-[874px] bg-white md:p-10 p-5">

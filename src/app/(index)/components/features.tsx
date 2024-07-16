@@ -24,7 +24,7 @@ const Features = () => {
                             </span>
                         </div>
                     </div>
-                    <div className="md:mt-[60px] mt-8 bg-[url('/assets/images/bg-training-01.png')] bg-left-bottom bg-no-repeat max-md:bg-[length:400px_auto] pb-[200px] md:pb-[290px]">
+                    <div className="md:mt-[60px] mt-8 bg-[url('/assets/images/bg-training-01.png')] bg-left-bottom bg-no-repeat max-md:bg-[length:400px_auto] pb-[200px] md:pb-[500px]">
                         <div className="px-5">
                             <div className="w-full md:max-w-[994px] max-w-[400px] mx-auto space-y-7">
                                 <div className="bg-white border border-black px-4 md:px-[30px] pt-3 md:pb-[30px] pb-4">
@@ -93,50 +93,6 @@ const Features = () => {
                                                     <li>実務での具体的な使い方を解説</li>
                                                     <li>最新のAIツールや技術の概要も紹介</li>
                                                     <li>生成AIの業務ソフトへの連携で業務効率化を支援</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="md:px-14">
-                                    <div className="bg-white w-full max-w-[740px] border border-black px-4 md:px-[30px] pt-3 md:pb-[30px] pb-4">
-                                        <div className="flex items-center gap-4 border-b border-[#A8A7A7] pb-2">
-                                            <figure>
-                                                <img className="max-md:h-8" src="/assets/images/feature-number-04.png" alt="4" />
-                                            </figure>
-                                            <h4 className="md:text-[24px] text-[18px] font-bold flex-1">
-                                            充実したサポート体制
-                                            </h4>
-                                        </div>
-                                        <div className="flex md:mt-[26px] mt-4 md:gap-9 gap-5 max-md:flex-col max-md:items-center">
-                                            <div className="md:pl-3">
-                                                <h5 className="md:text-[20px] text-[16px] font-semibold">一人で悩まない、確実に習得できる学習環境</h5>
-                                                <ul className="list-disc md:text-[17px] text-[14px] md:mt-6 mt-3 md:ml-14 ml-8">
-                                                    <li>生成AIコーディネーターによる質問対応</li>
-                                                    <li>学習の進捗に応じたガイダンス提供</li>
-                                                    <li>個々の学習状況の進捗を管理</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="md:pl-[240px]">
-                                    <div className="bg-white w-full max-w-[740px] border border-black px-4 md:px-[30px] pt-3 md:pb-[30px] pb-4">
-                                        <div className="flex items-center gap-4 border-b border-[#A8A7A7] pb-2">
-                                            <figure>
-                                                <img className="max-md:h-8" src="/assets/images/feature-number-05.png" alt="5" />
-                                            </figure>
-                                            <h4 className="md:text-[24px] text-[18px] font-bold flex-1">
-                                            高い投資対効果
-                                            </h4>
-                                        </div>
-                                        <div className="flex md:mt-[26px] mt-4 md:gap-9 gap-5 max-md:flex-col max-md:items-center">
-                                            <div className="md:pl-3">
-                                                <h5 className="md:text-[20px] text-[16px] font-semibold">AIスキル習得は、あなたと会社の未来への確実な投資</h5>
-                                                <ul className="list-disc md:text-[17px] text-[14px] md:mt-6 mt-3 md:ml-14 ml-8">
-                                                    <li>短期間で効果的なAIスキル習得を実現</li>
-                                                    <li>助成金の活用で導入コストを抑え、より効果的な投資を実現</li>
-                                                    <li>学んだAIを業務に活用することで投資額の短期間回収</li>
                                                 </ul>
                                             </div>
                                         </div>
