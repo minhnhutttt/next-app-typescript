@@ -3,7 +3,7 @@
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 
-const Generation = () => {
+const About = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="relative px-5">
@@ -11,7 +11,7 @@ const Generation = () => {
             <div className="flex justify-center">
                 <div className="relative w-[350px] md:w-[41.667vw] dt:w-[600px] flex justify-end">
                     <span className="absolute w-[170px] md:w-[20.069vw] dt:w-[289px] left-6 -top-10 md:-top-[6.944vw] dt:top-[-100px]">
-                        <img src="/assets/images/img-bubble-02.png" alt="" />
+                        <img src="/assets/images/img-bubble-02.png" alt="そう！これらの誤解は前世代NFTの話！" />
                     </span>
                     <figure className="max-md:w-[170px] max-dt:w-[22.569vw]">
                         <img src="/assets/images/img-character-02.png" alt="" />
@@ -29,20 +29,21 @@ const Generation = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="w-full max-w-[1240px] mx-auto flex gap-10 md:gap-[70px] pt-9 md:pt-16 max-md:flex-col">
-                        <figure className="max-md:w-auto max-dt:w-[31.25vw]">
+                    <div className="w-full max-w-[1240px] mx-auto flex gap-10 md:gap-[70px] pt-9 md:pt-16 max-md:flex-col max-md:items-center">
+                        <figure className="max-md:w-[300px] max-dt:w-[31.25vw]">
                             <img src="/assets/images/img-generation-01.png" alt="" />
                         </figure>
-                        <div className="pt-5 flex-1">
-                            <h3 className="mb-5">
-                                <img src="/assets/images/bubble-03.png" alt="NFTの送受信が無料！" />
+                        <div className="md:pt-5 flex-1">
+                            <h3 className="mb-5 max-md:flex max-md:justify-center max-md:items-center">
+                                <img className="max-md:w-[300px]" src="/assets/images/bubble-03.png" alt="NFTの送受信が無料！" />
                             </h3>
-                            <p className="md:text-[18px] text-[15px]">
-                            次世代NFTの最大の特徴は、NFTの送受信が永年無料であること！<br />
+                            <p className="md:text-[18px] text-[14px] max-md:text-center">
+                            次世代NFTの最大の特徴は、<br className="md:hidden" />NFTの送受信が<span className="relative">
+                                <span className="slide-gradient absolute top-0 left-0 right-0 bottom-0 bg-[#FEEF01]"></span><span className="relative">永年無料</span></span>であること！<br />
                             いつでもどこでも、ガス代(=手数料)を気にせずにNFTを送信することができます。
                             </p>
-                            <div className="flex justify-end md:mt-20 mt-12">
-                                <figure className="max-md:w-auto max-dt:w-[28.472vw]">
+                            <div className="flex justify-end md:mt-20 mt-10">
+                                <figure className="max-md:w-[270px] max-dt:w-[28.472vw]">
                                     <img src="/assets/images/img-generation-02.png" alt="" />
                                 </figure>
                             </div>
@@ -55,4 +56,4 @@ const Generation = () => {
   );
 };
 
-export default Generation;
+export default About;

@@ -20,7 +20,7 @@ const data = [
     },
 ]
 
-const Reasons = () => {
+const Story = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="relative px-5">
@@ -68,4 +68,4 @@ const Reasons = () => {
   );
 };
 
-export default Reasons;
+export default Story;

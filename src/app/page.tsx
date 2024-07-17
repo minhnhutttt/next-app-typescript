@@ -1,8 +1,10 @@
 import Evolution from "./components/evolution";
 import FV from "./components/fv";
-import Generation from "./components/generation";
 import Introduction from "./components/introduction";
-import Reasons from "./components/reasons";
+import Story from "./components/story";
+import About from "./components/about";
+import Useful from "./components/useful";
+import Series from "./components/series";
 
 export default function Home() {
   return (
@@ -11,8 +13,10 @@ export default function Home() {
       <div className="bg-[url('/assets/images/bg.png')] bg-cover overflow-hidden">
       <Introduction />
       <Evolution />
-      <Reasons />
-      <Generation />
+      <Story />
+      <About />
+      <Useful />
+      <Series />
       </div>
     </main>
   );

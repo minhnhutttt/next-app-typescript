@@ -1,6 +1,6 @@
 "use client";
 import { ReactNode } from "react";
-export type PageTitlePropsType = {
+type PageTitlePropsType = {
   children: ReactNode;
 };
 export default function PageTitle({ children }: PageTitlePropsType) {
