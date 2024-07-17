@@ -24,24 +24,24 @@ const Reasons = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="relative px-5">
-        <div className="w-full max-w-[1360px] mx-auto pt-[60px]">
+        <div className="w-full md:max-w-[1360px] max-w-[440px] mx-auto md:pt-[60px] pt-[140px]">
             <div className="flex pl-[3.333vw] dt:pl-12">
                 <div className="relative">
-                    <span className="absolute left-[19.444vw] dt:left-[280px] w-[20.069vw] dt:w-[289px] top-[-6.667vw] dt:top-[-96px]">
+                    <span className="absolute left-[150px] md:left-[19.444vw] dt:left-[280px] w-[190px] md:w-[20.069vw] dt:w-[289px] top-[-100px] md:top-[-6.667vw] dt:top-[-96px]">
                         <img src="/assets/images/img-bubble.png" alt="でもNFTってなんか良くないって聞いたことがあるよ…" />
                     </span>
                     <figure>
-                        <img className="max-dt:w-[22.569vw]" src="/assets/images/img-character.png" alt="" />
+                        <img className="max-md:w-[200px] max-dt:w-[22.569vw]" src="/assets/images/img-character.png" alt="" />
                     </figure>
                 </div>
             </div>
-            <div className="flex flex-wrap justify-center dt:gap-5 gap-[1.389vw] mt-10 relative">
-                <span className="absolute left-0 -top-12 z-10 max-dt:w-[29.514vw]">
+            <div className="flex flex-wrap justify-center dt:gap-5 gap-6 md:gap-[1.389vw] mt-10 relative">
+                <span className="absolute left-0 -top-12 z-10 max-md:w-[340px] max-dt:w-[29.514vw]">
                     <img src="/assets/images/bubble-02.png" alt="NFTが誤解されている理由" />
                 </span>
                 {data.map((item, index) => (
-                    <div className="size-[340px] md:size-[30.556vw] dt:size-[440px] rounded-[20px] flex items-center justify-center flex-col relative" key={index}>
-                        <button type="button" className="group w-full h-full inline-block [perspective:1000px] text-left hover:scale-95 duration-150">
+                    <div className="max-md:w-[440px] aspect-square md:w-[30.556vw] dt:w-[440px] rounded-[20px] flex items-center justify-center flex-col relative" key={index}>
+                        <button type="button" className="group w-full h-full inline-block [perspective:1000px] text-left duration-150">
                         <div className="group-focus-within:[transform:rotate3d(1,_-1,_0,_180deg)] w-full h-full relative cursor-pointer duration-[600ms] ease-in-out [transform-style:preserve-3d]">
                             <div className="front z-10 absolute top-0 left-0 w-full h-full [backface-visibility:hidden] [transform:rotateX(0deg)] flex items-center justify-center bg-white rounded-[20px] p-[1.389vw] dt:p-5">
                                 <div className="w-full h-full flex items-center justify-center"><img className="max-md:w-[270px]" src={item.image} alt="" /></div>

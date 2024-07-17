@@ -1,5 +1,6 @@
 import Evolution from "./components/evolution";
 import FV from "./components/fv";
+import Generation from "./components/generation";
 import Introduction from "./components/introduction";
 import Reasons from "./components/reasons";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <Introduction />
       <Evolution />
       <Reasons />
+      <Generation />
       </div>
     </main>
   );
