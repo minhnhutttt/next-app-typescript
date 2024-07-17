@@ -87,7 +87,10 @@ const Introduction = () => {
         </div>
         </div>
         
-        <div className="pl-8 md:pl-[70px] mt-6 md:mt-[46px]">
+        <div className="pl-8 md:pl-[70px] mt-12 md:mt-24 lg:mt-[46px] relative">
+            <span className="absolute md:top-[-86px] top-[-40px] md:left-[70px] left-[40px] z-10">
+                <img className="max-md:w-[280px]" src="/assets/images/bubble.png" alt="" />
+            </span>
             <Swiper
                 slidesPerView={'auto'}
                 loop={true}

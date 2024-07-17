@@ -10,7 +10,14 @@ body {
   font-family: "M PLUS 1p", sans-serif;
 }
 
+.u-text-gradient {
+  background: linear-gradient(90deg, #FF75C3 0%, #FFA647 20%, #FFE83F 40%, #9FFF5B 60%, #70E2FF 80%, #CD93FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+/* Menu */
 
 .menu-trigger, .close-trigger {
   @apply absolute top-8 right-5 block size-[42px] cursor-pointer z-[333];
@@ -68,44 +75,22 @@ body {
   @apply block w-full p-[20%]
 }
 .menu li {
-  text-align: left;
-  display: block;
-  padding: 15px 0;
+  @apply py-[15px] block text-left;
 }
 .menu a {
-  text-decoration: none;
-  color: #222222;
-  display: inline-block;
-  padding: 10px 0;
-  position: relative;
+  @apply text-[#222] inline-block py-2.5 relative
 }
 .menu a:hover:before {
-  opacity: 1;
-  transform: translateX(0px);
+  @apply opacity-100 translate-x-0;
 }
 .menu a:before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 18px;
-  height: 4px;
-  opacity: 0;
-  background-color: #222222;
-  transform: translateX(100px);
-  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  @apply content-[''] block absolute left-0 bottom-0 w-[18px] h-1 opacity-0 bg-[#222] translate-x-[100px] [transition:all_0.3s_cubic-bezier(0.55,_0,_0.1,_1)];
 }
 
 .menu-bg {
-  position: absolute;
-  display: block;
-  width: 300vw;
-  height: 300vh;
-  background-color: white;
+  @apply absolute block w-[300vw] h-[300vh] bg-white;
 }
 .menu-bg.middle {
-  top: -100vh;
-  left: -100vw;
-  transform: rotate(-45deg) scaleY(0);
+  @apply top-[-100vh] left-[-100vw] -rotate-45 scale-y-0;
 }
+

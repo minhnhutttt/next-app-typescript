@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${mplus.className} ${inter.variable} bg-[#050C9C] font-medium`}
+        className={`${mplus.className} ${inter.variable} bg-[#050C9C] font-medium overflow-x-hidden`}
       >
         <Header />
         {children}
