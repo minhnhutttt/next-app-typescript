@@ -1,6 +1,7 @@
 import Evolution from "./components/evolution";
 import FV from "./components/fv";
 import Introduction from "./components/introduction";
+import Reasons from "./components/reasons";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="bg-[url('/assets/images/bg.png')] bg-cover overflow-hidden">
       <Introduction />
       <Evolution />
+      <Reasons />
       </div>
     </main>
   );

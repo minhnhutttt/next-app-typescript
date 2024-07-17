@@ -17,6 +17,9 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.flip-inverted-diagonal-left:hover .card {
+  transform: rotate3d(1, -1, 0, 180deg);
+}
 /* Menu */
 
 .menu-trigger, .close-trigger {
@@ -94,3 +97,13 @@ body {
   @apply top-[-100vh] left-[-100vw] -rotate-45 scale-y-0;
 }
 
+
+
+@keyframes poyopoyo {
+  0%, 40%, 60%, 80% {
+    transform: scale(1.0);
+  }
+  50%, 70% {
+    transform: scale(0.95);
+  }
+}
