@@ -42,7 +42,7 @@ const Development = () => {
                             </ul>
                         </div>
                         <div className="flex justify-center mt-6">
-                            <a href="/" className="w-[140px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">詳しく聞く</a>
+                            <a href="/#contact" className="w-[140px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">詳しく聞く</a>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ const Development = () => {
                             </ul>
                         </div>
                         <div className="flex justify-center mt-6">
-                            <a href="/" className="w-[140px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">詳しく聞く</a>
+                            <a href="/#contact" className="w-[140px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">詳しく聞く</a>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,19 @@ const Development = () => {
         </div>
         </div>
     </section>
-    <div className="md:h-[404px] h-[200px] bg-[url('/assets/images/bg-04.png')] bg-cover bg-center"></div>
+    <div className="md:h-[404px] h-[340px] bg-[url('/assets/images/bg-04.png')] bg-cover bg-center flex flex-col items-center justify-center py-10 px-5">
+        <h4 className="text-center mdLtext-[32px] text-[24px] font-bold">CONPANY Profile</h4>
+        <div className="flex justify-center md:py-8 py-6">
+            <p className="md:text-[18px] text-[15px] font-medium">
+            名称　株式会社MARKK <br />
+            住所　〒104-0061<br />
+            　　　東京都中央区銀座1-12-4 N&E BLD. 7F<br />
+            <br />
+            設立　2024年3月<br />
+            URL　<a href="https://markk.jp/" target="_blank" className='underline' rel="noopener noreferrer">https://markk.jp/</a><br />
+            </p>
+        </div>
+    </div>
     </>
   )
 }

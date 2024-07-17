@@ -16,7 +16,7 @@ const Features = () => {
                         <div className="max-w-[1087px] bg-[linear-gradient(278deg,_#FF2A2A_-5.11%,_#FF9B04_78.14%)] -ml-px h-16 md:h-[91px] relative -mt-[58px]">
                             <div className="flex items-center py-2">
                                 <span className="md:w-[100px] w-5 bg-white h-px"></span>
-                                <p className="md:text-[24px] text-[16px] font-bold text-white">eラーニング型生成AI研修の5つの特長</p>
+                                <p className="md:text-[24px] text-[16px] font-bold text-white">eラーニング型生成AI研修の3つの特長</p>
                                 <span className="flex-1 bg-white h-px"></span>
                             </div>
                             <span className="absolute bottom-0 right-0 pl-5">
@@ -41,7 +41,7 @@ const Features = () => {
                                             <img src="/assets/images/feature-img-01.png" alt="" />
                                         </figure>
                                         <div className="">
-                                            <h5 className="md:text-[20px] text-[16px] font-semibold">忙しい毎日でも、AIスキルアップを実現。</h5>
+                                            <h5 className="md:text-[20px] text-[16px] font-semibold">忙しい毎日でも、AIスキルアップを実現</h5>
                                             <ul className="list-disc md:text-[17px] text-[14px] md:mt-6 mt-3 ml-8">
                                                 <li>「いつでも、どこでも」アクセス可能なeラーニング</li>
                                                 <li>全12時間のコンパクトな構成</li>
@@ -65,7 +65,7 @@ const Features = () => {
                                                 <img src="/assets/images/feature-img-02.png" alt="" />
                                             </figure>
                                             <div className="">
-                                                <h5 className="md:text-[20px] text-[16px] font-semibold">学んだその日から、仕事に活かせるAIスキル</h5>
+                                                <h5 className="md:text-[20px] text-[16px] font-semibold">理論だけでなく実践で使えるAIスキルを習得</h5>
                                                 <ul className="list-disc md:text-[17px] text-[14px] md:mt-4 mt-3 ml-8">
                                                     <li>AI活用の基礎から応用まで、段階的に学習</li>
                                                     <li>実際の業務を想定した演習</li>

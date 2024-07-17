@@ -41,11 +41,11 @@ const Skill = () => {
       canvas.height = 1024;
     }
 
-    const frameCount = isMobile ? 540 : 480;
+    const frameCount = isMobile ? 270 : 480;
     const imagePath = isMobile ? "/assets/images/skill-sp/" : "/assets/images/skill/";
     const currentFrame = (index: number) =>
       isMobile
-        ? `${imagePath}png-sequence-s_${index.toString().padStart(6, "0")}.png`
+        ? `${imagePath}png-sequence-smartphone${index.toString().padStart(3, "0")}.png`
         : `${imagePath}png-sequence${index.toString().padStart(3, "0")}.png`;
 
     const images: HTMLImageElement[] = [];
@@ -91,10 +91,10 @@ const Skill = () => {
     <div className="bg-[#174D59]">
       <div className="overflow-hidden">
         <div className="pin relative w-screen h-screen">
-          <div className="canvas-container w-full h-screen flex justify-center items-center">
+          <div className="canvas-container w-full h-screen flex justify-center items-center md:pt-[66px] pt-[86px]">
             <canvas
               ref={canvasRef}
-              className="max-w-[100vw] max-h-[100vh] md:aspect-[1440/1024] aspect-[1170/2352]"
+              className="max-w-[100vw] md:max-h-[calc(100%-66px)] max-h-[calc(100%-86px)] md:aspect-[1440/1024] aspect-[1170/2352]"
             />
           </div>
         </div>

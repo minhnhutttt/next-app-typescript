@@ -55,7 +55,7 @@ const Reskilling = () => {
                                                 </p>
                                             </div>
                                             <div className="md:py-6 py-3">
-                                                <p className="lg:text-[20px] text-[16px] md:text-[2vw] font-bold"><span className="md:text-[22px]">3.</span>高速・高精度z処理</p>
+                                                <p className="lg:text-[20px] text-[16px] md:text-[2vw] font-bold"><span className="md:text-[22px]">3.</span>高速・高精度処理</p>
                                                 <p className="lg:text-[17px] text-[14px] md:text-[1.6vw] font-medium pl-3 md:pl-5 pt-3 md:pt-5">
                                                 複雑な計算や分析を迅速に実行し、人的ミスを軽減 <br />
                                                     例：財務予測や在庫管理の精度向上
