@@ -42,7 +42,7 @@ const Development = () => {
                             </ul>
                         </div>
                         <div className="flex justify-center mt-6">
-                            <a href="/#contact" className="w-[140px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">詳しく聞く</a>
+                            <a href="#contact" className="w-[140px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">詳しく聞く</a>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ const Development = () => {
                             </ul>
                         </div>
                         <div className="flex justify-center mt-6">
-                            <a href="/#contact" className="w-[140px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">詳しく聞く</a>
+                            <a href="#contact" className="w-[140px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">詳しく聞く</a>
                         </div>
                     </div>
                 </div>
