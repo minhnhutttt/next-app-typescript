@@ -17,7 +17,7 @@ const Footer = () => {
                     </li>
                 </ul>
                 <div className="">
-                  <a href="http://" target="_blank" rel="noopener noreferrer" className="block duration-150 hover:opacity-75"><img src="/assets/images/btn-line.png" alt="" /></a>
+                  <a href="https://lin.ee/3MXyqEC" target="_blank" rel="noopener noreferrer" className="block duration-150 hover:opacity-75"><img src="/assets/images/btn-line.png" alt="" /></a>
                 </div>
             </div>
         </div>

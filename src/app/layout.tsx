@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Backtop from "@/components/backtop";
+import ScrollContainer from "@/components/scrollContainer";
 
 const serif = Noto_Serif_JP({
   weight: ['700','900'],
@@ -30,10 +31,12 @@ export default function RootLayout({
        <body
         className={`${mplus.className} ${serif.variable} bg-[#050C9C] font-medium overflow-x-hidden`}
       >
-        <Header />
-        {children}
-        <Footer />
-        <Backtop />
+        <ScrollContainer>
+          <Header />
+          {children}
+          <Footer />
+          <Backtop />
+        </ScrollContainer>
       </body>
     </html>
   );

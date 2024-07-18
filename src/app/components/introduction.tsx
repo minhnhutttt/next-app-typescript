@@ -1,6 +1,5 @@
 "use client";
 
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -53,9 +52,8 @@ const data = [
 ]
 
 const Introduction = () => {
-  const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative md:pt-[96px] pt-12">
+    <section className="relative md:pt-[96px] pt-12">
         <div className="relative">
         <span className="absolute md:h-[calc(100%-280px)] h-[calc(100%-180px)] px-5 top-0 inset-x-0 ">
             <span className="w-full h-full bg-white rounded-[60px] block"></span>
@@ -64,19 +62,19 @@ const Introduction = () => {
         <div className="w-full max-w-[1350px] mx-auto relative">
             <div className="relative pl-[4.583vw] dt:pl-[66px] pt-5 pr-5">
                 <div className="flex md:gap-[40px] gap-7 max-md:flex-col">
-                    <figure className="max-md:w-[50vw] max-dt:w-[33.75vw]">
+                    <figure data-scroll className="ani-slide-left max-md:w-[50vw] max-dt:w-[33.75vw]">
                         <img src="/assets/images/img-intro-01.png" alt="NFTってなんだ？" />
                     </figure>
                     <div className="flex-1 md:pt-[7.778vw] dt:pt-28">
                         <div className="leading-[2]">
-                        <p className="md:text-[18px] text-[15px] max-w-[526px]">
+                        <p data-scroll className="ani-fade-up md:text-[18px] text-[15px] max-w-[526px]">
                             NFTとは「世界にひとつだけの証明番号」を画像やビデオ、3D、音楽、音声などに付与する技術を活用して発行されるものです。証明番号は第三者から書き換えられたりするリスクがなく、デジタルの世界に&quot;ひとつだけ&quot;であることを証明するために使われています。
                         </p>
                         <div className="flex pt-3 max-dt:gap-2 max-md:flex-col">
-                            <p className="md:text-[16px] text-[13px] flex-1">
+                            <p data-scroll className="ani-fade-up md:text-[16px] text-[13px] flex-1">
                             ※Non-Fungible Token（ノンファンジブルトークン）の略称で、日本語では「非代替性トークン」と訳されることが多いです。
                             </p>
-                            <figure className="min-[860px]:-mt-[4.444vw] dt:-mt-16 dt:-ml-5 max-md:w-[40vw] max-dt:w-[19.514vw] max-md:ml-auto">
+                            <figure data-scroll className="ani-slide-right min-[860px]:-mt-[4.444vw] dt:-mt-16 dt:-ml-5 max-md:w-[40vw] max-dt:w-[19.514vw] max-md:ml-auto">
                                 <img src="/assets/images/img-teacher.png" alt="" />
                             </figure>
                         </div>
@@ -88,9 +86,10 @@ const Introduction = () => {
         </div>
         
         <div className="pl-8 md:pl-[70px] mt-12 md:mt-24 lg:mt-[46px] relative">
-            <span className="absolute md:top-[-86px] top-[-40px] md:left-[70px] left-[40px] z-10">
+            <span data-scroll className="ani-fade-up absolute md:top-[-86px] top-[-40px] md:left-[70px] left-[40px] z-10">
                 <img className="max-md:w-[280px]" src="/assets/images/bubble.png" alt="" />
             </span>
+            <div data-scroll className="ani-fade-up">
             <Swiper
                 slidesPerView={'auto'}
                 loop={true}
@@ -112,6 +111,7 @@ const Introduction = () => {
                 ))}
                 
             </Swiper>
+            </div>
             </div>
         </div>
     </section>

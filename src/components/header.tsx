@@ -209,7 +209,7 @@ const Header = () => {
               <i className="close-trigger-bar right" ref={closeTriggerRightRef}></i>
             </span>
           </div>
-          <div className="inner-container" ref={innerContainerRef}>
+          <div className="inner-container opacity-0 pointer-events-none" ref={innerContainerRef}>
             <i className="menu-bg middle" ref={menuMiddleRef}></i>
             <div className="menu-container" ref={menuContainerRef}>
               <ul className="menu" ref={menuRef}>

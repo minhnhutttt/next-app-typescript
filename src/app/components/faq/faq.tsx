@@ -64,7 +64,7 @@ export default function FAQ() {
       className="px-5 pb-12 pt-14 mb-[30px] md:mb-[70px] md:pb-[90px] md:pt-[140px]"
     >
       <div className="mx-auto w-full max-w-[920px]">
-        <h4 className="ani-fade-up text-center text-white text-[28px] md:text-[48px]">
+        <h4 data-scroll className="ani-fade-up text-center text-white text-[28px] md:text-[48px]">
         FAQ
         </h4>
         <div className="mx-auto mt-5 w-full space-y-[20px] md:mt-[70px] md:space-y-[30px]">
