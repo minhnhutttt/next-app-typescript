@@ -22,8 +22,8 @@ const Learning = () => {
             <div className="flex max-lg:flex-col-reverse max-lg:items-center mb-10 md:mb-20 max-lg:gap-10 max-md:gap-6">
                 <div className="flex-1">
                     <h4 className="font-bold md:text-[32px] text-[24px] px-2 border-b border-black pb-3">他社の研修が貴社にマッチしない理由</h4>
-                    <p className="md:text-[20px] text-[16px] pt-3 md:pl-[40px]">AI活用は、もはや選択肢ではありません。社員がAIを使えなければ未来の競争力は勢いを増して低下するでしょう。全社員のAIスキル向上が急務です。</p>
-                    <div className="w-full max-w-[568px] bg-white border border-[#AEAEAE] mx-auto mt-5 p-4 md:p-8">
+                    <div className="w-full max-w-[568px] mx-auto md:mt-8 mt-5">
+                    <div className="bg-white border border-[#AEAEAE] p-4 md:p-8">
                         <ul className="list-disc list-inside md:text-[18px] text-[14px] space-y-1">
                             <li>大企業向けの高額な費用：中小企業の予算では厳しい</li>
                             <li>長期のoff-JT：学びに能動性がなく身につかない</li>
@@ -31,6 +31,8 @@ const Learning = () => {
                             <li>汎用的な内容：実務に直結しづらい</li>
                             <li>一度きりの学習：急速に進化するAI技術に追いつけない</li>
                         </ul>
+                    </div>
+                    <p className="md:text-[20px] text-[16px] pt-3">AI活用は、もはや選択肢ではありません。社員がAIを使えなければ未来の競争力は勢いを増して低下するでしょう。全社員のAIスキル向上が急務です。</p>
                     </div>
                 </div>
                 <figure className="md:mx-[50px]">
