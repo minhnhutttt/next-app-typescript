@@ -21,7 +21,7 @@ const Evolution = () => {
                     近い将来、お店で購入するトレーディングカードのように、中身は所有者だけが確認できるようになります。
                     </p>
                 </div>
-                <div data-scroll className="ani-slide-right !delay-700 absolute right-5 md:right-0 bottom-0 md:bottom-[4.861vw] dt:bottom-[70px]">
+                <div data-scroll className="ani-slide-right !delay-500 absolute right-5 md:right-0 bottom-0 md:bottom-[4.861vw] dt:bottom-[70px]">
                     <div className="flex justify-center -mb-[1.111vw] dt:-mb-4 relative">
                         <p className="w-full md:max-w-[19.097vw] dt:max-w-[275px] max-w-[170px] dt:text-[18px] md:text-[1.25vw] text-[11px] text-white">
                         希少性とセキュリティ、開封時の<br />ワクワク感が強化されるんだね！

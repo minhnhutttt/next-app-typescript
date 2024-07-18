@@ -214,16 +214,7 @@ const Header = () => {
             <div className="menu-container" ref={menuContainerRef}>
               <ul className="menu" ref={menuRef}>
                 <li>
-                  <a href="#">Login</a>
-                </li>
-                <li>
-                  <a href="#">Create account</a>
-                </li>
-                <li>
-                  <a href="#">Support</a>
-                </li>
-                <li>
-                  <a href="#">About</a>
+                  <a href="/">Home</a>
                 </li>
               </ul>
             </div>
