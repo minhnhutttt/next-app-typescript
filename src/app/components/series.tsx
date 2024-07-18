@@ -5,7 +5,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Series = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative px-5 bg-white md:rounded-t-[100px] rounded-t-[50px] md:pb-[107px] pb-[60px]">
+    <section ref={ref} className="relative px-5 bg-white md:rounded-t-[100px] rounded-t-[50px] md:pb-[114px] pb-[60px]">
         <div className="w-full md:max-w-[1360px] max-w-[440px] mx-auto md:pt-[80px] pt-[50px]">
             <h3 className="text-center md:text-[48px] text-[32px] font-black">次世代シリーズ</h3>
             <div className="flex flex-wrap justify-center gap-x-10 md:gap-y-[144px] gap-y-[44px] mt-16 md:mt-[132px]">

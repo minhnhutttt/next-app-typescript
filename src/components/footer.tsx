@@ -1,61 +1,27 @@
 "use client"
 
-interface NavLink {
-  link: string;
-  text: string;
-  target?: string;
-}
-
-const links: NavLink[] = [
-  {
-    link: "/#introduction",
-    text: "DIVER Agentとは？",
-  },
-  {
-    link: "/#products",
-    text: "商品例",
-  },
-  {
-    link: "/#sales",
-    text: "販売方法",
-  },
-  {
-    link: "/#flow",
-    text: "登録・販売フロー",
-  },
-  {
-    link: "/company",
-    text: "運営会社",
-  },
-  {
-    link: "/privacy-policy",
-    text: "プライバシーポリシー",
-  },
-];
 const Footer = () => {
   return (
-    <footer className="px-5 md:px-10 bg-black md:pt-[110px] pt-16 pb-5">
-        <div className="w-full max-w-[883px] mx-auto">
-            <div className="flex justify-center">
+    <footer className="px-5 md:px-10 bg-[#252525] md:pt-[170px] pt-16 pb-5">
+        <div className="w-full max-w-[864px] mx-auto md:mb-[120px] mb-20">
+            <div className="flex justify-between max-md:flex-col max-md:items-center gap-10 md:gap-5">
                 <a href="/" className="hover:opacity-75 duration-150">
-                    <img className="max-md:w-[200px]" src="/assets/images/logo.png" alt="" />
+                    <img className="max-lg:w-[200px]" src="/assets/images/logo-footer.png" alt="" />
                 </a>
+                <ul className="flex flex-col font-extrabold text-[16px] text-white gap-[30px]">
+                    <li>
+                        <a href="/#faq" className="block duration-150 hover:opacity-75">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="/privacy-policy" className="block duration-150 hover:opacity-75">プライバシーポリシー</a>
+                    </li>
+                </ul>
+                <div className="">
+                  <a href="http://" target="_blank" rel="noopener noreferrer" className="block duration-150 hover:opacity-75"><img src="/assets/images/btn-line.png" alt="" /></a>
+                </div>
             </div>
-            <ul className="flex md:justify-center items-center md:my-8 my-6 max-md:justify-center flex-wrap">
-                {links.map(({ link, text, target }, index) => (
-                <li key={index} className="flex items-center">
-                    <a
-                    href={link}
-                    className="text-[16px] text-white font-medium duration-150 hover:opacity-75 px-8 lg:px-12 h-[60px] flex items-center justify-center"
-                    target={target}
-                    >
-                    {text}
-                    </a>
-                </li>
-                ))}
-            </ul>
         </div>
-        <p className="text-center text-[14px] text-white font-lato">Copyright © 2024 DIVER Agent.</p>
+        <p className="text-center text-[14px] text-white font-lato">Copyright © 次世代NFT</p>
     </footer>
   );
 };

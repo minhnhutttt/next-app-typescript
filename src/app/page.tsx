@@ -6,6 +6,8 @@ import About from "./components/about";
 import Useful from "./components/useful";
 import Series from "./components/series";
 import Download from "./components/download";
+import Tracouhunter from "./components/tracouhunter";
+import FAQ from "./components/faq/faq";
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
         <Series />
       </div>
       <Download />
+      <Tracouhunter />
+      <FAQ />
     </main>
   );
 }
