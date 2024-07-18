@@ -35,7 +35,7 @@ const Story = () => {
             </div>
             <div className="flex flex-wrap justify-center dt:gap-5 gap-6 md:gap-[1.389vw] mt-10 relative">
                 <span data-scroll className="ani-fade-up absolute left-0 -top-12 z-10 max-md:w-[340px] max-dt:w-[29.514vw]">
-                    <img src="/assets/images/bubble-02.png" alt="NFTが誤解されている理由" />
+                    <img className="animate-[anim-bounce_0.6s_infinite_ease-in-out]" src="/assets/images/bubble-02.png" alt="NFTが誤解されている理由" />
                 </span>
                 {data.map((item, index) => (
                     <div data-scroll className="ani-fade-up max-md:w-[440px] aspect-square md:w-[30.556vw] dt:w-[440px] rounded-[20px] flex items-center justify-center flex-col relative" key={index}>

@@ -54,8 +54,8 @@ const Marque = ({ reverse }: MarquePropsType) => {
   }, []);
 
   return (
-    <div data-scroll className="ani-fade-up flex items-center justify-center md:py-[175px] py-[100px]">
-        <div className={`w-[120%] whitespace-nowrap border-y border-white py-3 md:py-5 origin-center ${reverse ? '-rotate-[10deg]' : 'rotate-[10deg]'}`} ref={rollingTextRef}>
+    <div className="flex items-center justify-center md:py-[175px] py-[100px]">
+        <div data-scroll className={`w-[120%] whitespace-nowrap border-y border-white py-3 md:py-5 origin-center !delay-300 ${reverse ? 'ani-fade-rotate-l' : 'ani-fade-rotate-r'}`} ref={rollingTextRef}>
             <div className="rollingText inline-block text md:h-[58px] h-[24px] w-[1733px] md:w-[4187px]">
                 <img className="" src="/assets/images/deco-marque.png" alt="" />
             </div>

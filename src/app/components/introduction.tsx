@@ -87,7 +87,7 @@ const Introduction = () => {
         
         <div className="pl-8 md:pl-[70px] mt-12 md:mt-24 lg:mt-[46px] relative">
             <span data-scroll className="ani-fade-up absolute md:top-[-86px] top-[-40px] md:left-[70px] left-[40px] z-10">
-                <img className="max-md:w-[280px]" src="/assets/images/bubble.png" alt="" />
+                <img className="max-md:w-[280px] animate-[anim-bounce_1s_infinite_ease-in-out]" src="/assets/images/bubble.png" alt="" />
             </span>
             <div data-scroll className="ani-fade-up">
             <Swiper

@@ -31,7 +31,7 @@ const About = () => {
                         </figure>
                         <div data-scroll className="ani-slide-right md:pt-5 flex-1">
                             <h3 className="mb-5 max-md:flex max-md:justify-center max-md:items-center">
-                                <img className="max-md:w-[300px]" src="/assets/images/bubble-03.png" alt="NFTの送受信が無料！" />
+                                <img className="max-md:w-[300px] animate-[anim-bounce_0.6s_infinite_ease-in-out]" src="/assets/images/bubble-03.png" alt="NFTの送受信が無料！" />
                             </h3>
                             <p className="md:text-[18px] text-[14px] max-md:text-center">
                             次世代NFTの最大の特徴は、<br className="md:hidden" />NFTの送受信が<span className="relative">
