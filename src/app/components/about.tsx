@@ -35,7 +35,7 @@ const About = () => {
                             </h3>
                             <p className="md:text-[18px] text-[14px] max-md:text-center">
                             次世代NFTの最大の特徴は、<br className="md:hidden" />NFTの送受信が<span className="relative">
-                                <span className="slide-gradient absolute top-0 left-0 right-0 bottom-0 bg-[#FEEF01]"></span><span className="relative">永年無料</span></span>であること！<br />
+                                <span data-scroll className="ani-scale absolute top-0 left-0 right-0 bottom-0 bg-[#FEEF01]"></span><span className="relative">永年無料</span></span>であること！<br />
                             いつでもどこでも、ガス代(=手数料)を気にせずにNFTを送信することができます。
                             </p>
                             <div className="flex justify-end md:mt-20 mt-10">
