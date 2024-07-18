@@ -19,8 +19,7 @@ const Footer = () => {
             <li>
               <p className="mb-4">提供サービス</p>
               <a href="/" className="block duration-150 hover:opacity-75 mb-2">・eラーニング「Chat GPT研修」</a>
-              <a href="/" className="block duration-150 hover:opacity-75 mb-2">・生成AI導入コンサルティング</a>
-              <a href="/" className="block duration-150 hover:opacity-75 mb-2">・業務改善支援</a>
+              <a href="/" className="block duration-150 hover:opacity-75 mb-2">・生成AIコンサルティング・業務改善支援</a>
               <a href="/" className="block duration-150 hover:opacity-75">・自社専用生成AIツールの開発</a>
             </li>
           </ul>

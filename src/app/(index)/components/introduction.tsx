@@ -13,7 +13,7 @@ const Introduction = () => {
             <img className='max-md:w-[300px]' src="/assets/images/reasons.png" alt="" />
         </div>
         <div className="flex justify-center">
-            <a href="" className="md:w-[300px] w-[200px] h-12 md:h-20 flex items-center justify-center bg-[#03BA0B] rounded-[40px] md:text-[28px] font-black gap-4 text-white">
+            <a href="/#contact" className="md:w-[300px] w-[200px] h-12 md:h-20 flex items-center justify-center bg-[#03BA0B] rounded-[40px] md:text-[28px] font-black gap-4 text-white">
             <span>導入を相談する</span>
             <span>＞</span>
             </a>
@@ -44,7 +44,7 @@ const Introduction = () => {
                 <span className="show">生成AIは<span className="md:text-[38px] text-[24px] text-[#FF9242]">アイデア</span>をひねりだす。<br />
                 人間の発想の10倍のスピードで。</span><br />
                 <br />
-                <span className="show">生成AIは<span className="md:text-[38px] text-[24px] text-[#FF9242]">あらゆる領域</span>で<span className="md:text-[38px] text-[24px] text-[#FF9242]">変化<span className="md:text-[30px] text-[20px]">を</span>起こす。</span><br />
+                <span className="show">生成AIは<span className="md:text-[38px] text-[24px] text-[#FF9242]">あらゆる領域</span>で<br className="md:hidden" /><span className="md:text-[38px] text-[24px] text-[#FF9242]">変化<span className="md:text-[30px] text-[20px]">を</span>起こす。</span><br />
                 人間がAIを使いこなすことで。</span><br />
                 <br />
                 <span className="show">その両方を<span className="md:text-[38px] text-[24px] text-[#FF9242]">1<span className="md:text-[30px] text-[20px]">ヶ</span>月<span className="md:text-[30px] text-[20px]">で</span>実現</span>する。<br />
@@ -65,7 +65,7 @@ const Introduction = () => {
       <div className="absolute right-0 top-[340px] md:top-[-120px]">
         <img className='max-md:w-[160px]' src="/assets/images/bg-02.png" alt="" />
       </div>
-      <div className="absolute left-0 top-[700px]">
+      <div className="absolute left-0 md:top-[700px] top-[760px]">
         <img className='max-md:w-[280px]' src="/assets/images/bg-03.png" alt="" />
       </div>
     </section>

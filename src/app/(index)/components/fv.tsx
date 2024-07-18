@@ -27,10 +27,10 @@ const FV = () => {
       <div className="h-[57vw] md:h-[29.861vw] dt:h-[430px] bg-[url('/assets/images/bg-fv.png')] bg-cover bg-center md:px-5">
         <div className="w-full max-w-[1440px] mx-auto relative">
           <div className="max-md:hidden">
-            <img className="absolute w-[15.972vw] dt:w-[230px] left-[7.722vw] md:left-[7vw] dt:left-[140px] -top-[0.694vw] dt:-top-[10px]" src="/assets/images/fv-01.png" alt="" />
+            <img className="absolute w-[15.972vw] dt:w-[230px] left-[5vw] md:left-[6.4vw] dt:left-[100px] -top-[0.694vw] dt:-top-[10px]" src="/assets/images/fv-01.png" alt="" />
             <img className="absolute w-[12.431vw] dt:w-[179px] left-[0.389vw] md:left-[1.389vw] dt:left-[20px] top-[9.028vw] dt:top-[130px] z-10" src="/assets/images/fv-02.png" alt="" />
             <img className="absolute w-[12.083vw] dt:w-[174px] left-[3.903vw] md:left-[5.903vw] dt:left-[85px] top-[19.444vw] dt:top-[280px]" src="/assets/images/fv-03.png" alt="" />
-            <img className="absolute w-[14.722vw] dt:w-[212px] right-[8.069vw] md:right-[10.069vw] dt:right-[145px] top-[0.833vw] dt:top-[12px]" src="/assets/images/fv-04.png" alt="" />
+            <img className="absolute w-[14.722vw] dt:w-[212px] right-[8.069vw] md:right-[9.069vw] dt:right-[135px] top-[0.833vw] dt:top-[12px]" src="/assets/images/fv-04.png" alt="" />
             <img className="absolute w-[12.361vw] dt:w-[178px] right-[1.736vw] dt:right-[25px] top-[10.764vw] dt:top-[155px]" src="/assets/images/fv-05.png" alt="" />
             <img className="absolute w-[12.361vw] dt:w-[178px] right-[2.861vw] md:right-[4.861vw] dt:right-[70px] top-[24.653vw] dt:top-[355px]" src="/assets/images/fv-06.png" alt="" />
           </div>

@@ -55,7 +55,7 @@ const Development = () => {
                         </p>
                         <div className="bg-[#FDFDFD]/[0.7] p-5 mt-4 md:text-[16px] text-[13px] font-medium">
                             <ul className="list-disc ml-6 space-y-1">
-                                <li>詳貴社の独自ニーズに完全対応したAIツールの設計</li>
+                                <li>貴社の独自ニーズに完全対応したAIツールの設計</li>
                                 <li>既存の業務フローを革新するカスタマイズAIツールの開発</li>
                                 <li>自社に真に必要な業務改善ツールの提案と実装</li>
                                 <li>社内データと知見を活用した、高精度AIモデルの構築</li>

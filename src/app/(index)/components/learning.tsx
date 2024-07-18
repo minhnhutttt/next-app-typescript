@@ -173,7 +173,7 @@ const Learning = () => {
                                 <textarea className="w-full h-[150px] md:h-[240px] border border-[#AEAEAE] mt-2"></textarea>
                             </div>
                             <div className="flex justify-center items-center">
-                            <button className="w-[240px] h-[51px] flex items-center justify-center bg-[#FEFFBA] rounded-[30px] md:text-[18px] text-[14px] font-bold">送信する</button>
+                            <button className="w-[240px] h-[51px] flex items-center justify-center bg-[linear-gradient(180deg,_#F35646_0%,_#F58214_100%)] text-white rounded-[30px] md:text-[18px] text-[14px] font-bold">送信する</button>
                             </div>
                         </div>
                     </div>
