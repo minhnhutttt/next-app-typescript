@@ -58,7 +58,7 @@ const Marque = ({ reverse }: MarquePropsType) => {
   return (
     <section ref={ref}>
         <div className="flex items-center justify-center md:py-[175px] py-[100px]">
-            <div className={`w-[110%] whitespace-nowrap border-y border-white py-3 md:py-5 rotate-[10deg] origin-center ${reverse ? '-rotate-[10deg]' : 'rotate-[10deg]'}`} ref={rollingTextRef}>
+            <div className={`w-[110%] whitespace-nowrap border-y border-white py-3 md:py-5  origin-center ${reverse ? '-rotate-[10deg]' : 'rotate-[10deg]'}`} ref={rollingTextRef}>
                 <div className="rollingText inline-block text md:h-[58px] h-[24px] w-[1733px] md:w-[4187px]">
                     <img className="" src="/assets/images/deco-marque.png" alt="" />
                 </div>
