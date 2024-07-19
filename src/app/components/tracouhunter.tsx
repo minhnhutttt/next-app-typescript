@@ -2,7 +2,7 @@
 
 const Tracouhunter = () => {
   return (
-    <section className="relative md:py-[60px] py-[40px] bg-[url('/assets/images/bg-tracou.png')] bg-cover">
+    <section id="tracouhunter" className="relative md:py-[60px] py-[40px] bg-[url('/assets/images/bg-tracou.png')] bg-cover">
         <div className="w-full md:max-w-[1440px] max-w-[440px] mx-auto">
             <div className="relative">
                 <div data-scroll className="ani-fade-up absolute inset-0 flex justify-center items-center mix-blend-overlay">

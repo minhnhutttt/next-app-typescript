@@ -10,6 +10,12 @@ body {
   font-family: "M PLUS 1p", sans-serif;
 }
 
+:root {
+  --swiper-navigation-size: 30px !important;
+  --swiper-navigation-color: #000;
+  --swiper-navigation-sides-offset: 4px;
+}
+
 .u-text-gradient {
   background: linear-gradient(90deg, #FF75C3 0%, #FFA647 20%, #FFE83F 40%, #9FFF5B 60%, #70E2FF 80%, #CD93FF 100%);
   background-clip: text;
@@ -275,13 +281,13 @@ body {
 }
 
 .menu {
-  @apply block w-full p-[20%]
+  @apply flex flex-wrap w-full p-[20%]
 }
 .menu li {
-  @apply py-[15px] block text-left;
+  @apply w-1/2 py-2 block text-left;
 }
 .menu a {
-  @apply text-[#222] inline-block py-2.5 relative
+  @apply md:text-[24px] text-[18px] font-bold inline-block py-2.5 relative
 }
 .menu a:hover:before {
   @apply opacity-100 translate-x-0;

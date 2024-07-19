@@ -14,187 +14,187 @@ const Header = () => {
   const closeTriggerLeftRef = useRef<HTMLIFrameElement>(null);
   const closeTriggerRightRef = useRef<HTMLIFrameElement>(null);
   const innerContainerRef = useRef<HTMLDivElement>(null);
+  const menuItemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
-    const context = gsap.context(() => {
-      const tlOpen = gsap.timeline({ paused: true });
-      const tlClose = gsap.timeline({ paused: true });
+    const tlOpen = gsap.timeline({ paused: true });
+    const tlClose = gsap.timeline({ paused: true });
 
-      tlOpen.add("preOpen")
-        .to(openTriggerTopRef.current, {
-          x: "+80px",
-          y: "-80px",
-          delay: 0.1,
-          ease: "power4.in",
-          onComplete: () => {
-            if (closeTriggerRef.current) closeTriggerRef.current.style.zIndex = '25';
-          }
-        }, "preOpen")
-        .to(openTriggerMiddleRef.current, {
-          x: "+=80px",
-          y: "-=80px",
-          ease: "power4.in",
-          onComplete: () => {
-            if (openTriggerRef.current) openTriggerRef.current.style.visibility = 'hidden';
-          }
-        }, "preOpen")
-        .to(openTriggerBottomRef.current, {
-          x: "+=80px",
-          y: "-=80px",
-          delay: 0.2,
-          ease: "power4.in"
-        }, "preOpen")
-        .add("open", "-=0.4")
-        .to(menuMiddleRef.current, {
-          scaleY: 1,
-          ease: "power4.inOut"
-        }, "open")
-        .fromTo(menuRef.current, {
-          y: 30,
-          opacity: 0,
-          visibility: 'hidden'
-        }, {
-          y: 0,
-          opacity: 1,
-          visibility: 'visible',
-          ease: "power4.out"
-        }, "-=0.2")
-        .to(innerContainerRef.current, {
-          opacity: 1,
-          pointerEvents: 'all',
-          ease: "power4.out"
-        }, "open")
-        .to(menuContainerRef.current, {
-          opacity: 1,
-          pointerEvents: 'all',
-          ease: "power4.out"
-        }, "open")
-        .add("preClose", "-=0.8")
-        .to(closeTriggerLeftRef.current, {
-          x: "-=100px",
-          y: "+=100px",
-          ease: "power4.out"
-        }, "preClose")
-        .to(closeTriggerRightRef.current, {
-          x: "+=100px",
-          y: "+=100px",
-          delay: 0.2,
-          ease: "power4.out"
-        }, "preClose");
-
-      tlClose.add("close")
-        .to(menuMiddleRef.current, {
-          backgroundColor: "#6295ca",
-          ease: "power4.inOut",
-          onComplete: () => {
-            if (closeTriggerRef.current) closeTriggerRef.current.style.zIndex = '5';
-            if (openTriggerRef.current) openTriggerRef.current.style.visibility = 'visible';
-          }
-        }, "close")
-        .to(menuRef.current, {
-          y: 20,
-          opacity: 0,
-          ease: "power4.out",
-          onComplete: () => {
-            if (menuRef.current) menuRef.current.style.visibility = 'hidden';
-          }
-        }, "close")
-        .to(menuMiddleRef.current, {
-          scaleY: 0,
-          ease: "power4.inOut",
-          onComplete: () => {
-            if (menuMiddleRef.current) menuMiddleRef.current.style.backgroundColor = '#ffffff';
-          }
-        }, "close")
-        .to(innerContainerRef.current, {
-          opacity: 0,
-          pointerEvents: 'none',
-          ease: "power4.inOut"
-        }, "close")
-        .to(menuContainerRef.current, {
-          opacity: 0,
-          pointerEvents: 'none',
-          ease: "power4.inOut"
-        }, "close")
-        .to(closeTriggerLeftRef.current, {
-          x: "+=100px",
-          y: "-=100px",
-          ease: "power4.in"
-        }, "close")
-        .to(closeTriggerRightRef.current, {
-          x: "-=100px",
-          y: "-=100px",
-          delay: 0.1,
-          ease: "power4.in"
-        }, "close")
-        .to(openTriggerTopRef.current, {
-          x: "-=80px",
-          y: "+=80px",
-          delay: 0.2,
-          ease: "power4.out"
-        }, "close")
-        .to(openTriggerMiddleRef.current, {
-          x: "-=80px",
-          y: "+=80px",
-          ease: "power4.out"
-        }, "close")
-        .to(openTriggerBottomRef.current, {
-          x: "-=80px",
-          y: "+=80px",
-          delay: 0.1,
-          ease: "power4.out"
-        }, "close");
-
-      if (openTriggerRef.current) {
-        openTriggerRef.current.addEventListener('click', () => {
-          if (tlOpen.progress() < 1) {
-            tlOpen.play();
-          } else {
-            tlOpen.restart();
-          }
-        });
-      }
-
-      if (closeTriggerRef.current) {
-        closeTriggerRef.current.addEventListener('click', () => {
-          if (tlClose.progress() < 1) {
-            tlClose.play();
-          } else {
-            tlClose.restart();
-          }
-        });
-      }
-
-      return () => {
-        if (openTriggerRef.current) {
-          openTriggerRef.current.removeEventListener('click', () => {
-            if (tlOpen.progress() < 1) {
-              tlOpen.play();
-            } else {
-              tlOpen.restart();
-            }
-          });
+    tlOpen.add("preOpen")
+      .to(openTriggerTopRef.current, {
+        x: "+80px",
+        y: "-80px",
+        delay: 0.1,
+        ease: "power4.in",
+        onComplete: () => {
+          if (closeTriggerRef.current) closeTriggerRef.current.style.zIndex = '25';
         }
-        if (closeTriggerRef.current) {
-          closeTriggerRef.current.removeEventListener('click', () => {
-            if (tlClose.progress() < 1) {
-              tlClose.play();
-            } else {
-              tlClose.restart();
-            }
-          });
+      }, "preOpen")
+      .to(openTriggerMiddleRef.current, {
+        x: "+=80px",
+        y: "-=80px",
+        ease: "power4.in",
+        onComplete: () => {
+          if (openTriggerRef.current) openTriggerRef.current.style.visibility = 'hidden';
         }
-      };
+      }, "preOpen")
+      .to(openTriggerBottomRef.current, {
+        x: "+=80px",
+        y: "-=80px",
+        delay: 0.2,
+        ease: "power4.in"
+      }, "preOpen")
+      .add("open", "-=0.4")
+      .to(menuMiddleRef.current, {
+        scaleY: 1,
+        ease: "power4.inOut"
+      }, "open")
+      .fromTo(menuRef.current, {
+        y: 30,
+        opacity: 0,
+        visibility: 'hidden'
+      }, {
+        y: 0,
+        opacity: 1,
+        visibility: 'visible',
+        ease: "power4.out"
+      }, "-=0.2")
+      .to(innerContainerRef.current, {
+        opacity: 1,
+        pointerEvents: 'all',
+        ease: "power4.out"
+      }, "open")
+      .to(menuContainerRef.current, {
+        opacity: 1,
+        pointerEvents: 'all',
+        ease: "power4.out"
+      }, "open")
+      .add("preClose", "-=0.8")
+      .to(closeTriggerLeftRef.current, {
+        x: "-=100px",
+        y: "+=100px",
+        ease: "power4.out"
+      }, "preClose")
+      .to(closeTriggerRightRef.current, {
+        x: "+=100px",
+        y: "+=100px",
+        delay: 0.2,
+        ease: "power4.out"
+      }, "preClose");
+
+    tlClose.add("close")
+      .to(menuMiddleRef.current, {
+        backgroundColor: "#6295ca",
+        ease: "power4.inOut",
+        onComplete: () => {
+          if (closeTriggerRef.current) closeTriggerRef.current.style.zIndex = '5';
+          if (openTriggerRef.current) openTriggerRef.current.style.visibility = 'visible';
+        }
+      }, "close")
+      .to(menuRef.current, {
+        y: 20,
+        opacity: 0,
+        ease: "power4.out",
+        onComplete: () => {
+          if (menuRef.current) menuRef.current.style.visibility = 'hidden';
+        }
+      }, "close")
+      .to(menuMiddleRef.current, {
+        scaleY: 0,
+        ease: "power4.inOut",
+        onComplete: () => {
+          if (menuMiddleRef.current) menuMiddleRef.current.style.backgroundColor = '#ffffff';
+        }
+      }, "close")
+      .to(innerContainerRef.current, {
+        opacity: 0,
+        pointerEvents: 'none',
+        ease: "power4.inOut"
+      }, "close")
+      .to(menuContainerRef.current, {
+        opacity: 0,
+        pointerEvents: 'none',
+        ease: "power4.inOut"
+      }, "close")
+      .to(closeTriggerLeftRef.current, {
+        x: "+=100px",
+        y: "-=100px",
+        ease: "power4.in"
+      }, "close")
+      .to(closeTriggerRightRef.current, {
+        x: "-=100px",
+        y: "-=100px",
+        delay: 0.1,
+        ease: "power4.in"
+      }, "close")
+      .to(openTriggerTopRef.current, {
+        x: "-=80px",
+        y: "+=80px",
+        delay: 0.2,
+        ease: "power4.out"
+      }, "close")
+      .to(openTriggerMiddleRef.current, {
+        x: "-=80px",
+        y: "+=80px",
+        ease: "power4.out"
+      }, "close")
+      .to(openTriggerBottomRef.current, {
+        x: "-=80px",
+        y: "+=80px",
+        delay: 0.1,
+        ease: "power4.out"
+      }, "close");
+
+    const handleOpen = () => {
+      if (tlOpen.progress() < 1) {
+        tlOpen.play();
+      } else {
+        tlOpen.restart();
+      }
+    };
+
+    const handleClose = () => {
+      if (tlClose.progress() < 1) {
+        tlClose.play();
+      } else {
+        tlClose.restart();
+      }
+    };
+
+    if (openTriggerRef.current) {
+      openTriggerRef.current.addEventListener('click', handleOpen);
+    }
+
+    if (closeTriggerRef.current) {
+      closeTriggerRef.current.addEventListener('click', handleClose);
+    }
+
+    menuItemsRef.current.forEach((menuItem) => {
+      if (menuItem) {
+        menuItem.addEventListener('click', handleClose);
+      }
     });
 
-    return () => context.revert();
+    return () => {
+      if (openTriggerRef.current) {
+        openTriggerRef.current.removeEventListener('click', handleOpen);
+      }
+      if (closeTriggerRef.current) {
+        closeTriggerRef.current.removeEventListener('click', handleClose);
+      }
+      menuItemsRef.current.forEach((menuItem) => {
+        if (menuItem) {
+          menuItem.removeEventListener('click', handleClose);
+        }
+      });
+    };
   }, []);
 
   return (
     <header className="absolute top-0 inset-x-0 z-10 md:pt-[40px] pt-5 md:px-9 px-5">
       <div className="flex items-center justify-between">
         <a href="/" className="relative block z-10">
-          <img className='max-md:w-[140px]' src="/assets/images/logo.png" alt="次世代NFT" />
+          <img className='max-md:w-[115px]' src="/assets/images/logo.png" alt="次世代NFT" />
         </a>
         <div className="w-full max-w-full inset-0 min-h-screen absolute overflow-hidden scale-100">
           <div className="">
@@ -213,9 +213,22 @@ const Header = () => {
             <i className="menu-bg middle" ref={menuMiddleRef}></i>
             <div className="menu-container" ref={menuContainerRef}>
               <ul className="menu" ref={menuRef}>
-                <li>
-                  <a href="/">Home</a>
-                </li>
+                {[
+                  { href: "/", text: "Home" },
+                  { href: "/#introduction", text: "NFTってなんだ？" },
+                  { href: "/#evolution", text: "NFTはもっと進化する" },
+                  { href: "/#story", text: "NFTが誤解されている理由" },
+                  { href: "/#about", text: "次世代NFTとは？" },
+                  { href: "/#series", text: "次世代シリーズ" },
+                  { href: "/#download", text: "DIVERWalletをインストール" },
+                  { href: "/#tracouhunter", text: "戦国NFT" },
+                  { href: "/#faq", text: "よくある質問" },
+                  { href: "https://lin.ee/3MXyqEC", text: "お問い合わせ", target: '_blank' },
+                ].map((item, index) => (
+                  <li key={index}>
+                    <a href={item.href} target={item.target} ref={el => menuItemsRef.current[index] = el}>{item.text}</a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

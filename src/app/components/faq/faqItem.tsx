@@ -35,10 +35,10 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
         onClick={handleExpanderClick}
       >
         <div className="flex items-center gap-4 md:gap-8">
-          <p className="font-dela text-[18px] text-[#2639A6] uppercase tracking-widest md:text-[32px]">
+          <p className="text-[18px] text-[#2639A6] uppercase tracking-widest md:text-[32px]">
             q
           </p>
-          <p className="font-dela text-left text-[16px] md:text-[22px]">
+          <p className="text-left text-[16px] md:text-[22px]">
             {question}
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
         </div>
       </button>
       <div ref={contentRef} className="h-0 overflow-hidden">
-        <p className="pb-4 pl-8 text-[14px] leading-[1.6] text-black md:w-[85%] md:pb-7 md:pl-16 md:text-[16px] break-keep">
+        <p className="pb-4 pl-8 text-[14px] leading-[1.6] text-black md:w-[85%] md:pb-7 md:pl-16 md:text-[16px] ">
           {answer}
         </p>
       </div>

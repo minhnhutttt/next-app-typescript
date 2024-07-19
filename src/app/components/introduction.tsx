@@ -1,6 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
 const data = [
@@ -53,7 +54,7 @@ const data = [
 
 const Introduction = () => {
   return (
-    <section className="relative md:pt-[96px] pt-12">
+    <section id="introduction" className="relative md:pt-[96px] pt-12">
         <div className="relative">
         <span className="absolute md:h-[calc(100%-280px)] h-[calc(100%-180px)] px-5 top-0 inset-x-0 ">
             <span className="w-full h-full bg-white rounded-[60px] block"></span>
@@ -94,6 +95,11 @@ const Introduction = () => {
                 slidesPerView={'auto'}
                 loop={true}
                 spaceBetween={20}
+                modules={[Autoplay]}
+                autoplay={{
+                    delay: 4000,
+                    disableOnInteraction: false,
+                  }}
                 className="mySwiper"
             >
                 {data.map((item, index) =>(

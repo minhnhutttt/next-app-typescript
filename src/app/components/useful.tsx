@@ -6,7 +6,7 @@ const data = [
     {
         image: '/assets/images/img-useful-01.png',
         title: (<>NFTが<br />もっと<span className="md:text-[42px] text-[30px]">便利に！</span></>),
-        text: (<>コインがないからNFTを送れないという心配はありません！<br />ガス代の安い時間を待って送信する必要もありません。</>)
+        text: (<>コインがないからNFTを送れないという<br className="md:hidden" />心配はありません！<br />ガス代の安い時間を待って<br className="md:hidden" />送信する必要もありません。</>)
     },
     {
         image: '/assets/images/img-useful-02.png',

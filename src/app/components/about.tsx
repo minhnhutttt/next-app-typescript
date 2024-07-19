@@ -2,7 +2,7 @@
 
 const About = () => {
   return (
-    <section className="relative px-5">
+    <section id="about" className="relative px-5">
         <div className="w-full md:max-w-[1360px] max-w-[440px] mx-auto md:pt-[20.833vw] dt:pt-[300px] pt-[140px]">
             <div className="flex justify-center">
                 <div className="relative w-[350px] md:w-[41.667vw] dt:w-[600px] flex justify-end">

@@ -2,10 +2,10 @@
 
 const Download = () => {
   return (
-    <section className="relative px-5 md:py-[100px] py-[60px]">
+    <section id="download" className="relative px-5 md:py-[100px] py-[60px]">
         <div className="w-full md:max-w-[912px] max-w-[440px] mx-auto rounded-[20px] flex bg-[#2157E3] pt-9 pb-6 px-[40px] gap-14 max-md:flex-col-reverse">
             <div data-scroll className="ani-fade-up">
-                <figure>
+                <figure className="animate-[anim-bounce_1.2s_infinite_ease-in-out]">
                     <img src="/assets/images/img-download-diver.png" alt="" />
                 </figure>
                 <div className="mt-5">
