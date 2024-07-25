@@ -224,8 +224,8 @@ const ModalForm = () => {
                             id="plan1"
                             name="interests"
                             type="checkbox"
-                            checked={formData.interests.includes("【先着50名様で締切】メモリアルモニタープランに申し込む")}
-                            value="【先着50名様で締切】メモリアルモニタープランに申し込む"
+                            checked={formData.interests.includes("＼一番人気／先着50名様で締切メモリアルモニタープランに申し込む")}
+                            value="＼一番人気／先着50名様で締切メモリアルモニタープランに申し込む"
                             onChange={handleChange}
                             className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
                           />
@@ -238,7 +238,7 @@ const ModalForm = () => {
                         </span>
                       </p>
                       <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
-                        【先着50名様で締切】メモリアルモニタープランに申し込む
+                        ＼一番人気／先着50名様で締切メモリアルモニタープランに申し込む
                       </p>
                     </label>
                     <label htmlFor="plan2" className="flex items-center gap-3">

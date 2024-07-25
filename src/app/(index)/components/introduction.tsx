@@ -161,9 +161,10 @@ const Introduction = () => {
                   現実の供養所である「KARIMATA(狩俣)供養所」とメタバース供養所が融合することで、ペットとの再会の喜びと死への向き合いをバランス良く体験可能です。あなた様とペットだけの特別な空間がそこには広がっています。
                 </p>
                 <div className="flex justify-center items-center mt-8">
-                  <a href="" className="hover:opacity-75 duration-150 drop-shadow-xl">
-                    <img src="/assets/images/btn-youtube.png" alt="" />
-                  </a>
+                  <p className="hover:opacity-75 duration-150 drop-shadow-xl relative">
+                      <span className="absolute z-10 inset-0 bg-black/65 flex items-center justify-center text-white font-bold md:text-[32px] text-[22px] rounded-[60px]">※ただいま準備中※</span>
+                      <img className="block relative" src="/assets/images/btn-youtube.png" alt="" />
+                    </p>
                 </div>
               </div>
             </div>
