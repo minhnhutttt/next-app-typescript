@@ -155,7 +155,7 @@ const Introduction = () => {
               </figure>
               <div
                 data-scroll="out"
-                className="has-animation animation-ltr max-w-[636px] flex-1 bg-white/60 px-9 py-8 text-[16px] font-medium before:bg-[#4EA4E3]  after:bg-[#51BDE4] max-md:mt-5 md:-ml-6 md:mt-8 md:min-h-[205px] md:text-[20px] relative"
+                className="has-animation animation-ltr max-w-[636px] flex-1 bg-white/60 px-9 pt-8 pb-4 text-[16px] font-medium before:bg-[#4EA4E3]  after:bg-[#51BDE4] max-md:mt-5 md:-ml-6 md:mt-8 md:min-h-[205px] md:text-[20px] relative"
               >
                 <p>
                   現実の供養所である「KARIMATA(狩俣)供養所」とメタバース供養所が融合することで、ペットとの再会の喜びと死への向き合いをバランス良く体験可能です。あなた様とペットだけの特別な空間がそこには広がっています。
@@ -237,7 +237,7 @@ const Introduction = () => {
                               <p className="mt-6 min-h-[184px] break-all text-[13px] font-medium leading-[1.65] text-[#1B0220] md:text-[16px]">
                                 {item.text}
                               </p>
-                              <div className="mt-5 w-full border border-[#6F9D23] bg-[#F7FCEC] md:mt-7 md:min-h-[230px]">
+                              <div className="mt-5 w-full border border-[#6F9D23] bg-[#F7FCEC] md:mt-7 md:min-h-[230px] relative pb-[34px]">
                                 <div className="flex pl-1">
                                   <figure>
                                     <img
@@ -252,7 +252,7 @@ const Introduction = () => {
                                     {item.quote}
                                   </p>
                                 </div>
-                                <div className="text-right">
+                                <div className="text-right absolute bottom-0 inset-x-0 h-[34px]">
                                   <span className="inline-block pb-2 pr-3 text-[14px] md:text-[16px]">
                                     {item.sign}
                                   </span>
