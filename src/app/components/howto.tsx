@@ -1,11 +1,11 @@
 "use client";
 
-const Ideas = () => {
+const Howto = () => {
   return (
-    <section className="relative md:mt-[200px] mt-[120px]">
-        <div className="w-full mx-auto bg-[url('/assets/images/ideas-bg.png')] dt:bg-[length:100%_100%] bg-cover bg-center px-3 md:pb-[130px] pb-[60px]">
+    <section className="relative mt-6">
+        <div className="w-full mx-auto max-w-[1360px] md:rounded-[70px] rounded-[44px] bg-white px-3 md:pb-[130px] pb-[60px]">
             <div className="h-px"></div>
-            <div className="md:-mt-[47px] -mt-[37px] flex justify-center"><h3><img className="max-md:h-[100px]" src="/assets/images/ideas-title.png" alt="お得がいっぱい" /></h3></div>
+            <div className="md:-mt-[47px] -mt-[37px] flex justify-center"><h3><img className="max-md:h-[100px]" src="/assets/images/howto-title.png" alt="使い方" /></h3></div>
             <div className="flex flex-wrap justify-center md:gap-x-[90px] md:mt-14 mt-14 max-[1366px]:gap-20 max-md:gap-7">
                 <div className="md:w-[610px] md:min-h-[552px] border-black border-[5px] md:border-[10px] md:rounded-[60px] rounded-[32px] bg-white overflow-hidden">
                     <figure>
@@ -63,4 +63,4 @@ const Ideas = () => {
   );
 };
 
-export default Ideas;
+export default Howto;
