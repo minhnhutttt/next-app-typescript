@@ -54,7 +54,7 @@ const FV = () => {
           </div>
         </div>
       </div>
-      <div data-scroll className="ani-zoom-out flex justify-center items-center md:-mt-[12.5vw] dt:-mt-[180px] -mt-[80px]">
+      <div data-scroll className="ani-zoom-out duration-1000 flex justify-center items-center md:-mt-[12.5vw] dt:-mt-[180px] -mt-[80px]">
         <div className="group md:w-[510px] w-[280px] md:h-[510px] h-[280px] relative flex items-center justify-center max-md:p-4">
           <figure className="bg-white rounded-full drop-shadow-2xl">
             <img src="/assets/images/circle.png" alt="" />

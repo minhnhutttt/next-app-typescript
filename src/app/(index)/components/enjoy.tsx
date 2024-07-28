@@ -33,10 +33,10 @@ const Enjoy = () => {
     <section className="relative md:mt-[200px] mt-[120px] px-3">
         <div className="w-full max-w-[1360px] mx-auto bg-[url('/assets/images/enjoy-bg.png')] bg-cover bg-white md:rounded-[70px] rounded-[32px] px-3 md:pb-[173px] pb-[100px]">
             <div className="h-px"></div>
-            <div className="md:-mt-[47px] -mt-[37px] flex justify-center"><h3><img className="max-md:h-[80px]" src="/assets/images/enjoy-title.png" alt="楽しみ方" /></h3></div>
+            <div data-scroll className="ani-fade-up md:-mt-[47px] -mt-[37px] flex justify-center"><h3><img className="max-md:h-[80px]" src="/assets/images/enjoy-title.png" alt="楽しみ方" /></h3></div>
             <div className="flex flex-wrap justify-center md:gap-[80px] gap-10 md:mt-24 mt-14">
                 {data.map((item,index) => (
-                    <div className="size-[320px] md:size-[590px] bg-[url('/assets/images/enjoy-frame.png')] [&:nth-of-type(2)]:bg-[url('/assets/images/enjoy-frame-02.png')] [&:nth-of-type(3)]:bg-[url('/assets/images/enjoy-frame-02.png')] bg-cover flex flex-col items-center md:pt-[70px] pt-6" key={index}>
+                    <div data-scroll className="ani-fade-up size-[320px] md:size-[590px] bg-[url('/assets/images/enjoy-frame.png')] [&:nth-of-type(2)]:bg-[url('/assets/images/enjoy-frame-02.png')] [&:nth-of-type(3)]:bg-[url('/assets/images/enjoy-frame-02.png')] bg-cover flex flex-col items-center md:pt-[70px] pt-6" key={index}>
                         <figure>
                             <img className="max-md:w-[80px]" src={item.image} alt="" />
                         </figure>

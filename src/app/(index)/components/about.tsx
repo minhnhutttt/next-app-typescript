@@ -45,7 +45,7 @@ const data = [
 
 const About = () => {
   return (
-    <section className="relative md:mt-[90px] mt-[60px]">
+    <section className="relative md:mt-[90px] mt-[60px] overflow-hidden">
       <div className="w-full max-w-[1440px] mx-auto md:space-y-[180px] space-y-[50px]">
         {data.map((item, index) => (
           <div 
@@ -55,16 +55,16 @@ const About = () => {
           >
             <div className="md:w-[47%] md:px-10 px-5 max-md:py-8">
               <h4
-                className={`max-lg:w-[200px] ${index % 2 === 0 ? "ani-slide-left" : "ani-slide-right"}`}
+                className={`max-lg:w-[200px] !delay-150 ${index % 2 === 0 ? "ani-slide-left" : "ani-slide-right"}`}
               >
                 <img src={item.title} alt={item.text} />
               </h4>
-              <p className="ani-fade-up !delay-150 md:text-[28px] text-[20px] font-black md:py-[30px] py-5">
+              <p className="ani-fade-up !delay-300 md:text-[28px] text-[20px] font-black md:py-[30px] py-5">
                 {item.text}
               </p>
-              <p className="ani-fade-up !delay-300 md:text-[18px] text-[14px]">{item.content}</p>
+              <p className="ani-fade-up !delay-500 md:text-[18px] text-[14px]">{item.content}</p>
             </div>
-            <div className={`flex-1 flex items-center md:group-odd:rounded-l-[50px] md:group-even:rounded-r-[50px] overflow-hidden !delay-500 ${index % 2 !== 0 ? "ani-slide-left" : "ani-slide-right"}`}>
+            <div className={`flex-1 flex items-center md:group-odd:rounded-l-[50px] md:group-even:rounded-r-[50px] overflow-hidden ${index % 2 !== 0 ? "ani-slide-left" : "ani-slide-right"}`}>
               <img
                 className="h-full w-full object-center md:min-h-[400px] object-cover"
                 src={item.image}

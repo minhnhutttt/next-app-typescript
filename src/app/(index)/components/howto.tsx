@@ -3,9 +3,9 @@ const Howto = () => {
     <section className="relative mt-8">
         <div className="w-full mx-auto max-w-[1360px] md:rounded-[70px] rounded-[44px] bg-white px-5 md:pb-[50px] pb-[32px]">
             <div className="h-px"></div>
-            <div className="md:-mt-[54px] -mt-[37px] flex justify-center"><h3><img className="max-md:h-[80px]" src="/assets/images/howto-title.png" alt="使い方" /></h3></div>
+            <div data-scroll className="ani-fade-up md:-mt-[54px] -mt-[37px] flex justify-center"><h3><img className="max-md:h-[80px]" src="/assets/images/howto-title.png" alt="使い方" /></h3></div>
             <div className="flex flex-wrap justify-center md:gap-10 gap-12 md:mt-36 mt-14">
-                <div className="w-[410px]">
+                <div data-scroll className="ani-fade-up w-[410px]">
                     <div className="md:min-h-[453px] min-h-[400px] border-[5px] border-[#181818] rounded-[28px] md:rounded-[45px] md:px-[20px] px-4 pb-4 md:pb-6">
                         <div className="flex justify-center">
                             <p className="rounded-full md:size-[76px] size-[60px] bg-white flex place-content-center border-[5px] border-black md:text-[48px] text-[32px] font-extrabold md:-mt-[40px] -mt-[28px]">
@@ -33,7 +33,7 @@ const Howto = () => {
                         </a>
                     </div>
                 </div>
-                <div className="w-[410px]">
+                <div data-scroll className="ani-fade-up w-[410px] md:!delay-150">
                     <div className="md:min-h-[453px] min-h-[400px] border-[5px] border-[#181818] rounded-[28px] md:rounded-[45px] md:px-[20px] px-4 pb-4 md:pb-6">
                         <div className="flex justify-center">
                             <p className="rounded-full md:size-[76px] size-[60px] bg-white flex place-content-center border-[5px] border-black md:text-[48px] text-[32px] font-extrabold md:-mt-[40px] -mt-[28px]">
@@ -49,7 +49,7 @@ const Howto = () => {
                         </h5>
                     </div>
                 </div>
-                <div className="w-[410px]">
+                <div data-scroll className="ani-fade-up w-[410px] md:!delay-300">
                     <div className="md:min-h-[453px] min-h-[400px] border-[5px] border-[#181818] rounded-[28px] md:rounded-[45px] md:px-[20px] px-4 pb-4 md:pb-6">
                         <div className="flex justify-center">
                             <p className="rounded-full md:size-[76px] size-[60px] bg-white flex place-content-center border-[5px] border-black md:text-[48px] text-[32px] font-extrabold md:-mt-[40px] -mt-[28px]">
