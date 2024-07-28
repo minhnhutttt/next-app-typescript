@@ -6,7 +6,7 @@ export type PageTitlePropsType = {
 };
 export default function TextBlock({ title, children }: PageTitlePropsType) {
   return (
-    <div className="text-black">
+    <div className="text-black break-words">
       {title && (
         <p className="text-[20px] font-bold md:text-[25px]">
           {title}
