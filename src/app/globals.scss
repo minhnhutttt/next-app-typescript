@@ -10,6 +10,9 @@ body {
   color: #000;
   font-family: "Noto Sans", sans-serif;
 }
+* {
+	scroll-margin-top: 80px;
+}
 :root:has(.no-doc-scroll) {
   overflow:hidden;
 }
