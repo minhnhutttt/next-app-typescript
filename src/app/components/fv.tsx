@@ -23,7 +23,7 @@ const FV = () => {
             <div className="absolute inset-0 flex justify-center pt-[15vw] md:pt-[11.111vw] dt:pt-[160px]">
               <h1 className="relative pl-[4.4vw] md:pl-[3.889vw] dt:pl-14">
                 <div
-                  className={`absolute duration-300 left-[0vw] md:left-[1.389vw] dt:left-5 flex animation-flash ${isActive ? "top-[3vw] md:top-[2.778vw] dt:top-10" : "top-[14vw] md:top-[12.5vw] dt:top-[180px]"}`}
+                  className={`absolute duration-500 left-[0vw] md:left-[1.389vw] dt:left-5 flex animation-flash ${isActive ? "top-[3vw] md:top-[2.778vw] dt:top-10" : "top-[14vw] md:top-[12.5vw] dt:top-[180px]"}`}
                 >
                   <img
                     className="block max-md:w-[2.4vw] max-dt:w-[1.458vw]"
