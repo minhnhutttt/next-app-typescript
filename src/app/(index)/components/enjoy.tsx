@@ -30,7 +30,7 @@ const data = [
 
 const Enjoy = () => {
   return (
-    <section className="relative md:mt-[200px] mt-[120px] px-3">
+    <section id="enjoy" className="relative md:mt-[200px] mt-[120px] px-3">
         <div className="w-full max-w-[1360px] mx-auto bg-[url('/assets/images/enjoy-bg.png')] bg-cover bg-white md:rounded-[70px] rounded-[32px] px-3 md:pb-[173px] pb-[100px]">
             <div className="h-px"></div>
             <div data-scroll className="ani-fade-up md:-mt-[47px] -mt-[37px] flex justify-center"><h3><img className="max-md:h-[80px]" src="/assets/images/enjoy-title.png" alt="楽しみ方" /></h3></div>

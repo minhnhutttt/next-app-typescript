@@ -1,18 +1,14 @@
-"use client";
-
 import PageTitle from "@/components/pageTitle";
 import TextBlock from "@/components/textBlock";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 export default function PrivacyPolicy() {
-  const ref = useScrollAnimations();
   return (
-    <section ref={ref}>
+    <section>
       <PageTitle>プライバシーポリシー</PageTitle>
       <div className="px-5 mt-7 md:mt-10">
         <div className="font-worksans mx-auto w-full max-w-[1190px]">
           <div className="flex justify-end">
-            <p className="text-[12px] font-bold text-white md:text-[15px]">
+            <p className="text-[12px] font-bold text-black md:text-[15px]">
               制定　2023.01.26 <br />
               株式会社ZEXAVERSE（ゼクサバース）
             </p>

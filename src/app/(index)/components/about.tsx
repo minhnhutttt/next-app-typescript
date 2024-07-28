@@ -45,7 +45,7 @@ const data = [
 
 const About = () => {
   return (
-    <section className="relative md:mt-[90px] mt-[60px] overflow-hidden">
+    <section id="about" className="relative md:mt-[90px] mt-[60px] overflow-hidden">
       <div className="w-full max-w-[1440px] mx-auto md:space-y-[180px] space-y-[50px]">
         {data.map((item, index) => (
           <div 

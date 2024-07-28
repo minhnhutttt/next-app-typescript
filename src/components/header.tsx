@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import Link from 'next/link'
 
 interface NavLink {
   link: string
@@ -11,24 +10,29 @@ interface NavLink {
 
 const links: NavLink[] = [
   {
-    link: '/',
+    link: '/#about',
     text: 'Idol Questとは？',
   },
   {
-    link: '/',
+    link: '/#enjoy',
     text: '楽しみ方',
   },
   {
-    link: '/',
+    link: '/#ideas',
     text: 'お得がいっぱい使い方',
   },
   {
-    link: '/',
+    link: '/#howto',
+    text: '使い方',
+  },
+  {
+    link: '/#faq',
     text: 'FAQ',
   },
   {
-    link: '/',
+    link: 'https://lin.ee/jBWR0Qu',
     text: 'お問い合わせ',
+    target: '_blank'
   }
 ]
 
@@ -39,6 +43,7 @@ const Header = () => {
 
   const close = useCallback(() => {
     setNavOpen(false)
+    setIsBack(true);
   }, [])
 
   const handleClick = () => {
@@ -56,12 +61,12 @@ const Header = () => {
     <header className="relative z-50 w-full">
       <div className="px-5 xl:px-10">
         <div className="flex items-center justify-between relative">
-          <Link
+          <a
             href="/"
             className="absolute top-5 md:top-8 left-0 max-md:max-w-[90px] md:max-w-[150px]"
           >
             <img src="/assets/images/logo.png" className="w-full" alt="" />
-          </Link>
+          </a>
           <div
             className={`fixed left-0 top-0 h-screen w-full overflow-auto bg-[#F77C96]/90 px-10 pb-12 pt-28 ${
               NavOpen ? 'no-doc-scroll' : 'invisible opacity-0'
@@ -70,14 +75,14 @@ const Header = () => {
             <ul className="flex md:items-center justify-center h-full gap-6 flex-col md::gap-8 text-white">
               {links.map(({ link, text, target }, index) => (
                 <li key={index}>
-                  <Link
+                  <a
                     href={link}
                     className="inline-block text-[20px] leading-none duration-300 md::text-[24px] lg:hover:scale-125"
                     target={target}
                     onClick={close}
                   >
                     {text}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

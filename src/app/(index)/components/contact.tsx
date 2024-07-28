@@ -9,7 +9,7 @@ const Contact = () => {
                 <p className="md:text-[32px] text-[18px] font-black p-5 tracking-widest">お問い合わせ</p>
             </div>
             <div className="md:w-1/2 flex items-center justify-center flex-col max-md:p-5">
-                <a href="https://lin.ee/jBWR0Qu" target="_blank">
+                <a href="https://lin.ee/jBWR0Qu" target="_blank" className="duration-150 hover:opacity-75">
                     <img className="max-md:w-[120px]" src="/assets/images/line.png" alt="" />
                 </a>
                 <p className="md:text-[18px] text-[14px] mt-2">

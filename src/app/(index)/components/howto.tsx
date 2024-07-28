@@ -1,6 +1,6 @@
 const Howto = () => {
   return (
-    <section className="relative mt-8">
+    <section id="howto" className="relative mt-8">
         <div className="w-full mx-auto max-w-[1360px] md:rounded-[70px] rounded-[44px] bg-white px-5 md:pb-[50px] pb-[32px]">
             <div className="h-px"></div>
             <div data-scroll className="ani-fade-up md:-mt-[54px] -mt-[37px] flex justify-center"><h3><img className="max-md:h-[80px]" src="/assets/images/howto-title.png" alt="使い方" /></h3></div>
