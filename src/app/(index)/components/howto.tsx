@@ -1,9 +1,7 @@
-"use client";
-
 const Howto = () => {
   return (
     <section className="relative mt-8">
-        <div className="w-full mx-auto max-w-[1360px] md:rounded-[70px] rounded-[44px] bg-white px-3 md:pb-[130px] pb-[60px]">
+        <div className="w-full mx-auto max-w-[1360px] md:rounded-[70px] rounded-[44px] bg-white px-5 md:pb-[50px] pb-[32px]">
             <div className="h-px"></div>
             <div className="md:-mt-[54px] -mt-[37px] flex justify-center"><h3><img className="max-md:h-[80px]" src="/assets/images/howto-title.png" alt="使い方" /></h3></div>
             <div className="flex flex-wrap justify-center md:gap-10 gap-12 md:mt-36 mt-14">

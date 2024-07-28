@@ -3,7 +3,7 @@
 const Ideas = () => {
   return (
     <section className="relative md:mt-[200px] mt-[120px]">
-        <div className="w-full mx-auto bg-[url('/assets/images/ideas-bg.png')] dt:bg-[length:100%_100%] bg-cover bg-center px-3 md:pb-[130px] pb-[60px]">
+        <div className="w-full mx-auto bg-[url('/assets/images/ideas-bg.png')] dt:bg-[length:100%_100%] bg-cover bg-center px-5 md:pb-[130px] pb-[60px]">
             <div className="h-px"></div>
             <div className="md:-mt-[47px] -mt-[37px] flex justify-center"><h3><img className="max-md:h-[80px]" src="/assets/images/ideas-title.png" alt="お得がいっぱい" /></h3></div>
             <div className="flex flex-wrap justify-center md:gap-x-[90px] md:mt-14 mt-10 max-[1366px]:gap-20 max-md:gap-7">

@@ -58,7 +58,7 @@ const Header = () => {
         <div className="flex items-center justify-between relative">
           <Link
             href="/"
-            className="absolute top-5 md:top-8 left-0 max-md:max-w-[90px]"
+            className="absolute top-5 md:top-8 left-0 max-md:max-w-[90px] md:max-w-[150px]"
           >
             <img src="/assets/images/logo.png" className="w-full" alt="" />
           </Link>
