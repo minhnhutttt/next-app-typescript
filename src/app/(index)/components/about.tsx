@@ -32,7 +32,7 @@ const data = [
   {
     title: "/assets/images/about-title-03.png",
     image: "/assets/images/about-img-03.png",
-    text: "推しよ！このトレカは完全に私のものだ！",
+    text: (<>推しよ！<br className="md:hidden" />このトレカは完全に私のものだ！</>),
     content: (
       <>
         NFTだから、所有権を簡単かつスマートに証明できます。
@@ -53,7 +53,7 @@ const About = () => {
             className="group flex items-center md:even:flex-row-reverse max-md:flex-col-reverse"
             key={index}
           >
-            <div className="md:w-[47%] md:px-10 px-5 max-md:py-8">
+            <div className="w-full md:w-[47%] md:px-10 px-5 max-md:py-8">
               <h4
                 className={`max-lg:w-[200px] !delay-150 ${index % 2 === 0 ? "ani-slide-left" : "ani-slide-right"}`}
               >

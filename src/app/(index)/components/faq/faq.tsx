@@ -44,8 +44,7 @@ const faqData: FaqItemPropsType[] = [
     question: "NFTはどこで販売できますか？",
     answer: (
       <>
-        Oceans Rareで販売できます。
-        ※Oceans Rareをクリックするとサイトに飛ぶようにしてください <a href="https://diver-rare.com/" target="_blank" rel="noopener noreferrer" className="underline">https://diver-rare.com/</a>
+        <a href="https://diver-rare.com/" target="_blank" rel="noopener noreferrer" className="underline">Oceans Rare</a>で販売できます。
       </>
     ),
   },

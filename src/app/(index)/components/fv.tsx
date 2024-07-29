@@ -16,7 +16,7 @@ const FV = () => {
     <section data-scroll="in" className="relative">
       <div className="relative md:h-[55.556vw] dt:h-[800px] h-[115vw] max-md:max-h-[660px] md:min-h-[690px] bg-[url('/assets/images/fv-bg.png')] bg-cover bg-no-repeat">
         <div className="w-full h-full flex justify-center max-lg:items-center lg:pt-[120px] xl:pt-[150px]">
-          <div  className="ani-zoom-out animation-500 relative">
+          <div className="relative">
             <figure className="max-md:w-[90vw] max-dt:w-[71.944vw] relative">
               <span className="absolute left-[30vw] md:left-[22.917vw] dt:left-[330px] top-[-2.6vw] md:top-[-2.778vw] dt:top-[-40px] [transition:1.5s_ease-in-out] animate-[fuwafuwa_3s_ease-in-out_infinite_alternate]">
                 <img className="max-md:w-[8.5vw] max-dt:w-[7.292vw]" src="/assets/images/fv-t1.png" alt="" />
@@ -54,7 +54,7 @@ const FV = () => {
           </div>
         </div>
       </div>
-      <div className="ani-zoom-out animation-1000 flex justify-center items-center md:-mt-[12.5vw] dt:-mt-[180px] -mt-[80px]">
+      <div className="flex justify-center items-center md:-mt-[12.5vw] dt:-mt-[180px] -mt-[80px]">
         <div className="group md:w-[510px] w-[280px] md:h-[510px] h-[280px] relative flex items-center justify-center max-md:p-4">
           <figure className="bg-white rounded-full drop-shadow-2xl">
             <img src="/assets/images/circle.png" alt="" />
