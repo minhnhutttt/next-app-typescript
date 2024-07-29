@@ -19,7 +19,7 @@ const useScrollAnimations = () => {
           y: 30,
           duration: 0.5,
           ease: 'Power2.easeInOut',
-          scrollTrigger: { trigger: el },
+          scrollTrigger: { trigger: el, start: 'top 75%' },
         }),
       'fade-down': (el: HTMLElement) =>
         gsap.from(el, {

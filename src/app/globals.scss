@@ -1,0 +1,27 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth !important;
+  }
+
+  body {
+    @apply text-[18px];
+  }
+
+  a {
+    @apply no-underline;
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+}

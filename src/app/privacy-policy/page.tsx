@@ -1,34 +1,50 @@
-"use client";
+import type { Metadata } from 'next'
 
-import PageTitle from "@/components/pageTitle";
-import TextBlock from "@/components/textBlock";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { SITE_URL, OG, TWITTER } from '@/config/constants'
+import PageTitle from '@/components/pageTitle'
+import TextBlock from '@/components/textBlock'
 
-export default function PrivacyPolicy() {
-  const ref = useScrollAnimations();
+export const metadata: Metadata = {
+  title: 'プライバシーポリシー',
+  openGraph: {
+    ...OG,
+    title: 'プライバシーポリシー',
+    url: SITE_URL + '/privacy-policy',
+  },
+  twitter: {
+    ...TWITTER,
+    title: 'プライバシーポリシー',
+  },
+  alternates: {
+    canonical: SITE_URL + '/privacy-policy',
+  },
+}
+
+const PrivacyPolicyPage = () => {
   return (
-    <section ref={ref} className="bg-white">
+    <section className="bg-white">
       <PageTitle>プライバシーポリシー</PageTitle>
-      <div className="px-5 mt-7 md:mt-10">
+      <div className="mt-7 px-5 md:mt-10">
         <div className="font-worksans mx-auto w-full max-w-[1190px]">
           <div className="flex justify-end">
             <p className="text-[12px] font-bold text-black md:text-[15px]">
-            制定　2024.7.1 <br />
-            株式会社MARKK
+              制定　2024.7.1 <br />
+              株式会社MARKK
             </p>
           </div>
         </div>
-        <div className="mx-auto pb-16 pt-5 w-full max-w-[1000px] space-y-14 md:pb-20 md:pt-11">
+        <div className="mx-auto w-full max-w-[1000px] space-y-14 pb-16 pt-5 md:pb-20 md:pt-11">
           <div className="md:mb-14">
             <TextBlock>
-            当社は、お客様の個人情報の保護について、次のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定め、本ポリシーに基づき適正に個人情報を取り扱います。<br />
-            なお、本ポリシーで使用する用語の意味は、個人情報の保護に関する法律（以下、「個人情報保護法」といいます。）に準拠するものとします。
+              当社は、お客様の個人情報の保護について、次のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定め、本ポリシーに基づき適正に個人情報を取り扱います。
+              <br />
+              なお、本ポリシーで使用する用語の意味は、個人情報の保護に関する法律（以下、「個人情報保護法」といいます。）に準拠するものとします。
             </TextBlock>
           </div>
           <TextBlock title="1.取得する個人情報の項目">
             当社は、お客様に関する次に掲げる個人情報を取得します。
             <br />
-            <ol className="list-decimal ml-5">
+            <ol className="ml-5 list-decimal">
               <li>
                 本人確認に関する情報
                 <br />
@@ -58,7 +74,7 @@ export default function PrivacyPolicy() {
           </TextBlock>
           <TextBlock title="2.利用目的">
             当社は、お客様の個人情報を、次に掲げる利用目的（以下、「本利用目的」といいます。）の範囲内において、取得及び利用いたします。
-            <ol className="list-decimal ml-5">
+            <ol className="ml-5 list-decimal">
               <li>
                 サービスへの登録及びサービス利用時の本人確認並びにお客様の管理のため
               </li>
@@ -81,8 +97,8 @@ export default function PrivacyPolicy() {
             </ol>
           </TextBlock>
           <TextBlock title="3.第三者提供">
-          （1）当社は、次に掲げる場合を除き、当社が取り扱う個人情報を、あらかじめお客様の同意を得ないで、第三者に提供いたしません。
-            <ol className="list-decimal ml-5">
+            （1）当社は、次に掲げる場合を除き、当社が取り扱う個人情報を、あらかじめお客様の同意を得ないで、第三者に提供いたしません。
+            <ol className="ml-5 list-decimal">
               <li>法令に基づく場合</li>
               <li>
                 人の生命、身体又は財産の保護のために必要がある場合であって、お客様の同意を得ることが困難であるとき
@@ -96,37 +112,51 @@ export default function PrivacyPolicy() {
               <li>その他法令で認められる場合</li>
             </ol>
             （2）上記（1）にかかわらず、当社は、次に掲げる場合には、当社が取り扱う個人情報を第三者に提供することがあります。
-            <ol className="list-disc ml-5">
+            <ol className="ml-5 list-disc">
               <li>
                 お客様の興味・関心等に合わせた広告の配信及びその成果確認並びにサービスの提供のために、それ自体では特定の個人を識別できないようにした情報を当社と提携している広告配信事業者に提供する場合
               </li>
             </ol>
-            （3）当社は、次の外国にある第三者にお客様の個人データを提供する場合があります。その場合に参考となるべき国別の情報は、現時点において、次に掲げるとおりです。<br />
-            なお、適宜適切な事業者を選定して委託を行うべく、現時点では受託業者及びその所在国が特定できていないものの．下記以外の外国の受託業者に対して個人データの委託（提供）を行う場合があります。この場合、改めてお客様の同意を取得せず、新たな受託業者に対する委託を開始することがあります。<br />
-            <ol className="list-disc ml-5">
+            （3）当社は、次の外国にある第三者にお客様の個人データを提供する場合があります。その場合に参考となるべき国別の情報は、現時点において、次に掲げるとおりです。
+            <br />
+            なお、適宜適切な事業者を選定して委託を行うべく、現時点では受託業者及びその所在国が特定できていないものの．下記以外の外国の受託業者に対して個人データの委託（提供）を行う場合があります。この場合、改めてお客様の同意を取得せず、新たな受託業者に対する委託を開始することがあります。
+            <br />
+            <ol className="ml-5 list-disc">
               <li>法令に基づく場合</li>
-              <li>［国名］米国カリフォルニア州 <br />
-                ・当該外国の個人情報保護制度<br />
-                個人情報保護委員会が提供する情報を以下のリンクからご確認ください。<br />
-                <a href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.&chapter=&article=" target="_blank" className="underline">https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.&chapter=&article=</a>　<br />
-                ・第三者が講ずる個人情報保護措置<br />
+              <li>
+                ［国名］米国カリフォルニア州 <br />
+                ・当該外国の個人情報保護制度
+                <br />
+                個人情報保護委員会が提供する情報を以下のリンクからご確認ください。
+                <br />
+                <a
+                  href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.&chapter=&article="
+                  target="_blank"
+                  className="break-all underline"
+                >
+                  https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CIV&division=3.&title=1.81.5.&part=4.&chapter=&article=
+                </a>
+                　<br />
+                ・第三者が講ずる個人情報保護措置
+                <br />
                 提供先は、概ね個人データの取扱いについて我が国の個人情報取扱事業者に求められる措置と同水準の措置を講じているものの、取得した個人情報について利用目的の通知・公表を行っていません。
               </li>
             </ol>
-            (4) 当社は、個人情報保護法に基づき、個人情報取扱事業者が講ずべきこととされている措置に相当する措置を講じている外国にある第三者に個人情報を提供するときは、当該措置の継続的実施を確保するために必要な措置を講じています。当該措置の詳細については、第１０項記載のお問い合わせ窓口までお問い合わせください。
+            (4)
+            当社は、個人情報保護法に基づき、個人情報取扱事業者が講ずべきこととされている措置に相当する措置を講じている外国にある第三者に個人情報を提供するときは、当該措置の継続的実施を確保するために必要な措置を講じています。当該措置の詳細については、第１０項記載のお問い合わせ窓口までお問い合わせください。
           </TextBlock>
           <TextBlock title="4.安全管理措置">
-          当社は、その取り扱う個人情報の漏洩、滅失又は毀損の防止その他個人情報の安全管理のために、必要かつ適切な措置を講じます。当社が講じる安全管理措置については、第１０項記載のお問い合わせ窓口までお問い合わせください。
+            当社は、その取り扱う個人情報の漏洩、滅失又は毀損の防止その他個人情報の安全管理のために、必要かつ適切な措置を講じます。当社が講じる安全管理措置については、第１０項記載のお問い合わせ窓口までお問い合わせください。
           </TextBlock>
           <TextBlock title="5.開示等の請求">
             当社は、次に定めるとおり開示後の請求（利用目的の通知、個人情報又は第三者提供記録の開示、訂正・追加・削除、利用の停止・第三者提供の停止の請求をいいます。）に対応します。
             <br />
-            <ol className="list-decimal ml-5">
+            <ol className="ml-5 list-decimal">
               <li>
-              （1）利用目的の通知又は個人情報若しくは第三者提供記録の開示
+                （1）利用目的の通知又は個人情報若しくは第三者提供記録の開示
                 <br />
                 お客様は、当社に対し、下記（4）に定める手続に従って、個人情報保護法において認められる範囲内において、利用目的の通知を求め、又は、個人情報若しくは第三者提供記録の開示を請求することができます。ただし、当社は、次の各号のいずれかに該当する場合は、閉示を行わないことがあります。
-                <ul className="list-[lower-alpha] ml-5">
+                <ul className="ml-5 list-[lower-alpha]">
                   <li>
                     開示することでご本人様又は第三者の生命、身体、財産その他の権利利益を書するおそれがある場合
                   </li>
@@ -138,37 +168,41 @@ export default function PrivacyPolicy() {
                 </ul>
               </li>
               <li>
-              なお、利用目的の通知又は個人情報若しくは第三者提供記録の開示を請求される場合には、下記（4）に定める開示手数料をいただきます。
+                なお、利用目的の通知又は個人情報若しくは第三者提供記録の開示を請求される場合には、下記（4）に定める開示手数料をいただきます。
               </li>
               <li>
-              （2）訂正・追加・削除
+                （2）訂正・追加・削除
                 <br />
                 お客様は、下記（4）に定める手続に従って、個人情報の訂正・追加・削除を請求することができます。その場合、当社は、利用目的の達成に必要な範囲内で遅滞なく調査を行い、その結果に基づき、個人情報保護法において認められる範囲内において、当該個人情報の訂正・追加・削除を行います。
               </li>
               <li>
-              （3）利用の停止又は第三者提供の停止
+                （3）利用の停止又は第三者提供の停止
                 <br />
                 お客様は、下記（4）に定める手続に従って、個人情報の利用の停止又は第三者提供の停止を請求することができます。その場合、当社は、個人情報保護法に従って適切に対応いたします。
               </li>
               <li>
-              （4）手続 <br />
+                （4）手続 <br />
                 お客様は、開示等の請求を行う場合には、当社所定の請求書（下記ア）に所定事項を記入の上、本人確認書類（下記イ）を同封の上、当社の指定する送付先（下記ウ）までご郵送ください。また、利用目的の通知及び個人情報又は第三者提供記録の開示については、1回の請求につき1,000円の手数料をいただきます。請求書記載の振込先までお振込みください。なお、不開示及び利用目的の非通知の場合についても、所定の手数料をいただきます。
-                <ul className="list-[lower-alpha] ml-5">
+                <ul className="ml-5 list-[lower-alpha]">
                   <li>
                     請求書
                     <br />
                     請求書については、以下よりダウンロードください。
-                    ・利用目的の通知、個人情報又は第三者提供記録の開示の請求書 <br />
-                    ・訂正・追加・削除の請求書<br />
+                    ・利用目的の通知、個人情報又は第三者提供記録の開示の請求書{' '}
+                    <br />
+                    ・訂正・追加・削除の請求書
+                    <br />
                     ・利用の停止・第三者提供停止の請求の請求書
                   </li>
                   <li>
-                  本人確認書類
+                    本人確認書類
                     <br />
                     ■お客様ご本人による請求の場合
                     <br />
                     <ol className="ml-5">
-                    <li>・お客様ご本人の本人確認書類（個人番号カード（表面）、運転免許証、健康保険被保険者証、又はパスポートの写し(いずれか一つ))</li>
+                      <li>
+                        ・お客様ご本人の本人確認書類（個人番号カード（表面）、運転免許証、健康保険被保険者証、又はパスポートの写し(いずれか一つ))
+                      </li>
                     </ol>
                     ■任意代理人による請求の場合
                     <br />
@@ -176,7 +210,7 @@ export default function PrivacyPolicy() {
                     <ol className="ml-5">
                       <li>・委任状</li>
                       <li>
-                      ・任意代理人の本人確認書類（個人番号カード（表面）、運転免許証、健康保険被保険者証、又はパスポートの写し（いずれか一つ））
+                        ・任意代理人の本人確認書類（個人番号カード（表面）、運転免許証、健康保険被保険者証、又はパスポートの写し（いずれか一つ））
                       </li>
                     </ol>
                     ■法定代理人による請求の場合
@@ -184,18 +218,18 @@ export default function PrivacyPolicy() {
                     上記の「お客様ご本人による請求の場合」に記載されている書類に加え、下記の書類
                     <ol className="ml-5">
                       <li>
-                      ・法定代理権の存在を確認できる書類（戸籍謄本又は成年後見登記事項証明書）
+                        ・法定代理権の存在を確認できる書類（戸籍謄本又は成年後見登記事項証明書）
                       </li>
                       <li>
-                      ・法定代理人の本人確認事類
+                        ・法定代理人の本人確認書類
                         （個人番号カード（表面）、運転免許証、健康保険被保険者証、又はパスポートの写し（いずれか一つ））
                       </li>
                     </ol>
                   </li>
                   <li>
-                  送付先
+                    送付先
                     <br />
-                    〒104-0061 
+                    〒104-0061
                     <br />
                     住所:東京都中央区銀座1-12-4N&E BLD.7階
                     <br />
@@ -206,20 +240,26 @@ export default function PrivacyPolicy() {
             </ol>
           </TextBlock>
           <TextBlock title="6.匿名加工情報の取扱い">
-          当社は、次に掲げるとおり匿名加工情報を作成し、第三者に提供いたします。また、当社は、今後も継続的に同様の匿名加工情報を作成し、第三者に提供することを予定しております。<br />
-          （1）匿名加工情報に含まれる個人に関する情報の項目 <br />
-            性别、生年、購買履歷<br />
-            （2）匿名加工情報の提供の方法<br />
-            電子メールによる送信、CD-ROM、USB等の外部記憶媒体の送付、サーバへのアップロード<br />
-            （3）匿名加工情報の安全管理措置等の適正な取扱いを確保するために必要な措置<br />
-            当社は、匿名加工情報取扱マニュアルを作成し、当該マニュアルに従って匿名加工情報を取り扱うことで、匿名加工情報の安全管理措置等の適正な取扱いを確保するために必要な措置を講じています。<br />
+            当社は、次に掲げるとおり匿名加工情報を作成し、第三者に提供いたします。また、当社は、今後も継続的に同様の匿名加工情報を作成し、第三者に提供することを予定しております。
+            <br />
+            （1）匿名加工情報に含まれる個人に関する情報の項目 <br />
+            性别、生年、購買履歷
+            <br />
+            （2）匿名加工情報の提供の方法
+            <br />
+            電子メールによる送信、CD-ROM、USB等の外部記憶媒体の送付、サーバへのアップロード
+            <br />
+            （3）匿名加工情報の安全管理措置等の適正な取扱いを確保するために必要な措置
+            <br />
+            当社は、匿名加工情報取扱マニュアルを作成し、当該マニュアルに従って匿名加工情報を取り扱うことで、匿名加工情報の安全管理措置等の適正な取扱いを確保するために必要な措置を講じています。
+            <br />
             匿名加工情報に関するお問い合わせは、第１０項記載のお問い合わせ窓口までご連絡ください。
           </TextBlock>
           <TextBlock title="7.Cookie の取扱い">
-          （1）Cookieの利用について <br />
+            （1）Cookieの利用について <br />
             当社のウェブサイトでは、お客様により適切なサービスをご提供するためCookie（クッキー）その他のトラッキング又は解析を行うための類似技術（以下、総称して「Cookie」といいます。）を使用しております。
             <br />
-            <ul className="list-[lower-alpha] ml-5">
+            <ul className="ml-5 list-[lower-alpha]">
               <li>
                 Cookieの概要
                 <br />
@@ -230,7 +270,8 @@ export default function PrivacyPolicy() {
               <li>
                 第三者が提供する閲覧履歴等の収集・分析サービスの利用について
                 <br />
-                当社は、Googleが提供するGoogleアナリティクス、Metaが提供するFacebookの分析ツール（Metaピクセルを含みますが、これに限られません。）、株式会社Faber Companyが提供するミエルカ（ミエルカSEO、ミエルカヒートアップを含みますが、これらに限られません。）を利用しています。
+                当社は、Googleが提供するGoogleアナリティクス、Metaが提供するFacebookの分析ツール（Metaピクセルを含みますが、これに限られません。）、株式会社Faber
+                Companyが提供するミエルカ（ミエルカSEO、ミエルカヒートアップを含みますが、これらに限られません。）を利用しています。
                 <br />
                 当社は、上記第三者が当社又は当該第三者の設定するCookieをもとにしてお客様の閲覧履歴を収集し、分析した結果を受け取り、お客様の利用状況の把握や、当社のサービスに利用する場合があります。上記第三者によるデータの取扱い等については、以下の各社のウェブサイトをご確認ください。
                 <br />
@@ -238,7 +279,7 @@ export default function PrivacyPolicy() {
                 <a
                   href="https://policies.google.com/technologies/partner-sites"
                   target="_blank"
-                  className="underline"
+                  className="break-all underline"
                 >
                   https://policies.google.com/technologies/partner-sites
                 </a>
@@ -247,7 +288,7 @@ export default function PrivacyPolicy() {
                 <a
                   href="https://www.facebook.com/legal/technology_terms"
                   target="_blank"
-                  className="underline"
+                  className="break-all underline"
                 >
                   https://www.facebook.com/legal/technology_terms　
                 </a>
@@ -256,7 +297,7 @@ export default function PrivacyPolicy() {
                 <a
                   href="https://mieru-ca.com/privacy-policy/"
                   target="_blank"
-                  className="underline"
+                  className="break-all underline"
                 >
                   https://mieru-ca.com/privacy-policy/　
                 </a>
@@ -273,5 +314,7 @@ export default function PrivacyPolicy() {
         </div>
       </div>
     </section>
-  );
+  )
 }
+
+export default PrivacyPolicyPage
