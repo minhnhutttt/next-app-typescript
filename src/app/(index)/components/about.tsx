@@ -57,7 +57,7 @@ const About = () => {
               <h4
                 className={`max-lg:w-[200px] !delay-150 ${index % 2 === 0 ? "ani-slide-left" : "ani-slide-right"}`}
               >
-                <img src={item.title} alt={item.text} />
+                <img src={item.title} alt="" />
               </h4>
               <p className="ani-fade-up !delay-300 md:text-[28px] text-[20px] font-black md:py-[30px] py-5">
                 {item.text}
