@@ -17,7 +17,7 @@ const Features = () => {
               <div className="pr-5 md:pr-12">
                 <div className="relative -ml-px -mt-[58px] h-16 max-w-[1087px] bg-[linear-gradient(278deg,_#FF2A2A_-5.11%,_#FF9B04_78.14%)] md:h-[91px]">
                   <div className="flex items-center py-2">
-                    <span className="h-px w-5 bg-white md:w-[100px]"></span>
+                    <span className="h-px w-3 bg-white md:w-[80px]"></span>
                     <p className="text-[16px] font-bold text-white md:text-[24px]">
                       eラーニング型ChatGPT研修の3つの特長
                     </p>
