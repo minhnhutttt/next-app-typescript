@@ -16,7 +16,7 @@ const Conventional = () => {
           その<span className="text-[#FF9242]">常識</span>を覆します。
         </h3>
         <p className="show mt-6 text-center text-[16px] font-bold md:mt-10 md:text-[20px]">
-          私たちのAI eラーニングは、
+          私たちのChatGPT研修は、
         </p>
         <p className="show text-center text-[20px] font-bold md:text-[28px]">
           <span className="text-[#FF9242]">短期集中型</span>で効率的な

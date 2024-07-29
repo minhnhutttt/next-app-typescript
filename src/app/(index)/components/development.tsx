@@ -106,7 +106,7 @@ const Development = () => {
       </section>
       <div className="flex h-[340px] flex-col items-center justify-center bg-[url('/assets/images/bg-04.png')] bg-cover bg-center px-5 py-10 md:h-[404px]">
         <h4 className="mdLtext-[32px] text-center text-[24px] font-bold">
-          CONPANY Profile
+        COMPANY Profile
         </h4>
         <div className="flex justify-center py-6 md:py-8">
           <p className="text-[15px] font-medium md:text-[18px]">

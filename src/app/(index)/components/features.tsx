@@ -19,7 +19,7 @@ const Features = () => {
                   <div className="flex items-center py-2">
                     <span className="h-px w-5 bg-white md:w-[100px]"></span>
                     <p className="text-[16px] font-bold text-white md:text-[24px]">
-                      eラーニング型生成AI研修の3つの特長
+                      eラーニング型ChatGPT研修の3つの特長
                     </p>
                     <span className="h-px flex-1 bg-white"></span>
                   </div>

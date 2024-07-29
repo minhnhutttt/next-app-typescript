@@ -143,7 +143,7 @@ const Learning = () => {
           <div className="mt-7 scroll-mt-24 md:mt-10" id="contact">
             <h3 className="text-center text-[18px] font-bold md:text-[24px]">
               ＼ eラーニングで学ぶ ／<br />
-              当社のChatGPT研修へ <br />
+              <span className="md:text-[64px] text-[32px] text-[#DC2286]">ChatGPT研修</span>へ <br />
               まずはご相談ください（無料）
             </h3>
           </div>

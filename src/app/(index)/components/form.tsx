@@ -189,12 +189,8 @@ const Form = () => {
             </span>
           </div>
           <div className="mt-4 flex flex-col gap-2 text-[14px] md:text-[16px]">
-            <Radio label="AI eラーニングに申し込みたい" name="type" />
-            <Radio label="オンラインでのご相談を希望" name="type" />
-            <Radio label="対面でのご相談を希望" name="type" />
-            <Radio label="資料のご請求" name="type" />
-            <Radio label="セミナー予定に関するお問い合わせ" name="type" />
-            <Radio label="その他ご相談・お問い合わせ" name="type" />
+            <Radio label="生成AI導入コンサルティング・業務改善支援に関するお問い合わ" name="type" />
+            <Radio label="自社専用生成AIツールの開発に関するお問い合わせ" name="type" />
           </div>
           <div className="text-[#FA3131]">
             {
