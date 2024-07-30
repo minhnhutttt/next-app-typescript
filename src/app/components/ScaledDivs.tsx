@@ -25,30 +25,91 @@ const ScaledDivs = () => {
   const { yPercent } = useMousePositionPercentage();
   const containerRef = useRef<HTMLDivElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
+  const measureRef = useRef<HTMLSpanElement>(null);
+
+  const totalLines = 2;
 
   const topScaleY = 1.5 - ((yPercent / 100) * 1);
   const bottomScaleY = 0.5 + ((yPercent / 100) * 1);
-
   
+
   const containerHeight = containerRef.current?.clientHeight ?? 0;
+  const containerWidth = containerRef.current?.clientWidth ?? 0;
   const divHeight = divRef.current?.clientHeight ?? 0;
+
+  const bottomScaleX = 0;
 
   const bottomPx = (containerHeight - (divHeight * bottomScaleY));
 
+  
+
+
+  var i = containerHeight / totalLines;
+  var s = i * (1 / 0.82);
+
+  useEffect(() => {
+    if (measureRef.current) {
+      measureRef.current.style.fontVariationSettings = "'wdth' 200";
+    }
+  }, []);
+
+  const getCharacterWidths = (text: string) => {
+    const widths = [];
+    if (measureRef.current) {
+      for (const char of text) {
+        measureRef.current.innerText = char;
+        const charWidth = measureRef.current.getBoundingClientRect().width;
+        widths.push(charWidth);
+      }
+    }
+    return widths;
+  };
+
+  const getTotalWidth = (text: string) => {
+    const widths = getCharacterWidths(text);
+    return widths.reduce((total, width) => total + width, 0);
+  };
+
+  const renderCharacters = (text: string) => {
+    const widths = getCharacterWidths(text);
+    let cumulativeWidth = 0;
+
+    return text.split('').map((char, index) => {
+      const translateX = cumulativeWidth;
+      cumulativeWidth += widths[index];
+
+      return (
+        <span
+          key={index}
+          data-char={char}
+          className="variable-word-letter"
+          style={{
+            fontVariationSettings: "'wdth' 200",
+            transform: `translate3d(0px, 0px, 0px) scaleY(1) translateX(${translateX}px)`
+          }}
+        >
+          {char}
+        </span>
+      );
+    });
+  };
+
   return (
-    <div ref={containerRef} className="relative h-screen overflow-hidden">
+    <div ref={containerRef} className="relative h-screen overflow-hidden" style={{ fontSize: s + 'px', lineHeight: i + 'px' }}>
+      {/* Hidden span for measuring character width */}
+      <span ref={measureRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
       <div
-        className="variable-word w-full h-[50vh] origin-top-left"
+        className="variable-word w-full origin-top-left"
         style={{ transform: `translate3d(0px, 0px, 0px) scaleY(${topScaleY})` }}
       >
-
+        {renderCharacters("ARTISTS")}
       </div>
       <div
         ref={divRef}
-        className="absolute inset-x-0 top-0 variable-word w-full h-[50vh] origin-top-left"
-        style={{ transform: `translate3d(0px, ${bottomPx}px, 0px) scaleY(${bottomScaleY})` }}
+        className="absolute inset-x-0 top-0 variable-word w-full  origin-top-left"
+        style={{ transform: `translate3d(0px, ${bottomPx}px, 0px) scaleX(${ containerWidth / getTotalWidth("DEPTS")}) scaleY(${bottomScaleY})` }}
       >
-        
+        {renderCharacters("DEPTS")}
       </div>
     </div>
   );
