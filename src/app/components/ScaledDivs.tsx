@@ -2,13 +2,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const useMousePositionPercentage = () => {
-  const [position, setPosition] = useState({ xPercent: 0, yPercent: 0 });
+  const [position, setPosition] = useState({ xPercent: 0, yPercent: 0, clientX: 0 });
 
   useEffect(() => {
     const updateMousePosition = (event: MouseEvent) => {
       const xPercent = (event.clientX / window.innerWidth) * 100;
       const yPercent = (event.clientY / window.innerHeight) * 100;
-      setPosition({ xPercent, yPercent });
+      setPosition({ xPercent, yPercent, clientX: event.clientX });
     };
 
     window.addEventListener('mousemove', updateMousePosition);
@@ -22,30 +22,22 @@ const useMousePositionPercentage = () => {
 };
 
 const ScaledDivs = () => {
-  const { yPercent } = useMousePositionPercentage();
+  const { yPercent, clientX } = useMousePositionPercentage();
   const containerRef = useRef<HTMLDivElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLSpanElement>(null);
 
   const totalLines = 2;
-
   const topScaleY = 1.5 - ((yPercent / 100) * 1);
   const bottomScaleY = 0.5 + ((yPercent / 100) * 1);
-  
 
   const containerHeight = containerRef.current?.clientHeight ?? 0;
   const containerWidth = containerRef.current?.clientWidth ?? 0;
   const divHeight = divRef.current?.clientHeight ?? 0;
-
-  const bottomScaleX = 0;
-
   const bottomPx = (containerHeight - (divHeight * bottomScaleY));
 
-  
-
-
-  var i = containerHeight / totalLines;
-  var s = i * (1 / 0.82);
+  const lineHeight = containerHeight / totalLines;
+  const fontSize = lineHeight * (1 / 0.82);
 
   useEffect(() => {
     if (measureRef.current) {
@@ -54,7 +46,7 @@ const ScaledDivs = () => {
   }, []);
 
   const getCharacterWidths = (text: string) => {
-    const widths = [];
+    const widths: number[] = [];
     if (measureRef.current) {
       for (const char of text) {
         measureRef.current.innerText = char;
@@ -72,11 +64,16 @@ const ScaledDivs = () => {
 
   const renderCharacters = (text: string) => {
     const widths = getCharacterWidths(text);
-    let cumulativeWidth = 0;
+    let cumulativeWidth = 200;
 
     return text.split('').map((char, index) => {
       const translateX = cumulativeWidth;
       cumulativeWidth += widths[index];
+
+      const charCenterX = translateX + (widths[index] / 2);
+      const distance = Math.abs(clientX - charCenterX);
+      const maxDistance = containerWidth / 2;
+      const variationValue = Math.max(10, 400 - (distance / maxDistance) * 390);
 
       return (
         <span
@@ -84,7 +81,7 @@ const ScaledDivs = () => {
           data-char={char}
           className="variable-word-letter"
           style={{
-            fontVariationSettings: "'wdth' 200",
+            fontVariationSettings: `'wdth' ${variationValue}`,
             transform: `translate3d(0px, 0px, 0px) scaleY(1) translateX(${translateX}px)`
           }}
         >
@@ -95,19 +92,18 @@ const ScaledDivs = () => {
   };
 
   return (
-    <div ref={containerRef} className="relative h-screen overflow-hidden" style={{ fontSize: s + 'px', lineHeight: i + 'px' }}>
-      {/* Hidden span for measuring character width */}
+    <div ref={containerRef} className="relative h-screen overflow-hidden" style={{ fontSize: fontSize + 'px', lineHeight: lineHeight + 'px' }}>
       <span ref={measureRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
       <div
         className="variable-word w-full origin-top-left"
-        style={{ transform: `translate3d(0px, 0px, 0px) scaleX(${ containerWidth / getTotalWidth("ARTISTS")}) scaleY(${topScaleY})` }}
+        style={{ transform: `translate3d(0px, 0px, 0px) scaleX(${containerWidth / getTotalWidth("ARTISTS")}) scaleY(${topScaleY})` }}
       >
         {renderCharacters("ARTISTS")}
       </div>
       <div
         ref={divRef}
-        className="absolute inset-x-0 top-0 variable-word w-full  origin-top-left"
-        style={{ transform: `translate3d(0px, ${bottomPx}px, 0px) scaleX(${ containerWidth / getTotalWidth("DEPTS")}) scaleY(${bottomScaleY})` }}
+        className="absolute inset-x-0 top-0 variable-word w-full origin-top-left"
+        style={{ transform: `translate3d(0px, ${bottomPx}px, 0px) scaleX(${containerWidth / getTotalWidth("DEPTS")}) scaleY(${bottomScaleY})` }}
       >
         {renderCharacters("DEPTS")}
       </div>
