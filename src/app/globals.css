@@ -11,9 +11,3 @@ body {
   font-family: Fit-Variable;
   font-feature-settings: "tnum", "liga", "kern";
 }
-
-.variable-word {
-  height: 50vh;
-}
-.variable-word:nth-of-type(2) {
-}

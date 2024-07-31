@@ -1,24 +1,7 @@
 import type { Metadata } from "next";
-import { Noto_Serif_JP, M_PLUS_1p, Roboto} from "next/font/google";
 import localFont from 'next/font/local'
 import "./globals.css";
-import ScrollContainer from "@/components/scrollContainer";
 
-const serif = Noto_Serif_JP({
-  weight: ['700','900'],
-  subsets: ["latin"],
-  variable: "--font-serif",
-});
-const mplus = M_PLUS_1p({
-  weight: ['400','500','700','800','900'],
-  subsets: ["latin"],
-  variable: "--font-mplus",
-});
-const roboto = Roboto({
-  weight: ['400','500','700'],
-  subsets: ["latin"],
-  variable: "--font-roboto",
-});
 
 const myFont = localFont({
   src: './font.woff',
@@ -40,9 +23,7 @@ export default function RootLayout({
        <body
         className={`${myFont.className} bg-[#FFE8EC] font-medium overflow-x-hidden`}
       >
-        <ScrollContainer>
           {children}
-        </ScrollContainer>
       </body>
     </html>
   );
