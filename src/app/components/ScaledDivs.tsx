@@ -2,19 +2,29 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const useMousePositionPercentage = () => {
-  const [position, setPosition] = useState({ xPercent: 0, yPercent: 0, clientX: 0 });
+  const [position, setPosition] = useState({ xPercent: 0, yPercent: 0, clientX: 0, clientY: 0 });
 
   useEffect(() => {
-    const updateMousePosition = (event: MouseEvent) => {
-      const xPercent = (event.clientX / window.innerWidth) * 100;
-      const yPercent = (event.clientY / window.innerHeight) * 100;
-      setPosition({ xPercent, yPercent, clientX: event.clientX });
+    const updateMousePosition = (event: MouseEvent | TouchEvent) => {
+      const clientX = event instanceof MouseEvent ? event.clientX : event.touches[0].clientX;
+      const clientY = event instanceof MouseEvent ? event.clientY : event.touches[0].clientY;
+      const xPercent = (clientX / window.innerWidth) * 100;
+      const yPercent = (clientY / window.innerHeight) * 100;
+      setPosition({ xPercent, yPercent, clientX, clientY });
     };
 
-    window.addEventListener('mousemove', updateMousePosition);
+    const handleMouseMove = (event: MouseEvent) => updateMousePosition(event);
+    const handleTouchMove = (event: TouchEvent) => updateMousePosition(event);
+    const handleMouseLeave = () => setPosition({ xPercent: 0, yPercent: 0, clientX: 0, clientY: 0 });
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, []);
 
@@ -22,14 +32,14 @@ const useMousePositionPercentage = () => {
 };
 
 const ScaledDivs = () => {
-  const { yPercent, xPercent, clientX } = useMousePositionPercentage();
+  const { yPercent, xPercent, clientX, clientY } = useMousePositionPercentage();
   const spansRef = useRef<HTMLSpanElement[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLSpanElement>(null);
 
   const totalLines = 2;
-  const topScaleY = 1.5 - (yPercent / 100);
-  const bottomScaleY = 0.5 + (yPercent / 100);
+  const topScaleY = clientX === 0 && clientY === 0 ? 1 : 1.5 - (yPercent / 100);
+  const bottomScaleY = clientX === 0 && clientY === 0 ? 1 : 0.5 + (yPercent / 100);
   const [scaleX, setScaleX] = useState([1, 1]);
 
   const containerHeight = containerRef.current?.clientHeight ?? 0;
