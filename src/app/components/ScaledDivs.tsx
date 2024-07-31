@@ -96,9 +96,9 @@ const ScaledDivs = () => {
       <span ref={measureRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
       <div
         className="variable-word w-full origin-top-left"
-        style={{ transform: `translate3d(0px, 0px, 0px) scaleX(${containerWidth / getTotalWidth("ARTISTS")}) scaleY(${topScaleY})` }}
+        style={{ transform: `translate3d(0px, 0px, 0px) scaleX(${containerWidth / getTotalWidth("ART")}) scaleY(${topScaleY})` }}
       >
-        {renderCharacters("ARTISTS")}
+        {renderCharacters("ART")}
       </div>
       <div
         ref={divRef}
