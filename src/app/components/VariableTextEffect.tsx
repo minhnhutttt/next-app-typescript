@@ -5,16 +5,14 @@ import useMousePosition from './useMousePosition'; // Điều chỉnh đường 
 const FullWidthSpans: React.FC = () => {
   const { x } = useMousePosition();
   const containerRef = useRef<HTMLDivElement>(null);
-  const [leftSpanWdth, setLeftSpanWdth] = useState(200);
-  const [rightSpanWdth, setRightSpanWdth] = useState(200);
+  const [spanWidths, setSpanWidths] = useState<number[]>([200, 200, 200, 200, 200]);
   const [scaleX, setScaleX] = useState(1);
 
   useEffect(() => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.offsetWidth;
-      const halfContainerWidth = containerWidth / 2;
       const spanElements = containerRef.current.querySelectorAll('span');
-
+      
       let totalSpanWidth = 0;
       spanElements.forEach((span) => {
         totalSpanWidth += span.offsetWidth;
@@ -23,36 +21,50 @@ const FullWidthSpans: React.FC = () => {
       const newScaleX = containerWidth / totalSpanWidth;
       setScaleX(newScaleX);
 
-      if (x < halfContainerWidth) {
-        // Cursor on the left side
-        const distanceFromCenter = halfContainerWidth - x;
-        const newLeftSpanWdth = Math.min(400, 200 + distanceFromCenter / 5);
-        const newRightSpanWdth = Math.max(10, 200 - distanceFromCenter / 5);
-        setLeftSpanWdth(newLeftSpanWdth);
-        setRightSpanWdth(newRightSpanWdth);
-      } else {
-        // Cursor on the right side
-        const distanceFromCenter = x - halfContainerWidth;
-        const newLeftSpanWdth = Math.max(10, 200 - distanceFromCenter / 5);
-        const newRightSpanWdth = Math.min(400, 200 + distanceFromCenter / 5);
-        setLeftSpanWdth(newLeftSpanWdth);
-        setRightSpanWdth(newRightSpanWdth);
-      }
+      const newSpanWidths = [...spanWidths];
+      spanElements.forEach((span, index) => {
+        const spanRect = span.getBoundingClientRect();
+        const spanCenter = (spanRect.left + spanRect.right) / 2;
+
+        if (spanCenter < containerWidth / 2) {
+          // Span is on the left side of the container
+          if (x < spanCenter) {
+            newSpanWidths[index] = Math.min(400, 200 + ((spanCenter - x) / containerWidth) * 400);
+          } else {
+            newSpanWidths[index] = Math.max(100, 200 - ((x - spanCenter) / containerWidth) * 200);
+          }
+        } else {
+          // Span is on the right side of the container
+          if (x > spanCenter) {
+            newSpanWidths[index] = Math.min(400, 200 + ((x - spanCenter) / containerWidth) * 400);
+          } else {
+            newSpanWidths[index] = Math.max(100, 200 - ((spanCenter - x) / containerWidth) * 200);
+          }
+        }
+      });
+
+      setSpanWidths(newSpanWidths);
     }
   }, [x]);
 
   return (
     <div 
       ref={containerRef} 
-      className='text-[500px]'
+      className='text-[400px]'
       style={{ 
         display: 'flex', 
         transform: `scaleX(${scaleX})`,
         transformOrigin: 'left'
       }}
     >
-      <span style={{ fontVariationSettings: `"wdth" ${leftSpanWdth}` }}>A</span>
-      <span style={{ fontVariationSettings: `"wdth" ${rightSpanWdth}` }}>A</span>
+      {spanWidths.map((width, index) => (
+        <span 
+          key={index} 
+          style={{ fontVariationSettings: `"wdth" ${width}` }}
+        >
+          A
+        </span>
+      ))}
     </div>
   );
 };
