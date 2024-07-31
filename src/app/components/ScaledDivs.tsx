@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
 
 const useMousePositionPercentage = () => {
@@ -49,70 +49,68 @@ const ScaledDivs = () => {
     }
   }, []);
 
-  function lerp(start: any, end:any, t:any) {
+  function lerp(start: number, end: number, t: number) {
     return start * (1 - t) + end * t;
   }
 
   useEffect(() => {
-      if (containerRef.current) {
-        const containerWidth = containerRef.current.offsetWidth;
-        const spanElements = containerRef.current.querySelectorAll('.variable-word-letter');
+    if (containerRef.current) {
+      const spanElements = containerRef.current.querySelectorAll('.variable-word-letter');
+      const newSpanWidths = [...spanWidths];
 
-        const newSpanWidths = [...spanWidths];
-        var w = 0;
+      // Tính toán chiều rộng của từng span
+      spanElements.forEach((span, index) => {
+        let h = 200;
+        let x = 0.5;
 
-        // Tính toán chiều rộng của từng span
-        spanElements.forEach((span, index) => {
-          var h = 200;
-          var x = 0.5
-          if (clientX === 0) {
-            h = 200;
-            x = 0.5
-            console.log(1);
-          } else {
-            var x = xPercent ? xPercent / 100 : 0.5;
-            var u = index / (spanElements.length - 1);
-            var l = 1 - Math.abs(u - x);
-            l *= l;
-            h = 400 * Math.min(1, l) + 10;
-            const startValue = 200;
-            const n = 0;
-            const e = 1;
-            const t = Math.min(1 - n, e);
-            h = lerp(startValue, h, t);
-          }
-          newSpanWidths[index] = h;
-          setSpanWidths(newSpanWidths);
-        });
-      
-        const widths = getCharacterWidths('ARTISTS');
-        const newWidth = widths.reduce((total, width) => total + width, 0);
-        setScaleX(containerWidth / newWidth);
-      }
-  }, [clientX]);
+        if (clientX !== 0) {
+          x = xPercent / 100;
+          const u = index / (spanElements.length - 1);
+          let l = 1 - Math.abs(u - x);
+          l *= l;
+          h = 400 * Math.min(1, l) + 10;
+          const startValue = 200;
+          const t = Math.min(1, 1);
+          h = lerp(startValue, h, t);
+        }
 
-  const getCharacterWidths = (text: string) => {
-    const widths: number[] = [];
-    if (measureRef.current) {
-      for (const char of text) {
+        newSpanWidths[index] = h;
+      });
+
+      setSpanWidths(newSpanWidths);
+
+      // Tính toán scaleX
+      const widths = getCharacterWidths('ARTISTS', newSpanWidths);
+      const totalWidth = widths.reduce((total, width) => total + width, 0);
+      setScaleX(containerWidth / totalWidth);
+    }
+  }, [clientX, containerWidth, xPercent]);
+
+  const getCharacterWidths = (text: string, widths: number[]) => {
+    const charWidths: number[] = [];
+    
+      text.split('').forEach((char, index) => {
+        if (measureRef.current) {
+        measureRef.current.style.fontVariationSettings = `'wdth' ${widths[index]}`;
         measureRef.current.innerText = char;
         const charWidth = measureRef.current.getBoundingClientRect().width;
-        widths.push(charWidth);
-      }
+        charWidths.push(charWidth);
     }
-    return widths;
+
+      });
+    return charWidths;
   };
 
-  const getTotalWidth = (text: string) => {
-    const widths = getCharacterWidths(text);
-    return widths.reduce((total, width) => total + width, 0);
+  const getTotalWidth = (text: string, widths: number[]) => {
+    const charWidths = getCharacterWidths(text, widths);
+    return charWidths.reduce((total, width) => total + width, 0);
   };
 
   const renderCharacters = (text: string) => {
-    const widths = getCharacterWidths(text);
+    const widths = getCharacterWidths(text, spanWidths);
     let cumulativeWidth = 0;
 
-    const spanElements = text.split('').map((char, index) => {
+    return text.split('').map((char, index) => {
       const translateX = cumulativeWidth;
       cumulativeWidth += widths[index];
 
@@ -131,10 +129,7 @@ const ScaledDivs = () => {
         </span>
       );
     });
-    return spanElements;
   };
-
-
 
   return (
     <div ref={containerRef} className="relative h-screen overflow-hidden" style={{ fontSize: fontSize + 'px', lineHeight: lineHeight + 'px' }}>
@@ -148,7 +143,7 @@ const ScaledDivs = () => {
       <div
         ref={divRef}
         className="absolute inset-x-0 top-0 variable-word w-full origin-top-left"
-        style={{ transform: `translate3d(0px, ${bottomPx}px, 0px) scaleX(${containerWidth / getTotalWidth("DEPTS")}) scaleY(${bottomScaleY})` }}
+        style={{ transform: `translate3d(0px, ${bottomPx}px, 0px) scaleX(${containerWidth / getTotalWidth("DEPTS", spanWidths)}) scaleY(${bottomScaleY})` }}
       >
         {/* {renderCharacters("DEPTS")} */}
       </div>
