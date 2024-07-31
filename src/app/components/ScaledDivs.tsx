@@ -22,8 +22,9 @@ const useMousePositionPercentage = () => {
 };
 
 const ScaledDivs = () => {
-  const { yPercent, clientX } = useMousePositionPercentage();
+  const { yPercent, xPercent, clientX } = useMousePositionPercentage();
   const [scaleX, setScaleX] = useState(1);
+  const spansRef = useRef<HTMLSpanElement[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLSpanElement>(null);
@@ -48,42 +49,46 @@ const ScaledDivs = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (containerRef.current) {
-      const containerWidth = containerRef.current.offsetWidth;
-      const spanElements = containerRef.current.querySelectorAll('.variable-word-letter');
-      
-      const newSpanWidths = [...spanWidths];
-      
-      // Tính toán chiều rộng của từng span
-      spanElements.forEach((span, index) => {
+  function lerp(start: any, end:any, t:any) {
+    return start * (1 - t) + end * t;
+  }
 
-        const spanRect = span.getBoundingClientRect();
-        const spanCenter = (spanRect.left + spanRect.right) / 2;
-  
-        const minWdth = 10;
-        const maxWdth = 400;
-        const baseWdth = 200;
-        const containerCenter = containerWidth / 2;
-  
-        // if (spanCenter <= containerCenter) {
-        //   // Span is on the left side of the container
-        //   newSpanWidths[index] = clientX <= spanCenter
-        //     ? Math.min(maxWdth, baseWdth + ((spanCenter - clientX) / containerWidth) * (maxWdth - baseWdth))
-        //     : Math.max(minWdth, baseWdth - ((clientX - spanCenter) / containerWidth) * (baseWdth - minWdth));
-        // }
-        //  else {
-        //   // Span is on the right side of the container
-        //   newSpanWidths[index] = clientX > spanCenter
-        //     ? Math.min(maxWdth, baseWdth + ((clientX - spanCenter) / containerWidth) * (maxWdth - baseWdth))
-        //     : Math.max(minWdth, baseWdth - ((spanCenter - clientX) / containerWidth) * (baseWdth - minWdth));
-        // }
-      });
-      setSpanWidths(newSpanWidths);
-      const widths = getCharacterWidths('ARTISTS');
-      const newWidth = widths.reduce((total, width) => total + width, 0)
-      setScaleX(containerWidth / newWidth);
-    }
+  useEffect(() => {
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.offsetWidth;
+        const spanElements = containerRef.current.querySelectorAll('.variable-word-letter');
+
+        const newSpanWidths = [...spanWidths];
+        var w = 0;
+
+        // Tính toán chiều rộng của từng span
+        spanElements.forEach((span, index) => {
+          var h = 200;
+          var x = 0.5
+          if (clientX === 0) {
+            h = 200;
+            x = 0.5
+            console.log(1);
+          } else {
+            var x = xPercent ? xPercent / 100 : 0.5;
+            var u = index / (spanElements.length - 1);
+            var l = 1 - Math.abs(u - x);
+            l *= l;
+            h = 400 * Math.min(1, l) + 10;
+            const startValue = 200;
+            const n = 0;
+            const e = 1;
+            const t = Math.min(1 - n, e);
+            h = lerp(startValue, h, t);
+          }
+          newSpanWidths[index] = h;
+          setSpanWidths(newSpanWidths);
+        });
+      
+        const widths = getCharacterWidths('ARTISTS');
+        const newWidth = widths.reduce((total, width) => total + width, 0);
+        setScaleX(containerWidth / newWidth);
+      }
   }, [clientX]);
 
   const getCharacterWidths = (text: string) => {
@@ -95,7 +100,6 @@ const ScaledDivs = () => {
         widths.push(charWidth);
       }
     }
-    console.log(widths);
     return widths;
   };
 
@@ -105,32 +109,31 @@ const ScaledDivs = () => {
   };
 
   const renderCharacters = (text: string) => {
-  const widths = getCharacterWidths(text);
-  let cumulativeWidth = 200;
+    const widths = getCharacterWidths(text);
+    let cumulativeWidth = 0;
 
-  // Tạo một mảng để lưu các thẻ span
-  const spanElements = text.split('').map((char, index) => {
-    const translateX = cumulativeWidth;
-    cumulativeWidth += widths[index];
+    const spanElements = text.split('').map((char, index) => {
+      const translateX = cumulativeWidth;
+      cumulativeWidth += widths[index];
 
-    return (
-      <span
-        key={index}
-        data-char={char}
-        className="variable-word-letter"
-        style={{
-          fontVariationSettings: `'wdth' ${spanWidths[index]}`,
-          transform: `translate3d(0px, 0px, 0px) scaleY(1) translateX(${translateX}px)`
-        }}
-      >
-        {char}
-      </span>
-    );
-  });
+      return (
+        <span
+          key={index}
+          ref={(el) => el && (spansRef.current[index] = el)}
+          data-char={char}
+          className="variable-word-letter"
+          style={{
+            fontVariationSettings: `'wdth' ${spanWidths[index]}`,
+            transform: `translate3d(0px, 0px, 0px) scaleY(1) translateX(${translateX}px)`
+          }}
+        >
+          {char}
+        </span>
+      );
+    });
+    return spanElements;
+  };
 
-  // Trả về mảng spanElements
-  return spanElements;
-};
 
 
   return (
@@ -147,7 +150,7 @@ const ScaledDivs = () => {
         className="absolute inset-x-0 top-0 variable-word w-full origin-top-left"
         style={{ transform: `translate3d(0px, ${bottomPx}px, 0px) scaleX(${containerWidth / getTotalWidth("DEPTS")}) scaleY(${bottomScaleY})` }}
       >
-        {renderCharacters("DEPTS")}
+        {/* {renderCharacters("DEPTS")} */}
       </div>
     </div>
   );

@@ -1,60 +1,35 @@
 "use client"
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useRef } from 'react';
+import useMousePosition from './useMousePosition'; // Cập nhật đường dẫn nếu cần
 
-const VariableWord: React.FC = () => {
-  const [mouseX, setMouseX] = useState<number>(0);
+const VariableWord: FC = () => {
+  const { x } = useMousePosition();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      setMouseX(event.clientX);
-    };
+    if (containerRef.current) {
+      const spans = containerRef.current.querySelectorAll('.variable-word-letter');
+      const containerWidth = containerRef.current.offsetWidth;
+      const maxVariation = 400; // Giá trị tối đa của font-variation-settings
+      const minVariation = 10;  // Giá trị tối thiểu của font-variation-settings
+      const centerX = containerWidth / 2;
 
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  // Get the width of the container
-  const containerWidth = 500; // Adjust based on your container width
-
-  // Calculate the font-variation-settings value based on mouseX
-  const calculateFontVariation = (index: number) => {
-    const spanWidth = containerWidth / 3; // Assuming 3 spans, adjust as needed
-    const center = containerWidth / 2;
-    const distance = Math.abs(mouseX - (index * spanWidth + spanWidth / 2));
-    const maxWidth = containerWidth / 3;
-    const minValue = 100; // Minimum font-variation-settings value
-    const maxValue = 400; // Maximum font-variation-settings value
-    const percentage = 1 - Math.min(distance / maxWidth, 1);
-    return minValue + (maxValue - minValue) * percentage;
-  };
+      spans.forEach(span => {
+        const spanX = span.getBoundingClientRect().left + span.clientWidth / 2;
+        const distanceFromCenter = Math.abs(centerX - spanX);
+        const maxDistance = containerWidth / 2;
+        const variation = Math.max(minVariation, maxVariation - (distanceFromCenter / maxDistance) * (maxVariation - minVariation));
+        (span as HTMLElement).style.fontVariationSettings = `'wdth' ${variation}`;
+      });
+    }
+  }, [x]);
 
   return (
-    <div className="variable-word">
+    <div className="variable-word text-[400px]" ref={containerRef}>
       <div className="variable-word-inner" style={{ opacity: 1, transform: 'translateY(0px) scaleY(1)' }}>
-        <span
-          data-char="A"
-          className="variable-word-letter"
-          style={{ fontVariationSettings: `wdth ${calculateFontVariation(0)}` }}
-        >
-          A
-        </span>
-        <span
-          data-char="R"
-          className="variable-word-letter"
-          style={{ fontVariationSettings: `wdth ${calculateFontVariation(1)}` }}
-        >
-          R
-        </span>
-        <span
-          data-char="T"
-          className="variable-word-letter"
-          style={{ fontVariationSettings: `wdth ${calculateFontVariation(2)}` }}
-        >
-          T
-        </span>
+        <span data-char="A" className="variable-word-letter" style={{ fontVariationSettings: 'wdth 200' }}>A</span>
+        <span data-char="R" className="variable-word-letter" style={{ fontVariationSettings: 'wdth 200' }}>R</span>
+        <span data-char="T" className="variable-word-letter" style={{ fontVariationSettings: 'wdth 200' }}>T</span>
       </div>
     </div>
   );
