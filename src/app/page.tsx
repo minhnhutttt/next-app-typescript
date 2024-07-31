@@ -7,8 +7,8 @@ import FullWidthSpans from "./components/VariableTextEffect";
 export default function Home() {
   return (
     <main>
-     {/* <ScaledDivs /> */}
-     <FullWidthSpans />
+     <ScaledDivs />
+     {/* <FullWidthSpans /> */}
     </main>
   );
 }

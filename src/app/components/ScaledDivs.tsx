@@ -23,6 +23,7 @@ const useMousePositionPercentage = () => {
 
 const ScaledDivs = () => {
   const { yPercent, clientX } = useMousePositionPercentage();
+  const [scaleX, setScaleX] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLSpanElement>(null);
@@ -39,11 +40,51 @@ const ScaledDivs = () => {
   const lineHeight = containerHeight / totalLines;
   const fontSize = lineHeight * (1 / 0.82);
 
+  const [spanWidths, setSpanWidths] = useState<number[]>([200, 200, 200, 200, 200, 200, 200]);
+
   useEffect(() => {
     if (measureRef.current) {
       measureRef.current.style.fontVariationSettings = "'wdth' 200";
     }
   }, []);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.offsetWidth;
+      const spanElements = containerRef.current.querySelectorAll('.variable-word-letter');
+      
+      const newSpanWidths = [...spanWidths];
+      
+      // Tính toán chiều rộng của từng span
+      spanElements.forEach((span, index) => {
+
+        const spanRect = span.getBoundingClientRect();
+        const spanCenter = (spanRect.left + spanRect.right) / 2;
+  
+        const minWdth = 10;
+        const maxWdth = 400;
+        const baseWdth = 200;
+        const containerCenter = containerWidth / 2;
+  
+        // if (spanCenter <= containerCenter) {
+        //   // Span is on the left side of the container
+        //   newSpanWidths[index] = clientX <= spanCenter
+        //     ? Math.min(maxWdth, baseWdth + ((spanCenter - clientX) / containerWidth) * (maxWdth - baseWdth))
+        //     : Math.max(minWdth, baseWdth - ((clientX - spanCenter) / containerWidth) * (baseWdth - minWdth));
+        // }
+        //  else {
+        //   // Span is on the right side of the container
+        //   newSpanWidths[index] = clientX > spanCenter
+        //     ? Math.min(maxWdth, baseWdth + ((clientX - spanCenter) / containerWidth) * (maxWdth - baseWdth))
+        //     : Math.max(minWdth, baseWdth - ((spanCenter - clientX) / containerWidth) * (baseWdth - minWdth));
+        // }
+      });
+      setSpanWidths(newSpanWidths);
+      const widths = getCharacterWidths('ARTISTS');
+      const newWidth = widths.reduce((total, width) => total + width, 0)
+      setScaleX(containerWidth / newWidth);
+    }
+  }, [clientX]);
 
   const getCharacterWidths = (text: string) => {
     const widths: number[] = [];
@@ -54,6 +95,7 @@ const ScaledDivs = () => {
         widths.push(charWidth);
       }
     }
+    console.log(widths);
     return widths;
   };
 
@@ -63,42 +105,42 @@ const ScaledDivs = () => {
   };
 
   const renderCharacters = (text: string) => {
-    const widths = getCharacterWidths(text);
-    let cumulativeWidth = 200;
+  const widths = getCharacterWidths(text);
+  let cumulativeWidth = 200;
 
-    return text.split('').map((char, index) => {
-      const translateX = cumulativeWidth;
-      cumulativeWidth += widths[index];
+  // Tạo một mảng để lưu các thẻ span
+  const spanElements = text.split('').map((char, index) => {
+    const translateX = cumulativeWidth;
+    cumulativeWidth += widths[index];
 
-      const charCenterX = translateX + (widths[index] / 2);
-      const distance = Math.abs(clientX - charCenterX);
-      const maxDistance = containerWidth / 2;
-      const variationValue = Math.max(10, 400 - (distance / maxDistance) * 390);
+    return (
+      <span
+        key={index}
+        data-char={char}
+        className="variable-word-letter"
+        style={{
+          fontVariationSettings: `'wdth' ${spanWidths[index]}`,
+          transform: `translate3d(0px, 0px, 0px) scaleY(1) translateX(${translateX}px)`
+        }}
+      >
+        {char}
+      </span>
+    );
+  });
 
-      return (
-        <span
-          key={index}
-          data-char={char}
-          className="variable-word-letter"
-          style={{
-            fontVariationSettings: `'wdth' ${variationValue}`,
-            transform: `translate3d(0px, 0px, 0px) scaleY(1) translateX(${translateX}px)`
-          }}
-        >
-          {char}
-        </span>
-      );
-    });
-  };
+  // Trả về mảng spanElements
+  return spanElements;
+};
+
 
   return (
     <div ref={containerRef} className="relative h-screen overflow-hidden" style={{ fontSize: fontSize + 'px', lineHeight: lineHeight + 'px' }}>
       <span ref={measureRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
       <div
         className="variable-word w-full origin-top-left"
-        style={{ transform: `translate3d(0px, 0px, 0px) scaleX(${containerWidth / getTotalWidth("ART")}) scaleY(${topScaleY})` }}
+        style={{ transform: `translate3d(0px, 0px, 0px) scaleX(${scaleX}) scaleY(${topScaleY})` }}
       >
-        {renderCharacters("ART")}
+        {renderCharacters("ARTISTS")}
       </div>
       <div
         ref={divRef}

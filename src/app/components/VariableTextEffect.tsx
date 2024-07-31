@@ -1,72 +1,63 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react';
-import useMousePosition from './useMousePosition'; // Điều chỉnh đường dẫn nếu cần
+import { useEffect, useState } from 'react';
 
-const FullWidthSpans: React.FC = () => {
-  const { x } = useMousePosition();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [spanWidths, setSpanWidths] = useState<number[]>([200, 200, 200, 200, 200]);
-  const [scaleX, setScaleX] = useState(1);
+const VariableWord: React.FC = () => {
+  const [mouseX, setMouseX] = useState<number>(0);
 
   useEffect(() => {
-    if (containerRef.current) {
-      const containerWidth = containerRef.current.offsetWidth;
-      const spanElements = containerRef.current.querySelectorAll('span');
-      
-      let totalSpanWidth = 0;
-      spanElements.forEach((span) => {
-        totalSpanWidth += span.offsetWidth;
-      });
+    const handleMouseMove = (event: MouseEvent) => {
+      setMouseX(event.clientX);
+    };
 
-      const newScaleX = containerWidth / totalSpanWidth;
-      setScaleX(newScaleX);
+    window.addEventListener('mousemove', handleMouseMove);
 
-      const newSpanWidths = [...spanWidths];
-      spanElements.forEach((span, index) => {
-        const spanRect = span.getBoundingClientRect();
-        const spanCenter = (spanRect.left + spanRect.right) / 2;
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
-        if (spanCenter < containerWidth / 2) {
-          // Span is on the left side of the container
-          if (x < spanCenter) {
-            newSpanWidths[index] = Math.min(400, 200 + ((spanCenter - x) / containerWidth) * 400);
-          } else {
-            newSpanWidths[index] = Math.max(100, 200 - ((x - spanCenter) / containerWidth) * 200);
-          }
-        } else {
-          // Span is on the right side of the container
-          if (x > spanCenter) {
-            newSpanWidths[index] = Math.min(400, 200 + ((x - spanCenter) / containerWidth) * 400);
-          } else {
-            newSpanWidths[index] = Math.max(100, 200 - ((spanCenter - x) / containerWidth) * 200);
-          }
-        }
-      });
+  // Get the width of the container
+  const containerWidth = 500; // Adjust based on your container width
 
-      setSpanWidths(newSpanWidths);
-    }
-  }, [x]);
+  // Calculate the font-variation-settings value based on mouseX
+  const calculateFontVariation = (index: number) => {
+    const spanWidth = containerWidth / 3; // Assuming 3 spans, adjust as needed
+    const center = containerWidth / 2;
+    const distance = Math.abs(mouseX - (index * spanWidth + spanWidth / 2));
+    const maxWidth = containerWidth / 3;
+    const minValue = 100; // Minimum font-variation-settings value
+    const maxValue = 400; // Maximum font-variation-settings value
+    const percentage = 1 - Math.min(distance / maxWidth, 1);
+    return minValue + (maxValue - minValue) * percentage;
+  };
 
   return (
-    <div 
-      ref={containerRef} 
-      className='text-[400px]'
-      style={{ 
-        display: 'flex', 
-        transform: `scaleX(${scaleX})`,
-        transformOrigin: 'left'
-      }}
-    >
-      {spanWidths.map((width, index) => (
-        <span 
-          key={index} 
-          style={{ fontVariationSettings: `"wdth" ${width}` }}
+    <div className="variable-word">
+      <div className="variable-word-inner" style={{ opacity: 1, transform: 'translateY(0px) scaleY(1)' }}>
+        <span
+          data-char="A"
+          className="variable-word-letter"
+          style={{ fontVariationSettings: `wdth ${calculateFontVariation(0)}` }}
         >
           A
         </span>
-      ))}
+        <span
+          data-char="R"
+          className="variable-word-letter"
+          style={{ fontVariationSettings: `wdth ${calculateFontVariation(1)}` }}
+        >
+          R
+        </span>
+        <span
+          data-char="T"
+          className="variable-word-letter"
+          style={{ fontVariationSettings: `wdth ${calculateFontVariation(2)}` }}
+        >
+          T
+        </span>
+      </div>
     </div>
   );
 };
 
-export default FullWidthSpans;
+export default VariableWord;
