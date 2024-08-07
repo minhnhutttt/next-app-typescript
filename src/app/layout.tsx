@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "./components/header";
+import Menu from "./components/menu";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +16,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="font-hiragino bg-[#F2F0E6] dark:bg-black">
+        <div className="flex">
+          <div className="flex sticky top-0 left-0 h-screen">
+            <div className="w-10 flex items-center pl-4 border-r border-[#989898] dark:border-white ">
+              <figure className="dark:hidden">
+                <img src="/assets/images/ardorex-blog-vertical.png" alt="" />
+              </figure>
+              <figure className="hidden dark:block">
+                <img src="/assets/images/ardorex-blog-vertical-dark.png" alt="" />
+              </figure>
+            </div>
+            <Menu />
+            <span className="w-[5px] bg-[linear-gradient(40deg,_rgba(248,183,76,1)_0%,_rgba(175,34,227,1)_65%,_rgba(200,200,141,1)_100%)]"></span>
+          </div>
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
