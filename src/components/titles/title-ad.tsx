@@ -1,7 +1,6 @@
 "use client"
 import { TitleProps } from '@/type';
 
-
 const TitleAD = ({ rect }: TitleProps) => {
 
   return (
