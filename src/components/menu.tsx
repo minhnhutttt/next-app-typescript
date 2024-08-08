@@ -13,7 +13,9 @@ import Link from 'next/link';
 const Menu = () => {
     const [NavOpen, setNavOpen] = useState(false);
     const pathname = usePathname();
-
+    const close = useCallback(() => {
+        setNavOpen(false);
+      }, []);
   return (
     <div className="md:mt-12 md:pt-5 w-full md:w-[250px]">
         <div className="px-2">
@@ -54,27 +56,27 @@ const Menu = () => {
                 <img className="hidden dark:block" src="/assets/images/ardorex-title-dark.png" alt="" />
             </p>
             <div className="max-md:pr-14">
-            <Link href="/ai" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            <Link onClick={close} href="/ai" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#FF5660] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/ai" && "!opacity-100"}`}></span>
                 <TitleAI rect="md:h-[11.5px] h-[13.5px]" />
             </Link>
-            <Link href="/blockchain" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            <Link onClick={close} href="/blockchain" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#E445AE] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/blockchain" && "!opacity-100"}`}></span>
                 <TitleBlockChain rect="md:h-[11.5px] h-[13.5px]" />
             </Link>
-            <Link href="/website" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            <Link onClick={close} href="/website" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#7940F3] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/website" && "!opacity-100"}`}></span>
                 <TitleWebSite rect="md:h-[11.5px] h-[13.5px]" />
             </Link>
-            <Link href="/ad" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            <Link onClick={close} href="/ad" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#153DCA] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/ad" && "!opacity-100"}`}></span>
                 <TitleAD rect="md:h-[11.5px] h-[13.5px]" />
             </Link>
-            <Link href="/marketing" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            <Link onClick={close} href="/marketing" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#1A8CBD] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/marketing" && "!opacity-100"}`}></span>
                 <TitleMarketing rect="md:h-[11.5px] h-[13.5px]" />
             </Link>
-            <Link href="/fx" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            <Link onClick={close} href="/fx" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#1ABD48] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/fx" && "!opacity-100"}`}></span>
                 <TitleFx rect="md:h-[11.5px] h-[13.5px]" />
             </Link>
