@@ -25,7 +25,7 @@ const Header = () => {
             <span className="max-md:hidden">{isNight ? 'Sun mode' : 'Night Shift'}</span>
             <span className="md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-              <g clip-path="url(#clip0_840_8559)">
+              <g clipPath="url(#clip0_840_8559)">
                 <path d="M8 0L10.4725 4.93759L16 5.73L12.0005 9.5731L12.944 15L8 12.4376L3.05601 15L4.00052 9.5731L0 5.73L5.52748 4.93759L8 0Z" fill="white"/>
               </g>
               <defs>

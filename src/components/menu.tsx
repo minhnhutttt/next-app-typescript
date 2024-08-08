@@ -13,11 +13,8 @@ const Menu = () => {
     const [NavOpen, setNavOpen] = useState(false);
     const pathname = usePathname();
 
-    const close = useCallback(() => {
-        setNavOpen(false);
-    }, []);
   return (
-    <div className="md:mt-12 md:pt-5 md:w-[250px]">
+    <div className="md:mt-12 md:pt-5 w-full md:w-[250px]">
         <div className="px-2">
             <div className="md:hidden">
                 <div className="px-2 pt-5 pb-4">
@@ -49,31 +46,43 @@ const Menu = () => {
         >
           <img src="/assets/images/maru.png" alt="" />
         </button>
-        <div className={`px-2 max-md:fixed max-md:right-0 max-md:top-1/2 max-md:-translate-y-1/2 max-md:h-screen max-md:max-h-[85%] max-md:max-w-[85%] max-md:w-full max-md:rounded-[25px] max-md:rounded-r-none z-[99] max-md:overflow-y-scroll max-md:bg-[#F2F0E6]/[0.98] max-md:border max-md:border-[#797979] ${NavOpen ? "" : "max-md:invisible max-md:opacity-0"}`}>
-            <a href="/" className="flex items-center h-12 px-2 relative border-b border-black/30 duration-150 hover:opacity-75">
-                <span className={`h-12 bg-[#FF5660] w-[5px] absolute top-0 -left-[13px] opacity-0 ${pathname === "/" && "!opacity-100"}`}></span>
-                <TitleAI rect="h-[11.5px]" />
+        <div onClick={() => setNavOpen((prev) => !prev)} className={`fixed inset-0 z-[99] ${NavOpen ? "" : "hidden"}`}></div>
+        <div className={`md:px-2 max-md:fixed max-md:right-0 max-md:top-1/2 max-md:-translate-y-1/2 max-md:max-h-[90%] max-md:max-w-[85%] max-md:w-full max-md:rounded-[25px] max-md:rounded-r-none z-[99] max-md:overflow-y-scroll max-md:bg-[#F2F0E6]/[0.98] dark:bg-black/[0.98] max-md:border max-md:border-[#797979] ${NavOpen ? "" : "max-md:invisible max-md:opacity-0"}`}>
+            <p className="md:hidden pt-6 pb-[18px] px-[18px] border-b-4 border-[#464646] dark:border-[#C6C6C6]">
+                <img className="dark:hidden" src="/assets/images/ardorex-title.png" alt="" />
+                <img className="hidden dark:block" src="/assets/images/ardorex-title-dark.png" alt="" />
+            </p>
+            <div className="max-md:pr-14">
+            <a href="/ai" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+                <span className={`h-full bg-[#FF5660] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/ai" && "!opacity-100"}`}></span>
+                <TitleAI rect="md:h-[11.5px] h-[13.5px]" />
             </a>
-            <a href="/" className="flex items-center h-12 px-2 relative border-b border-black/30 duration-150 hover:opacity-75">
-                <span className={`h-12 bg-[#E445AE] w-[5px] absolute top-0 -left-[13px] opacity-0 ${pathname === "/" && "!opacity-100"}`}></span>
-                <TitleBlockChain rect="h-[11.5px]" />
+            <a href="/blockchain" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+                <span className={`h-full bg-[#E445AE] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/blockchain" && "!opacity-100"}`}></span>
+                <TitleBlockChain rect="md:h-[11.5px] h-[13.5px]" />
             </a>
-            <a href="/" className="flex items-center h-12 px-2 relative border-b border-black/30 duration-150 hover:opacity-75">
-                <span className={`h-12 bg-[#7940F3] w-[5px] absolute top-0 -left-[13px] opacity-0 ${pathname === "/" && "!opacity-100"}`}></span>
-                <TitleWebSite rect="h-[11.5px]" />
+            <a href="/website" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+                <span className={`h-full bg-[#7940F3] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/website" && "!opacity-100"}`}></span>
+                <TitleWebSite rect="md:h-[11.5px] h-[13.5px]" />
             </a>
-            <a href="/" className="flex items-center h-12 px-2 relative border-b border-black/30 duration-150 hover:opacity-75">
-                <span className={`h-12 bg-[#153DCA] w-[5px] absolute top-0 -left-[13px] opacity-0 ${pathname === "/" && "!opacity-100"}`}></span>
-                <TitleAD rect="h-[11.5px]" />
+            <a href="/ad" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+                <span className={`h-full bg-[#153DCA] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/ad" && "!opacity-100"}`}></span>
+                <TitleAD rect="md:h-[11.5px] h-[13.5px]" />
             </a>
-            <a href="/" className="flex items-center h-12 px-2 relative border-b border-black/30 duration-150 hover:opacity-75">
-                <span className={`h-12 bg-[#1A8CBD] w-[5px] absolute top-0 -left-[13px] opacity-0 ${pathname === "/" && "!opacity-100"}`}></span>
-                <TitleMarketing rect="h-[11.5px]" />
+            <a href="/marketing" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+                <span className={`h-full bg-[#1A8CBD] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/marketing" && "!opacity-100"}`}></span>
+                <TitleMarketing rect="md:h-[11.5px] h-[13.5px]" />
             </a>
-            <a href="/" className="flex items-center h-12 px-2 relative border-b border-black/30 duration-150 hover:opacity-75">
-                <span className={`h-12 bg-[#1ABD48] w-[5px] absolute top-0 -left-[13px] opacity-0 ${pathname === "/" && "!opacity-100"}`}></span>
-                <TitleFx rect="h-[11.5px]" />
+            <a href="/fx" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+                <span className={`h-full bg-[#1ABD48] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/fx" && "!opacity-100"}`}></span>
+                <TitleFx rect="md:h-[11.5px] h-[13.5px]" />
             </a>
+            </div>
+            <div className="absolute md:hidden right-5 bottom-8">
+                <img className="dark:hidden" src="/assets/images/content-menu.png" alt="" />
+                <img className="hidden dark:block" src="/assets/images/content-menu-dark.png" alt="" />
+            </div>
+            <div className="md:hidden top-0 right-0 bottom-0 absolute w-2.5 bg-[linear-gradient(180deg,_#F4963A_0%,_#C5329D_37%,_#AD22E9_80%)]"></div>
         </div>
     </div>
   );
