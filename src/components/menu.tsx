@@ -8,6 +8,7 @@ import TitleWebSite from './titles/title-web-site';
 import TitleAD from './titles/title-ad';
 import TitleMarketing from './titles/title-marketing';
 import TitleFx from './titles/title-fx';
+import Link from 'next/link';
 
 const Menu = () => {
     const [NavOpen, setNavOpen] = useState(false);
@@ -18,10 +19,10 @@ const Menu = () => {
         <div className="px-2">
             <div className="md:hidden">
                 <div className="px-2 pt-5 pb-4">
-                    <h2>
+                    <a href='/'>
                         <img className="dark:hidden" src="/assets/images/logo-sp.png" alt="" />
                         <img className="hidden dark:block" src="/assets/images/logo-sp-dark.png" alt="" />
-                    </h2>
+                    </a>
                 </div>
                 <span className="block h-0.5 bg-[#464646] dark:bg-[#C6C6C6]"></span>
             </div>
@@ -30,10 +31,10 @@ const Menu = () => {
             </div>
             <div className="max-md:hidden">
                 <div className="px-2 pt-5 pb-2.5">
-                    <h2>
+                    <a href='/'>
                         <img className="dark:hidden" src="/assets/images/ardorex-title.png" alt="" />
                         <img className="hidden dark:block" src="/assets/images/ardorex-title-dark.png" alt="" />
-                    </h2>
+                    </a>
                 </div>
                 <span className="block h-1 bg-[#464646] dark:bg-[#C6C6C6]"></span>
             </div>
@@ -53,30 +54,30 @@ const Menu = () => {
                 <img className="hidden dark:block" src="/assets/images/ardorex-title-dark.png" alt="" />
             </p>
             <div className="max-md:pr-14">
-            <a href="/ai" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            <Link href="/ai" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#FF5660] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/ai" && "!opacity-100"}`}></span>
                 <TitleAI rect="md:h-[11.5px] h-[13.5px]" />
-            </a>
-            <a href="/blockchain" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            </Link>
+            <Link href="/blockchain" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#E445AE] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/blockchain" && "!opacity-100"}`}></span>
                 <TitleBlockChain rect="md:h-[11.5px] h-[13.5px]" />
-            </a>
-            <a href="/website" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            </Link>
+            <Link href="/website" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#7940F3] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/website" && "!opacity-100"}`}></span>
                 <TitleWebSite rect="md:h-[11.5px] h-[13.5px]" />
-            </a>
-            <a href="/ad" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            </Link>
+            <Link href="/ad" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#153DCA] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/ad" && "!opacity-100"}`}></span>
                 <TitleAD rect="md:h-[11.5px] h-[13.5px]" />
-            </a>
-            <a href="/marketing" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            </Link>
+            <Link href="/marketing" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#1A8CBD] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/marketing" && "!opacity-100"}`}></span>
                 <TitleMarketing rect="md:h-[11.5px] h-[13.5px]" />
-            </a>
-            <a href="/fx" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            </Link>
+            <Link href="/fx" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#1ABD48] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/fx" && "!opacity-100"}`}></span>
                 <TitleFx rect="md:h-[11.5px] h-[13.5px]" />
-            </a>
+            </Link>
             </div>
             <div className="absolute md:hidden right-5 bottom-8">
                 <img className="dark:hidden" src="/assets/images/content-menu.png" alt="" />
