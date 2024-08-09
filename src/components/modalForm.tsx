@@ -238,7 +238,7 @@ const ModalForm = () => {
                         </span>
                       </p>
                       <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
-                        ＼一番人気／先着50名様で締切メモリアルモニタープランに申し込む
+                        ＼一番人気／先着50名様で締切<br />メモリアルモニタープランに申し込む
                       </p>
                     </label>
                     <label htmlFor="plan2" className="flex items-center gap-3">
