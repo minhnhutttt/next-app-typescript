@@ -1,4 +1,5 @@
 "use client"
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import BarCode from "@/components/barcode";
 import LogoDots from "@/components/logo-dots";
 import Modal from "@/components/modal";
@@ -6,15 +7,16 @@ import TitleWebSite from "@/components/titles/title-web-site";
 import { useState } from "react";
 
 export default function Home() {
+    const ref = useScrollAnimations();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
   return (
     <main>
-      <div className="relative">
+      <div ref={ref} className="relative">
         <div className="flex">
-            <div className="flex-1 pb-[324px] pt-6 px-4">
+            <div className="fade-up flex-1 pb-[324px] pt-6 px-4">
                 <div className="px-3 pb-2 border-b border-black/30 dark:border-white/30">
                     <h3 className="md:text-[21px] text-[19px] font-semibold leading-snug dark:text-white">
                         イーロン・マスクが中国を訪問しても、テスラにとっての <br />
@@ -68,7 +70,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="max-xl:hidden w-[295px] bg-[#E4E7F3] dark:bg-[#9C89D2]/[0.68] border-l border-[#A06778] dark:border-white flex flex-col justify-between">
-                <div className="px-3 pt-6">
+                <div className="fade-up px-3 pt-6">
                     <figure className="pb-7">
                         <img className="dark:hidden" src="/assets/images/annotation.png" alt="" />
                         <img className="dark:block hidden" src="/assets/images/annotation-dark.png" alt="" />

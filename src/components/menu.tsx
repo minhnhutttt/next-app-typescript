@@ -50,7 +50,7 @@ const Menu = () => {
           <img src="/assets/images/maru.png" alt="" />
         </button>
         <div onClick={() => setNavOpen((prev) => !prev)} className={`fixed inset-0 z-[99] ${NavOpen ? "" : "hidden"}`}></div>
-        <div className={`md:px-2 max-md:fixed max-md:right-0 max-md:top-1/2 max-md:-translate-y-1/2 max-md:max-h-[90%] max-md:max-w-[85%] max-md:w-full max-md:rounded-[25px] max-md:rounded-r-none z-[99] max-md:overflow-y-scroll max-md:bg-[#F2F0E6]/[0.98] dark:bg-black/[0.98] max-md:border max-md:border-[#797979] ${NavOpen ? "" : "max-md:invisible max-md:opacity-0"}`}>
+        <div className={`md:px-2 max-md:fixed max-md:right-0 max-md:top-1/2 max-md:-translate-y-1/2 max-md:max-h-[90%] max-md:max-w-[85%] max-md:w-full max-md:rounded-[25px] max-md:rounded-r-none z-[99] max-md:overflow-y-scroll max-md:bg-[#F2F0E6]/[0.98] dark:bg-black/[0.98] max-md:border duration-300 max-md:border-[#797979] ${NavOpen ? "max-md:translate-x-0" : "max-md:invisible max-md:opacity-0 max-md:translate-x-full"}`}>
             <p className="md:hidden pt-6 pb-[18px] px-[18px] border-b-4 border-[#464646] dark:border-[#C6C6C6]">
                 <img className="dark:hidden" src="/assets/images/ardorex-title.png" alt="" />
                 <img className="hidden dark:block" src="/assets/images/ardorex-title-dark.png" alt="" />
