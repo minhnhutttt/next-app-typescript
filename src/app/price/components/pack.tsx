@@ -21,8 +21,8 @@ const Pack = () => {
                 メタバース供養所 初期費用
               </p>
               <p className="text-center text-[20px] font-extrabold md:text-[34px]">
-                定価 <span className="text-[32px] md:text-[48px]">250,000</span>{' '}
-                円 <span className="text-[16px] md:text-[26px]">(税抜）</span>
+                定価 <span className="text-[32px] md:text-[48px]">265,000</span>
+                円 <span className="text-[16px] md:text-[26px]">(税込）</span>
               </p>
               <figure className="mt-3 flex items-center justify-center">
                 <img src="/assets/images/price/pack-banner-01.png" alt="" />
@@ -42,8 +42,8 @@ const Pack = () => {
                 2Dアバター制作費用
               </p>
               <p className="text-center text-[20px] font-extrabold md:text-[34px]">
-                定価 <span className="text-[32px] md:text-[48px]">50,000</span>{' '}
-                円 <span className="text-[16px] md:text-[26px]">(税抜）</span>
+                定価 <span className="text-[32px] md:text-[48px]">55,000</span>
+                円 <span className="text-[16px] md:text-[26px]">(税込）</span>
               </p>
               <figure className="mt-3 flex items-center justify-center">
                 <img src="/assets/images/price/pack-banner-02.png" alt="" />
@@ -71,7 +71,7 @@ const Pack = () => {
               <p className="text-center text-[13px] font-bold leading-loose md:text-[16px]">
                 ※5つのアイテムからお選びいただけます。
                 <br />
-                (2万円相当)
+                (2.2万円相当)
               </p>
             </div>
           </div>
@@ -93,7 +93,7 @@ const Pack = () => {
                 カスタマイズ権
               </p>
               <p className="text-center text-[13px] font-bold leading-loose md:text-[16px]">
-                (3万円相当)
+              (3.3万円相当)
               </p>
             </div>
           </div>
@@ -116,7 +116,7 @@ const Pack = () => {
                 </span>
               </p>
               <p className="text-center text-[13px] font-bold leading-loose md:text-[16px]">
-              (6万円相当)
+              (6.6万円相当)
               </p>
             </div>
           </div>
@@ -207,7 +207,7 @@ const Pack = () => {
                 <span className="text-[18px] text-black md:text-[24px]">
                   通常
                 </span>
-                <span className="text-black">5,000円</span>
+                <span className="text-black">5,500円</span>
                 <span className="text-[18px] text-black md:text-[24px]">
                   (税抜)
                 </span>
@@ -234,7 +234,7 @@ const Pack = () => {
                 <span className="text-[18px] text-black md:text-[24px]">
                   通常
                 </span>
-                <span className="text-black">5,000円</span>
+                <span className="text-black">5,500円</span>
                 <span className="text-[18px] text-black md:text-[24px]">
                   (税抜)
                 </span>
@@ -285,7 +285,7 @@ const Pack = () => {
                   <span className="text-[18px] md:text-[24px]">
                     (対面/Web)通常
                   </span>
-                  5,000円
+                  5,500円
                   <span className="text-[18px] md:text-[24px]">(税抜)</span>
                 </span>
                 <span className="text-[#9C37DF]">▶️</span>無料
@@ -343,11 +343,11 @@ const Pack = () => {
                 <span className="text-[18px] md:text-[24px]">
                   初期費用<span className="text-black">通常</span>
                 </span>
-                <span className="text-black">60,000円</span>
+                <span className="text-black">66,000円</span>
                 <span className="text-[18px] text-black md:text-[24px]">
                   (税抜)
                 </span>
-                <span className="text-[#9C37DF]">▶️</span>2万円オフ
+                <span className="text-[#9C37DF]">▶️</span>2.2万円オフ
                 <span className="text-[18px] text-black md:text-[24px]">
                   クーポンご進呈
                 </span>

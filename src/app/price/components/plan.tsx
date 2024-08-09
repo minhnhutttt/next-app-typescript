@@ -60,15 +60,15 @@ const Plan = () => {
             </div>
             <div className="bg-white px-6 pb-6 pt-4 md:px-9 md:pb-10 md:pt-6">
               <p className="border-b border-[#001C80] text-center text-[18px] font-bold md:text-[24px]">
-                <span><span className="text-[30px] md:text-[58px]">90,000</span>
-                円(税抜)</span>
-                <span className="block text-center md:text-[16px] text-[14px] font-normal text-black">※税込99,000円となります。</span>
+                <span><span className="text-[30px] md:text-[58px]">99,000</span>
+                円(税込)</span>
+                <span className="block text-center md:text-[16px] text-[14px] font-normal text-black">※定価90,000円＋消費税</span>
               </p>
               <div className="my-6 space-y-7 text-[13px] md:my-8 md:space-y-9 md:text-[16px]">
                 <Item>メタバース内のお墓(4種類から選べるようになりました)</Item>
                 <Item>2Dペットアバター制作(1枚以上の写真データが必要です)</Item>
                 <Item>
-                AI僧侶による法要(年に2回実施、以降は2万円/回)
+                AI僧侶による法要(年に2回実施、以降は2.2万円/回)
                 </Item>
               </div>
               <div className="flex justify-center">
@@ -106,15 +106,15 @@ const Plan = () => {
             </div>
             <div className="bg-white px-6 pb-8 pt-4 md:px-[45px] md:pb-12 md:pt-6">
               <p className="border-b border-[#001C80] text-center text-[18px] font-bold text-[#F59F3A] md:text-[24px]">
-                <span><span className="text-[30px] md:text-[58px]">180,000</span>
-                円(税抜)</span>
-                <span className="block text-center md:text-[16px] text-[14px] font-normal text-black">※税込198,000円となります。</span>
+                <span><span className="text-[30px] md:text-[58px]">198,000</span>
+                円(税込)</span>
+                <span className="block text-center md:text-[16px] text-[14px] font-normal text-black">※定価180,000円＋消費税</span>
               </p>
               <div className="my-6 space-y-7 text-[13px] md:my-8 md:space-y-[21px] md:text-[16px]">
                 <Item>メタバース内のお墓(4種類から選べるようになりました)</Item>
                 <Item>2Dペットアバター制作(1枚以上の写真データが必要です)</Item>
                 <Item>
-                  AI僧侶による法要(年に2回実施、以降は2万円/回)
+                AI僧侶による法要(年に2回実施、以降は2.2万円/回)
                 </Item>
                 <Item>AI僧侶による毎月の個別法要(初年度無料で毎月実施いたします)</Item>
                 <Item>
@@ -173,15 +173,15 @@ const Plan = () => {
             </div>
             <div className="bg-white px-6 pb-6 pt-4 md:px-9 md:pb-10 md:pt-6">
               <p className="border-b border-[#001C80] text-center text-[18px] font-bold md:text-[24px]">
-                <span><span className="text-[30px] md:text-[58px]">300,000</span>
-                円(税抜)</span>
-                <span className="block text-center md:text-[16px] text-[14px] font-normal text-black">※税込330,000円となります。</span>
+                <span><span className="text-[30px] md:text-[58px]">330,000</span>
+                円(税込)</span>
+                <span className="block text-center md:text-[16px] text-[14px] font-normal text-black">※定価300,000円＋消費税</span>
               </p>
               <div className="my-6 space-y-5 text-[13px] md:my-8 md:space-y-[21px] md:text-[16px]">
                 <Item>メタバース内のお墓(4種類から選べるようになりました)</Item>
                 <Item>2Dペットアバター制作(1枚以上の写真データが必要です)</Item>
                 <Item>
-                  AI僧侶による法要(指定日に一度のみ、2回目以降は2万円/回)
+                AI僧侶による法要(指定日に一度のみ、2回目以降は2.2万円/回)
                 </Item>
                 <Item>
                   ペットとの個別空間構築(ペットオーナー様ごとのプライベートな供養場所)
@@ -233,9 +233,9 @@ const Plan = () => {
               現実の供養所のオプションをご希望の方は、お申し込み完了後スタッフにお伝えください。
             </p>
             <p className="text-[13px] font-medium md:text-[16px]">
-              ※初期費用60,000円が別途必要です。メモリアルモニター特典の2万円オフクーポンが利用可能です。
+              ※初期費用66,000円（税込）が別途必要です。特典の2.2万円オフクーポンが利用可能です。
               <br />
-              ※棚級により年会費が別途50,000円〜30,000円必要です。
+              ※棚級により年会費が別途55,000円〜33,000円（税込）必要です。
               <br />
               ※現実の供養所は株式会社んみゃーちにより運営されています。
             </p>
