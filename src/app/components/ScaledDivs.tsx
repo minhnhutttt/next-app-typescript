@@ -7,6 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.config({
   nullTargetWarn: false,
 });
+
+
 const useMousePositionPercentage = (
   containerRef: React.RefObject<HTMLDivElement>,
   rotate: boolean
@@ -102,7 +104,12 @@ const useMousePositionPercentage = (
   return { position, resetPosition };
 };
 
-
+const isMobile = (): boolean => {
+  if (typeof window !== "undefined") {
+    return window.innerWidth < 768;
+  }
+  return false;
+};
 interface ScaledDivsProps {
   rotate?: boolean;
 }
@@ -160,6 +167,19 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
     });
 
   };
+
+  useEffect(() => {
+    setRotate(isMobile());
+    const handleResize = () => {
+      setRotate(isMobile());
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     if (measureRef.current) {
@@ -276,7 +296,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
       };
       updateSpanWidths('ROGYX', 0);
     }
-  }, [position.clientX, containerWidth, position.xPercent, rotate, position.xPercentRotate, getCharacterWidths, rotating, containerRotateWidth, getCharacterWidthsRotate]);
+  }, [position.clientX, containerWidth, position.xPercent, rotate, position.xPercentRotate, getCharacterWidths, rotating, containerRotateWidth, getCharacterWidthsRotate, updateContainerDimensions]);
 
   const renderCharacters = useCallback((text: string, widths: number[]) => {
     const charWidths = getCharacterWidths(text, widths);
