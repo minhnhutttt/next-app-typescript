@@ -115,6 +115,7 @@ interface ScaledDivsProps {
 }
 
 const ScaledDivs: React.FC<ScaledDivsProps> = () => {
+  const [isMobileView, setIsMobileView] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerRotateRef = useRef<HTMLDivElement>(null);
   const [rotate, setRotate] = useState(false);
@@ -151,7 +152,21 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   }, []);
 
   const handleClick = () => {
-
+    if (rotate) {
+    gsap.to(divRef.current, {
+      width: "100vw",
+      height: "30vh",
+      rotate: 360,
+      onStart: () => {
+        setRotating(true);
+      },
+      onComplete: () => {
+        setRotate(!rotate);
+        setRotating(false);
+        resetPosition();
+      },
+    });
+  } else {
     gsap.to(divRef.current, {
       width: "100vh",
       height: "30vw",
@@ -165,13 +180,16 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
         resetPosition();
       },
     });
+  }
 
   };
 
   useEffect(() => {
+    setIsMobileView(isMobile());
     setRotate(isMobile());
     const handleResize = () => {
       setRotate(isMobile());
+      setIsMobileView(isMobile());
     };
 
     window.addEventListener("resize", handleResize);
@@ -214,11 +232,15 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
       if (measureRotateRef.current) {
         measureRotateRef.current.style.fontVariationSettings = `'wdth' 200}`;
         measureRotateRef.current.innerText = char;
+        if (isMobileView) {
+          charWidths.push(measureRotateRef.current.getBoundingClientRect().width);
+        } else {
           charWidths.push(measureRotateRef.current.getBoundingClientRect().height);
+        }
       }
     });
     return charWidths;
-  }, []);
+  }, [isMobileView]);
 
   const updateContainerDimensions = useCallback(() => {
     if (containerRef.current) {
@@ -242,7 +264,6 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
 
   useEffect(() => {
     if (containerRef.current) {
-
       const updateSpanWidths = (text: string, index: number) => {
         const spanElements = containerRef.current!.querySelectorAll(`.variable-word-${index + 1} .variable-word-letter`);
         const newSpanWidths = Array.from(spanElements).map((_, i) => {
@@ -261,7 +282,6 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
               width = lerp(200, 400 * Math.min(1, l) + 10, 1);
             }
           }
-
           return width;
         });
 
@@ -288,15 +308,15 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
 
         setScaleX(prev => {
           const updated = [...prev];
-          updated[index] = containerRotateWidth / totalWidth;
-
+            updated[index] = containerRotateWidth / totalWidth;
           return updated;
         });
+
         }
       };
       updateSpanWidths('ROGYX', 0);
     }
-  }, [position.clientX, containerWidth, position.xPercent, rotate, position.xPercentRotate, getCharacterWidths, rotating, containerRotateWidth, getCharacterWidthsRotate, updateContainerDimensions]);
+  }, [position.clientX, containerWidth, position.xPercent, rotate, position.xPercentRotate, getCharacterWidths, rotating, containerRotateWidth, containerRotateHeight,getCharacterWidthsRotate, updateContainerDimensions]);
 
   const renderCharacters = useCallback((text: string, widths: number[]) => {
     const charWidths = getCharacterWidths(text, widths);
@@ -326,7 +346,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
 
   return (
     <div className="relative flex items-center justify-start h-screen overflow-hidden">
-      <div ref={divRef} className="absolute w-full h-screen origin-[15vw] top-[0vw] max-md:w-[100svh] max-md:h-[100lvw] max-md:inset-0 max-md:origin-[50vw] max-md:rotate-90" onClick={handleClick}>
+      <div ref={divRef} className="absolute w-full h-screen md:origin-[15vw] max-md:bottom-0 top-0 max-md:w-[100svh] max-md:h-[100lvw] max-md:origin-[50vw] max-md:rotate-90" onClick={handleClick}>
       <div
         ref={containerRef}
         className="relative h-full w-full overflow-hidden"
@@ -346,7 +366,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
       </div>
       <div
         ref={containerRotateRef}
-        className="h-[30vw] w-[100vh] top-0 rotate-[-270deg] overflow-hidden absolute opacity-0 -z-10"
+        className="md:h-[30vw] md:w-[100vh] md:top-0 md:rotate-[-270deg] overflow-hidden absolute opacity-0 -z-10 max-md:w-[100vw] max-md:h-[30vh] rotate-[360deg]"
         style={{
           fontSize: `${fontSizeRoteta}px`,
           lineHeight: `${lineHeightRoteta}px`,
