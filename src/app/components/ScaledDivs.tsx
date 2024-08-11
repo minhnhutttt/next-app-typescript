@@ -117,20 +117,21 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   const measureRotateRef = useRef<HTMLSpanElement>(null);
 
   const totalLines = 1;
-  const [scaleX, setScaleX] = useState([1, 1]);
+  const [scaleX, setScaleX] = useState([1]);
+  const [containerHeight, setContainerHeight] = useState<number>(0);
+  const [containerWidth, setContainerWidth] = useState<number>(0);
+  const [containerRotateHeight, setContainerRotateHeight] = useState<number>(0);
+  const [containerRotateWidth, setContainerRotateWidth] = useState<number>(0);
 
-  const containerHeight = containerRef.current?.clientHeight ?? 0;
-  const containerWidth = containerRef.current?.clientWidth ?? 0;
   const lineHeight = containerHeight / totalLines;
   const fontSize = lineHeight / 0.77;
 
   const containerRotetaHeight = containerRotateRef.current?.clientHeight ?? 0;
-  const containerRotateWidth = containerRotateRef.current?.clientWidth ?? 0;
   const lineHeightRoteta = containerRotetaHeight / totalLines;
   const fontSizeRoteta = lineHeightRoteta / 0.77;
   const [rotating, setRotating] = useState<boolean>(false)
 
-  const [spanWidths, setSpanWidths] = useState<number[][]>([[], []]);
+  const [spanWidths, setSpanWidths] = useState<number[][]>([[]]);
 
   const divRef = useRef(null);
 
@@ -152,7 +153,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
         setRotating(true);
       },
       onComplete: () => {
-        setRotate(true);
+        setRotate(!rotate);
         setRotating(false);
         resetPosition();
       },
@@ -198,6 +199,26 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
     });
     return charWidths;
   }, []);
+
+  const updateContainerDimensions = useCallback(() => {
+    if (containerRef.current) {
+      setContainerHeight(containerRef.current.clientHeight);
+      setContainerWidth(containerRef.current.clientWidth);
+    }
+    if (containerRotateRef.current) {
+      setContainerRotateHeight(containerRotateRef.current.clientHeight);
+      setContainerRotateWidth(containerRotateRef.current.clientWidth);
+    }
+  }, []);
+
+  useEffect(() => {
+    updateContainerDimensions();
+    window.addEventListener('resize', updateContainerDimensions);
+
+    return () => {
+      window.removeEventListener('resize', updateContainerDimensions);
+    };
+  }, [updateContainerDimensions, rotating]);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -285,7 +306,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
 
   return (
     <div className="relative flex items-center justify-start h-screen overflow-hidden">
-      <div ref={divRef} className="absolute w-full h-screen origin-[15vw] top-[0vw]" onClick={handleClick}>
+      <div ref={divRef} className="absolute w-full h-screen origin-[15vw] top-[0vw] max-md:w-[100svh] max-md:h-[100lvw] max-md:inset-0 max-md:origin-[50vw] max-md:rotate-90" onClick={handleClick}>
       <div
         ref={containerRef}
         className="relative h-full w-full overflow-hidden"
