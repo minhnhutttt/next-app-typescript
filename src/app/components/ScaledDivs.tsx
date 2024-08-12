@@ -118,11 +118,14 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   const [isMobileView, setIsMobileView] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerRotateRef = useRef<HTMLDivElement>(null);
+  const containerHoriRef = useRef<HTMLDivElement>(null);
+  
   const [rotate, setRotate] = useState(false);
   const { position, resetPosition } = useMousePositionPercentage(containerRef, rotate);
   const spansRef = useRef<HTMLSpanElement[]>([]);
   const measureRef = useRef<HTMLSpanElement>(null);
   const measureRotateRef = useRef<HTMLSpanElement>(null);
+  const measureHoriRef = useRef<HTMLSpanElement>(null);
 
   const totalLines = 1;
   const [scaleX, setScaleX] = useState([1]);
@@ -130,57 +133,166 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const [containerRotateHeight, setContainerRotateHeight] = useState<number>(0);
   const [containerRotateWidth, setContainerRotateWidth] = useState<number>(0);
+  const [containerHoriHeight, setContainerHoriHeight] = useState<number>(0);
+  const [containerHoriWidth, setContainerHoriWidth] = useState<number>(0);
 
   const lineHeight = containerHeight / totalLines;
   const fontSize = lineHeight / 0.77;
 
-  const containerRotetaHeight = containerRotateRef.current?.clientHeight ?? 0;
-  const lineHeightRoteta = containerRotetaHeight / totalLines;
+  const containerRotateHeightBase = containerRotateRef.current?.clientHeight ?? 0;
+  const lineHeightRoteta = containerRotateHeightBase / totalLines;
   const fontSizeRoteta = lineHeightRoteta / 0.77;
+
+
+  const containerHoriHeightBase = containerHoriRef.current?.clientHeight ?? 0;
+  const lineHeightHori = containerHoriHeightBase / totalLines;
+  const fontSizeHori = lineHeightHori / 0.77;
   const [rotating, setRotating] = useState<boolean>(false)
 
   const [spanWidths, setSpanWidths] = useState<number[][]>([[]]);
 
   const divRef = useRef(null);
-
+  const textRef = useRef<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      // Bạn có thể thêm các animation khác tại đây nếu cần.
+      
     });
 
     return () => ctx.revert();
   }, []);
 
+  // useEffect(() => {
+  //   const boxes = gsap.utils.toArray<HTMLElement>(".box");
+  //   const duration = 16;
+  //   const gap = 1; 
+  //   const step = duration / boxes.length - gap;
+  //   const gapPosition = "+=" + gap;
+
+  //   gsap.set(".box", {
+  //     y: (i: number) => i * 80,
+  //   });
+
+  //   gsap.to(".box", {
+  //     y: "-=960",
+  //     duration: duration,
+  //     ease: "none",
+  //   });
+
+  //   const tl = gsap.timeline({
+  //     defaults: {
+  //       duration: step,
+  //       ease: "none",
+  //     },
+  //   });
+
+  //   boxes.forEach((box, i) => {
+  //     if (boxes[i + 1]) {
+  //       tl.to(box, { opacity: "0.3", scale: 0.5 }, gapPosition).to(
+  //         boxes[i + 1],
+  //         { opacity: "1", scale: 1 },
+  //         "<"
+  //       );
+  //     }
+  //   });
+  // }, []);
+
   const handleClick = () => {
-    if (rotate) {
-    gsap.to(divRef.current, {
-      width: "100vw",
-      height: "30vh",
-      rotate: 360,
-      onStart: () => {
-        setRotating(true);
-      },
-      onComplete: () => {
-        setRotate(!rotate);
-        setRotating(false);
-        resetPosition();
+    const tl = gsap.timeline();
+    if (!isMobileView) {
+      if (rotate) {
+        tl.to(divRef.current, {
+        width: "100vw",
+        height: "100vh",
+        rotate: 0,
+        onStart: () => {
+          setRotating(true);
+        },
+        onComplete: () => {
+          setRotate(!rotate);
+          setRotating(false);
+          resetPosition();
+        },
+      });
+      } else {
+      tl.to(divRef.current, {
+        width: "100vh",
+        height: "30vw",
+        rotate: -270,
+        onStart: () => {
+          setRotating(true);
+        },
+        onComplete: () => {
+          setRotate(!rotate);
+          setRotating(false);
+          resetPosition();
+        },
+      });
+      }
+    } else {
+      if (rotate) {
+        tl.to(divRef.current, {
+        width: "100vw",
+        height: "30vh",
+        rotate: -360,
+        onStart: () => {
+          setRotating(true);
+        },
+        onComplete: () => {
+          setRotate(!rotate);
+          setRotating(false);
+          resetPosition();
+        },
+      });
+      } else {
+      tl.to(divRef.current, {
+        width: "100vh",
+        height: "100vw",
+        rotate: 90,
+        onStart: () => {
+          setRotating(true);
+        },
+        onComplete: () => {
+          setRotate(!rotate);
+          setRotating(false);
+          resetPosition();
+        },
+      });
+      }
+    }
+
+    const boxes = gsap.utils.toArray<HTMLElement>(".box");
+    const duration = 16;
+    const gap = 1;
+    const step = duration / boxes.length - gap;
+    const gapPosition = "+=" + gap;
+  
+    gsap.set(".box", {
+      y: (i: number) => i * 80,
+    });
+  
+    tl.to(".box", {
+      y: "-=960",
+      duration: duration,
+      ease: "none",
+    });
+
+    const tl2 = gsap.timeline({
+      defaults: {
+        duration: step,
+        ease: "none",
       },
     });
-  } else {
-    gsap.to(divRef.current, {
-      width: "100vh",
-      height: "30vw",
-      rotate: -270,
-      onStart: () => {
-        setRotating(true);
-      },
-      onComplete: () => {
-        setRotate(!rotate);
-        setRotating(false);
-        resetPosition();
-      },
+  
+    // Hiệu ứng trên các box
+    boxes.forEach((box, i) => {
+      if (boxes[i + 1]) {
+        tl2.to(box, { opacity: "0.3", scale: 0.5 }, gapPosition).to(
+          boxes[i + 1],
+          { opacity: "1", scale: 1 },
+          "<"
+        );
+      }
     });
-  }
 
   };
 
@@ -205,6 +317,9 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
     }
     if (measureRotateRef.current) {
       measureRotateRef.current.style.fontVariationSettings = "'wdth' 200";
+    }
+    if (measureHoriRef.current) {
+      measureHoriRef.current.style.fontVariationSettings = "'wdth' 200";
     }
   }, []);
 
@@ -242,6 +357,18 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
     return charWidths;
   }, [isMobileView]);
 
+  const getCharacterWidthsHori = useCallback((text: string) => {
+    const charWidths: number[] = [];
+    text.split('').forEach((char) => {
+      if (measureHoriRef.current) {
+        measureHoriRef.current.style.fontVariationSettings = `'wdth' 200}`;
+        measureHoriRef.current.innerText = char;
+          charWidths.push(measureHoriRef.current.getBoundingClientRect().width);
+      }
+    });
+    return charWidths;
+  }, []);
+
   const updateContainerDimensions = useCallback(() => {
     if (containerRef.current) {
       setContainerHeight(containerRef.current.clientHeight);
@@ -250,6 +377,10 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
     if (containerRotateRef.current) {
       setContainerRotateHeight(containerRotateRef.current.clientHeight);
       setContainerRotateWidth(containerRotateRef.current.clientWidth);
+    }
+    if (containerHoriRef.current) {
+      setContainerHoriHeight(containerHoriRef.current.clientHeight);
+      setContainerHoriWidth(containerHoriRef.current.clientWidth);
     }
   }, []);
 
@@ -299,24 +430,31 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
         setScaleX(prev => {
           const updated = [...prev];
           updated[index] = containerWidth / totalWidth;
-
           return updated;
         });
         } else {
-          widths = getCharacterWidthsRotate('ROGYX'); 
-          const totalWidth = widths.reduce((total, width) => total + width, 0);
-
-        setScaleX(prev => {
-          const updated = [...prev];
-            updated[index] = containerRotateWidth / totalWidth;
-          return updated;
-        });
-
+          if (rotate) {
+            widths = getCharacterWidthsHori('ROGYX'); 
+            const totalWidth = widths.reduce((total, width) => total + width, 0);
+            setScaleX(prev => {
+            const updated = [...prev];
+              updated[index] = containerHoriWidth / totalWidth;
+            return updated;
+          });
+          } else {
+            widths = getCharacterWidthsRotate('ROGYX'); 
+            const totalWidth = widths.reduce((total, width) => total + width, 0);
+            setScaleX(prev => {
+            const updated = [...prev];
+              updated[index] = containerRotateWidth / totalWidth;
+            return updated;
+          });
+          }
         }
       };
       updateSpanWidths('ROGYX', 0);
     }
-  }, [position.clientX, containerWidth, position.xPercent, rotate, position.xPercentRotate, getCharacterWidths, rotating, containerRotateWidth, containerRotateHeight,getCharacterWidthsRotate, updateContainerDimensions]);
+  }, [position.clientX, containerWidth, position.xPercent, rotate, position.xPercentRotate, getCharacterWidths, rotating, containerRotateWidth, containerRotateHeight,getCharacterWidthsRotate, updateContainerDimensions, containerHoriWidth, getCharacterWidthsHori, containerHoriHeight]);
 
   const renderCharacters = useCallback((text: string, widths: number[]) => {
     const charWidths = getCharacterWidths(text, widths);
@@ -351,8 +489,8 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
         ref={containerRef}
         className="relative h-full w-full overflow-hidden"
         style={{
-          fontSize: `${rotating ? fontSizeRoteta : fontSize}px`,
-          lineHeight: `${rotating ? lineHeightRoteta : lineHeight}px`,
+          fontSize: `${rotating ? (rotate ? (fontSizeHori) : fontSizeRoteta) : fontSize}px`,
+          lineHeight: `${rotating ? (rotate ? (lineHeightHori) : lineHeightRoteta)  : lineHeight}px`,
         }}
       >
         <span ref={measureRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
@@ -366,13 +504,41 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
       </div>
       <div
         ref={containerRotateRef}
-        className="md:h-[30vw] md:w-[100vh] md:top-0 md:rotate-[-270deg] overflow-hidden absolute opacity-0 -z-10 max-md:w-[100vw] max-md:h-[30vh] rotate-[360deg]"
+        className="md:h-[30vw] md:w-[100svh] md:top-0 md:rotate-[-270deg] overflow-hidden absolute opacity-0 -z-10 max-md:w-[100svh] max-md:h-[100lvw]"
         style={{
           fontSize: `${fontSizeRoteta}px`,
           lineHeight: `${lineHeightRoteta}px`,
         }}
       >
         <span ref={measureRotateRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
+      </div>
+      <div
+        ref={containerHoriRef}
+        className="w-full md:h-full overflow-hidden absolute opacity-0 -z-10 max-md:w-[100vw] max-md:h-[30vh]"
+        style={{
+          fontSize: `${fontSizeHori}px`,
+          lineHeight: `${lineHeightHori}px`,
+        }}
+      >
+        <span ref={measureHoriRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
+      </div>
+      <div className="w-[70vw] h-full absolute right-0 top-0 flex items-center justify-center">
+      <div className="wrapper w-full h-[240px] relative m-auto overflow-hidden">
+        <div className="boxes text-[20px] font-['STIX_Two_Text'] text-center leading-[45px]">
+          <p className="box">Elevating Marketing Excellence through:</p>
+          <p className="box">Strategic Development</p>
+          <p className="box">Meticulous Planning</p>
+          <p className="box">Innovative Strategy</p>
+          <p className="box">Expert Consulting</p>
+          <p className="box">Our Mission:</p>
+          <p className="box">Advancing the future of ICT</p>
+          <p className="box">through cutting-edge marketing</p>
+          <p className="box">Committed to excellence for our clients,</p>
+          <p className="box">for our users,</p>
+          <p className="box">and for ourselves</p>
+          <p className="box">Pioneering the Future of Marketing</p>
+        </div>
+      </div>
       </div>
     </div>
   );
