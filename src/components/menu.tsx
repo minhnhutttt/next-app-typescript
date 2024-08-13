@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { usePathname } from "next/navigation";
 import TitleAI from './titles/title-ai';
 import TitleBlockChain from './titles/title-block-chain';
@@ -9,13 +9,38 @@ import TitleAD from './titles/title-ad';
 import TitleMarketing from './titles/title-marketing';
 import TitleFx from './titles/title-fx';
 import Link from 'next/link';
+import Anime from './anime';
+import gsap from "gsap";
 
 const Menu = () => {
     const [NavOpen, setNavOpen] = useState(false);
     const pathname = usePathname();
     const close = useCallback(() => {
         setNavOpen(false);
+        if (!NavOpen) {
+            closeExpand();
+        }
       }, []);
+
+      const boxRef = useRef(null);
+  
+  const closeExpand = () => {
+    const box = boxRef.current;
+    gsap.to(box, { xPercent: 100, duration: 0.3 });
+    setNavOpen(false)
+  };
+
+  const toggleExpand = () => {
+    const box = boxRef.current;
+        if (NavOpen) {
+        gsap.to(box, { xPercent: 100, duration: 0.3 });
+        setNavOpen(false)
+    } else {
+        gsap.to(box, { height: "auto", xPercent: 0, x: 0, duration: 0.3, delay: 0.3 });
+        setNavOpen(true)
+    }
+  };
+
   return (
     <div className="md:mt-12 md:pt-5 w-full md:w-[250px]">
         <div className="px-2">
@@ -41,16 +66,15 @@ const Menu = () => {
                 <span className="block h-1 bg-[#464646] dark:bg-[#C6C6C6]"></span>
             </div>
         </div>
+        
+        <div onClick={closeExpand} className={`fixed inset-0 z-[99] ${NavOpen ? "" : "hidden"}`}></div>
+        <div ref={boxRef} className={`md:px-2 max-md:fixed max-md:right-0 max-md:top-1/2 max-md:-translate-y-1/2 max-md:max-h-[90%] max-md:max-w-[80%] max-md:w-full max-md:rounded-[25px] max-md:rounded-r-none z-[99] max-md:bg-[#F2F0E6]/[0.98] dark:bg-black/[0.98] max-md:border max-md:border-[#797979] max-md:translate-x-full origin-right`}>
         <button
-          className={`group fixed right-0 top-[20%] py-3 pl-4 pr-1.5 border border-[#BABABA] border-r-0 rounded-[30px] rounded-r-none z-[99] md:hidden  ${
-            NavOpen ? "active" : ""
-          }`}
-          onClick={() => setNavOpen((prev) => !prev)}
+          className={`group absolute left-[-67px] bg-[#F2F0E6] top-[61px] py-3 pl-4 pr-1.5 border border-[#BABABA]  rounded-[30px] rounded-r-none z-[99] md:hidden`}
+          onClick={toggleExpand}
         >
-          <img src="/assets/images/maru.png" alt="" />
+          <Anime />
         </button>
-        <div onClick={() => setNavOpen((prev) => !prev)} className={`fixed inset-0 z-[99] ${NavOpen ? "" : "hidden"}`}></div>
-        <div className={`md:px-2 max-md:fixed max-md:right-0 max-md:top-1/2 max-md:-translate-y-1/2 max-md:max-h-[90%] max-md:max-w-[85%] max-md:w-full max-md:rounded-[25px] max-md:rounded-r-none z-[99] max-md:overflow-y-scroll max-md:bg-[#F2F0E6]/[0.98] dark:bg-black/[0.98] max-md:border duration-300 max-md:border-[#797979] ${NavOpen ? "max-md:translate-x-0" : "max-md:invisible max-md:opacity-0 max-md:translate-x-full"}`}>
             <p className="md:hidden pt-6 pb-[18px] px-[18px] border-b-4 border-[#464646] dark:border-[#C6C6C6]">
                 <img className="dark:hidden" src="/assets/images/ardorex-title.png" alt="" />
                 <img className="hidden dark:block" src="/assets/images/ardorex-title-dark.png" alt="" />

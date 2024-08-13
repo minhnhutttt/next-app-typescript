@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useTheme } from "next-themes";
-
 const Header = () => {
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -11,22 +10,51 @@ const Header = () => {
     setMounted(true);
   }, []);
 
+  const googleTranslateElementInit = () => {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: "en",
+        autoDisplay: false,
+      },
+      "google_translate_element"
+    );
+  };
+  useEffect(() => {
+    const addScript = document.createElement("script");
+    addScript.setAttribute(
+      "src",
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    );
+    document.body.appendChild(addScript);
+
+    window.googleTranslateElementInit = googleTranslateElementInit;
+  }, []);
   if (!mounted) {
     return null;
   }
 
+
   return (
     <header className="flex md:items-center md:justify-end max-md:flex-col md:px-4 h-full md:h-12 z-40 gap-9 md:gap-1 border-b border-dashed border-black/50 dark:border-white absolute top-0 left-0 md:inset-x-0 max-md:pt-10">
-      <button className="flex items-center justify-center h-7 pr-2 pl-1 md:px-3 max-md:rounded-l-none max-md:border-l-0 rounded-[14px] bg-white border border-[#CFCFCF] text-[14px] text-helvetica">
+      <button
+        className="flex items-center justify-center h-7 pr-2 pl-1 md:px-3 max-md:rounded-l-none max-md:border-l-0 rounded-[14px] bg-white border border-[#CFCFCF] text-[14px] text-helvetica"
+      >
         <span className="max-md:hidden">Japanese</span><span className="md:hidden">Ja</span>
       </button>
-      <button className="flex items-center justify-center h-7 pr-2 pl-1 md:px-3 max-md:rounded-l-none max-md:border-l-0 rounded-[14px] bg-white border border-[#CFCFCF] text-[14px] text-helvetica">
+      <button
+        className="flex items-center justify-center h-7 pr-2 pl-1 md:px-3 max-md:rounded-l-none max-md:border-l-0 rounded-[14px] bg-white border border-[#CFCFCF] text-[14px] text-helvetica"
+      >
         <span className="max-md:hidden">English</span><span className="md:hidden">En</span>
       </button>
-      <button className="flex items-center justify-center h-7 pr-2 pl-1 md:px-3 max-md:rounded-l-none max-md:border-l-0 rounded-[14px] bg-white border border-[#CFCFCF] text-[14px] text-helvetica">
+      <button
+        className="flex items-center justify-center h-7 pr-2 pl-1 md:px-3 max-md:rounded-l-none max-md:border-l-0 rounded-[14px] bg-white border border-[#CFCFCF] text-[14px] text-helvetica"
+      >
         <span className="max-md:hidden">Chinese</span><span className="md:hidden">Ch</span>
       </button>
-      <button onClick={() => resolvedTheme === "dark" ? setTheme('light') : setTheme("dark")} className={`flex items-center justify-center h-7 pr-2 pl-1 md:px-3 max-md:rounded-l-none max-md:border-l-0 rounded-[14px] text-white/60 border border-[#CFCFCF] text-[14px] text-helvetica ${resolvedTheme === "dark" ? 'bg-[#EF9B1D]' : 'bg-[#2B3E81]'}`}>
+      <button
+        onClick={() => resolvedTheme === "dark" ? setTheme('light') : setTheme("dark")}
+        className={`flex items-center justify-center h-7 pr-2 pl-1 md:px-3 max-md:rounded-l-none max-md:border-l-0 rounded-[14px] text-white/60 border border-[#CFCFCF] text-[14px] text-helvetica ${resolvedTheme === "dark" ? 'bg-[#EF9B1D]' : 'bg-[#2B3E81]'}`}
+      >
         <p className="max-md:hidden">{resolvedTheme === "dark" ? 'Sun mode' : 'Night Shift'}</p>
         <span className="md:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">

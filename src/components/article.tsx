@@ -1,10 +1,12 @@
 "use client"
 
+import Link from "next/link";
 import { ReactNode, useState } from "react";
 
 export interface dataArticle {
     date: string;
     title: string;
+    link: string;
 }
 
 interface ArticleProps {
@@ -33,10 +35,10 @@ const Article = ({ children, data }: ArticleProps) => {
             </button>
             <div className={`max-md:pl-8 max-md:divide-y divide-black/60 dark:divide-white/60 ${isVisible ? "block" : "hidden md:block"}`}>
                 {data.map((item, index) => (
-                    <div className="md:border-b border-black/60 dark:border-white/60 py-2 pr-4" key={index}>
+                    <Link href={item.link} className="block w-full md:border-b border-black/60 dark:border-white/60 py-2 pr-4" key={index}>
                         <p className="text-[16px] md:text-[15px] font-helvetica dark:text-white">{item.date}</p>
                         <p className="text-[16px] md:text-[15px] font-hiragino dark:text-white leading-snug">{item.title}</p>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
