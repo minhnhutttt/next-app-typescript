@@ -1,7 +1,8 @@
 "use client";
-import React, { useState, useEffect, useRef, useCallback, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Box from './box';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -44,7 +45,6 @@ const useMousePositionPercentage = (
             ? event.clientY
             : event.touches[0].clientY;
 
-        // Calculate the position relative to the container
         let relativeX = clientX - rect.left;
         let relativeY = clientY - rect.top;
 
@@ -116,6 +116,7 @@ interface ScaledDivsProps {
 
 const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   const [isMobileView, setIsMobileView] = useState(false);
+  const [isRunning, setIsRunning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerRotateRef = useRef<HTMLDivElement>(null);
   const containerHoriRef = useRef<HTMLDivElement>(null);
@@ -152,149 +153,123 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   const [spanWidths, setSpanWidths] = useState<number[][]>([[]]);
 
   const divRef = useRef(null);
-  const textRef = useRef<HTMLDivElement | null>(null);
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      
-    });
-
-    return () => ctx.revert();
-  }, []);
-
-  // useEffect(() => {
-  //   const boxes = gsap.utils.toArray<HTMLElement>(".box");
-  //   const duration = 16;
-  //   const gap = 1; 
-  //   const step = duration / boxes.length - gap;
-  //   const gapPosition = "+=" + gap;
-
-  //   gsap.set(".box", {
-  //     y: (i: number) => i * 80,
-  //   });
-
-  //   gsap.to(".box", {
-  //     y: "-=960",
-  //     duration: duration,
-  //     ease: "none",
-  //   });
-
-  //   const tl = gsap.timeline({
-  //     defaults: {
-  //       duration: step,
-  //       ease: "none",
-  //     },
-  //   });
-
-  //   boxes.forEach((box, i) => {
-  //     if (boxes[i + 1]) {
-  //       tl.to(box, { opacity: "0.3", scale: 0.5 }, gapPosition).to(
-  //         boxes[i + 1],
-  //         { opacity: "1", scale: 1 },
-  //         "<"
-  //       );
-  //     }
-  //   });
-  // }, []);
 
   const handleClick = () => {
     const tl = gsap.timeline();
-    if (!isMobileView) {
-        
-      tl.to(divRef.current, {
-        width: "100vh",
-        height: "30vw",
-        rotate: -270,
-        onStart: () => {
-          setRotating(true);
-        },
-        onComplete: () => {
-          setRotate(true);
-          setRotating(false);
-          resetPosition();
-        },
-      });
-
-      const boxes = gsap.utils.toArray<HTMLElement>(".box");
-      const duration = 16;
-      const gap = 1;
-      const step = duration / boxes.length - gap;
-      const gapPosition = "+=" + gap;
-    
-      gsap.set(".box", {
-        y: (i: number) => i * 80,
-      });
-    
-      tl.to(".box", {
-        y: "-=960",
-        duration: duration,
-        ease: "none",
-      });
-  
-      const tl2 = gsap.timeline({
-        defaults: {
-          duration: step,
-          ease: "none",
-        },
-      });
-    
-      boxes.forEach((box, i) => {
-        if (boxes[i + 1]) {
-          tl2.to(box, { opacity: "0.3", scale: 0.5 }, gapPosition).to(
-            boxes[i + 1],
-            { opacity: "1", scale: 1 },
-            "<"
-          );
-        }
-      });
-      tl.to(divRef.current, {
-        width: "100vw",
-        height: "100vh",
-        rotate: 0,
-        duration: 1,
-        onStart: () => {
-          setRotating(true);
-        },
-        onComplete: () => {
-          setRotate(false);
-          setRotating(false);
-          resetPosition();
-        },
-      });
-      
-    } else {
-      if (rotate) {
+    const boxes = gsap.utils.toArray<HTMLElement>(".box");
+    const duration = 20;
+    const gap = 1;
+    const step = duration / boxes.length - gap;
+    const gapPosition = "+=" + gap;
+    const height = isMobileView ? 40 : 80;
+    const boxCount = 12;
+    if (!isRunning) {
+      if (!isMobileView) {
         tl.to(divRef.current, {
-        width: "100vw",
-        height: "30vh",
-        rotate: -360,
-        onStart: () => {
-          setRotating(true);
-        },
-        onComplete: () => {
-          setRotate(!rotate);
-          setRotating(false);
-          resetPosition();
-        },
-      });
+          width: "100vh",
+          height: "30vw",
+          rotate: -270,
+          onStart: () => {
+            setRotating(true);
+            setIsRunning(true);
+          },
+          onComplete: () => {
+            setRotate(true);
+            setRotating(false);
+            resetPosition();
+          },
+        });
       } else {
-      tl.to(divRef.current, {
-        width: "100vh",
-        height: "100vw",
-        rotate: 90,
-        onStart: () => {
-          setRotating(true);
-        },
-        onComplete: () => {
-          setRotate(!rotate);
-          setRotating(false);
-          resetPosition();
-        },
-      });
+        tl.to(divRef.current, {
+          width: "100vw",
+          height: "30vh",
+          rotate: -360,
+          top: '70lvh',
+          onStart: () => {
+            setRotating(true);
+            setIsRunning(true);
+          },
+          onComplete: () => {
+            setRotate(false);
+            setRotating(false);
+            resetPosition();
+          },
+        });
+      }
+
+        tl.to(".wrapper", {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power2.inOut",
+        });
+      
+        gsap.set(".box", {
+          y: (i: number) => i * height,
+        });
+      
+        tl.to(".box", {
+          y: `-=${height*boxCount}`,
+          duration: duration,
+          ease: "none",
+        });
+    
+        const tl2 = gsap.timeline({
+          defaults: {
+            duration: step,
+            ease: "none",
+          },
+        });
+      
+        boxes.forEach((box, i) => {
+          if (boxes[i + 1]) {
+            tl2.to(box, { opacity: "0.3", scale: 0.5 }, gapPosition).to(
+              boxes[i + 1],
+              { opacity: "1", scale: 1 },
+              "<"
+            );
+          }
+        });
+        tl.to(".wrapper", {
+          opacity: 0,
+          scale: 0,
+          duration: 1,
+          ease: "power2.inOut",
+        });
+        if (!isMobileView) {
+        tl.to(divRef.current, {
+          width: "100vw",
+          height: "100vh",
+          rotate: 0,
+          duration: 1,
+          onStart: () => {
+            setRotating(true);
+          },
+          onComplete: () => {
+            setRotate(false);
+            setRotating(false);
+            setIsRunning(false);
+            resetPosition();
+          },
+        });
+      } else {
+        tl.to(divRef.current, {
+          width: "100vh",
+          height: "100vw",
+          rotate: 90,
+          top: 0,
+          onStart: () => {
+            setRotating(true);
+          },
+          onComplete: () => {
+            setRotate(true);
+            setRotating(false);
+            setIsRunning(false);
+            resetPosition();
+          },
+        });
       }
     }
-
-    
-
   };
 
   useEffect(() => {
@@ -484,14 +459,14 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   }, [getCharacterWidths]);
 
   return (
-    <div className="relative flex items-center justify-start h-screen overflow-hidden">
-      <div ref={divRef} className="absolute w-full h-screen md:origin-[15vw] max-md:bottom-0 top-0 max-md:w-[100svh] max-md:h-[100lvw] max-md:origin-[50vw] max-md:rotate-90" onClick={handleClick}>
+    <div className="relative flex md:items-center items-end justify-start h-screen overflow-hidden">
+      <div ref={divRef} className="absolute z-10 w-full h-screen md:origin-[15vw] left-0 right-0 bottom-0 top-0 max-md:w-[100svh] max-md:h-[100lvw] max-md:origin-[50lvw] max-md:rotate-90" onClick={handleClick}>
       <div
         ref={containerRef}
         className="relative h-full w-full overflow-hidden"
         style={{
-          fontSize: `${rotating ? (rotate ? (fontSizeHori) : fontSizeRoteta) : fontSize}px`,
-          lineHeight: `${rotating ? (rotate ? (lineHeightHori) : lineHeightRoteta)  : lineHeight}px`,
+          fontSize: `${rotating ? (rotate ? fontSizeHori : fontSizeRoteta) : fontSize}px`,
+          lineHeight: `${rotating ? (rotate ? lineHeightHori : lineHeightRoteta)  : lineHeight}px`,
         }}
       >
         <span ref={measureRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
@@ -523,21 +498,22 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
       >
         <span ref={measureHoriRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
       </div>
-      <div className="w-[70vw] h-full absolute right-0 top-0 flex items-center justify-center">
-      <div className="wrapper w-full h-[240px] relative m-auto overflow-hidden">
-        <div className="boxes text-[20px] font-['STIX_Two_Text'] text-center leading-[45px]">
-          <p className="box">Elevating Marketing Excellence through:</p>
-          <p className="box">Strategic Development</p>
-          <p className="box">Meticulous Planning</p>
-          <p className="box">Innovative Strategy</p>
-          <p className="box">Expert Consulting</p>
-          <p className="box">Our Mission:</p>
-          <p className="box">Advancing the future of ICT</p>
-          <p className="box">through cutting-edge marketing</p>
-          <p className="box">Committed to excellence for our clients,</p>
-          <p className="box">for our users,</p>
-          <p className="box">and for ourselves</p>
-          <p className="box">Pioneering the Future of Marketing</p>
+      <div className="md:w-[70vw] w-full md:h-full h-[70vh] absolute right-0 top-0 flex items-center justify-center">
+      <div className="wrapper opacity-0 w-full md:h-[240px] h-[120px] relative m-auto overflow-hidden scale-0">
+        <div className="boxes font-['STIX_Two_Text'] text-center relative">
+          <Box></Box>
+          <Box>Elevating Marketing Excellence through:</Box>
+          <Box>Strategic Development</Box>
+          <Box>Meticulous Planning</Box>
+          <Box>Innovative Strategy</Box>
+          <Box>Expert Consulting</Box>
+          <Box>Our Mission:</Box>
+          <Box>Advancing the future of ICT</Box>
+          <Box>through cutting-edge marketing</Box>
+          <Box>Committed to excellence for our clients,</Box>
+          <Box>for our users,</Box>
+          <Box>and for ourselves</Box>
+          <Box>Pioneering the Future of Marketing</Box>
         </div>
       </div>
       </div>
