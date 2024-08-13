@@ -199,21 +199,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   const handleClick = () => {
     const tl = gsap.timeline();
     if (!isMobileView) {
-      if (rotate) {
-        tl.to(divRef.current, {
-        width: "100vw",
-        height: "100vh",
-        rotate: 0,
-        onStart: () => {
-          setRotating(true);
-        },
-        onComplete: () => {
-          setRotate(!rotate);
-          setRotating(false);
-          resetPosition();
-        },
-      });
-      } else {
+        
       tl.to(divRef.current, {
         width: "100vh",
         height: "30vw",
@@ -222,12 +208,59 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
           setRotating(true);
         },
         onComplete: () => {
-          setRotate(!rotate);
+          setRotate(true);
           setRotating(false);
           resetPosition();
         },
       });
-      }
+
+      const boxes = gsap.utils.toArray<HTMLElement>(".box");
+      const duration = 16;
+      const gap = 1;
+      const step = duration / boxes.length - gap;
+      const gapPosition = "+=" + gap;
+    
+      gsap.set(".box", {
+        y: (i: number) => i * 80,
+      });
+    
+      tl.to(".box", {
+        y: "-=960",
+        duration: duration,
+        ease: "none",
+      });
+  
+      const tl2 = gsap.timeline({
+        defaults: {
+          duration: step,
+          ease: "none",
+        },
+      });
+    
+      boxes.forEach((box, i) => {
+        if (boxes[i + 1]) {
+          tl2.to(box, { opacity: "0.3", scale: 0.5 }, gapPosition).to(
+            boxes[i + 1],
+            { opacity: "1", scale: 1 },
+            "<"
+          );
+        }
+      });
+      tl.to(divRef.current, {
+        width: "100vw",
+        height: "100vh",
+        rotate: 0,
+        duration: 1,
+        onStart: () => {
+          setRotating(true);
+        },
+        onComplete: () => {
+          setRotate(false);
+          setRotating(false);
+          resetPosition();
+        },
+      });
+      
     } else {
       if (rotate) {
         tl.to(divRef.current, {
@@ -260,39 +293,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
       }
     }
 
-    const boxes = gsap.utils.toArray<HTMLElement>(".box");
-    const duration = 16;
-    const gap = 1;
-    const step = duration / boxes.length - gap;
-    const gapPosition = "+=" + gap;
-  
-    gsap.set(".box", {
-      y: (i: number) => i * 80,
-    });
-  
-    tl.to(".box", {
-      y: "-=960",
-      duration: duration,
-      ease: "none",
-    });
-
-    const tl2 = gsap.timeline({
-      defaults: {
-        duration: step,
-        ease: "none",
-      },
-    });
-  
-    // Hiệu ứng trên các box
-    boxes.forEach((box, i) => {
-      if (boxes[i + 1]) {
-        tl2.to(box, { opacity: "0.3", scale: 0.5 }, gapPosition).to(
-          boxes[i + 1],
-          { opacity: "1", scale: 1 },
-          "<"
-        );
-      }
-    });
+    
 
   };
 
