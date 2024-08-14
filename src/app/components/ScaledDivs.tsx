@@ -130,6 +130,8 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
 
   const totalLines = 1;
   const [scaleX, setScaleX] = useState([1]);
+  const topScaleY = position.clientX === 0 && position.clientY === 0 ? 1 : 1.5 - (position.yPercent / 100);
+  const bottomScaleY = position.clientX === 0 && position.clientY === 0 ? 1 : 0.5 + (position.yPercent / 100);
   const [containerHeight, setContainerHeight] = useState<number>(0);
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const [containerRotateHeight, setContainerRotateHeight] = useState<number>(0);
@@ -157,18 +159,18 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   const handleClick = () => {
     const tl = gsap.timeline();
     const boxes = gsap.utils.toArray<HTMLElement>(".box");
-    const duration = 20;
-    const gap = 1;
-    const step = duration / boxes.length - gap;
-    const gapPosition = "+=" + gap;
     const height = isMobileView ? 40 : 80;
-    const boxCount = 12;
     if (!isRunning) {
+      gsap.set(".box", {
+        y: (i: number) => i * height,
+        opacity: 0,
+      });
       if (!isMobileView) {
         tl.to(divRef.current, {
           width: "100vh",
           height: "30vw",
           rotate: -270,
+          left: 0,
           onStart: () => {
             setRotating(true);
             setIsRunning(true);
@@ -204,73 +206,146 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
           ease: "power2.inOut",
         });
       
-        gsap.set(".box", {
-          y: (i: number) => i * height,
-        });
+        tl.to(boxes[1], {
+          opacity: "1", scale: 1, duration:  0.5 
+        })
       
-        tl.to(".box", {
-          y: `-=${height*boxCount}`,
-          duration: duration,
-          ease: "none",
-        });
-    
-        const tl2 = gsap.timeline({
-          defaults: {
-            duration: step,
-            ease: "none",
-          },
-        });
-      
-        boxes.forEach((box, i) => {
-          if (boxes[i + 1]) {
-            tl2.to(box, { opacity: "0.3", scale: 0.5 }, gapPosition).to(
-              boxes[i + 1],
-              { opacity: "1", scale: 1 },
-              "<"
-            );
-          }
-        });
+        for (let i = 0; i < boxes.length; i++) {
+          tl.to(".box", {
+            y: `-=${height}`,
+            delay: 0.5,
+            ease: "power2.inOut",
+            onStart: () => {
+              if (boxes[i]) {
+                gsap.timeline()
+                .to(boxes[i], { opacity: "0" })
+                  .to(boxes[i + 1], { opacity: "0.3", scale: 0.5, duration: 0.5, ease: "power2.inOut", }, "<") 
+                  .to(boxes[i + 2], { opacity: "1", scale: 1, duration:  0.5, ease: "power2.inOut", }, "<")
+                  .to(boxes[i + 3], { opacity: "0.3", scale: 0.5, duration:  0.5, ease: "power2.inOut", }, "<");
+              }
+            }
+          });
+        }
         tl.to(".wrapper", {
           opacity: 0,
           scale: 0,
           duration: 1,
           ease: "power2.inOut",
-        });
+        }, '-=1');
         if (!isMobileView) {
-        tl.to(divRef.current, {
-          width: "100vw",
-          height: "100vh",
-          rotate: 0,
+          tl.to(divRef.current, {
+            width: "100vw",
+            height: "100vh",
+            rotate: -360,
+            onStart: () => {
+              setRotating(true);
+            },
+            onComplete: () => {
+              setRotate(false);
+              setRotating(false);
+              resetPosition();
+            },
+          });
+          tl.to(divRef.current, {
+            width: "100vh",
+            height: "30vw",
+            rotate: -450,
+            top: '0%',
+            right: '30vw',
+            left: 'inherit',
+            transformOrigin: 'top right',
+            onStart: () => {
+              setRotating(true);
+            },
+            onComplete: () => {
+              setRotate(true);
+              setRotating(false);
+              resetPosition();
+            },
+          }, "+=1");
+        } else {
+          tl.to(divRef.current, {
+            width: "100vh",
+            height: "100vw",
+            rotate: 90,
+            top: 0,
+            onStart: () => {
+              setRotating(true);
+            },
+            onComplete: () => {
+              setRotate(true);
+              setRotating(false);
+              resetPosition();
+            },
+          });
+          tl.to(divRef.current, {
+            width: "100vw",
+            height: "30vh",
+            rotate: -360,
+            top: '70lvh',
+            onStart: () => {
+              setRotating(true);
+            },
+            onComplete: () => {
+              setRotate(false);
+              setRotating(false);
+              resetPosition();
+            },
+          }, "+=1");
+        }
+        tl.to(".wrapper02", {
+          opacity: 1,
+          scale: 1,
           duration: 1,
-          onStart: () => {
-            setRotating(true);
-          },
-          onComplete: () => {
-            setRotate(false);
-            setRotating(false);
-            setIsRunning(false);
-            resetPosition();
-          },
+          ease: "power2.inOut",
         });
-      } else {
-        tl.to(divRef.current, {
-          width: "100vh",
-          height: "100vw",
-          rotate: 90,
-          top: 0,
-          onStart: () => {
-            setRotating(true);
-          },
-          onComplete: () => {
-            setRotate(true);
-            setRotating(false);
-            setIsRunning(false);
-            resetPosition();
-          },
+        tl.to(".box-blur", {
+          scale: 1,
+          filter: "blur(0px)",
+          stagger: 0.05
         });
+        tl.to(".wrapper02", {
+          opacity: 0,
+          scale: 0,
+          duration: 1,
+          ease: "power2.inOut",
+        }, "+=5");
+        if (!isMobileView) {
+          tl.to(divRef.current, {
+            width: "100vw",
+            height: "100vh",
+            rotate: 0,
+            right: 0,
+            transformOrigin: '15vw 15vw',
+            onStart: () => {
+              setRotating(true);
+            },
+            onComplete: () => {
+              setRotate(false);
+              setRotating(false);
+              resetPosition();
+              setIsRunning(false);
+            },
+          });
+        } else {
+          tl.to(divRef.current, {
+            width: "100vh",
+            height: "100vw",
+            rotate: 90,
+            top: 0,
+            onStart: () => {
+              setRotating(true);
+            },
+            onComplete: () => {
+              setRotate(true);
+              setRotating(false);
+              setIsRunning(false);
+              resetPosition();
+            },
+          });
+        }
       }
-    }
-  };
+    };
 
   useEffect(() => {
     setIsMobileView(isMobile());
@@ -460,7 +535,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
 
   return (
     <div className="relative flex md:items-center items-end justify-start h-screen overflow-hidden">
-      <div ref={divRef} className="absolute z-10 w-full h-screen md:origin-[15vw] left-0 right-0 bottom-0 top-0 max-md:w-[100svh] max-md:h-[100lvw] max-md:origin-[50lvw] max-md:rotate-90" onClick={handleClick}>
+      <div ref={divRef} className="absolute z-10 w-full h-screen md:origin-[15vw_15vw] left-0  bottom-0 top-0 max-md:w-[100svh] max-md:h-[100lvw] max-md:origin-[50lvw] max-md:rotate-90" onClick={handleClick}>
       <div
         ref={containerRef}
         className="relative h-full w-full overflow-hidden"
@@ -498,24 +573,45 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
       >
         <span ref={measureHoriRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
       </div>
-      <div className="md:w-[70vw] w-full md:h-full h-[70vh] absolute right-0 top-0 flex items-center justify-center">
-      <div className="wrapper opacity-0 w-full md:h-[240px] h-[120px] relative m-auto overflow-hidden scale-0">
-        <div className="boxes font-['STIX_Two_Text'] text-center relative">
-          <Box></Box>
-          <Box>Elevating Marketing Excellence through:</Box>
-          <Box>Strategic Development</Box>
-          <Box>Meticulous Planning</Box>
-          <Box>Innovative Strategy</Box>
-          <Box>Expert Consulting</Box>
-          <Box>Our Mission:</Box>
-          <Box>Advancing the future of ICT</Box>
-          <Box>through cutting-edge marketing</Box>
-          <Box>Committed to excellence for our clients,</Box>
-          <Box>for our users,</Box>
-          <Box>and for ourselves</Box>
-          <Box>Pioneering the Future of Marketing</Box>
+      <div className="wrapper md:w-[70vw] w-full md:h-full h-[70vh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
+        <div className="w-full md:h-[240px] h-[120px] relative m-auto">
+          <div className="boxes font-['STIX_Two_Text'] text-center relative">
+            <Box></Box>
+            <Box>Elevating Marketing Excellence through:</Box>
+            <Box>Strategic Development</Box>
+            <Box>Meticulous Planning</Box>
+            <Box>Innovative Strategy</Box>
+            <Box>Expert Consulting</Box>
+            <Box>Our Mission:</Box>
+            <Box><span>Advancing the future of <a href="https://g.co/kgs/Vt1oGkn" target="_blank" className="text-[#1B00CD] inline-block">ICT</a></span></Box>
+            <Box>through cutting-edge marketing</Box>
+            <Box>Committed to excellence for our clients,</Box>
+            <Box>for our users,</Box>
+            <Box>and for ourselves</Box>
+            <Box>Pioneering the Future of Marketing</Box>
+          </div>
         </div>
       </div>
+      <div className="wrapper02 md:w-[70vw] w-full md:h-full h-[70vh] absolute left-0 top-0 flex items-center justify-center opacity-0 scale-0">
+        <div className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2vh)] md:text-[calc(1vw+1vh)] font-bold">
+          <p className='box-blur blur-sm scale-x-125'>Elevating Marketing Excellence through: </p>
+          <br />
+          <p className='box-blur blur-sm scale-x-125'>Strategic Development</p>
+          <p className='box-blur blur-sm scale-x-125'>Meticulous Planning</p>
+          <p className='box-blur blur-sm scale-x-125'>Innovative Strategy</p>
+          <p className='box-blur blur-sm scale-x-125'>Expert Consulting</p>
+          <br />
+          <p className='box-blur blur-sm scale-x-125'>Our Mission:</p>
+          <br />
+          <p className='box-blur blur-sm scale-x-125'>Advancing the future of <a href="https://g.co/kgs/Vt1oGkn" target="_blank" className="text-[#1B00CD] inline-block">ICT</a> </p>
+          <p className='box-blur blur-sm scale-x-125'>through cutting-edge marketing</p>
+          <br />
+          <p className='box-blur blur-sm scale-x-125'>Committed to excellence for our clients,</p>
+          <p className='box-blur blur-sm scale-x-125'>for our users,</p>
+          <p className='box-blur blur-sm scale-x-125'>and for ourselves</p>
+          <br />
+          <p className='box-blur blur-sm scale-x-125'>Pioneering the Future of Marketing</p>
+        </div>
       </div>
     </div>
   );

@@ -11,3 +11,6 @@ body {
   font-family: Fit-Variable;
   font-feature-settings: "tnum", "liga", "kern";
 }
+.box:nth-of-type(2) {
+  @apply opacity-100 scale-100
+}
