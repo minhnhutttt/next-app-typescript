@@ -6,7 +6,7 @@ import TitleFx from "@/components/titles/title-fx";
 export default function Fx() {
   return (
     <PageContainer>
-        <Article data={dataFx}>
+        <Article data={dataFx} disable>
             <TitleFx rect="md:h-[12.5px] h-[14px]" />
         </Article>
     </PageContainer>

@@ -11,72 +11,72 @@ export const dataAI: dataArticle[] = [
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'ai/1'
+    link: 'ai/id'
   },
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'ai/1'
+    link: 'ai/id'
   }
 ]
 export const dataBlockChain: dataArticle[] = [
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'blockchain/1'
+    link: 'blockchain/id'
   },
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'blockchain/1'
+    link: 'blockchain/id'
   }
 ]
 export const dataWebSite: dataArticle[] = [
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'website/1'
+    link: 'website/id'
   },
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'website/1'
+    link: 'website/id'
   }
 ]
 export const dataAD: dataArticle[] = [
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'ad/1'
+    link: 'ad/id'
   },
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'ad/1'
+    link: 'ad/id'
   }
 ]
 export const dataMarketing: dataArticle[] = [
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'marketing/1'
+    link: 'marketing/id'
   },
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'marketing/1'
+    link: 'marketing/id'
   }
 ]
 export const dataFx: dataArticle[] = [
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'fx/1'
+    link: 'fx/id'
   },
   {
     date: '2024.4.18',
     title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'fx/1'
+    link: 'fx/id'
   }
 ]
 

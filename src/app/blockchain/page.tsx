@@ -6,7 +6,7 @@ import { dataBlockChain } from "../(index)/page";
 export default function Blockchain() {
   return (
     <PageContainer>
-        <Article data={dataBlockChain}>
+        <Article data={dataBlockChain} disable>
             <TitleBlockChain rect="md:h-[12.5px] h-[14px]" />
         </Article>
     </PageContainer>

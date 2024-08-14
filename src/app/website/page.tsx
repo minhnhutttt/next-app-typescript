@@ -6,7 +6,7 @@ import TitleWebSite from "@/components/titles/title-web-site";
 export default function Website() {
   return (
     <PageContainer>
-        <Article data={dataWebSite}>
+        <Article data={dataWebSite} disable>
             <TitleWebSite rect="md:h-[12.5px] h-[14px]" />
         </Article>
     </PageContainer>
