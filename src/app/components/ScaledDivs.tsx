@@ -130,8 +130,6 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
 
   const totalLines = 1;
   const [scaleX, setScaleX] = useState([1]);
-  const topScaleY = position.clientX === 0 && position.clientY === 0 ? 1 : 1.5 - (position.yPercent / 100);
-  const bottomScaleY = position.clientX === 0 && position.clientY === 0 ? 1 : 0.5 + (position.yPercent / 100);
   const [containerHeight, setContainerHeight] = useState<number>(0);
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const [containerRotateHeight, setContainerRotateHeight] = useState<number>(0);
@@ -140,16 +138,16 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   const [containerHoriWidth, setContainerHoriWidth] = useState<number>(0);
 
   const lineHeight = containerHeight / totalLines;
-  const fontSize = lineHeight / 0.77;
+  const fontSize = lineHeight / 0.75;
 
   const containerRotateHeightBase = containerRotateRef.current?.clientHeight ?? 0;
   const lineHeightRoteta = containerRotateHeightBase / totalLines;
-  const fontSizeRoteta = lineHeightRoteta / 0.77;
+  const fontSizeRoteta = lineHeightRoteta / 0.75;
 
 
   const containerHoriHeightBase = containerHoriRef.current?.clientHeight ?? 0;
   const lineHeightHori = containerHoriHeightBase / totalLines;
-  const fontSizeHori = lineHeightHori / 0.77;
+  const fontSizeHori = lineHeightHori / 0.75;
   const [rotating, setRotating] = useState<boolean>(false)
 
   const [spanWidths, setSpanWidths] = useState<number[][]>([[]]);
@@ -232,73 +230,13 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
           duration: 1,
           ease: "power2.inOut",
         }, '-=1');
-        if (!isMobileView) {
-          tl.to(divRef.current, {
-            width: "100vw",
-            height: "100vh",
-            rotate: -360,
-            onStart: () => {
-              setRotating(true);
-            },
-            onComplete: () => {
-              setRotate(false);
-              setRotating(false);
-              resetPosition();
-            },
-          });
-          tl.to(divRef.current, {
-            width: "100vh",
-            height: "30vw",
-            rotate: -450,
-            top: '0%',
-            right: '30vw',
-            left: 'inherit',
-            transformOrigin: 'top right',
-            onStart: () => {
-              setRotating(true);
-            },
-            onComplete: () => {
-              setRotate(true);
-              setRotating(false);
-              resetPosition();
-            },
-          }, "+=1");
-        } else {
-          tl.to(divRef.current, {
-            width: "100vh",
-            height: "100vw",
-            rotate: 90,
-            top: 0,
-            onStart: () => {
-              setRotating(true);
-            },
-            onComplete: () => {
-              setRotate(true);
-              setRotating(false);
-              resetPosition();
-            },
-          });
-          tl.to(divRef.current, {
-            width: "100vw",
-            height: "30vh",
-            rotate: -360,
-            top: '70lvh',
-            onStart: () => {
-              setRotating(true);
-            },
-            onComplete: () => {
-              setRotate(false);
-              setRotating(false);
-              resetPosition();
-            },
-          }, "+=1");
-        }
+        
         tl.to(".wrapper02", {
           opacity: 1,
           scale: 1,
           duration: 1,
           ease: "power2.inOut",
-        });
+        }, "<");
         tl.to(".box-blur", {
           scale: 1,
           filter: "blur(0px)",
@@ -315,8 +253,6 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
             width: "100vw",
             height: "100vh",
             rotate: 0,
-            right: 0,
-            transformOrigin: '15vw 15vw',
             onStart: () => {
               setRotating(true);
             },
@@ -339,11 +275,12 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
             onComplete: () => {
               setRotate(true);
               setRotating(false);
-              setIsRunning(false);
               resetPosition();
+              setIsRunning(false);
             },
           });
         }
+        
       }
     };
 
@@ -508,34 +445,30 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   }, [position.clientX, containerWidth, position.xPercent, rotate, position.xPercentRotate, getCharacterWidths, rotating, containerRotateWidth, containerRotateHeight,getCharacterWidthsRotate, updateContainerDimensions, containerHoriWidth, getCharacterWidthsHori, containerHoriHeight]);
 
   const renderCharacters = useCallback((text: string, widths: number[]) => {
-    const charWidths = getCharacterWidths(text, widths);
-    let cumulativeWidth = 0;
+    const colors = ['863EC8', 'F7B318', '174DF8', '50D488', 'CC3D95'];
     
-
     return text.split('').map((char, index) => {
-      const translateX = cumulativeWidth;
-      cumulativeWidth += charWidths[index];
-
       return (
         <span
           key={index}
           ref={(el) => el && (spansRef.current[index] = el)}
           data-char={char}
-          className="variable-word-letter"
+          className="variable-word-letter origin-center"
           style={{
             fontVariationSettings: `'wdth' ${widths[index]}`,
-            transform: `translate3d(0px, 0px, 0px) scaleY(1) translateX(${translateX}px)`
+            transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1.03)`,
+            color: `#${colors[index]}`
           }}
         >
           {char}
         </span>
       );
     });
-  }, [getCharacterWidths]);
+  }, []);
 
   return (
-    <div className="relative flex md:items-center items-end justify-start h-screen overflow-hidden">
-      <div ref={divRef} className="absolute z-10 w-full h-screen md:origin-[15vw_15vw] left-0  bottom-0 top-0 max-md:w-[100svh] max-md:h-[100lvw] max-md:origin-[50lvw] max-md:rotate-90" onClick={handleClick}>
+    <div className="relative flex md:items-center items-end justify-start h-screen overflow-hidden origin-center z-0">
+      <div ref={divRef} className="absolute z-10 w-full h-screen md:origin-[15vw_15vw] left-0 bottom-0 top-0 max-md:w-[100svh] max-md:h-[100lvw] max-md:origin-[50lvw] max-md:rotate-90" onClick={handleClick}>
       <div
         ref={containerRef}
         className="relative h-full w-full overflow-hidden"
@@ -546,7 +479,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
       >
         <span ref={measureRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
         <div
-          className="variable-word-1 w-full origin-top-left h-full hover:duration-0 duration-150"
+          className="variable-word-1 w-full origin-top-left h-full hover:duration-0 duration-150 flex justify-evenly items-center gap-2"
           style={{ transform: `translate3d(0px, 0px, 0px) scaleX(${scaleX[0]}) scaleY(${1})` }}
         >
           {renderCharacters("ROGYX", spanWidths[0])}
@@ -592,7 +525,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
           </div>
         </div>
       </div>
-      <div className="wrapper02 md:w-[70vw] w-full md:h-full h-[70vh] absolute left-0 top-0 flex items-center justify-center opacity-0 scale-0">
+      <div className="wrapper02 md:w-[70vw] w-full md:h-full h-[70vh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
         <div className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2vh)] md:text-[calc(1vw+1vh)] font-bold">
           <p className='box-blur blur-sm scale-x-125'>Elevating Marketing Excellence through: </p>
           <br />
