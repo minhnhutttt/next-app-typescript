@@ -1,0 +1,35 @@
+# exported by https://3dviewer.net
+newmtl standard_motorcycle_285_silver_Mat
+Kd 0 0 0
+d 1
+Ka 0 0 0
+Ks 1 1 1
+Ns 16
+map_Kd standard_motorcycle_285_copper_baseColor.png
+newmtl standard_motorcycle_285_black_Mat
+Kd 0 0 0
+d 1
+Ka 0 0 0
+Ks 1 1 1
+Ns 16
+map_Kd standard_motorcycle_285_copper_baseColor.png
+newmtl standard_motorcycle_285_red_Mat
+Kd 0.33725490196078434 0 0
+d 1
+Ka 0 0 0
+Ks 1 1 1
+Ns 16
+newmtl standard_motorcycle_285_copper_Mat
+Kd 0 0 0
+d 1
+Ka 0 0 0
+Ks 1 1 1
+Ns 16
+map_Kd standard_motorcycle_285_copper_baseColor.png
+newmtl standard_motorcycle_285_tire_Mat
+Kd 0 0 0
+d 1
+Ka 0 0 0
+Ks 1 1 1
+Ns 16
+map_Kd standard_motorcycle_285_copper_baseColor.png
