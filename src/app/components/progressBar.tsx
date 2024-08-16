@@ -34,12 +34,12 @@ const ProgressBar = ({ onComplete }: ProgressBarProps) => {
   }, [onComplete]);
 
   return (
-    <div className="bg-black fixed inset-0 w-full z-[1031] flex items-center justify-center font-['STIX_Two_Text']">
+    <div className="bg-white fixed inset-0 w-full z-[1031] flex items-center justify-center font-['STIX_Two_Text']">
         <div className="w-full">
-        <div style={{ textAlign: 'center', marginBottom: '8px', color: '#555' }}>
+        <div style={{ textAlign: 'center', marginBottom: '8px', color: '#000' }}>
             {progress}%
         </div>
-        <div className='origin-left' style={{ height: '2px', background: '#555', width: `${progress}%` }} />
+        <div className='origin-left' style={{ height: '2px', background: '#000', width: `${progress}%` }} />
       </div>
     </div>
   );

@@ -111,10 +111,10 @@ const isMobile = (): boolean => {
   return false;
 };
 interface ScaledDivsProps {
-  rotate?: boolean;
+  isMuted: boolean;
 }
 
-const ScaledDivs: React.FC<ScaledDivsProps> = () => {
+const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
   const [isMobileView, setIsMobileView] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -151,16 +151,28 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
   const [rotating, setRotating] = useState<boolean>(false)
 
   const [spanWidths, setSpanWidths] = useState<number[][]>([[]]);
-
+  
+  const audioRef = useRef<HTMLAudioElement>(null);
   const divRef = useRef(null);
+
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
 
   const handleClick = () => {
     const tl = gsap.timeline();
     const boxes = gsap.utils.toArray<HTMLElement>(".box");
     const height = isMobileView ? 40 : 80;
+
     if (!isRunning) {
       gsap.set(".box", {
         y: (i: number) => i * height,
+        opacity: 0,
+      });
+      gsap.set(".char", {
         opacity: 0,
       });
       if (!isMobileView) {
@@ -237,10 +249,21 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
           duration: 1,
           ease: "power2.inOut",
         }, "<");
-        tl.to(".box-blur", {
-          scale: 1,
-          filter: "blur(0px)",
-          stagger: 0.05
+        tl.to(".char", {
+          opacity: 1,
+          stagger: 0.05,
+          onStart: () => {
+            if (audioRef.current) {
+              audioRef.current.play();
+            }
+          },
+          onComplete: () => {
+            if (audioRef.current) {
+              audioRef.current.currentTime = 0;
+              audioRef.current.pause();
+            }
+            
+          },
         });
         tl.to(".wrapper02", {
           opacity: 0,
@@ -282,7 +305,8 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
         }
         
       }
-    };
+  };
+
 
   useEffect(() => {
     setIsMobileView(isMobile());
@@ -298,6 +322,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  
 
   useEffect(() => {
     if (measureRef.current) {
@@ -526,26 +551,27 @@ const ScaledDivs: React.FC<ScaledDivsProps> = () => {
         </div>
       </div>
       <div className="wrapper02 md:w-[70vw] w-full md:h-full h-[70vh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
-        <div className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2vh)] md:text-[calc(1vw+1vh)] font-bold">
-          <p className='box-blur blur-sm scale-x-125'>Elevating Marketing Excellence through: </p>
+        <div data-splitting className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2vh)] md:text-[calc(1vw+1vh)] font-bold">
+          Elevating Marketing Excellence through:<br />
           <br />
-          <p className='box-blur blur-sm scale-x-125'>Strategic Development</p>
-          <p className='box-blur blur-sm scale-x-125'>Meticulous Planning</p>
-          <p className='box-blur blur-sm scale-x-125'>Innovative Strategy</p>
-          <p className='box-blur blur-sm scale-x-125'>Expert Consulting</p>
+          Strategic Development<br />
+          Meticulous Planning<br />
+          Innovative Strategy<br />
+          Expert Consulting<br />
           <br />
-          <p className='box-blur blur-sm scale-x-125'>Our Mission:</p>
+          Our Mission:<br />
           <br />
-          <p className='box-blur blur-sm scale-x-125'>Advancing the future of <a href="https://g.co/kgs/Vt1oGkn" target="_blank" className="text-[#1B00CD] inline-block">ICT</a> </p>
-          <p className='box-blur blur-sm scale-x-125'>through cutting-edge marketing</p>
+          Advancing the future of <a href="https://g.co/kgs/Vt1oGkn" target="_blank" className="text-[#1B00CD] inline-block">ICT</a> <br />
+          through cutting-edge marketing<br />
           <br />
-          <p className='box-blur blur-sm scale-x-125'>Committed to excellence for our clients,</p>
-          <p className='box-blur blur-sm scale-x-125'>for our users,</p>
-          <p className='box-blur blur-sm scale-x-125'>and for ourselves</p>
+          Committed to excellence for our clients,<br />
+          for our users,<br />
+          and for ourselves<br />
           <br />
-          <p className='box-blur blur-sm scale-x-125'>Pioneering the Future of Marketing</p>
+          Pioneering the Future of Marketing
         </div>
       </div>
+      <audio ref={audioRef} src="/assets/audio/type.mp3" loop />
     </div>
   );
 };

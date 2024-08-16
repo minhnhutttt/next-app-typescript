@@ -23,7 +23,7 @@ class PixelImage {
         this.styleHeight = height;
         this.width = width * window.devicePixelRatio;
         this.height = height * window.devicePixelRatio;
-        this.percent = 1; // Start fully visible
+        this.percent = 1;
         this.onComplete = onComplete;
         this.applyCanvas();
         this.draw();
@@ -40,10 +40,8 @@ class PixelImage {
         this.scaledWidth = this.width * this.percent;
         this.scaledHeight = this.height * this.percent;
 
-        // Turn off image aliasing
         this.ctx.imageSmoothingEnabled = false;
 
-        // Ensure canvas size is valid before adding it to the DOM
         if (this.canvas.width > 0 && this.canvas.height > 0) {
             this.image.parentElement?.appendChild(this.canvas);
         } else {
@@ -66,10 +64,8 @@ class PixelImage {
         this.scaledWidth = this.width * this.percent;
         this.scaledHeight = this.height * this.percent;
 
-        // Clear the canvas
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        // Draw the pixelated image
         if (this.image.complete && this.canvas.width > 0 && this.canvas.height > 0) {
             this.ctx.drawImage(this.image, 0, 0, this.scaledWidth, this.scaledHeight);
             this.ctx.drawImage(this.canvas, 0, 0, this.scaledWidth, this.scaledHeight, 0, 0, this.width, this.height);
@@ -81,7 +77,7 @@ class PixelImage {
             requestAnimationFrame(() => this.reveal());
         } else {
             this.canvas.remove();
-            this.onComplete(); // Notify that the animation is complete
+            this.onComplete();
         }
     }
 
@@ -118,13 +114,13 @@ const PixelImageComponent = ({ loadingComplete, onComplete }: { loadingComplete:
                 }
             });
         }
-    }, [loadingComplete]);
+    }, [loadingComplete, onComplete]);
 
     return (
         <section>
-            <div className="image__container">
-                <img className='max-md:hidden' ref={pcImgRef} src="/assets/images/loading.png" alt="PC Image" />
-                <img className='md:hidden' ref={spImgRef} src="/assets/images/loading-sp.png" alt="SP Image" />
+            <div className="loading-screen">
+                <img className='max-md:hidden' ref={pcImgRef} src="/assets/images/loading.png" />
+                <img className='md:hidden' ref={spImgRef} src="/assets/images/loading-sp.png" />
             </div>
         </section>
     );

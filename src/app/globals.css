@@ -15,7 +15,6 @@ body {
   @apply opacity-100 scale-100
 }
 
-/* styles/globals.css */
 #nprogress {
   pointer-events: none;
 }
@@ -28,17 +27,17 @@ body {
   display: none;
 }
 
-.image__container{
+.loading-screen{
   position: relative;
   width: 100%;
 }
 
-img{
+.loading-screen img{
   width: 100%;
   opacity: 0;
 }
 
-canvas{
+.loading-screen canvas {
   position: absolute;
   top: 0;
   left: 0;
@@ -46,12 +45,12 @@ canvas{
   transition: .5s;
 }
 
-canvas.active{
+.loading-screen canvas.active{
   opacity: 1;
   pointer-events: none;
 }
 
-.image__container {
+.loading-screen {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -59,8 +58,27 @@ canvas.active{
   z-index: 99;
   background: #fff;
 }
-.image__container img {
+
+.loading-screen img {
   width: 100%;
   height: 100%;
   background-size: cover;
+}
+
+
+.animate {
+  animation: pulse 1.5s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
