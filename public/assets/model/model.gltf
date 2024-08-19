@@ -1,0 +1,546 @@
+{
+    "asset": {
+        "generator": "https://3dviewer.net",
+        "version": "2.0"
+    },
+    "scene": 0,
+    "scenes": [
+        {
+            "nodes": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "mesh": 0
+        },
+        {
+            "mesh": 1
+        },
+        {
+            "mesh": 2
+        },
+        {
+            "mesh": 3
+        },
+        {
+            "mesh": 4
+        }
+    ],
+    "materials": [
+        {
+            "name": "standard_motorcycle_285_silver_Mat",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "baseColorTexture": {
+                    "index": 0
+                }
+            },
+            "emissiveFactor": [
+                0,
+                0,
+                0
+            ],
+            "doubleSided": true,
+            "alphaMode": "OPAQUE"
+        },
+        {
+            "name": "standard_motorcycle_285_black_Mat",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "baseColorTexture": {
+                    "index": 0
+                }
+            },
+            "emissiveFactor": [
+                0,
+                0,
+                0
+            ],
+            "doubleSided": true,
+            "alphaMode": "OPAQUE"
+        },
+        {
+            "name": "standard_motorcycle_285_red_Mat",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.09305896283800832,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "emissiveFactor": [
+                0,
+                0,
+                0
+            ],
+            "doubleSided": true,
+            "alphaMode": "OPAQUE"
+        },
+        {
+            "name": "standard_motorcycle_285_copper_Mat",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "baseColorTexture": {
+                    "index": 0
+                }
+            },
+            "emissiveFactor": [
+                0,
+                0,
+                0
+            ],
+            "doubleSided": true,
+            "alphaMode": "OPAQUE"
+        },
+        {
+            "name": "standard_motorcycle_285_tire_Mat",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "baseColorTexture": {
+                    "index": 0
+                }
+            },
+            "emissiveFactor": [
+                0,
+                0,
+                0
+            ],
+            "doubleSided": true,
+            "alphaMode": "OPAQUE"
+        }
+    ],
+    "meshes": [
+        {
+            "name": "standard_motorcycle_285_tire",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": 1,
+                        "NORMAL": 2,
+                        "TEXCOORD_0": 3
+                    },
+                    "mode": 4,
+                    "material": 4,
+                    "indices": 0
+                }
+            ]
+        },
+        {
+            "name": "standard_motorcycle_285_silver",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": 5,
+                        "NORMAL": 6,
+                        "TEXCOORD_0": 7
+                    },
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 4
+                }
+            ]
+        },
+        {
+            "name": "standard_motorcycle_285_red",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": 9,
+                        "NORMAL": 10,
+                        "TEXCOORD_0": 11
+                    },
+                    "mode": 4,
+                    "material": 2,
+                    "indices": 8
+                }
+            ]
+        },
+        {
+            "name": "standard_motorcycle_285_copper",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": 13,
+                        "NORMAL": 14,
+                        "TEXCOORD_0": 15
+                    },
+                    "mode": 4,
+                    "material": 3,
+                    "indices": 12
+                }
+            ]
+        },
+        {
+            "name": "standard_motorcycle_285_black",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": 17,
+                        "NORMAL": 18,
+                        "TEXCOORD_0": 19
+                    },
+                    "mode": 4,
+                    "material": 1,
+                    "indices": 16
+                }
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "uri": "model.bin",
+            "byteLength": 15781672
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 1290240,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1290240,
+            "byteLength": 669288,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1959528,
+            "byteLength": 669288,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 2628816,
+            "byteLength": 446192,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 3075008,
+            "byteLength": 2949936,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 6024944,
+            "byteLength": 1634004,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 7658948,
+            "byteLength": 1634004,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 9292952,
+            "byteLength": 1089336,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 10382288,
+            "byteLength": 182736,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 10565024,
+            "byteLength": 98028,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 10663052,
+            "byteLength": 98028,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 10761080,
+            "byteLength": 65352,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 10826432,
+            "byteLength": 1062840,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 11889272,
+            "byteLength": 591264,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 12480536,
+            "byteLength": 591264,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 13071800,
+            "byteLength": 394176,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 13465976,
+            "byteLength": 936816,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 14402792,
+            "byteLength": 517080,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 14919872,
+            "byteLength": 517080,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 15436952,
+            "byteLength": 344720,
+            "target": 34962
+        }
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 322560,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 55774,
+            "min": [
+                -24.612009,
+                0.022775,
+                -97.670959
+            ],
+            "max": [
+                21.023191,
+                91.397598,
+                101.914474
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 55774,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 55774,
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 737484,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 136167,
+            "min": [
+                -34.569237,
+                8.552387,
+                -89.141357
+            ],
+            "max": [
+                34.569237,
+                96.077904,
+                93.384857
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 6,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 136167,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 7,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 136167,
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 8,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 45684,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 9,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 8169,
+            "min": [
+                -14.10611,
+                16.965189,
+                -101.914474
+            ],
+            "max": [
+                13.064991,
+                84.697403,
+                91.908264
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 10,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 8169,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 11,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 8169,
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 12,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 265710,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 13,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 49272,
+            "min": [
+                -25.455959,
+                10.51735,
+                -76.00119
+            ],
+            "max": [
+                24.414841,
+                92.324448,
+                79.990158
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 14,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 49272,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 15,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 49272,
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 16,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 234204,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 17,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 43090,
+            "min": [
+                -33.398758,
+                0,
+                -93.03569
+            ],
+            "max": [
+                32.326317,
+                97.257996,
+                82.314163
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 18,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 43090,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 19,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 43090,
+            "type": "VEC2"
+        }
+    ],
+    "images": [
+        {
+            "uri": "standard_motorcycle_285_copper_baseColor.png"
+        }
+    ],
+    "textures": [
+        {
+            "source": 0
+        }
+    ]
+}
