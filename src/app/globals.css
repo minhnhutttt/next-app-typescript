@@ -66,7 +66,7 @@ body {
 }
 
 
-.animate {
+.animate path{
   animation: pulse 1.5s infinite ease-in-out;
   transform-origin: center;
 }
