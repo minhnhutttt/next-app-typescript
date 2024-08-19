@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${myFont.className} bg-[#FFE8EC] font-medium overflow-x-hidden`}
+        className={`${myFont.className} bg-white font-medium overflow-x-hidden`}
       >
         <ScrollContainer>
           {children}

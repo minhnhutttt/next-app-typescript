@@ -154,7 +154,13 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const divRef = useRef(null);
+  const [shuffledColors, setShuffledColors] = useState<string[]>([]);
 
+  useEffect(() => {
+    const colors = ['863EC8', 'F7B318', '174DF8', '50D488', 'CC3D95'];
+    const randomColors = [...colors].sort(() => Math.random() - 0.5);
+    setShuffledColors(randomColors);
+  }, []);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -177,7 +183,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
       });
       if (!isMobileView) {
         tl.to(divRef.current, {
-          width: "100vh",
+          width: "100svh",
           height: "30vw",
           rotate: -270,
           left: 0,
@@ -194,9 +200,9 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
       } else {
         tl.to(divRef.current, {
           width: "100vw",
-          height: "30vh",
+          height: "30svh",
           rotate: -360,
-          top: '70lvh',
+          top: '70svh',
           onStart: () => {
             setRotating(true);
             setIsRunning(true);
@@ -274,7 +280,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
         if (!isMobileView) {
           tl.to(divRef.current, {
             width: "100vw",
-            height: "100vh",
+            height: "100svh",
             rotate: 0,
             onStart: () => {
               setRotating(true);
@@ -288,7 +294,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           });
         } else {
           tl.to(divRef.current, {
-            width: "100vh",
+            width: "100svh",
             height: "100vw",
             rotate: 90,
             top: 0,
@@ -468,32 +474,29 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
       updateSpanWidths('ROGYX', 0);
     }
   }, [position.clientX, containerWidth, position.xPercent, rotate, position.xPercentRotate, getCharacterWidths, rotating, containerRotateWidth, containerRotateHeight,getCharacterWidthsRotate, updateContainerDimensions, containerHoriWidth, getCharacterWidthsHori, containerHoriHeight]);
-
+  
   const renderCharacters = useCallback((text: string, widths: number[]) => {
-    const colors = ['863EC8', 'F7B318', '174DF8', '50D488', 'CC3D95'];
-    
-    return text.split('').map((char, index) => {
-      return (
-        <span
-          key={index}
-          ref={(el) => el && (spansRef.current[index] = el)}
-          data-char={char}
-          className="variable-word-letter origin-center"
-          style={{
-            fontVariationSettings: `'wdth' ${widths[index]}`,
-            transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1.03)`,
-            color: `#${colors[index]}`
-          }}
-        >
-          {char}
-        </span>
-      );
-    });
-  }, []);
+    return text.split('').map((char, index) => (
+      <span
+        key={index}
+        ref={(el) => el && (spansRef.current[index] = el)}
+        data-char={char}
+        className="variable-word-letter origin-center"
+        style={{
+          fontVariationSettings: `'wdth' ${widths[index]}`,
+          transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1.03)`,
+          color: `#${shuffledColors[index % shuffledColors.length]}`
+        }}
+      >
+        {char}
+      </span>
+    ));
+  }, [shuffledColors]);
+
 
   return (
-    <div className="relative flex md:items-center items-end justify-start h-screen overflow-hidden origin-center z-0">
-      <div ref={divRef} className="absolute z-10 w-full h-screen md:origin-[15vw_15vw] left-0 bottom-0 top-0 max-md:w-[100svh] max-md:h-[100lvw] max-md:origin-[50lvw] max-md:rotate-90" onClick={handleClick}>
+    <div className="relative flex md:items-center items-end justify-start h-[100svh] overflow-hidden origin-center z-0">
+      <div ref={divRef} className="absolute z-10 w-[100vw] h-[100svh] md:origin-[15vw_15vw] left-0 bottom-0 top-0 max-md:w-[100svh] max-md:h-[100vw] max-md:origin-[50vw] max-md:rotate-90" onClick={handleClick}>
       <div
         ref={containerRef}
         className="relative h-full w-full overflow-hidden"
@@ -504,7 +507,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
       >
         <span ref={measureRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
         <div
-          className="variable-word-1 w-full origin-top-left h-full hover:duration-0 duration-150 flex justify-evenly items-center gap-2"
+          className="variable-word-1 w-full md:origin-left h-full hover:duration-0 duration-150 flex justify-evenly items-center gap-2"
           style={{ transform: `translate3d(0px, 0px, 0px) scaleX(${scaleX[0]}) scaleY(${1})` }}
         >
           {renderCharacters("ROGYX", spanWidths[0])}
@@ -513,7 +516,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
       </div>
       <div
         ref={containerRotateRef}
-        className="md:h-[30vw] md:w-[100svh] md:top-0 md:rotate-[-270deg] overflow-hidden absolute opacity-0 -z-10 max-md:w-[100svh] max-md:h-[100lvw]"
+        className="md:h-[30vw] md:w-[100svh] md:top-0 md:rotate-[-270deg] overflow-hidden absolute opacity-0 -z-10 max-md:w-[100svh] max-md:h-[100vw]"
         style={{
           fontSize: `${fontSizeRoteta}px`,
           lineHeight: `${lineHeightRoteta}px`,
@@ -523,7 +526,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
       </div>
       <div
         ref={containerHoriRef}
-        className="w-full md:h-full overflow-hidden absolute opacity-0 -z-10 max-md:w-[100vw] max-md:h-[30vh]"
+        className="w-full md:h-full overflow-hidden absolute opacity-0 -z-10 max-md:w-[100vw] max-md:h-[30svh]"
         style={{
           fontSize: `${fontSizeHori}px`,
           lineHeight: `${lineHeightHori}px`,
@@ -531,7 +534,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
       >
         <span ref={measureHoriRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
       </div>
-      <div className="wrapper md:w-[70vw] w-full md:h-full h-[70vh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
+      <div className="wrapper md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
         <div className="w-full md:h-[240px] h-[120px] relative m-auto">
           <div className="boxes font-['STIX_Two_Text'] text-center relative">
             <Box></Box>
@@ -550,8 +553,8 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           </div>
         </div>
       </div>
-      <div className="wrapper02 md:w-[70vw] w-full md:h-full h-[70vh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
-        <div data-splitting className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2vh)] md:text-[calc(1vw+1vh)] font-bold">
+      <div className="wrapper02 md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
+        <div data-splitting className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)] font-bold">
           Elevating Marketing Excellence through:<br />
           <br />
           Strategic Development<br />
