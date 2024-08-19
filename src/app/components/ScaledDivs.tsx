@@ -507,7 +507,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
       >
         <span ref={measureRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
         <div
-          className="variable-word-1 w-full md:origin-left h-full hover:duration-0 duration-150 flex justify-evenly items-center gap-2"
+          className="variable-word-1 origin-top-left h-full hover:duration-0 duration-150 inline-flex justify-evenly items-center gap-2"
           style={{ transform: `translate3d(0px, 0px, 0px) scaleX(${scaleX[0]}) scaleY(${1})` }}
         >
           {renderCharacters("ROGYX", spanWidths[0])}
