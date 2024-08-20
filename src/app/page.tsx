@@ -24,17 +24,22 @@ const Scene: React.FC<SceneProps> = ({
   const modelRef = useRef<Group>(null);
   const [clicked, setClicked] = useState<boolean>(false);
   const [scale, setScale] = useState<number>(1);
+  const [opacity, setOpacity] = useState<number>(1);
 
   useFrame((state) => {
     const { mouse, viewport } = state;
     if (modelRef.current) {
-
       if (!clicked) {
         const x = mouse.x * viewport.width * 30;
         const y = mouse.y * viewport.height * 50;
         modelRef.current.lookAt(x, y, 500);
         onMouseMove();
       } else {
+
+        if (opacity > 0.2) {
+          setOpacity((prevOpacity) => Math.max(prevOpacity - 0.05, 0.2));
+        }
+
         if (scale < 10) {
           setScale((prevScale) => prevScale + 0.1);
           modelRef.current.scale.set(scale, scale, scale);
@@ -42,6 +47,20 @@ const Scene: React.FC<SceneProps> = ({
           modelRef.current.visible = false;
           onModelZoomed();
         }
+
+        modelRef.current.traverse((child) => {
+          if (child instanceof THREE.Mesh) {
+            if (Array.isArray(child.material)) {
+              child.material.forEach((material) => {
+                material.transparent = true;
+                material.opacity = opacity;
+              });
+            } else {
+              child.material.transparent = true;
+              child.material.opacity = opacity;
+            }
+          }
+        });
       }
     }
   });
@@ -99,7 +118,7 @@ export default function Home() {
   };
 
   const toggleMute = () => {
-    setIsMuted(prevState => !prevState);
+    setIsMuted((prevState) => !prevState);
   };
 
   return (
@@ -120,22 +139,46 @@ export default function Home() {
         </Canvas>
       </div>
       <div
-        className={`flex items-center justify-center h-screen text-[100px] font-bold transition-opacity duration-500 ${
+        className={`flex w-full relative items-center justify-center h-screen text-[100px] font-bold transition-opacity duration-500 ${
           modelZoomed ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
         Content
       </div>
-      <audio ref={audio1Ref} id="audio-1" src="/assets/music/bike-engine.mp3" loop></audio>
-      <audio ref={audio2Ref} id="audio-2" src="/assets/music/bike-engine.mp3"></audio>
-
-      <button onClick={toggleMute} className="fixed right-5 bottom-5 flex items-center justify-end md:h-20 h-[55px]">
-          {isMuted ?
-            <img className="md:w-[220px] w-[150px]" src="/assets/images/mute.svg" alt="" />
-            :
-            <img className="md:w-[220px] w-[150px]" src="/assets/images/unmute.svg" alt="" />
-          }
+      <audio
+        ref={audio1Ref}
+        id="audio-1"
+        src="/assets/music/bike-engine.mp3"
+        loop
+      ></audio>
+      <audio
+        ref={audio2Ref}
+        id="audio-2"
+        src="/assets/music/bike2.mp3"
+      ></audio>
+    {!modelZoomed &&
+      <button
+        onClick={toggleMute}
+        className="fixed right-5 bottom-5 flex items-center justify-end md:h-20 h-[55px] gap-10"
+      >
+        {isMuted ? 'Trun On' : 'Trun Off'}
+        <figure className="w-[170px] flex items-center">
+        {isMuted ? (
+          <img
+            className="md:w-[90px] w-[150px]"
+            src="/assets/images/mute.svg"
+            alt=""
+          />
+        ) : (
+          <img
+            className="md:w-[170px] w-[150px]"
+            src="/assets/images/unmute.svg"
+            alt=""
+          />
+        )}
+        </figure>
       </button>
+      }
     </div>
   );
 }
