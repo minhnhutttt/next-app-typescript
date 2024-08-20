@@ -23,7 +23,7 @@ export default function Home() {
         <PixelImageComponent loadingComplete={loadingComplete} onComplete={handlePixelImageComplete} />
       )}
       <ScaledDivs isMuted={isMuted} />
-      <button  onClick={toggleMute} className="fixed md:right-10 right-5 md:bottom-10 bottom-5 flex items-center font-['STIX_Two_Text'] z-[9999]">
+      <button  onClick={toggleMute} className="fixed md:right-10 right-5 md:bottom-10 bottom-5 flex items-center gap-2 font-['STIX_Two_Text'] z-[9999]">
         <span>{isMuted ? 'Trun On' : 'Turn off'}</span>
         <figure>
           <svg xmlns="http://www.w3.org/2000/svg" className={`size-10 md:size-20 ${!isMuted && 'animate'}`} viewBox="0 0 172 172" fill="none">
