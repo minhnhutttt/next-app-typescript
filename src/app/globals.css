@@ -65,7 +65,6 @@ body {
   background-size: cover;
 }
 
-
 .animate path{
   animation: pulse 1.5s infinite ease-in-out;
   transform-origin: center;
@@ -82,3 +81,25 @@ body {
     transform: scaleY(1);
   }
 }
+
+.caret {
+  display: none;
+	border-right: 2px solid #000;
+  margin-left: 4px;
+	animation: typing 3s steps(18), blink .4s step-end infinite alternate;
+}
+.show-caret .caret {
+  display: inline;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+}
+@keyframes blink {
+	50% {
+		border-color: transparent;
+	}
+}
+

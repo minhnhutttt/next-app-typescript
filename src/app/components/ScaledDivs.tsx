@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import gsap from "gsap";
+import gsap, { SteppedEase } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Box from './box';
 
@@ -171,15 +171,18 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
   const handleClick = () => {
     const tl = gsap.timeline();
     const boxes = gsap.utils.toArray<HTMLElement>(".box");
+    const lines = gsap.utils.toArray<HTMLElement>(".type-line");
     const height = isMobileView ? 40 : 80;
-
+    let cursor = document.querySelector("#cursor");
+    let text = document.querySelector("#text");
+    gsap.fromTo(cursor, {autoAlpha: 0, x: 2}, {autoAlpha: 1, duration: 0.5, repeat: -1, ease: SteppedEase.config(1)});
     if (!isRunning) {
       gsap.set(".box", {
         y: (i: number) => i * height,
         opacity: 0,
       });
       gsap.set(".char", {
-        opacity: 0,
+        display:"none",
       });
       if (!isMobileView) {
         tl.to(divRef.current, {
@@ -255,21 +258,25 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           duration: 1,
           ease: "power2.inOut",
         }, "<");
-        tl.to(".char", {
-          opacity: 1,
-          stagger: 0.05,
-          onStart: () => {
-            if (audioRef.current) {
-              audioRef.current.play();
-            }
-          },
-          onComplete: () => {
-            if (audioRef.current) {
-              audioRef.current.currentTime = 0;
-              audioRef.current.pause();
-            }
-            
-          },
+        lines.forEach((line) => {
+          const chars = line.querySelectorAll(".char");
+          tl.to(chars, {
+            display: "inline",
+            stagger: 0.05,
+            onStart: () => {
+              if (audioRef.current) {
+                audioRef.current.play();
+              }
+              line.classList.add("show-caret");
+            },
+            onComplete: () => {
+              line.classList.remove("show-caret");
+              if (audioRef.current) {
+                audioRef.current.currentTime = 0;
+                audioRef.current.pause();
+              }
+            },
+          });
         });
         tl.to(".wrapper02", {
           opacity: 0,
@@ -555,23 +562,24 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
       </div>
       <div className="wrapper02 md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
         <div data-splitting className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)] font-bold">
-          Elevating Marketing Excellence through:<br />
+          <span className="type-line">Elevating Marketing Excellence through:<span className="caret"></span></span>
           <br />
-          Strategic Development<br />
-          Meticulous Planning<br />
-          Innovative Strategy<br />
-          Expert Consulting<br />
           <br />
-          Our Mission:<br />
+          <span className="type-line">Strategic Development<span className="caret"></span></span><br />
+          <span className="type-line">Meticulous Planning<span className="caret"></span></span><br />
+          <span className="type-line">Innovative Strategy<span className="caret"></span></span><br />
+          <span className="type-line">Expert Consulting<span className="caret"></span></span><br />
           <br />
-          Advancing the future of <a href="https://g.co/kgs/Vt1oGkn" target="_blank" className="text-[#1B00CD] inline-block">ICT</a> <br />
-          through cutting-edge marketing<br />
+          <span className="type-line">Our Mission:<span className="caret"></span></span><br />
           <br />
-          Committed to excellence for our clients,<br />
-          for our users,<br />
-          and for ourselves<br />
+          <span className="type-line">Advancing the future of <a href="https://g.co/kgs/Vt1oGkn" target="_blank" className="text-[#1B00CD] inline-block">ICT</a> <span className="caret"></span></span><br />
+          <span className="type-line">through cutting-edge marketing<span className="caret"></span></span><br />
           <br />
-          Pioneering the Future of Marketing
+          <span className="type-line">Committed to excellence for our clients,<span className="caret"></span></span><br />
+          <span className="type-line">for our users,<span className="caret"></span></span><br />
+          <span className="type-line">and for ourselves<span className="caret"></span></span><br />
+          <br />
+          <span className="type-line">Pioneering the Future of Marketing<span className="caret"></span></span>
         </div>
       </div>
       <audio ref={audioRef} src="/assets/audio/type.mp3" loop />

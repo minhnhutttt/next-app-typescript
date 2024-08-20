@@ -24,7 +24,7 @@ export default function Home() {
       )}
       <ScaledDivs isMuted={isMuted} />
       <button  onClick={toggleMute} className="fixed md:right-10 right-5 md:bottom-10 bottom-5 flex items-center font-['STIX_Two_Text'] z-[9999]">
-        <span>{isMuted ? 'Unmute' : 'Mute'}</span>
+        <span>{isMuted ? 'Trun On' : 'Turn off'}</span>
         <figure>
           <svg xmlns="http://www.w3.org/2000/svg" className={`size-10 md:size-20 ${!isMuted && 'animate'}`} viewBox="0 0 172 172" fill="none">
             <path className="animate" d="M115.486 135.757C114.025 135.738 112.63 135.149 111.597 134.117C110.565 133.084 109.976 131.689 109.957 130.228V41.7713C109.957 40.305 110.539 38.8987 111.576 37.8619C112.613 36.825 114.019 36.2426 115.486 36.2426C116.952 36.2426 118.358 36.825 119.395 37.8619C120.432 38.8987 121.014 40.305 121.014 41.7713V130.228C120.995 131.689 120.406 133.084 119.374 134.117C118.341 135.149 116.946 135.738 115.486 135.757Z" fill="black"/>
