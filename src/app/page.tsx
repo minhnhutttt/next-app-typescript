@@ -2,7 +2,7 @@
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useLoader } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
+import { Environment, OrbitControls } from "@react-three/drei";
 import { DDSLoader, GLTFLoader } from "three-stdlib";
 import { Suspense, useRef, useState, useEffect } from "react";
 import { Group } from "three";
@@ -36,8 +36,8 @@ const Scene: React.FC<SceneProps> = ({
         onMouseMove();
       } else {
 
-        if (opacity > 0.2) {
-          setOpacity((prevOpacity) => Math.max(prevOpacity - 0.05, 0.2));
+        if (opacity > 0) {
+          setOpacity((prevOpacity) => Math.max(prevOpacity - 0.03, 0));
         }
 
         if (scale < 10) {
@@ -77,7 +77,7 @@ const Scene: React.FC<SceneProps> = ({
         dispose={null}
         object={gltf.scene}
         scale={[scale, scale, scale]}
-        position={[0, -40, -180]}
+        position={[0, -80, -170]}
         onClick={handleClick}
       />
     </>
@@ -89,6 +89,28 @@ export default function Home() {
   const audio1Ref = useRef<HTMLAudioElement>(null);
   const audio2Ref = useRef<HTMLAudioElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+  const controlsRef = useRef<any>(null);
+  const [initialTarget] = useState([0, -40, -170]);
+  const [initialAzimuthAngle, setInitialAzimuthAngle] = useState(null);
+  const [initialPolarAngle, setInitialPolarAngle] = useState(null);
+
+  const handleControlsReady = () => {
+    if (controlsRef.current) {
+      setInitialAzimuthAngle(controlsRef.current.getAzimuthalAngle());
+      setInitialPolarAngle(controlsRef.current.getPolarAngle());
+    }
+  };
+
+  const handleControlEnd = () => {
+    if (controlsRef.current) {
+      controlsRef.current.target.set(...initialTarget);
+
+      controlsRef.current.setAzimuthalAngle(initialAzimuthAngle);
+      controlsRef.current.setPolarAngle(initialPolarAngle);
+
+      controlsRef.current.update();
+    }
+  };
 
   useEffect(() => {
     if (audio1Ref.current && audio2Ref.current) {
@@ -128,7 +150,20 @@ export default function Home() {
           <Suspense fallback={null}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 10]} intensity={1} />
-            <directionalLight position={[-10, -10, -10]} intensity={0.5} />
+            <OrbitControls 
+              ref={controlsRef}
+              target={[0, -40, -170]} 
+              enableDamping={true}
+              enableZoom={false}
+              enablePan={false} 
+              enableRotate={true} 
+              minAzimuthAngle={-Math.PI / 6}
+              maxAzimuthAngle={Math.PI / 6}
+              minPolarAngle={Math.PI / 2 - 0.5}
+              maxPolarAngle={Math.PI / 2 + 0.5}
+              onStart={handleControlsReady}
+              onEnd={handleControlEnd}
+            />
             <Scene
               onModelZoomed={handleModelZoomed}
               onMouseMove={playAudio1}
