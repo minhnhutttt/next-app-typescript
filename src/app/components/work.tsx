@@ -1,11 +1,12 @@
 "use client";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { Falling } from "./falling";
 
 const Work = () => {
     const ref = useScrollAnimations();
-
+    
     return (
-        <section ref={ref} className="relative pt-[80px] md:pt-[130px] px-5">
+        <section ref={ref} className="relative pt-[80px] md:pt-[130px] px-5 md:pb-[190px] pb-[120px]">
             <div className="flex justify-center items-center gap-3">
                 <figure><img className="max-md:w-10" src="/assets/images/ic-walk.svg" alt="" /></figure>
                 <p className="md:text-[64px] text-[36px] text-white font-extrabold">働き方</p>
@@ -30,19 +31,19 @@ const Work = () => {
                         <div>
                             <p className="md:text-[24px] text-[18px] md:mb-6">FLOW</p>
                             <div className="md:text-[18px] text-[14px] md:space-y-[30px] space-y-4">
-                                <a href="#diver-wallet" className="group flex items-center gap-2">
+                                <a href="#nft-creation" className="group flex items-center gap-2">
                                     <figure className="duration-150 opacity-0 group-hover:opacity-100"><img src="/assets/images/ic-link.svg" alt="" /></figure>
                                     NFT作成
                                 </a>
-                                <a href="#diver-knock" className="group flex items-center gap-2">
+                                <a href="#order" className="group flex items-center gap-2">
                                 <figure className="duration-150 opacity-0 group-hover:opacity-100"><img src="/assets/images/ic-link.svg" alt="" /></figure>
                                     受注する
                                 </a>
-                                <a href="#diver-knock" className="group flex items-center gap-2">
+                                <a href="#job" className="group flex items-center gap-2">
                                 <figure className="duration-150 opacity-0 group-hover:opacity-100"><img src="/assets/images/ic-link.svg" alt="" /></figure>
                                     仕事をする
                                 </a>
-                                <a href="#diver-knock" className="group flex items-center gap-2">
+                                <a href="#rewards" className="group flex items-center gap-2">
                                 <figure className="duration-150 opacity-0 group-hover:opacity-100"><img src="/assets/images/ic-link.svg" alt="" /></figure>
                                     報酬
                                 </a>
@@ -52,7 +53,7 @@ const Work = () => {
                 </div>
                 <div className="flex-1">
                     <div className="md:space-y-20 space-y-10">
-                        <div className="bg-[url('/assets/images/bg-diver.png')] rounded-[40px] border-[10px] border-[#191919] [box-shadow:0px_10px_0px_0px_#191919] bg-[#FFEADC] md:py-[50px] py-8 px-5">
+                        <div id="diver-wallet" className="bg-[url('/assets/images/bg-diver.png')] rounded-[40px] border-[10px] border-[#191919] [box-shadow:0px_10px_0px_0px_#191919] bg-[#FFEADC] md:py-[50px] py-8 px-5">
                             <div className="flex items-center w-full max-w-[896px] mx-auto gap-7 max-lg:flex-col">
                                 <figure>
                                     <img className="max-md:w-[230px]" src="/assets/images/img-diver-wallet.png" alt="" />
@@ -73,7 +74,7 @@ const Work = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-[url('/assets/images/bg-diver.png')] rounded-[40px] border-[10px] border-[#191919] [box-shadow:0px_10px_0px_0px_#191919] bg-[#FFEADC] md:py-[50px] py-8 px-5">
+                        <div id="diver-knock" className="bg-[url('/assets/images/bg-diver.png')] rounded-[40px] border-[10px] border-[#191919] [box-shadow:0px_10px_0px_0px_#191919] bg-[#FFEADC] md:py-[50px] py-8 px-5">
                             <div className="flex items-center w-full max-w-[896px] mx-auto gap-7 max-lg:flex-col">
                                 <figure>
                                     <img className="max-md:w-[230px]" src="/assets/images/img-diver-knock.png" alt="" />
@@ -95,8 +96,9 @@ const Work = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="md:mt-[140px] mt-[100px] flex flex-wrap gap-5 gap-y-16 justify-center">
-                        <div className="w-full max-w-[355px] md:w-[355px] md:h-[470px] h-[380px] bg-[#FFEADC] border-[#3D2216] md:border-[10px] border-[6px] rounded-[40px] relative">
+                    <div className="md:mt-[140px] mt-[100px] flex flex-wrap gap-5 gap-y-16 justify-center relative">
+                        <div className="absolute top-[-50px] left-3 md:text-[24px] text-[20px] font-extrabold text-white">FLOW</div>
+                        <div id="nft-creation" className="w-full max-w-[355px] md:w-[355px] md:h-[470px] h-[380px] bg-[#FFEADC] border-[#3D2216] md:border-[10px] border-[6px] rounded-[40px] relative">
                             <div className="flex justify-center md:-mt-[60px] -mt-[53px]">
                                 <div className="w-full md:max-w-[114px] max-w-[100px] md:h-[60px] h-[53px] flex justify-center items-end bg-[url('/assets/images/flow-number.png')] bg-cover md:text-[50px] text-[32px] font-extrabold leading-8">
                                     1
@@ -117,7 +119,7 @@ const Work = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full max-w-[355px] md:w-[355px] md:h-[470px] h-[380px] bg-[#FFEADC] border-[#3D2216] md:border-[10px] border-[6px] rounded-[40px] relative">
+                        <div id="order" className="w-full max-w-[355px] md:w-[355px] md:h-[470px] h-[380px] bg-[#FFEADC] border-[#3D2216] md:border-[10px] border-[6px] rounded-[40px] relative">
                             <div className="flex justify-center md:-mt-[60px] -mt-[53px]">
                                 <div className="w-full md:max-w-[114px] max-w-[100px] md:h-[60px] h-[53px] flex justify-center items-end bg-[url('/assets/images/flow-number.png')] bg-cover md:text-[50px] text-[32px] font-extrabold leading-8">
                                 2
@@ -135,7 +137,7 @@ const Work = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full max-w-[355px] md:w-[355px] md:h-[470px] h-[380px] bg-[#FFEADC] border-[#3D2216] md:border-[10px] border-[6px] rounded-[40px] relative">
+                        <div id="job" className="w-full max-w-[355px] md:w-[355px] md:h-[470px] h-[380px] bg-[#FFEADC] border-[#3D2216] md:border-[10px] border-[6px] rounded-[40px] relative">
                             <div className="flex justify-center md:-mt-[60px] -mt-[53px]">
                                 <div className="w-full md:max-w-[114px] max-w-[100px] md:h-[60px] h-[53px] flex justify-center items-end bg-[url('/assets/images/flow-number.png')] bg-cover md:text-[50px] text-[32px] font-extrabold leading-8">
                                     3
@@ -152,6 +154,42 @@ const Work = () => {
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div className="flex justify-center md:pt-20 pt-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="max-md:w-[120px] md:w-[201px]" viewBox="0 0 201 106" fill="none">
+                            <path d="M100.5 106L0.474558 0.249996L200.526 0.250014L100.5 106Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div className="flex justify-center md:mt-16 mt-8">
+                        <div id="rewards" className="w-full max-w-[460px] md:w-[460px] md:h-[612px] h-[570px] bg-[url('/assets/images/bg-clear.png')] bg-[length:100%_100%] md:pt-[28px] pt-10 md:px-9 px-6 overflow-hidden relative">
+                            <div className="relative z-10">
+                                <div className="flex items-center justify-center md:text-[48px] text-[32px] font-medium text-white gap-1">
+                                    <figure><img src="/assets/images/ic-l.png" alt="" className="max-md:w-[80px]" /></figure>
+                                    <p>報 酬</p>
+                                    <figure><img src="/assets/images/ic-r.png" alt="" className="max-md:w-[80px]" /></figure>
+                                </div>
+                                <div className="space-y-9 relative">
+                                    <div className="flex">
+                                        <img src="/assets/images/line-1.png" alt="" />
+                                    </div>
+                                    <div className="h-[152px] bg-black border-[5px] border-white flex flex-col items-center justify-center rounded-[20px]">
+                                        <h5><img src="/assets/images/congratulations.png" alt="" /></h5>
+                                        <p className="text-white font-extrabold md:text-[20px] text-[16px] text-center">企業から報酬を受け取ろう！</p>
+                                    </div>
+                                    <div className="flex">
+                                        <img src="/assets/images/line-2.png" alt="" />
+                                    </div>
+                                    <div className="absolute right-[-50px] bottom-[-16px]">
+                                        <img className="max-md:w-[100px]" src="/assets/images/ic-takara.png" alt="" />
+                                    </div>
+                                </div>
+                                <div className="text-center md:text-[22px] text-[17px] font-extrabold text-white py-7">
+                                    クエストクリア！<br />
+                                    次のクエストへ！
+                                </div>
+                            </div>
+                            <Falling />
                         </div>
                     </div>
                 </div>
