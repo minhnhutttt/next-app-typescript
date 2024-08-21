@@ -27,7 +27,7 @@ const data = [
 const List = () => {
     const ref = useScrollAnimations();
     return (
-        <section ref={ref} className="relative overflow-hidden py-[100px] md:py-[160px] px-4">
+        <section ref={ref} className="relative overflow-hidden pt-[100px] md:pt-[160px] px-4">
             <div className="w-full md:max-w-[1180px] max-w-[480px] mx-auto md:space-y-20 space-y-10">
                 {data.map((item, index) => (
                     <div className="" key={index}>
