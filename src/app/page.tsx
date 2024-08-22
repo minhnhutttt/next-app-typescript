@@ -122,6 +122,7 @@ export default function Home() {
   const handleModelZoomed = () => {
     setModelZoomed(true);
     if (audio1Ref.current) {
+      audio1Ref.current.muted = true;
       audio1Ref.current.pause();
     }
   };
@@ -133,6 +134,10 @@ export default function Home() {
   };
 
   const playAudio2 = () => {
+    if (audio1Ref.current) {
+      audio1Ref.current.muted = true;
+      audio1Ref.current.pause();
+    }
     if (audio2Ref.current) {
       audio2Ref.current.currentTime = 0;
       audio2Ref.current.play();
