@@ -47,13 +47,13 @@ const data = [
 const Merit = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative overflow-hidden">
-      <h4 className="text-center md:text-[64px] text-[40px] font-extrabold md:pt-16 pt-10 md:pb-14 pb-8">
+    <section id="merit" ref={ref} className="relative overflow-hidden">
+      <h4 data-scroll className="ani-fade-up text-center md:text-[64px] text-[40px] font-extrabold md:pt-16 pt-10 md:pb-14 pb-8">
         メリットがいっぱい
       </h4>
       <div className="relative md:h-[646px] h-[480px] bg-bottom bg-[url('/assets/images/bg-02.png')]">
         <div className="absolute inset-0 flex justify-center text-center items-start md:text-[54px] lg:text-[64px] text-[24px] font-extrabold text-white md:pt-[85px] pt-20 leading-[1.4] px-5">
-          <div className="w-full max-w-[976px] bg-black border-[8px] border-white rounded-[50px] py-7">
+          <div data-scroll className="ani-fade-up w-full max-w-[976px] bg-black border-[8px] border-white rounded-[50px] py-7">
             リアル型サブクエスト <br />
             ↓↓↓
             <br />
@@ -61,7 +61,7 @@ const Merit = () => {
           </div>
         </div>
       </div>
-      <div className="pb-4">
+      <div data-scroll className="ani-fade-up pb-4">
         <Splide
           hasTrack={false}
           options={{

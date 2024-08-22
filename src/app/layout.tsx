@@ -3,6 +3,7 @@ import { M_PLUS_1p } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import ScrollContainer from "@/components/scrollContainer";
 
 const mplus = M_PLUS_1p({
   weight: ["400", "500", "700", "800", "900"],
@@ -21,11 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${mplus.className}`}
+        className={`bg-[#FA3D51] ${mplus.className}`}
       >
+        <ScrollContainer>
         <Header />
         {children}
         <Footer />
+        </ScrollContainer>
       </body>
     </html>
   );

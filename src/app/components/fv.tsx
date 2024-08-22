@@ -11,8 +11,8 @@ const FV = () => {
                 Your browser does not support the video tag.
             </video>
         </div>
-        <div className="w-full max-w-[1440px] mx-auto md:pt-[143px] pt-[40vw] pb-12 md:pb-[124px] px-10">
-            <h1 className="zoom-in"><img src="/assets/images/fv-text.png" alt="タイパ最強！空いた時間で稼ぎまくれ！" /></h1>
+        <div className="w-full max-w-[1440px] mx-auto md:pt-[143px] pt-[40vw] pb-12 md:pb-[124px] md:px-10 px-5">
+            <h1 data-scroll className="ani-fade-up"><img src="/assets/images/fv-text.png" alt="タイパ最強！空いた時間で稼ぎまくれ！" /></h1>
         </div>
         <div className="absolute inset-x-0 -bottom-0.5 flex z-10">
             <img className="w-full" src="/assets/images/fv-line.png" alt="" />

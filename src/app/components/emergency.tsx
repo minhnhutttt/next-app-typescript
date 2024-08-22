@@ -10,7 +10,7 @@ const Emergency = () => {
                 <div className="relative">
                     <img src="/assets/images/bg-emergency.png" alt="" />
                 </div>
-                <div className="absolute inset-0">
+                <div data-scroll className="ani-fade-up absolute inset-0">
                     <div className="w-[70vw] md:w-[56.25vw] dt:w-[810px] mx-auto md:pt-[19.306vw] pt-[16vw] dt:pt-[278px]">
                         <div>
                             <span className="block h-[2.083vw] dt:h-[30px] md:bg-[repeating-linear-gradient(_-45deg,_#FEC800,_#FEC800_10px,_#000_10px,_#000_20px_)] bg-[repeating-linear-gradient(_-60deg,_#FEC800,_#FEC800_5px,_#000_5px,_#000_10px_)]"></span>

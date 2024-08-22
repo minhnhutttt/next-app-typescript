@@ -1,14 +1,12 @@
 "use client";
+import PageContainer from "@/components/pageContainer";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 export default function Company() {
   const ref = useScrollAnimations();
   return (
-    <main ref={ref}>
-      <div className="px-5 md:pb-[120px] pb-20">
-        <div className="md:text-[56px] text-[36px] text-center font-bold md:py-[112px] py-16">
-        運営会社
-        </div>
+    <PageContainer>
+      <div className="px-5 md:py-[300px] pt-[120px]">
         <div className="mx-auto w-full max-w-[1350px] bg-black max-md:bg-[length:140%_auto] bg-no-repeat bg-right bg-cover px-5 py-12 md:py-16">
           <div className="flex justify-center">
             <img
@@ -47,6 +45,6 @@ export default function Company() {
           </div>
         </div>
       </div>
-    </main>
+    </PageContainer>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import PageContainer from "@/components/pageContainer";
 import PageTitle from "@/components/pageTitle";
 import TextBlock from "@/components/textBlock";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
@@ -7,21 +8,21 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 export default function PrivacyPolicy() {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref}>
+    <PageContainer>
       <PageTitle>プライバシーポリシー</PageTitle>
       <div className="px-5 mt-7 md:mt-10">
         <div className="font-worksans mx-auto w-full max-w-[1190px]">
           <div className="flex justify-end">
             <p className="text-[12px] font-bold text-black md:text-[15px]">
-                制定　2023.01.26 <br />
-                株式会社ZEXAVERSE（ゼクサバース）
+            制定　2023.01.26 <br />
+            株式会社ZEXAVERSE（ゼクサバース）
             </p>
           </div>
         </div>
         <div className="mx-auto pb-16 pt-5 w-full max-w-[1000px] space-y-14 md:pb-20 md:pt-11">
           <div className="md:mb-14">
             <TextBlock>
-              当社は、お客様の個人情報の保護について、次のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定め、本ポリシーに基づき適正に個人情報を取り扱います。なお、本ポリシーで使用する用語の意味は、個人情報の保護に関する法律（以下、「個人情報保護法」といいます。）に準拠するものとします。
+            当社は、お客様の個人情報の保護について、次のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定め、本ポリシーに基づき適正に個人情報を取り扱います。なお、本ポリシーで使用する用語の意味は、個人情報の保護に関する法律（以下、「個人情報保護法」といいます。）に準拠するものとします。
             </TextBlock>
           </div>
           <TextBlock title="取得する個人情報の項目">
@@ -135,8 +136,7 @@ export default function PrivacyPolicy() {
               </li>
               <li>
               手続 <br />
-                <br />
-                お客様は、開示等の請求を行う場合には、当社所定の請求書（下記ア）に所定事項を記入の上、本人確認書類（下記イ）を同封の上、当社の指定する送付先（下記ウ）までご郵送ください。また、利用目的の通知及び個人情報又は第三者提供記録の開示については、1回の請求につき1,000円の手数料をいただきま　す。請求書記載の振込先までお振込みください。なお、不開示及び利用目的の非通知の場合についても、所定の手数料をいただきます。
+                お客様は、開示等の請求を行う場合には、当社所定の請求書（下記ア）に所定事項を記入の上、本人確認書類（下記イ）を同封の上、当社の指定する送付先（下記ウ）までご郵送ください。また、利用目的の通知及び個人情報又は第三者提供記録の開示については、1回の請求につき1,000円の手数料をいただきます。請求書記載の振込先までお振込みください。なお、不開示及び利用目的の非通知の場合についても、所定の手数料をいただきます。
                 <ul className="list-[lower-alpha] ml-5">
                   <li>
                   請求書
@@ -242,6 +242,6 @@ export default function PrivacyPolicy() {
           </TextBlock>
         </div>
       </div>
-    </section>
+    </PageContainer>
   );
 }

@@ -1,6 +1,8 @@
 import Emergency from "./components/emergency";
+import FAQ from "./components/faq/faq";
 import FV from "./components/fv";
 import Howto from "./components/howto";
+import Line from "./components/line";
 import List from "./components/list";
 import Merit from "./components/merit";
 import Work from "./components/work";
@@ -18,7 +20,8 @@ export default function Home() {
         <Merit />
       </div>
       <Howto />
-
+      <FAQ />
+      <Line />
     </main>
   );
 }

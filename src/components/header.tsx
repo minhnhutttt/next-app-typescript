@@ -14,23 +14,23 @@ const links: NavLink[] = [
     text: "バイトクエストとは？",
   },
   {
-    link: "/#products",
+    link: "/#work-style",
     text: "働き方",
   },
   {
-    link: "/#sales",
+    link: "/#item",
     text: "アイテム",
   },
   {
-    link: "/#flow",
+    link: "/#merit",
     text: "メリット",
   },
   {
-    link: "/#flow",
+    link: "/#howto",
     text: "使い方",
   },
   {
-    link: "/#flow",
+    link: "/#faq",
     text: "よくある質問",
   },
 ];
