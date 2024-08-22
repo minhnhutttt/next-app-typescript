@@ -162,7 +162,7 @@ const Work = () => {
                         </svg>
                     </div>
                     <div className="flex justify-center md:mt-16 mt-8">
-                        <div id="rewards" data-scroll className="ani-fade-up w-full max-w-[460px] md:w-[460px] md:h-[612px] h-[570px] bg-[url('/assets/images/bg-clear.png')] bg-[length:100%_100%] md:pt-[28px] pt-10 md:px-9 px-6 overflow-hidden relative [filter:drop-shadow(0px_0px_100px_rgba(131,_5,_19,_0.60))]">
+                        <div id="rewards" data-scroll className="ani-fade-up w-full max-w-[460px] md:w-[460px] md:h-[612px] h-[570px] bg-[url('/assets/images/bg-clear.png')] bg-[length:100%_100%] md:pt-[28px] pt-10 md:px-9 px-6  relative [filter:drop-shadow(0px_0px_100px_rgba(131,_5,_19,_0.60))]">
                             <div className="relative z-10">
                                 <div className="flex items-center justify-center md:text-[48px] text-[32px] font-medium text-white gap-1">
                                     <figure><img src="/assets/images/ic-l.png" alt="" className="max-md:w-[80px]" /></figure>
@@ -180,8 +180,8 @@ const Work = () => {
                                     <div className="flex">
                                         <img src="/assets/images/line-2.png" alt="" />
                                     </div>
-                                    <div className="absolute right-[-50px] bottom-[-16px]">
-                                        <img className="max-md:w-[100px]" src="/assets/images/ic-takara.png" alt="" />
+                                    <div className="absolute right-[-50px] bottom-[-20px]">
+                                        <img className="max-md:w-[100px] [transition:1.5s_ease-in-out] animate-[fuwafuwa_3s_ease-in-out_infinite_alternate]" src="/assets/images/ic-takara.png" alt="" />
                                     </div>
                                 </div>
                                 <div className="text-center md:text-[22px] text-[17px] font-extrabold text-white py-7">
