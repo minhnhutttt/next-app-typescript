@@ -35,9 +35,9 @@ const Loading = () => {
   if (!isLoading) return null;
 
   return (
-    <div className="bg-[#333] fixed inset-0 w-full z-[1031] flex items-center justify-center">
+    <div className="bg-white fixed inset-0 w-full z-[1031] flex items-center justify-center">
         <div className="w-full">
-        <div className="text-center text-white">
+        <div className="text-center text-black text-[25px] md:text-[50px]">
             {progress}%
         </div>
       </div>
