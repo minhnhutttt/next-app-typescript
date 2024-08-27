@@ -1,16 +1,61 @@
 "use client";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { Falling } from "./falling";
+import { useEffect, useState } from "react";
 
 const Work = () => {
     const ref = useScrollAnimations();
     
+    let [activeSection, setActiveSection] = useState('diverWallet')
+
+
+  useEffect(() => {
+
+      let diverWallet = document.getElementById('diver-wallet')
+      let diverKnock = document.getElementById('diver-knock')
+      let flow = document.getElementById('flow')
+      let rewards = document.getElementById('rewards')
+
+      let sections = [diverWallet, diverKnock, flow, rewards]
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.8,
+      };
+
+
+    const observer = new IntersectionObserver(entries => {
+  
+      entries.forEach(entry => {
+          if(entry.isIntersecting){
+              if (entry.target.id == 'diver-wallet'){
+                setActiveSection('diverWallet')
+              }
+              if (entry.target.id == 'diver-knock'){
+                setActiveSection('diverKnock')
+              }
+              if (entry.target.id == 'flow'){
+                setActiveSection('flow')
+              }
+              if (entry.target.id == 'rewards'){
+                setActiveSection('rewards')
+              }
+          }
+      })
+  }, observerOptions)
+  
+  sections?.forEach(section => {
+    section && observer.observe(section)
+  })
+  }, [])
+
     return (
         <section id="work-style" ref={ref} className="relative pt-[80px] md:pt-[130px] px-5 md:pb-[190px] pb-[120px]">
             <div data-scroll className="ani-fade-up flex justify-center items-center gap-3">
-                <figure><img className="max-md:w-10" src="/assets/images/ic-walk.svg" alt="" /></figure>
+                <figure><img className="max-md:w-10 animate-[decoSwing_2400ms_steps(2,_end)_infinite]" src="/assets/images/ic-walk.svg" alt="" /></figure>
                 <p className="md:text-[64px] text-[36px] text-white font-extrabold">働き方</p>
-                <figure><img className="max-md:w-10" src="/assets/images/ic-walk.svg" alt="" /></figure>
+                <figure><img className="max-md:w-10 animate-[decoSwing_2400ms_steps(2,_end)_infinite]" src="/assets/images/ic-walk.svg" alt="" /></figure>
             </div>
             <div id="item" className="w-full md:max-w-[1360px] max-w-[480px] mx-auto flex gap-10 md:mt-14 mt-8 max-md:flex-col items-start relative">
                 <div className="sticky top-10 max-md:hidden md:flex-[0_0_210px] md:w-[210px]">
@@ -19,11 +64,23 @@ const Work = () => {
                             <p className="md:text-[24px] text-[18px] md:mb-6">必要なアイテム</p>
                             <div className="md:text-[18px] text-[14px] md:space-y-[30px] space-y-4">
                                 <a href="#diver-wallet" className="group flex items-center gap-2">
-                                    <figure className="duration-150 opacity-0 group-hover:opacity-100"><img src="/assets/images/ic-link.svg" alt="" /></figure>
+                                <figure
+                    className={`duration-150 ${
+                        activeSection === "diverWallet" ? "opacity-100" : "opacity-0"
+                    } group-hover:opacity-100`}
+                  >
+                    <img src="/assets/images/ic-link.svg" alt="" />
+                  </figure>
                                     DIVER Wallet
                                 </a>
                                 <a href="#diver-knock" className="group flex items-center gap-2">
-                                <figure className="duration-150 opacity-0 group-hover:opacity-100"><img src="/assets/images/ic-link.svg" alt="" /></figure>
+                                <figure
+                    className={`duration-150 ${
+                        activeSection === "diverKnock" ? "opacity-100" : "opacity-0"
+                    } group-hover:opacity-100`}
+                  >
+                    <img src="/assets/images/ic-link.svg" alt="" />
+                  </figure>
                                     DIVER Knock
                                 </a>
                             </div>
@@ -32,19 +89,43 @@ const Work = () => {
                             <p className="md:text-[24px] text-[18px] md:mb-6">FLOW</p>
                             <div className="md:text-[18px] text-[14px] md:space-y-[30px] space-y-4">
                                 <a href="#nft-creation" className="group flex items-center gap-2">
-                                    <figure className="duration-150 opacity-0 group-hover:opacity-100"><img src="/assets/images/ic-link.svg" alt="" /></figure>
+                                <figure
+                    className={`duration-150 ${
+                        activeSection === "flow" ? "opacity-100" : "opacity-0"
+                    } group-hover:opacity-100`}
+                  >
+                    <img src="/assets/images/ic-link.svg" alt="" />
+                  </figure>
                                     NFT作成
                                 </a>
                                 <a href="#order" className="group flex items-center gap-2">
-                                <figure className="duration-150 opacity-0 group-hover:opacity-100"><img src="/assets/images/ic-link.svg" alt="" /></figure>
+                                <figure
+                    className={`duration-150 ${
+                        activeSection === "flow" ? "opacity-100" : "opacity-0"
+                    } group-hover:opacity-100`}
+                  >
+                    <img src="/assets/images/ic-link.svg" alt="" />
+                  </figure>
                                     受注する
                                 </a>
                                 <a href="#job" className="group flex items-center gap-2">
-                                <figure className="duration-150 opacity-0 group-hover:opacity-100"><img src="/assets/images/ic-link.svg" alt="" /></figure>
+                                <figure
+                    className={`duration-150 ${
+                        activeSection === "flow" ? "opacity-100" : "opacity-0"
+                    } group-hover:opacity-100`}
+                  >
+                    <img src="/assets/images/ic-link.svg" alt="" />
+                  </figure>
                                     仕事をする
                                 </a>
                                 <a href="#rewards" className="group flex items-center gap-2">
-                                <figure className="duration-150 opacity-0 group-hover:opacity-100"><img src="/assets/images/ic-link.svg" alt="" /></figure>
+                                <figure
+                    className={`duration-150 ${
+                        activeSection === "rewards" ? "opacity-100" : "opacity-0"
+                    } group-hover:opacity-100`}
+                  >
+                    <img src="/assets/images/ic-link.svg" alt="" />
+                  </figure>
                                     報酬
                                 </a>
                             </div>
@@ -96,7 +177,7 @@ const Work = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="md:mt-[140px] mt-[100px] flex flex-wrap gap-5 gap-y-16 justify-center relative">
+                    <div id="flow" className="md:mt-[140px] mt-[100px] flex flex-wrap gap-5 gap-y-16 justify-center relative">
                         <div data-scroll className="ani-fade-up absolute top-[-50px] left-3 md:text-[24px] text-[20px] font-extrabold text-white">FLOW</div>
                         <div id="nft-creation" data-scroll className="ani-fade-up w-full max-w-[355px] md:w-[355px] md:h-[470px] h-[380px] bg-[#FFEADC] border-[#3D2216] md:border-[10px] border-[6px] rounded-[40px] relative">
                             <div className="flex justify-center md:-mt-[60px] -mt-[53px]">
@@ -127,7 +208,7 @@ const Work = () => {
                             </div>
                             <div className="flex flex-col items-center justify-center md:pt-8 pt-5 px-4">
                                 <div className="w-[270px] flex flex-col items-center justify-center">
-                                    <p className="text-center md:text-[24px] text-[18px] font-extrabold">NFT作成</p>
+                                    <p className="text-center md:text-[24px] text-[18px] font-extrabold">受注する</p>
                                     <div className="pt-3">
                                         <img className="max-md:w-[140px]" src="/assets/images/img-flow-02.png" alt="" />
                                     </div>
@@ -145,7 +226,7 @@ const Work = () => {
                             </div>
                             <div className="flex flex-col items-center justify-center md:pt-8 pt-5 px-4">
                                 <div className="w-[270px] flex flex-col items-center justify-center">
-                                    <p className="text-center md:text-[24px] text-[18px] font-extrabold">NFT作成</p>
+                                    <p className="text-center md:text-[24px] text-[18px] font-extrabold">仕事をする</p>
                                     <div className="pt-3">
                                         <img className="max-md:w-[140px]" src="/assets/images/img-flow-03.png" alt="" />
                                     </div>
@@ -180,7 +261,7 @@ const Work = () => {
                                     <div className="flex">
                                         <img src="/assets/images/line-2.png" alt="" />
                                     </div>
-                                    <div className="absolute right-[-50px] bottom-[-20px]">
+                                    <div className="absolute md:right-[-50px] right-[-32px] bottom-[-20px]">
                                         <img className="max-md:w-[100px] [transition:1.5s_ease-in-out] animate-[fuwafuwa_3s_ease-in-out_infinite_alternate]" src="/assets/images/ic-takara.png" alt="" />
                                     </div>
                                 </div>

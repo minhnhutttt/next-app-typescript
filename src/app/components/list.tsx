@@ -34,20 +34,27 @@ const List = () => {
             <div className="w-full md:max-w-[1180px] max-w-[480px] mx-auto md:space-y-20 space-y-10">
                 {data.map((item, index) => (
                     <div id={item.id} key={index}>
-                        <div data-scroll className="ani-fade-up md:text-[40px] text-[24px] text-white font-extrabold flex items-center justify-center gap-4 h-20 md:h-[120px] relative mb-2">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="md:w-[21px] w-4" viewBox="0 0 21 34" fill="none">
-                                    <path d="M20.1271 16.2441C20.5876 16.6428 20.5876 17.3572 20.1271 17.7559L1.65465 33.7536C1.00701 34.3144 -1.65467e-06 33.8544 -1.61722e-06 32.9976L-2.1866e-07 1.00237C-1.81211e-07 0.145615 1.00701 -0.314438 1.65465 0.246438L20.1271 16.2441Z" fill="white"/>
-                                </svg>
-                            </span>
-                            {item.topic}
+                        <div data-scroll className="ani-fade-up md:text-[40px] text-[24px] text-white font-extrabold flex items-center justify-center h-20 md:h-[120px] relative mb-2">
+                            <div className="relative flex items-center justify-center z-10 gap-4">
+                                <span className="animate-[fadeIn_1s_ease_infinite]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="md:w-[21px] w-4" viewBox="0 0 21 34" fill="none">
+                                        <path d="M20.1271 16.2441C20.5876 16.6428 20.5876 17.3572 20.1271 17.7559L1.65465 33.7536C1.00701 34.3144 -1.65467e-06 33.8544 -1.61722e-06 32.9976L-2.1866e-07 1.00237C-1.81211e-07 0.145615 1.00701 -0.314438 1.65465 0.246438L20.1271 16.2441Z" fill="white"/>
+                                    </svg>
+                                </span>
+                                {item.topic}
+                            </div>
                             <span className="absolute">
                                 <img className="max-md:w-[70px]" src="/assets/images/deco.png" alt="" />
                             </span>
                         </div>
                         <div data-scroll className="ani-fade-up bg-black border-[5px] border-white rounded-[40px] md:py-[74px] py-8 md:px-10 px-5 flex items-center max-md:flex-col md:gap-[52px] gap-6">
-                            <figure className="max-md:w-full max-lg:w-1/2">
+                            <figure className="max-md:w-full max-lg:w-1/2 relative">
                                 <img src={item.image} alt="" />
+                                {item.id === "nft" &&
+                                <div className="absolute w-[35.1%] aspect-[179/205] left-[41.17%] top-[27%] overflow-hidden">
+                                    <img className="animate-[moveArrow_12s_linear_infinite] block absolute left-0 top-0 max-lg:w-[8px]" src="/assets/images/triangle.png" alt="" />
+                                </div>
+                                }
                             </figure>
                             <div className="flex-1">
                                 <h5 className="md:mb-5 mb-3 md:text-[24px] leading-none text-[18px] font-extrabold relative flex items-center justify-center w-full aspect-[351/79] md:max-w-[351px] max-w-[300px] bg-[url('/assets/images/bg-list.png')] bg-cover">

@@ -53,15 +53,15 @@ const Merit = () => {
       </h4>
       <div className="relative md:h-[646px] h-[480px] bg-bottom bg-[url('/assets/images/bg-02.png')]">
         <div className="absolute inset-0 flex justify-center text-center items-start md:text-[54px] lg:text-[64px] text-[24px] font-extrabold text-white md:pt-[85px] pt-20 leading-[1.4] px-5">
-          <div data-scroll className="ani-fade-up w-full max-w-[976px] bg-black border-[8px] border-white rounded-[50px] py-7">
-            リアル型サブクエスト <br />
-            ↓↓↓
+          <div data-scroll className="w-full max-w-[976px] bg-black border-[8px] border-white rounded-[50px] py-7">
+            <span className="ani-fade-up">リアル型サブクエスト</span> <br />
+            <span className="ani-fade-up !delay-200">↓↓↓</span>
             <br />
-            それがバイトクエストだ！
+            <span className="ani-fade-up !delay-[400ms]">それがバイトクエストだ！</span>
           </div>
         </div>
       </div>
-      <div data-scroll className="ani-fade-up pb-4">
+      <div data-scroll className="ani-fade-up pb-4 overflow-hidden">
         <Splide
           hasTrack={false}
           options={{
