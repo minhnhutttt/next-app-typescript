@@ -14,7 +14,6 @@ export default function Home() {
   };
   return (
     <main>
-      
        {!loadingComplete && <ProgressBar onComplete={() => setLoadingComplete(true)} />}
       {loadingComplete && (
         <NoiseAnimation />
