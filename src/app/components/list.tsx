@@ -52,7 +52,7 @@ const List = () => {
                                 <img src={item.image} alt="" />
                                 {item.id === "nft" &&
                                 <div className="absolute w-[35.1%] aspect-[179/205] left-[41.17%] top-[27%] overflow-hidden">
-                                    <img className="animate-[moveArrow_12s_linear_infinite] block absolute left-0 top-0 max-lg:w-[8px]" src="/assets/images/triangle.png" alt="" />
+                                    <p className="animate-[fadeIn_1s_ease_infinite]"><img className="animate-[moveArrow_12s_infinite] block absolute left-0 top-0 max-lg:w-[8px]" src="/assets/images/triangle.png" alt="" /></p>
                                 </div>
                                 }
                             </figure>

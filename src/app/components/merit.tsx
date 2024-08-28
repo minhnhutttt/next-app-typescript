@@ -61,7 +61,7 @@ const Merit = () => {
           </div>
         </div>
       </div>
-      <div data-scroll className="ani-fade-up pb-4 overflow-hidden">
+      <div data-scroll className="ani-fade-up pb-4">
         <Splide
           hasTrack={false}
           options={{

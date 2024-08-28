@@ -53,9 +53,9 @@ const Work = () => {
     return (
         <section id="work-style" ref={ref} className="relative pt-[80px] md:pt-[130px] px-5 md:pb-[190px] pb-[120px]">
             <div data-scroll className="ani-fade-up flex justify-center items-center gap-3">
-                <figure><img className="max-md:w-10 animate-[decoSwing_2400ms_steps(2,_end)_infinite]" src="/assets/images/ic-walk.svg" alt="" /></figure>
+                <figure><img className="max-md:w-10 animate-[decoSwing_500ms_steps(2,_end)_infinite]" src="/assets/images/ic-walk.svg" alt="" /></figure>
                 <p className="md:text-[64px] text-[36px] text-white font-extrabold">働き方</p>
-                <figure><img className="max-md:w-10 animate-[decoSwing_2400ms_steps(2,_end)_infinite]" src="/assets/images/ic-walk.svg" alt="" /></figure>
+                <figure><img className="max-md:w-10 animate-[decoSwing_500ms_steps(2,_end)_infinite]" src="/assets/images/ic-walk.svg" alt="" /></figure>
             </div>
             <div id="item" className="w-full md:max-w-[1360px] max-w-[480px] mx-auto flex gap-10 md:mt-14 mt-8 max-md:flex-col items-start relative">
                 <div className="sticky top-10 max-md:hidden md:flex-[0_0_210px] md:w-[210px]">

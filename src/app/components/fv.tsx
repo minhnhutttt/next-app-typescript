@@ -1,12 +1,10 @@
 "use client";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const FV = () => {
-  const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-                <video autoPlay muted loop className="w-full h-full object-cover object-center">
+                <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover object-center">
                 <source src="/assets/videos/fv.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
