@@ -2,18 +2,13 @@
 import ScaledDivs from "./components/ScaledDivs";
 import ProgressBar from "./components/progressBar"
 import { useState } from "react";
-import PixelImageComponent from "./components/pixelImageComponent";
 import NoiseAnimation from "./components/noiseAnimation";
 
 
 export default function Home() {
   const [loadingComplete, setLoadingComplete] = useState(false);
-  const [showPixelImage, setShowPixelImage] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
 
-  const handlePixelImageComplete = () => {
-    setShowPixelImage(false);
-  };
   const toggleMute = () => {
     setIsMuted(prevState => !prevState);
   };
@@ -21,7 +16,7 @@ export default function Home() {
     <main>
       
        {!loadingComplete && <ProgressBar onComplete={() => setLoadingComplete(true)} />}
-      {loadingComplete && showPixelImage && (
+      {loadingComplete && (
         <NoiseAnimation />
       )}
       <ScaledDivs isMuted={isMuted} />

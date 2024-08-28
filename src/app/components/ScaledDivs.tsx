@@ -155,15 +155,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const divRef = useRef(null);
   const [shuffledColors, setShuffledColors] = useState<string[]>([]);
-  useEffect(() => {
-    const handleResize = () => {
-      window.location.reload();
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  
   useEffect(() => {
     const colors = ['863EC8', 'F7B318', '174DF8', '50D488', 'CC3D95'];
     const randomColors = [...colors].sort(() => Math.random() - 0.5);
