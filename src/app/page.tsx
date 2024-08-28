@@ -3,6 +3,7 @@ import ScaledDivs from "./components/ScaledDivs";
 import ProgressBar from "./components/progressBar"
 import { useState } from "react";
 import PixelImageComponent from "./components/pixelImageComponent";
+import NoiseAnimation from "./components/noiseAnimation";
 
 
 export default function Home() {
@@ -18,9 +19,10 @@ export default function Home() {
   };
   return (
     <main>
+      
        {!loadingComplete && <ProgressBar onComplete={() => setLoadingComplete(true)} />}
       {loadingComplete && showPixelImage && (
-        <PixelImageComponent loadingComplete={loadingComplete} onComplete={handlePixelImageComplete} />
+        <NoiseAnimation />
       )}
       <ScaledDivs isMuted={isMuted} />
       <button  onClick={toggleMute} className="fixed md:right-10 right-5 md:bottom-10 bottom-5 flex items-center gap-2 font-['STIX_Two_Text'] z-[9999]">
