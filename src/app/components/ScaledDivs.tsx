@@ -174,7 +174,6 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
     const lines = gsap.utils.toArray<HTMLElement>(".type-line");
     const height = isMobileView ? 40 : 80;
     let cursor = document.querySelector("#cursor");
-    let text = document.querySelector("#text");
     gsap.fromTo(cursor, {autoAlpha: 0, x: 2}, {autoAlpha: 1, duration: 0.5, repeat: -1, ease: SteppedEase.config(1)});
     if (!isRunning) {
       gsap.set(".box", {
@@ -545,41 +544,41 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
         <div className="w-full md:h-[240px] h-[120px] relative m-auto">
           <div className="boxes font-['STIX_Two_Text'] text-center relative">
             <Box></Box>
-            <Box>Elevating Marketing Excellence through:</Box>
-            <Box>Strategic Development</Box>
-            <Box>Meticulous Planning</Box>
-            <Box>Innovative Strategy</Box>
-            <Box>Expert Consulting</Box>
-            <Box>Our Mission:</Box>
-            <Box><span>Advancing the future of <a href="https://g.co/kgs/Vt1oGkn" target="_blank" className="text-[#1B00CD] inline-block">ICT</a></span></Box>
-            <Box>through cutting-edge marketing</Box>
-            <Box>Committed to excellence for our clients,</Box>
-            <Box>for our users,</Box>
-            <Box>and for ourselves</Box>
-            <Box>Pioneering the Future of Marketing</Box>
+            <Box>The future is already accelerating.</Box>
+            <Box>Leave the past behind.</Box>
+            <Box>Reject the template.</Box>
+            <Box>Discover world-class modern development.</Box>
+            <Box>Choose originality.</Box>
+            <Box>Unleash infinite potential.</Box>
+            <Box>Marketing is being redefined.</Box>
+            <Box>We ensure success, covering every angle.</Box>
+            <Box>Elevating Japan’s web to a new level.</Box>
+            <Box>Results through function and performance.</Box>
+            <Box>For proactive business leaders.</Box>
+            <Box>An exclusive, referral-only digital marketing agency.</Box>
           </div>
         </div>
       </div>
       <div className="wrapper02 md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
-        <div data-splitting className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)] font-bold">
-          <span className="type-line">Elevating Marketing Excellence through:<span className="caret"></span></span>
+        <div data-splitting className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)] ">
+          <span className="type-line font-bold">未来は、もう加速している。<span className="caret"></span></span><br />
+          <span className="type-line">過去を振り切り、前だけを見ろ。<span className="caret"></span></span><br />
           <br />
+          <span className="type-line font-bold">テンプレートを捨て去れ。<span className="caret"></span></span><br />
+          <span className="type-line">世界標準のモダン開発で新たな価値を創り出す。<span className="caret"></span></span><br />
           <br />
-          <span className="type-line">Strategic Development<span className="caret"></span></span><br />
-          <span className="type-line">Meticulous Planning<span className="caret"></span></span><br />
-          <span className="type-line">Innovative Strategy<span className="caret"></span></span><br />
-          <span className="type-line">Expert Consulting<span className="caret"></span></span><br />
+          <span className="type-line font-bold">個性を殺すコピーに背を向け、<span className="caret"></span></span><br />
+          <span className="type-line">無限の可能性を秘めたオリジナルを選び抜け。<span className="caret"></span></span><br />
           <br />
-          <span className="type-line">Our Mission:<span className="caret"></span></span><br />
+          <span className="type-line font-bold">マーケティングは、今、時代に再定義される。<span className="caret"></span></span><br />
+          <span className="type-line">すべてを網羅し、成功を必ず手にする。<span className="caret"></span></span><br />
           <br />
-          <span className="type-line">Advancing the future of <a href="https://g.co/kgs/Vt1oGkn" target="_blank" className="text-[#1B00CD] inline-block">ICT</a> <span className="caret"></span></span><br />
-          <span className="type-line">through cutting-edge marketing<span className="caret"></span></span><br />
+          <span className="type-line font-bold">日本のウェブを、新次元へと引き上げる。<span className="caret"></span></span><br />
+          <span className="type-line">機能美とパフォーマンスで、確実に結果を出す。<span className="caret"></span></span><br />
           <br />
-          <span className="type-line">Committed to excellence for our clients,<span className="caret"></span></span><br />
-          <span className="type-line">for our users,<span className="caret"></span></span><br />
-          <span className="type-line">and for ourselves<span className="caret"></span></span><br />
+          <span className="type-line font-bold">プロアクティブなビジネスマンだけに贈る、<span className="caret"></span></span><br />
+          <span className="type-line">紹介制のデジタルマーケティングエージェンシー。<span className="caret"></span></span><br />
           <br />
-          <span className="type-line">Pioneering the Future of Marketing<span className="caret"></span></span>
         </div>
       </div>
       <audio ref={audioRef} src="/assets/audio/type.mp3" loop />

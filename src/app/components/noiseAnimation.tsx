@@ -32,13 +32,11 @@ const NoiseAnimation: React.FC = () => {
 
     const duration = 2000;
     const displayDuration = 500;
-    let startTime = Date.now();
     let displayStartTime = Date.now();
     let transitionStartTime: number | null = null;
     let time = 0;
 
     const draw = () => {
-      const elapsed = Date.now() - startTime;
       const displayElapsed = Date.now() - displayStartTime;
       const transitionElapsed = transitionStartTime ? Date.now() - transitionStartTime : 0;
 
@@ -53,7 +51,7 @@ const NoiseAnimation: React.FC = () => {
             const alpha = displayProgress * colors.length - colorIndex;
             return interpolateColor(color, 'rgba(0, 0, 0, 0)', alpha);
           } else {
-            return 'rgba(0, 0, 0, 0)';
+            return 'rgba(0, 0, 0, 1)';
           }
         });
       } else {
