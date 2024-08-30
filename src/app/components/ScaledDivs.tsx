@@ -228,10 +228,10 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           opacity: "1", scale: 1, duration:  0.5 
         })
       
-        for (let i = 0; i < boxes.length; i++) {
+        for (let i = 0; i < boxes.length -1; i++) {
           tl.to(".box", {
             y: `-=${height}`,
-            delay: 0.5,
+            delay: 3,
             ease: "power2.inOut",
             onStart: () => {
               if (boxes[i]) {
