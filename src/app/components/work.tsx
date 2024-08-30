@@ -69,7 +69,7 @@ const Work = () => {
                         activeSection === "diverWallet" ? "opacity-100" : "opacity-0"
                     } group-hover:opacity-100`}
                   >
-                    <img src="/assets/images/ic-link.svg" alt="" />
+                    <img className="animate-[fadeIn_1s_ease_infinite]" src="/assets/images/ic-link.svg" alt="" />
                   </figure>
                                     DIVER Wallet
                                 </a>
@@ -79,7 +79,7 @@ const Work = () => {
                         activeSection === "diverKnock" ? "opacity-100" : "opacity-0"
                     } group-hover:opacity-100`}
                   >
-                    <img src="/assets/images/ic-link.svg" alt="" />
+                    <img className="animate-[fadeIn_1s_ease_infinite]" src="/assets/images/ic-link.svg" alt="" />
                   </figure>
                                     DIVER Knock
                                 </a>
@@ -94,7 +94,7 @@ const Work = () => {
                         activeSection === "flow" ? "opacity-100" : "opacity-0"
                     } group-hover:opacity-100`}
                   >
-                    <img src="/assets/images/ic-link.svg" alt="" />
+                    <img className="animate-[fadeIn_1s_ease_infinite]" src="/assets/images/ic-link.svg" alt="" />
                   </figure>
                                     NFT作成
                                 </a>
@@ -104,7 +104,7 @@ const Work = () => {
                         activeSection === "flow" ? "opacity-100" : "opacity-0"
                     } group-hover:opacity-100`}
                   >
-                    <img src="/assets/images/ic-link.svg" alt="" />
+                    <img className="animate-[fadeIn_1s_ease_infinite]" src="/assets/images/ic-link.svg" alt="" />
                   </figure>
                                     受注する
                                 </a>
@@ -114,7 +114,7 @@ const Work = () => {
                         activeSection === "flow" ? "opacity-100" : "opacity-0"
                     } group-hover:opacity-100`}
                   >
-                    <img src="/assets/images/ic-link.svg" alt="" />
+                    <img className="animate-[fadeIn_1s_ease_infinite]" src="/assets/images/ic-link.svg" alt="" />
                   </figure>
                                     仕事をする
                                 </a>
@@ -124,7 +124,7 @@ const Work = () => {
                         activeSection === "rewards" ? "opacity-100" : "opacity-0"
                     } group-hover:opacity-100`}
                   >
-                    <img src="/assets/images/ic-link.svg" alt="" />
+                    <img className="animate-[fadeIn_1s_ease_infinite]" src="/assets/images/ic-link.svg" alt="" />
                   </figure>
                                     報酬
                                 </a>

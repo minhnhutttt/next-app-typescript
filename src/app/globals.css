@@ -177,6 +177,7 @@ body {
   @keyframes moveArrow {
 	0% {
 	  top: 0%;
+	  opacity: 1;
 	}
 	15.6% {
 		top: 0%;
@@ -208,11 +209,16 @@ body {
 	83.3% {
 	  top: 83.3%;
 	}
+	98% {
+		top: 83.3%;
+		opacity: 1;
+	  }
 	99% {
 		top: 83.3%;
+		opacity: 0;
 	  }
 	100% {
-	  top: 0%;
+		opacity: 0;
 	}
   }
   
