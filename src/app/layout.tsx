@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Inter } from "next/font/google";
+import { Noto_Sans_JP, Inter, M_PLUS_1p } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -8,12 +8,19 @@ import ScrollContainer from "@/components/scrollContainer";
 const noto = Noto_Sans_JP({
   weight: ["400", "500", "700", "800", "900"],
   subsets: ["latin"],
+  variable: "--font-noto"
 });
 
 const inter = Inter({
   weight: ["400", "500", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-inter"
+});
+
+const mplus = M_PLUS_1p({
+  weight: ["400", "500", "700", "800", "900"],
+  subsets: ["latin"],
+   variable: "--font-mplus"
 });
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`bg-[#FFE5E5] ${noto.className} ${inter.variable}`}
+        className={`bg-[#FFE5E5] ${noto.className} ${inter.variable} ${noto.variable} ${mplus.variable}`}
       >
         <ScrollContainer>
         <Header />

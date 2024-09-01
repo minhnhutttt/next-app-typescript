@@ -2,10 +2,10 @@
 
 const Line = () => {
     return (
-        <section className="relative overflow-hidden bg-white md:py-[50px] py-8 px-5 skew-x-[0deg] skew-y-[-10deg]">
-            <div className="w-full max-w-[619px] mx-auto md:px-[10px] px-6 md:py-9 py-6 flex items-center md:gap-9 gap-6 max-md:flex-col max-md:justify-center skew-x-[0deg] skew-y-[10deg]">
+        <section className="relative overflow-hidden -mt-[11.5vw] md:py-[160px] md:pb-[100px] py-8 px-5 [clip-path:polygon(0_11.5vw,_100%_0,_100%_calc(100%-11.5vw),_0%_100%)]">
+            <div className="w-full max-w-[619px] mx-auto md:px-[10px] px-6 md:py-9 py-6 flex items-center md:gap-9 gap-6 max-md:flex-col max-md:justify-center">
                 <figure>
-                    <img src="/assets/images/person-contact.png" alt="" />
+                    <img className="max-md:w-[200px]" src="/assets/images/person-contact.png" alt="" />
                 </figure>
                 <div className="">
                     <p className="md:text-[28px] text-[22px] max-md:text-center border-b-[1px] border-black font-noto font-bold">お問い合わせ</p>
@@ -15,8 +15,8 @@ const Line = () => {
                         お問い合わせください。
                         </p>
                     </div>
-                    <a href="https://lin.ee/fMZCQsF" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/images/btn-line02.png" alt="" /></a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                    <img className="max-md:w-[200px]" src="/assets/images/btn-line02.png" alt="" /></a>
                 </div>
             </div>
         </section>

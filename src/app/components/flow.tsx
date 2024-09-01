@@ -2,8 +2,8 @@
 
 const Flow = () => {
   return (
-    <section id="flow" className="relative px-6">
-      <h2 className="font-bold md:text-[50px] text-[25px] text-center md:mb-[57px] mb-[30px]">
+    <section id="flow" className="relative px-6 md:pt-16 pt-10">
+      <h2 className="font-bold md:text-[50px] text-[25px] text-center md:mb-[48px] mb-[30px]">
         フロー
       </h2>
       <div
@@ -13,15 +13,15 @@ const Flow = () => {
         <div
           id="nft-creation"
           data-scroll
-          className="ani-fade-up w-full max-w-[363px] md:w-[363px] md:h-[470px] h-[380px] gradient-border2 border-[#3D2216] md:border-[10px] border-[6px] rounded-[40px] relative"
+          className="ani-fade-up w-full max-w-[363px] md:w-[363px] md:h-[494px] h-[380px] bg-[url('/assets/images/bg-flow.png')] border-[#C27500] md:border-[5px] border-[3px] rounded-[40px] relative"
         >
-          <div className="flex flex-col items-center justify-center md:pt-8 pt-5 px-4">
-            <div className="md:w-[320px] w-full flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center md:pt-8 pt-5 px-4 pb-5">
+            <div className="md:w-[363px] w-full flex flex-col items-center justify-center px-5">
               <div className="w-full flex justify-center items-center">
-                <span className="md:text-[42px] text-[24px] mr-[15px] bg-white md:max-w-[63px] max-w-[50px] w-full md:h-[63px] h-[50px] rounded-[50px] flex justify-center items-center border-[2px] border-black font-bold">
+                <span className="md:text-[42px] text-[24px] mr-[15px] bg-white md:max-w-[63px] max-w-[50px] w-full md:h-[63px] h-[50px] rounded-[50px] flex justify-center items-center border-[2px] border-black font-extrabold leading-none">
                   1
                 </span>
-                <p className="text-center md:text-[24px] text-[18px] font-noto font-bold">
+                <p className="text-center md:text-[32px] text-[18px] font-extrabold">
                   NFT作成
                 </p>
               </div>
@@ -36,7 +36,7 @@ const Flow = () => {
                 公式LINEへウォレットアドレスを連絡し、NFT作成しよう！
               </p>
               <a
-                href="https://lin.ee/fMZCQsF"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3"
@@ -49,15 +49,15 @@ const Flow = () => {
         <div
           id="order"
           data-scroll
-          className="ani-fade-up w-full max-w-[363px] md:w-[363px] md:h-[470px] h-[380px] gradient-border2 border-[#3D2216] md:border-[10px] border-[6px] rounded-[40px] relative"
+          className="ani-fade-up w-full max-w-[363px] md:w-[363px] md:h-[494px] h-[380px] bg-[url('/assets/images/bg-flow.png')] border-[#C27500] md:border-[5px] border-[3px] rounded-[40px] relative"
         >
-          <div className="flex flex-col items-center justify-center md:pt-8 pt-5 px-4">
-            <div className="md:w-[320px] w-full flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center md:pt-8 pt-5 px-4 pb-5">
+            <div className="md:w-[363px] w-full flex flex-col items-center justify-center px-5">
               <div className="w-full flex justify-center items-center">
-                <span className="md:text-[42px] text-[24px] mr-[15px] bg-white md:max-w-[63px] max-w-[50px] w-full md:h-[63px] h-[50px] rounded-[50px] flex justify-center items-center border-[2px] border-black font-bold">
+                <span className="md:text-[42px] text-[24px] mr-[15px] bg-white md:max-w-[63px] max-w-[50px] w-full md:h-[63px] h-[50px] rounded-[50px] flex justify-center items-center border-[2px] border-black font-extrabold leading-none">
                   2
                 </span>
-                <p className="text-center md:text-[24px] text-[18px] font-noto font-bold">
+                <p className="text-center md:text-[32px] text-[18px] font-extrabold">
                   受注する
                 </p>
               </div>
@@ -80,15 +80,15 @@ const Flow = () => {
         <div
           id="job"
           data-scroll
-          className="ani-fade-up w-full max-w-[363px] md:w-[363px] md:h-[470px] h-[380px] gradient-border2 border-[#3D2216] md:border-[10px] border-[6px] rounded-[40px] relative"
+          className="ani-fade-up w-full max-w-[363px] md:w-[363px] md:h-[494px] h-[380px] bg-[url('/assets/images/bg-flow.png')] border-[#C27500] md:border-[5px] border-[3px] rounded-[40px] relative"
         >
-          <div className="flex flex-col items-center justify-center md:pt-8 pt-5 px-4">
-            <div className="md:w-[320px] w-full flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center md:pt-8 pt-5 px-4 pb-5">
+            <div className="md:w-[363px] w-full flex flex-col items-center justify-center px-5">
               <div className="w-full flex justify-center items-center">
-                <span className="md:text-[42px] text-[24px] mr-[15px] bg-white md:max-w-[63px] max-w-[50px] w-full md:h-[63px] h-[50px] rounded-[50px] flex justify-center items-center border-[2px] border-black font-bold">
+                <span className="md:text-[42px] text-[24px] mr-[15px] bg-white md:max-w-[63px] max-w-[50px] w-full md:h-[63px] h-[50px] rounded-[50px] flex justify-center items-center border-[2px] border-black font-extrabold leading-none">
                   3
                 </span>
-                <p className="text-center md:text-[24px] text-[18px] font-noto font-bold">
+                <p className="text-center md:text-[32px] text-[18px] font-extrabold">
                   仕事をする
                 </p>
               </div>
@@ -108,7 +108,7 @@ const Flow = () => {
       </div>
       <div
         data-scroll
-        className="ani-fade-up flex justify-center md:pt-20 pt-10"
+        className="ani-fade-up flex justify-center md:pt-16 pt-10"
       >
         <svg
           width="201"
@@ -123,7 +123,7 @@ const Flow = () => {
           />
         </svg>
       </div>
-      <div className="flex w-full md:max-w-[942px] mx-auto justify-center md:mt-16 mt-8 bg-[url('/assets/images/bg-reward.png')] bg-[length:100%_100%]">
+      <div className="flex w-full md:max-w-[942px] mx-auto justify-center md:mt-10 mt-6 bg-[url('/assets/images/bg-reward.png')] bg-[length:100%_100%]">
         <div
           id="rewards"
           data-scroll

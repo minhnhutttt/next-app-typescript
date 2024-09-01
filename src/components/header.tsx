@@ -11,7 +11,7 @@ interface NavLink {
 
 const links: NavLink[] = [
   {
-    link: "/#introduction",
+    link: "/#delivery",
     text: "Delivery Man Mapとは?",
   },
   {

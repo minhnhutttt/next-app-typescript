@@ -47,9 +47,16 @@ const data = [
 const Merit = () => {
   const ref = useScrollAnimations();
   return (
-    <section id="merit" ref={ref} className="relative bg-[url('/assets/images/bg-slider.png')] md:bg-[length:100%_100%] pb-[10%] bg-cover">
-    <figure className="flex justify-center md:px-1 px-8 pt-[27%] md:pb-[2%] pb-[5%]">
-        <img src="/assets/images/merit-bar.png" alt="" />
+    <section id="merit" ref={ref} className="relative bg-[url('/assets/images/bg-slider.png')] pb-[10%] bg-cover bg-no-repeat md:bg-[length:100%_auto] bg-top [clip-path:polygon(0_11.5vw,_100%_0,_100%_calc(100%-11.5vw),_0%_100%)]">
+    <figure className="flex justify-center md:px-1 px-8 pt-[36%] md:pb-[2%] pb-[5%]">
+        <img className="md:hidden"
+                src="/assets/images/merit-title-sp.png"
+                alt="DELIVERY Man Mapのメリットとは？！"
+              />
+              <img className="max-md:hidden"
+                src="/assets/images/merit-title.png"
+                alt="DELIVERY Man Mapのメリットとは？！"
+              />
         </figure>
       <div data-scroll className="ani-fade-up pb-4">
         <Splide
@@ -62,11 +69,11 @@ const Merit = () => {
             autoWidth: true,
           }}
         >
-          <div className="relative lg:pl-[231px] pl-10 md:pl-[120px]">
+          <div className="relative pl-8 md:pl-[80px]">
             <SplideTrack>
               {data.map((item, index) => (
                 <SplideSlide key={index}>
-                  <div className="md:w-[381px] w-[250px] border-[1px] border-[#808080] bg-white mr-5 px-3 py-3">
+                  <div className="md:w-[381px] w-[330px] border-[1px] border-[#808080] bg-white mr-3 md:mr-5 px-3 py-3">
                     <figure className="border-[1px] border-[#808080] mb-[5px]">
                       <img src={item.image} alt="" />
                     </figure>
