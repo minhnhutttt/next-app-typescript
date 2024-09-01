@@ -15,7 +15,7 @@ const links: NavLink[] = [
     text: "Delivery Man Mapとは?",
   },
   {
-    link: "/#work-style",
+    link: "/#workstyle",
     text: "働き方",
   },
   {
@@ -49,7 +49,7 @@ const Header = () => {
   return (
     <header>
         <div
-          className={`fixed left-0 top-0 h-screen w-full bg-[#0E0023]/[0.9] z-[99] overflow-y-scroll flex items-center justify-center flex-col ${
+          className={`fixed left-0 top-0 h-screen w-full bg-[#0E0023]/[0.9] z-[99] overflow-y-auto flex items-center justify-center flex-col ${
             NavOpen ? "" : "invisible opacity-0"
           }`}
         >
@@ -69,8 +69,8 @@ const Header = () => {
           </ul>
         </div>
         <button
-          className={`group z-[99] h-6 w-8 md:right-16 right-4 top-4 absolute ${
-            NavOpen ? "active fixed" : ""
+          className={`group z-[99] h-6 w-8 md:right-16 right-4 top-4  ${
+            NavOpen ? "active fixed" : "absolute"
           }`}
           onClick={() => setNavOpen((prev) => !prev)}
         >

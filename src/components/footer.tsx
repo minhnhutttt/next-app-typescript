@@ -12,7 +12,7 @@ const links: NavLink[] = [
     text: "Delivery Man Mapとは?",
   },
   {
-    link: "/#work-style",
+    link: "/#workstyle",
     text: "働き方",
   },
   {
@@ -24,7 +24,7 @@ const links: NavLink[] = [
     text: "メリット",
   },
   {
-    link: "/#howtouse",
+    link: "/#howto",
     text: "使い方",
   },
   {
@@ -32,7 +32,7 @@ const links: NavLink[] = [
     text: "FAQ",
   },
   {
-    link: "/#inquiry",
+    link: "/",
     text: "問い合わせ",
   },
 ];

@@ -2,7 +2,7 @@
 
 const Flow = () => {
   return (
-    <section id="flow" className="relative px-6 md:pt-16 pt-10">
+    <section id="item" className="relative px-6 md:pt-16 pt-10">
       <h2 className="font-bold md:text-[50px] text-[25px] text-center md:mb-[48px] mb-[30px]">
         フロー
       </h2>
