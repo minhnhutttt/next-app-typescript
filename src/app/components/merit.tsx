@@ -37,10 +37,11 @@ const data = [
     ),
   },
   {
-    id: "/assets/images/number01.png",
+    id: "/assets/images/number04.png",
     image: "/assets/images/merit-04.jpg",
     title: "優れたタイムパフォーマンス",
-    text: <>自分で仕事を探す手間がないので、時間対効果に優れています。</>,
+    text: <>自分で仕事を探す手間がないので <br />
+時間対効果に優れています。</>,
   },
 ];
 
