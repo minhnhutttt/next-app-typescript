@@ -69,7 +69,7 @@ const Merit = () => {
             autoWidth: true,
           }}
         >
-          <div className="relative pl-8 md:pl-[80px]">
+          <div className="relative pl-6 md:pl-[80px]">
             <SplideTrack>
               {data.map((item, index) => (
                 <SplideSlide key={index}>
