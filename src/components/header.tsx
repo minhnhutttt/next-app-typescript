@@ -69,8 +69,8 @@ const Header = () => {
           </ul>
         </div>
         <button
-          className={`group z-[99] h-6 w-8 md:right-16 right-4 top-4 fixed ${
-            NavOpen ? "active" : ""
+          className={`group z-[99] h-6 w-8 md:right-16 right-4 top-4 absolute ${
+            NavOpen ? "active fixed" : ""
           }`}
           onClick={() => setNavOpen((prev) => !prev)}
         >
