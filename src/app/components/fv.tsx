@@ -5,9 +5,9 @@ const FV = () => {
     <section className="relative">
         <div className="relative md:bg-[url(/assets/images/fv.png)] bg-[url(/assets/images/fv-sp.png)] h-[600px] md:h-[67.778vw] dt:h-[976px] bg-cover bg-top [clip-path:polygon(0_0,_100%_0,_100%_calc(100%-11.5vw),_0%_100%)]">
         <div className="w-full max-w-[1440px] mx-auto relative h-full z-50">
-        <h3 className="dt:w-[568px] w-[35.139vw] relative z-50">
-          <img className="w-full max-dt:hidden" src="/assets/images/fv-img-dt.png" alt="" />
-          <img className="w-full dt:hidden" src="/assets/images/fv-img.png" alt="" />
+        <h3 className="dt:w-[506px] max-dt:w-[35.139vw] relative z-50">
+          <img className="w-full max-[1440px]:hidden" src="/assets/images/fv-img-dt.png" alt="" />
+          <img className="w-full min-[1441px]:hidden" src="/assets/images/fv-img.png" alt="" />
         </h3>
         <h1 className="absolute top-10 md:top-[30px] left-[22.917vw] pr-5">
           <img src="/assets/images/fv-text.png" alt="" />
@@ -26,14 +26,14 @@ const FV = () => {
             </p>
           </div>
         </div>
-        <div className="absolute bottom-[0px] flex justify-center inset-x-0 pb-[1vw] dt:pb-[2vw]">
+        <div className="absolute bottom-0 flex justify-center inset-x-0 pb-[1vw] min-[1441px]:pb-[2vw]">
             <img className="max-dt:w-[86.667vw] transform origin-bottom-left" src="/assets/images/delivery-man.png" alt="" />
         </div>
       </div>
       </div>
       <div className="w-full max-w-[1440px] mx-auto absolute inset-0 z-0">
-        <div className="absolute dt:top-[290px] dt:left-[225px] top-[17.708vw] left-[11.111vw]">
-          <img className="max-dt:w-[23.125vw] w-[310px]" src="/assets/images/fv-line.png" alt="" />
+        <div className="absolute dt:top-[255px] dt:left-[160px] top-[17.708vw] left-[11.111vw]">
+          <img className="max-dt:w-[23.125vw] w-[333px]" src="/assets/images/fv-line.png" alt="" />
         </div>
       </div>
       <div className="h-[72.569vw] dt:h-[1045px] relative [clip-path:polygon(0_calc(11.5vw),_100%_0%,_100%_100%,_0%_calc(100%-11.5vw))] pt-[14.5vw] -mt-[14.5vw] bg-[url('/assets/images/bg-case.png')] bg-right-bottom bg-no-repeat max-dt:bg-[length:100%_90%]">
