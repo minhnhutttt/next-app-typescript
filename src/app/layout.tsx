@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Inter, M_PLUS_1p } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import ScrollContainer from "@/components/scrollContainer";
+import Loading from "@/components/loading";
 
 const noto = Noto_Sans_JP({
   weight: ["400", "500", "700", "800", "900"],
@@ -37,10 +36,9 @@ export default function RootLayout({
        <body
         className={`bg-[#FFE5E5] ${noto.className} ${inter.variable} ${noto.variable} ${mplus.variable}`}
       >
+        <Loading />
         <ScrollContainer>
-        <Header />
         {children}
-        <Footer />
         </ScrollContainer>
       </body>
     </html>
