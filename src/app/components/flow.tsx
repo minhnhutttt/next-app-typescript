@@ -36,7 +36,7 @@ const Flow = () => {
                 公式LINEへウォレットアドレスを連絡し、NFT作成しよう！
               </p>
               <a
-                href=""
+                href="https://lin.ee/JYLtdjG"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3"

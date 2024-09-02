@@ -32,7 +32,8 @@ const links: NavLink[] = [
     text: "FAQ",
   },
   {
-    link: "/",
+    link: "https://lin.ee/JYLtdjG",
+    target: '_blank',
     text: "問い合わせ",
   },
 ];

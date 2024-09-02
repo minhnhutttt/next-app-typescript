@@ -43,8 +43,14 @@ const FV = () => {
               <img className="max-dt:w-[18.403vw] max-md:w-[24.403vw]" src="/assets/images/img-case-01.png" alt="" />
             </div>
             <div className="relative">
-              <div data-scroll  className="ani-fade-up flex justify-center px-4 relative">
-                <h3><img className="max-md:w-[49.222vw] max-dt:w-[37.222vw]" src="/assets/images/title-urgent-case-arises.png" alt="緊急案件発生！隙間時間で近所企業救え！ " /></h3>
+              <div data-scroll className="ani-fade-up flex justify-center px-4 relative">
+                <h3 className="relative">
+                  <img className="max-md:w-[49.222vw] max-dt:w-[37.222vw]" src="/assets/images/bg-title.png" alt="緊急案件発生！隙間時間で近所企業救え！ " />
+                  <p data-splitting className="splitting font-gothic md:text-[2.5vw] text-[3.4vw] dt:text-[36px] font-extrabold absolute md:top-[2.778vw] top-[4vw] dt:top-10 left-[3.333vw] dt:left-12">
+                    緊急案件発生！<br />
+                    隙間時間で近所企業救え！ 
+                  </p>
+                </h3>
               </div>
               <div data-scroll  className="ani-fade-up flex justify-center py-[3.333vw] dt:py-12">
                 <p className="md:text-[2.083vw] text-[3.2vw] dt:text-[30px] font-extrabold">

@@ -4,6 +4,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { Splide, SplideSlide, SplideTrack } from "react-splide-ts";
 import "@splidejs/splide/css";
 import "@splidejs/splide/css/core";
+import TitleDeco04 from "@/components/titleDeco/titleDeco04";
 
 const data = [
   {
@@ -48,17 +49,22 @@ const data = [
 const Merit = () => {
   const ref = useScrollAnimations();
   return (
-    <section id="merit" ref={ref} className="relative bg-[url('/assets/images/bg-slider.png')] pb-[10%] bg-cover bg-no-repeat md:bg-[length:100%_auto] bg-top [clip-path:polygon(0_11.5vw,_100%_0,_100%_calc(100%-11.5vw),_0%_100%)]">
-    <figure className="flex justify-center md:px-1 px-8 pt-[36%] md:pb-[2%] pb-[5%]">
-        <img className="md:hidden"
-                src="/assets/images/merit-title-sp.png"
-                alt="DELIVERY Man Mapのメリットとは？！"
-              />
-              <img className="max-md:hidden"
-                src="/assets/images/merit-title.png"
-                alt="DELIVERY Man Mapのメリットとは？！"
-              />
-        </figure>
+    <section id="merit" ref={ref} className="relative bg-[url('/assets/images/bg-slider.png')] pb-[10%] bg-cover bg-no-repeat bg-top [clip-path:polygon(0_11.5vw,_100%_0,_100%_calc(100%-11.5vw),_0%_100%)]">
+      <div className=" md:px-1 px-8 pt-[36%] md:pb-[2%] pb-[5%]">
+      <div className="w-full md:max-w-[80.556vw] max-w-[90vw] dt:max-w-[1160px] mx-auto relative">
+            <h3 className="fade-up flex justify-center items-center relative">
+            <img className="md:hidden"
+                    src="/assets/images/merit-title-sp.png"
+                    alt="DELIVERY Man Mapのメリットとは？！"
+                  />
+                  <img className="max-md:hidden"
+                    src="/assets/images/merit-title.png"
+                    alt="DELIVERY Man Mapのメリットとは？！"
+                  />
+                  <TitleDeco04 />
+            </h3>
+            </div>
+        </div>
       <div data-scroll className="ani-fade-up pb-4">
         <Splide
           hasTrack={false}

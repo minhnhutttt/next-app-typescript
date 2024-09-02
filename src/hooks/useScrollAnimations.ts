@@ -1,5 +1,4 @@
 import { useLayoutEffect, useRef } from "react";
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -37,7 +36,7 @@ const useScrollAnimations = () => {
           ease: "Power2.easeInOut",
           scrollTrigger: { trigger: el },
         }),
-       "zoom-in": (el: HTMLElement) =>
+      "zoom-in": (el: HTMLElement) =>
         gsap.fromTo(
           el,
           { scale: 0.8, opacity: 0 },
@@ -49,7 +48,7 @@ const useScrollAnimations = () => {
             scrollTrigger: { trigger: el },
           }
         ),
-        "popup": (el: HTMLElement) =>
+      "popup": (el: HTMLElement) =>
         gsap.fromTo(
           el,
           { translateY: 40, scale: 0.8, opacity: 0 },
@@ -62,7 +61,7 @@ const useScrollAnimations = () => {
             scrollTrigger: { trigger: el },
           }
         ),
-        "slide-gradient": (el: HTMLElement) =>
+      "slide-gradient": (el: HTMLElement) =>
         gsap.fromTo(
           el,
           { transformOrigin: "left center", scaleX: 0, opacity: 0 },
@@ -75,18 +74,24 @@ const useScrollAnimations = () => {
             scrollTrigger: { trigger: el },
           }
         ),
-        "slide-skew": (el: HTMLElement) =>
-          gsap.fromTo(
-            el,
-            { transform: "translate(-180px,30px)", opacity: 0 },
-            {
-              transform: "translate(0,0)",
-              opacity: 1,
-              duration: 0.4,
-              ease: "cubic-bezier(0.25, 1, 0.5, 1)",
-              scrollTrigger: { trigger: el },
-            }
-          ),
+      "slide-skew": (el: HTMLElement) =>
+        gsap.fromTo(
+          el,
+          { transform: "translate(-180px,30px)", opacity: 0 },
+          {
+            transform: "translate(0,0)",
+            opacity: 1,
+            duration: 0.4,
+            ease: "cubic-bezier(0.25, 1, 0.5, 1)",
+            scrollTrigger: { trigger: el },
+          }
+        ),
+      "rotate-flash": (el: HTMLElement) =>
+        gsap.timeline({
+          scrollTrigger: { trigger: el },
+        })
+        .to(el, { rotation: 720, duration: 1, ease: 'power2.inOut' })
+        .to(el, { opacity: 0, duration: 0.2, repeat: 3, yoyo: true })
     };
 
     let ctx = gsap.context(() => {

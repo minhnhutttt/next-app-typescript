@@ -15,7 +15,7 @@ const Line = () => {
                         お問い合わせください。
                         </p>
                     </div>
-                    <a href="" target="_blank" rel="noopener noreferrer">
+                    <a href="https://lin.ee/JYLtdjG" target="_blank" rel="noopener noreferrer">
                     <img className="max-md:w-[200px]" src="/assets/images/btn-line02.png" alt="" /></a>
                 </div>
             </div>

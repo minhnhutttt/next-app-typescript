@@ -22,6 +22,8 @@ const config: Config = {
       inter: ["var(--font-inter)", "sans-serif"],
       mplus: ["var(--font-mplus)", "sans-serif"],
       noto: ["var(--font-noto)", "sans-serif"],
+      gothic: ["Hiragino Kaku Gothic Std", "sans-serif"],
+      
     },
   },
   plugins: [],

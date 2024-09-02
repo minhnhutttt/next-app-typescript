@@ -8,7 +8,7 @@ export default function ScrollContainer({children}: ScrollContainerPropsType) {
   useEffect(()=>{
     ScrollOut({
       once: true,
-      threshold: 0.5
+      threshold: 0.3
     });
     setTimeout(() => {
       if ( window && document ) {

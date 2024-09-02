@@ -31,14 +31,14 @@ const Work = () => {
           </div>
           <div className="w-full max-w-[640px] md:mt-[60px] mt-[30px] flex justify-center items-center md:gap-10 gap-6 mx-auto">
             <a
-              href=""
+              href="https://apps.apple.com/jp/app/diver-wallet/id6444421722"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src="/assets/images/btn-appstore.png" alt="" />
             </a>
             <a
-              href=""
+              href="https://play.google.com/store/apps/details?id=com.hyerdesign.diver.wallet&hl=ln"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -72,14 +72,14 @@ const Work = () => {
           </div>
           <div className="w-full max-w-[640px] md:mt-[60px] mt-[30px] flex justify-center items-center md:gap-10 gap-6 mx-auto">
             <a
-              href=""
+              href="https://apps.apple.com/jp/app/diver-knock/id6450264436"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src="/assets/images/btn-appstore.png" alt="" />
             </a>
             <a
-              href=""
+              href="https://play.google.com/store/apps/details?id=com.bigant.diver.limited.talk.flutter_project&hl=ja"
               target="_blank"
               rel="noopener noreferrer"
             >
