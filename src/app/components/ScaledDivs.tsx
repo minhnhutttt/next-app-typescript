@@ -129,21 +129,6 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
     rotate
   );
 
-  const topScaleY =
-    position.clientX === 0 && position.clientY === 0
-      ? 1
-      : 1.3 - (position.yPercent / 100) * 0.6;
-
-  const centerScaleY =
-    position.clientX === 0 && position.clientY === 0
-      ? 1
-      : 1 - (Math.abs(50 - position.yPercent) / 100) * 0.0001;
-
-  const bottomScaleY =
-    position.clientX === 0 && position.clientY === 0
-      ? 1
-      : 0.7 + (position.yPercent / 100) * 0.6;
-
   const spansRef = useRef<HTMLSpanElement[]>([]);
   const measureRef = useRef<HTMLSpanElement>(null);
   const measureRotateRef = useRef<HTMLSpanElement>(null);
@@ -151,6 +136,9 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
 
   const totalLines = 3;
   const [scaleX, setScaleX] = useState([1, 1, 1]);
+  const [topScaleY, setTopScaleY] = useState(0);
+  const [centerScaleY, setCenterScaleY] = useState(0);
+  const [bottomScaleY, setBottomScaleY] = useState(0);
   const [containerHeight, setContainerHeight] = useState<number>(0);
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const [containerRotateHeight, setContainerRotateHeight] = useState<number>(0);
@@ -467,6 +455,23 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
 
   useEffect(() => {
     if (containerRef.current) {
+      setTopScaleY(
+        position.clientX === 0 && position.clientY === 0
+          ? 1
+          : 1.3 - (position.yPercent / 100) * 0.6
+      );
+
+      setCenterScaleY(
+        position.clientX === 0 && position.clientY === 0
+          ? 1
+          : 1 - (Math.abs(50 - position.yPercent) / 100) * 0.0001
+      );
+
+      setBottomScaleY(
+        position.clientX === 0 && position.clientY === 0
+          ? 1
+          : 0.7 + (position.yPercent / 100) * 0.6
+      );
       const updateSpanWidths = (text: string, index: number) => {
         const spanElements = containerRef.current!.querySelectorAll(
           `.variable-word-${index + 1} .variable-word-letter`
@@ -538,6 +543,8 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
     }
   }, [
     position.clientX,
+    position.clientY,
+    position.yPercent,
     containerWidth,
     position.xPercent,
     rotate,
