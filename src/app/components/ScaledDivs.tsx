@@ -1,14 +1,13 @@
 "use client";
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import gsap, { SteppedEase } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Box from './box';
+import Box from "./box";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
   nullTargetWarn: false,
 });
-
 
 const useMousePositionPercentage = (
   containerRef: React.RefObject<HTMLDivElement>,
@@ -97,7 +96,10 @@ const useMousePositionPercentage = (
       containerRef.current?.removeEventListener("touchmove", handleTouchMove);
       containerRef.current?.removeEventListener("mouseleave", handleMouseLeave);
       containerRef.current?.removeEventListener("touchend", handleTouchLeave);
-      containerRef.current?.removeEventListener("touchcancel", handleTouchLeave);
+      containerRef.current?.removeEventListener(
+        "touchcancel",
+        handleTouchLeave
+      );
     };
   }, [containerRef, rotate]);
 
@@ -120,16 +122,35 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const containerRotateRef = useRef<HTMLDivElement>(null);
   const containerHoriRef = useRef<HTMLDivElement>(null);
-  
+
   const [rotate, setRotate] = useState(false);
-  const { position, resetPosition } = useMousePositionPercentage(containerRef, rotate);
+  const { position, resetPosition } = useMousePositionPercentage(
+    containerRef,
+    rotate
+  );
+
+  const topScaleY =
+    position.clientX === 0 && position.clientY === 0
+      ? 1
+      : 1.3 - (position.yPercent / 100) * 0.6;
+
+  const centerScaleY =
+    position.clientX === 0 && position.clientY === 0
+      ? 1
+      : 1 - (Math.abs(50 - position.yPercent) / 100) * 0.0001;
+
+  const bottomScaleY =
+    position.clientX === 0 && position.clientY === 0
+      ? 1
+      : 0.7 + (position.yPercent / 100) * 0.6;
+
   const spansRef = useRef<HTMLSpanElement[]>([]);
   const measureRef = useRef<HTMLSpanElement>(null);
   const measureRotateRef = useRef<HTMLSpanElement>(null);
   const measureHoriRef = useRef<HTMLSpanElement>(null);
 
-  const totalLines = 1;
-  const [scaleX, setScaleX] = useState([1]);
+  const totalLines = 3;
+  const [scaleX, setScaleX] = useState([1, 1, 1]);
   const [containerHeight, setContainerHeight] = useState<number>(0);
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const [containerRotateHeight, setContainerRotateHeight] = useState<number>(0);
@@ -140,24 +161,24 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
   const lineHeight = containerHeight / totalLines;
   const fontSize = lineHeight / 0.75;
 
-  const containerRotateHeightBase = containerRotateRef.current?.clientHeight ?? 0;
+  const containerRotateHeightBase =
+    containerRotateRef.current?.clientHeight ?? 0;
   const lineHeightRoteta = containerRotateHeightBase / totalLines;
   const fontSizeRoteta = lineHeightRoteta / 0.75;
-
 
   const containerHoriHeightBase = containerHoriRef.current?.clientHeight ?? 0;
   const lineHeightHori = containerHoriHeightBase / totalLines;
   const fontSizeHori = lineHeightHori / 0.75;
-  const [rotating, setRotating] = useState<boolean>(false)
+  const [rotating, setRotating] = useState<boolean>(false);
 
-  const [spanWidths, setSpanWidths] = useState<number[][]>([[]]);
-  
+  const [spanWidths, setSpanWidths] = useState<number[][]>([[], [], []]);
+
   const audioRef = useRef<HTMLAudioElement>(null);
   const divRef = useRef(null);
   const [shuffledColors, setShuffledColors] = useState<string[]>([]);
-  
+
   useEffect(() => {
-    const colors = ['863EC8', 'F7B318', '174DF8', '50D488', 'CC3D95'];
+    const colors = ["863EC8", "F7B318", "174DF8", "50D488", "CC3D95"];
     const randomColors = [...colors].sort(() => Math.random() - 0.5);
     setShuffledColors(randomColors);
   }, []);
@@ -174,14 +195,18 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
     const lines = gsap.utils.toArray<HTMLElement>(".type-line");
     const height = isMobileView ? 40 : 80;
     let cursor = document.querySelector("#cursor");
-    gsap.fromTo(cursor, {autoAlpha: 0, x: 2}, {autoAlpha: 1, duration: 0.5, repeat: -1, ease: SteppedEase.config(1)});
+    gsap.fromTo(
+      cursor,
+      { autoAlpha: 0, x: 2 },
+      { autoAlpha: 1, duration: 0.5, repeat: -1, ease: SteppedEase.config(1) }
+    );
     if (!isRunning) {
       gsap.set(".box", {
         y: (i: number) => i * height,
         opacity: 0,
       });
       gsap.set(".char", {
-        display:"none",
+        display: "none",
       });
       if (!isMobileView) {
         tl.to(divRef.current, {
@@ -204,7 +229,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           width: "100vw",
           height: "30svh",
           rotate: -360,
-          top: '70svh',
+          top: "70svh",
           onStart: () => {
             setRotating(true);
             setIsRunning(true);
@@ -217,108 +242,120 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
         });
       }
 
-        tl.to(".wrapper", {
-          opacity: 1,
-          scale: 1,
-          duration: 1,
-          ease: "power2.inOut",
-        });
-      
-        tl.to(boxes[1], {
-          opacity: "1", scale: 1, duration:  0.5 
-        })
-      
-        for (let i = 0; i < boxes.length -1; i++) {
-          tl.to(".box", {
-            y: `-=${height}`,
-            delay: 3,
-            ease: "power2.inOut",
-            onStart: () => {
-              if (boxes[i]) {
-                gsap.timeline()
-                .to(boxes[i], { opacity: "0" })
-                  .to(boxes[i + 1], { opacity: "0.3", scale: 0.5, duration: 0.5, ease: "power2.inOut", }, "<") 
-                  .to(boxes[i + 2], { opacity: "1", scale: 1, duration:  0.5, ease: "power2.inOut", }, "<")
-                  .to(boxes[i + 3], { opacity: "0.3", scale: 0.5, duration:  0.5, ease: "power2.inOut", }, "<");
-              }
-            }
-          });
-        }
-        tl.to(".wrapper", {
-          opacity: 0,
-          scale: 0,
-          duration: 1,
-          ease: "power2.inOut",
-        }, '-=1');
-        
-        tl.to(".wrapper02", {
-          opacity: 1,
-          scale: 1,
-          duration: 1,
-          ease: "power2.inOut",
-        }, "<");
-        lines.forEach((line) => {
-          const chars = line.querySelectorAll(".char");
-          tl.to(chars, {
-            display: "inline",
-            stagger: 0.05,
-            onStart: () => {
-              if (audioRef.current) {
-                audioRef.current.play();
-              }
-              line.classList.add("show-caret");
-            },
-            onComplete: () => {
-              line.classList.remove("show-caret");
-              if (audioRef.current) {
-                audioRef.current.currentTime = 0;
-                audioRef.current.pause();
-              }
-            },
-          });
-        });
-        tl.to(".wrapper02", {
-          opacity: 0,
-          scale: 0,
-          duration: 1,
-          ease: "power2.inOut",
-        }, "+=5");
-        if (!isMobileView) {
-          tl.to(divRef.current, {
-            width: "100vw",
-            height: "100svh",
-            rotate: 0,
-            onStart: () => {
-              setRotating(true);
-            },
-            onComplete: () => {
-              setRotate(false);
-              setRotating(false);
-              resetPosition();
-              setIsRunning(false);
-            },
-          });
-        } else {
-          tl.to(divRef.current, {
-            width: "100svh",
-            height: "100vw",
-            rotate: 90,
-            top: 0,
-            onStart: () => {
-              setRotating(true);
-            },
-            onComplete: () => {
-              setRotate(true);
-              setRotating(false);
-              resetPosition();
-              setIsRunning(false);
-            },
-          });
-        }
-        
-      }
-  };
+      tl.to(".wrapper", {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "power2.inOut",
+      });
 
+      tl.to(boxes[1], {
+        opacity: "1",
+        scale: 1,
+        duration: 0.5,
+      });
+
+      // for (let i = 0; i < boxes.length -1; i++) {
+      //   tl.to(".box", {
+      //     y: `-=${height}`,
+      //     delay: 3,
+      //     ease: "power2.inOut",
+      //     onStart: () => {
+      //       if (boxes[i]) {
+      //         gsap.timeline()
+      //         .to(boxes[i], { opacity: "0" })
+      //           .to(boxes[i + 1], { opacity: "0.3", scale: 0.5, duration: 0.5, ease: "power2.inOut", }, "<")
+      //           .to(boxes[i + 2], { opacity: "1", scale: 1, duration:  0.5, ease: "power2.inOut", }, "<")
+      //           .to(boxes[i + 3], { opacity: "0.3", scale: 0.5, duration:  0.5, ease: "power2.inOut", }, "<");
+      //       }
+      //     }
+      //   });
+      // }
+      tl.to(
+        ".wrapper",
+        {
+          opacity: 0,
+          scale: 0,
+          duration: 1,
+          ease: "power2.inOut",
+        },
+        "-=1"
+      );
+
+      tl.to(
+        ".wrapper02",
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power2.inOut",
+        },
+        "<"
+      );
+      // lines.forEach((line) => {
+      //   const chars = line.querySelectorAll(".char");
+      //   tl.to(chars, {
+      //     display: "inline",
+      //     stagger: 0.05,
+      //     onStart: () => {
+      //       if (audioRef.current) {
+      //         audioRef.current.play();
+      //       }
+      //       line.classList.add("show-caret");
+      //     },
+      //     onComplete: () => {
+      //       line.classList.remove("show-caret");
+      //       if (audioRef.current) {
+      //         audioRef.current.currentTime = 0;
+      //         audioRef.current.pause();
+      //       }
+      //     },
+      //   });
+      // });
+      tl.to(
+        ".wrapper02",
+        {
+          opacity: 0,
+          scale: 0,
+          duration: 1,
+          ease: "power2.inOut",
+        },
+        "+=5"
+      );
+      if (!isMobileView) {
+        tl.to(divRef.current, {
+          width: "100vw",
+          height: "100svh",
+          rotate: 0,
+          onStart: () => {
+            setRotating(true);
+          },
+          onComplete: () => {
+            setRotate(false);
+            setRotating(false);
+            resetPosition();
+            setIsRunning(false);
+          },
+        });
+      } else {
+        tl.to(divRef.current, {
+          width: "100svh",
+          height: "100vw",
+          rotate: 90,
+          top: 0,
+          onStart: () => {
+            setRotating(true);
+          },
+          onComplete: () => {
+            setRotate(true);
+            setRotating(false);
+            resetPosition();
+            setIsRunning(false);
+          },
+        });
+      }
+    }
+  };
 
   useEffect(() => {
     setIsMobileView(isMobile());
@@ -334,7 +371,6 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
 
   useEffect(() => {
     if (measureRef.current) {
@@ -348,47 +384,58 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
     }
   }, []);
 
-  const lerp = (start: number, end: number, t: number) => start * (1 - t) + end * t;
+  const lerp = (start: number, end: number, t: number) =>
+    start * (1 - t) + end * t;
 
-  const getCharacterWidths = useCallback((text: string, widths: number[]) => {
-    const charWidths: number[] = [];
-    text.split('').forEach((char, index) => {
-      if (measureRef.current) {
-        measureRef.current.style.fontVariationSettings = `'wdth' ${rotating ? 200 : widths[index]}`;
-        measureRef.current.innerText = char;
-        if (rotate) {
-          charWidths.push(measureRef.current.getBoundingClientRect().height);
-        } else {
-          charWidths.push(measureRef.current.getBoundingClientRect().width);
+  const getCharacterWidths = useCallback(
+    (text: string, widths: number[]) => {
+      const charWidths: number[] = [];
+      text.split("").forEach((char, index) => {
+        if (measureRef.current) {
+          measureRef.current.style.fontVariationSettings = `'wdth' ${rotating ? 200 : widths[index]}`;
+          measureRef.current.innerText = char;
+          if (rotate) {
+            charWidths.push(measureRef.current.getBoundingClientRect().height);
+          } else {
+            charWidths.push(measureRef.current.getBoundingClientRect().width);
+          }
         }
-      }
-    });
-    return charWidths;
-  }, [rotate, rotating]);
+      });
+      return charWidths;
+    },
+    [rotate, rotating]
+  );
 
-  const getCharacterWidthsRotate = useCallback((text: string) => {
-    const charWidths: number[] = [];
-    text.split('').forEach((char) => {
-      if (measureRotateRef.current) {
-        measureRotateRef.current.style.fontVariationSettings = `'wdth' 200}`;
-        measureRotateRef.current.innerText = char;
-        if (isMobileView) {
-          charWidths.push(measureRotateRef.current.getBoundingClientRect().width);
-        } else {
-          charWidths.push(measureRotateRef.current.getBoundingClientRect().height);
+  const getCharacterWidthsRotate = useCallback(
+    (text: string) => {
+      const charWidths: number[] = [];
+      text.split("").forEach((char) => {
+        if (measureRotateRef.current) {
+          measureRotateRef.current.style.fontVariationSettings = `'wdth' 200}`;
+          measureRotateRef.current.innerText = char;
+          if (isMobileView) {
+            charWidths.push(
+              measureRotateRef.current.getBoundingClientRect().width
+            );
+          } else {
+            charWidths.push(
+              measureRotateRef.current.getBoundingClientRect().height
+            );
+          }
         }
-      }
-    });
-    return charWidths;
-  }, [isMobileView]);
+      });
+      return charWidths;
+    },
+    [isMobileView]
+  );
 
   const getCharacterWidthsHori = useCallback((text: string) => {
     const charWidths: number[] = [];
-    text.split('').forEach((char) => {
+    text.split("").forEach((char) => {
       if (measureHoriRef.current) {
         measureHoriRef.current.style.fontVariationSettings = `'wdth' 200}`;
         measureHoriRef.current.innerText = char;
-          charWidths.push(measureHoriRef.current.getBoundingClientRect().width);
+        charWidths.push(measureHoriRef.current.getBoundingClientRect().width);
       }
     });
     return charWidths;
@@ -411,17 +458,19 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
 
   useEffect(() => {
     updateContainerDimensions();
-    window.addEventListener('resize', updateContainerDimensions);
+    window.addEventListener("resize", updateContainerDimensions);
 
     return () => {
-      window.removeEventListener('resize', updateContainerDimensions);
+      window.removeEventListener("resize", updateContainerDimensions);
     };
   }, [updateContainerDimensions, rotating]);
 
   useEffect(() => {
     if (containerRef.current) {
       const updateSpanWidths = (text: string, index: number) => {
-        const spanElements = containerRef.current!.querySelectorAll(`.variable-word-${index + 1} .variable-word-letter`);
+        const spanElements = containerRef.current!.querySelectorAll(
+          `.variable-word-${index + 1} .variable-word-letter`
+        );
         const newSpanWidths = Array.from(spanElements).map((_, i) => {
           let width = 200;
           if (!rotating) {
@@ -441,7 +490,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           return width;
         });
 
-        setSpanWidths(prev => {
+        setSpanWidths((prev) => {
           const updated = [...prev];
           updated[index] = newSpanWidths;
           return updated;
@@ -452,73 +501,127 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           widths = getCharacterWidths(text, newSpanWidths);
           const totalWidth = widths.reduce((total, width) => total + width, 0);
 
-        setScaleX(prev => {
-          const updated = [...prev];
-          updated[index] = containerWidth / totalWidth;
-          return updated;
-        });
+          setScaleX((prev) => {
+            const updated = [...prev];
+            updated[index] = containerWidth / totalWidth;
+            return updated;
+          });
         } else {
           if (rotate) {
-            widths = getCharacterWidthsHori('ROGYX'); 
-            const totalWidth = widths.reduce((total, width) => total + width, 0);
-            setScaleX(prev => {
-            const updated = [...prev];
+            widths = getCharacterWidthsHori(text);
+            const totalWidth = widths.reduce(
+              (total, width) => total + width,
+              0
+            );
+            setScaleX((prev) => {
+              const updated = [...prev];
               updated[index] = containerHoriWidth / totalWidth;
-            return updated;
-          });
+              return updated;
+            });
           } else {
-            widths = getCharacterWidthsRotate('ROGYX'); 
-            const totalWidth = widths.reduce((total, width) => total + width, 0);
-            setScaleX(prev => {
-            const updated = [...prev];
+            widths = getCharacterWidthsRotate(text);
+            const totalWidth = widths.reduce(
+              (total, width) => total + width,
+              0
+            );
+            setScaleX((prev) => {
+              const updated = [...prev];
               updated[index] = containerRotateWidth / totalWidth;
-            return updated;
-          });
+              return updated;
+            });
           }
         }
       };
-      updateSpanWidths('ROGYX', 0);
+      updateSpanWidths("ROGYX", 0);
+      updateSpanWidths("DIGITAL", 1);
+      updateSpanWidths("MAKETING", 2);
     }
-  }, [position.clientX, containerWidth, position.xPercent, rotate, position.xPercentRotate, getCharacterWidths, rotating, containerRotateWidth, containerRotateHeight,getCharacterWidthsRotate, updateContainerDimensions, containerHoriWidth, getCharacterWidthsHori, containerHoriHeight]);
-  
-  const renderCharacters = useCallback((text: string, widths: number[]) => {
-    return text.split('').map((char, index) => (
-      <span
-        key={index}
-        ref={(el) => el && (spansRef.current[index] = el)}
-        data-char={char}
-        className="variable-word-letter origin-center"
-        style={{
-          fontVariationSettings: `'wdth' ${widths[index]}`,
-          transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1.03)`,
-          color: `#${shuffledColors[index % shuffledColors.length]}`
-        }}
-      >
-        {char}
-      </span>
-    ));
-  }, [shuffledColors]);
+  }, [
+    position.clientX,
+    containerWidth,
+    position.xPercent,
+    rotate,
+    position.xPercentRotate,
+    getCharacterWidths,
+    rotating,
+    containerRotateWidth,
+    containerRotateHeight,
+    getCharacterWidthsRotate,
+    updateContainerDimensions,
+    containerHoriWidth,
+    getCharacterWidthsHori,
+    containerHoriHeight,
+  ]);
 
+  const renderCharacters = useCallback(
+    (text: string, widths: number[]) => {
+      return text.split("").map((char, index) => (
+        <span
+          key={index}
+          ref={(el) => el && (spansRef.current[index] = el)}
+          data-char={char}
+          className="variable-word-letter origin-center"
+          style={{
+            fontVariationSettings: `'wdth' ${widths[index]}`,
+            transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1.03)`,
+            color: `#${shuffledColors[index % shuffledColors.length]}`,
+          }}
+        >
+          {char}
+        </span>
+      ));
+    },
+    [shuffledColors]
+  );
 
   return (
     <div className="relative flex md:items-center items-end justify-start h-[100svh] overflow-hidden origin-center z-0">
-      <div ref={divRef} className="absolute z-10 w-[100vw] h-[100svh] md:origin-[15vw_15vw] left-0 bottom-0 top-0 max-md:w-[100svh] max-md:h-[100vw] max-md:origin-[50vw] max-md:rotate-90" onClick={handleClick}>
       <div
-        ref={containerRef}
-        className="relative h-full w-full overflow-hidden"
-        style={{
-          fontSize: `${rotating ? (rotate ? fontSizeHori : fontSizeRoteta) : fontSize}px`,
-          lineHeight: `${rotating ? (rotate ? lineHeightHori : lineHeightRoteta)  : lineHeight}px`,
-        }}
+        ref={divRef}
+        className="absolute z-10 w-[100vw] h-[100svh] md:origin-[15vw_15vw] left-0 bottom-0 top-0 max-md:w-[100svh] max-md:h-[100vw] max-md:origin-[50vw] max-md:rotate-90"
+        onClick={handleClick}
       >
-        <span ref={measureRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
         <div
-          className="variable-word-1 origin-top-left h-full hover:duration-0 duration-150 inline-flex justify-evenly items-center gap-2"
-          style={{ transform: `translate3d(0px, 0px, 0px) scaleX(${scaleX[0]}) scaleY(${1})` }}
+          ref={containerRef}
+          className="relative h-full w-full overflow-hidden"
+          style={{
+            fontSize: `${rotating ? (rotate ? fontSizeHori : fontSizeRoteta) : fontSize}px`,
+            lineHeight: `${rotating ? (rotate ? lineHeightHori : lineHeightRoteta) : lineHeight}px`,
+          }}
         >
-          {renderCharacters("ROGYX", spanWidths[0])}
+          <span
+            ref={measureRef}
+            style={{
+              visibility: "hidden",
+              position: "absolute",
+              whiteSpace: "nowrap",
+            }}
+          ></span>
+          <div
+            className="variable-word-1 origin-top-left inline-flex justify-evenly items-center"
+            style={{
+              transform: `translate3d(0px, 0px, 0px) scaleX(${scaleX[0]}) scaleY(${topScaleY})`,
+            }}
+          >
+            {renderCharacters("ROGYX", spanWidths[0])}
+          </div>
+          <div
+            className="absolute left-0 right-0 top-0 w-0 variable-word-2 origin-top-left inline-flex justify-evenly items-center"
+            style={{
+              transform: `translate3d(0px, ${containerHeight - (lineHeight * (bottomScaleY + centerScaleY) - 10)}px, 0px) scaleX(${scaleX[1]}) scaleY(${centerScaleY})`,
+            }}
+          >
+            {renderCharacters("DIGITAL", spanWidths[1])}
+          </div>
+          <div
+            className="absolute left-0 right-0 top-0 w-0 variable-word-3 origin-top-left inline-flex justify-evenly items-center"
+            style={{
+              transform: `translate3d(0px, ${containerHeight - (lineHeight * bottomScaleY - 20)}px, 0px) scaleX(${scaleX[2]}) scaleY(${bottomScaleY})`,
+            }}
+          >
+            {renderCharacters("MAKETING", spanWidths[2])}
+          </div>
         </div>
-      </div>
       </div>
       <div
         ref={containerRotateRef}
@@ -528,7 +631,14 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           lineHeight: `${lineHeightRoteta}px`,
         }}
       >
-        <span ref={measureRotateRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
+        <span
+          ref={measureRotateRef}
+          style={{
+            visibility: "hidden",
+            position: "absolute",
+            whiteSpace: "nowrap",
+          }}
+        ></span>
       </div>
       <div
         ref={containerHoriRef}
@@ -538,7 +648,14 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           lineHeight: `${lineHeightHori}px`,
         }}
       >
-        <span ref={measureHoriRef} style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }}></span>
+        <span
+          ref={measureHoriRef}
+          style={{
+            visibility: "hidden",
+            position: "absolute",
+            whiteSpace: "nowrap",
+          }}
+        ></span>
       </div>
       <div className="wrapper md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
         <div className="w-full md:h-[240px] h-[120px] relative m-auto">
@@ -560,24 +677,70 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
         </div>
       </div>
       <div className="wrapper02 md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
-        <div data-splitting className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)] ">
-          <span className="type-line font-bold">未来は、もう加速している。<span className="caret"></span></span><br />
-          <span className="type-line">過去を振り切り、前だけを見ろ。<span className="caret"></span></span><br />
+        <div
+          data-splitting
+          className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)] "
+        >
+          <span className="type-line font-bold">
+            未来は、もう加速している。<span className="caret"></span>
+          </span>
           <br />
-          <span className="type-line font-bold">テンプレートを捨て去れ。<span className="caret"></span></span><br />
-          <span className="type-line">世界標準のモダン開発で新たな価値を創り出す。<span className="caret"></span></span><br />
+          <span className="type-line">
+            過去を振り切り、前だけを見ろ。<span className="caret"></span>
+          </span>
           <br />
-          <span className="type-line font-bold">個性を殺すコピーに背を向け、<span className="caret"></span></span><br />
-          <span className="type-line">無限の可能性を秘めたオリジナルを選び抜け。<span className="caret"></span></span><br />
           <br />
-          <span className="type-line font-bold">マーケティングは、今、時代に再定義される。<span className="caret"></span></span><br />
-          <span className="type-line">すべてを網羅し、成功を必ず手にする。<span className="caret"></span></span><br />
+          <span className="type-line font-bold">
+            テンプレートを捨て去れ。<span className="caret"></span>
+          </span>
           <br />
-          <span className="type-line font-bold">日本のウェブを、新次元へと引き上げる。<span className="caret"></span></span><br />
-          <span className="type-line">機能美とパフォーマンスで、確実に結果を出す。<span className="caret"></span></span><br />
+          <span className="type-line">
+            世界標準のモダン開発で新たな価値を創り出す。
+            <span className="caret"></span>
+          </span>
           <br />
-          <span className="type-line font-bold">プロアクティブなビジネスマンだけに贈る、<span className="caret"></span></span><br />
-          <span className="type-line">紹介制のデジタルマーケティングエージェンシー。<span className="caret"></span></span><br />
+          <br />
+          <span className="type-line font-bold">
+            個性を殺すコピーに背を向け、<span className="caret"></span>
+          </span>
+          <br />
+          <span className="type-line">
+            無限の可能性を秘めたオリジナルを選び抜け。
+            <span className="caret"></span>
+          </span>
+          <br />
+          <br />
+          <span className="type-line font-bold">
+            マーケティングは、今、時代に再定義される。
+            <span className="caret"></span>
+          </span>
+          <br />
+          <span className="type-line">
+            すべてを網羅し、成功を必ず手にする。<span className="caret"></span>
+          </span>
+          <br />
+          <br />
+          <span className="type-line font-bold">
+            日本のウェブを、新次元へと引き上げる。
+            <span className="caret"></span>
+          </span>
+          <br />
+          <span className="type-line">
+            機能美とパフォーマンスで、確実に結果を出す。
+            <span className="caret"></span>
+          </span>
+          <br />
+          <br />
+          <span className="type-line font-bold">
+            プロアクティブなビジネスマンだけに贈る、
+            <span className="caret"></span>
+          </span>
+          <br />
+          <span className="type-line">
+            紹介制のデジタルマーケティングエージェンシー。
+            <span className="caret"></span>
+          </span>
+          <br />
           <br />
         </div>
       </div>
