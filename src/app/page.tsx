@@ -162,7 +162,8 @@ export default function Home() {
 
   return (
     <div className="h-screen w-full">
-      <div className="fixed inset-0">
+      {!modelZoomed &&
+      <div className="fixed inset-0 bg-[url('/assets/images/bg-loading.png')] bg-cover bg-center">
         <Canvas>
           <Suspense fallback={null}>
             <ambientLight intensity={0.5} />
@@ -190,6 +191,7 @@ export default function Home() {
           </Suspense>
         </Canvas>
       </div>
+      }
       <div
         className={`transition-opacity duration-500 opacity-0 ${
           modelZoomed ? "opacity-100" : "opacity-0 pointer-events-none overflow-hidden h-screen"

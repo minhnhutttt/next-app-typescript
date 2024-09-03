@@ -3,7 +3,13 @@
 const FV = () => {
   return (
     <section className="relative">
-        <div data-scroll  className="relative md:bg-[url(/assets/images/fv.png)] bg-[url(/assets/images/fv-sp.png)] h-[600px] md:h-[67.778vw] dt:h-[976px] bg-cover bg-top [clip-path:polygon(0_0,_100%_0,_100%_calc(100%-11.5vw),_0%_100%)]">
+        <div data-scroll  className="relative  h-[600px] md:h-[67.778vw] dt:h-[976px] bg-cover bg-top [clip-path:polygon(0_0,_100%_0,_100%_calc(100%-11.5vw),_0%_100%)]">
+        <div className="absolute inset-0">
+                <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover object-center">
+                <source src="/assets/videos/fv.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
         <div className="w-full max-w-[1440px] mx-auto relative h-full z-50">
         <h3 className="ani-fade-up dt:w-[506px] max-dt:w-[35.139vw] relative z-50">
           <img className="w-full max-[1440px]:hidden" src="/assets/images/fv-img-dt.png" alt="" />
