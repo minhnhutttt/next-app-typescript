@@ -578,7 +578,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           className="variable-word-letter origin-center bg-text"
           style={{
             fontVariationSettings: `'wdth' ${widths[index]}`,
-            transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1.03)`,
+            transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1.02)`,
             color: `#${!noColor && shuffledColors[index % shuffledColors.length]}`,
           }}
         >
