@@ -14,10 +14,10 @@ export default function Home() {
   };
   return (
     <main>
-       {/* {!loadingComplete && <ProgressBar onComplete={() => setLoadingComplete(true)} />}
+       {!loadingComplete && <ProgressBar onComplete={() => setLoadingComplete(true)} />}
       {loadingComplete && (
         <NoiseAnimation />
-      )} */}
+      )}
       <ScaledDivs isMuted={isMuted} />
       <button  onClick={toggleMute} className="fixed md:right-10 right-5 md:bottom-10 bottom-5 flex items-center gap-2 font-['STIX_Two_Text'] z-[9999]">
         <span>{isMuted ? 'Trun On' : 'Turn off'}</span>

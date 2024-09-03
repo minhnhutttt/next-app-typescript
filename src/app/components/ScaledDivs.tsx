@@ -147,17 +147,25 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
   const [containerHoriWidth, setContainerHoriWidth] = useState<number>(0);
 
   const lineHeight = containerHeight / totalLines;
-  const fontSize = lineHeight / 0.75;
+  const fontSize = lineHeight / 0.77;
 
   const containerRotateHeightBase =
     containerRotateRef.current?.clientHeight ?? 0;
   const lineHeightRoteta = containerRotateHeightBase / totalLines;
-  const fontSizeRoteta = lineHeightRoteta / 0.75;
+  const fontSizeRoteta = lineHeightRoteta / 0.77;
 
   const containerHoriHeightBase = containerHoriRef.current?.clientHeight ?? 0;
   const lineHeightHori = containerHoriHeightBase / totalLines;
-  const fontSizeHori = lineHeightHori / 0.75;
+  const fontSizeHori = lineHeightHori / 0.77;
   const [rotating, setRotating] = useState<boolean>(false);
+
+  const translateCenter = containerHeight - (lineHeight * (bottomScaleY + centerScaleY));
+  const translateCenterRotate = containerRotateHeight - (lineHeightRoteta * (bottomScaleY + centerScaleY));
+  const translateCenterHori = containerHoriHeight - (lineHeightHori * (bottomScaleY + centerScaleY) );
+
+  const translateBottom = containerHeight - (lineHeight * bottomScaleY);
+  const translateBottomRotate = containerRotateHeight - (lineHeightRoteta * bottomScaleY);
+  const translateBottomHori = containerHoriHeight - (lineHeightHori * bottomScaleY);
 
   const [spanWidths, setSpanWidths] = useState<number[][]>([[], [], []]);
 
@@ -243,22 +251,22 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
         duration: 0.5,
       });
 
-      // for (let i = 0; i < boxes.length -1; i++) {
-      //   tl.to(".box", {
-      //     y: `-=${height}`,
-      //     delay: 3,
-      //     ease: "power2.inOut",
-      //     onStart: () => {
-      //       if (boxes[i]) {
-      //         gsap.timeline()
-      //         .to(boxes[i], { opacity: "0" })
-      //           .to(boxes[i + 1], { opacity: "0.3", scale: 0.5, duration: 0.5, ease: "power2.inOut", }, "<")
-      //           .to(boxes[i + 2], { opacity: "1", scale: 1, duration:  0.5, ease: "power2.inOut", }, "<")
-      //           .to(boxes[i + 3], { opacity: "0.3", scale: 0.5, duration:  0.5, ease: "power2.inOut", }, "<");
-      //       }
-      //     }
-      //   });
-      // }
+      for (let i = 0; i < boxes.length -1; i++) {
+        tl.to(".box", {
+          y: `-=${height}`,
+          delay: 3,
+          ease: "power2.inOut",
+          onStart: () => {
+            if (boxes[i]) {
+              gsap.timeline()
+              .to(boxes[i], { opacity: "0" })
+                .to(boxes[i + 1], { opacity: "0.3", scale: 0.5, duration: 0.5, ease: "power2.inOut", }, "<")
+                .to(boxes[i + 2], { opacity: "1", scale: 1, duration:  0.5, ease: "power2.inOut", }, "<")
+                .to(boxes[i + 3], { opacity: "0.3", scale: 0.5, duration:  0.5, ease: "power2.inOut", }, "<");
+            }
+          }
+        });
+      }
       tl.to(
         ".wrapper",
         {
@@ -280,26 +288,26 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
         },
         "<"
       );
-      // lines.forEach((line) => {
-      //   const chars = line.querySelectorAll(".char");
-      //   tl.to(chars, {
-      //     display: "inline",
-      //     stagger: 0.05,
-      //     onStart: () => {
-      //       if (audioRef.current) {
-      //         audioRef.current.play();
-      //       }
-      //       line.classList.add("show-caret");
-      //     },
-      //     onComplete: () => {
-      //       line.classList.remove("show-caret");
-      //       if (audioRef.current) {
-      //         audioRef.current.currentTime = 0;
-      //         audioRef.current.pause();
-      //       }
-      //     },
-      //   });
-      // });
+      lines.forEach((line) => {
+        const chars = line.querySelectorAll(".char");
+        tl.to(chars, {
+          display: "inline",
+          stagger: 0.05,
+          onStart: () => {
+            if (audioRef.current) {
+              audioRef.current.play();
+            }
+            line.classList.add("show-caret");
+          },
+          onComplete: () => {
+            line.classList.remove("show-caret");
+            if (audioRef.current) {
+              audioRef.current.currentTime = 0;
+              audioRef.current.pause();
+            }
+          },
+        });
+      });
       tl.to(
         ".wrapper02",
         {
@@ -561,17 +569,17 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
   ]);
 
   const renderCharacters = useCallback(
-    (text: string, widths: number[]) => {
+    (text: string, widths: number[], noColor?: boolean) => {
       return text.split("").map((char, index) => (
         <span
           key={index}
           ref={(el) => el && (spansRef.current[index] = el)}
           data-char={char}
-          className="variable-word-letter origin-center"
+          className="variable-word-letter origin-center bg-text"
           style={{
             fontVariationSettings: `'wdth' ${widths[index]}`,
             transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1.03)`,
-            color: `#${shuffledColors[index % shuffledColors.length]}`,
+            color: `#${!noColor && shuffledColors[index % shuffledColors.length]}`,
           }}
         >
           {char}
@@ -610,12 +618,12 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
               transform: `translate3d(0px, 0px, 0px) scaleX(${scaleX[0]}) scaleY(${topScaleY})`,
             }}
           >
-            {renderCharacters("ROGYX", spanWidths[0])}
+            {renderCharacters("ROGYX", spanWidths[0], true)}
           </div>
           <div
             className="absolute left-0 right-0 top-0 w-0 variable-word-2 origin-top-left inline-flex justify-evenly items-center"
             style={{
-              transform: `translate3d(0px, ${containerHeight - (lineHeight * (bottomScaleY + centerScaleY) - 10)}px, 0px) scaleX(${scaleX[1]}) scaleY(${centerScaleY})`,
+              transform: `translate3d(0px, ${rotating ?  (rotate ? translateCenterHori : translateCenterRotate) : translateCenter}px, 0px) scaleX(${scaleX[1]}) scaleY(${centerScaleY})`,
             }}
           >
             {renderCharacters("DIGITAL", spanWidths[1])}
@@ -623,7 +631,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           <div
             className="absolute left-0 right-0 top-0 w-0 variable-word-3 origin-top-left inline-flex justify-evenly items-center"
             style={{
-              transform: `translate3d(0px, ${containerHeight - (lineHeight * bottomScaleY - 20)}px, 0px) scaleX(${scaleX[2]}) scaleY(${bottomScaleY})`,
+              transform: `translate3d(0px, ${rotating ? (rotate ? translateBottomHori : translateBottomRotate)   : translateBottom}px, 0px) scaleX(${scaleX[2]}) scaleY(${bottomScaleY})`,
             }}
           >
             {renderCharacters("MAKETING", spanWidths[2])}
