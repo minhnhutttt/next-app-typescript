@@ -1,5 +1,7 @@
 "use client";
 
+import Confetti from "@/components/confetti";
+
 const Flow = () => {
   return (
     <section id="item" className="relative px-6 md:pt-16 pt-10">
@@ -111,8 +113,7 @@ const Flow = () => {
         className="ani-fade-up flex justify-center md:pt-16 pt-10"
       >
         <svg
-          width="201"
-          height="106"
+          className="md:w-[201px] w-[150px]"
           viewBox="0 0 201 106"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +124,9 @@ const Flow = () => {
           />
         </svg>
       </div>
-      <div className="flex w-full md:max-w-[942px] mx-auto justify-center md:mt-10 mt-6 bg-[url('/assets/images/bg-reward.png')] bg-[length:100%_100%]">
+      <div className="flex w-full md:max-w-[942px] mx-auto justify-center md:mt-10 mt-6 md:bg-[url('/assets/images/bg-reward.png')] bg-[length:100%_100%] relative max-md:pb-6 max-md:px-6">
+      <Confetti />
+
         <div
           id="rewards"
           data-scroll
