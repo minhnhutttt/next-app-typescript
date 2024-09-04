@@ -4,16 +4,16 @@ const Howto = () => {
   return (
     <section
       id="howto"
-      className="relative md:-mt-8"
+      className="relative -mt-[14vw] md:-mt-8"
     >
       <div className="w-full max-w-[1360px] mx-auto">
         <div className="md:pb-20 pb-14 px-5">
           <div data-scroll className="flex justify-center items-center">
             <h3 className="relative">
-            <img  className="max-md:w-[49.222vw] max-dt:w-[37.222vw]" src="/assets/images/bg-title.png" alt="" />
-            <p data-splitting className="text-center splitting font-gothic md:text-[2.5vw] text-[3.4vw] dt:text-[36px] font-extrabold absolute md:top-[3.889vw] top-[5.2vw] dt:top-14  dt:left-0 md:w-[35.694vw] w-[49.694vw] dt:w-[514px] leading-[1.2]">
+            <img  className="max-md:w-[90vw] max-dt:w-[37.222vw]" src="/assets/images/bg-title.png" alt="" />
+            <p data-splitting className="text-center splitting font-gothic md:text-[2.5vw] text-[6.8vw] dt:text-[36px] font-extrabold absolute md:top-[3.889vw] top-[9.5vw] dt:top-14  dt:left-0 md:w-[35.694vw] w-[90vw] dt:w-[514px] leading-[1.2]">
             配達案件続々発生中！<br />
-            <span className="md:text-[1.875vw] text-[2.6vw] dt:text-[27px] font-noto font-normal">あなたの愛車で企業を救え！ </span>
+            <span className="md:text-[1.875vw] text-[4.8vw] dt:text-[27px] font-noto font-normal">あなたの愛車で企業を救え！ </span>
             </p>
             </h3>
           </div>

@@ -1,11 +1,24 @@
 "use client";
 
-const FV = () => {
+import { useEffect, useRef } from "react";
+
+const FV = ({ isPlay }: {isPlay: boolean}) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isPlay) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isPlay]);
   return (
     <section className="relative">
         <div data-scroll  className="relative  h-[600px] md:h-[67.778vw] dt:h-[976px] bg-cover bg-top [clip-path:polygon(0_0,_100%_0,_100%_calc(100%-11.5vw),_0%_100%)]">
         <div className="absolute inset-0">
-                <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover object-center">
+                <video ref={videoRef} autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover object-center">
                 <source src="/assets/videos/fv.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
@@ -19,7 +32,8 @@ const FV = () => {
           <img src="/assets/images/fv-text.png" alt="" />
         </h1>
         <div className="ani-fade-up absolute left-1/2 -translate-x-1/2 md:bottom-[210px] bottom-[110px] md:w-[48.958vw] dt:w-[705px] w-[90%] md:h-[15.556vw] dt:h-[224px] mx-auto [clip-path:polygon(0%_0%,_100%_0,_100%_80%,_95%_100%,_0%_100%)] overflow-hidden z-50">
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,_#FFF_50%,_#1E072B_371.87%)] opacity-65"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,_#FFF_50%,_#1E072B_371.87%)] opacity-[0.55]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,_#FFF_50%,_#1E072B_371.87%)] opacity-60"></div>
           <div className="w-full h-full md:px-5 px-3 relative">
             <div className="flex justify-between h-10 md:h-[50px] items-center border-b border-[#2E177E]">
               <h5 className="text-[17px] md:text-[1.528vw] dt:text-[22px] font-bold ">DELIVERY Man Mapとは！</h5>
@@ -49,10 +63,10 @@ const FV = () => {
               <img className="max-dt:w-[18.403vw] max-md:w-[24.403vw]" src="/assets/images/img-case-01.png" alt="" />
             </div>
             <div className="relative">
-              <div data-scroll className="ani-fade-up flex justify-center px-4 relative">
-                <h3 className="relative">
-                  <img className="max-md:w-[49.222vw] max-dt:w-[37.222vw]" src="/assets/images/bg-title.png" alt="緊急案件発生！隙間時間で近所企業救え！ " />
-                  <p data-splitting className="splitting font-gothic md:text-[2.5vw] text-[3.4vw] dt:text-[36px] font-extrabold absolute md:top-[2.778vw] top-[4vw] dt:top-10 left-[3.333vw] dt:left-12">
+              <div data-scroll className="ani-fade-up flex justify-center px-4 relative max-md:pl-[17vw]">
+                <h3 className="relative z-10">
+                  <img className="max-md:w-[64vw] max-dt:w-[37.222vw]" src="/assets/images/bg-title.png" alt="緊急案件発生！隙間時間で近所企業救え！ " />
+                  <p data-splitting className="splitting font-gothic md:text-[2.5vw] text-[4.5vw] dt:text-[36px] font-extrabold absolute md:top-[2.778vw] top-[5vw] dt:top-10 left-[4.333vw] dt:left-12">
                     緊急案件発生！<br />
                     隙間時間で近所企業救え！ 
                   </p>

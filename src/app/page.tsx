@@ -198,7 +198,7 @@ export default function Home() {
         }`}
       >
         <Header />
-        <FV />
+        <FV isPlay={modelZoomed} />
         <Introduction />
         <Work />
         <Flow />
@@ -222,7 +222,7 @@ export default function Home() {
     {!modelZoomed &&
       <button
         onClick={toggleMute}
-        className="fixed right-5 bottom-5 flex items-center justify-end md:h-20 h-[40px] md:gap-10 gap-4 max-md:text-[13px]"
+        className="fixed right-5 bottom-5 flex items-center justify-end md:h-20 h-[40px] md:gap-10 gap-4 max-md:text-[13px] text-white"
       >
         {isMuted ? 'Trun On' : 'Trun Off'}
         <figure className="md:w-[170px] w-[60px] flex items-center">
@@ -234,18 +234,18 @@ export default function Home() {
           />
         ) : (
           <svg className="md:w-[170px] w-[150px] animate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171 91" fill="none">
-          <path d="M3 38V53" stroke="black" stroke-width="6" stroke-linecap="round"/>
-          <path d="M168 37V52" stroke="black" stroke-width="6" stroke-linecap="round"/>
-          <path d="M18 24V66" stroke="black" stroke-width="6" stroke-linecap="round"/>
-          <path d="M78 24V66" stroke="black" stroke-width="6" stroke-linecap="round"/>
-          <path d="M153 24V66" stroke="black" stroke-width="6" stroke-linecap="round"/>
-          <path d="M48 29V62" stroke="black" stroke-width="6" stroke-linecap="round"/>
-          <path d="M63 35V56" stroke="black" stroke-width="6" stroke-linecap="round"/>
-          <path d="M33 15V76" stroke="black" stroke-width="6" stroke-linecap="round"/>
-          <path d="M123 21V69" stroke="black" stroke-width="6" stroke-linecap="round"/>
-          <path d="M93 13V78" stroke="black" stroke-width="6" stroke-linecap="round"/>
-          <path d="M138 9V81" stroke="black" stroke-width="6" stroke-linecap="round"/>
-          <path d="M108 3V88" stroke="black" stroke-width="6" stroke-linecap="round"/>
+          <path d="M3 38V53" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <path d="M168 37V52" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <path d="M18 24V66" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <path d="M78 24V66" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <path d="M153 24V66" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <path d="M48 29V62" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <path d="M63 35V56" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <path d="M33 15V76" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <path d="M123 21V69" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <path d="M93 13V78" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <path d="M138 9V81" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <path d="M108 3V88" stroke="white" stroke-width="6" stroke-linecap="round"/>
         </svg>
         )}
         </figure>
