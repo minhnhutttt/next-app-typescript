@@ -10,3 +10,9 @@ body {
   color: #000;
   font-family: "Noto Sans", sans-serif;
 }
+strong {
+  font-weight: bold;
+}
+.hightlight {
+  @apply bg-[linear-gradient(to_top,_#FFF574_100%,_transparent_100%)] dark:bg-[linear-gradient(to_top,_#EF9B1D_100%,_transparent_100%)] font-bold;
+}
