@@ -591,7 +591,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
   );
 
   return (
-    <div className="relative flex md:items-center items-end justify-start h-[100svh] overflow-hidden origin-center z-0">
+    <div className="relative flex md:items-center items-end justify-start h-[100svh] overflow-hidden origin-center z-0 bg-[#FDDFFD]">
       <div
         ref={divRef}
         className="absolute z-10 w-[100vw] h-[100svh] md:origin-[15vw_15vw] left-0 bottom-0 top-0 max-md:w-[100svh] max-md:h-[100vw] max-md:origin-[50vw] max-md:rotate-90"
