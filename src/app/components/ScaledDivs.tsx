@@ -545,8 +545,8 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           }
         }
       };
-      updateSpanWidths("ROGYX", 0);
-      updateSpanWidths("DIGITAL", 1);
+      updateSpanWidths("DIGITAL", 0);
+      updateSpanWidths("ROGYX", 1);
       updateSpanWidths("MAKETING", 2);
     }
   }, [
@@ -578,8 +578,9 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           className="variable-word-letter origin-center bg-text"
           style={{
             fontVariationSettings: `'wdth' ${widths[index]}`,
-            transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1.02)`,
-            color: `#${!noColor && shuffledColors[index % shuffledColors.length]}`,
+            transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1)`,
+            color: `#${!noColor && '000'}`,
+            backgroundColor: `#${shuffledColors[index % shuffledColors.length]}`,
           }}
         >
           {char}
@@ -618,7 +619,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
               transform: `translate3d(0px, 0px, 0px) scaleX(${scaleX[0]}) scaleY(${topScaleY})`,
             }}
           >
-            {renderCharacters("ROGYX", spanWidths[0], true)}
+            {renderCharacters("DIGITAL", spanWidths[0])}
           </div>
           <div
             className="absolute left-0 right-0 top-0 w-0 variable-word-2 origin-top-left inline-flex justify-evenly items-center"
@@ -626,7 +627,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
               transform: `translate3d(0px, ${rotating ?  (rotate ? translateCenterHori : translateCenterRotate) : translateCenter}px, 0px) scaleX(${scaleX[1]}) scaleY(${centerScaleY})`,
             }}
           >
-            {renderCharacters("DIGITAL", spanWidths[1])}
+            {renderCharacters("ROGYX", spanWidths[1], true)}
           </div>
           <div
             className="absolute left-0 right-0 top-0 w-0 variable-word-3 origin-top-left inline-flex justify-evenly items-center"
