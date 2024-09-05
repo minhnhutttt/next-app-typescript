@@ -16,7 +16,7 @@ const FV = ({ isPlay }: {isPlay: boolean}) => {
   }, [isPlay]);
   return (
     <section className="relative">
-        <div data-scroll  className="relative  h-[600px] md:h-[67.778vw] dt:h-[976px] bg-cover bg-top [clip-path:polygon(0_0,_100%_0,_100%_calc(100%-11.5vw),_0%_100%)]">
+        <div data-scroll  className="relative max-md:min-h-[600px] h-[100vw] md:h-[67.778vw] dt:h-[976px] bg-cover bg-top [clip-path:polygon(0_0,_100%_0,_100%_calc(100%-11.5vw),_0%_100%)]">
         <div className="absolute inset-0">
                 <video ref={videoRef} autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover object-center">
                 <source src="/assets/videos/fv.mp4" type="video/mp4" />
@@ -28,10 +28,10 @@ const FV = ({ isPlay }: {isPlay: boolean}) => {
           <img className="w-full max-[1440px]:hidden" src="/assets/images/fv-img-dt.png" alt="" />
           <img className="w-full min-[1441px]:hidden" src="/assets/images/fv-img.png" alt="" />
         </h3>
-        <h1 className="ani-fade-up absolute top-10 md:top-[30px] left-[22.917vw] pr-5">
-          <img src="/assets/images/fv-text.png" alt="" />
+        <h1 className="ani-fade-up absolute top-[17vw] md:top-[30px] md:left-[22.917vw] left-[3vw] pr-5 z-[51]">
+          <img src="/assets/images/fv-text.svg" alt="" />
         </h1>
-        <div className="ani-fade-up absolute left-1/2 -translate-x-1/2 md:bottom-[210px] bottom-[110px] md:w-[48.958vw] dt:w-[705px] w-[90%] md:h-[15.556vw] dt:h-[224px] mx-auto [clip-path:polygon(0%_0%,_100%_0,_100%_80%,_95%_100%,_0%_100%)] overflow-hidden z-50">
+        <div className="ani-fade-up absolute left-1/2 -translate-x-1/2 md:bottom-[160px] lg:bottom-[210px] dt:bottom-[240px] bottom-[20vw] md:w-[48.958vw] dt:w-[705px] w-[90%] md:min-h-[15.556vw] dt:min-h-[224px] mx-auto [clip-path:polygon(0%_0%,_100%_0,_100%_80%,_95%_100%,_0%_100%)] overflow-hidden z-50">
         <div className="absolute inset-0 bg-[linear-gradient(180deg,_#FFF_50%,_#1E072B_371.87%)] opacity-[0.55]"></div>
           <div className="absolute inset-0 bg-[linear-gradient(180deg,_#FFF_50%,_#1E072B_371.87%)] opacity-60"></div>
           <div className="w-full h-full md:px-5 px-3 relative">
@@ -47,7 +47,7 @@ const FV = ({ isPlay }: {isPlay: boolean}) => {
           </div>
         </div>
         <div className="ani-fade-up absolute bottom-0 flex justify-center inset-x-0 pb-[1vw] min-[1441px]:pb-[2vw]">
-            <img className="max-dt:w-[86.667vw] transform origin-bottom-left" src="/assets/images/delivery-man.png" alt="" />
+            <img className="max-dt:w-[86.667vw] transform origin-bottom-left" src="/assets/images/delivery-man.svg" alt="" />
         </div>
       </div>
       </div>

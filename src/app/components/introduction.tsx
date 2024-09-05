@@ -14,7 +14,7 @@ const Introduction = () => {
       <div className="relative bg-white [clip-path:polygon(0_0,_100%_11.5vw,_100%_calc(100%-11.5vw),_0_100%)]">
         <div className="md:h-[65.278vw] h-[105vw] relative -mt-[11.5vw] pt-[11.5vw] md:bg-[url('/assets/images/bg-022.png')] bg-[url('/assets/images/bg-022-sp.png')] bg-cover bg-bottom [clip-path:polygon(0_0,_100%_11.5vw,_100%_calc(100%-11.5vw),_0_100%)] px-5">
           <div className="w-full md:max-w-[80.556vw] max-w-[90vw] dt:max-w-[1160px] mx-auto relative">
-            <h3 className="fade-up flex justify-center items-center relative">
+            <h3 className="fade-up flex justify-center items-center relative max-md:max-w-[538px] max-md:mx-auto">
               <img className="md:hidden"
                 src="/assets/images/title-01-sp.png"
                 alt="DELIVERY Man Mapとは？"
@@ -61,7 +61,7 @@ const Introduction = () => {
         <div className="md:h-[65.278vw] h-[105vw] relative -mt-[calc(11.5vw-8px)] pt-[11.5vw] md:bg-[url('/assets/images/bg-03.png')] bg-[url('/assets/images/bg-03-sp.png')] bg-cover bg-bottom [clip-path:polygon(0_11.5vw,_100%_0,_100%_100%,_0_calc(100%-11.5vw))] px-5 bg-[#172124]">
           <div className="w-full md:max-w-[80.556vw] max-md:max-w-[90vw] dt:max-w-[1200px] mx-auto relative pt-[40px]">
             <div className="w-full max-w-[1160px] mx-auto">
-            <h3 className="flex justify-center items-center relative">
+            <h3 className="flex justify-center items-center relative  max-md:max-w-[538px] max-md:mx-auto">
               <img className="md:hidden"
                 src="/assets/images/title-02-sp.png"
                 alt="GPSでオファー待ち！"
@@ -97,7 +97,7 @@ const Introduction = () => {
         </div>
         <div className="md:h-[65.278vw] h-[105vw] relative -mt-[calc(11.5vw-8px)] pt-[11.5vw] md:bg-[url('/assets/images/bg-04.png')] bg-[url('/assets/images/bg-04-sp.png')] bg-cover bg-bottom [clip-path:polygon(0_0,_100%_11.5vw,_100%_calc(100%-11.5vw),_0_100%)] px-5">
           <div className="w-full md:max-w-[80.556vw] max-w-[90vw] dt:max-w-[1160px] mx-auto relative">
-            <h3 className="fade-up flex justify-center items-center relative">
+            <h3 className="fade-up flex justify-center items-center relative  max-md:max-w-[538px] max-md:mx-auto">
               <img className="md:hidden"
                 src="/assets/images/title-03-sp.png"
                 alt="NFTで自分を証明！"

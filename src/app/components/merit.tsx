@@ -52,7 +52,7 @@ const Merit = () => {
     <section id="merit" ref={ref} className="relative bg-[url('/assets/images/bg-slider.png')] pb-[10%] bg-cover bg-no-repeat bg-top [clip-path:polygon(0_11.5vw,_100%_0,_100%_calc(100%-11.5vw),_0%_100%)]">
       <div className=" md:px-1 px-8 pt-[36%] md:pb-[2%] pb-[5%]">
       <div className="w-full md:max-w-[80.556vw] max-w-[90vw] dt:max-w-[1160px] mx-auto relative">
-            <h3 className="fade-up flex justify-center items-center relative">
+            <h3 className="fade-up flex justify-center items-center relative max-md:max-w-[538px] max-md:mx-auto">
             <img className="md:hidden"
                     src="/assets/images/merit-title-sp.png"
                     alt="DELIVERY Man Mapのメリットとは？！"
