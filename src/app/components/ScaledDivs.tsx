@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import gsap, { SteppedEase } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Box from "./box";
+import Tooltip from "./tooltip";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -112,11 +113,8 @@ const isMobile = (): boolean => {
   }
   return false;
 };
-interface ScaledDivsProps {
-  isMuted: boolean;
-}
 
-const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
+const ScaledDivs = () => {
   const [isMobileView, setIsMobileView] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -169,7 +167,6 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
 
   const [spanWidths, setSpanWidths] = useState<number[][]>([[], [], []]);
 
-  const audioRef = useRef<HTMLAudioElement>(null);
   const divRef = useRef(null);
   const [shuffledColors, setShuffledColors] = useState<string[]>([]);
 
@@ -179,11 +176,6 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
     setShuffledColors(randomColors);
   }, []);
 
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.muted = isMuted;
-    }
-  }, [isMuted]);
 
   const handleClick = () => {
     const tl = gsap.timeline();
@@ -254,7 +246,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
       for (let i = 0; i < boxes.length -1; i++) {
         tl.to(".box", {
           y: `-=${height}`,
-          delay: 3,
+          delay: 1,
           ease: "power2.inOut",
           onStart: () => {
             if (boxes[i]) {
@@ -278,35 +270,10 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
         "-=1"
       );
 
-      tl.to(
-        ".wrapper02",
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1,
-          ease: "power2.inOut",
-        },
-        "<"
-      );
-      lines.forEach((line) => {
-        const chars = line.querySelectorAll(".char");
-        tl.to(chars, {
-          display: "inline",
-          stagger: 0.05,
-          onStart: () => {
-            if (audioRef.current) {
-              audioRef.current.play();
-            }
-            line.classList.add("show-caret");
-          },
-          onComplete: () => {
-            line.classList.remove("show-caret");
-            if (audioRef.current) {
-              audioRef.current.currentTime = 0;
-              audioRef.current.pause();
-            }
-          },
-        });
+      tl.to(".wrapper02", {
+        duration: 3,
+        filter: "blur(0px)",
+        ease: "linear",
       });
       tl.to(
         ".wrapper02",
@@ -316,7 +283,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           duration: 1,
           ease: "power2.inOut",
         },
-        "+=5"
+        "+=10"
       );
       if (!isMobileView) {
         tl.to(divRef.current, {
@@ -591,7 +558,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
   );
 
   return (
-    <div className="relative flex md:items-center items-end justify-start h-[100svh] overflow-hidden origin-center z-0 bg-[#FDDFFD]">
+    <div className="relative flex md:items-center items-end justify-start h-[100svh] overflow-hidden origin-center z-0 bg-[#FDFDFD]">
       <div
         ref={divRef}
         className="absolute z-10 w-[100vw] h-[100svh] md:origin-[15vw_15vw] left-0 bottom-0 top-0 max-md:w-[100svh] max-md:h-[100vw] max-md:origin-[50vw] max-md:rotate-90"
@@ -614,7 +581,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
             }}
           ></span>
           <div
-            className="variable-word-1 origin-top-left inline-flex justify-evenly items-center"
+            className="variable-word-1 origin-top-left inline-flex justify-evenly items-center whitespace-nowrap"
             style={{
               transform: `translate3d(0px, 0px, 0px) scaleX(${scaleX[0]}) scaleY(${topScaleY})`,
             }}
@@ -622,7 +589,7 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
             {renderCharacters("DIGITAL", spanWidths[0])}
           </div>
           <div
-            className="absolute left-0 right-0 top-0 w-0 variable-word-2 origin-top-left inline-flex justify-evenly items-center"
+            className="absolute left-0 right-0 top-0 variable-word-2 w-full origin-top-left whitespace-nowrap"
             style={{
               transform: `translate3d(0px, ${rotating ?  (rotate ? translateCenterHori : translateCenterRotate) : translateCenter}px, 0px) scaleX(${scaleX[1]}) scaleY(${centerScaleY})`,
             }}
@@ -630,9 +597,9 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
             {renderCharacters("ROGYX", spanWidths[1], true)}
           </div>
           <div
-            className="absolute left-0 right-0 top-0 w-0 variable-word-3 origin-top-left inline-flex justify-evenly items-center"
+            className="absolute left-0 right-0 top-0 variable-word-3 w-full origin-top-left whitespace-nowrap"
             style={{
-              transform: `translate3d(0px, ${rotating ? (rotate ? translateBottomHori : translateBottomRotate)   : translateBottom}px, 0px) scaleX(${scaleX[2]}) scaleY(${bottomScaleY})`,
+              transform: `translate3d(0px, ${rotating ? (rotate ? translateBottomHori : translateBottomRotate)  : translateBottom}px, 0px) scaleX(${scaleX[2]}) scaleY(${bottomScaleY})`,
             }}
           >
             {renderCharacters("MAKETING", spanWidths[2])}
@@ -692,75 +659,81 @@ const ScaledDivs: React.FC<ScaledDivsProps> = ({ isMuted }) => {
           </div>
         </div>
       </div>
-      <div className="wrapper02 md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
+      <div className="wrapper02 blur-[100px] md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex items-center justify-center">
         <div
-          data-splitting
-          className="font-['STIX_Two_Text'] text-center text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)] "
+          className="font-noto text-left text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)]"
         >
           <span className="type-line font-bold">
-            未来は、もう加速している。<span className="caret"></span>
+            未来は、もう加速している。
           </span>
           <br />
-          <span className="type-line">
-            過去を振り切り、前だけを見ろ。<span className="caret"></span>
-          </span>
-          <br />
-          <br />
-          <span className="type-line font-bold">
-            テンプレートを捨て去れ。<span className="caret"></span>
-          </span>
-          <br />
-          <span className="type-line">
-            世界標準のモダン開発で新たな価値を創り出す。
-            <span className="caret"></span>
+          <span>
+            過去を振り切り、前だけを見ろ。
           </span>
           <br />
           <br />
           <span className="type-line font-bold">
-            個性を殺すコピーに背を向け、<span className="caret"></span>
+            テンプレートを捨て去れ。
           </span>
           <br />
-          <span className="type-line">
+          <span>
+            世界標準の<Tooltip text="モダン開発" tooltipTitle="モダン開発">
+            モダン開発とは、最新のツール、技術、方法論を活用して
+            ソフトウェアを効率的に開発するアプローチです。クラウド、DevOps、アジャイル手法、マイクロサービス、コンテナ化などを取り入れ、迅速な開発とデプロイメント、継続的な改善を実現します。自動化、スケーラビリティ、セキュリティに重点を置き、ユーザーニーズに迅速に対応できる柔軟なシステム構築を目指します。
+              </Tooltip>で新たな価値を創り出す。
+            
+          </span>
+          <br />
+          <br />
+          <span className="type-line font-bold">
+            個性を殺すコピーに背を向け、
+          </span>
+          <br />
+          <span>
             無限の可能性を秘めたオリジナルを選び抜け。
-            <span className="caret"></span>
+            
           </span>
           <br />
           <br />
           <span className="type-line font-bold">
             マーケティングは、今、時代に再定義される。
-            <span className="caret"></span>
           </span>
           <br />
-          <span className="type-line">
-            すべてを網羅し、成功を必ず手にする。<span className="caret"></span>
+          <span>
+          <Tooltip text="すべてを網羅" tooltipTitle="マーケティングは、今、時代に再定義される">
+            現代のマーケティングにおいて、総合的な戦略立案と実行が成功の鍵と考えます。<br />
+顧客のニーズや市場動向を包括的に理解し、製品開発から販売、顧客サービスまでの全プロセスを一貫して最適化できることにより、ターゲット市場への効果的なアプローチ、競合他社との差別化、顧客満足度の向上が可能となり、結果として売上増加と持続的な成長につながります。
+              </Tooltip>し、成功を必ず手にする。
           </span>
           <br />
           <br />
           <span className="type-line font-bold">
             日本のウェブを、新次元へと引き上げる。
-            <span className="caret"></span>
+            
           </span>
           <br />
-          <span className="type-line">
+          <span>
             機能美とパフォーマンスで、確実に結果を出す。
-            <span className="caret"></span>
+            
           </span>
           <br />
           <br />
           <span className="type-line font-bold">
-            プロアクティブなビジネスマンだけに贈る、
-            <span className="caret"></span>
+          <Tooltip position="top" text="プロアクティブなビジネスマン" tooltipTitle="プロアクティブなビジネスマン">プロアクティブなビジネスマンとは、未来志向で変革を追求する人物です。常に市場動向や業界の変化を分析し、新しい機会を積極的に探求します。創造的な解決策を提案し、リスクを管理しながら革新的なアイデアを実行に移します。受動的ではなく、主体的に状況を改善し、ビジネスの成長を牽引する姿勢を持っています。</Tooltip>だけに贈る、
+            
           </span>
           <br />
-          <span className="type-line">
+          <span>
             紹介制のデジタルマーケティングエージェンシー。
-            <span className="caret"></span>
+            
           </span>
           <br />
           <br />
+          <div className="text-right">
+            <a href="https://g.co/kgs/Vt1oGkn" target="_blank" className="text-[calc(1.4vw+1.4svh)] md:text-[calc(1.2vw+1.2svh)] font-bold">株式会社 ROGYX</a>
+          </div>
         </div>
       </div>
-      <audio ref={audioRef} src="/assets/audio/type.mp3" loop />
     </div>
   );
 };

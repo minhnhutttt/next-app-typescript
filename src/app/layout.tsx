@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
+import { Noto_Sans_Arabic } from "next/font/google";
 import localFont from 'next/font/local'
 import "./globals.css";
 import ScrollContainer from "@/components/scrollContainer";
 
+const noto = Noto_Sans_Arabic({
+  weight: ["400", "500", "700", "800", "900"],
+  subsets: ["arabic"],
+  variable: "--font-noto",
+});
 
 const myFont = localFont({
   src: './font.woff',
@@ -22,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${myFont.className} bg-white font-medium overflow-x-hidden`}
+        className={`${myFont.className} ${noto.variable} bg-white font-medium overflow-x-hidden`}
       >
         <ScrollContainer>
           {children}

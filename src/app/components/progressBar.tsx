@@ -34,7 +34,7 @@ const ProgressBar = ({ onComplete }: ProgressBarProps) => {
   }, [onComplete]);
 
   return (
-    <div className="bg-[#FDDFFD] fixed inset-0 w-full z-[1031] flex items-center justify-center font-['STIX_Two_Text']">
+    <div className="bg-[#FDFDFD] fixed inset-0 w-full z-[1031] flex items-center justify-center font-['STIX_Two_Text']">
         <div className="w-full">
         <div style={{ textAlign: 'center', marginBottom: '8px', color: '#000' }}>
             {progress}%

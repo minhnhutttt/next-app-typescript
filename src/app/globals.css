@@ -113,3 +113,12 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
 }
+
+.ani-blur{
+	filter: blur(100px);
+	animation: blur-anim2 10s linear forwards;
+}
+
+@keyframes blur-anim2 {
+	100% {	filter: blur(0); }
+}

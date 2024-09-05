@@ -15,7 +15,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      noto: ["--font-noto", "sans-serif"],
     },
   },
   plugins: [],
