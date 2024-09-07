@@ -83,13 +83,14 @@ body {
 }
 
 .caret {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 	border-right: 2px solid #000;
   margin-left: 4px;
 	animation: typing 3s steps(18), blink .4s step-end infinite alternate;
 }
 .show-caret .caret {
-  display: inline;
+  opacity: 1;
 }
 
 @keyframes typing {

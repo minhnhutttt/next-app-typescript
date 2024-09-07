@@ -107,6 +107,25 @@ const useMousePositionPercentage = (
   return { position, resetPosition };
 };
 
+const useWindowSize = () => {
+  const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowWidth;
+};
+
+
 const isMobile = (): boolean => {
   if (typeof window !== "undefined") {
     return window.innerWidth < 768;
@@ -114,7 +133,11 @@ const isMobile = (): boolean => {
   return false;
 };
 
-const ScaledDivs = () => {
+interface ScaledDivsProps {
+  isMuted: boolean;
+}
+
+const ScaledDivs = ({ isMuted }: ScaledDivsProps) => {
   const [isMobileView, setIsMobileView] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -166,15 +189,32 @@ const ScaledDivs = () => {
   const translateBottomHori = containerHoriHeight - (lineHeightHori * bottomScaleY);
 
   const [spanWidths, setSpanWidths] = useState<number[][]>([[], [], []]);
-
+  const audioRef = useRef<HTMLAudioElement>(null);
   const divRef = useRef(null);
   const [shuffledColors, setShuffledColors] = useState<string[]>([]);
+  const windowWidth = useWindowSize();
+  const [previousWidth, setPreviousWidth] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    if (windowWidth !== undefined && previousWidth !== undefined) {
+      if ((previousWidth > 767 && windowWidth <= 767) || (previousWidth <= 767 && windowWidth > 767)) {
+        window.location.reload();
+      }
+    }
+    setPreviousWidth(windowWidth);
+  }, [windowWidth, previousWidth]);
 
   useEffect(() => {
     const colors = ["863EC8", "F7B318", "174DF8", "50D488", "CC3D95"];
     const randomColors = [...colors].sort(() => Math.random() - 0.5);
     setShuffledColors(randomColors);
   }, []);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
 
 
   const handleClick = () => {
@@ -270,11 +310,43 @@ const ScaledDivs = () => {
         "-=1"
       );
 
-      tl.to(".wrapper02", {
+
+      tl.to(
+        ".wrapper02",
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power2.inOut",
+        },
+        "<"
+      );
+      lines.forEach((line) => {
+        const chars = line.querySelectorAll(".char");
+        tl.to(chars, {
+          display: "inline",
+          stagger: 0.03,
+          onStart: () => {
+            if (audioRef.current) {
+              audioRef.current.play();
+            }
+            line.classList.add("show-caret");
+          },
+          onComplete: () => {
+            line.classList.remove("show-caret");
+            if (audioRef.current) {
+              audioRef.current.currentTime = 0;
+              audioRef.current.pause();
+            }
+          },
+        });
+      });
+      tl.to(".type-blur", {
         duration: 3,
         filter: "blur(0px)",
         ease: "linear",
-      });
+      },
+      "-=1");
       tl.to(
         ".wrapper02",
         {
@@ -324,8 +396,10 @@ const ScaledDivs = () => {
     setIsMobileView(isMobile());
     setRotate(isMobile());
     const handleResize = () => {
-      setRotate(isMobile());
       setIsMobileView(isMobile());
+      if (isRunning) {
+        setRotate(isMobile());
+      }
     };
 
     window.addEventListener("resize", handleResize);
@@ -357,6 +431,7 @@ const ScaledDivs = () => {
         if (measureRef.current) {
           measureRef.current.style.fontVariationSettings = `'wdth' ${rotating ? 200 : widths[index]}`;
           measureRef.current.innerText = char;
+          // 
           if (rotate) {
             charWidths.push(measureRef.current.getBoundingClientRect().height);
           } else {
@@ -480,7 +555,6 @@ const ScaledDivs = () => {
         if (!rotating) {
           widths = getCharacterWidths(text, newSpanWidths);
           const totalWidth = widths.reduce((total, width) => total + width, 0);
-
           setScaleX((prev) => {
             const updated = [...prev];
             updated[index] = containerWidth / totalWidth;
@@ -505,10 +579,10 @@ const ScaledDivs = () => {
               0
             );
             setScaleX((prev) => {
-              const updated = [...prev];
-              updated[index] = containerRotateWidth / totalWidth;
-              return updated;
-            });
+                const updated = [...prev];
+                updated[index] = containerRotateWidth / totalWidth;
+                return updated;
+              });
           }
         }
       };
@@ -520,6 +594,7 @@ const ScaledDivs = () => {
     position.clientX,
     position.clientY,
     position.yPercent,
+    isRunning,
     containerWidth,
     position.xPercent,
     rotate,
@@ -659,80 +734,85 @@ const ScaledDivs = () => {
           </div>
         </div>
       </div>
-      <div className="wrapper02 blur-[100px] md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex items-center justify-center">
+      <div className="wrapper02 font-noto opacity-0 md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex justify-center items-center">
+        <div>
         <div
-          className="font-noto text-left text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)]"
+        data-splitting
+          className="text-left text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)]"
         >
           <span className="type-line font-bold">
-            未来は、もう加速している。
+            未来は、もう加速している。<span className="caret"></span>
           </span>
           <br />
-          <span>
-            過去を振り切り、前だけを見ろ。
+          <span className="type-line font-bold">
+            過去を振り切り、前だけを見ろ。<span className="caret"></span>
           </span>
           <br />
           <br />
           <span className="type-line font-bold">
-            テンプレートを捨て去れ。
+            テンプレートを捨て去れ。<span className="caret"></span>
           </span>
           <br />
-          <span>
+          <span className="type-line font-bold">
             世界標準の<Tooltip text="モダン開発" tooltipTitle="モダン開発">
             モダン開発とは、最新のツール、技術、方法論を活用して
             ソフトウェアを効率的に開発するアプローチです。クラウド、DevOps、アジャイル手法、マイクロサービス、コンテナ化などを取り入れ、迅速な開発とデプロイメント、継続的な改善を実現します。自動化、スケーラビリティ、セキュリティに重点を置き、ユーザーニーズに迅速に対応できる柔軟なシステム構築を目指します。
-              </Tooltip>で新たな価値を創り出す。
+              </Tooltip>で新たな価値を創り出す。<span className="caret"></span>
             
           </span>
           <br />
           <br />
           <span className="type-line font-bold">
-            個性を殺すコピーに背を向け、
+            個性を殺すコピーに背を向け、<span className="caret"></span>
           </span>
           <br />
-          <span>
-            無限の可能性を秘めたオリジナルを選び抜け。
+          <span className="type-line font-bold">
+            無限の可能性を秘めたオリジナルを選び抜け。<span className="caret"></span>
             
           </span>
           <br />
           <br />
           <span className="type-line font-bold">
-            マーケティングは、今、時代に再定義される。
+            マーケティングは、今、時代に再定義される。<span className="caret"></span>
           </span>
           <br />
-          <span>
+          <span className="type-line font-bold">
           <Tooltip text="すべてを網羅" tooltipTitle="マーケティングは、今、時代に再定義される">
             現代のマーケティングにおいて、総合的な戦略立案と実行が成功の鍵と考えます。<br />
 顧客のニーズや市場動向を包括的に理解し、製品開発から販売、顧客サービスまでの全プロセスを一貫して最適化できることにより、ターゲット市場への効果的なアプローチ、競合他社との差別化、顧客満足度の向上が可能となり、結果として売上増加と持続的な成長につながります。
-              </Tooltip>し、成功を必ず手にする。
+              </Tooltip>し、成功を必ず手にする。<span className="caret"></span>
           </span>
           <br />
           <br />
           <span className="type-line font-bold">
-            日本のウェブを、新次元へと引き上げる。
+            日本のウェブを、新次元へと引き上げる。<span className="caret"></span>
             
           </span>
           <br />
-          <span>
-            機能美とパフォーマンスで、確実に結果を出す。
+          <span className="type-line font-bold">
+            機能美とパフォーマンスで、確実に結果を出す。<span className="caret"></span>
             
           </span>
           <br />
           <br />
           <span className="type-line font-bold">
-          <Tooltip position="top" text="プロアクティブなビジネスマン" tooltipTitle="プロアクティブなビジネスマン">プロアクティブなビジネスマンとは、未来志向で変革を追求する人物です。常に市場動向や業界の変化を分析し、新しい機会を積極的に探求します。創造的な解決策を提案し、リスクを管理しながら革新的なアイデアを実行に移します。受動的ではなく、主体的に状況を改善し、ビジネスの成長を牽引する姿勢を持っています。</Tooltip>だけに贈る、
+          <Tooltip text="プロアクティブなビジネスマン" tooltipTitle="プロアクティブなビジネスマン">プロアクティブなビジネスマンとは、未来志向で変革を追求する人物です。常に市場動向や業界の変化を分析し、新しい機会を積極的に探求します。創造的な解決策を提案し、リスクを管理しながら革新的なアイデアを実行に移します。受動的ではなく、主体的に状況を改善し、ビジネスの成長を牽引する姿勢を持っています。</Tooltip>だけに贈る、<span className="caret"></span>
             
           </span>
           <br />
-          <span>
-            紹介制のデジタルマーケティングエージェンシー。
+          <span className="type-line font-bold">
+            紹介制のデジタルマーケティングエージェンシー。<span className="caret"></span>
             
           </span>
           <br />
           <br />
-          <div className="text-right">
+        </div>
+        
+        <div className="text-right type-blur blur-[100px]">
             <a href="https://g.co/kgs/Vt1oGkn" target="_blank" className="text-[calc(1.4vw+1.4svh)] md:text-[calc(1.2vw+1.2svh)] font-bold">株式会社 ROGYX</a>
           </div>
-        </div>
+          </div>
+        <audio ref={audioRef} src="/assets/audio/type.mp3" loop />
       </div>
     </div>
   );
