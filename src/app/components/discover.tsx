@@ -15,7 +15,7 @@ const Discover = () => {
             <Title left>
             EXO Coin & DAO
             </Title>
-            <p className="font-roboto text-[16px] mt-6 text-white">Discover the role of EXO token and decentralized governance</p>
+            <p className="fade-up font-roboto text-[16px] mt-6 text-white">Discover the role of EXO token and decentralized governance</p>
         </div>
         <div className="flex-1 md:space-y-10 space-y-7 max-md:mt-10">
             <div className="flex justify-center py-3 md:h-[228px]">

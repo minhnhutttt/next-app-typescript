@@ -34,7 +34,7 @@ const Challenges = () => {
         <Title>
             Current Challenges
         </Title>
-        <p className="text-center font-roboto text-[16px] mt-6">Identifying key challenges in the exosome technology landscape</p>
+        <p className="fade-up text-center font-roboto text-[16px] mt-6">Identifying key challenges in the exosome technology landscape</p>
         <div className="flex gap-5 mt-10 max-lg:flex-wrap justify-center">
           {data.map((item, index) => (
             <div
