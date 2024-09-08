@@ -17,10 +17,12 @@ const Membership = () => {
                 </div>
                 <p className="text-white text-[16px] font-roboto">Join the global community of EXO <br className="md:hidden" />enthusiasts and contribute to a sustainable future</p>
             </div>
-            <a href="/" className="fade-up flex items-center justify-center px-[22px] py-[14px] gap-2 rounded-xl bg-[#00F4AE] text-[18px] font-semibold">
-                <span><img src="/assets/images/plus.svg" alt="" /></span>
-                <span>Join Now</span>
-            </a>
+            <div className="fade-up">
+                <a href="/" className="flex items-center justify-center px-[22px] py-[14px] gap-2 rounded-xl bg-[#00F4AE] text-[18px] font-semibold">
+                    <span><img src="/assets/images/plus.svg" alt="" /></span>
+                    <span>Join Now</span>
+                </a>
+            </div>
         </div>
     </section>
   );

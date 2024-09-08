@@ -11,6 +11,10 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+a {
+  @apply hover:opacity-70 duration-150;
+}
+
 .u-text-gradient {
   background-clip: text;
   -webkit-background-clip: text;
