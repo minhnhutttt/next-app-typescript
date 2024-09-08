@@ -5,10 +5,10 @@ type PageTitlePropsType = {
 };
 export default function PageTitle({ children }: PageTitlePropsType) {
   return (
-    <div className="pt-[60px] flex items-center justify-center px-5 md:pt-[120px] text-white">
-      <p className="fade-up text-[7vw] font-bold md:text-[50px]">
+    <div className="flex items-center justify-center text-center">
+        <h3 className="fade-up u-text-gradient bg-[linear-gradient(90deg,_#00F4AE_0%,_#0C408C_100%)] text-[24px] font-bold md:leading-[1.1] leading-[1.3]">
         {children}
-      </p>
+        </h3>
     </div>
   );
 }

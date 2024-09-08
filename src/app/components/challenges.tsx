@@ -27,6 +27,7 @@ const Challenges = () => {
   const ref = useScrollAnimations();
   return (
     <section
+    id="challenges"
       ref={ref}
       className="relative px-8 py-10 md:py-[60px]"
     >

@@ -7,6 +7,7 @@ import VisionMission from "./components/visionMission";
 import Challenges from "./components/challenges";
 import Discover from "./components/discover";
 import Contact from "./components/contact";
+import Join from "./components/join";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Challenges />
       <Discover />
       <Contact />
+      <Join />
     </main>
   );
 }

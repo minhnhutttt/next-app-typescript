@@ -31,6 +31,7 @@ const VisionMission = () => {
   const ref = useScrollAnimations();
   return (
     <section
+    id="vision"
       ref={ref}
       className="relative px-8 py-10 md:py-[60px] bg-[url('/assets/images/vm-bg.png')] bg-cover"
     >

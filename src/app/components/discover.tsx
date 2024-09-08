@@ -7,6 +7,7 @@ const Discover = () => {
   const ref = useScrollAnimations();
   return (
     <section
+    id="token"
       ref={ref}
       className="relative px-8 pt-10 pb-8 md:py-[60px] md:bg-[url('/assets/images/discover-bg.png')] bg-[url('/assets/images/discover-bg-sp.png')] bg-top bg-cover"
     >
@@ -19,7 +20,7 @@ const Discover = () => {
         </div>
         <div className="flex-1 md:space-y-10 space-y-7 max-md:mt-10">
             <div className="flex justify-center py-3 md:h-[228px]">
-                <div className="w-[240px] h-[204px] py-3 flex flex-col items-center justify-center">
+                <div className="fade-up w-[240px] h-[204px] py-3 flex flex-col items-center justify-center">
                     <figure>
                         <img src="/assets/images/discover-icon-01.png" alt="What is EXO Coin?" />
                     </figure>
@@ -30,7 +31,7 @@ const Discover = () => {
                 </div>
             </div>
             <div className="flex justify-center max-md:flex-col md:h-[228px] max-md:space-y-4">
-                <div className="w-[240px] h-[204px] py-3 flex flex-col items-center justify-center">
+                <div className="fade-up w-[240px] h-[204px] py-3 flex flex-col items-center justify-center">
                     <figure>
                         <img src="/assets/images/discover-icon-02.png" alt="DAO Governance" />
                     </figure>
@@ -39,7 +40,7 @@ const Discover = () => {
                         <p className="text-white text-[16px]">Decentralized decision-making</p>
                     </div>
                 </div>
-                <div className="w-[240px] h-[204px] py-3 flex flex-col items-center justify-center">
+                <div className="fade-up w-[240px] h-[204px] py-3 flex flex-col items-center justify-center">
                     <figure>
                         <img src="/assets/images/discover-icon-03.png" alt="Ecosystem" />
                     </figure>

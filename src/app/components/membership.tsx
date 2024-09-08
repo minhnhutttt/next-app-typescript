@@ -4,7 +4,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Membership = () => {
     const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative bg-[linear-gradient(90deg,_#00F4AE_0%,_#0C408C_100%)] px-8 py-10 md:py-[60px]">
+    <section id="membership" ref={ref} className="relative bg-[linear-gradient(90deg,_#00F4AE_0%,_#0C408C_100%)] px-8 py-10 md:py-[60px]">
         <div className="w-full md:max-w-[1100px] max-w-[375px] mx-auto flex items-center justify-center gap-5 md:gap-10 max-md:flex-col">
             <figure className="fade-up">
                 <img src="/assets/images/avatar.png" alt="" />

@@ -14,23 +14,23 @@ const links: NavLink[] = [
     text: "Home",
   },
   {
-    link: "/",
+    link: "/#membership",
     text: "Membership",
   },
   {
-    link: "/",
+    link: "/#introduction",
     text: "What’s EXO",
   },
   {
-    link: "/",
+    link: "/#vision",
     text: "Vision",
   },
   {
-    link: "/",
+    link: "/#challenges",
     text: "Challenges",
   },
   {
-    link: "/",
+    link: "/#token",
     text: "Token",
   },
 ];
@@ -41,7 +41,7 @@ const Header = () => {
     setNavOpen(false);
   }, []);
   return (
-    <header className="flex items-center px-2 md:px-5 lg:px-[100px] h-[72px] z-40 bg-white border-b border-[#0C468D]">
+    <header className="flex items-center px-2 md:px-5 lg:px-[100px] h-[72px] z-40 bg-white relative">
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="block relative duration-150 hover:opacity-75">
@@ -89,6 +89,7 @@ const Header = () => {
           </div>
         </button>
       </div>
+      <div className="absolute bottom-0 inset-x-0 h-px bg-[linear-gradient(90deg,_#00F4AE_0%,_#0C408C_100%)]"></div>
     </header>
   );
 };
