@@ -237,6 +237,12 @@ const ScaledDivs = ({ isMuted }: ScaledDivsProps) => {
       { autoAlpha: 0, x: 2 },
       { autoAlpha: 1, duration: 0.5, repeat: -1, ease: SteppedEase.config(1) }
     );
+    tl.set(
+      ".type-blur",
+      {
+        filter: "blur(100px)",
+      },
+    );
     if (!isRunning) {
       if (isCompleted) {
         tl.to(".wrapper02", {
