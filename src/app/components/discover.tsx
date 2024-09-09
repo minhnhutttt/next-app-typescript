@@ -22,7 +22,7 @@ const Discover = () => {
             <div className="flex justify-center py-3 md:h-[228px]">
                 <div className="fade-up w-[240px] h-[204px] py-3 flex flex-col items-center justify-center">
                     <figure>
-                        <img src="/assets/images/discover-icon-01.png" alt="What is EXO Coin?" />
+                        <img src="/assets/images/discover-icon-01.svg" alt="What is EXO Coin?" />
                     </figure>
                     <div className="text-center space-y-2 mt-5">
                         <h5 className="text-[#00F4AE] leading-[1.4] text-[20px] font-medium">What is EXO Coin?</h5>
@@ -33,7 +33,7 @@ const Discover = () => {
             <div className="flex justify-center max-md:flex-col md:h-[228px] max-md:space-y-4">
                 <div className="fade-up w-[240px] h-[204px] py-3 flex flex-col items-center justify-center">
                     <figure>
-                        <img src="/assets/images/discover-icon-02.png" alt="DAO Governance" />
+                        <img src="/assets/images/discover-icon-02.svg" alt="DAO Governance" />
                     </figure>
                     <div className="text-center space-y-2 mt-5">
                         <h5 className="text-[#00F4AE] leading-[1.4] text-[20px] font-medium">DAO Governance</h5>
@@ -42,7 +42,7 @@ const Discover = () => {
                 </div>
                 <div className="fade-up w-[240px] h-[204px] py-3 flex flex-col items-center justify-center">
                     <figure>
-                        <img src="/assets/images/discover-icon-03.png" alt="Ecosystem" />
+                        <img src="/assets/images/discover-icon-03.svg" alt="Ecosystem" />
                     </figure>
                     <div className="text-center space-y-2 mt-5">
                         <h5 className="text-[#00F4AE] leading-[1.4] text-[20px] font-medium">Ecosystem</h5>
