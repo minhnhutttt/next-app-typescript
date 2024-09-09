@@ -14,10 +14,6 @@ const links: NavLink[] = [
     text: "Home",
   },
   {
-    link: "/#membership",
-    text: "Membership",
-  },
-  {
     link: "/#introduction",
     text: "What’s EXO",
   },
@@ -45,7 +41,7 @@ const Header = () => {
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="block relative duration-150 hover:opacity-75">
-            <img className="max-md:w-[134px]" src="/assets/images/logo.png" alt="" />
+            <img className="max-md:w-[134px]" src="/assets/images/logo.svg" alt="" />
           </a>
         </div>
         <div
@@ -66,14 +62,6 @@ const Header = () => {
                 </a>
               </li>
             ))}
-            <li className="flex items-center">
-                <a
-                  href="/"
-                  onClick={close}
-                >
-                  <img src="/assets/images/button-x.svg" alt="" />
-                </a>
-              </li>
           </ul>
         </div>
         <button
