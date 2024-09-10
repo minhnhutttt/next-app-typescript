@@ -8,5 +8,15 @@ html {
 }
 body {
   color: #000;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  @apply hover:opacity-70 duration-150;
+}
+
+.u-text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
