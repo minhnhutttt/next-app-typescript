@@ -4,6 +4,7 @@ import gsap, { SteppedEase } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Box from "./box";
 import Tooltip from "./tooltip";
+import Sound from "./sound";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -132,17 +133,21 @@ const isMobile = (): boolean => {
   return false;
 };
 
-interface ScaledDivsProps {
-  isMuted: boolean;
-}
 
-const ScaledDivs = ({ isMuted }: ScaledDivsProps) => {
+const ScaledDivs = () => {
   const [isMobileView, setIsMobileView] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerRotateRef = useRef<HTMLDivElement>(null);
   const containerHoriRef = useRef<HTMLDivElement>(null);
+
+  const [isMuted, setIsMuted] = useState(true);
+  const [isBlend, setIsBlend] = useState(false);
+
+  const toggleMute = () => {
+    setIsMuted(prevState => !prevState);
+  };
 
   const [rotate, setRotate] = useState(false);
   const { position, resetPosition } = useMousePositionPercentage(
@@ -263,6 +268,7 @@ const ScaledDivs = ({ isMuted }: ScaledDivsProps) => {
               setRotate(false);
               setRotating(false);
               resetPosition();
+              setIsBlend(false);
               setIsCompleted(false);
             },
           });
@@ -279,11 +285,13 @@ const ScaledDivs = ({ isMuted }: ScaledDivsProps) => {
               setRotate(true);
               setRotating(false);
               resetPosition();
+              setIsBlend(false);
               setIsCompleted(false);
             },
           });
         }
       } else {
+        setIsBlend(true);
         gsap.set(".box", {
           y: (i: number) => i * height,
           opacity: 0,
@@ -803,7 +811,7 @@ const ScaledDivs = ({ isMuted }: ScaledDivsProps) => {
             <br />
             <span className="type-line font-bold">
               世界標準の
-              <Tooltip text="モダン開発" tooltipTitle="モダン開発">
+              <Tooltip text="モダン開発">
                 モダン開発とは、最新のツール、技術、方法論を活用して
                 ソフトウェアを効率的に開発するアプローチです。クラウド、DevOps、アジャイル手法、マイクロサービス、コンテナ化などを取り入れ、迅速な開発とデプロイメント、継続的な改善を実現します。自動化、スケーラビリティ、セキュリティに重点を置き、ユーザーニーズに迅速に対応できる柔軟なシステム構築を目指します。
               </Tooltip>
@@ -822,20 +830,20 @@ const ScaledDivs = ({ isMuted }: ScaledDivsProps) => {
             <br />
             <br />
             <span className="type-line font-bold">
-              マーケティングは、今、時代に再定義される。
-              <span className="caret"></span>
-            </span>
-            <br />
-            <span className="type-line font-bold">
+              
+              
               <Tooltip
-                text="すべてを網羅"
-                tooltipTitle="マーケティングは、今、時代に再定義される"
+                text="マーケティングは、今、時代に再定義される。"
               >
                 現代のマーケティングにおいて、総合的な戦略立案と実行が成功の鍵と考えます。
                 <br />
                 顧客のニーズや市場動向を包括的に理解し、製品開発から販売、顧客サービスまでの全プロセスを一貫して最適化できることにより、ターゲット市場への効果的なアプローチ、競合他社との差別化、顧客満足度の向上が可能となり、結果として売上増加と持続的な成長につながります。
               </Tooltip>
-              し、成功を必ず手にする。<span className="caret"></span>
+              <span className="caret"></span>
+            </span>
+            <br />
+            <span className="type-line font-bold">
+              すべてを網羅し、成功を必ず手にする<span className="caret"></span>
             </span>
             <br />
             <br />
@@ -853,7 +861,6 @@ const ScaledDivs = ({ isMuted }: ScaledDivsProps) => {
             <span className="type-line font-bold">
               <Tooltip
                 text="プロアクティブなビジネスマン"
-                tooltipTitle="プロアクティブなビジネスマン"
               >
                 プロアクティブなビジネスマンとは、未来志向で変革を追求する人物です。常に市場動向や業界の変化を分析し、新しい機会を積極的に探求します。創造的な解決策を提案し、リスクを管理しながら革新的なアイデアを実行に移します。受動的ではなく、主体的に状況を改善し、ビジネスの成長を牽引する姿勢を持っています。
               </Tooltip>
@@ -880,7 +887,9 @@ const ScaledDivs = ({ isMuted }: ScaledDivsProps) => {
         </div>
         <audio ref={audioRef} src="/assets/audio/type.mp3" loop />
       </div>
+      <Sound isMuted={isMuted} isBlend={isBlend} toggleMute={toggleMute} />
     </div>
+    
   );
 };
 
