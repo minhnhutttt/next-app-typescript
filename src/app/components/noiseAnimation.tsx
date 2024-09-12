@@ -1,12 +1,17 @@
-"use client"
+"use client";
 import { useEffect, useRef, useState } from 'react';
 import { createNoise3D } from 'simplex-noise';
 
-const NoiseAnimation: React.FC = () => {
+interface NoiseAnimationProps {
+  triggerAnimation: boolean;
+}
+
+const NoiseAnimation: React.FC<NoiseAnimationProps> = ({ triggerAnimation }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
+    setIsComplete(false);
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -27,7 +32,7 @@ const NoiseAnimation: React.FC = () => {
       '#116aa6',
       '#a9a4da',
       '#1b1b19',
-      '#c6e5aa'
+      '#c6e5aa',
     ];
 
     const duration = 2000;
@@ -101,7 +106,9 @@ const NoiseAnimation: React.FC = () => {
     }
 
     function hexToRgb(hex: string) {
-      let r = 0, g = 0, b = 0;
+      let r = 0,
+        g = 0,
+        b = 0;
       if (hex.length === 4) {
         r = parseInt(hex[1] + hex[1], 16);
         g = parseInt(hex[2] + hex[2], 16);
@@ -117,11 +124,11 @@ const NoiseAnimation: React.FC = () => {
     draw();
 
     return () => {
+      setIsComplete(true);
     };
-  }, []);
+  }, [triggerAnimation]);
 
-  return <canvas ref={canvasRef} className={`fixed inset-0 z-[99] ${isComplete ? 'hidden' : ''}`} />;
+  return <canvas ref={canvasRef} className={`fixed inset-0 ${isComplete ? 'z-0' : 'z-[99]'}`} />;
 };
 
 export default NoiseAnimation;
-

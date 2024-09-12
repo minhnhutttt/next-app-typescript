@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Box from "./box";
 import Tooltip from "./tooltip";
 import Sound from "./sound";
+import NoiseAnimation from "./noiseAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -133,11 +134,12 @@ const isMobile = (): boolean => {
   return false;
 };
 
-
-const ScaledDivs = () => {
+const ScaledDivs = ({ loading }: { loading: boolean }) => {
   const [isMobileView, setIsMobileView] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
+  const [trigger, setTrigger] = useState(false);
+  const [isHandleClick, setIsHandleClick] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const containerRotateRef = useRef<HTMLDivElement>(null);
   const containerHoriRef = useRef<HTMLDivElement>(null);
@@ -146,7 +148,7 @@ const ScaledDivs = () => {
   const [isBlend, setIsBlend] = useState(false);
 
   const toggleMute = () => {
-    setIsMuted(prevState => !prevState);
+    setIsMuted((prevState) => !prevState);
   };
 
   const [rotate, setRotate] = useState(false);
@@ -200,6 +202,7 @@ const ScaledDivs = () => {
 
   const [spanWidths, setSpanWidths] = useState<number[][]>([[], [], []]);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const audio2Ref = useRef<HTMLAudioElement>(null);
   const divRef = useRef(null);
   const [shuffledColors, setShuffledColors] = useState<string[]>([]);
   const windowWidth = useWindowSize();
@@ -229,10 +232,12 @@ const ScaledDivs = () => {
     if (audioRef.current) {
       audioRef.current.muted = isMuted;
     }
+    if (audio2Ref.current) {
+      audio2Ref.current.muted = isMuted;
+    }
   }, [isMuted]);
-
   const handleClick = () => {
-    const tl = gsap.timeline();
+    var tl = gsap.timeline();
     const boxes = gsap.utils.toArray<HTMLElement>(".box");
     const lines = gsap.utils.toArray<HTMLElement>(".type-line");
     const height = isMobileView ? 40 : 80;
@@ -242,55 +247,7 @@ const ScaledDivs = () => {
       { autoAlpha: 0, x: 2 },
       { autoAlpha: 1, duration: 0.5, repeat: -1, ease: SteppedEase.config(1) }
     );
-    tl.set(
-      ".type-blur",
-      {
-        filter: "blur(100px)",
-      },
-    );
     if (!isRunning) {
-      if (isCompleted) {
-        tl.to(".wrapper02", {
-          opacity: 0,
-          scale: 0,
-          duration: 1,
-          ease: "power2.inOut",
-        });
-        if (!isMobileView) {
-          tl.to(divRef.current, {
-            width: "100vw",
-            height: "100svh",
-            rotate: 0,
-            onStart: () => {
-              setRotating(true);
-            },
-            onComplete: () => {
-              setRotate(false);
-              setRotating(false);
-              resetPosition();
-              setIsBlend(false);
-              setIsCompleted(false);
-            },
-          });
-        } else {
-          tl.to(divRef.current, {
-            width: "100svh",
-            height: "100vw",
-            rotate: 90,
-            top: 0,
-            onStart: () => {
-              setRotating(true);
-            },
-            onComplete: () => {
-              setRotate(true);
-              setRotating(false);
-              resetPosition();
-              setIsBlend(false);
-              setIsCompleted(false);
-            },
-          });
-        }
-      } else {
         setIsBlend(true);
         gsap.set(".box", {
           y: (i: number) => i * height,
@@ -298,6 +255,10 @@ const ScaledDivs = () => {
         });
         gsap.set(".char", {
           display: "none",
+          yPercent: "110",
+        });
+        tl.set(".type-blur", {
+          filter: "blur(100px)",
         });
         if (!isMobileView) {
           tl.to(divRef.current, {
@@ -355,12 +316,22 @@ const ScaledDivs = () => {
               if (boxes[i]) {
                 gsap
                   .timeline()
-                  .to(boxes[i], { opacity: "0" })
+                  .to(boxes[i-1], { opacity: "0" })
+                  .to(
+                    boxes[i],
+                    {
+                      opacity: "0.1",
+                      scale: 0.5,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  )
                   .to(
                     boxes[i + 1],
                     {
                       opacity: "0.3",
-                      scale: 0.5,
+                      scale: 0.7,
                       duration: 0.5,
                       ease: "power2.inOut",
                     },
@@ -380,6 +351,16 @@ const ScaledDivs = () => {
                     boxes[i + 3],
                     {
                       opacity: "0.3",
+                      scale: 0.7,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  )
+                  .to(
+                    boxes[i + 4],
+                    {
+                      opacity: "0.1",
                       scale: 0.5,
                       duration: 0.5,
                       ease: "power2.inOut",
@@ -414,7 +395,8 @@ const ScaledDivs = () => {
         lines.forEach((line) => {
           const chars = line.querySelectorAll(".char");
           tl.to(chars, {
-            display: "inline",
+            display: 'inline-block',
+            yPercent: '0',
             stagger: 0.03,
             onStart: () => {
               if (audioRef.current) {
@@ -431,22 +413,76 @@ const ScaledDivs = () => {
             },
           });
         });
-        tl.to(
-          ".type-blur",
-          {
-            duration: 3,
-            filter: "blur(0px)",
-            ease: "linear",
-            onComplete: () => {
-              setIsRunning(false);
-              setIsCompleted(true);
-            },
+        tl.to(".type-blur", {
+          duration: 0.5,
+          filter: "blur(0px)",
+          ease: "linear",
+          onStart: () => {
+            if (audio2Ref.current) {
+              audio2Ref.current.play();
+            }
           },
-          "-=1"
-        );
-      }
+        });
+          tl.to(".main-container", {
+            opacity: 0,
+            duration: 1,
+            ease: "power2.inOut",
+          }, '+=15');
+          if (!isMobileView) {
+            tl.to(divRef.current, {
+              width: "100vw",
+              height: "100svh",
+              rotate: 0,
+              onStart: () => {
+                setRotating(true);
+              },
+              onComplete: () => {
+                setRotate(false);
+                setRotating(false);
+                resetPosition();
+                setIsBlend(false);
+                setIsRunning(false);
+            setIsCompleted(true);
+                setTrigger((prev) => !prev);
+              },
+            });
+          } else {
+            tl.to(divRef.current, {
+              width: "100svh",
+              height: "100vw",
+              rotate: 90,
+              top: 0,
+              onStart: () => {
+                setRotating(true);
+              },
+              onComplete: () => {
+                setRotate(true);
+                setRotating(false);
+                resetPosition();
+                setIsBlend(false);
+                setIsRunning(false);
+            setIsCompleted(true);
+                setTrigger((prev) => !prev);
+              },
+            });
+          }
+          tl.to(
+            ".wrapper02",
+            {
+              opacity: 0,
+              scale: 0,
+              duration: 1,
+              ease: "power2.inOut",
+            },
+            "<"
+          );
+          tl.to(".main-container", {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.inOut",
+          });
     }
-  };
+    };
 
   useEffect(() => {
     setIsMobileView(isMobile());
@@ -667,229 +703,223 @@ const ScaledDivs = () => {
   ]);
 
   const renderCharacters = useCallback(
-    (text: string, widths: number[], noColor?: boolean) => {
-      return text.split("").map((char, index) => (
-        <span
-          key={index}
-          ref={(el) => el && (spansRef.current[index] = el)}
-          data-char={char}
-          className="variable-word-letter origin-center bg-text"
-          style={{
-            fontVariationSettings: `'wdth' ${widths[index]}`,
-            transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1)`,
-            color: `#${!noColor && "000"}`,
-            backgroundColor: `#${shuffledColors[index % shuffledColors.length]}`,
-          }}
-        >
-          {char}
-        </span>
-      ));
+    (
+      text: string,
+      widths: number[],
+      coloredIndices: number[],
+      color: number
+    ) => {
+      let i = color;
+      return text.split("").map((char, index) => {
+        coloredIndices.includes(index) && i++;
+        return (
+          <span
+            key={index}
+            ref={(el) => el && (spansRef.current[index] = el)}
+            data-char={char}
+            className="variable-word-letter origin-center bg-text"
+            style={{
+              fontVariationSettings: `'wdth' ${widths[index]}`,
+              transform: `translate3d(0px, 0px, 0px) scaleY(1) scaleX(1)`,
+              backgroundColor: `#${coloredIndices.includes(index) ? shuffledColors[i % shuffledColors.length] : "000"}`,
+            }}
+          >
+            {char}
+          </span>
+        );
+      });
     },
     [shuffledColors]
   );
 
   return (
-    <div className="relative flex md:items-center items-end justify-start h-[100svh] overflow-hidden origin-center z-0 bg-[#FDFDFD]">
-      <div
-        ref={divRef}
-        className="absolute z-10 w-[100vw] h-[100svh] md:origin-[15vw_15vw] left-0 bottom-0 top-0 max-md:w-[100svh] max-md:h-[100vw] max-md:origin-[50vw] max-md:rotate-90"
-        onClick={handleClick}
-      >
+    <>
+      {loading && !isHandleClick && <NoiseAnimation triggerAnimation={trigger} />}
+      <div className="main-container relative flex md:items-center items-end justify-start h-[100svh] overflow-hidden origin-center z-50 bg-[#FDFDFD]">
         <div
-          ref={containerRef}
-          className="relative h-full w-full overflow-hidden"
+          ref={divRef}
+          className="absolute z-10 w-[100vw] h-[100svh] md:origin-[15vw_15vw] left-0 bottom-0 top-0 max-md:w-[100svh] max-md:h-[100vw] max-md:origin-[50vw] max-md:rotate-90"
+          onClick={handleClick}
+        >
+          <div
+            ref={containerRef}
+            className="relative h-full w-full overflow-hidden"
+            style={{
+              fontSize: `${rotating ? (rotate ? fontSizeHori : fontSizeRoteta) : fontSize}px`,
+              lineHeight: `${rotating ? (rotate ? lineHeightHori : lineHeightRoteta) : lineHeight}px`,
+            }}
+          >
+            <span
+              ref={measureRef}
+              style={{
+                visibility: "hidden",
+                position: "absolute",
+                whiteSpace: "nowrap",
+              }}
+            ></span>
+            <div
+              className="variable-word-1 origin-top-left inline-flex justify-evenly items-center whitespace-nowrap"
+              style={{
+                transform: `translate3d(0px, 0px, 0px) scaleX(${scaleX[0]}) scaleY(${topScaleY})`,
+              }}
+            >
+              {renderCharacters("DIGITAL", spanWidths[0], [2], 4)}
+            </div>
+            <div
+              className="absolute left-0 right-0 top-0 variable-word-2 w-full origin-top-left whitespace-nowrap"
+              style={{
+                transform: `translate3d(0px, ${rotating ? (rotate ? translateCenterHori : translateCenterRotate) : translateCenter}px, 0px) scaleX(${scaleX[1]}) scaleY(${centerScaleY})`,
+              }}
+            >
+              {renderCharacters("ROGYX", spanWidths[1], [0, 1, 2, 3, 4], 0)}
+            </div>
+            <div
+              className="absolute left-0 right-0 top-0 variable-word-3 w-full origin-top-left whitespace-nowrap"
+              style={{
+                transform: `translate3d(0px, ${rotating ? (rotate ? translateBottomHori : translateBottomRotate) : translateBottom}px, 0px) scaleX(${scaleX[2]}) scaleY(${bottomScaleY})`,
+              }}
+            >
+              {renderCharacters("MAKETING", spanWidths[2], [2, 7], 1)}
+            </div>
+          </div>
+        </div>
+        <div
+          ref={containerRotateRef}
+          className="md:h-[30vw] md:w-[100svh] md:top-0 md:rotate-[-270deg] overflow-hidden absolute opacity-0 -z-10 max-md:w-[100svh] max-md:h-[100vw]"
           style={{
-            fontSize: `${rotating ? (rotate ? fontSizeHori : fontSizeRoteta) : fontSize}px`,
-            lineHeight: `${rotating ? (rotate ? lineHeightHori : lineHeightRoteta) : lineHeight}px`,
+            fontSize: `${fontSizeRoteta}px`,
+            lineHeight: `${lineHeightRoteta}px`,
           }}
         >
           <span
-            ref={measureRef}
+            ref={measureRotateRef}
             style={{
               visibility: "hidden",
               position: "absolute",
               whiteSpace: "nowrap",
             }}
           ></span>
-          <div
-            className="variable-word-1 origin-top-left inline-flex justify-evenly items-center whitespace-nowrap"
+        </div>
+        <div
+          ref={containerHoriRef}
+          className="w-full md:h-full overflow-hidden absolute opacity-0 -z-10 max-md:w-[100vw] max-md:h-[30svh]"
+          style={{
+            fontSize: `${fontSizeHori}px`,
+            lineHeight: `${lineHeightHori}px`,
+          }}
+        >
+          <span
+            ref={measureHoriRef}
             style={{
-              transform: `translate3d(0px, 0px, 0px) scaleX(${scaleX[0]}) scaleY(${topScaleY})`,
+              visibility: "hidden",
+              position: "absolute",
+              whiteSpace: "nowrap",
             }}
-          >
-            {renderCharacters("DIGITAL", spanWidths[0])}
-          </div>
-          <div
-            className="absolute left-0 right-0 top-0 variable-word-2 w-full origin-top-left whitespace-nowrap"
-            style={{
-              transform: `translate3d(0px, ${rotating ? (rotate ? translateCenterHori : translateCenterRotate) : translateCenter}px, 0px) scaleX(${scaleX[1]}) scaleY(${centerScaleY})`,
-            }}
-          >
-            {renderCharacters("ROGYX", spanWidths[1], true)}
-          </div>
-          <div
-            className="absolute left-0 right-0 top-0 variable-word-3 w-full origin-top-left whitespace-nowrap"
-            style={{
-              transform: `translate3d(0px, ${rotating ? (rotate ? translateBottomHori : translateBottomRotate) : translateBottom}px, 0px) scaleX(${scaleX[2]}) scaleY(${bottomScaleY})`,
-            }}
-          >
-            {renderCharacters("MAKETING", spanWidths[2])}
+          ></span>
+        </div>
+        <div className="wrapper md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
+          <div className="w-full md:h-[240px] h-[120px] relative m-auto">
+            <div className="boxes font-['STIX_Two_Text'] text-center relative">
+              <Box></Box>
+              <Box>The future is already accelerating.</Box>
+              <Box>Leave the past behind.</Box>
+              <Box>Reject the template.</Box>
+              <Box>Discover world-class modern development.</Box>
+              <Box>Choose originality.</Box>
+              <Box>Unleash infinite potential.</Box>
+              <Box>Marketing is being redefined.</Box>
+              <Box>We ensure success, covering every angle.</Box>
+              <Box>Elevating Japan’s web to a new level.</Box>
+              <Box>Results through function and performance.</Box>
+              <Box>For proactive business leaders.</Box>
+              <Box>An exclusive, referral-only digital marketing agency.</Box>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        ref={containerRotateRef}
-        className="md:h-[30vw] md:w-[100svh] md:top-0 md:rotate-[-270deg] overflow-hidden absolute opacity-0 -z-10 max-md:w-[100svh] max-md:h-[100vw]"
-        style={{
-          fontSize: `${fontSizeRoteta}px`,
-          lineHeight: `${lineHeightRoteta}px`,
-        }}
-      >
-        <span
-          ref={measureRotateRef}
-          style={{
-            visibility: "hidden",
-            position: "absolute",
-            whiteSpace: "nowrap",
-          }}
-        ></span>
-      </div>
-      <div
-        ref={containerHoriRef}
-        className="w-full md:h-full overflow-hidden absolute opacity-0 -z-10 max-md:w-[100vw] max-md:h-[30svh]"
-        style={{
-          fontSize: `${fontSizeHori}px`,
-          lineHeight: `${lineHeightHori}px`,
-        }}
-      >
-        <span
-          ref={measureHoriRef}
-          style={{
-            visibility: "hidden",
-            position: "absolute",
-            whiteSpace: "nowrap",
-          }}
-        ></span>
-      </div>
-      <div className="wrapper md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex items-center justify-center opacity-0 scale-0">
-        <div className="w-full md:h-[240px] h-[120px] relative m-auto">
-          <div className="boxes font-['STIX_Two_Text'] text-center relative">
-            <Box></Box>
-            <Box>The future is already accelerating.</Box>
-            <Box>Leave the past behind.</Box>
-            <Box>Reject the template.</Box>
-            <Box>Discover world-class modern development.</Box>
-            <Box>Choose originality.</Box>
-            <Box>Unleash infinite potential.</Box>
-            <Box>Marketing is being redefined.</Box>
-            <Box>We ensure success, covering every angle.</Box>
-            <Box>Elevating Japan’s web to a new level.</Box>
-            <Box>Results through function and performance.</Box>
-            <Box>For proactive business leaders.</Box>
-            <Box>An exclusive, referral-only digital marketing agency.</Box>
-          </div>
-        </div>
-      </div>
-      <div className="wrapper02 font-noto opacity-0 md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex justify-center items-center">
-        <div>
-          <div
-            data-splitting
-            className="text-left text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)]"
-          >
-            <span className="type-line font-bold">
-              未来は、もう加速している。<span className="caret"></span>
-            </span>
-            <br />
-            <span className="type-line font-bold">
-              過去を振り切り、前だけを見ろ。<span className="caret"></span>
-            </span>
-            <br />
-            <br />
-            <span className="type-line font-bold">
-              テンプレートを捨て去れ。<span className="caret"></span>
-            </span>
-            <br />
-            <span className="type-line font-bold">
-              世界標準の
-              <Tooltip text="モダン開発">
-                モダン開発とは、最新のツール、技術、方法論を活用して
-                ソフトウェアを効率的に開発するアプローチです。クラウド、DevOps、アジャイル手法、マイクロサービス、コンテナ化などを取り入れ、迅速な開発とデプロイメント、継続的な改善を実現します。自動化、スケーラビリティ、セキュリティに重点を置き、ユーザーニーズに迅速に対応できる柔軟なシステム構築を目指します。
-              </Tooltip>
-              で新たな価値を創り出す。<span className="caret"></span>
-            </span>
-            <br />
-            <br />
-            <span className="type-line font-bold">
-              個性を殺すコピーに背を向け、<span className="caret"></span>
-            </span>
-            <br />
-            <span className="type-line font-bold">
-              無限の可能性を秘めたオリジナルを選び抜け。
-              <span className="caret"></span>
-            </span>
-            <br />
-            <br />
-            <span className="type-line font-bold">
-              
-              
-              <Tooltip
-                text="マーケティングは、今、時代に再定義される。"
-              >
-                現代のマーケティングにおいて、総合的な戦略立案と実行が成功の鍵と考えます。
-                <br />
-                顧客のニーズや市場動向を包括的に理解し、製品開発から販売、顧客サービスまでの全プロセスを一貫して最適化できることにより、ターゲット市場への効果的なアプローチ、競合他社との差別化、顧客満足度の向上が可能となり、結果として売上増加と持続的な成長につながります。
-              </Tooltip>
-              <span className="caret"></span>
-            </span>
-            <br />
-            <span className="type-line font-bold">
-              すべてを網羅し、成功を必ず手にする<span className="caret"></span>
-            </span>
-            <br />
-            <br />
-            <span className="type-line font-bold">
-              日本のウェブを、新次元へと引き上げる。
-              <span className="caret"></span>
-            </span>
-            <br />
-            <span className="type-line font-bold">
-              機能美とパフォーマンスで、確実に結果を出す。
-              <span className="caret"></span>
-            </span>
-            <br />
-            <br />
-            <span className="type-line font-bold">
-              <Tooltip
-                text="プロアクティブなビジネスマン"
-              >
-                プロアクティブなビジネスマンとは、未来志向で変革を追求する人物です。常に市場動向や業界の変化を分析し、新しい機会を積極的に探求します。創造的な解決策を提案し、リスクを管理しながら革新的なアイデアを実行に移します。受動的ではなく、主体的に状況を改善し、ビジネスの成長を牽引する姿勢を持っています。
-              </Tooltip>
-              だけに贈る、<span className="caret"></span>
-            </span>
-            <br />
-            <span className="type-line font-bold">
-              紹介制のデジタルマーケティングエージェンシー。
-              <span className="caret"></span>
-            </span>
-            <br />
-            <br />
-          </div>
-
-          <div className="text-right type-blur blur-[100px]">
-            <a
-              href="https://g.co/kgs/Vt1oGkn"
-              target="_blank"
-              className="text-[calc(1.4vw+1.4svh)] md:text-[calc(1.2vw+1.2svh)] font-bold"
+        <div className="wrapper02 font-noto opacity-0 md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex justify-center items-center">
+          <div>
+            <div
+              data-splitting
+              className="text-left text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)]"
             >
-              株式会社 ROGYX
-            </a>
+              <span className="type-line font-bold block overflow-hidden">
+                未来は、もう加速している。<span className="caret"></span>
+              </span>
+              <span className="type-line font-bold block overflow-hidden">
+                過去を振り切り、前だけを見ろ。<span className="caret"></span>
+              </span>
+              <br />
+              <span className="type-line font-bold block overflow-hidden">
+                テンプレートを捨て去れ。<span className="caret"></span>
+              </span>
+              <span className="type-line font-bold block overflow-hidden">
+                世界標準の
+                <Tooltip text="モダン開発">
+                  モダン開発とは、最新のツール、技術、方法論を活用して
+                  ソフトウェアを効率的に開発するアプローチです。クラウド、DevOps、アジャイル手法、マイクロサービス、コンテナ化などを取り入れ、迅速な開発とデプロイメント、継続的な改善を実現します。自動化、スケーラビリティ、セキュリティに重点を置き、ユーザーニーズに迅速に対応できる柔軟なシステム構築を目指します。
+                </Tooltip>
+                で新たな価値を創り出す。<span className="caret"></span>
+              </span>
+              <br />
+              <span className="type-line font-bold block overflow-hidden">
+                個性を殺すコピーに背を向け、<span className="caret"></span>
+              </span>
+              <span className="type-line font-bold block overflow-hidden">
+                無限の可能性を秘めたオリジナルを選び抜け。
+                <span className="caret"></span>
+              </span>
+              <br />
+              <span className="type-line font-bold block overflow-hidden">
+                <Tooltip text="マーケティングは、今、時代に再定義される。">
+                  現代のマーケティングにおいて、総合的な戦略立案と実行が成功の鍵と考えます。
+                  <br />
+                  顧客のニーズや市場動向を包括的に理解し、製品開発から販売、顧客サービスまでの全プロセスを一貫して最適化できることにより、ターゲット市場への効果的なアプローチ、競合他社との差別化、顧客満足度の向上が可能となり、結果として売上増加と持続的な成長につながります。
+                </Tooltip>
+                <span className="caret"></span>
+              </span>
+              <span className="type-line font-bold block overflow-hidden">
+                すべてを網羅し、成功を必ず手にする
+                <span className="caret"></span>
+              </span>
+              <br />
+              <span className="type-line font-bold block overflow-hidden">
+                日本のウェブを、新次元へと引き上げる。
+                <span className="caret"></span>
+              </span>
+              <span className="type-line font-bold block overflow-hidden">
+                機能美とパフォーマンスで、確実に結果を出す。
+                <span className="caret"></span>
+              </span>
+              <br />
+              <span className="type-line font-bold block overflow-hidden">
+                <Tooltip text="プロアクティブなビジネスマン">
+                  プロアクティブなビジネスマンとは、未来志向で変革を追求する人物です。常に市場動向や業界の変化を分析し、新しい機会を積極的に探求します。創造的な解決策を提案し、リスクを管理しながら革新的なアイデアを実行に移します。受動的ではなく、主体的に状況を改善し、ビジネスの成長を牽引する姿勢を持っています。
+                </Tooltip>
+                だけに贈る、<span className="caret"></span>
+              </span>
+              <span className="type-line font-bold block overflow-hidden">
+                紹介制のデジタルマーケティングエージェンシー。
+                <span className="caret"></span>
+              </span>
+              <br />
+            </div>
+
+            <div className="text-right type-blur blur-[100px]">
+              <a
+                href="https://g.co/kgs/Vt1oGkn"
+                target="_blank"
+                className="text-[calc(1.4vw+1.4svh)] md:text-[calc(1.2vw+1.2svh)] font-bold"
+              >
+                ROGYX
+              </a>
+            </div>
           </div>
+          <audio ref={audioRef} src="/assets/audio/type.mp3" loop />
+          <audio ref={audio2Ref} src="/assets/audio/text-impact1.mp3" />
         </div>
-        <audio ref={audioRef} src="/assets/audio/type.mp3" loop />
+        <Sound isMuted={isMuted} isBlend={isBlend} toggleMute={toggleMute} />
       </div>
-      <Sound isMuted={isMuted} isBlend={isBlend} toggleMute={toggleMute} />
-    </div>
-    
+    </>
   );
 };
 

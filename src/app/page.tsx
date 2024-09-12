@@ -2,7 +2,6 @@
 import ScaledDivs from "./components/ScaledDivs";
 import ProgressBar from "./components/progressBar"
 import { useState } from "react";
-import NoiseAnimation from "./components/noiseAnimation";
 
 
 export default function Home() {
@@ -11,11 +10,7 @@ export default function Home() {
   return (
     <main>
        {!loadingComplete && <ProgressBar onComplete={() => setLoadingComplete(true)} />}
-      {loadingComplete && (
-        <NoiseAnimation />
-      )}
-      <ScaledDivs />
-      
+      <ScaledDivs loading={loadingComplete} />
     </main>
   );
 }
