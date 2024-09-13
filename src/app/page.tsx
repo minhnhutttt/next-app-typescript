@@ -6,7 +6,6 @@ import Applications from "./components/applications";
 import Challenges from "./components/challenges";
 import Reason from "./components/reason";
 import Tokens from "./components/tokens";
-import Contact from "./components/contact";
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
       <VisionMission />
       <Reason />
       <Tokens />
-      <Contact />
       <Join />
     </main>
   );

@@ -5,7 +5,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Introduction = () => {
     const ref = useScrollAnimations();
   return (
-    <section ref={ref} id="introduction" className="relative md:bg-[url('/assets/images/introduction-bg.png')] bg-[url('/assets/images/introduction-bg-sp.png')] bg-cover bg-center px-8 py-[60px]">
+    <section ref={ref} id="about" className="relative md:bg-[url('/assets/images/introduction-bg.png')] bg-[url('/assets/images/introduction-bg-sp.png')] bg-cover bg-center px-8 py-[60px]">
         <div className="w-full md:max-w-[1100px] max-w-[375px] mx-auto">
             <Title>What are iPS Cells?</Title>
             <div className="fade-up mt-10 bg-white rounded-md border border-[#E4E4E7] overflow-hidden">

@@ -44,12 +44,6 @@ const Tokens = () => {
             <span className="fade-up md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 max-md:mt-6">
                 <img src="/assets/images/avatar.svg" alt="" />
             </span>
-            <div className="fade-up flex mt-6">
-                <a href="/" className="flex items-center justify-center px-[18px] md:px-[22px] md:py-[14px] py-3 gap-2 rounded-xl bg-[#D9748F] text-white text-[16px] md:text-[18px] font-semibold">
-                    <span><img src="/assets/images/plus.svg" alt="" /></span>
-                    <span>Get Started</span>
-                </a>
-            </div>
         </div>
         <div className="flex justify-center gap-10 flex-wrap mt-10">
           {data.map((item, index) => (

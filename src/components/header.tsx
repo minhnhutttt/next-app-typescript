@@ -18,16 +18,16 @@ const links: NavLink[] = [
     text: "About",
   },
   {
-    link: "/# ",
-    text: "Projects",
-  },
-  {
     link: "/#challenges",
     text: "Challenges",
   },
   {
-    link: "/#join",
-    text: "Join",
+    link: "/#vision",
+    text: "Vision",
+  },
+  {
+    link: "/#white-paper",
+    text: "White Paper",
   },
 ];
 const Header = () => {
@@ -62,14 +62,6 @@ const Header = () => {
                 </a>
               </li>
             ))}
-            <li className="flex items-center">
-                <a
-                  href="/"
-                  onClick={close}
-                >
-                  <img src="/assets/images/button-x.svg" alt="" />
-                </a>
-              </li>
           </ul>
         </div>
         <button
