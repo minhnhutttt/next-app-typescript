@@ -41,7 +41,7 @@ const Tokens = () => {
                 Explore iPS tokens
             </Title>
             <p className="fade-up font-roboto text-[16px] mt-6">Innovate with iPS Coins for medical projects</p>
-            <span className="md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 max-md:mt-6">
+            <span className="fade-up md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 max-md:mt-6">
                 <img src="/assets/images/avatar.svg" alt="" />
             </span>
             <div className="fade-up flex mt-6">

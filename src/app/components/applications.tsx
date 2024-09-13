@@ -34,7 +34,7 @@ const Applications = () => {
         <Title>
             Applications of iPS Cells
         </Title>
-        <p className="text-center font-roboto text-[16px] mt-6">Explore practical uses of iPS cells in medicine</p>
+        <p className="fade-up text-center font-roboto text-[16px] mt-6">Explore practical uses of iPS cells in medicine</p>
         <div className="flex gap-9 md:gap-10 mt-10 max-lg:flex-wrap justify-center items-center">
           {data.map((item, index) => (
             <div
