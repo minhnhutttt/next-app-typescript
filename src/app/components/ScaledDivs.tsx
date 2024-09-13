@@ -255,7 +255,6 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
         });
         gsap.set(".char", {
           display: "none",
-          yPercent: "110",
         });
         tl.set(".type-blur", {
           filter: "blur(100px)",
@@ -395,8 +394,7 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
         lines.forEach((line) => {
           const chars = line.querySelectorAll(".char");
           tl.to(chars, {
-            display: 'inline-block',
-            yPercent: '0',
+            display: 'inline',
             stagger: 0.03,
             onStart: () => {
               if (audioRef.current) {
@@ -424,9 +422,12 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
           },
         });
           tl.to(".main-container", {
-            opacity: 0,
-            duration: 1,
+            opacity: 0.2,
+            duration: 1.5,
             ease: "power2.inOut",
+            onComplete: () => {
+              setTrigger((prev) => !prev);
+            }
           }, '+=15');
           if (!isMobileView) {
             tl.to(divRef.current, {
@@ -443,7 +444,6 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
                 setIsBlend(false);
                 setIsRunning(false);
             setIsCompleted(true);
-                setTrigger((prev) => !prev);
               },
             });
           } else {
@@ -462,7 +462,6 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
                 setIsBlend(false);
                 setIsRunning(false);
             setIsCompleted(true);
-                setTrigger((prev) => !prev);
               },
             });
           }

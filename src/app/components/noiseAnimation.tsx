@@ -56,7 +56,7 @@ const NoiseAnimation: React.FC<NoiseAnimationProps> = ({ triggerAnimation }) => 
             const alpha = displayProgress * colors.length - colorIndex;
             return interpolateColor(color, 'rgba(0, 0, 0, 0)', alpha);
           } else {
-            return 'rgba(0, 0, 0, 1)';
+            return 'rgba(0, 0, 0, 0.5)';
           }
         });
       } else {
