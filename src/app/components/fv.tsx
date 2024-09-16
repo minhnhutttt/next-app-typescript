@@ -10,7 +10,7 @@ const FV = () => {
             </video>
         </div>
         <div className="px-2 md:px-20 lg:px-[240px] w-full max-md:py-10 relative flex max-md:justify-center">
-          <div className="px-3 py-5 md:p-10 bg-[#EEEDED]/[0.8]">
+          <div className="px-3 py-5 md:p-10 bg-[#EEEDED]/[0.8] max-md:w-full">
             <div className="w-full max-md:max-w-[350px] md:w-[496px] md:space-y-6 space-y-4 max-md:mx-auto">
               <h1 className="u-text-gradient bg-[linear-gradient(90deg,_#D9748F_0%,#0059BA_100%)] text-[30px] md:text-[48px] font-bold leading-[1.2] md:leading-none">
               Join the <br className="max-md:hidden" />
