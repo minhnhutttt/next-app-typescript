@@ -306,70 +306,70 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
           duration: 0.5,
         });
 
-        for (let i = 0; i < boxes.length - 1; i++) {
-          tl.to(".box", {
-            y: `-=${height}`,
-            delay: 1,
-            ease: "power2.inOut",
-            onStart: () => {
-              if (boxes[i]) {
-                gsap
-                  .timeline()
-                  .to(boxes[i-1], { opacity: "0" })
-                  .to(
-                    boxes[i],
-                    {
-                      opacity: "0.1",
-                      scale: 0.5,
-                      duration: 0.5,
-                      ease: "power2.inOut",
-                    },
-                    "<"
-                  )
-                  .to(
-                    boxes[i + 1],
-                    {
-                      opacity: "0.3",
-                      scale: 0.7,
-                      duration: 0.5,
-                      ease: "power2.inOut",
-                    },
-                    "<"
-                  )
-                  .to(
-                    boxes[i + 2],
-                    {
-                      opacity: "1",
-                      scale: 1,
-                      duration: 0.5,
-                      ease: "power2.inOut",
-                    },
-                    "<"
-                  )
-                  .to(
-                    boxes[i + 3],
-                    {
-                      opacity: "0.3",
-                      scale: 0.7,
-                      duration: 0.5,
-                      ease: "power2.inOut",
-                    },
-                    "<"
-                  )
-                  .to(
-                    boxes[i + 4],
-                    {
-                      opacity: "0.1",
-                      scale: 0.5,
-                      duration: 0.5,
-                      ease: "power2.inOut",
-                    },
-                    "<"
-                  );
-              }
-            },
-          });
-        }
+        // for (let i = 0; i < boxes.length - 1; i++) {
+        //   tl.to(".box", {
+        //     y: `-=${height}`,
+        //     delay: 1,
+        //     ease: "power2.inOut",
+        //     onStart: () => {
+        //       if (boxes[i]) {
+        //         gsap
+        //           .timeline()
+        //           .to(boxes[i-1], { opacity: "0" })
+        //           .to(
+        //             boxes[i],
+        //             {
+        //               opacity: "0.1",
+        //               scale: 0.5,
+        //               duration: 0.5,
+        //               ease: "power2.inOut",
+        //             },
+        //             "<"
+        //           )
+        //           .to(
+        //             boxes[i + 1],
+        //             {
+        //               opacity: "0.3",
+        //               scale: 0.7,
+        //               duration: 0.5,
+        //               ease: "power2.inOut",
+        //             },
+        //             "<"
+        //           )
+        //           .to(
+        //             boxes[i + 2],
+        //             {
+        //               opacity: "1",
+        //               scale: 1,
+        //               duration: 0.5,
+        //               ease: "power2.inOut",
+        //             },
+        //             "<"
+        //           )
+        //           .to(
+        //             boxes[i + 3],
+        //             {
+        //               opacity: "0.3",
+        //               scale: 0.7,
+        //               duration: 0.5,
+        //               ease: "power2.inOut",
+        //             },
+        //             "<"
+        //           )
+        //           .to(
+        //             boxes[i + 4],
+        //             {
+        //               opacity: "0.1",
+        //               scale: 0.5,
+        //               duration: 0.5,
+        //               ease: "power2.inOut",
+        //             },
+        //             "<"
+        //           );
+        //       }
+        //     },
+        //   });
+        // }
         tl.to(
           ".wrapper",
           {
@@ -428,7 +428,7 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
             onComplete: () => {
               setTrigger((prev) => !prev);
             }
-          }, '+=15');
+          }, '+=150');
           if (!isMobileView) {
             tl.to(divRef.current, {
               width: "100vw",
@@ -903,13 +903,13 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
               <br />
             </div>
 
-            <div className="text-right type-blur blur-[100px]">
+            <div className="flex justify-end items-center type-blur blur-[100px]">
               <a
                 href="https://g.co/kgs/Vt1oGkn"
                 target="_blank"
-                className="text-[calc(1.4vw+1.4svh)] md:text-[calc(1.2vw+1.2svh)] font-bold"
+                className=""
               >
-                ROGYX
+                <img className="w-[calc(8vw+8svh)]" src="/assets/images/rogyx.svg" alt="" />
               </a>
             </div>
           </div>
