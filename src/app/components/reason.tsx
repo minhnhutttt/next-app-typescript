@@ -19,7 +19,7 @@ const data = [
     title: "Voting",
     subTitle: (
       <>
-        Vote to focus on specific areas of application of PS cell research
+        Vote to focus on specific areas of application of iPS cell research
       </>
     ),
   },

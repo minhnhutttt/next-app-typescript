@@ -37,7 +37,7 @@ const Challenges = () => {
             Current Challenges
             </h3>
         </div>
-        <p className="fade-up text-center font-roboto text-[16px] text-white mt-6">Identifying key challenges in the exosome technology landscape</p>
+        <p className="fade-up text-center font-roboto text-[16px] text-white mt-6">Identifying key challenges in the iPS cells technology landscape</p>
         <div className="flex gap-5 mt-10 max-lg:flex-wrap justify-center">
           {data.map((item, index) => (
             <div

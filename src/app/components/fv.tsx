@@ -19,7 +19,7 @@ const FV = () => {
               </h1>
               <p className="text-[#3F3F46] text-[16px]">
               Empowering regenerative medicine, <br className="md:hidden" />environmental protection, <br />
-              and personalized medicine through EXO DAO and EXO tokens
+              and personalized medicine through iPS DAO and iPS tokens
               </p>
               <div className="fade-up flex max-md:justify-center">
               <a href="/" className="fade-up flex items-center justify-center md:px-[22px] px-3 md:py-[14px] py-2 gap-2 rounded-xl bg-[#D9748F] text-white md:text-[18px] text-[14px] font-semibold">
