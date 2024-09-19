@@ -13,7 +13,7 @@ const FV = () => {
     <div className="mb-[256px] max-md:mb-[82px]">
       <div className="pt-[30vh] max-md:pt-[20vh]">
         <h1 className="relative mb-[-1.5em] px-[32px]  font-anton text-[calc(24px_+_20vw)] uppercase leading-none">
-        Innovate
+          Innovate
           <br />
           <span className="stroke">Create</span>
           <br />
