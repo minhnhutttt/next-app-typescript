@@ -17,7 +17,7 @@ const Header = () => {
             translate="no"
             href="/"
           >
-            TECHNO LLC
+            Yumeaci inc.
           </a>
           <div className="flex items-center justify-center">
             <nav
@@ -44,7 +44,7 @@ const Header = () => {
                 </li>
                 <li className="p-[8px]">
                   <a
-                    href="mailto:info@techno-agency.com"
+                    href="mailto:info@yumeaci.co.jp"
                     className="hover-underline"
                     onClick={close}
                   >

@@ -6,8 +6,7 @@ const Service = () => {
       <section className="mb-[256px] max-md:mb-[82px]">
         <div className="container">
           <div className="mx-auto max-w-[1200px] text-center text-[calc(18px_+_2vw)] uppercase leading-[1.2]">
-            各種調査 / 各種代行 / デジタルマーケティング / 海外人材採用支援 /
-            ブロックチェーン解析支援 / 販売プラットフォーム出品支援
+          ホームページ制作/ システム開発 / UI/UXデザイン / SEO対策 / アパレル製品の企画 / ノベルティグッズの企画
           </div>
         </div>
       </section>
@@ -27,10 +26,10 @@ const Service = () => {
                 className="font-anton text-[calc(24px_+_2vw)] uppercase"
                 translate="no"
               >
-                Research
+                Web Site Production
               </div>
               <div className="max-w-[600px] text-[21px] max-md:text-[18px]">
-                私たちはお客様のビジネスに必要不可欠な情報の収集・分析を行い、最適なソリューションを提供します。企業分析から海外人材のバックグラウンド調査、ブロックチェーン解析など、幅広い分野に対応しています。
+                Yumeaciのホームページ制作サービスは、クライアントのニーズに応じた魅力的で機能的なウェブサイトを提供します。最新のデザインとユーザーエクスペリエンス（UX）を重視し、訪問者が簡単に情報を見つけられるように構築します。Reactを使用して高性能なウェブアプリケーションを開発し、スムーズな操作性を実現しています。また、SEO対策も施し、検索エンジンでの visibility を高めることで、ビジネスの成長をサポートします。
               </div>
             </a>
             <a
@@ -41,10 +40,10 @@ const Service = () => {
                 className="font-anton text-[calc(24px_+_2vw)] uppercase"
                 translate="no"
               >
-                Agency
+                System development business
               </div>
               <div className="max-w-[600px] text-[21px] max-md:text-[18px]">
-                私たちは代理店としての機能を持ち、Google、MetaをはじめとするWeb広告の運用代行や営業活動の代行、ECプラットフォームへの出品など、お客様の業務を代行することで、効率的かつ効果的なビジネス運営をサポートします。
+                Yumeaciのシステム開発事業では、企業の業務効率を向上させるためのカスタマイズされたソフトウェアソリューションを提供しています。Yumeaciの専門チームは、ニーズに合わせたシステム設計から開発、導入後のサポートまで、一貫して対応します。クライアントのビジョンを実現し、業務のデジタル化を促進します。
               </div>
             </a>
             <a
@@ -55,25 +54,10 @@ const Service = () => {
                 className="font-anton text-[calc(24px_+_2vw)] uppercase"
                 translate="no"
               >
-                Digital marketing
+                Planning of apparel products and novelty goods
               </div>
               <div className="max-w-[600px] text-[21px] max-md:text-[18px]">
-                私たちはデジタル領域における様々なチャネルを活用し、お客様のビジネスの本質を論理的に捉えたプロモーション戦略を構築・実行します。
-              </div>
-            </a>
-            <a
-              className="sticky top-[10rem] block w-full bg-[#cbc7b7] p-[8%]"
-              href="/research-shield-ai"
-            >
-              <div
-                className="font-anton text-[calc(24px_+_2vw)] uppercase"
-                translate="no"
-              >
-                Research shield+AI
-              </div>
-              <div className="max-w-[600px] text-[21px] max-md:text-[18px]">
-                設立から9年間経験・蓄積してきた調査力を活用した新サービスです。業界を絞り、AIのパワーを加えることで、属人的なリサーチアウトプットの再現性を高めた特化型サービス「海外人材のバックグラウンド調査：Research
-                Shield+AI」をリリースいたしました。
+                Yumeaciは、オリジナルアパレルやノベルティグッズの企画・制作にも力を入れています。トレンドを取り入れたデザインと高品質な素材を使用し、魅力的な商品を提供します。クライアントのブランド価値を高めるために、マーケットリサーチから商品企画、製造までをトータルでサポートします。
               </div>
             </a>
           </div>

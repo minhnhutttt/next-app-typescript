@@ -11,7 +11,7 @@ const Contact = ({ title, children }: ContactPropsType) => {
       <div className="container grid grid-cols-[.3fr_.7fr] gap-[3em] max-md:grid-cols-1 max-md:gap-[16px]">
         <div>
           <a
-            href="mailto:info@techno-agency.com"
+            href="mailto:info@yumeaci.co.jp"
             className="text-bold rounded-full bg-black px-[16px] py-[8px] text-white duration-150 hover:opacity-75"
           >
             Contact

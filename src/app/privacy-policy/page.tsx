@@ -30,8 +30,7 @@ const PrivacyPolicyPage = () => {
               プライバシーポリシー
             </div>
             <div className="mb-[24px] text-right text-[24px]">
-              制定　2024.7.1 <br />
-              TECHNO合同会社
+              制定　2024.5.1 <br />株式会社 Yumeaci
             </div>
             <div className="mb-[24px]">
               当社は、お客様の個人情報の保護について、次のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定め、本ポリシーに基づき適正に個人情報を取り扱います。
@@ -204,11 +203,11 @@ const PrivacyPolicyPage = () => {
               <br />
               ウ　送付先
               <br />
-              〒150-0002
+              〒125-0002
               <br />
-              住所　東京都渋谷区渋谷2-19-15宮益坂ビルディング609
+              東京都葛飾区西亀有4-19-5
               <br />
-              TECHNO合同会社　個人情報開示請求窓口
+              株式会社 Yumeaci　個人情報開示請求窓口
             </div>
             <h2 className="mb-[24px] text-[24px]">6. 匿名加工情報の取扱い</h2>
             <div className="mb-[24px]">
@@ -273,11 +272,11 @@ const PrivacyPolicyPage = () => {
             </div>
             <h2 className="mb-[24px] text-[24px]">8. お問い合わせ窓口</h2>
             <div className="mb-[24px]">
-              ご意見、ご質問、苦情のお申出その他個人情報の取扱いに関するお問い合わせは、下記の窓口までご連絡ください。
+            ご意見、ご質問、苦情のお申出その他個人情報の取扱いに関するお問い合わせは、下記の窓口までご連絡ください。
               <br />
-              　　住所：〒150-0002　東京都渋谷区渋谷2-19-15宮益坂ビルディング609
+              　　住所：〒125-0002 東京都葛飾区西亀有4-19-5
               <br />
-              　　E-mail：info@techno-agency.com
+              　　E-mail：info@yumeaci.co.jp
             </div>
           </div>
         </div>

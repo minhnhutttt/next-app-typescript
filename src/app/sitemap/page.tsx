@@ -34,19 +34,15 @@ const DataSitemap = [
   },
   {
     href: '/research',
-    text: 'Research',
+    text: 'Web Development ',
   },
   {
     href: '/agency',
-    text: 'Agency',
+    text: 'System Development',
   },
   {
     href: '/digital-marketing',
-    text: 'Digital marketing',
-  },
-  {
-    href: '/research-shield-ai',
-    text: 'Research Shield+AI',
+    text: 'Apparel and Novelty Goods',
   },
   {
     href: '/sitemap',

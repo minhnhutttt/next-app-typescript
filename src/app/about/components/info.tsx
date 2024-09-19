@@ -13,7 +13,7 @@ const Info = () => {
               <div className="border-b border-solid border-b-[rgba(172,172,172,0.3)]">
                 <div className="py-[4%]">
                   <div className="text-[24px] max-md:text-[18px]">
-                    TECHNO合同会社
+                    株式会社 Yumeaci
                     <br />
                   </div>
                 </div>
@@ -21,14 +21,14 @@ const Info = () => {
               <div className="border-b border-solid border-b-[rgba(172,172,172,0.3)]">
                 <div className="py-[4%]">
                   <div className="text-[24px] max-md:text-[18px]">
-                    〒150-0002 東京都渋谷区渋谷2-19-15宮益坂ビルディング609
+                    〒125-0002 東京都葛飾区西亀有4-19-5
                   </div>
                 </div>
               </div>
               <div className="border-b border-solid border-b-[rgba(172,172,172,0.3)]">
                 <div className="py-[4%]">
                   <div className="text-[24px] max-md:text-[18px]">
-                    info@techno-agency.com
+                    info@yumeaci.co.jp
                   </div>
                 </div>
               </div>

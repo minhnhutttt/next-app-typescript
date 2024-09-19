@@ -13,11 +13,11 @@ const FV = () => {
     <div className="mb-[256px] max-md:mb-[82px]">
       <div className="pt-[30vh] max-md:pt-[20vh]">
         <h1 className="relative mb-[-1.5em] px-[32px]  font-anton text-[calc(24px_+_20vw)] uppercase leading-none">
-          Global
+        Innovate
           <br />
-          <span className="stroke">Digital</span>
+          <span className="stroke">Create</span>
           <br />
-          <span className="text-white">Agency</span>
+          <span className="text-white">Elevate.</span>
         </h1>
         <div>
           <video ref={videoRef} muted loop className="w-full" poster="">
