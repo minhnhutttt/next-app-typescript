@@ -33,15 +33,15 @@ const DataSitemap = [
     text: 'Solutions',
   },
   {
-    href: '/research',
+    href: '/web-development',
     text: 'Web Development ',
   },
   {
-    href: '/agency',
+    href: '/system-development',
     text: 'System Development',
   },
   {
-    href: '/digital-marketing',
+    href: '/apparel',
     text: 'Apparel and Novelty Goods',
   },
   {

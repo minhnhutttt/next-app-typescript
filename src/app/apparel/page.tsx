@@ -5,21 +5,20 @@ import PageTitle from '@/components/pageTitle'
 import Banner from '@/components/banner'
 import Provide from '@/components/provide'
 import Faq from '@/components/faq'
-import Contact from '@/components/contact'
 
 export const metadata: Metadata = {
-  title: 'Digital marketing',
+  title: 'Apparel and Novelty Goods',
   openGraph: {
     ...OG,
-    title: 'Digital marketing',
-    url: SITE_URL + '/digital-marketing',
+    title: 'Apparel and Novelty Goods',
+    url: SITE_URL + '/apparel',
   },
   twitter: {
     ...TWITTER,
-    title: 'Digital marketing',
+    title: 'Apparel and Novelty Goods',
   },
   alternates: {
-    canonical: SITE_URL + '/digital-marketing',
+    canonical: SITE_URL + '/apparel',
   },
 }
 
@@ -98,7 +97,7 @@ const DataFaq = [
   },
 ]
 
-const DigitalMarketingPage = () => {
+const ApparelPage = () => {
   return (
     <main>
       <PageTitle>Apparel and Novelty Goods</PageTitle>
@@ -114,4 +113,4 @@ const DigitalMarketingPage = () => {
   )
 }
 
-export default DigitalMarketingPage
+export default ApparelPage

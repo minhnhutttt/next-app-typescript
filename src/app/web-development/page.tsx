@@ -5,21 +5,20 @@ import PageTitle from '@/components/pageTitle'
 import Banner from '@/components/banner'
 import Provide from '@/components/provide'
 import Faq from '@/components/faq'
-import Contact from '@/components/contact'
 
 export const metadata: Metadata = {
-  title: 'Research',
+  title: 'Web Development',
   openGraph: {
     ...OG,
-    title: 'Research',
-    url: SITE_URL + '/research',
+    title: 'Web Development',
+    url: SITE_URL + '/web-development',
   },
   twitter: {
     ...TWITTER,
-    title: 'Research',
+    title: 'Web Development',
   },
   alternates: {
-    canonical: SITE_URL + '/research',
+    canonical: SITE_URL + '/web-development',
   },
 }
 
@@ -85,7 +84,7 @@ const DataFaq = [
   },
 ]
 
-const ResearchPage = () => {
+const WebDevelopmentPage = () => {
   return (
     <main>
       <PageTitle>Web Development</PageTitle>
@@ -101,4 +100,4 @@ const ResearchPage = () => {
   )
 }
 
-export default ResearchPage
+export default WebDevelopmentPage

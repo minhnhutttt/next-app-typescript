@@ -28,17 +28,17 @@ const Footer = () => {
                       </a>
                     </li>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/research">
+                      <a className="hover-underline" href="/web-development">
                       Web  Development
                       </a>
                     </li>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/agency">
-                      System Development
+                      <a className="hover-underline" href="/system-development">
+                        System Development
                       </a>
                     </li>
                     <li className="py-[8px]">
-                      <a className="hover-underline" href="/digital-marketing">
+                      <a className="hover-underline" href="/apparel">
                       Apparel and Novelty Goods
                       </a>
                     </li>

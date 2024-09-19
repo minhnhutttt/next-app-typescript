@@ -5,21 +5,20 @@ import PageTitle from '@/components/pageTitle'
 import Banner from '@/components/banner'
 import Provide from '@/components/provide'
 import Faq from '@/components/faq'
-import Contact from '@/components/contact'
 
 export const metadata: Metadata = {
-  title: 'Agency',
+  title: 'System Development',
   openGraph: {
     ...OG,
-    title: 'Agency',
-    url: SITE_URL + '/agency',
+    title: 'System Development',
+    url: SITE_URL + '/system-development',
   },
   twitter: {
     ...TWITTER,
-    title: 'Agency',
+    title: 'System Development',
   },
   alternates: {
-    canonical: SITE_URL + '/agency',
+    canonical: SITE_URL + '/system-development',
   },
 }
 
@@ -88,10 +87,10 @@ const DataFaq = [
   },
 ]
 
-const AgencyPage = () => {
+const SystemDevelopmentPage = () => {
   return (
     <main>
-      <PageTitle>Agency</PageTitle>
+      <PageTitle>System Development</PageTitle>
       <Banner image="/assets/images/development.jpg">
         代行サービスは企業やブランドの業務効率化と最適化の鍵であり、専門性と経験が求められます。だからこそ、業種やニーズに合わせた最適なサービス提供が必要です。私たちは、長年培った知識と経験をもとに、お客様の期待を超える提案をいたします。
       </Banner>
@@ -104,4 +103,4 @@ const AgencyPage = () => {
   )
 }
 
-export default AgencyPage
+export default SystemDevelopmentPage

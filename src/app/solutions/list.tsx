@@ -13,7 +13,7 @@ const List = () => {
         <div>
           <a
             className="relative z-20 mb-[64px] block flex aspect-[2.4/1] items-end overflow-hidden rounded-[12px] bg-[#eee] p-[3%] font-anton text-[calc(16px_+_4vw)] text-white max-md:aspect-[1.7/1]"
-            href="/research"
+            href="/web-development"
           >
             Web Development
             <div className="absolute right-[2%] top-[5%] block flex aspect-square w-[2em] items-center justify-center rounded-full bg-white text-[21px]">
@@ -27,7 +27,7 @@ const List = () => {
           </a>
           <a
             className="relative z-20 mb-[64px] block flex aspect-[2.4/1] items-end overflow-hidden rounded-[12px] bg-[#eee] p-[3%] font-anton text-[calc(16px_+_4vw)] text-white max-md:aspect-[1.7/1]"
-            href="/agency"
+            href="/system-development"
           >
             System Development
             <div className="absolute right-[2%] top-[5%] block flex aspect-square w-[2em] items-center justify-center rounded-full bg-white text-[21px]">
@@ -41,7 +41,7 @@ const List = () => {
           </a>
           <a
             className="relative z-20 mb-[64px] block flex aspect-[2.4/1] items-end overflow-hidden rounded-[12px] bg-[#eee] p-[3%] font-anton text-[calc(16px_+_4vw)] text-white max-md:aspect-[1.7/1]"
-            href="/digital-marketing"
+            href="/apparel"
           >
             Apparel and Novelty Goods
             <div className="absolute right-[2%] top-[5%] block flex aspect-square w-[2em] items-center justify-center rounded-full bg-white text-[21px]">
