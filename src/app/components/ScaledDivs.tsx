@@ -306,70 +306,70 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
           duration: 0.5,
         });
 
-        // for (let i = 0; i < boxes.length - 1; i++) {
-        //   tl.to(".box", {
-        //     y: `-=${height}`,
-        //     delay: 1,
-        //     ease: "power2.inOut",
-        //     onStart: () => {
-        //       if (boxes[i]) {
-        //         gsap
-        //           .timeline()
-        //           .to(boxes[i-1], { opacity: "0" })
-        //           .to(
-        //             boxes[i],
-        //             {
-        //               opacity: "0.1",
-        //               scale: 0.5,
-        //               duration: 0.5,
-        //               ease: "power2.inOut",
-        //             },
-        //             "<"
-        //           )
-        //           .to(
-        //             boxes[i + 1],
-        //             {
-        //               opacity: "0.3",
-        //               scale: 0.7,
-        //               duration: 0.5,
-        //               ease: "power2.inOut",
-        //             },
-        //             "<"
-        //           )
-        //           .to(
-        //             boxes[i + 2],
-        //             {
-        //               opacity: "1",
-        //               scale: 1,
-        //               duration: 0.5,
-        //               ease: "power2.inOut",
-        //             },
-        //             "<"
-        //           )
-        //           .to(
-        //             boxes[i + 3],
-        //             {
-        //               opacity: "0.3",
-        //               scale: 0.7,
-        //               duration: 0.5,
-        //               ease: "power2.inOut",
-        //             },
-        //             "<"
-        //           )
-        //           .to(
-        //             boxes[i + 4],
-        //             {
-        //               opacity: "0.1",
-        //               scale: 0.5,
-        //               duration: 0.5,
-        //               ease: "power2.inOut",
-        //             },
-        //             "<"
-        //           );
-        //       }
-        //     },
-        //   });
-        // }
+        for (let i = 0; i < boxes.length - 1; i++) {
+          tl.to(".box", {
+            y: `-=${height}`,
+            delay: 1,
+            ease: "power2.inOut",
+            onStart: () => {
+              if (boxes[i]) {
+                gsap
+                  .timeline()
+                  .to(boxes[i-1], { opacity: "0" })
+                  .to(
+                    boxes[i],
+                    {
+                      opacity: "0.1",
+                      scale: 0.5,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  )
+                  .to(
+                    boxes[i + 1],
+                    {
+                      opacity: "0.3",
+                      scale: 0.7,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  )
+                  .to(
+                    boxes[i + 2],
+                    {
+                      opacity: "1",
+                      scale: 1,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  )
+                  .to(
+                    boxes[i + 3],
+                    {
+                      opacity: "0.3",
+                      scale: 0.7,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  )
+                  .to(
+                    boxes[i + 4],
+                    {
+                      opacity: "0.1",
+                      scale: 0.5,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  );
+              }
+            },
+          });
+        }
         tl.to(
           ".wrapper",
           {
@@ -420,7 +420,7 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
               audio2Ref.current.play();
             }
           },
-        });
+        },'+=1');
           tl.to(".main-container", {
             opacity: 0.2,
             duration: 1.5,
@@ -428,7 +428,7 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
             onComplete: () => {
               setTrigger((prev) => !prev);
             }
-          }, '+=150');
+          }, '+=15');
           if (!isMobileView) {
             tl.to(divRef.current, {
               width: "100vw",
@@ -679,7 +679,7 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
       };
       updateSpanWidths("DIGITAL", 0);
       updateSpanWidths("ROGYX", 1);
-      updateSpanWidths("MAKETING", 2);
+      updateSpanWidths("MARKETING", 2);
     }
   }, [
     position.clientX,
@@ -778,7 +778,7 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
                 transform: `translate3d(0px, ${rotating ? (rotate ? translateBottomHori : translateBottomRotate) : translateBottom}px, 0px) scaleX(${scaleX[2]}) scaleY(${bottomScaleY})`,
               }}
             >
-              {renderCharacters("MAKETING", spanWidths[2], [2, 7], 1)}
+              {renderCharacters("MARKETING", spanWidths[2], [2, 8], 1)}
             </div>
           </div>
         </div>
