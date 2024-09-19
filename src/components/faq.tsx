@@ -1,27 +1,28 @@
-"use client";
-import { ReactNode, useState } from "react";
+'use client'
+
+import { ReactNode, useState } from 'react'
 
 type item = {
-  id?: string;
-  title: string;
-  content: ReactNode;
-};
+  id?: string
+  title: string
+  content: ReactNode
+}
 
 type FaqPropsType = {
-  items: item[];
-};
+  items: item[]
+}
 
 const Item = ({ title, content }: item) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   return (
-    <div className="border-b border-solid border-b-[rgba(172,172,172,0.3)] hover-underline">
+    <div className="hover-underline border-b border-solid border-b-[rgba(172,172,172,0.3)]">
       <div
-        className="pr-[32px] py-[3%] max-md:py-[24px] cursor-pointer relative"
+        className="relative cursor-pointer py-[3%] pr-[32px] max-md:py-[24px]"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <div className="text-[24px] max-md:text-[18px] leading-none font-sans">
+        <div className="text-[24px] leading-none max-md:text-[18px]">
           {title}
-          <div className="text-white text-[21px] bg-black w-[1.5em] block flex justify-center items-center rounded-full aspect-square absolute top-1/2 right-0 translate-y-[-50%] rotate-90">
+          <div className="absolute right-0 top-1/2 block flex aspect-square w-[1.5em] translate-y-[-50%] rotate-90 items-center justify-center rounded-full bg-black text-[21px] text-white">
             <img
               src="/assets/images/arrow-w.svg"
               className="max-h-[50%]"
@@ -31,19 +32,23 @@ const Item = ({ title, content }: item) => {
         </div>
       </div>
       <div
-        className={`text-[21px] max-md:text-[18px] overflow-hidden font-sans ${isOpen ? "bg-[#eee] px-[16px] py-[24px] h-auto border-t border-solid border-t-[rgba(172,172,172,0.3)]" : "h-[0px]"}`}
+        className={`overflow-hidden text-[21px] max-md:text-[18px] ${
+          isOpen
+            ? 'h-auto border-t border-solid border-t-[rgba(172,172,172,0.3)] bg-[#eee] px-[16px] py-[24px]'
+            : 'h-[0px]'
+        }`}
       >
         <p>{content}</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const Faq = ({ items }: FaqPropsType) => {
   return (
     <section className="mb-[256px] max-md:mb-[82px]">
       <div className="container">
-        <div className="font-anton text-[calc(18px_+_8vw)] mb-32px">
+        <div className="mb-32px font-anton text-[calc(18px_+_8vw)]">
           <h2 className="uppercase leading-[1.25]">FAQS</h2>
         </div>
         <div>
@@ -53,7 +58,7 @@ const Faq = ({ items }: FaqPropsType) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Faq;
+export default Faq
