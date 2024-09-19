@@ -123,3 +123,81 @@ body {
 @keyframes blur-anim2 {
 	100% {	filter: blur(0); }
 }
+
+
+
+.tooltip.type-01:not(.is-active) {
+  --opacity: 1;
+  --scale: 1;
+}
+
+.tooltip.type-01 .char {
+  display: inline-block;
+  transform: scale(var(--scale, 0));
+  opacity: var(--opacity, 0);
+  transition: opacity 0.3s cubic-bezier(0.77, 0, 0.175, 1), transform 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-delay: calc(0.016s * var(--char-index));
+}
+
+
+.tooltip.type-02:not(.is-active) {
+  --y: 0;
+}
+
+.tooltip.type-02 .char {
+  display: inline-block;
+  transform: translateY(var(--y, 110%));
+  transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: calc(0.04s * var(--char-index));
+}
+
+
+
+.tooltip.type-03:not(.is-active) {
+	--skewX: 0deg;
+	--x: 0;
+}
+.text1,
+.text2,
+.text3 {
+  display: inline-block;
+	transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.text2,
+.text3 {
+	position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.text1 {
+  position: relative;
+	mask-image: linear-gradient(
+    to bottom, 
+    #000 33.3%, 
+    transparent 33.3%
+  );
+	transform: translateX(var(--x, -110%)) skewX(var(--skewX, 40deg));
+}
+
+.text2 {
+	mask-image: linear-gradient(
+		to bottom,
+		transparent 33.3%,
+		#000 33.3%,
+		#000 66.6%,
+		transparent 66.6%
+	);
+	transform: translateX(var(--x, 110%)) skewX(var(--skewX, -40deg));
+}
+
+.text3 {
+	mask-image: linear-gradient(
+    to bottom, 
+    transparent 66.6%, 
+    #000 66.6%
+  );
+	transform: translateX(var(--x, -110%)) skewX(var(--skewX, 40deg));
+}
+

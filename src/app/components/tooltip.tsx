@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -12,11 +12,11 @@ gsap.config({
 interface TooltipProps {
   text: string;
   children: ReactNode;
+  animation?: boolean,
 }
 
-const Tooltip = ({ text, children }: TooltipProps) => {
+const Tooltip = ({ text, children, animation = false }: TooltipProps) => {
   const [showTooltip, setShowTooltip] = useState(false);
-  const tooltipRef = useRef<HTMLSpanElement>(null);
 
   const isMobile = (): boolean => {
     if (typeof window !== "undefined") {
@@ -25,71 +25,51 @@ const Tooltip = ({ text, children }: TooltipProps) => {
     return false;
   };
 
-  const animateChars = () => {
-    const tl = gsap.timeline({ repeat: -1 });
-    if (tooltipRef.current) { 
-      gsap.set(tooltipRef.current.querySelectorAll('.char'), {
-        display: 'inline-block',
-      });
-      tl.to(tooltipRef.current.querySelectorAll('.char'), {
-        yPercent: 100,
-        stagger: 0.03,
-        duration: 0.2,
-      });
-      tl.to(tooltipRef.current.querySelectorAll('.char'), {
-        yPercent: 0,
-        stagger: 0.03,
-        duration: 0.2,
-      });
-
-      (tooltipRef.current as any).timeline = tl;
-    }
-  };
-
-  const stopAnimation = () => {
-    if (tooltipRef.current && (tooltipRef.current as any).timeline) {
-      (tooltipRef.current as any).timeline.restart().kill();
-    }
-  };
 
   const handleClick = () => {
     if (isMobile()) {
       setShowTooltip(true);
-      animateChars();
     }
   };
 
   const closeTooltip = () => {
     if (isMobile()) {
       setShowTooltip(false);
-      stopAnimation();
     }
   };
 
   const handleMouseEnter = () => {
     if (!isMobile()) {
       setShowTooltip(true);
-      animateChars();
     }
   };
 
   const handleMouseLeave = () => {
     if (!isMobile()) {
       setShowTooltip(false);
-      stopAnimation();
     }
   };
 
   return (
     <span className="cursor-pointer">
       <span
-        ref={tooltipRef}
         className="tooltip-text"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onClick={handleClick}
       >
-        {text}
+        {animation ?
+        <>
+        <span className="tooltip-chars inline-block overflow-hidden relative">{text}</span>
+        <span className="tooltip-ani inline-block overflow-hidden relative">
+          <span className="text1">{text}</span>
+          <span className="text2">{text}</span>
+          <span className="text3">{text}</span>
+        </span>
+        </>
+        :
+        <span>{text}</span>
+      }
       </span>
       {showTooltip && (
         <>

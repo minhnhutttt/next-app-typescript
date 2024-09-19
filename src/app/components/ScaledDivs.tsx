@@ -306,70 +306,70 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
           duration: 0.5,
         });
 
-        for (let i = 0; i < boxes.length - 1; i++) {
-          tl.to(".box", {
-            y: `-=${height}`,
-            delay: 1,
-            ease: "power2.inOut",
-            onStart: () => {
-              if (boxes[i]) {
-                gsap
-                  .timeline()
-                  .to(boxes[i-1], { opacity: "0" })
-                  .to(
-                    boxes[i],
-                    {
-                      opacity: "0.1",
-                      scale: 0.5,
-                      duration: 0.5,
-                      ease: "power2.inOut",
-                    },
-                    "<"
-                  )
-                  .to(
-                    boxes[i + 1],
-                    {
-                      opacity: "0.3",
-                      scale: 0.7,
-                      duration: 0.5,
-                      ease: "power2.inOut",
-                    },
-                    "<"
-                  )
-                  .to(
-                    boxes[i + 2],
-                    {
-                      opacity: "1",
-                      scale: 1,
-                      duration: 0.5,
-                      ease: "power2.inOut",
-                    },
-                    "<"
-                  )
-                  .to(
-                    boxes[i + 3],
-                    {
-                      opacity: "0.3",
-                      scale: 0.7,
-                      duration: 0.5,
-                      ease: "power2.inOut",
-                    },
-                    "<"
-                  )
-                  .to(
-                    boxes[i + 4],
-                    {
-                      opacity: "0.1",
-                      scale: 0.5,
-                      duration: 0.5,
-                      ease: "power2.inOut",
-                    },
-                    "<"
-                  );
-              }
-            },
-          });
-        }
+        // for (let i = 0; i < boxes.length - 1; i++) {
+        //   tl.to(".box", {
+        //     y: `-=${height}`,
+        //     delay: 1,
+        //     ease: "power2.inOut",
+        //     onStart: () => {
+        //       if (boxes[i]) {
+        //         gsap
+        //           .timeline()
+        //           .to(boxes[i-1], { opacity: "0" })
+        //           .to(
+        //             boxes[i],
+        //             {
+        //               opacity: "0.1",
+        //               scale: 0.5,
+        //               duration: 0.5,
+        //               ease: "power2.inOut",
+        //             },
+        //             "<"
+        //           )
+        //           .to(
+        //             boxes[i + 1],
+        //             {
+        //               opacity: "0.3",
+        //               scale: 0.7,
+        //               duration: 0.5,
+        //               ease: "power2.inOut",
+        //             },
+        //             "<"
+        //           )
+        //           .to(
+        //             boxes[i + 2],
+        //             {
+        //               opacity: "1",
+        //               scale: 1,
+        //               duration: 0.5,
+        //               ease: "power2.inOut",
+        //             },
+        //             "<"
+        //           )
+        //           .to(
+        //             boxes[i + 3],
+        //             {
+        //               opacity: "0.3",
+        //               scale: 0.7,
+        //               duration: 0.5,
+        //               ease: "power2.inOut",
+        //             },
+        //             "<"
+        //           )
+        //           .to(
+        //             boxes[i + 4],
+        //             {
+        //               opacity: "0.1",
+        //               scale: 0.5,
+        //               duration: 0.5,
+        //               ease: "power2.inOut",
+        //             },
+        //             "<"
+        //           );
+        //       }
+        //     },
+        //   });
+        // }
         tl.to(
           ".wrapper",
           {
@@ -392,9 +392,9 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
           "<"
         );
         lines.forEach((line) => {
-          const chars = line.querySelectorAll(".char");
+          const chars = line.querySelectorAll(".char:not(.tooltip-ani .char)");
           tl.to(chars, {
-            display: 'inline',
+            display: 'inline-block',
             stagger: 0.03,
             onStart: () => {
               if (audioRef.current) {
@@ -421,6 +421,25 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
             }
           },
         },'+=1');
+        tl.to(".tooltip.type-03 .tooltip-chars", {
+          display: 'none',
+        });
+        tl.to(".tooltip.type-03 .tooltip-ani .char", {
+          display: "inline-block",
+        });
+        tl.add(() => {
+          const tl2 = gsap.timeline({ repeat: -1 });
+          const tooltips = document.querySelectorAll('.tooltip');
+        
+          tooltips.forEach(tooltip => {
+            tl2.to(tooltip, {
+              onComplete: () => {
+                  tooltip.classList.toggle('is-active');
+              }
+            });
+          });
+        });
+
           tl.to(".main-container", {
             opacity: 0.2,
             duration: 1.5,
@@ -428,7 +447,7 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
             onComplete: () => {
               setTrigger((prev) => !prev);
             }
-          }, '+=15');
+          }, '+=1000');
           if (!isMobileView) {
             tl.to(divRef.current, {
               width: "100vw",
@@ -481,7 +500,9 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
             ease: "power2.inOut",
           });
     }
-    };
+  };
+    
+    
 
   useEffect(() => {
     setIsMobileView(isMobile());
@@ -838,65 +859,65 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
         <div className="wrapper02 font-noto opacity-0 md:w-[70vw] w-full md:h-full h-[70svh] absolute right-0 top-0 flex justify-center items-center">
           <div>
             <div
-              data-splitting
               className="text-left text-[calc(1.2vw+1.2svh)] md:text-[calc(1vw+1svh)]"
             >
-              <span className="type-line font-bold block overflow-hidden">
+              <span data-splitting className="type-line font-bold block overflow-hidden">
                 未来は、もう加速している。<span className="caret"></span>
               </span>
-              <span className="type-line font-bold block overflow-hidden">
+              <span data-splitting className="type-line font-bold block overflow-hidden">
                 過去を振り切り、前だけを見ろ。<span className="caret"></span>
               </span>
               <br />
-              <span className="type-line font-bold block overflow-hidden">
+              <span data-splitting className="type-line font-bold block overflow-hidden">
                 テンプレートを捨て去れ。<span className="caret"></span>
               </span>
               <span className="type-line font-bold block overflow-hidden">
-                世界標準の
-                <Tooltip text="モダン開発">
+                <span data-splitting>世界標準の</span>
+                <span data-splitting className="tooltip type-01"><Tooltip text="モダン開発">
                   モダン開発とは、最新のツール、技術、方法論を活用して
                   ソフトウェアを効率的に開発するアプローチです。クラウド、DevOps、アジャイル手法、マイクロサービス、コンテナ化などを取り入れ、迅速な開発とデプロイメント、継続的な改善を実現します。自動化、スケーラビリティ、セキュリティに重点を置き、ユーザーニーズに迅速に対応できる柔軟なシステム構築を目指します。
-                </Tooltip>
-                で新たな価値を創り出す。<span className="caret"></span>
+                </Tooltip></span>
+                <span data-splitting>で新たな価値を創り出す。</span><span className="caret"></span>
               </span>
               <br />
-              <span className="type-line font-bold block overflow-hidden">
+              <span data-splitting className="type-line font-bold block overflow-hidden">
                 個性を殺すコピーに背を向け、<span className="caret"></span>
               </span>
-              <span className="type-line font-bold block overflow-hidden">
+              <span data-splitting className="type-line font-bold block overflow-hidden">
                 無限の可能性を秘めたオリジナルを選び抜け。
                 <span className="caret"></span>
               </span>
               <br />
               <span className="type-line font-bold block overflow-hidden">
-                <Tooltip text="マーケティングは、今、時代に再定義される。">
+              <span data-splitting className="tooltip type-03"><Tooltip animation={true} text="マーケティングは、今、時代に再定義される。">
                   現代のマーケティングにおいて、総合的な戦略立案と実行が成功の鍵と考えます。
                   <br />
                   顧客のニーズや市場動向を包括的に理解し、製品開発から販売、顧客サービスまでの全プロセスを一貫して最適化できることにより、ターゲット市場への効果的なアプローチ、競合他社との差別化、顧客満足度の向上が可能となり、結果として売上増加と持続的な成長につながります。
-                </Tooltip>
+                </Tooltip></span>
                 <span className="caret"></span>
               </span>
-              <span className="type-line font-bold block overflow-hidden">
+              <span data-splitting className="type-line font-bold block overflow-hidden">
                 すべてを網羅し、成功を必ず手にする
                 <span className="caret"></span>
               </span>
               <br />
-              <span className="type-line font-bold block overflow-hidden">
+              <span data-splitting className="type-line font-bold block overflow-hidden">
                 日本のウェブを、新次元へと引き上げる。
                 <span className="caret"></span>
               </span>
-              <span className="type-line font-bold block overflow-hidden">
+              <span data-splitting className="type-line font-bold block overflow-hidden">
                 機能美とパフォーマンスで、確実に結果を出す。
                 <span className="caret"></span>
               </span>
               <br />
-              <span className="type-line font-bold block overflow-hidden">
-                <Tooltip text="プロアクティブなビジネスマン">
+              <span data-splitting className="type-line font-bold block overflow-hidden">
+
+              <span className="tooltip type-02"><Tooltip text="プロアクティブなビジネスマン">
                   プロアクティブなビジネスマンとは、未来志向で変革を追求する人物です。常に市場動向や業界の変化を分析し、新しい機会を積極的に探求します。創造的な解決策を提案し、リスクを管理しながら革新的なアイデアを実行に移します。受動的ではなく、主体的に状況を改善し、ビジネスの成長を牽引する姿勢を持っています。
-                </Tooltip>
+                </Tooltip></span>
                 だけに贈る、<span className="caret"></span>
               </span>
-              <span className="type-line font-bold block overflow-hidden">
+              <span data-splitting className="type-line font-bold block overflow-hidden">
                 紹介制のデジタルマーケティングエージェンシー。
                 <span className="caret"></span>
               </span>
