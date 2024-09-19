@@ -313,70 +313,70 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
           duration: 0.5,
         });
 
-        // for (let i = 0; i < boxes.length - 1; i++) {
-        //   tl.to(".box", {
-        //     y: `-=${height}`,
-        //     delay: 1,
-        //     ease: "power2.inOut",
-        //     onStart: () => {
-        //       if (boxes[i]) {
-        //         gsap
-        //           .timeline()
-        //           .to(boxes[i-1], { opacity: "0" })
-        //           .to(
-        //             boxes[i],
-        //             {
-        //               opacity: "0.1",
-        //               scale: 0.5,
-        //               duration: 0.5,
-        //               ease: "power2.inOut",
-        //             },
-        //             "<"
-        //           )
-        //           .to(
-        //             boxes[i + 1],
-        //             {
-        //               opacity: "0.3",
-        //               scale: 0.7,
-        //               duration: 0.5,
-        //               ease: "power2.inOut",
-        //             },
-        //             "<"
-        //           )
-        //           .to(
-        //             boxes[i + 2],
-        //             {
-        //               opacity: "1",
-        //               scale: 1,
-        //               duration: 0.5,
-        //               ease: "power2.inOut",
-        //             },
-        //             "<"
-        //           )
-        //           .to(
-        //             boxes[i + 3],
-        //             {
-        //               opacity: "0.3",
-        //               scale: 0.7,
-        //               duration: 0.5,
-        //               ease: "power2.inOut",
-        //             },
-        //             "<"
-        //           )
-        //           .to(
-        //             boxes[i + 4],
-        //             {
-        //               opacity: "0.1",
-        //               scale: 0.5,
-        //               duration: 0.5,
-        //               ease: "power2.inOut",
-        //             },
-        //             "<"
-        //           );
-        //       }
-        //     },
-        //   });
-        // }
+        for (let i = 0; i < boxes.length - 1; i++) {
+          tl.to(".box", {
+            y: `-=${height}`,
+            delay: 1,
+            ease: "power2.inOut",
+            onStart: () => {
+              if (boxes[i]) {
+                gsap
+                  .timeline()
+                  .to(boxes[i-1], { opacity: "0" })
+                  .to(
+                    boxes[i],
+                    {
+                      opacity: "0.1",
+                      scale: 0.5,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  )
+                  .to(
+                    boxes[i + 1],
+                    {
+                      opacity: "0.3",
+                      scale: 0.7,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  )
+                  .to(
+                    boxes[i + 2],
+                    {
+                      opacity: "1",
+                      scale: 1,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  )
+                  .to(
+                    boxes[i + 3],
+                    {
+                      opacity: "0.3",
+                      scale: 0.7,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  )
+                  .to(
+                    boxes[i + 4],
+                    {
+                      opacity: "0.1",
+                      scale: 0.5,
+                      duration: 0.5,
+                      ease: "power2.inOut",
+                    },
+                    "<"
+                  );
+              }
+            },
+          });
+        }
         tl.to(
           ".wrapper",
           {
