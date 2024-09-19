@@ -238,8 +238,12 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
   }, [isMuted]);
   const handleClick = () => {
     var tl = gsap.timeline();
+    const tl2 = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+
     const boxes = gsap.utils.toArray<HTMLElement>(".box");
     const lines = gsap.utils.toArray<HTMLElement>(".type-line");
+    const tooltips = document.querySelectorAll('.tooltip');
+
     const height = isMobileView ? 40 : 80;
     let cursor = document.querySelector("#cursor");
     gsap.fromTo(
@@ -258,6 +262,9 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
         });
         tl.set(".type-blur", {
           filter: "blur(100px)",
+        });
+        tl.to(".tooltip.type-03 .tooltip-chars", {
+          display: 'inline-block',
         });
         if (!isMobileView) {
           tl.to(divRef.current, {
@@ -428,15 +435,12 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
           display: "inline-block",
         });
         tl.add(() => {
-          const tl2 = gsap.timeline({ repeat: -1 });
-          const tooltips = document.querySelectorAll('.tooltip');
-        
           tooltips.forEach(tooltip => {
             tl2.to(tooltip, {
               onComplete: () => {
                   tooltip.classList.toggle('is-active');
               }
-            });
+            },"<");
           });
         });
 
@@ -447,7 +451,7 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
             onComplete: () => {
               setTrigger((prev) => !prev);
             }
-          }, '+=1000');
+          }, '+=15');
           if (!isMobileView) {
             tl.to(divRef.current, {
               width: "100vw",
@@ -498,6 +502,12 @@ const ScaledDivs = ({ loading }: { loading: boolean }) => {
             opacity: 1,
             duration: 1,
             ease: "power2.inOut",
+            onComplete: () => {
+              tl2.kill();
+              tooltips.forEach(tooltip => {
+                tooltip.classList.remove('is-active');
+              })
+            }
           });
     }
   };
