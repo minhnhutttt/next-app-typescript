@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef, useLayoutEffect, ReactNode } from "react";
 import { gsap } from 'gsap';
 
-const MouseDirectionDiv = ({children}: {children: ReactNode}) => {
+const HoverFill = ({children}: {children: ReactNode}) => {
   const divRef = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
-  const [direction, setDirection] = useState<string>("");
   const [previousMousePos, setPreviousMousePos] = useState<{ x: number, y: number } | null>(null);
 
   const handleMouseMove = (e: MouseEvent) => {
@@ -19,11 +18,23 @@ const MouseDirectionDiv = ({children}: {children: ReactNode}) => {
     const mouseY = previousMousePos.y;
     const tl = gsap.timeline();
     if (mouseX < rect.left) {
-      setDirection("EL");
+    //   EL
+      tl.set(pathRef.current, {
+        attr: { d: "M 0 0 H 20 Q 25 50 20 100 H 0 V 0 z" },
+      });
+      tl.to(pathRef.current, {
+        attr: { d: "M 0 0 H 100 Q 110 50 100 100 H 0 V 0 z" },
+      });
     } else if (mouseX > rect.right) {
-      setDirection("ER");
+    //   ER
+      tl.set(pathRef.current, {
+        attr: { d: "M 100 0 H 90 Q 65 50 90 100 H 100 V 0 z" },
+      });
+      tl.to(pathRef.current, {
+        attr: { d: "M 100 0 H 0 Q -10 50 0 100 H 100 V 0 z" },
+      });
     } else if (mouseY < rect.top) {
-      setDirection("ET");
+    //   ET
       tl.set(pathRef.current, {
         attr: { d: "M 0 100 V 0 Q 50 0 100 0 V 0 H 0 z" },
       });
@@ -31,7 +42,13 @@ const MouseDirectionDiv = ({children}: {children: ReactNode}) => {
         attr: { d: "M 0 100 V 100 Q 50 125 100 100 V 0 H 0 z" },
       });
     } else if (mouseY > rect.bottom) {
-      setDirection("EB");
+    //   EB
+      tl.set(pathRef.current, {
+        attr: { d: "M 0 100 V 80 Q 50 50 100 80 V 100 z" },
+      });
+      tl.to(pathRef.current, {
+        attr: { d: "M 0 100 V 0 Q 50 0 100 0 V 100 z" },
+      });
     }
   };
 
@@ -44,19 +61,31 @@ const MouseDirectionDiv = ({children}: {children: ReactNode}) => {
 
     const tl = gsap.timeline();
     if (mouseX < rect.left) {
-      setDirection("LL");
-    } else if (mouseX > rect.right) {
-      setDirection("LR");
-    } else if (mouseY < rect.top) {
-      setDirection("LT");
+    //   LL
       tl.set(pathRef.current, {
-        attr: { d: "M 0 100 V 0 Q 50 50 100 0 V 100 z" },
+        attr: { d: "M 0 0 H 60 Q 25 50 60 100 H 0 V 0 z" },
+      });
+      tl.to(pathRef.current, {
+        attr: { d: "M 0 0 H 0 Q 0 50 0 100 H 0 V 0 z" },
+      });
+    } else if (mouseX > rect.right) {
+    //   LR
+      tl.set(pathRef.current, {
+        attr: { d: "M 100 0 H 20 Q 65 50 20 100 H 100 V 0 z" },
+      });
+      tl.to(pathRef.current, {
+        attr: { d: "M 100 0 H 100 Q 100 50 100 100 H 100 V 0 z" },
+      });
+    } else if (mouseY < rect.top) {
+    //   LT
+      tl.set(pathRef.current, {
+        attr: { d: "M 0 100 V 100 Q 50 60 100 100 V 0 H 0 z" },
       });
       tl.to(pathRef.current, {
         attr: {d: "M 0 100 V 0 Q 50 0 100 0 V 0 H 0 z" },
       });
     } else if (mouseY > rect.bottom) {
-      setDirection("LB");
+    //   LB
       tl.set(pathRef.current, {
         attr: { d: "M 0 100 V 0 Q 50 50 100 0 V 100 z" },
       });
@@ -68,7 +97,7 @@ const MouseDirectionDiv = ({children}: {children: ReactNode}) => {
  
   useLayoutEffect(() => {
 
-  },[direction])
+  })
   useEffect(() => {
     document.addEventListener("mousemove", handleMouseMove);
 
@@ -91,9 +120,8 @@ const MouseDirectionDiv = ({children}: {children: ReactNode}) => {
     <div ref={divRef} className="relative mix-blend-difference">
       <svg viewBox="0 0 100 100" preserveAspectRatio="none" data-animate="card-hover-fill" className="fill-white absolute w-full h-full inset-0 mix-blend-difference"><path ref={pathRef} d="M 0 100 V 0 Q 0 50 0 100 V 0 H 0 z"></path></svg>
       {children}
-      <p>Mouse Direction: {direction}</p>
     </div>
   );
 };
 
-export default MouseDirectionDiv;
+export default HoverFill;

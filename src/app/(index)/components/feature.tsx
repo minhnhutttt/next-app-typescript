@@ -41,13 +41,13 @@ const Feature = () => {
       }, []);
       
     return (
-        <section  className="relative overflow-hidden md:px-10 px-5">
-            <div  id="textSection" className="w-full md:max-w-[1310px] max-w-[540px] mx-auto pt-[80px] pb-16 md:pt-[230px] md:pb-[180px]">
+        <section ref={ref} className="relative overflow-hidden md:px-10 px-5">
+            <div id="textSection" className="w-full md:max-w-[1310px] max-w-[540px] mx-auto pt-[80px] pb-16 md:pt-[230px] md:pb-[180px]">
             <h4 data-splitting className="md:text-[64px] text-[32px] text-center font-bold leading-[1.2]">
                 Biological Functions and Potential <br className="max-xl:hidden" />Applications of HGF
             </h4>
             <div className="flex md:gap-[60px] gap-[30px] mt-[60px] md:mt-[100px] max-md:flex-col max-md:items-center max-md:justify-center">
-                <div className="flex-1 border-2 border-white/20 rounded-[10px] max-w-[625px] overflow-hidden flex flex-col justify-between">
+                <div id="functions" className="fade-up flex-1 border-2 border-white/20 rounded-[10px] max-w-[625px] overflow-hidden flex flex-col justify-between">
                     <div>
                         <figure>
                             <img src="/assets/images/feature-img-01.png" alt="Functions of HGF" />
@@ -60,13 +60,13 @@ const Feature = () => {
                         </div>
                     </div>
                     <div className="flex justify-end mt-8 md:mt-12 md:px-6 px-4 md:pb-6 pb-4">
-                        <a href="/" className="flex items-center gap-2 md:text-[20px] text-[16px] font-bold">
+                        <a href="/" className="flex items-center gap-2 md:text-[20px] text-[16px] font-bold duration-150 hover:opacity-75">
                         <span>Learn more</span>
                         <span><img src="/assets/images/arrow.svg" alt="" /></span>
                         </a>
                     </div>
                 </div>
-                <div className="flex-1 border-2 border-white/20 rounded-[10px] max-w-[625px] overflow-hidden flex flex-col justify-between">
+                <div id="fields" className="fade-up flex-1 border-2 border-white/20 rounded-[10px] max-w-[625px] overflow-hidden flex flex-col justify-between">
                     <div>
                         <figure>
                             <img src="/assets/images/feature-img-02.png" alt=" Fields of application" />
@@ -95,7 +95,7 @@ const Feature = () => {
                     </div>
                     
                     <div className="flex justify-end mt-8 md:mt-12 md:px-6 px-4 md:pb-6 pb-4">
-                        <a href="/" className="flex items-center gap-2 md:text-[20px] text-[16px] font-bold">
+                        <a href="/" className="flex items-center gap-2 md:text-[20px] text-[16px] font-bold duration-150 hover:opacity-75">
                         <span>Learn more</span>
                         <span><img src="/assets/images/arrow.svg" alt="" /></span></a>
                     </div>

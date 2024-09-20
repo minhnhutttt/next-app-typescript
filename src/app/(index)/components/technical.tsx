@@ -1,6 +1,6 @@
 "use client";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
@@ -29,9 +29,8 @@ const Technical = () => {
     const ref = useScrollAnimations();
     const containerRef = useRef<HTMLDivElement>(null)
     const sliderRef = useRef<HTMLDivElement>(null)
-    useEffect(() => {
-        let ctx = gsap.context(() => {
-          let panels = gsap.utils.toArray('.panel')
+    useLayoutEffect(() => {
+      let panels = gsap.utils.toArray('.panel')
           const sliderContainer = sliderRef.current
           if (sliderContainer) {
             gsap.to(panels, {
@@ -41,21 +40,20 @@ const Technical = () => {
                 trigger: containerRef.current,
                 pin: true,
                 scrub: 1,
-                snap: 1 / (panels.length - 1),
                 start: 'center center',
-                end: () => '+=' + sliderContainer.offsetWidth / 3,
               },
             })
           }
-        }, containerRef)
     
-        return () => ctx.revert()
-      }, [])
+      return () => {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      };
+    }, []);
   return (
-    <section ref={ref} className="relative overflow-hidden pt-[100px] md:pt-[148px]">
+    <section id="technical" ref={ref} className="relative overflow-hidden pt-[100px] md:pt-[148px]">
         <div ref={containerRef} className="bg-[url('/assets/images/technical-bg.png')] bg-cover bg-no-repeat md:pb-[273px] pb-[160px]">
         <div className="w-full mx-auto pt-8 md:pt-10">
-          <h4 className="md:text-[64px] text-[32px] text-center font-bold">Technical Challenges and Solutions</h4>
+          <h4 className="fade-up md:text-[64px] text-[32px] text-center font-bold">Technical Challenges and Solutions</h4>
           <div className="relative md:mt-[160px] mt-20">
           <div className="flex items-center justify-center">
             <figure className="aspect-[420/428] w-[60vw] max-w-[420px] animate-[backwards-rotation_60s_infinite_linear] md:w-[29.167vw]">

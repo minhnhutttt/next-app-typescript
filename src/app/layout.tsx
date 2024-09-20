@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/header";
 import ScrollContainer from "@/components/scrollContainer";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <ScrollContainer>
           <Header />
           {children}
+          <Footer />
         </ScrollContainer>
       </body>
     </html>
