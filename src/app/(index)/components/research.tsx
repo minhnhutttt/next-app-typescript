@@ -22,12 +22,12 @@ const Card = ({ number, text, data, hoveredData }: { number: string, text: strin
     const opacityClass = isHovered || !hoveredData ? "opacity-100" : "xl:opacity-50";
     
     return (
-        <div data-reseach={data} className={`relative w-full max-w-[280px] size-[280px] flex justify-center items-center transition-opacity duration-300 ${opacityClass}`}>
+        <div data-reseach={data} className={`relative w-full max-w-[280px] md:max-w-[280px] md:h-[280px] size-[200px] flex justify-center items-center transition-opacity duration-300 ${opacityClass}`}>
             <span className="absolute inset-0 bg-[linear-gradient(180deg,_#405EFF_0%,_#0321BE_100%)]"></span>
-            <p className="font-['DIN_2014'] text-[100px] md:text-[160px] italic font-extrabold relative">{number}</p>
-            <p className="absolute md:text-[14px] text-[12px] bottom-4">{text}</p>
+            <p className="font-['DIN_2014'] text-[80px] md:text-[160px] italic font-extrabold relative">{number}</p>
+            <p className="absolute md:text-[14px] text-[12px] bottom-4 text-center">{text}</p>
             <figure className="absolute top-2.5 right-2.5">
-                <img src="/assets/images/card-arrow.svg" alt="" />
+                <img className="max-md:w-8" src="/assets/images/card-arrow.svg" alt="" />
             </figure>
         </div>
     );
@@ -41,12 +41,12 @@ const Research = () => {
     const handleMouseLeave = () => setHoveredData(null);
 
     return (
-        <section ref={ref} className="relative overflow-hidden md:px-10 px-5 bg-[url('/assets/images/research-bg.png')] bg-cover">
-            <div className="w-full md:max-w-[1180px] max-w-[540px] mx-auto pt-[124px] pb-12 md:pt-[225px] md:pb-[74px]">
+        <section ref={ref} className="relative bg-black overflow-hidden md:px-10 px-5 bg-[url('/assets/images/research-bg.png')] bg-cover md:pb-[204px] pb-[100px]">
+            <div className="w-full md:max-w-[1180px] max-w-[540px] mx-auto pt-[90px] pb-16 md:pt-[225px] md:pb-[100px]">
                 <h4 className="md:text-[64px] text-[32px] text-center font-bold leading-[1.2]">
                     Current Status of Research
                 </h4>
-                <div className="flex items-start md:mt-28 mt-16 gap-[100px] pr-5">
+                <div className="flex max-lg:flex-col-reverse items-start md:mt-28 mt-16 md:gap-[100px] gap-[50px] lg:pr-5 max-lg:max-w-[540px] max-lg:mx-auto">
                     <div className="space-y-10">
                         <div onMouseEnter={() => handleMouseEnter('1')} onMouseLeave={handleMouseLeave}>
                             <Item title="1. Regenerative medicine" text="Two types: A and B" data="1" hoveredData={hoveredData} />
@@ -67,7 +67,7 @@ const Research = () => {
                             <Item title="6. Angiogenesis therapy" text="Human trial phase" data="6" hoveredData={hoveredData} />
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 flex-1 gap-5">
+                    <div className="grid grid-cols-2 flex-1 gap-5 max-lg:w-full">
                         <div onMouseEnter={() => handleMouseEnter('1')} onMouseLeave={handleMouseLeave}>
                             <Card number="1" text="Regenerative medicine" data="1" hoveredData={hoveredData} />
                         </div>
@@ -88,6 +88,9 @@ const Research = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="flex justify-center">
+                <a href="" className="w-[300px] md:w-[455px] h-20 md:h-[100px] border-2 border-[#405EFF] bg-[linear-gradient(93deg,_rgba(64,_94,_255,_0.30)_0%,_rgba(3,_33,_190,_0.30)_102.1%)] [box-shadow:0px_4px_50px_0px_rgba(137,_207,_236,_0.29)] rounded-[10px] md:text-[24px] text-[18px] flex items-center justify-center">Learn more</a>
             </div>
         </section>
     );

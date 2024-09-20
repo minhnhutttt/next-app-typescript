@@ -42,11 +42,11 @@ const Feature = () => {
       
     return (
         <section  className="relative overflow-hidden md:px-10 px-5">
-            <div  id="textSection" className="w-full md:max-w-[1310px] max-w-[540px] mx-auto pt-[120px] pb-20 md:pt-[230px] md:pb-[180px]">
+            <div  id="textSection" className="w-full md:max-w-[1310px] max-w-[540px] mx-auto pt-[80px] pb-16 md:pt-[230px] md:pb-[180px]">
             <h4 data-splitting className="md:text-[64px] text-[32px] text-center font-bold leading-[1.2]">
-                Biological Functions and Potential <br />Applications of HGF
+                Biological Functions and Potential <br className="max-xl:hidden" />Applications of HGF
             </h4>
-            <div className="flex gap-[60px] mt-[100px] max-md:flex-col max-md:items-center max-md:justify-center">
+            <div className="flex md:gap-[60px] gap-[30px] mt-[60px] md:mt-[100px] max-md:flex-col max-md:items-center max-md:justify-center">
                 <div className="flex-1 border-2 border-white/20 rounded-[10px] max-w-[625px] overflow-hidden flex flex-col justify-between">
                     <div>
                         <figure>
