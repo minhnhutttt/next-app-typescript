@@ -17,7 +17,7 @@ const Header = () => {
             translate="no"
             href="/"
           >
-            Yumeaci inc.
+            <img className='max-w-[180px]' src="/assets/images/logo.svg" alt="Yumeaci inc." />
           </a>
           <div className="flex items-center justify-center">
             <nav

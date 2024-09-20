@@ -2,8 +2,8 @@ const Footer = () => {
   return (
     <>
       <div className="overflow-hidden" translate="no">
-        <div className="whitespace-nowrap p-[8px] text-center font-anton text-[calc(10vw)] uppercase leading-[1.25] max-md:text-[calc(10vw)]">
-        Innovate Create Elevate
+        <div className="whitespace-nowrap p-[8px] text-center font-anton text-[calc(9.5vw)] uppercase leading-[1.25]">
+        Innovate. Create. Elevate.
         </div>
       </div>
       <footer className="border-t border-solid border-t-[rgba(172,172,172,0.3)]">
@@ -16,7 +16,7 @@ const Footer = () => {
                   translate="no"
                   href="/"
                 >
-                  Yumeaci inc.
+                  <img className='max-w-[180px]' src="/assets/images/logo.svg" alt="Yumeaci inc." />
                 </a>
               </div>
               <div className="max-md:mb-[24px]">
@@ -29,7 +29,7 @@ const Footer = () => {
                     </li>
                     <li className="py-[8px]">
                       <a className="hover-underline" href="/web-development">
-                      Web  Development
+                        Web  Development
                       </a>
                     </li>
                     <li className="py-[8px]">
@@ -39,7 +39,7 @@ const Footer = () => {
                     </li>
                     <li className="py-[8px]">
                       <a className="hover-underline" href="/apparel">
-                      Apparel and Novelty Goods
+                        Apparel and Novelty Goods
                       </a>
                     </li>
                   </ul>
@@ -71,14 +71,10 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col gap-[16px]">
                   <div>
-                    <a href="mailto:info@yumeaci.co.jp">
-                      info@yumeaci.co.jp
-                    </a>
+                    <a href="mailto:info@yumeaci.co.jp">info@yumeaci.co.jp</a>
                   </div>
                   <div>
-                    <span>
-                    〒125-0002  東京都葛飾区西亀有4-19-5
-                    </span>
+                    <span>〒125-0002 東京都葛飾区西亀有4-19-5</span>
                   </div>
                 </div>
               </div>

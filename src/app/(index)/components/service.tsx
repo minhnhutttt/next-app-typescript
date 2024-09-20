@@ -6,7 +6,8 @@ const Service = () => {
       <section className="mb-[256px] max-md:mb-[82px]">
         <div className="container">
           <div className="mx-auto max-w-[1200px] text-center text-[calc(18px_+_2vw)] uppercase leading-[1.2]">
-          ホームページ制作/ システム開発 / UI/UXデザイン / SEO対策 / アパレル製品の企画 / ノベルティグッズの企画
+            ホームページ制作/ システム開発 / UI/UXデザイン / SEO対策 /
+            アパレル製品の企画 / ノベルティグッズの企画
           </div>
         </div>
       </section>
@@ -19,7 +20,7 @@ const Service = () => {
           </div>
           <div className="flex flex-col gap-[16px]">
             <a
-              className="sticky top-[10rem] block w-full bg-[#c9b5ab] p-[8%]"
+              className="sticky top-[10rem] block w-full bg-[#EBD7CA] p-[8%]"
               href="/web-development"
             >
               <div
@@ -29,11 +30,12 @@ const Service = () => {
                 Web Site Production
               </div>
               <div className="max-w-[600px] text-[21px] max-md:text-[18px]">
-                Yumeaciのホームページ制作サービスは、クライアントのニーズに応じた魅力的で機能的なウェブサイトを提供します。最新のデザインとユーザーエクスペリエンス（UX）を重視し、訪問者が簡単に情報を見つけられるように構築します。Reactを使用して高性能なウェブアプリケーションを開発し、スムーズな操作性を実現しています。また、SEO対策も施し、検索エンジンでの visibility を高めることで、ビジネスの成長をサポートします。
+                Yumeaciのホームページ制作サービスは、クライアントのニーズに応じた魅力的で機能的なウェブサイトを提供します。最新のデザインとユーザーエクスペリエンス（UX）を重視し、訪問者が簡単に情報を見つけられるように構築します。Reactを使用して高性能なウェブアプリケーションを開発し、スムーズな操作性を実現しています。また、SEO対策も施し、検索エンジンでの
+                visibility を高めることで、ビジネスの成長をサポートします。
               </div>
             </a>
             <a
-              className="sticky top-[10rem] block w-full bg-[#ab9247] p-[8%]"
+              className="sticky top-[10rem] block w-full bg-[#C9B05F] p-[8%]"
               href="/system-development"
             >
               <div
@@ -47,7 +49,7 @@ const Service = () => {
               </div>
             </a>
             <a
-              className="sticky top-[10rem] block w-full bg-[#97b0bd] p-[8%]"
+              className="sticky top-[10rem] block w-full bg-[#B1CCDD] p-[8%]"
               href="/apparel"
             >
               <div
