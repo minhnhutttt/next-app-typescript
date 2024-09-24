@@ -1,6 +1,5 @@
 "use client";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,39 +9,37 @@ gsap.config({
 });
 
 const Feature = () => {
-    const ref = useScrollAnimations();
-
-    useLayoutEffect(() => {
-        let trigger = document.querySelector("#textSection");
-        const chars = gsap.utils.toArray<HTMLElement>(".char");
-        gsap.set(chars, {
-            display: 'inline-block',
-            opacity: 0.4,
-        });
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: trigger,
-            start: "top top",
-            end: "+=150%",
-            scrub: 0.75,
-            pin: true,
-          },
-        });
-        tl.to(chars, {
-          opacity: 1,
-          stagger: 0.1,
-          duration: 0.5,
-        }, 0.01);
+    const containerRef = useRef<HTMLDivElement>(null)
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+            const chars = document.querySelectorAll(".char");
+            gsap.set(chars, {
+                display: 'inline-block',
+                opacity: 0.4,
+            });
+            const tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top top",
+                end: "+=150%",
+                scrub: 0.75,
+                pin: true,
+              },
+            });
+            tl.to(chars, {
+              opacity: 1,
+              stagger: 0.1,
+              duration: 0.5,
+            }, 0.01);
+          }, [containerRef]);
       
-        return () => {
-          ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-          tl.kill();
-        };
+          return () => ctx.revert();
+        
       }, []);
       
     return (
-        <section ref={ref} className="relative overflow-hidden md:px-10 px-5">
-            <div id="textSection" className="w-full md:max-w-[1310px] max-w-[540px] mx-auto pt-[80px] pb-16 md:pt-[230px] md:pb-[180px]">
+        <section className="relative overflow-hidden md:px-10 px-5">
+            <div ref={containerRef} className="w-full md:max-w-[1310px] max-w-[540px] mx-auto pt-[80px] pb-16 md:pt-[230px] md:pb-[180px]">
             <h4 data-splitting className="md:text-[64px] text-[32px] text-center font-bold leading-[1.2]">
                 Biological Functions and Potential <br className="max-xl:hidden" />Applications of HGF
             </h4>
