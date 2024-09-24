@@ -1,7 +1,11 @@
-import Image from "next/image";
+import FV from "./(index)/components/fv";
+import Introduction from "./(index)/components/introduction";
 
 export default function Home() {
   return (
-    <main></main>
+    <main>
+      <FV />
+      <Introduction />
+    </main>
   );
 }
