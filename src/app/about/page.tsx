@@ -5,6 +5,7 @@ import PageTitle from '@/components/pageTitle'
 import Video from './components/video'
 import GlobalDigitalAgency from './components/globalDigitalAgency'
 import Info from './components/info'
+import Greeting from './components/greeting'
 
 export const metadata: Metadata = {
   title: 'About us',
@@ -28,6 +29,7 @@ const AboutPage = () => {
       <PageTitle>ABOUT US</PageTitle>
       <Video />
       <GlobalDigitalAgency />
+      <Greeting />
       <Info />
     </>
   )

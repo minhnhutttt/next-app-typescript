@@ -3,7 +3,7 @@ const Footer = () => {
     <>
       <div className="overflow-hidden" translate="no">
         <div className="whitespace-nowrap p-[8px] text-center font-anton text-[calc(9.5vw)] uppercase leading-[1.25]">
-        Innovate. Create. Elevate.
+          Innovate. Create. Elevate.
         </div>
       </div>
       <footer className="border-t border-solid border-t-[rgba(172,172,172,0.3)]">
@@ -16,7 +16,11 @@ const Footer = () => {
                   translate="no"
                   href="/"
                 >
-                  <img className='max-w-[180px]' src="/assets/images/logo.svg" alt="Yumeaci inc." />
+                  <img
+                    className="max-w-[180px]"
+                    src="/assets/images/logo.svg"
+                    alt="Yumeaci inc."
+                  />
                 </a>
               </div>
               <div className="max-md:mb-[24px]">

@@ -13,7 +13,7 @@ const FV = () => {
     <div className="mb-[256px] max-md:mb-[82px]">
       <div className="pt-[30vh] max-md:pt-[20vh]">
         <h1 className="relative mb-[-1.5em] px-[32px]  font-anton text-[calc(24px_+_18vw)] uppercase leading-none">
-        Innovate.
+          Innovate.
           <br />
           <span className="stroke">Create.</span>
           <br />
@@ -21,7 +21,7 @@ const FV = () => {
         </h1>
         <div>
           <video ref={videoRef} muted loop className="w-full" poster="">
-            <source src="/assets/videos/mv.mov" type="video/mp4" />
+            <source src="/assets/videos/mv.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
