@@ -1,4 +1,5 @@
 import FV from "./(index)/components/fv";
+import Howto from "./(index)/components/howto";
 import Introduction from "./(index)/components/introduction";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <main>
       <FV />
       <Introduction />
+      <Howto />
     </main>
   );
 }
