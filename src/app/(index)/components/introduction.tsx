@@ -7,7 +7,7 @@ const Introduction = () => {
     const ref = useScrollAnimations();
   return (
     <section ref={ref} className="relative mt-[-24vw] md:mt-[-7vw] dt:-mt-[108px]">
-        <div className="bg-[url('/assets/images/bg-01.png')] max-dt:bg-right-top bg-cover md:bg-[length:100%_100%] max-md:pb-[36vw] md:h-[94.306vw] dt:h-[1358px] px-5 relative">
+        <div id="introduction" className="bg-[url('/assets/images/bg-01.png')] max-dt:bg-right-top bg-cover md:bg-[length:100%_100%] max-md:pb-[36vw] md:h-[94.306vw] dt:h-[1358px] px-5 relative">
             <div className="flex justify-center max-md:flex-col max-md:items-center">
                 <figure className="md:mt-[-5.556vw] mt-[-14vw] dt:mt-[-80px] relative z-10">
                     <img className="fade-up max-md:w-[60vw] max-dt:w-[27.708vw]" src="/assets/images/introduction-img.png" alt="" />

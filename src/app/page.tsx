@@ -1,13 +1,19 @@
+import Deals from "./(index)/components/deals";
 import FV from "./(index)/components/fv";
-import Howto from "./(index)/components/howto";
 import Introduction from "./(index)/components/introduction";
+import Enjoy from "./(index)/components/enjoy";
+import Use from "./(index)/components/use";
+import FAQ from "./(index)/components/faq/faq";
 
 export default function Home() {
   return (
     <main>
       <FV />
       <Introduction />
-      <Howto />
+      <Enjoy />
+      <Deals />
+      <Use />
+      <FAQ />
     </main>
   );
 }

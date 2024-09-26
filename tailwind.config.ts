@@ -19,6 +19,8 @@ const config: Config = {
     },
     fontFamily: {
       gothic: ["Hiragino Kaku Gothic Std", "sans-serif"],
+      mplus: ["var(--font-mp)", "sans-serif"],
+      roboto: ["var(--font-roboto)", "sans-serif"],
     },
   },
   plugins: [],

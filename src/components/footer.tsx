@@ -1,34 +1,85 @@
 "use client";
 
+interface NavLink {
+    link: string;
+    text: string;
+    target?: string;
+  }
+  
+  const links: NavLink[] = [
+    {
+      link: "/#introduction",
+      text: "Campaign Questとは?　",
+    },
+    {
+        link: "/#",
+        text: "働き方",
+      },
+      {
+        link: "/#",
+        text: "アイテム",
+      },
+      {
+        link: "/#",
+        text: "メリット",
+      },
+      {
+        link: "/#",
+        text: "使い方",
+      },
+      {
+        link: "/#faq",
+        text: "FAQ",
+      },
+      {
+        link: "/#",
+        text: "問い合わせ",
+      },
+  ];
 const Footer = () => {
   return (
-    <section className="relative overflow-hidden bg-[#0321BE] md:pt-[150px] pt-20">
-        <div className="w-full max-w-[1080px] mx-auto px-5">
-            <div className="flex justify-center items-center">
-                <a href="/" className="relative w-full max-w-[800px] h-[100px] md:h-[200px] flex items-center justify-center md:text-[80px] text-[28px] font-bold border-2 border-white hover:opacity-70 duration-150">
-                WHITEPAPER
-                <span className="absolute right-5"><img className="max-md:w-10" src="/assets/images/arrow-wp.svg" alt="" /></span>
-                </a>
-            </div>
-            <div className="mt-[60px] md:mt-[105px] mb-8 md:mb-12">
-                <ul className="flex flex-wrap gap-x-5 gap-y-4 md:text-[16px] text-[15px]">
-                    <li><a className="hover:opacity-75 duration-150" href="/#technology">Background of HGF Technology</a></li>
-                    <li><a className="hover:opacity-75 duration-150" href="/#functions">Functions of HGF</a></li>
-                    <li><a className="hover:opacity-75 duration-150" href="/#fields">Fields of application</a></li>
-                    <li><a className="hover:opacity-75 duration-150" href="/#research">Current Status of Research</a></li>
-                    <li><a className="hover:opacity-75 duration-150" href="/#technical">Technical issues and solutions</a></li>
-                    <li><a className="hover:opacity-75 duration-150" href="/#ethical">Ethical and regulatory issues</a></li>
-                    <li><a className="hover:opacity-75 duration-150" href="/#framework">HGF DAO Framework</a></li>
-                    <li><a className="hover:opacity-75 duration-150" href="/#prospects">Future Prospects</a></li>
-                    <li><a className="hover:opacity-75 duration-150" href="/#general">General summary</a></li>
-                </ul>
-            </div>
-            <p className="text-center text-[13px] md:text-[15px] font-light">© 2024 HGF DAO</p>
+    <section className="relative">
+        <div className="bg-[#E6ECEA] relative">
+            <h5>
+                <img className="w-full max-md:hidden" src="/assets/images/footer-banner.png" alt="キャンペーンクエストってLINEから登録できるんだ！" />
+                <img className="md:hidden" src="/assets/images/footer-banner-sp.png" alt="キャンペーンクエストってLINEから登録できるんだ！" />
+            </h5>
         </div>
-        
-        <div className="flex justify-center items-center md:mt-16 mt-8">
-                <img src="/assets/images/hgf-dao-footer.svg" alt="" />
+        <div className="relative bg-[url('/assets/images/footer-bg.png')] bg-cover bg-top mt-[-100px] md:mt-[-200px] px-5 pb-9">
+            <div className="w-full max-w-[1140px] mx-auto max-md:pt-10">
+                <div className="flex items-end">
+                    <figure className="pb-10">
+                        <img src="/assets/images/footer-img.png" alt="" />
+                    </figure>
+                    <div className="">
+                        <a href="/" className="">
+                            <img src="/assets/images/line-button.png" alt="" />
+                        </a>
+                        <div className="md:-ml-[110px] -ml-[70px]">
+                        <img src="/assets/images/footer-bubble.png" alt="" />
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div className="flex justify-end mt-9">
+                <img src="/assets/images/footer-text.svg" alt="" />
+            </div>
+            <div className="w-full max-w-[1280px] mx-auto mt-5">
+            <ul className="flex items-center max-md:justify-center flex-wrap flex-1 gap-y-5 gap-x-4">
+                {links.map(({ link, text, target }, index) => (
+                <li key={index} className="flex items-center">
+                    <a
+                    href={link}
+                    className="text-[19px] text-[#111010] font-medium duration-150 hover:opacity-75 px-3 lg:px-5 flex items-center justify-center"
+                    target={target}
+                    >
+                    {text}
+                    </a>
+                </li>
+                ))}
+            </ul>
+            </div>
+        </div>
     </section>
   );
 };

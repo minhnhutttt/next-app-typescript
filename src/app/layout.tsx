@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Noto_Sans, M_PLUS_1p, Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 const noto = Noto_Sans({ subsets: ["latin"] });
+const mplus = M_PLUS_1p({ weight: ['400', '500', '900'], subsets: ["latin"], variable: '--font-mp' });
+const roboto = Roboto({  weight: ['400', '500', '900'], subsets: ["latin"], variable: '--font-roboto' });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={noto.className}>
+      <body className={`${noto.className} ${mplus.variable} ${roboto.variable}`}>
         <Header />
         {children}
         <Footer />
