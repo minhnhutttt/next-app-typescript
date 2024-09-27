@@ -8,7 +8,7 @@ const FV = () => {
                 <img className="max-md:w-[58vw] max-dt:w-[48.333vw]" src="/assets/images/fv-text.svg" alt="" />
             </h1>
         </div>
-        <figure className="absolute top-0 right-[1.944vw]">
+        <figure className="anim-poyopoyo absolute top-0 right-[1.944vw]">
           <img className="w-[60vw] md:w-[37.222vw]" src="/assets/images/fv-bubble.svg" alt="" />
         </figure>
     </section>

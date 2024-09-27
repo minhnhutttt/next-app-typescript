@@ -25,7 +25,7 @@ const Introduction = () => {
                                 今なら年間パスポートNFTを無料で受け取れるチャンス！
                             </p>
                             <div className="flex justify-center mt-[2.431vw] dt:mt-7">
-                                <a href="https://lin.ee/5WfLOMX" target="_blank" className="w-[36vw] md:w-[22.222vw] dt:w-[320px] h-[10vw] md:h-[5.556vw] dt:h-20 bg-[#2CBE00] flex items-center justify-center rounded-[2.917vw] dt:rounded-[42px] md:text-[2.083vw] text-[3.6vw] dt:text-[30px] text-white font-bold">公式LINEへ</a>
+                                <a href="https://lin.ee/5WfLOMX" target="_blank" className="anim-poyoyon3 w-[36vw] md:w-[22.222vw] dt:w-[320px] h-[10vw] md:h-[5.556vw] dt:h-20 bg-[#2CBE00] flex items-center justify-center rounded-[2.917vw] dt:rounded-[42px] md:text-[2.083vw] text-[3.6vw] dt:text-[30px] text-white font-bold">公式LINEへ</a>
                             </div>
                         </div>
                         <figure className="max-md:absolute max-md:top-[5vw] max-md:right-[10vw]">
@@ -45,7 +45,10 @@ const Introduction = () => {
                             今すぐキャンペーン詳細を確認し、ワンタップでNFTクーポンをゲットしよう！
                     </Article>
                 </div>
-                <figure className="md:ml-[-8.611vw] dt:ml-[-124px] mt-[-2.778vw] dt:mt-[-40px]">
+                <figure className="md:ml-[-0.972vw] dt:ml-[-14px] relative">
+                    <figure className="absolute right-[40px] top-[-50px] z-10">
+                        <img className="anim-poyopoyo max-dt:w-[9.236vw] max-md:w-[20vw]" src="/assets/images/bubble-01.png" alt="" />
+                    </figure>
                     <img className="fade-up max-md:w-[70vw] max-dt:w-[39.722vw]" src="/assets/images/img-01.png" alt="" />
                 </figure>
             </div>

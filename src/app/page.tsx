@@ -16,7 +16,6 @@ export default function Home() {
         <FV />
         <Introduction />
       </div>
-
       <Enjoy />
       <Deals />
       <Use />

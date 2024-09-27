@@ -3,6 +3,7 @@ import { Noto_Sans, M_PLUS_1p, Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import ScrollContainer from "@/components/scrollContainer";
 
 const noto = Noto_Sans({ subsets: ["latin"] });
 const mplus = M_PLUS_1p({ weight: ['400', '500', '900'], subsets: ["latin"], variable: '--font-mp' });
@@ -21,9 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${noto.className} ${mplus.variable} ${roboto.variable}`}>
-        <Header />
-        {children}
-        <Footer />
+        <ScrollContainer>
+          <Header />
+          {children}
+          <Footer />
+        </ScrollContainer>
       </body>
     </html>
   );
