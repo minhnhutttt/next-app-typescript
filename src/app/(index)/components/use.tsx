@@ -6,7 +6,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Use = () => {
     const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative overflow-hidden pb-[40px] px-5">
+    <section ref={ref} className="relative overflow-hidden pb-[40px] px-5 z-20">
         <div className="">
             <h3 className="fade-up text-center md:text-[50px] text-[36px] font-bold font-gothic">使い方</h3>
             <div className="flex flex-wrap justify-center w-full max-w-[1220px] mx-auto gap-8 md:gap-11 mt-12 md:mt-20 xl:mt-36 max-md:max-w-[380px]">
@@ -19,8 +19,8 @@ const Use = () => {
                     <div className="md:mt-10 px-5 mt-8 pb-5">
                         <p className="text-center font-mplus font-medium text-[18px]">DIVER Walletをダウンロード</p>
                         <div className="flex justify-center gap-1 mt-2">
-                            <a href="/" className=""><img src="/assets/images/btn-appstore.png" alt="" /></a>
-                            <a href="/" className=""><img src="/assets/images/btn-google.png" alt="" /></a>
+                            <a href="https://apps.apple.com/jp/app/diver-wallet/id6444421722" target="_blank" className=""><img src="/assets/images/btn-appstore.png" alt="" /></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.hyerdesign.diver.wallet&hl=ln" target="_blank" className=""><img src="/assets/images/btn-google.png" alt="" /></a>
                         </div>
                     </div>
                 </div>

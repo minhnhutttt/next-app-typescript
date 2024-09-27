@@ -8,8 +8,15 @@ import FAQ from "./(index)/components/faq/faq";
 export default function Home() {
   return (
     <main>
-      <FV />
-      <Introduction />
+      <div className="relative overflow-hidden">
+        <div className="confetti">
+        <span></span><span></span><span></span>  <span></span><span></span><span></span>  <span></span><span></span><span></span>  <span></span><span></span>
+        </div>
+
+        <FV />
+        <Introduction />
+      </div>
+
       <Enjoy />
       <Deals />
       <Use />

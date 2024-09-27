@@ -1,7 +1,13 @@
 "use client";
 
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { useEffect, useRef } from "react";
+import confetti from "canvas-confetti";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// Đăng ký plugin ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 const data = [
     {
         id: '01',
@@ -25,8 +31,26 @@ const data = [
 
 const Deals = () => {
     const ref = useScrollAnimations();
+    const confettiSectionRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+      ScrollTrigger.create({
+        trigger: confettiSectionRef.current,
+        start: 'top +=30%', 
+        onEnter: () => fireConfetti(), 
+      });
+    }, []);
+  
+    const fireConfetti = () => {
+      confetti({
+        particleCount: 1000,
+        spread: 1200,
+        origin: { y: 0.6 },
+        scalar: 1.5,
+      });
+    };
   return (
-    <section ref={ref} className="relative overflow-hidden bg-[url('/assets/images/bg-03.png')] bg-cover md:bg-[length:100%_100%] bg-center pb-[70px] px-5 ">
+    <section ref={confettiSectionRef} className="relative overflow-hidden bg-[url('/assets/images/bg-03.png')] bg-cover md:bg-[length:100%_100%] bg-center pb-[70px] px-5 z-20">
         <div className="mt-32 md:mt-24">
         <div className="fade-up flex justify-center items-start gap-2 md:gap-12">
                 <span className="max-md:hidden"><img src="/assets/images/ribbon-left.png" alt="" /></span>
@@ -62,7 +86,7 @@ const Deals = () => {
             </p>
             <div className="fade-up flex justify-center relative z-10">
                 <div className="relative pt-32 md:pt-48 xl:pt-20 px-10 md:px-5">
-                    <a href="/" className=""><img className="max-md:w-[260px]" src="/assets/images/line-button.png" alt="" /></a>
+                    <a href="https://lin.ee/5WfLOMX" target="_blank" className=""><img className="max-md:w-[260px]" src="/assets/images/line-button.png" alt="" /></a>
                     <div className="absolute xl:left-full max-md:right-0 md:left-1/2 top-5 aspect-[375/159] w-[240px] md:w-[375px] pl-10 bg-[url('/assets/images/bubble.png')] bg-cover flex items-center justify-center">
                         <p className="md:text-[22px] text-[17px] font-medium">DIVER Walletの<br />
                         アドレスを送るだけ！</p>

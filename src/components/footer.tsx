@@ -52,11 +52,12 @@ const Footer = () => {
                         <img src="/assets/images/footer-img.png" alt="" />
                     </figure>
                     <div className="">
-                        <a href="/" className="">
+                        <a href="https://lin.ee/5WfLOMX" target="_blank" className="">
                             <img src="/assets/images/line-button.png" alt="" />
                         </a>
-                        <div className="md:-ml-[110px] -ml-[70px]">
-                        <img src="/assets/images/footer-bubble.png" alt="" />
+                        <div className="md:-ml-[110px] -ml-[70px] relative max-md:w-[61.8vw]">
+                          <img className="" src="/assets/images/footer-bubble.png" alt="" />
+                          <p className="absolute top-[4vw] md:top-8 left-[10vw] md:left-[90px] font-mplus md:text-[24px] lg:text-[28px] text-[3vw] font-medium">あの店キャンペーンやってるよ！</p>
                         </div>
                     </div>
                 </div>
