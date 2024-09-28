@@ -289,3 +289,7 @@ body {
     transform: skew(0.3deg, 0.3deg);
   }
 }
+
+[data-scroll='in'].anim-img-01 {
+  
+}

@@ -41,14 +41,21 @@ const Footer = () => {
     <section className="relative">
         <div className="bg-[#E6ECEA] relative">
             <h5>
+              <div className="absolute left-[5vw] md:left-[25.5vw] top-[14vw] md:top-[7.5vw]">
+                <img className="w-[50vw] md:w-[30.069vw]" src="/assets/images/footer-banner-text.svg" alt="" />
+              </div>
+              <div className="anim-poyopoyo absolute left-[75vw] top-[10vw] md:left-[76vw] md:top-[13vw]">
+                <img className="w-[16vw] md:w-[10.694vw]" src="/assets/images/footer-banner-bubble.svg" alt="" />
+              </div>
                 <img className="w-full max-md:hidden" src="/assets/images/footer-banner.png" alt="キャンペーンクエストってLINEから登録できるんだ！" />
                 <img className="md:hidden" src="/assets/images/footer-banner-sp.png" alt="キャンペーンクエストってLINEから登録できるんだ！" />
             </h5>
         </div>
         <div className="relative bg-[url('/assets/images/footer-bg.png')] bg-cover bg-top mt-[-100px] md:mt-[-200px] px-5 pb-9">
-            <div className="w-full max-w-[1140px] mx-auto max-md:pt-10">
-                <div className="flex items-end">
-                    <figure className="pb-10">
+            <div className="w-full max-w-[940px] mx-auto max-md:pt-10">
+                <div className="flex items-end pt-[40px] md:pt-[94px]">
+                    <figure className="pb-10 relative">
+                      <img src="/assets/images/footer-img-bubble.svg" alt="" className="anim-poyopoyo absolute top-[-46%] left-[-33%] w-[53.31%]" />
                         <img src="/assets/images/footer-img.png" alt="" />
                     </figure>
                     <div className="">

@@ -45,11 +45,17 @@ const Introduction = () => {
                             今すぐキャンペーン詳細を確認し、ワンタップでNFTクーポンをゲットしよう！
                     </Article>
                 </div>
-                <figure className="md:ml-[-0.972vw] dt:ml-[-14px] relative">
+                <figure className="md:ml-[-0.972vw] dt:ml-[-14px] relative max-md:pb-[28vw]">
                     <figure className="absolute right-[40px] top-[-50px] z-10">
                         <img className="anim-poyopoyo max-dt:w-[9.236vw] max-md:w-[20vw]" src="/assets/images/bubble-01.png" alt="" />
                     </figure>
                     <img className="fade-up max-md:w-[70vw] max-dt:w-[39.722vw]" src="/assets/images/img-01.png" alt="" />
+                    <div data-scroll className="group anim-img-01 absolute md:w-[39.861vw] dt:w-[573px] top-[45vw] md:top-[21.528vw] dt:top-[310px] right-[2.778vw] dt:right-[40px]">
+                        <img className="relative z-10" src="/assets/images/introduction-ani.png" alt="" />
+                        <img className="group-data-[scroll=in]:left-0 left-[30%] duration-300 ease-out absolute top-[20%] w-[37.28%]" src="/assets/images/introduction-ani-01.png" alt="" />
+                        <img className="group-data-[scroll=in]:right-0 right-[30%] duration-300 ease-out absolute top-[18%] w-[28.22%]" src="/assets/images/introduction-ani-02.png" alt="" />
+                        <img className="group-data-[scroll=in]:right-[14%] right-[30%] group-data-[scroll=in]:top-[68%] top-[30%] absolute w-[17.94%] duration-300 ease-out" src="/assets/images/introduction-ani-03.png" alt="" />
+                    </div>
                 </figure>
             </div>
             <div className="absolute dt:bottom-[245px] bottom-[17.014vw] left-[4.861vw]">
@@ -77,7 +83,7 @@ const Introduction = () => {
         </div>
         <div className="relative pb-[6vw] md:pb-[2.778vw] dt:pb-10 bg-[#FFF8BC]/[0.2] ">
         <div className="md:bg-[url('/assets/images/bg-02.png')] bg-[url('/assets/images/bg-02-sp.png')] max-dt:bg-right-top max-md:bg-right bg-cover md:bg-[length:100%_100%] pb-[40vw] md:pb-[19.444vw] dt:pb-[280px]">
-            <div className="w-full max-w-[89.583vw] dt:max-w-[1100px] mx-auto relative">
+            <div className="w-full max-w-[74.306vw] dt:max-w-[1070px] mx-auto relative">
                 <div className="flex max-md:flex-col-reverse gap-4">
                     <div className="fade-up flex-1 pt-[5vw] md:pt-[4.167vw] dt:pt-[60px] flex items-end relative flex-col">
                         <Article title="年間パスポートNFTを配信中！" text={<>近くのお得情報を無料で見つけるチャンス！</>}>
@@ -90,7 +96,8 @@ const Introduction = () => {
                             </figure>
                         </div>
                     </div>
-                    <figure className="fade-up max-md:w-[90vw] max-dt:w-[30.833vw] md:ml-[-3.472vw] dt:ml-[-50px] relative mt-[5.556vw] dt:mt-[80px]">
+                    <figure className="fade-up max-md:w-[90vw] max-dt:w-[29.514vw] md:ml-[-3.472vw] dt:ml-[-50px] relative mt-[15.278vw] dt:mt-[220px]">
+                        <img className="anim-poyopoyo absolute right-0 top-[-36%] w-[55.76%] " src="/assets/images/card-img-bubble.png" alt="" />
                         <img src="/assets/images/card-img.png" alt="" />
                     </figure>
                 </div>
