@@ -8,7 +8,7 @@ export default function ScrollContainer({children}: ScrollContainerPropsType) {
     useLayoutEffect(()=>{
     ScrollOut({
       once: true,
-      threshold: 0.5
+      threshold: 0.8
     });
     setTimeout(() => {
       if ( window && document ) {
