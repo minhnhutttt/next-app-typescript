@@ -10,7 +10,7 @@ const Introduction = () => {
         <div id="introduction" className="bg-[url('/assets/images/bg-01.png')] max-dt:bg-right-top bg-cover md:bg-[length:100%_100%] max-md:pb-[36vw] md:h-[94.306vw] dt:h-[1358px] px-5 relative">
             <div className="fade-up flex justify-center max-md:flex-col max-md:items-center">
                 <figure className="md:mt-[-5.556vw] mt-[-4vw] dt:mt-[-80px] relative z-10">
-                    <img className="fade-up max-md:w-[60vw] max-dt:w-[27.708vw]" src="/assets/images/introduction-img.png" alt="" />
+                    <img className="fade-up max-md:w-[90vw] max-dt:w-[27.708vw]" src="/assets/images/introduction-img.png" alt="" />
                     <img className="anim-poyopoyo absolute w-[46.20%] right-[-10%] top-[-5%]" src="/assets/images/introduction-bubble.svg" alt="" />
                 </figure>
                 <div className="fade-up md:flex-1 mt-[0.694vw] dt:mt-[10px] max-md:w-full md:max-w-[62.986vw] max-w-[100vw] dt:max-w-[907px] md:bg-[url('/assets/images/introduction-frame.png')] bg-[url('/assets/images/introduction-frame-sp.png')] bg-cover md:aspect-[907/429] aspect-[1053/853] bg-no-repeat md:ml-[-11.111vw] dt:ml-[-160px] flex justify-center md:justify-end px-[2vw] md:px-[2.778vw] dt:px-10 relative max-md:mt-[-10vw]">
@@ -76,7 +76,7 @@ const Introduction = () => {
                         高精度の位置情報機能を活用して、まるで宝探しのようにお得なお店を見つけよう！<br />あなたが地図の中心です！
                         </Article>
                         <div className="flex md:ml-[-120px] mt-8 max-md:justify-end">
-                            <div data-scroll className="group max-md:w-[47vw] max-dt:w-[34.861vw] aspect-[502/251] flex items-end relative">
+                            <div data-scroll className="group max-md:w-[67vw] max-dt:w-[34.861vw] aspect-[502/251] flex items-end relative">
                                 <img src="/assets/images/map.png" alt="" />
                                 <img className="absolute top-0 right-[16%] w-[31.27%] z-10" src="/assets/images/map-cloud.png" alt="" />
                                 <img className="group-data-[scroll=in]:scale-100 scale-0 origin-bottom duration-300 absolute top-[52%] left-[22%] w-[10.159%]" src="/assets/images/map-pin-01.png" alt="" />
@@ -104,7 +104,7 @@ const Introduction = () => {
                             </figure>
                         </div>
                     </div>
-                    <figure className="fade-up max-md:mx-auto max-md:w-[90vw] max-dt:w-[29.514vw] md:ml-[-3.472vw] dt:ml-[-50px] relative mt-[15.278vw] dt:mt-[220px] max-w-[425px]">
+                    <figure className="fade-up max-md:mx-auto max-md:w-[80vw] max-dt:w-[29.514vw] md:ml-[-3.472vw] dt:ml-[-50px] relative mt-[15.278vw] dt:mt-[220px] max-w-[425px]">
                         <img className="anim-poyopoyo absolute right-0 top-[-36%] w-[55.76%] max-w-[237px]" src="/assets/images/card-img-bubble.png" alt="" />
                         <img src="/assets/images/card-img.png" alt="" />
                     </figure>

@@ -26,7 +26,7 @@ const data = [
 const Enjoy = () => {
     const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative overflow-hidden pt-20 bg-[#FFF8BC]/[0.2]  md:pb-[9.931vw] dt:pb-[143px]">
+    <section ref={ref} className="relative overflow-hidden pt-20 bg-[#FFF8BC]/[0.2] px-5 md:pb-[9.931vw] dt:pb-[143px]">
         <div className="">
             <h3 className="fade-up text-center md:text-[42px] text-[32px] font-bold font-gothic">楽しみ方</h3>
             <div className="flex flex-wrap justify-center w-full max-w-[1220px] mx-auto gap-9 mt-12 md:mt-24 max-md:max-w-[380px]">

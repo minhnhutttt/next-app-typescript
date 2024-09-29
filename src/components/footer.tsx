@@ -55,7 +55,7 @@ const Footer = () => {
             <div className="w-full max-w-[940px] mx-auto max-md:pt-10">
                 <div className="flex items-end pt-[40px] md:pt-[94px]">
                     <figure className="pb-10 relative">
-                      <img src="/assets/images/footer-img-bubble.svg" alt="" className="anim-poyopoyo absolute top-[-46%] left-[-33%] w-[53.31%]" />
+                      <img src="/assets/images/footer-img-bubble.svg" alt="" className="anim-poyopoyo absolute top-[-46%] md:left-[-33%] left-[-12%] w-[53.31%]" />
                         <img src="/assets/images/footer-img.png" alt="" />
                     </figure>
                     <div className="">
