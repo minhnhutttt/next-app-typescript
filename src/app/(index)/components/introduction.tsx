@@ -63,12 +63,12 @@ const Introduction = () => {
             </div>
         </div>
         <div className="bg-[#FFF0F0]">
-            <div className="w-full max-w-[89.583vw] dt:max-w-[1290px] mx-auto -mt-[14.931vw] dt:-mt-[215px] relative">
-                <div className="flex max-md:flex-col gap-4">
+            <div className="w-full max-w-[89.583vw] dt:max-w-[1200px] mx-auto -mt-[14.931vw] dt:-mt-[215px] relative">
+                <div className="flex justify-end max-md:flex-col gap-4">
                     <figure className="fade-up max-md:w-[80vw] max-dt:w-[40.972vw]">
                         <img src="/assets/images/gps-img.png" alt="" />
                     </figure>
-                    <div className="fade-up flex-1 md:pt-[80px] relative max-md:mt-[-18vw]">
+                    <div className="fade-up md:pt-[80px] relative max-md:mt-[-18vw]">
                         <Article title="GPSで簡単にお店探し！" text={<>歩いて行ける範囲にはお得がいっぱい！</>}>
                         高精度の位置情報機能を活用して、まるで宝探しのようにお得なお店を見つけよう！<br />あなたが地図の中心です！
                         </Article>
@@ -81,9 +81,9 @@ const Introduction = () => {
                 </div>
             </div>
         </div>
-        <div className="relative pb-[6vw] md:pb-[2.778vw] dt:pb-10 bg-[#FFF8BC]/[0.2] ">
-        <div className="md:bg-[url('/assets/images/bg-02.png')] bg-[url('/assets/images/bg-02-sp.png')] max-dt:bg-right-top max-md:bg-right bg-cover md:bg-[length:100%_100%] pb-[40vw] md:pb-[19.444vw] dt:pb-[280px]">
-            <div className="w-full max-w-[74.306vw] dt:max-w-[1070px] mx-auto relative">
+        <div className="relative pb-[6vw] md:pb-[2.778vw] dt:pb-10 bg-[#FFF8BC]/[0.2]">
+        <div className="md:bg-[url('/assets/images/bg-02.png')] bg-[url('/assets/images/bg-02-sp.png')] max-dt:bg-right-top max-md:bg-right bg-cover md:bg-[length:100%_100%] pb-[40vw] md:pb-[19.444vw] dt:pb-[280px]  max-md:pt-[22vw]">
+            <div className="w-full max-md:w-[90vw] md:max-w-[74.306vw] dt:max-w-[1070px] mx-auto relative">
                 <div className="flex max-md:flex-col-reverse gap-4">
                     <div className="fade-up flex-1 pt-[5vw] md:pt-[4.167vw] dt:pt-[60px] flex items-end relative flex-col">
                         <Article title="年間パスポートNFTを配信中！" text={<>近くのお得情報を無料で見つけるチャンス！</>}>
@@ -96,8 +96,8 @@ const Introduction = () => {
                             </figure>
                         </div>
                     </div>
-                    <figure className="fade-up max-md:w-[90vw] max-dt:w-[29.514vw] md:ml-[-3.472vw] dt:ml-[-50px] relative mt-[15.278vw] dt:mt-[220px]">
-                        <img className="anim-poyopoyo absolute right-0 top-[-36%] w-[55.76%] " src="/assets/images/card-img-bubble.png" alt="" />
+                    <figure className="fade-up max-md:mx-auto max-md:w-[90vw] max-dt:w-[29.514vw] md:ml-[-3.472vw] dt:ml-[-50px] relative mt-[15.278vw] dt:mt-[220px] max-w-[425px]">
+                        <img className="anim-poyopoyo absolute right-0 top-[-36%] w-[55.76%] max-w-[237px]" src="/assets/images/card-img-bubble.png" alt="" />
                         <img src="/assets/images/card-img.png" alt="" />
                     </figure>
                 </div>
