@@ -8,11 +8,12 @@ const Introduction = () => {
   return (
     <section ref={ref} className="relative mt-[-24vw] md:mt-[-7vw] dt:-mt-[108px]">
         <div id="introduction" className="bg-[url('/assets/images/bg-01.png')] max-dt:bg-right-top bg-cover md:bg-[length:100%_100%] max-md:pb-[36vw] md:h-[94.306vw] dt:h-[1358px] px-5 relative">
-            <div className="flex justify-center max-md:flex-col max-md:items-center">
-                <figure className="md:mt-[-5.556vw] mt-[-14vw] dt:mt-[-80px] relative z-10">
+            <div className="fade-up flex justify-center max-md:flex-col max-md:items-center">
+                <figure className="md:mt-[-5.556vw] mt-[-4vw] dt:mt-[-80px] relative z-10">
                     <img className="fade-up max-md:w-[60vw] max-dt:w-[27.708vw]" src="/assets/images/introduction-img.png" alt="" />
+                    <img className="anim-poyopoyo absolute w-[46.20%] right-[-10%] top-[-5%]" src="/assets/images/introduction-bubble.svg" alt="" />
                 </figure>
-                <div className="fade-up md:flex-1 mt-[0.694vw] dt:mt-[10px] max-md:w-full md:max-w-[62.986vw] max-w-[100vw] dt:max-w-[907px] md:bg-[url('/assets/images/introduction-frame.png')] bg-[url('/assets/images/introduction-frame-sp.png')] bg-cover md:aspect-[907/429] aspect-[1053/853] bg-no-repeat md:ml-[-8.333vw] dt:ml-[-120px] flex justify-center md:justify-end px-[2vw] md:px-[2.778vw] dt:px-10 relative max-md:mt-[-10vw]">
+                <div className="fade-up md:flex-1 mt-[0.694vw] dt:mt-[10px] max-md:w-full md:max-w-[62.986vw] max-w-[100vw] dt:max-w-[907px] md:bg-[url('/assets/images/introduction-frame.png')] bg-[url('/assets/images/introduction-frame-sp.png')] bg-cover md:aspect-[907/429] aspect-[1053/853] bg-no-repeat md:ml-[-11.111vw] dt:ml-[-160px] flex justify-center md:justify-end px-[2vw] md:px-[2.778vw] dt:px-10 relative max-md:mt-[-10vw]">
                     <div className="fade-up flex justify-center md:justify-end pt-[24vw] md:pt-[4.167vw] dt:pt-[60px] w-full md:max-w-[48.611vw] max-w-[100vw] dt:max-w-[700px]">
                         <div className="flex-1">
                             <h4 className="text-center font-gothic font-extrabold text-[4vw] md:text-[1.944vw] dt:text-[28px] leading-tight">
@@ -45,11 +46,11 @@ const Introduction = () => {
                             今すぐキャンペーン詳細を確認し、ワンタップでNFTクーポンをゲットしよう！
                     </Article>
                 </div>
-                <figure className="md:ml-[-0.972vw] dt:ml-[-14px] relative max-md:pb-[28vw]">
+                <figure className="fade-up md:ml-[-0.972vw] dt:ml-[-14px] relative max-md:pb-[28vw]">
                     <figure className="absolute right-[40px] top-[-50px] z-10">
                         <img className="anim-poyopoyo max-dt:w-[9.236vw] max-md:w-[20vw]" src="/assets/images/bubble-01.png" alt="" />
                     </figure>
-                    <img className="fade-up max-md:w-[70vw] max-dt:w-[39.722vw]" src="/assets/images/img-01.png" alt="" />
+                    <img className=" max-md:w-[70vw] max-dt:w-[39.722vw]" src="/assets/images/img-01.png" alt="" />
                     <div data-scroll className="group anim-img-01 absolute md:w-[39.861vw] dt:w-[573px] top-[45vw] md:top-[21.528vw] dt:top-[310px] right-[2.778vw] dt:right-[40px]">
                         <img className="relative z-10" src="/assets/images/introduction-ani.png" alt="" />
                         <img className="group-data-[scroll=in]:left-0 left-[30%] duration-300 ease-out absolute top-[20%] w-[37.28%]" src="/assets/images/introduction-ani-01.png" alt="" />
@@ -64,21 +65,28 @@ const Introduction = () => {
         </div>
         <div className="bg-[#FFF0F0]">
             <div className="w-full max-w-[89.583vw] dt:max-w-[1200px] mx-auto -mt-[14.931vw] dt:-mt-[215px] relative">
-                <div className="flex justify-end max-md:flex-col gap-4">
-                    <figure className="fade-up max-md:w-[80vw] max-dt:w-[40.972vw]">
+                <div className="flex items-center md:items-start md:justify-end max-md:flex-col gap-4">
+                    <div className="fade-up max-md:w-[80vw] max-dt:w-[40.972vw] relative">
+                        <img className="anim-poyopoyo absolute w-[35.61%] left-[-5%] md:left-[-22%] top-[3%]" src="/assets/images/gps-img-bubble.svg" alt="" />
                         <img src="/assets/images/gps-img.png" alt="" />
-                    </figure>
-                    <div className="fade-up md:pt-[80px] relative max-md:mt-[-18vw]">
+                        <img className="absolute w-[36.82%] bottom-[-18%] right-[10%] [transition:1.5s_ease-in-out] animate-[fuwafuwa_3s_ease-in-out_infinite_alternate]" src="/assets/images/trolley.png" alt="" />
+                    </div>
+                    <div className="fade-up md:pt-[80px] relative pt-[10vw]">
                         <Article title="GPSで簡単にお店探し！" text={<>歩いて行ける範囲にはお得がいっぱい！</>}>
                         高精度の位置情報機能を活用して、まるで宝探しのようにお得なお店を見つけよう！<br />あなたが地図の中心です！
                         </Article>
                         <div className="flex md:ml-[-120px] mt-8 max-md:justify-end">
-                            <figure className="max-md:w-[47vw] max-dt:w-[34.861vw]">
-                                <img src="/assets/images/gps-img2.png" alt="" />
-                            </figure>
+                            <div data-scroll className="group max-md:w-[47vw] max-dt:w-[34.861vw] aspect-[502/251] flex items-end relative">
+                                <img src="/assets/images/map.png" alt="" />
+                                <img className="absolute top-0 right-[16%] w-[31.27%] z-10" src="/assets/images/map-cloud.png" alt="" />
+                                <img className="group-data-[scroll=in]:scale-100 scale-0 origin-bottom duration-300 absolute top-[52%] left-[22%] w-[10.159%]" src="/assets/images/map-pin-01.png" alt="" />
+                                <img className="group-data-[scroll=in]:scale-100 scale-0 origin-bottom duration-150 absolute top-[12%] left-[42%] w-[14.14%]" src="/assets/images/map-pin-02.png" alt="" />
+                                <img className="group-data-[scroll=in]:scale-100 scale-0 origin-bottom duration-300 absolute top-[38%] left-[75%] w-[8.366%]" src="/assets/images/map-pin-03.png" alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>
+                <figure className="absolute"><img src="/assets/images/gps-deco.png" alt="" /></figure>
             </div>
         </div>
         <div className="relative pb-[6vw] md:pb-[2.778vw] dt:pb-10 bg-[#FFF8BC]/[0.2]">
