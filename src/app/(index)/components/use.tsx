@@ -6,7 +6,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Use = () => {
     const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative overflow-hidden pb-[40px] px-5 z-20">
+    <section id="use" ref={ref} className="relative overflow-hidden pb-[40px] px-5 z-20">
         <div className="">
             <h3 className="fade-up text-center md:text-[50px] text-[36px] font-bold font-gothic">使い方</h3>
             <div className="flex flex-wrap justify-center w-full max-w-[1220px] mx-auto gap-8 md:gap-11 mt-12 md:mt-20 xl:mt-36 max-md:max-w-[380px]">

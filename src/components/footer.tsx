@@ -12,19 +12,15 @@ interface NavLink {
       text: "Campaign Questとは?　",
     },
     {
-        link: "/#",
-        text: "働き方",
+        link: "/#enjoy",
+        text: "楽しみ方",
       },
       {
-        link: "/#",
-        text: "アイテム",
+        link: "/#deals",
+        text: "お得がいっぱい",
       },
       {
-        link: "/#",
-        text: "メリット",
-      },
-      {
-        link: "/#",
+        link: "/#use",
         text: "使い方",
       },
       {
@@ -32,7 +28,8 @@ interface NavLink {
         text: "FAQ",
       },
       {
-        link: "/#",
+        link: "https://lin.ee/5WfLOMX",
+        target: "_blank",
         text: "問い合わせ",
       },
   ];

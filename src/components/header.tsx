@@ -3,8 +3,8 @@
 const Header = () => {
 
   return (
-    <header data-scroll className="group absolute left-[3.333vw] dt:left-12 top-6 z-10">
-        <a href="/" className="block relative duration-150 hover:opacity-75 max-md:w-[160px] max-dt:w-[23.75vw]">
+    <header data-scroll className="group absolute left-[3.333vw] dt:left-12 top-2 md:top-6 z-10">
+        <a href="/" className="block relative duration-150 hover:opacity-75 min-w-[160px] max-md:w-[36vw] max-dt:w-[23.75vw]">
           <img src="/assets/images/logo.svg" alt="" />
           <svg className="absolute w-[62.573%] top-[32%] right-[12%]" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 214 65" fill="none">
               <path className="group-data-[scroll=true]:opacity-0" d="M0.197847 13.6C1.55183 5.89814 9.05207 0 16.9148 0C19.9 0 22.8851 0.65297 25.8703 2.15694L25.3692 5.00967C22.6346 3.58598 19.6494 2.69752 16.7016 2.69752C10.614 2.69752 4.59564 7.05422 3.44422 13.6C2.53801 18.7649 5.42722 24.2723 12.8315 24.2723C15.9286 24.2723 19.3882 23.539 22.6826 21.7675L22.1868 24.5827C18.7166 26.2794 15.3796 26.9698 12.0906 26.9698C2.38875 26.9752 -0.884277 19.7657 0.197847 13.6ZM5.23532 13.5625C6.14686 8.36016 10.4967 4.27642 16.7336 4.27642C19.5322 4.27642 22.6399 5.08461 25.092 6.62604L24.5963 9.44131C22.2348 7.82494 19.4362 6.97394 16.563 6.97394C11.8027 6.97394 9.10538 10.0568 8.48703 13.5625C7.85801 17.1485 9.54782 19.9959 14.2388 19.9959C17.2986 19.9959 20.5503 19.1502 23.4768 17.3358L22.9758 20.1886C20.1878 21.8477 16.3391 22.6934 13.4659 22.6934C7.2663 22.6934 4.30246 18.9147 5.24065 13.5625H5.23532Z" fill="#FF9C65"/>

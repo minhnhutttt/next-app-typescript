@@ -7,26 +7,27 @@ const Introduction = () => {
     const ref = useScrollAnimations();
   return (
     <section ref={ref} className="relative mt-[-24vw] md:mt-[-7vw] dt:-mt-[108px]">
-        <div id="introduction" className="bg-[url('/assets/images/bg-01.png')] max-dt:bg-right-top bg-cover md:bg-[length:100%_100%] max-md:pb-[36vw] md:h-[94.306vw] dt:h-[1358px] px-5 relative">
-            <div className="fade-up flex justify-center max-md:flex-col max-md:items-center">
-                <figure className="md:mt-[-5.556vw] mt-[-4vw] dt:mt-[-80px] relative z-10">
-                    <img className="fade-up max-md:w-[90vw] max-dt:w-[27.708vw]" src="/assets/images/introduction-img.png" alt="" />
-                    <img className="anim-poyopoyo absolute w-[46.20%] right-[-10%] top-[-5%]" src="/assets/images/introduction-bubble.svg" alt="" />
+        <div id="introduction" className="bg-[url('/assets/images/bg-01.png')] max-dt:bg-right-top bg-cover md:bg-[length:100%_100%] max-lg:pb-[36vw] lg:h-[94.306vw] dt:h-[1358px] md:px-5 relative">
+            <div className="fade-up flex justify-center max-md:flex-col">
+                <figure className="md:mt-[-5.556vw] mt-[-4vw] dt:mt-[-80px] relative z-10 max-md:px-5">
+                    <img className="fade-up max-md:hidden max-md:w-[90vw] max-dt:w-[27.708vw]" src="/assets/images/introduction-img.png" alt="" />
+                    <img className="fade-up md:hidden max-md:w-[62vw] max-dt:w-[27.708vw]" src="/assets/images/introduction-img-sp.png" alt="" />
+                    <img className="anim-poyopoyo absolute w-[36%] md:w-[46.20%] right-[-5%] md:right-[-10%] top-0 md:top-[-5%]" src="/assets/images/introduction-bubble.svg" alt="" />
                 </figure>
-                <div className="fade-up md:flex-1 mt-[0.694vw] dt:mt-[10px] max-md:w-full md:max-w-[62.986vw] max-w-[100vw] dt:max-w-[907px] md:bg-[url('/assets/images/introduction-frame.png')] bg-[url('/assets/images/introduction-frame-sp.png')] bg-cover md:aspect-[907/429] aspect-[1053/853] bg-no-repeat md:ml-[-11.111vw] dt:ml-[-160px] flex justify-center md:justify-end px-[2vw] md:px-[2.778vw] dt:px-10 relative max-md:mt-[-10vw]">
+                <div className="fade-up md:flex-1 mt-[0.694vw] dt:mt-[10px] max-md:w-full md:max-w-[62.986vw] max-w-[100vw] dt:max-w-[907px] md:bg-[url('/assets/images/introduction-frame.png')] bg-[url('/assets/images/introduction-frame-sp.png')] bg-[length:100%_100%] md:aspect-[907/429] aspect-[1053/853] bg-no-repeat md:ml-[-11.111vw] dt:ml-[-160px] flex justify-center md:justify-end md:px-[2.778vw] dt:px-10 relative max-md:mt-[-16vw]">
                     <div className="fade-up flex justify-center md:justify-end pt-[24vw] md:pt-[4.167vw] dt:pt-[60px] w-full md:max-w-[48.611vw] max-w-[100vw] dt:max-w-[700px]">
                         <div className="flex-1">
-                            <h4 className="text-center font-gothic font-extrabold text-[4vw] md:text-[1.944vw] dt:text-[28px] leading-tight">
+                            <h4 className="text-center font-gothic font-extrabold text-[18px] md:text-[1.944vw] dt:text-[28px] leading-tight">
                             大好きなお店の限定NFTクーポンを <br />
                             無料でゲット！
                             </h4>
-                            <p className="text-center md:text-[1.319vw] text-[3vw] dt:text-[19px] leading-relaxed mt-[2vw] md:mt-5">
-                                いますぐ公式LINEにDIVER Walletアドレスを送って <br />
+                            <p className="text-center md:text-[1.319vw] text-[16px] dt:text-[19px] leading-relaxed mt-[2vw] md:mt-5 max-md:pr-[30px] max-md:pl-[16px]">
+                                いますぐ公式LINEにDIVER Walletアドレスを送って <br className="max-md:hidden" />
                                 近くのお店ですぐ使える特別割引クーポンをゲットしよう！<br />
                                 今なら年間パスポートNFTを無料で受け取れるチャンス！
                             </p>
                             <div className="flex justify-center mt-[2.431vw] dt:mt-7">
-                                <a href="https://lin.ee/5WfLOMX" target="_blank" className="anim-poyoyon3 w-[36vw] md:w-[22.222vw] dt:w-[320px] h-[10vw] md:h-[5.556vw] dt:h-20 bg-[#2CBE00] flex items-center justify-center rounded-[2.917vw] dt:rounded-[42px] md:text-[2.083vw] text-[3.6vw] dt:text-[30px] text-white font-bold">公式LINEへ</a>
+                                <a href="https://lin.ee/5WfLOMX" target="_blank" className="anim-poyoyon3 w-[240px] md:w-[22.222vw] dt:w-[320px] h-[64px] md:h-[5.556vw] dt:h-20 bg-[#2CBE00] flex items-center justify-center rounded-[24px] dt:rounded-[42px] md:text-[2.083vw] text-[20px] dt:text-[30px] text-white font-bold">公式LINEへ</a>
                             </div>
                         </div>
                         <figure className="max-md:absolute max-md:top-[5vw] max-md:right-[10vw]">

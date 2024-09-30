@@ -6,7 +6,6 @@ import confetti from "canvas-confetti";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Đăng ký plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 const data = [
     {
@@ -50,7 +49,7 @@ const Deals = () => {
       });
     };
   return (
-    <section ref={confettiSectionRef} className="relative overflow-hidden bg-[url('/assets/images/bg-03.png')] bg-cover md:bg-[length:100%_100%] bg-center pb-[70px] px-5 z-20">
+    <section id="deals" ref={confettiSectionRef} className="relative overflow-hidden bg-[url('/assets/images/bg-03.png')] bg-cover md:bg-[length:100%_100%] bg-center pb-[70px] px-5 z-20">
         <div className="mt-32 md:mt-24">
         <div className="fade-up flex justify-center items-start gap-2 md:gap-12">
                 <span className="max-md:hidden"><img src="/assets/images/ribbon-left.png" alt="" /></span>
