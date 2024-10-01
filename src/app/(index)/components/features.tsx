@@ -2,7 +2,7 @@
 
 const Features = () => {
   return (
-    <section className="mt-8 bg-[linear-gradient(160deg,_#32BCFE_7.72%,_#2AB1FF_20.66%,_#28A7FE_31.36%,_#2594F7_45.44%,_#2379E7_64.01%)] [clip-path:polygon(0_0,_100%_130px,_100%_100%,_0%_100%)] px-5 overflow-hidden">
+    <section className="mt-8 bg-[linear-gradient(160deg,_#32BCFE_7.72%,_#2AB1FF_20.66%,_#28A7FE_31.36%,_#2594F7_45.44%,_#2379E7_64.01%)] md:[clip-path:polygon(0_0,_100%_130px,_100%_100%,_0%_100%)] [clip-path:polygon(0_0,_100%_70px,_100%_100%,_0%_100%)] px-5 overflow-hidden">
         <div className="w-full max-w-[1080px] mx-auto pt-[225px] md:pb-[180px] pb-[100px]">
             <h3 className="text-center text-white md:text-[58px] text-[32px] font-black tracking-[0.22em]">
             PURPOSE AND FEATURES
@@ -29,7 +29,7 @@ const Features = () => {
                     <div className="w-full max-w-[900px] mx-auto relative">
                         <h5 className="text-center md:text-[24px] text-[18px] font-black tracking-widest pb-10 border-b border-white"> Key Features of DwETH</h5>
                         <div className="mt-[60px] w-full max-w-[800px] mx-auto">
-                            <table className="border-collapse w-full [&_tr]:h-[60px] [&_td+td]:border-l [&_td]:px-5 [&_tr]:border-white [&>tr]:border">
+                            <table className="border-collapse w-full md:text-[16px] text-[13px] [&_tr]:h-[60px] [&_td+td]:border-l md:[&_td]:px-5 [&_td]:px-3 [&_td]:py-2 [&_tr]:border-white [&_tr]:border">
                                 <tbody>
                                     <tr>
                                         <td>1:1 ETH Backing</td>

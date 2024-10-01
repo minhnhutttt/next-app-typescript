@@ -9,11 +9,11 @@ const FV = () => {
         cssProps: true,
   });
   return (
-    <div className=" ">
+    <div>
       <div className="fv-scroll group pt-[100px] h-[760px] relative">
-      <div className="absolute top-0 inset-x-0 h-[95%] bg-[linear-gradient(140deg,_#2379E7_1.59%,_#2594F7_33.42%,_#28A7FE_57.52%,_#2AB1FF_75.85%,_#32BCFE_98.03%)] [clip-path:polygon(0_0,_100%_0,_100%_80%,_0%_100%)]">
+      <div className="absolute top-0 inset-x-0 h-full bg-[linear-gradient(140deg,_#2379E7_1.59%,_#2594F7_33.42%,_#28A7FE_57.52%,_#2AB1FF_75.85%,_#32BCFE_98.03%)] md:[clip-path:polygon(0_0,_100%_0,_100%_calc(100%-140px),_0%_100%)] [clip-path:polygon(0_0,_100%_0,_100%_calc(100%-70px),_0%_100%)]">
       </div>
-        <div className="fixed top-0 inset-x-0 h-full w-full max-w-[1440px] mx-auto flex items-center justify-center">
+        <div className="fixed top-0 inset-x-0 h-full w-full max-w-[1440px] mx-auto flex items-center justify-center z-0">
           <div className="group-data-[scroll=in]:translate-x-[100%] group-data-[scroll=in]:translate-y-[40%] group-data-[scroll=in]:rotate-[-30deg] group-data-[scroll=in]:opacity-0 duration-300 absolute w-[24.375%] top-[25%] md:top-[12%] md:left-[2.083%] left-[12%]">
             <img src="/assets/images/fc-sec-01.png" alt="" />
           </div>

@@ -10,3 +10,9 @@ body {
   color: #fff;
   font-family: "Noto Sans", sans-serif;
 }
+
+.u-text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
