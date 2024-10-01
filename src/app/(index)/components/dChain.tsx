@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import useScrollAnimations from '@/hooks/useScrollAnimations';
 
 const data = [
     {
@@ -47,14 +48,15 @@ const data = [
 ]
 
 const DChain = () => {
+    const ref = useScrollAnimations();
   return (
-    <section className="md:mt-[-160px] mt-[-80px] bg-[url('/assets/images/d-chain-bg.png')] bg-cover bg-left-top md:[clip-path:polygon(0_160px,_100%_0,_100%_100%,_0%_100%)] [clip-path:polygon(0_80px,_100%_0,_100%_100%,_0%_100%)] overflow-hidden">
+    <section ref={ref} className="md:mt-[-160px] mt-[-80px] bg-[url('/assets/images/d-chain-bg.png')] bg-cover bg-left-top md:[clip-path:polygon(0_160px,_100%_0,_100%_100%,_0%_100%)] [clip-path:polygon(0_80px,_100%_0,_100%_100%,_0%_100%)] overflow-hidden">
         <div className="md:pt-[260px] pt-[160px] md:pb-[250px] pb-[120px]">
-            <h3 className="text-center text-white md:text-[58px] text-[32px] font-black tracking-[0.22em]">
+            <h3 className="fade-up text-center text-white md:text-[58px] text-[32px] font-black tracking-[0.22em]">
             Overview of DIVER Chain
             </h3>
             <div className="md:mt-[170px] mt-[80px]">
-                <div className="px-5">
+                <div className="fade-up px-5">
                     <p className="text-center md:text-[32px] text-[20px] font-black tracking-widest">What is DIVER Chain?</p>
                     <p className="w-full max-w-[665px] mx-auto md:text-[16px] text-[14px] tracking-widest mt-4">
                     DIVER Chain is a high-performance blockchain designed specifically for the modern decentralized economy. Its main features include:
@@ -93,7 +95,7 @@ const DChain = () => {
                 </div>
                 <div className="w-full max-w-[1440px] mx-auto md:mt-[160px] mt-[100px]">
                     <p className="text-center md:text-[32px] text-[20px] font-black leading-[1.3] tracking-[0.1em] px-5">Reasons to Use DwETH on DIVER Chain</p>
-                    <div className="flex max-md:flex-col items-center md:items-start gap-6 md:gap-[35px] mt-16">
+                    <div className="fade-up flex max-md:flex-col items-center md:items-start gap-6 md:gap-[35px] mt-16">
                         <figure className="md:rounded-r-[30px] overflow-hidden max-xl:w-1/2 max-md:w-auto">
                             <img src="/assets/images/d-chain-thumb.png" alt="" />
                         </figure>

@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${gothic.className}`}
+        className={`bg-[#EFF6FA] ${gothic.className}`}
       >
         <Header />
         {children}

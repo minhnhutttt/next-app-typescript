@@ -1,12 +1,10 @@
 "use client";
 import useScrollOut from "@/hooks/useScrollOut";
-import { useEffect } from "react";
-import ScrollOut from "scroll-out";
 
 const FV = () => {
   useScrollOut('.fv-scroll', {
     offset: 50,
-        cssProps: true,
+    cssProps: true,
   });
   return (
     <div>

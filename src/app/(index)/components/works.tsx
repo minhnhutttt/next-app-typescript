@@ -1,21 +1,23 @@
 "use client";
 
 import ButtonWhitePaper from "@/components/buttonWhitePaper";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useState } from "react";
 
 const Works = () => {
+    const ref = useScrollAnimations();
     const [tab, setTab] = useState<number | null>(1);
 
     const handleToggle = (index: number) => {
         setTab(tab === index ? 1 : index);
     };
   return (
-    <section className="relative bg-[url('/assets/images/works-bg.png')] pt-16 md:pt-[95px] md:pb-[280px] pb-[140px] md:[clip-path:polygon(0_0,_100%_0,_100%_100%,_0_calc(100%-150px))] [clip-path:polygon(0_0,_100%_0,_100%_100%,_0_calc(100%-80px))]">
+    <section ref={ref} className="relative bg-[url('/assets/images/works-bg.png')] pt-16 md:pt-[95px] md:pb-[280px] pb-[140px] md:[clip-path:polygon(0_0,_100%_0,_100%_100%,_0_calc(100%-150px))] [clip-path:polygon(0_0,_100%_0,_100%_100%,_0_calc(100%-80px))]">
         <div className="px-5">
-            <h3 className="text-center u-text-gradient bg-[linear-gradient(140deg,_#040444_15.67%,_#0D1054_38.25%,_#101764_55.35%,_#131D74_68.35%,_#15206B_84.08%)] bg-clip-text md:text-[58px] text-[32px] font-black tracking-[0.22em]">
+            <h3 className="fade-up text-center u-text-gradient bg-clip-text md:text-[58px] text-[32px] font-black tracking-[0.22em]">
                 How DwETH Works
             </h3>
-            <div className="w-full max-w-[1300px] mx-auto mt-14 md:mt-[70px]">
+            <div className="fade-up w-full max-w-[1300px] mx-auto mt-14 md:mt-[70px]">
                 <div className="flex md:gap-5 gap-3">
                     <button onClick={() => handleToggle(1)} className={`max-md:w-1/2 flex justify-center items-center gap-2.5 border-4 border-[#040444] md:text-[24px] text-[16px] font-black px-3 md:px-[60px] h-[64px] md:h-[84px] tracking-wide ${tab === 1 ? 'bg-[linear-gradient(140deg,_#040444_15.67%,_#0D1054_38.25%,_#101764_55.35%,_#131D74_68.35%,_#15206B_84.08%)] text-white' : 'text-[#F90000]'}`}>
                         <span>DwETH issuance</span>
@@ -33,7 +35,7 @@ const Works = () => {
             </div>
         </div>
         
-        <div className="w-full max-w-[1440px] mx-auto border-[6px] border-[#040444] bg-white/70 px-5 pt-10 md:pt-[65px] md:pb-[76px] pb-[50px]">
+        <div className="fade-up w-full max-w-[1440px] mx-auto border-[6px] border-[#040444] bg-white/70 px-5 pt-10 md:pt-[65px] md:pb-[76px] pb-[50px]">
                 <div className="w-full max-w-[1274px] mx-auto">
                     {tab === 1 &&
                         <div>

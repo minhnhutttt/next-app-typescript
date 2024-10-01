@@ -8,7 +8,7 @@ import Roadmap from "./components/roadmap";
 
 export default function Home() {
   return (
-    <main className="h-[3000px]">
+    <main>
       <FV />
       <Features />
       <Gas />

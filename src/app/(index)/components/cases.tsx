@@ -2,6 +2,7 @@
 import { ReactNode, useRef } from "react";
 import { gsap } from "gsap";
 import ButtonWhitePaper from "@/components/buttonWhitePaper";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 type CaseItemPropsType = {
   id: string;
@@ -74,8 +75,7 @@ function CaseItem({ id, title, text }: CaseItemPropsType) {
 
   return (
     <div
-      data-scroll
-      className="px-3 md:px-6 border-b border-white pb-5"
+      className="fade-up px-3 md:px-6 border-b border-white pb-5"
     >
       <button
         type="button"
@@ -102,18 +102,20 @@ function CaseItem({ id, title, text }: CaseItemPropsType) {
 }
 
 export default function Cases() {
+  const ref = useScrollAnimations();
   return (
     <div
+    ref={ref}
       id="cases"
       className="md:mt-[-150px] mt-[-80px] md:[clip-path:polygon(0_0,_100%_150px,_100%_100%,_0%_100%)] [clip-path:polygon(0_0,_100%_80px,_100%_100%,_0%_100%)] bg-[linear-gradient(163deg,_#32BCFE_6.76%,_#2AB1FF_18.1%,_#28A7FE_27.47%,_#2594F7_39.79%,_#2379E7_56.06%)] px-5 pt-[160px] md:pt-[260px] md:pb-[123px] pb-[70px]"
     >
       <div className="mx-auto w-full max-w-[1340px]">
-        <h3 className="text-center text-white md:text-[58px] text-[32px] font-black tracking-[0.22em] w-full max-w-[1000px] mx-auto">
+        <h3 className="fade-up text-center text-white md:text-[58px] text-[32px] font-black tracking-[0.22em] w-full max-w-[1000px] mx-auto">
           Use Cases for DwETH on DIVER Chain
         </h3>
         <div className="flex justify-center flex-wrap w-full max-w-[1240px] mx-auto gap-7 md:gap-[85px] mt-8 md:mt-[70px]">
             {data.map((item,index) => (
-                <div className="flex flex-col items-center aspect-[348/388] w-[348px] bg-[url('/assets/images/case-item.png')] bg-cover drop-shadow-[0px_0px_40px_0px_rgba(38,_64,_141,_0.10)] pt-[100px]" key={index}>
+                <div className="fade-up flex flex-col items-center aspect-[348/388] w-[348px] bg-[url('/assets/images/case-item.png')] bg-cover drop-shadow-[0px_0px_40px_0px_rgba(38,_64,_141,_0.10)] pt-[100px]" key={index}>
                     <figure className="h-[135px] flex items-center justify-center">
                         <img src={item.image} alt="" />
                     </figure>
@@ -122,7 +124,7 @@ export default function Cases() {
             ))}
         </div>
         <div className="md:mt-[230px] mt-[100px]">
-            <h3 className="text-center text-white md:text-[58px] text-[32px] font-black tracking-[0.22em] w-full max-w-[1000px] mx-auto">
+            <h3 className="fade-up text-center text-white md:text-[58px] text-[32px] font-black tracking-[0.22em] w-full max-w-[1000px] mx-auto">
             Technical Architecture
             </h3>
             <div className="mx-auto mt-5 w-full space-y-[20px] md:mt-[70px] md:space-y-[30px]">
@@ -131,7 +133,7 @@ export default function Cases() {
                 ))}
                 </div>
             </div>
-            <div className="flex justify-center mt-16 md:mt-[90px]">
+            <div className="fade-up flex justify-center mt-16 md:mt-[90px]">
                 <ButtonWhitePaper />
             </div>
       </div>

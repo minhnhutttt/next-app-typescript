@@ -12,6 +12,7 @@ body {
 }
 
 .u-text-gradient {
+  background: linear-gradient(140deg, #040444 15.67%, #0D1054 38.25%, #101764 55.35%, #131D74 68.35%, #15206B 84.08%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

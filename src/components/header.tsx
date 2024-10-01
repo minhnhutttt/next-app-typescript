@@ -34,7 +34,7 @@ const Header = () => {
           </a>
         </div>
         <div
-          className={`max-md:fixed max-md:left-0 max-md:top-0 max-md:h-screen max-md:w-full max-md:bg-[linear-gradient(140deg,_#040444_15.67%,_#0D1054_38.25%,_#101764_55.35%,_#131D74_68.35%,_#15206B_84.08%)] z-[99] max-md:overflow-y-scroll flex items-center justify-center max-md:flex-col ${
+          className={`max-md:fixed max-md:left-0 max-md:top-0 max-md:h-screen max-md:w-full max-md:bg-[linear-gradient(140deg,_#2379E7_1.59%,_#2594F7_33.42%,_#28A7FE_57.52%,_#2AB1FF_75.85%,_#32BCFE_98.03%)] z-[99] max-md:overflow-y-scroll flex items-center justify-center max-md:flex-col ${
             NavOpen ? "" : "max-md:invisible max-md:opacity-0"
           }`}
         >
@@ -43,7 +43,9 @@ const Header = () => {
               <li key={index} className="flex items-center">
                 <a
                   href={link}
-                  className="text-[20px] md:text-[18px] text-white duration-150 hover:opacity-75 tracking-widest h-[60px] flex items-center justify-center "
+                  className={`text-[20px] md:text-[18px] text-white duration-150 hover:opacity-75 tracking-widest h-[60px] flex items-center justify-center  ${
+                    pathname === link ? "u-text-gradient" : ""
+                  }`}
                   target={target}
                   onClick={close}
                 >
