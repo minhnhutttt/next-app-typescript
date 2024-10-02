@@ -43,15 +43,13 @@ const FV = () => {
             ・ETH⇄DwETH Easy Bridges<br />
             ・Unwavering Commitment to Transparency and Security
           </div>
-          
-          
-      <p className="absolute bottom-0 text-[28px] lg:text-[82px] md:text-[44px] text-center font-black leading-[1.3] text-[#1E1E1E] [text-shadow:3px_3px_3px_#fff]" style={{
-              filter: "blur(calc((1 - var(--visible-y)) * 10px))",
-              opacity: "var(--visible-y)",
-            }}>
-          Ethereum, Evolving <br />
-          Further with DIVER
-        </p>
+          <p className="absolute bottom-0 text-[28px] lg:text-[82px] md:text-[44px] text-center font-black leading-[1.3] text-[#1E1E1E] [text-shadow:3px_3px_3px_#fff]" style={{
+                  filter: "blur(calc((1 - var(--visible-y)) * 10px))",
+                  opacity: "var(--visible-y)",
+                }}>
+              Ethereum, Evolving <br />
+              Further with DIVER
+            </p>
         </div>
       </div>
       
