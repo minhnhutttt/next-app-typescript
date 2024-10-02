@@ -32,37 +32,29 @@ body {
   @return $min + random($max - $min + 1);
 }
 
-.canvas {
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(to bottom, #edfffa 0%, #31c5d6 100%);
-  position: relative;
-  overflow: hidden;
-}
-
 .bubble {
   display: block;
   border-radius: 100%;
   opacity: .8;
-  position: absolute;
+  position: fixed;
+  z-index: 1;
 }
 
-@for $i from 1 through 50 {
+@for $i from 1 through 12 {
   $bgpos: if($i % 2 == 0, top right, center);
 
   .bubble:nth-child(#{$i}) {
-    background: radial-gradient(ellipse at #{$bgpos}, #b8c6c6 0%, #30b3d3 46%, #20628c 100%);
-    $width: randomInRange(5, 100); // Tạo giá trị width ngẫu nhiên
-    width: #{$width}px; // Nối giá trị width với đơn vị 'px'
+    $width: randomInRange(100, 300); 
+    width: #{$width}px;
     height: #{$width}px;
-    left: #{randomInRange(1, 100)}vw; // Nối giá trị với đơn vị 'vw'
-    bottom: #{randomInRange(1, 100)}vh; // Nối giá trị với đơn vị 'vh'
-    animation: move#{$i} infinite #{randomT(3, 15)}s; // Nối đơn vị 's' cho animation
+    left: #{randomInRange(1, 100)}vw;
+    bottom: #{randomInRange(1, 100)}vh;
+    animation: move#{$i} infinite #{randomT(3, 15)}s;
   }
 
   @keyframes move#{$i} {
     0% {
-      bottom: -100px;
+      bottom: -500px;
     }
 
     100% {

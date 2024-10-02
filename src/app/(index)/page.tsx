@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FV from "./components/fv";
 import BackgroundGradient from "@/components/backgroundGradient";
+import Product from "./components/product";
 
 export default function Home() {
   return (
@@ -8,59 +9,9 @@ export default function Home() {
       <BackgroundGradient>
       <div className="bg-[url('/assets/images/fv-bg.png')] bg-[length:100%_auto] bg-no-repeat bg-top">
         <FV />
+        <Product />
       </div>
-      <div className='canvas'>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-  <div className='bubble'></div>
-</div>
+      
 
       </BackgroundGradient>
     </main>
