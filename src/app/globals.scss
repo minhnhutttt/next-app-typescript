@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth !important;
+}
+body {
+  color: #fff;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.bg-main {
+  background: -webkit-radial-gradient(50% 50%, circle cover, #005FD7, #8CCAF6);     
+  animation: flow 10s infinite;
+}
+
+@keyframes flow {
+  @for $i from 0 through 99 {
+    $per: $i + '%';
+    #{$i + '%'} {
+      background: -webkit-radial-gradient(#{$per} #{$per}, circle cover, #005FD7, #8CCAF6);  
+    }
+  }
+}
+@function randomInRange($min, $max) {
+  @return $min + random($max - $min + 1);
+}
+
+@function randomT($min, $max) {
+  @return $min + random($max - $min + 1);
+}
+
+.canvas {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, #edfffa 0%, #31c5d6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.bubble {
+  display: block;
+  border-radius: 100%;
+  opacity: .8;
+  position: absolute;
+}
+
+@for $i from 1 through 50 {
+  $bgpos: if($i % 2 == 0, top right, center);
+
+  .bubble:nth-child(#{$i}) {
+    background: radial-gradient(ellipse at #{$bgpos}, #b8c6c6 0%, #30b3d3 46%, #20628c 100%);
+    $width: randomInRange(5, 100); // Tạo giá trị width ngẫu nhiên
+    width: #{$width}px; // Nối giá trị width với đơn vị 'px'
+    height: #{$width}px;
+    left: #{randomInRange(1, 100)}vw; // Nối giá trị với đơn vị 'vw'
+    bottom: #{randomInRange(1, 100)}vh; // Nối giá trị với đơn vị 'vh'
+    animation: move#{$i} infinite #{randomT(3, 15)}s; // Nối đơn vị 's' cho animation
+  }
+
+  @keyframes move#{$i} {
+    0% {
+      bottom: -100px;
+    }
+
+    100% {
+      bottom: #{randomInRange(0, 100)}vh;
+      transform: translate(#{randomInRange(-100, 200)}px, 0);
+      opacity: 0;
+    }
+  }
+}
