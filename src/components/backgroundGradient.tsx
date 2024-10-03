@@ -17,13 +17,12 @@ const BackgroundGradient = ({children}:{children: ReactNode}) => {
 
   return (
     <div
-    className=' h-[4000px] duration-75'
+    className="duration-75"
       onMouseMove={handleMouseMove}
       style={{
         backgroundImage: `radial-gradient(circle at ${bgPosition}, ${colorOne}, ${colorTwo})`,
       }}
     >
-      <div>
         {Array.from({ length: 3 }).map((_, index) => (
           <Fragment key={index}>
           <div className="bubble bg-[url('/assets/images/bubble-ss.png')] bg-cover aspect-[119/121]"></div>
@@ -32,8 +31,9 @@ const BackgroundGradient = ({children}:{children: ReactNode}) => {
           <div className="bubble bg-[url('/assets/images/bubble-l.png')] bg-cover aspect-[260/265]"></div>
           </Fragment>
       ))}
-      </div>
+      <div className="relative">
       {children}
+      </div>
     </div>
   );
 };
