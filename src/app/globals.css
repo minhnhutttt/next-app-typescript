@@ -30,3 +30,39 @@ body {
 	}
 }
  
+@keyframes aniDotTop {
+    100% {
+        background-position-x: 73px; 
+    }        
+}
+@keyframes aniDotBottom {
+    100% {
+        background-position-x: -73px; 
+    }        
+}
+@keyframes aniDotRight {
+    100% {
+        background-position-y: 73px; 
+    }        
+}
+@keyframes aniDotLeft {
+    100% {
+        background-position-y: -73px; 
+    }        
+}
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+    100% {
+        transform: rotate(359deg);
+    }        
+}
+@keyframes flash {
+	0% {
+		opacity: 0;
+	}
+    100% {
+        opacity: 1;
+    }        
+}

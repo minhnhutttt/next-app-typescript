@@ -114,14 +114,37 @@ export default function Cases() {
           Use Cases for DwETH on DIVER Chain
         </h3>
         <div className="flex justify-center flex-wrap w-full max-w-[1240px] mx-auto gap-7 md:gap-[85px] mt-8 md:mt-[70px]">
-            {data.map((item,index) => (
-                <div className="fade-up flex flex-col items-center aspect-[348/388] w-[348px] bg-[url('/assets/images/case-item.png')] bg-cover drop-shadow-[0px_0px_40px_0px_rgba(38,_64,_141,_0.10)] pt-[100px]" key={index}>
-                    <figure className="h-[135px] flex items-center justify-center">
-                        <img src={item.image} alt="" />
-                    </figure>
-                    <p className="text-[20px] text-black font-medium md:mt-5 flex items-center justify-center tracking-widest h-16">{item.text}</p>
-                </div>
-            ))}
+            <div className="fade-up flex flex-col items-center aspect-[348/388] w-[348px] bg-[url('/assets/images/case-item.png')] bg-cover drop-shadow-[0px_0px_40px_0px_rgba(38,_64,_141,_0.10)] pt-[100px]">
+                <figure className="h-[135px] flex items-center justify-center relative">
+                    <div className="absolute size-[84px] overflow-hidden">
+                      <div className="animate-[aniDotTop_5s_linear_infinite] bg-[url('/assets/images/case-img-dots.svg')] h-[7px] absolute top-0 inset-x-0"></div>
+                      <div className="animate-[aniDotRight_5s_linear_infinite] bg-[url('/assets/images/case-img-dots-v.svg')] h-[73px] w-[7px] absolute right-0 inset-y-0"></div>
+                      <div className="animate-[aniDotBottom_5s_linear_infinite] bg-[url('/assets/images/case-img-dots.svg')] h-[7px] absolute bottom-0 inset-x-0"></div>
+                      <div className="animate-[aniDotLeft_5s_linear_infinite] bg-[url('/assets/images/case-img-dots-v.svg')] h-[73px] w-[7px] absolute left-0 inset-y-0"></div>
+                    </div>
+                    <img className="relative" src={data[0].image} alt="" />
+                </figure>
+                <p className="text-[20px] text-black font-medium md:mt-5 flex items-center justify-center tracking-widest h-16">{data[0].text}</p>
+            </div>
+            <div className="fade-up flex flex-col items-center aspect-[348/388] w-[348px] bg-[url('/assets/images/case-item.png')] bg-cover drop-shadow-[0px_0px_40px_0px_rgba(38,_64,_141,_0.10)] pt-[100px]">
+                <figure className="h-[135px] flex items-center justify-center relative">
+                    <img className="relative animate-[rotate_5s_linear_infinite]" src={data[1].image} alt="" />
+                </figure>
+                <p className="text-[20px] text-black font-medium md:mt-5 flex items-center justify-center tracking-widest h-16">{data[1].text}</p>
+            </div>
+            <div className="fade-up flex flex-col items-center aspect-[348/388] w-[348px] bg-[url('/assets/images/case-item.png')] bg-cover drop-shadow-[0px_0px_40px_0px_rgba(38,_64,_141,_0.10)] pt-[100px]">
+                <figure className="h-[135px] flex items-center justify-center relative">
+                    <span className="w-[138px] h-[90px] relative">
+                      <img src="/assets/images/case-img-circle.svg" className="animate-[flash_1s_infinite] absolute right-6 -top-0.5" />
+                      <img src="/assets/images/case-img-circle.svg" className="animate-[flash_1s_infinite] absolute right-0.5 top-3" />
+                      <img src="/assets/images/case-img-circle.svg" className="animate-[flash_1s_infinite] absolute -right-0.5 top-[38px]" />
+                      <img src="/assets/images/case-img-circle.svg" className="animate-[flash_1s_infinite] absolute right-0.5 top-[60px]" />
+                      <img src="/assets/images/case-img-circle.svg" className="animate-[flash_1s_infinite] absolute right-[22px] top-[76px]" />
+                      <img className="relative" src={data[2].image} alt="" />
+                    </span>
+                </figure>
+                <p className="text-[20px] text-black font-medium md:mt-5 flex items-center justify-center tracking-widest h-16">{data[2].text}</p>
+            </div>
         </div>
         <div className="md:mt-[230px] mt-[100px]">
             <h3 className="fade-up text-center text-white md:text-[58px] text-[32px] font-black tracking-[0.22em] w-full max-w-[1000px] mx-auto">
