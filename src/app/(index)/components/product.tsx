@@ -12,7 +12,7 @@ gsap.config({
 
 const ProductButton = ({href, children}: {href: string, children: ReactNode}) => {
   return (
-    <a href={href} className="flex justify-center items-center w-[280px] h-[60px] rounded-[10px] bg-[#005FD7] text-white/90 font-medium text-[18px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_22px_50px_0px_rgba(24,_83,_158,_0.80)] [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)]">{children}</a>
+    <a href={href} className="flex justify-center items-center w-[280px] md:h-[60px] h-[48px] rounded-[10px] bg-[#005FD7] text-white/90 font-medium text-[18px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_22px_50px_0px_rgba(24,_83,_158,_0.80)] [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)]">{children}</a>
   )
 }
 
@@ -163,9 +163,9 @@ const ProductItem = ({
 }) => {
   return (
     <div
-      className={`product-item relative flex items-center md:gap-[60px] gap-10 max-md:pb-[60px] md:py-[130px] px-[45px] border border-[#005FD7] rounded-[20px] [box-shadow:0px_4px_50px_0px_rgba(34,_143,_206,_0.20)] md:even:bg-[linear-gradient(145deg,_rgba(86,_184,_255,_0.90)_33.61%,_rgba(0,_119,_186,_0.90)_79.25%)] md:odd:bg-[linear-gradient(145deg,_#5F93FF_33.61%,_#0B3FAD_79.25%)]`}
+      className={`product-item relative flex max-lg:flex-col items-center md:gap-[60px] gap-6 max-md:pb-[60px] md:py-16 lg:py-[130px] md:px-[45px] border border-[#005FD7] rounded-[20px] [box-shadow:0px_4px_50px_0px_rgba(34,_143,_206,_0.20)] even:bg-[linear-gradient(145deg,_rgba(86,_184,_255,_0.90)_33.61%,_rgba(0,_119,_186,_0.90)_79.25%)] odd:bg-[linear-gradient(145deg,_#5F93FF_33.61%,_#0B3FAD_79.25%)]`}
     >
-      <div className="max-w-[660px]">
+      <div className="max-w-[660px] max-lg:w-full max-xl:w-1/2">
         <video
           autoPlay
           muted
@@ -178,14 +178,14 @@ const ProductItem = ({
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="relative z-10">
-        <p className="text-[24px] mb-3">{subTitle}</p>
-        <h4 className="text-[48px] font-bold leading-none">{title}</h4>
-        <p className="text-[18px] font-medium max-w-[550px] tracking-wide mt-4">{text}</p>
+      <div className="relative z-10 max-lg:px-10 max-md:px-5">
+        <p className="md:text-[24px] text-[16px] mb-3">{subTitle}</p>
+        <h4 className="md:text-[48px] text-[28px] font-bold leading-none">{title}</h4>
+        <p className="md:text-[18px] text-[14px] font-medium max-w-[550px] tracking-wide mt-4">{text}</p>
         <div className="mt-6 md:mt-10 flex gap-5">{children}</div>
       </div>
       <div className="absolute right-0 bottom-0">
-        <img src={number} alt="" />
+        <img className="max-lg:h-[160px]" src={number} alt="" />
       </div>
     </div>
   );
@@ -266,7 +266,7 @@ const Product = () => {
           </svg>
         </div>
       </div>
-      <div className="bg-[url('/assets/images/bg-product.png')] bg-[length:100%_100%] pt-10">
+      <div className="bg-[url('/assets/images/bg-product.png')] bg-[length:100%_100%] pt-10 md:px-10 px-6">
         <div className="flex flex-col items-center justify-center">
           <figure>
             <img src="/assets/images/product-logo.png" alt="" />
@@ -274,11 +274,11 @@ const Product = () => {
           <h5 className="text-center md:text-[48px] text-[36px] font-bold text-white leading-[1.3] mt-5">
             DIVER Ecosystem
           </h5>
-          <p className="text-center text-[20px] md:text-[32px]">
-            - Product list transforming DIVER&apos;s features into value -
+          <p className="text-center text-[20px] md:text-[32px] flex items-center gap-2">
+            <span>-</span>Product list transforming DIVER&apos;s features into value<span>-</span>
           </p>
         </div>
-        <div ref={containerRef} className="w-full max-w-[1360px] mx-auto mt-5 space-y-[30px] h-[972px] overflow-auto no-scrollbar">
+        <div ref={containerRef} className="w-full md:max-w-[1360px] max-w-[440px] mx-auto mt-5 space-y-[30px] h-[972px] overflow-auto no-scrollbar rounded-[20px]">
           {data.map((item, index)=>(
             <ProductItem
             number={item.number}

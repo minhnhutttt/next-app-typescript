@@ -65,8 +65,8 @@ const FV = () => {
       <p className="text-center md:text-[48px] text-[24px] font-bold mt-[90px] tracking-wide">
         A new economic sphere pioneered by DIVER
       </p>
-      <p className="text-center md:text-[32px] text-[20px] tracking-wide">
-        - Free, Fast, Efficient, and Secure -
+      <p className="text-center text-[20px] md:text-[32px] flex items-center gap-2 tracking-wide">
+        <span>-</span>Free, Fast, Efficient, and Secure<span>-</span>
       </p>
 
       <div className="w-full max-w-[960px] mx-auto mt-[70px]">
