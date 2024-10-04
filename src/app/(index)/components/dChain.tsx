@@ -96,8 +96,10 @@ const DChain = () => {
                 <div className="w-full max-w-[1440px] mx-auto md:mt-[160px] mt-[100px]">
                     <p className="text-center md:text-[32px] text-[20px] font-black leading-[1.3] tracking-[0.1em] px-5">Reasons to Use DwETH on DIVER Chain</p>
                     <div className="fade-up flex max-md:flex-col items-center md:items-start gap-6 md:gap-[35px] mt-16">
-                        <figure className="md:rounded-r-[30px] overflow-hidden max-xl:w-1/2 max-md:w-auto">
+                        <figure className="md:rounded-r-[30px] overflow-hidden max-xl:w-1/2 max-md:w-auto relative">
                             <img src="/assets/images/d-chain-thumb.png" alt="" />
+                            <img className="animate-[fuwafuwa_1.8s_ease-in-out_infinite_alternate] absolute w-[9.0278%] top-[19%] right-[11%]" src="/assets/images/d-chain-thumb-01.png" alt="" />
+                            <img className="animate-[fuwafuwa_1.8s_ease-in-out_infinite_alternate] absolute w-[7.777%] left-[7.5%] top-[64%]" src="/assets/images/d-chain-thumb-02.png" alt="" />
                         </figure>
                         <div className="flex flex-1 max-md:px-5">
                             <p className="md:text-[18px] text-[15px] font-medium leading-loose tracking-[0.1em] max-w-[487px]">
