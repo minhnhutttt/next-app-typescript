@@ -59,7 +59,7 @@ const FV = () => {
             <img className="animate-[fuwafuwa_1.8s_ease-in-out_infinite_alternate]" src="/assets/images/fc-sec-06.png" alt="" />
           </div>
           <div
-            className="w-full md:max-w-[750px] max-w-[450px] relative flex flex-col items-center"
+            className="w-full md:max-w-[750px]  relative flex flex-col items-center"
           >
             <div className="relative text-[10vw] lg:text-[82px] md:text-[44px] font-black leading-[1] text-[#1E1E1E] pr-10">
               <span className="opacity-0">
@@ -69,7 +69,7 @@ const FV = () => {
                 <span ref={typedElement} />
               </span>
             </div>
-            <div ref={text01Ref} className="opacity-0 w-full md:bg-white bg-white/75 font-bold text-[15px] md:text-[20px] text-[#1E1E1E] px-4 md:px-[32px] py-5 mt-5">
+            <div ref={text01Ref} className="opacity-0 max-md:max-w-[450px] w-full md:bg-white bg-white/75 font-bold text-[15px] md:text-[20px] text-[#1E1E1E] px-4 md:px-[32px] py-5 mt-5">
               <ul>
               <li className="flex items-start gap-2"><img className="w-2 md:w-3 mt-0.5 md:mt-1" src="/assets/images/ic-logo.svg" alt="" />1 DwETH = 1 ETH Guaranteed Value</li>
               <li className="flex items-start gap-2"><img className="w-2 md:w-3 mt-0.5 md:mt-1" src="/assets/images/ic-logo.svg" alt="" />Smooth Transactions with Zero Fees</li>
