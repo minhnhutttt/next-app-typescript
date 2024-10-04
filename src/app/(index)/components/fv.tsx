@@ -35,7 +35,7 @@ const FV = () => {
     <div>
       <div className="fv-scroll group pt-[100px] h-screen relative">
         <div className="absolute top-0 inset-x-0 h-[80%] bg-[linear-gradient(140deg,_#2379E7_1.59%,_#2594F7_33.42%,_#28A7FE_57.52%,_#2AB1FF_75.85%,_#32BCFE_98.03%)] md:[clip-path:polygon(0_0,_100%_0,_100%_calc(100%-140px),_0%_100%)] [clip-path:polygon(0_0,_100%_0,_100%_calc(100%-70px),_0%_100%)]"></div>
-        <div className="fixed top-0 inset-x-0 h-full w-full max-w-[1440px] mx-auto flex items-center justify-center flex-col z-0 md:pt-[128px]" 
+        <div className="fixed top-0 inset-x-0 h-full w-full max-w-[1440px] mx-auto flex items-center justify-center flex-col z-0 pt-[128px]" 
             style={{
               filter: "blur(calc((1 - var(--visible-y)) * 10px))",
               opacity: "var(--visible-y)",
@@ -61,21 +61,21 @@ const FV = () => {
           <div
             className="w-full md:max-w-[750px] max-w-[450px] relative flex flex-col items-center"
           >
-            <div className="relative text-[28px] lg:text-[82px] md:text-[44px] font-black leading-[1] text-[#1E1E1E] pr-10">
+            <div className="relative text-[10vw] lg:text-[82px] md:text-[44px] font-black leading-[1] text-[#1E1E1E] pr-10">
               <span className="opacity-0">
                 DwETH:<br /> Ethereum Reborn <br />on DIVER Chain
               </span>
-              <span className="absolute inset-0">
+              <span className="absolute inset-0 max-md:[text-shadow:3px_3px_3px_#fff]">
                 <span ref={typedElement} />
               </span>
             </div>
-            <div ref={text01Ref} className="opacity-0 w-full bg-white font-bold text-[15px] md:text-[20px] text-[#1E1E1E] px-4 md:px-[32px] py-5 mt-5">
+            <div ref={text01Ref} className="opacity-0 w-full md:bg-white bg-white/75 font-bold text-[15px] md:text-[20px] text-[#1E1E1E] px-4 md:px-[32px] py-5 mt-5">
               <ul>
-              <li className="flex items-center gap-2"><img className="w-2 md:w-3" src="/assets/images/ic-logo.svg" alt="" />1 DwETH = 1 ETH Guaranteed Value</li>
-              <li className="flex items-center gap-2"><img className="w-2 md:w-3" src="/assets/images/ic-logo.svg" alt="" />Smooth Transactions with Zero Fees</li>
-              <li className="flex items-center gap-2"><img className="w-2 md:w-3" src="/assets/images/ic-logo.svg" alt="" />Lightning-Fast 2-Second Processing</li>
-              <li className="flex items-center gap-2"><img className="w-2 md:w-3" src="/assets/images/ic-logo.svg" alt="" />ETH⇄DwETH Easy Bridges</li>
-              <li className="flex items-center gap-2"><img className="w-2 md:w-3" src="/assets/images/ic-logo.svg" alt="" />Unwavering Commitment to Transparency and Security</li>
+              <li className="flex items-start gap-2"><img className="w-2 md:w-3 mt-0.5 md:mt-1" src="/assets/images/ic-logo.svg" alt="" />1 DwETH = 1 ETH Guaranteed Value</li>
+              <li className="flex items-start gap-2"><img className="w-2 md:w-3 mt-0.5 md:mt-1" src="/assets/images/ic-logo.svg" alt="" />Smooth Transactions with Zero Fees</li>
+              <li className="flex items-start gap-2"><img className="w-2 md:w-3 mt-0.5 md:mt-1" src="/assets/images/ic-logo.svg" alt="" />Lightning-Fast 2-Second Processing</li>
+              <li className="flex items-start gap-2"><img className="w-2 md:w-3 mt-0.5 md:mt-1" src="/assets/images/ic-logo.svg" alt="" />ETH⇄DwETH Easy Bridges</li>
+              <li className="flex items-start gap-2"><img className="w-2 md:w-3 mt-0.5 md:mt-1" src="/assets/images/ic-logo.svg" alt="" />Unwavering Commitment to Transparency and Security</li>
               </ul>
             </div>
             </div>
