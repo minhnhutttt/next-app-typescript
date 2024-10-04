@@ -3,6 +3,7 @@ import FV from "./components/fv";
 import BackgroundGradient from "@/components/backgroundGradient";
 import Product from "./components/product";
 import Projects from "./components/projects";
+import Diver from "./components/diver";
 
 export default function Home() {
   return (
@@ -12,9 +13,8 @@ export default function Home() {
         <FV />
         <Product />
         <Projects />
+        <Diver />
       </div>
-      
-
       </BackgroundGradient>
     </main>
   );

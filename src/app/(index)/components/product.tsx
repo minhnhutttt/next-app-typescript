@@ -2,7 +2,7 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ReactNode, useLayoutEffect, useRef } from "react";
+import { ReactNode, useEffect, useLayoutEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -194,7 +194,7 @@ const ProductItem = ({
 const Product = () => {
   const waveRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  useLayoutEffect(() => {
+  useEffect(() => {
     let ctx = gsap.context(() => {
       if (waveRef.current) {
         gsap.fromTo(

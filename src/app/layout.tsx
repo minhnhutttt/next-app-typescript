@@ -3,6 +3,7 @@ import { League_Spartan, Poppins, Inter } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import ScrollContainer from "@/components/scrollContainer";
 
 const lagueSpartan = League_Spartan({
   weight: ["400", "500", "700", "800", "900"],
@@ -35,8 +36,10 @@ export default function RootLayout({
        <body
         className={`${lagueSpartan.className} ${poppins.variable} ${inter.variable}  bg-main bg-[linear-gradient(145deg,_#5F93FF_33.61%,_#0B3FAD_79.25%)]`}
       >
+        <ScrollContainer>
         <Header />
         {children}
+        </ScrollContainer>
       </body>
     </html>
   );

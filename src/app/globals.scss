@@ -74,3 +74,9 @@ body {
       scrollbar-width: none;
 }
 }
+
+.word {
+  display: inline-block;
+    transform-origin: 50% 100%;
+    will-change: transform;
+}
