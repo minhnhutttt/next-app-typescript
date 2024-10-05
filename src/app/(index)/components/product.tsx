@@ -1,5 +1,6 @@
 "use client";
 
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactNode, useEffect, useLayoutEffect, useRef } from "react";
@@ -192,6 +193,7 @@ const ProductItem = ({
 };
 
 const Product = () => {
+  const ref = useScrollAnimations();
   const waveRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
@@ -236,7 +238,7 @@ const Product = () => {
     return () => ctx.revert();
   });
   return (
-    <section className="relative pb-16 z-10">
+    <section ref={ref} className="relative pb-16 z-10">
       <div className="w-full h-[331px] flex items-end -mb-px">
         <div ref={waveRef} className="w-full">
           <svg
@@ -267,7 +269,7 @@ const Product = () => {
         </div>
       </div>
       <div className="bg-[url('/assets/images/bg-product.png')] bg-[length:100%_100%] pt-10 md:px-10 px-6">
-        <div className="flex flex-col items-center justify-center">
+        <div className="fade-up flex flex-col items-center justify-center">
           <figure>
             <img src="/assets/images/product-logo.png" alt="" />
           </figure>
@@ -278,7 +280,7 @@ const Product = () => {
             <span>-</span>Product list transforming DIVER&apos;s features into value<span>-</span>
           </p>
         </div>
-        <div ref={containerRef} className="w-full md:max-w-[1360px] max-w-[440px] mx-auto mt-5 space-y-[30px] h-[972px] overflow-auto no-scrollbar rounded-[20px]">
+        <div ref={containerRef} className="fade-up w-full md:max-w-[1360px] max-w-[440px] mx-auto mt-5 space-y-[30px] h-[972px] overflow-auto no-scrollbar rounded-[20px]">
           {data.map((item, index)=>(
             <ProductItem
             number={item.number}

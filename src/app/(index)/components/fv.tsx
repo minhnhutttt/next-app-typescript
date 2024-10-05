@@ -1,5 +1,7 @@
 "use client";
 
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+
 const dataStats = [
   {
     text: "Average block time",
@@ -44,44 +46,45 @@ const dataStats = [
 ];
 
 const FV = () => {
+  const ref = useScrollAnimations();
   return (
-    <section className="relative px-5 flex flex-col items-center justify-center pt-[180px] z-10">
-      <div className="[filter:drop-shadow(0px_6px_50px_rgba(1,_0,_69,_0.20))]">
+    <section ref={ref} className="relative px-5 flex flex-col items-center justify-center pt-[180px] z-10">
+      <div className="fade-up [filter:drop-shadow(0px_6px_50px_rgba(1,_0,_69,_0.20))]">
         <img className="max-md:w-[160px]" src="/assets/images/fv-logo.png" alt="" />
       </div>
-      <h3 className="text-center md:text-[128px] text-[40px] font-bold leading-none [text-shadow:2px_4px_4px_#18539E] mt-8">
+      <h3 className="fade-up text-center md:text-[128px] text-[40px] font-bold leading-none [text-shadow:2px_4px_4px_#18539E] mt-8">
         DIVER <br />
         Time Network
       </h3>
-      <p className="text-center md:text-[48px] text-[24px] leading-none [text-shadow:2px_4px_4px_#18539E] mb-9">
+      <p className="fade-up text-center md:text-[48px] text-[24px] leading-none [text-shadow:2px_4px_4px_#18539E] mb-9">
         - Dive into a world created by free -
       </p>
       <a
         href="/"
-        className="md:px-[90px] md:py-[25px] px-10 py-3 bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_22px_50px_0px_rgba(24,_83,_158,_0.80)] text-white/90 font-bold md:text-[36px] text-[24px] [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)] font-poppins"
+        className="fade-up md:px-[90px] md:py-[25px] px-10 py-3 bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_22px_50px_0px_rgba(24,_83,_158,_0.80)] text-white/90 font-bold md:text-[36px] text-[24px] [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)] font-poppins"
       >
         Learn DIVER
       </a>
-      <p className="text-center md:text-[48px] text-[24px] font-bold mt-[90px] tracking-wide">
+      <p className="fade-up text-center md:text-[48px] text-[24px] font-bold mt-[90px] tracking-wide">
         A new economic sphere pioneered by DIVER
       </p>
-      <p className="text-center text-[20px] md:text-[32px] flex items-center gap-2 tracking-wide">
+      <p className="fade-up text-center text-[20px] md:text-[32px] flex items-center gap-2 tracking-wide">
         <span>-</span>Free, Fast, Efficient, and Secure<span>-</span>
       </p>
 
       <div className="w-full max-w-[960px] mx-auto mt-[70px]">
-        <p className="text-center md:text-[28px] text-[20px] tracking-wider">
+        <p className="fade-up text-center md:text-[28px] text-[20px] tracking-wider">
           Astounding growth brought by innovative trading environment
         </p>
         <div className="md:mt-10 mt-6">
-          <figure>
+          <figure className="fade-up">
             <img
               className="drop-shadow-[10px_10px_70px_0px_rgba(10,_20,_57,_0.40)]"
               src="/assets/images/img-chart.png"
               alt=""
             />
           </figure>
-          <div className="flex max-md:flex-col gap-5 md:mt-[50px] mt-8">
+          <div className="fade-up flex max-md:flex-col gap-5 md:mt-[50px] mt-8">
             <figure>
               <img
                 className="drop-shadow-[10px_10px_70px_0px_rgba(10,_20,_57,_0.40)]"
@@ -99,10 +102,10 @@ const FV = () => {
           </div>
         </div>
         <div className="md:mt-[130px] mt-[70px]">
-          <p className="text-center md:text-[28px] text-[20px] tracking-wider md:mb-10 mb-6">
+          <p className="fade-up text-center md:text-[28px] text-[20px] tracking-wider md:mb-10 mb-6">
             DIVER Network&apos;s Prowess
           </p>
-          <div className="bg-white rounded-[24px] [box-shadow:10px_10px_70px_0px_rgba(10,_20,_57,_0.40)] p-5">
+          <div className="fade-up bg-white rounded-[24px] [box-shadow:10px_10px_70px_0px_rgba(10,_20,_57,_0.40)] p-5">
             <div className="font-poppins md:text-[16px] text-[14px] text-black/90 font-semibold px-2 pt-2.5 pb-0">
               DIVER Stats
             </div>

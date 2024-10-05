@@ -80,3 +80,9 @@ body {
     transform-origin: 50% 100%;
     will-change: transform;
 }
+
+@keyframes r {
+  to {
+    rotate: 1turn;
+  }
+}

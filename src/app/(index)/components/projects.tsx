@@ -13,7 +13,7 @@ const Projects = () => {
   return (
     <section ref={ref} className="relative md:mt-[175px] mt-[100px] px-5 z-10">
       <div className="w-full max-w-[1360px] mx-auto">
-        <div className="flex flex-col items-center justify-center">
+        <div className="fade-up flex flex-col items-center justify-center">
           <h5 className="text-center md:text-[48px] text-[36px] font-bold text-white leading-[1.3] mt-5">
             DRC20 Token Projects
           </h5>
@@ -21,7 +21,7 @@ const Projects = () => {
             <span>-</span> The essence of a world created by free <span>-</span>
           </p>
         </div>
-        <div className="relative md:rounded-[60px] rounded-[30px] border border-[#005FD7] overflow-hidden mt-7 p-5 md:pt-[111px] md:pb-[101px] md:px-[30px]">
+        <div className="fade-up relative md:rounded-[60px] rounded-[30px] border border-[#005FD7] overflow-hidden mt-7 p-5 md:pt-[111px] md:pb-[101px] md:px-[30px]">
           <span className="absolute inset-0 opacity-20 bg-[radial-gradient(28.72%_24.56%_at_21.47%_29.47%,_#CBC8C8_0%,_#000_100%)]"></span>
           <div className="grid md:grid-cols-4 grid-cols-2 md:text-[20px] text-[18px] font-semibold bg-white relative rounded-[20px]">
             <span
