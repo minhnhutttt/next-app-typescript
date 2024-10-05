@@ -24,7 +24,7 @@ const Consortium = () => {
             className="group relative flex items-center hover:duration-100 md:mb-5 md:gap-12 gap-5"
           >
             <p className="md:text-[22px] text-[16px] font-medium whitespace-nowrap">
-                Become a member to <br />co-create DIVER's future
+                Become a member to <br />co-create DIVER&apos;s future
             </p>
             <div className="relative">
             <img

@@ -99,8 +99,8 @@ const Diver = () => {
                 data-splitting
                 className="splitting-head md:text-[70px] text-[24px] tracking-wide leading-none"
               >
-                Inheriting Bitcoin's philosophy and reliability, surpassing
-                Ethereum's convenience and scalability, challenging the
+                Inheriting Bitcoin&apos;s philosophy and reliability, surpassing
+                Ethereum&apos;s convenience and scalability, challenging the
                 realization of essential Web3.
               </div>
               <div className="md:text-[46px] text-[20px] font-medium leading-[1.3] md:mt-[60px] mt-10 md:mb-[120px] mb-14 space-y-5">
