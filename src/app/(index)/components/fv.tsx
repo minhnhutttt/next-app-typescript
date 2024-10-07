@@ -6,9 +6,9 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const FV = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative px-5 md:pt-[130px] pt-[100px] z-10 md:h-[1174px] h-[900px]">
+    <section ref={ref} className="relative px-5 md:pt-[130px] pt-[100px] z-10 md:h-[1174px] h-[900px] dark:text-white">
       <div className="w-full max-w-[1440px] mx-auto relative h-full">
-        <div className="absolute top-0 left-0 md:size-[312px] size-[200px] rounded-full overflow-hidden">
+        <div className="absolute top-0 left-0 md:size-[312px] size-[200px] rounded-full overflow-hidden z-10">
           <video
             autoPlay
             muted
@@ -40,7 +40,8 @@ const FV = () => {
             Realizing zero-fee transactions
           </div>
           <div className="relative flex justify-center md:pt-12 pt-8 z-10">
-            <img src="/assets/images/fv-text.svg" alt="" />
+            <img className="dark:hidden" src="/assets/images/fv-text.svg" alt="" />
+            <img className="hidden dark:inline-block" src="/assets/images/fv-text-white.svg" alt="" />
           </div>
         </div>
       </div>

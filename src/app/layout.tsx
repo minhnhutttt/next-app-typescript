@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { EB_Garamond, Poppins, Inter } from "next/font/google";
+import { EB_Garamond, Noto_Sans_JP} from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -7,6 +7,12 @@ import Footer from "@/components/footer";
 const EBGaramond = EB_Garamond({
   weight: ["400", "500", "700", "800"],
   subsets: ["latin"],
+});
+
+const noto = Noto_Sans_JP({
+  weight: ["400", "500", "700", "800"],
+  subsets: ["latin"],
+  variable: '--font-noto'
 });
 
 export const metadata: Metadata = {
@@ -22,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${EBGaramond.className}`}
+        className={`${EBGaramond.className} ${noto.variable } [transition:background-color_200ms_linear] bg-[#FFFAFA] [&.dark]:bg-black`}
       >
         <Header />
         {children}

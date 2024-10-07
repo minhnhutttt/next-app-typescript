@@ -11,14 +11,44 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+.u-transform {
+  will-change: transform;
+}
+
 #fv-svg {
   stroke-dashoffset: 1855;
   stroke-dasharray: 1855;
-  animation: line 6s ease forwards;
+  animation: line 4s ease forwards;
 }
+
+#diver-svg {
+  stroke-dashoffset: 11439;
+  stroke-dasharray: 11439;
+  animation: line 15s ease forwards;
+}
+
 
 @keyframes line {
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+  .no-scrollbar {
+      -ms-overflow-style: none; 
+      scrollbar-width: none;
   }
 }
