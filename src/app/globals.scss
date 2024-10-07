@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth !important;
+}
+body {
+  color: #000;
+  font-family: "Noto Sans", sans-serif;
+}
+
+#fv-svg {
+  stroke-dashoffset: 1855;
+  stroke-dasharray: 1855;
+  animation: line 6s ease forwards;
+}
+
+@keyframes line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
