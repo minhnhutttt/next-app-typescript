@@ -16,6 +16,26 @@ body {
   animation: flow 10s infinite;
 }
 
+.u-text-stroke {
+  background: linear-gradient(145deg, #5F93FF 33.61%, #0B3FAD 79.25%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.u-transform {
+  will-change: transform;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
 @keyframes flow {
   @for $i from 0 through 99 {
     $per: $i + '%';
