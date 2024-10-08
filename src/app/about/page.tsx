@@ -1,17 +1,21 @@
 import BackgroundGradient from "@/components/backgroundGradient";
 import PageHead from "./components/pageHead";
-import Strategy from "./components/strategy";
-import Solution from "./components/solution";
-import Consortium from "./components/consortium";
+import AboutStrategy from "./components/strategy";
+import AboutSolution from "./components/solution";
+import AboutConsortium from "./components/consortium";
+import AboutRoadMap from "./components/roadmap";
+import AboutMessage from "./components/message";
 
 export default function About() {
   return (
     <main>
       <BackgroundGradient>
         <PageHead />
-        <Strategy />
-        <Solution />
-        <Consortium />
+        <AboutStrategy />
+        <AboutSolution />
+        <AboutConsortium />
+        <AboutRoadMap />
+        <AboutMessage />
       </BackgroundGradient>
     </main>
   );

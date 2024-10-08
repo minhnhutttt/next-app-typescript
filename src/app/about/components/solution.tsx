@@ -55,16 +55,16 @@ const data = [
     },
 ]
 
-const Solution = () => {
+const AboutSolution = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="relative pt-14 md:pt-[70px] z-10 px-5 md:pb-[100px] pb-[60px]">
       <div className="w-full mx-auto max-w-[1360px]">
-        <h3 className="text-center md:text-[64px] text-[32px] leading-none font-bold tracking-wide">Developing Functions to Solve Global Issues</h3>
-        <p className="text-center md:text-[18px] text-[16px] text-white font-bold leading-none md:mt-5 mt-3">DIVER is developing innovative solutions to the following global challenges to realize a future where individuals drive global progress.</p>
+        <h3 className="fade-up text-center md:text-[64px] text-[32px] leading-none font-bold tracking-wide">Developing Functions to Solve Global Issues</h3>
+        <p className="fade-up text-center md:text-[18px] text-[16px] text-white font-bold leading-none md:mt-5 mt-3">DIVER is developing innovative solutions to the following global challenges to realize a future where individuals drive global progress.</p>
         <div className="leading-[1.3] w-full max-w-[1200px] mx-auto md:mt-[70px] mt-10 md:space-y-[60px] space-y-14">
             {data.map((item,index)=>(
-                <div className="flex items-center max-md:flex-col-reverse max-md:gap-7" key={index}>
+                <div className="fade-up flex items-center max-md:flex-col-reverse max-md:gap-7" key={index}>
                     <div className="max-w-[600px] md:mr-[-130px] relative">
                         <h5 className="md:text-[40px] text-[24px] font-bold tracking-tight">{item.title}</h5>
                         <div className="md:mt-10 mt-6 space-y-5">
@@ -84,7 +84,7 @@ const Solution = () => {
                                 <p className="md:text-[18px] text-[16px] font-bold md:w-[120px] w-[100px]">IMPACT</p>
                                 <ul className="flex-1 md:text-[20px] text-[16px] list-decimal md:pl-8 pl-5 tracking-wide">
                                     {item.impacts.map((impact,index) => (
-                                        <li>{impact}</li>
+                                        <li key={index}>{impact}</li>
                                     ))}
                                 </ul>
                             </div>
@@ -101,4 +101,4 @@ const Solution = () => {
   );
 };
 
-export default Solution;
+export default AboutSolution;

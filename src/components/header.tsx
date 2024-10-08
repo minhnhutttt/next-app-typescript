@@ -3,6 +3,36 @@
 import { useCallback, useState } from "react";
 import { usePathname } from "next/navigation";
 
+interface NavLink {
+  link: string;
+  text: string;
+  icon: string;
+  target?: string;
+}
+
+const links: NavLink[] = [
+  {
+    link: "/about",
+    text: "About DIVER",
+    icon: "/assets/images/ic-nav-01.svg",
+  },
+  {
+    link: "#",
+    text: "Amazing️",
+    icon: "/assets/images/ic-nav-02.svg",
+  },
+  {
+    link: "#",
+    text: "Unlock",
+    icon: "/assets/images/ic-nav-03.svg",
+  },
+  {
+    link: "#",
+    text: "Learn…",
+    icon: "/assets/images/ic-nav-04.svg",
+  },
+];
+
 const Header = () => {
   const [NavOpen, setNavOpen] = useState(false);
   const pathname = usePathname();
@@ -15,7 +45,11 @@ const Header = () => {
       <div className="w-full flex items-center justify-between h-20 md:h-[83px] pr-5">
         <div className="flex items-center">
           <a href="/" className="block relative duration-150 hover:opacity-75">
-            <img className="max-md:w-[170px]" src="/assets/images/logo.svg" alt="" />
+            <img
+              className="max-md:w-[170px]"
+              src="/assets/images/logo.svg"
+              alt=""
+            />
           </a>
         </div>
         <div
@@ -23,11 +57,27 @@ const Header = () => {
             NavOpen ? "" : "max-md:invisible max-md:opacity-0"
           }`}
         >
-          <ul className="flex items-center gap-6">
-            <li><a href="/"  className="flex items-center md:text-[20px] text-[16px] gap-[3px] tracking-widest"><span>Overview</span><span className=""><img src="/assets/images/ic-nav-01.svg" alt="" /></span></a></li>
-            <li><a href="/"  className="flex items-center md:text-[20px] text-[16px] gap-[3px] tracking-widest"><span>Amazing️</span><span className=""><img src="/assets/images/ic-nav-02.svg" alt="" /></span></a></li>
-            <li><a href="/"  className="flex items-center md:text-[20px] text-[16px] gap-[3px] tracking-widest"><span>Unlock</span><span className=""><img src="/assets/images/ic-nav-03.svg" alt="" /></span></a></li>
-            <li><a href="/"  className="flex items-center md:text-[20px] text-[16px] gap-[3px] tracking-widest"><span>Learn…</span><span className=""><img src="/assets/images/ic-nav-04.svg" alt="" /></span></a></li>
+          <ul className="flex items-center max-md:flex-col gap-6">
+            {links.map(({ link, text, icon, target }, index) => (
+              <li key={index} className="relative">
+                <a
+                  href={link}
+                  className={`flex items-center md:text-[20px] text-[16px] gap-[3px] tracking-widest ${
+                    pathname === link ? "font-bold" : ""
+                  }`}
+                  target={target}
+                  onClick={close}
+                >
+                  <span>{text}</span>
+                  <span className="">
+                    <img src={icon} alt="" />
+                  </span>
+                </a>
+                <span className={`absolute top-full left-0 w-full bg-white h-[3px] rounded-full  ${
+                    pathname === link ? "opacity-100" : "opacity-0"
+                  }`}></span>
+              </li>
+            ))}
           </ul>
         </div>
         <button

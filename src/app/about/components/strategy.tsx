@@ -35,19 +35,19 @@ const data = [
     }
 ]
 
-const Strategy = () => {
+const AboutStrategy = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="relative pt-20 md:pt-[160px] z-10 px-5 md:pb-[100px] pb-[60px]">
       <div className="w-full mx-auto max-w-[1363px]">
-        <h3 className="text-center md:text-[64px] text-[32px] font-bold tracking-wideleading-none">DIVER's Growth Strategy</h3>
+        <h3 className="fade-up text-center md:text-[64px] text-[32px] font-bold tracking-wideleading-none">DIVER's Growth Strategy</h3>
         <div className="grid md:grid-cols-2 gap-7 md:gap-[43px] md:mt-[46px]">
             {data.map((item,index)=> (
-                <div className="md:min-h-[550px] rounded-[20px] py-8 md:py-[60px] px-5" style={{backgroundColor: item.background}} key={index}>
+                <div className="fade-up md:min-h-[550px] rounded-[20px] py-8 md:py-[60px] px-5" style={{backgroundColor: item.background}} key={index}>
                     <div className="w-full max-w-[530px] mx-auto">
                         <div className="md:text-[24px] text-[18px] leading-none">Strategy {item.id}</div>
                         <h5 className="md:text-[32px] text-[20px] leading-[1.3] md:mt-5 mt-4 tracking-wide md:min-h-[120px]">{item.title}</h5>
-                        <div className="md:mt-10 mt-6 bg-white/10 rounded-[10px] md:py-[30px] py-5 px-5 md:text-[20px] text-[16px] font-medium leading-[1.3]">
+                        <div className="md:mt-10 mt-6 bg-white/10 rounded-[10px] md:py-[30px] py-5 px-6 md:text-[20px] text-[16px] font-medium leading-[1.3]">
                             <ul className="w-full max-w-[400px] mx-auto list-disc md:space-y-6 space-y-4">
                                 {item.items.map((text, index) => (
                                     <li className="" key={index}>
@@ -59,11 +59,11 @@ const Strategy = () => {
                     </div>
                 </div>
             ))}
-            <div className="md:min-h-[550px] rounded-[20px] py-8 md:py-[60px] px-5 bg-black">
+            <div className="fade-up md:min-h-[550px] rounded-[20px] py-8 md:py-[60px] px-5 bg-black">
                 <div className="w-full max-w-[530px] mx-auto">
                     <h4 className="md:text-[45px] text-[24px] font-bold u-text-stroke">The Future DIVER Aims For</h4>
                     <div className="md:mt-10 mt-6 bg-white/10 rounded-[10px] md:py-[30px] py-5 px-5 md:text-[20px] text-[16px] font-bold leading-[1.3] h-[354px] bg-[url('/assets/images/strategy-d.png')] bg-center flex items-center justify-center">
-                        <ul className="w-full max-w-[400px] mx-auto list-disc md:space-y-6 space-y-4">
+                        <ul className="w-full max-w-[400px] mx-auto list-disc md:space-y-6 space-y-4 max-md:px-2">
                             <li>A world without economic barriers</li>
                             <li>A society where individual potential is maximized</li>
                             <li>A sustainable and equitable global economic sphere</li>
@@ -78,4 +78,4 @@ const Strategy = () => {
   );
 };
 
-export default Strategy;
+export default AboutStrategy;
