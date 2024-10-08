@@ -3,6 +3,8 @@ import { EB_Garamond, Noto_Sans_JP} from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import ScrollContainer from "@/components/scrollContainer";
+import SmoothScroll from "@/components/smoothSCroll";
 
 const EBGaramond = EB_Garamond({
   weight: ["400", "500", "700", "800"],
@@ -30,9 +32,13 @@ export default function RootLayout({
        <body
         className={`${EBGaramond.className} ${noto.variable } [transition:background-color_200ms_linear] bg-[#FFFAFA] [&.dark]:bg-black`}
       >
-        <Header />
-        {children}
-        {/* <Footer /> */}
+        <ScrollContainer>
+        <SmoothScroll>
+          <Header />
+          {children}
+          <Footer />
+          </SmoothScroll>
+        </ScrollContainer>
       </body>
     </html>
   );

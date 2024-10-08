@@ -8,7 +8,7 @@ const FV = () => {
   return (
     <section ref={ref} className="relative px-5 md:pt-[130px] pt-[100px] z-10 md:h-[1174px] h-[900px] dark:text-white">
       <div className="w-full max-w-[1440px] mx-auto relative h-full">
-        <div className="absolute top-0 left-0 md:size-[312px] size-[200px] rounded-full overflow-hidden z-10">
+        <div className="zoom-out absolute top-0 left-0 md:size-[312px] size-[200px] rounded-full overflow-hidden z-10">
           <video
             autoPlay
             muted
@@ -21,7 +21,7 @@ const FV = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="absolute bottom-10 right-5 md:size-[513px] size-[280px] rounded-full overflow-hidden">
+        <div className="zoom-out absolute bottom-10 right-5 md:size-[513px] size-[280px] rounded-full overflow-hidden">
           <video
             autoPlay
             muted
@@ -34,12 +34,12 @@ const FV = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="relative pt-[220px] md:pt-[180px] z-10">
+        <div className="zoom-out relative pt-[220px] md:pt-[180px] z-10">
           <div className="md:text-[67px] text-[32px] leading-[1.3] text-center">
             Gratitude leads to social contribution <br />
             Realizing zero-fee transactions
           </div>
-          <div className="relative flex justify-center md:pt-12 pt-8 z-10">
+          <div className="zoom-out relative flex justify-center md:pt-12 pt-8 z-10">
             <img className="dark:hidden" src="/assets/images/fv-text.svg" alt="" />
             <img className="hidden dark:inline-block" src="/assets/images/fv-text-white.svg" alt="" />
           </div>

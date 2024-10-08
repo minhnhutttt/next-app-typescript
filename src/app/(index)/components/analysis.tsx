@@ -103,7 +103,7 @@ const Analysis  = () => {
   return (
     <section ref={ref} className="relative px-5 md:pt-[146px] pt-[70px] md:pb-[180px] pb-20 z-10 dark:text-white">
       <div className="w-full max-w-[1280px] mx-auto relative h-full">
-        <h3 className="text-center font-semibold md:text-[48px] text-[28px]">Scientific Analysis of Expressing Gratitude</h3>
+        <h3 className="fade-up text-center font-semibold md:text-[48px] text-[28px]">Scientific Analysis of Expressing Gratitude</h3>
         <div className="md:mt-[130px] mt-[70px]">
         <div className="mx-auto mt-5 w-full space-y-[20px] md:mt-[70px] md:space-y-[16px]">
                 {caseData.map(({ id, title, text }) => (

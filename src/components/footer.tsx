@@ -1,16 +1,14 @@
 
 const Footer = () => {
     return (
-      <footer className="relative px-5 md:px-10 bg-[#00053A] md:py-5 py-8 z-10">
-          <div className="flex items-center justify-between w-full max-md:flex-col max-w-[1150px] mx-auto pt-6 max-md:pb-10">
-            <a href="/" className="flex max-md:ml-[-45px]"><img className="max-md:w-[240px]" src="/assets/images/logo-footer.svg" alt="" /></a>
-            <div className="flex md:flex-col items-end gap-5 tracking-widest lg:pr-[76px]">
-              <a href="/" className="block text-[16px] font-medium">WHITEPEPAR</a>
-              <a href="/" className="block text-[16px] font-medium">CONTACT</a>
-              <a href="/" className=""><img src="/assets/images/ic-knock.svg" alt="" /></a>
+      <footer className="relative px-5 md:px-10 bg-[#101010] md:pt-[34px] pt-7 z-10 pb-2.5">
+          <div className="flex items-center justify-between w-full max-md:flex-col max-w-[1020px] mx-auto max-md:pb-10 mb-2.5">
+            <a href="/" className="flex"><img className="max-md:w-[200px]" src="/assets/images/logo-footer.svg" alt="" /></a>
+            <div className="flex items-end tracking-widest max-md:mt-10">
+              <a href="/" className="block text-[18px] font-medium text-white">WHITEPEPAR</a>
             </div>
           </div>
-          <p className="text-center text-[12px] font-medium">© Copyright 2024 DIVER.</p>
+          <p className="text-center text-[14px] text-white font-medium">© 2024 CIP DAO</p>
       </footer>
     );
   };
