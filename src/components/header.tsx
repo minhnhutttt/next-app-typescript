@@ -11,7 +11,7 @@ const Header = () => {
     setNavOpen(false);
   }, []);
   return (
-    <header className="absolute w-full flex items-center border-b border-[#777] bg-white/20">
+    <header className="absolute w-full flex items-center border-b border-[#777] bg-white/20 z-50">
       <div className="w-full flex items-center justify-between h-20 pr-5">
         <div className="flex items-center">
           <a href="/" className="block relative duration-150 hover:opacity-75">
