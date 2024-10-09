@@ -101,7 +101,7 @@ const Overview = () => {
         </div>
         <div className="w-full max-w-[1440px] mx-auto px-5 mt-10 md:mt-14">
             <div className="flex max-md:flex-col">
-                <div className="fade-up md:w-1/2 md:h-[390px] h-[260px] overflow-auto no-scrollbar max-md:border-l border-r border-[#777]">
+                <div data-lenis-prevent className="fade-up md:w-1/2 md:h-[390px] h-[260px] overflow-auto no-scrollbar max-md:border-l border-r border-[#777]">
                     <Step number="1">Enabling "small expressions of gratitude" and "frequent expressions of gratitude" through fee-free transactions</Step>
                     <Step number="2">A psychological model based on scientific evidence linking expressions of gratitude to individual and social well-being</Step>
                     <Step number="3">A bidirectional social credit system that evaluates both givers and receivers</Step>
