@@ -37,6 +37,13 @@ const useScrollAnimations = () => {
           ease: "Power2.easeInOut",
           scrollTrigger: { trigger: el },
         }),
+        "scale-img": (el: HTMLElement) =>
+        gsap.to(el, {
+          scale: 1.2,
+          duration: 5,
+          ease: "Power2.easeInOut",
+          scrollTrigger: { trigger: el },
+        }),
        "zoom-in": (el: HTMLElement) =>
         gsap.fromTo(
           el,

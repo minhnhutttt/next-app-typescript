@@ -19,7 +19,7 @@ const links: NavLink[] = [
     text: "Usecase",
   },
   {
-    link: "#",
+    link: "/gateway",
     text: "RPC Gateway",
   },
   {
