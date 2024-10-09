@@ -5,7 +5,7 @@ const Footer = () => {
           <div className="flex items-center justify-between w-full max-md:flex-col max-w-[1150px] mx-auto pt-6 max-md:pb-10">
             <a href="/" className="flex max-md:ml-[-45px]"><img className="max-md:w-[240px]" src="/assets/images/logo-footer.svg" alt="" /></a>
             <div className="flex md:flex-col items-end gap-5 tracking-widest lg:pr-[76px]">
-              <a href="/" className="block text-[16px] font-medium">WHITEPEPAR</a>
+              <a href="/" className="block text-[16px] font-medium">WHITEPAPER</a>
               <a href="/" className="block text-[16px] font-medium">CONTACT</a>
               <a href="/" className=""><img src="/assets/images/ic-knock.svg" alt="" /></a>
             </div>
