@@ -8,7 +8,7 @@ const data = [
         image: '/assets/images/solution-img-01.png',
         title: 'Establishing Economic Sovereignty',
         challenge: (<>
-        Restrictions on individual economic activities due to centralized financial systems <br />DIVER's Solution: Development of a wallet with a completely free transaction system
+        Restrictions on individual economic activities due to centralized financial systems
         </>),
         solution: (<>Development of a wallet with a completely free transaction system</>),
         impacts: ["Promotion of financial inclusion and individual economic independence","Activation of peer-to-peer economic activitie","Realization of borderless economic participation"]
@@ -69,7 +69,7 @@ const AboutSolution = () => {
                         <h5 className="md:text-[40px] text-[24px] font-bold tracking-tight">{item.title}</h5>
                         <div className="md:mt-10 mt-6 space-y-5">
                             <div className="flex gap-5">
-                                <p className="md:text-[18px] text-[16px] font-bold md:w-[120px] w-[100px]">CHALLENGE</p>
+                                <p className="md:text-[18px] text-[16px] font-bold md:w-[120px] w-[100px]">ISSUE</p>
                                 <p className="flex-1 md:text-[16px] text-[14px]">
                                     {item.challenge}
                                 </p>

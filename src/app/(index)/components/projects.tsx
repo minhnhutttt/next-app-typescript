@@ -28,10 +28,12 @@ const Projects = () => {
               className="max-md:hidden top-0 absolute md:w-1/4 w-1/2 h-full bg-[linear-gradient(145deg,_#3576FE_33.61%,_#0B3FAD_79.25%)] rounded-[20px] transition-transform duration-300"
               style={{ transform: `translateX(${(tab - 1) * 100}%)` }}
             ></span>
-              <span
-                className={`md:hidden absolute md:w-1/4 w-1/2 h-20 bg-[linear-gradient(145deg,_#3576FE_33.61%,_#0B3FAD_79.25%)] rounded-[20px] transition-all duration-300 ${tab <= 2 ? 'top-0 ' : 'bottom-0'}`}
-                style={{ transform: `translateX(${(tab - (tab <= 2 ? 1 : 3)) * 100}%)` }}
-              ></span>
+            <span
+              className={`md:hidden absolute md:w-1/4 w-1/2 h-20 bg-[linear-gradient(145deg,_#3576FE_33.61%,_#0B3FAD_79.25%)] rounded-[20px] transition-all duration-300 ${tab <= 2 ? "top-0 " : "bottom-0"}`}
+              style={{
+                transform: `translateX(${(tab - (tab <= 2 ? 1 : 3)) * 100}%)`,
+              }}
+            ></span>
             <button
               onClick={() => handleToggle(1)}
               className={`relative h-20 flex items-center justify-center rounded-[20px] gap-[3px] ${tab === 1 ? "text-white" : "text-[#212534]"}`}
@@ -105,11 +107,163 @@ const Projects = () => {
               <span>Other</span>
             </button>
           </div>
-          <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
-            <p className="md:text-[24px] text-[18px] font-medium text-center text-black">Enabling efficient cross-chain asset movement, breaking down walls between blockchains</p>
-            <div className="max-md:w-[160px]"><img src="/assets/images/project-logo.png" alt="" /></div>
-            <a href="/" className="md:w-[290px] w-[240px] md:h-[70px] h-[60px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold">DwETH</a>
+          {tab === 1 && (
+            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
+              <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
+                Enabling efficient cross-chain asset movement, breaking down
+                walls between blockchains
+              </p>
+              <div>
+                <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
+                  DwETH
+                </p>
+                <div className="size-[200px] md:size-[280px] mx-auto bg-white rounded-full flex items-center justify-center">
+                  <img className="max-md:w-[100px]" src="/assets/images/logo-dweth.svg" alt="" />
+                </div>
+              </div>
+              <a
+                href="/"
+                className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
+              >
+                DwETH
+              </a>
+            </div>
+          )}
+          {tab === 2 && (
+            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
+              <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
+              From nano-level innovations to new therapies, a new medical frontier is here
+              </p>
+              <div className="flex max-md:gap-10 flex-wrap justify-center xl:divide-x divide-[#53A1D8]">
+                <div className="px-10">
+                  <div>
+                    <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
+                      EXO
+                    </p>
+                    <div className="size-[200px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px]">
+                      <img src="/assets/images/logo-exo.svg" alt="" />
+                    </div>
+                  </div>
+                  <a
+                    href="https://exodao.org/"
+                    target="_blank"
+                    className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
+                  >
+                    EXO
+                  </a>
+                </div>
+                <div className="px-10">
+                  <div>
+                    <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
+                      iPS
+                    </p>
+                    <div className="size-[200px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px]">
+                      <img
+                        className="md:w-[100px]"
+                        src="/assets/images/logo-ips.svg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <a
+                    href="https://ipsdao.org/"
+                    target="_blank"
+                    className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
+                  >
+                    iPS
+                  </a>
+                </div>
+                <div className="px-10">
+                  <div>
+                    <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
+                    HGF
+                    </p>
+                    <div className="size-[200px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px]">
+                      <img
+                        className="md:w-[100px]"
+                        src="/assets/images/logo-hgf.svg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <a
+                    href="https://hgfdao.org/"
+                    target="_blank"
+                    className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
+                  >
+                    HGF
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
+          {tab === 3 && (
+            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
+            <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
+            Creating new standards for social contribution with highly transparent donation systems
+            </p>
+            <div>
+              <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
+              CIP
+              </p>
+              <div className="size-[200px] md:size-[280px] mx-auto bg-white rounded-full flex items-center justify-center">
+              </div>
+            </div>
+            <a
+              href="/"
+              className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
+            >
+              CIP
+            </a>
           </div>
+          )}
+          {tab === 4 && (
+            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
+            <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
+            Innovative ideas beyond categories become reality on DIVER
+            </p>
+            <div className="flex max-md:gap-10 flex-wrap justify-center xl:divide-x divide-[#53A1D8]">
+              <div className="px-10">
+                <div>
+                  <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
+                    EXO
+                  </p>
+                  <div className="size-[200px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px]">
+                    <img src="/assets/images/logo-exo.svg" alt="" />
+                  </div>
+                </div>
+                <a
+                  href="https://exodao.org/"
+                  target="_blank"
+                  className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
+                >
+                  EXO
+                </a>
+              </div>
+              <div className="px-10">
+                <div>
+                  <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
+                    iPS
+                  </p>
+                  <div className="size-[200px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px]">
+                    <img
+                      className="md:w-[100px]"
+                      src="/assets/images/logo-ips.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <a
+                  href="https://ipsdao.org/"
+                  target="_blank"
+                  className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
+                >
+                  iPS
+                </a>
+              </div>
+            </div>
+          </div>
+          )}
         </div>
       </div>
     </section>

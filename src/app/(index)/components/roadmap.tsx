@@ -91,7 +91,7 @@ const Roadmap = () => {
                 </RoadContainer>
             </div>
             <div className="fade-up flex items-start">
-                <Roadlabel>5Q</Roadlabel>
+                <Roadlabel>2024</Roadlabel>
                 <RoadContainer last>
                     <RoadTitle title="Oceans Rare (Web) released"></RoadTitle>
                     <RoadTitle title="Official domain released"></RoadTitle>

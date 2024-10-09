@@ -48,16 +48,36 @@ const dataStats = [
 const FV = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative px-5 flex flex-col items-center justify-center pt-[180px] z-10">
+    <section
+      ref={ref}
+      className="relative px-5 flex flex-col items-center justify-center pt-[180px] z-10"
+    >
       <div className="fade-up [filter:drop-shadow(0px_6px_50px_rgba(1,_0,_69,_0.20))]">
-        <img className="max-md:w-[160px]" src="/assets/images/fv-logo.png" alt="" />
+        <img
+          className="max-md:w-[160px]"
+          src="/assets/images/fv-logo.png"
+          alt=""
+        />
       </div>
-      <h3 className="fade-up text-center md:text-[128px] text-[40px] font-bold leading-none [text-shadow:2px_4px_4px_#18539E] mt-8">
-        DIVER <br />
-        Time Network
-      </h3>
-      <p className="fade-up text-center md:text-[48px] text-[24px] leading-none [text-shadow:2px_4px_4px_#18539E] mb-9">
+      <div className="fade-up relative text-center md:text-[128px] text-[45px] font-bold leading-none [text-shadow:2px_4px_4px_#18539E] mt-8">
+        <h3 className="opacity-0">
+          DIVER <br />
+          Time Network
+        </h3>
+        <p id="ui" className="absolute inset-0 top-1/2">
+          {[...Array(26)].map((_, index) => (
+            <span className="text-water" key={index}>
+              DIVER <br />
+              Time Network
+            </span>
+          ))}
+        </p>
+      </div>
+      <p className="fade-up text-center md:text-[48px] text-[24px] leading-none [text-shadow:2px_4px_4px_#18539E] max-md:mt-7 mb-9">
         - Dive into a world created by free -
+      </p>
+      <p className="fade-up text-center md:text-[24px] text-[18px] leading-none [text-shadow:2px_4px_4px_#18539E] mb-9">
+        The world's only blockchain with completely free transaction costs.
       </p>
       <a
         href="/"

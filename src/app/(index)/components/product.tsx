@@ -139,9 +139,7 @@ const data = [
     title: (<>Next DIVER <br />Innovations</>),
     text: "Continuously developing innovative products to further expand DIVER's possibilities. Aiming for new frontiers in completely free, high-performance blockchain experiences.",
     buttons: (
-      <>
-        <ProductButton href="/">Receive release information</ProductButton>
-      </>
+      <></>
     ),
   },
 ];

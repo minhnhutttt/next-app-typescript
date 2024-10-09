@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 interface NavLink {
   link: string;
   text: string;
-  icon: string;
   target?: string;
 }
 
@@ -14,22 +13,18 @@ const links: NavLink[] = [
   {
     link: "/about",
     text: "About DIVER",
-    icon: "/assets/images/ic-nav-01.svg",
   },
   {
     link: "#",
-    text: "Amazing️",
-    icon: "/assets/images/ic-nav-02.svg",
+    text: "Usecase",
   },
   {
     link: "#",
-    text: "Unlock",
-    icon: "/assets/images/ic-nav-03.svg",
+    text: "RPC Gateway",
   },
   {
     link: "#",
-    text: "Learn…",
-    icon: "/assets/images/ic-nav-04.svg",
+    text: "Whitepaper",
   },
 ];
 
@@ -58,7 +53,7 @@ const Header = () => {
           }`}
         >
           <ul className="flex items-center max-md:flex-col gap-6">
-            {links.map(({ link, text, icon, target }, index) => (
+            {links.map(({ link, text, target }, index) => (
               <li key={index} className="relative">
                 <a
                   href={link}
@@ -69,9 +64,6 @@ const Header = () => {
                   onClick={close}
                 >
                   <span>{text}</span>
-                  <span className="">
-                    <img src={icon} alt="" />
-                  </span>
                 </a>
                 <span className={`absolute top-full left-0 w-full bg-white h-[3px] rounded-full  ${
                     pathname === link ? "opacity-100" : "opacity-0"
