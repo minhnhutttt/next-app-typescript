@@ -12,12 +12,12 @@ const AboutPageHead = () => {
         </div>
         <div className="fade-up h-[100px] md:h-[156px] bg-[url('/assets/images/about-title-line.png')] bg-[lenth:100%_100%] flex items-center gap-5">
             <div className="flex-shrink-0 flex gap-5 min-w-full animate-[scroll_30s_linear_infinite] u-transform">
-                <p className="md:text-[128px] text-[50px] flex-[0_0_auto]">Creating a Future Where Individuals Drive Global Progress</p>
-                <p className="md:text-[128px] text-[50px] flex-[0_0_auto]">Creating a Future Where Individuals Drive Global Progress</p>
+                <p className="md:text-[128px] text-[50px] flex-[0_0_auto]">Creating a Future Where Individuals Drive Global Progress.</p>
+                <p className="md:text-[128px] text-[50px] flex-[0_0_auto]">Creating a Future Where Individuals Drive Global Progress.</p>
             </div>
             <div className="flex-shrink-0 flex gap-5 min-w-full animate-[scroll_30s_linear_infinite] u-transform">
-                <p className="md:text-[128px] text-[50px] flex-[0_0_auto]">Creating a Future Where Individuals Drive Global Progress</p>
-                <p className="md:text-[128px] text-[50px] flex-[0_0_auto]">Creating a Future Where Individuals Drive Global Progress</p>
+                <p className="md:text-[128px] text-[50px] flex-[0_0_auto]">Creating a Future Where Individuals Drive Global Progress.</p>
+                <p className="md:text-[128px] text-[50px] flex-[0_0_auto]">Creating a Future Where Individuals Drive Global Progress.</p>
             </div>
         </div>
         <div className="fade-up px-7 md:px-[60px] md:text-[20px] text-[16px] py-5">

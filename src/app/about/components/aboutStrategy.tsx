@@ -7,31 +7,31 @@ const data = [
         id: '01',
         title: 'Developing innovative products that strengthen individual sovereignty',
         items: ["Maximizing users' right to self-determination and providing direct pathways for social participation","Designing intuitive interfaces that support individual decision-making"],
-        background: '#2A5298'
+        background: 'bg-[#2A5298]/[0.5]'
     },
     {
         id: '02',
         title: 'Market-driven evolution',
         items: ["Platform evolution based on user choices and actions","Flexible development cycles that respond to diverse individual needs"],
-        background: '#3366A8'
+        background: 'bg-[#3366A8]/[0.5]'
     },
     {
         id: '03',
         title: "Respecting individuals' freedom of choice",
         items: ["Emphasizing voluntary involvement rather than forced participation","Providing diverse options to promote users' autonomous decision-making"],
-        background: '#3D7BB8'
+        background: 'bg-[#3D7BB8]/[0.5]'
     },
     {
         id: '04',
         title: 'Improvement centered on user feedback',
         items: ["Continuous evolution based on individual experiences and opinions","Directly reflecting user voices in the platform's direction"],
-        background: '#468CC8'
+        background: 'bg-[#468CC8]/[0.5]'
     },
     {
         id: '05',
         title: 'Creating a virtuous cycle where individual success leads to societal development',
         items: ["Ensuring individual value creation directly contributes to the overall value of the platform and society","Promoting the ripple effect of individual success stories on society as a whole"],
-        background: '#53A1D8'
+        background: 'bg-[#53A1D8]/[0.5]'
     }
 ]
 
@@ -43,7 +43,7 @@ const AboutStrategy = () => {
         <h3 className="fade-up text-center md:text-[64px] text-[32px] font-bold tracking-wideleading-none">DIVER's Growth Strategy</h3>
         <div className="grid md:grid-cols-2 gap-7 md:gap-[43px] md:mt-[46px]">
             {data.map((item,index)=> (
-                <div className="fade-up md:min-h-[550px] rounded-[20px] py-8 md:py-[60px] px-5" style={{backgroundColor: item.background}} key={index}>
+                <div className={`fade-up md:min-h-[550px] rounded-[20px] py-8 md:py-[60px] px-5 ${item.background}`} key={index}>
                     <div className="w-full max-w-[530px] mx-auto">
                         <div className="md:text-[24px] text-[18px] leading-none">Strategy {item.id}</div>
                         <h5 className="md:text-[32px] text-[20px] leading-[1.3] md:mt-5 mt-4 tracking-wide md:min-h-[120px]">{item.title}</h5>

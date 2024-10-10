@@ -52,12 +52,14 @@ const FV = () => {
       ref={ref}
       className="relative px-5 flex flex-col items-center justify-center pt-[180px] z-10"
     >
-      <div className="fade-up [filter:drop-shadow(0px_6px_50px_rgba(1,_0,_69,_0.20))]">
-        <img
-          className="max-md:w-[160px]"
-          src="/assets/images/fv-logo.png"
-          alt=""
-        />
+      <div data-scroll className="group [filter:drop-shadow(0px_6px_50px_rgba(1,_0,_69,_0.20))]">
+        <svg xmlns="http://www.w3.org/2000/svg" className="max-md:w-[160px] md:w-[184px]" viewBox="0 0 184 184" fill="none">
+        <path className="animate-[logo3d_2s_forwards] [animation-delay:0.5s]" d="M114.59 45.84H22.91L0 0H91.69L114.59 45.84Z" fill="#18539E"/>
+        <path className="animate-[logo3d_2s_forwards] [animation-delay:0.6s]" d="M160.44 45.84L137.53 91.69L114.59 45.84L91.69 0H137.53L160.44 45.84Z" fill="#1A68AE"/>
+        <path className="animate-[logo3d_2s_forwards] [animation-delay:0.8s]" d="M160.44 137.53L137.53 183.37H45.87L68.78 137.53H160.44Z" fill="#228FCE"/>
+        <path className="animate-[logo3d_2s_forwards] [animation-delay:0.9s]" d="M68.75 137.53L68.78 137.53L45.87 183.37L0 183.37L68.75 45.8398L91.69 91.6898L68.75 137.53Z" fill="#2CA4DE"/>
+        <path className="animate-[logo3d_2s_forwards] [animation-delay:0.7s]" d="M183.37 91.6898L160.44 137.53L114.59 137.53L137.53 91.69L160.44 45.84L183.37 91.6898Z" fill="#1E7DBE"/>
+      </svg>
       </div>
       <div className="fade-up relative text-center md:text-[128px] text-[45px] font-bold leading-none [text-shadow:2px_4px_4px_#18539E] mt-8">
         <h3 className="opacity-0">
@@ -125,7 +127,7 @@ const FV = () => {
           <p className="fade-up text-center md:text-[28px] text-[20px] tracking-wider md:mb-10 mb-6">
             DIVER Network&apos;s Prowess
           </p>
-          <div className="fade-up bg-white rounded-[24px] [box-shadow:10px_10px_70px_0px_rgba(10,_20,_57,_0.40)] p-5">
+          <div className="fade-up bg-white/85 rounded-[24px] [box-shadow:10px_10px_70px_0px_rgba(10,_20,_57,_0.40)] p-5">
             <div className="font-poppins md:text-[16px] text-[14px] text-black/90 font-semibold px-2 pt-2.5 pb-0">
               DIVER Stats
             </div>

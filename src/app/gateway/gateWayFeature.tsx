@@ -44,8 +44,8 @@ const GateWayFeature = () => {
                             </div>
                             <figure><img className="max-md:h-16" src={item.number} alt="" /></figure>
                         </div>
-                            <figure>
-                                <img src={item.image} alt="" />
+                            <figure className="overflow-hidden origin-center">
+                                <img className="scale-img" src={item.image} alt="" />
                             </figure>
                         </div>
                     </div>

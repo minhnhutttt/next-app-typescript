@@ -24,7 +24,7 @@ type CaseItemPropsType = {
       title: "Which regions are supported?",
       text: (
         <>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eius exercitationem obcaecati cupiditate animi voluptas molestiae doloremque nisi maiores consequuntur aperiam omnis, ad ab consequatur asperiores. Eligendi doloribus perspiciatis commodi.
+          The RPC is accessible from anywhere in the world. We have nodes deployed in key regions to ensure low-latency global access.
         </>
       ),
     },
@@ -33,19 +33,10 @@ type CaseItemPropsType = {
       title: "What about security measures?",
       text: (
         <>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eius exercitationem obcaecati cupiditate animi voluptas molestiae doloremque nisi maiores consequuntur aperiam omnis, ad ab consequatur asperiores. Eligendi doloribus perspiciatis commodi.
+          We employ state-of-the-art encryption technology and a multi-layered defense strategy, with 24/7 monitoring. Regular security audits are conducted to maintain the highest security standards.
         </>
       ),
-    },
-    {
-        id: "4",
-        title: "Why is BRIX Templates the best Webflow agency out there?",
-        text: (
-          <>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eius exercitationem obcaecati cupiditate animi voluptas molestiae doloremque nisi maiores consequuntur aperiam omnis, ad ab consequatur asperiores. Eligendi doloribus perspiciatis commodi.
-          </>
-        ),
-      },
+    }
   ];
 
   function CaseItem({ id, title, text }: CaseItemPropsType) {
@@ -72,7 +63,7 @@ type CaseItemPropsType = {
   
     return (
       <div
-        className="fade-up bg-white border border-[#005FD7] rounded-[14px] md:py-8 md:px-9 p-5 [box-shadow:0px_6px_16px_0px_rgba(74,_58,_255,_0.19)]"
+        className="fade-up bg-white/90 border border-[#005FD7] rounded-[14px] md:py-8 md:px-9 p-5 [box-shadow:0px_6px_16px_0px_rgba(74,_58,_255,_0.19)]"
       >
         <button
           type="button"

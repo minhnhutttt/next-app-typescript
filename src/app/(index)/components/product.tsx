@@ -236,7 +236,7 @@ const Product = () => {
     return () => ctx.revert();
   });
   return (
-    <section ref={ref} className="relative pb-16 z-10">
+    <section ref={ref} className="relative pb-16">
       <div className="w-full h-[331px] flex items-end -mb-px">
         <div ref={waveRef} className="w-full">
           <svg

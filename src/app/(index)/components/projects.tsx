@@ -108,7 +108,7 @@ const Projects = () => {
             </button>
           </div>
           {tab === 1 && (
-            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
+            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF]/[0.7] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
               <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
                 Enabling efficient cross-chain asset movement, breaking down
                 walls between blockchains
@@ -130,11 +130,11 @@ const Projects = () => {
             </div>
           )}
           {tab === 2 && (
-            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
+            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF]/[0.7] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
               <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
               From nano-level innovations to new therapies, a new medical frontier is here
               </p>
-              <div className="flex max-md:gap-10 flex-wrap justify-center xl:divide-x divide-[#53A1D8]">
+              <div className="flex max-md:gap-10 gap-y-10 flex-wrap justify-center xl:divide-x divide-[#53A1D8]">
                 <div className="px-10">
                   <div>
                     <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
@@ -180,7 +180,7 @@ const Projects = () => {
                     </p>
                     <div className="size-[200px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px]">
                       <img
-                        className="md:w-[100px]"
+                        className="w-[240px]"
                         src="/assets/images/logo-hgf.svg"
                         alt=""
                       />
@@ -198,7 +198,7 @@ const Projects = () => {
             </div>
           )}
           {tab === 3 && (
-            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
+            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF]/[0.7] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
             <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
             Creating new standards for social contribution with highly transparent donation systems
             </p>
@@ -218,12 +218,15 @@ const Projects = () => {
           </div>
           )}
           {tab === 4 && (
-            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
+            <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF]/[0.7] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
             <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
             Innovative ideas beyond categories become reality on DIVER
             </p>
             <div className="flex max-md:gap-10 flex-wrap justify-center xl:divide-x divide-[#53A1D8]">
-              <div className="px-10">
+              <div className="px-10 relative">
+              <span className="absolute bg-gray-500/90 inset-0 flex justify-center items-center text-white md:text-[54px] text-[30px]">
+              Coming Soon
+              </span>
                 <div>
                   <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
                     EXO
@@ -238,27 +241,6 @@ const Projects = () => {
                   className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
                 >
                   EXO
-                </a>
-              </div>
-              <div className="px-10">
-                <div>
-                  <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
-                    iPS
-                  </p>
-                  <div className="size-[200px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px]">
-                    <img
-                      className="md:w-[100px]"
-                      src="/assets/images/logo-ips.svg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <a
-                  href="https://ipsdao.org/"
-                  target="_blank"
-                  className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
-                >
-                  iPS
                 </a>
               </div>
             </div>

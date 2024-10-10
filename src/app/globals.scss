@@ -58,6 +58,7 @@ body {
   opacity: .8;
   position: fixed;
   z-index: 1;
+  pointer-events: none;
 }
 
 @for $i from 1 through 12 {
@@ -143,5 +144,18 @@ body {
   100% {
     transform: translate(-50%, -50%) scale(1.1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     color: rgba(50, 230, 255, 1);
+  }
+}
+
+
+@keyframes logo3d {
+  0% { 
+    fill: auto;
+  }
+  5% {
+    fill: white;
+  }
+  100% {
+    fill: auto;
   }
 }

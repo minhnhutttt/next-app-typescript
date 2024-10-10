@@ -6,7 +6,7 @@ const AboutRoadMap = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="relative md:py-[100px] py-16 z-10 px-5">
-      <div className="w-full max-w-[1300px] mx-auto overflow-hidden bg-black/80 md:rounded-[60px] rounded-[30px] md:pt-[108px] pt-16 px-5 md:pb-[88px] pb-12">
+      <div className="w-full max-w-[1300px] mx-auto overflow-hidden bg-black/50 md:rounded-[60px] rounded-[30px] md:pt-[108px] pt-16 px-5 md:pb-[88px] pb-12">
         <h4 className="fade-up text-center md:text-[48px] text-[28px] font-bold tracking-wide">Roadmap and Future Release Plans</h4>
         <div className="fade-up flex justify-center md:mt-10 mt-7">
             <p className="w-full max-w-[735px] mx-auto md:text-[18px] text-[16px] font-medium tracking-wide">
