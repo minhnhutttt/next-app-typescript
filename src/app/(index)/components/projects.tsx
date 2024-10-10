@@ -2,6 +2,36 @@
 
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {  Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
+const Item = ({
+  text,
+  logo,
+  link,
+}: {
+  text: string;
+  logo: string;
+  link: string;
+}) => (
+  <div className="md:px-10">
+    <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
+      {text}
+    </p>
+    <div className="size-[150px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px] p-5">
+      <img className="max-h-full" src={logo} alt="" />
+    </div>
+    <a
+      href={link}
+      target="_blank"
+      className="relative md:w-[290px] w-[220px] md:h-[70px] h-[50px] mx-auto flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
+    >
+      {text}
+    </a>
+  </div>
+);
 
 const Projects = () => {
   const ref = useScrollAnimations();
@@ -114,137 +144,94 @@ const Projects = () => {
                 walls between blockchains
               </p>
               <div>
-                <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
-                  DwETH
-                </p>
-                <div className="size-[200px] md:size-[280px] mx-auto bg-white rounded-full flex items-center justify-center">
-                  <img className="max-md:w-[100px]" src="/assets/images/logo-dweth.svg" alt="" />
-                </div>
+                <Item
+                  text="DwETH"
+                  logo="/assets/images/logo-dweth.svg"
+                  link="/"
+                />
               </div>
-              <a
-                href="/"
-                className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
-              >
-                DwETH
-              </a>
             </div>
           )}
           {tab === 2 && (
             <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF]/[0.7] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
               <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
-              From nano-level innovations to new therapies, a new medical frontier is here
+                From nano-level innovations to new therapies, a new medical
+                frontier is here
               </p>
-              <div className="flex max-md:gap-10 gap-y-10 flex-wrap justify-center xl:divide-x divide-[#53A1D8]">
-                <div className="px-10">
-                  <div>
-                    <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
-                      EXO
-                    </p>
-                    <div className="size-[200px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px]">
-                      <img src="/assets/images/logo-exo.svg" alt="" />
-                    </div>
-                  </div>
-                  <a
-                    href="https://exodao.org/"
-                    target="_blank"
-                    className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
-                  >
-                    EXO
-                  </a>
-                </div>
-                <div className="px-10">
-                  <div>
-                    <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
-                      iPS
-                    </p>
-                    <div className="size-[200px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px]">
-                      <img
-                        className="md:w-[100px]"
-                        src="/assets/images/logo-ips.svg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <a
-                    href="https://ipsdao.org/"
-                    target="_blank"
-                    className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
-                  >
-                    iPS
-                  </a>
-                </div>
-                <div className="px-10">
-                  <div>
-                    <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
-                    HGF
-                    </p>
-                    <div className="size-[200px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px]">
-                      <img
-                        className="w-[240px]"
-                        src="/assets/images/logo-hgf.svg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <a
-                    href="https://hgfdao.org/"
-                    target="_blank"
-                    className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
-                  >
-                    HGF
-                  </a>
-                </div>
+              <div className="max-md:hidden flex max-md:gap-10 gap-y-10 flex-wrap justify-center xl:divide-x divide-[#53A1D8]">
+                <Item
+                  text="EXO"
+                  logo="/assets/images/logo-exo.svg"
+                  link="https://exodao.org/"
+                />
+                <Item
+                  text="iPS"
+                  logo="/assets/images/logo-ips.svg"
+                  link="https://ipsdao.org/"
+                />
+                <Item
+                  text="HGF"
+                  logo="/assets/images/logo-hgf.svg"
+                  link="https://hgfdao.org/"
+                />
+              </div>
+              <div className="w-full md:hidden">
+              <Swiper
+              loop={true}
+                navigation={true}
+                modules={[Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide className="!flex flex-col !h-auto">
+                  <Item
+                    text="EXO"
+                    logo="/assets/images/logo-exo.svg"
+                    link="https://exodao.org/"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className="!flex flex-col !h-auto">
+                  <Item
+                    text="iPS"
+                    logo="/assets/images/logo-ips.svg"
+                    link="https://ipsdao.org/"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className="!flex flex-col !h-auto">
+                  <Item
+                    text="HGF"
+                    logo="/assets/images/logo-hgf.svg"
+                    link="https://hgfdao.org/"
+                  />
+                </SwiperSlide>
+              </Swiper>
               </div>
             </div>
           )}
           {tab === 3 && (
             <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF]/[0.7] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
-            <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
-            Creating new standards for social contribution with highly transparent donation systems
-            </p>
-            <div>
-              <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
-              CIP
+              <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
+                Creating new standards for social contribution with highly
+                transparent donation systems
               </p>
-              <div className="size-[200px] md:size-[280px] mx-auto bg-white rounded-full flex items-center justify-center">
+              <div>
+                <Item text="CIP" logo="/assets/images/logo-cip.svg" link="/" />
               </div>
             </div>
-            <a
-              href="/"
-              className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
-            >
-              CIP
-            </a>
-          </div>
           )}
           {tab === 4 && (
             <div className="min-h-[430px] md:min-h-[640px] bg-[#EAF6FF]/[0.7] rounded-[30px] relative mt-[18px] px-5 flex flex-col items-center justify-center gap-[30px] py-5">
-            <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
-            Innovative ideas beyond categories become reality on DIVER
-            </p>
-            <div className="flex max-md:gap-10 flex-wrap justify-center xl:divide-x divide-[#53A1D8]">
-              <div className="px-10 relative">
-              <span className="absolute bg-gray-500/90 inset-0 flex justify-center items-center text-white md:text-[54px] text-[30px]">
-              Coming Soon
-              </span>
-                <div>
-                  <p className="text-center font-bold md:text-[36px] text-[24px] text-black mb-5">
-                    EXO
-                  </p>
-                  <div className="size-[200px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px]">
-                    <img src="/assets/images/logo-exo.svg" alt="" />
-                  </div>
+              <p className="md:text-[24px] text-[18px] font-medium text-center text-black">
+                Innovative ideas beyond categories become reality on DIVER
+              </p>
+              <div className="flex max-md:gap-10 flex-wrap justify-center xl:divide-x divide-[#53A1D8]">
+                <div className="relative">
+                  <Item text="" logo="" link="/" />
+                  <span className="absolute bg-gray-500/90 inset-0 flex justify-center items-center text-white md:text-[54px] text-[30px]">
+                    Coming Soon
+                  </span>
                 </div>
-                <a
-                  href="https://exodao.org/"
-                  target="_blank"
-                  className="md:w-[290px] w-[220px] md:h-[70px] h-[50px] flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
-                >
-                  EXO
-                </a>
               </div>
             </div>
-          </div>
           )}
         </div>
       </div>

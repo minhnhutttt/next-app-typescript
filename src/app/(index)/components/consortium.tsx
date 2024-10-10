@@ -9,14 +9,14 @@ const Consortium = () => {
       <div className="w-full md:max-w-[1040px] max-w-[500px] mx-auto">
         <h4 className="fade-up md:text-[48px] text-[28px] font-bold text-center">CONSORTIUM</h4>
         <div className="fade-up grid md:grid-cols-4 grid-cols-2 justify-center md:mt-6 mt-4 md:mb-20 mb-10">
-            <p><img src="/assets/images/consortium-01.png" alt="" /></p>
-            <p><img src="/assets/images/consortium-02.png" alt="" /></p>
-            <p><img src="/assets/images/consortium-03.png" alt="" /></p>
-            <p><img src="/assets/images/consortium-04.png" alt="" /></p>
-            <p><img src="/assets/images/consortium-05.png" alt="" /></p>
-            <p><img src="/assets/images/consortium-06.png" alt="" /></p>
-            <p><img src="/assets/images/consortium-07.png" alt="" /></p>
-            <p><img src="/assets/images/consortium-08.png" alt="" /></p>
+            <a href="https://digital-mobility.net/" target="_blank"><img src="/assets/images/consortium-01.png" alt="" /></a>
+            <a href="https://crypto-dimension.org/" target="_blank"><img src="/assets/images/consortium-02.png" alt="" /></a>
+            <a href="https://metamagic.click/" target="_blank"><img src="/assets/images/consortium-03.png" alt="" /></a>
+            <a href="https://sky-protocol.io/" target="_blank"><img src="/assets/images/consortium-04.png" alt="" /></a>
+            <a href="https://www.bigant.ca/" target="_blank"><img src="/assets/images/consortium-05.png" alt="" /></a>
+            <a href="https://greedybrain.net/" target="_blank"><img src="/assets/images/consortium-06.png" alt="" /></a>
+            <a href="https://conn2.world/" target="_blank"><img src="/assets/images/consortium-07.png" alt="" /></a>
+            <a href="" target="_blank"><img src="/assets/images/consortium-08.png" alt="" /></a>
         </div>
         <div className="fade-up flex justify-center">
             <a

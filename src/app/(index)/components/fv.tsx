@@ -81,12 +81,12 @@ const FV = () => {
       <p className="fade-up text-center md:text-[24px] text-[18px] leading-none [text-shadow:2px_4px_4px_#18539E] mb-9">
         The world's only blockchain with completely free transaction costs.
       </p>
-      <a
-        href="/"
-        className="fade-up md:px-[90px] md:py-[25px] px-10 py-3 bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_22px_50px_0px_rgba(24,_83,_158,_0.80)] text-white/90 font-bold md:text-[36px] text-[24px] [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)] font-poppins"
-      >
-        Learn DIVER
-      </a>
+      <div className="fade-up ugb-button-container kp-wave-button">
+  <a  href="" target="_blank" className="kp-btn kp-btn-medium kp-btn-solid kp-btn-wave-hover text-white/90 font-bold md:text-[36px] text-[24px] [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)] font-poppins md:px-[90px] md:py-[25px] px-10 py-3 bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_22px_50px_0px_rgba(24,_83,_158,_0.80)]">
+<span className="kp-btn-text">Learn DIVER</span>
+<span className="kp-btn-wave-holder"></span>
+</a>
+</div>
       <p className="fade-up text-center md:text-[48px] text-[24px] font-bold mt-[90px] tracking-wide">
         A new economic sphere pioneered by DIVER
       </p>

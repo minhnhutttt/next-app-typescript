@@ -53,7 +53,7 @@ const data = [
     text: "Blockchain explorer pursuing transparency and reliability. View and analyze all DIVER network transactions for free.",
     buttons: (
       <>
-        <ProductButton href="/">Access website</ProductButton>
+        <ProductButton href="https://scan.diver.io/">Access website</ProductButton>
       </>
     ),
   },
@@ -65,7 +65,7 @@ const data = [
     text: "Decentralized domain service obtainable on a yearly basis. Enhance DIVER's convenience by converting complex addresses to simple names.",
     buttons: (
       <>
-        <ProductButton href="/">Open web application</ProductButton>
+        <ProductButton href="https://diver.domains/">Open web application</ProductButton>
       </>
     ),
   },
