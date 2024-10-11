@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/button";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const data = [
@@ -80,9 +81,9 @@ const AboutConsortium = () => {
                 ))}
             </div>
             <div className="fade-up flex justify-center md:mt-16 mt-10">
-                <a href="/" className="w-[355px] h-[86px] flex items-center justify-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_22px_50px_0px_rgba(24,_83,_158,_0.80)] text-white/90 md:text-[24px] text-[20px] font-poppins font-bold [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)] tracking-widest">
+                <Button href="/" rect="w-[355px] h-[86px] flex items-center justify-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_22px_50px_0px_rgba(24,_83,_158,_0.80)] text-white/90 md:text-[24px] text-[20px] font-poppins font-bold [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)] tracking-widest">
                 WHITEPAPER
-                </a>
+                </Button>
             </div>
         </div>
       </div>

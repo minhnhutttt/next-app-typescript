@@ -64,7 +64,7 @@ const Header = () => {
         >
           <ul className="flex items-center max-md:flex-col gap-6">
             {links.map(({ link, text, icon, activeText, target }, index) => (
-              <li key={index} className="relative md:w-[136px]">
+              <li key={index} className="relative md:w-[143px]">
                 <a
                   href={link}
                   className={`group h-[30px] relative flex items-center justify-start flex-col md:text-[20px] text-[16px] font-medium tracking-widest overflow-hidden ${

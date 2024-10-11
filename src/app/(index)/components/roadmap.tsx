@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/button";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode } from "react";
 
@@ -105,7 +106,9 @@ const Roadmap = () => {
             </p>
         </div>
         <div className="fade-up flex justify-center md:mt-[44px] mt-8">
-            <a href="/" className="md:text-[20px] text-[16px] font-semibold leading-none md:w-[320px] w-[280px] h-[60px] md:h-[70px] flex justify-center items-center [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)] bg-white text-[#005FD7] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] rounded-[80px] tracking-widest">View roadmap</a>
+            <Button href="/" rect="md:text-[20px] text-[16px] font-semibold leading-none md:w-[320px] w-[280px] h-[60px] md:h-[70px] flex justify-center items-center [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)] bg-white text-[#005FD7] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] rounded-[80px] tracking-widest">
+            View roadmap
+            </Button>
           </div>
       </div>
     </section>

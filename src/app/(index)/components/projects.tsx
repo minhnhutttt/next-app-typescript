@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import {  Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Button from "@/components/button";
 
 const Item = ({
   text,
@@ -23,13 +24,9 @@ const Item = ({
     <div className="size-[150px] md:size-[280px] mx-auto  bg-white rounded-full flex items-center justify-center mb-[30px] p-5">
       <img className="max-h-full" src={logo} alt="" />
     </div>
-    <a
-      href={link}
-      target="_blank"
-      className="relative md:w-[290px] w-[220px] md:h-[70px] h-[50px] mx-auto flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold"
-    >
-      {text}
-    </a>
+    <Button href={link} rect="relative md:w-[290px] w-[220px] md:h-[70px] h-[50px] mx-auto flex justify-center items-center bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_10px_30px_0px_rgba(24,_83,_158,_0.50)] md:text-[20px] text-[18px] font-semibold">
+    {text}
+    </Button>
   </div>
 );
 

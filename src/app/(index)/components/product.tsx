@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/button";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,7 +14,9 @@ gsap.config({
 
 const ProductButton = ({href, children}: {href: string, children: ReactNode}) => {
   return (
-    <a href={href} target="_blank" className="flex justify-center items-center w-[280px] md:h-[60px] h-[48px] rounded-[10px] bg-[#005FD7] text-white/90 font-medium text-[18px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_22px_50px_0px_rgba(24,_83,_158,_0.80)] [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)]">{children}</a>
+    <Button href={href} rect="flex justify-center items-center w-[280px] md:h-[60px] h-[48px] rounded-[10px] bg-[#005FD7] text-white/90 font-medium text-[18px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_22px_50px_0px_rgba(24,_83,_158,_0.80)] [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)]">
+{children}
+    </Button>
   )
 }
 
