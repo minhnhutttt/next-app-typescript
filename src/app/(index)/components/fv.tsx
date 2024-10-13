@@ -1,0 +1,239 @@
+"use client";
+import gsap from "gsap";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { ReactNode, useEffect, useRef } from "react";
+
+const Bubble = ({rect, children}: {rect: string, children: ReactNode}) => (
+  <div className={`absolute bg-white border border-[#9B9B9B] rounded-[26px] p-5 md:p-7 md:text-[17px] text-[15px] font-medium z-10 ${rect}`}>{children}</div>
+)
+
+const FV = () => {
+  const ref = useScrollAnimations();
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  useEffect(()=> {
+    let ctx = gsap.context(() => {
+      if (containerRef.current) {
+        const f1_img = containerRef.current.querySelector(".f1-img");
+        const f2_img = containerRef.current.querySelector(".f2-img");
+        const f3_img = containerRef.current.querySelector(".f3-img");
+        const f4_img = containerRef.current.querySelector(".f4-img");
+        const f5_img = containerRef.current.querySelector(".f5-img");
+
+        const f1_bubble = containerRef.current.querySelector(".f1-bubble");
+        const f2_bubble = containerRef.current.querySelector(".f2-bubble");
+        const f3_bubble = containerRef.current.querySelector(".f3-bubble");
+        const f4_bubble = containerRef.current.querySelector(".f4-bubble");
+        const f5_bubble = containerRef.current.querySelector(".f5-bubble");
+        const f6_bubble = containerRef.current.querySelector(".f6-bubble");
+        const tl = gsap.timeline({repeat: -1});
+        gsap.set([f2_img, f3_img, f4_img, f5_img], { opacity: 0 });
+        gsap.set([f1_bubble, f2_bubble, f3_bubble, f4_bubble, f5_bubble, f6_bubble], { scale: 0 });
+
+        tl.to(f1_bubble, {
+          scale: 1,
+          duration: 0.4
+        }).to(f1_img, {
+          rotateY: 180,
+          opacity: 0,
+          duration: 2,
+          delay: 2
+        },"<").to(f1_bubble, {
+          scale: 0,
+          duration: 0.4
+        },"<").to(f2_img, {
+          rotateY: 180,
+          opacity: 1,
+          duration: 2
+        },"<").to(f2_bubble, {
+          scale: 1,
+          duration: 0.4
+        },"-=0.5").to(f2_img, {
+          rotateY: 360,
+          opacity: 0,
+          duration: 2,
+          delay: 2
+        }).to(f2_bubble, {
+          scale: 0,
+          duration: 0.4
+        },"<").to(f3_img, {
+          rotateY: 180,
+          opacity: 1,
+          duration: 2
+        },"<").to(f3_bubble, {
+          scale: 1,
+          duration: 0.4
+        },"-=0.5").to(f3_img, {
+          rotateY: 360,
+          opacity: 0,
+          duration: 2,
+          delay: 2
+        }).to(f3_bubble, {
+          scale: 0,
+          duration: 0.4
+        },"<").to(f4_img, {
+          rotateY: 180,
+          opacity: 1,
+          duration: 2
+        },"<").to(f4_bubble, {
+          scale: 1,
+          duration: 0.4
+        },"-=0.5").to(f4_img, {
+          rotateY: 360,
+          opacity: 0,
+          duration: 2,
+          delay: 2
+        }).to(f4_bubble, {
+          scale: 0,
+          duration: 0.4
+        },"<").to(f5_img, {
+          rotateY: 180,
+          opacity: 1,
+          duration: 2
+        },"<").to(f5_bubble, {
+          scale: 1,
+          duration: 0.4
+        },"-=0.5").to(f6_bubble, {
+          scale: 1,
+          duration: 0.4
+        },"-=0.5").to(f5_img, {
+          rotateY: 360,
+          opacity: 0,
+          duration: 2,
+          delay: 2
+        }).to(f5_bubble, {
+          scale: 0,
+          duration: 0.4
+        },"<").to(f6_bubble, {
+          scale: 0,
+          duration: 0.4
+        },"<").to(f1_img, {
+          rotateY: 0,
+          opacity: 1,
+          duration: 2,
+        },"<")
+      }
+    });
+
+    return () => ctx.revert();
+  })
+  return (
+    <section
+      ref={ref}
+      className="relative bg-[url('/assets/images/fv-bg.png')] h-[686px] bg-[length:100%_100%]"
+    >
+      <div className="flex items-start absolute left-7 top-3">
+          <a href="/" className="block relative duration-150 hover:opacity-75">
+            <img
+              className="max-md:w-[170px]"
+              src="/assets/images/logo.svg"
+              alt=""
+            />
+          </a>
+          <figure className="pt-6">
+            <img src="/assets/images/ad-agency.svg" alt="" />
+          </figure>
+        </div>
+        <div className="relative w-full max-w-[1440px] mx-auto h-full pt-14">
+          <div className="absolute top-2 left-[354px]"><img className="animate-[anistar_3s_ease-in-out_1s_infinite]" src="/assets/images/star-01.svg" alt="" /></div>
+          <div className="absolute top-0 left-[970px]"><img className="animate-[anistar_3s_ease-in-out_2s_infinite]" src="/assets/images/star-02.svg" alt="" /></div>
+          <div className="absolute top-[460px] left-[40px]"><img className="animate-[anistar_3s_ease-in-out_0.4s_infinite]" src="/assets/images/star-03.svg" alt="" /></div>
+          <div className="absolute top-[440px] left-[820px]"><img className="animate-[anistar_3s_ease-in-out_infinite]" src="/assets/images/star-04.svg" alt="" /></div>
+          <div className="flex pt-10">
+            <div className="ml-20">
+              <h1 className="relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
+                <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
+                <img className="animate-[bgextendAnimeBase_2s_0.8s_forwards]  opacity-0" src="/assets/images/fv-text.svg" alt="" />
+              </h1>
+              <ul className="relative space-y-1 md:text-[25px] text-[16px] font-bold ml-9 mt-6 z-10">
+                <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
+                <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
+                <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-center gap-2.5">
+                  <figure>
+                    <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span>実際の来店、購入、契約の増加にフォーカス!!</span>
+                    </span>
+                </li>
+                <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
+                <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
+                <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-center gap-2.5">
+                  <figure>
+                    <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span>24時間365日休まず自動改善!!</span>
+                    </span>
+                </li>
+                <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
+                <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
+                <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-center gap-2.5">
+                  <figure>
+                    <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span>専門知識・手数料不要!!※</span>
+                    </span>
+                </li>
+              </ul>
+              <div className="flex justify-center mt-6 relative z-10">
+                <img src="/assets/images/seikai.svg" alt="" />
+              </div>
+              <div className="absolute bottom-24">
+                <img src="/assets/images/fv-arrow.svg" alt="" />
+              </div>
+            </div>
+            <div ref={containerRef} className="">
+                <div className="relative aspect-[518/377] w-[518px]">
+                  <div className="f1 size-full absolute inset-0 z-[6]">
+                    <Bubble rect="f1-bubble top-5 -right-5">
+                      せっかく広告出すから<br />
+                      売上に直結する運用が<br />
+                      したい!!
+                    </Bubble>
+                    <figure className="f1-img">
+                      <img src="/assets/images/fv-item-01.png" alt="" />
+                    </figure>
+                  </div>
+                  <div className="f2 size-full absolute inset-0 z-[5]">
+                    <Bubble rect="f2-bubble -top-5 -right-5">
+                    お金をかけたら、かけた <br />
+                    だけの効果を手に入れ<br />
+                    たいよね!!
+                      したい!!
+                    </Bubble>
+                    <figure className="f2-img">
+                      <img src="/assets/images/fv-item-02.png" alt="" />
+                    </figure>
+                  </div>
+                  <div className="f3 size-full absolute inset-0 z-[4]">
+                    <Bubble rect="f3-bubble -top-5 right-5">
+                    SEIKAIは費用対効果が高くて、<br />
+                    上司や同僚からの評判もよく、<br />
+                    私も鼻が高いです。
+                    </Bubble>
+                    <figure className="f3-img">
+                      <img src="/assets/images/fv-item-03.png" alt="" />
+                    </figure>
+                  </div>
+                  <div className="f4 size-full absolute inset-0 z-[3]">
+                    <Bubble rect="f4-bubble top-1/3 -right-10">
+                    毎日忙しくてもSEIKAIなら<br />
+                    やることがほとんどないし<br />お客さんも増えてます。
+                    </Bubble>
+                    <figure className="f4-img">
+                      <img src="/assets/images/fv-item-04.png" alt="" />
+                    </figure>
+                  </div>
+                  <div className="f5 size-full absolute inset-0 z-[3]">
+                      <Bubble rect="f5-bubble top-0 -right-10">
+                      この現場もSEIKAI経由で <br />
+                      契約したんだって。
+                      </Bubble>
+                      <Bubble rect="f6-bubble top-1/3 -right-10">
+                      また!?
+                      </Bubble>
+                    <figure className="f5-img">
+                      <img src="/assets/images/fv-item-05.png" alt="" />
+                    </figure>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  );
+};
+
+export default FV;
