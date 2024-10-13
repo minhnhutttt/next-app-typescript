@@ -1,9 +1,11 @@
 "use client";
 import Title from "@/components/title";
 import Text from "@/components/text";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Intro = () => {
+  const ref = useScrollAnimations();
   return (
-   <section className="md:pt-[120px] md:px-0 px-5 pt-5">
+   <section ref={ref} className="md:pt-[120px] md:px-0 px-5 pt-5">
         <Title>
             What is FAVE Coin?
         </Title>

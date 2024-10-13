@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import { Roboto_Condensed } from 'next/font/google';
-import { Noto_Sans } from 'next/font/google';
 import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 
-
-
 const robotoCondensed = Roboto_Condensed({
   subsets: ['latin'], 
   weight: ['400','500','700','900'], 
-});
-const notoSans = Noto_Sans({
-  subsets: ['latin'],
-  weight: ['400', '700'], 
 });
 export const metadata: Metadata = {
   title: "Create Next App",
