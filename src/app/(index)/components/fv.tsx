@@ -4,7 +4,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode, useEffect, useRef } from "react";
 
 const Bubble = ({rect, children}: {rect: string, children: ReactNode}) => (
-  <div className={`absolute bg-white border border-[#9B9B9B] rounded-[26px] p-5 md:p-7 md:text-[17px] text-[15px] font-medium z-10 ${rect}`}>{children}</div>
+  <div className={`absolute bg-white border border-[#9B9B9B] rounded-[26px] p-3 md:p-7 md:text-[17px] text-[14px] font-medium z-10 ${rect}`}>{children}</div>
 )
 
 const FV = () => {
@@ -119,12 +119,12 @@ const FV = () => {
   return (
     <section
       ref={ref}
-      className="relative bg-[url('/assets/images/fv-bg.png')] h-[686px] bg-[length:100%_100%]"
+      className="relative bg-[url('/assets/images/fv-bg.png')] lg:h-[686px] bg-[length:100%_100%]"
     >
       <div className="flex items-start absolute left-7 top-3">
           <a href="/" className="block relative duration-150 hover:opacity-75">
             <img
-              className="max-md:w-[170px]"
+              className="max-md:w-[120px]"
               src="/assets/images/logo.svg"
               alt=""
             />
@@ -138,46 +138,46 @@ const FV = () => {
           <div className="absolute top-0 left-[970px]"><img className="animate-[anistar_3s_ease-in-out_2s_infinite]" src="/assets/images/star-02.svg" alt="" /></div>
           <div className="absolute top-[460px] left-[40px]"><img className="animate-[anistar_3s_ease-in-out_0.4s_infinite]" src="/assets/images/star-03.svg" alt="" /></div>
           <div className="absolute top-[440px] left-[820px]"><img className="animate-[anistar_3s_ease-in-out_infinite]" src="/assets/images/star-04.svg" alt="" /></div>
-          <div className="flex pt-10">
-            <div className="ml-20">
+          <div className="flex max-lg:flex-col max-lg:items-center gap-5">
+            <div className="pl-5 max-md:pr-5 xl:pl-20 pt-16 md:pt-10">
               <h1 className="relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
                 <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
-                <img className="animate-[bgextendAnimeBase_2s_0.8s_forwards]  opacity-0" src="/assets/images/fv-text.svg" alt="" />
+                <img className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 max-md:w-full max-md:max-w-[400px]" src="/assets/images/fv-text.svg" alt="" />
               </h1>
-              <ul className="relative space-y-1 md:text-[25px] text-[16px] font-bold ml-9 mt-6 z-10">
+              <ul className="relative space-y-1 md:text-[25px] text-[16px] font-bold lg:ml-9 md:ml-6 mt-6 z-10">
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
                 <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
                 <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-center gap-2.5">
                   <figure>
-                    <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span>実際の来店、購入、契約の増加にフォーカス!!</span>
+                    <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span className="flex-1">実際の来店、購入、<br className="md:hidden" />契約の増加にフォーカス!!</span>
                     </span>
                 </li>
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
                 <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
                 <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-center gap-2.5">
                   <figure>
-                    <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span>24時間365日休まず自動改善!!</span>
+                    <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span className="flex-1">24時間365日休まず自動改善!!</span>
                     </span>
                 </li>
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
                 <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
                 <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-center gap-2.5">
                   <figure>
-                    <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span>専門知識・手数料不要!!※</span>
+                    <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span className="flex-1">専門知識・手数料不要!!※</span>
                     </span>
                 </li>
               </ul>
               <div className="flex justify-center mt-6 relative z-10">
-                <img src="/assets/images/seikai.svg" alt="" />
+                <img className="max-md:w-full max-md:max-w-[400px]" src="/assets/images/seikai.svg" alt="" />
               </div>
-              <div className="absolute bottom-24">
+              <div className="absolute bottom-[32%] md:bottom-24">
                 <img src="/assets/images/fv-arrow.svg" alt="" />
               </div>
             </div>
-            <div ref={containerRef} className="">
-                <div className="relative aspect-[518/377] w-[518px]">
+            <div ref={containerRef} className="fade-up pt-5">
+                <div className="relative aspect-[518/377] max-[440px]:w-[360px] max-md:w-[440px] md:w-[518px]">
                   <div className="f1 size-full absolute inset-0 z-[6]">
-                    <Bubble rect="f1-bubble top-5 -right-5">
+                    <Bubble rect="f1-bubble top-5 right-0 dt:-right-5">
                       せっかく広告出すから<br />
                       売上に直結する運用が<br />
                       したい!!
@@ -187,7 +187,7 @@ const FV = () => {
                     </figure>
                   </div>
                   <div className="f2 size-full absolute inset-0 z-[5]">
-                    <Bubble rect="f2-bubble -top-5 -right-5">
+                    <Bubble rect="f2-bubble -top-5 right-0 dt:-right-5">
                     お金をかけたら、かけた <br />
                     だけの効果を手に入れ<br />
                     たいよね!!
@@ -208,7 +208,7 @@ const FV = () => {
                     </figure>
                   </div>
                   <div className="f4 size-full absolute inset-0 z-[3]">
-                    <Bubble rect="f4-bubble top-1/3 -right-10">
+                    <Bubble rect="f4-bubble top-1/3 right-0 dt:-right-10">
                     毎日忙しくてもSEIKAIなら<br />
                     やることがほとんどないし<br />お客さんも増えてます。
                     </Bubble>
@@ -217,11 +217,11 @@ const FV = () => {
                     </figure>
                   </div>
                   <div className="f5 size-full absolute inset-0 z-[3]">
-                      <Bubble rect="f5-bubble top-0 -right-10">
+                      <Bubble rect="f5-bubble top-0 right-0 dt:-right-10">
                       この現場もSEIKAI経由で <br />
                       契約したんだって。
                       </Bubble>
-                      <Bubble rect="f6-bubble top-1/3 -right-10">
+                      <Bubble rect="f6-bubble top-1/3 right-0 dt:-right-10">
                       また!?
                       </Bubble>
                     <figure className="f5-img">
