@@ -4,7 +4,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode, useEffect, useRef } from "react";
 
 const Bubble = ({rect, children}: {rect: string, children: ReactNode}) => (
-  <div className={`absolute bg-white border border-[#9B9B9B] rounded-[26px] p-3 md:p-7 md:text-[17px] text-[14px] font-medium z-10 ${rect}`}>{children}</div>
+  <div className={`absolute bg-white border border-[#9B9B9B] scale-0 rounded-[26px] p-3 md:p-7 md:text-[17px] text-[14px] font-medium z-10 ${rect}`}>{children}</div>
 )
 
 const FV = () => {
@@ -13,6 +13,8 @@ const FV = () => {
   useEffect(()=> {
     let ctx = gsap.context(() => {
       if (containerRef.current) {
+        let duration = 1;
+        let delay = 3;
         const f1_img = containerRef.current.querySelector(".f1-img");
         const f2_img = containerRef.current.querySelector(".f2-img");
         const f3_img = containerRef.current.querySelector(".f3-img");
@@ -25,7 +27,7 @@ const FV = () => {
         const f4_bubble = containerRef.current.querySelector(".f4-bubble");
         const f5_bubble = containerRef.current.querySelector(".f5-bubble");
         const f6_bubble = containerRef.current.querySelector(".f6-bubble");
-        const tl = gsap.timeline({repeat: -1});
+        const tl = gsap.timeline({repeat: -1, ease: 'ease-in-out'});
         gsap.set([f2_img, f3_img, f4_img, f5_img], { opacity: 0 });
         gsap.set([f1_bubble, f2_bubble, f3_bubble, f4_bubble, f5_bubble, f6_bubble], { scale: 0 });
 
@@ -35,60 +37,60 @@ const FV = () => {
         }).to(f1_img, {
           rotateY: 180,
           opacity: 0,
-          duration: 2,
-          delay: 2
+          duration: duration,
+          delay: delay
         },"<").to(f1_bubble, {
           scale: 0,
           duration: 0.4
         },"<").to(f2_img, {
           rotateY: 180,
           opacity: 1,
-          duration: 2
+          duration: duration
         },"<").to(f2_bubble, {
           scale: 1,
           duration: 0.4
         },"-=0.5").to(f2_img, {
           rotateY: 360,
           opacity: 0,
-          duration: 2,
-          delay: 2
+          duration: duration,
+          delay: delay
         }).to(f2_bubble, {
           scale: 0,
           duration: 0.4
         },"<").to(f3_img, {
           rotateY: 180,
           opacity: 1,
-          duration: 2
+          duration: duration
         },"<").to(f3_bubble, {
           scale: 1,
           duration: 0.4
         },"-=0.5").to(f3_img, {
           rotateY: 360,
           opacity: 0,
-          duration: 2,
-          delay: 2
+          duration: duration,
+          delay: delay
         }).to(f3_bubble, {
           scale: 0,
           duration: 0.4
         },"<").to(f4_img, {
           rotateY: 180,
           opacity: 1,
-          duration: 2
+          duration: duration
         },"<").to(f4_bubble, {
           scale: 1,
           duration: 0.4
         },"-=0.5").to(f4_img, {
           rotateY: 360,
           opacity: 0,
-          duration: 2,
-          delay: 2
+          duration: duration,
+          delay: delay
         }).to(f4_bubble, {
           scale: 0,
           duration: 0.4
         },"<").to(f5_img, {
           rotateY: 180,
           opacity: 1,
-          duration: 2
+          duration: duration
         },"<").to(f5_bubble, {
           scale: 1,
           duration: 0.4
@@ -98,8 +100,8 @@ const FV = () => {
         },"-=0.5").to(f5_img, {
           rotateY: 360,
           opacity: 0,
-          duration: 2,
-          delay: 2
+          duration: duration,
+          delay: delay
         }).to(f5_bubble, {
           scale: 0,
           duration: 0.4
@@ -109,7 +111,7 @@ const FV = () => {
         },"<").to(f1_img, {
           rotateY: 0,
           opacity: 1,
-          duration: 2,
+          duration: duration,
         },"<")
       }
     });
@@ -147,21 +149,21 @@ const FV = () => {
               <ul className="relative space-y-1 md:text-[25px] text-[16px] font-bold lg:ml-9 md:ml-6 mt-6 z-10">
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
                 <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
-                <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-center gap-2.5">
+                <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-start gap-2.5">
                   <figure>
                     <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span className="flex-1">実際の来店、購入、<br className="md:hidden" />契約の増加にフォーカス!!</span>
                     </span>
                 </li>
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
                 <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
-                <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-center gap-2.5">
+                <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-start gap-2.5">
                   <figure>
                     <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span className="flex-1">24時間365日休まず自動改善!!</span>
                     </span>
                 </li>
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
                 <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
-                <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-center gap-2.5">
+                <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-start gap-2.5">
                   <figure>
                     <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span className="flex-1">専門知識・手数料不要!!※</span>
                     </span>
@@ -174,8 +176,8 @@ const FV = () => {
                 <img src="/assets/images/fv-arrow.svg" alt="" />
               </div>
             </div>
-            <div ref={containerRef} className="fade-up pt-5">
-                <div className="relative aspect-[518/377] max-[440px]:w-[360px] max-md:w-[440px] md:w-[518px]">
+            <div ref={containerRef} className="fade-up pt-10 md:pt-5">
+                <div className="relative aspect-[518/377] max-[440px]:w-[360px] max-md:w-[440px] md:w-[518px] animate-[anibounce_2s_linear_infinite]">
                   <div className="f1 size-full absolute inset-0 z-[6]">
                     <Bubble rect="f1-bubble top-5 right-0 dt:-right-5">
                       せっかく広告出すから<br />

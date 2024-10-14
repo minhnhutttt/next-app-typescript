@@ -33,11 +33,10 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${noto.className} ${poppins.variable} ${inter.variable} text-black/80`}
+        className={`${noto.className} ${poppins.variable} ${inter.variable}  text-black/80`}
       >
         <ScrollContainer>
         {children}
-        <Footer />
         </ScrollContainer>
       </body>
     </html>
