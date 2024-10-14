@@ -20,6 +20,7 @@ const config: Config = {
     fontFamily: {
       poppins: ["var(--font-poppins)", "sans-serif"],
       inter: ["var(--font-inter)", "sans-serif"],
+      roboto: ["var(--font-roboto)", "sans-serif"],
     },
   },
   plugins: [],

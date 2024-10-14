@@ -80,7 +80,7 @@ const data = [
     text: "Official domain service for businesses and organizations. Achieve brand protection and enhance credibility on the DIVER network for free.",
     buttons: (
       <>
-        <ProductButton href="/">Apply via form</ProductButton>
+        <ProductButton href="mailto:info@diver.io">Apply by email</ProductButton>
       </>
     ),
   },
@@ -93,18 +93,18 @@ const data = [
     buttons: (
         <>
         <a
-          href="http://"
+          href="https://apps.apple.com/us/app/diver-knock/id6450264436"
           target="_blank"
           rel="noopener noreferrer"
-          className=""
+          className="duration-150 hover:opacity-75"
         >
           <img src="/assets/images/btn-appstore.png" alt="" />
         </a>
         <a
-          href="http://"
+          href="https://play.google.com/store/apps/details?id=com.bigant.diver.limited.talk.flutter_project&pcampaignid=web_share"
           target="_blank"
           rel="noopener noreferrer"
-          className=""
+          className="duration-150 hover:opacity-75"
         >
           <img src="/assets/images/btn-google.png" alt="" />
         </a>
@@ -119,7 +119,7 @@ const data = [
     text: "Low-cost cloud storage utilizing DIVER's decentralization. Provide safe and efficient data management with advanced encryption and redundancy.",
     buttons: (
       <>
-        <ProductButton href="/">Open web application</ProductButton>
+        <ProductButton href="https://diver.storage/">Open web application</ProductButton>
       </>
     ),
   },

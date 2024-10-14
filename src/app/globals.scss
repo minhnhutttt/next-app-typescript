@@ -16,6 +16,10 @@ body {
   --swiper-navigation-sides-offset: 5px;
 }
 
+.swiper-slide {
+  height: auto !important;
+}
+
 .bg-main {
   background: -webkit-radial-gradient(50% 50%, circle cover, #005FD7, #8CCAF6);     
   animation: flow 10s infinite;

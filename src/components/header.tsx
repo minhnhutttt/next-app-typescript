@@ -19,7 +19,7 @@ const links: NavLink[] = [
     icon: "/assets/images/ic-nav-01.svg",
   },
   {
-    link: "#",
+    link: "/usecase",
     text: "Amazing",
     activeText: "Usecase",
     icon: "/assets/images/ic-nav-02.svg",
