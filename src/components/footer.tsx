@@ -1,16 +1,26 @@
 
 const Footer = () => {
     return (
-      <footer className="relative px-5 md:px-10 bg-[#00053A] md:py-5 py-8 z-10">
-          <div className="flex items-center justify-between w-full max-md:flex-col max-w-[1150px] mx-auto pt-6 max-md:pb-10">
-            <a href="/" className="flex max-md:ml-[-45px]"><img className="max-md:w-[240px]" src="/assets/images/logo-footer.svg" alt="" /></a>
-            <div className="flex md:flex-col items-end gap-5 tracking-widest lg:pr-[76px]">
-              <a href="/" className="block text-[16px] font-medium">WHITEPAPER</a>
-              <a href="/" className="block text-[16px] font-medium">CONTACT</a>
-              <a href="/" className=""><img src="/assets/images/ic-knock.svg" alt="" /></a>
+      <footer className="relative px-5 md:px-10 bg-[#111111] md:py-5 py-8 z-10">
+          <div className="w-full max-w-[1440px] mx-auto">
+            <a href="/" className="flex">
+              <img className="max-md:w-[60%]" src="/assets/images/logo-footer.png" alt="" />
+            </a>
+            <div className="md:text-[22px] text-[15px] text-white/80 md:ml-[70px] mt-4">
+            <p>雪だるま式に積み上がる広告費とデータ。</p>
+              <p className="ml-5">広告を正解にするのは売上。</p>
+                    <p className="ml-10 md:ml-14">売上のそばにあるデータから改善しよう。</p>
+            </div>
+            <div className="flex items-end md:justify-between md:ml-[70px] mt-28 md:mt-[165px] gap-10 max-md:flex-col-reverse">
+              <ul className="md:text-[19px] text-[15px] font-medium text-white/80 flex gap-10">
+                <li><a href="/" className="block p-4">利用規約</a></li>
+                <li><a href="/" className="block p-4">プライバシーポリシー</a></li>
+              </ul>
+              <div className="flex-1 max-md:flex max-md:justify-end">
+                <img className="max-md:w-[50%]" src="/assets/images/seikai-footer.svg" alt="" />
+              </div>
             </div>
           </div>
-          <p className="text-center text-[12px] font-medium">© Copyright 2024 DIVER.</p>
       </footer>
     );
   };

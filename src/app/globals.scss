@@ -83,3 +83,30 @@ body {
 	  animation-timing-function: cubic-bezier(0,0,0.2,1);
 	}
   }
+
+  @keyframes rotateAnimation {
+	0% {
+	  transform: rotate(0deg);
+	}
+	45% {
+	  transform: rotate(180deg);
+	}
+	55% {
+		transform: rotate(180deg);
+	  }
+	  90% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(0);
+	}
+  }
+
+  @keyframes underlineText {
+	0%{
+	  stroke-dashoffset: 1;
+	}
+	100%{
+	  stroke-dashoffset: 0;
+	}
+  }

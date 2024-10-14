@@ -1,4 +1,5 @@
 "use client";
+import UnderlineText from "@/components/underlineText";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const data = [
@@ -28,11 +29,11 @@ const Promises = () => {
       className="relative px-5 pt-5 md:pb-[200px] pb-[100px]"
     >
         <div className="w-full max-w-[710px] mx-auto">
-            <h3 className="flex md:text-[42px] text-[24px] font-black leading-[1.3] relative tracking-[-0.018em]">嘘つきにサヨナラ、あなたとのお約束</h3>
-            <p className="text-[16px] md:text-[23px] font-bold mt-2">掲げたメリットは、人間よりも真面目に、地道で、コツコツと、毎秒単位で対応してまいります。</p>
+            <h3 className="fade-up flex md:text-[42px] text-[24px] font-black leading-[1.3] relative tracking-[-0.018em]">嘘つきにサヨナラ、あなたとの<UnderlineText>お約束</UnderlineText></h3>
+            <p className="fade-up text-[16px] md:text-[23px] font-bold mt-2">掲げたメリットは、人間よりも真面目に、地道で、コツコツと、毎秒単位で対応してまいります。</p>
             <div className="md:mt-[124px] mt-16 md:space-y-[70px] space-y-10">
                 {data.map((item,index) => (
-                    <div className="flex items-start gap-2" key={index}>
+                    <div className="fade-up flex items-start gap-2" key={index}>
                         <span><img className="max-md:h-14" src={item.number} alt="" /></span>
                         <div className="flex-1 pt-5 md:pt-7">
                             <p className="md:text-[26px] text-[18px] font-bold mb-2">{item.title}</p>

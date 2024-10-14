@@ -143,36 +143,36 @@ const FV = () => {
           <div className="flex max-lg:flex-col max-lg:items-center gap-5">
             <div className="pl-5 max-md:pr-5 xl:pl-20 pt-16 md:pt-10">
               <h1 className="relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
-                <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
+                <span className="absolute w-full h-full bg-[linear-gradient(90deg,_rgba(150,68,255,1)_0%,_rgba(236,98,98,1)_80%)] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
                 <img className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 max-md:w-full max-md:max-w-[400px]" src="/assets/images/fv-text.svg" alt="" />
               </h1>
               <ul className="relative space-y-1 md:text-[25px] text-[16px] font-bold lg:ml-9 md:ml-6 mt-6 z-10">
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
-                <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
+                <span className="absolute w-full h-full bg-[linear-gradient(90deg,_rgba(150,68,255,1)_0%,_rgba(236,98,98,1)_80%)] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
                 <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-start gap-2.5">
                   <figure>
                     <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span className="flex-1">実際の来店、購入、<br className="md:hidden" />契約の増加にフォーカス!!</span>
                     </span>
                 </li>
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
-                <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
+                <span className="absolute w-full h-full bg-[linear-gradient(90deg,_rgba(150,68,255,1)_0%,_rgba(236,98,98,1)_80%)] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
                 <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-start gap-2.5">
                   <figure>
                     <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span className="flex-1">24時間365日休まず自動改善!!</span>
                     </span>
                 </li>
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
-                <span className="absolute w-full h-full bg-[#111] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
+                <span className="absolute w-full h-full bg-[linear-gradient(90deg,_rgba(150,68,255,1)_0%,_rgba(236,98,98,1)_80%)] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
                 <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-start gap-2.5">
                   <figure>
                     <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span className="flex-1">専門知識・手数料不要!!※</span>
                     </span>
                 </li>
               </ul>
-              <div className="flex justify-center mt-6 relative z-10">
+              <div className="fade-up flex justify-center mt-6 relative z-10">
                 <img className="max-md:w-full max-md:max-w-[400px]" src="/assets/images/seikai.svg" alt="" />
               </div>
-              <div className="absolute bottom-[32%] md:bottom-24">
+              <div className="fade-up absolute bottom-[32%] md:bottom-24">
                 <img src="/assets/images/fv-arrow.svg" alt="" />
               </div>
             </div>

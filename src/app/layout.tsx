@@ -37,6 +37,7 @@ export default function RootLayout({
       >
         <ScrollContainer>
         {children}
+        <Footer />
         </ScrollContainer>
       </body>
     </html>
