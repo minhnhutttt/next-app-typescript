@@ -190,20 +190,33 @@ const datas = [
 ];
 
 const Article = ({ items }: { items: Items[] }) => (
-  <Swiper slidesPerView={"auto"} spaceBetween={10} breakpoints={{
-    768: {
-      spaceBetween: 40,
-    },
-  }}>
+  <Swiper
+    slidesPerView={"auto"}
+    loop={true}
+    spaceBetween={10}
+    autoplay={{
+      delay: 2500,
+      disableOnInteraction: false,
+    }}
+    modules={[Autoplay]}
+    breakpoints={{
+      768: {
+        spaceBetween: 40,
+      },
+    }}
+  >
     {items.map((item, index) => (
-      <SwiperSlide key={index} className={`md:min-h-[390px] bg-white border-y border-white/40 [box-shadow:0px_0px_2px_0px_rgba(0,_0,_0,_0.25)] md:py-[60px] py-8 md:px-10 px-6 !flex flex-col justify-between ${items.length >= 2 ? '!w-[90%]' : ''}`}>
+      <SwiperSlide
+        key={index}
+        className={`md:min-h-[390px] bg-white border-y border-white/40 [box-shadow:0px_0px_2px_0px_rgba(0,_0,_0,_0.25)] md:py-[60px] py-8 md:px-10 px-6 !flex flex-col justify-between ${items.length >= 2 ? "!w-[90%]" : ""}`}
+      >
         <div>
-            <h5 className="md:text-[32px] text-[20px] font-bold text-[#005FD7] leading-none">
+          <h5 className="md:text-[32px] text-[20px] font-bold text-[#005FD7] leading-none">
             {item.title}
-            </h5>
-            <p className="md:text-[16px] text-[14px] text-[#212534] leading-[1.3] md:mt-[30px] mt-5">
+          </h5>
+          <p className="md:text-[16px] text-[14px] text-[#212534] leading-[1.3] md:mt-[30px] mt-5">
             {item.text}
-            </p>
+          </p>
         </div>
         <div className="flex gap-2.5 md:mt-[30px] mt-5 max-md:flex-col max-md:items-center">
           {item.buttons.map((button, index) => (
@@ -224,7 +237,10 @@ const Article = ({ items }: { items: Items[] }) => (
 const UseCaseArticles = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative pt-[70px] md:pt-[130px] md:pb-[160px] pb-20 z-10 overflow-hidden">
+    <section
+      ref={ref}
+      className="relative pt-[70px] md:pt-[130px] md:pb-[160px] pb-20 z-10 overflow-hidden"
+    >
       <div className="w-full xl:max-w-[1440px] max-w-[600px] md:max-w-[880px] mx-auto px-5 md:px-[50px] overflow-hidden md:space-y-20 space-y-12">
         {datas.map((data, index) => (
           <div className="flex max-xl:flex-col max-xl:items-center" key={index}>
@@ -235,9 +251,9 @@ const UseCaseArticles = () => {
               <h3 className="md:text-[58px] text-[26px] font-bold leading-none">
                 {data.head}
               </h3>
-                <div className="overflow-hidden mt-4 md:mt-6">
-                    <Article items={data.items} />
-                </div>
+              <div className="overflow-hidden mt-4 md:mt-6">
+                <Article items={data.items} />
+              </div>
             </div>
           </div>
         ))}
