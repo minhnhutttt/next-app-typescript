@@ -11,6 +11,13 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+.u-text-gradient {
+	background: conic-gradient(from 180deg at 50% 50%, #EC6262 0deg, #9644FF 288.0000042915344deg);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
 .transform-style-3d {
   transform-style: 'preserve-3d',
 }

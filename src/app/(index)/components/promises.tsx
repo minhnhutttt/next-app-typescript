@@ -26,10 +26,10 @@ const Promises = () => {
   return (
     <section
       ref={ref}
-      className="relative px-5 pt-5 md:pb-[200px] pb-[100px]"
+      className="relative px-5 pt-24 md:pt-[160px] md:pb-[200px] pb-[100px]"
     >
         <div className="w-full max-w-[710px] mx-auto">
-            <h3 className="fade-up flex md:text-[42px] text-[24px] font-black leading-[1.3] relative tracking-[-0.018em]">嘘つきにサヨナラ、あなたとの<UnderlineText>お約束</UnderlineText></h3>
+            <h3 className="fade-up md:text-[42px] text-[22px] font-black leading-[1.3] relative tracking-[-0.018em]">嘘つきにサヨナラ、あなたとの<UnderlineText>お約束</UnderlineText></h3>
             <p className="fade-up text-[16px] md:text-[23px] font-bold mt-2">掲げたメリットは、人間よりも真面目に、地道で、コツコツと、毎秒単位で対応してまいります。</p>
             <div className="md:mt-[124px] mt-16 md:space-y-[70px] space-y-10">
                 {data.map((item,index) => (

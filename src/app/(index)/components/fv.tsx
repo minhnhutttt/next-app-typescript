@@ -2,6 +2,7 @@
 import gsap from "gsap";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode, useEffect, useRef } from "react";
+import Button from "@/components/button";
 
 const Bubble = ({rect, children}: {rect: string, children: ReactNode}) => (
   <div className={`absolute bg-white border border-[#9B9B9B] scale-0 rounded-[26px] p-3 md:p-7 md:text-[17px] text-[14px] font-medium z-10 ${rect}`}>{children}</div>
@@ -121,8 +122,9 @@ const FV = () => {
   return (
     <section
       ref={ref}
-      className="relative bg-[url('/assets/images/fv-bg.png')] lg:h-[686px] bg-[length:100%_100%]"
+      className="relative pr-5"
     >
+      <div className="bg-[url('/assets/images/bg-01.png')] pb-[25px] bg-[length:100%_100%] rounded-r-[45px]">
       <div className="flex items-start absolute left-7 top-3">
           <a href="/" className="block relative duration-150 hover:opacity-75">
             <img
@@ -131,17 +133,14 @@ const FV = () => {
               alt=""
             />
           </a>
-          <figure className="pt-6">
-            <img src="/assets/images/ad-agency.svg" alt="" />
-          </figure>
         </div>
-        <div className="relative w-full max-w-[1440px] mx-auto h-full pt-14">
+        <div className="relative w-full max-w-[1440px] mx-auto h-full pt-14 z-30">
           <div className="absolute top-2 left-[354px]"><img className="animate-[anistar_3s_ease-in-out_1s_infinite]" src="/assets/images/star-01.svg" alt="" /></div>
           <div className="absolute top-0 left-[970px]"><img className="animate-[anistar_3s_ease-in-out_2s_infinite]" src="/assets/images/star-02.svg" alt="" /></div>
           <div className="absolute top-[460px] left-[40px]"><img className="animate-[anistar_3s_ease-in-out_0.4s_infinite]" src="/assets/images/star-03.svg" alt="" /></div>
           <div className="absolute top-[440px] left-[820px]"><img className="animate-[anistar_3s_ease-in-out_infinite]" src="/assets/images/star-04.svg" alt="" /></div>
           <div className="flex max-lg:flex-col max-lg:items-center gap-5">
-            <div className="pl-5 max-md:pr-5 xl:pl-20 pt-16 md:pt-10">
+            <div className="md:pl-5 max-md:px-5 xl:pl-20 pt-16 md:pt-10">
               <h1 className="relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
                 <span className="absolute w-full h-full bg-[linear-gradient(90deg,_rgba(150,68,255,1)_0%,_rgba(236,98,98,1)_80%)] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
                 <img className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 max-md:w-full max-md:max-w-[400px]" src="/assets/images/fv-text.svg" alt="" />
@@ -151,7 +150,7 @@ const FV = () => {
                 <span className="absolute w-full h-full bg-[linear-gradient(90deg,_rgba(150,68,255,1)_0%,_rgba(236,98,98,1)_80%)] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
                 <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-start gap-2.5">
                   <figure>
-                    <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span className="flex-1">実際の来店、購入、<br className="md:hidden" />契約の増加にフォーカス!!</span>
+                    <img className="max-md:w-[24px]" src="/assets/images/fv-list-star.svg" alt="" /></figure><span className="flex-1">実際の来店、購入、契約の増加にフォーカス!!</span>
                     </span>
                 </li>
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
@@ -169,10 +168,7 @@ const FV = () => {
                     </span>
                 </li>
               </ul>
-              <div className="fade-up flex justify-center mt-6 relative z-10">
-                <img className="max-md:w-full max-md:max-w-[400px]" src="/assets/images/seikai.svg" alt="" />
-              </div>
-              <div className="fade-up absolute bottom-[32%] md:bottom-24">
+              <div className="fade-up absolute bottom-[32%] md:bottom-24 max-md:hidden">
                 <img src="/assets/images/fv-arrow.svg" alt="" />
               </div>
             </div>
@@ -233,6 +229,17 @@ const FV = () => {
                 </div>
             </div>
           </div>
+          
+          <div className="fade-up flex justify-center mt-6 relative z-30 max-md:px-5">
+                <img className="max-md:w-full max-md:max-w-[400px]" src="/assets/images/seikai.svg" alt="" />
+              </div>
+              
+        <div className="flex justify-center md:mt-7 mt-5 relative z-30">
+            <Button href="/">
+                SEIKAI広告を今すぐ試す
+            </Button>
+        </div>
+        </div>
         </div>
     </section>
   );

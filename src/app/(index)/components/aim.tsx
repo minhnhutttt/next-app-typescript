@@ -9,12 +9,13 @@ const Aim = () => {
   return (
     <section
       ref={ref}
-      className="relative px-5 bg-[#9ED05F] md:[clip-path:polygon(0_270px,_100%_0,_100%_calc(100%-260px),_0%_100%)] [clip-path:polygon(0_80px,_100%_0,_100%_calc(100%-70px),_0%_100%)] -mt-8 pt-[120px] md:pt-[300px] md:pb-[200px] pb-[80px] max-md:mt-10"
+      className="relative pr-5"
     >
+      <div className="bg-[url('/assets/images/bg-04.png')] bg-[length:100%_100%] rounded-r-[45px] pt-16 md:pt-[110px] md:pb-[53px] pb-10">
       <div className="w-full max-w-[1000px] mx-auto">
-        <div className="">
+        <div className="max-md:px-5">
           <div className="max-lg:px-5">
-                <h3 className="fade-up flex md:text-[42px] text-[24px] font-black leading-[1.3] relative tracking-[-0.018em]">
+                <h3 className="fade-up md:text-[42px] text-[22px] font-black leading-[1.3] relative tracking-[-0.018em]">
                 <span className="absolute md:left-[-40px] left-[-28px] top-1 md:top-2.5"><img className="max-md:w-6" src="/assets/images/ic-title.svg" alt="" /></span>無駄撃ちやめて<UnderlineText>狙い撃ち。</UnderlineText></h3>
             <p className="fade-up text-[16px] md:text-[23px] font-bold mt-2">お金を無駄にしたくなければ今すぐSEIKAI広告エージェントで広告運用を始めてください。</p>
             </div>
@@ -46,6 +47,7 @@ const Aim = () => {
             <Button href="/">
             売上をもらう
             </Button>
+        </div>
         </div>
         </div>
       </div>

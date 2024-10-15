@@ -24,7 +24,7 @@ const Prices = () => {
       <div className="w-full max-w-[1032px] mx-auto">
           <div className="flex justify-center max-lg:px-5">
             <div>
-                <h3 className="fade-up flex md:text-[42px] text-[24px] font-black leading-[1.3] relative tracking-[-0.018em]">
+                <h3 className="fade-up md:text-[42px] text-[22px] font-black leading-[1.3] relative tracking-[-0.018em]">
                 <UnderlineText>明快かつ驚きの価格</UnderlineText>をあなたへ。
                 </h3>
                 <p className="fade-up text-[16px] md:text-[23px] font-bold mt-2">
