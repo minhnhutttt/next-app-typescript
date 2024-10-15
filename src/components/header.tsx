@@ -90,8 +90,9 @@ const Header = () => {
             ))}
           </ul>
         </div>
+        <div className="max-lg:hidden"></div>
         <button
-          className={`group relative z-[99] h-[15px] w-[45px] origin-center ${
+          className={`group relative z-[99] h-[15px] w-[45px] origin-center lg:hidden${
             NavOpen ? "active fixed" : ""
           }`}
           onClick={() => setNavOpen((prev) => !prev)}

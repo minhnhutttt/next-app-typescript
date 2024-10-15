@@ -42,12 +42,39 @@ const Footer = () => {
       <footer className="relative px-5 md:px-10 bg-[#00053A] md:py-5 py-8 z-10">
         <div className="w-full max-w-[1150px] mx-auto mb-10">
           <div className="flex items-center justify-between max-md:flex-col pt-6 max-md:pb-10">
-            <div className="">
-              <a href="/" className="flex max-md:ml-[-45px]"><img className="max-md:w-[240px]" src="/assets/images/logo-footer.svg" alt="" /></a>
-              <div className="md:pl-[60px] space-y-4 max-md:text-center">
-                <a href="privacy-policy" className="block text-[16px] font-medium uppercase">privacy policy</a>
-                <a href="/terms-of-service" className="block text-[16px] font-medium uppercase">
-                terms of service</a>
+            <div className="max-md:flex max-md:flex-col max-md:items-center max-md:w-full max-md:max-w-[400px]">
+              <a href="/" className="flex">
+                <div data-scroll className="group [filter:drop-shadow(0px_6px_50px_rgba(1,_0,_69,_0.20))]">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="max-md:w-[120px] md:w-[140px]" viewBox="0 0 184 184" fill="none">
+                  <path className="group-data-[scroll=in]:animate-[logo3d_2s_0.5s_forwards]" d="M114.59 45.84H22.91L0 0H91.69L114.59 45.84Z" fill="#18539E"/>
+                  <path className="group-data-[scroll=in]:animate-[logo3d_2s_0.6s_forwards]" d="M160.44 45.84L137.53 91.69L114.59 45.84L91.69 0H137.53L160.44 45.84Z" fill="#1A68AE"/>
+                  <path className="group-data-[scroll=in]:animate-[logo3d_2s_0.8s_forwards]" d="M160.44 137.53L137.53 183.37H45.87L68.78 137.53H160.44Z" fill="#228FCE"/>
+                  <path className="group-data-[scroll=in]:animate-[logo3d_2s_0.9s_forwards]" d="M68.75 137.53L68.78 137.53L45.87 183.37L0 183.37L68.75 45.8398L91.69 91.6898L68.75 137.53Z" fill="#2CA4DE"/>
+                  <path className="group-data-[scroll=in]:animate-[logo3d_2s_0.7s_forwards]" d="M183.37 91.6898L160.44 137.53L114.59 137.53L137.53 91.69L160.44 45.84L183.37 91.6898Z" fill="#1E7DBE"/>
+                </svg>
+              </div>
+              </a>
+              <div className="fade-up max-md:w-full relative text-center md:text-left md:text-[45px] text-[36px] font-bold leading-none [text-shadow:2px_4px_4px_#18539E] mt-8">
+                <h3 className="opacity-0">
+                  DIVER <br />
+                  <span className="whitespace-nowrap">Time Network</span>
+                </h3>
+                <p id="ui" className="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2">
+                  {[...Array(26)].map((_, index) => (
+                    <span className="text-water" key={index}>
+                      DIVER <br />
+                      <span className="whitespace-nowrap">Time Network</span>
+                    </span>
+                  ))}
+                </p>
+              </div>
+              <p className="fade-up text-center md:text-[28px] text-[18px] leading-none [text-shadow:2px_4px_4px_#18539E] max-md:mt-7 mt-10 mb-9">
+                - Dive into a world created by free -
+              </p>
+              <div className="space-y-4 max-md:text-center md:mt-10">
+                <a href="/privacy-policy" className="block md:text-[20px] text-[16px] font-medium">Privacy policy</a>
+                <a href="/terms-of-service" className="block md:text-[20px] text-[16px] font-medium">
+                Terms of service</a>
               </div>
             </div>
 
@@ -78,8 +105,7 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-              <a href="/" className="block text-[16px] font-medium">WHITEPAPER</a>
-              <a href="/" className="block text-[16px] font-medium">CONTACT</a>
+              <a href="/" className="block md:text-[20px] text-[16px] font-medium">Contact</a>
               <a href="/" className=""><img src="/assets/images/ic-knock.svg" alt="" /></a>
             </div>
           </div>

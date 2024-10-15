@@ -16,7 +16,7 @@ const Consortium = () => {
             <a href="https://www.bigant.ca/" target="_blank"><img src="/assets/images/consortium-05.png" alt="" /></a>
             <a href="https://greedybrain.net/" target="_blank"><img src="/assets/images/consortium-06.png" alt="" /></a>
             <a href="https://conn2.world/" target="_blank"><img src="/assets/images/consortium-07.png" alt="" /></a>
-            <a href="" target="_blank"><img src="/assets/images/consortium-08.png" alt="" /></a>
+            <a href="https://isc.ltd/" target="_blank"><img src="/assets/images/consortium-08.png" alt="" /></a>
         </div>
         <div className="fade-up flex justify-center">
             <a

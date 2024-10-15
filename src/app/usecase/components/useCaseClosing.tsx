@@ -7,13 +7,13 @@ const data = [
         icon: '/assets/images/usecase-ic-01.svg',
         title: 'Learn More About DIVER',
         text: (<>For those who want to deeply understand <br className="max-md:hidden" />DIVER's basic concepts, features, and vision</>),
-        link: '/'
+        link: '/about'
     },
     {
         icon: '/assets/images/usecase-ic-02.svg',
         title: 'Access the Developer RPC Gateway',
         text: (<>For developers who want to build their own <br className="max-md:hidden" />applications using DIVER's infrastructure</>),
-        link: '/'
+        link: '/gateway'
     },
     {
         icon: '/assets/images/usecase-ic-03.svg',
