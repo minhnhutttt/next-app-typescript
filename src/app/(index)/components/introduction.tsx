@@ -16,9 +16,9 @@ const Introduction = () => {
       <div className="bg-white rounded-l-[45px] pb-14 md:pb-[155px] relative z-20">
       <div className="w-full max-w-[1000px] mx-auto">
           <div className="md:pt-[50px] pt-10 max-md:px-5">
-            <div className="max-lg:px-5">
+            <div className="max-md:px-5 max-xl:px-10">
               <h3 className="fade-up md:text-[42px] text-[22px] font-black leading-[1.3] relative tracking-[-0.018em]">
-                  <span className="absolute md:left-[-40px] left-[-28px] top-1 md:top-2.5"><img className="max-md:w-6" src="/assets/images/ic-title.svg" alt="" /></span>LP訪問者の99％は<br className="md:hidden" />コンバージョンせずに<br className="md:hidden" /><UnderlineText>離脱します。</UnderlineText></h3>
+                  <span className="absolute md:left-[-40px] left-[-28px] top-1 md:top-2.5"><img className="max-md:w-6" src="/assets/images/ic-title.svg" alt="" /></span>LP訪問者の99％はコンバージョンせずに<UnderlineText>離脱します。</UnderlineText></h3>
               <p className="fade-up text-[16px] md:text-[23px] font-bold mt-2">嘘だと思ったあなた。すでに騙されています。確認推奨。</p>
               </div>
               <div className="md:mt-10 mt-7 space-y-12">

@@ -5,11 +5,10 @@ const UnderlineText = ({ children }: { children: ReactNode }) => {
   return (
     <span data-scroll className="group relative">
       {children}
-      <span className="w-full block h-4 absolute top-auto -bottom-[12px] left-[.0625rem] right-auto">
+      <span className="w-full block md:h-4 h-3 absolute top-auto md:-bottom-[12px] -bottom-[7px] left-[.0625rem] right-auto">
         <span className="justify-center items-center w-full h-full flex">
-            {/* <span className="w-full h-4 bg-[linear-gradient(90deg,_rgba(150,68,255,1)_0%,_rgba(236,98,98,1)_80%)]"></span> */}
           <svg
-            className="w-full !h-4"
+            className="w-full h-full"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >

@@ -63,9 +63,9 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
             <path
               d="M28.2667 21.8672L24.0001 26.1339L19.7334 21.8672"
               stroke="url(#paint1_angular_270_3348)"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <defs>
               <radialGradient
@@ -76,8 +76,8 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(24 24) rotate(90) scale(24)"
               >
-                <stop stop-color="#EC6262" />
-                <stop offset="0.8" stop-color="#9644FF" />
+                <stop stopColor="#EC6262" />
+                <stop offset="0.8" stopColor="#9644FF" />
               </radialGradient>
               <radialGradient
                 id="paint1_angular_270_3348"
@@ -87,8 +87,8 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(24.0001 24.0005) rotate(90) scale(2.13333 4.26667)"
               >
-                <stop stop-color="#EC6262" />
-                <stop offset="0.8" stop-color="#9644FF" />
+                <stop stopColor="#EC6262" />
+                <stop offset="0.8" stopColor="#9644FF" />
               </radialGradient>
             </defs>
           </svg>
