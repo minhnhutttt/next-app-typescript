@@ -34,7 +34,7 @@ const Introduction = () => {
                 <div className="fade-up flex max-md:flex-col-reverse flex-row-reverse justify-center max-md:items-center md:justify-end items-center gap-6 md:gap-10">
                   <div className="flex-1 max-w-[447px]">
                     <p className="md:text-[25px] text-[17px] font-bold leading-[1.3] mb-4 md:mb-7"><UnderlineText>嘘の成果</UnderlineText>に騙されないでください。</p>
-                    <p className="md:text-[19px] text-[15px] font-medium leading-[1.55]">あなたが成果として報告されてきたものは成果ではありません。本当の成果とは実際に売上があがったかどうかで判断するのが正解です。%は、実際に売上があがったかどうかだけです。</p>
+                    <p className="md:text-[19px] text-[15px] font-medium leading-[1.55]">あなたが成果として報告されてきたものは成果ではありません。本当の成果とは実際に売上があがったかどうかで判断するのが正解です。</p>
                   </div>
                   <div className="">
                     <img src="/assets/images/introduction-img-02.png" alt="" />

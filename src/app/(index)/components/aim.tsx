@@ -23,7 +23,7 @@ const Aim = () => {
               <div className="fade-up flex max-md:flex-col-reverse justify-center max-md:items-center md:justify-end gap-6 md:gap-10 lg:gap-[35px]">
                 <div className="flex-1 lg:pl-[60px] md:pt-7">
                   <p className="md:text-[25px] text-[17px] font-bold leading-[1.3] mb-4 md:mb-7">価値のない成果vs<UnderlineText>100万倍の価値</UnderlineText>のある成果。</p>
-                  <p className="md:text-[19px] text-[15px] font-medium leading-[1.55] max-w-[447px]">ボタンクリックやお金にならないコンバージョンがわかったところで意味はありません。実際に売上を生み出したコンバージョンにはそれらの100万倍価値があります。%は、実際に売上があがったかどうかだけです。</p>
+                  <p className="md:text-[19px] text-[15px] font-medium leading-[1.55] max-w-[447px]">ボタンクリックやお金にならないコンバージョンがわかったところで意味はありません。実際に売上を生み出したコンバージョンにはそれらの100万倍価値があります。</p>
                 </div>
                 <div className="">
                   <img src="/assets/images/aim-img-01.png" alt="" />
@@ -45,7 +45,7 @@ const Aim = () => {
                     広告の正解はここに。</p>
                 </div>
             <Button href="/">
-            売上をもらう
+            売上を伸ばす
             </Button>
         </div>
         </div>

@@ -61,9 +61,16 @@ export default function FAQ() {
       className="px-5 pb-12 pt-14  md:pb-[90px] md:pt-[150px]"
     >
       <div className="mx-auto w-full max-w-[920px]">
-        <h4 className="fade-up text-center font-extrabold text-[28px] md:text-[48px]">
-        FAQ
-        </h4>
+        <div className="flex justify-center max-lg:px-5">
+            <div>
+                <h3 className="fade-up md:text-[42px] text-[22px] font-black leading-[1.3] relative tracking-[-0.018em]">
+                正解広告エージェントをもっと知る。
+                </h3>
+                <p className="fade-up text-[16px] md:text-[23px] font-bold mt-2">
+                よくある質問。
+                </p>
+            </div>
+          </div>
         <div className="mx-auto mt-5 w-full space-y-[20px] md:mt-[70px] md:space-y-[30px]">
           {faqData.map(({ id, question, answer }) => (
             <FaqItem key={id} id={id} question={question} answer={answer} />

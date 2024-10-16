@@ -11,7 +11,7 @@ const data = [
     },
     {
         image: '/assets/images/price-img-02.png',
-        title: (<>AIの限界維持費用<UnderlineText>3.99％</UnderlineText></>),
+        title: (<><UnderlineText>AIの限界維持費用3.99％</UnderlineText></>),
         text: 'SEIKAI広告エージェントの質や機能性を維持向上するための限界費用です。文字通り限界まで抑えました。'
     },
 ]

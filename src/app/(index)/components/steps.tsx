@@ -55,6 +55,8 @@ const Item = ({
 const Steps = () => {
   const ref = useScrollAnimations();
   const stepsRef = useRef<HTMLDivElement | null>(null);
+  const bgRef = useRef<HTMLDivElement | null>(null);
+  const buttonRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     let ctx = gsap.context(() => {
       if (stepsRef.current) {
@@ -82,6 +84,19 @@ const Steps = () => {
             index * 0.5
           );
         });
+        tl.from(bgRef.current, {
+          autoAlpha: 0,
+          y: 30,
+          scale: 0.7,
+          duration: 1.3,
+          ease: "power2.out",
+        })
+        tl.from(buttonRef.current, {
+          autoAlpha: 0,
+          y: 30,
+          duration: 1.3,
+          ease: "power2.out",
+        })
       }
     });
 
@@ -90,19 +105,22 @@ const Steps = () => {
   return (
     <section ref={ref} className="relative bg-[#C5E1E5] overflow-hidden ">
       <div className="w-full mx-auto md:pt-[84px] pt-[60px] overflow-hidden ">
-        <div className="w-full max-w-[834px] mx-auto px-5">
+        <div className="w-full max-w-[834px] flex justify-center mx-auto px-5">
+          <div>
           <h3 className="fade-up md:text-[42px] text-[22px] font-black leading-[1.3] relative tracking-[-0.018em]">
-            7ステップ、10クリック、<UnderlineText>3分で広告出稿。</UnderlineText>
+            7ステップ、<UnderlineText>10クリックで広告出稿。</UnderlineText>
           </h3>
           <p className="fade-up text-[16px] md:text-[23px] font-bold mt-2">
             用意するのはLPのURLとGoogle広告アカウントだけ。
           </p>
+          </div>
         </div>
         <div
           ref={stepsRef}
-          className="md:py-24 py-14 w-full h-screen bg-[url('/assets/images/step-number.svg')] max-md:bg-[length:160px_auto] bg-right-bottom bg-no-repeat max-md:px-5 flex flex-col justify-center"
+          className="md:py-24 py-14 w-full h-screen  max-md:px-5 flex flex-col justify-center"
         >
-          <div className="bg-[url('/assets/images/step-bg.svg')] max-md:bg-[length:100%_100%] bg-no-repeat bg-center pb-4">
+          <div className="relative pb-4">
+            <span ref={bgRef} className="absolute bg-[url('/assets/images/step-bg.svg')] max-md:bg-[length:100%_100%] bg-no-repeat bg-center inset-0"></span>
             <div className="relative w-[320px] md:w-[657px] h-[434px] mx-auto">
               <Item
                 rect="z-[10] rotate-[2deg]"
@@ -183,7 +201,7 @@ const Steps = () => {
               </Item>
             </div>
           </div>
-          <div className="flex justify-center md:mt-20 mt-12">
+          <div ref={buttonRef} className="flex justify-center md:mt-20 mt-12">
             <Button href="/">ステップ4で待ってます</Button>
           </div>
         </div>
