@@ -318,7 +318,7 @@ const FV = () => {
                   </span>
                 </li>
               </ul>
-              <div className="fade-up left-0 absolute top-[140px] md:top-[230px]">
+              <div className="zoom-out left-0 absolute top-[140px] md:top-[230px]">
                 <img src="/assets/images/fv-arrow.svg" alt="" />
               </div>
             </div>
