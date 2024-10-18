@@ -11,6 +11,15 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+
+:root {
+  --swiper-pagination-bullet-size: 26px;
+  --swiper-pagination-bullet-horizontal-gap: 16px;
+  --swiper-pagination-bullet-inactive-color: #EAEAEA;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-color: #FF7DD3;
+}
+
 /* Utility */
 
 .u-stroke {

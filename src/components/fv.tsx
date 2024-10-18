@@ -74,8 +74,7 @@ const Fv = () => {
   }, []);
   return (
     <div
-      data-scroll="out"
-      className="flex w-full justify-center items-center xl:pt-[clamp(10px,3.818vmin,42px)] xl:pb-[clamp(10px,2.182vmin,24px)] px-5 font-semibold"
+      className="flex w-full justify-center items-center xl:pt-[clamp(10px,2.222vmin,24px)] xl:pb-[clamp(10px,2.182vmin,24px)] px-5 font-semibold"
     >
       <div className="flex items-center justify-center aspect-[600/844] xl:h-[78vmin] md:max-h-[844px] max-h-[705px] w-full max-w-[600px]">
         <div
