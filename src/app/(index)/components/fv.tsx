@@ -6,7 +6,7 @@ import Button from "@/components/button";
 
 const Bubble = ({ rect, children }: { rect: string; children: ReactNode }) => (
   <div
-    className={`absolute bg-white border border-[#9B9B9B] scale-0 rounded-[26px] p-3 md:p-7 md:text-[17px] text-[14px] font-medium z-10 ${rect}`}
+    className={`absolute bg-white border border-[#9B9B9B] scale-0 rounded-[26px] p-3 md:p-4 md:text-[18px] text-[14px] leading-[1.3] font-medium z-10 ${rect}`}
   >
     {children}
   </div>
@@ -325,23 +325,18 @@ const FV = () => {
             <div ref={containerRef} className="fade-up pt-10 md:pt-10">
               <div className="relative aspect-[518/377] max-[440px]:w-[360px] max-md:w-[440px] md:w-[518px] animate-[anibounce_2s_linear_infinite]">
                 <div className="f1 size-full absolute inset-0 z-[6]">
-                  <Bubble rect="f1-bubble top-5 right-0 dt:-right-5">
-                    せっかく広告出すから
-                    <br />
-                    売上に直結する運用が
-                    <br />
-                    したい!!
+                  <Bubble rect="f1-bubble top-[25%] left-0 dt:-left-5">
+                  せっかく広告出すか<br />ら売上に直結する運<br />用がしたい!!
                   </Bubble>
                   <figure className="f1-img">
                     <img src="/assets/images/fv-item-01.png" alt="" />
                   </figure>
                 </div>
                 <div className="f2 size-full absolute inset-0 z-[5]">
-                  <Bubble rect="f2-bubble -top-5 right-0 dt:-right-5">
+                  <Bubble rect="f2-bubble -top-5 left-0 dt:-left-5">
                     お金をかけたら、かけた <br />
-                    だけの効果を手に入れ
-                    <br />
-                    たいよね!! したい!!
+                    だけの効果を手に入れ<br />
+                    たいよね!!
                   </Bubble>
                   <figure className="f2-img">
                     <img src="/assets/images/fv-item-02.png" alt="" />
@@ -349,10 +344,8 @@ const FV = () => {
                 </div>
                 <div className="f3 size-full absolute inset-0 z-[4]">
                   <Bubble rect="f3-bubble -top-5 right-5">
-                    SEIKAIは費用対効果が高くて、
-                    <br />
-                    上司や同僚からの評判もよく、
-                    <br />
+                    SEIKAIは費用対効果が高くて、<br />
+                    上司や同僚からの評判もよく、<br />
                     私も鼻が高いです。
                   </Bubble>
                   <figure className="f3-img">
@@ -360,24 +353,22 @@ const FV = () => {
                   </figure>
                 </div>
                 <div className="f4 size-full absolute inset-0 z-[3]">
-                  <Bubble rect="f4-bubble top-1/3 right-0 dt:-right-10">
-                    毎日忙しくてもSEIKAIなら
-                    <br />
-                    やることがほとんどないし
-                    <br />
-                    お客さんも増えてます。
+                  <Bubble rect="f4-bubble top-1/4 right-0 dt:-right-10">
+                  毎日忙しくてもSEIKAIなら<br />
+                  やることがほとんどないし<br />
+                  お客さんも増えてます。
                   </Bubble>
                   <figure className="f4-img">
                     <img src="/assets/images/fv-item-04.png" alt="" />
                   </figure>
                 </div>
                 <div className="f5 size-full absolute inset-0 z-[3]">
-                  <Bubble rect="f5-bubble top-0 right-0 dt:-right-10">
-                    この現場もSEIKAI経由で <br />
-                    契約したんだって。
+                  <Bubble rect="f5-bubble top-0 left-0 dt:-left-10">
+                  この現場もSEIKAI経由で <br />
+                  契約したんだって。
                   </Bubble>
-                  <Bubble rect="f6-bubble top-1/3 right-0 dt:-right-10">
-                    また!?
+                  <Bubble rect="f6-bubble top-1/4 left-8 dt:left-14">
+                  また!?
                   </Bubble>
                   <figure className="f5-img">
                     <img src="/assets/images/fv-item-05.png" alt="" />
