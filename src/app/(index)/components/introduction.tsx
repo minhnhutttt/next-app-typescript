@@ -3,7 +3,7 @@ import Title from "@/components/title";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Introduction = () => {
   const ref = useScrollAnimations();
-  return <section ref={ref} className="px-5 md:pt-[52px]">
+  return <section ref={ref} className="px-5 pt-10 md:pt-[52px]">
     <div className="fade-up flex justify-center">
         <div className="relative w-full max-w-[315px] h-[95px] [box-shadow:0px_4px_40px_0px_rgba(255,_125,_211,_0.20)] rounded-[10px] overflow-hidden flex items-center justify-center flex-col p-0.5">
             <span className="absolute animate-[border-animation_5s_linear_infinite] rounded-[10px] overflow-hidden bg-[conic-gradient(_transparent_0%12.5%,_transparent_12.5%25%,_#FF7DD3_25%37.5%,_#FF7DD3_37.5%50%,_transparent_50%62.5%,_transparent_62.5%75%,_#3CE8FF_75%87.5%,_#3CE8FF_87.5%100%_)] w-[500px] h-[500px]"></span>

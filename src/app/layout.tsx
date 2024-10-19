@@ -27,9 +27,9 @@ export default function RootLayout({
         className={`${noto.className} text-black bg-[url('/assets/images/bg.png')] bg-fixed bg-[length:100%_auto]`}
       >
         <div className="flex justify-center bg-[url('/assets/images/bg-fv.png')] bg-[length:100%_auto] bg-fixed bg-no-repeat">
-        <div className="flex w-full max-w-[1320px] mx-auto">
+        <div className="flex max-md:flex-col w-full max-w-[1320px] mx-auto">
           <Mainvisual />
-          <div className="flex-1 flex justify-center relative">
+          <div className="md:flex-1 flex justify-center relative">
             <div className="max-w-[550px] w-full relative bg-white">
               <Header />
               {children}

@@ -55,12 +55,12 @@ const LiverIntroduction = () => {
       <div ref={ref} className="md:pt-[70px] pt-12 relative overflow-hidden">
         <div className="px-5">
           <Title>ライバー紹介</Title>
-          <p className="fade-up flex flex-col items-center justify-center md:text-[28px] text-[18px] font-bold leading-none gap-2 mt-2">
+          <p className="fade-up flex flex-col items-center justify-center md:text-[28px] text-[24px] font-bold leading-none gap-2 mt-2">
             <span className="bg-[linear-gradient(90deg,_rgba(255,_125,_211,_0.30)_0%,_rgba(60,_232,_255,_0.30)_100%)] rounded-lg">LIVERS</span>
             <span className="bg-[linear-gradient(90deg,_rgba(255,_125,_211,_0.30)_0%,_rgba(60,_232,_255,_0.30)_100%)] rounded-lg">INTRODUCTION</span>
           </p>
         </div>
-        <div className="fade-up mt-16 relative overflow-hidden">
+        <div className="fade-up mt-10 md:mt-16 relative overflow-hidden">
             <Swiper
             slidesPerView={1}
             loop={true}

@@ -50,14 +50,14 @@ const data = [
 
 const Voice = () => {
   const ref = useScrollAnimations();
-  return <section ref={ref} className="md:pt-[50px]">
+  return <section ref={ref} className="md:pt-[50px] pt-10 overflow-hidden">
         <div className="px-5 ">
             <h4 className="md:text-[28px] text-[20px] text-center font-bold leading-[1.3]">
                 メッセージ...<br />配信中のライバーさんからの一言
             </h4>
             <p className="text-center md:text-[18px] text-[16px] mt-1"> 感想をインタビューしてきました。 </p>
         </div>
-        <div className="fade-up pt-[120px] relative overflow-hidden bg-[url('/assets/images/voice-bg.png')] bg-cover">
+        <div className="fade-up pt-[90px] md:pt-[100px] mt-5 md:pb-[24px] relative overflow-hidden bg-[url('/assets/images/voice-bg.png')] bg-cover">
             <div className="md:w-[500px] mx-auto">
                 <Swiper
                 slidesPerView={1}
@@ -67,15 +67,15 @@ const Voice = () => {
                     clickable: true,
                 }}
                 modules={[Pagination]}
-                className="mySwiper relative "
+                className="mySwiper relative !pb-[50px]"
             >
                 {data.map((item, index) => (
-                    <SwiperSlide key={index} className="w-full bg-white/90 px-5 rounded-[20px] !h-[763px]">
+                    <SwiperSlide key={index} className="w-full bg-white/90 px-5 rounded-[20px]">
                         <div className="overflow-hidden">
-                            <figure className="overflow-hidden aspect-square rounded-full">
-                                <img src={item.image} alt="" />
+                            <figure className="overflow-hidden aspect-square rounded-full flex justify-center items-center relative">
+                                <img className="absolute min-w-full min-h-full" src={item.image} alt="" />
                             </figure>
-                            <div className="flex justify-center md:mt-10">
+                            <div className="flex justify-center mt-7 md:mt-10">
                                 <div className="relative w-[297px] h-[51px]">
                                     <span className="absolute inset-0 w-full h-full u-border-rainbow border-2 -top-1 -left-1.5"></span>
                                     <div className="md:text-[22px] text-[18px] font-bold w-full h-full flex items-center justify-center bg-[linear-gradient(90deg,_rgba(255,_125,_211,_0.20)_0%,_rgba(60,_232,_255,_0.20)_100%)]">

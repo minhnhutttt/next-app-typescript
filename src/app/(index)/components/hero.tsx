@@ -59,18 +59,18 @@ const Hero = () => {
       </video>
       <div
         ref={containerRef}
-        className="w-full h-full flex justify-center items-end"
+        className="w-full h-full flex justify-center items-end pt-20 md:pt-[118px] overflow-hidden"
       >
         <div className="relative">
-          <span className="animate-[anim-bounce_1.6s_infinite_ease-in-out] absolute right-[-80px] z-40">
+          <span className="animate-[anim-bounce_1.6s_infinite_ease-in-out] absolute -right-10 md:right-[-80px] z-40">
             <img src="/assets/images/hero-bubble.png" alt="" />
           </span>
           <div className="relative">
             <p className="f1-img relative z-10">
-              <img src="/assets/images/hero-01.png" alt="" />
+              <img className="max-md:h-[480px]" src="/assets/images/hero-01.png" alt="" />
             </p>
             <p className="f2-img absolute inset-0">
-              <img src="/assets/images/hero-02.png" alt="" />
+              <img className="max-md:h-[480px]" src="/assets/images/hero-02.png" alt="" />
             </p>
           </div>
         </div>

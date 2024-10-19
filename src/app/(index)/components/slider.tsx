@@ -10,6 +10,18 @@ const data = [
         image: '/assets/images/slider-01.png',
         text: 'ライブ配信の世界大会において2位、4位のライバーを輩出。',
     },
+    {
+        image: '/assets/images/slider-02.png',
+        text: '国内17ライバー月間TOP100に7名ランクイン。',
+    },
+    {
+        image: '/assets/images/slider-03.png',
+        text: '毎月数名が常にイベントTOP10にランクイン。',
+    },
+    {
+        image: '/assets/images/slider-04.png',
+        text: '新人イベントにて上位20位以内に6名がランクイン。更に、１位も所属ライバー。',
+    }
 ]
 
 const Slider = () => {
@@ -19,7 +31,7 @@ const Slider = () => {
         <div className="px-5">
           <Title>育成したライバーの実績</Title>
           </div>
-        <div className="fade-up mt-6 relative overflow-hidden">
+        <div className="fade-up w-full mt-6 relative overflow-hidden">
             <Swiper
             slidesPerView={'auto'}
             loop={true}
@@ -49,7 +61,7 @@ const Slider = () => {
             </div>
             </Swiper>
             <div className="fade-up z-10">
-                <figure className="pl-4 md:-mt-[136px] -mt-[66px] max-md:w-[200px] md:w-[274px] absolute z-10 pointer-events-none">
+                <figure className="pl-4 md:-mt-[136px] -mt-[100px] max-md:w-[200px] md:w-[274px] absolute z-10 pointer-events-none">
                     <img className="max-md:w-[200px]" src="/assets/images/support.png" alt="" />
                 </figure>
                 <p className="w-[325px] mx-auto md:text-[18px] text-[15px] pt-[5px] font-semibold">
