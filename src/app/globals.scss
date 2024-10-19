@@ -20,6 +20,9 @@ body {
   --swiper-pagination-color: #FF7DD3;
 }
 
+.swiper-slide {
+}
+
 /* Utility */
 
 .u-stroke {
@@ -33,7 +36,9 @@ body {
   background-size: 12px 3px, 100% 3px;
   border: none;
 }
-
+.u-border-rainbow {
+  border-image: linear-gradient(90deg, rgba(255,117,195,1) 0%, rgba(255,166,71,1) 20%, rgba(255,232,63,1) 40%, rgba(159,255,91,1) 60%, rgba(112,226,255,1) 80%, rgba(205,147,255,1) 100%) 1;
+}
 /* Animation */
 [data-scroll='in'] .popoupin {
   animation: 1s anim-popoupin ease forwards;

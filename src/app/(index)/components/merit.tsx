@@ -65,14 +65,14 @@ const Merit = () => {
         </div>
       </div>
       <div className="md:mt-24 mt-16 pb-5">
-        <h5 className="text-center md:text-[28px] text-[20px] font-semibold mb-6">
+        <h5 className="fade-up text-center md:text-[28px] text-[20px] font-semibold mb-6">
             楽しく配信するために... <br />
             全力でサポートいたします♪♪
         </h5>
-        <figure className="rounded-[30px] overflow-hidden">
+        <figure className="fade-up rounded-[30px] overflow-hidden">
             <img src="/assets/images/merit-img.png" alt="" />
         </figure>
-        <p className="text-center md:text-[17px] text-[15px] font-bold mt-5">- 世界大会授賞式の模様(ののさん) -</p>
+        <p className="fade-up text-center md:text-[17px] text-[15px] font-bold mt-5">- 世界大会授賞式の模様(ののさん) -</p>
       </div>
   </section>;
 };

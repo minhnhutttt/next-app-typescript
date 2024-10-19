@@ -50,36 +50,45 @@ const data = [
 
 const Voice = () => {
   const ref = useScrollAnimations();
-  return <section ref={ref} className="px-5 md:pt-[50px]">
-        <div className="">
+  return <section ref={ref} className="md:pt-[50px]">
+        <div className="px-5 ">
             <h4 className="md:text-[28px] text-[20px] text-center font-bold leading-[1.3]">
                 メッセージ...<br />配信中のライバーさんからの一言
             </h4>
             <p className="text-center md:text-[18px] text-[16px] mt-1"> 感想をインタビューしてきました。 </p>
         </div>
-        <div className="fade-up mt-16 relative overflow-hidden">
-            <Swiper
-            slidesPerView={1}
-            loop={true}
-            pagination={{
-                clickable: true,
-              }}
-              modules={[Pagination]}
-            className="mySwiper relative !pb-[56px]"
-        >
-            {data.map((item, index) => (
-                <SwiperSlide key={index} className="w-full px-5">
-                    <div className="overflow-hidden bg-[#FF7DD3]/[0.2] [box-shadow:0px_4px_30px_0px_rgba(0,_0,_0,_0.10)]">
-                        <figure className="rounded-[30px] overflow-hidden aspect-square rounded-full">
-                            <img src={item.image} alt="" />
-                        </figure>
-                        <p className="md:text-[23px] text-[16px] text-[#82ACDE] text-center font-bold leading-[1.35] p-[15px]">
-                            {item.text}
-                        </p>
-                    </div>
-                </SwiperSlide>
-            ))}
-            </Swiper>
+        <div className="fade-up pt-[120px] relative overflow-hidden bg-[url('/assets/images/voice-bg.png')] bg-cover">
+            <div className="md:w-[500px] mx-auto">
+                <Swiper
+                slidesPerView={1}
+                spaceBetween={20}
+                loop={true}
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Pagination]}
+                className="mySwiper relative "
+            >
+                {data.map((item, index) => (
+                    <SwiperSlide key={index} className="w-full bg-white/90 px-5 rounded-[20px] !h-[763px]">
+                        <div className="overflow-hidden">
+                            <figure className="overflow-hidden aspect-square rounded-full">
+                                <img src={item.image} alt="" />
+                            </figure>
+                            <div className="flex justify-center md:mt-10">
+                                <div className="relative w-[297px] h-[51px]">
+                                    <span className="absolute inset-0 w-full h-full u-border-rainbow border-2 -top-1 -left-1.5"></span>
+                                    <div className="md:text-[22px] text-[18px] font-bold w-full h-full flex items-center justify-center bg-[linear-gradient(90deg,_rgba(255,_125,_211,_0.20)_0%,_rgba(60,_232,_255,_0.20)_100%)]">
+                                        {item.title}
+                                    </div>
+                                </div>
+                            </div>
+                            <p className="md:text-[16px] text-[14px] mt-6 w-full max-w-[398px] mx-auto">{item.text}</p>
+                        </div>
+                    </SwiperSlide>
+                ))}
+                </Swiper>
+            </div>
         </div>
   </section>;
 };

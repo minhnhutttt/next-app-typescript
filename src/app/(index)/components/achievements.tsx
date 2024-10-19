@@ -5,7 +5,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Achievements = () => {
   const ref = useScrollAnimations();
   return <section ref={ref} className="px-5 md:pt-[60px]">
-    <div className="border-[20px] border-[#F3F3F3] rounded-[20px]">
+    <div className="fade-up border-[20px] border-[#F3F3F3] rounded-[20px]">
         <div className="rounded-[10px] overflow-hidden bg-white">
             <h5 className="h-[70px] flex items-center justify-center bg-[linear-gradient(90deg,_#FF75C3_0%,_#FFA647_20%,_#FFE83F_40%,_#9FFF5B_60%,_#70E2FF_80%,_#CD93FF_100%)] md:text-[28px] text-[20px] font-semibold">育成したトップライバーの実績</h5>
             <p className="px-4 pt-9 pb-4 md:text-[18px] text-[16px]">
