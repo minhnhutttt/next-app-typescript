@@ -8,7 +8,7 @@ const Header = () => {
     setNavOpen(false);
   }, []);
   return (
-    <header className="absolute inset-x-0 top-0 z-50 flex items-center pt-3 px-5 md:pt-7">
+    <header className="absolute inset-x-0 top-0 z-[35] flex items-center pt-3 px-5 md:pt-7">
       <div className="flex h-[66px] w-full items-center justify-between">
         <div className="flex">
           <a href="/">

@@ -45,7 +45,9 @@ const faqData: FaqItemPropsType[] = [
     question: "顔出しは必須ですか？",
     answer: (
       <>
-        基本的には顔出しは必須ですが、就寝前やスッピンの時などは顔出しでない配信も可能です。
+        基本的には顔出しが望ましいですが、マスクや仮面での配信や顔出しなしの配信も可能です。<br />
+        <br />
+      ※審査の時だけは顔出しが必須となります。
       </>
     ),
   },
@@ -67,7 +69,7 @@ export default function FAQ() {
     <div
       ref={ref}
       id="faq"
-      className="px-5 pb-12 pt-14 mb-[30px] md:mb-[70px] md:pb-[55px] md:pt-[80px]"
+      className="px-5 pt-14 mb-[30px] md:mb-[30px]  md:pt-[80px]"
     >
       <div className="mx-auto w-full max-w-[920px]">
         <div>
@@ -77,6 +79,13 @@ export default function FAQ() {
           {faqData.map(({ id, question, answer }) => (
             <FaqItem key={id} id={id} question={question} answer={answer} />
           ))}
+        </div>
+        <div className="fade-up flex justify-center mt-7 md:mt-10">
+          <a href="/" className="w-[330px] md:w-[480px] flex justify-center items-center md:text-[20px] text-[16px] h-[70px] p-[3px] rounded-full bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] leading-[1.2] font-semibold">
+          <span className="h-full w-full bg-white rounded-full text-center flex items-center justify-center">
+          今すぐLINEで応募して<br />ライバーへの扉を開きましょう！！
+          </span>
+          </a>
         </div>
       </div>
     </div>
