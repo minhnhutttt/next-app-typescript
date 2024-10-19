@@ -55,12 +55,12 @@ const LiverIntroduction = () => {
       <div ref={ref} className="md:pt-[70px] pt-12 relative overflow-hidden">
         <div className="px-5">
           <Title>ライバー紹介</Title>
-          <p className="flex flex-col items-center justify-center md:text-[28px] text-[18px] font-bold leading-none gap-2 mt-2">
+          <p className="fade-up flex flex-col items-center justify-center md:text-[28px] text-[18px] font-bold leading-none gap-2 mt-2">
             <span className="bg-[linear-gradient(90deg,_rgba(255,_125,_211,_0.30)_0%,_rgba(60,_232,_255,_0.30)_100%)] rounded-lg">LIVERS</span>
             <span className="bg-[linear-gradient(90deg,_rgba(255,_125,_211,_0.30)_0%,_rgba(60,_232,_255,_0.30)_100%)] rounded-lg">INTRODUCTION</span>
           </p>
         </div>
-        <div className="fade-up mt-16 relative overflow-hidden px-5">
+        <div className="fade-up mt-16 relative overflow-hidden">
             <Swiper
             slidesPerView={1}
             loop={true}
@@ -71,7 +71,7 @@ const LiverIntroduction = () => {
             className="mySwiper relative !pb-[56px]"
         >
             {data.map((item, index) => (
-                <SwiperSlide key={index} className="w-full">
+                <SwiperSlide key={index} className="w-full px-5">
                     <a href={item.link} target="_blank" className="overflow-hidden bg-[#FF7DD3]/[0.2] [box-shadow:0px_4px_30px_0px_rgba(0,_0,_0,_0.10)]">
                         <figure className="rounded-[30px] overflow-hidden">
                             <img src={item.image} alt="" />
@@ -84,7 +84,7 @@ const LiverIntroduction = () => {
             ))}
             </Swiper>
         </div>
-        <div className="flex justify-center md:mt-5">
+        <div className="fade-up flex justify-center md:mt-5">
             <a href="#" className="rounded-[70px] flex items-center justify-center md:w-[480px] h-[70px] w-[330px] p-[3px] bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)]">
                 <span className="w-full h-full flex items-center justify-center rounded-[70px] bg-white md:text-[20px] text-[18px] font-extrabold text-center relative">
                     <span>ライバーをもっと見る</span>

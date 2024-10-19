@@ -10,18 +10,6 @@ const data = [
         image: '/assets/images/slider-01.png',
         text: 'ライブ配信の世界大会において2位、4位のライバーを輩出。',
     },
-    {
-        image: '/assets/images/slider-02.png',
-        text: '国内17ライバー月間TOP100に7名ランクイン。',
-    },
-    {
-        image: '/assets/images/slider-03.png',
-        text: '毎月数名が常にイベントTOP10にランクイン。',
-    },
-    {
-        image: '/assets/images/slider-04.png',
-        text: '新人イベントにて上位20位以内に6名がランクイン。更に、１位も所属ライバー。',
-    }
 ]
 
 const Slider = () => {
@@ -60,7 +48,7 @@ const Slider = () => {
                 <button className="swiper-button-next cursor-pointer duration-150 hover:opacity-75 max-md:absolute max-md:top-[calc(50%-20px)] max-md:right-3 z-50"><img className="rotate-180" src="/assets/images/arrows.svg" alt="" /></button>
             </div>
             </Swiper>
-            <div className="z-10">
+            <div className="fade-up z-10">
                 <figure className="pl-4 md:-mt-[136px] -mt-[66px] max-md:w-[200px] md:w-[274px] absolute z-10 pointer-events-none">
                     <img className="max-md:w-[200px]" src="/assets/images/support.png" alt="" />
                 </figure>

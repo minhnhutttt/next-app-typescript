@@ -27,17 +27,11 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.u-bg-gradient-01 {
-  background-image: linear-gradient(90deg, #BD84FA 0%, #6E69FC 40%, #43ABFC 65%, #65D7FA 100%);
-}
-.u-bg-gradient-02 {
-  background-image: linear-gradient(90deg, #FFB310 0%, #FFF30D 16%, #FFB90D 34%, #FFB90D 40%, #FFB90D 41%, #FEBA0B 45%, #FEC006 47%, #FEE00C 50%, #FDDE0B 53%, #FCD70A 54%, #F5BA07 55%, #F2A905 56%, #F2A905 65%, #CA8D06 71%, #A87407 76%, #A77207 84%, #AD7607 87%, #C08407 91%, #D79608 95%, #D79406 99%, #D99002 100%);
-}
-.u-bg-gradient-03 {
-  background-image: linear-gradient(90deg, #FF75C3 0%, #FFA647 20%, #FFE83F 40%, #9FFF5B 60%, #70E2FF 80%, #CD93FF 100%);
-}
-.u-bg-gradient-04 {
-  background-image: linear-gradient(180deg, #01B902 0%, #FFF 100%);
+
+.u-border-dash {
+  background-image: linear-gradient(90deg, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(90deg, #3CE8FF, #3CE8FF, #3CE8FF, #FF7DD3, #FF7DD3);
+  background-size: 12px 3px, 100% 3px;
+  border: none;
 }
 
 /* Animation */
