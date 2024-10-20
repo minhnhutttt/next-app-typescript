@@ -5,17 +5,17 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const data = [
     {
         image: '/assets/images/promises-img-01.png',
-        title: (<>実際の来店、購入、<br />契約の増加にフォーカス!!</>),
+        title: (<>実際の来店、購入、<br />契約の増加に<UnderlineText>フォーカス</UnderlineText>!!</>),
         text: 'SEIKAI広告エージェントは実際に売上を生み出したコンバージョンの増加にフォーカスします。それ以外に何か必要ですか？鳴り止まない電話への対応を準備をしてください！'
     },
     {
         image: '/assets/images/promises-img-02.png',
-        title: '24時間365日休まず自動改善!!',
+        title: (<>24時間365日休まず<UnderlineText>自動改善</UnderlineText>!!</>),
         text: 'SEIKAI広告エージェントは人間のように休むことなく働きます。あなたがソファの上でくつろいでいる時も、眠っている時も、重要な仕事中でも、代わりに自動で改善し続けます。'
     },
     {
         image: '/assets/images/promises-img-03.png',
-        title: '専門知識・手数料不要!!',
+        title: (<>専門知識・手数料<UnderlineText>不要</UnderlineText>!!</>),
         text: 'SEIKAI広告エージェントの利用には専門知識も、広告代理店のような手数料も一切不要です。AIの限界維持費用だけ必要ですが、それでも月間広告費の3.99%で日本一安いです。'
     }
 ]
@@ -31,7 +31,7 @@ const Promises = () => {
         <div className="w-full max-w-[980px] mx-auto">
             <div className="flex justify-center">
                 <div>
-                    <h3 className="fade-up md:text-[42px] text-[22px] font-black leading-[1.3] relative tracking-[-0.018em]">嘘つきにサヨ👋ナラ、あなたとのお約🤝束</h3>
+                    <h3 className="fade-up md:text-[42px] text-[22px] font-black leading-[1.3] relative tracking-[-0.018em]">嘘つきにサヨ👋ナラ、あなたとの<UnderlineText>お約🤝束</UnderlineText></h3>
                     <p className="fade-up text-[16px] md:text-[23px] font-bold mt-2">掲げたメリットは、人間よりも真面目に、地道で、コツコツと、<br />毎秒単位で対応してまいります。</p>
                     </div>
             </div>

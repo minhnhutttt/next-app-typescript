@@ -76,7 +76,7 @@ const Steps = () => {
           tl.to(
             item,
             {
-              y: "-100vh",
+              y: "-130%",
               rotate: "-3deg",
               duration: 1,
               ease: "power2.out",

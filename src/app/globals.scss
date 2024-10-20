@@ -122,3 +122,40 @@ body {
 		width: 100%;
 	}
   }
+
+
+
+  [data-scroll='in'] .hexagon {
+	cursor: default;
+	--duration: 0.45s;
+	--ripple-factor: 0.45s;
+	-webkit-animation: ripple var(--duration) ease-in-out;
+			animation: ripple var(--duration) ease-in-out;
+	-webkit-animation-duration: max(var(--duration), calc(var(--duration) * var(--ripple-factor) / 100));
+			animation-duration: max(var(--duration), calc(var(--duration) * var(--ripple-factor) / 100));
+	-webkit-animation-delay: calc(var(--ripple-factor) * 8ms);
+			animation-delay: calc(var(--ripple-factor) * 8ms);
+  }
+
+  
+  @keyframes ripple {
+	from {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+	50% {
+	  transform: scale(max(0.8, calc(var(--ripple-factor) / 100)));
+	  opacity: 0.42;
+	}
+	65% {
+	  opacity: 1;
+	}
+	70% {
+	  transform: scale(1.5);
+	  filter: var(--ripple-filter);
+	}
+	to {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+  }

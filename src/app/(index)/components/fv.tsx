@@ -217,7 +217,7 @@ const FV = () => {
   });
   return (
     <section ref={ref} className="relative pr-5">
-      <div className="bg-[url('/assets/images/bg-01.png')] pb-[25px] bg-[length:100%_100%] rounded-r-[45px]">
+      <div className="bg-[url('/assets/images/bg-01.png')] bg-[length:100%_100%] rounded-r-[45px] pt-24 md:pt-[160px] md:pb-[200px] pb-[100px]">
         <div className="flex items-start absolute left-7 top-3">
           <a href="/" className="block relative duration-150 hover:opacity-75">
             <img
@@ -384,7 +384,7 @@ const FV = () => {
           </div>
             </div>
           </div>
-          <div className="flex justify-center md:mt-3 mt-5 relative z-30">
+          <div className="flex justify-center md:mt-8 mt-10 relative z-30">
             <Button href="/">SEIKAI広告を今すぐ試す</Button>
           </div>
         </div>
