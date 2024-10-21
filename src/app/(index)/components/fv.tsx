@@ -1,7 +1,7 @@
 "use client";
 import gsap from "gsap";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useLayoutEffect, useRef } from "react";
 import Button from "@/components/button";
 
 const Bubble = ({ rect, children }: { rect: string; children: ReactNode }) => (
@@ -215,9 +215,12 @@ const FV = () => {
 
     return () => ctx.revert();
   });
+  useLayoutEffect(() => {
+    console.log("aa");
+  });
   return (
     <section ref={ref} className="relative pr-5">
-      <div className="bg-[url('/assets/images/bg-01.png')] bg-[length:100%_100%] rounded-r-[45px] pt-24 md:pt-[160px] md:pb-[200px] pb-[100px]">
+      <div className="bg-[url('/assets/images/bg-01.png')] bg-[length:100%_100%] rounded-r-[45px] py-16 md:py-24">
         <div className="flex items-start absolute left-7 top-3">
           <a href="/" className="block relative duration-150 hover:opacity-75">
             <img
@@ -227,7 +230,7 @@ const FV = () => {
             />
           </a>
         </div>
-        <div className="relative w-full max-w-[1440px] mx-auto h-full pt-14 z-30">
+        <div className="relative w-full max-w-[1440px] mx-auto h-full  z-30">
           <div className="absolute top-2 left-[354px] z-10 pointer-events-none">
             <img
               className="animate-[anistar_3s_ease-in-out_1s_infinite]"
@@ -274,7 +277,7 @@ const FV = () => {
                   </h1>
                 </div>
               </div>
-              <ul className="relative md:text-[22px] text-[16px] font-bold lg:ml-9 md:ml-6 mt-6 z-10">
+              <ul className="relative md:text-[22px] text-[16px] font-bold lg:ml-9 md:ml-6 mt-8 md:mt-10 z-10">
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
                   <span className="absolute w-full h-full bg-[linear-gradient(90deg,_rgba(150,68,255,1)_0%,_rgba(236,98,98,1)_80%)] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
                   <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-start gap-2.5">
@@ -384,7 +387,7 @@ const FV = () => {
           </div>
             </div>
           </div>
-          <div className="flex justify-center md:mt-8 mt-10 relative z-30">
+          <div className="flex justify-center md:mt-16 mt-10 relative z-30">
             <Button href="/">SEIKAI広告を今すぐ試す</Button>
           </div>
         </div>

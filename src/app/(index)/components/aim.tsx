@@ -11,7 +11,7 @@ const Aim = () => {
       ref={ref}
       className="relative pr-5"
     >
-      <div className="bg-[url('/assets/images/bg-04.png')] bg-[length:100%_100%] rounded-r-[45px] pt-16 md:pt-[110px] md:pb-[53px] pb-10">
+      <div className="bg-[url('/assets/images/bg-04.png')] bg-[length:100%_100%] rounded-r-[45px] py-16 md:py-24">
       <div className="w-full max-w-[1000px] mx-auto">
         <div className="max-md:px-5">
           <div className="max-lg:px-5">

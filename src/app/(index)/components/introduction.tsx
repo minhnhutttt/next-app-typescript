@@ -13,9 +13,9 @@ const Introduction = () => {
     >
           <span className="absolute w-full h-full top-[-50%] left-0 bg-[url('/assets/images/bg-02.png')] bg-left-top bg-no-repeat z-10 pointer-events-none"></span>
 
-      <div className="bg-white rounded-l-[45px] pb-14 md:pb-[155px] relative z-20">
+      <div className="bg-white rounded-l-[45px] py-16 md:py-24 relative z-20">
       <div className="w-full max-w-[1000px] mx-auto">
-          <div className="md:pt-[50px] pt-10 max-md:px-5">
+          <div className="max-md:px-5">
             <div className="max-md:px-5 max-xl:px-10">
               <h3 className="fade-up md:text-[42px] text-[22px] font-black leading-[1.3] relative tracking-[-0.018em]">
                   <span className="absolute md:left-[-40px] left-[-28px] top-1 md:top-2.5"><img className="max-md:w-6" src="/assets/images/ic-title.svg" alt="" /></span>LP訪問者の99％はコンバージョンせずに<UnderlineText>離脱します。</UnderlineText></h3>
