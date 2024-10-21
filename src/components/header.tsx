@@ -23,10 +23,19 @@ const Header = () => {
           <div className="w-[260px] md:w-[326px] ml-[50px]">
             <ul className="flex gap-8 mb-10 flex-col">
               <li>
-                <a href="/company" className="block text-[20px] text-white border-b border-white py-2 px-4" onClick={close}>企業情報</a>
+                <a href="/liver" className="block text-[20px] text-white border-b border-white py-2 px-4" onClick={close}>所属ライバー</a>
               </li>
               <li>
-                <a href="/privacy-policy" className="block text-[20px] text-white border-b border-white py-2 px-4" onClick={close}>プライバシーポリシー</a>
+                <a href="/company" className="block text-[20px] text-white border-b border-white py-2 px-4" onClick={close}>企業情報
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="block text-[20px] text-white border-b border-white py-2 px-4" onClick={close}>法人様はこちら
+                </a>
+              </li>
+              <li>
+                <a href="/privacy-policy" className="block text-[20px] text-white border-b border-white py-2 px-4" onClick={close}>プライバシーポリシー
+                </a>
               </li>
             </ul>
             <div className="flex p-4 md:gap-[60px] gap-10">

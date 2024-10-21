@@ -37,12 +37,12 @@ export default function RootLayout({
               <Footer />
             </div>
           </div>
-          <div className="flex-1 max-xl:hidden overflow-hidden">
-          <div className=" relative">
-              <a href="/" className="fixed block top-0 right-0 max-xl:w-14 z-10 hover:opacity-75 duration-150">
-              <img src="/assets/images/contact.png" alt="" /></a>
+          <div className="max-[1400px]:flex-1 max-xl:hidden overflow-hidden">
+            <div className="relative">
+                <a href="/" className="fixed block top-0 right-0 max-xl:w-14 z-10 hover:opacity-75 duration-150">
+                <img src="/assets/images/contact.png" alt="" /></a>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </body>

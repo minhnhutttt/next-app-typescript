@@ -76,7 +76,7 @@ const Fv = () => {
     <div
       className="flex w-full justify-center items-center xl:pt-[clamp(10px,2.222vmin,24px)] xl:pb-[clamp(10px,2.182vmin,24px)] px-5 font-semibold"
     >
-      <div className="flex items-center justify-center aspect-[600/844] xl:h-[78vmin] md:max-h-[844px] max-h-[705px] w-full max-w-[600px]">
+      <div className="flex items-center justify-center xl:aspect-[600/844] md:h-[749px] h-[600px] xl:h-[78vmin] md:max-h-[844px] max-h-[705px] w-full max-w-[600px]">
         <div
           ref={wrapperRef}
           className="w-[10%] h-[10%] relative overflow-hidden xl:rounded-[30px] rounded-[20px] p-5 xl:p-[2.182vmin] before: before:absolute before:z-[1] before:flex xl:before:h-[calc(100%-20px)] before:h-[calc(100%-15px)] xl:before:w-[calc(100%-20px)] before:w-[calc(100%-15px)] before:items-center before:justify-center before:rounded-[30px] before:bg-[url('/assets/images/bg-01.jpg')] before:bg-cover after:absolute after:h-[2000px] after:w-[2000px] after:aspect-square after:animate-[border-animation_5s_linear_infinite] after:rounded-[30px] after:bg-[conic-gradient(_transparent_0%12.5%,_transparent_12.5%25%,_#FF7DD3_25%37.5%,_#FF7DD3_37.5%50%,_transparent_50%62.5%,_transparent_62.5%75%,_#3CE8FF_75%87.5%,_#3CE8FF_87.5%100%_)] after:content-[''] flex flex-col items-center justify-center"
@@ -84,8 +84,7 @@ const Fv = () => {
           <div className="relative z-10 h-full w-full xl:rounded-[30px] rounded-[20px] bg-white/80 p-2 xl:p-[clamp(5px,0.741vmin,8px)]">
             <div className="flex justify-end pt-2.5 xl:pt-[clamp(5px,0.926vmin,10px)]">
               <svg
-                width="94"
-                height="14"
+              className="max-xl:w-[76px] xl:w-[94px]"
                 viewBox="0 0 94 14"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +140,6 @@ const Fv = () => {
               </svg>
             </div>
             <div className="px-3 md:pt-5 pt-3 xl:pt-[clamp(5px,1.852vmin,20px)]">
-              <div className="">
                 <div ref={boxRef1} className="overflow-hidden flex justify-center">
                 <img
                 className="h-[100px] md:h-[clamp(1px,14.352vmin,155px)]"
@@ -149,14 +147,13 @@ const Fv = () => {
                     alt=""
                   />
                 </div>
-                <div ref={boxRef2} className="md:mt-10 xl:mt-[clamp(5px,3.704vmin,40px)] mt-5 flex justify-center">
+                <div ref={boxRef2} className="md:mt-10 xl:mt-[clamp(5px,3.704vmin,40px)] mt-3 flex justify-center">
                   <img
                   className="h-[90px] md:h-[clamp(1px,13.333vmin,144px)]"
                       src="/assets/images/text-3000.svg"
                       alt=""
                     />
                 </div>
-              </div>
               <div ref={boxRef3}>
                 <div className="mt-4 md:mt-7 xl:mt-[clamp(5px,2.593vmin,28px)] flex justify-center">
                   <img
