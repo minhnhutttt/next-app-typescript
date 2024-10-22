@@ -9,7 +9,7 @@ const Introduction = () => {
   return (
     <section
       ref={ref}
-      className="relative pl-5 z-20 bg-[linear-gradient(180deg,_rgba(239,222,233,1)_0%,_rgba(249,237,242,1)_35%,_rgba(253,244,245,1)_68%,_rgba(255,215,207,1)_100%)]"
+      className="relative pl-2 md:pl-5 z-20 bg-[linear-gradient(180deg,_rgba(239,222,233,1)_0%,_rgba(249,237,242,1)_35%,_rgba(253,244,245,1)_68%,_rgba(255,215,207,1)_100%)]"
     >
           <span className="absolute w-full h-full top-[-50%] left-0 bg-[url('/assets/images/bg-02.png')] bg-left-top bg-no-repeat z-10 pointer-events-none"></span>
 

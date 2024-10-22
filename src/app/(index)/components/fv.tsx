@@ -215,11 +215,8 @@ const FV = () => {
 
     return () => ctx.revert();
   });
-  useLayoutEffect(() => {
-    console.log("aa");
-  });
   return (
-    <section ref={ref} className="relative pr-5">
+    <section ref={ref} className="relative pr-2 md:pr-5">
       <div className="bg-[url('/assets/images/bg-01.png')] bg-[length:100%_100%] rounded-r-[45px] py-16 md:py-24">
         <div className="flex items-start absolute left-7 top-3">
           <a href="/" className="block relative duration-150 hover:opacity-75">
@@ -280,7 +277,7 @@ const FV = () => {
               <ul className="relative md:text-[22px] text-[16px] font-bold lg:ml-9 md:ml-6 mt-8 md:mt-10 z-10">
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
                   <span className="absolute w-full h-full bg-[linear-gradient(90deg,_rgba(150,68,255,1)_0%,_rgba(236,98,98,1)_80%)] animate-[bgLRextendAnime_2s_forwards] scale-x-0 z-10"></span>
-                  <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-start gap-2.5">
+                  <span className="animate-[bgextendAnimeBase_2s_0.8s_forwards] opacity-0 flex items-start gap-2.5 relative">
                     <figure>
                       <img
                         className="max-md:w-[24px]"
@@ -289,7 +286,13 @@ const FV = () => {
                       />
                     </figure>
                     <span className="flex-1">
-                    実際の来店、購入、契約の増加にフォーカス!!
+                      実際の来店、購入、契約の増加にフォーカス!! 
+                      <span className="group ml-1 size-6 cursor-default leading-[0] inline-flex items-center justify-center rounded-full ">
+                        ℹ️
+                        <span className="absolute right-0 bottom-full group-hover:block hidden text-black leading-[1.5] text-[14px] p-2 bg-white rounded-lg">
+                        広告から実際の来店、購入、契約等（オフラインコンバージョン）につながった場合に得られた顧客属性を定期的にアップロードすることで、AIが出稿中の広告と真の成果とのつながりにフォーカスして学習します。
+                        </span>
+                      </span>
                     </span>
                   </span>
                 </li>
@@ -304,7 +307,14 @@ const FV = () => {
                       />
                     </figure>
                     <span className="flex-1">
-                    24時間365日休まず自動改善!!</span>
+                    24時間365日休まず自動改善!!
+                    <span className="group ml-1 size-6 cursor-default leading-[0] inline-flex items-center justify-center rounded-full ">
+                        ℹ️
+                        <span className="absolute right-0 bottom-full group-hover:block hidden text-black leading-[1.5] text-[14px] p-2 bg-white rounded-lg">
+                        売上のそばにある情報のインプットを継続することで、AIは休むことなく改善アクションを取り続けます。続けるほどに、広告パフォーマンスの着実な向上を実感できます。
+                        </span>
+                      </span>
+                    </span>
                   </span>
                 </li>
                 <li className="flex items-center relative animate-[bgextendAnimeBase_1s_forwards] opacity-0">
@@ -317,7 +327,14 @@ const FV = () => {
                         alt=""
                       />
                     </figure>
-                    <span className="flex-1">専門知識・手数料不要!!※</span>
+                    <span className="flex-1">専門知識・手数料不要!!
+                    <span className="group ml-1 size-6 cursor-default leading-[0] inline-flex items-center justify-center rounded-full ">
+                        ℹ️
+                        <span className="absolute right-0 bottom-full group-hover:block hidden text-black leading-[1.5] text-[14px] p-2 bg-white rounded-lg">
+                        知識不要で使えるのは当然として、広告代理店のように広告費の20％の重い労働費用は一切徴収いたしません。代わりにAIの限界維持費用として広告費の3.99％が請求されますが、それでも日本一安いです。
+                        </span>
+                      </span>
+                    </span>
                   </span>
                 </li>
               </ul>
@@ -388,7 +405,7 @@ const FV = () => {
             </div>
           </div>
           <div className="flex justify-center md:mt-16 mt-10 relative z-30">
-            <Button href="/">SEIKAI広告を今すぐ試す</Button>
+            <Button href="/">SEIKAIで真の成果を狙う</Button>
           </div>
         </div>
       </div>

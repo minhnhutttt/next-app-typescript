@@ -26,18 +26,18 @@ const Item = ({
   rect?: string;
 }) => (
   <div
-    className={`${rect} step-item absolute inset-0 w-[320px] md:w-[657px] h-[434px] max-md:flex-col bg-white border border-black rounded-[51px] pt-5 md:pt-[34px] md:pb-[42px] pb-6 flex`}
+    className={`${rect} step-item absolute inset-0 w-[300px] md:w-[657px] md:h-[434px] h-[400px] max-md:flex-col bg-white border border-black rounded-[51px] pt-5 md:pt-[34px] md:pb-[42px] pb-6 flex`}
   >
     <div className="md:w-[225px] md:border-r border-black flex items-center justify-center">
       <img className="max-md:h-20" src={step} alt="" />
     </div>
     <div className="flex-1 pr-4 md:pr-8 pl-4 flex flex-col justify-between">
       <div className="">
-        <h5 className="md:text-[26px] text-[18px] font-bold">{title}</h5>
+        <h5 className="md:text-[26px] text-[16px] font-bold">{title}</h5>
         <div className="mt-2">
           {list.map((item, index) => (
             <p
-              className="flex md:text-[19px] text-[14px] font-medium"
+              className="flex md:text-[19px] text-[13px] font-medium"
               key={index}
             >
               <span>・</span>
@@ -79,7 +79,6 @@ const Steps = () => {
               y: "-130%",
               rotate: "-3deg",
               duration: 1,
-              ease: "power2.out",
             },
             index * 0.5
           );
@@ -89,13 +88,11 @@ const Steps = () => {
           y: 30,
           scale: 0.7,
           duration: 1.3,
-          ease: "power2.out",
         })
         tl.from(buttonRef.current, {
           autoAlpha: 0,
           y: 30,
           duration: 1.3,
-          ease: "power2.out",
         })
       }
     });
@@ -117,7 +114,7 @@ const Steps = () => {
         </div>
         <div
           ref={stepsRef}
-          className="md:py-24 py-14 w-full h-screen  max-md:px-5 flex flex-col justify-center"
+          className="md:py-24 pb-14 pt-24 w-full h-screen  max-md:px-5 flex flex-col justify-center"
         >
           <div className="relative pb-4">
             <span ref={bgRef} className="absolute bg-[url('/assets/images/step-bg.svg')] max-md:bg-[length:100%_100%] bg-no-repeat bg-center inset-0"></span>

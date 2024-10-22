@@ -9,7 +9,7 @@ const Aim = () => {
   return (
     <section
       ref={ref}
-      className="relative pr-5"
+      className="relative md:pr-5 pr-2"
     >
       <div className="bg-[url('/assets/images/bg-04.png')] bg-[length:100%_100%] rounded-r-[45px] py-16 md:py-24">
       <div className="w-full max-w-[1000px] mx-auto">
