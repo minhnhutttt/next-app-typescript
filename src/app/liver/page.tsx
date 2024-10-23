@@ -165,7 +165,7 @@ export default function Liver() {
     const ref = useScrollAnimations();
   return (
     <main>
-        <section ref={ref} className="pt-20 md:pt-[120px]">
+        <section ref={ref} className="pt-20 md:pt-[120px] bg-[url(/assets/images/liver-bg.png)] bg-no-repeat bg-left-top">
             <div className="h-[5px] bg-[linear-gradient(90deg,_#FF7DD3_0%,_#3CE8FF_100%)]"></div>
             <div className="md:px-5 px-3 pb-[50px]">
                 <div className="relative md:w-[510px] w-full mx-auto rounded-[10px] bg-[linear-gradient(90deg,_#FF7DD3_0%,_#3CE8FF_100%)] p-px flex items-center justify-center mt-5 [box-shadow:0px_4px_40px_0px_rgba(255,_125,_211,_0.20)]">

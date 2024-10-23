@@ -2,10 +2,9 @@
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import Title from "@/components/title";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
 const data = [
     {
         link: 'https://17.live/s/u/9ef2c16f-e1cc-49c6-b4f0-0bf6c6c60089',
@@ -64,10 +63,14 @@ const LiverIntroduction = () => {
             <Swiper
             slidesPerView={1}
             loop={true}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
             pagination={{
                 clickable: true,
               }}
-              modules={[Pagination]}
+              modules={[Pagination, Autoplay]}
             className="mySwiper relative !pb-[56px]"
         >
             {data.map((item, index) => (
@@ -84,8 +87,8 @@ const LiverIntroduction = () => {
             ))}
             </Swiper>
         </div>
-        <div className="fade-up flex justify-center md:mt-5">
-            <a href="#" className="rounded-[70px] flex items-center justify-center md:w-[480px] h-[70px] w-[330px] p-[3px] bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)]">
+        <div className="fade-up flex justify-center mt-5">
+            <a href="https://goodfellows17.info/talent/" target="_blank" className="rounded-[70px] flex items-center justify-center md:w-[480px] h-[70px] w-[330px] p-[3px] bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)]">
                 <span className="w-full h-full flex items-center justify-center rounded-[70px] bg-white md:text-[20px] text-[18px] font-extrabold text-center relative">
                     <span>ライバーをもっと見る</span>
                     <img className="absolute right-2.5" src="/assets/images/ic-btn.svg" alt="" />

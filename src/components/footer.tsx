@@ -4,7 +4,7 @@ const Footer = () => {
         <div className="flex justify-center gap-5 md:mb-14 mb-8">
             <a href="https://x.com/17_gold_partner" target="_blank"><img src="/assets/images/socical-x.png" alt="" /></a>
             <a href="https://line.me/R/ti/p/%40300kbcvu" target="_blank"><img src="/assets/images/socical-line.png" alt="" /></a>
-            <a href="https://drive.google.com/file/d/1o-b_eIhgMQYf6PcLdDGsZBlDL-qxBOpz/view?usp=drive_link" target="_blank"><img src="/assets/images/socical-instagram.png" alt="" /></a>
+            <a href="https://www.instagram.com/goodfellows_17/" target="_blank"><img src="/assets/images/socical-instagram.png" alt="" /></a>
         </div>
           <div className="flex justify-center">
               <a href="/" className="hover:opacity-75 duration-150">

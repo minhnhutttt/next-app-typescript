@@ -23,41 +23,40 @@ export default function Contact() {
       <div className="h-[240px] bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] flex justify-center pt-[124px] md:w-[550px]">
         <p className="md:text-[36px] text-[24px] text-white font-semibold">法人様はこちら</p>
       </div>
-      <div className="pt-12 px-4 md:pb-[46px]">
+      <div className="pt-12 px-5 pb-7 md:pb-[46px]">
             <p className=" text-[14px] w-full max-w-[436px] mx-auto">
             タレント・モデルのキャスティング、その他のお問い合わせがございましたら、以下のフォームよりお願いします。
             </p>
       </div>
-      <div className="w-full max-w-[460px] mx-auto md:space-y-[60px] space-y-8 md:pb-[277px] pb-[160px]">
+      <div className="w-full max-w-[500px] mx-auto md:space-y-[60px] space-y-8 md:pb-[277px] pb-[160px] px-5">
         <div className="space-y-2">
           <ContactLabel required>企業名・店舗名</ContactLabel>
-          <p><input type="text" placeholder="株式会社ABC" className="w-full bg-[#F4F1F3] md:h-[62px] h-[12] md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
+          <p><input type="text" placeholder="株式会社ABC" className="w-full bg-[#F4F1F3] md:h-[62px] h-12 md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
           <p className="md:text-[16px] text-[14px] font-black italic flex items-center text-[#999]"><ContactIcon />個人事業主様の場合「なし」でも可</p>
         </div>
         <div className="space-y-2">
           <ContactLabel required>ご担当者名</ContactLabel>
-          <p><input type="text" placeholder="山田　太郎" className="w-full bg-[#F4F1F3] md:h-[62px] h-[12] md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
+          <p><input type="text" placeholder="山田　太郎" className="w-full bg-[#F4F1F3] md:h-[62px] h-12 md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
         </div>
         <div className="space-y-2">
           <ContactLabel required>ご担当者名 (カナ)</ContactLabel>
-          <p><input type="text" placeholder="ヤマダ　タロウ" className="w-full bg-[#F4F1F3] md:h-[62px] h-[12] md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
-          <p className="md:text-[16px] text-[14px] font-black italic flex items-center text-[#E63404]"><ContactIcon error />エラーメッセージエラーメッセージエラーメッセージ</p>
+          <p><input type="text" placeholder="ヤマダ　タロウ" className="w-full bg-[#F4F1F3] md:h-[62px] h-12 md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
         </div>
         <div className="space-y-2">
           <ContactLabel required>メールアドレス</ContactLabel>
-          <p><input type="text" placeholder="yamada@goodfellows17.info" className="w-full bg-[#F4F1F3] md:h-[62px] h-[12] md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
+          <p><input type="text" placeholder="yamada@goodfellows17.info" className="w-full bg-[#F4F1F3] md:h-[62px] h-12 md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
         </div>
         <div className="space-y-2">
           <ContactLabel required>電話番号</ContactLabel>
-          <p><input type="text" placeholder="03-1234-5678" className="w-full bg-[#F4F1F3] md:h-[62px] h-[12] md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
+          <p><input type="text" placeholder="03-1234-5678" className="w-full bg-[#F4F1F3] md:h-[62px] h-12 md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
         </div>
         <div className="space-y-2">
           <ContactLabel>貴社ホームページURL</ContactLabel>
-          <p><input type="text" placeholder="goodfellows17.info" className="w-full bg-[#F4F1F3] md:h-[62px] h-[12] md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
+          <p><input type="text" placeholder="goodfellows17.info" className="w-full bg-[#F4F1F3] md:h-[62px] h-12 md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
         </div>
         <div className="space-y-2">
           <ContactLabel>件名</ContactLabel>
-          <p><input type="text" placeholder="ライバーについて" className="w-full bg-[#F4F1F3] md:h-[62px] h-[12] md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
+          <p><input type="text" placeholder="ライバーについて" className="w-full bg-[#F4F1F3] md:h-[62px] h-12 md:text-[20px] text-[16px] rounded-lg px-6 font-black italic placeholder-[#A9A9A9]" /></p>
         </div>
         <div className="space-y-2">
           <ContactLabel required>お問い合わせ内容</ContactLabel>

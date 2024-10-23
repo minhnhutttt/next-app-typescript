@@ -81,7 +81,7 @@ export default function FAQ() {
           ))}
         </div>
         <div className="fade-up flex justify-center mt-7 md:mt-10">
-          <a href="/" className="w-[330px] md:w-[480px] flex justify-center items-center md:text-[20px] text-[16px] h-[70px] p-[3px] rounded-full bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] leading-[1.2] font-semibold">
+          <a href="https://line.me/R/ti/p/%40300kbcvu" target="_blank" className="w-[330px] md:w-[480px] flex justify-center items-center md:text-[20px] text-[16px] h-[70px] p-[3px] rounded-full bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] leading-[1.2] font-semibold">
           <span className="h-full w-full bg-white rounded-full text-center flex items-center justify-center">
           今すぐLINEで応募して<br />ライバーへの扉を開きましょう！！
           </span>

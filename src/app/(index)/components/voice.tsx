@@ -1,7 +1,7 @@
 "use client";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -63,10 +63,14 @@ const Voice = () => {
                 slidesPerView={1}
                 spaceBetween={20}
                 loop={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
                 pagination={{
                     clickable: true,
                 }}
-                modules={[Pagination]}
+                modules={[Pagination, Autoplay]}
                 className="mySwiper relative !pb-[50px]"
             >
                 {data.map((item, index) => (

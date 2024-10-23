@@ -22,6 +22,9 @@ const Header = () => {
         >
           <div className="w-[260px] md:w-[326px] ml-[50px]">
             <ul className="flex gap-8 mb-10 flex-col">
+            <li>
+                <a href="/" className="block text-[20px] text-white border-b border-white py-2 px-4" onClick={close}>TOP</a>
+              </li>
               <li>
                 <a href="/liver" className="block text-[20px] text-white border-b border-white py-2 px-4" onClick={close}>所属ライバー</a>
               </li>

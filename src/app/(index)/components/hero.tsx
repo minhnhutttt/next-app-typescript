@@ -3,47 +3,6 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      if (containerRef.current) {
-        const tl = gsap.timeline({ repeat: -1, ease: "ease-in-out" });
-        let duration = 1;
-        let delay = 3;
-        const f1_img = containerRef.current.querySelector(".f1-img");
-        const f2_img = containerRef.current.querySelector(".f2-img");
-
-        tl.to(f1_img, {
-          rotateY: "+=180",
-          opacity: 0,
-          duration: duration,
-          delay: delay,
-        }).to(
-          f2_img,
-          {
-            rotateY: "+=180",
-            opacity: 1,
-            duration: duration,
-          },
-          "<"
-        ).to(f1_img, {
-            rotateY: "+=180",
-            opacity: 1,
-            duration: duration,
-            delay: delay,
-          }).to(
-            f2_img,
-            {
-              rotateY: "+=180",
-              opacity: 0,
-              duration: duration,
-            },
-            "<"
-          );
-      }
-    });
-
-    return () => ctx.revert();
-  });
   return (
     <div className="relative h-[600px] md:h-[749px] w-full">
       <div className="absolute z-40 inset-0 bg-black/60 xl:hidden max-xl:animate-[fadeOut_6.5s_forwards]"></div>
@@ -67,11 +26,8 @@ const Hero = () => {
             <img src="/assets/images/hero-bubble.png" alt="" />
           </span>
           <div className="relative">
-            <p className="f1-img relative z-10">
+            <p className="relative z-10">
               <img className="max-md:h-[480px]" src="/assets/images/hero-01.png" alt="" />
-            </p>
-            <p className="f2-img absolute inset-0">
-              <img className="max-md:h-[480px]" src="/assets/images/hero-02.png" alt="" />
             </p>
           </div>
         </div>

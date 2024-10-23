@@ -15,14 +15,19 @@ const data = [
     },
     {
         id: '3',
-        title: '概要説明',
-        text: 'GoodFellowsライバー報酬や概要説明など説明後にライバー登録をしていただきます。',
+        title: '審査',
+        text: 'ご提出の内容により簡潔な書類審査を行い、結果をご連絡いたします。',
     },
     {
         id: '4',
-        title: '審査',
-        text: '配信の説明をした後、実際に17LIVEによる配信の審査が行われ結果をご連絡いたします。',
+        title: '概要説明と登録',
+        text: 'ライバー報酬や概要説明などを説明後にライバー登録をしていただきます。',
     },
+    {
+      id: '5',
+      title: '契約',
+      text: '17LIVE、GoodFellowsとの契約を締結しライバーデビューとなります。',
+  },
 ]
 const Process = () => {
   const ref = useScrollAnimations(); 

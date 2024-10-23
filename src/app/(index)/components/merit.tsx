@@ -14,7 +14,7 @@ const Item = ({title, children} : {title: string, children: ReactNode}) => (
 
 const Merit = () => {
   const ref = useScrollAnimations();
-  return <section ref={ref} className="px-5 pt-[100px] md:pt-[150px]">
+  return <section ref={ref} className="px-5 pt-[150px]">
     <div className="fade-up relative mx-auto flex w-full max-w-[414px]">
         <div className="absolute top-[-75px] md:left-[-40px] left-[-15px]">
           <img className="max-md:w-[90px]" src="/assets/images/hand.png" alt="" />
@@ -25,16 +25,16 @@ const Merit = () => {
       </div>
       <div className="w-full max-w-[440px] mx-auto mt-8 space-y-12">
         <div className="relative bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] p-px flex items-center justify-center rounded-[20px]">
-            <div className="absolute bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] w-full h-full right-[-10px] bottom-[-10px] rounded-[20px]"></div>
-            <div className="w-full h-full bg-white rounded-[20px] overflow-hidden relative pt-6">
+            <div className="absolute bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] w-full h-full md:right-[-10px] right-[-6px] md:bottom-[-10px] bottom-[-6px] rounded-[20px]"></div>
+            <div className="w-full h-full bg-white rounded-[20px] overflow-hidden relative pt-6 px-5">
                 <div className="fade-up flex justify-center"><img className="max-md:w-[120px]" src="/assets/images/merit-ic-01.png" alt="" /></div>
-                <h5 className="fade-up text-center md:text-[32px] text-[24px] font-semibold">配信サポート</h5>
+                <h5 className="fade-up text-center md:text-[32px] text-[24px] font-semibold max-md:mt-3">配信サポート</h5>
                 <div className="w-full max-w-[376px] mx-auto mt-5">
                     <Item title="新人さんレクチャー！！">
                         全く操作が分からない方も安心。オンラインレクチャーにて丁寧に操作方法などを説明致します。
                     </Item>
                     <Item title="新人さん講習！！">
-                        いつでも自由に読めるTOP LIVE所属ライバー専用の新人講習ルームがあります。過去にあったTOPライバーの成功事例や悩みをいつでも好きな時に学べます。
+                    いつでも自由に読めるGoodFellows所属ライバー専用の新人講習ルームがあります。過去にあったTOPライバーの成功事例や悩みをいつでも好きな時に学べます。
                     </Item>
                     <Item title="所属ライバー × 協力">
                     所属ライバー専用の配信告知ルームでは、ライバー同士が応援し合い、相互効果を生み出します。新人ライバーさんもすぐに仲間ができます。
@@ -46,10 +46,10 @@ const Merit = () => {
             </div>
         </div>
         <div className="relative bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] p-px flex items-center justify-center rounded-[20px]">
-            <div className="absolute bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] w-full h-full right-[-10px] bottom-[-10px] rounded-[20px]"></div>
-            <div className="w-full h-full bg-white rounded-[20px] overflow-hidden relative pt-6">
+            <div className="absolute bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] w-full h-full md:right-[-10px] right-[-6px] md:bottom-[-10px] bottom-[-6px] rounded-[20px]"></div>
+            <div className="w-full h-full bg-white rounded-[20px] overflow-hidden relative pt-6 px-5">
                 <div className="fade-up flex justify-center"><img className="max-md:w-[120px]" src="/assets/images/merit-ic-02.png" alt="" /></div>
-                <h5 className="fade-up text-center md:text-[32px] text-[24px] font-semibold">素敵な特典</h5>
+                <h5 className="fade-up text-center md:text-[32px] text-[24px] font-semibold max-md:mt-3">素敵な特典</h5>
                 <div className="w-full max-w-[376px] mx-auto mt-5">
                     <Item title="新人特典">
                     新人さんが続けられるよう、弊社独自の特別ボーナスキャンペーンがあります。
