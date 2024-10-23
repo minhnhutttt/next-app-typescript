@@ -14,6 +14,7 @@ export default function Home() {
   const ref = useRef(null);
   useEffect(() => {
     import("@lottiefiles/lottie-player");
+    initScrollTrigger();
   },[]);
 
   function getBackgroundColor(elementId: string): string | null {
@@ -99,8 +100,6 @@ useEffect(() => {
 
   // GSAP setup
   gsap.set('#wrapContainer', { force3D: false });
-  initScrollTrigger()
-  startPreload()
 
   // Đợi hình ảnh tải xong
   const bodyElement = document.getElementById('body');
@@ -360,19 +359,20 @@ function initAnimations() {
 }
 
 function initScrollTrigger() {
+  console.log('initScrollTrigger');
   const htmlElement = document.getElementById("html");
   if (!htmlElement) return;
 
   const isTouchDevice = htmlElement.classList.contains("touchevents") && isMobile();
 
   // Các vị trí (stripeC, sometimesC, ...) cần được định nghĩa sẵn
-  const stripeC = isTouchDevice ? stripeCoords.mobile : stripeCoords.desktop;
-  const sometimesC = isTouchDevice ? sometimesCoords.mobile : sometimesCoords.desktop;
-  const factsC = isTouchDevice ? factsCoords.mobile : factsCoords.desktop;
-  const bornC = isTouchDevice ? bornCoords.mobile : bornCoords.desktop;
-  const matterC = isTouchDevice ? matterCoords.mobile : matterCoords.desktop;
-  const serviziC = isTouchDevice ? serviziCoords.mobile : serviziCoords.desktop;
-  const footerC = isTouchDevice ? footerCoords.mobile : footerCoords.desktop;
+  stripeC = isTouchDevice ? stripeCoords.mobile : stripeCoords.desktop;
+  sometimesC = isTouchDevice ? sometimesCoords.mobile : sometimesCoords.desktop;
+  factsC = isTouchDevice ? factsCoords.mobile : factsCoords.desktop;
+  bornC = isTouchDevice ? bornCoords.mobile : bornCoords.desktop;
+  matterC = isTouchDevice ? matterCoords.mobile : matterCoords.desktop;
+  serviziC = isTouchDevice ? serviziCoords.mobile : serviziCoords.desktop;
+  footerC = isTouchDevice ? footerCoords.mobile : footerCoords.desktop;
 
   document.querySelectorAll(".toHide").forEach((element) => {
     (element as HTMLElement).style.display = "inline-block";

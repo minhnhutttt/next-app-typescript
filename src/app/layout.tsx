@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className=" no-touchevents">
+    <html lang="en" id="html" className=" no-touchevents">
       <body
         className={`${noto.className} `}
       >
