@@ -14,7 +14,6 @@ export default function Home() {
   const ref = useRef(null);
   useEffect(() => {
     import("@lottiefiles/lottie-player");
-    initScrollTrigger();
   },[]);
 
   function getBackgroundColor(elementId: string): string | null {
@@ -39,189 +38,216 @@ export default function Home() {
     return /mobile/i.test(navigator.userAgent) && !/ipad|tablet/i.test(navigator.userAgent);
   }
 
-  let isStripe: any, isSometimes: any, isFact: any, isMatter: any, isBorn: any, isServizi: any, isFooter: any, isAnimFooter: any = null;
-let posStripe: number, posSometimes: number, posFact: number, posBorn: number, posResult: number, posLetso: number, posFooter: number = 0;
-
-let stripeC: any;
-const stripeCoords = {
-  desktop: { x: '0vw', zoom: 1.2 },
-  mobile: { x: '0vw', zoom: 2.3 },
-};
-
-let sometimesC: any;
-const sometimesCoords = {
-  desktop: { x: '138vw', zoom: 10 },
-  mobile: { x: '283vw', zoom: 16 },
-  mobileL: { x: '210vw', zoom: 14 },
-};
-
-let factsC: any;
-const factsCoords = {
-  desktop: { x: '18vw', zoom: 1.4 },
-  mobile: { x: '55vw', zoom: 2.8 },
-};
-
-let bornC: any;
-const bornCoords = {
-  desktop: { x: '-40vw', zoom: 10 },
-  mobile: { x: '-64vw', zoom: 16 },
-  mobileL: { x: '-50vw', zoom: 14 },
-};
-
-let matterC: any;
-const matterCoords = {
-  desktop: { x: '0vw', zoom: 1.2 },
-  mobile: { x: '0vw', zoom: 2.3 },
-};
-
-let serviziC: any;
-const serviziCoords = {
-  desktop: { x: '85vw', zoom: 2.3 },
-  mobile: { x: '85vw', zoom: 2.3 },
-};
-
-let footerC: any;
-const footerCoords = {
-  desktop: { x: '0vw', zoom: 1 },
-  mobile: { x: '0vw', zoom: 1 },
-};
-
-let anims: any = null;
-let lottieHeight: number = 0;
-let windowHeight: number = 0;
-let gap: number = 0;
-
-// Thay thế jQuery `waitForImages` bằng DOMContentLoaded và ảnh
-useEffect(() => {
-  window.addEventListener('resize', handleResize);
-
-  // Cuộn lên đầu trang
-  window.scrollTo(0, 0);
-
-  // GSAP setup
-  gsap.set('#wrapContainer', { force3D: false });
-
-  // Đợi hình ảnh tải xong
-  const bodyElement = document.getElementById('body');
-  if (bodyElement) {
-    bodyElement.classList.add('loaded');
-    startPreload();
-  }
-
-
-  return () => {
-    window.removeEventListener('resize', handleResize);
-  };
-}, []);
-
-// Chuyển đổi vw sang px
-function vwToPixel(vwValue: number): number {
-  const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-  return (viewportWidth * vwValue) / 100;
-}
-
-// Chuyển đổi vh sang px
-function vhToPixel(vhValue: number): number {
-  const viewportHeight = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-  return (viewportHeight * vhValue) / 100;
-}
-
-// Hàm xử lý khi thay đổi kích thước cửa sổ
-function handleResize() {
-  const htmlElement = document.documentElement;
-  if (htmlElement.classList.contains('touchevents')) {
-    return;
-  }
-
-  resetAll();
-}
-
- // Hàm reset tất cả các animation
-function resetAll() {
-  const toHideElements = document.querySelectorAll('.toHide');
-  toHideElements.forEach((element) => {
-    (element as HTMLElement).style.display = 'inline-block';
-    element.classList.remove('hide');
-  });
-
-  // Xóa các animation GSAP hiện có
-  anims = gsap.globalTimeline.getChildren(true, true, true);
-  anims.forEach((anim: gsap.core.Tween) => {
-    anim.revert();
-    anim.kill();
-  });
-
-  ScrollTrigger.getAll().forEach((trigger) => {
-    trigger.kill();
-  });
-
-  gsap.killTweensOf('*');
-
-  // Đặt lại container
-  gsap.set('#wrapContainer', { x: 0, y: 0, scale: 1 });
-  const wrapContainer = document.getElementById('wrapContainer');
-  if (wrapContainer) {
-    wrapContainer.style.transform = 'translate(0) scale(1)';
-  }
-
-  // Cuộn lại về đầu trang
-  window.scrollTo(0, 0);
-
-  // Khởi tạo lại animation
-  initAnimations();
-  initScrollTrigger();
-
-}
-
-// Hàm preload bắt đầu các animation và thiết lập trang
-function startPreload() {
-  // Get the height of the lottie element and the window height
-  const lottieElement = document.getElementById("lottie") as HTMLElement;
-  const lottieHeight = lottieElement ? lottieElement.clientHeight : 0;
-  const windowHeight = window.innerHeight;
-
-  // Adjust padding based on lottie height
-  const wrapSite = document.getElementById("wrapSite") as HTMLElement;
-  if (lottieHeight > windowHeight / 2) {
-    wrapSite.style.paddingTop = "50vh";
-  } else {
-    wrapSite.style.paddingTop = `calc(100vh - ${lottieHeight}px)`;
-  }
-
-  // Adjust margin for container
-  const container = document.querySelector(".containerMix") as HTMLElement;
+  let isStripe: any = null;
+  let isSometimes: any = null;
+  let isFact: any = null
+  let isMatter: any = null
+  let isBorn: any = null
+  let isServizi: any = null
+  let isFooter: any = null
+  let isAnimFooter: any = null
   
-  container.style.marginTop = `-${lottieHeight / 2}px`;
-
-  // Calculate the gap
-  const gap = container.getBoundingClientRect().top;
-
-  // Create a timeline for the GSAP animation
-  const tl = gsap.timeline();
-
-  tl.to("#progressStroke2", {
-    strokeDashoffset: 0,
-    ease: "expo.inOut",
-    duration: 1.2,
-    onComplete: () => {
-      document.body.classList.add("loadato");
-      tl.to("#progressStroke2", {
-        strokeDashoffset: 242,
-        ease: "expo.inOut",
-        duration: 0.8,
-        delay: 0.5,
-      });
+  let posStripe: number = 0;
+  let posSometimes: number = 0;
+  let posFact: number = 0;
+  let posBorn: number = 0;
+  let posResult: number = 0;
+  let posLetso: number = 0;
+  let posFooter: number = 0;
+  
+  let stripeC: any;
+  const stripeCoords = {
+    desktop: {
+      x: "0vw",
+      zoom: 1.2,
     },
-  });
+    mobile: {
+      x: "0vw",
+      zoom: 2.3,
+    },
+  };
+  
+  let sometimesC: any;
+  const sometimesCoords = {
+    desktop: {
+      x: "138vw",
+      zoom: 10,
+    },
+    mobile: {
+      x: "283vw",
+      zoom: 16,
+    },
+    mobileL: {
+      x: "210vw",
+      zoom: 14,
+    },
+  };
+  
+  let factsC: any;
+  const factsCoords = {
+    desktop: {
+      x: "18vw",
+      zoom: 1.4,
+    },
+    mobile: {
+      x: "55vw",
+      zoom: 2.8,
+    },
+  };
+  
+  let bornC: any;
+  const bornCoords = {
+    desktop: {
+      x: "-40vw",
+      zoom: 10,
+    },
+    mobile: {
+      x: "-64vw",
+      zoom: 16,
+    },
+    mobileL: {
+      x: "-50vw",
+      zoom: 14,
+    },
+  };
+  
+  let matterC: any;
+  const matterCoords = {
+    desktop: {
+      x: "0vw",
+      zoom: 1.2,
+    },
+    mobile: {
+      x: "0vw",
+      zoom: 2.3,
+    },
+  };
+  
+  let serviziC: any;
+  const serviziCoords = {
+    desktop: {
+      x: "85vw",
+      zoom: 2.3,
+    },
+    mobile: {
+      x: "85vw",
+      zoom: 2.3,
+    },
+  };
+  
+  let footerC: any;
+  const footerCoords = {
+    desktop: {
+      x: "0vw",
+      zoom: 1,
+    },
+    mobile: {
+      x: "0vw",
+      zoom: 1,
+    },
+  };
+  let lottieHeight: number = 0;
+  let gap: number = 0;
 
-  // Timeout to control the flow of the animation
-  const myTimeout = setTimeout(() => {
+  
+  if (typeof window !== "undefined") {
+    window.scrollTo(0, 0);
+  }
+  
+  useEffect(() => {
+    startPreload();
+    applyRandomBackgroundPosition();
+    initAnimations();
+    initScrollTrigger();
+    window.addEventListener("resize", handleResize);
 
-    const lottieTop = document.getElementById("lottieTop") as any; // Assuming lottieTop is a Lottie instance
-    if (lottieTop) {
-      lottieTop.seek("5%");
-      lottieTop.play();
+    const htmlElement = document.getElementById('html');
+    if (htmlElement?.classList.contains('touchevents') && isMobile()) {
+      ScrollTrigger.defaults({
+        scroller: '#wrapSite',
+        markers: false,
+      });
+    }
+  
+  
+    // Animation GSAP cho wrapContainer
+    gsap.to('#wrapContainer', {
+      scale: 1,
+      opacity: 1,
+      duration: 1,
+      onComplete: () => {
+        ScrollTrigger.refresh();
+      },
+    });
 
+    const handleLoad = () => {
+      document.getElementById("body")?.classList.add("loaded");
+      startPreload();
+    };
+  
+    if (typeof window !== "undefined") {
+      window.addEventListener("load", handleLoad);
+    }
+  
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("load", handleLoad);
+      }
+    };
+  }, []);
+  
+  function startPreload() {
+    // Lấy chiều cao của phần tử lottie và cửa sổ
+    lottieHeight = document.getElementById("lottie")?.offsetHeight || 0;
+    const windowHeight = window.innerHeight;
+  
+    // Điều chỉnh padding-top cho #wrapSite dựa trên chiều cao của lottie
+    const wrapSite = document.getElementById("wrapSite");
+    if (wrapSite) {
+      if (lottieHeight > windowHeight / 2) {
+        wrapSite.style.paddingTop = "50vh";
+      } else {
+        wrapSite.style.paddingTop = `calc(100vh - ${lottieHeight}px)`;
+      }
+    }
+  
+    // Điều chỉnh margin-top cho .container
+    const container = document.querySelector(".container") as HTMLElement;
+    if (container) {
+      container.style.marginTop = `-${lottieHeight / 2}px`;
+    }
+  
+    // Tính khoảng cách giữa .container và đỉnh của trang
+    const gap = container?.getBoundingClientRect().top || 0;
+  
+    // Tạo GSAP timeline để thực hiện animation
+    const tl = gsap.timeline();
+  
+    tl.to("#progressStroke2", {
+      strokeDashoffset: 0,
+      ease: "expo.inOut",
+      duration: 1.2,
+      onComplete: () => {
+        document.getElementById("body")?.classList.add("loadato");
+        tl.to("#progressStroke2", {
+          strokeDashoffset: 242,
+          ease: "expo.inOut",
+          duration: 0.8,
+          delay: 0.5,
+        });
+      },
+    });
+  
+    // Thiết lập timeout để thực hiện các hành động sau một khoảng thời gian nhất định
+    setTimeout(() => {
+      const lottieTop = document.getElementById("lottieTop");
+      if (lottieTop) {
+        lottieTop.style.opacity = "1";
+        // Giả định `lottieTop` có phương thức `seek` và `play` (nếu dùng Lottie animation)
+        (lottieTop as any).seek?.("5%");
+        (lottieTop as any).play?.();
+      }
+  
       gsap.to(".loballo", {
         y: 0,
         x: 0,
@@ -230,15 +256,16 @@ function startPreload() {
         ease: "Cubic.easeOut",
         duration: 0.3,
       });
-
+  
       setTimeout(() => {
-        gsap.to(container, {
+        gsap.to(".container", {
           opacity: 1,
           duration: 0,
           ease: "expo.inOut",
           onComplete: () => {
-            document.body.classList.add("libera");
-            initObserver(); // Ensure initObserver is defined somewhere
+            document.getElementById("body")?.classList.add("libera");
+            initObserver();
+  
             gsap.to("#titolone", {
               yPercent: 0,
               opacity: 1,
@@ -247,966 +274,1051 @@ function startPreload() {
           },
         });
       }, 2800);
-    }
-  }, 1900);
-
-}
-let tl: any = null;
-let canAnim = true;
-useEffect(() => {
-  // Khởi tạo Observer khi component được mount
-
-  // Animation xuất hiện cho wrapContainer
-  gsap.to("#wrapContainer", {
-    scale: 1,
-    opacity: 1,
-    duration: 1,
-    onComplete: () => {
-      ScrollTrigger.refresh();
-    },
-  });
-}, []);
-
-function initObserver() {
-  console.log(2);
-  Observer.create({
-    type: "wheel,touch,pointer",
-    onStop: () => {
-      canAnim = true;
-      console.log("fine!");
-    },
-    onChangeY: () => {
-      if (!canAnim) return;
-      if (tl && tl.isActive()) return;
-
-      const currentScroll = window.scrollY + window.innerHeight;
-      canAnim = false;
-      if (currentScroll + 5 > document.body.scrollHeight) {
-        tl = gsap.to("#r_web", {
-          rotate: -20,
-          ease: "Power2.easeInOut",
-          yoyo: true,
-          repeat: 1,
-          duration: 0.2,
-        });
-      }
-    },
-  });
-}
-
-function gotoSection() {
-  const wrapContainer = document.getElementById("wrapContainer");
-  const htmlElement = document.getElementById("html");
-  if (!wrapContainer || !htmlElement) return;
-
-  const posStripe = 0; // Giả sử giá trị ban đầu
-  const pos2 = posStripe - (htmlElement.classList.contains("touchevents") && isMobile()
-    ? document.getElementById("wrapSite")?.scrollTop ?? 0
-    : window.scrollY);
+    }, 1900);
+  }
+  
+  function vwToPixel(vwValue: number): number {
+    const viewportWidth = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    );
+    const pixelValue = (viewportWidth * vwValue) / 100;
+    return pixelValue;
+  }
+  
+  function vhToPixel(vhValue: number): number {
+    const viewportHeight = Math.max(
+      document.documentElement.clientHeight || 0,
+      window.innerHeight || 0
+    );
+    const pixelValue = (viewportHeight * vhValue) / 100;
+    return pixelValue;
+  }
+  let tl: any = null;
+  let canAnim = true;
+  
+  function initObserver() {
+    // Khởi tạo Observer để lắng nghe các sự kiện cuộn (scroll), chạm (touch), và con trỏ (pointer)
+    canAnim = true;
     
-  gsap.to(wrapContainer, {
-    scale: 1.2,
-    x: "0vw",
-    y: `${-pos2}px`,
-    duration: 1,
-    force3D: false,
-    ease: "power1.inOut",
-  });
-}
+    Observer.create({
+      // target: window, // Không cần chỉ định vì mặc định lắng nghe trên window
+      type: "wheel,touch,pointer",  // Các loại sự kiện được lắng nghe
+      
+      onStop: (self) => {
+        canAnim = true;
+        console.log("Scroll stopped!");
+      },
+      
+      onChangeY: (self) => {
+        // Nếu không thể animation hoặc timeline đang chạy, không tiếp tục
+        if (!canAnim) return;
+        if (tl && tl.isActive()) return;
+        
+        const currentScroll = window.scrollY + window.innerHeight;
+        canAnim = false;
+  
+        // Kiểm tra nếu cuộn tới gần cuối trang
+        if (currentScroll + 5 > document.body.scrollHeight) {
+          // Tạo GSAP animation cho #r_web
+          tl = gsap.to("#r_web", {
+            rotate: -20,
+            ease: "Power2.easeInOut",
+            yoyo: true,
+            repeat: 1,
+            duration: 0.2,
+          });
+        }
+      },
+    });
+  }
 
-// Random position for textures
-// TODO:
-// document.querySelectorAll(".texture").forEach((element) => {
-//   const numRand = Math.floor(Math.random() * 2001);
-//   const numRand2 = Math.floor(Math.random() * 1200);
-//   (element as HTMLElement).style.backgroundPosition = `${numRand2}px ${numRand}px`;
-// });
-
-// document.querySelectorAll(".texture2").forEach((element) => {
-//   const numRand = Math.floor(Math.random() * 2001);
-//   const numRand2 = Math.floor(Math.random() * 1200);
-//   (element as HTMLElement).style.backgroundPosition = `${numRand2}px ${numRand}px`;
-// });
-
-
-
-
-function initAnimations() {
-  gsap.set("#lang span,#lang a", { transformOrigin: "center left" });
-
-  const progressStroke2 = document.getElementById("progressStroke2");
-  if (progressStroke2) {
-    if (isMobile()) {
-      gsap.to(progressStroke2, {
-        strokeDashoffset: 0,
-        ease: "none",
-        scrollTrigger: {
-          scrub: true,
-          end: `+=${document.getElementById("wrapContainer")?.clientHeight ?? 0 + vhToPixel(isMobileLandscape() ? 1600 : 400)}`,
-        },
-      });
-    } else {
-      gsap.to(progressStroke2, {
-        strokeDashoffset: 0,
-        ease: "none",
-        scrollTrigger: {
-          scrub: true,
-          end: `+=${document.documentElement.scrollHeight + vhToPixel(300)}`,
-        },
-      });
+  function applyRandomBackgroundPosition() {
+    const textures = document.querySelectorAll<HTMLElement>('.texture');
+    const textures2 = document.querySelectorAll<HTMLElement>('.texture2');
+  
+    textures.forEach((texture) => {
+      const numRand = Math.floor(Math.random() * 2001);
+      const numRand2 = Math.floor(Math.random() * 1200);
+      texture.style.backgroundPosition = `${numRand2}px ${numRand}px`;
+    });
+  
+    textures2.forEach((texture2) => {
+      const numRand = Math.floor(Math.random() * 2001);
+      const numRand2 = Math.floor(Math.random() * 1200);
+      texture2.style.backgroundPosition = `${numRand2}px ${numRand}px`;
+    });
+  }
+  function handleResize(): void {
+    if (document.documentElement.classList.contains("touchevents")) {
+      return;
     }
+    resetAll();
   }
-}
-
-function initScrollTrigger() {
-  console.log('initScrollTrigger');
-  const htmlElement = document.getElementById("html");
-  if (!htmlElement) return;
-
-  const isTouchDevice = htmlElement.classList.contains("touchevents") && isMobile();
-
-  // Các vị trí (stripeC, sometimesC, ...) cần được định nghĩa sẵn
-  stripeC = isTouchDevice ? stripeCoords.mobile : stripeCoords.desktop;
-  sometimesC = isTouchDevice ? sometimesCoords.mobile : sometimesCoords.desktop;
-  factsC = isTouchDevice ? factsCoords.mobile : factsCoords.desktop;
-  bornC = isTouchDevice ? bornCoords.mobile : bornCoords.desktop;
-  matterC = isTouchDevice ? matterCoords.mobile : matterCoords.desktop;
-  serviziC = isTouchDevice ? serviziCoords.mobile : serviziCoords.desktop;
-  footerC = isTouchDevice ? footerCoords.mobile : footerCoords.desktop;
-
-  document.querySelectorAll(".toHide").forEach((element) => {
-    (element as HTMLElement).style.display = "inline-block";
-    element.classList.remove("hide");
-  });
-
-  if (isTouchDevice) {
-    initPositionsMobile();
-  } else {
-    initPositionsDesktop();
-  }
-
-  if (!isStripe) {
-    stripe();
-  }
-}
-
-
-function getElementOffsetTop(elementId: string): number {
-  const element = document.getElementById(elementId);
-  if (!element) throw new Error(`Element with id ${elementId} not found`);
-  const rect = element.getBoundingClientRect();
-  return rect.top + window.scrollY;
-}
-
-function resetContainerTransform() {
-  gsap.set("#wrapContainer", { clearProps: "scale,y" }); // Clear any applied styles
-}
-
-function initPositionsDesktop() {
-  // STRIPE
-  gsap.set("#wrapContainer", { scale: stripeC.zoom, y: 0 });
-  const posStripe =
-    getElementOffsetTop("testolets") - getElementOffsetTop("wrapContainer") - window.innerHeight * 1.5;
-  resetContainerTransform();
-
-  // SOMETIMES
-  gsap.set("#wrapContainer", { scale: sometimesC.zoom, y: 0 });
-  const posSometimes =
-    getElementOffsetTop("sometimes") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
-  resetContainerTransform();
-
-  // FACTS
-  gsap.set("#wrapContainer", { scale: factsC.zoom, y: 0 });
-  const posFact =
-    getElementOffsetTop("facts") - getElementOffsetTop("wrapContainer") - window.innerHeight;
-  resetContainerTransform();
-
-  // BORN
-  gsap.set("#wrapContainer", { scale: bornC.zoom, y: 0 });
-  const posBorn =
-    getElementOffsetTop("born") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
-  resetContainerTransform();
-
-  // RESULT MATTER
-  gsap.set("#wrapContainer", { scale: matterC.zoom, y: 0 });
-  const posResult =
-    getElementOffsetTop("stripeTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
-  resetContainerTransform();
-
-  // RESULT LETSO = SERVIZI!
-  gsap.set("#wrapContainer", { scale: serviziC.zoom, y: 0 });
-  const posLetso =
-    getElementOffsetTop("letsoTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
-  resetContainerTransform();
-
-  // FOOTER
-  gsap.set("#wrapContainer", { scale: footerC.zoom, y: 0 });
-  const posFooter =
-    getElementOffsetTop("triggerFooter") - getElementOffsetTop("wrapContainer") - window.innerHeight / 1.5;
-  resetContainerTransform();
-}
-
-function initPositionsMobile() {
-  // STRIPE
-  gsap.set("#wrapContainer", { scale: stripeC.zoom, y: 0 });
-  const posStripe =
-    getElementOffsetTop("testolets") - getElementOffsetTop("wrapContainer") - window.innerHeight * 1.5;
-  resetContainerTransform();
-
-  // SOMETIMES
-  if (isMobileLandscape()) {
-    sometimesC = sometimesCoords.mobileL;
-    gsap.set("#wrapContainer", { scale: sometimesC.zoom, y: 0 });
-    const posSometimes =
-      getElementOffsetTop("sometimes") - getElementOffsetTop("wrapContainer") - window.innerHeight * 2;
-    resetContainerTransform();
-  } else {
-    gsap.set("#wrapContainer", { scale: sometimesC.zoom, y: 0 });
-    const posSometimes =
-      getElementOffsetTop("sometimes") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
-    resetContainerTransform();
-  }
-
-  // FACTS
-  gsap.set("#wrapContainer", { scale: factsC.zoom, y: 0 });
-  const posFact =
-    getElementOffsetTop("facts") - getElementOffsetTop("wrapContainer") - window.innerHeight;
-  resetContainerTransform();
-
-  // BORN
-  if (isMobileLandscape()) {
-    bornC = bornCoords.mobileL;
-    gsap.set("#wrapContainer", { scale: bornC.zoom, y: 0 });
-    const posBorn =
-      getElementOffsetTop("born") - getElementOffsetTop("wrapContainer") - window.innerHeight * 2;
-    resetContainerTransform();
-  } else {
-    gsap.set("#wrapContainer", { scale: bornC.zoom, y: 0 });
-    const posBorn =
-      getElementOffsetTop("born") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
-    resetContainerTransform();
-  }
-
-  // RESULT MATTER
-  gsap.set("#wrapContainer", { scale: matterC.zoom, y: 0 });
-  const posResult =
-    getElementOffsetTop("stripeTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight;
-  resetContainerTransform();
-
-  // RESULT LETSO = SERVIZI!
-  gsap.set("#wrapContainer", { scale: serviziC.zoom, y: 0 });
-  const posLetso =
-    getElementOffsetTop("letsoTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
-  resetContainerTransform();
-
-  // FOOTER
-  gsap.set("#wrapContainer", { scale: 1, y: 0 });
-  const posFooter =
-    getElementOffsetTop("triggerFooter") - getElementOffsetTop("wrapContainer") - window.innerHeight / 1.5;
-  resetContainerTransform();
-}
-
-
-function getScrollPosition(): number {
-  // Check if touchevents are present (i.e., touch devices)
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  const scrollElement = document.querySelector("#wrapSite");
-  return isTouchDevice && isMobile() && scrollElement
-    ? scrollElement.scrollTop
-    : window.scrollY;
-}
-
-function stripe() {
-  const posStripe = 100; // Replace with your actual position calculation
-  let pos2: number;
-
-  // STRIPE animation
-  isStripe = gsap.to("#wrapContainer", {
-    id: "STRIPE",
-    scale: stripeC.zoom,
-    x: stripeC.x,
-    y: () => {
-      pos2 = posStripe - getScrollPosition();
-      return `${0 - pos2}px`;
-    },
-    force3D: false,
-    ease: "power1.inOut",
-    scrollTrigger: {
-      trigger: "#primoTrigger",
-      start: "bottom bottom",
-      end: "+=700",
-      markers: false,
-      scrub: true,
-      immediateRender: false,
-    },
-    onComplete: () => {
-      // Call the sometimes function if it's not triggered yet
-      if (!isSometimes) sometimes();
-    },
-  });
-
-  // STRIPE INNER animation
-  gsap.to("#stripeInner", {
-    xPercent: 15,
-    id: "INNER",
-    scrollTrigger: {
-      trigger: "#primoTrigger",
-      start: "bottom bottom",
-      end: `${vwToPixel(180)}px top`,
-      scrub: true,
-      markers: false,
-    },
-  });
-
-  // WTF Sticker Animation
-  gsap.to("#WTF-Sticker_01", {
-    id: "PARA WTF-Sticker_01",
-    force3D: false,
-    xPercent: 25,
-    scrollTrigger: {
-      trigger: "#primoTrigger",
-      start: "bottom bottom",
-      end: `+=${vhToPixel(100)}px top`,
-      scrub: true,
-      markers: false,
-      immediateRender: false,
-    },
-  });
-}
-let trigPara: number;
-let anini: GSAPTimeline;
-let psom: GSAPTimeline;
-let po: GSAPTimeline;
-
-
-function hideElements(selector: string) {
-  document.querySelectorAll(selector).forEach((el) => {
-    el.classList.add("hide");
-    (el as HTMLElement).style.display = "none";
-  });
-}
-
-function showElements(selector: string) {
-  document.querySelectorAll(selector).forEach((el) => {
-    el.classList.remove("hide");
-    (el as HTMLElement).style.display = "inline-block";
-  });
-}
-
-function sometimes() {
-  // SOMETIMES AROUND
-  isSometimes = gsap.to("#wrapContainer", {
-    id: "SOMETIMES AROUND",
-    scrollTrigger: {
-      trigger: "#testolets",
-      start: "bottom top",
-      end: "+=950",
-      markers: false,
-      onEnter() {
-        hideElements(".toHide:not(#sometimes, .sec4)");
-      },
-      onLeaveBack() {
-        showElements(".toHide.sec3, .toHide.sec2, .toHide.sec1, .toHide.sec0");
-      },
-      onEnterBack() {
-        hideElements(".toHide:not(#sometimes, .sec4)");
-        showElements(".toHide.sec4");
-      },
-    },
-  });
-
-  // SOMETIMES Animation
-  anini = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#testolets",
-      start: "bottom top",
-      end: "+=900",
-      markers: false,
-      scrub: true,
-      immediateRender: false,
-    },
-  });
-
-  anini.add("start");
-
-  anini.to(
-    "#wrapContainer",
-    {
-      id: "SOMETIMES",
-      x: sometimesC.x,
-      y: () => {
-        const pos2 =
-          posSometimes - (isMobile() ? document.querySelector("#wrapSite")?.scrollTop || 0 : window.scrollY);
-        return `${0 - pos2}px`;
-      },
-      scale: sometimesC.zoom,
-      ease: "power1.inOut",
-      force3D: false,
-      onComplete() {
-        if (!isFact) fact();
-      },
-    },
-    "start"
-  );
-
-  anini.to(".texture2", { opacity: 0.1 }, "start");
-
-  // PARALLAX SOMETIMES (non-touch devices)
-  if (!("ontouchstart" in window)) {
-    trigPara = posSometimes / 10 / 4;
-
-    psom = gsap.timeline({
-      id: "PARA SOMW",
-      scrollTrigger: {
-        trigger: "#testolets",
-        start: `bottom+=${trigPara} top`,
-        end: "+=1200",
-        scrub: 1,
-        markers: false,
-        immediateRender: false,
-      },
+  
+  function resetAll(): void {
+    const elementsToHide = document.querySelectorAll<HTMLElement>(".toHide");
+    elementsToHide.forEach((element) => {
+      element.style.display = "inline-block";
+      element.classList.remove("hide");
     });
-
-    psom.add("start");
-
-    psom.to(
-      "#sometimes",
-      {
-        id: "PARA",
-        force3D: false,
-        y: () => (1 - 0.25) * 80,
-      },
-      "start"
-    );
-
-    po = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#testolets",
-        start: `bottom+=${trigPara + 600} bottom`,
-        end: `+=${vhToPixel(200)}`,
-        scrub: true,
-        markers: false,
-      },
+  
+    // Lấy tất cả các animation từ GSAP
+    const anims = gsap.globalTimeline.getChildren(true, true, true);
+    anims.forEach((anim) => {
+      anim.revert();
+      anim.kill();
     });
-
-    po.add("start");
-
-    po.to(
-      "#MessHoloImg",
-      {
-        id: "PARA",
-        force3D: false,
-        xPercent: 20,
-      },
-      "start"
-    );
-
-    po.to(
-      "#yolo",
-      {
-        id: "YOLOSO",
-        force3D: false,
-        y: () => (1 - 0.45) * -vwToPixel(5),
-      },
-      "start"
-    );
-  }
-}
-
-
-// Function to toggle display and class for elements
-const toggleDisplayClass = (
-  selector: string,
-  display: string,
-  action: "add" | "remove",
-  className: string
-) => {
-  const elements = document.querySelectorAll(selector);
-  elements.forEach((el) => {
-    (el as HTMLElement).style.display = display;
-    el.classList[action](className);
-  });
-};
-
-function fact() {
-  // FACTS AROUND
-  const isFact = gsap.to("#wrapContainer", {
-    id: "FACTS AROUND",
-    scrollTrigger: {
-      trigger: "#sometimes",
-      start: "bottom+=400 top",
-      end: "+=800",
-      markers: false,
-      onEnter() {
-        toggleDisplayClass(".toHide.sec5", "inline-block", "remove", "hide");
-      },
-      onLeaveBack() {
-        toggleDisplayClass(".toHide.sec5", "none", "add", "hide");
-        toggleDisplayClass(".toHide.sec4", "inline-block", "remove", "hide");
-      },
-      onEnterBack() {
-        toggleDisplayClass(".toHide.sec5", "inline-block", "remove", "hide");
-      },
-    },
-  });
-
-  const anini = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#sometimes",
-      start: "bottom+=600 top",
-      end: "+=" + vhToPixel(200),
-      markers: false,
-      scrub: true,
-      immediateRender: false,
-    },
-  });
-
-  anini.add("start");
-
-  anini.to(
-    "#wrapContainer",
-    {
-      id: "FACTS",
-      x: factsC.x,
-      y: function () {
-        const pos2 =
-          posFact -
-          (document.documentElement.classList.contains("touchevents") && isMobile()
-            ? document.querySelector("#wrapSite")?.scrollTop ?? 0
-            : window.scrollY);
-        return `${0 - pos2}px`;
-      },
-      scale: factsC.zoom,
-      force3D: false,
-      ease: "power1.inOut",
-      onComplete() {
-        if (!isBorn) born();
-      },
-    },
-    "start"
-  );
-
-  anini.to(".texture2", { opacity: 0.25, delay: 2.1 }, "start");
-
-  // FACTS PARALLAX
-  let anio = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#sometimes",
-      start: "bottom+=1400 top",
-      end: "+=" + vhToPixel(80),
-      scrub: true,
-      markers: false,
-      immediateRender: false,
-    },
-  });
-  anio.add("start");
-
-  if (document.documentElement.classList.contains("touchevents")) {
-    anio.to(
-      ".fact",
-      {
-        id: "PARA FACTS",
-        x: "+=5",
-        stagger: 0.1,
-      },
-      "start"
-    );
-  } else {
-    anio.to(
-      ".fact",
-      {
-        id: "PARA FACTS",
-        x: "+=30",
-        stagger: 0.1,
-      },
-      "start"
-    );
-  }
-
-  // FACTS2 PARALLAX
-  anio = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#sometimes",
-      start: "bottom+=1400 top",
-      end: "+=" + vhToPixel(250),
-      scrub: true,
-      markers: false,
-      immediateRender: false,
-    },
-  });
-  anio.add("start");
-
-  anio.to(
-    "#holoFact",
-    {
-      x: "+=60",
-    },
-    "start"
-  );
-
-  anio.to(
-    "#NOT-COOL-Sticker",
-    {
-      x: "-=60",
-    },
-    "start"
-  );
-}
-
-
-function born() {
-  // BORN AROUND
-  const isBorn = gsap.to("#wrapContainer", {
-    id: "BORN AROUND",
-    scrollTrigger: {
-      trigger: "#holoFact",
-      start: "bottom top",
-      end: "+=950",
-      markers: false,
-      onEnter() {
-        toggleDisplayClass(".toHide:not(.sec6)", "none", "add", "hide");
-        toggleDisplayClass(".toHide.sec6", "inline-block", "remove", "hide");
-      },
-      onLeaveBack() {
-        toggleDisplayClass(".toHide.sec5", "inline-block", "remove", "hide");
-      },
-    },
-  });
-
-  const animi = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#holoFact",
-      start: "bottom top",
-      end: "+=900",
-      markers: false,
-      scrub: true,
-      immediateRender: false,
-    },
-  });
-
-  animi.add("start");
-
-  animi.to(
-    "#wrapContainer",
-    {
-      id: "BORN",
-      x: bornC.x,
-      y: function () {
-        const pos2 =
-          posBorn -
-          (document.documentElement.classList.contains("touchevents") && isMobile()
-            ? (document.querySelector("#wrapSite") as HTMLElement)?.scrollTop ?? 0
-            : window.scrollY);
-        return `${0 - pos2}px`;
-      },
-      scale: bornC.zoom,
-      force3D: false,
-      ease: "power1.inOut",
-      onComplete() {
-        if (!isMatter) matter();
-      },
-    },
-    "start"
-  );
-
-  animi.to(".texture2", { opacity: 0.1 }, "start");
-
-  if (!document.documentElement.classList.contains("touchevents")) {
-    // BORN PARALLAX
-    const aniBP = gsap.timeline({
-      id: "BORN TIMELINE",
-      scrollTrigger: {
-        trigger: "#holoFact",
-        start: "bottom+=400 top",
-        end: `+=${vwToPixel(150)}px`,
-        scrub: true,
-        markers: false,
-        immediateRender: false,
-      },
+  
+    // Xóa tất cả các ScrollTrigger hiện tại
+    ScrollTrigger.getAll().forEach((trigger) => {
+      trigger.kill();
     });
-
-    aniBP.add("start");
-
-    aniBP.to(
-      "#born",
-      {
-        id: "PARA BORN",
-        y: (i, el) => (1 - 0.25) * 80,
-        force3D: false,
-      },
-      "start"
-    );
-
-    aniBP.to(
-      "#LETS-ROLL-Sticker_01",
-      {
-        y: (i, el) => (1 - 0.95) * -vwToPixel(25),
-        force3D: false,
-      },
-      "start"
-    );
-
-    aniBP.to(
-      "#MessUp_Holo_Circle",
-      {
-        xPercent: 10,
-        force3D: false,
-      },
-      "start"
-    );
+  
+    gsap.killTweensOf("*");
+  
+    // Đặt lại vị trí và tỷ lệ cho wrapContainer
+    gsap.set("#wrapContainer", { x: 0, y: 0, scale: 1 });
+    const wrapContainer = document.getElementById("wrapContainer");
+    if (wrapContainer) {
+      wrapContainer.style.transform = "translate(0) scale(1)";
+    }
+  
+    // Cuộn về đầu trang
+    window.scrollTo(0, 0);
+  
+    // Khởi tạo lại các animation và ScrollTrigger
+    initAnimations();
+    initScrollTrigger();
   }
-}
-
-function matter() {
-  const animi = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#born",
-      start: "bottom+=200 top",
-      end: "+=1200",
-      markers: false,
-      scrub: true,
-      immediateRender: false,
-      onEnter() {
-        toggleDisplayClass(".toHide:not(.sec6, .sec7)", "none", "add", "hide");
-        toggleDisplayClass(".toHide.sec7", "inline-block", "remove", "hide");
-      },
-      onEnterBack() {
-        toggleDisplayClass(".toHide.sec7", "inline-block", "remove", "hide");
-        toggleDisplayClass(".toHide.sec6", "inline-block", "remove", "hide");
-      },
-      onLeave() {
-        toggleDisplayClass(".toHide.sec8", "inline-block", "remove", "hide");
-      },
-    },
-  });
-
-  animi.add("start");
-
-  const isMatter = animi.to(
-    "#wrapContainer",
-    {
-      id: "RESULT",
-      x: matterC.x,
-      y: function () {
-        const pos2 =
-          posResult -
-          (document.documentElement.classList.contains("touchevents") && isMobile()
-            ? (document.querySelector("#wrapSite") as HTMLElement)?.scrollTop ?? 0
-            : window.scrollY);
-        return `${0 - pos2}px`;
-      },
-      scale: matterC.zoom,
-      force3D: false,
-      ease: "power1.inOut",
-      onComplete() {
-        if (!isServizi) servizi(); // SERVIZI E POI FOOTER
-
-        // STRIPE RESULT MATTER
-        gsap.to("#stripeMatterInner", {
-          xPercent: 15,
-          id: "MATTER INNER",
+  
+  function initAnimations() {
+    let followY = 0;
+  
+    gsap.set('#lang span, #lang a', { transformOrigin: 'center left' });
+  
+    const wrapContainerHeight = document.getElementById('wrapContainer')?.offsetHeight || 0;
+  
+    if (isMobile()) {
+      if (isMobileLandscape()) {
+        gsap.to('#progressStroke2', {
+          strokeDashoffset: 0,
+          ease: 'none',
           scrollTrigger: {
-            trigger: "#stripeMatterInner",
-            start: "top bottom",
-            end: "bottom top",
-            immediateRender: false,
             scrub: true,
-            markers: false,
+            end: `+=${wrapContainerHeight + vhToPixel(1600)}`,
           },
         });
+      } else {
+        gsap.to('#progressStroke2', {
+          strokeDashoffset: 0,
+          ease: 'none',
+          scrollTrigger: {
+            scrub: true,
+            end: `+=${wrapContainerHeight + vhToPixel(400)}`,
+          },
+        });
+      }
+    } else {
+      gsap.to('#progressStroke2', {
+        strokeDashoffset: 0,
+        ease: 'none',
+        scrollTrigger: {
+          scrub: true,
+          end: `+=${document.body.offsetHeight + vhToPixel(300)}`,
+        },
+      });
+    }
+  }
+  
+  function initScrollTrigger() {
+    console.log('initScrollTrigger');
+  
+    const htmlElement = document.getElementById('html');
+    const isTouchEvent = htmlElement?.classList.contains('touchevents') && isMobile();
+  
+    stripeC = isTouchEvent ? stripeCoords.mobile : stripeCoords.desktop;
+    sometimesC = isTouchEvent ? sometimesCoords.mobile : sometimesCoords.desktop;
+    factsC = isTouchEvent ? factsCoords.mobile : factsCoords.desktop;
+    bornC = isTouchEvent ? bornCoords.mobile : bornCoords.desktop;
+    matterC = isTouchEvent ? matterCoords.mobile : matterCoords.desktop;
+    serviziC = isTouchEvent ? serviziCoords.mobile : serviziCoords.desktop;
+    footerC = isTouchEvent ? footerCoords.mobile : footerCoords.desktop;
+  
+    isStripe = null;
+    isSometimes = null;
+    isFact = null;
+    isMatter = null;
+    isBorn = null;
+    isServizi = null;
+    isFooter = null;
+    isAnimFooter = null;
+  
+    document.querySelectorAll('.toHide').forEach((el: any) => {
+      el.style.display = 'inline-block';
+      el.classList.remove('hide');
+    });
+  
+    if (isTouchEvent) {
+      initPositionsMobile();
+    } else {
+      initPositionsDesktop();
+    }
+  
+    if (!isStripe) stripe();
+  }
+  
+  useEffect(() => {
+    
+  }, []);
 
-        // CIRCLE RESULT MATTER
-        if (
-          !document.documentElement.classList.contains("touchevents") &&
-          !document.querySelector("#YOLO-2_-Sticker")?.classList.contains("ita")
-        ) {
-          gsap.to("#YOLO-2_-Sticker", {
-            rotate: "+=100%",
-            yPercent: -10,
+  function getElementOffsetTop(elementId: string): number {
+    const element = document.getElementById(elementId);
+    if (!element) throw new Error(`Element with id ${elementId} not found`);
+    const rect = element.getBoundingClientRect();
+    return rect.top + window.scrollY; // Cộng thêm scrollY để có tọa độ chính xác
+  }
+  
+  function initPositionsDesktop() {
+    // STRIPE
+    let t = gsap.set("#wrapContainer", { scale: stripeC.zoom, y: 0 });
+    posStripe = getElementOffsetTop("testolets") - getElementOffsetTop("wrapContainer") - window.innerHeight * 1.5;
+    t.revert();
+  
+    // SOMETIMES
+    t = gsap.set("#wrapContainer", { scale: sometimesC.zoom, y: 0 });
+    posSometimes = getElementOffsetTop("sometimes") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+    t.revert();
+  
+    // FACTS
+    t = gsap.set("#wrapContainer", { scale: factsC.zoom, y: 0 });
+    posFact = getElementOffsetTop("facts") - getElementOffsetTop("wrapContainer") - window.innerHeight;
+    t.revert();
+  
+    // BORN
+    t = gsap.set("#wrapContainer", { scale: bornC.zoom, y: 0 });
+    posBorn = getElementOffsetTop("born") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+    t.revert();
+  
+    // RESULT MATTER
+    t = gsap.set("#wrapContainer", { scale: matterC.zoom, y: 0 });
+    posResult = getElementOffsetTop("stripeTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+    t.revert();
+  
+    // RESULT LETSO = SERVIZI!
+    t = gsap.set("#wrapContainer", { scale: serviziC.zoom, y: 0 });
+    posLetso = getElementOffsetTop("letsoTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+    t.revert();
+  
+    // FOOTER
+    t = gsap.set("#wrapContainer", { scale: footerC.zoom, y: 0 });
+    posFooter = getElementOffsetTop("triggerFooter") - getElementOffsetTop("wrapContainer") - window.innerHeight / 1.5;
+    t.revert();
+  }
+  
+  function initPositionsMobile() {
+    // STRIPE
+    let t = gsap.set("#wrapContainer", { scale: stripeC.zoom, y: 0 });
+    posStripe = getElementOffsetTop("testolets") - getElementOffsetTop("wrapContainer") - window.innerHeight * 1.5;
+    t.revert();
+  
+    // SOMETIMES
+    if (isMobileLandscape()) {
+      sometimesC = sometimesCoords.mobileL;
+      t = gsap.set("#wrapContainer", { scale: sometimesC.zoom, y: 0 });
+      posSometimes = getElementOffsetTop("sometimes") - getElementOffsetTop("wrapContainer") - window.innerHeight * 2;
+      t.revert();
+    } else {
+      t = gsap.set("#wrapContainer", { scale: sometimesC.zoom, y: 0 });
+      posSometimes = getElementOffsetTop("sometimes") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+      t.revert();
+    }
+  
+    // FACTS
+    t = gsap.set("#wrapContainer", { scale: factsC.zoom, y: 0 });
+    posFact = getElementOffsetTop("facts") - getElementOffsetTop("wrapContainer") - window.innerHeight;
+    t.revert();
+  
+    // BORN
+    if (isMobileLandscape()) {
+      bornC = bornCoords.mobileL;
+      t = gsap.set("#wrapContainer", { scale: bornC.zoom, y: 0 });
+      posBorn = getElementOffsetTop("born") - getElementOffsetTop("wrapContainer") - window.innerHeight * 2;
+      t.revert();
+    } else {
+      t = gsap.set("#wrapContainer", { scale: bornC.zoom, y: 0 });
+      posBorn = getElementOffsetTop("born") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+      t.revert();
+    }
+  
+    // RESULT MATTER
+    t = gsap.set("#wrapContainer", { scale: matterC.zoom, y: 0 });
+    posResult = getElementOffsetTop("stripeTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight;
+    t.revert();
+  
+    // RESULT LETSO = SERVIZI!
+    t = gsap.set("#wrapContainer", { scale: serviziC.zoom, y: 0 });
+    posLetso = getElementOffsetTop("letsoTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+    t.revert();
+  
+    // FOOTER
+    t = gsap.set("#wrapContainer", { scale: 1, y: 0 });
+    posFooter = getElementOffsetTop("triggerFooter") - getElementOffsetTop("wrapContainer") - window.innerHeight / 1.5;
+    t.revert();
+  }
+
+  function stripe(): void {
+    isStripe = gsap.to("#wrapContainer", {
+      id: "STRIPE",
+      scale: stripeC.zoom,
+      x: stripeC.x,
+      y: () => {
+        const scrollTop = document.documentElement.classList.contains("touchevents") && isMobile()
+          ? (document.getElementById("wrapSite") as HTMLElement)?.scrollTop || 0
+          : window.scrollY;
+  
+        let pos2 = posStripe - scrollTop;
+        return `${0 - pos2}px`;
+      },
+      force3D: false,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: "#primoTrigger",
+        start: "bottom bottom",
+        end: "+=700",
+        markers: false,
+        scrub: true,
+        immediateRender: false,
+      },
+      onComplete() {
+        if (!isSometimes) sometimes();
+      },
+    });
+  
+    gsap.to("#stripeInner", {
+      xPercent: 15,
+      id: "INNER",
+      scrollTrigger: {
+        trigger: "#primoTrigger",
+        start: "bottom bottom",
+        end: () => `${vwToPixel(180)}px top`,
+        scrub: true,
+        markers: false,
+      },
+    });
+  
+    // PARALLASSE WTF
+    gsap.to("#WTF-Sticker_01", {
+      id: "PARA WTF-Sticker_01",
+      force3D: false,
+      scrollTrigger: {
+        trigger: "#primoTrigger",
+        start: "bottom bottom",
+        end: `+=${vhToPixel(100)} top`,
+        scrub: true,
+        markers: false,
+        immediateRender: false,
+      },
+      xPercent: 25,
+    });
+  }
+  function sometimes(): void {
+    // SOMETIMES AROUND
+    isSometimes = gsap.to("#wrapContainer", {
+      id: "SOMETIMES AROUND",
+      scrollTrigger: {
+        trigger: "#testolets",
+        start: "bottom top",
+        end: "+=950",
+        markers: false,
+        onEnter() {
+          const elements = document.querySelectorAll(".toHide:not(#sometimes, .sec4)");
+          elements.forEach((el) => {
+            (el as HTMLElement).style.display = "none";
+            el.classList.add("hide");
+          });
+        },
+        onLeaveBack() {
+          const sections = document.querySelectorAll(".toHide.sec0, .toHide.sec1, .toHide.sec2, .toHide.sec3");
+          sections.forEach((el) => {
+            (el as HTMLElement).style.display = "inline-block";
+            el.classList.remove("hide");
+          });
+        },
+        onEnterBack() {
+          const elements = document.querySelectorAll(".toHide:not(#sometimes, .sec4)");
+          elements.forEach((el) => {
+            (el as HTMLElement).style.display = "none";
+            el.classList.remove("hide");
+          });
+          const sec4 = document.querySelector(".toHide.sec4") as HTMLElement;
+          if (sec4) {
+            sec4.style.display = "inline-block";
+            sec4.classList.remove("hide");
+          }
+        },
+      },
+    });
+  
+    // SOMETIMES
+    const anini = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#testolets",
+        start: "bottom top",
+        end: "+=900",
+        markers: false,
+        scrub: true,
+        immediateRender: false,
+      },
+    });
+    anini.add("start");
+  
+    anini.to(
+      "#wrapContainer",
+      {
+        id: "SOMETIMES",
+        x: sometimesC.x,
+        y: () => {
+          const scrollTop = document.documentElement.classList.contains("touchevents") && isMobile()
+            ? (document.getElementById("wrapSite") as HTMLElement)?.scrollTop || 0
+            : window.scrollY;
+  
+          let pos2 = posSometimes - scrollTop;
+          return `${0 - pos2}px`;
+        },
+        scale: sometimesC.zoom,
+        ease: "power1.inOut",
+        force3D: false,
+        onComplete() {
+          if (!isFact) fact();
+        },
+      },
+      "start"
+    );
+  
+    anini.to(".texture2", { opacity: 0.1 }, "start");
+  
+    if (!document.documentElement.classList.contains("touchevents")) {
+      const trigPara = posSometimes / 10 / 4;
+  
+      // PARALLASSE SOMETIMES
+      const psom = gsap.timeline({
+        id: "PARA SOMW",
+        scrollTrigger: {
+          trigger: "#testolets",
+          start: `bottom+=${trigPara} top`,
+          end: "+=1200",
+          scrub: 1,
+          markers: false,
+          immediateRender: false,
+        },
+      });
+      psom.add("start");
+  
+      psom.to(
+        "#sometimes",
+        {
+          id: "PARA",
+          force3D: false,
+          y: (i, el) => (1 - parseFloat("0.25")) * 80,
+          onStart() {},
+          onComplete() {},
+        },
+        "start"
+      );
+  
+      const po = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#testolets",
+          start: `bottom+=${trigPara + 600} bottom`,
+          end: `+=${vhToPixel(200)}`,
+          scrub: true,
+          markers: false,
+        },
+      });
+      po.add("start");
+  
+      po.to(
+        "#MessHoloImg",
+        {
+          id: "PARA",
+          force3D: false,
+          xPercent: 20,
+        },
+        "start"
+      );
+  
+      po.to(
+        "#yolo",
+        {
+          id: "YOLOSO",
+          force3D: false,
+          y: (i, el) => (1 - parseFloat("0.45")) * -vwToPixel(5),
+        },
+        "start"
+      );
+    }
+  }
+  
+  function fact() {
+    isFact = gsap.to("#wrapContainer", {
+      id: "FACTS AROUND",
+      scrollTrigger: {
+        trigger: "#sometimes",
+        start: "bottom+=400 top",
+        end: "+=800",
+        markers: false,
+        onEnter: () => {
+          const sec5: any = document.querySelector(".toHide.sec5");
+          if (sec5) {
+            sec5.style.display = "inline-block";
+            sec5.classList.remove("hide");
+          }
+        },
+        onLeaveBack: () => {
+          const sec5: any = document.querySelector(".toHide.sec5");
+          const sec4: any = document.querySelector(".toHide.sec4");
+          if (sec5) {
+            sec5.style.display = "none";
+            sec5.classList.add("hide");
+          }
+          if (sec4) {
+            sec4.style.display = "inline-block";
+            sec4.classList.remove("hide");
+          }
+        },
+        onEnterBack: () => {
+          const sec5: any = document.querySelector(".toHide.sec5");
+          if (sec5) {
+            sec5.style.display = "inline-block";
+            sec5.classList.remove("hide");
+          }
+        },
+      },
+    });
+  
+    const anini = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#sometimes",
+        start: "bottom+=600 top",
+        end: `+=${vhToPixel(200)}`,
+        markers: false,
+        scrub: true,
+        immediateRender: false,
+      },
+    });
+  
+    anini.add("start");
+  
+    anini.to(
+      "#wrapContainer",
+      {
+        id: "FACTS",
+        x: factsC.x,
+        y: () => {
+          const pos2 =
+            posFact -
+            (document.documentElement.classList.contains("touchevents") && isMobile()
+              ? (document.getElementById("wrapSite")?.scrollTop || 0)
+              : window.scrollY);
+          return `${0 - pos2}px`;
+        },
+        scale: factsC.zoom,
+        force3D: false,
+        ease: "power1.inOut",
+        onStart: () => {},
+        onComplete: () => {
+          if (!isBorn) born();
+        },
+      },
+      "start"
+    );
+  
+    anini.to(".texture2", { opacity: 0.25, delay: 2.1 }, "start");
+  
+    // FACTS PARALLASSE
+    let anio = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#sometimes",
+        start: "bottom+=1400 top",
+        end: `+=${vhToPixel(80)}`,
+        scrub: true,
+        markers: false,
+        immediateRender: false,
+      },
+    });
+  
+    anio.add("start");
+  
+    const factsElements = document.querySelectorAll(".fact");
+    if (document.documentElement.classList.contains("touchevents")) {
+      anio.to(
+        factsElements,
+        {
+          id: "PARA FACTS",
+          x: "+=5",
+          stagger: 0.1,
+        },
+        "start"
+      );
+    } else {
+      anio.to(
+        factsElements,
+        {
+          id: "PARA FACTS",
+          x: "+=30",
+          stagger: 0.1,
+        },
+        "start"
+      );
+    }
+  
+    // FACTS2 PARALLASSE
+    anio = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#sometimes",
+        start: "bottom+=1400 top",
+        end: `+=${vhToPixel(250)}`,
+        scrub: true,
+        markers: false,
+        immediateRender: false,
+      },
+    });
+  
+    anio.add("start");
+    anio.to(
+      "#holoFact",
+      {
+        x: "+=60",
+      },
+      "start"
+    );
+    anio.to(
+      "#NOT-COOL-Sticker",
+      {
+        x: "-=60",
+      },
+      "start"
+    );
+  }
+  
+  function born() {
+    // BORN AROUND
+    isBorn = gsap.to("#wrapContainer", {
+      id: "BORN AROUND",
+      scrollTrigger: {
+        trigger: "#holoFact",
+        start: "bottom top",
+        end: "+=950",
+        markers: false,
+        onEnter: () => {
+          const toHideElements = document.querySelectorAll(".toHide:not(.sec6)");
+          toHideElements.forEach((el: any) => {
+            el.style.display = "none";
+            el.classList.add("hide");
+          });
+          
+          const sec6: any = document.querySelector(".toHide.sec6");
+          if (sec6) {
+            sec6.style.display = "inline-block";
+            sec6.classList.remove("hide");
+          }
+        },
+        onLeaveBack: () => {
+          const sec5: any = document.querySelector(".toHide.sec5");
+          if (sec5) {
+            sec5.style.display = "inline-block";
+            sec5.classList.remove("hide");
+          }
+        },
+      },
+    });
+  
+    const animi = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#holoFact",
+        start: "bottom top",
+        end: "+=900",
+        markers: false,
+        scrub: true,
+        immediateRender: false,
+      },
+    });
+  
+    animi.add("start");
+  
+    animi.to(
+      "#wrapContainer",
+      {
+        id: "BORN",
+        x: bornC.x,
+        y: () => {
+          const pos2 =
+            posBorn -
+            (document.documentElement.classList.contains("touchevents") && isMobile()
+              ? (document.getElementById("wrapSite")?.scrollTop || 0)
+              : window.scrollY);
+          return `${0 - pos2}px`;
+        },
+        scale: bornC.zoom,
+        force3D: false,
+        ease: "power1.inOut",
+        onComplete: () => {
+          if (!isMatter) matter();
+        },
+      },
+      "start"
+    );
+  
+    animi.to(".texture2", { opacity: 0.1 }, "start");
+  
+    if (document.documentElement.classList.contains("no-touchevents")) {
+      // BORN PARALLASSE
+      const aniBP = gsap.timeline({
+        id: "BORN TIMELINE",
+        scrollTrigger: {
+          trigger: "#holoFact",
+          start: "bottom+=400 top",
+          end: `+=${vwToPixel(150)}px`,
+          scrub: true,
+          markers: false,
+          immediateRender: false,
+        },
+      });
+      aniBP.add("start");
+  
+      aniBP.to(
+        "#born",
+        {
+          id: "PARA BORN",
+          y: (i, el) => (1 - parseFloat("0.25")) * 80,
+          force3D: false,
+        },
+        "start"
+      );
+  
+      aniBP.to(
+        "#LETS-ROLL-Sticker_01",
+        {
+          y: (i, el) => (1 - parseFloat("0.95")) * -vwToPixel(25),
+          force3D: false,
+        },
+        "start"
+      );
+  
+      aniBP.to(
+        "#MessUp_Holo_Circle",
+        {
+          xPercent: 10,
+          force3D: false,
+        },
+        "start"
+      );
+    }
+  }
+  function matter() {
+    const animi = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#born",
+        start: "bottom+=200 top",
+        end: "+=1200",
+        markers: false,
+        scrub: true,
+        immediateRender: false,
+        onEnter: () => {
+          const toHideElements = document.querySelectorAll(".toHide:not(.sec6):not(.sec7)");
+          toHideElements.forEach((el:any) => {
+            el.style.display = "none";
+            el.classList.add("hide");
+          });
+          
+          const sec7:any = document.querySelector(".toHide.sec7");
+          if (sec7) {
+            sec7.style.display = "inline-block";
+            sec7.classList.remove("hide");
+          }
+        },
+        onEnterBack: () => {
+          const sec7:any = document.querySelector(".toHide.sec7");
+          if (sec7) {
+            sec7.style.display = "inline-block";
+            sec7.classList.remove("hide");
+          }
+  
+          const sec6:any = document.querySelector(".toHide.sec6");
+          if (sec6) {
+            sec6.style.display = "inline-block";
+            sec6.classList.remove("hide");
+          }
+        },
+        onLeave: () => {
+          const sec8:any = document.querySelector(".toHide.sec8");
+          if (sec8) {
+            sec8.style.display = "inline-block";
+            sec8.classList.remove("hide");
+          }
+        },
+      },
+    });
+  
+    animi.add("start");
+  
+    isMatter = animi.to(
+      "#wrapContainer",
+      {
+        id: "RESULT",
+        x: matterC.x,
+        y: () => {
+          const pos2 =
+            posResult -
+            (document.documentElement.classList.contains("touchevents") && isMobile()
+              ? (document.getElementById("wrapSite")?.scrollTop || 0)
+              : window.scrollY);
+          return `${0 - pos2}px`;
+        },
+        scale: matterC.zoom,
+        force3D: false,
+        ease: "power1.inOut",
+        onComplete: () => {
+          if (!isServizi) servizi(); // SERVIZI E POI FOOTER
+  
+          // STRIPE RESULT MATTER
+          gsap.to("#stripeMatterInner", {
+            xPercent: 15,
+            id: "MATTER INNER",
             scrollTrigger: {
               trigger: "#stripeMatterInner",
               start: "top bottom",
-              end: "bottom+=300 top",
+              end: "bottom top",
               immediateRender: false,
               scrub: true,
               markers: false,
             },
           });
-        }
+  
+          // CIRCLE RESULT MATTER
+          if (
+            document.documentElement.classList.contains("no-touchevents") &&
+            !document.getElementById("YOLO-2_-Sticker")?.classList.contains("ita")
+          ) {
+            gsap.to("#YOLO-2_-Sticker", {
+              rotate: "+=100%",
+              yPercent: -10,
+              scrollTrigger: {
+                trigger: "#stripeMatterInner",
+                start: "top bottom",
+                end: "bottom+=300 top",
+                immediateRender: false,
+                scrub: true,
+                markers: false,
+              },
+            });
+          }
+        },
       },
-    },
-    "start"
-  );
-
-  animi.to(".texture2", { opacity: 0.25, delay: 1.5 }, "start");
-}
-function servizi() {
-  // LETS
-  gsap.to("#wrapContainer", {
-    id: "LETS MESSUP",
-    x: serviziC.x,
-    scale: serviziC.zoom,
-    y: function () {
-      const pos2 =
-        posLetso -
-        (document.documentElement.classList.contains("touchevents") && isMobile()
-          ? (document.querySelector("#wrapSite") as HTMLElement)?.scrollTop ?? 0
-          : window.scrollY);
-      return `${0 - pos2}px`;
-    },
-    force3D: false,
-    immediateRender: false,
-    ease: "power1.inOut",
-    scrollTrigger: {
-      trigger: "#testomatter",
-      start: "bottom top",
-      end: "+=500",
-      markers: false,
-      scrub: true,
+      "start"
+    );
+  
+    animi.to(".texture2", { opacity: 0.25, delay: 1.5 }, "start");
+  }
+  function servizi() {
+    // LETS
+    isServizi = gsap.to("#wrapContainer", {
+      id: "LETS MESSUP",
+      x: serviziC.x,
+      scale: serviziC.zoom,
+      y: () => {
+        const pos2 =
+          posLetso -
+          (document.documentElement.classList.contains("touchevents") && isMobile()
+            ? (document.getElementById("wrapSite")?.scrollTop || 0)
+            : window.scrollY);
+        return `${0 - pos2}px`;
+      },
+      force3D: false,
       immediateRender: false,
-      onEnter() {
-        toggleDisplayClass(".toHide:not(.sec8)", "none", "add", "hide");
-        toggleDisplayClass(".toHide.sec8", "inline-block", "remove", "hide");
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: "#testomatter",
+        start: "bottom top",
+        end: "+=500",
+        markers: false,
+        scrub: true,
+        immediateRender: false,
+        onEnter: () => {
+          const toHideElements = document.querySelectorAll(".toHide:not(.sec8)");
+          toHideElements.forEach((el: any) => {
+            el.style.display = "none";
+            el.classList.add("hide");
+          });
+  
+          const sec8: any = document.querySelector(".toHide.sec8");
+          if (sec8) {
+            sec8.style.display = "inline-block";
+            sec8.classList.remove("hide");
+          }
+        },
+        onLeaveBack: () => {
+          const toHideElements = document.querySelectorAll(".toHide:not(.sec7)");
+          toHideElements.forEach((el: any) => {
+            el.style.display = "none";
+            el.classList.add("hide");
+          });
+  
+          const sec7: any = document.querySelector(".toHide.sec7");
+          if (sec7) {
+            sec7.style.display = "inline-block";
+            sec7.classList.remove("hide");
+          }
+        },
+        onEnterBack: () => {
+          const toHideElements = document.querySelectorAll(".toHide:not(.sec8)");
+          toHideElements.forEach((el: any) => {
+            el.style.display = "none";
+            el.classList.add("hide");
+          });
+  
+          const sec8: any = document.querySelector(".toHide.sec8");
+          if (sec8) {
+            sec8.style.display = "inline-block";
+            sec8.classList.remove("hide");
+          }
+        },
       },
-      onLeaveBack() {
-        toggleDisplayClass(".toHide:not(.sec7)", "none", "add", "hide");
-        toggleDisplayClass(".toHide.sec7", "inline-block", "remove", "hide");
+      onComplete: () => {
+        if (!isFooter) footer();
       },
-      onEnterBack() {
-        toggleDisplayClass(".toHide:not(.sec8)", "none", "add", "hide");
-        toggleDisplayClass(".toHide.sec8", "inline-block", "remove", "hide");
-      },
-    },
-    onComplete() {
-      if (!isFooter) footer();
-    },
-  });
-
-  if (!document.documentElement.classList.contains("touchevents")) {
-    // Parallax tagsv LETS
-    gsap.to("#letso", {
+    });
+  
+    if (document.documentElement.classList.contains("no-touchevents")) {
+      // parallax tagsv LETS
+      gsap.to("#letso", {
+        id: "TAGSV",
+        ease: "Power1.easeInOut",
+        scrollTrigger: {
+          trigger: "#letsoTrigger",
+          start: "top-=20% bottom",
+          end: `+=${vwToPixel(200)}px`,
+          scrub: 1,
+          markers: false,
+        },
+        y: (i, el) => (1 - 0.3) * vwToPixel(90),
+      });
+  
+      // parallasse riga servizi esterna.
+    }
+  
+    gsap.to("#tagsvE", {
       id: "TAGSV",
-      ease: "Power1.easeInOut",
       scrollTrigger: {
         trigger: "#letsoTrigger",
-        start: "top-=20% bottom",
+        start: "top bottom",
         end: `+=${vwToPixel(200)}px`,
         scrub: 1,
         markers: false,
       },
-      y: (i, el) => (1 - 0.3) * vwToPixel(90),
+      y: (i, el) => (1 - 0.85) * vwToPixel(98),
     });
-
-    // Parallax riga servizi esterna.
   }
-
-  gsap.to("#tagsvE", {
-    id: "TAGSV",
-    scrollTrigger: {
-      trigger: "#letsoTrigger",
-      start: "top bottom",
-      end: `+=${vwToPixel(200)}px`,
-      scrub: 1,
-      markers: false,
-    },
-    y: (i, el) => (1 - 0.85) * vwToPixel(98),
-  });
-}
-// Function to toggle display for elements
-const toggleDisplay = (selector: string, display: string) => {
-  const elements = document.querySelectorAll(selector);
-  elements.forEach((el) => {
-    (el as HTMLElement).style.display = display;
-  });
-};
-
-function footer() {
-  const isFooter = gsap.to("#wrapContainer", {
-    id: "FOOTER",
-    x: footerC.x,
-    y: function () {
-      const pos2 =
-        posFooter -
-        (document.documentElement.classList.contains("touchevents") && isMobile()
-          ? (document.querySelector("#wrapSite") as HTMLElement)?.scrollTop ?? 0
-          : window.scrollY);
-      console.log(posFooter, window.scrollY);
-      return `${0 - pos2}px`;
-    },
-    scale: footerC.zoom,
-    force3D: false,
-    ease: "power1.inOut",
-    scrollTrigger: {
-      trigger: "#tagsv",
-      start: "bottom top",
-      end: `+=${vhToPixel(50)}px`,
-      markers: false,
-      scrub: true,
-      immediateRender: false,
-      onEnter() {
-        toggleDisplay(".secBottom", "inline-block");
-        toggleDisplay(".secFooter", "inline-block");
+  function footer() {
+  
+    isFooter = gsap.to("#wrapContainer", {
+      id: "FOOTER",
+      x: footerC.x,
+      y: () => {
+        const pos2 =
+          posFooter -
+          (document.documentElement.classList.contains("touchevents") && isMobile()
+            ? (document.getElementById("wrapSite")?.scrollTop || 0)
+            : window.scrollY);
+        console.log(posFooter, window.scrollY);
+        return `${0 - pos2}px`;
       },
-      onLeaveBack() {
-        toggleDisplay(".secBottom", "none");
-        toggleDisplay(".secFooter", "none");
-      },
-    },
-    onComplete() {
-      if (!isAnimFooter) {
-        const buttons = document.querySelectorAll(".bu");
-        buttons.forEach((button) => {
-          const d = button instanceof HTMLElement ? button.dataset.delay : undefined;
-          const delay = d ? parseFloat(d) : 0;
-
-          gsap.from(button, {
-            duration: 0.4,
-            scrollTrigger: {
-              markers: false,
-              trigger: button,
-              start: "top bottom",
-              scrub: false,
-            },
-            delay: delay,
-            opacity: 1,
-            rotate: "+=8",
-            yPercent: 100,
-            ease: "Cubic.easeOut",
+      scale: footerC.zoom,
+      force3D: false,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: "#tagsv",
+        start: "bottom top",
+        end: `+=${vhToPixel(50)}px`,
+        markers: false,
+        scrub: true,
+        immediateRender: false,
+        onEnter: () => {
+          document.querySelectorAll(".secBottom").forEach((el: any) => {
+            el.style.display = "inline-block";
           });
-        });
-
-        isAnimFooter = gsap.to("#i3", {
-          scrollTrigger: {
-            trigger: "#i3",
-            start: "top-=100% bottom",
-            markers: false,
-            scrub: false,
-            onEnter() {
-              const i3 = document.getElementById("i3");
-              if (i3) i3.classList.remove("-flip");
+          document.querySelectorAll(".secFooter").forEach((el: any) => {
+            el.style.display = "inline-block";
+          });
+        },
+        onLeaveBack: () => {
+          document.querySelectorAll(".secBottom").forEach((el: any) => {
+            el.style.display = "none";
+          });
+          document.querySelectorAll(".secFooter").forEach((el: any) => {
+            el.style.display = "none";
+          });
+  
+          // gsap.set("#wrapSite", { height: wrapHeight });
+        },
+      },
+      onComplete: () => {
+        // gsap.set("#wrapSite", { height: document.getElementById("messFooter")?.offsetHeight + document.getElementById("messFooter")?.getBoundingClientRect().top - vhToPixel(70) });
+  
+        if (!isAnimFooter) {
+          document.querySelectorAll(".bu").forEach((el) => {
+            let d = 0;
+            const de = el.getAttribute("data-delay");
+            if (de) d = parseFloat(de);
+  
+            gsap.from(el, 0.4, {
+              scrollTrigger: {
+                markers: false,
+                trigger: el,
+                start: "top bottom",
+                scrub: false,
+              },
+              delay: d,
+              opacity: 1,
+              rotate: "+=8",
+              yPercent: 100,
+              ease: "power1.out",
+            });
+          });
+  
+          isAnimFooter = gsap.to("#i3", {
+            scrollTrigger: {
+              trigger: "#i3",
+              start: "top-=100% bottom",
+              markers: false,
+              scrub: false,
+              onEnter: () => {
+                document.getElementById("i3")?.classList.remove("-flip");
+              },
+              onLeaveBack: () => {
+                document.getElementById("i3")?.classList.add("-flip");
+              },
             },
-            onLeaveBack() {
-              const i3 = document.getElementById("i3");
-              if (i3) i3.classList.add("-flip");
+          });
+  
+          gsap.to("#r_web", {
+            id: "R",
+            rotate: -360,
+            scrollTrigger: {
+              trigger: "#r_web",
+              endTrigger: "#triggerR",
+              end: "clamp(top bottom)",
+              markers: false,
+              scrub: true,
             },
-          },
-        });
-
-        gsap.to("#r_web", {
-          id: "R",
-          rotate: -360,
-          scrollTrigger: {
-            trigger: "#r_web",
-            endTrigger: "#triggerR",
-            end: "clamp(top bottom)",
-            markers: false,
-            scrub: true,
-          },
-        });
-      }
-    },
-  });
-}
+          });
+        }
+      },
+    });
+  }
+  
+  
   return (
     <main>
       <div id="wrapSite">
@@ -1231,9 +1343,9 @@ function footer() {
             </clipPath>
           </svg>
 
-          <div className="sec0" id="lottie">
+          <div className="sec0">
             <div id="lottieTexture"></div>
-            <lottie-player id="lottieTop" ref={ref} src="/assets/images/MessUpLottie/2406_DEF-2.json" background="transparent"  speed="1" autoplay mode="normal"></lottie-player>
+            <lottie-player id="lottie" ref={ref} src="/assets/images/MessUpLottie/2406_DEF-2.json" background="transparent"  speed="1" autoplay mode="normal"></lottie-player>
           </div>
 
           <div id="wrapColumns">
