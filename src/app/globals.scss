@@ -6,6 +6,178 @@
   --bg:url('https://www.messup.it/images/ALL-EYES-ON-US-Sticker_08.png')
 }
 
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {
+  display: block;
+}
+
+audio,canvas,video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active,a:hover {
+  outline: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code,kbd,pre,samp {
+  font-family: monospace,serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+button,input,select,textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+button,input {
+  line-height: normal;
+}
+
+button,select {
+  text-transform: none;
+}
+
+button,html input[type="button"],input[type="reset"],input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],html input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"],input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 * {
   image-rendering: crisp-edges;
 }
@@ -31,8 +203,8 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #F2F2F2;
+  
   overflow-x: hidden;
-  opacity: 0;
   background-image: url(/assets/images/texture.png);
   background-size: 20%;
 }
@@ -155,6 +327,7 @@ body {
   
   justify-content: space-between;
   margin-top:-90px;
+  opacity: 0;
 }
 /*
 #heighter {
@@ -640,10 +813,126 @@ div.a1 p {
   transform: translateY(0) rotate(0);
 }
 
+#lottieTop {
+  width:100%;
+}
 
 
-// Extra.css
+#messupTop,#messupBottom{
+  width:100%;
+}
+#wrapContainer {
+  width:100%;
+}
 
+
+#titolone, #titolone span {
+  font-size: 12cqi;
+  letter-spacing: -6px;
+  line-height: 10cqi;   
+}
+
+p {
+  font-size: 1cqi;
+  letter-spacing: -0.25px;
+  line-height: 1.2cqi;    
+}
+
+p.testo1 {
+  top: 86vw;
+}
+
+
+#over1, #over2 {
+  height: 110vh;
+  top: 170vw;
+}
+
+
+p.testo2 {
+  font-size: .5cqi;
+  line-height: .60cqi;
+}
+
+#sometimes {
+  top: 280vw;
+}
+#sometimesZoom {
+  position:absolute;
+  top: 14500px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/*
+PROVA PER SPOSTAMENTO LATERALE EXTRA
+*/
+
+p.testo2 {
+  font-size: 2.5cqi;
+  line-height: 2.6cqi;
+}
+
+p.testo2 span.superfly {
+  font-size: 2.5cqi;
+  line-height: 2.6cqi;
+}
+
+div.a1 p {
+  font-size: .5cqi;
+  line-height: 1px;
+  letter-spacing: 0px;
+}
+
+#wrapContainer {
+  transform-origin: 50% top;
+}
+
+#extraLeft {
+  display: flex;
+  height: 10300px;
+  background-color: #F2F2F2;
+  justify-content: space-between;
+  opacity: 1;
+  position: absolute;
+  width: 84vw;
+  /*left: calc(-84vw - 5.398%);  */
+  left: calc(-84vw - 1.168%); 
+  transform-origin: right top;
+  opacity: 1;  
+}
+
+.containerMix {
+  /* height: 60300px; Altezza estesa */
+  height: auto;
+}
+
+.fact {
+  top: 298vw;
+}
+.top-fact {
+  top: 299vw;
+}
+.pillo {
+  top: 318vw;
+}
+/*
+.column.extra {
+  width:10%;
+}*/
+
+
+#sometimesZoom {
+  position:absolute;
+  top: 19352.5px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+#wrapContainer {
+    
+}
 #wrapSite {
     margin: 0 auto;
     height: 100svh;
@@ -665,6 +954,9 @@ div.a1 p {
 }
 
 @container mcc (min-width: 200px) {
+
+
+
     .column {
         /*height:1380cqw;*/
         height: calc(460cqi + 600vh);
@@ -1765,123 +2057,4 @@ p.testo1,p.testo1.primo {
         /*FINE TUTTO IL MONDO*/
     }
 
-    // medium.css
-
-    #lottieTop {
-      width:100%;
-  }
-  
-  
-  #messupTop,#messupBottom{
-      width:100%;
-  }
-  #wrapContainer {
-      width:100%;
-  }
-  
-  
-  #titolone, #titolone span {
-      font-size: 12cqi;
-      letter-spacing: -6px;
-      line-height: 10cqi;   
-  }
-  
-  p {
-      font-size: 1cqi;
-      letter-spacing: -0.25px;
-      line-height: 1.2cqi;    
-  }
-  
-  p.testo1 {
-      top: 86vw;
-  }
-  
-  
-  #over1, #over2 {
-      height: 110vh;
-      top: 170vw;
-  }
-  
-  
-  p.testo2 {
-      font-size: .5cqi;
-      line-height: .60cqi;
-  }
-  
-  #sometimes {
-      top: 280vw;
-  }
-  #sometimesZoom {
-      position:absolute;
-      top: 14500px;
-      width: 1px;
-      height: 1px;
-      opacity: 0;
-  }
-  
-  /*
-  PROVA PER SPOSTAMENTO LATERALE EXTRA
-  */
-  
-  p.testo2 {
-      font-size: 2.5cqi;
-      line-height: 2.6cqi;
-  }
-  
-  p.testo2 span.superfly {
-      font-size: 2.5cqi;
-      line-height: 2.6cqi;
-  }
-  
-  div.a1 p {
-      font-size: .5cqi;
-      line-height: 1px;
-      letter-spacing: 0px;
-  }
-  
-  #wrapContainer {
-      transform-origin: 50% top;
-  }
-  
-  #extraLeft {
-      display: flex;
-      height: 10300px;
-      background-color: #F2F2F2;
-      justify-content: space-between;
-      opacity: 1;
-      position: absolute;
-      width: 84vw;
-      /*left: calc(-84vw - 5.398%);  */
-      left: calc(-84vw - 1.168%); 
-      transform-origin: right top;
-      opacity: 1;  
-    }
-  
-    .containerMix{
-      /* height: 60300px; Altezza estesa */
-      height: auto;
-    }
-  
-    .fact {
-      top: 298vw;
-    }
-  .top-fact {
-      top: 299vw;
-  }
-  .pillo {
-      top: 318vw;
-  }
-  /*
-  .column.extra {
-      width:10%;
-  }*/
-  
-  
-  
-  #sometimesZoom {
-    position:absolute;
-    top: 19352.5px;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-}
+    

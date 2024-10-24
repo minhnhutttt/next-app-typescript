@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Observer } from "gsap/Observer";
+import { relative } from "path";
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(Observer);
@@ -212,7 +213,7 @@ export default function Home() {
     }
   
     // Điều chỉnh margin-top cho .container
-    const container = document.querySelector(".container") as HTMLElement;
+    const container = document.querySelector(".containerMix") as HTMLElement;
     if (container) {
       container.style.marginTop = `-${lottieHeight / 2}px`;
     }
@@ -258,7 +259,7 @@ export default function Home() {
       });
   
       setTimeout(() => {
-        gsap.to(".container", {
+        gsap.to(".containerMix", {
           opacity: 1,
           duration: 0,
           ease: "expo.inOut",
@@ -1321,487 +1322,357 @@ export default function Home() {
   
   return (
     <main>
-      <div id="wrapSite">
-        <div id="wrapContainer">
-          <svg
-            id="Livello_1"
-            width="0"
-            height="0"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <clipPath clipPathUnits="objectBoundingBox" id="svgPath">
-              <rect x="870" y=".05" width="72" height="259.95" />
-              <rect x="435" y="210.12" width="72" height="49.88" />
-              <path d="m521.92,123.17c0,40.01,32.07,72.45,72.08,72.46h15v64.37h72v-57.12c.32-40.02-32.12-72.46-72.14-72.46h-14.86v-65.16h15v50.67h72V0h-159.08v123.17Z" />
-              <polygon points="696 260 768 260 768 65.26 783 65.26 783 260 855 260 855 0 696 0 696 260" />
-              <rect x="957" y=".05" width="72" height="259.95" />
-              <path d="m1130.53,0v.05L1044,0v260h72V65.26h15v194.74h72V72.46C1202.99,32.44,1170.55,0,1130.53,0Z" />
-              <polygon points="0 0 0 260 72 260 72 65.13 86.95 65.21 86.95 260 159 260 159 0 0 0" />
-              <rect x="522" y="210.12" width="72" height="49.88" />
-              <polygon points="174 260 246 260 246 65.21 261 65.21 261 260 333 260 333 0 174 0 174 260" />
-              <polygon points="348 260 420 260 420 195.63 494.31 195.63 494.31 130.42 420 130.42 420 65.21 435 65.21 435 115.93 507 115.93 507 0 348 0 348 260" />
-            </clipPath>
-          </svg>
+      <div id="smolla" style={{position: 'absolute'}}></div>
 
-          <div className="sec0">
-            <div id="lottieTexture"></div>
-            <lottie-player id="lottie" ref={ref} src="/assets/images/MessUpLottie/2406_DEF-2.json" background="transparent"  speed="1" autoplay mode="normal"></lottie-player>
-          </div>
 
-          <div id="wrapColumns">
-            <div className="containerMix relative">
-              <h1 className="sec1 toHide z-[99]" id="titolone">
-                We’d rather
-                <br />
-                be{" "}
-                <span className="z-[-2]">
-                  <span className="a">
-                    <img src="/assets/images/txt/wrong.png" className="svgTitolo" />
-                  </span>
-                </span>
-                <br />
-                than{" "}
-                <span className="z-[-1]">
-                  <span className="a z-[-1]">
-                    <img
-                      src="/assets/images/txt/boring.png"
-                      className="svgTitolo boring"
-                    />
-                  </span>
-                </span>
-                <br />
-                How about
-                <br />
-                you?
-              </h1>
 
-              <div id="primoTrigger"></div>
-              <div className="sec3 toHide " id="stripe">
-                <div id="stripeInner"></div>
-              </div>
-              <div className="sec7 toHide z-[4]" id="stripeMatter">
-                <div id="stripeMatterInner"></div>
-              </div>
-              <div className="sec7 toHide " id="stripeTrigger"></div>
-              <div className="sec8 toHide " id="letsoTrigger"></div>
+<div id="progress">
+  <a href="https://messup.it/whatamess.php?lang=en">
+  <svg id="progresso" width="29px" height="61px" viewBox="0 0 29 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+      <g id="Desktop" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+          <g id="progressStroke1" transform="translate(-106.000000, -64.000000)" stroke="#FFFFFF" strokeWidth="6">
+              <path  d="M109.459024 123.844943 109.459024 67.7487719 116.894769 67.7487719 116.894769 121.059655 123.956799 121.059655 123.956799 67.7487719 131.625823 67.7487719 131.625823 123.844943"></path>
+          </g>
+          <g  id="progressStroke2" transform="translate(-106.000000, -64.000000)" stroke="#FF6600" strokeWidth="6">
+              <path  d="M109.459024 123.844943 109.459024 67.7487719 116.894769 67.7487719 116.894769 121.059655 123.956799 121.059655 123.956799 67.7487719 131.625823 67.7487719 131.625823 123.844943"></path>
+          </g>        
+      </g>
+  </svg>
+  </a>
+</div>
 
-              <div id="messHolo" className="sec4 toHide ">
-                <img id="MessHoloImg" src="/assets/images/MessUp_Holo.jpg" />
-              </div>
+<div id="wrapSite">
+<div id="wrapContainer">
 
-              <div id="c1" className="column z-[1001]">
-                <div id="heighter"></div>
-                <div className="texture2"></div>
-                <div className="texture"></div>
 
-                <p
-                  id="letso"
-                  className=" results v big biggo lets  sec8 toHide  "
-                >
-                  <span className="inline-block relative">Let’s</span>{" "}
-                  <img
-                    className="inline-block relative svgMessupLetso"
-                    src="/assets/images/txt/MessUp.png"
-                  />
-                </p>
-              </div>
 
-              <div id="c2" className="column z-[1]">
-                <div className="texture2"></div>
-                <div className="texture"></div>
+  <svg id="Livello_1" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+    <clipPath clipPathUnits="objectBoundingBox" id="svgPath">
+      <rect x="870" y=".05" width="72" height="259.95"/><rect x="435" y="210.12" width="72" height="49.88"/><path d="m521.92,123.17c0,40.01,32.07,72.45,72.08,72.46h15v64.37h72v-57.12c.32-40.02-32.12-72.46-72.14-72.46h-14.86v-65.16h15v50.67h72V0h-159.08v123.17Z"/><polygon points="696 260 768 260 768 65.26 783 65.26 783 260 855 260 855 0 696 0 696 260"/><rect x="957" y=".05" width="72" height="259.95"/><path d="m1130.53,0v.05L1044,0v260h72V65.26h15v194.74h72V72.46C1202.99,32.44,1170.55,0,1130.53,0Z"/><polygon points="0 0 0 260 72 260 72 65.13 86.95 65.21 86.95 260 159 260 159 0 0 0"/><rect x="522" y="210.12" width="72" height="49.88"/><polygon points="174 260 246 260 246 65.21 261 65.21 261 260 333 260 333 0 174 0 174 260"/><polygon points="348 260 420 260 420 195.63 494.31 195.63 494.31 130.42 420 130.42 420 65.21 435 65.21 435 115.93 507 115.93 507 0 348 0 348 260"/>
+    </clipPath>
+  </svg>
 
-                <p id="tagsv" className="tags v  sec8 toHide  ">
-                  <span>Brand strategy</span>
-                  <span>Brand naming</span>
-                  <span>Visual identity</span>
-                </p>
-              </div>
+  <div className="sec0 toHide" id="lottie" style={{display:"none"}}>
+    <div id="lottieTexture"></div>
+    <lottie-player  id="lottieTop" src="/assets/images/MessUpLottie/2406_DEF-2.json" background="transparent"  speed="1"></lottie-player>
+  </div>
 
-              <div id="c3" className="column z-[1]">
-                <div className="texture2"></div>
-                <div className="texture"></div>
+<div id="wrapColumns">
 
-                <div className="sec5 toHide maskFact z-[1]">
-                  <span className="sec5 toHide  fact z-[5]" id="facts">
-                    F
-                  </span>
-                </div>
+  <div className="containerMix" style={{position: "relative"}}>
+    
 
-                <img
-                  className="sec5 toHide show-md"
-                  id="NOT-COOL-Sticker"
-                  src="/assets/images/NOT-COOL-Sticker_08.png"
-                />
 
-                <p id="tagsvE" className="tags v  sec8 toHide  ">
-                  <span>Web design</span>
-                  <span>Video and photo production</span>
-                </p>
-              </div>
+    <h1 className="sec1 toHide " id="titolone" style={{zIndex: 99}}>We’d rather<br />be <span style={{zIndex: -2}}><span className="a"><img src="/assets/images/txt/wrong.png" className="svgTitolo" /></span></span><br />than <span style={{zIndex: -1}}><span className="a" style={{zIndex: -1}}><img src="/assets/images/txt/boring.png" className="svgTitolo boring" /></span></span><br />How about<br />you?</h1>
+    
+    
+    <div id="primoTrigger"></div>
+    <div className="sec3 toHide " id="stripe"><div id="stripeInner"></div></div>
+    <div className="sec7 toHide " style={{zIndex: 4}} id="stripeMatter"><div id="stripeMatterInner"></div></div>
+    <div className="sec7 toHide " id="stripeTrigger"></div>
+    <div className="sec8 toHide " id="letsoTrigger"></div>
 
-              <div id="c4" className="column z-0">
-                <div className="texture2"></div>
-                <div className="texture"></div>
+    <div id="messHolo" className="sec4 toHide ">
+        <img id="MessHoloImg" src="/assets/images/MessUp_Holo.jpg" />
+    </div>
 
-                <div className="sec5 toHide maskFact">
-                  <span className="sec5 toHide  fact z-[4]">a</span>
-                </div>
+   
 
-                <img
-                  className="sec5 toHide "
-                  id="holoFact"
-                  src="/assets/images/MessUp_Holo.jpg"
-                />
 
-                <img
-                  className="sec8 toHide "
-                  id="holoFact2"
-                  src="/assets/images/MessUp_Holo.jpg"
-                />
+    <div id="c1" className="column" style={{zIndex: 1001}}>
+      <div id="heighter"></div>
+      <div className="texture2"></div><div className="texture"></div>
 
-                <p className="v pillo sec5 toHide show-sm factu text-[#FF6600]">
-                  <span className="pollo-span invisible">
-                    Not everyone likes us.
-                  </span>
-                  <br />
-                  <span className="pollo-span">
-                    Not everyone likes us<span className="text-white">.</span>
-                  </span>
-                </p>
-              </div>
+      <p id="letso"  className=" results v big biggo lets  sec8 toHide  "><span style={{display: 'inline-block', position: 'relative'}}>Let’s</span> <img  style={{display: 'inline-block', position: 'relative'}} className="svgMessupLetso" src="/assets/images/txt/MessUp.png" /></p>     
 
-              <div id="c5" className="column z-[5]">
-                <div className="texture2"></div>
-                <div className="texture"></div>
+    </div>
 
-                <span className="sec3 toHide " id="testoletsSpan">
-                  <div className="sec3" id="over0">
-                    <div className="texture2"></div>
-                  </div>
-                  <p id="testolets" className="testolets v">
-                    You are looking for a communication agency, but we
-                  </p>
-                </span>
+    <div id="c2" className="column" style={{zIndex: 1}}>
+      <div className="texture2"></div><div className="texture"></div>
+      
+      <p id="tagsv" className="tags v  sec8 toHide  ">
+        <span>Brand strategy</span>
+        <span>Brand naming</span>
+        <span>Visual identity</span>
+      </p>
 
-                <div id="sometimes" className="hor sec4 toHide biggo ">
-                  <p className="testo2">Sometimes</p>
-                  <p className="testo2">you need to</p>
-                  <p className="testo2 te">
-                    <img className="svgMessup" src="/assets/images/txt/MessUp.png" />a
-                    bit.
-                  </p>
-
-                  <div className="a1">
-                    <p>It's communication, not an Excel sheet.</p>
-                    <p className="text-[#FF6600]">
-                      No filters, no brakes, no fear
-                      <span className="text-white">.</span>
-                    </p>
-                    <p id="spacer">More fun, isn't it?</p>
-                  </div>
-
-                  <div id="yolo" className="oh-shut-up"></div>
-                </div>
-
-                <div className="sec5 toHide maskFact">
-                  <span className="sec5 toHide  fact z-[3]">c</span>
-                </div>
-
-                <p className="v pillo sec5 toHide  show-sm factu">
-                  <span className="pollo-span">
-                    But someone does: brands that
-                  </span>
-                  <br />
-                  <span className="pollo-span">
-                    don't want to be background noise.
-                  </span>
-                </p>
-
-                <span className="sec7 toHide ">
-                  <p id="testomatter" className="testomatter v">
-                    We love mess, but we always have the goal in mind.
-                  </p>
-                </span>
-              </div>
-
-              <div id="c6" className="column z-[10]">
-                <div className="texture2"></div>
-                <div className="texture"></div>
-
-                <span className="sec3 toHide " id="testoletsSpan">
-                  <div id="over1">
-                    <div className="texture2"></div>
-                  </div>
-                  <p className="testolets v">
-                    are more of{" "}
-                    <span className="text-[#FF6600]">
-                      a collective of hot heads
-                    </span>
-                    . However, you
-                  </p>
-                </span>
-
-                <div className="sec5 toHide maskFact">
-                  <span className="sec5 toHide  fact z-[2]">t:</span>
-                </div>
-
-                <p className="v pillo sec5 toHide  show-sm factu">
-                  <span className="pollo-span">Trust us, together we</span>
-                  <br />
-                  <span className="pollo-span">
-                    will stir up quite a storm.
-                  </span>
-                </p>
-
-                <p className="v pillo sec5 toHide show-md text-[#FF6600]">
-                  <span className="pollo-span invisible">
-                    Not everyone likes us.
-                  </span>
-                  <br />
-                  <span className="pollo-span">
-                    Not everyone likes us<span className="text-white">.</span>
-                  </span>
-                </p>
-
-                <span className="sec7 toHide ">
-                  <p className="testomatter v">
-                    And we are so stubborn that we keep going when
-                  </p>
-                </span>
-              </div>
-
-              <div id="c7" className="column z-[10]">
-                <div className="texture2"></div>
-                <div className="texture"></div>
-
-                <div className="sec3 toHide " id="testoletsSpan">
-                  <div id="over2">
-                    <div className="texture2"></div>
-                  </div>
-                  <p className="testolets v">
-                    can ask us everything that machines - and those
-                  </p>
-                </div>
-
-                <p className="v pillo sec5 toHide  show-md">
-                  <span className="pollo-span">
-                    But someone does: brands that
-                  </span>
-                  <br />
-                  <span className="pollo-span">
-                    don't want to be background noise.
-                  </span>
-                </p>
-
-                <span className="sec7 toHide ">
-                  <p className="testomatter v">
-                    others give up.{" "}
-                    <span className="text-[#FF6600]">
-                      That's how we get where others don't
-                    </span>
-                    .
-                  </p>
-                </span>
-              </div>
-
-              <div id="c8" className="column z-[1]">
-                <div className="texture2"></div>
-                <div className="texture"></div>
-
-                <p className="sec3 toHide  testolets v">
-                  who think like a machine - will never give you.
-                </p>
-
-                <p className="testo1 v sec2 toHide show-sm primo z-[99]">
-                  Your brand wants to do the right thing?
-                  <br />
-                </p>
-
-                <div id="born" className="hor sec6 toHide biggo">
-                  <p className="testo2">Born digital,</p>
-                  <p className="testo2">die-hard</p>
-                  <p className="testo2">
-                    <img className="svgBorn" src="/assets/images/txt/humans.png" />
-                  </p>
-
-                  <div className="a1">
-                    <p>We grew up immersed in technology,</p>
-                    <p>so we take it for granted.</p>
-                    <div id="spacer"></div>
-                    <p className="text-[#FF6600]">
-                      But we're here to do things it was not
-                    </p>
-                    <p className="text-[#FF6600]">
-                      meant for<span className="text-white">.</span>
-                    </p>
-                  </div>
-                  <img
-                    id="LETS-ROLL-Sticker_01"
-                    className="sec6 toHide "
-                    src="/assets/images/LETS-ROLL-Sticker_01.png"
-                  />
-                </div>
-
-                <p className="v pillo sec5 toHide  show-md">
-                  <span className="pollo-span">Trust us, together we</span>
-                  <br />
-                  <span className="pollo-span">
-                    will stir up quite a storm.
-                  </span>
-                </p>
-              </div>
-
-              <div id="c9" className="column">
-                <div className="texture2"></div>
-                <div className="texture"></div>
-                <p id="testo1" className="testo1 v sec2 toHide z-[99]">
-                  <span className="show-md">
-                    Your brand wants to do the right thing?
-                    <br />
-                    Easy: just do as everybody else.
-                  </span>
-                  <span className="show-sm primo">
-                    Easy: just do as everybody else.
-                  </span>
-                </p>
-
-                <div className="sec3 toHide ">
-                  <div id="over2">
-                    <div className="texture2"></div>
-                  </div>
-                  <p className="testolets v">
-                    For example, something that will truly amaze you.
-                  </p>
-                </div>
-
-                <div className="shinju" id="shinju2"></div>
-
-                <div id="_stripeOrange"></div>
-
-                <img
-                  id="MessUp_Holo_Circle"
-                  className="sec6 toHide "
-                  src="/assets/images/MessUp_Holo_Circle.png"
-                />
-              </div>
-
-              <div id="c10" className="column z-[2]">
-                <div className="texture2"></div>
-                <div className="texture"></div>
-                <p className="testo1 v sec2 toHide z-[99]">
-                  <span className="show-md">
-                    But you are not like everybody else, right?
-                    <br />
-                    <span className="text-[#FF6600]" id="lets">
-                      Let’s MessUp
-                    </span>
-                    <span className="text-white">.</span>
-                  </span>
-                  <span className="show-sm">
-                    But you are not like everybody else, right?
-                  </span>
-                </p>
-              </div>
-
-              <div id="c11" className="column z-[1]">
-                <div className="texture2"></div>
-                <div className="texture"></div>
-
-                <p className="testo1 v sec2 toHide show-sm primo z-[99]">
-                  <span className="text-[#FF6600]" id="lets">
-                    Let’s MessUp
-                  </span>
-                  <span className="text-white">.</span>
-                </p>
-
-                <div className="sec3 toHide ">
-                  <div id="over3">
-                    <div className="texture2 wtf"></div>
-                  </div>
-                  <img id="WTF-Sticker_01" src="/assets/images/WTF-Sticker_01.png" />
-                </div>
-
-                <img
-                  id="YOLO-2_-Sticker"
-                  className="toHide sec7 show-md"
-                  src="/assets/images/YOLO-2_-Sticker_08.png"
-                />
-              </div>
-
-              <div id="c12" className="column z-0">
-                <div className="texture2"></div>
-                <div className="texture"></div>
-              </div>
-
-              <div id="c13" className="column z-[-1]">
-                <div className="texture2"></div>
-                <div className="texture"></div>
-              </div>
-
-              <div id="c14" className="column">
-                <div className="texture2"></div>
-                <div className="texture"></div>
-              </div>
-            </div>
-          </div>
-          <div id="triggerFooter"></div>
-          <div className="relative">
-            <img
-              className="toHide secBottom"
-              id="messupBottom"
-              src="/assets/images/MessUp_Bottom.png"
-            />
-            <img
-              className="toHide secBottom"
-              id="r_web"
-              src="/assets/images/R_Web.png"
-            />
-          </div>
-          <div id="messFooter" className="toHide secFooter">
-            <div id="quicker">
-              <span className="overflow">
-                <h3 className="bu m-0" data-delay=".2">
-                  Quicker to talk it out.
-                </h3>
-              </span>
-            </div>
-
-            <div id="footer-links">
-              <span className="overflow">
-                <span className="bu inline-block" data-delay=".3">
-                  <a href="mailto:yo@messup.it">Email</a>
-                </span>
-              </span>
-              <span className="overflow">
-                <span className="bu inline-block" data-delay=".4">
-                  <a href="https://www.instagram.com/messup.it">Instagram</a>
-                </span>
-              </span>
-              <span className="overflow">
-                <span className="bu inline-block" data-delay=".5">
-                  <a href="https://messup.it/whatamess.php?lang=en">Nothing</a>
-                </span>
-              </span>
-            </div>
-
-            <div id="iFooter" className="">
-              <span
-                id="i3"
-                className="-flip iFooterI c-header_brand"
-                aria-label="Go to home page"
-              >
-                <div className="c-header_brand-back">
-                  <div></div>
-                </div>
-                <div className="c-header_brand-front">
-                  <div></div>
-                </div>
-              </span>
-              <div id="triggerR" className="absolute bottom-0"></div>
-            </div>
-          </div>
-        </div>
+    </div>
+  
+    <div id="c3" className="column" style={{zIndex: 1}}>
+      <div className="texture2"></div><div className="texture"></div>
+      
+      <div className="sec5 toHide maskFact"  style={{zIndex: 1}}>
+        <span className="sec5 toHide  fact" id="facts" style={{zIndex: 5}}>F</span>
       </div>
+
+      <img className="sec5 toHide show-md" id="NOT-COOL-Sticker" src="/assets/images/NOT-COOL-Sticker_08.png"/>      
+
+      <p id="tagsvE" className="tags v  sec8 toHide  ">
+        <span>Web design</span>
+        <span>Video and photo production</span>
+      </p>
+
+    </div>
+
+    <div id="c4" className="column"  style={{zIndex: 0}}>
+      <div className="texture2"></div><div className="texture"></div>
+      
+      <div className="sec5 toHide maskFact">
+        <span className="sec5 toHide  fact"  style={{zIndex: 4}}>a</span>
+      </div>
+
+      <img className="sec5 toHide " id="holoFact" src="/assets/images/MessUp_Holo.jpg"/>
+
+      <img className="sec8 toHide " id="holoFact2" src="/assets/images/MessUp_Holo.jpg"/>
+
+      <p className="v pillo sec5 toHide show-sm factu" style={{color: '#FF6600'}}>
+      <span style={{visibility:"hidden"}} className="pollo-span">Not everyone likes us.</span><br />
+      <span className="pollo-span">Not everyone likes us<span style={{color: '#fff'}}>.</span></span>
+      </p> 
+
+    </div>
+
+
+    <div id="c5" className="column" style={{zIndex: 5}}>
+      <div className="texture2"></div><div className="texture"></div>
+
+      
+      <span className="sec3 toHide " id="testoletsSpan">
+        <div className="sec3" id="over0"><div className="texture2"></div></div>
+        <p id="testolets" className="testolets v">You are looking for a communication agency, but we</p>
+      </span>
+
+
+
+
+      <div id="sometimes"  className="hor sec4 toHide biggo ">
+        <p className="testo2">Sometimes</p>
+        <p className="testo2">you need to</p>
+        <p className="testo2 te"><img className="svgMessup" src="/assets/images/txt/MessUp.png" />a bit.</p>
+
+        <div className="a1">
+          <p>It's communication, not an Excel sheet.</p>
+          <p style={{color: '#FF6600'}}>No filters, no brakes, no fear<span style={{color: '#fff'}}>.</span></p>
+          <p id="spacer">More fun, isn't it?</p>
+        </div>
+
+        <div id="yolo" className="oh-shut-up"></div>
+        
+        
+      </div>
+      
+      <div className="sec5 toHide maskFact">
+        <span className="sec5 toHide  fact" style={{zIndex: 3}}>c</span>
+      </div>      
+
+      <p className="v pillo sec5 toHide  show-sm factu">
+        <span className="pollo-span">But someone does: brands that</span><br /> 
+        <span className="pollo-span">don't want to be background noise.</span> 
+      </p>
+
+      <span className="sec7 toHide ">
+        <p id="testomatter" className="testomatter v">We love mess, but we always have the goal in mind.</p>
+      </span>
+
+    </div>
+
+    
+    
+    <div id="c6" className="column" style={{zIndex: 10}}>
+      <div className="texture2"></div><div className="texture"></div>
+ 
+      <span className="sec3 toHide " id="testoletsSpan">
+        <div  id="over1"><div className="texture2"></div></div>
+        <p className="testolets v">are more of <span style={{color: '#FF6600'}}>a collective of hot heads</span>. However, you</p>
+      </span>      
+
+
+      <div className="sec5 toHide maskFact">
+        <span className="sec5 toHide  fact" style={{zIndex: 2}}>t:</span>
+       </div>
+
+      <p className="v pillo sec5 toHide  show-sm factu">
+        <span className="pollo-span">Trust us, together we</span><br /> 
+        <span className="pollo-span">will stir up quite a storm.</span> 
+      </p>     
+
+    
+      <p className="v pillo sec5 toHide show-md " style={{color: '#FF6600'}}>
+      <span style={{visibility:"hidden"}} className="pollo-span">Not everyone likes us.</span><br />
+      <span className="pollo-span">Not everyone likes us<span style={{color: '#fff'}}>.</span></span>
+      </p>      
+
+      <span className="sec7 toHide ">
+        <p className="testomatter v">And we are so stubborn that we keep going when</p>
+      </span>
+
+    </div>
+
+    <div id="c7" className="column" style={{zIndex: 10}}>
+      <div className="texture2"></div><div className="texture"></div>    
+
+      <div className="sec3 toHide " id="testoletsSpan">
+        <div id="over2"><div className="texture2"></div></div>  
+        <p className="testolets v">can ask us everything that machines - and those</p>
+      </div>
+
+
+
+
+      <p className="v pillo sec5 toHide  show-md">
+        <span className="pollo-span">But someone does: brands that</span><br /> 
+        <span className="pollo-span">don't want to be background noise.</span> 
+      </p>
+
+      <span className="sec7 toHide ">
+        <p className="testomatter v">others give up. <span style={{color: '#FF6600'}}>That's how we get where others don't</span>.</p>
+      </span> 
+
+    </div>
+
+    <div id="c8" className="column" style={{zIndex: 1}}>
+      <div className="texture2"></div><div className="texture"></div>      
+      
+      <p className="sec3 toHide  testolets v">who think like a machine - will never give you.</p>
+
+      <p className="testo1 v sec2 toHide show-sm primo" style={{zIndex: 99}}>
+        Your brand wants to do the right thing?<br />
+      </p>
+
+      <div id="born" className="hor sec6 toHide biggo">
+        
+        <p className="testo2">Born digital,</p>
+        <p className="testo2">die-hard</p>
+        <p className="testo2"><img className="svgBorn" src="/assets/images/txt/humans.png" /></p>
+
+        <div className="a1">
+          <p>We grew up immersed in technology,</p>
+          <p>so we take it for granted.</p>
+          <div id="spacer"></div>
+          <p style={{color: '#FF6600'}}>But we're here to do things it was not</p>
+          <p style={{color: '#FF6600'}}>meant for<span style={{color: '#fff'}}>.</span></p>
+        </div>
+        <img id="LETS-ROLL-Sticker_01" className="sec6 toHide " src="/assets/images/LETS-ROLL-Sticker_01.png"/>
+      </div>      
+
+  
+      
+
+      <p className="v pillo sec5 toHide  show-md">
+        <span className="pollo-span">Trust us, together we</span><br /> 
+        <span className="pollo-span">will stir up quite a storm.</span> 
+      </p>  
+
+    </div>
+
+    <div id="c9" className="column">
+      <div className="texture2"></div><div className="texture"></div>  
+      <p id="testo1" className="testo1 v sec2 toHide" style={{zIndex: 99}}>
+        <span className="show-md">
+        Your brand wants to do the right thing?<br />
+        Easy: just do as everybody else.
+        </span>
+        <span className="show-sm primo">
+        Easy: just do as everybody else.
+        </span>        
+        
+      </p>
+
+      
+      <div className="sec3 toHide ">
+        <div id="over2"><div className="texture2"></div></div>  
+        <p className="testolets v">For example, something that will truly amaze you.</p>      
+      </div>      
+      
+
+      <div className="shinju" id="shinju2"></div>     
+  
+      <div id="_stripeOrange"></div>
+      
+
+      <img id="MessUp_Holo_Circle" className="sec6 toHide " src="/assets/images/MessUp_Holo_Circle.png"/>
+
+    </div>
+
+    <div id="c10" className="column" style={{zIndex: 2}}>
+
+      <div className="texture2"></div><div className="texture"></div>
+      <p className="testo1 v sec2 toHide " style={{zIndex: 99}}>
+<span className="show-md">
+        But you are not like everybody else, right?<br/>
+        <span style={{color: '#FF6600'}} id="lets">Let’s MessUp</span><span style={{color: '#fff'}}>.</span>
+  </span>
+  <span className="show-sm">
+        But you are not like everybody else, right?
+  </span>  
+      </p>
+
+
+    </div>
+
+    <div id="c11" className="column" style={{zIndex: 1}}>
+      <div className="texture2"></div><div className="texture"></div>
+
+      <p className="testo1 v sec2 toHide show-sm primo"  style={{zIndex: 99}}>
+        <span style={{color: '#FF6600'}} id="lets">Let’s MessUp</span><span style={{color: '#fff'}}>.</span>
+      </p>
+
+      <div className="sec3 toHide ">
+        <div id="over3"><div className="texture2 wtf"></div></div>  
+        <img id="WTF-Sticker_01" src="/assets/images/WTF-Sticker_01.png" />      
+      </div> 
+
+      <img id="YOLO-2_-Sticker" className="toHide sec7 show-md" src="/assets/images/YOLO-2_-Sticker_08.png"/>
+    </div>
+    
+    <div id="c12" className="column" style={{zIndex: 0}}>
+      <div className="texture2"></div><div className="texture"></div>
+    
+    </div>
+    
+    <div id="c13" className="column" style={{zIndex: -1}}>
+      <div className="texture2"></div><div className="texture"></div>
+    </div>
+    
+    <div id="c14" className="column">
+      <div className="texture2"></div><div className="texture"></div>
+    </div>        
+  </div>
+
+</div>
+  <div id="triggerFooter"></div>
+  <div style={{position: 'relative'}}>
+    <img className="toHide secBottom" id="messupBottom" src="/assets/images/MessUp_Bottom.png" />
+    <img className="toHide secBottom" id="r_web" src="/assets/images/R_Web.png" />
+  </div>
+<div id="messFooter" className="toHide secFooter">
+  <div id="quicker" >
+    <span className="overflow">
+      <h3 className="bu" data-delay=".2" style={{margin: 0}}>Quicker to talk it out.</h3>
+    </span>
+  </div>
+
+  <div id="footer-links">
+  <span className="overflow"><span style={{display: 'inline-block'}} className="bu" data-delay=".3"><a href="mailto:yo@messup.it">Email</a></span></span>
+    <span className="overflow"><span style={{display: 'inline-block'}} className="bu" data-delay=".4"><a href="https://www.instagram.com/messup.it">Instagram</a></span></span>
+    <span className="overflow"><span style={{display: 'inline-block'}} className="bu" data-delay=".5"><a href="https://messup.it/whatamess.php?lang=en">Nothing</a></span></span>
+  </div>
+
+  <div id="iFooter" className="">
+
+     <span id="i3" className="-flip iFooterI c-header_brand"  aria-label="Go to home page">
+        <div className="c-header_brand-back"><div></div></div>
+        <div className="c-header_brand-front"><div></div></div>
+    </span>
+    <span id="triggerR" style={{position:"absolute", bottom:0}}></span>
+  </div>
+
+</div> 
+  
+</div>
+
+
+</div>
     </main>
     
   );
