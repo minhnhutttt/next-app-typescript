@@ -1352,8 +1352,8 @@ export default function Home() {
       <div id="smolla" style={{ position: "absolute" }}></div>
 
 
-      <div id="wrapSite" className="mx-auto">
-        <div id="wrapContainer" className="mx-auto w-full relative">
+      <div id="wrapSite" className="mx-auto my-[0] h-[100svh] w-screen absolute overflow-y-hidden overflow-x-hidden block">
+        <div id="wrapContainer" className="mx-auto w-full relative origin-[50%_top]">
           <svg
             id="Livello_1"
             width="0"
@@ -1472,7 +1472,7 @@ export default function Home() {
 
                 <div className="sec5 toHide maskFact" style={{ zIndex: 1 }}>
                   <span
-                    className="sec5 toHide  fact absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]"
+                    className="sec5 toHide  fact top-[298vw] absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]"
                     id="facts"
                     style={{ zIndex: 5 }}
                   >
@@ -1497,7 +1497,7 @@ export default function Home() {
                 <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
 
                 <div className="sec5 toHide maskFact">
-                  <span className="sec5 toHide  fact absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]" style={{ zIndex: 4 }}>
+                  <span className="sec5 toHide  fact top-[298vw] absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]" style={{ zIndex: 4 }}>
                     a
                   </span>
                 </div>
@@ -1515,7 +1515,7 @@ export default function Home() {
                 />
 
                 <p
-                  className="v pillo absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide show-sm factu"
+                  className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide show-sm factu"
                   style={{ color: "#FF6600" }}
                 >
                   <span style={{ visibility: "hidden" }} className="pollo-span">
@@ -1542,10 +1542,10 @@ export default function Home() {
                   </p>
                 </span>
 
-                <div id="sometimes" className="hor sec4 toHide biggo top-[3500px] absolute w-full inline-block p-[5px] box-border">
-                  <p className="testo2 whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">Sometimes</p>
-                  <p className="testo2 whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">you need to</p>
-                  <p className="testo2 whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic te">
+                <div id="sometimes" className="hor sec4 toHide biggo top-[280vw] top-[3500px] absolute w-full inline-block p-[5px] box-border">
+                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">Sometimes</p>
+                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">you need to</p>
+                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic te">
                     <img
                       className="svgMessup"
                       src="/assets/images/txt/MessUp.png"
@@ -1554,24 +1554,24 @@ export default function Home() {
                   </p>
 
                   <div className="a1 -mt-[4px] ml-[30%]">
-                    <p className="text-[1.2px] leading-[1px] tracking-[0px]">It's communication, not an Excel sheet.</p>
-                    <p className="text-[1.2px] leading-[1px] tracking-[0px]" style={{ color: "#FF6600" }}>
+                    <p className="text-[.5cqi] leading-[1px] tracking-[0px] text-[1.2px] leading-[1px] tracking-[0px]">It's communication, not an Excel sheet.</p>
+                    <p className="text-[.5cqi] leading-[1px] tracking-[0px] text-[1.2px] leading-[1px] tracking-[0px]" style={{ color: "#FF6600" }}>
                       No filters, no brakes, no fear
                       <span style={{ color: "#fff" }}>.</span>
                     </p>
-                    <p className="mt-[3px] text-[1.2px] leading-[1px] tracking-[0px]" id="spacer">More fun, isn't it?</p>
+                    <p className="text-[.5cqi] leading-[1px] tracking-[0px] mt-[3px] text-[1.2px] leading-[1px] tracking-[0px]" id="spacer">More fun, isn't it?</p>
                   </div>
 
                   <div id="yolo" className="oh-shut-up absolute -right-[20px] bg-[url(/assets/images/OH-SHUT-UP-Sticker_08.png)] bg-contain w-[32px] h-[16px] bg-no-repeat flex items-center justify-end origin-center -rotate-[14deg] top-full"></div>
                 </div>
 
                 <div className="sec5 toHide maskFact">
-                  <span className="sec5 toHide  fact absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]" style={{ zIndex: 3 }}>
+                  <span className="sec5 toHide  fact top-[298vw] absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]" style={{ zIndex: 3 }}>
                     c
                   </span>
                 </div>
 
-                <p className="v pillo absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-sm factu">
+                <p className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-sm factu">
                   <span className="pollo-span">
                     But someone does: brands that
                   </span>
@@ -1593,7 +1593,7 @@ export default function Home() {
                 <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
 
                 <span className="sec3 toHide " id="testoletsSpan">
-                  <div id="over1">
+                  <div id="over1" className="h-[110vh] top-[170vw]">
                     <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
                   </div>
                   <p className="testolets top-[2780px] text-[30px] text-[#F0F0F0] tracking-[-0.25px] leading-[86.5px] absolute mx-[auto] my-[0] left-[0] right-[0] v">
@@ -1606,12 +1606,12 @@ export default function Home() {
                 </span>
 
                 <div className="sec5 toHide maskFact">
-                  <span className="sec5 toHide  fact absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]" style={{ zIndex: 2 }}>
+                  <span className="sec5 toHide  fact top-[298vw] absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]" style={{ zIndex: 2 }}>
                     t:
                   </span>
                 </div>
 
-                <p className="v pillo absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-sm testo2 whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italicu">
+                <p className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-sm testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italicu">
                   <span className="pollo-span">Trust us, together we</span>
                   <br />
                   <span className="pollo-span">
@@ -1620,7 +1620,7 @@ export default function Home() {
                 </p>
 
                 <p
-                  className="v pillo absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide show-md "
+                  className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide show-md "
                   style={{ color: "#FF6600" }}
                 >
                   <span style={{ visibility: "hidden" }} className="pollo-span">
@@ -1645,7 +1645,7 @@ export default function Home() {
                 <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
 
                 <div className="sec3 toHide " id="testoletsSpan">
-                  <div id="over2">
+                  <div id="over2" className="h-[110vh] top-[170vw]">
                     <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
                   </div>
                   <p className="testolets top-[2780px] text-[30px] text-[#F0F0F0] tracking-[-0.25px] leading-[86.5px] absolute mx-[auto] my-[0] left-[0] right-[0] v">
@@ -1653,7 +1653,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <p className="v pillo absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-md">
+                <p className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-md">
                   <span className="pollo-span">
                     But someone does: brands that
                   </span>
@@ -1683,7 +1683,7 @@ export default function Home() {
                 </p>
 
                 <p
-                  className="testo1 absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide show-sm primo"
+                  className="testo1 top-[86vw] absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide show-sm primo"
                   style={{ zIndex: 99 }}
                 >
                   Your brand wants to do the right thing?
@@ -1691,9 +1691,9 @@ export default function Home() {
                 </p>
 
                 <div id="born" className="hor sec6 toHide biggo top-[6500px] absolute w-full inline-block p-[5px] box-border">
-                  <p className="testo2 whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">Born digital,</p>
-                  <p className="testo2 whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">die-hard</p>
-                  <p className="testo2 whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">
+                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">Born digital,</p>
+                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">die-hard</p>
+                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">
                     <img
                       className="svgBorn"
                       src="/assets/images/txt/humans.png"
@@ -1718,7 +1718,7 @@ export default function Home() {
                   />
                 </div>
 
-                <p className="v pillo absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-md">
+                <p className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-md">
                   <span className="pollo-span">Trust us, together we</span>
                   <br />
                   <span className="pollo-span">
@@ -1732,7 +1732,7 @@ export default function Home() {
                 <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
                 <p
                   id="testo1"
-                  className="testo1 absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide"
+                  className="testo1 top-[86vw] absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide"
                   style={{ zIndex: 99 }}
                 >
                   <span className="show-md">
@@ -1746,7 +1746,7 @@ export default function Home() {
                 </p>
 
                 <div className="sec3 toHide ">
-                  <div id="over2">
+                  <div id="over2" className="h-[110vh] top-[170vw]">
                     <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
                   </div>
                   <p className="testolets top-[2780px] text-[30px] text-[#F0F0F0] tracking-[-0.25px] leading-[86.5px] absolute mx-[auto] my-[0] left-[0] right-[0] v">
@@ -1767,11 +1767,11 @@ export default function Home() {
               <div id="c10" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 2 }}>
                 <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
                 <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
-                <p className="testo1 absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide " style={{ zIndex: 99 }}>
+                <p className="testo1 top-[86vw] absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide " style={{ zIndex: 99 }}>
                   <span className="show-md">
                     But you are not like everybody else, right?
                     <br />
-                    <span style={{ color: "#FF6600" }} id="testo2 whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">
+                    <span style={{ color: "#FF6600" }} id="testo2" className=" text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">
                       Let’s MessUp
                     </span>
                     <span style={{ color: "#fff" }}>.</span>
@@ -1787,7 +1787,7 @@ export default function Home() {
                 <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
 
                 <p
-                  className="testo1 absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide show-sm primo"
+                  className="testo1 top-[86vw] absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide show-sm primo"
                   style={{ zIndex: 99 }}
                 >
                   <span style={{ color: "#FF6600" }} id="lets">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import "./globals.scss";
+import SmoothScroll from "@/components/smoothSCroll";
 
 const noto = Noto_Sans({
   weight: ["400", "500", "700", "800", "900"],
@@ -22,7 +23,9 @@ export default function RootLayout({
       <body
         className={`${noto.className} libera`}
       >
+        <SmoothScroll>
          {children}
+         </SmoothScroll>
       </body>
     </html>
   );

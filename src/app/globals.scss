@@ -6,6 +6,27 @@
   --bg:url('https://www.messup.it/images/ALL-EYES-ON-US-Sticker_08.png')
 }
 
+/* Smooth Scroll */
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {
   display: block;
 }
@@ -426,83 +447,41 @@ p {
 }
 
 p.testo1 {
-  top: 86vw;
 }
 
 
 #over1, #over2 {
-  height: 110vh;
-  top: 170vw;
 }
 
 
 p.testo2 {
-  font-size: .5cqi;
-  line-height: .60cqi;
+ 
 }
 
 #sometimes {
-  top: 280vw;
 }
-#sometimesZoom {
-  position:absolute;
-  top: 14500px;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-
 /*
 PROVA PER SPOSTAMENTO LATERALE EXTRA
 */
 
 p.testo2 {
-  font-size: 2.5cqi;
-  line-height: 2.6cqi;
 }
 
-p.testo2 span.superfly {
-  font-size: 2.5cqi;
-  line-height: 2.6cqi;
-}
 
 div.a1 p {
-  font-size: .5cqi;
-  line-height: 1px;
-  letter-spacing: 0px;
+  
 }
 
 #wrapContainer {
-  transform-origin: 50% top;
 }
 
-#extraLeft {
-  display: flex;
-  height: 10300px;
-  background-color: #F2F2F2;
-  justify-content: space-between;
-  opacity: 1;
-  position: absolute;
-  width: 84vw;
-  /*left: calc(-84vw - 5.398%);  */
-  left: calc(-84vw - 1.168%); 
-  transform-origin: right top;
-  opacity: 1;  
-}
 
 .containerMix {
-  /* height: 60300px; Altezza estesa */
-  height: auto;
 }
 
 .fact {
-  top: 298vw;
-}
-.top-fact {
-  top: 299vw;
 }
 .pillo {
-  top: 318vw;
 }
 /*
 .column.extra {
@@ -510,24 +489,7 @@ div.a1 p {
 }*/
 
 
-#sometimesZoom {
-  position:absolute;
-  top: 19352.5px;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-#wrapContainer {
-    
-}
 #wrapSite {
-    margin: 0 auto;
-    height: 100svh;
-    width: 100vw;
-    position: absolute;
-    overflow-y: hidden;
-    overflow-x:hidden;
-    display: block;
 }
 
 .libera #wrapSite {
@@ -541,17 +503,13 @@ div.a1 p {
 }
 
 @container mcc (min-width: 200px) {
-
-
-
     .column {
-        /*height:1380cqw;*/
         height: calc(460cqi + 600vh);
         height: calc(1194cqi + 641vh);
         height: calc(790cqi + 800vh);
         height: calc(296cqi + 800vh);
-        _-webkit-backface-visibility: hidden; /* add to fix webkit bug jitter */
-        _-webkit-transform: perspective(1000px); /* add to fix webkit bug jitter */
+        _-webkit-backface-visibility: hidden; 
+        _-webkit-transform: perspective(1000px); 
         _will-change:transform;
     }
 
@@ -604,7 +562,6 @@ div.a1 p {
     }
     
     #over0, #over1, #over2, #over3 {
-        /*top: 200cqi;*/
         top: calc(148cqi + 100vh);
         height:100vw;
     }
@@ -614,7 +571,6 @@ div.a1 p {
     }
     
     #stripe {
-        /*top: 176cqi;*/
         top: calc(122cqi + 100vh);
         height:0;
         padding-bottom: 3cqi;
