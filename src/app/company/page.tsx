@@ -2,7 +2,7 @@
 export default function Company() {
   return (
     <main>
-      <div className="h-[240px] bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] flex justify-center pt-[124px] md:w-[550px]">
+      <div className="h-[240px] bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] flex justify-center pt-[124px] md:w-[550px] -mt-[100vh]">
         <p className="md:text-[36px] text-[24px] text-white font-semibold">会社概要</p>
       </div>
       <div className="pt-10 px-4 md:pb-[200px] pb-[100px]">

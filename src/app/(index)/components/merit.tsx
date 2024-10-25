@@ -15,7 +15,7 @@ const Item = ({title, children} : {title: string, children: ReactNode}) => (
 const Merit = () => {
   const ref = useScrollAnimations();
   return <section ref={ref} className="px-5 pt-[150px]">
-    <div className="fade-up relative mx-auto flex w-full max-w-[414px]">
+    <div className="fade-up relative mx-auto flex w-full max-w-[414px] pb-[75px]">
         <div className="absolute top-[-75px] md:left-[-40px] left-[-15px]">
           <img className="max-md:w-[90px]" src="/assets/images/hand.png" alt="" />
         </div>

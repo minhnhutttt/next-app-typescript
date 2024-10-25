@@ -1,4 +1,5 @@
 "use client";
+import LineButton from "@/components/lineButton";
 import Title from "@/components/title";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Introduction = () => {
@@ -14,6 +15,9 @@ const Introduction = () => {
             </div>
             </div>
         </a>
+    </div>
+    <div className="md:hidden mt-8">
+          <LineButton />
     </div>
     <div className="md:py-[60px] py-10 font-bold leading-[1.2]">
         <h4 className="fade-up flex items-center justify-center">

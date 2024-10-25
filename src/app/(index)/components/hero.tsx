@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   return (
-    <div className="relative h-[600px] md:h-[749px] w-full">
-      <div className="absolute z-40 inset-0 bg-black/60 xl:hidden max-xl:animate-[fadeOut_6.5s_forwards]"></div>
+    <div className="relative h-[600px] md:h-[749px] w-full -mt-[100vh]">
+      <div className="absolute z-40 inset-0 bg-black/60 xl:hidden max-xl:animate-[fadeOut_8s_forwards]"></div>
       <video
         autoPlay
         muted
@@ -22,7 +22,7 @@ const Hero = () => {
         className="w-full h-full flex justify-center items-end pt-20 md:pt-[118px] overflow-hidden"
       >
         <div className="relative">
-          <span className="animate-[anim-bounce_1.6s_infinite_ease-in-out] absolute -right-10 md:right-[-80px] z-30">
+          <span className="animate-[anim-bounce_1.6s_infinite_ease-in-out] absolute -right-10 md:right-[-80px] z-[25]">
             <img src="/assets/images/hero-bubble.png" alt="" />
           </span>
           <div className="relative">

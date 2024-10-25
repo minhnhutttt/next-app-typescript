@@ -22,7 +22,7 @@ const data = [
         text: 'ゆうき🐱🍀🤎',
     },
     {
-        link: 'https://17.live/s/u/a44b4b9a-eb0a-4c63-91d1-f9eb8f7bc758',
+        link: 'https://17.live/ja/profile/u/0cf05a87-e8fc-49b8-8d9b-6aec50f22be0?af_c_id=profilepage&pid=InappShare&deep_link_value=media17%3A%2F%2Fv2%2Fstreamer_profile%2F0cf05a87-e8fc-49b8-8d9b-6aec50f22be0&af_force_deeplink=true',
         image: '/assets/images/liver-img-04.png',
         text: 'REiYAN',
     },

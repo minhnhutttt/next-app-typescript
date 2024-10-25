@@ -6,6 +6,7 @@ import Fv from "../components/fv";
 import Mainvisual from "@/components/mainvisual";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Menu from "@/components/menu";
 
 const noto = Noto_Sans({
   weight: ["400", "500", "700", "800", "900"],
@@ -33,6 +34,7 @@ export default function RootLayout({
           <div className="md:flex-1 flex justify-center relative">
             <div className="max-w-[550px] w-full relative bg-white">
               <Header />
+              <Menu />
               {children}
               <Footer />
             </div>

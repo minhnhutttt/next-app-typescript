@@ -154,24 +154,19 @@ const data = [
         name: '🐇エト⛩et🥂',
         link: 'https://17.live/s/u/11cb1ab4-8eea-4c42-a820-aead24c961fa'
     },
-    {
-        image: '/assets/images/3d1363ef.jpg',
-        name: 'Juri🌹',
-        link: 'https://17.live/s/u/3d1363ef-83c2-44c7-808a-759b8af132bf'
-    },
 ]
 
 export default function Liver() {
     const ref = useScrollAnimations();
   return (
     <main>
-        <section ref={ref} className="pt-20 md:pt-[120px] bg-[url(/assets/images/liver-bg.png)] bg-no-repeat bg-left-top">
+        <section ref={ref} className="pt-20 md:pt-[120px] bg-[url(/assets/images/liver-bg.png)] bg-no-repeat bg-left-top -mt-[100vh]">
             <div className="h-[5px] bg-[linear-gradient(90deg,_#FF7DD3_0%,_#3CE8FF_100%)]"></div>
             <div className="md:px-5 px-3 pb-[50px]">
                 <div className="relative md:w-[510px] w-full mx-auto rounded-[10px] bg-[linear-gradient(90deg,_#FF7DD3_0%,_#3CE8FF_100%)] p-px flex items-center justify-center mt-5 [box-shadow:0px_4px_40px_0px_rgba(255,_125,_211,_0.20)]">
                     <div className="w-full h-full bg-white/90 rounded-[10px] pt-8 md:pt-[50px] md:px-5 px-3">
                         <Title>所属ライバー</Title>
-                        <div className="flex justify-center items-center md:text-[21px] text-[18px] font-semibold gap-2 py-4">
+                        <div className="fade-up flex justify-center items-center md:text-[21px] text-[18px] font-semibold gap-2 py-4">
                             <span><img className="md:w-20 w-16" src="/assets/images/17live-logo.svg" alt="" /></span>
                             <span>公式ライバー</span>
                         </div>
