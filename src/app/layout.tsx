@@ -18,9 +18,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" id="html" className=" no-touchevents">
+    <html lang="en" id="html" >
       <body
-        className={`${noto.className} `}
+        className={`${noto.className} libera`}
       >
          {children}
       </body>
