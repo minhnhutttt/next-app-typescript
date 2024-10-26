@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" id="html" >
       <body
-        className={`${noto.className} libera`}
+        className={`${noto.className} libera loadato`}
       >
         <SmoothScroll>
          {children}

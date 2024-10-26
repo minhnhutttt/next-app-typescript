@@ -160,6 +160,7 @@ export default function Home() {
   }
 
   useEffect(() => {
+    document.body.classList.add("loaded");
     startPreload();
     applyRandomBackgroundPosition();
     initAnimations();
@@ -184,29 +185,18 @@ export default function Home() {
       },
     });
 
-    const handleLoad = () => {
-      document.getElementById("body")?.classList.add("loaded");
-      startPreload();
-    };
-
-    if (typeof window !== "undefined") {
-      window.addEventListener("load", handleLoad);
-    }
-
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("load", handleLoad);
-      }
-    };
+    
   }, []);
 
   function startPreload() {
     // Lấy chiều cao của phần tử lottie và cửa sổ
-    lottieHeight = document.getElementById("lottie")?.offsetHeight || 0;
+    setTimeout(() => {
+      lottieHeight = document.getElementById("lottie")?.offsetHeight || 0;
     const windowHeight = window.innerHeight;
 
     // Điều chỉnh padding-top cho #wrapSite dựa trên chiều cao của lottie
     const wrapSite = document.getElementById("wrapSite");
+
     if (wrapSite) {
       if (lottieHeight > windowHeight / 2) {
         wrapSite.style.paddingTop = "50vh";
@@ -214,23 +204,14 @@ export default function Home() {
         wrapSite.style.paddingTop = `calc(100vh - ${lottieHeight}px)`;
       }
     }
-
-    // Điều chỉnh margin-top cho .container
     const container = document.querySelector(".containerMix") as HTMLElement;
     if (container) {
       container.style.marginTop = `-${lottieHeight / 2}px`;
     }
-
-    // Tính khoảng cách giữa .container và đỉnh của trang
-    const gap = container?.getBoundingClientRect().top || 0;
-
-
-    // Thiết lập timeout để thực hiện các hành động sau một khoảng thời gian nhất định
     setTimeout(() => {
       const lottieTop = document.getElementById("lottieTop");
       if (lottieTop) {
         lottieTop.style.opacity = "1";
-        // Giả định `lottieTop` có phương thức `seek` và `play` (nếu dùng Lottie animation)
         (lottieTop as any).seek?.("5%");
         (lottieTop as any).play?.();
       }
@@ -262,6 +243,8 @@ export default function Home() {
         });
       }, 2800);
     }, 1900);
+    }, 200);
+    
   }
 
   function vwToPixel(vwValue: number): number {
@@ -294,7 +277,6 @@ export default function Home() {
 
       onStop: (self) => {
         canAnim = true;
-        console.log("Scroll stopped!");
       },
 
       onChangeY: (self) => {
@@ -347,7 +329,6 @@ export default function Home() {
     const elementsToHide = document.querySelectorAll<HTMLElement>(".toHide");
     elementsToHide.forEach((element) => {
       element.style.display = "inline-block";
-      element.classList.remove("hide");
     });
 
     // Lấy tất cả các animation từ GSAP
@@ -380,15 +361,10 @@ export default function Home() {
   }
 
   function initAnimations() {
-
     gsap.set("#lang span, #lang a", { transformOrigin: "center left" });
-
-
-    
   }
 
   function initScrollTrigger() {
-    console.log("initScrollTrigger");
 
     const htmlElement = document.getElementById("html");
     const isTouchEvent =
@@ -573,6 +549,7 @@ export default function Home() {
   }
 
   function stripe(): void {
+    console.log('stripe');
     isStripe = gsap.to("#wrapContainer", {
       id: "STRIPE",
       scale: stripeC.zoom,
@@ -631,6 +608,7 @@ export default function Home() {
     });
   }
   function sometimes(): void {
+    console.log('sometimes');
     // SOMETIMES AROUND
     isSometimes = gsap.to("#wrapContainer", {
       id: "SOMETIMES AROUND",
@@ -736,6 +714,7 @@ export default function Home() {
         "#sometimes",
         {
           id: "PARA",
+          display: 'inline-block',
           force3D: false,
           y: (i, el) => (1 - parseFloat("0.25")) * 80,
           onStart() {},
@@ -759,6 +738,7 @@ export default function Home() {
         "#MessHoloImg",
         {
           id: "PARA",
+          display: 'inline-block',
           force3D: false,
           xPercent: 20,
         },
@@ -769,6 +749,7 @@ export default function Home() {
         "#yolo",
         {
           id: "YOLOSO",
+          display: 'inline-block',
           force3D: false,
           y: (i, el) => (1 - parseFloat("0.45")) * -vwToPixel(5),
         },
@@ -778,6 +759,7 @@ export default function Home() {
   }
 
   function fact() {
+    console.log('fact');
     isFact = gsap.to("#wrapContainer", {
       id: "FACTS AROUND",
       scrollTrigger: {
@@ -907,6 +889,7 @@ export default function Home() {
     anio.to(
       "#holoFact",
       {
+        display: 'inline-block',
         x: "+=60",
       },
       "start"
@@ -914,6 +897,7 @@ export default function Home() {
     anio.to(
       "#NOT-COOL-Sticker",
       {
+        display: 'inline-block',
         x: "-=60",
       },
       "start"
@@ -921,6 +905,7 @@ export default function Home() {
   }
 
   function born() {
+    console.log('born');
     // BORN AROUND
     isBorn = gsap.to("#wrapContainer", {
       id: "BORN AROUND",
@@ -1246,6 +1231,7 @@ export default function Home() {
         scrub: 1,
         markers: false,
       },
+      display: 'inline-block',
       y: (i, el) => (1 - 0.85) * vwToPixel(98),
     });
   }
@@ -1260,7 +1246,6 @@ export default function Home() {
           isMobile()
             ? document.getElementById("wrapSite")?.scrollTop || 0
             : window.scrollY);
-        console.log(posFooter, window.scrollY);
         return `${0 - pos2}px`;
       },
       scale: footerC.zoom,
@@ -1351,9 +1336,15 @@ export default function Home() {
     <main>
       <div id="smolla" style={{ position: "absolute" }}></div>
 
+      <div id="preloadImages" style={{ position: "absolute", opacity: 0 }}>
+        <img src="/assets/images/spray/images/img_1.png" style={{ width: "1px" }} />
+        <img src="/assets/images/spray/images/img_0.png" style={{ width: "1px" }} />
+      </div>
 
-      <div id="wrapSite" className="mx-auto my-[0] h-[100svh] w-screen absolute overflow-y-hidden overflow-x-hidden block">
-        <div id="wrapContainer" className="mx-auto w-full relative origin-[50%_top]">
+
+      <div id="wrapSite">
+        <div id="wrapContainer">
+
           <svg
             id="Livello_1"
             width="0"
@@ -1374,35 +1365,31 @@ export default function Home() {
             </clipPath>
           </svg>
 
-          <div className="sec0 toHide relative" id="lottie" style={{ display: "none" }}>
-            <div id="lottieTexture" className="block absolute left-0 top-0 w-full h-full opacity-100 bg-[url(/assets/images/texture.png)] [background-size:70vw_auto]"></div>
+          <div className="sec0 toHide" id="lottie">
+            <div id="lottieTexture"></div>
             <lottie-player
               id="lottieTop"
-              className="w-full h-auto [transition:.8s_ease_all] opacity-0"
-              src="/assets/images/MessUpLottie/2406_DEF-2.json"
+              src="/assets/images/MessUpLottie/2406_DEF-2.json?B2320"
               background="transparent"
               speed="1"
             ></lottie-player>
           </div>
 
           <div id="wrapColumns">
-            <div className="containerMix flex h-auto mx-auto origin-[center_center] justify-between -mt-[90px] opacity-0" style={{ position: "relative" }}>
-              <h1 className="sec1 toHide absolute text-[white] left-[3%] font-['FreigeistItalic']  text-[12cqi] tracking-[-6px] leading-[10cqi] [text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic opacity-0 translate-y-[10%]" id="titolone" style={{ zIndex: 99 }}>
+            <div className="containerMix" style={{ position: "relative" }}>
+              <h1 className="sec1 toHide " id="titolone" style={{ zIndex: 99 }}>
                 We’d rather
                 <br />
-                be
-                <span className="font-['FreigeistItalic'] text-[12cqi] tracking-[-6px] leading-[10cqi]" style={{ zIndex: -2 }}>
+                be{" "}
+                <span style={{ zIndex: -2 }}>
                   <span className="a">
-                    <img
-                      src="/assets/images/txt/wrong.png"
-                      className="svgTitolo"
-                    />
+                    <img src="/assets/images/txt/wrong.png" className="svgTitolo" />
                   </span>
                 </span>
                 <br />
-                than
-                <span className="font-['FreigeistItalic']  text-[12cqi] tracking-[-6px] leading-[10cqi]" style={{ zIndex: -1 }}>
-                  <span className="a" style={{ zIndex: -1 }}>
+                than{" "}
+                <span style={{ zIndex: 1 }}>
+                  <span className="a" style={{ zIndex: 1 }}>
                     <img
                       src="/assets/images/txt/boring.png"
                       className="svgTitolo boring"
@@ -1416,15 +1403,15 @@ export default function Home() {
               </h1>
 
               <div id="primoTrigger"></div>
-              <div className="sec3 toHide z-0 absolute w-[500vw] h-[42px] bg-contain origin-[center_center] -rotate-[11deg] -translate-y-full -left-[300vw] top-[2400px]" id="stripe">
-                <div id="stripeInner" className="bg-[url('/assets/images/lets.png')] absolute w-full h-full bg-contain origin-[center_center]"></div>
+              <div className="sec3 toHide " id="stripe">
+                <div id="stripeInner"></div>
               </div>
               <div
-                className="sec7 toHide absolute w-[500vw] h-[42px] bg-contain origin-[center_center] rotate-[5deg] -translate-y-full -left-[300vw] top-[2400px]"
+                className="sec7 "
                 style={{ zIndex: 4 }}
                 id="stripeMatter"
               >
-                <div id="stripeMatterInner" className="bg-[url('/assets/images/MessUp_Results-Matter_Web.png')] absolute w-full h-full bg-contain origin-[center_center]"></div>
+                <div id="stripeMatterInner"></div>
               </div>
               <div className="sec7 toHide " id="stripeTrigger"></div>
               <div className="sec8 toHide " id="letsoTrigger"></div>
@@ -1433,14 +1420,14 @@ export default function Home() {
                 <img id="MessHoloImg" src="/assets/images/MessUp_Holo.jpg" />
               </div>
 
-              <div id="c1" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 1001 }}>
+              <div id="c1" className="column" style={{ zIndex: 1001 }}>
                 <div id="heighter"></div>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+                <div className="texture2"></div>
+                <div className="texture"></div>
 
                 <p
                   id="letso"
-                  className=" results mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 v big text-[60px] font-['FreigeistItalic'] font-normal italic biggo lets absolute top-[9400px] sec8 toHide  "
+                  className=" results v big biggo lets  sec8  "
                 >
                   <span
                     style={{ display: "inline-block", position: "relative" }}
@@ -1455,24 +1442,24 @@ export default function Home() {
                 </p>
               </div>
 
-              <div id="c2" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 1 }}>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c2" className="column" style={{ zIndex: 1 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
 
-                <p id="tagsv" className="tags absolute top-[9457px] mx-[auto] my-[0] left-2/4 origin-left -translate-y-1/2 -rotate-90 text-[40px] font-light font-['Faktum-Regular'] v  sec8 toHide  ">
-                  <span className="mx-10">Brand strategy</span>
-                  <span className="mx-10">Brand naming</span>
-                  <span className="mx-10">Visual identity</span>
+                <p id="tagsv" className="tags v  sec8 ">
+                  <span>Brand strategy</span>
+                  <span>Brand naming</span>
+                  <span>Visual identity</span>
                 </p>
               </div>
 
-              <div id="c3" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 1 }}>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c3" className="column" style={{ zIndex: 1 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
 
-                <div className="sec5 toHide maskFact" style={{ zIndex: 1 }}>
+                <div className="sec5 maskFact" style={{ zIndex: 1 }}>
                   <span
-                    className="sec5 toHide  fact top-[298vw] absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]"
+                    className="sec5 fact"
                     id="facts"
                     style={{ zIndex: 5 }}
                   >
@@ -1486,36 +1473,36 @@ export default function Home() {
                   src="/assets/images/NOT-COOL-Sticker_08.png"
                 />
 
-                <p id="tagsvE" className="tags absolute top-[9457px] mx-[auto] my-[0] left-2/4 origin-left -translate-y-1/2 -rotate-90 text-[40px] font-light font-['Faktum-Regular'] v  sec8 toHide  ">
-                  <span className="mx-10">Web design</span>
-                  <span className="mx-10">Video and photo production</span>
+                <p id="tagsvE" className="tags v sec8 ">
+                  <span>Web design</span>
+                  <span>Video and photo production</span>
                 </p>
               </div>
 
-              <div id="c4" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 0 }}>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c4" className="column" style={{ zIndex: 0 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
 
-                <div className="sec5 toHide maskFact">
-                  <span className="sec5 toHide  fact top-[298vw] absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]" style={{ zIndex: 4 }}>
+                <div className="sec5  maskFact">
+                  <span className="sec5   fact" style={{ zIndex: 4 }}>
                     a
                   </span>
                 </div>
 
                 <img
-                  className="sec5 toHide "
+                  className="sec5  "
                   id="holoFact"
                   src="/assets/images/MessUp_Holo.jpg"
                 />
 
                 <img
-                  className="sec8 toHide "
+                  className="sec8 "
                   id="holoFact2"
                   src="/assets/images/MessUp_Holo.jpg"
                 />
 
                 <p
-                  className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide show-sm factu"
+                  className="v pillo sec5  show-sm factu"
                   style={{ color: "#FF6600" }}
                 >
                   <span style={{ visibility: "hidden" }} className="pollo-span">
@@ -1529,49 +1516,46 @@ export default function Home() {
                 </p>
               </div>
 
-              <div id="c5" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 5 }}>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c5" className="column" style={{ zIndex: 5 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
 
                 <span className="sec3 toHide " id="testoletsSpan">
                   <div className="sec3" id="over0">
-                    <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
+                    <div className="texture2"></div>
                   </div>
-                  <p id="testolets" className="testolets top-[2780px] text-[30px] text-[#F0F0F0] tracking-[-0.25px] leading-[86.5px] absolute mx-[auto] my-[0] left-[0] right-[0] v">
+                  <p id="testolets" className="testolets v">
                     You are looking for a communication agency, but we
                   </p>
                 </span>
 
-                <div id="sometimes" className="hor sec4 toHide biggo top-[280vw] top-[3500px] absolute w-full inline-block p-[5px] box-border">
-                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">Sometimes</p>
-                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">you need to</p>
-                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic te">
-                    <img
-                      className="svgMessup"
-                      src="/assets/images/txt/MessUp.png"
-                    />
-                    a bit.
+                <div id="sometimes" className="hor sec4 biggo ">
+                  <p className="testo2">Sometimes</p>
+                  <p className="testo2">you need to</p>
+                  <p className="testo2 te">
+                    <img className="svgMessup" src="/assets/images/txt/MessUp.png" />a
+                    bit.
                   </p>
 
-                  <div className="a1 -mt-[4px] ml-[30%]">
-                    <p className="text-[.5cqi] leading-[1px] tracking-[0px] text-[1.2px] leading-[1px] tracking-[0px]">It's communication, not an Excel sheet.</p>
-                    <p className="text-[.5cqi] leading-[1px] tracking-[0px] text-[1.2px] leading-[1px] tracking-[0px]" style={{ color: "#FF6600" }}>
+                  <div className="a1">
+                    <p>It's communication, not an Excel sheet.</p>
+                    <p style={{ color: "#FF6600" }}>
                       No filters, no brakes, no fear
                       <span style={{ color: "#fff" }}>.</span>
                     </p>
-                    <p className="text-[.5cqi] leading-[1px] tracking-[0px] mt-[3px] text-[1.2px] leading-[1px] tracking-[0px]" id="spacer">More fun, isn't it?</p>
+                    <p id="spacer">More fun, isn't it?</p>
                   </div>
 
-                  <div id="yolo" className="oh-shut-up absolute -right-[20px] bg-[url(/assets/images/OH-SHUT-UP-Sticker_08.png)] bg-contain w-[32px] h-[16px] bg-no-repeat flex items-center justify-end origin-center -rotate-[14deg] top-full"></div>
+                  <div id="yolo" className="oh-shut-up"></div>
                 </div>
 
-                <div className="sec5 toHide maskFact">
-                  <span className="sec5 toHide  fact top-[298vw] absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]" style={{ zIndex: 3 }}>
+                <div className="sec5  maskFact">
+                  <span className="sec5   fact" style={{ zIndex: 3 }}>
                     c
                   </span>
                 </div>
 
-                <p className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-sm factu">
+                <p className="v pillo sec5  show-sm factu">
                   <span className="pollo-span">
                     But someone does: brands that
                   </span>
@@ -1581,22 +1565,22 @@ export default function Home() {
                   </span>
                 </p>
 
-                <span className="sec7 toHide ">
-                  <p id="testomatter" className="testomatter top-[2780px] text-[30px] text-[#F0F0F0] tracking-[-0.81px] leading-[86.5px] absolute mx-[auto] my-[0] left-[0] right-[0] v">
+                <span className="sec7 ">
+                  <p id="testomatter" className="testomatter v">
                     We love mess, but we always have the goal in mind.
                   </p>
                 </span>
               </div>
 
-              <div id="c6" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 10 }}>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c6" className="column" style={{ zIndex: 10 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
 
                 <span className="sec3 toHide " id="testoletsSpan">
-                  <div id="over1" className="h-[110vh] top-[170vw]">
-                    <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
+                  <div id="over1">
+                    <div className="texture2"></div>
                   </div>
-                  <p className="testolets top-[2780px] text-[30px] text-[#F0F0F0] tracking-[-0.25px] leading-[86.5px] absolute mx-[auto] my-[0] left-[0] right-[0] v">
+                  <p className="testolets v">
                     are more of{" "}
                     <span style={{ color: "#FF6600" }}>
                       a collective of hot heads
@@ -1605,13 +1589,13 @@ export default function Home() {
                   </p>
                 </span>
 
-                <div className="sec5 toHide maskFact">
-                  <span className="sec5 toHide  fact top-[298vw] absolute text-[white] -left-[15%] top-[5200px] font-['FreigeistItalic'] text-[9cqi][text-shadow:0_2px_83px_rgba(0,0,0,0.50)] font-normal italic -translate-x-[10%]" style={{ zIndex: 2 }}>
+                <div className="sec5  maskFact">
+                  <span className="sec5   fact" style={{ zIndex: 2 }}>
                     t:
                   </span>
                 </div>
 
-                <p className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-sm testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italicu">
+                <p className="v pillo sec5 toHide  show-sm factu">
                   <span className="pollo-span">Trust us, together we</span>
                   <br />
                   <span className="pollo-span">
@@ -1620,7 +1604,7 @@ export default function Home() {
                 </p>
 
                 <p
-                  className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide show-md "
+                  className="v pillo sec5  show-md "
                   style={{ color: "#FF6600" }}
                 >
                   <span style={{ visibility: "hidden" }} className="pollo-span">
@@ -1633,27 +1617,27 @@ export default function Home() {
                   </span>
                 </p>
 
-                <span className="sec7 toHide ">
-                  <p className="testomatter top-[2780px] text-[30px] text-[#F0F0F0] tracking-[-0.81px] leading-[86.5px] absolute mx-[auto] my-[0] left-[0] right-[0] v">
+                <span className="sec7 ">
+                  <p className="testomatter v">
                     And we are so stubborn that we keep going when
                   </p>
                 </span>
               </div>
 
-              <div id="c7" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 10 }}>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c7" className="column" style={{ zIndex: 10 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
 
                 <div className="sec3 toHide " id="testoletsSpan">
-                  <div id="over2" className="h-[110vh] top-[170vw]">
-                    <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
+                  <div id="over2">
+                    <div className="texture2"></div>
                   </div>
-                  <p className="testolets top-[2780px] text-[30px] text-[#F0F0F0] tracking-[-0.25px] leading-[86.5px] absolute mx-[auto] my-[0] left-[0] right-[0] v">
+                  <p className="testolets v">
                     can ask us everything that machines - and those
                   </p>
                 </div>
 
-                <p className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-md">
+                <p className="v pillo sec5  show-md">
                   <span className="pollo-span">
                     But someone does: brands that
                   </span>
@@ -1663,8 +1647,8 @@ export default function Home() {
                   </span>
                 </p>
 
-                <span className="sec7 toHide ">
-                  <p className="testomatter top-[2780px] text-[30px] text-[#F0F0F0] tracking-[-0.81px] leading-[86.5px] absolute mx-[auto] my-[0] left-[0] right-[0] v">
+                <span className="sec7 ">
+                  <p className="testomatter v">
                     others give up.{" "}
                     <span style={{ color: "#FF6600" }}>
                       That's how we get where others don't
@@ -1674,51 +1658,48 @@ export default function Home() {
                 </span>
               </div>
 
-              <div id="c8" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 1 }}>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c8" className="column" style={{ zIndex: 1 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
 
-                <p className="sec3 toHide  testolets top-[2780px] text-[30px] text-[#F0F0F0] tracking-[-0.25px] leading-[86.5px] absolute mx-[auto] my-[0] left-[0] right-[0] v">
+                <p className="sec3 toHide  testolets v">
                   who think like a machine - will never give you.
                 </p>
 
                 <p
-                  className="testo1 top-[86vw] absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide show-sm primo"
+                  className="testo1 v sec2 toHide show-sm primo"
                   style={{ zIndex: 99 }}
                 >
                   Your brand wants to do the right thing?
                   <br />
                 </p>
 
-                <div id="born" className="hor sec6 toHide biggo top-[6500px] absolute w-full inline-block p-[5px] box-border">
-                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">Born digital,</p>
-                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">die-hard</p>
-                  <p className="testo2 text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">
-                    <img
-                      className="svgBorn"
-                      src="/assets/images/txt/humans.png"
-                    />
+                <div id="born" className="hor sec6 toHide biggo">
+                  <p className="testo2">Born digital,</p>
+                  <p className="testo2">die-hard</p>
+                  <p className="testo2">
+                    <img className="svgBorn" src="/assets/images/txt/humans.png" />
                   </p>
 
-                  <div className="-mt-[4px] ml-[30%]">
-                    <p className="text-[1.2px] leading-[1px] tracking-[0px]">We grew up immersed in technology,</p>
-                    <p className="text-[1.2px] leading-[1px] tracking-[0px]">so we take it for granted.</p>
+                  <div className="a1">
+                    <p>We grew up immersed in technology,</p>
+                    <p>so we take it for granted.</p>
                     <div id="spacer"></div>
-                    <p className="text-[1.2px] leading-[1px] tracking-[0px]" style={{ color: "#FF6600" }}>
+                    <p style={{ color: "#FF6600" }}>
                       But we're here to do things it was not
                     </p>
-                    <p className="text-[1.2px] leading-[1px] tracking-[0px]" style={{ color: "#FF6600" }}>
+                    <p style={{ color: "#FF6600" }}>
                       meant for<span style={{ color: "#fff" }}>.</span>
                     </p>
                   </div>
                   <img
                     id="LETS-ROLL-Sticker_01"
-                    className="sec6 toHide "
+                    className="sec6 "
                     src="/assets/images/LETS-ROLL-Sticker_01.png"
                   />
                 </div>
 
-                <p className="v pillo top-[318vw] absolute top-[5510px] mx-[auto] my-[0] left-2/4 origin-left right-[0] -translate-y-1/2 -rotate-90 sec5 toHide  show-md">
+                <p className="v pillo sec5 toHide  show-md">
                   <span className="pollo-span">Trust us, together we</span>
                   <br />
                   <span className="pollo-span">
@@ -1727,12 +1708,12 @@ export default function Home() {
                 </p>
               </div>
 
-              <div id="c9" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]">
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c9" className="column">
+                <div className="texture2"></div>
+                <div className="texture"></div>
                 <p
                   id="testo1"
-                  className="testo1 top-[86vw] absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide"
+                  className="testo1 v sec2 toHide"
                   style={{ zIndex: 99 }}
                 >
                   <span className="show-md">
@@ -1746,32 +1727,33 @@ export default function Home() {
                 </p>
 
                 <div className="sec3 toHide ">
-                  <div id="over2" className="h-[110vh] top-[170vw]">
-                    <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
+                  <div id="over2">
+                    <div className="texture2"></div>
                   </div>
-                  <p className="testolets top-[2780px] text-[30px] text-[#F0F0F0] tracking-[-0.25px] leading-[86.5px] absolute mx-[auto] my-[0] left-[0] right-[0] v">
+                  <p className="testolets v">
                     For example, something that will truly amaze you.
                   </p>
                 </div>
 
-                <div className="shinju absolute -right-[28px] bg-contain bg-no-repeat w-[109px] h-[165px] top-[5370px] left-[0]" id="shinju2"></div>
+                <div className="shinju" id="shinju2"></div>
 
+                <div id="_stripeOrange"></div>
 
                 <img
                   id="MessUp_Holo_Circle"
-                  className="sec6 toHide "
+                  className="sec6 "
                   src="/assets/images/MessUp_Holo_Circle.png"
                 />
               </div>
 
-              <div id="c10" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 2 }}>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
-                <p className="testo1 top-[86vw] absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide " style={{ zIndex: 99 }}>
+              <div id="c10" className="column" style={{ zIndex: 2 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
+                <p className="testo1 v sec2 toHide " style={{ zIndex: 99 }}>
                   <span className="show-md">
                     But you are not like everybody else, right?
                     <br />
-                    <span style={{ color: "#FF6600" }} id="testo2" className=" text-[2.5cqi] leading-[2.6cqi] text-[.5cqi] leading-[.60cqi] whitespace-break-spaces text-[9px] leading-[10px] font-['FreigeistItalic'] font-normal italic">
+                    <span style={{ color: "#FF6600" }} id="lets">
                       Let’s MessUp
                     </span>
                     <span style={{ color: "#fff" }}>.</span>
@@ -1782,12 +1764,12 @@ export default function Home() {
                 </p>
               </div>
 
-              <div id="c11" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 1 }}>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c11" className="column" style={{ zIndex: 1 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
 
                 <p
-                  className="testo1 top-[86vw] absolute top-[1400px] left-[0] right-[0] mx-[auto] my-[0] v sec2 toHide show-sm primo"
+                  className="testo1 v sec2 toHide show-sm primo"
                   style={{ zIndex: 99 }}
                 >
                   <span style={{ color: "#FF6600" }} id="lets">
@@ -1800,39 +1782,36 @@ export default function Home() {
                   <div id="over3">
                     <div className="texture2 wtf"></div>
                   </div>
-                  <img
-                    id="WTF-Sticker_01"
-                    src="/assets/images/WTF-Sticker_01.png"
-                  />
+                  <img id="WTF-Sticker_01" src="/assets/images/WTF-Sticker_01.png" />
                 </div>
 
                 <img
                   id="YOLO-2_-Sticker"
-                  className="toHide sec7 show-md"
+                  className="sec7 show-md"
                   src="/assets/images/YOLO-2_-Sticker_08.png"
                 />
               </div>
 
-              <div id="c12" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: 0 }}>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c12" className="column" style={{ zIndex: 0 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
               </div>
 
-              <div id="c13" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]" style={{ zIndex: -1 }}>
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c13" className="column" style={{ zIndex: -1 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
               </div>
 
-              <div id="c14" className="column bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(13,13,13,1)_60px,_rgba(13,13,13,1)_99.5%,_rgba(13,13,13,0)_100%)] w-[5.986%] relative whitespace-nowrap h-[calc(10000px + 1000cqw)] [transition:.3s_ease_all]">
-                <div className="texture2 block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture2k.png)] [background-size:100%_auto]"></div>
-                <div className="texture block absolute left-[0] top-[0] w-full h-full opacity-[.25] bg-[url(/assets/images/texture200.png)] bg-[#0d0d0d]"></div>
+              <div id="c14" className="column">
+                <div className="texture2"></div>
+                <div className="texture"></div>
               </div>
             </div>
           </div>
           <div id="triggerFooter"></div>
           <div style={{ position: "relative" }}>
             <img
-              className="toHide secBottom w-full mt-[-20%]"
+              className="toHide secBottom"
               id="messupBottom"
               src="/assets/images/MessUp_Bottom.png"
             />
@@ -1845,43 +1824,44 @@ export default function Home() {
           <div id="messFooter" className="toHide secFooter">
             <div id="quicker">
               <span className="overflow">
-                <h3 className="bu origin-left translate-y-[0] rotate-[0]" data-delay=".2" style={{ margin: 0 }}>
+                <h3 className="bu" data-delay=".2" style={{ margin: 0 }}>
                   Quicker to talk it out.
                 </h3>
               </span>
             </div>
 
-            <div id="footer-links" className="ml-[19%] mb-[100px]">
+            <div id="footer-links">
               <span className="overflow">
                 <span
                   style={{ display: "inline-block" }}
-                  className="bu origin-left translate-y-[0] rotate-[0]"
+                  className="bu"
                   data-delay=".3"
                 >
-                  <a className="font-[Faktum-Medium] text-[14px] text-[#000000] tracking-[0] no-underline mr-[120px] [transition:.5s_ease_all] relative" href="mailto:yo@messup.it">Email</a>
+                  <a href="mailto:yo@messup.it">Email</a>
                 </span>
               </span>
               <span className="overflow">
                 <span
                   style={{ display: "inline-block" }}
-                  className="bu origin-left translate-y-[0] rotate-[0]"
+                  className="bu"
                   data-delay=".4"
                 >
-                  <a className="font-[Faktum-Medium] text-[14px] text-[#000000] tracking-[0] no-underline mr-[120px] [transition:.5s_ease_all] relative" href="https://www.instagram.com/messup.it">Instagram</a>
+                  <a href="https://www.instagram.com/messup.it">Instagram</a>
                 </span>
               </span>
               <span className="overflow">
                 <span
                   style={{ display: "inline-block" }}
-                  className="bu origin-left translate-y-[0] rotate-[0]"
+                  className="bu"
                   data-delay=".5"
                 >
-                  <a className="font-[Faktum-Medium] text-[14px] text-[#000000] tracking-[0] no-underline mr-[120px] [transition:.5s_ease_all] relative" href="https://messup.it/whatamess.php?lang=en">Nothing</a>
+                  <a href="https://messup.it/whatamess.php?lang=en">Nothing</a>
                 </span>
               </span>
             </div>
 
             <div id="iFooter" className="">
+
               <span
                 id="i3"
                 className="-flip iFooterI c-header_brand"
@@ -1894,10 +1874,10 @@ export default function Home() {
                   <div></div>
                 </div>
               </span>
-              <span
+              <div
                 id="triggerR"
                 style={{ position: "absolute", bottom: 0 }}
-              ></span>
+              ></div>
             </div>
           </div>
         </div>
