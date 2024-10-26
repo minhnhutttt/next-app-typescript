@@ -198,10 +198,18 @@ export default function Home() {
     const wrapSite = document.getElementById("wrapSite");
 
     if (wrapSite) {
-      if (lottieHeight > windowHeight / 2) {
-        wrapSite.style.paddingTop = "50vh";
+      if (lottieHeight > (windowHeight / 2)) {
+        wrapSite.style.paddingTop = `50vh`;
+        console.log(222);
       } else {
-        wrapSite.style.paddingTop = `calc(100vh - ${lottieHeight}px)`;
+        const wrapContainer = document.getElementById("wrapContainer");
+        if (document.documentElement.classList.contains("touchevents") && isMobile() && wrapContainer) {
+            console.log(333);
+            wrapContainer.style.marginTop = `calc(100vh - ${lottieHeight}px)`;
+        } else {
+          console.log(1111);
+          wrapSite.style.paddingTop = `calc(100vh - ${lottieHeight}px)`;
+        }
       }
     }
     const container = document.querySelector(".containerMix") as HTMLElement;

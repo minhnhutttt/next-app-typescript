@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" id="html" >
-      <body
+      <body id="body"
         className={`${noto.className} libera loadato`}
       >
         <SmoothScroll>
