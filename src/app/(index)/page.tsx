@@ -240,8 +240,8 @@ export default function Home() {
             });
           },
         });
-      }, 2800);
-    }, 1900);
+      }, 1000);
+    }, 500);
     }, 200);
     
   }
@@ -1047,13 +1047,6 @@ export default function Home() {
             sec6.classList.remove("hide");
           }
         },
-        onLeave: () => {
-          const sec8: any = document.querySelector(".toHide.sec8");
-          if (sec8) {
-            sec8.style.display = "inline-block";
-            sec8.classList.remove("hide");
-          }
-        },
       },
     });
 
@@ -1077,7 +1070,7 @@ export default function Home() {
         force3D: false,
         ease: "power1.inOut",
         onComplete: () => {
-          if (!isServizi) servizi(); // SERVIZI E POI FOOTER
+          if (!isFooter) footer();
 
           // STRIPE RESULT MATTER
           gsap.to("#stripeMatterInner", {
@@ -1119,110 +1112,6 @@ export default function Home() {
     );
 
     animi.to(".texture2", { opacity: 0.25, delay: 1.5 }, "start");
-  }
-  function servizi() {
-    // LETS
-    isServizi = gsap.to("#wrapContainer", {
-      id: "LETS MESSUP",
-      x: serviziC.x,
-      scale: serviziC.zoom,
-      y: () => {
-        const pos2 =
-          posLetso -
-          (document.documentElement.classList.contains("touchevents") &&
-          isMobile()
-            ? document.getElementById("wrapSite")?.scrollTop || 0
-            : window.scrollY);
-        return `${0 - pos2}px`;
-      },
-      force3D: false,
-      immediateRender: false,
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: "#testomatter",
-        start: "bottom top",
-        end: "+=500",
-        markers: false,
-        scrub: true,
-        immediateRender: false,
-        onEnter: () => {
-          const toHideElements =
-            document.querySelectorAll(".toHide:not(.sec8)");
-          toHideElements.forEach((el: any) => {
-            el.style.display = "none";
-            el.classList.add("hide");
-          });
-
-          const sec8: any = document.querySelector(".toHide.sec8");
-          if (sec8) {
-            sec8.style.display = "inline-block";
-            sec8.classList.remove("hide");
-          }
-        },
-        onLeaveBack: () => {
-          const toHideElements =
-            document.querySelectorAll(".toHide:not(.sec7)");
-          toHideElements.forEach((el: any) => {
-            el.style.display = "none";
-            el.classList.add("hide");
-          });
-
-          const sec7: any = document.querySelector(".toHide.sec7");
-          if (sec7) {
-            sec7.style.display = "inline-block";
-            sec7.classList.remove("hide");
-          }
-        },
-        onEnterBack: () => {
-          const toHideElements =
-            document.querySelectorAll(".toHide:not(.sec8)");
-          toHideElements.forEach((el: any) => {
-            el.style.display = "none";
-            el.classList.add("hide");
-          });
-
-          const sec8: any = document.querySelector(".toHide.sec8");
-          if (sec8) {
-            sec8.style.display = "inline-block";
-            sec8.classList.remove("hide");
-          }
-        },
-      },
-      onComplete: () => {
-        if (!isFooter) footer();
-      },
-    });
-
-    if (document.documentElement.classList.contains("no-touchevents")) {
-      // parallax tagsv LETS
-      gsap.to("#letso", {
-        id: "TAGSV",
-        ease: "Power1.easeInOut",
-        scrollTrigger: {
-          trigger: "#letsoTrigger",
-          start: "top-=20% bottom",
-          end: `+=${vwToPixel(200)}px`,
-          scrub: 1,
-          markers: false,
-        },
-        y: (i, el) => (1 - 0.3) * vwToPixel(90),
-      });
-
-      // parallasse riga servizi esterna.
-    }
-
-    gsap.to("#tagsvE", {
-      id: "TAGSV",
-      scrollTrigger: {
-        trigger: "#letsoTrigger",
-        start: "top bottom",
-        end: `+=${vwToPixel(200)}px`,
-        scrub: 1,
-        markers: false,
-      },
-      display: 'inline-block',
-      y: (i, el) => (1 - 0.85) * vwToPixel(98),
-    });
   }
   function footer() {
     isFooter = gsap.to("#wrapContainer", {
@@ -1398,32 +1287,11 @@ export default function Home() {
                 <div className="texture2"></div>
                 <div className="texture"></div>
 
-                <p
-                  id="letso"
-                  className=" results v big biggo lets  sec8  "
-                >
-                  <span
-                    style={{ display: "inline-block", position: "relative" }}
-                  >
-                    Let’s
-                  </span>{" "}
-                  <img
-                    style={{ display: "inline-block", position: "relative" }}
-                    className="svgMessupLetso"
-                    src="/assets/images/txt/MessUp.png"
-                  />
-                </p>
               </div>
 
               <div id="c2" className="column" style={{ zIndex: 1 }}>
                 <div className="texture2"></div>
                 <div className="texture"></div>
-
-                <p id="tagsv" className="tags v  sec8 ">
-                  <span>Brand strategy</span>
-                  <span>Brand naming</span>
-                  <span>Visual identity</span>
-                </p>
               </div>
 
               <div id="c3" className="column" style={{ zIndex: 1 }}>
@@ -1445,11 +1313,6 @@ export default function Home() {
                   id="NOT-COOL-Sticker"
                   src="/assets/images/NOT-COOL-Sticker_08.png"
                 />
-
-                <p id="tagsvE" className="tags v sec8 ">
-                  <span>Web design</span>
-                  <span>Video and photo production</span>
-                </p>
               </div>
 
               <div id="c4" className="column" style={{ zIndex: 0 }}>
