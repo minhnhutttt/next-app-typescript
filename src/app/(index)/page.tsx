@@ -37,7 +37,6 @@ export default function Home() {
     return bgColor === "rgb(255, 0, 0)";
   }
 
-
   let isStripe: any = null;
   let isSometimes: any = null;
   let isFact: any = null;
@@ -149,11 +148,8 @@ export default function Home() {
   let lottieHeight: number = 0;
   let gap: number = 0;
 
-  if (typeof window !== "undefined") {
-    window.scrollTo(0, 0);
-  }
-
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.body.classList.add("loaded");
     startPreload();
     applyRandomBackgroundPosition();
@@ -177,79 +173,80 @@ export default function Home() {
         ScrollTrigger.refresh();
       },
     });
-
-    
   }, []);
 
   function startPreload() {
     setTimeout(() => {
       lottieHeight = document.getElementById("lottie")?.offsetHeight || 0;
-    const windowHeight = window.innerHeight;
+      const windowHeight = window.innerHeight;
 
-    const wrapSite = document.getElementById("wrapSite");
+      const wrapSite = document.getElementById("wrapSite");
 
-    if (wrapSite) {
-      if (lottieHeight > (windowHeight / 2)) {
-        wrapSite.style.paddingTop = `50vh`;
-        console.log(222);
-      } else {
-        const wrapContainer = document.getElementById("wrapContainer");
-        if (document.documentElement.classList.contains("touchevents") && isMobile() && wrapContainer) {
+      if (wrapSite) {
+        if (lottieHeight > windowHeight / 2) {
+          wrapSite.style.paddingTop = `50vh`;
+          console.log(222);
+        } else {
+          const wrapContainer = document.getElementById("wrapContainer");
+          if (
+            document.documentElement.classList.contains("touchevents") &&
+            isMobile() &&
+            wrapContainer
+          ) {
             console.log(333);
             wrapContainer.style.marginTop = `calc(100vh - ${lottieHeight}px)`;
-        } else {
-          console.log(1111);
-          wrapSite.style.paddingTop = `calc(100vh - ${lottieHeight}px)`;
+          } else {
+            console.log(1111);
+            wrapSite.style.paddingTop = `calc(100vh - ${lottieHeight}px)`;
+          }
         }
       }
-    }
-    const container = document.querySelector(".containerMix") as HTMLElement;
-    if (container) {
-      container.style.marginTop = `-${lottieHeight / 2}px`;
-    }
-    setTimeout(() => {
-      const lottieTop = document.getElementById("lottieTop");
-      if (lottieTop) {
-        lottieTop.style.opacity = "1";
-        (lottieTop as any).seek?.("5%");
-        (lottieTop as any).play?.();
+      const container = document.querySelector(".containerMix") as HTMLElement;
+      if (container) {
+        container.style.marginTop = `-${lottieHeight / 2}px`;
       }
-
-      gsap.to(".loballo", {
-        y: 0,
-        x: 0,
-        delay: 1,
-        stagger: 0.5,
-        ease: "Cubic.easeOut",
-        duration: 0.3,
-      });
-
       setTimeout(() => {
-        gsap.to(".containerMix", {
-          opacity: 1,
-          duration: 0,
-          ease: "expo.inOut",
-          onComplete: () => {
-            document.getElementById("body")?.classList.add("libera");
-            initObserver();
+        const lottieTop = document.getElementById("lottieTop");
+        if (lottieTop) {
+          lottieTop.style.opacity = "1";
+          (lottieTop as any).seek?.("5%");
+          (lottieTop as any).play?.();
+        }
 
-            gsap.to("#titolone", {
-              yPercent: 0,
-              opacity: 1,
-              duration: 0.5,
-            });
-          },
+        gsap.to(".loballo", {
+          y: 0,
+          x: 0,
+          delay: 1,
+          stagger: 0.5,
+          ease: "Cubic.easeOut",
+          duration: 0.3,
         });
-      }, 1000);
-    }, 500);
+
+        setTimeout(() => {
+          gsap.to(".containerMix", {
+            opacity: 1,
+            duration: 0,
+            ease: "expo.inOut",
+            onComplete: () => {
+              document.getElementById("body")?.classList.add("libera");
+              initObserver();
+
+              gsap.to("#titolone", {
+                yPercent: 0,
+                opacity: 1,
+                duration: 0.5,
+              });
+            },
+          });
+        }, 1000);
+      }, 500);
     }, 200);
-    
   }
 
   function vwToPixel(vwValue: number): number {
     const viewportWidth = Math.max(
       document.documentElement.clientWidth || 0,
-      window.innerWidth || 0
+      window.innerWidth || 0,
     );
     const pixelValue = (viewportWidth * vwValue) / 100;
     return pixelValue;
@@ -258,7 +255,7 @@ export default function Home() {
   function vhToPixel(vhValue: number): number {
     const viewportHeight = Math.max(
       document.documentElement.clientHeight || 0,
-      window.innerHeight || 0
+      window.innerHeight || 0,
     );
     const pixelValue = (viewportHeight * vhValue) / 100;
     return pixelValue;
@@ -354,7 +351,6 @@ export default function Home() {
   }
 
   function initScrollTrigger() {
-
     const htmlElement = document.getElementById("html");
     const isTouchEvent =
       htmlElement?.classList.contains("touchevents") && isMobile();
@@ -398,7 +394,7 @@ export default function Home() {
     const element = document.getElementById(elementId);
     if (!element) throw new Error(`Element with id ${elementId} not found`);
     const rect = element.getBoundingClientRect();
-    return rect.top + window.scrollY; 
+    return rect.top + window.scrollY;
   }
 
   function initPositionsDesktop() {
@@ -538,7 +534,7 @@ export default function Home() {
   }
 
   function stripe(): void {
-    console.log('stripe');
+    console.log("stripe");
     isStripe = gsap.to("#wrapContainer", {
       id: "STRIPE",
       scale: stripeC.zoom,
@@ -597,7 +593,7 @@ export default function Home() {
     });
   }
   function sometimes(): void {
-    console.log('sometimes');
+    console.log("sometimes");
     // SOMETIMES AROUND
     isSometimes = gsap.to("#wrapContainer", {
       id: "SOMETIMES AROUND",
@@ -608,7 +604,7 @@ export default function Home() {
         markers: false,
         onEnter() {
           const elements = document.querySelectorAll(
-            ".toHide:not(#sometimes, .sec4)"
+            ".toHide:not(#sometimes, .sec4)",
           );
           elements.forEach((el) => {
             (el as HTMLElement).style.display = "none";
@@ -617,7 +613,7 @@ export default function Home() {
         },
         onLeaveBack() {
           const sections = document.querySelectorAll(
-            ".toHide.sec0, .toHide.sec1, .toHide.sec2, .toHide.sec3"
+            ".toHide.sec0, .toHide.sec1, .toHide.sec2, .toHide.sec3",
           );
           sections.forEach((el) => {
             (el as HTMLElement).style.display = "inline-block";
@@ -626,7 +622,7 @@ export default function Home() {
         },
         onEnterBack() {
           const elements = document.querySelectorAll(
-            ".toHide:not(#sometimes, .sec4)"
+            ".toHide:not(#sometimes, .sec4)",
           );
           elements.forEach((el) => {
             (el as HTMLElement).style.display = "none";
@@ -677,7 +673,7 @@ export default function Home() {
           if (!isFact) fact();
         },
       },
-      "start"
+      "start",
     );
 
     anini.to(".texture2", { opacity: 0.1 }, "start");
@@ -703,13 +699,13 @@ export default function Home() {
         "#sometimes",
         {
           id: "PARA",
-          display: 'inline-block',
+          display: "inline-block",
           force3D: false,
           y: (i, el) => (1 - parseFloat("0.25")) * 80,
           onStart() {},
           onComplete() {},
         },
-        "start"
+        "start",
       );
 
       const po = gsap.timeline({
@@ -727,28 +723,28 @@ export default function Home() {
         "#MessHoloImg",
         {
           id: "PARA",
-          display: 'inline-block',
+          display: "inline-block",
           force3D: false,
           xPercent: 20,
         },
-        "start"
+        "start",
       );
 
       po.to(
         "#yolo",
         {
           id: "YOLOSO",
-          display: 'inline-block',
+          display: "inline-block",
           force3D: false,
           y: (i, el) => (1 - parseFloat("0.45")) * -vwToPixel(5),
         },
-        "start"
+        "start",
       );
     }
   }
 
   function fact() {
-    console.log('fact');
+    console.log("fact");
     isFact = gsap.to("#wrapContainer", {
       id: "FACTS AROUND",
       scrollTrigger: {
@@ -820,7 +816,7 @@ export default function Home() {
           if (!isBorn) born();
         },
       },
-      "start"
+      "start",
     );
 
     anini.to(".texture2", { opacity: 0.25, delay: 2.1 }, "start");
@@ -848,7 +844,7 @@ export default function Home() {
           x: "+=5",
           stagger: 0.1,
         },
-        "start"
+        "start",
       );
     } else {
       anio.to(
@@ -858,7 +854,7 @@ export default function Home() {
           x: "+=30",
           stagger: 0.1,
         },
-        "start"
+        "start",
       );
     }
 
@@ -878,23 +874,23 @@ export default function Home() {
     anio.to(
       "#holoFact",
       {
-        display: 'inline-block',
+        display: "inline-block",
         x: "+=60",
       },
-      "start"
+      "start",
     );
     anio.to(
       "#NOT-COOL-Sticker",
       {
-        display: 'inline-block',
+        display: "inline-block",
         x: "-=60",
       },
-      "start"
+      "start",
     );
   }
 
   function born() {
-    console.log('born');
+    console.log("born");
     // BORN AROUND
     isBorn = gsap.to("#wrapContainer", {
       id: "BORN AROUND",
@@ -961,7 +957,7 @@ export default function Home() {
           if (!isMatter) matter();
         },
       },
-      "start"
+      "start",
     );
 
     animi.to(".texture2", { opacity: 0.1 }, "start");
@@ -988,7 +984,7 @@ export default function Home() {
           y: (i, el) => (1 - parseFloat("0.25")) * 80,
           force3D: false,
         },
-        "start"
+        "start",
       );
 
       aniBP.to(
@@ -997,7 +993,7 @@ export default function Home() {
           y: (i, el) => (1 - parseFloat("0.95")) * -vwToPixel(25),
           force3D: false,
         },
-        "start"
+        "start",
       );
 
       aniBP.to(
@@ -1006,7 +1002,7 @@ export default function Home() {
           xPercent: 10,
           force3D: false,
         },
-        "start"
+        "start",
       );
     }
   }
@@ -1021,7 +1017,7 @@ export default function Home() {
         immediateRender: false,
         onEnter: () => {
           const toHideElements = document.querySelectorAll(
-            ".toHide:not(.sec6):not(.sec7)"
+            ".toHide:not(.sec6):not(.sec7)",
           );
           toHideElements.forEach((el: any) => {
             el.style.display = "none";
@@ -1108,7 +1104,7 @@ export default function Home() {
           }
         },
       },
-      "start"
+      "start",
     );
 
     animi.to(".texture2", { opacity: 0.25, delay: 1.5 }, "start");
@@ -1215,14 +1211,18 @@ export default function Home() {
       <div id="smolla" style={{ position: "absolute" }}></div>
 
       <div id="preloadImages" style={{ position: "absolute", opacity: 0 }}>
-        <img src="/assets/images/spray/images/img_1.png" style={{ width: "1px" }} />
-        <img src="/assets/images/spray/images/img_0.png" style={{ width: "1px" }} />
+        <img
+          src="/assets/images/spray/images/img_1.png"
+          style={{ width: "1px" }}
+        />
+        <img
+          src="/assets/images/spray/images/img_0.png"
+          style={{ width: "1px" }}
+        />
       </div>
-
 
       <div id="wrapSite">
         <div id="wrapContainer">
-
           <svg
             id="Livello_1"
             width="0"
@@ -1242,7 +1242,7 @@ export default function Home() {
               <polygon points="348 260 420 260 420 195.63 494.31 195.63 494.31 130.42 420 130.42 420 65.21 435 65.21 435 115.93 507 115.93 507 0 348 0 348 260" />
             </clipPath>
           </svg>
-          
+
           <div className="sec0 toHide" id="lottie">
             <div id="lottieTexture"></div>
             <img id="messupTop" src="/assets/images/SKALE-LP.png" />
@@ -1257,10 +1257,14 @@ export default function Home() {
           <div id="wrapColumns">
             <div className="containerMix" style={{ position: "relative" }}>
               <h1 className="sec1 toHide " id="titolone" style={{ zIndex: 99 }}>
-                今日の限界が、<br />
-                明日の出発点になる。<br />
-                上・下・右・左。<br />
-                一夜で次元は<br />
+                今日の限界が、
+                <br />
+                明日の出発点になる。
+                <br />
+                上・下・右・左。
+                <br />
+                一夜で次元は
+                <br />
                 変えられる。
               </h1>
 
@@ -1268,11 +1272,7 @@ export default function Home() {
               <div className="sec3 toHide " id="stripe">
                 <div id="stripeInner"></div>
               </div>
-              <div
-                className="sec7 "
-                style={{ zIndex: 4 }}
-                id="stripeMatter"
-              >
+              <div className="sec7 " style={{ zIndex: 4 }} id="stripeMatter">
                 <div id="stripeMatterInner"></div>
               </div>
               <div className="sec7 toHide " id="stripeTrigger"></div>
@@ -1286,7 +1286,6 @@ export default function Home() {
                 <div id="heighter"></div>
                 <div className="texture2"></div>
                 <div className="texture"></div>
-
               </div>
 
               <div id="c2" className="column" style={{ zIndex: 1 }}>
@@ -1299,11 +1298,7 @@ export default function Home() {
                 <div className="texture"></div>
 
                 <div className="sec5 maskFact" style={{ zIndex: 1 }}>
-                  <span
-                    className="sec5 fact"
-                    id="facts"
-                    style={{ zIndex: 5 }}
-                  >
+                  <span className="sec5 fact" id="facts" style={{ zIndex: 5 }}>
                     次
                   </span>
                 </div>
@@ -1323,7 +1318,7 @@ export default function Home() {
                     <div className="texture2"></div>
                   </div>
                   <p id="testolets" className="testolets v">
-                  「もう、これ以上の成長は難しい」 
+                    「もう、これ以上の成長は難しい」
                   </p>
                 </span>
                 <div id="sometimes" className="hor sec4 biggo ">
@@ -1331,8 +1326,9 @@ export default function Home() {
 
                   <div className="a1">
                     <p>
-                    「限界」は、あなたの頭の中にしか存在しない幻想だ。<br />
-                    「限界」だと思っているその壁は、上から見たら長い道のりの些細な障害でしかない。
+                      「限界」は、あなたの頭の中にしか存在しない幻想だ。
+                      <br />
+                      「限界」だと思っているその壁は、上から見たら長い道のりの些細な障害でしかない。
                     </p>
                   </div>
 
@@ -1340,7 +1336,7 @@ export default function Home() {
                 </div>
                 <div className="sec5  maskFact">
                   <span className="sec5   fact" style={{ zIndex: 4 }}>
-                  元
+                    元
                   </span>
                 </div>
 
@@ -1360,7 +1356,7 @@ export default function Home() {
               <div id="c5" className="column" style={{ zIndex: 5 }}>
                 <div className="texture2"></div>
                 <div className="texture"></div>
-                
+
                 <span className="sec3 toHide " id="testoletsSpan">
                   <div id="over1">
                     <div className="texture2"></div>
@@ -1369,28 +1365,27 @@ export default function Home() {
                     「うちの業界では、これが限界だ」
                   </p>
                 </span>
-                
 
                 <div className="sec5  maskFact">
                   <span className="sec5   fact" style={{ zIndex: 3 }}>
-                  鍵
+                    鍵
                   </span>
                 </div>
 
-
-                <p
-                  className="v pillo sec5  factu"
-                >
+                <p className="v pillo sec5  factu">
                   <span className="pollo-span">
-                  「限界」という名の幻想を打ち破る鍵。次元鍵は、<br />あなたのビジネスの中に既に存在している。
+                    「限界」という名の幻想を打ち破る鍵。次元鍵は、
+                    <br />
+                    あなたのビジネスの中に既に存在している。
                     <span style={{ color: "#fff" }}>.</span>
                   </span>
                 </p>
 
                 <span className="sec7 ">
                   <p id="testomatter" className="testomatter v">
-                  Webサイト制作・リニューアル（Reactを中心としたモダン開発）<br />
-                  ランディングページ（LP）制作（Reactを中心としたモダン開発）
+                    Webサイト制作・リニューアル（Reactを中心としたモダン開発）
+                    <br />
+                    ランディングページ（LP）制作（Reactを中心としたモダン開発）
                   </p>
                 </span>
               </div>
@@ -1405,8 +1400,9 @@ export default function Home() {
                   style={{ zIndex: 99 }}
                 >
                   <span>
-                  あなたは今、<br />
-                  ビジネスを殺そうとしている。
+                    あなたは今、
+                    <br />
+                    ビジネスを殺そうとしている。
                   </span>
                 </p>
 
@@ -1415,22 +1411,22 @@ export default function Home() {
                     <div className="texture2"></div>
                   </div>
                   <p className="testolets v">
-                  「このビジネスモデルでは、ここまでが精一杯だ」
+                    「このビジネスモデルでは、ここまでが精一杯だ」
                   </p>
                 </div>
                 <div className="sec5  maskFact">
                   <span className="sec5   fact" style={{ zIndex: 2 }}>
-                  ？
+                    ？
                   </span>
                 </div>
 
                 <p className="v pillo sec5 factu">
                   <span className="pollo-span">
-                  「できない」と思っていたことの中に
+                    「できない」と思っていたことの中に
                   </span>
                   <br />
                   <span className="pollo-span">
-                  「無理だ」と諦めていたアイデアの中に
+                    「無理だ」と諦めていたアイデアの中に
                   </span>
                 </p>
                 <p className="v pillo sec5 toHide  show-sm factu">
@@ -1444,13 +1440,18 @@ export default function Home() {
                   <p className="testo2">目と勇気と仲間。</p>
 
                   <div className="a1">
-                    <p>あなたには、次元鍵を見つけ出す目があるか？ <br />
-次元鍵を使って自らのビジネスを根本から覆す勇気があるか？<br />
-<br />
-目がなければSKALEがなろう。<br />
-勇気がなければSKALEが支えよう。<br />
-<br />
-ビジネスを殺したくなければ、SKALEを仲間に。</p>
+                    <p>
+                      あなたには、次元鍵を見つけ出す目があるか？ <br />
+                      次元鍵を使って自らのビジネスを根本から覆す勇気があるか？
+                      <br />
+                      <br />
+                      目がなければSKALEがなろう。
+                      <br />
+                      勇気がなければSKALEが支えよう。
+                      <br />
+                      <br />
+                      ビジネスを殺したくなければ、SKALEを仲間に。
+                    </p>
                   </div>
                   <img
                     id="LETS-ROLL-Sticker_01"
@@ -1461,8 +1462,8 @@ export default function Home() {
 
                 <span className="sec7 ">
                   <p className="testomatter v">
-                  システム開発（CRM、MA等Reactを中心としたモダン開発） <br />
-                  AI活用支援（AIを起点とした事業開発）
+                    システム開発（CRM、MA等Reactを中心としたモダン開発） <br />
+                    AI活用支援（AIを起点とした事業開発）
                   </p>
                 </span>
               </div>
@@ -1478,16 +1479,16 @@ export default function Home() {
                 </p>
 
                 <p className="sec3 toHide  testolets v">
-                こんな言葉を口にしたことはないか？ 
+                  こんな言葉を口にしたことはないか？
                 </p>
                 <p className="v pillo sec5 factu">
                   <span className="pollo-span">
-                  「非現実的だ」と片付けていた戦略の中に
+                    「非現実的だ」と片付けていた戦略の中に
                   </span>
                 </p>
                 <span className="sec7 ">
                   <p className="testomatter v">
-                  広告運用支援（AI活用による高効率低コストの運用）
+                    広告運用支援（AI活用による高効率低コストの運用）
                   </p>
                 </span>
               </div>
@@ -1501,12 +1502,11 @@ export default function Home() {
                     <div className="texture2"></div>
                   </div>
                   <p className="testolets v">
-                  あるなら、既に自社に死刑宣告を下しているも同然だ。<br />
-                  限界を口実に挑戦を放棄している。
+                    あるなら、既に自社に死刑宣告を下しているも同然だ。
+                    <br />
+                    限界を口実に挑戦を放棄している。
                   </p>
                 </div>
-
-                
 
                 <p className="v pillo sec5 toHide  show-md">
                   <span className="pollo-span">Trust us, together we</span>
@@ -1520,7 +1520,6 @@ export default function Home() {
               <div id="c9" className="column">
                 <div className="texture2"></div>
                 <div className="texture"></div>
-                
 
                 <div className="shinju" id="shinju2"></div>
 
@@ -1536,7 +1535,7 @@ export default function Home() {
               <div id="c10" className="column" style={{ zIndex: 2 }}>
                 <div className="texture2"></div>
                 <div className="texture"></div>
-                
+
                 <div className="texture2"></div>
                 <div className="texture"></div>
 
@@ -1554,7 +1553,10 @@ export default function Home() {
                   <div id="over3">
                     <div className="texture2 wtf"></div>
                   </div>
-                  <img id="WTF-Sticker_01" src="/assets/images/WTF-Sticker_01.png" />
+                  <img
+                    id="WTF-Sticker_01"
+                    src="/assets/images/WTF-Sticker_01.png"
+                  />
                 </div>
 
                 <img
@@ -1644,7 +1646,6 @@ export default function Home() {
             </div>
 
             <div id="iFooter" className="">
-
               <span
                 id="i3"
                 className="-flip iFooterI c-header_brand"

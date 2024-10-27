@@ -19,13 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" id="html" >
-      <body id="body"
-        className={`${noto.className} libera loadato`}
-      >
-        <SmoothScroll>
-         {children}
-         </SmoothScroll>
+    <html lang="en" id="html">
+      <body id="body" className={`${noto.className} libera loadato`}>
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

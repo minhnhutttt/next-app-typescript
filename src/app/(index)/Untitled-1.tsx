@@ -1,20 +1,20 @@
-"use client"
+"use client";
 import { useEffect, useRef } from "react";
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Observer);
 gsap.config({
   nullTargetWarn: false,
-})
+});
 
 export default function Home() {
   const ref = useRef(null);
   useEffect(() => {
     import("@lottiefiles/lottie-player");
-  },[]);
+  }, []);
 
   function getBackgroundColor(elementId: string): string | null {
     const element = document.getElementById(elementId);
@@ -23,30 +23,33 @@ export default function Home() {
     }
     return null;
   }
-  
+
   function isMobile(): boolean {
     const bgColor = getBackgroundColor("smolla");
     return bgColor === "rgb(255, 255, 255)" || bgColor === "rgb(255, 0, 0)";
   }
-  
+
   function isMobileLandscape(): boolean {
     const bgColor = getBackgroundColor("smolla");
     return bgColor === "rgb(255, 0, 0)";
   }
-  
+
   function isPhone(): boolean {
-    return /mobile/i.test(navigator.userAgent) && !/ipad|tablet/i.test(navigator.userAgent);
+    return (
+      /mobile/i.test(navigator.userAgent) &&
+      !/ipad|tablet/i.test(navigator.userAgent)
+    );
   }
 
   let isStripe: any = null;
   let isSometimes: any = null;
-  let isFact: any = null
-  let isMatter: any = null
-  let isBorn: any = null
-  let isServizi: any = null
-  let isFooter: any = null
-  let isAnimFooter: any = null
-  
+  let isFact: any = null;
+  let isMatter: any = null;
+  let isBorn: any = null;
+  let isServizi: any = null;
+  let isFooter: any = null;
+  let isAnimFooter: any = null;
+
   let posStripe: number = 0;
   let posSometimes: number = 0;
   let posFact: number = 0;
@@ -54,7 +57,7 @@ export default function Home() {
   let posResult: number = 0;
   let posLetso: number = 0;
   let posFooter: number = 0;
-  
+
   let stripeC: any;
   const stripeCoords = {
     desktop: {
@@ -66,7 +69,7 @@ export default function Home() {
       zoom: 2.3,
     },
   };
-  
+
   let sometimesC: any;
   const sometimesCoords = {
     desktop: {
@@ -82,7 +85,7 @@ export default function Home() {
       zoom: 14,
     },
   };
-  
+
   let factsC: any;
   const factsCoords = {
     desktop: {
@@ -94,7 +97,7 @@ export default function Home() {
       zoom: 2.8,
     },
   };
-  
+
   let bornC: any;
   const bornCoords = {
     desktop: {
@@ -110,7 +113,7 @@ export default function Home() {
       zoom: 14,
     },
   };
-  
+
   let matterC: any;
   const matterCoords = {
     desktop: {
@@ -122,7 +125,7 @@ export default function Home() {
       zoom: 2.3,
     },
   };
-  
+
   let serviziC: any;
   const serviziCoords = {
     desktop: {
@@ -134,7 +137,7 @@ export default function Home() {
       zoom: 2.3,
     },
   };
-  
+
   let footerC: any;
   const footerCoords = {
     desktop: {
@@ -149,11 +152,10 @@ export default function Home() {
   let lottieHeight: number = 0;
   let gap: number = 0;
 
-  
   if (typeof window !== "undefined") {
     window.scrollTo(0, 0);
   }
-  
+
   useEffect(() => {
     startPreload();
     applyRandomBackgroundPosition();
@@ -161,17 +163,16 @@ export default function Home() {
     initScrollTrigger();
     window.addEventListener("resize", handleResize);
 
-    const htmlElement = document.getElementById('html');
-    if (htmlElement?.classList.contains('touchevents') && isMobile()) {
+    const htmlElement = document.getElementById("html");
+    if (htmlElement?.classList.contains("touchevents") && isMobile()) {
       ScrollTrigger.defaults({
-        scroller: '#wrapSite',
+        scroller: "#wrapSite",
         markers: false,
       });
     }
-  
-  
+
     // Animation GSAP cho wrapContainer
-    gsap.to('#wrapContainer', {
+    gsap.to("#wrapContainer", {
       scale: 1,
       opacity: 1,
       duration: 1,
@@ -184,23 +185,23 @@ export default function Home() {
       document.getElementById("body")?.classList.add("loaded");
       startPreload();
     };
-  
+
     if (typeof window !== "undefined") {
       window.addEventListener("load", handleLoad);
     }
-  
+
     return () => {
       if (typeof window !== "undefined") {
         window.removeEventListener("load", handleLoad);
       }
     };
   }, []);
-  
+
   function startPreload() {
     // Lấy chiều cao của phần tử lottie và cửa sổ
     lottieHeight = document.getElementById("lottie")?.offsetHeight || 0;
     const windowHeight = window.innerHeight;
-  
+
     // Điều chỉnh padding-top cho #wrapSite dựa trên chiều cao của lottie
     const wrapSite = document.getElementById("wrapSite");
     if (wrapSite) {
@@ -210,19 +211,19 @@ export default function Home() {
         wrapSite.style.paddingTop = `calc(100vh - ${lottieHeight}px)`;
       }
     }
-  
+
     // Điều chỉnh margin-top cho .container
     const container = document.querySelector(".container") as HTMLElement;
     if (container) {
       container.style.marginTop = `-${lottieHeight / 2}px`;
     }
-  
+
     // Tính khoảng cách giữa .container và đỉnh của trang
     const gap = container?.getBoundingClientRect().top || 0;
-  
+
     // Tạo GSAP timeline để thực hiện animation
     const tl = gsap.timeline();
-  
+
     tl.to("#progressStroke2", {
       strokeDashoffset: 0,
       ease: "expo.inOut",
@@ -237,7 +238,7 @@ export default function Home() {
         });
       },
     });
-  
+
     // Thiết lập timeout để thực hiện các hành động sau một khoảng thời gian nhất định
     setTimeout(() => {
       const lottieTop = document.getElementById("lottieTop");
@@ -247,7 +248,7 @@ export default function Home() {
         (lottieTop as any).seek?.("5%");
         (lottieTop as any).play?.();
       }
-  
+
       gsap.to(".loballo", {
         y: 0,
         x: 0,
@@ -256,7 +257,7 @@ export default function Home() {
         ease: "Cubic.easeOut",
         duration: 0.3,
       });
-  
+
       setTimeout(() => {
         gsap.to(".container", {
           opacity: 1,
@@ -265,7 +266,7 @@ export default function Home() {
           onComplete: () => {
             document.getElementById("body")?.classList.add("libera");
             initObserver();
-  
+
             gsap.to("#titolone", {
               yPercent: 0,
               opacity: 1,
@@ -276,48 +277,48 @@ export default function Home() {
       }, 2800);
     }, 1900);
   }
-  
+
   function vwToPixel(vwValue: number): number {
     const viewportWidth = Math.max(
       document.documentElement.clientWidth || 0,
-      window.innerWidth || 0
+      window.innerWidth || 0,
     );
     const pixelValue = (viewportWidth * vwValue) / 100;
     return pixelValue;
   }
-  
+
   function vhToPixel(vhValue: number): number {
     const viewportHeight = Math.max(
       document.documentElement.clientHeight || 0,
-      window.innerHeight || 0
+      window.innerHeight || 0,
     );
     const pixelValue = (viewportHeight * vhValue) / 100;
     return pixelValue;
   }
   let tl: any = null;
   let canAnim = true;
-  
+
   function initObserver() {
     // Khởi tạo Observer để lắng nghe các sự kiện cuộn (scroll), chạm (touch), và con trỏ (pointer)
     canAnim = true;
-    
+
     Observer.create({
       // target: window, // Không cần chỉ định vì mặc định lắng nghe trên window
-      type: "wheel,touch,pointer",  // Các loại sự kiện được lắng nghe
-      
+      type: "wheel,touch,pointer", // Các loại sự kiện được lắng nghe
+
       onStop: (self) => {
         canAnim = true;
         console.log("Scroll stopped!");
       },
-      
+
       onChangeY: (self) => {
         // Nếu không thể animation hoặc timeline đang chạy, không tiếp tục
         if (!canAnim) return;
         if (tl && tl.isActive()) return;
-        
+
         const currentScroll = window.scrollY + window.innerHeight;
         canAnim = false;
-  
+
         // Kiểm tra nếu cuộn tới gần cuối trang
         if (currentScroll + 5 > document.body.scrollHeight) {
           // Tạo GSAP animation cho #r_web
@@ -334,15 +335,15 @@ export default function Home() {
   }
 
   function applyRandomBackgroundPosition() {
-    const textures = document.querySelectorAll<HTMLElement>('.texture');
-    const textures2 = document.querySelectorAll<HTMLElement>('.texture2');
-  
+    const textures = document.querySelectorAll<HTMLElement>(".texture");
+    const textures2 = document.querySelectorAll<HTMLElement>(".texture2");
+
     textures.forEach((texture) => {
       const numRand = Math.floor(Math.random() * 2001);
       const numRand2 = Math.floor(Math.random() * 1200);
       texture.style.backgroundPosition = `${numRand2}px ${numRand}px`;
     });
-  
+
     textures2.forEach((texture2) => {
       const numRand = Math.floor(Math.random() * 2001);
       const numRand2 = Math.floor(Math.random() * 1200);
@@ -355,64 +356,65 @@ export default function Home() {
     }
     resetAll();
   }
-  
+
   function resetAll(): void {
     const elementsToHide = document.querySelectorAll<HTMLElement>(".toHide");
     elementsToHide.forEach((element) => {
       element.style.display = "inline-block";
       element.classList.remove("hide");
     });
-  
+
     // Lấy tất cả các animation từ GSAP
     const anims = gsap.globalTimeline.getChildren(true, true, true);
     anims.forEach((anim) => {
       anim.revert();
       anim.kill();
     });
-  
+
     // Xóa tất cả các ScrollTrigger hiện tại
     ScrollTrigger.getAll().forEach((trigger) => {
       trigger.kill();
     });
-  
+
     gsap.killTweensOf("*");
-  
+
     // Đặt lại vị trí và tỷ lệ cho wrapContainer
     gsap.set("#wrapContainer", { x: 0, y: 0, scale: 1 });
     const wrapContainer = document.getElementById("wrapContainer");
     if (wrapContainer) {
       wrapContainer.style.transform = "translate(0) scale(1)";
     }
-  
+
     // Cuộn về đầu trang
     window.scrollTo(0, 0);
-  
+
     // Khởi tạo lại các animation và ScrollTrigger
     initAnimations();
     initScrollTrigger();
   }
-  
+
   function initAnimations() {
     let followY = 0;
-  
-    gsap.set('#lang span, #lang a', { transformOrigin: 'center left' });
-  
-    const wrapContainerHeight = document.getElementById('wrapContainer')?.offsetHeight || 0;
-  
+
+    gsap.set("#lang span, #lang a", { transformOrigin: "center left" });
+
+    const wrapContainerHeight =
+      document.getElementById("wrapContainer")?.offsetHeight || 0;
+
     if (isMobile()) {
       if (isMobileLandscape()) {
-        gsap.to('#progressStroke2', {
+        gsap.to("#progressStroke2", {
           strokeDashoffset: 0,
-          ease: 'none',
+          ease: "none",
           scrollTrigger: {
             scrub: true,
             end: `+=${wrapContainerHeight + vhToPixel(1600)}`,
           },
         });
       } else {
-        gsap.to('#progressStroke2', {
+        gsap.to("#progressStroke2", {
           strokeDashoffset: 0,
-          ease: 'none',
+          ease: "none",
           scrollTrigger: {
             scrub: true,
             end: `+=${wrapContainerHeight + vhToPixel(400)}`,
@@ -420,9 +422,9 @@ export default function Home() {
         });
       }
     } else {
-      gsap.to('#progressStroke2', {
+      gsap.to("#progressStroke2", {
         strokeDashoffset: 0,
-        ease: 'none',
+        ease: "none",
         scrollTrigger: {
           scrub: true,
           end: `+=${document.body.offsetHeight + vhToPixel(300)}`,
@@ -430,21 +432,24 @@ export default function Home() {
       });
     }
   }
-  
+
   function initScrollTrigger() {
-    console.log('initScrollTrigger');
-  
-    const htmlElement = document.getElementById('html');
-    const isTouchEvent = htmlElement?.classList.contains('touchevents') && isMobile();
-  
+    console.log("initScrollTrigger");
+
+    const htmlElement = document.getElementById("html");
+    const isTouchEvent =
+      htmlElement?.classList.contains("touchevents") && isMobile();
+
     stripeC = isTouchEvent ? stripeCoords.mobile : stripeCoords.desktop;
-    sometimesC = isTouchEvent ? sometimesCoords.mobile : sometimesCoords.desktop;
+    sometimesC = isTouchEvent
+      ? sometimesCoords.mobile
+      : sometimesCoords.desktop;
     factsC = isTouchEvent ? factsCoords.mobile : factsCoords.desktop;
     bornC = isTouchEvent ? bornCoords.mobile : bornCoords.desktop;
     matterC = isTouchEvent ? matterCoords.mobile : matterCoords.desktop;
     serviziC = isTouchEvent ? serviziCoords.mobile : serviziCoords.desktop;
     footerC = isTouchEvent ? footerCoords.mobile : footerCoords.desktop;
-  
+
     isStripe = null;
     isSometimes = null;
     isFact = null;
@@ -453,24 +458,22 @@ export default function Home() {
     isServizi = null;
     isFooter = null;
     isAnimFooter = null;
-  
-    document.querySelectorAll('.toHide').forEach((el: any) => {
-      el.style.display = 'inline-block';
-      el.classList.remove('hide');
+
+    document.querySelectorAll(".toHide").forEach((el: any) => {
+      el.style.display = "inline-block";
+      el.classList.remove("hide");
     });
-  
+
     if (isTouchEvent) {
       initPositionsMobile();
     } else {
       initPositionsDesktop();
     }
-  
+
     if (!isStripe) stripe();
   }
-  
-  useEffect(() => {
-    
-  }, []);
+
+  useEffect(() => {}, []);
 
   function getElementOffsetTop(elementId: string): number {
     const element = document.getElementById(elementId);
@@ -478,92 +481,140 @@ export default function Home() {
     const rect = element.getBoundingClientRect();
     return rect.top + window.scrollY; // Cộng thêm scrollY để có tọa độ chính xác
   }
-  
+
   function initPositionsDesktop() {
     // STRIPE
     let t = gsap.set("#wrapContainer", { scale: stripeC.zoom, y: 0 });
-    posStripe = getElementOffsetTop("testolets") - getElementOffsetTop("wrapContainer") - window.innerHeight * 1.5;
+    posStripe =
+      getElementOffsetTop("testolets") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight * 1.5;
     t.revert();
-  
+
     // SOMETIMES
     t = gsap.set("#wrapContainer", { scale: sometimesC.zoom, y: 0 });
-    posSometimes = getElementOffsetTop("sometimes") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+    posSometimes =
+      getElementOffsetTop("sometimes") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight / 2;
     t.revert();
-  
+
     // FACTS
     t = gsap.set("#wrapContainer", { scale: factsC.zoom, y: 0 });
-    posFact = getElementOffsetTop("facts") - getElementOffsetTop("wrapContainer") - window.innerHeight;
+    posFact =
+      getElementOffsetTop("facts") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight;
     t.revert();
-  
+
     // BORN
     t = gsap.set("#wrapContainer", { scale: bornC.zoom, y: 0 });
-    posBorn = getElementOffsetTop("born") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+    posBorn =
+      getElementOffsetTop("born") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight / 2;
     t.revert();
-  
+
     // RESULT MATTER
     t = gsap.set("#wrapContainer", { scale: matterC.zoom, y: 0 });
-    posResult = getElementOffsetTop("stripeTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+    posResult =
+      getElementOffsetTop("stripeTrigger") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight / 2;
     t.revert();
-  
+
     // RESULT LETSO = SERVIZI!
     t = gsap.set("#wrapContainer", { scale: serviziC.zoom, y: 0 });
-    posLetso = getElementOffsetTop("letsoTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+    posLetso =
+      getElementOffsetTop("letsoTrigger") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight / 2;
     t.revert();
-  
+
     // FOOTER
     t = gsap.set("#wrapContainer", { scale: footerC.zoom, y: 0 });
-    posFooter = getElementOffsetTop("triggerFooter") - getElementOffsetTop("wrapContainer") - window.innerHeight / 1.5;
+    posFooter =
+      getElementOffsetTop("triggerFooter") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight / 1.5;
     t.revert();
   }
-  
+
   function initPositionsMobile() {
     // STRIPE
     let t = gsap.set("#wrapContainer", { scale: stripeC.zoom, y: 0 });
-    posStripe = getElementOffsetTop("testolets") - getElementOffsetTop("wrapContainer") - window.innerHeight * 1.5;
+    posStripe =
+      getElementOffsetTop("testolets") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight * 1.5;
     t.revert();
-  
+
     // SOMETIMES
     if (isMobileLandscape()) {
       sometimesC = sometimesCoords.mobileL;
       t = gsap.set("#wrapContainer", { scale: sometimesC.zoom, y: 0 });
-      posSometimes = getElementOffsetTop("sometimes") - getElementOffsetTop("wrapContainer") - window.innerHeight * 2;
+      posSometimes =
+        getElementOffsetTop("sometimes") -
+        getElementOffsetTop("wrapContainer") -
+        window.innerHeight * 2;
       t.revert();
     } else {
       t = gsap.set("#wrapContainer", { scale: sometimesC.zoom, y: 0 });
-      posSometimes = getElementOffsetTop("sometimes") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+      posSometimes =
+        getElementOffsetTop("sometimes") -
+        getElementOffsetTop("wrapContainer") -
+        window.innerHeight / 2;
       t.revert();
     }
-  
+
     // FACTS
     t = gsap.set("#wrapContainer", { scale: factsC.zoom, y: 0 });
-    posFact = getElementOffsetTop("facts") - getElementOffsetTop("wrapContainer") - window.innerHeight;
+    posFact =
+      getElementOffsetTop("facts") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight;
     t.revert();
-  
+
     // BORN
     if (isMobileLandscape()) {
       bornC = bornCoords.mobileL;
       t = gsap.set("#wrapContainer", { scale: bornC.zoom, y: 0 });
-      posBorn = getElementOffsetTop("born") - getElementOffsetTop("wrapContainer") - window.innerHeight * 2;
+      posBorn =
+        getElementOffsetTop("born") -
+        getElementOffsetTop("wrapContainer") -
+        window.innerHeight * 2;
       t.revert();
     } else {
       t = gsap.set("#wrapContainer", { scale: bornC.zoom, y: 0 });
-      posBorn = getElementOffsetTop("born") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+      posBorn =
+        getElementOffsetTop("born") -
+        getElementOffsetTop("wrapContainer") -
+        window.innerHeight / 2;
       t.revert();
     }
-  
+
     // RESULT MATTER
     t = gsap.set("#wrapContainer", { scale: matterC.zoom, y: 0 });
-    posResult = getElementOffsetTop("stripeTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight;
+    posResult =
+      getElementOffsetTop("stripeTrigger") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight;
     t.revert();
-  
+
     // RESULT LETSO = SERVIZI!
     t = gsap.set("#wrapContainer", { scale: serviziC.zoom, y: 0 });
-    posLetso = getElementOffsetTop("letsoTrigger") - getElementOffsetTop("wrapContainer") - window.innerHeight / 2;
+    posLetso =
+      getElementOffsetTop("letsoTrigger") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight / 2;
     t.revert();
-  
+
     // FOOTER
     t = gsap.set("#wrapContainer", { scale: 1, y: 0 });
-    posFooter = getElementOffsetTop("triggerFooter") - getElementOffsetTop("wrapContainer") - window.innerHeight / 1.5;
+    posFooter =
+      getElementOffsetTop("triggerFooter") -
+      getElementOffsetTop("wrapContainer") -
+      window.innerHeight / 1.5;
     t.revert();
   }
 
@@ -573,10 +624,13 @@ export default function Home() {
       scale: stripeC.zoom,
       x: stripeC.x,
       y: () => {
-        const scrollTop = document.documentElement.classList.contains("touchevents") && isMobile()
-          ? (document.getElementById("wrapSite") as HTMLElement)?.scrollTop || 0
-          : window.scrollY;
-  
+        const scrollTop =
+          document.documentElement.classList.contains("touchevents") &&
+          isMobile()
+            ? (document.getElementById("wrapSite") as HTMLElement)?.scrollTop ||
+              0
+            : window.scrollY;
+
         let pos2 = posStripe - scrollTop;
         return `${0 - pos2}px`;
       },
@@ -594,7 +648,7 @@ export default function Home() {
         if (!isSometimes) sometimes();
       },
     });
-  
+
     gsap.to("#stripeInner", {
       xPercent: 15,
       id: "INNER",
@@ -606,7 +660,7 @@ export default function Home() {
         markers: false,
       },
     });
-  
+
     // PARALLASSE WTF
     gsap.to("#WTF-Sticker_01", {
       id: "PARA WTF-Sticker_01",
@@ -632,21 +686,27 @@ export default function Home() {
         end: "+=950",
         markers: false,
         onEnter() {
-          const elements = document.querySelectorAll(".toHide:not(#sometimes, .sec4)");
+          const elements = document.querySelectorAll(
+            ".toHide:not(#sometimes, .sec4)",
+          );
           elements.forEach((el) => {
             (el as HTMLElement).style.display = "none";
             el.classList.add("hide");
           });
         },
         onLeaveBack() {
-          const sections = document.querySelectorAll(".toHide.sec0, .toHide.sec1, .toHide.sec2, .toHide.sec3");
+          const sections = document.querySelectorAll(
+            ".toHide.sec0, .toHide.sec1, .toHide.sec2, .toHide.sec3",
+          );
           sections.forEach((el) => {
             (el as HTMLElement).style.display = "inline-block";
             el.classList.remove("hide");
           });
         },
         onEnterBack() {
-          const elements = document.querySelectorAll(".toHide:not(#sometimes, .sec4)");
+          const elements = document.querySelectorAll(
+            ".toHide:not(#sometimes, .sec4)",
+          );
           elements.forEach((el) => {
             (el as HTMLElement).style.display = "none";
             el.classList.remove("hide");
@@ -659,7 +719,7 @@ export default function Home() {
         },
       },
     });
-  
+
     // SOMETIMES
     const anini = gsap.timeline({
       scrollTrigger: {
@@ -672,17 +732,20 @@ export default function Home() {
       },
     });
     anini.add("start");
-  
+
     anini.to(
       "#wrapContainer",
       {
         id: "SOMETIMES",
         x: sometimesC.x,
         y: () => {
-          const scrollTop = document.documentElement.classList.contains("touchevents") && isMobile()
-            ? (document.getElementById("wrapSite") as HTMLElement)?.scrollTop || 0
-            : window.scrollY;
-  
+          const scrollTop =
+            document.documentElement.classList.contains("touchevents") &&
+            isMobile()
+              ? (document.getElementById("wrapSite") as HTMLElement)
+                  ?.scrollTop || 0
+              : window.scrollY;
+
           let pos2 = posSometimes - scrollTop;
           return `${0 - pos2}px`;
         },
@@ -693,14 +756,14 @@ export default function Home() {
           if (!isFact) fact();
         },
       },
-      "start"
+      "start",
     );
-  
+
     anini.to(".texture2", { opacity: 0.1 }, "start");
-  
+
     if (!document.documentElement.classList.contains("touchevents")) {
       const trigPara = posSometimes / 10 / 4;
-  
+
       // PARALLASSE SOMETIMES
       const psom = gsap.timeline({
         id: "PARA SOMW",
@@ -714,7 +777,7 @@ export default function Home() {
         },
       });
       psom.add("start");
-  
+
       psom.to(
         "#sometimes",
         {
@@ -724,9 +787,9 @@ export default function Home() {
           onStart() {},
           onComplete() {},
         },
-        "start"
+        "start",
       );
-  
+
       const po = gsap.timeline({
         scrollTrigger: {
           trigger: "#testolets",
@@ -737,7 +800,7 @@ export default function Home() {
         },
       });
       po.add("start");
-  
+
       po.to(
         "#MessHoloImg",
         {
@@ -745,9 +808,9 @@ export default function Home() {
           force3D: false,
           xPercent: 20,
         },
-        "start"
+        "start",
       );
-  
+
       po.to(
         "#yolo",
         {
@@ -755,11 +818,11 @@ export default function Home() {
           force3D: false,
           y: (i, el) => (1 - parseFloat("0.45")) * -vwToPixel(5),
         },
-        "start"
+        "start",
       );
     }
   }
-  
+
   function fact() {
     isFact = gsap.to("#wrapContainer", {
       id: "FACTS AROUND",
@@ -796,7 +859,7 @@ export default function Home() {
         },
       },
     });
-  
+
     const anini = gsap.timeline({
       scrollTrigger: {
         trigger: "#sometimes",
@@ -807,9 +870,9 @@ export default function Home() {
         immediateRender: false,
       },
     });
-  
+
     anini.add("start");
-  
+
     anini.to(
       "#wrapContainer",
       {
@@ -818,8 +881,9 @@ export default function Home() {
         y: () => {
           const pos2 =
             posFact -
-            (document.documentElement.classList.contains("touchevents") && isMobile()
-              ? (document.getElementById("wrapSite")?.scrollTop || 0)
+            (document.documentElement.classList.contains("touchevents") &&
+            isMobile()
+              ? document.getElementById("wrapSite")?.scrollTop || 0
               : window.scrollY);
           return `${0 - pos2}px`;
         },
@@ -831,11 +895,11 @@ export default function Home() {
           if (!isBorn) born();
         },
       },
-      "start"
+      "start",
     );
-  
+
     anini.to(".texture2", { opacity: 0.25, delay: 2.1 }, "start");
-  
+
     // FACTS PARALLASSE
     let anio = gsap.timeline({
       scrollTrigger: {
@@ -847,9 +911,9 @@ export default function Home() {
         immediateRender: false,
       },
     });
-  
+
     anio.add("start");
-  
+
     const factsElements = document.querySelectorAll(".fact");
     if (document.documentElement.classList.contains("touchevents")) {
       anio.to(
@@ -859,7 +923,7 @@ export default function Home() {
           x: "+=5",
           stagger: 0.1,
         },
-        "start"
+        "start",
       );
     } else {
       anio.to(
@@ -869,10 +933,10 @@ export default function Home() {
           x: "+=30",
           stagger: 0.1,
         },
-        "start"
+        "start",
       );
     }
-  
+
     // FACTS2 PARALLASSE
     anio = gsap.timeline({
       scrollTrigger: {
@@ -884,24 +948,24 @@ export default function Home() {
         immediateRender: false,
       },
     });
-  
+
     anio.add("start");
     anio.to(
       "#holoFact",
       {
         x: "+=60",
       },
-      "start"
+      "start",
     );
     anio.to(
       "#NOT-COOL-Sticker",
       {
         x: "-=60",
       },
-      "start"
+      "start",
     );
   }
-  
+
   function born() {
     // BORN AROUND
     isBorn = gsap.to("#wrapContainer", {
@@ -912,12 +976,13 @@ export default function Home() {
         end: "+=950",
         markers: false,
         onEnter: () => {
-          const toHideElements = document.querySelectorAll(".toHide:not(.sec6)");
+          const toHideElements =
+            document.querySelectorAll(".toHide:not(.sec6)");
           toHideElements.forEach((el: any) => {
             el.style.display = "none";
             el.classList.add("hide");
           });
-          
+
           const sec6: any = document.querySelector(".toHide.sec6");
           if (sec6) {
             sec6.style.display = "inline-block";
@@ -933,7 +998,7 @@ export default function Home() {
         },
       },
     });
-  
+
     const animi = gsap.timeline({
       scrollTrigger: {
         trigger: "#holoFact",
@@ -944,9 +1009,9 @@ export default function Home() {
         immediateRender: false,
       },
     });
-  
+
     animi.add("start");
-  
+
     animi.to(
       "#wrapContainer",
       {
@@ -955,8 +1020,9 @@ export default function Home() {
         y: () => {
           const pos2 =
             posBorn -
-            (document.documentElement.classList.contains("touchevents") && isMobile()
-              ? (document.getElementById("wrapSite")?.scrollTop || 0)
+            (document.documentElement.classList.contains("touchevents") &&
+            isMobile()
+              ? document.getElementById("wrapSite")?.scrollTop || 0
               : window.scrollY);
           return `${0 - pos2}px`;
         },
@@ -967,11 +1033,11 @@ export default function Home() {
           if (!isMatter) matter();
         },
       },
-      "start"
+      "start",
     );
-  
+
     animi.to(".texture2", { opacity: 0.1 }, "start");
-  
+
     if (document.documentElement.classList.contains("no-touchevents")) {
       // BORN PARALLASSE
       const aniBP = gsap.timeline({
@@ -986,7 +1052,7 @@ export default function Home() {
         },
       });
       aniBP.add("start");
-  
+
       aniBP.to(
         "#born",
         {
@@ -994,25 +1060,25 @@ export default function Home() {
           y: (i, el) => (1 - parseFloat("0.25")) * 80,
           force3D: false,
         },
-        "start"
+        "start",
       );
-  
+
       aniBP.to(
         "#LETS-ROLL-Sticker_01",
         {
           y: (i, el) => (1 - parseFloat("0.95")) * -vwToPixel(25),
           force3D: false,
         },
-        "start"
+        "start",
       );
-  
+
       aniBP.to(
         "#MessUp_Holo_Circle",
         {
           xPercent: 10,
           force3D: false,
         },
-        "start"
+        "start",
       );
     }
   }
@@ -1026,33 +1092,35 @@ export default function Home() {
         scrub: true,
         immediateRender: false,
         onEnter: () => {
-          const toHideElements = document.querySelectorAll(".toHide:not(.sec6):not(.sec7)");
-          toHideElements.forEach((el:any) => {
+          const toHideElements = document.querySelectorAll(
+            ".toHide:not(.sec6):not(.sec7)",
+          );
+          toHideElements.forEach((el: any) => {
             el.style.display = "none";
             el.classList.add("hide");
           });
-          
-          const sec7:any = document.querySelector(".toHide.sec7");
+
+          const sec7: any = document.querySelector(".toHide.sec7");
           if (sec7) {
             sec7.style.display = "inline-block";
             sec7.classList.remove("hide");
           }
         },
         onEnterBack: () => {
-          const sec7:any = document.querySelector(".toHide.sec7");
+          const sec7: any = document.querySelector(".toHide.sec7");
           if (sec7) {
             sec7.style.display = "inline-block";
             sec7.classList.remove("hide");
           }
-  
-          const sec6:any = document.querySelector(".toHide.sec6");
+
+          const sec6: any = document.querySelector(".toHide.sec6");
           if (sec6) {
             sec6.style.display = "inline-block";
             sec6.classList.remove("hide");
           }
         },
         onLeave: () => {
-          const sec8:any = document.querySelector(".toHide.sec8");
+          const sec8: any = document.querySelector(".toHide.sec8");
           if (sec8) {
             sec8.style.display = "inline-block";
             sec8.classList.remove("hide");
@@ -1060,9 +1128,9 @@ export default function Home() {
         },
       },
     });
-  
+
     animi.add("start");
-  
+
     isMatter = animi.to(
       "#wrapContainer",
       {
@@ -1071,8 +1139,9 @@ export default function Home() {
         y: () => {
           const pos2 =
             posResult -
-            (document.documentElement.classList.contains("touchevents") && isMobile()
-              ? (document.getElementById("wrapSite")?.scrollTop || 0)
+            (document.documentElement.classList.contains("touchevents") &&
+            isMobile()
+              ? document.getElementById("wrapSite")?.scrollTop || 0
               : window.scrollY);
           return `${0 - pos2}px`;
         },
@@ -1081,7 +1150,7 @@ export default function Home() {
         ease: "power1.inOut",
         onComplete: () => {
           if (!isServizi) servizi(); // SERVIZI E POI FOOTER
-  
+
           // STRIPE RESULT MATTER
           gsap.to("#stripeMatterInner", {
             xPercent: 15,
@@ -1095,11 +1164,13 @@ export default function Home() {
               markers: false,
             },
           });
-  
+
           // CIRCLE RESULT MATTER
           if (
             document.documentElement.classList.contains("no-touchevents") &&
-            !document.getElementById("YOLO-2_-Sticker")?.classList.contains("ita")
+            !document
+              .getElementById("YOLO-2_-Sticker")
+              ?.classList.contains("ita")
           ) {
             gsap.to("#YOLO-2_-Sticker", {
               rotate: "+=100%",
@@ -1116,9 +1187,9 @@ export default function Home() {
           }
         },
       },
-      "start"
+      "start",
     );
-  
+
     animi.to(".texture2", { opacity: 0.25, delay: 1.5 }, "start");
   }
   function servizi() {
@@ -1130,8 +1201,9 @@ export default function Home() {
       y: () => {
         const pos2 =
           posLetso -
-          (document.documentElement.classList.contains("touchevents") && isMobile()
-            ? (document.getElementById("wrapSite")?.scrollTop || 0)
+          (document.documentElement.classList.contains("touchevents") &&
+          isMobile()
+            ? document.getElementById("wrapSite")?.scrollTop || 0
             : window.scrollY);
         return `${0 - pos2}px`;
       },
@@ -1146,12 +1218,13 @@ export default function Home() {
         scrub: true,
         immediateRender: false,
         onEnter: () => {
-          const toHideElements = document.querySelectorAll(".toHide:not(.sec8)");
+          const toHideElements =
+            document.querySelectorAll(".toHide:not(.sec8)");
           toHideElements.forEach((el: any) => {
             el.style.display = "none";
             el.classList.add("hide");
           });
-  
+
           const sec8: any = document.querySelector(".toHide.sec8");
           if (sec8) {
             sec8.style.display = "inline-block";
@@ -1159,12 +1232,13 @@ export default function Home() {
           }
         },
         onLeaveBack: () => {
-          const toHideElements = document.querySelectorAll(".toHide:not(.sec7)");
+          const toHideElements =
+            document.querySelectorAll(".toHide:not(.sec7)");
           toHideElements.forEach((el: any) => {
             el.style.display = "none";
             el.classList.add("hide");
           });
-  
+
           const sec7: any = document.querySelector(".toHide.sec7");
           if (sec7) {
             sec7.style.display = "inline-block";
@@ -1172,12 +1246,13 @@ export default function Home() {
           }
         },
         onEnterBack: () => {
-          const toHideElements = document.querySelectorAll(".toHide:not(.sec8)");
+          const toHideElements =
+            document.querySelectorAll(".toHide:not(.sec8)");
           toHideElements.forEach((el: any) => {
             el.style.display = "none";
             el.classList.add("hide");
           });
-  
+
           const sec8: any = document.querySelector(".toHide.sec8");
           if (sec8) {
             sec8.style.display = "inline-block";
@@ -1189,7 +1264,7 @@ export default function Home() {
         if (!isFooter) footer();
       },
     });
-  
+
     if (document.documentElement.classList.contains("no-touchevents")) {
       // parallax tagsv LETS
       gsap.to("#letso", {
@@ -1204,10 +1279,10 @@ export default function Home() {
         },
         y: (i, el) => (1 - 0.3) * vwToPixel(90),
       });
-  
+
       // parallasse riga servizi esterna.
     }
-  
+
     gsap.to("#tagsvE", {
       id: "TAGSV",
       scrollTrigger: {
@@ -1221,15 +1296,15 @@ export default function Home() {
     });
   }
   function footer() {
-  
     isFooter = gsap.to("#wrapContainer", {
       id: "FOOTER",
       x: footerC.x,
       y: () => {
         const pos2 =
           posFooter -
-          (document.documentElement.classList.contains("touchevents") && isMobile()
-            ? (document.getElementById("wrapSite")?.scrollTop || 0)
+          (document.documentElement.classList.contains("touchevents") &&
+          isMobile()
+            ? document.getElementById("wrapSite")?.scrollTop || 0
             : window.scrollY);
         console.log(posFooter, window.scrollY);
         return `${0 - pos2}px`;
@@ -1259,19 +1334,19 @@ export default function Home() {
           document.querySelectorAll(".secFooter").forEach((el: any) => {
             el.style.display = "none";
           });
-  
+
           // gsap.set("#wrapSite", { height: wrapHeight });
         },
       },
       onComplete: () => {
         // gsap.set("#wrapSite", { height: document.getElementById("messFooter")?.offsetHeight + document.getElementById("messFooter")?.getBoundingClientRect().top - vhToPixel(70) });
-  
+
         if (!isAnimFooter) {
           document.querySelectorAll(".bu").forEach((el) => {
             let d = 0;
             const de = el.getAttribute("data-delay");
             if (de) d = parseFloat(de);
-  
+
             gsap.from(el, 0.4, {
               scrollTrigger: {
                 markers: false,
@@ -1286,7 +1361,7 @@ export default function Home() {
               ease: "power1.out",
             });
           });
-  
+
           isAnimFooter = gsap.to("#i3", {
             scrollTrigger: {
               trigger: "#i3",
@@ -1301,7 +1376,7 @@ export default function Home() {
               },
             },
           });
-  
+
           gsap.to("#r_web", {
             id: "R",
             rotate: -360,
@@ -1317,8 +1392,7 @@ export default function Home() {
       },
     });
   }
-  
-  
+
   return (
     <main>
       <div id="wrapSite">
@@ -1345,7 +1419,14 @@ export default function Home() {
 
           <div className="sec0" id="lottie">
             <div id="lottieTexture"></div>
-            <lottie-player  ref={ref} src="/assets/images/MessUpLottie/2406_DEF-2.json" background="transparent"  speed="1" autoplay mode="normal"></lottie-player>
+            <lottie-player
+              ref={ref}
+              src="/assets/images/MessUpLottie/2406_DEF-2.json"
+              background="transparent"
+              speed="1"
+              autoplay
+              mode="normal"
+            ></lottie-player>
           </div>
 
           <div id="wrapColumns">
@@ -1356,7 +1437,10 @@ export default function Home() {
                 be{" "}
                 <span className="z-[-2]">
                   <span className="a">
-                    <img src="/assets/images/txt/wrong.png" className="svgTitolo" />
+                    <img
+                      src="/assets/images/txt/wrong.png"
+                      className="svgTitolo"
+                    />
                   </span>
                 </span>
                 <br />
@@ -1487,8 +1571,11 @@ export default function Home() {
                   <p className="testo2">Sometimes</p>
                   <p className="testo2">you need to</p>
                   <p className="testo2 te">
-                    <img className="svgMessup" src="/assets/images/txt/MessUp.png" />a
-                    bit.
+                    <img
+                      className="svgMessup"
+                      src="/assets/images/txt/MessUp.png"
+                    />
+                    a bit.
                   </p>
 
                   <div className="a1">
@@ -1621,7 +1708,10 @@ export default function Home() {
                   <p className="testo2">Born digital,</p>
                   <p className="testo2">die-hard</p>
                   <p className="testo2">
-                    <img className="svgBorn" src="/assets/images/txt/humans.png" />
+                    <img
+                      className="svgBorn"
+                      src="/assets/images/txt/humans.png"
+                    />
                   </p>
 
                   <div className="a1">
@@ -1718,7 +1808,10 @@ export default function Home() {
                   <div id="over3">
                     <div className="texture2 wtf"></div>
                   </div>
-                  <img id="WTF-Sticker_01" src="/assets/images/WTF-Sticker_01.png" />
+                  <img
+                    id="WTF-Sticker_01"
+                    src="/assets/images/WTF-Sticker_01.png"
+                  />
                 </div>
 
                 <img
@@ -1803,6 +1896,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-    
   );
 }

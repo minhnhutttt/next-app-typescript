@@ -1,6 +1,6 @@
 'use client'
 
-import { ReactNode, useLayoutEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 
 import { ReactLenis } from '@studio-freight/react-lenis'
 import gsap from 'gsap'
@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 interface SmoothScrollPropsType {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 const SmoothScroll = ({ children }: SmoothScrollPropsType) => {
@@ -28,9 +28,9 @@ const SmoothScroll = ({ children }: SmoothScrollPropsType) => {
   }, [])
 
   return (
-    <div>
+    <main>
       <ReactLenis root>{children}</ReactLenis>
-    </div>
+    </main>
   )
 }
 
