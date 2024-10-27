@@ -307,7 +307,7 @@ body {
 }
 .column {
 	background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(13,13,13,1) 60px, rgba(13,13,13,1) 99.5%, rgba(13,13,13,0) 100%);
-	width: 5.986%;
+	width: 8.74074%;
 	position: relative;
 	text-wrap: nowrap;
 	white-space: nowrap;
@@ -357,7 +357,7 @@ body {
 #titolone {
 	position: absolute;
 	color: white;
-	left: 3%;
+	left: 8%;
 	z-index: 1;
 	font-family: 'FreigeistItalic';
 	font-size: 195px;
@@ -405,7 +405,7 @@ p.testolets {
 	font-size: 30px;
 	color: #F0F0F0;
 	letter-spacing: -0.25px;
-	line-height: 86.5px;
+	line-height: 3cqi;
 	position: absolute;
 	z-index: 9;
 	margin: 0 auto;
@@ -708,6 +708,7 @@ div.a1 p {
 }
 #messupTop,#messupBottom{
 	width:100%;
+	max-width: 100% !important;
 }
 #wrapContainer {
 	width:100%;
@@ -831,9 +832,9 @@ div.a1 p {
 		_will-change:transform;
 	}
 	#titolone{
-		font-size: 16cqi;
-		line-height: 14cqi;
-		letter-spacing: -0.8cqi;
+		font-size: 9cqi;
+		line-height: 9cqi;
+		letter-spacing: 0;
 	}
 	.svgTitolo {
 		width: 48cqi;
@@ -1035,7 +1036,7 @@ div.a1 p {
 	/*PROVA PER SPOSTAMENTO LATERALE EXTRA*/
 	p.testo2 span.superfly {
 		font-size: 1.05cqi;
-		line-height: 0;
+		line-height: 2cqi;
 		font-style: normal;
 	}
 	div.a1 {
@@ -1053,7 +1054,7 @@ div.a1 p {
 		*/
 		top:0;
 		position: relative;
-		font-size:13cqi;
+		font-size:8cqi;
 	}
 	.top-fact {
 		/*top: 340cqi;
@@ -1097,7 +1098,7 @@ div.a1 p {
 	.pillo {
 		/*top: 361cqi;
 		*/
-		top: calc(190cqi + 300vh);
+		top: calc(210cqi + 300vh);
 	}
 	p.testolets {
 		/*top: 200cqi;
@@ -1145,6 +1146,7 @@ div.a1 p {
 		top: calc(248cqi + 500vh);
 		font-size: 2.3cqi;
 		letter-spacing: -0.035cqi;
+		line-height: 3cqi;
 	}
 	.results {
 		/*top: 450cqi;
@@ -1229,8 +1231,8 @@ div.a1 p {
 	transform: rotate(14deg);
 }
 div.a1 p {
-	font-size: 0.93px;
-	line-height: 0.11px;
+	font-size: 1.1px;
+	line-height: 2.11px;
 	letter-spacing: .015px;
 	color: #F0F0F0;
 	margin-bottom: 1.3px;
@@ -1345,7 +1347,8 @@ body,html,#wrapSite {
 	width:20px;
 }
 p.testo1,p.testo1.primo {
-	font-size: 3.2cqi;
+	font-size: 2.8cqi;
+	line-height: 3.4cqi;
 	top: 185cqi;
 }
 #primoTrigger {
@@ -1419,7 +1422,7 @@ p.testo1,p.testo1.primo {
 		top: calc(209cqi + 400vh);
 	}
 	p.factu {
-		font-size: 1.2cqi;
+		font-size: 1.6cqi;
 		letter-spacing: -0.25px;
 		line-height: 1.8cqi;
 	}
@@ -1429,7 +1432,7 @@ p.testo1,p.testo1.primo {
 	p.testo2 {
 		font-size: 0.85cqi;
 		line-height: .80cqi;
-		line-height: 0;
+		line-height: 2cqi;
 		letter-spacing: -0.25px;
 	}
 	.biggo p{
@@ -1440,7 +1443,7 @@ p.testo1,p.testo1.primo {
 		top: 110cqi;
 	}
 	p.testo1,p.testo1.primo {
-		font-size: 1.2cqi;
+		font-size: 1.6cqi;
 		line-height: 2cqi;
 		top: 110cqi;
 	}
@@ -1537,12 +1540,12 @@ p.testo1,p.testo1.primo {
 		margin-left: .6cqi;
 	}
 	div.a1 p {
-		font-size: 1.8px;
+		font-size: 2.2px;
 		line-height: 1px;
 		letter-spacing: .01px;
 		color: #F0F0F0;
 		margin: 0;
-		line-height: 2.4px;
+		line-height: 3.2px;
 		margin-bottom: 0.5px;
 	}
 	#spacer {

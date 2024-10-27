@@ -37,12 +37,6 @@ export default function Home() {
     return bgColor === "rgb(255, 0, 0)";
   }
 
-  function isPhone(): boolean {
-    return (
-      /mobile/i.test(navigator.userAgent) &&
-      !/ipad|tablet/i.test(navigator.userAgent)
-    );
-  }
 
   let isStripe: any = null;
   let isSometimes: any = null;
@@ -68,8 +62,8 @@ export default function Home() {
       zoom: 1.2,
     },
     mobile: {
-      x: "0vw",
-      zoom: 2.3,
+      x: "-10vw",
+      zoom: 2,
     },
   };
 
@@ -80,12 +74,12 @@ export default function Home() {
       zoom: 10,
     },
     mobile: {
-      x: "283vw",
-      zoom: 16,
+      x: "150vw",
+      zoom: 10,
     },
     mobileL: {
-      x: "210vw",
-      zoom: 14,
+      x: "180vw",
+      zoom: 11,
     },
   };
 
@@ -109,7 +103,7 @@ export default function Home() {
     },
     mobile: {
       x: "-64vw",
-      zoom: 16,
+      zoom: 13,
     },
     mobileL: {
       x: "-50vw",
@@ -175,7 +169,6 @@ export default function Home() {
       });
     }
 
-    // Animation GSAP cho wrapContainer
     gsap.to("#wrapContainer", {
       scale: 1,
       opacity: 1,
@@ -189,12 +182,10 @@ export default function Home() {
   }, []);
 
   function startPreload() {
-    // Lấy chiều cao của phần tử lottie và cửa sổ
     setTimeout(() => {
       lottieHeight = document.getElementById("lottie")?.offsetHeight || 0;
     const windowHeight = window.innerHeight;
 
-    // Điều chỉnh padding-top cho #wrapSite dựa trên chiều cao của lottie
     const wrapSite = document.getElementById("wrapSite");
 
     if (wrapSite) {
@@ -276,28 +267,23 @@ export default function Home() {
   let canAnim = true;
 
   function initObserver() {
-    // Khởi tạo Observer để lắng nghe các sự kiện cuộn (scroll), chạm (touch), và con trỏ (pointer)
     canAnim = true;
 
     Observer.create({
-      // target: window, // Không cần chỉ định vì mặc định lắng nghe trên window
-      type: "wheel,touch,pointer", // Các loại sự kiện được lắng nghe
+      type: "wheel,touch,pointer",
 
       onStop: (self) => {
         canAnim = true;
       },
 
       onChangeY: (self) => {
-        // Nếu không thể animation hoặc timeline đang chạy, không tiếp tục
         if (!canAnim) return;
         if (tl && tl.isActive()) return;
 
         const currentScroll = window.scrollY + window.innerHeight;
         canAnim = false;
 
-        // Kiểm tra nếu cuộn tới gần cuối trang
         if (currentScroll + 5 > document.body.scrollHeight) {
-          // Tạo GSAP animation cho #r_web
           tl = gsap.to("#r_web", {
             rotate: -20,
             ease: "Power2.easeInOut",
@@ -339,31 +325,26 @@ export default function Home() {
       element.style.display = "inline-block";
     });
 
-    // Lấy tất cả các animation từ GSAP
     const anims = gsap.globalTimeline.getChildren(true, true, true);
     anims.forEach((anim) => {
       anim.revert();
       anim.kill();
     });
 
-    // Xóa tất cả các ScrollTrigger hiện tại
     ScrollTrigger.getAll().forEach((trigger) => {
       trigger.kill();
     });
 
     gsap.killTweensOf("*");
 
-    // Đặt lại vị trí và tỷ lệ cho wrapContainer
     gsap.set("#wrapContainer", { x: 0, y: 0, scale: 1 });
     const wrapContainer = document.getElementById("wrapContainer");
     if (wrapContainer) {
       wrapContainer.style.transform = "translate(0) scale(1)";
     }
 
-    // Cuộn về đầu trang
     window.scrollTo(0, 0);
 
-    // Khởi tạo lại các animation và ScrollTrigger
     initAnimations();
     initScrollTrigger();
   }
@@ -417,7 +398,7 @@ export default function Home() {
     const element = document.getElementById(elementId);
     if (!element) throw new Error(`Element with id ${elementId} not found`);
     const rect = element.getBoundingClientRect();
-    return rect.top + window.scrollY; // Cộng thêm scrollY để có tọa độ chính xác
+    return rect.top + window.scrollY; 
   }
 
   function initPositionsDesktop() {
@@ -1372,42 +1353,26 @@ export default function Home() {
               <polygon points="348 260 420 260 420 195.63 494.31 195.63 494.31 130.42 420 130.42 420 65.21 435 65.21 435 115.93 507 115.93 507 0 348 0 348 260" />
             </clipPath>
           </svg>
-
+          
           <div className="sec0 toHide" id="lottie">
             <div id="lottieTexture"></div>
-            <lottie-player
+            <img id="messupTop" src="/assets/images/SKALE-LP.png" />
+            {/* <lottie-player
               id="lottieTop"
               src="/assets/images/MessUpLottie/2406_DEF-2.json?B2320"
               background="transparent"
               speed="1"
-            ></lottie-player>
+            ></lottie-player> */}
           </div>
 
           <div id="wrapColumns">
             <div className="containerMix" style={{ position: "relative" }}>
               <h1 className="sec1 toHide " id="titolone" style={{ zIndex: 99 }}>
-                We’d rather
-                <br />
-                be{" "}
-                <span style={{ zIndex: -2 }}>
-                  <span className="a">
-                    <img src="/assets/images/txt/wrong.png" className="svgTitolo" />
-                  </span>
-                </span>
-                <br />
-                than{" "}
-                <span style={{ zIndex: 1 }}>
-                  <span className="a" style={{ zIndex: 1 }}>
-                    <img
-                      src="/assets/images/txt/boring.png"
-                      className="svgTitolo boring"
-                    />
-                  </span>
-                </span>
-                <br />
-                How about
-                <br />
-                you?
+                今日の限界が、<br />
+                明日の出発点になる。<br />
+                上・下・右・左。<br />
+                一夜で次元は<br />
+                変えられる。
               </h1>
 
               <div id="primoTrigger"></div>
@@ -1471,7 +1436,7 @@ export default function Home() {
                     id="facts"
                     style={{ zIndex: 5 }}
                   >
-                    F
+                    次
                   </span>
                 </div>
 
@@ -1490,10 +1455,29 @@ export default function Home() {
               <div id="c4" className="column" style={{ zIndex: 0 }}>
                 <div className="texture2"></div>
                 <div className="texture"></div>
+                <span className="sec3 toHide " id="testoletsSpan">
+                  <div className="sec3" id="over0">
+                    <div className="texture2"></div>
+                  </div>
+                  <p id="testolets" className="testolets v">
+                  「もう、これ以上の成長は難しい」 
+                  </p>
+                </span>
+                <div id="sometimes" className="hor sec4 biggo ">
+                  <p className="testo2">それでいいのか？</p>
 
+                  <div className="a1">
+                    <p>
+                    「限界」は、あなたの頭の中にしか存在しない幻想だ。<br />
+                    「限界」だと思っているその壁は、上から見たら長い道のりの些細な障害でしかない。
+                    </p>
+                  </div>
+
+                  <div id="yolo" className="oh-shut-up"></div>
+                </div>
                 <div className="sec5  maskFact">
                   <span className="sec5   fact" style={{ zIndex: 4 }}>
-                    a
+                  元
                   </span>
                 </div>
 
@@ -1508,74 +1492,42 @@ export default function Home() {
                   id="holoFact2"
                   src="/assets/images/MessUp_Holo.jpg"
                 />
-
-                <p
-                  className="v pillo sec5  show-sm factu"
-                  style={{ color: "#FF6600" }}
-                >
-                  <span style={{ visibility: "hidden" }} className="pollo-span">
-                    Not everyone likes us.
-                  </span>
-                  <br />
-                  <span className="pollo-span">
-                    Not everyone likes us
-                    <span style={{ color: "#fff" }}>.</span>
-                  </span>
-                </p>
               </div>
 
               <div id="c5" className="column" style={{ zIndex: 5 }}>
                 <div className="texture2"></div>
                 <div className="texture"></div>
-
+                
                 <span className="sec3 toHide " id="testoletsSpan">
-                  <div className="sec3" id="over0">
+                  <div id="over1">
                     <div className="texture2"></div>
                   </div>
-                  <p id="testolets" className="testolets v">
-                    You are looking for a communication agency, but we
+                  <p className="testolets v">
+                    「うちの業界では、これが限界だ」
                   </p>
                 </span>
-
-                <div id="sometimes" className="hor sec4 biggo ">
-                  <p className="testo2">Sometimes</p>
-                  <p className="testo2">you need to</p>
-                  <p className="testo2 te">
-                    <img className="svgMessup" src="/assets/images/txt/MessUp.png" />a
-                    bit.
-                  </p>
-
-                  <div className="a1">
-                    <p>It's communication, not an Excel sheet.</p>
-                    <p style={{ color: "#FF6600" }}>
-                      No filters, no brakes, no fear
-                      <span style={{ color: "#fff" }}>.</span>
-                    </p>
-                    <p id="spacer">More fun, isn't it?</p>
-                  </div>
-
-                  <div id="yolo" className="oh-shut-up"></div>
-                </div>
+                
 
                 <div className="sec5  maskFact">
                   <span className="sec5   fact" style={{ zIndex: 3 }}>
-                    c
+                  鍵
                   </span>
                 </div>
 
-                <p className="v pillo sec5  show-sm factu">
+
+                <p
+                  className="v pillo sec5  factu"
+                >
                   <span className="pollo-span">
-                    But someone does: brands that
-                  </span>
-                  <br />
-                  <span className="pollo-span">
-                    don't want to be background noise.
+                  「限界」という名の幻想を打ち破る鍵。次元鍵は、<br />あなたのビジネスの中に既に存在している。
+                    <span style={{ color: "#fff" }}>.</span>
                   </span>
                 </p>
 
                 <span className="sec7 ">
                   <p id="testomatter" className="testomatter v">
-                    We love mess, but we always have the goal in mind.
+                  Webサイト制作・リニューアル（Reactを中心としたモダン開発）<br />
+                  ランディングページ（LP）制作（Reactを中心としたモダン開発）
                   </p>
                 </span>
               </div>
@@ -1584,25 +1536,40 @@ export default function Home() {
                 <div className="texture2"></div>
                 <div className="texture"></div>
 
-                <span className="sec3 toHide " id="testoletsSpan">
-                  <div id="over1">
+                <p
+                  id="testo1"
+                  className="testo1 v sec2 toHide"
+                  style={{ zIndex: 99 }}
+                >
+                  <span>
+                  あなたは今、<br />
+                  ビジネスを殺そうとしている。
+                  </span>
+                </p>
+
+                <div className="sec3 toHide " id="testoletsSpan">
+                  <div id="over2">
                     <div className="texture2"></div>
                   </div>
                   <p className="testolets v">
-                    are more of{" "}
-                    <span style={{ color: "#FF6600" }}>
-                      a collective of hot heads
-                    </span>
-                    . However, you
+                  「このビジネスモデルでは、ここまでが精一杯だ」
                   </p>
-                </span>
-
+                </div>
                 <div className="sec5  maskFact">
                   <span className="sec5   fact" style={{ zIndex: 2 }}>
-                    t:
+                  ？
                   </span>
                 </div>
 
+                <p className="v pillo sec5 factu">
+                  <span className="pollo-span">
+                  「できない」と思っていたことの中に
+                  </span>
+                  <br />
+                  <span className="pollo-span">
+                  「無理だ」と諦めていたアイデアの中に
+                  </span>
+                </p>
                 <p className="v pillo sec5 toHide  show-sm factu">
                   <span className="pollo-span">Trust us, together we</span>
                   <br />
@@ -1610,24 +1577,29 @@ export default function Home() {
                     will stir up quite a storm.
                   </span>
                 </p>
+                <div id="born" className="hor sec6 toHide biggo">
+                  <p className="testo2">目と勇気と仲間。</p>
 
-                <p
-                  className="v pillo sec5  show-md "
-                  style={{ color: "#FF6600" }}
-                >
-                  <span style={{ visibility: "hidden" }} className="pollo-span">
-                    Not everyone likes us.
-                  </span>
-                  <br />
-                  <span className="pollo-span">
-                    Not everyone likes us
-                    <span style={{ color: "#fff" }}>.</span>
-                  </span>
-                </p>
+                  <div className="a1">
+                    <p>あなたには、次元鍵を見つけ出す目があるか？ <br />
+次元鍵を使って自らのビジネスを根本から覆す勇気があるか？<br />
+<br />
+目がなければSKALEがなろう。<br />
+勇気がなければSKALEが支えよう。<br />
+<br />
+ビジネスを殺したくなければ、SKALEを仲間に。</p>
+                  </div>
+                  <img
+                    id="LETS-ROLL-Sticker_01"
+                    className="sec6 "
+                    src="/assets/images/LETS-ROLL-Sticker_01.png"
+                  />
+                </div>
 
                 <span className="sec7 ">
                   <p className="testomatter v">
-                    And we are so stubborn that we keep going when
+                  システム開発（CRM、MA等Reactを中心としたモダン開発） <br />
+                  AI活用支援（AIを起点とした事業開発）
                   </p>
                 </span>
               </div>
@@ -1635,33 +1607,24 @@ export default function Home() {
               <div id="c7" className="column" style={{ zIndex: 10 }}>
                 <div className="texture2"></div>
                 <div className="texture"></div>
-
-                <div className="sec3 toHide " id="testoletsSpan">
-                  <div id="over2">
-                    <div className="texture2"></div>
-                  </div>
-                  <p className="testolets v">
-                    can ask us everything that machines - and those
-                  </p>
-                </div>
-
-                <p className="v pillo sec5  show-md">
-                  <span className="pollo-span">
-                    But someone does: brands that
-                  </span>
-                  <br />
-                  <span className="pollo-span">
-                    don't want to be background noise.
+                <p className="testo1 v sec2 toHide " style={{ zIndex: 99 }}>
+                  <span className="">
+                    あなたは知らず知らずのうちに <br />
+                    可能性を自ら摘み取っている。
                   </span>
                 </p>
 
+                <p className="sec3 toHide  testolets v">
+                こんな言葉を口にしたことはないか？ 
+                </p>
+                <p className="v pillo sec5 factu">
+                  <span className="pollo-span">
+                  「非現実的だ」と片付けていた戦略の中に
+                  </span>
+                </p>
                 <span className="sec7 ">
                   <p className="testomatter v">
-                    others give up.{" "}
-                    <span style={{ color: "#FF6600" }}>
-                      That's how we get where others don't
-                    </span>
-                    .
+                  広告運用支援（AI活用による高効率低コストの運用）
                   </p>
                 </span>
               </div>
@@ -1670,42 +1633,17 @@ export default function Home() {
                 <div className="texture2"></div>
                 <div className="texture"></div>
 
-                <p className="sec3 toHide  testolets v">
-                  who think like a machine - will never give you.
-                </p>
-
-                <p
-                  className="testo1 v sec2 toHide show-sm primo"
-                  style={{ zIndex: 99 }}
-                >
-                  Your brand wants to do the right thing?
-                  <br />
-                </p>
-
-                <div id="born" className="hor sec6 toHide biggo">
-                  <p className="testo2">Born digital,</p>
-                  <p className="testo2">die-hard</p>
-                  <p className="testo2">
-                    <img className="svgBorn" src="/assets/images/txt/humans.png" />
-                  </p>
-
-                  <div className="a1">
-                    <p>We grew up immersed in technology,</p>
-                    <p>so we take it for granted.</p>
-                    <div id="spacer"></div>
-                    <p style={{ color: "#FF6600" }}>
-                      But we're here to do things it was not
-                    </p>
-                    <p style={{ color: "#FF6600" }}>
-                      meant for<span style={{ color: "#fff" }}>.</span>
-                    </p>
+                <div className="sec3 toHide ">
+                  <div id="over2">
+                    <div className="texture2"></div>
                   </div>
-                  <img
-                    id="LETS-ROLL-Sticker_01"
-                    className="sec6 "
-                    src="/assets/images/LETS-ROLL-Sticker_01.png"
-                  />
+                  <p className="testolets v">
+                  あるなら、既に自社に死刑宣告を下しているも同然だ。<br />
+                  限界を口実に挑戦を放棄している。
+                  </p>
                 </div>
+
+                
 
                 <p className="v pillo sec5 toHide  show-md">
                   <span className="pollo-span">Trust us, together we</span>
@@ -1719,29 +1657,7 @@ export default function Home() {
               <div id="c9" className="column">
                 <div className="texture2"></div>
                 <div className="texture"></div>
-                <p
-                  id="testo1"
-                  className="testo1 v sec2 toHide"
-                  style={{ zIndex: 99 }}
-                >
-                  <span className="show-md">
-                    Your brand wants to do the right thing?
-                    <br />
-                    Easy: just do as everybody else.
-                  </span>
-                  <span className="show-sm primo">
-                    Easy: just do as everybody else.
-                  </span>
-                </p>
-
-                <div className="sec3 toHide ">
-                  <div id="over2">
-                    <div className="texture2"></div>
-                  </div>
-                  <p className="testolets v">
-                    For example, something that will truly amaze you.
-                  </p>
-                </div>
+                
 
                 <div className="shinju" id="shinju2"></div>
 
@@ -1757,27 +1673,12 @@ export default function Home() {
               <div id="c10" className="column" style={{ zIndex: 2 }}>
                 <div className="texture2"></div>
                 <div className="texture"></div>
-                <p className="testo1 v sec2 toHide " style={{ zIndex: 99 }}>
-                  <span className="show-md">
-                    But you are not like everybody else, right?
-                    <br />
-                    <span style={{ color: "#FF6600" }} id="lets">
-                      Let’s MessUp
-                    </span>
-                    <span style={{ color: "#fff" }}>.</span>
-                  </span>
-                  <span className="show-sm">
-                    But you are not like everybody else, right?
-                  </span>
-                </p>
-              </div>
-
-              <div id="c11" className="column" style={{ zIndex: 1 }}>
+                
                 <div className="texture2"></div>
                 <div className="texture"></div>
 
                 <p
-                  className="testo1 v sec2 toHide show-sm primo"
+                  className="testo1 v sec2  show-sm primo"
                   style={{ zIndex: 99 }}
                 >
                   <span style={{ color: "#FF6600" }} id="lets">
@@ -1786,7 +1687,7 @@ export default function Home() {
                   <span style={{ color: "#fff" }}>.</span>
                 </p>
 
-                <div className="sec3 toHide ">
+                <div className="sec3  ">
                   <div id="over3">
                     <div className="texture2 wtf"></div>
                   </div>
@@ -1800,6 +1701,34 @@ export default function Home() {
                 />
               </div>
 
+              {/* <div id="c11" className="column" style={{ zIndex: 1 }}>
+                <div className="texture2"></div>
+                <div className="texture"></div>
+
+                <p
+                  className="testo1 v sec2  show-sm primo"
+                  style={{ zIndex: 99 }}
+                >
+                  <span style={{ color: "#FF6600" }} id="lets">
+                    Let’s MessUp
+                  </span>
+                  <span style={{ color: "#fff" }}>.</span>
+                </p>
+
+                <div className="sec3  ">
+                  <div id="over3">
+                    <div className="texture2 wtf"></div>
+                  </div>
+                  <img id="WTF-Sticker_01" src="/assets/images/WTF-Sticker_01.png" />
+                </div>
+
+                <img
+                  id="YOLO-2_-Sticker"
+                  className="sec7 show-md"
+                  src="/assets/images/YOLO-2_-Sticker_08.png"
+                />
+              </div> */}
+              {/*
               <div id="c12" className="column" style={{ zIndex: 0 }}>
                 <div className="texture2"></div>
                 <div className="texture"></div>
@@ -1814,6 +1743,7 @@ export default function Home() {
                 <div className="texture2"></div>
                 <div className="texture"></div>
               </div>
+              */}
             </div>
           </div>
           <div id="triggerFooter"></div>
@@ -1821,7 +1751,7 @@ export default function Home() {
             <img
               className="toHide secBottom"
               id="messupBottom"
-              src="/assets/images/MessUp_Bottom.png"
+              src="/assets/images/SKALE-LP-bottom.png"
             />
             <img
               className="toHide secBottom"
@@ -1833,7 +1763,7 @@ export default function Home() {
             <div id="quicker">
               <span className="overflow">
                 <h3 className="bu" data-delay=".2" style={{ margin: 0 }}>
-                  Quicker to talk it out.
+                  話し合った方が早いです。
                 </h3>
               </span>
             </div>
@@ -1845,25 +1775,7 @@ export default function Home() {
                   className="bu"
                   data-delay=".3"
                 >
-                  <a href="mailto:yo@messup.it">Email</a>
-                </span>
-              </span>
-              <span className="overflow">
-                <span
-                  style={{ display: "inline-block" }}
-                  className="bu"
-                  data-delay=".4"
-                >
-                  <a href="https://www.instagram.com/messup.it">Instagram</a>
-                </span>
-              </span>
-              <span className="overflow">
-                <span
-                  style={{ display: "inline-block" }}
-                  className="bu"
-                  data-delay=".5"
-                >
-                  <a href="https://messup.it/whatamess.php?lang=en">Nothing</a>
+                  <a href="">Email</a>
                 </span>
               </span>
             </div>
