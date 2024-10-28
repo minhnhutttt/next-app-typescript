@@ -61,9 +61,9 @@ const Voice = () => {
         <Column title="企業担当者の声" items={rightItems} />
         </div>
       </div>
-      <div className="md:mt-[38px] mt-[18px] max-w-[671px] md:w-full w-[90%] mx-auto border-dashed border border-[#73E3DC] bg-white md:px-[40px] px-[20px] md:py-[30px] py-[15px] rounded-[20px]">
+      <div className="md:mt-[44px] mt-[18px] max-w-[671px] md:w-full w-[90%] mx-auto border-dashed border border-[#73E3DC] bg-white md:px-[40px] px-[20px] md:py-[30px] py-[15px] rounded-[20px]">
         <h3 className="md:text-[22px] text-[18px] text-center font-bold border-b border-solid border-[#73E3DC] pb-[10px]">社員が福利厚生を選ぶ時代へ！</h3>
-        <p className="md:text-[18px] text-[14px] left-5 md:py-[20px] py-[10px]">福利厚生クエストを導入し、社員の満足度とモチベーションを向上させ、企業全体の生産性とパフォーマンスを高めましょう！</p>
+        <p className="md:text-[18px] text-[14px] left-5 md:py-[24px] py-[10px]">福利厚生クエストを導入し、社員の満足度とモチベーションを向上させ、企業全体の生産性とパフォーマンスを高めましょう！</p>
       <Button large link="#">LINEでお問い合わせ</Button>
       </div>
       </div>

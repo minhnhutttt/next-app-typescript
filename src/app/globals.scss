@@ -10,6 +10,17 @@ body {
   color: #fff;
   font-family: "Shippori Mincho", serif;
 }
+
+@layer utilities {
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none; 
+		scrollbar-width: none;
+  }
+  }
+
 .box:before {
 	position: absolute;
 	top: 100%;
@@ -24,17 +35,5 @@ body {
   
   .bg-line-height{
 	background: linear-gradient( transparent 70%, #FAC103 20% );
-  }
-  
-  .flow-arrow:not(:last-child)::before{
-	content:"";
-	background: url(/assets/images/arrow-down.png) no-repeat;
-	width: 30px;
-	height: 53px;
-	background-size: 30px 53px;
-	position: absolute;
-	bottom: -70px;
-	left: 50%;
-	transform: translateX(-50%);
   }
   

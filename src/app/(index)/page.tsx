@@ -21,9 +21,9 @@ export default function Home() {
         <Merit />
         <Voice />
         </div>
-        {/*<Flow />
+        <Flow />
         <Plans/>
-        <FAQ /> */}
+        <FAQ />
     </main>
   );
 }

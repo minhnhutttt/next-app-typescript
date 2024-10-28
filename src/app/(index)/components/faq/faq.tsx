@@ -86,7 +86,6 @@ export default function FAQ() {
     <section id="faq" className="px-5 pb-12 pt-14  md:pb-[90px] md:pt-[150px]">
       <div className="mx-auto w-full max-w-[920px]">
         <Title
-          title="My Page Title"
           text_ja="よくある質問"
           text_en="FAQ"
           alignment="center"

@@ -39,15 +39,15 @@ const Flow = () => {
     <section className="relative bg-cover bg-center bg-[url(/assets/images/bg-flow.jpg);] md:pt-[80px] pt-[40px]">
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
         <Title
-          title="My Page Title"
           text_ja="ご利用の流れ"
           text_en="Flow of Use"
           alignment="center"
           titleColor="white"
         />
-        <div className="md:mt-[77px] pt-[30px] mt-[35px] text-black rounded-lg shadow-lg max-w-[560px] mx-auto h-[529px] overflow-y-scroll max-sm:px-4">
+        <div className="md:mt-[77px] pt-[30px] mt-[35px] text-black rounded-lg shadow-lg max-w-[560px] mx-auto h-[529px] overflow-y-scroll max-sm:px-4 no-scrollbar">
           {steps.map((step, index) => (
-            <div className="mb-[120px] relative flow-arrow last:mb-0 bg-[rgba(255,255,255,0.9)] px-[20px] pb-[30px] pt-[40px] rounded-[20px]" key={index}>
+            <div className="group mb-[120px] relative flow-arrow last:mb-0 bg-[rgba(255,255,255,0.9)] px-[20px] pb-[30px] pt-[40px] rounded-[20px]" key={index}>
+              <div className="group-last:hidden bg-[url(/assets/images/arrow-down.png)] bg-no-repeat w-[30px] h-[53px] [background-size:30px_53px] absolute -bottom-[70px] left-2/4 -translate-x-1/2"></div>
               <div className="w-[60px] h-[60px] text-[25px] bg-white text-black rounded-full border-[#73E3DC] border-[6px] text-center absolute top-[-30px] left-1/2 -translate-x-1/2">
                 {step.number}
               </div>

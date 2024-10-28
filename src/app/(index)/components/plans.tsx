@@ -9,7 +9,7 @@ const Plans = () => {
       price: "¥30,000",
       description: "年間パスポートNFTの作成用コンソールのご提供",
       details:
-        "初期費用を抑えつつ、スムーズにサービスを開始できるため、小規模な企業や導入を検討中の企業にぴったりです。",
+        (<>NFT の作成を自ら行うプランです。<br />初期費用を抑えつつ、スムーズにサービスを開始できるため、小規模な企業や導入を検討中の企業にぴったりです。</>),
       bgColor: "#5DF340",
     },
     {
@@ -37,20 +37,20 @@ const Plans = () => {
   ];
 
   return (
-    <section className="bg-white md:ml-10 ml-5 rounded-tl-[30px] rounded-bl-[30px] md:pt-[90px] pt-[40px] md:pb-[80px] pb-[40px] max-sm:px-[20px]">
+    <section className="md:pt-[160px] pt-20 overflow-hidden">
+      <div className="w-full md:ml-10 ml-5 mx-auto bg-white  rounded-tl-[30px] rounded-bl-[30px] md:pt-[90px] pt-[40px] md:pb-[80px] pb-[40px] max-sm:px-[20px]">
       <Title
-        title="My Page Title"
         text_ja="料金プラン"
         text_en="Rate Plans"
         alignment="center"
       />
-      <div className="flex justify-center items-center w-full max-w-[1220px] mx-auto md:pt-[50px] pt-[25px] md:mb-[46px] mb-[23px]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px]">
+      <div className="flex justify-center items-center w-full max-w-[1260px] mx-auto md:pt-[50px] pt-[25px] md:mb-[46px] mb-[23px] font-notoSans md:pr-10 pr-5">
+        <div className="flex flex-wrap justify-center items-center gap-[10px]">
           {plans.map((plan, index) => (
             <div
               key={index}
               style={{ backgroundColor: plan.bgColor }}
-              className={`text-black md:px-[20px] px-[10px] md:pt-[40px] pt-[20px] pb-[30px] md:rounded-[30px] rounded-2xl shadow-lg relative`}
+              className="text-black md:px-[20px] px-[10px] md:pt-[40px] pt-[20px] pb-[30px] md:rounded-[30px] rounded-2xl shadow-lg relative md:w-[400px] w-full"
             >
               {plan.popular && (
                 <span className="absolute top-0 md:right-[38px] md:leading-5 leading-[14px] right-[18px] bg-[url(/assets/images/bg-no1.png);] md:w-[65px] w-[45px] md:h-[68px] h-[48px] bg-[length:100%_100%] text-black font-notoSans md:text-[18px] text-[12px] font-bold text-center md:pt-[7px] pt-[4px]">
@@ -61,15 +61,15 @@ const Plans = () => {
               <h2 className="md:text-[32px] text-[24px] font-bold font-notoSans text-center mb-5">
                 {plan.title}
               </h2>
-              <p className="md:text-[20px] text-[18px] font-black mb-1 bg-white text-center font-notoSerif md:py-[30px] py-[15px]">
-                年額{" "}
-                <span className="md:text[52px] text-[28px]">{plan.price}</span>{" "}
+              <p className="md:text-[20px] text-[18px] font-black mb-1 bg-white text-center font-notoSerif md:py-[10px] py-[15px]">
+                年額
+                <span className="md:text-[52px] text-[28px]">{plan.price}</span>{" "}
                 (税別)
               </p>
-              <p className="mb-1 md:text-[18px] text-[16px] bg-white md:px-[30px] px-[15px] md:py-[20px] py-[10px] font-bold font-notoSerif flex items-center justify-center min-h-[94px]">
+              <p className="mb-1 md:text-[18px] text-[16px] bg-white md:px-[30px] px-[15px] md:py-3 py-[10px] font-bold font-notoSerif flex items-center justify-center min-h-[84px]">
                 {plan.description}
               </p>
-              <p className="min-h-[100px] flex items-center bg-white md:text-[15px] text-[14px] md:px-[30px] px-[15px] md:py-[20px] py-[10px] font-notoSerif">
+              <p className="min-h-[120px] flex items-center bg-white md:text-[15px] text-[14px] md:px-[30px] px-[15px] md:py-4 py-[10px] font-notoSerif">
                 {plan.details}
               </p>
             </div>
@@ -90,9 +90,10 @@ const Plans = () => {
           </p>
         </div>
       </div>
-      <Button width="320px" link="#">
+      <Button link="#">
         今すぐ申し込む
       </Button>
+      </div>
     </section>
   );
 };
