@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
-import { Noto_Sans, Poppins, Inter } from "next/font/google";
+import { Shippori_Antique, Noto_Serif_JP, Noto_Sans_JP } from "next/font/google";
 import "./globals.scss";
 import ScrollContainer from "@/components/scrollContainer";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
-const noto = Noto_Sans({
-  weight: ["400", "500", "700", "800", "900"],
+const shipporiAntique = Shippori_Antique({
+  weight: ["400"],
   subsets: ["latin"],
+  variable: "--font-shipporiAntique"
 });
 
-const poppins = Poppins({
-  weight: ["400", "500", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--font-poppins"
+const serif = Noto_Serif_JP({
+  subsets: ['latin'],
+  weight: ['400', '700'], 
+  variable: "--font-noto-serif"
 });
-
-const inter = Inter({
-  weight: ["400", "500", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--font-inter"
+const sans = Noto_Sans_JP({
+  subsets: ['latin'],
+  weight: ['400', '700'], 
+  variable: "--font-noto-san"
 });
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -32,10 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${noto.className} ${poppins.variable} ${inter.variable}  text-black/80`}
+        className={`${shipporiAntique.variable} ${serif.variable} ${sans.variable} bg-[#DDFFFF] text-black`}
       >
         <ScrollContainer>
+          <Header />
         {children}
+        <Footer />
         </ScrollContainer>
       </body>
     </html>

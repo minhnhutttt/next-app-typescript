@@ -13,9 +13,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        dt: "1440px",
+      },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      notoSerif: ["var(--font-noto-serif)", "sans-serif"],
+      notoSans: ["var(--font-noto-san)", "sans-serif"],
+      shipporiAntique: ["var(--font-shipporiAntique)", "sans-serif"],
     },
   },
   plugins: [],
