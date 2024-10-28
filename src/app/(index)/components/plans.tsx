@@ -1,43 +1,46 @@
 "use client";
 import Title from "@/components/title";
 import Button from "@/components/button";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+
+const plans = [
+  {
+    title: "ベーシックプラン",
+    price: "¥30,000",
+    description: "年間パスポートNFTの作成用コンソールのご提供",
+    details:
+      (<>NFT の作成を自ら行うプランです。<br />初期費用を抑えつつ、スムーズにサービスを開始できるため、小規模な企業や導入を検討中の企業にぴったりです。</>),
+    bgColor: "#5DF340",
+  },
+  {
+    title: "サポートプラン",
+    price: "¥50,000",
+    description: "ベーシックプラン + NFT作成サポート",
+    details: (
+      <>
+        NFTの作成をサポートするプランです。
+        <br />
+        中規模企業や多くの従業員がいる企業に最適です。
+      </>
+    ),
+    bgColor: "#F97E3C",
+    popular: true,
+  },
+  {
+    title: "フルサポートプラン",
+    price: "¥100,000",
+    description: "フルサポート",
+    details:
+      "NFT作成からお店のご紹介まで、全ての機能をフル活用できる最上位プランです。",
+    bgColor: "#DF0F47",
+  },
+];
 
 const Plans = () => {
-  const plans = [
-    {
-      title: "ベーシックプラン",
-      price: "¥30,000",
-      description: "年間パスポートNFTの作成用コンソールのご提供",
-      details:
-        (<>NFT の作成を自ら行うプランです。<br />初期費用を抑えつつ、スムーズにサービスを開始できるため、小規模な企業や導入を検討中の企業にぴったりです。</>),
-      bgColor: "#5DF340",
-    },
-    {
-      title: "サポートプラン",
-      price: "¥50,000",
-      description: "ベーシックプラン + NFT作成サポート",
-      details: (
-        <>
-          NFTの作成をサポートするプランです。
-          <br />
-          中規模企業や多くの従業員がいる企業に最適です。
-        </>
-      ),
-      bgColor: "#F97E3C",
-      popular: true,
-    },
-    {
-      title: "フルサポートプラン",
-      price: "¥100,000",
-      description: "フルサポート",
-      details:
-        "NFT作成からお店のご紹介まで、全ての機能をフル活用できる最上位プランです。",
-      bgColor: "#DF0F47",
-    },
-  ];
+  const ref = useScrollAnimations();
 
   return (
-    <section className="md:pt-[160px] pt-20 overflow-hidden">
+    <section ref={ref} className="md:pt-[160px] pt-20 overflow-hidden">
       <div className="w-full md:ml-10 ml-5 mx-auto bg-white  rounded-tl-[30px] rounded-bl-[30px] md:pt-[90px] pt-[40px] md:pb-[80px] pb-[40px] max-sm:px-[20px]">
       <Title
         text_ja="料金プラン"
@@ -50,7 +53,7 @@ const Plans = () => {
             <div
               key={index}
               style={{ backgroundColor: plan.bgColor }}
-              className="text-black md:px-[20px] px-[10px] md:pt-[40px] pt-[20px] pb-[30px] md:rounded-[30px] rounded-2xl shadow-lg relative md:w-[400px] w-full"
+              className="fade-up text-black md:px-[20px] px-[10px] md:pt-[40px] pt-[20px] pb-[30px] md:rounded-[30px] rounded-2xl shadow-lg relative md:w-[400px] w-full"
             >
               {plan.popular && (
                 <span className="absolute top-0 md:right-[38px] md:leading-5 leading-[14px] right-[18px] bg-[url(/assets/images/bg-no1.png);] md:w-[65px] w-[45px] md:h-[68px] h-[48px] bg-[length:100%_100%] text-black font-notoSans md:text-[18px] text-[12px] font-bold text-center md:pt-[7px] pt-[4px]">
@@ -76,7 +79,7 @@ const Plans = () => {
           ))}
         </div>
       </div>
-      <div className="max-w-[545px] w-full relative mx-auto mb-[30px]">
+      <div className="fade-up max-w-[545px] w-full relative mx-auto mb-[30px]">
         <figure className="absolute md:left-[-30px] left-[-18px] md:-top-[28%] top-[-20px] z-10">
           <img
             className="max-sm:w-1/2"

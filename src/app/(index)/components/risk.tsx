@@ -1,36 +1,11 @@
+"use client"
 import Text from "@/components/text";
 import Title from "@/components/title";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import React, { ReactNode } from "react";
-const items = [
-  {
-    number: "01",
-    title: "優秀な人材が流出するリスク",
-    des: "優秀な従業員が、より福利厚生の充実した競合他社へと流出する可能性が高まります。従業員の定着率が下がれば、採用コストが増加し、チームの一体感も損なわれます。",
-  },
-  {
-    number: "02",
-    title: "従業員のモチベーション低下",
-    des: "福利厚生が不十分だと、従業員の満足度が低下し、仕事に対するモチベーションや生産性も下がる傾向があります。これは企業全体の業績にも悪影響を与えます。",
-  },
-  {
-    number: "03",
-    title: "企業イメージの低下",
-    des: "企業が従業員の福利に投資しないことは、外部から「従業員を大切にしない企業」という印象を与える可能性があり、求職者や取引先、顧客に対してもマイナスの影響を与えます。",
-  },
-  {
-    number: "04",
-    title: "メンタルヘルス問題の増加",
-    des: "福利厚生が不足していると、従業員の健康管理が不十分になり、メンタルヘルスの問題やストレスによる長期休暇が増加するリスクがあります。これは、企業の生産性を低下させる大きな要因です。",
-  },
-  {
-    number: "05",
-    title: "競合に遅れを取るリスク",
-    des: "競合他社が福利厚生の充実を図っている中、自社だけがその取り組みを怠ると、市場での競争力が低下します。福利厚生が優れた企業は、より優秀な人材を集め、強力な組織を築くことができます。",
-  },
-];
 
 const Item = ({number, title, children, rect, color}: {number:string, title: string, children: ReactNode, rect?: string, color: string}) => (
-  <div className={`${rect} size-[70vw] md:size-[29.861vw] dt:size-[430px] rounded-full flex flex-col items-center border-[1.042vw] dt:border-[15px] bg-white text-center p-[0.556vw] dt:p-2 [box-shadow:0px_5px_10px_0px_rgba(0,_0,_0,_0.20)]`} style={{borderColor: color}}>
+  <div className={`${rect} fade-up  size-[70vw] md:size-[29.861vw] dt:size-[430px] rounded-full flex flex-col items-center border-[1.042vw] dt:border-[15px] bg-white text-center p-[0.556vw] dt:p-2 [box-shadow:0px_5px_10px_0px_rgba(0,_0,_0,_0.20)]`} style={{borderColor: color}}>
     <div className="w-full md:max-w-[19.444vw] max-w-[55vw] dt:max-w-[280px]">
       <span className="dt:text-[80px] text-[15vw] md:text-[5.556vw] font-bold tracking-widest" style={{color: color}}>{number}</span>
       <h3 className="dt:text-[20px] text-[4vw] md:text-[1.389vw] my-[1.111vw] dt:my-4">{title}</h3>
@@ -40,8 +15,9 @@ const Item = ({number, title, children, rect, color}: {number:string, title: str
 )
 
 const Risk = () => {
+  const ref = useScrollAnimations();
   return (
-    <section className="relative">
+    <section ref={ref} className="relative">
       <div className="px-5 md:pt-[155px]">
       <div className="w-full max-w-[1360px] mx-auto md:mb-[70px] mb-10 relative">
         <Title
@@ -76,7 +52,7 @@ const Risk = () => {
             </Item>
             </div>
 
-            <div className="md:absolute flex flex-col justify-center max-md:mx-auto size-[50vw] md:size-[22.639vw] dt:size-[326px] rounded-full bg-white border-[1.389vw] dt:border-[20px] border-[#D9D9D9] text-center p-[1.111vw] dt:p-4 shadow-md md:top-[20.833vw] dt:top-[300px] left-1/2 transform md:-translate-x-1/2 mt-[6.25vw]">
+            <div className="fade-up md:absolute flex flex-col justify-center max-md:mx-auto size-[50vw] md:size-[22.639vw] dt:size-[326px] rounded-full bg-white border-[1.389vw] dt:border-[20px] border-[#D9D9D9] text-center p-[1.111vw] dt:p-4 shadow-md md:top-[20.833vw] dt:top-[260px] left-1/2 transform md:-translate-x-1/2 mt-[6.25vw]">
               <p className="dt:text-[32px] text-[4vw] md:text-[2.222vw]">リスクについて</p>
               <p className="dt:text-[16px] text-[3vw] md:text-[1.111vw] mt-[10px] px-[1.944vw] dt:px-7 text-left">
                 もし、福利厚生が不十分な場合、５種類リスクが生じる可能性があります。
@@ -87,7 +63,7 @@ const Risk = () => {
         </div>
       </div>
       <div className="px-5">
-        <div className="md:text-[18px] text-[14px] font-medium leading-loose bg-[#73E3DC]/[0.1] border border-dashed border-[#73E3DC] w-full max-w-[737px] mx-auto md:p-10 p-5 rounded-[20px]">
+        <div className="fade-up md:text-[18px] text-[14px] font-medium leading-loose bg-[#73E3DC]/[0.1] border border-dashed border-[#73E3DC] w-full max-w-[737px] mx-auto md:p-10 p-5 rounded-[20px]">
         福利厚生の充実は単なる付加価値ではなく、企業の成長と持続可能性に直結する重要な要素です。<br />
         「 福利厚生クエスト 」は、これらの課題を解決し、従業員の満足度を向上させるための最適なソリューションです。
         </div>

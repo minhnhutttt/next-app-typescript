@@ -30,7 +30,7 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
   return (
     <div
       data-scroll
-      className="ani-fade-up border-[2px] border-[#73E3DC] hover:border-[#73E3DC] rounded-[18px] bg-white p-4 md:px-8 md:pb-11 md:pt-11 [box-shadow:0px_6px_16px_0px_rgba(74,_58,_255,_0.19)]"
+      className="fade-up border-[2px] border-[#73E3DC] hover:border-[#73E3DC] rounded-[18px] bg-white p-4 md:px-8 md:pb-11 md:pt-11 [box-shadow:0px_6px_16px_0px_rgba(74,_58,_255,_0.19)]"
     >
       <button
         type="button"

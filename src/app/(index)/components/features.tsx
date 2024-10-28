@@ -1,6 +1,7 @@
 "use client";
 import Title from "@/components/title";
 import Text from "@/components/text";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const features = [
   {
@@ -30,8 +31,9 @@ const features = [
 ];
 
 const Features = () => {
+  const ref = useScrollAnimations();
   return (
-    <section className="md:pt-[155px] pt-[100px]">
+    <section ref={ref} className="md:pt-[155px] pt-[100px]">
       <div className="w-full max-w-[1440px] mx-auto flex md:items-end max-md:flex-col">
         <div className="w-auto px-5 md:px-10">
           <Title
@@ -49,7 +51,7 @@ const Features = () => {
 
       <ul className="grid md:grid-cols-4 grid-cols-2 border-t border-b border-solid border-[#73E3DC] md:mt-[52px] mt-[25px]">
         {features.map((feature, index) => (
-          <li className="text-center md:pt-[58px] pt-[30px] md:pb-[100px] pb-[50px] max-md:odd:border-r md:border-r border-b border-dashed border-[#73E3DC] last:border-0 px-5" key={index}>
+          <li className="fade-up text-center md:pt-[58px] pt-[30px] md:pb-[100px] pb-[50px] max-md:odd:border-r md:border-r border-b border-dashed border-[#73E3DC] last:border-0 px-5" key={index}>
             <figure className="flex justify-center items-center bg-white rounded-full size-[130px] lg:size-[260px] aspect-square shadow-[3px_5px_0_0_#73E3DC] mx-auto border border-[#73E3DC]" key={index}>
                 <img className="max-md:h-16" src={feature.img} alt="" />
             </figure>

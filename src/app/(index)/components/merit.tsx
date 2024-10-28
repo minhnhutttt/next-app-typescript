@@ -1,6 +1,6 @@
 "use client";
 import Title from "@/components/title";
-import { title } from "process";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 const merits = [
     {
       title: "従業員満足度の向上",
@@ -17,10 +17,9 @@ const merits = [
   ];
 
 const Merit = () => {
-  
-  
+  const ref = useScrollAnimations();
     return (
-      <section className="md:pt-[160px] pt-24">
+      <section ref={ref} className="md:pt-[160px] pt-24">
         <div className="bg-white/70 md:mr-10 mr-5 md:rounded-tr-[120px] rounded-tr-[60px] md:rounded-br-[120px] rounded-br-[60px] md:pt-[130px] pt-[40px] md:pb-[80px] pb-[40px] max-sm:px-[20px] ">
         <Title
           text_ja="福利厚生クエスト導入のメリット"
@@ -28,13 +27,13 @@ const Merit = () => {
           alignment="center"
         />
         <div className="md:flex justify-center w-full mx-auto max-md:max-w-[520px] md:pt-[36px] pt-[25px] md:mb-[46px] mb-[23px]">
-          <figure className="md:w-[37%] max-w-[520px] w-full">
+          <figure className="fade-up md:w-[37%] max-w-[520px] w-full">
             <img className="w-full" src="/assets/images/img-merit.jpg" alt="" />
           </figure>
           <div className="flex-1 md:pl-[30px] md:pr-[50px] md:px-4">
             <ul>
             {merits.map((merit, index) => (
-             <li className="md:py-[45px] py-7 border-t last:border-b border-solid border-[rgba(0, 15, 18, 0.30)] px-4" key={index}>
+             <li className="fade-up md:py-[45px] py-7 border-t last:border-b border-solid border-[rgba(0, 15, 18, 0.30)] px-4" key={index}>
                 <p className="md:flex align-center border-l-8 border-b border-[#73E3DC] mb-[22px] pl-[10px]">
                     <span className="text-[14px] font-bold mr-[14px]  uppercase">Merit <span className="md:text-[24px] text-[18px]">{index+1}</span></span>
                     <span className="font-bold md:text-[24px] text-[18px]">{merit.title}</span>

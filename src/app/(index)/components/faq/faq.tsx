@@ -2,6 +2,7 @@
 import Title from "@/components/title";
 import FaqItem from "./faqItem";
 import { FaqItemPropsType } from "./faqItem";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const faqData: FaqItemPropsType[] = [
   {
@@ -82,8 +83,9 @@ const faqData: FaqItemPropsType[] = [
 ];
 
 export default function FAQ() {
+  const ref = useScrollAnimations();
   return (
-    <section id="faq" className="px-5 pb-12 pt-14  md:pb-[90px] md:pt-[150px]">
+    <section ref={ref} id="faq" className="px-5 pb-12 pt-14  md:pb-[90px] md:pt-[150px]">
       <div className="mx-auto w-full max-w-[920px]">
         <Title
           text_ja="よくある質問"
