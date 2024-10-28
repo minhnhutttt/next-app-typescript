@@ -62,6 +62,7 @@ export default function Contact() {
           <ContactLabel required>お問い合わせ内容</ContactLabel>
           <p><textarea placeholder="200文字以内でご入力ください。" className="w-full bg-[#F4F1F3] md:h-[338px] h-[240px] md:text-[20px] text-[16px] rounded-lg p-6 font-black italic placeholder-[#A9A9A9]"></textarea></p>
         </div>
+        <p className="text-center">ご送信前に弊社<a href="https://goodfellows17.info/privacy-policy/" className="underline font-bold" target="_blank" rel="noopener noreferrer">個人情報保護方針</a>をご確認ください。</p>
         <div className="flex justify-center">
           <button type="submit" className="flex items-center justify-center md:text-[22px] text-[18px] font-bold bg-[linear-gradient(90deg,_rgba(255,125,211,1)_0%,_rgba(60,232,255,1)_100%)] rounded-lg md:h-[70px] h-[60px] w-full gap-2 text-white">
           <span>送　信</span>

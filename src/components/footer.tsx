@@ -1,6 +1,9 @@
+import LineButton from "./lineButton";
+
 const Footer = () => {
     return (
-      <footer className="bg-black md:pt-[66px] pt-10 pb-6">
+      <>
+      <footer className="bg-black md:pt-[66px] pt-10 pb-[180px] xl:pb-6">
         <div className="flex justify-center gap-5 md:mb-14 mb-8">
             <a href="https://x.com/17_gold_partner" target="_blank"><img src="/assets/images/socical-x.png" alt="" /></a>
             <a href="https://line.me/R/ti/p/%40300kbcvu" target="_blank"><img src="/assets/images/socical-line.png" alt="" /></a>
@@ -17,6 +20,10 @@ const Footer = () => {
           </div>
           <p className="text-center md:text-[16px] text-[14px] text-white font-light">© 2024 Good Fellows Co. All rights reserved.</p>
       </footer>
+      <div className="fixed bottom-0 left-0 w-full px-2 xl:hidden">
+        <LineButton />
+      </div>
+      </>
     );
   };
   
