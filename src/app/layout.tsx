@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Hina_Mincho } from "next/font/google";
 import "./globals.scss";
 import SmoothScroll from "@/components/smoothSCroll";
 
-const noto = Noto_Sans({
-  weight: ["400", "500", "700", "800", "900"],
+const mincho = Hina_Mincho({
+  weight: ["400"],
   subsets: ["latin"],
 });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" id="html">
-      <body id="body" className={`${noto.className} libera loadato`}>
+      <body id="body" className={`${mincho.className} libera loadato`}>
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

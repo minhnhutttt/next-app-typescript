@@ -69,8 +69,8 @@ export default function Home() {
   let sometimesC: any;
   const sometimesCoords = {
     desktop: {
-      x: "138vw",
-      zoom: 10,
+      x: "100vw",
+      zoom: 8,
     },
     mobile: {
       x: "150vw",
@@ -97,8 +97,8 @@ export default function Home() {
   let bornC: any;
   const bornCoords = {
     desktop: {
-      x: "-40vw",
-      zoom: 10,
+      x: "-50vw",
+      zoom: 9,
     },
     mobile: {
       x: "-64vw",
@@ -184,8 +184,7 @@ export default function Home() {
 
       if (wrapSite) {
         if (lottieHeight > windowHeight / 2) {
-          wrapSite.style.paddingTop = `50vh`;
-          console.log(222);
+          wrapSite.style.paddingTop = `0`;
         } else {
           const wrapContainer = document.getElementById("wrapContainer");
           if (
@@ -193,11 +192,7 @@ export default function Home() {
             isMobile() &&
             wrapContainer
           ) {
-            console.log(333);
-            wrapContainer.style.marginTop = `calc(100vh - ${lottieHeight}px)`;
-          } else {
-            console.log(1111);
-            wrapSite.style.paddingTop = `calc(100vh - ${lottieHeight}px)`;
+            wrapContainer.style.marginTop = `0`;
           }
         }
       }
@@ -1245,27 +1240,18 @@ export default function Home() {
 
           <div className="sec0 toHide" id="lottie">
             <div id="lottieTexture"></div>
-            <img id="messupTop" src="/assets/images/SKALE-LP.png" />
-            {/* <lottie-player
+            <lottie-player
               id="lottieTop"
-              src="/assets/images/MessUpLottie/2406_DEF-2.json?B2320"
+              src="/assets/images/MessUpLottie/2406_DEF-2.json"
               background="transparent"
               speed="1"
-            ></lottie-player> */}
+            ></lottie-player>
           </div>
 
           <div id="wrapColumns">
             <div className="containerMix" style={{ position: "relative" }}>
               <h1 className="sec1 toHide " id="titolone" style={{ zIndex: 99 }}>
-                今日の限界が、
-                <br />
-                明日の出発点になる。
-                <br />
-                上・下・右・左。
-                <br />
-                一夜で次元は
-                <br />
-                変えられる。
+              今日の限界が、<br />明日の出発点になる。<br />一夜で次元は<br />変えられる。
               </h1>
 
               <div id="primoTrigger"></div>
@@ -1299,7 +1285,7 @@ export default function Home() {
 
                 <div className="sec5 maskFact" style={{ zIndex: 1 }}>
                   <span className="sec5 fact" id="facts" style={{ zIndex: 5 }}>
-                    次
+                  <span className="verticleText">次元鍵？</span>
                   </span>
                 </div>
 
@@ -1317,27 +1303,24 @@ export default function Home() {
                   <div className="sec3" id="over0">
                     <div className="texture2"></div>
                   </div>
-                  <p id="testolets" className="testolets v">
-                    「もう、これ以上の成長は難しい」
+                  <p id="testolets" className="testolets v ">
+                    <span className="verticleText">「もう、これ以上の成長は難しい」</span>
                   </p>
                 </span>
                 <div id="sometimes" className="hor sec4 biggo ">
-                  <p className="testo2">それでいいのか？</p>
+                  <div className="flex justify-center mt-[5cqi]">
+                  <p className="testo2 !m-0"><span className="verticleText l">それでいいのか？</span></p>
 
                   <div className="a1">
                     <p>
-                      「限界」は、あなたの頭の中にしか存在しない幻想だ。
-                      <br />
-                      「限界」だと思っているその壁は、上から見たら長い道のりの些細な障害でしかない。
+                    <span className="verticleText l">
+                    「限界」は、あなたの頭の中にしか存在しない幻想だ。<br />「限界」だと思っているその壁は、上から見れば長い道のりの些細な障害でしかない。
+                    </span>
                     </p>
+                  </div>
                   </div>
 
                   <div id="yolo" className="oh-shut-up"></div>
-                </div>
-                <div className="sec5  maskFact">
-                  <span className="sec5   fact" style={{ zIndex: 4 }}>
-                    元
-                  </span>
                 </div>
 
                 <img
@@ -1362,30 +1345,28 @@ export default function Home() {
                     <div className="texture2"></div>
                   </div>
                   <p className="testolets v">
-                    「うちの業界では、これが限界だ」
+                  <span className="verticleText">「うちの業界では、これが限界だ」</span>
                   </p>
                 </span>
 
-                <div className="sec5  maskFact">
-                  <span className="sec5   fact" style={{ zIndex: 3 }}>
-                    鍵
-                  </span>
-                </div>
 
-                <p className="v pillo sec5  factu">
+                <p className="pillo sec5  factu">
                   <span className="pollo-span">
+                  <span className="verticleText">
                     「限界」という名の幻想を打ち破る鍵。次元鍵は、
                     <br />
                     あなたのビジネスの中に既に存在している。
                     <span style={{ color: "#fff" }}>.</span>
+                    </span>
                   </span>
                 </p>
 
                 <span className="sec7 ">
                   <p id="testomatter" className="testomatter v">
-                    Webサイト制作・リニューアル（Reactを中心としたモダン開発）
+                  <span className="verticleText"> Webサイト制作・リニューアル（Reactを中心としたモダン開発）
                     <br />
                     ランディングページ（LP）制作（Reactを中心としたモダン開発）
+                    </span>
                   </p>
                 </span>
               </div>
@@ -1399,7 +1380,7 @@ export default function Home() {
                   className="testo1 v sec2 toHide"
                   style={{ zIndex: 99 }}
                 >
-                  <span>
+                  <span className="verticleText">
                     あなたは今、
                     <br />
                     ビジネスを殺そうとしている。
@@ -1411,22 +1392,16 @@ export default function Home() {
                     <div className="texture2"></div>
                   </div>
                   <p className="testolets v">
-                    「このビジネスモデルでは、ここまでが精一杯だ」
+                  <span className="verticleText">「このビジネスモデルでは、ここまでが精一杯だ」</span>
                   </p>
                 </div>
-                <div className="sec5  maskFact">
-                  <span className="sec5   fact" style={{ zIndex: 2 }}>
-                    ？
-                  </span>
-                </div>
 
-                <p className="v pillo sec5 factu">
+                <p className="pillo sec5 factu">
+                <span className="verticleText">
                   <span className="pollo-span">
-                    「できない」と思っていたことの中に
-                  </span>
-                  <br />
-                  <span className="pollo-span">
+                    「できない」と思っていたことの中に <br />
                     「無理だ」と諦めていたアイデアの中に
+                  </span>
                   </span>
                 </p>
                 <p className="v pillo sec5 toHide  show-sm factu">
@@ -1437,10 +1412,12 @@ export default function Home() {
                   </span>
                 </p>
                 <div id="born" className="hor sec6 toHide biggo">
-                  <p className="testo2">目と勇気と仲間。</p>
+                  <div className="flex justify-center mt-[3cqi]">
+                  <p className="testo2 !m-0"><span className="verticleText">目と勇気と仲間。</span></p>
 
                   <div className="a1">
                     <p>
+                    <span className="verticleText">
                       あなたには、次元鍵を見つけ出す目があるか？ <br />
                       次元鍵を使って自らのビジネスを根本から覆す勇気があるか？
                       <br />
@@ -1451,7 +1428,9 @@ export default function Home() {
                       <br />
                       <br />
                       ビジネスを殺したくなければ、SKALEを仲間に。
+                      </span>
                     </p>
+                  </div>
                   </div>
                   <img
                     id="LETS-ROLL-Sticker_01"
@@ -1462,8 +1441,9 @@ export default function Home() {
 
                 <span className="sec7 ">
                   <p className="testomatter v">
-                    システム開発（CRM、MA等Reactを中心としたモダン開発） <br />
+                  <span className="verticleText">システム開発（CRM、MA等Reactを中心としたモダン開発） <br />
                     AI活用支援（AIを起点とした事業開発）
+                    </span>
                   </p>
                 </span>
               </div>
@@ -1472,23 +1452,23 @@ export default function Home() {
                 <div className="texture2"></div>
                 <div className="texture"></div>
                 <p className="testo1 v sec2 toHide " style={{ zIndex: 99 }}>
-                  <span className="">
+                  <span className="verticleText">
                     あなたは知らず知らずのうちに <br />
                     可能性を自ら摘み取っている。
                   </span>
                 </p>
 
                 <p className="sec3 toHide  testolets v">
-                  こんな言葉を口にしたことはないか？
+                <span className="verticleText">こんな言葉を口にしたことはないか？</span>
                 </p>
                 <p className="v pillo sec5 factu">
                   <span className="pollo-span">
-                    「非現実的だ」と片付けていた戦略の中に
+                  <span className="verticleText">「非現実的だ」と片付けていた戦略の中に</span>
                   </span>
                 </p>
                 <span className="sec7 ">
                   <p className="testomatter v">
-                    広告運用支援（AI活用による高効率低コストの運用）
+                  <span className="verticleText">広告運用支援（AI活用による高効率低コストの運用）</span>
                   </p>
                 </span>
               </div>
@@ -1502,9 +1482,11 @@ export default function Home() {
                     <div className="texture2"></div>
                   </div>
                   <p className="testolets v">
+                  <span className="verticleText">
                     あるなら、既に自社に死刑宣告を下しているも同然だ。
                     <br />
                     限界を口実に挑戦を放棄している。
+                    </span>
                   </p>
                 </div>
 

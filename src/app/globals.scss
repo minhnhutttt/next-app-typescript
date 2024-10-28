@@ -213,7 +213,6 @@ table {
 }
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background-color: #f2f2f2;
   overflow-x: hidden;
   opacity: 0;
@@ -245,6 +244,15 @@ body {
   opacity: 1;
   /*transition: .3s ease all;
 	*/
+}
+.verticleText {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: 0 auto;
+  display: flex;
+}
+.verticleText.l {
+  margin: 0;
 }
 .png {
   transform: none !important;
@@ -390,39 +398,36 @@ body {
   color: white;
   left: 8%;
   z-index: 1;
-  font-family: "FreigeistItalic";
+  
   font-size: 195px;
   color: #ffffff;
   letter-spacing: -6px;
   line-height: 180px;
   text-shadow: 0 2px 83px rgba(0, 0, 0, 0.5);
   font-weight: normal;
-  font-family: "FreigeistItalic";
+  
   font-weight: normal;
   font-style: italic;
   opacity: 0;
   transform: translateY(10%);
 }
 #titolone span {
-  font-family: "FreigeistItalic";
+  
   /*'Superfly-One';
 	*/
   font-size: 260px;
 }
 .superfly {
-  font-family: "FreigeistItalic";
+  
   /*'Superfly-One';
 	*/
 }
 p {
-  font-family: Faktum-Regular;
+  
   font-size: 15px;
   color: #ffffff;
   letter-spacing: -0.25px;
   line-height: 1.5;
-}
-p.v {
-  transform: rotate(-90deg);
 }
 p.testo1 {
   position: absolute;
@@ -524,10 +529,10 @@ a#lets {
   white-space: break-spaces;
 }
 p.testo2 {
-  font-family: "FreigeistItalic";
+  
   font-size: 9px;
   line-height: 10px;
-  font-family: "FreigeistItalic";
+  
   font-weight: normal;
   font-style: italic;
 }
@@ -606,14 +611,14 @@ div.a1 p {
   left: -15%;
   z-index: 1;
   top: 5200px;
-  font-family: "FreigeistItalic";
+  
   /*font-size: 142px;
 	*/
   font-size: 9cqi;
   color: #ffffff;
   text-shadow: 0 2px 83px rgba(0, 0, 0, 0.5);
   font-weight: normal;
-  font-family: "FreigeistItalic";
+  
   font-weight: normal;
   font-style: italic;
   transform: translateX(-10%);
@@ -629,10 +634,9 @@ div.a1 p {
   position: absolute;
   top: 5510px;
   margin: 0 auto;
-  left: 50%;
+  left: 0%;
   transform-origin: left;
   right: 0;
-  transform: translateY(-50%) rotate(-90deg);
 }
 #shinju2 {
   /*background-image: url(/assets/images/shinju2.png);
@@ -671,9 +675,9 @@ div.a1 p {
   transform: translateY(-50%) rotate(-90deg);
 }
 .results.big {
-  font-family: "FreigeistItalic";
+  
   font-size: 60px;
-  font-family: "FreigeistItalic";
+  
   font-weight: normal;
   font-style: italic;
 }
@@ -690,7 +694,6 @@ div.a1 p {
   transform: translateY(-50%) rotate(-90deg);
   font-size: 40px;
   font-weight: 300;
-  font-family: "Faktum-Regular";
 }
 .tags span {
   margin: 0 40px;
@@ -700,7 +703,6 @@ div.a1 p {
   margin-bottom: 100px;
 }
 #footer-links a {
-  font-family: Faktum-Medium;
   font-size: 14px;
   color: #000000;
   letter-spacing: 0;
@@ -1131,7 +1133,7 @@ div.a1 p {
   }
   #NOT-COOL-Sticker {
     position: absolute;
-    top: calc(176cqi + 300vh);
+    top: calc(192cqi + 300vh);
     width: 14cqi;
     transform: translateX(calc(-45% + 60px)) rotate(-5deg);
     transform-origin: left top;
@@ -1140,14 +1142,14 @@ div.a1 p {
   .pillo {
     /*top: 361cqi;
 		*/
-    top: calc(210cqi + 300vh);
+    top: calc(165cqi + 300vh);
   }
   p.testolets {
     /*top: 200cqi;
 		*/
     /*top:166vw;
 		*/
-    top: calc(148cqi + 100vh);
+    top: calc(104cqi + 100vh);
     font-size: 2.3cqi;
   }
   #WTF-Sticker_01 {
@@ -1185,8 +1187,8 @@ div.a1 p {
   p.testomatter {
     /* top: 200cqi;
 		*/
-    top: calc(248cqi + 500vh);
-    font-size: 2.3cqi;
+    top: calc(200cqi + 500vh);
+    font-size: 1.3cqi;
     letter-spacing: -0.035cqi;
     line-height: 3cqi;
   }
@@ -1296,7 +1298,7 @@ div.a1 {
 }
 #lang a,
 #lang span {
-  font-family: "Faktum-Medium";
+  
   font-size: 9px;
   color: #b3b3b3;
   letter-spacing: 1px;
@@ -1351,7 +1353,7 @@ html,
   letter-spacing: -1.2px;
 }
 #quicker {
-  font-family: Faktum-Regular;
+  
   font-size: 30px;
   color: #2e2e2e;
   letter-spacing: -0.8px;
@@ -1493,7 +1495,7 @@ p.testo1.primo {
   p.testo1.primo {
     font-size: 1.6cqi;
     line-height: 2cqi;
-    top: 110cqi;
+    top: 60cqi;
   }
   #progress,
   #progresso {
@@ -1590,7 +1592,7 @@ p.testo1.primo {
     margin-left: 0.6cqi;
   }
   div.a1 p {
-    font-size: 2.2px;
+    font-size: 2.7px;
     line-height: 1px;
     letter-spacing: 0.01px;
     color: #f0f0f0;
@@ -1600,9 +1602,6 @@ p.testo1.primo {
   }
   #spacer {
     margin-top: 3px;
-  }
-  div.a1 {
-    transform: translateY(-80%);
   }
   .tags {
     letter-spacing: -0.011cqi;
@@ -1631,12 +1630,12 @@ p.testo1.primo {
   background-image: url(/assets/images/texture.png);
   width: 100%;
   background-size: 20%;
+  height:100vh;
+  display: flex !important;
+  align-items: flex-end;
 }
 .containerMix {
-  margin-top: 0 !important;
-}
-.containerMix {
-  margin-top: 20% !important;
+  margin-top: 100vh !important;
 }
 .texture,
 .texture2 {
