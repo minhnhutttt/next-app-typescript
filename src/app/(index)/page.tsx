@@ -1,24 +1,21 @@
-import Image from "next/image";
+import Analysis from "./components/analysis";
+import Cases from "./components/cases";
+import Diver from "./components/diver";
+import Future from "./components/future";
 import FV from "./components/fv";
-import Intro from "./components/intro";
-import Vision from "./components/vision";
-import Background from "./components/background";
-import Token from "./components/token";
-import Features from "./components/features";
-import Community from "./components/community";
-import Roadmap from "./components/roadmap";
+import Overview from "./components/overview";
+import System from "./components/system";
 
 export default function Home() {
   return (
     <main>
-      <FV />
-      <Intro />
-      <Vision />
-      <Background />
-      <Features />
-      <Community />
-      <Token />
-      <Roadmap />
+        <FV />
+        <Overview />
+        <Analysis />
+        <Diver />
+        <Cases />
+        <System />
+        <Future />
     </main>
   );
 }

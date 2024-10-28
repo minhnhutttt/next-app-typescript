@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'selector',
   theme: {
     extend: {
       backgroundImage: {
@@ -18,8 +19,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      poppins: ["var(--font-poppins)", "sans-serif"],
-      inter: ["var(--font-inter)", "sans-serif"],
+      noto: ["var(--font-noto)", "sans-serif"],
     },
   },
   plugins: [],
