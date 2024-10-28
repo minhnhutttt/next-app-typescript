@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth !important;
+}
+body {
+  color: #fff;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.u-text-gradient {
+	background: conic-gradient(from 180deg at 50% 50%, #EC6262 0deg, #9644FF 288.0000042915344deg);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.u-text-gradient-or {
+	background: linear-gradient(207deg, rgba(232,184,90,1) 0%, rgba(239,56,190,1) 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.transform-style-3d {
+  transform-style: 'preserve-3d',
+}
+
+.backface-hidden {
+  backface-visibility: 'hidden',
+}
+
+.button-splitting .char {
+	transition: transform 0.3s cubic-bezier(0.3, 0, 0.3, 1), opacity 0.3s linear;
+	transition-delay: calc( 20ms * var(--char-index) );
+  }
+  .button-splitting .char {
+	display: inline-block;
+  }
+  .button-splitting.clone .char {
+	opacity: 0;
+	transform: translateY(20px);
+  }
+
+@keyframes anistar {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes bgLRextendAnime{
+	0% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+	50% {
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	50.001% {
+		transform-origin:right;
+	}
+	100% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+}
+
+@keyframes bgextendAnimeBase{
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;  
+}
+}
+@keyframes bgextendAnimeSecond{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+
+@keyframes anibounce{
+	0%, 100%{
+	  transform: translateY(-10%);
+	  animation-timing-function: cubic-bezier(0.8,0,1,1);
+	}
+	50%{
+	  transform: none;
+	  animation-timing-function: cubic-bezier(0,0,0.2,1);
+	}
+  }
+
+  @keyframes rotateAnimation {
+	0% {
+	  transform: rotate(0deg);
+	}
+	45% {
+	  transform: rotate(180deg);
+	}
+	55% {
+		transform: rotate(180deg);
+	  }
+	  90% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(0);
+	}
+  }
+
+  @keyframes underlineText {
+	0%{
+	  width: 0;
+	}
+	100%{
+		width: 100%;
+	}
+  }
+
+
+
+  [data-scroll='in'] .hexagon {
+	cursor: default;
+	--duration: 0.45s;
+	--ripple-factor: 0.45s;
+	-webkit-animation: ripple var(--duration) ease-in-out;
+			animation: ripple var(--duration) ease-in-out;
+	-webkit-animation-duration: max(var(--duration), calc(var(--duration) * var(--ripple-factor) / 100));
+			animation-duration: max(var(--duration), calc(var(--duration) * var(--ripple-factor) / 100));
+	-webkit-animation-delay: calc(var(--ripple-factor) * 8ms);
+			animation-delay: calc(var(--ripple-factor) * 8ms);
+  }
+
+  
+  @keyframes ripple {
+	from {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+	50% {
+	  transform: scale(max(0.8, calc(var(--ripple-factor) / 100)));
+	  opacity: 0.42;
+	}
+	65% {
+	  opacity: 1;
+	}
+	70% {
+	  transform: scale(1.5);
+	  filter: var(--ripple-filter);
+	}
+	to {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+  }
+
+
+@property --index {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: true;
+}
+@property --ripple-factor {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: true;
+}
+:root {
+  --hexagon-size: 8vmin;
+  --gap: 0.1vmin;
+}
+
+
+.hexagon {
+  cursor: pointer;
+}
+
+@keyframes ripple {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(max(0.8, calc(var(--ripple-factor) / 100)));
+    opacity: 0.42;
+  }
+  65% {
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.5);
+    filter: var(--ripple-filter);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.rippleContainer.show-ripple .hexagon {
+  cursor: default;
+  --duration: 0.45s;
+  -webkit-animation: ripple var(--duration) ease-in-out;
+          animation: ripple var(--duration) ease-in-out;
+  -webkit-animation-duration: max(var(--duration), calc(var(--duration) * var(--ripple-factor) / 100));
+          animation-duration: max(var(--duration), calc(var(--duration) * var(--ripple-factor) / 100));
+  -webkit-animation-delay: calc(var(--ripple-factor) * 8ms);
+          animation-delay: calc(var(--ripple-factor) * 8ms);
+}
