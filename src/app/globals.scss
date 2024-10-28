@@ -11,3 +11,14 @@ body {
   font-family: "Shippori Mincho", serif;
 }
 
+@keyframes shine {
+	0% {
+		background-position-x: 400%;
+	}
+	50% {
+		background-position-x: 0%;
+	}
+	100% {
+		background-position-x: -400%;
+	}
+}

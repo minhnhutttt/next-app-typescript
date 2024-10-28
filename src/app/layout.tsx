@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${lagueSpartan.className}`}
+        className={`${lagueSpartan.className} bg-[#0C0F18]`}
       >
         <ScrollContainer>
         <Header />
