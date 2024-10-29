@@ -89,8 +89,8 @@ export default function Home() {
       zoom: 1.4,
     },
     mobile: {
-      x: "55vw",
-      zoom: 2.8,
+      x: "25vw",
+      zoom: 2.3,
     },
   };
 
@@ -1285,9 +1285,17 @@ export default function Home() {
 
                 <div className="sec5 maskFact" style={{ zIndex: 1 }}>
                   <span className="sec5 fact" id="facts" style={{ zIndex: 5 }}>
-                  <span className="verticleText">次元鍵？</span>
+                  <span className="verticleText">次</span>
                   </span>
                 </div>
+                
+                <p className="pillo sec5 factu">
+                <span className="verticleText">
+                  <span className="pollo-span">
+                    「できない」と思っていたことの中に
+                  </span>
+                  </span>
+                </p>
 
                 <img
                   className="sec5 toHide show-md"
@@ -1303,8 +1311,13 @@ export default function Home() {
                   <div className="sec3" id="over0">
                     <div className="texture2"></div>
                   </div>
-                  <p id="testolets" className="testolets v ">
-                    <span className="verticleText">「もう、これ以上の成長は難しい」</span>
+                  <p id="testolets" className="testolets v is-top01">
+                    
+                    <span className="verticleText">
+                    あるなら、既に自社に死刑宣告を下しているも同然だ。
+                    <br />
+                    限界を口実に挑戦を放棄している。
+                    </span>
                   </p>
                 </span>
                 <div id="sometimes" className="hor sec4 biggo ">
@@ -1322,7 +1335,20 @@ export default function Home() {
 
                   <div id="yolo" className="oh-shut-up"></div>
                 </div>
+                <div className="sec5  maskFact">
+                  <span className="sec5  fact" style={{ zIndex: 4 }}>
+                    元
+                  </span>
+                </div>
+                
 
+                <p className="pillo sec5 factu">
+                <span className="verticleText">
+                  <span className="pollo-span">
+                    「無理だ」と諦めていたアイデアの中に
+                  </span>
+                  </span>
+                </p>
                 <img
                   className="sec5  "
                   id="holoFact"
@@ -1344,25 +1370,23 @@ export default function Home() {
                   <div id="over1">
                     <div className="texture2"></div>
                   </div>
-                  <p className="testolets v">
-                  <span className="verticleText">「うちの業界では、これが限界だ」</span>
+                  <p className="testolets v is-top02">
+                  <span className="verticleText">「もう、これ以上の成長は難しい」</span>
                   </p>
                 </span>
+                <div className="sec5 maskFact">
+                  <span className="sec5  fact" style={{ zIndex: 3 }}>
+                    鍵
+                  </span>
+                </div>
 
-
-                <p className="pillo sec5  factu">
+                <p className="v pillo sec5 factu">
                   <span className="pollo-span">
-                  <span className="verticleText">
-                    「限界」という名の幻想を打ち破る鍵。次元鍵は、
-                    <br />
-                    あなたのビジネスの中に既に存在している。
-                    <span style={{ color: "#fff" }}>.</span>
-                    </span>
+                  <span className="verticleText">「非現実的だ」と片付けていた戦略の中に</span>
                   </span>
                 </p>
-
                 <span className="sec7 ">
-                  <p id="testomatter" className="testomatter v">
+                  <p id="testomatter" className="testomatter v is-top01">
                   <span className="verticleText"> Webサイト制作・リニューアル（Reactを中心としたモダン開発）
                     <br />
                     ランディングページ（LP）制作（Reactを中心としたモダン開発）
@@ -1375,33 +1399,32 @@ export default function Home() {
                 <div className="texture2"></div>
                 <div className="texture"></div>
 
-                <p
-                  id="testo1"
-                  className="testo1 v sec2 toHide"
-                  style={{ zIndex: 99 }}
-                >
+                <p className="testo1 v sec2 toHide " style={{ zIndex: 99 }}>
                   <span className="verticleText">
-                    あなたは今、
-                    <br />
-                    ビジネスを殺そうとしている。
+                    あなたは知らず知らずのうちに <br />
+                    可能性を自ら摘み取っている。
                   </span>
                 </p>
-
                 <div className="sec3 toHide " id="testoletsSpan">
                   <div id="over2">
                     <div className="texture2"></div>
                   </div>
-                  <p className="testolets v">
-                  <span className="verticleText">「このビジネスモデルでは、ここまでが精一杯だ」</span>
+                  <p className="testolets v is-top02">
+                  <span className="verticleText">「うちの業界では、これが限界だ」</span>
                   </p>
                 </div>
-
-                <p className="pillo sec5 factu">
-                <span className="verticleText">
-                  <span className="pollo-span">
-                    「できない」と思っていたことの中に <br />
-                    「無理だ」と諦めていたアイデアの中に
+                <div className="sec5  maskFact">
+                  <span className="sec5   fact" style={{ zIndex: 2 }}>
+                    ？
                   </span>
+                </div>
+                <p className="pillo sec5  factu">
+                  <span className="pollo-span">
+                  <span className="verticleText">
+                    「限界」という名の幻想を打ち破る鍵。次元鍵は、
+                    <br />
+                    あなたのビジネスの中に既に存在している。
+                    </span>
                   </span>
                 </p>
                 <p className="v pillo sec5 toHide  show-sm factu">
@@ -1440,7 +1463,7 @@ export default function Home() {
                 </div>
 
                 <span className="sec7 ">
-                  <p className="testomatter v">
+                  <p className="testomatter v is-top02">
                   <span className="verticleText">システム開発（CRM、MA等Reactを中心としたモダン開発） <br />
                     AI活用支援（AIを起点とした事業開発）
                     </span>
@@ -1451,20 +1474,21 @@ export default function Home() {
               <div id="c7" className="column" style={{ zIndex: 10 }}>
                 <div className="texture2"></div>
                 <div className="texture"></div>
-                <p className="testo1 v sec2 toHide " style={{ zIndex: 99 }}>
+                
+                <p
+                  id="testo1"
+                  className="testo1 v sec2 toHide is-top"
+                  style={{ zIndex: 99 }}
+                >
                   <span className="verticleText">
-                    あなたは知らず知らずのうちに <br />
-                    可能性を自ら摘み取っている。
+                    あなたは今、
+                    <br />
+                    ビジネスを殺そうとしている。
                   </span>
                 </p>
 
-                <p className="sec3 toHide  testolets v">
-                <span className="verticleText">こんな言葉を口にしたことはないか？</span>
-                </p>
-                <p className="v pillo sec5 factu">
-                  <span className="pollo-span">
-                  <span className="verticleText">「非現実的だ」と片付けていた戦略の中に</span>
-                  </span>
+                <p className="sec3 toHide  testolets v is-top02">
+                <span className="verticleText">「このビジネスモデルでは、ここまでが精一杯だ」</span>
                 </p>
                 <span className="sec7 ">
                   <p className="testomatter v">
@@ -1482,11 +1506,7 @@ export default function Home() {
                     <div className="texture2"></div>
                   </div>
                   <p className="testolets v">
-                  <span className="verticleText">
-                    あるなら、既に自社に死刑宣告を下しているも同然だ。
-                    <br />
-                    限界を口実に挑戦を放棄している。
-                    </span>
+                  <span className="verticleText">こんな言葉を口にしたことはないか？</span>
                   </p>
                 </div>
 
@@ -1598,7 +1618,7 @@ export default function Home() {
             <img
               className="toHide secBottom"
               id="messupBottom"
-              src="/assets/images/SKALE-LP-bottom.png"
+              src="/assets/images/SKALE-LP.png"
             />
             <img
               className="toHide secBottom"

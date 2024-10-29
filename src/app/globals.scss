@@ -317,7 +317,6 @@ body {
   height: auto;
   margin: 0 auto;
   transform-origin: center center;
-  justify-content: space-between;
   margin-top: -90px;
   opacity: 0;
 }
@@ -346,12 +345,50 @@ body {
 }
 .column {
   background: #242424;
-  width: 8.74074%;
   position: relative;
   text-wrap: nowrap;
   white-space: nowrap;
   height: calc(10000px + 1000cqw);
   transition: 0.3s ease all;
+}
+.column#c1 {
+  width: 8.866%;
+  margin-right: 1.2042356%;
+}
+.column#c2 {
+  width: 8.874%;
+  margin-right: 1.24%;
+}
+.column#c3 {
+  width: 8.866%;
+  margin-right: 1.25%;
+}
+.column#c4 {
+  width: 8.95%;
+  margin-right: 1.24%;
+}
+.column#c5 {
+  width: 8.83%;
+  margin-right: 1.31%;
+}
+.column#c6 {
+  width: 8.94%;
+  margin-right: 1.16%;
+}
+.column#c7 {
+  width: 8.94%;
+  margin-right: 1.22%;
+}
+.column#c8 {
+  width: 8.92%;
+  margin-right: 1.18%;
+}
+.column#c9 {
+  width: 8.94%;
+  margin-right: 1.29%;
+}
+.column#c10 {
+  width: 8.8%;
 }
 .column.extra {
   width: 20.951%;
@@ -489,7 +526,7 @@ a#lets {
   top: 2400px;
 }
 #stripeInner {
-  background-image: url("/assets/images/lets.png");
+  background-image: url("/assets/images/awaken.png");
   position: absolute;
   width: 100%;
   height: 100%;
@@ -509,7 +546,7 @@ a#lets {
   z-index: 1;
 }
 #stripeMatterInner {
-  background-image: url("/assets/images/MessUp_Results-Matter_Web.png");
+  background-image: url("/assets/images/our-service.png");
   position: absolute;
   width: 100%;
   height: 100%;
@@ -608,7 +645,7 @@ div.a1 p {
   position: absolute;
   display: inline-block;
   color: white;
-  left: -15%;
+  left: -12%;
   z-index: 1;
   top: 5200px;
   
@@ -987,7 +1024,7 @@ div.a1 p {
     position: absolute;
     top: calc(154cqi + 200vh);
     height: 6cqi;
-    left: 31cqi;
+    left: 36cqi;
     z-index: 99;
     display: inline-block;
     overflow: hidden;
@@ -1084,7 +1121,7 @@ div.a1 p {
     font-style: normal;
   }
   div.a1 {
-    margin-top: 0;
+    margin-top: 1cqi;
     margin-left: 0cqi;
   }
   #wrapContainer {
@@ -1109,11 +1146,12 @@ div.a1 p {
   }
   .maskFact {
     width: 200%;
-    top: calc(152cqi + 300vh);
+    top: calc(162cqi + 300vh);
     font-size: 11cqi;
     position: absolute;
     overflow: hidden;
     left: 0;
+
   }
   #holoFact {
     position: absolute;
@@ -1135,14 +1173,14 @@ div.a1 p {
     position: absolute;
     top: calc(192cqi + 300vh);
     width: 14cqi;
-    transform: translateX(calc(-45% + 60px)) rotate(-5deg);
+    transform: translateX(calc(-120% + 60px)) rotate(-5deg);
     transform-origin: left top;
     z-index: 11;
   }
   .pillo {
     /*top: 361cqi;
 		*/
-    top: calc(165cqi + 300vh);
+    top: calc(180cqi + 300vh);
   }
   p.testolets {
     /*top: 200cqi;
@@ -1151,6 +1189,12 @@ div.a1 p {
 		*/
     top: calc(104cqi + 100vh);
     font-size: 2.3cqi;
+  }
+  p.testolets.is-top01 {
+    margin-top: 36cqi;
+  }
+  p.testolets.is-top02 {
+    margin-top: 20cqi;
   }
   #WTF-Sticker_01 {
     position: absolute;
@@ -1191,6 +1235,12 @@ div.a1 p {
     font-size: 1.3cqi;
     letter-spacing: -0.035cqi;
     line-height: 3cqi;
+  }
+  p.testomatter.is-top01 {
+    margin-top: 10cqi;
+  }
+  p.testomatter.is-top02 {
+    margin-top: 5cqi;
   }
   .results {
     /*top: 450cqi;
@@ -1400,6 +1450,9 @@ p.testo1.primo {
   line-height: 3.4cqi;
   top: 185cqi;
 }
+p.testo1.is-top {
+  top: 165cqi;
+}
 #primoTrigger {
   position: absolute;
   top: 90cqi;
@@ -1497,6 +1550,9 @@ p.testo1.primo {
     line-height: 2cqi;
     top: 60cqi;
   }
+  p.testo1.is-top {
+    top: 50cqi;
+  }
   #progress,
   #progresso {
     width: 29px;
@@ -1590,6 +1646,7 @@ p.testo1.primo {
   }
   div.a1 {
     margin-left: 0.6cqi;
+    margin-top: 1cqi;
   }
   div.a1 p {
     font-size: 2.7px;
