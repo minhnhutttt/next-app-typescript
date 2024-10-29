@@ -32,3 +32,33 @@ body {
 	-webkit-text-stroke-width: 1;
 	-webkit-text-stroke-color: #000A40;
 }
+
+.u-text-gradient2 {
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.linear-wipe {
+	text-align: center;
+	background: linear-gradient(to right, #FFF 20%, #0321BE 40%, #0321BE 60%, #FFF 80%);
+	background-size: 200% auto;
+	color: #000;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: shine 1s linear infinite;
+			animation: shine 1s linear infinite;
+  }
+  @-webkit-keyframes shine {
+	to {
+	  background-position: 200% center;
+	}
+  }
+  @keyframes shine {
+	to {
+	  background-position: 200% center;
+	}
+  }
+  
