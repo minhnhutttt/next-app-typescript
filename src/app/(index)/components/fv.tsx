@@ -37,7 +37,7 @@ class Circle {
 
   show(context: CanvasRenderingContext2D, frames: number) {
     context.beginPath();
-    context.fillStyle = `hsl(${frames}, 100%, 80%)`;
+    context.fillStyle = `hsl(${frames}, 100%, 70%)`;
     context.arc(this.x, this.y, this.r * 2, 0, Math.PI * 2);
     context.fill();
   }

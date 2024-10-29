@@ -11,6 +11,11 @@ body {
   font-family: "Shippori Mincho", serif;
 }
 
+  
+.u-underline{
+	background: linear-gradient( transparent 70%, #FAC103 20% );
+  }
+  
 @layer utilities {
 	.no-scrollbar::-webkit-scrollbar {
 		display: none;
@@ -32,8 +37,3 @@ body {
 	background-color: white;
 	content: "";
   }
-  
-  .bg-line-height{
-	background: linear-gradient( transparent 70%, #FAC103 20% );
-  }
-  

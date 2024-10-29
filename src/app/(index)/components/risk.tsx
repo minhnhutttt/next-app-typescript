@@ -18,7 +18,7 @@ const Risk = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="relative">
-      <div className="px-5 md:pt-[155px]">
+      <div className="px-5 md:pt-[155px] pt-20">
       <div className="w-full max-w-[1360px] mx-auto md:mb-[70px] mb-10 relative">
         <Title
             text_ja="見直される福利厚生の重要性"
