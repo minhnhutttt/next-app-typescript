@@ -14,11 +14,11 @@ const Header = () => {
       <img className="max-md:w-[240px]" src="/assets/images/logo.svg" alt="" />
      </a>
      <div
-          className={`max-lg:fixed max-lg:left-0 max-lg:top-0 max-lg:h-screen max-lg:w-full max-lg:bg-white/90 z-[99] max-lg:overflow-y-scroll flex items-center justify-center max-lg:flex-col ${
+          className={`max-lg:fixed max-lg:left-0 max-lg:top-0 max-lg:h-screen max-lg:w-full max-lg:bg-black/90 z-[99] max-lg:overflow-y-scroll flex items-center justify-center max-lg:flex-col ${
             NavOpen ? "" : "max-lg:invisible max-lg:opacity-0"
           }`}
         >
-     <ul className="flex items-center gap-5">
+     <ul className="flex items-center max-md:flex-col gap-5">
       <li>
         <a href="/" onClick={close} className="flex justify-center items-center"><img src="/assets/images/btn-app.png" alt="" /></a>
       </li>

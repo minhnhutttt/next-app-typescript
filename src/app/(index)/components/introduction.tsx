@@ -2,6 +2,7 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -9,6 +10,8 @@ gsap.config({
 });
 
 const Introduction = () => {
+    const ref = useScrollAnimations();
+
     const containerRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         let ctx = gsap.context(() => {
@@ -20,85 +23,63 @@ const Introduction = () => {
             const tl = gsap.timeline({
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top top",
-                end: "+=150%",
-                scrub: 0.75,
-                pin: true,
+                start: "top 70%",
+                end: "bottom bottom",
+                scrub: 0.5,
               },
             });
             tl.to(chars, {
               opacity: 1,
-              stagger: 0.1,
-              duration: 0.5,
-            }, 0.01);
+              stagger: 1,
+              duration: 1,
+            }, 0.1);
           }, [containerRef]);
       
           return () => ctx.revert();
         
       }, []);
-      
+    
     return (
-        <section className="relative overflow-hidden md:px-10 px-5">
-            <div ref={containerRef} className="w-full md:max-w-[1310px] max-w-[540px] mx-auto pt-[80px] pb-16 md:pt-[230px] md:pb-[180px]">
-            
-            <div className="flex md:gap-[60px] gap-[30px] mt-[60px] md:mt-[100px] max-md:flex-col max-md:items-center max-md:justify-center">
-                <div id="functions" className="fade-up flex-1 border-2 border-white/20 rounded-[10px] max-w-[625px] overflow-hidden flex flex-col justify-between">
-                    <div>
-                        <figure>
-                            <img src="/assets/images/feature-img-01.png" alt="Functions of HGF" />
-                        </figure>
-                        <div className="md:px-6 px-4 pt-8 md:pt-12">
-                            <h4 className="md:text-[32px] text-[20px] font-bold">Functions of HGF</h4>
-                            <p className="md:text-[20px] text-[16px] tracking-[0.04em] mt-3 md:mt-4">
-                            HGF is a growth factor that promotes liver regeneration and cell repair and prevents injured cells from apoptosis. It also creates new blood vessels and aids in muscle and organ recovery. For this reason, it plays an important role in regenerative medicine and cancer treatment.
-                            </p>
+        <section ref={ref} id="introduction" className="relative overflow-hidden md:px-10 px-5 md:pt-[100px] pt-16">
+            <div className="w-full max-w-[1282px] mx-auto">
+                <div className="flex justify-center max-md:flex-col dt:gap-20 md:gap-[5.556vw] gap-10 items-center w-full max-w-[1100px] mx-auto">
+                    <figure className="fade-up max-md:w-full max-dt:w-[25vw] max-md:flex max-md:justify-center">
+                        <img src="/assets/images/phone.png" alt="" />
+                    </figure>
+                    <div className="flex-1">
+                        <div className="fade-up">
+                            <h3 className="dt:text-[118px] md:text-[8.194vw] text-[54px] font-bold relative leading-none max-md:text-center">
+                                <span className="absolute inset-0 text-transparent [text-shadow:4px_4px_0px_#000,_0px_0px_20px_rgba(61,_91,_246,_0.45)]">ALL IN ONE</span>
+                                <span className="block relative u-text-gradient">ALL IN ONE</span>
+                            </h3>
+                            <div className="flex flex-col items-end gap-1.5">
+                                <span className="w-3/5 h-[3px] bg-white"></span>
+                                <span className="w-4/5 h-[3px] bg-white"></span>
+                                <span className="w-full h-[3px] bg-white"></span>
+                            </div>
                         </div>
-                    </div>
-                    <div className="flex justify-end mt-8 md:mt-12 md:px-6 px-4 md:pb-6 pb-4">
-                        <a href="/" className="flex items-center gap-2 md:text-[20px] text-[16px] font-bold duration-150 hover:opacity-75">
-                        <span>Learn more</span>
-                        <span><img src="/assets/images/arrow.svg" alt="" /></span>
-                        </a>
-                    </div>
-                </div>
-                <div id="fields" className="fade-up flex-1 border-2 border-white/20 rounded-[10px] max-w-[625px] overflow-hidden flex flex-col justify-between">
-                    <div>
-                        <figure>
-                            <img src="/assets/images/feature-img-02.png" alt=" Fields of application" />
-                        </figure>
-                        <div className="md:px-6 px-4 pt-8 md:pt-12">
-                            <h4 className="md:text-[32px] text-[20px] font-bold"> Fields of application</h4>
-                            <div className="grid grid-cols-4 lg:grid-cols-4 md:grid-cols-2 items-start md:text-[13px] text-[10px] font-light text-center md:mt-9 mt-4 md:px-2 gap-5 break-words">
-                                <div className="flex flex-col items-center justify-center gap-1.5">
-                                    <span><img src="/assets/images/feature-ic-01.png" alt="Regenerative Medicine" /></span>
-                                    <span>Regenerative <br />Medicine</span>
-                                </div>
-                                <div className="flex flex-col items-center justify-center gap-1.5">
-                                    <span><img src="/assets/images/feature-ic-02.png" alt="Cancer Treatment" /></span>
-                                    <span>Cancer <br />Treatment</span>
-                                </div>
-                                <div className="flex flex-col items-center justify-center gap-1.5">
-                                    <span><img src="/assets/images/feature-ic-03.png" alt="Tissue Repair" /></span>
-                                    <span>Tissue Repair</span>
-                                </div>
-                                <div className="flex flex-col items-center justify-center gap-1.5">
-                                    <span><img src="/assets/images/feature-ic-04.png" alt="Neuroregenerative medicine" /></span>
-                                    <span className="break-words md:max-w-[90px] max-w-[70px]">Neuroregenerative medicine</span>
-                                </div>
+                        <div className="fade-up flex justify-center pt-6 md:pt-10">
+                            <div className="px-3 md:px-5">
+                                <p className="md:text-[40px] text-[24px] leading-[1.4]">
+                                    Next-generation wallet that <br className="max-md:hidden" />meets all needs of WEB3
+                                </p>
+                                <p className="md:text-[32px] text-[20px]  leading-[1.3] mt-2">
+                                    Access crypto assets, DApps, NFTs and various WEB3 ecosystems from multiple chains in one wallet.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div className="flex justify-end mt-8 md:mt-12 md:px-6 px-4 md:pb-6 pb-4">
-                        <a href="/" className="flex items-center gap-2 md:text-[20px] text-[16px] font-bold duration-150 hover:opacity-75">
-                        <span>Learn more</span>
-                        <span><img src="/assets/images/arrow.svg" alt="" /></span></a>
-                    </div>
                 </div>
-            </div>
-            <h4 data-splitting className="md:text-[64px] text-[32px] text-center font-bold leading-[1.2]">
-                Biological Functions and Potential <br className="max-xl:hidden" />Applications of HGF
-            </h4>
+                <div ref={containerRef} className="md:mt-[160px] mt-[100px]">
+                    <h4 data-splitting className="md:text-[64px] text-[30px] text-center font-bold leading-[1.2]">
+                        Safe, secure, simple <br className="max-lg:hidden" />
+                        Easy operation with one click <br className="max-lg:hidden" />
+                        Pursuing fast and intuitive UI/UX. 
+                    </h4>
+                </div>
+                <p className="fade-up w-full max-w-[520px] mx-auto md:text-[24px] text-[16px] font-bold leading-[1.3] md:mt-10 mt-7">
+                    Cryptocurrencies and NFTs can be sent and received with just a few taps.
+                </p>
             </div>
         </section>
   );

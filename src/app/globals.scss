@@ -22,3 +22,13 @@ body {
 		background-position-x: -400%;
 	}
 }
+
+
+.u-text-gradient {
+	background: linear-gradient(245deg, #18539E 15.94%, #228FCE 48.55%, #4FBCEC 84.06%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 1;
+	-webkit-text-stroke-color: #000A40;
+}

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { League_Spartan, Poppins, Inter, Roboto_Condensed } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ScrollContainer from "@/components/scrollContainer";
 
-const lagueSpartan = League_Spartan({
+const inter = Inter({
   weight: ["400", "500", "700", "800", "900"],
   subsets: ["latin"],
 });
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${lagueSpartan.className} bg-[#0C0F18]`}
+        className={`${inter.className} bg-[#0C0F18]`}
       >
         <ScrollContainer>
         <Header />
