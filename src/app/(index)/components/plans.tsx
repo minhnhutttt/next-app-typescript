@@ -139,8 +139,10 @@ const Plans = () => {
           />
         </figure>
         <div className="relative box max-w-[495px] w-full border-[3px] rounded-[10px] border-[#000] mx-auto md:px-[48px] px-[26px] py-[38px]">
-          <p className="md:text-[20px] text-[16px] inline u-underline">
+          <p className="md:text-[20px] text-[16px] inline">
+            <span className="relative gradient-background bg-no-repeat bg-[size:0_100%] bg-[linear-gradient(to_top,_#FAC103_30%,_transparent_30%)]">
             今ならベーシックプランの料金でサポートプランの利用が可能！
+            </span>
           </p>
         </div>
       </div>

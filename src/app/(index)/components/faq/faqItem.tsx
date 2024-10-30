@@ -50,9 +50,9 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
           className="relative ml-2 flex w-8 items-center justify-center duration-150  md:w-[50px] -rotate-90"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="51" height="52" viewBox="0 0 51 52" fill="none">
-  <circle cx="25.4876" cy="26.0887" r="24.8309" stroke="#73E3DC"/>
-  <path d="M17.231 22.979L25.4875 31.1983L33.7441 22.979" stroke="#73E3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+            <circle cx="25.4876" cy="26.0887" r="24.8309" stroke="#73E3DC"/>
+            <path d="M17.231 22.979L25.4875 31.1983L33.7441 22.979" stroke="#73E3DC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
       </button>
       <div ref={contentRef} className="h-0 overflow-hidden flex">
