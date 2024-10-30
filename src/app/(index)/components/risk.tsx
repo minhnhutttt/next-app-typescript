@@ -32,7 +32,7 @@ const Risk = () => {
             </Text>
           </div>
           </div>
-        <div className="relative w-full dt:w-[1330px] mx-auto mt-12 md:mt-20 overflow-auto max-md:px-10">
+        <div className="relative w-full dt:w-[1330px] mx-auto mt-12 md:mt-20 overflow-auto no-scrollbar max-md:px-10">
           <div className="relative w-full md:h-full max-md:flex max-md:items-center max-md:gap-[6.25vw]">
           <div className="flex-[0_0_50vw] md:absolute flex flex-col justify-center max-md:mx-auto size-[50vw] md:size-[22.639vw] dt:size-[326px] rounded-full bg-white border-[1.389vw] dt:border-[20px] border-[#D9D9D9] text-center p-[1.111vw] dt:p-4 shadow-md md:top-[20.833vw] dt:top-[260px] left-1/2 transform md:-translate-x-1/2 mt-[6.25vw]">
               <p className="dt:text-[32px] text-[4vw] md:text-[2.222vw]">リスクについて</p>

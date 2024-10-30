@@ -82,7 +82,7 @@ const Plans = () => {
             </div>
           ))}
         </div>
-        <div className="w-full max-w-[440px] px-5 md:hidden">
+        <div className="w-full max-w-[420px] md:hidden">
         <Swiper
                 slidesPerView={1}
                 spaceBetween={20}
