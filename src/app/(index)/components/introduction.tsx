@@ -50,7 +50,7 @@ const Introduction = () => {
                         <div className="fade-up">
                             <h3 className="dt:text-[118px] md:text-[8.194vw] text-[54px] font-bold relative leading-none max-md:text-center">
                                 <span className="absolute inset-0 text-transparent [text-shadow:4px_4px_0px_#000,_0px_0px_20px_rgba(61,_91,_246,_0.45)]">ALL IN ONE</span>
-                                <span className="block relative u-text-gradient">ALL IN ONE</span>
+                                <span className="block relative u-text-gradient u-text-stroke bg-[linear-gradient(245deg,_#18539E_15.94%,_#228FCE_48.55%,_#4FBCEC_84.06%)]">ALL IN ONE</span>
                             </h3>
                             <div className="flex flex-col items-end gap-1.5">
                                 <span className="w-3/5 h-[3px] bg-white"></span>
