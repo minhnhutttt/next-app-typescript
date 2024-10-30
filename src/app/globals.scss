@@ -645,7 +645,7 @@ div.a1 p {
   position: absolute;
   display: inline-block;
   color: white;
-  left: -12%;
+  left: 0;
   z-index: 1;
   top: 5200px;
   
@@ -1013,7 +1013,7 @@ div.a1 p {
   #sometimes {
     /*top:280cqi;
 		*/
-    top: calc(152cqi + 200vh);
+    top: calc(196cqi + 200vh);
     padding: 0.5cqi;
   }
   .svgMessup {
@@ -1122,7 +1122,7 @@ div.a1 p {
   }
   div.a1 {
     margin-top: 1cqi;
-    margin-left: 0cqi;
+    margin-left: 1cqi;
   }
   #wrapContainer {
     transform-origin: 50% top;
@@ -1135,7 +1135,7 @@ div.a1 p {
 		*/
     top: 0;
     position: relative;
-    font-size: 8cqi;
+    font-size: 6.5cqi;
   }
   .top-fact {
     /*top: 340cqi;
@@ -1171,7 +1171,7 @@ div.a1 p {
   }
   #NOT-COOL-Sticker {
     position: absolute;
-    top: calc(192cqi + 300vh);
+    top: calc(184cqi + 300vh);
     width: 14cqi;
     transform: translateX(calc(-120% + 60px)) rotate(-5deg);
     transform-origin: left top;
@@ -1527,6 +1527,9 @@ p.testo1.is-top {
     font-size: 1.6cqi;
     letter-spacing: -0.25px;
     line-height: 1.8cqi;
+  }
+  p.factu.is-top {
+    margin-top: 20cqi;
   }
   #yolo {
     right: -1.1cqi;
