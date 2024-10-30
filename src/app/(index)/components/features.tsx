@@ -24,7 +24,7 @@ const features = [
     img: "/assets/images/phone.svg",
     text: (
         <>
-        年間パスポートNFTによ<br />るセキュアなアクセス
+        年間パスポート<br className="md:hidden" />NFTによ<br className="max-md:hidden" />る<br className="md:hidden" />セキュアなアクセス
         </>
     ),
   },

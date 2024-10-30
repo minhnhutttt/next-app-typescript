@@ -4,14 +4,13 @@ import { ReactNode } from "react";
 
 interface ButtonProps {
   large?: boolean;
-  link?: string;
   children: ReactNode;
 }
 
-const Button = ({ large = false, link = '#', children }: ButtonProps) => {
+const Button = ({ large = false, children }: ButtonProps) => {
   return (
     <a
-      href={link}
+      href="https://lin.ee/9TgYyex"
       target="_blank"
       rel="noopener noreferrer"
       className={`fade-up relative bg-[#73E3DC] md:rounded-[20px] rounded-[10px] flex justify-center items-center mx-auto md:h-20 h-16 max-w-[100%] text-[#000F12] text-center font-bold transition duration-300 tracking-wides gap-2 hover:opacity-75

@@ -41,7 +41,7 @@ const Flow = () => {
     <section ref={ref} className="relative bg-cover bg-center bg-[url(/assets/images/bg-flow.jpg);] md:pt-[80px] pt-[40px]">
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
         <Title
-          text_ja="ご利用の流れ"
+          text_ja="ご利用までの5ステップ"
           text_en="Flow of Use"
           alignment="center"
           titleColor="white"

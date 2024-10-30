@@ -94,6 +94,15 @@ const useScrollAnimations = () => {
               scrollTrigger: { trigger: el },
             }
           ),
+          "gradient-background": (el: HTMLElement) =>
+            gsap.to(".gradient-background", {
+              backgroundSize: "100% 100%",
+              duration: 0.8,
+              ease: "linear",
+              scrollTrigger: { trigger: el },
+            }
+          ),
+          
     };
 
     let ctx = gsap.context(() => {

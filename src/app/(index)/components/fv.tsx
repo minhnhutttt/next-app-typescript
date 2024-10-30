@@ -79,19 +79,24 @@ useEffect(() => {
   };
 
   setup();
-  requestAnimationFrame(draw);
+  const timeoutId = setTimeout(() => {
+    requestAnimationFrame(draw);
+  }, 2000);
 
-  return () => {};
+  return () => {
+    clearTimeout(timeoutId);
+  };
+
 }, []);
   return (
     <div ref={ref}>
-    <section className="h-[120vw] md:h-[55.556vw] dt:h-[800px] bg-[#73E3DC] rounded-br-[20%] overflow-hidden">
+    <section className="h-[110vw] md:h-[55.556vw] dt:h-[800px] bg-[#73E3DC] rounded-br-[20%] max-md:overflow-hidden">
       <div className="w-full max-w-[1440px] mx-auto h-full relative">
-        <div ref={canvasContainerRef} className="w-full max-w-[100vw] md:max-w-[71.528vw] dt:max-w-[1030px] absolute left-0 max-md:top-[50vw] aspect-[1920/945]">
+        <div ref={canvasContainerRef} className="w-full max-w-[100vw] md:max-w-[71.528vw] dt:max-w-[1030px] absolute left-0 max-md:top-[42vw] aspect-[1920/945]">
         <canvas ref={canvasRef} />
         </div>
         
-        <div className="fade-up md:text-[8.889vw] text-[12vw] dt:text-[128px] font-extrabold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] absolute right-0 max-md:left-0 max-md:text-center md:right-[5.556vw] dt:right-20 top-[8vw] md:top-[2.222vw] dt:top-8 tracking-[0.2em] leading-[1.2]">
+        <div className="animate-[ani-zoom-out_0.25s_forwards] md:text-[8.889vw] text-[12vw] dt:text-[128px] font-extrabold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] absolute right-0 max-md:left-0 max-md:text-center md:right-[5.556vw] dt:right-20 top-[8vw] md:top-[2.222vw] dt:top-8 tracking-[0.2em] leading-[1.2]">
           <p className="">社員の力</p>
           <p className="md:mr-5 md:mt-[18.75vw] dt:mt-[270px]">無限大</p>
         </div>
@@ -113,7 +118,7 @@ useEffect(() => {
         </div>
       </div>
     </section>
-    <section className="md:pt-[54px] pt-10 px-5">
+    <section className="md:pt-[54px] pt-8 px-5">
         <p className="fade-up text-center md:text-[32px] text-[19px] leading-loose font-extrabold mb-4 md:mb-7">
         福利厚生クエストで社員へ豊かな毎日<br />をサポートし、働く喜びを最大化！
         </p>

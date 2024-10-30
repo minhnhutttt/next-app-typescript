@@ -24,7 +24,7 @@ const Header = () => {
         <a href="/" onClick={close} className="md:text-[18px] text-[16px] flex justify-center items-center gap-1 font-shipporiAntique">よくある質問</a>
       </li>
       <li className="">
-        <a href="/" onClick={close} className="md:text-[18px] text-[16px] flex justify-center items-center gap-1 font-shipporiAntique"><span><img src="/assets/images/ic-line.png" alt="" /></span>お問い合わせ</a>
+        <a href="https://lin.ee/9TgYyex" target="_blank" onClick={close} className="md:text-[18px] text-[16px] flex justify-center items-center gap-1 font-shipporiAntique"><span><img src="/assets/images/ic-line.png" alt="" /></span>お問い合わせ</a>
       </li>
      </ul>
      </div>

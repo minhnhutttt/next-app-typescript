@@ -37,3 +37,41 @@ body {
 	background-color: white;
 	content: "";
   }
+
+
+   
+.poyopoyo {
+	animation: poyopoyo 2s ease-out infinite;
+	opacity: 1;
+  }
+  @keyframes poyopoyo {
+	0%, 40%, 60%, 80% {
+	  transform: scale(1.0);
+	}
+	50%, 70% {
+	  transform: scale(0.95);
+	}
+  }
+
+
+  
+@keyframes ani-zoom-out {
+	0% {
+	  scale: 2;
+	  opacity: 0;
+	}
+	1% {
+	  scale: 2;
+	  opacity: 100;
+	}
+	50% {
+	  scale: 0.8;
+	}
+	70% {
+	  scale: 1.5;
+	}
+	100% {
+	  opacity: 100;
+	  scale: 1;
+	}
+  }

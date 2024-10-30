@@ -6,13 +6,13 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 interface ListItemProps {
   imageSrc: string;
-  text: string;
+  text: ReactNode;
 }
 
 const ListItem = ({ imageSrc, text }: ListItemProps) => {
   return (
     <li className="fade-up py-2 flex items-center pb-[20px] last:mb-0 md:mb-[60px] mb-[30px] last:border-b-0 border-b border-dotted border-[rgba(0,0,0,0.3)]">
-      <img src={imageSrc} alt={text} className="size-[120px] drop-shadow-md" />
+      <img src={imageSrc} className="size-[120px] drop-shadow-md" />
       <p className="md:text-[16px] text-[14px] ml-4 flex-1">{text}</p>
     </li>
   );
@@ -20,7 +20,7 @@ const ListItem = ({ imageSrc, text }: ListItemProps) => {
 
 interface ColumnProps {
   title: string;
-  items: { imageSrc: string; text: string }[];
+  items: { imageSrc: string; text: ReactNode }[];
 }
 
 const Column = ({ title, items }: ColumnProps) => {
@@ -37,14 +37,14 @@ const Column = ({ title, items }: ColumnProps) => {
 };
 
 const leftItems = [
-  { imageSrc: "/assets/images/staff1.svg", text: "福利厚生サービスを探すのがとても簡単になりました！地図を開いて近くのサービスをすぐに見つけられるので、ランチタイムや仕事帰りに利用できて便利です。" },
-  { imageSrc: "/assets/images/staff2.svg", text: "今までは福利厚生をあまり使っていなかったのですが、福利厚生Questのおかげで、自分が受けられるサービスが一目でわかり、活用する機会が増えました。会社の福利厚生がこんなに充実しているなんて、驚きです！" },
-  { imageSrc: "/assets/images/staff3.svg", text: "近くのジムやカフェの割引サービスを気軽に利用できるようになり、日常生活がさらに豊かになりました。仕事とプライベートのバランスも取りやすくなり、毎日の満足度が上がっています！" },
+  { imageSrc: "/assets/images/staff1.svg", text: (<><span className="font-bold">福利厚生サービスを探すのがとても簡単になりました！</span>地図を開いて近くのサービスをすぐに見つけられるので、ランチタイムや仕事帰りに利用できて便利です。</>) },
+  { imageSrc: "/assets/images/staff2.svg", text: (<>今までは福利厚生をあまり使っていなかったのですが、福利厚生クエストのおかげで、<span className="font-bold">自分が受けられるサービスが一目でわかり、活用する機会が増えました。</span>会社の福利厚生がこんなに充実しているなんて、驚きです！</>) },
+  { imageSrc: "/assets/images/staff3.svg", text: (<>近くのジムやカフェの割引サービスを気軽に利用できるようになり、日常生活がさらに豊かになりました。<span className="font-bold">仕事とプライベートのバランスも取りやすくなり、毎日の満足度が上がっています！</span></>) },
 ];
 const rightItems = [
-  { imageSrc: "/assets/images/company1.svg", text: "福利厚生クエストを導入してから、従業員からの福利厚生に関する問い合わせが減り、利用率が飛躍的に向上しました。社員が積極的にサービスを活用してくれるようになり、モチベーションが高まっているのを感じます。" },
-  { imageSrc: "/assets/images/company2.svg", text: "福利厚生Questは、管理が簡単で、導入コストも手頃です。従業員が自らサービスを見つけて利用してくれるので、社内でのサポート負担も減りました。これまで以上に福利厚生制度をうまく運用できています。" },
-  { imageSrc: "/assets/images/company3.svg", text: "求職者に福利厚生制度を説明するとき、福利厚生Questの導入が非常に大きなアピールポイントになっています。従業員の定着率も向上し、結果的に会社全体の雰囲気が良くなりました。" },
+  { imageSrc: "/assets/images/company1.svg", text: (<>福利厚生クエストを導入してから、<span className="font-bold">従業員からの福利厚生に関する問い合わせが減り、利用率が飛躍的に向上しました。</span>社員が積極的にサービスを活用してくれるようになり、モチベーションが高まっているのを感じます。</>) },
+  { imageSrc: "/assets/images/company2.svg", text: (<>福利厚生クエストは、<span className="font-bold">管理が簡単で、導入コストも手頃です。</span>従業員が自らサービスを見つけて利用してくれるので、社内でのサポート負担も減りました。これまで以上に福利厚生制度をうまく運用できています。</>) },
+  { imageSrc: "/assets/images/company3.svg", text: (<><span className="font-bold">求職者に福利厚生制度を説明するとき、福利厚生クエストの導入が非常に大きなアピールポイントになっています。</span>従業員の定着率も向上し、結果的に会社全体の雰囲気が良くなりました。</>) },
 ];
 const Voice = () => {
   const ref = useScrollAnimations();
@@ -66,7 +66,7 @@ const Voice = () => {
       <div className="md:mt-[44px] mt-[18px] max-w-[671px] md:w-full w-[90%] mx-auto border-dashed border border-[#73E3DC] bg-white md:px-[40px] px-[20px] md:py-[30px] py-[15px] rounded-[20px]">
         <h3 className="fade-up md:text-[22px] text-[18px] text-center font-bold border-b border-solid border-[#73E3DC] pb-[10px]">社員が福利厚生を選ぶ時代へ！</h3>
         <p className="fade-up md:text-[18px] text-[14px] left-5 md:py-[24px] py-[10px]">福利厚生クエストを導入し、社員の満足度とモチベーションを向上させ、企業全体の生産性とパフォーマンスを高めましょう！</p>
-      <Button large link="#">LINEでお問い合わせ</Button>
+      <Button large>LINEでお問い合わせ</Button>
       </div>
       </div>
     </section>
