@@ -30,7 +30,7 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
   return (
     <div
       data-scroll
-      className="fade-up border-[2px] border-[#73E3DC] hover:border-[#73E3DC] rounded-[18px] bg-white p-4 md:px-8 md:pb-11 md:pt-11 [box-shadow:0px_6px_16px_0px_rgba(74,_58,_255,_0.19)]"
+      className="fade-up border-[2px] border-[#005FD7] rounded-[14px] bg-black/70 p-4 md:px-8 md:pb-11 md:pt-11 [box-shadow:0px_6px_16px_0px_rgba(74,_58,_255,_0.19)]"
     >
       <button
         type="button"
@@ -50,16 +50,13 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
           className="relative ml-2 flex w-8 items-center justify-center duration-150  md:w-[50px] -rotate-90"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="51" height="52" viewBox="0 0 51 52" fill="none">
-  <circle cx="25.4876" cy="26.0887" r="24.8309" stroke="#73E3DC"/>
-  <path d="M17.231 22.979L25.4875 31.1983L33.7441 22.979" stroke="#73E3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="25.4876" cy="26.0887" r="24.8309" stroke="#fff"/>
+  <path d="M17.231 22.979L25.4875 31.1983L33.7441 22.979" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
         </div>
       </button>
       <div ref={contentRef} className="h-0 overflow-hidden flex">
-        <p className="font-bold text-[18px] uppercase tracking-widest md:text-[24px] text-[#DF0F47]">
-          a.
-        </p>
-        <p className="pt-[5px] pb-4 text-[14px] leading-[1.6] text-black md:w-[85%] md:pb-7 md:text-[16px] ">
+        <p className="pt-[5px] pb-4 text-[14px] leading-[1.6] text-white md:w-[85%] md:pb-7 md:text-[16px] md:pl-10 pl-5">
           {answer}
         </p>
       </div>

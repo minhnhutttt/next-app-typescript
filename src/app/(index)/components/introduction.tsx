@@ -24,8 +24,8 @@ const Introduction = () => {
               scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 70%",
-                end: "bottom bottom",
-                scrub: 0.5,
+                end: "bottom",
+                scrub: 0.9,
               },
             });
             tl.to(chars, {

@@ -22,11 +22,24 @@ const Diver = () => {
     <section
       ref={ref}
       id="diver"
-      className="relative md:px-10 px-5 bg-[url('/assets/images/bg-diver.png')] bg-center bg-[length:100%_100%] md:pt-[94px]"
+      className="relative md:px-10 px-5 bg-[url('/assets/images/bg-diver.png')] bg-center bg-[length:100%_100%] md:pt-[94px] md:h-[820px]"
     >
-      <div className="w-full max-w-[1187px] mx-auto">
+      <div className="absolute inset-0 z-10">
+            <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover object-bottom"
+              >
+                <source src="/assets/videos/diver.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+          </div>
+      <div className="w-full max-w-[1187px] mx-auto relative z-10 h-full max-md:py-20">
         <div className="relative text-[4.861vw] dt:text-[70px] font-black leading-[1.3] text-center">
-          <h4 data-splitting className="relative text tracking-wider">
+          <h4 className="relative text tracking-wider">
             <span className="char text-[#FF9E5C]" style={{ "--char-index": 0 } as React.CSSProperties}>D</span>
             <span className="char text-[#FFA34F]" style={{ "--char-index": 1 } as React.CSSProperties}>I</span>
             <span className="char text-[#FFAD46]" style={{ "--char-index": 2 } as React.CSSProperties}>V</span>
@@ -71,6 +84,16 @@ const Diver = () => {
             <span className="char text-[#A0B9FF]" style={{ "--char-index": 36 } as React.CSSProperties}>L</span>
             <span className="char text-[#B7A7FF]" style={{ "--char-index": 37 } as React.CSSProperties}>S</span>
           </h4>
+        </div>
+        <div className="fade-up flex justify-center items-center max-md:flex-col pt-8 md:pt-12">
+          <figure>
+            <img className="max-md:w-[200px]" src="/assets/images/ic-diver.svg" alt="" />
+          </figure>
+          <div className="">
+            <p className="max-w-[620px] md:text-[32px] text-[20px] font-medium">
+            MERCURY VAULT supports DIVER Time Network and handles DIV, the cryptocurrency of DIVER Time Network.
+            </p>
+          </div>
         </div>
       </div>
     </section>

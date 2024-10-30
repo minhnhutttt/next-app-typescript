@@ -67,7 +67,7 @@ body {
   
 }
 
-.char {
+#diver .char {
   display: inline-block;
   transform: scale(var(--scale, 0));
   opacity: var(--opacity, 0);
