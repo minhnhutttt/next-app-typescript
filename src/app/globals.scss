@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=Shippori+Mincho&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth !important;
+}
+body {
+  color: #fff;
+  font-family: "Shippori Mincho", serif;
+}
+
+@layer utilities {
+
+	.u-text-gradient {
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none; 
+		scrollbar-width: none;
+  }
+  }
+
+  
