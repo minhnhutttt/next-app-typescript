@@ -37,7 +37,7 @@ const Merit = () => {
             {merits.map((merit, index) => (
              <li className="fade-up md:py-[45px] py-7 border-t last:border-b border-solid border-[rgba(0, 15, 18, 0.30)] px-4" key={index}>
                 <p className="md:flex align-center border-l-8 border-b border-[#73E3DC] mb-[22px] pl-[10px]">
-                    <span className="font-bold md:text-[24px] text-[18px]">{merit.title}</span>
+                    <span className="font-extrabold md:text-[24px] text-[18px]">{merit.title}</span>
                 </p>
                 <p className="md:text-[16px] text-[12px]">{merit.description}</p>
              </li>

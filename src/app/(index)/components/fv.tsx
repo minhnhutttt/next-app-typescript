@@ -81,7 +81,7 @@ useEffect(() => {
   setup();
   const timeoutId = setTimeout(() => {
     requestAnimationFrame(draw);
-  }, 2000);
+  }, 1200);
 
   return () => {
     clearTimeout(timeoutId);
@@ -96,9 +96,9 @@ useEffect(() => {
         <canvas ref={canvasRef} />
         </div>
         
-        <div className="animate-[ani-zoom-out_0.25s_forwards] md:text-[8.889vw] text-[12vw] dt:text-[128px] font-extrabold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] absolute right-0 max-md:left-0 max-md:text-center md:right-[5.556vw] dt:right-20 top-[8vw] md:top-[2.222vw] dt:top-8 tracking-[0.2em] leading-[1.2]">
+        <div className="md:text-[8.889vw] text-[12vw] dt:text-[128px] font-extrabold md:[writing-mode:vertical-rl] md:[text-orientation:mixed] absolute right-0 max-md:left-0 max-md:text-center md:right-[5.556vw] dt:right-20 top-[8vw] md:top-[2.222vw] dt:top-8 tracking-[0.2em] leading-[1.2]">
           <p className="">社員の力</p>
-          <p className="md:mr-5 md:mt-[18.75vw] dt:mt-[270px]">無限大</p>
+          <p className="animate-[ani-zoom-out_0.25s_forwards] [animation-delay:1.2s] md:mr-5 md:mt-[18.75vw] dt:mt-[270px]">無限大</p>
         </div>
         <div className="fade-up absolute bottom-0 left-0">
           <div className="absolute right-[-28vw] md:-right-[12.5vw] dt:right-[-180px] top-0 md:top-20">
