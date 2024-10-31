@@ -12,11 +12,20 @@ body {
 }
 
 @layer utilities {
-
+ .u-text-stroke {
+	-webkit-text-fill-color: black;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: white;
+ }
 	.u-text-gradient {
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+	}
+	.road-prerspective {
+		transform-style: preserve-3d;
+		height: 100%;
+		transform: perspective(550px) rotateX(33deg) rotateY(0) rotate(0);
 	}
 
 	.no-scrollbar::-webkit-scrollbar {
@@ -28,4 +37,11 @@ body {
   }
   }
 
-  
+  @keyframes scroll {
+	from {
+	  transform: translateX(0);
+	}
+	to {
+	  transform: translateX(calc(-100% - 20px));
+	}
+  }
