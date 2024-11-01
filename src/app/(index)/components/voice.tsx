@@ -37,14 +37,14 @@ const Column = ({ title, items }: ColumnProps) => {
 };
 
 const leftItems = [
-  { imageSrc: "/assets/images/staff1.svg", text: (<><span className="font-extrabold">福利厚生サービスを探すのがとても簡単になりました！</span>地図を開いて近くのサービスをすぐに見つけられるので、ランチタイムや仕事帰りに利用できて便利です。</>) },
-  { imageSrc: "/assets/images/staff2.svg", text: (<>今までは福利厚生をあまり使っていなかったのですが、福利厚生クエストのおかげで、<span className="font-extrabold">自分が受けられるサービスが一目でわかり、活用する機会が増えました。</span>会社の福利厚生がこんなに充実しているなんて、驚きです！</>) },
-  { imageSrc: "/assets/images/staff3.svg", text: (<>近くのジムやカフェの割引サービスを気軽に利用できるようになり、日常生活がさらに豊かになりました。<span className="font-extrabold">仕事とプライベートのバランスも取りやすくなり、毎日の満足度が上がっています！</span></>) },
+  { imageSrc: "/assets/images/staff1.svg", text: (<><span className="font-extrabold  text-[#DF0F47]">福利厚生サービスを探すのがとても簡単になりました！</span>地図を開いて近くのサービスをすぐに見つけられるので、ランチタイムや仕事帰りに利用できて便利です。</>) },
+  { imageSrc: "/assets/images/staff2.svg", text: (<>今までは福利厚生をあまり使っていなかったのですが、福利厚生クエストのおかげで、<span className="font-extrabold  text-[#DF0F47]">自分が受けられるサービスが一目でわかり、活用する機会が増えました。</span>会社の福利厚生がこんなに充実しているなんて、驚きです！</>) },
+  { imageSrc: "/assets/images/staff3.svg", text: (<>近くのジムやカフェの割引サービスを気軽に利用できるようになり、日常生活がさらに豊かになりました。<span className="font-extrabold  text-[#DF0F47]">仕事とプライベートのバランスも取りやすくなり、毎日の満足度が上がっています！</span></>) },
 ];
 const rightItems = [
-  { imageSrc: "/assets/images/company1.svg", text: (<>福利厚生クエストを導入してから、<span className="font-extrabold">従業員からの福利厚生に関する問い合わせが減り、利用率が飛躍的に向上しました。</span>社員が積極的にサービスを活用してくれるようになり、モチベーションが高まっているのを感じます。</>) },
-  { imageSrc: "/assets/images/company2.svg", text: (<>福利厚生クエストは、<span className="font-extrabold">管理が簡単で、導入コストも手頃です。</span>従業員が自らサービスを見つけて利用してくれるので、社内でのサポート負担も減りました。これまで以上に福利厚生制度をうまく運用できています。</>) },
-  { imageSrc: "/assets/images/company3.svg", text: (<><span className="font-extrabold">求職者に福利厚生制度を説明するとき、福利厚生クエストの導入が非常に大きなアピールポイントになっています。</span>従業員の定着率も向上し、結果的に会社全体の雰囲気が良くなりました。</>) },
+  { imageSrc: "/assets/images/company1.svg", text: (<>福利厚生クエストを導入してから、<span className="font-extrabold  text-[#DF0F47]">従業員からの福利厚生に関する問い合わせが減り、利用率が飛躍的に向上しました。</span>社員が積極的にサービスを活用してくれるようになり、モチベーションが高まっているのを感じます。</>) },
+  { imageSrc: "/assets/images/company2.svg", text: (<>福利厚生クエストは、<span className="font-extrabold  text-[#DF0F47]">管理が簡単で、導入コストも手頃です。</span>従業員が自らサービスを見つけて利用してくれるので、社内でのサポート負担も減りました。これまで以上に福利厚生制度をうまく運用できています。</>) },
+  { imageSrc: "/assets/images/company3.svg", text: (<><span className="font-extrabold  text-[#DF0F47]">求職者に福利厚生制度を説明するとき、福利厚生クエストの導入が非常に大きなアピールポイントになっています。</span>従業員の定着率も向上し、結果的に会社全体の雰囲気が良くなりました。</>) },
 ];
 const Voice = () => {
   const ref = useScrollAnimations();

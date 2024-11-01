@@ -13,7 +13,7 @@ export default function Home() {
     <main>
         <FV />
           <About />
-          <div className=" bg-[url(/assets/images/bg-2.png)]  bg-[length:100%_auto] bg-no-repeat">
+          <div className=" bg-[url(/assets/images/bg-2.png)]  bg-[length:100%_auto] bg-no-repeat overflow-hidden">
           <Risk />
           <Features />
          </div>
