@@ -446,7 +446,7 @@ export default function Home() {
     posFooter =
       getElementOffsetTop("triggerFooter") -
       getElementOffsetTop("wrapContainer") -
-      window.innerHeight / 1.5;
+      window.innerHeight / 3;
     t.revert();
   }
 
@@ -1258,6 +1258,13 @@ export default function Home() {
               <div className="sec3 toHide " id="stripe">
                 <div id="stripeInner"></div>
               </div>
+              <div className="sec5 maskFact" style={{ zIndex: 99 }}>
+                  <span className="sec5 fact" id="facts" style={{ zIndex: 5 }}>
+                  探せ。<br />
+                  限界を出発点に<br />
+                    変える鍵を。
+                  </span>
+                </div>
               <div className="sec7 " style={{ zIndex: 4 }} id="stripeMatter">
                 <div id="stripeMatterInner"></div>
               </div>
@@ -1280,7 +1287,7 @@ export default function Home() {
                 <p className="pillo sec5 factu is-top">
                 <span className="verticleText">
                   <span className="pollo-span">
-                  まだ　あなたが　気づいてさえも　いない　可能性の　なかで
+                  まだあなたが　気づいてさえもいない　可能性のなかに
                   </span>
                   </span>
                 </p>
@@ -1290,16 +1297,12 @@ export default function Home() {
                 <div className="texture2"></div>
                 <div className="texture"></div>
 
-                <div className="sec5 maskFact" style={{ zIndex: 1 }}>
-                  <span className="sec5 fact" id="facts" style={{ zIndex: 5 }}>
-                  <span className="verticleText">探</span>
-                  </span>
-                </div>
+                
                 
                 <p className="pillo sec5 factu is-top">
                 <span className="verticleText">
                   <span className="pollo-span">
-                  非現実的だ と 片付けていた 戦略の なかで「できない」と思っていたことの中に
+                  非現実的だ と片付けていた 戦略のなかに
                   </span>
                   </span>
                 </p>
@@ -1320,7 +1323,7 @@ export default function Home() {
                   <p id="testolets" className="testolets v is-top01">
                     
                     <span className="verticleText">
-                    あるなら 既に 自社に死刑宣告を 下しているも同然だ ┃┃限界 を口実に 挑戦を放棄 している
+                    あるならすでに 自社に死刑宣告を下しているも同然だ┃┃限界を口実に 挑戦を放棄している。
                     </span>
                   </p>
                 </span>
@@ -1331,7 +1334,7 @@ export default function Home() {
                   <div className="a1">
                     <p>
                     <span className="verticleText l">
-                    限界 は あなたの 頭の中にしか 存在しない 幻想だ<br /><br />限界 だと思っている その壁は 上 から見れば 長い道のりの 些細な障害 でしかない
+                    限界は あなたの頭の中にしか 存在しない幻想だ。<br /><br />限界だ と思っているその壁は 上から見れば長い道のりの 些細な障害でしかない。
                     </span>
                     </p>
                   </div>
@@ -1339,17 +1342,12 @@ export default function Home() {
 
                   <div id="yolo" className="oh-shut-up"></div>
                 </div>
-                <div className="sec5  maskFact">
-                  <span className="sec5  fact" style={{ zIndex: 4 }}>
-                  せ。
-                  </span>
-                </div>
                 
 
                 <p className="pillo sec5 factu is-top">
                 <span className="verticleText">
                   <span className="pollo-span">
-                  無理だ と 諦めていた アイデアの なかで「無理だ」と諦めていたアイデアの中に
+                  無理だ と諦めていた アイデアのなかに
                   </span>
                   </span>
                 </p>
@@ -1359,11 +1357,6 @@ export default function Home() {
                   src="/assets/images/MessUp_Holo.jpg"
                 />
 
-                <img
-                  className="sec8 "
-                  id="holoFact2"
-                  src="/assets/images/MessUp_Holo.jpg"
-                />
               </div>
 
               <div id="c5" className="column" style={{ zIndex: 5 }}>
@@ -1381,7 +1374,7 @@ export default function Home() {
 
                 <p className="v pillo sec5 factu is-top">
                   <span className="pollo-span">
-                  <span className="verticleText">できない と 思っていた ことの なかで</span>
+                  <span className="verticleText">できない と思っていた ことのなかに</span>
                   </span>
                 </p>
                 <span className="sec7 ">
@@ -1412,7 +1405,7 @@ export default function Home() {
                 <p className="pillo sec5  factu">
                   <span className="pollo-span">
                   <span className="verticleText">
-                  限界 という名の 幻想 を打ち破る 鍵 を探せ<br /><br />     ヒントは あなたの ビジネスの中に 眠っている
+                  変革の鍵は あなたのビジネスのなかに 眠っている。
                     </span>
                   </span>
                 </p>
@@ -1449,7 +1442,7 @@ export default function Home() {
                 
                 <p
                   id="testo1"
-                  className="testo1 v sec2 toHide is-top"
+                  className="testo1 v sec2 toHide"
                   style={{ zIndex: 99 }}
                 >
                   <span className="verticleText">

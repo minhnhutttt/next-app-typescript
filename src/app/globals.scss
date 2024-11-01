@@ -427,9 +427,6 @@ body {
   width: 100%;
   margin-bottom: -5px;
 }
-#messupBottom {
-  margin-top: -20% !important;
-}
 #titolone {
   position: absolute;
   color: white;
@@ -645,7 +642,7 @@ div.a1 p {
   position: absolute;
   display: inline-block;
   color: white;
-  left: 0;
+  left: 3%;
   z-index: 1;
   top: 5200px;
   
@@ -898,9 +895,6 @@ div.a1 p {
 }
 @container mcc (min-width: 200px) {
   .column {
-    height: calc(460cqi + 600vh);
-    height: calc(1194cqi + 641vh);
-    height: calc(790cqi + 800vh);
     height: calc(296cqi + 800vh);
     _-webkit-backface-visibility: hidden;
     /* add to fix webkit bug jitter */
@@ -973,7 +967,7 @@ div.a1 p {
   #stripeMatter {
     height: 0;
     padding-bottom: 3cqi;
-    top: calc(205cqi + 500vh);
+    top: calc(212cqi + 500vh);
   }
   #stripeTrigger {
     top: calc(204cqi + 500vh);
@@ -1150,7 +1144,7 @@ div.a1 p {
     font-size: 11cqi;
     position: absolute;
     overflow: hidden;
-    left: 0;
+    left: 10%;
 
   }
   #holoFact {
@@ -1171,16 +1165,14 @@ div.a1 p {
   }
   #NOT-COOL-Sticker {
     position: absolute;
-    top: calc(184cqi + 300vh);
+    top: calc(195cqi + 300vh);
     width: 14cqi;
     transform: translateX(calc(-120% + 60px)) rotate(-5deg);
     transform-origin: left top;
     z-index: 11;
   }
   .pillo {
-    /*top: 361cqi;
-		*/
-    top: calc(180cqi + 300vh);
+    top: calc(195cqi + 300vh);
   }
   p.testolets {
     /*top: 200cqi;
@@ -1231,11 +1223,12 @@ div.a1 p {
   p.testomatter {
     /* top: 200cqi;
 		*/
-    top: calc(200cqi + 500vh);
+    top: calc(215cqi + 500vh);
     font-size: 1.3cqi;
     letter-spacing: -0.035cqi;
     line-height: 3cqi;
   }
+  
   p.testomatter.is-top01 {
     margin-top: 10cqi;
   }
@@ -1529,7 +1522,7 @@ p.testo1.is-top {
     line-height: 1.8cqi;
   }
   p.factu.is-top {
-    margin-top: 20cqi;
+    margin-top: 15cqi;
   }
   #yolo {
     right: -1.1cqi;
@@ -1549,7 +1542,7 @@ p.testo1.is-top {
   }
   p.testo1,
   p.testo1.primo {
-    font-size: 1.6cqi;
+    font-size: 2.3cqi;
     line-height: 2cqi;
     top: 60cqi;
   }
