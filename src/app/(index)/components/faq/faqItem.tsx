@@ -51,7 +51,7 @@ export default function FaqItem({ id, question, answer }: FaqItemPropsType) {
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="51" height="52" viewBox="0 0 51 52" fill="none">
   <circle cx="25.4876" cy="26.0887" r="24.8309" stroke="#fff"/>
-  <path d="M17.231 22.979L25.4875 31.1983L33.7441 22.979" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M17.231 22.979L25.4875 31.1983L33.7441 22.979" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
         </div>
       </button>
