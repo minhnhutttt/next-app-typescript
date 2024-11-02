@@ -22,10 +22,6 @@ const links: NavLink[] = [
     text: '産官学連携',
   },
   {
-    link: '/price',
-    text: '料金',
-  },
-  {
     link: '/#faq',
     text: 'FAQ',
   },

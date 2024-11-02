@@ -111,69 +111,31 @@ export default function Thankyou() {
               <div className="w-full overflow-hidden rounded-t-[10px] border border-black bg-white">
                 <p className="flex items-center justify-center bg-black px-5 py-2 text-center font-serif text-[18px] font-bold text-white md:h-[50px] md:text-[24px]">
                   <span>
-                    ご希望のプラン名の
-                    <span className="max-md:hidden">右手</span>
-                    <span className="md:hidden">下部</span>
-                    ボタンからお支払いにお進みください
+                    プラン名右手 の下部ボタンからお支払い画面にお進みください
                   </span>
                 </p>
                 <div className="divide-y divide-black">
                   <div className="flex items-center justify-between gap-4 py-5 pl-2 pr-4 max-md:flex-col md:gap-2 md:pb-11 md:pr-[38px] md:pt-8">
-                    <p className="text-center text-[22px] font-bold leading-[1.1] md:text-[48px]">
-                      【先着50名限定 ! 40%オフ】
-                      <br />
-                      メモリアルモニタープラン
+                    <p className="text-center text-[22px] font-bold leading-[1.1] md:text-[48px]  flex-1">
+                      【今だけセール中】<br />メタでペット供養<br />β（ベータ）版
                     </p>
                     <a
                       href="https://anz-official.myshopify.com/products/%E3%83%A1%E3%83%A2%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC%E3%83%97%E3%83%A9%E3%83%B3"
                       target="_blank"
                       className="flex h-20 w-[197px] items-center justify-center rounded-[10px] border-2 border-white bg-[#F12929] p-2 text-center text-[20px] font-bold leading-[1.2] tracking-wider text-white duration-150 hover:opacity-75 md:h-[121px] md:text-[32px]"
                     >
-                      お支払いへ進む
-                    </a>
-                  </div>
-                  <div className="flex items-center justify-between gap-4 py-5 max-md:flex-col max-md:px-4 md:gap-2 md:pb-4 md:pl-9 md:pr-[38px] md:pt-5">
-                    <p className="text-center text-[20px] font-bold leading-[1.1] md:text-[32px]">
-                      エントリープラン
-                    </p>
-                    <a
-                      href="https://anz-official.myshopify.com/products/%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%E3%83%97%E3%83%A9%E3%83%B3"
-                      target="_blank"
-                      className="flex h-[50px] w-[197px] items-center justify-center rounded-[10px] border-2 border-white bg-[#F12929] p-2 text-center text-[16px] font-bold leading-[1.2] tracking-wider text-white duration-150 hover:opacity-75 md:text-[20px]"
-                    >
-                      お支払いへ進む
-                    </a>
-                  </div>
-                  <div className="flex items-center justify-between gap-4 py-5 max-md:flex-col max-md:px-4 md:gap-2 md:pb-4 md:pl-9 md:pr-[38px] md:pt-5">
-                    <p className="text-center text-[20px] font-bold leading-[1.1] md:text-[32px]">
-                      スタンダードプラン
-                    </p>
-                    <a
-                      href="https://anz-official.myshopify.com/products/%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%80%E3%83%BC%E3%83%89%E3%83%97%E3%83%A9%E3%83%B3"
-                      target="_blank"
-                      className="flex h-[50px] w-[197px] items-center justify-center rounded-[10px] border-2 border-white bg-[#F12929] p-2 text-center text-[16px] font-bold leading-[1.2] tracking-wider text-white duration-150 hover:opacity-75 md:text-[20px]"
-                    >
-                      お支払いへ進む
+                      お支払いを完了する
                     </a>
                   </div>
                 </div>
               </div>
               <div className="mx-auto mt-4 w-full max-w-[800px] space-y-3 text-[14px] leading-[1.4] md:mt-7 md:text-[20px]">
                 <p>
-                  ※「お支払いへ進む」ボタンの遷移先ページは、
-                  <span className="font-bold">
-                    株式会社メタロポリスが運営するメタバースショップ
-                    <span className="text-[#F12929]">「ANZショップ」</span>
-                  </span>
-                  となります。
+                  ※「お支払いを完了する」ボタンの遷移先ページは、<span className="font-bold">株式会社メタロポリスが運営するメタバースショップ</span><span className="text-[#F12929]">「ANZショップ」</span>となります。
                   <br />
                 </p>
                 <p>
-                  ※銀行振込の方も上記「お支払いへ進む」ボタンからお手続きを完了してください。
-                  <span className="font-bold">
-                    振込先銀行口座情報もそちらでご案内
-                  </span>
-                  しております。
+                  ※銀行振込の方も上記「お支払いを完了する」ボタンからお手続きを完了してください。<span className="font-bold">振込先銀行口座情報もそちらでご案内</span>しております。
                 </p>
               </div>
             </div>
@@ -214,7 +176,6 @@ export default function Thankyou() {
           </div>
         </div>
       </main>
-      <A8SalesTracker />
     </Suspense>
   )
 }

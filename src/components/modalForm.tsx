@@ -253,9 +253,9 @@ const ModalForm = () => {
                             name="interests"
                             type="checkbox"
                             checked={formData.interests.includes(
-                              '＼一番人気／先着50名様で締切メモリアルモニタープランに申し込む'
+                              '＼セール価格の今がチャンス／ベータ版に申し込む'
                             )}
-                            value="＼一番人気／先着50名様で締切メモリアルモニタープランに申し込む"
+                            value="＼セール価格の今がチャンス／ベータ版に申し込む"
                             onChange={handleChange}
                             className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
                           />
@@ -268,61 +268,8 @@ const ModalForm = () => {
                         </span>
                       </p>
                       <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
-                        ＼一番人気／先着50名様で締切
-                        <br />
-                        メモリアルモニタープランに申し込む
-                      </p>
-                    </label>
-                    <label htmlFor="plan2" className="flex items-center gap-3">
-                      <p>
-                        <span className="relative block size-5 md:size-[30px]">
-                          <input
-                            id="plan2"
-                            name="interests"
-                            type="checkbox"
-                            checked={formData.interests.includes(
-                              'エントリープランに申し込む'
-                            )}
-                            value="エントリープランに申し込む"
-                            onChange={handleChange}
-                            className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
-                          />
-                          <span className="absolute inset-0 hidden h-full w-full cursor-pointer peer-checked:block">
-                            <img src="/assets/images/checkbox.svg" alt="" />
-                          </span>
-                          <span className="absolute  inset-0 h-full w-full cursor-pointer peer-checked:hidden">
-                            <img src="/assets/images/uncheckbox.svg" alt="" />
-                          </span>
-                        </span>
-                      </p>
-                      <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
-                        エントリープランに申し込む
-                      </p>
-                    </label>
-                    <label htmlFor="plan3" className="flex items-center gap-3">
-                      <p>
-                        <span className="relative block size-5 md:size-[30px]">
-                          <input
-                            id="plan3"
-                            name="interests"
-                            type="checkbox"
-                            checked={formData.interests.includes(
-                              'スタンダードプランに申し込む'
-                            )}
-                            value="スタンダードプランに申し込む"
-                            onChange={handleChange}
-                            className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
-                          />
-                          <span className="absolute inset-0 hidden h-full w-full cursor-pointer peer-checked:block">
-                            <img src="/assets/images/checkbox.svg" alt="" />
-                          </span>
-                          <span className="absolute  inset-0 h-full w-full cursor-pointer peer-checked:hidden">
-                            <img src="/assets/images/uncheckbox.svg" alt="" />
-                          </span>
-                        </span>
-                      </p>
-                      <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
-                        スタンダードプランに申し込む
+                        ＼セール価格の今がチャンス／ <br />
+                        ベータ版に申し込む
                       </p>
                     </label>
                     <label htmlFor="plan4" className="flex items-center gap-3">

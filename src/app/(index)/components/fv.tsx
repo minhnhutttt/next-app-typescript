@@ -3,6 +3,7 @@
 import Button from '@/components/button'
 import useScrollAnimations from '@/hooks/useScrollAnimations'
 import { useModal } from '@/context/ModalContext'
+import Banner from './banner'
 
 const FV = () => {
   const ref = useScrollAnimations()
@@ -50,75 +51,8 @@ const FV = () => {
           </div>
         </div>
       </div>
-      <div className="-mt-10 mb-12 px-5 max-dt:px-[8vw] md:-mt-20 md:mb-[70px]">
-        <div className="fade-up mx-auto w-full max-w-[440px] rounded-[32px] border-[3px] border-white bg-[url('/assets/images/bg-01.png')] bg-cover pb-5 md:max-w-[910px] md:rounded-[63px] md:border-[6px] md:pb-[34px]">
-          <div className="flex gap-2 px-4 max-md:ml-[-40px] max-md:justify-center">
-            <figure className="relative -mt-8 md:-mt-12">
-              <img
-                className="max-md:w-[110px]"
-                src="/assets/images/circle.png"
-                alt=""
-              />
-              <img
-                className="absolute inset-0 animate-[fadeIn_1s_ease_infinite] max-md:w-[110px]"
-                src="/assets/images/circle-c.png"
-                alt=""
-              />
-            </figure>
-            <div className="flex-1 pt-2 md:pt-9">
-              <h3 className="">
-                <img
-                  className="max-md:hidden max-md:w-full max-md:max-w-[400px]"
-                  src="/assets/images/title.png"
-                  alt="メモリアルモニター受付中 !!"
-                />
-                <img
-                  className="max-md:w-full max-md:max-w-[240px] md:hidden"
-                  src="/assets/images/title-sp.png"
-                  alt="メモリアルモニター受付中 !!"
-                />
-              </h3>
-              <p className="pt-4 font-zen text-[16px] font-black max-md:ml-[-75px] md:pt-5 md:text-[20px]">
-                今ならモニターとしての参加で、先行利用特典や初期費用・
-                年会費の割引クーポンをご提供！供養の新たな選択肢に魅力を感じるあなたを全面的にバックアップいたします。
-              </p>
-            </div>
-          </div>
-          <div className="mt-5 flex items-center justify-center gap-5 px-4 max-md:flex-col md:mt-7 md:gap-8">
-            <Button
-              onclick={openModal}
-              rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#0176FF] items-center justify-center rounded-[60px] border-2 border-white"
-            >
-              <span>
-                <img
-                  className="max-md:w-14"
-                  src="/assets/images/ic-btn-01.png"
-                  alt=""
-                />
-              </span>
-              <span className="text-[16px] font-extrabold md:text-[19px] ">
-                メモリアルモニター <br />
-                として参加する
-              </span>
-            </Button>
-            <Button
-              href="/price"
-              rect="flex md:w-[328px] w-[280px] md:h-[98px] h-20 bg-[#BB66FF] items-center justify-center rounded-[60px] border-2 border-white"
-            >
-              <span>
-                <img
-                  className="max-md:w-14"
-                  src="/assets/images/ic-btn-02.png"
-                  alt=""
-                />
-              </span>
-              <span className="text-[16px] font-extrabold md:text-[19px] ">
-                メモリアルモニター <br />
-                の詳細が知りたい
-              </span>
-            </Button>
-          </div>
-        </div>
+      <div className="relative -mt-10 mb-12 px-5  max-md:mx-auto max-md:max-w-[440px] md:-mt-20 md:mb-[70px]">
+        <Banner />
         <div className="mx-auto mt-10 w-full max-w-[920px] md:mt-14">
           <div className="fade-up flex items-center justify-center gap-4 max-md:flex-col md:gap-8">
             <figure>
