@@ -278,16 +278,16 @@ body {
 #lottie {
   position: relative;
 }
-#_lottieTexture {
+#lottieTexture {
   display: block;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 1;
-  background-image: url(/assets/images/texture.png);
-  background-size: 70vw auto;
+  opacity: 0.4;
+  background-image: url(/assets/images/texture1.png);
+  z-index: 2;
 }
 #lottieTop {
   width: 100%;
@@ -1179,14 +1179,14 @@ div.a1 p {
 		*/
     /*top:166vw;
 		*/
-    top: calc(104cqi + 100vh);
+    top: calc(99cqi + 100vh);
     font-size: 2.3cqi;
   }
   p.testolets.is-top01 {
-    margin-top: 36cqi;
+    margin-top: 20cqi;
   }
   p.testolets.is-top02 {
-    margin-top: 20cqi;
+    margin-top: 10cqi;
   }
   #WTF-Sticker_01 {
     position: absolute;
@@ -1223,7 +1223,7 @@ div.a1 p {
   p.testomatter {
     /* top: 200cqi;
 		*/
-    top: calc(215cqi + 500vh);
+    top: calc(205cqi + 500vh);
     font-size: 1.3cqi;
     letter-spacing: -0.035cqi;
     line-height: 3cqi;

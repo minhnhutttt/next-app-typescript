@@ -433,20 +433,12 @@ export default function Home() {
       window.innerHeight / 2;
     t.revert();
 
-    // RESULT LETSO = SERVIZI!
-    t = gsap.set("#wrapContainer", { scale: serviziC.zoom, y: 0 });
-    posLetso =
-      getElementOffsetTop("letsoTrigger") -
-      getElementOffsetTop("wrapContainer") -
-      window.innerHeight / 2;
-    t.revert();
-
     // FOOTER
     t = gsap.set("#wrapContainer", { scale: footerC.zoom, y: 0 });
     posFooter =
       getElementOffsetTop("triggerFooter") -
       getElementOffsetTop("wrapContainer") -
-      window.innerHeight / 3;
+      window.innerHeight ;
     t.revert();
   }
 
@@ -511,13 +503,6 @@ export default function Home() {
       window.innerHeight;
     t.revert();
 
-    // RESULT LETSO = SERVIZI!
-    t = gsap.set("#wrapContainer", { scale: serviziC.zoom, y: 0 });
-    posLetso =
-      getElementOffsetTop("letsoTrigger") -
-      getElementOffsetTop("wrapContainer") -
-      window.innerHeight / 2;
-    t.revert();
 
     // FOOTER
     t = gsap.set("#wrapContainer", { scale: 1, y: 0 });
@@ -713,17 +698,6 @@ export default function Home() {
         },
       });
       po.add("start");
-
-      po.to(
-        "#MessHoloImg",
-        {
-          id: "PARA",
-          display: "inline-block",
-          force3D: false,
-          xPercent: 20,
-        },
-        "start",
-      );
 
       po.to(
         "#yolo",
@@ -1123,7 +1097,7 @@ export default function Home() {
       scrollTrigger: {
         trigger: "#tagsv",
         start: "bottom top",
-        end: `+=${vhToPixel(50)}px`,
+        end: `+=${vhToPixel(100)}px`,
         markers: false,
         scrub: true,
         immediateRender: false,
@@ -1269,11 +1243,7 @@ export default function Home() {
                 <div id="stripeMatterInner"></div>
               </div>
               <div className="sec7 toHide " id="stripeTrigger"></div>
-              <div className="sec8 toHide " id="letsoTrigger"></div>
 
-              <div id="messHolo" className="sec4 toHide ">
-                <img id="MessHoloImg" src="/assets/images/MessUp_Holo.jpg" />
-              </div>
 
               <div id="c1" className="column" style={{ zIndex: 1001 }}>
                 <div id="heighter"></div>
@@ -1597,7 +1567,7 @@ export default function Home() {
                   className="bu"
                   data-delay=".3"
                 >
-                  <a href="">Email</a>
+                  <a href="mailto:info@skale.co.jp">Email</a>
                 </span>
               </span>
             </div>
