@@ -85,7 +85,7 @@ const Story = () => {
             >
               <SwiperSlide>
                 <div className=" relative w-full max-w-[1216px] rounded-[30px] border border-[#046DA8] bg-[#F0FBFB] px-5 pb-4 pt-3 md:px-9 md:pt-5">
-                  <div className="w-full max-w-[720px]">
+                  <div className="w-full max-w-[800px]">
                     <h5 className="pr-5 text-[20px] font-bold text-[#046DA8] md:text-[32px] md:leading-none">
                       「もう二度と会えない」絶望から、再会の喜びへ
                     </h5>
@@ -150,7 +150,7 @@ const Story = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div className=" relative w-full max-w-[1216px] rounded-[30px] border border-[#046DA8] bg-[#F0FBFB] px-5 pb-4 pt-3 md:px-9 md:pt-5">
-                  <div className="w-full max-w-[720px]">
+                  <div className="w-full max-w-[800px]">
                     <h5 className="pr-5 text-[20px] font-bold text-[#046DA8] md:text-[32px] md:leading-none">
                       ペットとの絆が、メタバースで永遠に
                     </h5>
@@ -215,7 +215,7 @@ const Story = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div className=" relative w-full max-w-[1216px] rounded-[30px] border border-[#046DA8] bg-[#F0FBFB] px-5 pb-4 pt-3 md:px-9 md:pt-5">
-                  <div className="w-full max-w-[720px]">
+                  <div className="w-full max-w-[800px]">
                     <h5 className="pr-5 text-[20px] font-bold text-[#046DA8] md:text-[32px] md:leading-none">
                       ペットロスと向き合い、前を向く力をくれる
                     </h5>
