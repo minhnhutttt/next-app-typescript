@@ -7,7 +7,7 @@ const Banner = () => {
   const { openModal } = useModal()
   return (
     <div className="flex items-start justify-center">
-    <div className="absolute left-2 top-[-40px]  z-10 md:relative md:-mt-7 md:mr-[-28px]">
+    <div className="fade-up absolute left-2 top-[-40px]  z-10 md:relative md:-mt-7 md:mr-[-28px]">
       <img
         className="max-md:w-[100px]"
         src="/assets/images/circle.png"

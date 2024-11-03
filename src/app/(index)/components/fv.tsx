@@ -47,7 +47,7 @@ const FV = () => {
             </h1>
           </div>
           <div className="absolute bottom-[12vw] left-[2vw] w-[28vw] md:bottom-[4.167vw] md:left-[19.444vw] md:w-[23.819vw] dt:bottom-[60px] dt:left-[280px] dt:w-[343px]">
-            <img src="/assets/images/fv-sign.png" alt="" />
+            <img className='fade-up' src="/assets/images/fv-sign.png" alt="" />
           </div>
         </div>
       </div>
