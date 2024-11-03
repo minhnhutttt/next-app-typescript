@@ -14,7 +14,7 @@ const data = [
 const Brain = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} id="brain" className="relative pt-20 md:pt-[160px] md:pb-[100px] pb-[60px] px-8">
+    <section ref={ref} id="brain" className="relative pt-20 md:pt-[160px] md:pb-[100px] pb-[60px] px-8 w-screen overflow-hidden">
       <div className="w-full max-w-[1350px] mx-auto">
         <h3 className="text-center font-semibold md:text-[96px] text-[32px]">Background and Challenges</h3>
         <div className="flex justify-end mt-12 md:mt-[85px]">

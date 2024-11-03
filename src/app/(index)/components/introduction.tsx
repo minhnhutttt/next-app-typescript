@@ -5,7 +5,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Introduction = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} id="introduction" className="relative pt-16 md:pt-[70px] md:pb-[100px] pb-[60px]">
+    <section ref={ref} id="introduction" className="relative pt-16 md:pt-[70px] md:pb-[100px] pb-[60px] w-screen overflow-hidden">
       <div className="w-full max-w-[1440px] mx-auto md:pt-[50px] pt-10 px-8">
         <div className="flex items-start max-md:flex-col">
           <div className="max-md:w-full max-dt:w-[58.056vw]">

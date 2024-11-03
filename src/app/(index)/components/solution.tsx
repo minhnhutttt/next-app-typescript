@@ -12,7 +12,7 @@ const data = [
 const Solution = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} id="brain" className="relative pt-20 md:pt-[60px] md:pb-10 pb-[60px] px-8">
+    <section ref={ref} id="brain" className="relative pt-20 md:pt-[60px] md:pb-10 pb-[60px] px-8 w-screen overflow-hidden">
       <div className="w-full max-w-[1310px] mx-auto">
         <h3 className="text-center font-semibold md:text-[96px] text-[32px]">IPDC Solution</h3>
         <p className="max-w-[520px] md:text-[24px] text-[18px] font-semibold mt-12 md:mt-[95px]">

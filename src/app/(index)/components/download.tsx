@@ -5,7 +5,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Download = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative bg-[url('/assets/images/fv-bg.png')] bg-cover bg-center">
+    <section ref={ref} className="relative bg-[url('/assets/images/fv-bg.png')] bg-cover bg-center w-screen overflow-hidden">
       <div className="w-full max-w-[1440px] mx-auto md:pt-[50px] pt-10">
           <div className="md:max-w-[39.931vw] max-w-[70vw] dt:max-w-[575px] ml-[7.778vw] dt:ml-[112px]">
             <h1 className="dt:text-[86px] text-[5.972vw] font-medium leading-[1.1]">

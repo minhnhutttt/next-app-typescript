@@ -19,7 +19,7 @@ const Article = ({title, items}:{title: string, items: string[]}) => (
 const Vision = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} id="introduction" className="relative bg-[url('/assets/images/vision-bg.png')] bg-center bg-[length:100%_100%] md:h-[1274px] md:pt-[254px] pt-[140px]">
+    <section ref={ref} id="introduction" className="relative bg-[url('/assets/images/vision-bg.png')] bg-center bg-[length:100%_100%] md:h-[1274px] md:pt-[254px] pt-[140px] w-screen overflow-hidden">
         <div className="w-full max-w-[1440px] mx-auto px-5 xl:px-12">
             <h5 className="md:text-[36px] text-[24px] font-semibold">
                 The IPDC project aims to realize the <br />
