@@ -82,13 +82,11 @@ const useScrollAnimations = () => {
             scrollTrigger: { trigger: el },
           }
         ),
-        "slide-skew": (el: HTMLElement) =>
-          gsap.fromTo(
+        "ani-width": (el: HTMLElement) =>
+          gsap.from(
             el,
-            { transform: "translate(-180px,30px)", opacity: 0 },
             {
-              transform: "translate(0,0)",
-              opacity: 1,
+              width: 0,
               duration: 0.4,
               ease: "cubic-bezier(0.25, 1, 0.5, 1)",
               scrollTrigger: { trigger: el },

@@ -7,7 +7,7 @@ const Download = () => {
     return (
         <section ref={ref} id="support" className="relative md:px-10 px-5 md:pt-[156px] pt-[70px] overflow-hidden">
             <div className="w-full max-w-[1308px] mx-auto">
-                <div className="flex items-center gap-10 max-xl:flex-col-reverse">
+                <div className="flex items-center gap-10 max-xl:flex-col">
                     <div className="flex-1">
                         <h4 className="fade-up md:text-[48px] text-[28px] font-bold">
                         Download MERCURY VAULT on your mobile

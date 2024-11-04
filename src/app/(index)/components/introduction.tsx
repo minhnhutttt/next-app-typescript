@@ -23,8 +23,9 @@ const Introduction = () => {
             const tl = gsap.timeline({
               scrollTrigger: {
                 trigger: containerRef.current,
-                start: "top 70%",
-                end: "bottom",
+                start: "top top",
+                end: "bottom top",
+                pin: true,
                 scrub: 0.9,
               },
             });
@@ -53,9 +54,9 @@ const Introduction = () => {
                                 <span className="block relative u-text-gradient u-text-stroke bg-[linear-gradient(245deg,_#18539E_15.94%,_#228FCE_48.55%,_#4FBCEC_84.06%)]">ALL IN ONE</span>
                             </h3>
                             <div className="flex flex-col items-end gap-1.5">
-                                <span className="w-3/5 h-[3px] bg-white"></span>
-                                <span className="w-4/5 h-[3px] bg-white"></span>
-                                <span className="w-full h-[3px] bg-white"></span>
+                                <span className="ani-width w-3/5 h-[3px] bg-white origin-right"></span>
+                                <span className="ani-width w-4/5 h-[3px] bg-white origin-right"></span>
+                                <span className="ani-width w-full h-[3px] bg-white origin-right"></span>
                             </div>
                         </div>
                         <div className="fade-up flex justify-center pt-6 md:pt-10">
@@ -70,16 +71,16 @@ const Introduction = () => {
                         </div>
                     </div>
                 </div>
-                <div ref={containerRef} className="md:mt-[160px] mt-[100px]">
+                <div ref={containerRef} className="md:mt-[160px] mt-[100px] h-screen flex flex-col justify-center items-center">
                     <h4 data-splitting className="md:text-[64px] text-[30px] text-center font-bold leading-[1.2]">
                         Safe, secure, simple <br className="max-lg:hidden" />
                         Easy operation with one click <br className="max-lg:hidden" />
                         Pursuing fast and intuitive UI/UX. 
                     </h4>
+                    <p className="fade-up w-full max-w-[520px] mx-auto md:text-[24px] text-[16px] font-bold leading-[1.3] md:mt-10 mt-7">
+                        Cryptocurrencies and NFTs can be sent and received with just a few taps.
+                    </p>
                 </div>
-                <p className="fade-up w-full max-w-[520px] mx-auto md:text-[24px] text-[16px] font-bold leading-[1.3] md:mt-10 mt-7">
-                    Cryptocurrencies and NFTs can be sent and received with just a few taps.
-                </p>
             </div>
         </section>
   );

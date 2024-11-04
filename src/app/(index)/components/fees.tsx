@@ -49,7 +49,22 @@ const Fees = () => {
       <div className="max-md:overflow-hidden">
       <div className="flex items-end gap-10 md:gap-16 mt-14 md:-mt-10 w-full max-w-[1312px] mx-auto max-md:flex-col relative z-20 ">
         <figure className="fade-up relative lg:ml-[120px] max-md:ml-20 max-lg:px-5">
-            <img className="relative z-10 max-md:w-[85%]" src="/assets/images/iphone-02.png" alt="" />
+            <div className="relative max-md:w-[85%]">
+              <img className="relative z-20" src="/assets/images/iphone-02.png" alt="" />
+              <div className="absolute z-10 w-full inset-0 z-10 overflow-hidden p-3 md:p-4">
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    className="w-full h-full object-cover object-center md:rounded-[34px] rounded-[24px]"
+                  >
+                    <source src="/assets/videos/phone.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+              </div>
+            </div>
             <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[497.226px] h-[87.893px] rotate-[0.4deg] flex-shrink-0 rounded-[497.226px] bg-[#051465] filter blur-[45px]"></span>
         </figure>
         <div className="md:flex-1 md:pb-[70px] pr-5 max-md:pl-5">
