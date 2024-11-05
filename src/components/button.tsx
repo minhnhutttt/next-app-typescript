@@ -7,6 +7,7 @@ import gsap from 'gsap'
 interface ButtonProps {
   rect?: string
   href?: string
+  red?: boolean
   children: ReactNode
   onclick?: () => void
 }
@@ -15,6 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   rect,
   children,
   href = '#',
+  red,
   onclick,
 }) => {
   const buttonRef = useRef<HTMLAnchorElement | any | null>(null)
@@ -127,7 +129,7 @@ const Button: React.FC<ButtonProps> = ({
         ref={buttonRef}
         className={`button button--stroke border-box relative flex -translate-x-[-3px] items-center justify-center overflow-hidden font-bold text-white [box-shadow:0px_0px_40px_0px_rgba(100,_0,_136,_0.20)] ${rect}`}
       >
-        <span className="button__flair"></span>
+        <span className={`button__flair ${red ? 'is-red' : ''}`}></span>
         <span className="absolute inset-0 z-20 flex items-center justify-center gap-2.5 text-white">
           {children}
         </span>

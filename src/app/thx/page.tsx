@@ -73,11 +73,11 @@ export default function Thankyou() {
                   </div>
                   <div>
                     <p className="text-[20px] font-bold md:text-[36px]">
-                      2. ご入金手続き
+                    2. ご決済手続き
                     </p>
                     <p className="text-[16px] font-medium md:text-[24px]">
                       下記の
-                      <span className="text-[#FF3700]">「お支払いへ進む」</span>
+                      <span className="text-[#FF3700]">「お支払いを完了する」</span>
                       ボタンから、決済画面へお進みください。
                     </p>
                     <p className="text-[14px] md:text-[20px]">
@@ -116,16 +116,19 @@ export default function Thankyou() {
                 </p>
                 <div className="divide-y divide-black">
                   <div className="flex items-center justify-between gap-4 py-5 pl-2 pr-4 max-md:flex-col md:gap-2 md:pb-11 md:pr-[38px] md:pt-8">
-                    <p className="text-center text-[22px] font-bold leading-[1.1] md:text-[48px]  flex-1">
+                    <p className="text-center text-[22px] font-bold leading-[1.1] md:text-[40px]  flex-1">
                       【今だけセール中】<br />メタでペット供養<br />β（ベータ）版
                     </p>
+                    <div className="w-[210px]">
+                      <p className="text-center md:text-[21px] font-bold md:mb-3 mb-2 text-[#F12929]">＼ ここをクリック ／</p>
                     <a
                       href="https://anz-official.myshopify.com/products/%E3%83%A1%E3%83%A2%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC%E3%83%97%E3%83%A9%E3%83%B3"
                       target="_blank"
-                      className="flex h-20 w-[197px] items-center justify-center rounded-[10px] border-2 border-white bg-[#F12929] p-2 text-center text-[20px] font-bold leading-[1.2] tracking-wider text-white duration-150 hover:opacity-75 md:h-[121px] md:text-[32px]"
+                      className="flex h-20 w-[210px] items-center justify-center rounded-[10px] border-2 border-white bg-[#F12929] p-2 text-center text-[20px] font-bold leading-[1.2] tracking-wider text-white duration-150 hover:opacity-75 md:h-[121px] md:text-[32px]"
                     >
                       お支払いを完了する
                     </a>
+                    </div>
                   </div>
                 </div>
               </div>
