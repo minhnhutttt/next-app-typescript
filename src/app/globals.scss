@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaisei+Opti&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Tsukushi A Round Gothic';
+	src: url('/assets/fonts/TsukushiARoundGothicRegular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+  }
+
+.inter {
+	font-family: "Inter", serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  color: #fff;
+  font-family: 'Tsukushi A Round Gothic', sans-serif;
+}
+
+.box:before,
+.box:after {
+	position: absolute;
+	left: 50%;
+	content: "";
+	height: 0;
+	width: 0;
+}
+
+.box:before {
+	top: 100%;
+	border: 18px solid;
+	border-color: transparent;
+	border-top-color: #333;
+	margin-left: -18px;
+}
+
+.box:after {
+	top: 99%;
+	border: 13px solid;
+	border-color: transparent;
+	border-top-color: #B6E1F2;
+	margin-left: -13px;
+}
