@@ -3,10 +3,9 @@
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const FV = () => {
-  const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative bg-[url('/assets/images/fv-bg.png')] bg-[length:100%_100%] bg-center w-screen overflow-hidden">
-      <div className="w-full max-w-[1440px] mx-auto md:pt-[50px] pt-10">
+    <section  className="relative bg-[url('/assets/images/fv-bg.png')] bg-[length:100%_100%] bg-center w-screen overflow-hidden z-30">
+      <div className="w-full max-w-[1440px] mx-auto md:pt-[50px] pt-10 relative z-30">
           <div className="md:max-w-[39.931vw] max-w-[70vw] dt:max-w-[575px] ml-[7.778vw] dt:ml-[112px]">
             <h1 className="dt:text-[86px] text-[5.972vw] font-medium leading-[1.1]">
             DATA WANTS TO BE FREE. <br />YOU HAVE THE POWER TO SET IT FREE.

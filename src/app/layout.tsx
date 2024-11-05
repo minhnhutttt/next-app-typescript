@@ -3,6 +3,7 @@ import { Oswald } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import ViewCanvas from "@/components/viewCanvas";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -24,7 +25,10 @@ export default function RootLayout({
         className={`${oswald.className} text-white bg-black`}
       >
           <Header />
+          <ViewCanvas />
+          <main className="relative">
           {children}
+          </main>
           <Footer />
       </body>
     </html>

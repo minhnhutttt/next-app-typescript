@@ -1,11 +1,10 @@
 "use client";
 
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useGSAP } from "@gsap/react";
 import { useScroll } from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {  useRef } from "react";
+import {  useEffect, useLayoutEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -62,11 +61,9 @@ const Phase = ({
   </div>
 );
 
-const Roadmap = () => {
-  const ref = useScrollAnimations();
+const Roadmap = ({loaded}: {loaded?: any}) => {
   const containerRef = useRef<HTMLDivElement>(null!);
   const roadRef = useRef<HTMLDivElement>(null!);
-  const {fixed} = useScroll();
   const isDesktop = (): boolean => {
     if (typeof window !== "undefined") {
       return window.matchMedia("(min-width: 1024px)").matches;
@@ -74,33 +71,41 @@ const Roadmap = () => {
     return false;
   };
 
-  useGSAP(() => {
-        const n = roadRef.current?.offsetHeight ?? 0;
-        gsap
-          .timeline({
+  useEffect(() => {
+    if (!loaded) {
+    let ctx = gsap.context(() => {
+      if (containerRef.current) {
+        const road = containerRef.current.querySelector(".road-move") as HTMLElement | null;;
+        const n = road?.offsetHeight ?? 0;
+
+        gsap.timeline({
             scrollTrigger: {
-              trigger: roadRef.current,
-              start: `${isDesktop() ? "500 bottom" : "600 bottom"}`,
-              end: isDesktop() ? "900 bottom" : "100 bottom",
-              scrub: 0.5,
-              scroller: fixed.parentElement,
-            },
-          })
-          .to(roadRef.current, {
-            top: isDesktop() ? 0.6 * -n : 0.3 * -n,
-            z: isDesktop() ? -250 : -50,
+                trigger: containerRef.current,
+                start: `${isDesktop() ? "500 bottom" : "top bottom"}`,
+                end: isDesktop() ? "900 bottom" : "bottom top",
+                scrub: 0.5,
+            }
+        }).to(road, {
+            top: isDesktop() ? 0.6 * -n : 0.4 * -n,
+            z: isDesktop() ? -250 : -70,
             ease: "linear",
-          });
-  },  { scope: roadRef });
+        });
+        
+      }
+    });
+
+    return () => ctx.revert();
+  }
+  });
 
   return (
     <div className="">
       <section
         ref={containerRef}
         id="brain"
-        className="road-prerspective max-md:mb-[0] max-xl:mb-[400px] relative pt-20 md:pt-[50px] md:pb-10 pb-[60px] px-8 w-full"
+        className="road-prerspective relative pt-20 md:pt-[50px] md:pb-10 pb-[60px] px-8 w-screen"
       >
-        <div ref={roadRef} className="road-move relative w-full max-w-[1310px] mx-auto">
+        <div ref={roadRef} className="road-move relative w-full max-w-[1310px] mx-auto max-md:mb-[0] max-xl:mb-[400px] ">
           <h3 className="text-center flex flex-col items-center justify-center leading-[1.3] font-semibold md:text-[96px] text-[32px]">
             <span className="mr-40">Technical</span>
             <span className="ml-40">Roadmap</span>
