@@ -76,3 +76,5 @@ export const Puzzle = forwardRef((props: JSX.IntrinsicElements['group'], ref: an
 })
 
 useGLTF.preload('/assets/models/puzzle.glb')
+Puzzle.displayName = 'Light';
+export default Puzzle;

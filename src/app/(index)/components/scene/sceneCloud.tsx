@@ -7,7 +7,7 @@ import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Float } from "@react-three/drei"
-import { Cloud } from "../models/Cloud"
+import Cloud from "../models/Cloud"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

@@ -93,3 +93,5 @@ export const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any
 })
 
 useGLTF.preload('/assets/models/light.glb')
+Light.displayName = 'Light';
+export default Light;

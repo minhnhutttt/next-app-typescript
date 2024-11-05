@@ -62,5 +62,5 @@ const ParticleField = forwardRef((props, ref: any) => {
         </group>
     );
 });
-
+ParticleField.displayName = 'ParticleField';
 export default ParticleField;

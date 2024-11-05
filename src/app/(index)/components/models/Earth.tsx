@@ -27,3 +27,5 @@ export const Earth = forwardRef((props: JSX.IntrinsicElements['group'], ref: any
 })
 
 useGLTF.preload('/assets/models/earth.glb')
+Earth.displayName = 'Earth';
+export default Earth;

@@ -13,7 +13,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export const Cloud = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
+const Cloud = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   const { nodes, materials } = useGLTF('/assets/models/cloud.glb') as GLTFResult
 
   materials['white_Mat'].wireframe = true
@@ -71,5 +71,7 @@ export const Cloud = forwardRef((props: JSX.IntrinsicElements['group'], ref: any
     </group>
   )
 })
-
 useGLTF.preload('/assets/models/cloud.glb')
+
+Cloud.displayName = 'Cloud';
+export default Cloud;

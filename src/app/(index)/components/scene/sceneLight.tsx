@@ -55,7 +55,7 @@ export default function SceneLight({}: Props) {
           },
       });
       scrollTl2.to(lightRef.current.scale, { x: 20, y: 20, z: 20 },0)
-      scrollTl2.to(lightRef.current.rotation, { x: 0, y: Math.PI / 2, z: 0 },0)
+      scrollTl2.to(lightRef.current.rotation, { x: Math.PI / 2, y: 0, z: Math.PI / 2 },0)
       scrollTl2.to(lightRef.current.position, { duration: 3, x: 1, y: 0, z: 10 },1)
     })
 
