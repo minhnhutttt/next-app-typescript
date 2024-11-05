@@ -45,7 +45,7 @@ const Banner = () => {
                 src="/assets/images/ic-1.svg"
                 alt=""
               />
-              <span className="absolute md:bottom-full max-md:top-full max-md:w-[180px] max-md:left-0 group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none p-2 bg-white rounded-2xl shadow-sm z-20">
+              <span className="absolute md:bottom-full max-md:top-full max-md:w-[180px] max-md:left-0 group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none p-2 bg-white rounded-2xl shadow-sm z-20 font-medium">
               データベース登録料金を含みます。
               </span>
             </p>
@@ -56,7 +56,7 @@ const Banner = () => {
                 src="/assets/images/ic-1.svg"
                 alt=""
               />
-              <span className="absolute w-[180px] md:w-[400px] bottom-full max-xl:right-0 group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none p-2 bg-white rounded-2xl shadow-sm z-40">
+              <span className="absolute w-[180px] md:w-[400px] bottom-full max-xl:right-0 group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none p-2 bg-white rounded-2xl shadow-sm z-40 font-medium">
               1枚の写真から、写真の中の愛するペットに自然な動きを与えます。AI技術の活用によりペットの息遣いや仕草を感じられるようになりました。
               </span>
             </p>
@@ -67,7 +67,7 @@ const Banner = () => {
                 src="/assets/images/ic-1.svg"
                 alt=""
               />
-              <span className="absolute w-[180px] md:w-[400px] right-0 md:bottom-full max-md:top-full group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none p-2 bg-white rounded-2xl shadow-sm z-20">
+              <span className="absolute w-[180px] md:w-[400px] right-0 md:bottom-full max-md:top-full group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none p-2 bg-white rounded-2xl shadow-sm z-20 font-medium">
               4つのお墓タイプがあります。決済完了後にお選びいただきます。
               </span>
             </p>
@@ -78,7 +78,7 @@ const Banner = () => {
                 src="/assets/images/ic-1.svg"
                 alt=""
               />
-              <span className="absolute w-[180px] md:w-[400px] right-0 bottom-full group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none p-2 bg-white rounded-2xl shadow-sm z-20">
+              <span className="absolute w-[180px] md:w-[400px] right-0 bottom-full group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none p-2 bg-white rounded-2xl shadow-sm z-20 font-medium">
               朝から夜まで24時間、どこからでも供養が可能です。供養場所による制限を受けません。
               </span>
             </p>
