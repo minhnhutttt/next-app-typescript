@@ -81,8 +81,8 @@ const Roadmap = ({loaded}: {loaded?: any}) => {
         gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
-                start: `${isDesktop() ? "500 bottom" : "top bottom"}`,
-                end: isDesktop() ? "900 bottom" : "bottom top",
+                start: `${isDesktop() ? "top bottom" : "top bottom"}`,
+                end: isDesktop() ? "bottom top" : "bottom top",
                 scrub: 0.5,
             }
         }).to(road, {
@@ -99,7 +99,7 @@ const Roadmap = ({loaded}: {loaded?: any}) => {
   });
 
   return (
-    <div className="">
+    <div className="md:mb-[280px] mb-[150px]">
       <section
         ref={containerRef}
         id="brain"
@@ -124,8 +124,18 @@ const Roadmap = ({loaded}: {loaded?: any}) => {
             ))}
           </div>
         </div>
-        <div className="footer-coll"></div>
       </section>
+      
+      <div className="footer-coll"></div>
+        <div className="text-center md:text-[96px] text-[40px] font-semibold md:mb-[64px] mb-8">
+        WHITEPAPER DOWNLOAD
+        </div>
+        <div className="flex justify-center">
+          <a href="/" className="flex items-center justify-center md:text-[36px] text-[24px] font-semibold md:w-[460px] md:h-[100px] w-[300px] h-20 rounded-full border border-white p-2">
+            <span className="flex-1 text-center"> DOWNLOAD NOW</span>
+            <img className="max-md:h-full" src="/assets/images/ic-download.svg" alt="" />
+          </a>
+        </div>
     </div>
   );
 };
