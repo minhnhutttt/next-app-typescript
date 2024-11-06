@@ -81,7 +81,7 @@ const Roadmap = ({loaded}: {loaded?: any}) => {
         gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
-                start: `${isDesktop() ? "top bottom" : "top bottom"}`,
+                start: `${isDesktop() ? "top center" : "top center"}`,
                 end: isDesktop() ? "bottom top" : "bottom top",
                 scrub: 0.5,
             }
