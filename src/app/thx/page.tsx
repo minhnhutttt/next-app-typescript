@@ -107,7 +107,7 @@ export default function Thankyou() {
             </div>
           </div>
           <div className="px-5">
-            <div className="mx-auto mt-8 w-full max-w-[400px] md:mt-16 md:max-w-[890px]">
+            <div className="mx-auto mt-8 w-full max-w-[400px] md:mt-16 md:max-w-[730px]">
               <div className="w-full overflow-hidden rounded-t-[10px] border border-black bg-white">
                 <p className="flex items-center justify-center bg-black px-5 py-2 text-center font-serif text-[18px] font-bold text-white md:h-[50px] md:text-[24px]">
                   <span>
@@ -119,16 +119,16 @@ export default function Thankyou() {
                     <p className="text-center text-[22px] font-bold leading-[1.1] md:text-[40px]  flex-1">
                       【今だけセール中】<br />メタでペット供養<br />β（ベータ）版
                     </p>
-                    <div className="w-[210px]">
-                      <p className="text-center md:text-[21px] font-bold md:mb-3 mb-2 text-[#F12929]">＼ ここをクリック ／</p>
-                    <a
-                      href="https://anz-official.myshopify.com/products/%E3%83%A1%E3%83%A2%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC%E3%83%97%E3%83%A9%E3%83%B3"
+                    <a 
                       target="_blank"
-                      className="flex h-20 w-[210px] items-center justify-center rounded-[10px] border-2 border-white bg-[#F12929] p-2 text-center text-[20px] font-bold leading-[1.2] tracking-wider text-white duration-150 hover:opacity-75 md:h-[121px] md:text-[32px]"
+                      href="https://anz-official.myshopify.com/products/pet-memorial" className="w-[210px] duration-150 hover:opacity-75 ">
+                      <p className="text-center md:text-[21px] font-bold md:mb-3 mb-2 text-[#F12929]">＼ ここをクリック ／</p>
+                    <div
+                      className="flex h-20 w-[210px] items-center justify-center rounded-[10px] border-2 border-white bg-[#F12929] p-2 text-center text-[20px] font-bold leading-[1.2] tracking-wider text-white md:h-[121px] md:text-[32px]"
                     >
                       お支払いを完了する
-                    </a>
                     </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -179,7 +179,7 @@ export default function Thankyou() {
           </div>
         </div>
       </main>
-      <A8SalesTracker />
+      {/* <A8SalesTracker /> */}
     </Suspense>
   )
 }
