@@ -1,9 +1,6 @@
 "use client";
-import Title from "@/components/title";
-import Text from "@/components/text";
 import Button from "@/components/button";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { title } from "process";
 
 const howtos = [
   {
@@ -44,14 +41,14 @@ const howtos = [
 const Howto = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="bg-[#B6E1F2] px-5 pt-[200px]">
+    <section ref={ref} className="bg-[#B6E1F2] px-5 pt-[100px]">
       <h2 className="md:text-[48px] text-[22px] text-center font-bold">
         <span className="box relative border-b-[5px] border-[#000]">
           簡単3ステップで今すぐ始めよう!!
         </span>
       </h2>
 
-      <ul className="max-w-[1160px] mx-auto w-full flex max-[767px]:flex-wrap justify-between pt-[50px] md:pt-[100px] gap-[40px]">
+      <ul className="max-w-[1160px] mx-auto w-full flex max-[767px]:flex-wrap justify-between pt-[50px] md:pt-[120px] gap-[40px]">
         {howtos.map((howto, index) => (
           <li
             style={{ borderColor: howto.bgColor }}
@@ -66,7 +63,7 @@ const Howto = () => {
             className="md:text-[18px] text-[14px] text-[#fff] font-bold pt-[2px] pb-[3px] text-center max-w-[80px] w-full rounded-full block mx-auto">
               STEP {index+1}
             </span>
-            <h3 className="text-[18px] text-center md:text-[28px] font-bold mt-[10px]">
+            <h3 className="text-[18px] text-center md:text-[28px] font-bold mt-[10px] leading-[1.2]">
               {howto.title}
             </h3>
             <figure className="mt-[20px] max-h-[300px] overflow-hidden" key={index}>

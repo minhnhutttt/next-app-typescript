@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 const kaiseiOpti = Kaisei_Opti({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
+  variable: "--font-kaisei"
 });
 const sans = Noto_Sans_JP({
   subsets: ['latin'],
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${sans.variable} bg-[#FFFFF4] text-black`}
+        className={`${sans.variable} ${kaiseiOpti.variable} bg-[#FFFFF4] text-black`}
       >
         <ScrollContainer>
         {children}

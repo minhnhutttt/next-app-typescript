@@ -128,11 +128,9 @@ const faqData: FaqItemPropsType[] = [
 export default function FAQ() {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} id="faq" className="px-5 pb-12 pt-14  md:pb-[90px] md:pt-[150px]">
+    <section ref={ref} id="faq" className="px-5 pb-12 pt-14 md:pb-[90px] md:pt-[75px]">
       <div className="mx-auto w-full max-w-[920px]">
-        <Title         
-          text="FAQ"
-        />
+        <h3 className="text-center md:text-[64px] text-[32px] font-['Inter'] font-bold tracking-widest">FAQ</h3>
         <div className="mx-auto mt-5 w-full space-y-[10px] md:mt-[70px]">
           {faqData.map(({ id, question, answer }) => (
             <FaqItem key={id} id={id} question={question} answer={answer} />

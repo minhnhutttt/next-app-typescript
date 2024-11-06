@@ -153,7 +153,7 @@ const list = [
 const Use = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="px-4 md:pb-[200px] pb-[100px] mt-[50px] bg-[url('/assets/images/bg-use.png')] bg-cover bg-top overflow-hidden">
+    <section ref={ref} className="px-4 md:pb-[120px] pb-20 mt-[50px] bg-[url('/assets/images/bg-use.png')] bg-cover bg-top overflow-hidden">
       <div className="flex flex-col items-baseline max-w-[916px] mx-auto md:pb-[70px] mb-32 relative pt-[90px] max-md:max-w-[400px] max-md:mx-auto">
         <figure className="absolute md:left-[-100px] left-0 md:bottom-[-35px] bottom-[-90px] max-md:w-[130px]">
           <img src="/assets/images/boy.png" alt="" />
@@ -179,11 +179,11 @@ const Use = () => {
         発見しよう！
         </p>
       </div>
-      <div className="flex max-w-[1364px] flex-wrap justify-center mx-auto w-full xl:gap-x-20 max-md:gap-10 md:gap-y-3">
+      <div className="flex max-w-[1364px] flex-wrap justify-center mx-auto w-full md:gap-x-[5.556vw] dt:gap-x-20 max-md:gap-5 md:gap-y-3">
         {list.map((use, index) => (
           <div
             key={index}
-            className={`w-full max-w-[400px] bg-[#FFFFFF] rounded-[80px] md:mb-[100px] mb-[20px] relative ${
+            className={`max-md:w-full max-dt:w-[27.778vw] max-w-[400px] bg-[#FFFFFF] rounded-[80px] md:mb-[100px] mb-[20px] relative ${
               index % 3 === 1 ? "md:-top-[95px]" : ""
             }`}
           >
