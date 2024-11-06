@@ -44,3 +44,59 @@ body {
 	border-top-color: #B6E1F2;
 	margin-left: -13px;
 }
+
+
+
+.ani-zoom-out, .ani-zoom-out2 {
+	opacity: 0;
+  }
+  [data-scroll='in'].ani-zoom-out {
+	animation: ani-zoom-out 0.25s forwards;
+  }
+  
+  [data-scroll='in'].ani-zoom-out2 {
+	animation: ani-zoom-out2 0.5s forwards;
+  }
+  
+  
+  
+@keyframes ani-zoom-out {
+	0% {
+	  scale: 2;
+	  opacity: 0;
+	}
+	1% {
+	  scale: 2;
+	  opacity: 100;
+	}
+	50% {
+	  scale: 0.8;
+	}
+	70% {
+	  scale: 1.5;
+	}
+	100% {
+	  opacity: 100;
+	  scale: 1;
+	}
+  }
+  
+  @keyframes ani-zoom-out2 {
+	0% {
+	  scale: 2;
+	}
+	20% {
+	  scale: 0.5;
+	}
+	50% {
+	  scale: 1.5;
+	}
+	70% {
+	  scale: 0.5;
+	}
+	100% {
+	  opacity: 100;
+	  scale: 1;
+	}
+  }
+  

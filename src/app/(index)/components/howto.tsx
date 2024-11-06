@@ -52,7 +52,7 @@ const Howto = () => {
         {howtos.map((howto, index) => (
           <li
             style={{ borderColor: howto.bgColor }}
-            className="md:w-1/3 w-full border-[5px] md:rounded-t-full rounded-t-[50%] bg-[#fff] relative pt-[40px] px-[44px]"
+            className="fade-up md:w-1/3 w-full border-[5px] md:rounded-t-full rounded-t-[50%] bg-[#fff] relative pt-[40px] px-[44px]"
             key={index}
           >
             <figure className="absolute left-1/2 -translate-x-1/2 top-[-34px]">

@@ -1,17 +1,17 @@
 "use client";
 import { useCallback, useState } from "react";
-import { usePathname } from "next/navigation";
 import Button from "@/components/button";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const FV = () => {
+  const ref = useScrollAnimations();
   const [NavOpen, setNavOpen] = useState(false);
-  const pathname = usePathname();
 
   const close = useCallback(() => {
     setNavOpen(false);
   }, []);
   return (
-    <section className="overflow-hidden bg-[url('/assets/images/fv-bg.png')] bg-[length:100%_auto] bg-no-repeat ">
+    <section ref={ref} className="overflow-hidden bg-[url('/assets/images/fv-bg.png')] bg-[length:100%_auto] bg-no-repeat ">
       <div className="relative px-5 md:px-10 ">
         <div className="absolute inset-x-0">
           <div className="flex absolute top-0 left-0 z-10">
@@ -72,7 +72,7 @@ const FV = () => {
                   alt=""
                 />
               </div>
-              <h1>
+              <h1 data-scroll className="ani-zoom-out">
                 <img src="/assets/images/fv-text.png" alt="" />
               </h1>
             </div>
@@ -82,7 +82,7 @@ const FV = () => {
       </div>
       <div className="px-5 -mt-[10.764vw] dt:-mt-[155px] relative z-20">
       <div className="flex items-start w-full max-w-[1360px] mx-auto max-md:flex-col-reverse">
-        <div className="flex-1 flex justify-center flex-col items-center md:mt-[15.972vw] dt:mt-[230px]">
+        <div className="fade-up flex-1 flex justify-center flex-col items-center md:mt-[15.972vw] dt:mt-[230px]">
           <div className="md:text-[24px] text-[18px] font-bold max-w-[544px] leading-[1.3] md:mb-9 mb-6">
             今いる場所の近くの最新情報をマップで発見し、NFTで特典をゲット！
             <br />
@@ -90,7 +90,7 @@ const FV = () => {
           </div>
           <Button>近くの特典を探す</Button>
         </div>
-        <div className="max-md:w-full max-dt:w-[49.444vw]">
+        <div className="fade-up max-md:w-full max-dt:w-[49.444vw]">
           <img src="/assets/images/intro-img.png" alt="" />
         </div>
       </div>

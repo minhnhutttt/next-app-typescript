@@ -183,7 +183,7 @@ const Use = () => {
         {list.map((use, index) => (
           <div
             key={index}
-            className={`max-md:w-full max-dt:w-[27.778vw] max-w-[400px] bg-[#FFFFFF] rounded-[80px] md:mb-[100px] mb-[20px] relative ${
+            className={`fade-up max-md:w-full max-dt:w-[27.778vw] max-w-[400px] bg-[#FFFFFF] rounded-[80px] md:mb-[100px] mb-[20px] relative ${
               index % 3 === 1 ? "md:-top-[95px]" : ""
             }`}
           >

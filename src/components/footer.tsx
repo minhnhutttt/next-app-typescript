@@ -21,7 +21,7 @@ const Footer = () => {
       </div>
       <ul className="flex items-center max-md:justify-center max-md:mt-3 mt-[27px] mb-[30px] flex-wrap gap-8 max-w-[266px] mx-auto">
       {links.map((link, index) => (
-        <li>
+        <li key={index}>
           <a href={link.url} className="md:text-[18px] text-[16px] font-bold">{link.title}</a>
         </li>
          ))}

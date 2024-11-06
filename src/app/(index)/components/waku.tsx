@@ -5,7 +5,7 @@ const Waku = () => {
   const ref = useScrollAnimations();
   return (
     <section ref={ref} className="px-5 pt-20 md:pt-[120px] bg-[url('/assets/images/bg-waku1.png')] bg-[length:100%_auto] bg-bottom bg-no-repeat">
-      <div className="relative overflow-hidden bg-[url(/assets/images/bg-waku.png)] max-w-[1012px] w-full bg-center bg-[length:100%_100%] mx-auto md:h-[712px] h-[450px] md:border-[12px] border-[6px] border-[#0F0F0F] md:rounded-[50px] rounded-[25px] max-md:flex max-md:items-center">
+      <div data-scroll className="ani-zoom-out relative overflow-hidden bg-[url(/assets/images/bg-waku.png)] max-w-[1012px] w-full bg-center bg-[length:100%_100%] mx-auto md:h-[712px] h-[450px] md:border-[12px] border-[6px] border-[#0F0F0F] md:rounded-[50px] rounded-[25px] max-md:flex max-md:items-center">
       <figure className="absolute right-0 top-[0px] max-md:w-[130px]">
           <img src="/assets/images/illustrator-right.png" alt="" />
         </figure>
