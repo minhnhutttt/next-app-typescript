@@ -107,8 +107,8 @@ const User = () => {
   const ref = useScrollAnimations();
 
   return (
-    <section
-      ref={ref}
+    <section ref={ref} className="bg-[#73E3DC]">
+    <div
       className="md:py-[30px] py-[15px] bg-[#00AAFF] md:rounded-t-[80px] rounded-t-[40px] md:px-[30px] px-[15px]"
     >
       <div className="w-full mx-auto border-dashed border-[#fff] border-[4px] md:rounded-t-[60px] rounded-t-[30px]">
@@ -121,6 +121,7 @@ const User = () => {
           </div>
         </div>
       </div>
+    </div>
     </section>
   );
 };

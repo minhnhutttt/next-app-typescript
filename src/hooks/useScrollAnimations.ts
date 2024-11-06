@@ -82,16 +82,27 @@ const useScrollAnimations = () => {
             scrollTrigger: { trigger: el },
           }
         ),
-        "ani-width": (el: HTMLElement) =>
-          gsap.from(
+        "slide-skew": (el: HTMLElement) =>
+          gsap.fromTo(
             el,
+            { transform: "translate(-180px,30px)", opacity: 0 },
             {
-              width: 0,
+              transform: "translate(0,0)",
+              opacity: 1,
               duration: 0.4,
               ease: "cubic-bezier(0.25, 1, 0.5, 1)",
               scrollTrigger: { trigger: el },
             }
           ),
+          "gradient-background": (el: HTMLElement) =>
+            gsap.to(".gradient-background", {
+              backgroundSize: "100% 100%",
+              duration: 0.8,
+              ease: "linear",
+              scrollTrigger: { trigger: el },
+            }
+          ),
+          
     };
 
     let ctx = gsap.context(() => {

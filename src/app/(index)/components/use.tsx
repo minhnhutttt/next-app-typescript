@@ -153,29 +153,33 @@ const list = [
 const Use = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="bg-[#73E3DC] px-4 md:pb-[200px] pb-[100px] pt-10">
-      <div className="flex flex-col items-baseline max-w-[916px] mx-auto md:pb-[100px] mb-32 relative max-md:pt-[80px]">
-        <figure className="absolute md:left-[-100px] left-0 md:bottom-[-35px] bottom-[-70px] max-md:w-[130px]">
+    <section ref={ref} className="px-4 md:pb-[200px] pb-[100px] mt-[50px] bg-[url('/assets/images/bg-use.png')] bg-cover bg-top overflow-hidden">
+      <div className="flex flex-col items-baseline max-w-[916px] mx-auto md:pb-[70px] mb-32 relative pt-[90px] max-md:max-w-[400px] max-md:mx-auto">
+        <figure className="absolute md:left-[-100px] left-0 md:bottom-[-35px] bottom-[-90px] max-md:w-[130px]">
           <img src="/assets/images/boy.png" alt="" />
         </figure>
-        <div className="inline-flex md:text-[64px] text-[24px] font-bold items-end relative gradient-background bg-no-repeat bg-[size:0_100%] bg-[linear-gradient(to_top,_#F2E206_30%,_transparent_30%)]">
-          <figure className="max-md:w-1/2">
-            <img src="/assets/images/logo-use.png" alt="" />
-          </figure>
-          <small className="md:text-[48px] text-[18px]">で</small>探して
-        </div>
-        <p className="mx-auto inline-flex items-end font-bold md:text-[64px] text-[24px] relative gradient-background bg-no-repeat bg-[size:0_100%] bg-[linear-gradient(to_top,_#F2E206_30%,_transparent_30%)]">身近
-          <small className="md:text-[48px] text-[18px]">な</small>
-          魅力<small className="md:text-[48px] text-[18px]">を</small>最大限に
-        </p><br/>
-        <p className="ml-auto md:text-[64px] text-[24px] font-bold relative gradient-background bg-no-repeat bg-[size:0_100%] bg-[linear-gradient(to_top,_#F2E206_30%,_transparent_30%)]">
-        発見しよう！
-        </p>
-        <figure className="absolute md:right-[-96px] right-0 md:top-[-70px] top-0 max-md:w-[120px]">
+        
+        <figure className="absolute md:right-[-106px] right-0 top-0 md:top-[10px] max-md:w-[120px]">
           <img src="/assets/images/girl.png" alt="" />
         </figure>
+        <div className="inline-flex md:text-[64px] text-[28px] font-bold items-end relative gradient-background bg-no-repeat bg-[size:0_100%] bg-[linear-gradient(to_top,_#F2E206_30%,_transparent_30%)]">
+        <span className="relative gradient-background bg-no-repeat bg-[size:0_100%] bg-[linear-gradient(to_top,_#FAC103_30%,_transparent_30%)]"></span>
+          <div className="flex items-end">
+          <figure className="max-md:w-1/2 md:mr-4">
+            <img src="/assets/images/logo-use.png" alt="" />
+          </figure>
+          <small className="md:text-[48px] text-[24px]">で</small>探して
+          </div>
+        </div>
+        <p className="mx-auto inline-flex items-end font-bold md:text-[64px] text-[32px] relative gradient-background bg-no-repeat bg-[size:0_100%] bg-[linear-gradient(to_top,_#F2E206_30%,_transparent_30%)] mt-3">身近
+          <small className="md:text-[48px] text-[24px]">な</small>
+          魅力<small className="md:text-[48px] text-[24px]">を</small>最大限に
+        </p><br/>
+        <p className="ml-auto md:text-[96px] text-[48px] font-bold relative gradient-background bg-no-repeat bg-[size:0_100%] bg-[linear-gradient(to_top,_#F2E206_30%,_transparent_30%)] leading-none">
+        発見しよう！
+        </p>
       </div>
-      <div className="flex max-w-[1364px] flex-wrap justify-center mx-auto w-full gap-10">
+      <div className="flex max-w-[1364px] flex-wrap justify-center mx-auto w-full xl:gap-x-20 max-md:gap-10 md:gap-y-3">
         {list.map((use, index) => (
           <div
             key={index}
@@ -186,11 +190,11 @@ const Use = () => {
             <figure>
               <img src={use.img} alt="" />
             </figure>
-            <div className="max-w-[340px] w-full mx-auto md:py-[30px] pt-[15px] pb-[25px] px-5">
-              <h3 className="font-bold text-[18px] md:text-[24px] md:mb-[20px] mb-[10px]">
+            <div className="max-w-[340px] w-full mx-auto md:py-[24px] pt-[15px] pb-[25px] px-5">
+              <h3 className="font-bold text-[18px] md:text-[24px] md:mb-[12px] mb-[10px] text-center">
                 {use.title}
               </h3>
-              <p className="text-[14px] md:text-[16px]">{use.content}</p>
+              <p className="text-[14px] md:text-[16px] leading-[1.3]">{use.content}</p>
             </div>
           </div>
         ))}

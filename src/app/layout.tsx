@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import {Inter, Kaisei_Opti, Noto_Sans_JP } from "next/font/google";
 import "./globals.scss";
 import ScrollContainer from "@/components/scrollContainer";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ['latin'] });
@@ -31,7 +30,6 @@ export default function RootLayout({
         className={`${sans.variable} bg-[#FFFFF4] text-black`}
       >
         <ScrollContainer>
-          <Header />
         {children}
         <Footer />
         </ScrollContainer>
