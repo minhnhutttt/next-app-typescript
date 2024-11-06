@@ -21,26 +21,18 @@ export default function SceneEarth({}: Props) {
         if (!earthRef.current) return
         gsap.set(earthRef.current.position, {
             x: isDesktop ? 1 : 0,
-            y: isDesktop ? -1 : -1.2
+            y: isDesktop ? 0 : -1.2
         })
         gsap.set(earthRef.current.scale, {
-            x: isDesktop ? 0.7 : 0.4,
-            y: isDesktop ? 0.7 : 0.4,
-            z: isDesktop ? 0.7 : 0.4,
-        })
-        gsap.from(earthRef.current.rotation, {
-            duration: 60,
-            y: Math.PI * 2,
-            repeat: -1,
-            ease: 'none'
+            x: isDesktop ? 0.8 : 0.4,
+            y: isDesktop ? 0.8 : 0.4,
+            z: isDesktop ? 0.8 : 0.4,
         })
     },{ dependencies: [isDesktop]})
 
   return (
     <group>
-        <Float>
         <Earth ref={earthRef} />
-        </Float>
         <ambientLight intensity={2} color="#9DDEFA" />
     </group>
   )
