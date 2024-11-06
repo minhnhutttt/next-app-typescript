@@ -179,7 +179,7 @@ export default function Thankyou() {
           </div>
         </div>
       </main>
-      {/* <A8SalesTracker /> */}
+      <A8SalesTracker />
     </Suspense>
   )
 }
