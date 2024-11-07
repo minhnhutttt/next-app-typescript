@@ -13,7 +13,7 @@ const About = () => {
                     <img src="/assets/images/about-img.png" alt="" />
                 </figure>
                 <div className="fade-up max-md:mt-10 md:ml-[-15.278vw] dt:ml-[-220px] dt:text-[48px] text-[20px] md:text-[3.333vw] leading-none flex flex-col items-center md:items-end whitespace-nowrap font-bold md:pr-10 md:pb-5 space-y-2.5">
-                    <p className="flex justify-center w-full -mb-2.5"><img src="/assets/images/about-bubble.png" alt="" /></p>
+                    <p className="flex justify-center w-full -mb-2.5"><img className="korokoro" src="/assets/images/about-bubble.png" alt="" /></p>
                     <p className="bg-white md:p-2.5 p-1.5">地域情報×マップで広がる新しい体験</p>
                     <p className="bg-white md:p-2.5 p-1.5">地域情報誌の親しみやすさと</p>
                     <p className="bg-white md:p-2.5 p-1.5">NFTの新しい</p>
@@ -25,7 +25,7 @@ const About = () => {
                     <img src="/assets/images/about-img-2.png" alt="" />
                 </figure>
                 <div className="fade-up max-md:mt-10 dt:text-[24px] text-[16px] md:text-[1.667vw] leading-loose flex flex-col items-center md:items-end font-bold px-5 md:px-10 md:pb-5 space-y-2.5">
-                あなたのすぐそばで使える特典、イベント、ショップ情報がNFTとなり、リアルタイムで更新される地域情報サービスが爆誕！<br />今すぐOPEN Mapを開いて、これまで気づかなかった地元の魅力や、限定特典を見つけに出かけよう！
+                <span className="text-[#DF0F47]">あなたのすぐそばで使える特典、イベント、ショップ情報がNFTとなり、リアルタイムで更新される地域情報サービスが爆誕！</span><br />今すぐOPEN Mapを開いて、これまで気づかなかった地元の魅力や、限定特典を見つけに出かけよう！
                 </div>
             </div>
         </div>

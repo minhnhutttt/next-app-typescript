@@ -1,4 +1,5 @@
 "use client";
+import ImageHover from "@/components/imageHover";
 import Title from "@/components/title";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
@@ -155,12 +156,14 @@ const Use = () => {
   return (
     <section ref={ref} className="px-4 md:pb-[120px] pb-20 mt-[50px] bg-[url('/assets/images/bg-use.png')] bg-cover bg-top overflow-hidden">
       <div className="flex flex-col items-baseline max-w-[916px] mx-auto md:pb-[70px] mb-32 relative pt-[90px] max-md:max-w-[400px] max-md:mx-auto">
-        <figure className="absolute md:left-[-100px] left-0 md:bottom-[-35px] bottom-[-90px] max-md:w-[130px]">
+        <figure className="absolute md:left-[-100px] -left-4 md:bottom-[-35px] bottom-[-105px] max-md:w-[130px]">
           <img src="/assets/images/boy.png" alt="" />
+          <img className="absolute inset-0 animate-[tikatika_1s_step-end_infinite]" src="/assets/images/boy-light.png" alt="" />
         </figure>
         
         <figure className="absolute md:right-[-106px] right-0 top-0 md:top-[10px] max-md:w-[120px]">
           <img src="/assets/images/girl.png" alt="" />
+          <img className="absolute inset-0 animate-[tikatika_1s_step-end_infinite]" src="/assets/images/girl-light.png" alt="" />
         </figure>
         <div className="inline-flex md:text-[64px] text-[28px] font-bold items-end relative gradient-background bg-no-repeat bg-[size:0_100%] bg-[linear-gradient(to_top,_#F2E206_30%,_transparent_30%)]">
         <span className="relative gradient-background bg-no-repeat bg-[size:0_100%] bg-[linear-gradient(to_top,_#FAC103_30%,_transparent_30%)]"></span>
@@ -181,6 +184,7 @@ const Use = () => {
       </div>
       <div className="flex max-w-[1364px] flex-wrap justify-center mx-auto w-full md:gap-x-[5.556vw] dt:gap-x-20 max-md:gap-5 md:gap-y-3">
         {list.map((use, index) => (
+          <ImageHover>
           <div
             key={index}
             className={`fade-up max-md:w-full max-dt:w-[27.778vw] max-w-[400px] bg-[#FFFFFF] rounded-[80px] md:mb-[100px] mb-[20px] relative ${
@@ -197,6 +201,7 @@ const Use = () => {
               <p className="text-[14px] md:text-[16px] leading-[1.3]">{use.content}</p>
             </div>
           </div>
+          </ImageHover>
         ))}
       </div>
     </section>

@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ImageHover = ({ image }: { image: string }) => {
+const ImageHover = ({ children }: { children: ReactNode }) => {
 
     const imageRef = useRef<HTMLDivElement>(null);
     const figureRef = useRef<HTMLDivElement>(null);
@@ -60,9 +60,9 @@ const ImageHover = ({ image }: { image: string }) => {
 
   return (
     <div ref={imageRef}>
-      <figure ref={figureRef} className="parallax relative">
-        <img className="object-cover md:rounded-tl-[60px] max-md:rounded-t-[30px] " src={image} alt="" />
-      </figure>
+      <div ref={figureRef} className="parallax relative">
+        {children}
+      </div>
     </div>
   );
 };

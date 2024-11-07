@@ -7,13 +7,13 @@ const data = [
   {
     image: '/assets/images/merit-pin-01.png',
     title: '1.あなたの街の最新情報を一目で確認！',
-    items: ['地域のイベントやショップの特典が、あなたの現在地に基づいて簡単に確認できる！','バイト、カフェ、ショッピング、エンタメなど、日常で使えるお得情報が満載！'],
+    items: [(<>地域のイベントやショップの特典が、<span className="font-bold">あなたの現在地に基づいて簡単に確認できる！</span></>),'バイト、カフェ、ショッピング、エンタメなど、日常で使えるお得情報が満載！'],
     background: "bg-[#F2685B]/[0.1]"
   },
   {
     image: '/assets/images/merit-pin-02.png',
     title: (<>2.地域の特典をNFTでゲット！</>),
-    items: ['地域限定のNFTを手に入れて、特典やクーポンをすぐに利用！','NFTを集める楽しさと、特典をゲットするお得感が同時に味わえる！'],
+    items: [(<span className="font-bold">地域限定のNFTを手に入れて、特典やクーポンをすぐに利用！</span>),'NFTを集める楽しさと、特典をゲットするお得感が同時に味わえる！'],
     background: "bg-[#46BF00]/[0.19]"
   },
   {
@@ -25,7 +25,7 @@ const data = [
   {
     image: '/assets/images/merit-pin-04.png',
     title: (<>4.簡単操作で誰でも使える！</>),
-    items: ['タップするだけでNFTをゲット！','面倒な操作は一切不要、誰でも簡単にスマホの画面を見せるだけで活用できます！'],
+    items: [(<span className="font-bold">タップするだけでNFTをゲット！</span>),(<><span className="font-bold">面倒な操作は一切不要</span>、誰でも簡単にスマホの画面を見せるだけで活用できます！</>)],
     background: "bg-[#00AAFF]/[0.1]"
   }
 ]
@@ -44,7 +44,7 @@ const Merit = () => {
                   <div className="md:pl-[20px] w-full mt-5">
                     <div className="md:text-[20px] text-[16px] font-bold leading-none space-y-6 md:mt-10 mt-7">
                       {item.items.map((i, index)=> (
-                        <p className="flex border-b border-dashed border-[#0F0F0F] pb-4 gap-3" key={index}>
+                        <p className="flex border-b border-dashed border-[#0F0F0F] pb-4 gap-3 font-normal" key={index}>
                             <span className="">●</span>
                             {i}
                         </p>
@@ -52,9 +52,11 @@ const Merit = () => {
                     </div>
                   </div>
                 </div>
-                <figure className="fade-up relative flex items-end max-md:max-w-[260px]">
-                    <ImageHover image={item.image} />
-                </figure>
+                <div className="fade-up relative flex items-end max-md:max-w-[260px]">
+                    <ImageHover>
+                      <img src={item.image} alt="" />  
+                    </ImageHover>
+                </div>
               </div>
             </div>
           ))}

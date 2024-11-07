@@ -5,6 +5,12 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const howtos = [
   {
     img: "/assets/images/app.png",
+    content: (<>
+      <div className="flex flex-col items-center justify-center gap-6 mt-7">
+        <a href="#" target="_blank" className=""><img src="/assets/images/btn-appstore.png" alt="" /></a>
+        <a href="#" target="_blank" className=""><img src="/assets/images/btn-google.png" alt="" /></a>
+      </div>
+    </>),
     bgColor:"#88D1F5",
     title: (
       <>
@@ -69,13 +75,14 @@ const Howto = () => {
             <figure className="mt-[20px] max-h-[300px] overflow-hidden" key={index}>
               <img className="mx-auto" src={howto.img} alt="" />
             </figure>
+            {howto.content}
           </li>
         ))}
       </ul>
       
-      <div className="relative md:pt-[106px] pt-[50px] md:pb-[83px] pb-[40px] md:max-w-[555px] max-w-[460px] mx-auto">
+      <div className="fade-up relative md:pt-[106px] pt-[50px] md:pb-[83px] pb-[40px] md:max-w-[555px] max-w-[460px] mx-auto">
         <figure className="md:w-auto max-md:max-w-[138px] w-full absolute md:-left-[31px] left-[0] top-[0] z-10">
-          <img className="w-full" src="/assets/images/bubble.png" alt="" />
+          <img className="w-full korokoro" src="/assets/images/bubble.png" alt="" />
         </figure>
         <Button>OPEN Mapへ</Button>
       </div>

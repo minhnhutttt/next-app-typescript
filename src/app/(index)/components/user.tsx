@@ -14,7 +14,7 @@ const leftItems = [
     text: (
       <>
         OPEN
-        Mapで初めて知ったカフェやお店がたくさんあって、週末ごとに新しい場所を開拓するのが楽しくなりました。
+        Mapで初めて知ったカフェやお店がたくさんあって、<span className="font-bold">週末ごとに新しい場所を開拓するのが楽しくなりました。</span>
       </>
     ),
   },
@@ -23,7 +23,7 @@ const leftItems = [
     bgColor :"#FFFEEA",
     text: (
       <>
-        旅行中に現地限定のNFTをいくつかゲットできて、本当にいい思い出になりました。
+        <span className="font-bold">旅行中に現地限定のNFTをいくつかゲット</span>できて、本当にいい思い出になりました。
       </>
     ),
   },
@@ -33,7 +33,7 @@ const leftItems = [
     text: (
       <>
         OPEN
-        Mapを使い始めてから、普段目にしない近場のイベントやキャンペーンの情報を見つけられるようになりました。こんなに多くの情報を見逃していたんだって感じです。
+        Mapを使い始めてから、普段目にしない近場のイベントやキャンペーンの情報を見つけられるようになりました。<span className="font-bold">こんなに多くの情報を見逃していたんだって感じです。</span>
       </>
     ),
   },
@@ -44,7 +44,7 @@ const rightItems = [
     bgColor :"#DEFFFD",
     text: (
       <>
-        NFTとか全然分からなかったのですが、操作がすごく簡単で、必要な情報や特典をすぐに見つけられるのが気に入っています。
+        NFTとか全然分からなかったのですが、<span className="font-bold">操作がすごく簡単で、必要な情報や特典をすぐに見つけられるのが気に入っています。</span>
       </>
     ),
   },
@@ -54,7 +54,7 @@ const rightItems = [
     text: (
       <>
         子どもの頃から住んでいる地域なのに、OPEN
-        Mapで初めて知るイベントや特典があって驚きました。地元の良さを再発見するきっかけになり、改めてこの街に誇りを持つようになりました。
+        Mapで初めて知るイベントや特典があって驚きました。<span className="font-bold">地元の良さを再発見するきっかけになり、改めてこの街に誇りを持つようになりました。</span>
       </>
     ),
   },
@@ -64,7 +64,7 @@ const rightItems = [
     text: (
       <>
         OPEN
-        MapのNFTは無料で送れるので、友人にNFTクーポンをプレゼントしたら、とても喜んでもらえました。
+        Mapの<span className="font-bold">NFTは無料で送れるので、友人にNFTクーポンをプレゼントしたら、とても喜んでもらえました。</span>
       </>
     ),
   },
@@ -100,7 +100,7 @@ const User = () => {
       <div className="w-full mx-auto border-dashed border-[#fff] border-[4px] md:rounded-t-[60px] rounded-t-[30px] pb-10 px-5">
         <div className="w-full max-w-[1280px] mx-auto relative">
         <p className="absolute top-[-50px] md:top-[-70px]">
-          <img className="max-md:w-[170px]" src="/assets/images/user-bubble.png" alt="" />
+          <img className="max-md:w-[170px] korokoro" src="/assets/images/user-bubble.png" alt="" />
         </p>
           <div className="">
             <div className="max-w-[1360px] w-full mx-auto flex flex-row max-md:flex-col justify-between relative xl:gap-[95px] md:gap-16 gap-[25px]">
