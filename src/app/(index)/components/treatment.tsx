@@ -1,9 +1,25 @@
 "use client";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { ReactNode } from "react";
-
+import { useRef, useState } from "react";
+import { gsap } from "gsap";
 const Treatment = () => {
   const ref = useScrollAnimations();
+  const contentRef = useRef(null);
+  const arrowRef = useRef(null);
+  const isClosedRef = useRef(true);
+  const handleExpanderClick = () => {
+    const $content = contentRef.current;
+    const $arrow = arrowRef.current;
+    if (isClosedRef.current) {
+      gsap.set($content, { height: "auto" });
+      gsap.from($content, { duration: 0.2, height: 0 });
+      gsap.to($arrow, { duration: 0.1, rotation: -90, transformOrigin: 'center'});
+    } else {
+      gsap.to($content, { duration: 0.2, height: 0 });
+      gsap.to($arrow, { duration: 0.1, rotation: 0 });
+    }
+    isClosedRef.current = !isClosedRef.current;
+  };
   return (
     <section ref={ref} className="px-5 pt-[50px] md:pt-[70px]">
       <div className="relative mx-auto w-full max-w-[510px]">
@@ -14,12 +30,18 @@ const Treatment = () => {
                 【 特別待遇 】
               </p>
             </div>
-            <h5 className="text-center md:text-[28px] text-[20px] font-bold tracking-widest mt-4 leading-[1.2]">
-              17LIVE公式ライバーの
-              <br />
-              秘密って ？？
-            </h5>
-            <p className="mt-7">
+            <button className="flex items-center justify-between gap-5 w-full" onClick={handleExpanderClick}>
+              <h5 className="text-left md:text-[28px] text-[20px] font-bold tracking-widest mt-4 leading-[1.2]">
+                17LIVE公式ライバーの
+                <br />
+                秘密って ？？
+              </h5>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 70 70" fill="none">
+              <rect ref={arrowRef} x="31.9999" width="6" height="70" fill="#0F0F0F"/>
+              <rect x="70" y="32" width="6" height="70" transform="rotate(90 70 32)" fill="#0F0F0F"/>
+            </svg>
+            </button>
+            <p ref={contentRef} className="mt-7 overflow-hidden h-0">
               <span className="md:text-[16px] text-[14px] leading-[1.3] tracking-widest inline-block">
                 実は17LIVE公式ライバーは、報酬のメインになる投げ銭を貰える割合が非公式ライバーとは大きく異なります。
                 <br /><br />

@@ -29,7 +29,7 @@ const Slider = () => {
     return (
       <div ref={ref} className="md:pt-11 pt-8 relative overflow-hidden">
         <div className="px-5">
-          <Title>育成したライバーの実績</Title>
+          <Title>育成したトップライバーの実績</Title>
           </div>
         <div className="fade-up w-full mt-6 relative overflow-hidden">
             <Swiper

@@ -1,5 +1,3 @@
-import Achievements from "./components/achievements";
-import Confirmation from "./components/confirmation";
 import FAQ from "./components/faq/faq";
 import Hero from "./components/hero";
 import Introduction from "./components/introduction";
@@ -20,13 +18,10 @@ export default function Home() {
       <Liver />
       <LiverIntroduction />
       <Merit />
-      <Achievements />
       <Voice />
       <Treatment />
       <Process />
-      <Confirmation />
       <FAQ />
-
     </main>
   );
 }
