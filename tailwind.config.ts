@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'selector',
   theme: {
     extend: {
       backgroundImage: {
@@ -13,9 +14,13 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        dt: "1440px",
+      },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      itim: ["var(--font-itim)", "sans-serif"],
+      courgette: ["var(--font-courgette)", "sans-serif"],
     },
   },
   plugins: [],

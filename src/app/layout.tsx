@@ -1,8 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Inter, Itim, Courgette } from "next/font/google";
+import "./globals.scss";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import ScrollContainer from "@/components/scrollContainer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+});
+
+const itim = Itim({
+  weight: '400',
+  subsets: ["latin"],
+  variable: '--font-itim'
+});
+
+const courgette = Courgette({
+  weight: '400',
+  subsets: ["latin"],
+  variable: '--font-courgette'
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +34,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+       <body
+        className={`${inter.className} ${itim.variable} ${courgette.variable} bg-[#FFF4F4]`}
+      >
+        <ScrollContainer>
+          <Header />
+          {children}
+          <Footer />
+        </ScrollContainer>
+      </body>
     </html>
   );
 }
