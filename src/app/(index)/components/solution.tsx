@@ -64,28 +64,14 @@ type CaseItemPropsType = {
       isClosedRef.current = !isClosedRef.current;
     };
   
-    const handleMouseEnter = () => {
-      if (isDesktop && isClosedRef.current) handleExpand();
-    };
-  
-    const handleMouseLeave = () => {
-      if (isDesktop && !isClosedRef.current) handleExpand();
-    };
-  
-    const handleClick = () => {
-      if (isDesktop) handleExpand();
-    };
-  
     return (
       <div
         className="fade-up border-b border-[#B70000] pt-8 pb-6 xl:px-8 md:px-5 px-3"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
         <button
           type="button"
           className="flex w-full items-center duration-200 hover:opacity-75 cursor-pointer pb-1"
-          onClick={handleClick}
+          onClick={handleExpand}
         >
           <p className="flex-1 text-left text-[24px] md:text-[48px] font-black leading-[1.3]">{title}</p>
           <div
