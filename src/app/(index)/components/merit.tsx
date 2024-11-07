@@ -13,7 +13,7 @@ const data = [
   {
     image: '/assets/images/merit-pin-02.png',
     title: (<>2.地域の特典をNFTでゲット！</>),
-    items: [(<span className="font-bold">地域限定のNFTを手に入れて、特典やクーポンをすぐに利用！</span>),'NFTを集める楽しさと、特典をゲットするお得感が同時に味わえる！'],
+    items: [(<><span className="font-bold">地域限定のNFTを手に入れて、特典やクーポンをすぐに利用！</span></>),'NFTを集める楽しさと、特典をゲットするお得感が同時に味わえる！'],
     background: "bg-[#46BF00]/[0.19]"
   },
   {
@@ -25,7 +25,7 @@ const data = [
   {
     image: '/assets/images/merit-pin-04.png',
     title: (<>4.簡単操作で誰でも使える！</>),
-    items: [(<span className="font-bold">タップするだけでNFTをゲット！</span>),(<><span className="font-bold">面倒な操作は一切不要</span>、誰でも簡単にスマホの画面を見せるだけで活用できます！</>)],
+    items: [(<><span className="font-bold">タップするだけでNFTをゲット！</span></>),(<><span className="font-bold">面倒な操作は一切不要</span>、誰でも簡単にスマホの画面を見せるだけで活用できます！</>)],
     background: "bg-[#00AAFF]/[0.1]"
   }
 ]

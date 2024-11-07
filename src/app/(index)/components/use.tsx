@@ -184,9 +184,8 @@ const Use = () => {
       </div>
       <div className="flex max-w-[1364px] flex-wrap justify-center mx-auto w-full md:gap-x-[5.556vw] dt:gap-x-20 max-md:gap-5 md:gap-y-3">
         {list.map((use, index) => (
-          <ImageHover>
+          <ImageHover key={index}>
           <div
-            key={index}
             className={`fade-up max-md:w-full max-dt:w-[27.778vw] max-w-[400px] bg-[#FFFFFF] rounded-[80px] md:mb-[100px] mb-[20px] relative ${
               index % 3 === 1 ? "md:-top-[95px]" : ""
             }`}

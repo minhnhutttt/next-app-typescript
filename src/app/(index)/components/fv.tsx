@@ -34,7 +34,7 @@ const FV = () => {
             </div>
           </div>
           <div
-            className={`max-xl:fixed max-w-[1360px] mx-auto max-xl:left-0 max-xl:top-0 max-xl:h-screen max-xl:w-full max-xl:bg-white/90 z-[99] max-xl:overflow-y-scroll flex items-center justify-center xl:justify-end max-xl:flex-col ${
+            className={`relative max-xl:fixed max-w-[1360px] mx-auto max-xl:left-0 max-xl:top-0 max-xl:h-screen max-xl:w-full max-xl:bg-white/90 z-[99] max-xl:overflow-y-scroll flex items-center justify-center xl:justify-end max-xl:flex-col ${
               NavOpen ? "" : "max-xl:invisible max-xl:opacity-0"
             }`}
           >

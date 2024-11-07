@@ -3,7 +3,7 @@
 const links = [
   {
    title:'よくある質問',
-   url:'#',
+   url:'/#faq',
   },
   {
     title:'お問い合わせ',

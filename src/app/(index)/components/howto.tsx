@@ -80,8 +80,8 @@ const Howto = () => {
         ))}
       </ul>
       
-      <div className="fade-up relative md:pt-[106px] pt-[50px] md:pb-[83px] pb-[40px] md:max-w-[555px] max-w-[460px] mx-auto">
-        <figure className="md:w-auto max-md:max-w-[138px] w-full absolute md:-left-[31px] left-[0] top-[0] z-10">
+      <div className="fade-up relative md:pt-[106px] pt-[90px] md:pb-[83px] pb-[40px] md:max-w-[555px] max-w-[460px] mx-auto">
+        <figure className="md:w-auto max-md:max-w-[200px] w-full absolute md:-left-[31px] left-[0] top-[0] z-10">
           <img className="w-full korokoro" src="/assets/images/bubble.png" alt="" />
         </figure>
         <Button>OPEN Mapへ</Button>
