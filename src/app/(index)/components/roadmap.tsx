@@ -127,6 +127,7 @@ const Roadmap = ({loaded}: {loaded?: any}) => {
       </section>
       
       <div className="footer-coll"></div>
+      <div className="relative z-20">
         <div className="text-center md:text-[96px] text-[40px] font-semibold md:mb-[64px] mb-8">
         WHITEPAPER DOWNLOAD
         </div>
@@ -135,6 +136,7 @@ const Roadmap = ({loaded}: {loaded?: any}) => {
             <span className="flex-1 text-center"> DOWNLOAD NOW</span>
             <img className="max-md:h-full" src="/assets/images/ic-download.svg" alt="" />
           </a>
+        </div>
         </div>
     </div>
   );
