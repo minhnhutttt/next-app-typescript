@@ -3,6 +3,7 @@ import {Inter, Kaisei_Opti, Noto_Sans_JP } from "next/font/google";
 import "./globals.scss";
 import ScrollContainer from "@/components/scrollContainer";
 import Footer from "@/components/footer";
+import FrontChat from "@/components/frontChat";
 
 const inter = Inter({ subsets: ['latin'] });
 const kaiseiOpti = Kaisei_Opti({
@@ -34,6 +35,7 @@ export default function RootLayout({
         {children}
         <Footer />
         </ScrollContainer>
+        <FrontChat />
       </body>
     </html>
   );

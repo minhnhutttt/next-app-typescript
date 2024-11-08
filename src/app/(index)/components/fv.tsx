@@ -2,7 +2,7 @@
 import { useCallback, useState } from "react";
 import Button from "@/components/button";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
-
+import { frontOpen } from "@/lib/front";
 const FV = () => {
   const ref = useScrollAnimations();
   const [NavOpen, setNavOpen] = useState(false);
@@ -45,9 +45,9 @@ const FV = () => {
                 </a>
               </li>
               <li>
-                <a href="/" onClick={close} className="">
+                <button onClick={()=> {close(),frontOpen()}} className="">
                   お問い合わせ
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -72,8 +72,9 @@ const FV = () => {
                   alt=""
                 />
               </div>
-              <h1 data-scroll className="ani-zoom-out">
-                <img className="korokoro" src="/assets/images/fv-text.png" alt="" />
+              <h1 data-scroll className="ani-zoom-out relative">
+                <img className="" src="/assets/images/fv-text.png" alt="" />
+                <span className="absolute w-[28.8683%] top-[41%] left-1/2 -translate-x-1/2"><img className="korokoro" src="/assets/images/fv-bubble.png" alt="" /></span>
               </h1>
             </div>
           </div>
@@ -91,7 +92,7 @@ const FV = () => {
           <Button>近くの特典を探す</Button>
         </div>
         <div className="fade-up max-md:w-full max-dt:w-[49.444vw]">
-          <img className="animate-[fuwafuwa_3s_infinite]" src="/assets/images/intro-img.png" alt="" />
+          <img className="animate-[bound_3s_infinite]" src="/assets/images/intro-img.png" alt="" />
         </div>
       </div>
       </div>
