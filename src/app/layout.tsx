@@ -25,7 +25,6 @@ export default function RootLayout({
         className={`${oswald.className} text-white bg-black`}
       >
           <Header />
-          <ViewCanvas />
           <main className="relative">
           {children}
           </main>

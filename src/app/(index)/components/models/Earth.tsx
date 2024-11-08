@@ -56,7 +56,7 @@ export const Earth = forwardRef((props: JSX.IntrinsicElements['group'], ref: any
   return (
     <group {...props} ref={ref} dispose={null}>
       <group scale={0.2}>
-      <points geometry={pointsGeometry1}>
+      <points geometry={pointsGeometry1}  onPointerOver={(e) => console.log(e)}>
         <pointsMaterial
           map={texture}
           size={0.08}
