@@ -5,6 +5,7 @@ import Solution from "./components/solution";
 import Roadmap from "./components/roadmap";
 import Tokenomics from "./components/tokenomics";
 import Howto from "./components/howto";
+import Dao from "./components/dao";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Roadmap />
         <Tokenomics />
         <Howto />
+        <Dao />
     </main>
   );
 }

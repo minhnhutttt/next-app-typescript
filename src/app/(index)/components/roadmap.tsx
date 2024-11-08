@@ -56,7 +56,7 @@ const Roadmap = () => {
         <h3 className="popup md:text-[96px] text-[36px] font-bold leading-none md:-mt-[52px] -mt-[20px] md:px-5">Roadmap</h3>
         <div className="w-full max-w-[935px] mx-auto mt-16 md:mt-[106px] md:space-y-2 space-y-8">
             {data.map((phase,index) => (
-                <div className="popup group flex md:gap-[30px] gap-5" key={index}>
+                <div className="fade-up group flex md:gap-[30px] gap-5" key={index}>
                     <div className="">
                         <div className="md:w-[181px] w-[90px] aspect-[181/291] bg-[url('/assets/images/phase-bg.png')] group-last:aspect-square group-last:bg-[url('/assets/images/phase-bg-last.png')] font-bold leading-none text-center pt-5 md:pt-10 bg-no-repeat bg-cover">
                             <p className="md:text-[24px] text-[16px]">Phase</p>

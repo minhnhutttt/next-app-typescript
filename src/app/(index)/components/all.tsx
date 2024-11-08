@@ -3,7 +3,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const All = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative px-2 md:pb-[160px] pb-[100px]">
+    <section id="project-vision" ref={ref} className="relative px-2 md:pb-[160px] pb-[100px]">
       <div className="w-full max-w-[1440px] mx-auto">
         <div className="flex justify-center">
             <div className="popup w-[440px] md:w-[875px] h-[160px] md:h-[310px] flex items-center justify-center relative">

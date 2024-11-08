@@ -37,12 +37,12 @@ const data = [
 const ChildrenInNeed = () => {
   const ref = useScrollAnimations();
   return (
-    <section id="children-in-need" ref={ref} className="relative px-5 bg-[url('/assets/images/children-bg.png')] bg-cover bg-center md:mt-[76px] mt-10 md:pb-[130px] pb-20">
+    <section id="children-in-need" ref={ref} className="scroll-mt-16 relative px-5 bg-[url('/assets/images/children-bg.png')] bg-cover bg-center md:mt-[76px] mt-10 md:pb-[130px] pb-20">
         <div className="h-px"></div>
         <h3 className="popup md:text-[96px] text-[36px] font-bold leading-none md:-mt-[52px] -mt-[20px] md:px-5">Children in Need</h3>
         <div className="flex flex-wrap w-full max-w-[1148px] justify-center mx-auto md:gap-x-[120px] md:gap-y-20 md:mt-[88px] mt-14 md:mb-20 mb-12 max-md:gap-10">
             {data.map((item)=> (
-                <div className="popup md:w-[300px] max-w-[300px] w-full" key={item.id}>
+                <div className="fade-up md:w-[300px] max-w-[300px] w-full" key={item.id}>
                     <figure className="md:mb-4 mb-3">
                         <img src={item.image} alt="" />
                     </figure>

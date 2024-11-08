@@ -119,7 +119,7 @@ const Solution = () => {
     }
   }, []);
   return (
-    <section ref={ref} className="relative overflow-hidden">
+    <section ref={ref} id="solution" className="relative overflow-hidden">
       <div className="px-5 bg-[#B70000]">
         <div className="w-full max-w-[1210px] mx-auto flex items-center max-md:flex-col py-8 md:py-10 md:gap-[52px] gap-10">
           <div className="popup md:w-[554px] w-[300px] aspect-[554/522] relative">
