@@ -26,19 +26,12 @@ const Dao = () => {
       className="bg-[#0F0F0F] bg-[url('/assets/images/dao-bg.png')] bg-[length:100%_auto] bg-no-repeat md:pb-[100px] pb-16"
     >
       <div className="w-full max-w-[440px] md:max-w-[1440px] mx-auto xl:px-10 px-5 md:pt-[100px] pt-16">
-        <div className="flex md:gap-12 gap-8 text-white max-md:flex-col-reverse">
+        <div className="flex md:gap-12 gap-8 text-white items-center max-md:flex-col-reverse">
           <div className="md:pt-9 md:pb-[100px]">
             <h3 className="fade-up md:text-[80px] text-[36px] font-bold leading-none md:mb-12 mb-8">
               DAO organization <br />
               management
             </h3>
-            <p className="fade-up max-w-[620px] md:text-[20px] text-[16px] leading-[1.3]">
-              SANTA Coin will gradually strengthen its characteristics as a DAO
-              (Decentralized Autonomous Organization) in order to maximize the
-              transparency and efficiency of support. We aim to build a
-              sustainable support ecosystem that brings together supporters,
-              recipients, and management teams.
-            </p>
           </div>
           <div className="fade-up ">
             <img src="/assets/images/dao-img.png" alt="" />
@@ -50,8 +43,8 @@ const Dao = () => {
               <img src="/assets/images/ic-bell.svg" alt="" />
               Basic concepts
             </h5>
-            <p className="md:text-[16px] text-[14px] leading-loose">
-              SANTA Coin will gradually strengthen its characteristics as a DAO
+            <p className="md:text-[16px] text-[14px] leading-loose text-[#E6E6E6]">
+              SANTA Coin will <span className="font-bold text-white">gradually strengthen its characteristics as a DAO</span>
               (Decentralized Autonomous Organization) in order to maximize the
               transparency and efficiency of support. We aim to build a
               sustainable support ecosystem that brings together supporters,
@@ -84,7 +77,7 @@ const Dao = () => {
                 <p className="md:text-[18px] text-[16px] font-bold">
                   Full version (2025~)
                 </p>
-                <ul className="md:text-[16px] text-[14px]">
+                <ul className="md:text-[16px] text-[14px] text-[#E6E6E6]">
                   <li className="flex gap-2">
                     <span>●</span>Voting system by token holders
                   </li>

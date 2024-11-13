@@ -102,11 +102,11 @@ const Solution = () => {
         {
           ".card-wrapper.forward": {
             0: { transform: "rotateY(0deg)" },
-            2: { transform: "rotateY(360deg)" },
+            5: { transform: "rotateY(360deg)" },
           },
           ".card-wrapper.backward": {
             0: { transform: "rotateY(180deg)" },
-            2: { transform: "rotateY(540deg)" },
+            5: { transform: "rotateY(540deg)" },
           },
         },
         {
@@ -144,14 +144,14 @@ const Solution = () => {
           </div>
           <div className="popup flex-1">
             <h4 className="md:text-[98px] text-[44px] text-white font-bold leading-none mb-5">SANTA Coin <br />Solution</h4>
-            <p className="md:text-[18px] text-[16px] leading-[1.3] font-medium text-white max-w-[535px]">
+            <p className="md:text-[18px] text-[16px] leading-[1.3] font-medium text-[#E6E6E6] max-w-[535px]">
                 SANTA Coin addresses these challenges through blockchain technology. <br />
                 <br />
-                On the blockchain, fund movements are public information. Therefore, support fund flows can never be opaque - every penny is tracked and visible.<br />
+                On the blockchain, <span className="font-bold text-white">fund movements are public</span> information. Therefore, support fund flows can never be opaque - every penny is tracked and visible.<br />
                 <br />
-                Additionally, since everything operates through programmed code, management costs, including personnel expenses, are significantly reduced.<br />
+                Additionally, since <span className="font-bold text-white">everything operates through programmed code</span>, management costs, including personnel expenses, are significantly reduced.<br />
                 <br />
-                As a result, support reaches children in need more efficiently.
+                As a result, <span className="font-bold text-white">support reaches children in need</span> more efficiently.
             </p>
           </div>
         </div>

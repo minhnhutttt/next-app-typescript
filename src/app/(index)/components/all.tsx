@@ -19,8 +19,8 @@ const All = () => {
             </div>
         </div>
         <div className="popup flex justify-center mt-6 md:mt-9">
-            <p className="md:text-[16px] text-[14px] max-w-[620px]">
-                <span className="font-bold">SANTA Coin</span> is an innovative social project that <span className="font-bold">brings Santa Claus's symbolic spirit of "unconditional love" and "gifts for children" to the blockchain</span>. It enables transparent, direct support for children facing economic and social challenges. <span className="font-bold">Starting with a pilot program in December 2024</span>, we aim to build a comprehensive support platform through phased functional expansions.
+            <p className="md:text-[16px] text-[14px] max-w-[620px] text-[#555]">
+                <span className="font-bold text-black">SANTA Coin</span> is an innovative social project that <span className="font-bold text-black">brings Santa Claus's symbolic spirit of "unconditional love" and "gifts for children" to the blockchain</span>. It enables transparent, direct support for children facing economic and social challenges. <span className="font-bold text-black">Starting with a pilot program in December 2024</span>, we aim to build a comprehensive support platform through phased functional expansions.
             </p>
         </div>
         <div className="popup">
@@ -43,8 +43,8 @@ const All = () => {
                         <h5 className="text-center md:text-[24px] text-[18px] font-bold leading-none">
                         The Spirit of Santa Claus and Blockchain
                         </h5>
-                        <p className="md:text-[18px] text-[16px] mt-4 md:mt-5">
-                        For centuries, Santa Claus has lived in children's hearts as a symbol of unconditional love and hope. SANTA Coin reinterprets this universal "spirit of giving" through modern blockchain technology
+                        <p className="md:text-[18px] text-[16px] mt-4 md:mt-5 text-[#555]">
+                        For centuries, Santa Claus has lived in children's hearts as a symbol of unconditional love and hope. <span className="text-black font-bold">SANTA Coin reinterprets</span> this universal <span className="font-bold text-black">"spirit of giving"</span> through modern <span className="font-bold text-black">blockchain technology</span>
                         </p>
                     </div>
                 </div>
@@ -65,8 +65,8 @@ const All = () => {
                         <h5 className="text-center md:text-[24px] text-[18px] font-bold leading-none">
                         Special Significance of December
                         </h5>
-                        <p className="md:text-[18px] text-[16px] mt-4 md:mt-5">
-                        Every December, when people worldwide think about gift-giving, SANTA Coin plays a special role
+                        <p className="md:text-[18px] text-[16px] mt-4 md:mt-5 text-[#555]">
+                        <span className="font-bold text-black">Every December</span>, when people worldwide think about gift-giving, <span className="font-bold text-black">SANTA Coin</span> plays a special role
                         </p>
                     </div>
                 </div>

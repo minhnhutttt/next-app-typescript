@@ -5,32 +5,32 @@ const data = [
     {
         id: '1',
         image: '/assets/images/children-img-01.png',
-        title: 'Children in foster care facilities'
+        title: (<>Children in <span className="font-bold text-black">foster care facilities</span></>)
     },
     {
         id: '2',
         image: '/assets/images/children-img-02.png',
-        title: 'Children in disability support facilities'
+        title: (<>Children in <span className="font-bold text-black">disability support facilities</span></>)
     },
     {
         id: '3',
         image: '/assets/images/children-img-03.png',
-        title: 'Children losing educational opportunities due to economic hardship'
+        title: (<>Children <span className="font-bold text-black">losing educational opportunities</span> due to economic hardship</>)
     },
     {
         id: '4',
         image: '/assets/images/children-img-04.png',
-        title: 'Children requiring medical support'
+        title: (<>Children <span className="font-bold text-black">requiring medical support</span></>)
     },
     {
         id: '5',
         image: '/assets/images/children-img-05.png',
-        title: 'Children facing difficulties due to disasters or conflicts'
+        title: (<>Children facing difficulties due to <span className="font-bold text-black">disasters or conflicts</span></>)
     },
     {
         id: '6',
         image: '/assets/images/children-img-06.png',
-        title: 'And even more cases...'
+        title: (<>And even more cases...</>)
     },
 ]
 
@@ -46,15 +46,14 @@ const ChildrenInNeed = () => {
                     <figure className="md:mb-4 mb-3">
                         <img src={item.image} alt="" />
                     </figure>
-                    <div className="size-10 mx-auto border border-black flex items-center justify-center leading-none rounded-[5px] md:text-[28px] text-[20px] font-bold">{item.id}</div>
-                    <div className="md:text-[18px] text-[16px] font-bold flex justify-center mt-2">
+                    <div className="md:text-[18px] text-[16px] font-bold flex justify-center mt-2 text-[#555]">
                         <p>{item.title}</p>
                     </div>
                 </div>
             ))}
         </div>
         <div className="popup w-full max-w-[754px] mx-auto border border-[#005311] rounded-[20px] px-5 md:px-10 py-2.5 md:text-[16px] text-[14px]">
-            Existing support systems face issues with fund transparency, high management costs that reduce efficiency, and difficulty in reaching children in need. Securing continuous support is also a challenge.
+            Existing support systems face issues with <span className="font-bold text-black">fund transparency</span>, <span className="font-bold text-black">high management costs</span> that reduce efficiency, and <span className="font-bold text-black">difficulty in reaching children in need</span>. <span className="font-bold text-black">Securing continuous support</span> is also a challenge.
         </div>
     </section>
   );
