@@ -1,5 +1,4 @@
 "use client";
-import Title from "@/components/title";
 import FaqItem from "./faqItem";
 import { FaqItemPropsType } from "./faqItem";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
