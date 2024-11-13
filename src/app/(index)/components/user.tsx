@@ -51,8 +51,7 @@ const rightItems = [
     bgColor :"#FFFEEA",
     text: (
       <>
-        子どもの頃から住んでいる地域なのに、OPEN
-        Mapで初めて知るイベントや特典があって驚きました。<span className="font-bold">地元の良さを再発見するきっかけになり、改めてこの街に誇りを持つようになりました。</span>
+        子どもの頃から住んでいる地域なのに、META Earthで初めて知るイベントや特典があって驚きました。<span className="font-bold">地元の良さを再発見するきっかけになり、改めてこの街に誇りを持つようになりました。</span>
       </>
     ),
   },
