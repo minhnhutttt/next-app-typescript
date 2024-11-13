@@ -11,6 +11,11 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+
+.imageMarquee
+{
+    animation: imageMovement 25s linear infinite;
+}
 .fuwafuwa {
   animation: fuwafuwa 3s ease-in-out infinite alternate;
 }
@@ -24,5 +29,20 @@ body {
   }
   100% {
     transform:translate(0, 0) rotate(7deg);
+  }
+}
+
+@keyframes imageMovement {
+  100% {
+      background-position-x: -1441px;
+  }        
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

@@ -20,7 +20,7 @@ const All = () => {
         </div>
         <div className="popup flex justify-center mt-6 md:mt-9">
             <p className="md:text-[16px] text-[14px] max-w-[620px]">
-                SANTA Coin is an innovative social project that brings Santa Claus's symbolic spirit of "unconditional love" and "gifts for children" to the blockchain. It enables transparent, direct support for children facing economic and social challenges. Starting with a pilot program in December 2024, we aim to build a comprehensive support platform through phased functional expansions.
+                <span className="font-bold">SANTA Coin</span> is an innovative social project that <span className="font-bold">brings Santa Claus's symbolic spirit of "unconditional love" and "gifts for children" to the blockchain</span>. It enables transparent, direct support for children facing economic and social challenges. <span className="font-bold">Starting with a pilot program in December 2024</span>, we aim to build a comprehensive support platform through phased functional expansions.
             </p>
         </div>
         <div className="popup">
@@ -30,9 +30,15 @@ const All = () => {
             <h3 className="popup text-center md:text-[48px] text-[24px] font-bold">Creating a Perpetual Gift Economy</h3>
             <div className="flex justify-between max-md:flex-col gap-10 w-full max-w-[440px] md:max-w-[1004px] mx-auto mt-10 md:mt-16">
                 <div className="popup md:w-[400px] w-full">
-                    <figure className="flex justify-center">
-                        <img className="max-md:w-[200px]" src="/assets/images/creating-img-01.png" alt="" />
-                    </figure>
+                    <div className="flex justify-center">
+                        <div className="relative max-md:w-[200px]">
+                            <img className="" src="/assets/images/creating-img.png" alt="" />
+                            <div className="flex justify-center items-center absolute inset-0 ">
+                            <img className="origin-center animate-[spin_10s_linear_infinite]" src="/assets/images/creating-img-snow.png" alt="" />
+                            </div>
+                            <img className="absolute inset-0" src="/assets/images/creating-img-santa.png" alt="" />
+                        </div>
+                    </div>
                     <div className="md:mt-10 mt-7">
                         <h5 className="text-center md:text-[24px] text-[18px] font-bold leading-none">
                         The Spirit of Santa Claus and Blockchain
@@ -43,9 +49,18 @@ const All = () => {
                     </div>
                 </div>
                 <div className="popup md:w-[400px] w-full">
-                    <figure className="flex justify-center">
-                        <img className="max-md:w-[200px]" src="/assets/images/creating-img-02.png" alt="" />
-                    </figure>
+                <div className="flex justify-center">
+                        <div className="relative max-md:w-[200px]">
+                            <img className="" src="/assets/images/creating-img.png" alt="" />
+                            <img className="absolute inset-0 animate-[fuwafuwa_3s_ease-in-out_1s_infinite_alternate]" src="/assets/images/creating-img-tree.png" alt="" />
+                            <img className="absolute inset-0 animate-[fuwafuwa_3s_ease-in-out_0.2s_infinite_alternate]" src="/assets/images/creating-img-snowman.png" alt="" />
+                            <img className="absolute inset-0 animate-[fuwafuwa_2.4s_ease-in-out_0.4s_infinite_alternate]" src="/assets/images/creating-img-christmas.png" alt="" />
+                            <img className="absolute inset-0 animate-[fuwafuwa_3.5s_ease-in-out_0.77s_infinite_alternate]" src="/assets/images/creating-img-ball.png" alt="" />
+                            <img className="absolute inset-0 animate-[fuwafuwa_3.2s_ease-in-out_0.55s_infinite_alternate]" src="/assets/images/creating-img-rudolph.png" alt="" />
+                            <img className="absolute inset-0 animate-[fuwafuwa_4s_ease-in-out_0.24s_infinite_alternate]" src="/assets/images/creating-img-calendar.png" alt="" />
+                            <img className="absolute inset-0 animate-[fuwafuwa_2.78s_ease-in-out_0.1s_infinite_alternate]" src="/assets/images/creating-img-gift.png" alt="" />
+                        </div>
+                    </div>
                     <div className="md:mt-10 mt-7">
                         <h5 className="text-center md:text-[24px] text-[18px] font-bold leading-none">
                         Special Significance of December

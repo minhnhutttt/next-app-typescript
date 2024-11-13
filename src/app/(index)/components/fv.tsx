@@ -24,6 +24,9 @@ const FV = () => {
           </h1>
         </div>
         <span className="slide-skew"><img src="/assets/images/fv-santa.png" alt="" /></span>
+        <div className="absolute left-0 right-0 imageMarquee bg-[url('/assets/images/fv-m.png')] h-[165px] md:h-[330px] bg-[length:auto_100%] bottom-[100px] z-10">
+
+        </div>
         <p className="popup text-center md:text-[24px] text-[18px] font-courgette md:mt-6 mt-4 mb-5 md:mb-8">A New Era of Giving, Where Blockchain Becomes Santa's Sleigh</p>
         <div className="popup flex justify-center">
           <a href="/" className="flex items-center justify-center w-[280px] md:w-[310px] h-[50px] md:h-[70px] bg-[#B70000] rounded-full text-white md:text-[26px] text-[20px] font-bold">
