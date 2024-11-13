@@ -25,7 +25,7 @@ const About = () => {
                     <img src="/assets/images/about-img-2.png" alt="" />
                 </figure>
                 <div className="fade-up max-md:mt-10 dt:text-[24px] text-[16px] md:text-[1.667vw] leading-loose flex flex-col items-center md:items-end font-bold px-5 md:px-10 md:pb-5 space-y-2.5">
-                <span className="text-[#DF0F47]">あなたのすぐそばで使える特典、イベント、ショップ情報がNFTとなり、リアルタイムで更新される地域情報サービスが爆誕！</span><br />今すぐOPEN Mapを開いて、これまで気づかなかった地元の魅力や、限定特典を見つけに出かけよう！
+                <span className="text-[#DF0F47]">あなたのすぐそばで使える特典、イベント、ショップ情報がNFTとなり、リアルタイムで更新される地域情報サービスが爆誕！</span><br />今すぐMETA Earthを開いて、これまで気づかなかった地元の魅力や、限定特典を見つけに出かけよう！
                 </div>
             </div>
         </div>

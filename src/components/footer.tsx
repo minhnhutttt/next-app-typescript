@@ -28,7 +28,7 @@ const Footer = () => {
         </li>
       </ul>
       <p className="md:text-[14px] text-[12px] text-[#0F0F0F] text-center font-light">
-        Copyright © OPEN Map
+        Copyright © META Earth
       </p>
     </footer>
   );

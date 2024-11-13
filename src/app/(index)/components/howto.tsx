@@ -84,7 +84,7 @@ const Howto = () => {
         <figure className="md:w-auto max-md:max-w-[200px] w-full absolute left-[0] top-[0] z-10 rotate-[-10deg]">
           <img className="w-full korokoro" src="/assets/images/bubble.png" alt="" />
         </figure>
-        <Button>OPEN Mapへ</Button>
+        <Button>META Earthへ</Button>
       </div>
       
 

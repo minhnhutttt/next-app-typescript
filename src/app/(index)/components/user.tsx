@@ -13,8 +13,7 @@ const leftItems = [
     bgColor :"#FFEFFE",
     text: (
       <>
-        OPEN
-        Mapで初めて知ったカフェやお店がたくさんあって、<span className="font-bold">週末ごとに新しい場所を開拓するのが楽しくなりました。</span>
+      META Earthで初めて知ったカフェやお店がたくさんあって、<span className="font-bold">週末ごとに新しい場所を開拓するのが楽しくなりました。</span>
       </>
     ),
   },
@@ -32,8 +31,7 @@ const leftItems = [
     bgColor :"#DEFFFD",
     text: (
       <>
-        OPEN
-        Mapを使い始めてから、普段目にしない近場のイベントやキャンペーンの情報を見つけられるようになりました。<span className="font-bold">こんなに多くの情報を見逃していたんだって感じです。</span>
+        META Earthを使い始めてから、普段目にしない近場のイベントやキャンペーンの情報を見つけられるようになりました。<span className="font-bold">こんなに多くの情報を見逃していたんだって感じです。</span>
       </>
     ),
   },
@@ -63,8 +61,7 @@ const rightItems = [
     bgColor :"#FFEFFE",
     text: (
       <>
-        OPEN
-        Mapの<span className="font-bold">NFTは無料で送れるので、友人にNFTクーポンをプレゼントしたら、とても喜んでもらえました。</span>
+        META Earthの<span className="font-bold">NFTは無料で送れるので、友人にNFTクーポンをプレゼントしたら、とても喜んでもらえました。</span>
       </>
     ),
   },
