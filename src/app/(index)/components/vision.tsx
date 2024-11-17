@@ -60,14 +60,14 @@ const Vision = () => {
   return (
     <section className="relative bg-[url('/assets/images/vision-bg.png')] bg-center bg-[length:100%_100%] md:h-[1274px] md:pt-[254px] pt-[140px] w-screen overflow-hidden">
         <div className="w-full max-w-[1440px] mx-auto px-5 xl:px-12 relative">
-        <View ref={lightRef} className="light-scene absolute right-0 top-[-5vw] z-40 size-[50vw] block">
+        <View ref={lightRef} className="light-scene absolute right-0 top-[-5vw] z-40 size-full md:size-[50vw] block">
           <Light />
         </View>
-            <h5 className="md:text-[36px] text-[24px] font-semibold">
+            <h5 className="md:text-[36px] text-[24px] font-semibold relative max-md:z-50">
                 The IPDC project aims to realize the <br />
                 following innovative vision
             </h5>
-            <div className="md:mt-[154px] mt-20 space-y-10 md:space-y-[64px]">
+            <div className="md:mt-[154px] mt-20 space-y-10 md:space-y-[64px]  relative max-md:z-50">
               <div className="">
                 <Article title="Building a True Distributed Web" items={['Realization of a completely distributed web system independent of traditional DNS','Creation of a secure internet environment resistant to tampering and unauthorized access','Freedom from hacking-related information leaks and database losses']} />
               </div>

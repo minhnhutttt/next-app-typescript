@@ -9,23 +9,12 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const FV = () => {
-  const isDesktop = useMediaQuery("(min-width: 768px)", true);
     const earthRef = useRef(null)
-    useGSAP(()=> {
-        if (!earthRef.current) return
-        gsap.set(earthRef.current, {
-            x: isDesktop ? 1 : 0,
-            y: isDesktop ? 0 : -1.2
-        })
-        gsap.set(earthRef.current, {
-            scale: isDesktop ? 1 : 0.4
-        })
-    },{ dependencies: [isDesktop]})
   return (
     <section  className="relative bg-[url('/assets/images/fv-bg.png')] bg-[length:100%_100%] bg-center w-screen overflow-hidden z-30">
       <div className="w-full max-w-[1440px] mx-auto md:pt-[50px] pt-10 relative z-30">
         
-      <View ref={earthRef} className="absolute top-[0vw] right-0 z-40  size-[50vw] flex justify-center items-center">
+      <View ref={earthRef} className="absolute top-[0vw] right-0 z-40 size-[100vw] md:size-[50vw] flex justify-center items-center">
         <Earth />
       </View>
           <div className="md:max-w-[39.931vw] max-w-[70vw] dt:max-w-[575px] ml-[7.778vw] dt:ml-[112px]">

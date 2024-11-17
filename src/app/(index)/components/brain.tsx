@@ -53,13 +53,13 @@ const Brain = () => {
         scrollTl2.to(cloudRef.current, { scale: 20 },0)
     })
   return (
-    <section id="brain" className="relative pt-20 md:pt-[160px] md:pb-[100px] pb-[60px] px-8 w-screen overflow-hidden min-h-screen mb-[30vh]">
+    <section id="brain" className="relative pt-20 md:pt-[160px] md:pb-[100px] pb-[60px] px-8 w-screen overflow-hidden min-h-screen md:mb-[30vh]">
       <div className="w-full max-w-[1350px] mx-auto relative">
-      <View ref={cloudRef} className="light-scene absolute top-[15vw] left-[-5vw] z-40 size-[50vw] block">
+      <View ref={cloudRef} className="light-scene absolute max-md:bottom-0 md:top-[15vw] left-[-5vw] z-40 size-[100vw] md:size-[50vw] block">
           <Cloud />
         </View>
         <h3 className="text-center font-semibold md:text-[96px] text-[32px]">Background and Challenges</h3>
-        <div className="flex justify-end mt-12 md:mt-[85px]">
+        <div className="flex justify-end mt-12 md:mt-[85px] relative max-md:z-50">
             <ul className="list-decimal md:text-[36px] text-[20px] font-semibold leading-[3]">
                 {data.map((item, index)=>(
                     <li key={index}>{item}</li>

@@ -39,7 +39,7 @@ const Light = () => {
   }, [obj]);
 
   const addPoints = (sampler: any) => {
-    const totalPoints = 3000;
+    const totalPoints = 7000;
     const tempPosition = new THREE.Vector3();
     const vertices: number[] = [];
     const originalVertices: number[] = [];
