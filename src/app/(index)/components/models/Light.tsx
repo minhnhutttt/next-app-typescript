@@ -1,97 +1,180 @@
-import * as THREE from 'three'
-import React, { forwardRef, useEffect, useMemo, useState } from 'react'
-import { useGLTF } from '@react-three/drei'
-import { GLTF, MeshSurfaceSampler } from 'three-stdlib'
-import { useFrame } from '@react-three/fiber'
+import { forwardRef, useEffect, useRef, useState } from "react";
+import { useLoader, useFrame } from "@react-three/fiber";
+// @ts-ignore
+import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler"; 
+// @ts-ignore
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+import * as THREE from "three";
+import { Float } from "@react-three/drei";
 
-type GLTFResult = GLTF & {
-  nodes: {
-    a_light_bulb_205001: THREE.Mesh
-    a_light_bulb_205001_1: THREE.Mesh
-  }
-  materials: {
-    ['a_light_bulb_205_Mat_glass.001']: THREE.MeshStandardMaterial
-    ['a_light_bulb_206_light_Mat.001']: THREE.MeshStandardMaterial
-  }
-}
+const Light = () => {
+  const [model, setModel] = useState<THREE.Group | null>(null);
+  const [pointsData, setPointsData] = useState<{
+    vertices: number[];
+    originalVertices: number[];
+    colors: number[];
+    sizes: number[];
+  }>({
+    vertices: [],
+    originalVertices: [],
+    colors: [],
+    sizes: [],
+  });
+  const [mousePosition, setMousePosition] = useState<THREE.Vector3 | null>(null);
+  const [brushSize] = useState(2.3);
 
-export const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
-  const { nodes, materials } = useGLTF('/assets/models/light.glb') as GLTFResult
+  const obj = useLoader(OBJLoader, "/assets/models/light.obj");
+  const ref = useRef<any>(null);
+  const samplerRef = useRef<any>(null);
+  const pointsRef = useRef<THREE.BufferGeometry>(null);
+  const materialRef = useRef<THREE.ShaderMaterial>(null);
 
-  materials['a_light_bulb_205_Mat_glass.001'].wireframe = true
-  materials['a_light_bulb_206_light_Mat.001'].wireframe = true
+  useEffect(() => {
+    const modelMesh = obj.children[0] as THREE.Mesh;
+    const sampler = new MeshSurfaceSampler(modelMesh).build();
+    samplerRef.current = sampler;
 
-  const texture = useMemo(() => new THREE.TextureLoader().load('/assets/images/sample.png'), [])
+    addPoints(sampler);
+    setModel(obj);
+  }, [obj]);
 
-  const createGeometryWithColors = (mesh: any, sampleCount: number) => {
-    const vertices = []
-    const colors = []
-    const tempPosition = new THREE.Vector3()
-    const sampler = new MeshSurfaceSampler(mesh).build()
-
-    for (let i = 0; i < sampleCount; i++) {
-      sampler.sample(tempPosition)
-      vertices.push(tempPosition.x, tempPosition.y, tempPosition.z)
-      
-      const color = new THREE.Color(Math.random(), Math.random(), Math.random())
-      colors.push(color.r, color.g, color.b)
+  const addPoints = (sampler: any) => {
+    const totalPoints = 3000;
+    const tempPosition = new THREE.Vector3();
+    const vertices: number[] = [];
+    const originalVertices: number[] = [];
+    const colors: number[] = [];
+    const sizes: number[] = [];
+    const fixedColors = ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"];
+    for (let i = 0; i < totalPoints; i++) {
+      sampler.sample(tempPosition);
+      vertices.push(tempPosition.x, tempPosition.y, tempPosition.z);
+      originalVertices.push(tempPosition.x, tempPosition.y, tempPosition.z);
+  
+      const randomColor = new THREE.Color(fixedColors[Math.floor(Math.random() * fixedColors.length)]);
+      colors.push(randomColor.r, randomColor.g, randomColor.b);
+  
+      sizes.push(0.1);
     }
 
-    const geometry = new THREE.BufferGeometry()
-    geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
-    geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3))
-    return geometry
-  }
+    setPointsData({
+      vertices,
+      originalVertices,
+      colors,
+      sizes,
+    });
+  };
 
-  const pointsGeometry1 = useMemo(() => createGeometryWithColors(nodes.a_light_bulb_205001, 4000), [nodes.a_light_bulb_205001])
-  const pointsGeometry2 = useMemo(() => createGeometryWithColors(nodes.a_light_bulb_205001_1, 2000), [nodes.a_light_bulb_205001_1])
-
-
-  useFrame(({ clock }) => {
-    const time = clock.getElapsedTime()
-    const positions1 = pointsGeometry1.attributes.position.array
-    const positions2 = pointsGeometry2.attributes.position.array
-
-    for (let i = 1; i < positions1.length; i += 3) {
-      positions1[i] += Math.sin(time + i * 0.1) * 0.002 
+  const updateSizes = () => {
+    if (!pointsRef.current || !materialRef.current) return;
+  
+    const { position, size } = pointsRef.current.attributes;
+    const positions = position.array as Float32Array;
+    const sizes = size.array as Float32Array;
+    const defaultSize = 0.1;
+  
+    for (let i = 0; i < positions.length; i += 3) {
+      const index = i / 3;
+      if (mousePosition) {
+        const vertex = new THREE.Vector3(positions[i], positions[i + 1], positions[i + 2]);
+        const distanceToMouse = vertex.distanceTo(mousePosition);
+        sizes[index] = distanceToMouse < brushSize 
+          ? 0.2 + (1 - distanceToMouse / brushSize) / 10 
+          : defaultSize;
+      } else {
+        sizes[index] = defaultSize;
+      }
     }
+  
+    size.needsUpdate = true;
+  };
+  
+  
 
-    for (let i = 1; i < positions2.length; i += 3) {
-      positions2[i] += Math.sin(time + i * 0.1) * 0.002
-    }
-
-    pointsGeometry1.attributes.position.needsUpdate = true
-    pointsGeometry2.attributes.position.needsUpdate = true
-  })
+  useFrame(() => {
+    updateSizes();
+  });
+  const handlePointerMove = (e: any) => {
+    if (!ref.current) return;
+  
+    const { x, y, z } = e.point;
+  
+    const worldMousePosition = new THREE.Vector3(x, y, z);
+    const localMousePosition = ref.current.worldToLocal(worldMousePosition);
+  
+    setMousePosition(localMousePosition);
+  };
+  
+  
+  const handlePointerOut = () => {
+    setMousePosition(null);
+  };
 
   return (
-    <group {...props} ref={ref} dispose={null} rotation={[Math.PI / 2, 0, 0]} position={[2,-15,0]}>
-      <group scale={0.15}>
-      <points geometry={pointsGeometry1}>
-        <pointsMaterial
-          map={texture}
-          size={0.08}
-          sizeAttenuation={true}
+    <>
+      {model && (
+        <Float>
+        <group dispose={null} ref={ref} scale={0.38} position={[0,-2.5,0]}>
+          <mesh geometry={(model.children[0] as THREE.Mesh).geometry}  onPointerMove={handlePointerMove} onPointerOut={handlePointerOut}>
+            <meshBasicMaterial transparent opacity={0} visible={false} />
+          </mesh>
+          <points>
+            <bufferGeometry ref={pointsRef}>
+              <bufferAttribute
+                attach="attributes-position"
+                array={new Float32Array(pointsData.vertices)}
+                count={pointsData.vertices.length / 3}
+                itemSize={3}
+              />
+              <bufferAttribute
+                attach="attributes-color"
+                array={new Float32Array(pointsData.colors)}
+                count={pointsData.colors.length / 3}
+                itemSize={3}
+              />
+              <bufferAttribute
+                attach="attributes-size"
+                array={new Float32Array(pointsData.sizes)}
+                count={pointsData.sizes.length}
+                itemSize={1}
+              />
+            </bufferGeometry>
+            <shaderMaterial
+              ref={materialRef}
+              opacity={0.5}
+              side={THREE.DoubleSide}
           vertexColors={true}
           transparent={true}
-          depthWrite={false}
-        />
-      </points>
-      <points geometry={pointsGeometry2}>
-        <pointsMaterial
-          map={texture}
-          size={0.08}
-          sizeAttenuation={true}
-          vertexColors={true}
-          transparent={true}
-          depthWrite={false}
-        />
-      </points>
-      </group>
-    </group>
-  )
-})
+              uniforms={{
+                pointTexture: { value: new THREE.TextureLoader().load("/assets/images/sample.png") },
+              }}
+              vertexShader={`
+                attribute float size;
+                varying vec3 vColor;
 
-useGLTF.preload('/assets/models/light.glb')
-Light.displayName = 'Light';
+                void main() {
+                  vColor = color;
+                  vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+                  gl_PointSize = size * (300.0 / -mvPosition.z);
+                  gl_Position = projectionMatrix * mvPosition;
+                }
+              `}
+              fragmentShader={`
+                uniform sampler2D pointTexture;
+                varying vec3 vColor;
+
+                void main() {
+                  gl_FragColor = vec4(vColor, 1.0) * texture2D(pointTexture, gl_PointCoord);
+                  if (gl_FragColor.a < 0.1) discard;
+                }
+              `}
+            />
+          </points>
+        </group>
+        </Float>
+      )}
+    </>
+  );
+};
+
 export default Light;

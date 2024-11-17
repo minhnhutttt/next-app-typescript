@@ -25,9 +25,6 @@ export default function ViewCanvas() {
         dpr={[1, 1.5]}
         gl={{ antialias: true }}
         eventSource={document.body}
-        camera={{
-          fov: 30,
-        }}
       >
         <Suspense fallback={null}>
           <View.Port />

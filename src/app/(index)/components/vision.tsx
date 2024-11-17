@@ -1,5 +1,13 @@
 "use client";
 
+import { View } from "@react-three/drei";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Light from "./models/Light";
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 const Article = ({title, items}:{title: string, items: string[]}) => (
   <div className="leading-[1.3]">
     <h5 className="md:text-[28px] text-[20px] font-medium">{title}</h5>
@@ -15,9 +23,46 @@ const Article = ({title, items}:{title: string, items: string[]}) => (
 )
 
 const Vision = () => {
+  const lightRef = useRef<any>(null)
+  useGSAP(()=> {
+    if (!lightRef.current) return
+    gsap.set(lightRef.current, {
+        scale: 20,
+        opacity: 0
+    })
+
+    const scrollTl = gsap.timeline({
+        defaults: {
+          duration: 2,
+        },
+        scrollTrigger: {
+          trigger: "#introduction",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+    });
+    scrollTl.to(lightRef.current, { duration: 3, scale: 1 },0)
+
+    const scrollTl2 = gsap.timeline({
+      defaults: {
+        duration: 2,
+      },
+      scrollTrigger: {
+        trigger: "#brain",
+        start: "top bottom",
+        end: "bottom +=50%",
+        scrub: 1,
+      },
+  });
+  scrollTl2.to(lightRef.current, { scale: 20, rotate: "45deg" },0)
+})
   return (
     <section className="relative bg-[url('/assets/images/vision-bg.png')] bg-center bg-[length:100%_100%] md:h-[1274px] md:pt-[254px] pt-[140px] w-screen overflow-hidden">
-        <div className="w-full max-w-[1440px] mx-auto px-5 xl:px-12">
+        <div className="w-full max-w-[1440px] mx-auto px-5 xl:px-12 relative">
+        <View ref={lightRef} className="light-scene absolute right-0 top-[-5vw] z-40 size-[50vw] block">
+          <Light />
+        </View>
             <h5 className="md:text-[36px] text-[24px] font-semibold">
                 The IPDC project aims to realize the <br />
                 following innovative vision

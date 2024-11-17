@@ -1,11 +1,33 @@
 "use client";
 
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-
+import { View } from "@react-three/drei";
+import Earth from "./models/Earth";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 const FV = () => {
+  const isDesktop = useMediaQuery("(min-width: 768px)", true);
+    const earthRef = useRef(null)
+    useGSAP(()=> {
+        if (!earthRef.current) return
+        gsap.set(earthRef.current, {
+            x: isDesktop ? 1 : 0,
+            y: isDesktop ? 0 : -1.2
+        })
+        gsap.set(earthRef.current, {
+            scale: isDesktop ? 1 : 0.4
+        })
+    },{ dependencies: [isDesktop]})
   return (
     <section  className="relative bg-[url('/assets/images/fv-bg.png')] bg-[length:100%_100%] bg-center w-screen overflow-hidden z-30">
       <div className="w-full max-w-[1440px] mx-auto md:pt-[50px] pt-10 relative z-30">
+        
+      <View ref={earthRef} className="absolute top-[0vw] right-0 z-40  size-[50vw] flex justify-center items-center">
+        <Earth />
+      </View>
           <div className="md:max-w-[39.931vw] max-w-[70vw] dt:max-w-[575px] ml-[7.778vw] dt:ml-[112px]">
             <h1 className="dt:text-[86px] text-[5.972vw] font-medium leading-[1.1]">
             DATA WANTS <br />TO BE FREE. <br />YOU HAVE <br />THE POWER <br />TO SET IT FREE.
@@ -24,12 +46,13 @@ const FV = () => {
               </p>
              </div>
              <div className="size-[100px] md:size-[13.889vw] dt:size-[200px]">
-              <a href="/" className="flex items-center justify-center flex-col dt:text-[24px] text-[16px] md:text-[1.667vw] size-full border border-white bg-[linear-gradient(90deg,_rgba(74,_199,_250,_0.10)_0%,_rgba(230,_73,_245,_0.10)_100%)] rounded-full [box-shadow:0px_0px_64px_30px_rgba(255,_255,_255,_0.20)_inset] tracking-wider">
+              <a href="/" className="flex items-center justify-center flex-col dt:text-[24px] text-[16px] md:text-[1.667vw] size-full border border-white bg-[linear-gradient(90deg,_rgba(74,_199,_250,_0.10)_0%,_rgba(230,_73,_245,_0.10)_100%)] rounded-full [box-shadow:0px_0px_64px_30px_rgba(255,_255,_255,_0.20)_inset] tracking-wider relative z-50">
                 WHITEPAPER
                 <span className="md:text-[24px] text-[18px]">Download</span>
               </a>
              </div>
           </div>
+          
       </div>
     </section>
   );

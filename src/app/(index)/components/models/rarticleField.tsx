@@ -42,7 +42,7 @@ const ParticleField = forwardRef((props, ref: any) => {
 
     return (
         <group ref={ref || undefined} {...props}>
-            <group ref={pointsRef} scale={0.6}>
+            <group ref={pointsRef} scale={1.2}>
                 {particles.map((particle, index) => (
                     <sprite
                         key={index}
