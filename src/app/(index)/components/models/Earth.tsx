@@ -137,7 +137,7 @@ const Earth = () => {
   });
 
   useFrame((state, delta) => {
-      easing.damp3(state.camera.position, [(state.pointer.x / 5), (state.pointer.y / 5) *-1 , 4.5], 0.8, delta)
+      easing.damp3(state.camera.position, [(state.pointer.x / 4), (state.pointer.y / 4) *-1 , 4.5], 0.4, delta)
   })
 
   const handlePointerMove = (e: any) => {

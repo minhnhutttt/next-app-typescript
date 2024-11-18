@@ -171,7 +171,7 @@ const Puzzle = () => {
     <>
       {model && (
         <Float>
-          <group dispose={null} ref={ref} scale={0.38} rotation={[0,Math.PI/2,Math.PI/2]} position={[0,-1,0]}>
+          <group dispose={null} ref={ref} scale={0.3} rotation={[0,Math.PI/2,Math.PI/2]} position={[0,-1,0]}>
             <mesh geometry={(model.children[0] as THREE.Mesh).geometry} onPointerMove={handlePointerMove} onPointerOut={handlePointerOut}>
               <meshBasicMaterial transparent opacity={0} visible={false} />
             </mesh>
