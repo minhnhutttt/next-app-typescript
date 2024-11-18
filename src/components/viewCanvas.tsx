@@ -13,14 +13,7 @@ export default function ViewCanvas() {
   return (
     <>
       <Canvas
-        style={{
-          position: "fixed",
-          top: 0,
-          left: "50%",
-          transform: "translateX(-50%)",
-          overflow: "hidden",
-          zIndex: 30,
-        }}
+         style={{ position: 'fixed', top: 0, bottom: 0, left: 0, right: 0, overflow: 'hidden' }}
         shadows
         dpr={[1, 1.5]}
         gl={{ antialias: true }}

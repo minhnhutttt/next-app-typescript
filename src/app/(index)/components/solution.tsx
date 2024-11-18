@@ -20,7 +20,7 @@ const Solution = () => {
     useGSAP(()=> {
         if (!puzzleRef.current) return
         gsap.set(puzzleRef.current, {
-            scale: 20
+            scale: 50,
         })
 
         const scrollTl = gsap.timeline({
@@ -31,10 +31,10 @@ const Solution = () => {
               trigger: "#brain",
               start: "top bottom",
               end: "bottom top",
-              scrub: 1,
+              scrub: 0.7,
             },
         });
-        scrollTl.to(puzzleRef.current, { duration: 3, scale: 1 },0)
+        scrollTl.to(puzzleRef.current, { duration: 3, y: "0", scale: 1 },0)
 
         const scrollTl2 = gsap.timeline({
           defaults: {
@@ -44,7 +44,7 @@ const Solution = () => {
             trigger: "#feature",
             start: "top bottom",
             end: "bottom top",
-            scrub: 1,
+            scrub: 0.7,
           },
       });
       scrollTl2.to(puzzleRef.current, { scale: 20 },0)

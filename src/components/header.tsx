@@ -10,7 +10,7 @@ const Header = () => {
     setNavOpen(false);
   }, []);
   return (
-    <header className="flex justify-between items-center md:h-[110px] py-3 md:px-10 px-5">
+    <header className="flex justify-between items-center md:h-[110px] py-3 md:px-10 px-5 absolute inset-x-0">
       <a
         href="/"
         className="block"

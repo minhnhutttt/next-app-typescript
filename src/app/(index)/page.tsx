@@ -28,11 +28,6 @@ export default function Home() {
       <View className="hero-scene pointer-events-none  fixed left-0 top-0 z-10 h-screen w-screen flex justify-center items-center">
         <SceneRarticleField />
       </View>
-      {/* <View className="light-scene pointer-events-none fixed top-0 z-40 h-screen w-screen block">
-        <SceneLight />
-        <SceneCloud />
-        <ScenePuzzle />
-      </View> */}
       <div className="hero ">
         <FV />
       </div>

@@ -23,7 +23,7 @@ const Brain = () => {
     useGSAP(()=> {
         if (!cloudRef.current) return
         gsap.set(cloudRef.current, {
-            scale: 20
+            scale: 20,
         })
 
         const scrollTl = gsap.timeline({
@@ -34,7 +34,7 @@ const Brain = () => {
               trigger: "#brain",
               start: "top bottom",
               end: "bottom bottom",
-              scrub: 1,
+              scrub: 0.7,
             },
         });
         scrollTl.to(cloudRef.current, { duration: 3,scale: 1 },0)
@@ -47,15 +47,15 @@ const Brain = () => {
               trigger: "#solution",
               start: "top bottom",
               end: "bottom top",
-              scrub: 1,
+              scrub: 0.7,
             },
         });
-        scrollTl2.to(cloudRef.current, { scale: 20 },0)
+        scrollTl2.to(cloudRef.current, { scale: 40 },0)
     })
   return (
-    <section id="brain" className="relative pt-20 md:pt-[160px] md:pb-[100px] pb-[60px] px-8 w-screen overflow-hidden min-h-screen md:mb-[30vh]">
+    <section id="brain" className="relative pt-[200px] md:pt-[160px] md:pb-[100px] pb-[60px] px-8 w-screen overflow-hidden min-h-screen md:mb-[30vh]">
       <div className="w-full max-w-[1350px] mx-auto relative">
-      <View ref={cloudRef} className="light-scene absolute max-md:bottom-0 md:top-[15vw] left-[-5vw] z-40 size-[100vw] md:size-[50vw] block">
+      <View ref={cloudRef} className="light-scene top-[20vw] absolute max-md:bottom-0 md:top-[15vw] left-[-5vw] z-40 size-[100vw] md:size-[50vw] block">
           <Cloud />
         </View>
         <h3 className="text-center font-semibold md:text-[96px] text-[32px]">Background and Challenges</h3>

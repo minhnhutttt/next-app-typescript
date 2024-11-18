@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLoader, useFrame } from "@react-three/fiber";
 // @ts-ignore
 import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler"; 
@@ -6,7 +6,7 @@ import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import * as THREE from "three";
 import { Float } from "@react-three/drei";
-
+import { easing } from 'maath'
 const Earth = () => {
   const [model, setModel] = useState<THREE.Group | null>(null);
   const [pointsData, setPointsData] = useState<{
@@ -14,15 +14,15 @@ const Earth = () => {
     originalVertices: number[];
     colors: number[];
     sizes: number[];
-    floatOffsets: number[]; // Thêm mảng lưu các giá trị offset cho hiệu ứng trôi nổi
-    floatSelectedIndices: Set<number>; // Thêm một mảng để lưu các chỉ số điểm được chọn
+    floatOffsets: number[];
+    floatSelectedIndices: Set<number>;
   }>({
     vertices: [],
     originalVertices: [],
     colors: [],
     sizes: [],
     floatOffsets: [],
-    floatSelectedIndices: new Set(), // Khởi tạo Set cho các chỉ số điểm được chọn
+    floatSelectedIndices: new Set(),
   });
   const [mousePosition, setMousePosition] = useState<THREE.Vector3 | null>(null);
   const [brushSize] = useState(3.6);
@@ -50,7 +50,7 @@ const Earth = () => {
     const colors: number[] = [];
     const sizes: number[] = [];
     const floatOffsets: number[] = [];
-    const floatSelectedIndices = new Set<number>(); // Mảng trôi nổi
+    const floatSelectedIndices = new Set<number>(); 
     const fixedColors = ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"];
 
     for (let i = 0; i < totalPoints; i++) {
@@ -71,7 +71,7 @@ const Earth = () => {
       colors,
       sizes,
       floatOffsets,
-      floatSelectedIndices, // Gửi Set các chỉ số điểm được chọn
+      floatSelectedIndices,
     });
   };
 
@@ -82,9 +82,9 @@ const Earth = () => {
     const positions = position.array as Float32Array;
     const sizes = size.array as Float32Array;
     const defaultSize = 0.1;
-    const maxDisplacement = 1; // Độ phồng tối đa
+    const maxDisplacement = 0.5;
 
-    const floatSpeed = 0.005; // Tốc độ trôi nổi
+    const floatSpeed = 0.005;
 
     for (let i = 0; i < positions.length; i += 3) {
       const index = i / 3;
@@ -94,23 +94,19 @@ const Earth = () => {
         pointsData.originalVertices[i + 2]
       );
 
-      // Kiểm tra nếu điểm nằm trong các chỉ số được chọn
       if (!pointsData.floatSelectedIndices.has(index)) continue;
 
       const floatOffset = pointsData.floatOffsets[index];
       const floatFactor = Math.sin(floatOffset + performance.now() * floatSpeed) * 0.05;
 
-      // Cập nhật vị trí theo trục Y (hoặc trục khác nếu cần)
       positions[i + 1] = originalVertex.y + floatFactor;
 
       if (mousePosition) {
         const distanceToMouse = originalVertex.distanceTo(mousePosition);
         const factor = Math.max(0, 1 - distanceToMouse / brushSize);
 
-        // Thay đổi kích thước
         sizes[index] = factor > 0 ? 0.2 + factor / 10 : defaultSize;
 
-        // Thay đổi vị trí để tạo hiệu ứng căng phồng
         if (factor > 0) {
           const displacement = originalVertex
             .clone()
@@ -120,13 +116,11 @@ const Earth = () => {
           positions[i + 1] = originalVertex.y + displacement.y + floatFactor;
           positions[i + 2] = originalVertex.z + displacement.z;
         } else {
-          // Reset về vị trí gốc
           positions[i] = originalVertex.x;
           positions[i + 1] = originalVertex.y + floatFactor;
           positions[i + 2] = originalVertex.z;
         }
       } else {
-        // Reset về vị trí gốc
         sizes[index] = defaultSize;
         positions[i] = originalVertex.x;
         positions[i + 1] = originalVertex.y + floatFactor;
@@ -142,6 +136,10 @@ const Earth = () => {
     updateSizes();
   });
 
+  useFrame((state, delta) => {
+      easing.damp3(state.camera.position, [(state.pointer.x / 5), (state.pointer.y / 5) *-1 , 4.5], 0.8, delta)
+  })
+
   const handlePointerMove = (e: any) => {
     if (!ref.current) return;
 
@@ -150,7 +148,6 @@ const Earth = () => {
     const localMousePosition = ref.current.worldToLocal(worldMousePosition);
     setMousePosition(localMousePosition);
     
-    // Lưu các chỉ số điểm nằm trong vùng brush
     const brushRadius = brushSize / 2;
     pointsData.floatSelectedIndices.clear();
     for (let i = 0; i < pointsData.originalVertices.length / 3; i++) {
@@ -174,7 +171,7 @@ const Earth = () => {
     <>
       {model && (
         <Float>
-          <group dispose={null} ref={ref} scale={0.38} position={[0, -1.2, 0]}>
+          <group dispose={null} ref={ref} scale={0.38} position={[0, -2.2, 0]}>
             <mesh geometry={(model.children[0] as THREE.Mesh).geometry} onPointerMove={handlePointerMove} onPointerOut={handlePointerOut}>
               <meshBasicMaterial transparent opacity={0} visible={false} />
             </mesh>

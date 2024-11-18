@@ -27,8 +27,8 @@ const Vision = () => {
   useGSAP(()=> {
     if (!lightRef.current) return
     gsap.set(lightRef.current, {
-        scale: 20,
-        opacity: 0
+        opacity: 0,
+        scale: 20
     })
 
     const scrollTl = gsap.timeline({
@@ -39,10 +39,10 @@ const Vision = () => {
           trigger: "#introduction",
           start: "top bottom",
           end: "bottom top",
-          scrub: 1,
+          scrub: 0.7,
         },
     });
-    scrollTl.to(lightRef.current, { duration: 3, scale: 1 },0)
+    scrollTl.to(lightRef.current, { duration: 3, opacity: 1, scale: 1 },0)
 
     const scrollTl2 = gsap.timeline({
       defaults: {
@@ -52,10 +52,10 @@ const Vision = () => {
         trigger: "#brain",
         start: "top bottom",
         end: "bottom +=50%",
-        scrub: 1,
+        scrub: 0.7,
       },
   });
-  scrollTl2.to(lightRef.current, { scale: 20, rotate: "45deg" },0)
+  scrollTl2.to(lightRef.current, { duration: 3, opacity: 0, scale: 30, pointerEvents: "none", display: 'none' },0)
 })
   return (
     <section className="relative bg-[url('/assets/images/vision-bg.png')] bg-center bg-[length:100%_100%] md:h-[1274px] md:pt-[254px] pt-[140px] w-screen overflow-hidden">
