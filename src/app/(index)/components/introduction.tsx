@@ -1,9 +1,13 @@
 'use client'
-import useScrollAnimations from '@/hooks/useScrollAnimations'
-import Button from '@/components/button'
+
 import { Splide, SplideSlide, SplideTrack } from 'react-splide-ts'
 import '@splidejs/splide/css'
 import '@splidejs/splide/css/core'
+
+import { useModal } from '@/context/ModalContext'
+import useScrollAnimations from '@/hooks/useScrollAnimations'
+import Button from '@/components/button'
+
 const dataSlider = [
   {
     image: '/assets/images/slider-01.png',
@@ -115,6 +119,8 @@ const data = [
 
 const Introduction = () => {
   const ref = useScrollAnimations()
+  const { openModal } = useModal()
+
   return (
     <section
       ref={ref}
@@ -327,11 +333,11 @@ const Introduction = () => {
               </div>
               <div className="fade-up flex justify-center">
                 <Button
-                  href="/price/"
+                  onclick={openModal}
                   rect="group md:w-[700px] md:h-[118px] w-[320px] h-20 font-sans text-white font-bold md:text-[32px] text-[20px] flex items-center justify-center md:rounded-[60px] rounded-[40px] bg-[#F12929]"
                 >
                   <span className="group-hover:text-black">
-                  セール価格でベータ版に申し込む
+                    セール価格でベータ版に申し込む
                   </span>
                 </Button>
               </div>

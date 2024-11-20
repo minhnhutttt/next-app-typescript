@@ -61,7 +61,7 @@ const Story = () => {
         </span>
       </div>
       <div className="px-7 md:px-20">
-        <div className="relative mx-auto bb-[80px] pt-10 flex w-full max-w-[480px] md:pb-[80px] md:pt-[100px] md:max-w-[1216px]">
+        <div className="bb-[80px] relative mx-auto flex w-full max-w-[480px] pt-10 md:max-w-[1216px] md:pb-[80px] md:pt-[100px]">
           <div className="w-full">
             <Swiper
               onSwiper={setSwiper}
@@ -83,7 +83,7 @@ const Story = () => {
               onSlideChange={handleSlideChange}
               className="mySwiper"
             >
-              <SwiperSlide className='px-2'>
+              <SwiperSlide className="px-2">
                 <div className="relative w-full max-w-[1216px] rounded-[30px] border border-[#046DA8] bg-[#F0FBFB] px-5 pb-4 pt-3 md:px-9 md:pt-5">
                   <div className="w-full max-w-[800px]">
                     <h5 className="pr-5 text-[20px] font-bold text-[#046DA8] md:text-[32px] md:leading-none">
@@ -148,7 +148,7 @@ const Story = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide className='px-2'>
+              <SwiperSlide className="px-2">
                 <div className=" relative w-full max-w-[1216px] rounded-[30px] border border-[#046DA8] bg-[#F0FBFB] px-5 pb-4 pt-3 md:px-9 md:pt-5">
                   <div className="w-full max-w-[800px]">
                     <h5 className="pr-5 text-[20px] font-bold text-[#046DA8] md:text-[32px] md:leading-none">
@@ -213,7 +213,7 @@ const Story = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide className='px-2'>
+              <SwiperSlide className="px-2">
                 <div className=" relative w-full max-w-[1216px] rounded-[30px] border border-[#046DA8] bg-[#F0FBFB] px-5 pb-4 pt-3 md:px-9 md:pt-5">
                   <div className="w-full max-w-[800px]">
                     <h5 className="pr-5 text-[20px] font-bold text-[#046DA8] md:text-[32px] md:leading-none">

@@ -98,12 +98,6 @@ const Footer = () => {
                 <span className="h-px flex-1 bg-[#FFF3F3]"></span>
               </div>
               <div className="flex items-center justify-center gap-[30px] pt-6 max-md:flex-wrap md:gap-[50px] md:pt-9">
-                <a href="/" className="max-md:w-[70px]">
-                  <img src="/assets/images/footer-banner-01.png" alt="" />
-                </a>
-                <a href="/" className="max-md:w-[160px]">
-                  <img src="/assets/images/footer-banner-02.png" alt="" />
-                </a>
                 <a href="/" className="max-md:w-[120px]">
                   <img src="/assets/images/footer-banner-03.png" alt="" />
                 </a>

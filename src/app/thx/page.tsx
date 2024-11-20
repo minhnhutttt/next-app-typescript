@@ -73,11 +73,13 @@ export default function Thankyou() {
                   </div>
                   <div>
                     <p className="text-[20px] font-bold md:text-[36px]">
-                    2. ご決済手続き
+                      2. ご決済手続き
                     </p>
                     <p className="text-[16px] font-medium md:text-[24px]">
                       下記の
-                      <span className="text-[#FF3700]">「お支払いを完了する」</span>
+                      <span className="text-[#FF3700]">
+                        「お支払いを完了する」
+                      </span>
                       ボタンから、決済画面へお進みください。
                     </p>
                     <p className="text-[14px] md:text-[20px]">
@@ -116,29 +118,44 @@ export default function Thankyou() {
                 </p>
                 <div className="divide-y divide-black">
                   <div className="flex items-center justify-between gap-4 py-5 pl-2 pr-4 max-md:flex-col md:gap-2 md:pb-11 md:pr-[38px] md:pt-8">
-                    <p className="text-center text-[22px] font-bold leading-[1.1] md:text-[40px]  flex-1">
-                      【今だけセール中】<br />メタでペット供養<br />β（ベータ）版
+                    <p className="flex-1 text-center text-[22px] font-bold leading-[1.1]  md:text-[40px]">
+                      【今だけセール中】
+                      <br />
+                      メタでペット供養
+                      <br />
+                      β（ベータ）版
                     </p>
-                    <a 
+                    <a
                       target="_blank"
-                      href="https://anz-official.myshopify.com/products/pet-memorial" className="w-[210px] duration-150 hover:opacity-75 ">
-                      <p className="text-center md:text-[21px] font-bold md:mb-3 mb-2 text-[#F12929]">＼ ここをクリック ／</p>
-                    <div
-                      className="flex h-20 w-[210px] items-center justify-center rounded-[10px] border-2 border-white bg-[#F12929] p-2 text-center text-[20px] font-bold leading-[1.2] tracking-wider text-white md:h-[121px] md:text-[32px]"
+                      href="https://anz-official.myshopify.com/products/pet-memorial"
+                      className="w-[210px] duration-150 hover:opacity-75 "
                     >
-                      お支払いを完了する
-                    </div>
+                      <p className="mb-2 text-center font-bold text-[#F12929] md:mb-3 md:text-[21px]">
+                        ＼ ここをクリック ／
+                      </p>
+                      <div className="flex h-20 w-[210px] items-center justify-center rounded-[10px] border-2 border-white bg-[#F12929] p-2 text-center text-[20px] font-bold leading-[1.2] tracking-wider text-white md:h-[121px] md:text-[32px]">
+                        お支払いを完了する
+                      </div>
                     </a>
                   </div>
                 </div>
               </div>
               <div className="mx-auto mt-4 w-full max-w-[800px] space-y-3 text-[14px] leading-[1.4] md:mt-7 md:text-[20px]">
                 <p>
-                  ※「お支払いを完了する」ボタンの遷移先ページは、<span className="font-bold">株式会社メタロポリスが運営するメタバースショップ</span><span className="text-[#F12929]">「ANZショップ」</span>となります。
+                  ※「お支払いを完了する」ボタンの遷移先ページは、
+                  <span className="font-bold">
+                    株式会社メタロポリスが運営するメタバースショップ
+                  </span>
+                  <span className="text-[#F12929]">「ANZショップ」</span>
+                  となります。
                   <br />
                 </p>
                 <p>
-                  ※銀行振込の方も上記「お支払いを完了する」ボタンからお手続きを完了してください。<span className="font-bold">振込先銀行口座情報もそちらでご案内</span>しております。
+                  ※銀行振込の方も上記「お支払いを完了する」ボタンからお手続きを完了してください。
+                  <span className="font-bold">
+                    振込先銀行口座情報もそちらでご案内
+                  </span>
+                  しております。
                 </p>
               </div>
             </div>

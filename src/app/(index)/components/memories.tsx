@@ -64,18 +64,17 @@ const Memories = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white bg-[url('/assets/images/bg-memories-02-sp.png')] bg-cover bg-top md:px-5 pt-[150px] md:bg-[url('/assets/images/bg-memories-02.png')] md:pt-[200px]">
+      <div className="bg-white bg-[url('/assets/images/bg-memories-02-sp.png')] bg-cover bg-top pt-[150px] md:bg-[url('/assets/images/bg-memories-02.png')] md:px-5 md:pt-[200px]">
         <div className="mx-auto w-full max-w-[1130px]">
-          <h3 className="mb-[30px] md:mb-[60px] max-md:px-5">
+          <h3 className="mb-[30px] max-md:px-5 md:mb-[60px]">
             <img
               className="max-md:w-[400px] max-md:w-full"
               src="/assets/images/memories-title.png"
               alt=""
             />
           </h3>
-          <div className="fade-up relative bottom-[-60px] px-5 w-full max-md:mx-auto max-md:max-w-[440px] pb-5 md:bottom-[-120px] md:pb-[34px]">
-          <Banner />
-
+          <div className="fade-up relative bottom-[-60px] w-full px-5 pb-5 max-md:mx-auto max-md:max-w-[440px] md:bottom-[-120px] md:pb-[34px]">
+            <Banner />
           </div>
         </div>
       </div>
