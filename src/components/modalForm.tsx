@@ -272,32 +272,6 @@ const ModalForm = () => {
                         ベータ版に申し込む
                       </p>
                     </label>
-                    <label htmlFor="plan4" className="flex items-center gap-3">
-                      <p>
-                        <span className="relative block size-5 md:size-[30px]">
-                          <input
-                            id="plan4"
-                            name="interests"
-                            type="checkbox"
-                            checked={formData.interests.includes(
-                              '現実の供養所オプション希望'
-                            )}
-                            value="現実の供養所オプション希望"
-                            onChange={handleChange}
-                            className="peer z-20 size-5 cursor-pointer opacity-0 md:size-[30px]"
-                          />
-                          <span className="absolute inset-0 hidden h-full w-full cursor-pointer peer-checked:block">
-                            <img src="/assets/images/checkbox.svg" alt="" />
-                          </span>
-                          <span className="absolute  inset-0 h-full w-full cursor-pointer peer-checked:hidden">
-                            <img src="/assets/images/uncheckbox.svg" alt="" />
-                          </span>
-                        </span>
-                      </p>
-                      <p className="text-[14px] md:whitespace-nowrap md:text-[20px]">
-                        現実の供養所オプション希望
-                      </p>
-                    </label>
                     <label htmlFor="plan5" className="flex items-center gap-3">
                       <p>
                         <span className="relative block size-5 md:size-[30px]">

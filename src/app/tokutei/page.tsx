@@ -158,9 +158,6 @@ export default function SpecifiedCommercialTransactionsAct() {
           <figure>
             <img src="/assets/images/law-01.png" alt="" />
           </figure>
-          <figure>
-            <img src="/assets/images/law-02.png" alt="" />
-          </figure>
         </div>
       </div>
     </main>

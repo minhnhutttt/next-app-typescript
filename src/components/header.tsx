@@ -18,10 +18,6 @@ const links: NavLink[] = [
     text: 'メタでペット供養とは？',
   },
   {
-    link: '/#trust',
-    text: '産官学連携',
-  },
-  {
     link: '/#faq',
     text: 'FAQ',
   },

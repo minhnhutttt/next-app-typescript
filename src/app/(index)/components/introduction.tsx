@@ -10,21 +10,6 @@ import Button from '@/components/button'
 
 const dataSlider = [
   {
-    image: '/assets/images/slider-01.png',
-    title: '美しい自然に囲まれた、厳かなリアル供養所',
-    text: (
-      <>
-        沖縄県宮古島の美しい自然に囲まれた狩俣供養所。青い海と白い砂浜、そよ風が運ぶハイビスカスの香り。その静謐な空間に佇む供養所は、まるでペットたちに安らぎを与えているかのようです。ここで過ごす時間は、愛するペットへの感謝の気持ちを捧げる大切なひとときとなるでしょう。
-      </>
-    ),
-    quote: (
-      <>
-        こんなに美しい場所で、愛するあの子のために手を合わせられるなんて…。頻繁には来れないけど、私には大切な時間となっています。狩俣供養所での時間は、悲しみを乗り越える力をくれるんです。
-      </>
-    ),
-    sign: '(40代女性)',
-  },
-  {
     image: '/assets/images/slider-02.png',
     title: ' メタバースならではの特別な体験',
     text: (
@@ -74,37 +59,19 @@ const data = [
   {
     id: '1',
     image: '/assets/images/s1.png',
-    title: '現実の供養所',
-    content: '「KARIMATA(狩俣)供養所」で、ペットの遺骨や遺品を供養',
-  },
-  {
-    id: '2',
-    image: '/assets/images/s2.png',
     title: 'メタバース空間',
     content: '「KARIMATA(狩俣)メタバース」で、ペットとの“おもいで”を紡ぎなおす',
   },
   {
-    id: '3',
-    image: '/assets/images/s3.png',
-    title: (
-      <>
-        “おもいで”が
-        <br />
-        よみがえる
-      </>
-    ),
-    content: '風化しかけたペットの姿や一緒に過ごした記憶がみがえる',
-  },
-  {
-    id: '4',
-    image: '/assets/images/s4.png',
+    id: '2',
+    image: '/assets/images/s2.png',
     title: '2D/3D化',
     content:
       '2D/3Dデータ化されたペットや“おもいで”の品をメタバース内に展示可能',
   },
   {
-    id: '5',
-    image: '/assets/images/s5.png',
+    id: '3',
+    image: '/assets/images/s3.png',
     title: (
       <>
         ペットの冥福
@@ -145,7 +112,7 @@ const Introduction = () => {
             data-scroll="out"
             className="has-animation animation-ltr w-full max-w-[1280px] border-b border-black/50 py-8 font-serif text-[19px] font-semibold text-[#5F5F5F] before:bg-[#4EA4E3] after:bg-[#51BDE4] max-md:px-3 max-md:text-center md:pl-16 md:text-[28px]"
           >
-            『メタでペット供養』は、現実とメタバースでの供養が織りなす新しい供養のカタチです
+            『メタでペット供養』とは、ペットとのおもいでが風化してしまう前に、メタバース空間で“いつでも会える”ペット供養を実現する新しいサービスです。
           </div>
           <div className="">
             <div className="fade-up mt-6 flex items-start pr-4 max-md:flex-col max-md:items-center max-md:justify-center max-md:px-4">
@@ -164,7 +131,7 @@ const Introduction = () => {
                 className="has-animation animation-ltr relative max-w-[636px] flex-1 bg-white/60 px-9 pb-4 pt-8 text-[16px] font-medium  before:bg-[#4EA4E3] after:bg-[#51BDE4] max-md:mt-5 md:-ml-6 md:mt-8 md:min-h-[205px] md:text-[20px]"
               >
                 <p>
-                  現実の供養所である「KARIMATA(狩俣)供養所」とメタバース供養所が融合することで、ペットとの再会の喜びと死への向き合いをバランス良く体験可能です。あなた様とペットだけの特別な空間がそこには広がっています。
+                メタバース上では選べるお墓を設置し、1枚の写真から2D/3Dのペットを再現します。供養のためにお線香をあげたり、かわいらしい仕草で動くペットとの時間を楽しんだり。あなた様とペットだけの特別な空間がそこには広がっています。
                 </p>
                 <div className="mb-5 mt-10 flex items-center justify-center">
                   <a

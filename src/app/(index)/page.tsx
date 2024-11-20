@@ -8,7 +8,6 @@ import Introduction from './components/introduction'
 import Memories from './components/memories'
 import Recover from './components/recover'
 import Story from './components/story'
-import Trust from './components/trust'
 import FAQ from './components/faq/faq'
 import Fear from './components/fear'
 
@@ -32,7 +31,6 @@ const IndexPage = () => {
       <Recover />
       <Introduction />
       <Story />
-      <Trust />
       <Memories />
       <FAQ />
     </Wrapper>
