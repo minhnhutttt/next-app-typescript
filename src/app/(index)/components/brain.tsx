@@ -50,7 +50,7 @@ const Brain = () => {
               scrub: 0.7,
             },
         });
-        scrollTl2.to(cloudRef.current, { scale: 40 },0)
+        scrollTl2.to(cloudRef.current, { scale: 30, y: '300%' },0)
     })
   return (
     <section id="brain" className="relative pt-[200px] md:pt-[160px] md:pb-[100px] pb-[60px] px-8 w-screen overflow-hidden min-h-screen md:mb-[30vh]">

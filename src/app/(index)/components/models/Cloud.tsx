@@ -25,7 +25,7 @@ const Cloud = () => {
     floatSelectedIndices: new Set(),
   });
   const [mousePosition, setMousePosition] = useState<THREE.Vector3 | null>(null);
-  const [brushSize] = useState(10);
+  const [brushSize] = useState(12);
 
   const obj = useLoader(OBJLoader, "/assets/models/cloud.obj");
   const ref = useRef<any>(null);

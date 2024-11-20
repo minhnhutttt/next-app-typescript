@@ -20,7 +20,8 @@ const Solution = () => {
     useGSAP(()=> {
         if (!puzzleRef.current) return
         gsap.set(puzzleRef.current, {
-            scale: 50,
+            scale: 100,
+            y: "-200%"
         })
 
         const scrollTl = gsap.timeline({
