@@ -7,7 +7,7 @@ const Header = () => {
         <div className="flex items-center">
           <a href="/" className="relative block duration-150 hover:opacity-75">
             <img
-              className="max-md:w-[170px]"
+              className="max-md:w-[210px]"
               src="/assets/images/logo.svg"
               alt=""
             />

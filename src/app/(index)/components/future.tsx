@@ -38,7 +38,7 @@ const Future = () => {
               the Project
             </h4>
             <p className="fade-up mt-8 text-[16px] leading-[1.3] md:mt-[42px] md:text-[18px]">
-              CIP Coin aims to digitize the expression of gratitude and
+            DONATION Coin aims to digitize the expression of gratitude and
               visualize the value of social contributions. It is a project that
               aims to create a new economic system. By introducing fee-free
               transactions, a design based on scientific evidence, and a
@@ -92,7 +92,7 @@ const Future = () => {
               We will continue to strive towards the realization of this vision,
               always listening to the voices of users and the community, while
               flexibly responding to technological evolution and changing
-              societal needs. We believe that CIP Coin will become the
+              societal needs. We believe that DONATION Coin will become the
               foundation of future socio-economic systems and bring positive
               impacts to people around the world. <br />
               <br />

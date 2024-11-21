@@ -40,8 +40,8 @@ const data = [
     title: <>Token Economy Structure</>,
     content: (
       <>
-        The CIP Coin economy promotes frequent and meaningful human
-        interactions. The initial issuance is set at 1 billion CIP, with an
+        The DONATION Coin economy promotes frequent and meaningful human
+        interactions. The initial issuance is set at 1 billion DONATION, with an
         annual fixed inflation rate of 2%. Newly issued tokens are distributed
         between network maintainers and the ecosystem development fund. An
         algorithmic stabilization mechanism ensures value stability by
@@ -56,7 +56,7 @@ const data = [
     title: <>Smart Contract Implementation</>,
     content: (
       <>
-        Smart contracts managing CIP Coin are optimized for micro and
+        Smart contracts managing DONATION Coin are optimized for micro and
         high-frequency transactions. They allow for automated sending and
         receiving processes, with features like attaching gratitude messages or
         conditional transfers upon task completion. Additionally, they
@@ -72,7 +72,7 @@ const data = [
     title: 'Data Analytics and Continuous Improvement',
     content: (
       <>
-        The CIP Coin system incorporates advanced data analytics for refinement.
+        The DONATION Coin system incorporates advanced data analytics for refinement.
         Machine learning algorithms analyze transaction patterns to detect
         trends and anomalies, enabling fraud detection and user behavior
         predictions. Privacy-preserving analysis using differential privacy

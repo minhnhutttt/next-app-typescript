@@ -10,7 +10,7 @@ const data = [
     title: 'Corporate Implementation',
     content: (
       <>
-        Organizations can use CIP Coin to foster an entirely new &quot;culture
+        Organizations can use DONATION Coin to foster an entirely new &quot;culture
         of expressing gratitude&quot; and enhance trust relationships with
         employees.
       </>
@@ -31,7 +31,7 @@ const data = [
     ),
     content: (
       <>
-        CIP Coin has the potential to revolutionize educational support and
+        DONATION Coin has the potential to revolutionize educational support and
         peer-to-peer skill sharing.
       </>
     ),
@@ -46,7 +46,7 @@ const data = [
     title: <>Support for Creator Economy</>,
     content: (
       <>
-        Content creators can benefit from CIP Coin&apos;s seamless
+        Content creators can benefit from DONATION Coin&apos;s seamless
         micro-donation functionality.
       </>
     ),
@@ -61,7 +61,7 @@ const data = [
     title: <>Revitalizing Local Communities</>,
     content: (
       <>
-        Using CIP Coin can strengthen social bonds in local communities and
+        Using DONATION Coin can strengthen social bonds in local communities and
         support community revitalization.
       </>
     ),
@@ -137,7 +137,7 @@ const Cases = () => {
           Revitalizing Local Communities
         </h3>
         <p className="fade-up mt-4 text-center text-[15px] font-medium md:mt-6 md:text-[18px]">
-          Using CIP Coin can strengthen social bonds in local communities and
+          Using DONATION Coin can strengthen social bonds in local communities and
           support community revitalization.
         </p>
         <div className="mx-auto grid w-full max-w-[960px] divide-[#D8D8D8] max-md:divide-y md:mt-20 md:grid-cols-3 md:divide-x">

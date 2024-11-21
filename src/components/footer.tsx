@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-center text-[14px] font-medium text-white">
-        © 2024 CIP DAO
+      © 2024 DONATION DAO
       </p>
     </footer>
   )

@@ -68,11 +68,11 @@ const Overview = () => {
             </div>
             <div className="fade-up flex-1 pt-8">
               <p className="text-[16px] leading-[1.3] md:text-[18px] ">
-                CIP Coin (Compliment and Incentive Platform Coin) is an
+                DONATION Coin (Compliment and Incentive Platform Coin) is an
                 innovative project that digitizes the exchange of gratitude and
                 appreciation to make society better. <br />
                 <br />
-                Built on the DRC20 platform, CIP Coin utilizes blockchain
+                Built on the DRC20 platform, DONATION Coin utilizes blockchain
                 technology.
                 <br />
                 <br />
@@ -140,10 +140,10 @@ const Overview = () => {
             <div className="fade-up flex flex-col justify-between max-md:pt-6 md:w-1/2 md:pl-[45px]">
               <div className="pt-3">
                 <h4 className="text-[32px] leading-[1.3] md:text-[64px]">
-                  Key features of CIP Coin
+                  Key features of DONATION Coin
                 </h4>
                 <p className="pt-5 text-[14px] leading-none md:text-[18px]">
-                  By eliminating transaction fees, CIP Coin removes barriers to
+                  By eliminating transaction fees, DONATION Coin removes barriers to
                   small-scale financial transactions. <br />
                   <br />
                   It opens up new possibilities for peer-to-peer support
@@ -153,7 +153,7 @@ const Overview = () => {
                   <br />
                   <br />
                   This white paper outlines the scientific basis, technical
-                  implementation, and potential social impact of the CIP Coin
+                  implementation, and potential social impact of the DONATION Coin
                   ecosystem.
                 </p>
               </div>

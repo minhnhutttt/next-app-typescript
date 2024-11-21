@@ -68,7 +68,7 @@ const Diver = () => {
           </h3>
           <div className="fade-up mt-8 md:mt-16">
             <p className="w-full max-w-[987px] text-[16px] font-semibold leading-none text-white md:text-[24px]">
-              CIP Coin is deployed on a blockchain that enables fee-free
+            DONATION Coin is deployed on a blockchain that enables fee-free
               transactions. <br />
               <br />
               <span className="bg-[#FEEF01] font-extrabold text-black">
@@ -84,7 +84,7 @@ const Diver = () => {
               express gratitude to your important people.
               <br />
               <br />
-              This is the core capability of CIP Coin.
+              This is the core capability of DONATION Coin.
             </p>
           </div>
         </div>
