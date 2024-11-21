@@ -1,60 +1,73 @@
-"use client";
+'use client'
 
-import Button from "@/components/button";
-import useDarkMode from "@/hooks/useDarkMode";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from 'react'
+
+import Button from '@/components/button'
+import useDarkMode from '@/hooks/useDarkMode'
+import useScrollAnimations from '@/hooks/useScrollAnimations'
 
 const sliderItems = [
-  "Tak",
-  "Danke",
-  "ありがとう",
-  "Salamat",
-  "Merci",
-  "Cảm ơn",
-  "Dziękuję",
-  "Obrigado",
-  "धन्यवाद",
-  "Thank you",
-  "Dank je",
-  "감사합니다",
-  "ευχαριστώ",
-  "Gracias",
-  "Tack",
-  "ขอบคุณ",
-  "谢谢",
-];
+  'Tak',
+  'Danke',
+  'ありがとう',
+  'Salamat',
+  'Merci',
+  'Cảm ơn',
+  'Dziękuję',
+  'Obrigado',
+  'धन्यवाद',
+  'Thank you',
+  'Dank je',
+  '감사합니다',
+  'ευχαριστώ',
+  'Gracias',
+  'Tack',
+  'ขอบคุณ',
+  '谢谢',
+]
+
 const SliderItem = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="md:text-[44px] text-[24px] flex-[0_0_auto]">
-      {children}
-    </div>
-  );
-};
+    <div className="flex-[0_0_auto] text-[24px] md:text-[44px]">{children}</div>
+  )
+}
 
-const Step = ({number, children}: {number: string, children: ReactNode}) => {
-    return (
-        <div className="flex items-center md:gap-10 gap-5 md:py-[30px] py-5 lg:pl-10 pl-5 pr-5 border-t border-[#777]">
-            <span className="md:size-20 size-16 text-center flex items-center justify-center rounded-full border border-black dark:border-white md:text-[48px] text-[24px] leading-none italic"><span className="-ml-2">{number}</span></span>
-            <span className="flex-1 lg:text-[24px] md:text-[20px] text-[16px] leading-[1.3]">{children}</span>
-        </div>
-    )
+const Step = ({
+  number,
+  children,
+}: {
+  number: string
+  children: ReactNode
+}) => {
+  return (
+    <div className="flex items-center gap-5 border-t border-[#777] py-5 pl-5 pr-5 md:gap-10 md:py-[30px] lg:pl-10">
+      <span className="flex size-16 items-center justify-center rounded-full border border-black text-center text-[24px] italic leading-none md:size-20 md:text-[48px] dark:border-white">
+        <span className="-ml-2">{number}</span>
+      </span>
+      <span className="flex-1 text-[16px] leading-[1.3] md:text-[20px] lg:text-[24px]">
+        {children}
+      </span>
+    </div>
+  )
 }
 
 const Overview = () => {
-  const ref = useScrollAnimations();
-  const triggerRef = useDarkMode();
+  const ref = useScrollAnimations()
+  const triggerRef = useDarkMode()
 
   return (
-    <section ref={ref} className="relative md:pt-[40px] pt-[100px] md:pb-[83px] pb-[60px] z-10 dark:text-white">
+    <section
+      ref={ref}
+      className="relative z-10 pb-[60px] pt-[100px] md:pb-[83px] md:pt-[40px] dark:text-white"
+    >
       <div ref={triggerRef}>
-        <div className="w-full max-w-[1480px] mx-auto relative px-5">
-          <div className="flex max-md:flex-col justify-between gap-10 md:gap-[70px]">
-            <div className="fade-up max-md:w-full max-xl:w-1/2 md:text-[80px] text-[40px] leading-[1.3] xl:w-[630px]">
+        <div className="relative mx-auto w-full max-w-[1480px] px-5">
+          <div className="flex justify-between gap-10 max-md:flex-col md:gap-[70px]">
+            <div className="fade-up text-[40px] leading-[1.3] max-xl:w-1/2 max-md:w-full md:text-[80px] xl:w-[630px]">
               Project Overview
             </div>
             <div className="fade-up flex-1 pt-8">
-              <p className="md:text-[18px] text-[16px] leading-[1.3] ">
+              <p className="text-[16px] leading-[1.3] md:text-[18px] ">
                 CIP Coin (Compliment and Incentive Platform Coin) is an
                 innovative project that digitizes the exchange of gratitude and
                 appreciation to make society better. <br />
@@ -67,18 +80,19 @@ const Overview = () => {
                 digitizing it.
                 <br />
                 <br />
-                For example, we have "likes," but we want to make it possible to
-                collect many of these "likes" and pass them on to others.
+                For example, we have &quot;likes,&quot; but we want to make it
+                possible to collect many of these &quot;likes&quot; and pass
+                them on to others.
               </p>
             </div>
           </div>
         </div>
         <div className="pt-8">
-          <div className="fade-up flex items-center overflow-hidden gap-5">
+          <div className="fade-up flex items-center gap-5 overflow-hidden">
             {[...Array(2)].map((_, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex gap-5 min-w-full animate-[scroll_40s_linear_infinite] u-transform"
+                className="u-transform flex min-w-full flex-shrink-0 animate-[scroll_40s_linear_infinite] gap-5"
               >
                 {sliderItems.concat(sliderItems).map((item, idx) => (
                   <SliderItem key={idx}>{item}</SliderItem>
@@ -86,11 +100,11 @@ const Overview = () => {
               </div>
             ))}
           </div>
-          <div className="fade-up flex items-center overflow-hidden gap-5">
+          <div className="fade-up flex items-center gap-5 overflow-hidden">
             {[...Array(2)].map((_, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex gap-5 min-w-full animate-[scroll_40s_linear_infinite] u-transform [animation-direction:reverse]"
+                className="u-transform flex min-w-full flex-shrink-0 animate-[scroll_40s_linear_infinite] gap-5 [animation-direction:reverse]"
               >
                 {sliderItems.concat(sliderItems).map((item, idx) => (
                   <SliderItem key={idx}>{item}</SliderItem>
@@ -99,34 +113,59 @@ const Overview = () => {
             ))}
           </div>
         </div>
-        <div className="w-full max-w-[1440px] mx-auto px-5 mt-10 md:mt-14">
-            <div className="flex max-md:flex-col">
-                <div data-lenis-prevent className="fade-up md:w-1/2 md:h-[390px] h-[260px] overflow-auto no-scrollbar max-md:border-l border-r border-[#777]">
-                    <Step number="1">Enabling "small expressions of gratitude" and "frequent expressions of gratitude" through fee-free transactions</Step>
-                    <Step number="2">A psychological model based on scientific evidence linking expressions of gratitude to individual and social well-being</Step>
-                    <Step number="3">A bidirectional social credit system that evaluates both givers and receivers</Step>
-                    <Step number="4">Promoting an economic support network through international micro-donation functionality</Step>
-                </div>
-                <div className="fade-up md:w-1/2 max-md:pt-6 md:pl-[45px] flex flex-col justify-between">
-                    <div className="pt-3">
-                        <h4 className="md:text-[64px] text-[32px] leading-[1.3]">Key features of CIP Coin</h4>
-                        <p className="md:text-[18px] text-[14px] leading-none pt-5">
-                            By eliminating transaction fees, CIP Coin removes barriers to small-scale financial transactions. <br />
-                            <br />
-                            It opens up new possibilities for peer-to-peer support (directly from one individual to another without intermediaries), rewards for content creators, and global charitable activities.<br />
-                            <br />
-                            This white paper outlines the scientific basis, technical implementation, and potential social impact of the CIP Coin ecosystem.
-                        </p>
-                    </div>
-                    <div className="flex justify-end mt-5">
-                        <Button />
-                    </div>
-                </div>
+        <div className="mx-auto mt-10 w-full max-w-[1440px] px-5 md:mt-14">
+          <div className="flex max-md:flex-col">
+            <div
+              data-lenis-prevent
+              className="fade-up no-scrollbar overflow-auto border-r border-[#777] max-md:border-l md:h-[390px] md:w-1/2"
+            >
+              <Step number="1">
+                Enabling &quot;small expressions of gratitude&quot; and
+                &quot;frequent expressions of gratitude&quot; through fee-free
+                transactions
+              </Step>
+              <Step number="2">
+                A psychological model based on scientific evidence linking
+                expressions of gratitude to individual and social well-being
+              </Step>
+              <Step number="3">
+                A bidirectional social credit system that evaluates both givers
+                and receivers
+              </Step>
+              <Step number="4">
+                Promoting an economic support network through international
+                micro-donation functionality
+              </Step>
             </div>
+            <div className="fade-up flex flex-col justify-between max-md:pt-6 md:w-1/2 md:pl-[45px]">
+              <div className="pt-3">
+                <h4 className="text-[32px] leading-[1.3] md:text-[64px]">
+                  Key features of CIP Coin
+                </h4>
+                <p className="pt-5 text-[14px] leading-none md:text-[18px]">
+                  By eliminating transaction fees, CIP Coin removes barriers to
+                  small-scale financial transactions. <br />
+                  <br />
+                  It opens up new possibilities for peer-to-peer support
+                  (directly from one individual to another without
+                  intermediaries), rewards for content creators, and global
+                  charitable activities.
+                  <br />
+                  <br />
+                  This white paper outlines the scientific basis, technical
+                  implementation, and potential social impact of the CIP Coin
+                  ecosystem.
+                </p>
+              </div>
+              <div className="mt-5 flex justify-end">
+                <Button />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Overview;
+export default Overview

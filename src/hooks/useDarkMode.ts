@@ -1,15 +1,17 @@
-"use client"
-import { useEffect, useRef } from 'react';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import gsap from 'gsap';
+'use client'
 
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef } from 'react'
+
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import gsap from 'gsap'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const useDarkMode = () => {
-  const triggerRef = useRef<HTMLDivElement | null>(null);
+  const triggerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    const element = triggerRef.current;
+    const element = triggerRef.current
 
     if (element) {
       ScrollTrigger.create({
@@ -20,15 +22,15 @@ const useDarkMode = () => {
         onLeave: () => document.body.classList.remove('dark'),
         onEnterBack: () => document.body.classList.add('dark'),
         onLeaveBack: () => document.body.classList.remove('dark'),
-      });
+      })
 
       return () => {
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      };
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+      }
     }
-  }, []);
+  }, [])
 
-  return triggerRef;
-};
+  return triggerRef
+}
 
-export default useDarkMode;
+export default useDarkMode

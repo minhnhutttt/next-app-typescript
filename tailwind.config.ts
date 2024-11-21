@@ -1,10 +1,10 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'selector',
   theme: {
@@ -17,11 +17,12 @@ const config: Config = {
       screens: {
         dt: "1440px",
       },
-    },
-    fontFamily: {
-      noto: ["var(--font-noto)", "sans-serif"],
+      fontFamily: {
+        EBGaramond: ["var(--font-EBGaramond)", "sans-serif"],
+      },
     },
   },
   plugins: [],
-};
-export default config;
+}
+
+export default config
