@@ -26,7 +26,6 @@ const Earth = () => {
 
   const obj = useLoader(OBJLoader, "/assets/models/earth.obj");
   const ipdcModel = useLoader(OBJLoader, "/assets/models/ipdc.obj");
-  const lightModel = useLoader(OBJLoader, "/assets/models/light.obj");
 
   const colors = ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"];
 

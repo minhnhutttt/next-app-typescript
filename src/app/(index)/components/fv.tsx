@@ -25,7 +25,7 @@ const FV = () => {
   //   });
   //   scrollTl.to(
   //     earthRef.current,
-  //     { duration: 3, opacity: 0, scale: 10, pointerEvents: "none", display: 'none' },
+  //     { duration: 3, opacity: 0, scale: 3, pointerEvents: "none" },
   //     0
   //   );
   // });
@@ -37,7 +37,7 @@ const FV = () => {
       <div className="w-full max-w-[1440px] mx-auto pt-[150px] relative z-30">
         <View
           ref={earthRef}
-          className="fixed top-[0vw] right-0 z-40 size-[100vw] md:size-[50vw] flex justify-center items-center"
+          className="absolute top-[0vw] right-0 z-40 size-[100vw] md:size-[50vw] flex justify-center items-center"
         >
           <Earth />
         </View>

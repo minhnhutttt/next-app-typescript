@@ -58,7 +58,7 @@ const Vision = () => {
 //   scrollTl2.to(lightRef.current, { duration: 3, opacity: 0, scale: 0, pointerEvents: "none", display: 'none' },0)
 // })
   return (
-    <section className="relative bg-[url('/assets/images/vision-bg.png')] bg-center bg-[length:100%_100%] md:h-[1274px] md:pt-[254px] pt-[140px] w-screen overflow-hidden">
+    <section id="vision" className="relative bg-[url('/assets/images/vision-bg.png')] bg-center bg-[length:100%_100%] md:h-[1274px] md:pt-[254px] pt-[140px] w-screen overflow-hidden">
         <div className="w-full max-w-[1440px] mx-auto px-5 xl:px-12 relative">
         <View ref={lightRef} className="light-scene absolute right-0 top-[-5vw] z-40 size-full md:size-[50vw] block">
           <Light />
