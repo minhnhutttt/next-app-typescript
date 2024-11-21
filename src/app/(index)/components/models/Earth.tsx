@@ -6,228 +6,144 @@ import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import * as THREE from "three";
 import { Float } from "@react-three/drei";
-import { easing } from 'maath'
+
 const Earth = () => {
   const [model, setModel] = useState<THREE.Group | null>(null);
-  const [pointsData, setPointsData] = useState<{
-    vertices: number[];
-    originalVertices: number[];
-    colors: number[];
-    sizes: number[];
-    floatOffsets: number[];
-    floatSelectedIndices: Set<number>;
-  }>({
-    vertices: [],
-    originalVertices: [],
-    colors: [],
-    sizes: [],
-    floatOffsets: [],
-    floatSelectedIndices: new Set(),
+  const ref = useRef<THREE.Group | null>(null);
+  const samplerRef = useRef<MeshSurfaceSampler | null>(null);
+  const instancedMeshRef = useRef<THREE.InstancedMesh | null>(null);
+  const pointsRef = useRef({
+    positions: [] as THREE.Vector3[],
+    scales: [] as number[],
+    colors: [] as THREE.Color[],
+    rotations: [] as THREE.Euler[],
   });
-  const [mousePosition, setMousePosition] = useState<THREE.Vector3 | null>(null);
-  const [brushSize] = useState(3.6);
+
+  const [brushSize] = useState(2.5);
+  const [minScale] = useState(1);
+  const [maxScale] = useState(3);
+  const numPoints = 3000;
 
   const obj = useLoader(OBJLoader, "/assets/models/earth.obj");
-  const ref = useRef<any>(null);
-  const samplerRef = useRef<any>(null);
-  const pointsRef = useRef<THREE.BufferGeometry>(null);
-  const materialRef = useRef<THREE.ShaderMaterial>(null);
+  const ipdcModel = useLoader(OBJLoader, "/assets/models/ipdc.obj");
+  const lightModel = useLoader(OBJLoader, "/assets/models/light.obj");
+
+  const colors = ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"];
 
   useEffect(() => {
     const modelMesh = obj.children[0] as THREE.Mesh;
     const sampler = new MeshSurfaceSampler(modelMesh).build();
     samplerRef.current = sampler;
 
-    addPoints(sampler);
+    const positions: THREE.Vector3[] = [];
+    const scales: number[] = Array(numPoints).fill(minScale);
+    const pointColors: THREE.Color[] = [];
+    const pointRotations: THREE.Euler[] = []; 
+
+    for (let i = 0; i < numPoints; i++) {
+      const tempPosition = new THREE.Vector3();
+      sampler.sample(tempPosition);
+      positions.push(tempPosition);
+
+      const randomColor = new THREE.Color(colors[Math.floor(Math.random() * colors.length)]);
+      pointColors.push(randomColor);
+
+      const randomRotation = new THREE.Euler(
+        Math.random() * Math.PI * 3,
+        Math.random() * Math.PI * 3,
+        Math.random() * Math.PI * 3 
+      );
+      pointRotations.push(randomRotation);
+    }
+
+    pointsRef.current = { positions, scales, colors: pointColors, rotations: pointRotations };
     setModel(obj);
   }, [obj]);
 
-  const addPoints = (sampler: any) => {
-    const totalPoints = 6000;
-    const tempPosition = new THREE.Vector3();
-    const vertices: number[] = [];
-    const originalVertices: number[] = [];
-    const colors: number[] = [];
-    const sizes: number[] = [];
-    const floatOffsets: number[] = [];
-    const floatSelectedIndices = new Set<number>(); 
-    const fixedColors = ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"];
+  const updateInstances = () => {
+    if (!instancedMeshRef.current) return;
 
-    for (let i = 0; i < totalPoints; i++) {
-      sampler.sample(tempPosition);
-      vertices.push(tempPosition.x, tempPosition.y, tempPosition.z);
-      originalVertices.push(tempPosition.x, tempPosition.y, tempPosition.z);
+    const tempObject = new THREE.Object3D();
+    const { positions, scales, colors, rotations } = pointsRef.current;
 
-      const randomColor = new THREE.Color(fixedColors[Math.floor(Math.random() * fixedColors.length)]);
-      colors.push(randomColor.r, randomColor.g, randomColor.b);
+    positions.forEach((pos, i) => {
+      tempObject.position.copy(pos);
+      tempObject.scale.setScalar(scales[i] * 0.004);
+      tempObject.rotation.copy(rotations[i]); 
+      tempObject.updateMatrix();
+      instancedMeshRef.current?.setMatrixAt(i, tempObject.matrix);
 
-      sizes.push(0.1);
-      floatOffsets.push(Math.random() * Math.PI * 2);
-    }
-
-    setPointsData({
-      vertices,
-      originalVertices,
-      colors,
-      sizes,
-      floatOffsets,
-      floatSelectedIndices,
+      const color = colors[i];
+      instancedMeshRef.current?.setColorAt(i, color);
     });
-  };
 
-  const updateSizes = () => {
-    if (!pointsRef.current || !materialRef.current) return;
-
-    const { position, size } = pointsRef.current.attributes;
-    const positions = position.array as Float32Array;
-    const sizes = size.array as Float32Array;
-    const defaultSize = 0.1;
-    const maxDisplacement = 0.5;
-
-    const floatSpeed = 0.005;
-
-    for (let i = 0; i < positions.length; i += 3) {
-      const index = i / 3;
-      const originalVertex = new THREE.Vector3(
-        pointsData.originalVertices[i],
-        pointsData.originalVertices[i + 1],
-        pointsData.originalVertices[i + 2]
-      );
-
-      if (!pointsData.floatSelectedIndices.has(index)) continue;
-
-      const floatOffset = pointsData.floatOffsets[index];
-      const floatFactor = Math.sin(floatOffset + performance.now() * floatSpeed) * 0.05;
-
-      positions[i + 1] = originalVertex.y + floatFactor;
-
-      if (mousePosition) {
-        const distanceToMouse = originalVertex.distanceTo(mousePosition);
-        const factor = Math.max(0, 1 - distanceToMouse / brushSize);
-
-        sizes[index] = factor > 0 ? 0.2 + factor / 10 : defaultSize;
-
-        if (factor > 0) {
-          const displacement = originalVertex
-            .clone()
-            .normalize()
-            .multiplyScalar(maxDisplacement * factor);
-          positions[i] = originalVertex.x + displacement.x;
-          positions[i + 1] = originalVertex.y + displacement.y + floatFactor;
-          positions[i + 2] = originalVertex.z + displacement.z;
-        } else {
-          positions[i] = originalVertex.x;
-          positions[i + 1] = originalVertex.y + floatFactor;
-          positions[i + 2] = originalVertex.z;
-        }
-      } else {
-        sizes[index] = defaultSize;
-        positions[i] = originalVertex.x;
-        positions[i + 1] = originalVertex.y + floatFactor;
-        positions[i + 2] = originalVertex.z;
-      }
+    instancedMeshRef.current.instanceMatrix.needsUpdate = true;
+    if (instancedMeshRef.current.instanceColor) {
+      instancedMeshRef.current.instanceColor.needsUpdate = true;
     }
-
-    position.needsUpdate = true;
-    size.needsUpdate = true;
   };
 
-  useFrame(() => {
-    updateSizes();
-  });
-
-  useFrame((state, delta) => {
-      easing.damp3(state.camera.position, [(state.pointer.x / 4), (state.pointer.y / 4) *-1 , 4.5], 0.4, delta)
-  })
+  useEffect(() => {
+    if (model) updateInstances();
+  }, [model]);
 
   const handlePointerMove = (e: any) => {
-    if (!ref.current) return;
+    if (!ref.current || !instancedMeshRef.current) return;
 
-    const { x, y, z } = e.point;
-    const worldMousePosition = new THREE.Vector3(x, y, z);
+    const worldMousePosition = new THREE.Vector3(e.point.x, e.point.y, e.point.z);
     const localMousePosition = ref.current.worldToLocal(worldMousePosition);
-    setMousePosition(localMousePosition);
-    
-    const brushRadius = brushSize / 2;
-    pointsData.floatSelectedIndices.clear();
-    for (let i = 0; i < pointsData.originalVertices.length / 3; i++) {
-      const vertex = new THREE.Vector3(
-        pointsData.originalVertices[i * 3],
-        pointsData.originalVertices[i * 3 + 1],
-        pointsData.originalVertices[i * 3 + 2]
-      );
-      if (vertex.distanceTo(localMousePosition) < brushRadius) {
-        pointsData.floatSelectedIndices.add(i);
-      }
+
+    const { positions, scales } = pointsRef.current;
+
+    for (let i = 0; i < positions.length; i++) {
+      const distance = localMousePosition.distanceTo(positions[i]);
+      scales[i] =
+        distance < brushSize
+          ? minScale + (maxScale - minScale) * (1 - distance / brushSize)
+          : minScale;
     }
+
+    updateInstances();
   };
 
   const handlePointerOut = () => {
-    setMousePosition(null);
-    pointsData.floatSelectedIndices.clear();
+    const { scales } = pointsRef.current;
+    pointsRef.current.scales = scales.map(() => minScale);
+    updateInstances();
   };
+
+  useFrame(() => {
+    const { rotations } = pointsRef.current;
+    for (let i = 0; i < rotations.length; i++) {
+      rotations[i].x += 0.001;
+      rotations[i].y += 0.001;
+      rotations[i].z += 0.001;
+    }
+    updateInstances();
+  });
 
   return (
     <>
       {model && (
         <Float>
-          <group dispose={null} ref={ref} scale={0.38} position={[0, -2.2, 0]}>
-            <mesh geometry={(model.children[0] as THREE.Mesh).geometry} onPointerMove={handlePointerMove} onPointerOut={handlePointerOut}>
+          <group ref={ref} scale={0.38} position={[0, -2.2, 0]}>
+            <mesh
+              geometry={(model.children[0] as THREE.Mesh).geometry}
+              onPointerMove={handlePointerMove}
+              onPointerOut={handlePointerOut}
+            >
               <meshBasicMaterial transparent opacity={0} visible={false} />
             </mesh>
-            <points>
-              <bufferGeometry ref={pointsRef}>
-                <bufferAttribute
-                  attach="attributes-position"
-                  array={new Float32Array(pointsData.vertices)}
-                  count={pointsData.vertices.length / 3}
-                  itemSize={3}
-                />
-                <bufferAttribute
-                  attach="attributes-color"
-                  array={new Float32Array(pointsData.colors)}
-                  count={pointsData.colors.length / 3}
-                  itemSize={3}
-                />
-                <bufferAttribute
-                  attach="attributes-size"
-                  array={new Float32Array(pointsData.sizes)}
-                  count={pointsData.sizes.length}
-                  itemSize={1}
-                />
-              </bufferGeometry>
-              <shaderMaterial
-                ref={materialRef}
-                opacity={0.5}
-                side={THREE.DoubleSide}
-                vertexColors={true}
-                transparent={true}
-                uniforms={{
-                  pointTexture: { value: new THREE.TextureLoader().load("/assets/images/sample.png") },
-                }}
-                vertexShader={`
-                  attribute float size;
-                  varying vec3 vColor;
 
-                  void main() {
-                    vColor = color;
-                    vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-                    gl_PointSize = size * (300.0 / -mvPosition.z);
-                    gl_Position = projectionMatrix * mvPosition;
-                  }
-                `}
-                fragmentShader={`
-                  uniform sampler2D pointTexture;
-                  varying vec3 vColor;
-
-                  void main() {
-                    gl_FragColor = vec4(vColor, 1.0) * texture2D(pointTexture, gl_PointCoord);
-                    if (gl_FragColor.a < 0.1) discard;
-                  }
-                `}
-              />
-            </points>
+            <instancedMesh
+              ref={instancedMeshRef}
+              args={[(ipdcModel.children[0] as THREE.Mesh).geometry, undefined, numPoints]}
+            >
+              <meshStandardMaterial  />
+            </instancedMesh>
           </group>
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[10, 10, 10]} intensity={1} />
         </Float>
       )}
     </>

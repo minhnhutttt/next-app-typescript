@@ -24,39 +24,39 @@ const Article = ({title, items}:{title: string, items: string[]}) => (
 
 const Vision = () => {
   const lightRef = useRef<any>(null)
-  useGSAP(()=> {
-    if (!lightRef.current) return
-    gsap.set(lightRef.current, {
-        opacity: 0,
-        scale: 20
-    })
+//   useGSAP(()=> {
+//     if (!lightRef.current) return
+//     gsap.set(lightRef.current, {
+//         opacity: 0,
+//         scale: 20
+//     })
 
-    const scrollTl = gsap.timeline({
-        defaults: {
-          duration: 2,
-        },
-        scrollTrigger: {
-          trigger: "#introduction",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.7,
-        },
-    });
-    scrollTl.to(lightRef.current, { duration: 3, opacity: 1, scale: 1 },0)
+//     const scrollTl = gsap.timeline({
+//         defaults: {
+//           duration: 2,
+//         },
+//         scrollTrigger: {
+//           trigger: "#introduction",
+//           start: "top bottom",
+//           end: "bottom top",
+//           scrub: 0.7,
+//         },
+//     });
+//     scrollTl.to(lightRef.current, { duration: 3, opacity: 1, scale: 1 },0)
 
-    const scrollTl2 = gsap.timeline({
-      defaults: {
-        duration: 2,
-      },
-      scrollTrigger: {
-        trigger: "#brain",
-        start: "top bottom",
-        end: "bottom +=50%",
-        scrub: 0.7,
-      },
-  });
-  scrollTl2.to(lightRef.current, { duration: 3, opacity: 0, scale: 30, pointerEvents: "none", display: 'none' },0)
-})
+//     const scrollTl2 = gsap.timeline({
+//       defaults: {
+//         duration: 2,
+//       },
+//       scrollTrigger: {
+//         trigger: "#brain",
+//         start: "top bottom",
+//         end: "bottom +=50%",
+//         scrub: 0.7,
+//       },
+//   });
+//   scrollTl2.to(lightRef.current, { duration: 3, opacity: 0, scale: 0, pointerEvents: "none", display: 'none' },0)
+// })
   return (
     <section className="relative bg-[url('/assets/images/vision-bg.png')] bg-center bg-[length:100%_100%] md:h-[1274px] md:pt-[254px] pt-[140px] w-screen overflow-hidden">
         <div className="w-full max-w-[1440px] mx-auto px-5 xl:px-12 relative">

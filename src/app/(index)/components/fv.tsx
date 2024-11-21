@@ -10,25 +10,25 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const FV = () => {
   const earthRef = useRef(null);
-  useGSAP(() => {
-    if (!earthRef.current) return;
-    const scrollTl = gsap.timeline({
-      defaults: {
-        duration: 2,
-      },
-      scrollTrigger: {
-        trigger: "#fv",
-        start: "top top",
-        end: "bottom top",
-        scrub: 0.7,
-      },
-    });
-    scrollTl.to(
-      earthRef.current,
-      { duration: 3, opacity: 0, scale: 10, pointerEvents: "none", display: 'none' },
-      0
-    );
-  });
+  // useGSAP(() => {
+  //   if (!earthRef.current) return;
+  //   const scrollTl = gsap.timeline({
+  //     defaults: {
+  //       duration: 2,
+  //     },
+  //     scrollTrigger: {
+  //       trigger: "#fv",
+  //       start: "top top",
+  //       end: "bottom top",
+  //       scrub: 0.7,
+  //     },
+  //   });
+  //   scrollTl.to(
+  //     earthRef.current,
+  //     { duration: 3, opacity: 0, scale: 10, pointerEvents: "none", display: 'none' },
+  //     0
+  //   );
+  // });
   return (
     <section
       id="fv"
@@ -37,7 +37,7 @@ const FV = () => {
       <div className="w-full max-w-[1440px] mx-auto pt-[150px] relative z-30">
         <View
           ref={earthRef}
-          className="absolute top-[0vw] right-0 z-40 size-[100vw] md:size-[50vw] flex justify-center items-center"
+          className="fixed top-[0vw] right-0 z-40 size-[100vw] md:size-[50vw] flex justify-center items-center"
         >
           <Earth />
         </View>

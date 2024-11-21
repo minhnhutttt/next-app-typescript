@@ -20,38 +20,38 @@ const data = [
 
 const Brain = () => {
   const cloudRef = useRef(null)
-    useGSAP(()=> {
-        if (!cloudRef.current) return
-        gsap.set(cloudRef.current, {
-            scale: 20,
-        })
+    // useGSAP(()=> {
+    //     if (!cloudRef.current) return
+    //     gsap.set(cloudRef.current, {
+    //         scale: 20,
+    //     })
 
-        const scrollTl = gsap.timeline({
-            defaults: {
-              duration: 2,
-            },
-            scrollTrigger: {
-              trigger: "#brain",
-              start: "top bottom",
-              end: "bottom bottom",
-              scrub: 0.7,
-            },
-        });
-        scrollTl.to(cloudRef.current, { duration: 3,scale: 1 },0)
+    //     const scrollTl = gsap.timeline({
+    //         defaults: {
+    //           duration: 2,
+    //         },
+    //         scrollTrigger: {
+    //           trigger: "#brain",
+    //           start: "top bottom",
+    //           end: "bottom bottom",
+    //           scrub: 0.7,
+    //         },
+    //     });
+    //     scrollTl.to(cloudRef.current, { duration: 3,scale: 1 },0)
 
-        const scrollTl2 = gsap.timeline({
-            defaults: {
-              duration: 2,
-            },
-            scrollTrigger: {
-              trigger: "#solution",
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 0.7,
-            },
-        });
-        scrollTl2.to(cloudRef.current, { scale: 30, y: '300%' },0)
-    })
+    //     const scrollTl2 = gsap.timeline({
+    //         defaults: {
+    //           duration: 2,
+    //         },
+    //         scrollTrigger: {
+    //           trigger: "#solution",
+    //           start: "top bottom",
+    //           end: "bottom top",
+    //           scrub: 0.7,
+    //         },
+    //     });
+    //     scrollTl2.to(cloudRef.current, { scale: 30, y: '300%' },0)
+    // })
   return (
     <section id="brain" className="relative pt-[200px] md:pt-[160px] md:pb-[100px] pb-[60px] px-8 w-screen overflow-hidden min-h-screen md:mb-[30vh]">
       <div className="w-full max-w-[1350px] mx-auto relative">

@@ -17,39 +17,39 @@ const data = [
 
 const Solution = () => {
   const puzzleRef = useRef(null)
-    useGSAP(()=> {
-        if (!puzzleRef.current) return
-        gsap.set(puzzleRef.current, {
-            scale: 100,
-            y: "-200%"
-        })
+    // useGSAP(()=> {
+    //     if (!puzzleRef.current) return
+    //     gsap.set(puzzleRef.current, {
+    //         scale: 100,
+    //         y: "-200%"
+    //     })
 
-        const scrollTl = gsap.timeline({
-            defaults: {
-              duration: 2,
-            },
-            scrollTrigger: {
-              trigger: "#brain",
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 0.7,
-            },
-        });
-        scrollTl.to(puzzleRef.current, { duration: 3, y: "0", scale: 1 },0)
+    //     const scrollTl = gsap.timeline({
+    //         defaults: {
+    //           duration: 2,
+    //         },
+    //         scrollTrigger: {
+    //           trigger: "#brain",
+    //           start: "top bottom",
+    //           end: "bottom top",
+    //           scrub: 0.7,
+    //         },
+    //     });
+    //     scrollTl.to(puzzleRef.current, { duration: 3, y: "0", scale: 1 },0)
 
-        const scrollTl2 = gsap.timeline({
-          defaults: {
-            duration: 2,
-          },
-          scrollTrigger: {
-            trigger: "#feature",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 0.7,
-          },
-      });
-      scrollTl2.to(puzzleRef.current, { scale: 20 },0)
-    })
+    //     const scrollTl2 = gsap.timeline({
+    //       defaults: {
+    //         duration: 2,
+    //       },
+    //       scrollTrigger: {
+    //         trigger: "#feature",
+    //         start: "top bottom",
+    //         end: "bottom top",
+    //         scrub: 0.7,
+    //       },
+    //   });
+    //   scrollTl2.to(puzzleRef.current, { scale: 20 },0)
+    // })
   return (
     <section id="solution" className="relative pt-20 md:pt-[60px] md:pb-10 pb-[60px] px-8 w-screen overflow-hidden md:mb-[30vh]">
       <div className="w-full max-w-[1310px] mx-auto relative">
