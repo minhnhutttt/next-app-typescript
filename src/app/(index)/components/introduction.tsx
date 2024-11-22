@@ -2,8 +2,8 @@
 
 const Introduction = () => {
   return (
-    <section id="introduction" className="relative pt-16 md:pt-[70px] md:pb-[100px] pb-[60px] w-screen overflow-hidden z-[60]">
-      <div className="w-full max-w-[1440px] mx-auto md:pt-[50px] pt-10 px-8">
+    <section id="introduction" className="relative pt-16 md:pt-[70px] md:pb-[100px] pb-[60px] w-screen overflow-hidden z-50">
+      <div className="w-full max-w-[1440px] mx-auto md:pt-[50px] pt-10 px-8 relative">
         <div className="flex items-start max-md:flex-col">
           <div className="max-md:w-full max-dt:w-[58.056vw]">
             <img src="/assets/images/ipdc.svg" alt="" />

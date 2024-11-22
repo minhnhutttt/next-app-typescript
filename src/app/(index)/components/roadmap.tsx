@@ -99,7 +99,7 @@ const Roadmap = ({loaded}: {loaded?: any}) => {
   });
 
   return (
-    <div className="md:mb-[280px] mb-[150px]">
+    <div className="md:mb-[280px] mb-[150px] relative z-50">
       <section
         ref={containerRef}
         id="brain"

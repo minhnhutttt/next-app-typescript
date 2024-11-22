@@ -23,7 +23,7 @@ const featuresData = [
 
 const Features = () => {
   return (
-    <section id="feature" className="relative pt-20 md:pt-[140px] md:pb-20 pb-[60px] w-screen overflow-hidden">
+    <section id="feature" className="relative pt-20 md:pt-[140px] md:pb-20 pb-[60px] w-screen overflow-hidden z-50">
       <div className="fade-up h-[100px] md:h-[156px] bg-[url('/assets/images/about-title-line.png')] bg-[lenth:100%_100%] flex items-center gap-5">
             <div className="flex-shrink-0 flex gap-5 min-w-full animate-[scroll_30s_linear_infinite] u-transform">
                 <p className="md:text-[130px] text-[70px] u-text-stroke font-semibold flex-[0_0_auto]">THE FUTURE OF DECENTRALIZED ECOSYSTEMS</p>

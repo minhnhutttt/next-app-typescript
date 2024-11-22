@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import { useLoader, useFrame } from "@react-three/fiber";
 // @ts-ignore
 import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler"; 
@@ -7,9 +7,9 @@ import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import * as THREE from "three";
 import { Float } from "@react-three/drei";
 
-const Light = () => {
+const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   const [model, setModel] = useState<THREE.Group | null>(null);
-  const ref = useRef<THREE.Group | null>(null);
+  const modelRef = useRef<THREE.Group | null>(null);
   const samplerRef = useRef<MeshSurfaceSampler | null>(null);
   const instancedMeshRef = useRef<THREE.InstancedMesh | null>(null);
   const pointsRef = useRef({
@@ -21,8 +21,8 @@ const Light = () => {
 
   const [brushSize] = useState(3.5);
   const [minScale] = useState(1);
-  const [maxScale] = useState(4);
-  const numPoints = 3000;
+  const [maxScale] = useState(3);
+  const numPoints = 2000;
 
   const obj = useLoader(OBJLoader, "/assets/models/light.obj");
   const ipdcModel = useLoader(OBJLoader, "/assets/models/ipdc.obj");
@@ -87,10 +87,10 @@ const Light = () => {
   }, [model]);
 
   const handlePointerMove = (e: any) => {
-    if (!ref.current || !instancedMeshRef.current) return;
+    if (!modelRef.current || !instancedMeshRef.current) return;
 
     const worldMousePosition = new THREE.Vector3(e.point.x, e.point.y, e.point.z);
-    const localMousePosition = ref.current.worldToLocal(worldMousePosition);
+    const localMousePosition = modelRef.current.worldToLocal(worldMousePosition);
 
     const { positions, scales } = pointsRef.current;
 
@@ -122,10 +122,10 @@ const Light = () => {
   });
 
   return (
-    <>
+    <group dispose={null} {...props} ref={ref}>
       {model && (
         <Float>
-          <group ref={ref} scale={0.35} position={[0, -3, 0]}>
+          <group ref={modelRef} scale={0.5} position={[0, -4, 0]}>
             <mesh
               geometry={(model.children[0] as THREE.Mesh).geometry}
               onPointerMove={handlePointerMove}
@@ -145,8 +145,8 @@ const Light = () => {
           <directionalLight position={[10, 10, 10]} intensity={1} />
         </Float>
       )}
-    </>
+    </group>
   );
-};
+});
 
 export default Light;

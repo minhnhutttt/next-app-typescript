@@ -6,41 +6,19 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Light from "./models/Light";
+import Scane from "./scene/scene";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const FV = () => {
-  const earthRef = useRef(null);
-  // useGSAP(() => {
-  //   if (!earthRef.current) return;
-  //   const scrollTl = gsap.timeline({
-  //     defaults: {
-  //       duration: 2,
-  //     },
-  //     scrollTrigger: {
-  //       trigger: "#fv",
-  //       start: "top top",
-  //       end: "bottom top",
-  //       scrub: 0.7,
-  //     },
-  //   });
-  //   scrollTl.to(
-  //     earthRef.current,
-  //     { duration: 3, opacity: 0, scale: 3, pointerEvents: "none" },
-  //     0
-  //   );
-  // });
+  
   return (
+    <>
     <section
       id="fv"
-      className="relative bg-[url('/assets/images/fv-bg.png')] bg-[length:100%_100%] bg-center w-screen overflow-hidden z-30"
+      className="relative bg-[url('/assets/images/fv-bg.png')] bg-[length:100%_100%] bg-center w-screen overflow-hidden"
     >
-      <div className="w-full max-w-[1440px] mx-auto pt-[150px] relative z-30">
-        <View
-          ref={earthRef}
-          className="absolute top-[0vw] right-0 z-40 size-[100vw] md:size-[50vw] flex justify-center items-center"
-        >
-          <Earth />
-        </View>
+      <div className="w-full max-w-[1440px] mx-auto pt-[150px] relative">
         <div className="md:max-w-[39.931vw] max-w-[70vw] dt:max-w-[575px] ml-[7.778vw] dt:ml-[112px]">
           <h1 className="dt:text-[86px] text-[5.972vw] font-medium leading-[1.1]">
             DATA WANTS <br />
@@ -83,6 +61,7 @@ const FV = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
