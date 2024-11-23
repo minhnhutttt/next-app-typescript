@@ -12,7 +12,6 @@ import { easing } from "maath";
 import Light from "../models/Light";
 import Cloud from "../models/Cloud";
 import Puzzle from "../models/Puzzle";
-import Earth2 from "../models/Earth2";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 type Props = {};

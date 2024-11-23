@@ -22,7 +22,7 @@ const Puzzle = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   const [brushSize] = useState(2.5);
   const [minScale] = useState(1);
   const [maxScale] = useState(3);
-  const numPoints = 3000;
+  const numPoints = 5000;
 
   const obj = useLoader(OBJLoader, "/assets/models/puzzle.obj");
   const ipdcModel = useLoader(OBJLoader, "/assets/models/ipdc.obj");
@@ -59,68 +59,66 @@ const Puzzle = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
     setModel(obj);
   }, [obj]);
 
-  const updateInstances = () => {
+  const updateInstancesWithEffect = (mousePosition?: THREE.Vector3) => {
     if (!instancedMeshRef.current) return;
-
+  
     const tempObject = new THREE.Object3D();
     const { positions, scales, colors, rotations } = pointsRef.current;
-
-    positions.forEach((pos, i) => {
-      tempObject.position.copy(pos);
-      tempObject.scale.setScalar(scales[i] * 0.004);
-      tempObject.rotation.copy(rotations[i]); 
+  
+    positions.forEach((originalPosition, i) => {
+      const currentPosition = originalPosition.clone();
+      let currentScale = minScale;
+      if (mousePosition) {
+        const distanceToMouse = mousePosition.distanceTo(currentPosition);
+        if (distanceToMouse < brushSize) {
+          const factor = 1 - distanceToMouse / brushSize;
+          currentScale = minScale + (maxScale - minScale) * factor;
+  
+          const displacement = currentPosition
+            .clone()
+            .normalize()
+            .multiplyScalar(0.5 * factor);
+          currentPosition.add(displacement);
+        }
+      }
+  
+      const floatFactor = Math.sin(performance.now() * 0.005 + i) * 0.05;
+      currentPosition.y += floatFactor;
+  
+      scales[i] = currentScale;
+  
+      tempObject.position.copy(currentPosition);
+      tempObject.scale.setScalar(currentScale * 0.003);
+      tempObject.rotation.copy(rotations[i]);
       tempObject.updateMatrix();
+  
       instancedMeshRef.current?.setMatrixAt(i, tempObject.matrix);
-
-      const color = colors[i];
-      instancedMeshRef.current?.setColorAt(i, color);
+      instancedMeshRef.current?.setColorAt(i, colors[i]);
     });
-
+  
     instancedMeshRef.current.instanceMatrix.needsUpdate = true;
     if (instancedMeshRef.current.instanceColor) {
       instancedMeshRef.current.instanceColor.needsUpdate = true;
     }
   };
-
+  
   useEffect(() => {
-    if (model) updateInstances();
+    if (model) updateInstancesWithEffect();
   }, [model]);
 
   const handlePointerMove = (e: any) => {
     if (!modelRef.current || !instancedMeshRef.current) return;
-
+  
     const worldMousePosition = new THREE.Vector3(e.point.x, e.point.y, e.point.z);
     const localMousePosition = modelRef.current.worldToLocal(worldMousePosition);
-
-    const { positions, scales } = pointsRef.current;
-
-    for (let i = 0; i < positions.length; i++) {
-      const distance = localMousePosition.distanceTo(positions[i]);
-      scales[i] =
-        distance < brushSize
-          ? minScale + (maxScale - minScale) * (1 - distance / brushSize)
-          : minScale;
-    }
-
-    updateInstances();
+  
+    updateInstancesWithEffect(localMousePosition);
   };
-
+  
   const handlePointerOut = () => {
-    const { scales } = pointsRef.current;
-    pointsRef.current.scales = scales.map(() => minScale);
-    updateInstances();
+    updateInstancesWithEffect(); 
   };
-
-  useFrame(() => {
-    const { rotations } = pointsRef.current;
-    for (let i = 0; i < rotations.length; i++) {
-      rotations[i].x += 0.001;
-      rotations[i].y += 0.001;
-      rotations[i].z += 0.001;
-    }
-    updateInstances();
-  });
-
+  
   return (
     <group dispose={null} {...props} ref={ref}>
       {model && (
@@ -149,4 +147,5 @@ const Puzzle = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   );
 });
 
+Puzzle.displayName = 'Puzzle';
 export default Puzzle;
