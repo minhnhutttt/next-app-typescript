@@ -1,6 +1,7 @@
 import Donation from "./components/donation";
 import Ecosystem from "./components/ecosystem";
 import FV from "./components/fv";
+import Operation from "./components/operation";
 import Project from "./components/project";
 import Voc from "./components/voc";
 
@@ -14,6 +15,7 @@ export default function Home() {
       <Voc />
       <Ecosystem />
       <Donation />
+      <Operation />
     </main>
   );
 }
