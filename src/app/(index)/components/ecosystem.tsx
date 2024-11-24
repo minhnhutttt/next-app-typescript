@@ -1,15 +1,10 @@
-"use client";
-
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-
 const Ecosystem = () => {
-  const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative bg-[url('/assets/images/ecosystem-bg.png')] bg-bottom bg-cover ">
+    <section className="relative bg-[url('/assets/images/ecosystem-bg.png')] bg-bottom bg-cover ">
       <div className="w-full max-w-[1440px] mx-auto pt-14 md:pt-[84px] md:pb-[200px] pb-[100px]">
         <div className="px-5">
-        <div className="w-full max-w-[1280px] mx-auto bg-[#038A49] rounded-[20px] px-5 xl:px-16 md:py-10 py-8 xl:py-[70px] flex items-center md:gap-10 gap-5 max-md:flex-col">
-            <div className="flex-1 text-white ">
+        <div data-scroll className="ani-fade-up w-full max-w-[1280px] mx-auto bg-[#038A49] rounded-[20px] px-5 xl:px-16 md:py-10 py-8 xl:py-[70px] flex items-center md:gap-10 gap-5 max-md:flex-col">
+            <div  className=" flex-1 text-white ">
                 <h4 className="md:text-[56px] text-[32px] font-bold leading-[1.2]">
                 BGT Ecosystem and How to Participate
                 </h4>
@@ -23,7 +18,7 @@ const Ecosystem = () => {
         </div>
         </div>
         <div className="md:mt-[150px] mt-16 md:space-y-[160px] space-y-20">
-            <div className="flex md:pr-10 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-8">
+            <div data-scroll className="ani-fade-up flex md:pr-10 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-8">
                 <figure className="relative max-xl:w-1/2 max-md:w-auto">
                     <img src="/assets/images/ecosystem-img-01.png" alt="" />
                 </figure>
@@ -47,7 +42,7 @@ const Ecosystem = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex md:pl-10 max-md:flex-col-reverse max-md:justify-center max-md:items-center max-md:gap-8">
+            <div data-scroll className="ani-fade-up flex md:pl-10 max-md:flex-col-reverse max-md:justify-center max-md:items-center max-md:gap-8">
                 <div className="flex-1 flex items-end md:-mr-[40px] md:-mb-[60px] relative max-md:px-5 z-10">
                     <div className="w-full max-w-[622px] rounded-[20px] bg-white/90 py-5 px-5 md:px-[30px]">
                         <h5 className="font-bold md:text-[36px] text-[22px]">Three Key Roles</h5>
@@ -72,7 +67,7 @@ const Ecosystem = () => {
                 </figure>
             </div>
 
-            <div className="flex md:pr-10 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-8">
+            <div data-scroll className="ani-fade-up flex md:pr-10 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-8">
                 <figure className="relative max-xl:w-1/2 max-md:w-auto">
                     <img src="/assets/images/ecosystem-img-03.png" alt="" />
                 </figure>

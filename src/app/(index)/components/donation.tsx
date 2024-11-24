@@ -1,15 +1,10 @@
-"use client";
-
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-
 const Donation = () => {
-  const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative pt-[19.167vw]">
+    <section className="relative pt-[19.167vw]">
       <div className="w-full max-w-[1440px] mx-auto px-5 pt-16 md:pt-[100px]">
-        <h3 className="text-center md:text-[48px] text-[32px] font-bold tracking-wide">Donation mechanism using BGT coins</h3>
+        <h3 data-scroll className="ani-fade-up text-center md:text-[48px] text-[32px] font-bold tracking-wide">Donation mechanism using BGT coins</h3>
         <div className="w-full max-w-[1360px] mx-auto mt-8 md:mt-[72px] md:space-y-[100px] space-y-[60px]">
-            <div className="flex items-center max-md:flex-col-reverse max-md:gap-6">
+            <div data-scroll className="ani-fade-up flex items-center max-md:flex-col-reverse max-md:gap-6">
                 <div className="flex-1 flex justify-center md:px-5">
                     <div className="w-full max-w-[555px]">
                         <h5 className="md:text-[32px] text-[24px] font-bold leading-[1.3]">
@@ -30,7 +25,7 @@ const Donation = () => {
                     <img className="" src="/assets/images/donation-img-01.png" alt="" />
                 </figure>
             </div>
-            <div className="flex items-center max-md:flex-col max-md:gap-6">
+            <div data-scroll className="ani-fade-up flex items-center max-md:flex-col max-md:gap-6">
             <figure className="max-md:w-auto max-xl:w-1/2">
                     <img className="" src="/assets/images/donation-img-02.png" alt="" />
                 </figure>

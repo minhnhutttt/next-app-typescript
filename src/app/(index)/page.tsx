@@ -3,19 +3,23 @@ import Ecosystem from "./components/ecosystem";
 import FV from "./components/fv";
 import Operation from "./components/operation";
 import Project from "./components/project";
+import Structure from "./components/structure";
 import Voc from "./components/voc";
+import Whitepaper from "./components/whitepaper";
 
 export default function Home() {
   return (
     <main>
       <div className="bg-[url('/assets/images/bg-01.png')] bg-cover">
-      <FV />
-      <Project />
+        <FV />
+        <Project />
       </div>
       <Voc />
       <Ecosystem />
       <Donation />
       <Operation />
+      <Structure />
+      <Whitepaper />
     </main>
   );
 }

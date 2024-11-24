@@ -1,6 +1,5 @@
 "use client";
 
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useLayoutEffect, useRef } from "react";
@@ -30,7 +29,6 @@ const data = [
 ];
 
 const Project = () => {
-  const ref = useScrollAnimations();
 
   const containerRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -73,12 +71,12 @@ const Project = () => {
   }, []);
 
   return (
-    <section ref={ref} className="relative">
+    <section className="relative">
       <div className="w-full max-w-[1380px] mx-auto pt-7 md:pb-28 pb-16 px-5">
-        <h2 className="fade-up md:text-[48px] text-[24px] font-bold max-w-[925px] tracking-wide">
+        <h2 data-scroll className="ani-fade-up md:text-[48px] text-[24px] font-bold max-w-[925px] tracking-wide">
           A new form of donation to support historical discoveries: BGT Project
         </h2>
-        <p className="fade-up max-w-[802px] md:text-[20px] text-[16px] font-medium pt-7 tracking-wide">
+        <p data-scroll className="ani-fade-up max-w-[802px] md:text-[20px] text-[16px] font-medium pt-7 tracking-wide">
           The BGT (BiG Treasure) project empowers individuals worldwide to
           support historical discoveries through blockchain-powered donations,
           enabling faster progress on uncovering lost treasures like the Titanic
@@ -86,7 +84,7 @@ const Project = () => {
         </p>
       </div>
       <div ref={containerRef} className="overflow-hidden relative pt-12 md:pt-20">
-        <h4 className="fade-up text-center font-bold md:text-[32px] text-[20px] tracking-wide">
+        <h4 data-scroll className="ani-fade-up text-center font-bold md:text-[32px] text-[20px] tracking-wide">
           Project and platform <br className="md:hidden" />vision and mission
         </h4>
         <div className="relative">
