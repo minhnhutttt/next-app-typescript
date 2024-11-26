@@ -18,11 +18,12 @@ const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
     colors: [] as THREE.Color[],
     rotations: [] as THREE.Euler[],
   });
-
+  const [mousePosition, setMousePosition] = useState<THREE.Vector3 | null>(null);
   const [brushSize] = useState(2.5);
   const [minScale] = useState(1);
   const [maxScale] = useState(3);
   const numPoints = 5000;
+  const rotationSpeed = 0.012;
 
   const obj = useLoader(OBJLoader, "/assets/models/light.obj");
   const ipdcModel = useLoader(OBJLoader, "/assets/models/ipdc.obj");
@@ -74,6 +75,10 @@ const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
           const factor = 1 - distanceToMouse / brushSize;
           currentScale = minScale + (maxScale - minScale) * factor;
   
+          rotations[i].x += rotationSpeed * factor;
+          rotations[i].y += rotationSpeed * factor;
+          rotations[i].z += rotationSpeed * factor;
+
           const displacement = currentPosition
             .clone()
             .normalize()
@@ -82,7 +87,7 @@ const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
         }
       }
   
-      const floatFactor = Math.sin(performance.now() * 0.005 + i) * 0.05;
+      const floatFactor = Math.sin(performance.now() * 0.005 + i) * 0.02;
       currentPosition.y += floatFactor;
   
       scales[i] = currentScale;
@@ -104,7 +109,7 @@ const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   
   useEffect(() => {
     if (model) updateInstancesWithEffect();
-  }, [model]);
+  }, [model, mousePosition]);
 
   const handlePointerMove = (e: any) => {
     if (!modelRef.current || !instancedMeshRef.current) return;
@@ -113,11 +118,19 @@ const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
     const localMousePosition = modelRef.current.worldToLocal(worldMousePosition);
   
     updateInstancesWithEffect(localMousePosition);
+    setMousePosition(localMousePosition);
   };
   
   const handlePointerOut = () => {
+    setMousePosition(null);
     updateInstancesWithEffect(); 
   };
+
+  useFrame(() => {
+    if (mousePosition) {
+      updateInstancesWithEffect(mousePosition);
+    }
+  });
   
   return (
     <group dispose={null} {...props} ref={ref}>
