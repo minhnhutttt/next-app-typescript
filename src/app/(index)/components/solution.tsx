@@ -23,7 +23,7 @@ const Solution = () => {
         <p className="max-w-[520px] md:text-[24px] text-[18px] font-semibold mt-12 md:mt-[95px] relative max-md:z-50">
             IPDC provides an innovative solution that builds upon IPFS concepts while incorporating unique improvements
         </p>
-        <div className="flex justify-start mt-12 md:mt-[45px] relative z-50">
+        <div className="flex justify-start mt-12 md:mt-[45px] relative">
             <ul className="list-decimal md:text-[36px] text-[20px] font-semibold leading-[3] pl-8 relative z-50">
                 {data.map((item, index)=>(
                     <li key={index}>{item}</li>

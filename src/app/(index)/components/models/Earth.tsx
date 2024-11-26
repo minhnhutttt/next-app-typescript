@@ -32,7 +32,6 @@ const Earth = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
 
   useEffect(() => {
     const modelMesh = obj.children[0] as THREE.Mesh;
-    console.log(obj)
     const sampler = new MeshSurfaceSampler(modelMesh).build();
     samplerRef.current = sampler;
 
@@ -130,7 +129,7 @@ const Earth = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   useFrame(() => {
     if (mousePosition) {
       updateInstancesWithEffect(mousePosition);
-    } 
+    }
   });
   
   return (
