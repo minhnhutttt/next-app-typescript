@@ -121,14 +121,14 @@ const Introduction = () => {
                 className="has-animation animation-ltr relative z-10 before:bg-[#4EA4E3] after:bg-[#51BDE4] max-xl:w-1/2 max-md:w-auto md:-ml-4"
               >
                 <img
-                  className="max-md:max-w-[400px]"
+                  className="max-md:max-w-[400px] md:max-w-[665px] w-full"
                   src="/assets/images/img-intro-01.png"
                   alt=""
                 />
               </figure>
               <div
                 data-scroll="out"
-                className="has-animation animation-ltr relative max-w-[636px] flex-1 bg-white/60 px-9 pb-4 pt-8 text-[16px] font-medium  before:bg-[#4EA4E3] after:bg-[#51BDE4] max-md:mt-5 md:-ml-6 md:mt-8 md:min-h-[205px] md:text-[20px]"
+                className="has-animation animation-ltr relative max-w-[636px] flex-1 bg-white/60 px-9 pb-4 pt-8 text-[16px] font-medium  before:bg-[#4EA4E3] after:bg-[#51BDE4] max-md:mt-5 md:ml-6 md:mt-8 md:min-h-[205px] md:text-[20px]"
               >
                 <p>
                 メタバース上では選べるお墓を設置し、1枚の写真から2D/3Dのペットを再現します。供養のためにお線香をあげたり、かわいらしい仕草で動くペットとの時間を楽しんだり。あなた様とペットだけの特別な空間がそこには広がっています。
