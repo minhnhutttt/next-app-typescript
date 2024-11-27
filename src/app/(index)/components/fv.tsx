@@ -1,11 +1,11 @@
 const FV = () => {
   return (
     <section className="relative px-5 md:pt-[150px] pt-[50px] z-10 h-[450px] md:h-[750px] md:bg-[url('/assets/images/fv.png')] max-md:bg-[size:100%_auto] bg-[url('/assets/images/fv-sp.png')] bg-bottom bg-cover">
-      <h1 data-scroll className="ani-fade-up md:text-[50px] text-[32px] xl:text-[80px] font-black text-center leading-[1.2] u-text-stroke tracking-wide [text-shadow:1px_2px_0px_#F6EAD9] md:[text-shadow:3px_6px_0px_#F6EAD9]">
+      <h1 data-scroll className="ani-fade-up md:text-[50px] text-[32px] xl:text-[80px] font-black text-center leading-[1.2] tracking-wide [text-shadow:0_0_5px_#FFCD00]">
         Passionate Explorers, Gather! <br />
         Fellow Supporters, Rise!
       </h1>
-      <p data-scroll className="ani-fade-up md:text-[32px] text-[18px] font-black text-center leading-[1.2] u-text-stroke tracking-wide md:pt-10 pt-5 [text-shadow:1px_1px_0px_#F6EAD9] md:[text-shadow:2px_2px_0px_#F6EAD9] md:mb-24 mb-10">
+      <p data-scroll className="ani-fade-up md:text-[32px] text-[18px] font-black text-center leading-[1.2] u-text-stroke tracking-wide md:pt-10 pt-5  [text-shadow:0_0_5px_#FFCD00] md:mb-24 mb-10">
         Where Passion Meets Great Cause, <br />The Quest for “BiG Treasures” Begins.
       </p>
       

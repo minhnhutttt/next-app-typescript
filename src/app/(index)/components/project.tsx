@@ -76,7 +76,7 @@ const Project = () => {
         <h2 data-scroll className="ani-fade-up md:text-[48px] text-[24px] font-bold max-w-[925px] tracking-wide">
           A new form of donation to support historical discoveries: BGT Project
         </h2>
-        <p data-scroll className="ani-fade-up max-w-[802px] md:text-[20px] text-[16px] font-medium pt-7 tracking-wide">
+        <p data-scroll className="ani-fade-up max-w-[802px] md:text-[20px] text-[16px] font-medium pt-7 tracking-wide text-gray-600">
           The BGT (BiG Treasure) project empowers individuals worldwide to
           support historical discoveries through blockchain-powered donations,
           enabling faster progress on uncovering lost treasures like the Titanic

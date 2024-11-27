@@ -8,7 +8,7 @@ const Ecosystem = () => {
                 <h4 className="md:text-[56px] text-[32px] font-bold leading-[1.2]">
                 BGT Ecosystem and How to Participate
                 </h4>
-                <p className="md:text-[18px] text-[15px] md:mt-5">
+                <p className="md:text-[18px] text-[15px] md:mt-5 text-gray-200">
                 The BGT Ecosystem is a platform for supporting historical discoveries. Using BGT coins, anyone can participate in projects and contribute to the discovery process.
                 </p>
             </div>
@@ -48,16 +48,13 @@ const Ecosystem = () => {
                         <h5 className="font-bold md:text-[36px] text-[22px]">Three Key Roles</h5>
                         <ul className="md:text-[20px] text-[16px] font-bold md:space-y-8 space-y-4 md:mt-5 mt-4">
                             <li className="flex md:gap-4 gap-2">
-                                <span>●</span>
-                                <span><span className="border border-[#000A23] rounded-[5px] px-2 mr-1">Donors</span> Provide funding for projects, track progress, and participate in voting.  </span>
+                                <span><span className="border border-[#000A23] rounded-[5px] px-2 mr-1">Donors</span> <br />Provide funding for projects, track progress, and participate in voting.  </span>
                             </li>
                             <li className="flex md:gap-4 gap-2">
-                                <span>●</span>
-                                <span><span className="border border-[#000A23] rounded-[5px] px-2 mr-1">Explorers</span> Propose, execute, and report the results of discovery projects.</span>
+                                <span><span className="border border-[#000A23] rounded-[5px] px-2 mr-1">Explorers</span> <br />Propose, execute, and report the results of discovery projects.</span>
                             </li>
                             <li className="flex md:gap-4 gap-2">
-                                <span>●</span>
-                                <span><span className="border border-[#000A23] rounded-[5px] px-2 mr-1">Evaluators</span>    Assess the scientific and historical value of proposals and verify project outcomes.</span>
+                                <span><span className="border border-[#000A23] rounded-[5px] px-2 mr-1">Evaluators</span> <br />Assess the scientific and historical value of proposals and verify project outcomes.</span>
                             </li>
                         </ul>
                     </div>
@@ -66,7 +63,6 @@ const Ecosystem = () => {
                     <img src="/assets/images/ecosystem-img-02.png" alt="" />
                 </figure>
             </div>
-
             <div data-scroll className="ani-fade-up flex md:pr-10 max-md:flex-col max-md:justify-center max-md:items-center max-md:gap-8">
                 <figure className="relative max-xl:w-1/2 max-md:w-auto">
                     <img src="/assets/images/ecosystem-img-03.png" alt="" />

@@ -10,7 +10,7 @@ const Donation = () => {
                         <h5 className="md:text-[32px] text-[24px] font-bold leading-[1.3]">
                         BGT coins are digital tokens that represent donations to projects. Its characteristics are as follows
                         </h5>
-                        <ul className="md:text-[18px] text-[15px] font-medium list-decimal pl-4 md:mt-10 mt-6 md:space-y-5 space-y-3 md:mb-7 mb-5">
+                        <ul className="md:text-[18px] text-[15px] font-medium list-decimal pl-4 md:mt-10 mt-6 md:space-y-5 space-y-3 md:mb-7 mb-5 text-gray-600">
                             <li>Easy to obtain: available for purchase on the BGT platform</li>
                             <li>Flexible donations: You can donate any amount, from small to large amounts.</li>
                             <li>Project specification: You can specify a specific project to donate to.</li>
@@ -34,7 +34,7 @@ const Donation = () => {
                         <h5 className="md:text-[32px] text-[24px] font-bold leading-[1.3]">
                         Donor benefits
                         </h5>
-                        <ul className="md:text-[18px] text-[15px] font-medium list-decimal pl-4 md:mt-10 mt-6 md:space-y-5 space-y-3 md:mb-7 mb-5">
+                        <ul className="md:text-[18px] text-[15px] font-medium list-decimal pl-4 md:mt-10 mt-6 md:space-y-5 space-y-3 md:mb-7 mb-5 text-gray-600">
                             <li>Voting rights: the right to participate in the selection of new projects</li>
                             <li>Information access: Access to detailed progress reports of supported projects</li>
                             <li>Sharing results: priority access to discovered information and materials</li>

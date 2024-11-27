@@ -58,7 +58,7 @@ const Structure = () => {
                         <li>Open Access: Whenever possible, we will make our research findings freely available to the public.</li>
                     </ul>
                 </div>
-                <div data-scroll className="ani-fade-up md:pt-20 pt-10 md:px-12 px-5 md:pb-[60px] pb-8 flex flex-col justify-center">
+                <div data-scroll className="ani-fade-up md:pt-20 pt-10 md:px-12 px-5 md:pb-[60px] pb-8">
                     <h5 className="md:text-[32px] text-[20px]">Measures to ensure long-term sustainability</h5>
                     <ul className="list-decimal md:text-[18px] text-[15px] pl-5 md:mt-6 mt-4 md:space-y-5 space-y-4">
                         <li>Burn mechanism: Part of the project management fee is periodically burned to maintain scarcity.</li>
