@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { EB_Garamond} from "next/font/google";
+import "./globals.scss";
+import Footer from "@/components/footer";
+import ScrollContainer from "@/components/scrollContainer";
+import SmoothScroll from "@/components/smoothSCroll";
 
-const inter = Inter({ subsets: ["latin"] });
+const garamond = EB_Garamond({
+  weight: ["400", "500", "700", "800"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +22,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+       <body
+        className={`${garamond.className}`}
+      >
+        <ScrollContainer>
+        <SmoothScroll>
+          {children}
+          <Footer />
+          </SmoothScroll>
+        </ScrollContainer>
+      </body>
     </html>
   );
 }
