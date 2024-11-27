@@ -706,11 +706,6 @@
   dependencies:
     undici-types "~5.26.4"
 
-"@types/p5@1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@types/p5/-/p5-1.7.0.tgz#af56b6b930f31e73d6ec1cb9f4539481d3212b51"
-  integrity sha512-6AnjmW98/edgXB+pYDBx7t6QbCogIG6NUzey93JpGTZA4096C+KjSN8y0sj43QRd9XtblrAhoRXHj1pFZ2vsCg==
-
 "@types/pako@^1.0.1":
   version "1.0.7"
   resolved "https://registry.npmjs.org/@types/pako/-/pako-1.0.7.tgz"
@@ -2435,11 +2430,6 @@ once@^1.3.0:
   dependencies:
     wrappy "1"
 
-opencollective-postinstall@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.2.tgz#5657f1bede69b6e33a45939b061eb53d3c6c3a89"
-  integrity sha512-pVOEP16TrAO2/fjej1IdOyupJY8KDUM1CvsaScRbw6oddvpQoOfGk4ywha0HKKVAD6RkW4x6Q+tNBwhf3Bgpuw==
-
 optionator@^0.9.3:
   version "0.9.3"
   resolved "https://registry.npmjs.org/optionator/-/optionator-0.9.3.tgz"
@@ -2470,11 +2460,6 @@ p5@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/p5/-/p5-1.4.0.tgz#d4d0f001c297525831861af5e017cdb5ef517a75"
   integrity sha512-U888W2ChcIzPhRhnv4FkNhaa4f5BDIWZfLhzvx9ZrQ5KtkZr/+o1UPIicV3yWTRy0HEG23NviHyDR3kgjaJ9wA==
-
-p5@1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/p5/-/p5-1.7.0.tgz#c983f12c2ffc1125e17cb89e97103f7716cb9f05"
-  integrity sha512-qrbT/44Dwm63ZtOKX/mp61pw+5yj6ijYLOmRv7p6zcfjbo83Vb0gVFEvW0kTLFu7hceWCig0HONo9F1bSlqbsQ==
 
 pako@^2.0.4:
   version "2.1.0"
@@ -2649,15 +2634,6 @@ react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-
-react-p5@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/react-p5/-/react-p5-1.4.1.tgz#29047ba7dd2a7aa9bcf22d552f78d1d663a59e41"
-  integrity sha512-njeL8zskkbo8gK3ql1u4/MgmecT/g7Z7LvypTn65DWUnuBvV/9S5AowcKkwQuLVo8/DDAE5vgGVFq1DOkoWiJA==
-  dependencies:
-    "@types/p5" "1.7.0"
-    opencollective-postinstall "2.0.2"
-    p5 "1.7.0"
 
 react-splide-ts@^0.7.14:
   version "0.7.14"
@@ -2883,11 +2859,6 @@ splitting@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/splitting/-/splitting-1.1.0.tgz"
   integrity sha512-6Tj+4mvlSti4DUu1yl0PnkHIIoLchFYJHqz2DnwYkvEehXbjrR2epa4ds/xdto6ZdZsC+NP5IOOehi9VGjNlMQ==
-
-starfield@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/starfield/-/starfield-0.0.1.tgz#5d611f4e8ee74f45fe4870413be8cebb24941737"
-  integrity sha512-5HJUqMkjBiTUra2/zbhpvsFw186ZXrlP2Kotc60e2/6/uzXjdnzvq/y7HMo7cXPGIuaheY1vFmDjUmM5yfsc0g==
 
 streamsearch@^1.1.0:
   version "1.1.0"
