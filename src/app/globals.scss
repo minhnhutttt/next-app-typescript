@@ -11,6 +11,34 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+.frame-black{
+	background:
+	radial-gradient(circle at top left, transparent 50%, #000 50%, #000 calc(50% + 2px), transparent calc(50% + 2px)),
+	radial-gradient(circle at top right, transparent 50%, #000 50%, #000 calc(50% + 2px), transparent calc(50% + 2px)),
+	radial-gradient(circle at bottom left, transparent 50%, #000 50%, #000 calc(50% + 2px), transparent calc(50% + 2px)),
+	radial-gradient(circle at bottom right, transparent 50%, #000 50%, #000 calc(50% + 2px), transparent calc(50% + 2px)),
+  linear-gradient(90deg, #000 2px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0) calc(100% - 2px), #000 calc(100% - 2px)),
+  linear-gradient(180deg, #000 2px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0) calc(100% - 2px), #000 calc(100% - 2px));
+	background-position: top left, top right, bottom left, bottom right, left 30px, 30px top;
+	background-size: 40px 40px, 40px 40px,40px 40px,40px 40px, 100% calc(100% - 60px), calc(100% - 60px) 100%;
+	background-repeat: no-repeat;
+}
+
+.frame-white{
+	background:
+	radial-gradient(circle at top left, transparent 50%, #fff 50%, #fff calc(50% + 2px), transparent calc(50% + 2px)),
+	radial-gradient(circle at top right, transparent 50%, #fff 50%, #fff calc(50% + 2px), transparent calc(50% + 2px)),
+	radial-gradient(circle at bottom left, transparent 50%, #fff 50%, #fff calc(50% + 2px), transparent calc(50% + 2px)),
+	radial-gradient(circle at bottom right, transparent 50%, #fff 50%, #fff calc(50% + 2px), transparent calc(50% + 2px)),
+  linear-gradient(90deg, #fff 2px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0) calc(100% - 2px), #fff calc(100% - 2px)),
+  linear-gradient(180deg, #fff 2px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0) calc(100% - 2px), #fff calc(100% - 2px));
+	background-position: top left, top right, bottom left, bottom right, left 30px, 30px top;
+	background-size: 40px 40px, 40px 40px,40px 40px,40px 40px, 100% calc(100% - 60px), calc(100% - 60px) 100%;
+	background-repeat: no-repeat;
+}
+
+
+
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
       display: none;

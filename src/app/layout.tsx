@@ -21,15 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="">
        <body
-        className={`${garamond.className}`}
+        className={`${garamond.className} `}
       >
         <ScrollContainer>
-        <SmoothScroll>
           {children}
           <Footer />
-          </SmoothScroll>
         </ScrollContainer>
       </body>
     </html>

@@ -1,50 +1,39 @@
-"use client"
-import FV from "./components/fv";
-import { useEffect, useLayoutEffect, useRef } from "react";
+"use client";
 
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import FV from "./components/fv";
+import Footer from "@/components/footer";
+// @ts-ignore
+import Introduction from "./components/introduction";
+import Activation from "./components/activation";
+import Introduction2 from "./components/introduction2";
+import Contents from "./components/contents";
+import Technical from "./components/technical";
+import Impact from "./components/impact";
+import Future from "./components/future";
+import Roadmap from "./components/roadmap";
 gsap.registerPlugin(ScrollTrigger);
-gsap.config({
-  nullTargetWarn: false,
-});
 
 export default function Home() {
+  const sectionsRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      
-      gsap.utils.toArray(".section-start").forEach((panel: any, i) => {
-        ScrollTrigger.create({
-          trigger: panel,
-          start: "top top", 
-          pin: true, 
-          pinSpacing: false
-        });
-      });
-      
-      ScrollTrigger.create({
-        snap:1
-      });
-      
-    });
-
-    return () => ctx.revert();
+    
   }, []);
+
   return (
     <main>
-        <div className="relative">
-          <div className="section-start">
           <FV />
-          </div>
-          <div className="section-start">
-          <FV />
-          </div>
-          <div className="section-start">
-          <FV />
-          </div>
-        </div>
+          <Introduction />
+          <Activation />
+          <Contents />
+          <Technical />
+          <Impact />
+          <Future />
+          <Roadmap />
+          {/* <Introduction2 /> */}
     </main>
   );
 }

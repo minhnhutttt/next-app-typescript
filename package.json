@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 192.168.1.15",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -18,9 +18,12 @@
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-full-page": "^0.1.12",
+    "react-scrollify": "^1.0.4",
     "react-splide-ts": "^0.7.14",
     "scroll-out": "^2.2.12",
     "splitting": "^1.1.0",
+    "swiper": "^11.1.15",
     "tsparticles": "^3.5.0"
   },
   "devDependencies": {
