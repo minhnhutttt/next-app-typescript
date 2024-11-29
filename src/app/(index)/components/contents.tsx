@@ -3,9 +3,10 @@
 const Contents = () => {
   return (
     <section className="relative h-screen bg-[url(/assets/images/content-bg.png)] bg-cover overflow-hidden bg-center">
-        <div className="w-full max-w-[1400px] mx-auto pt-[clamp(10px,5vmin,50px)] md:pt-[clamp(20px,7.778vmin,70px)] px-5 max-md:flex max-md:justify-center max-md:flex-col h-full">
-            <h3 className="text-[clamp(16px,10.667vmin,28px)] md:text-[clamp(28px,10.667vmin,96px)] font-medium tracking-wide text-white">Technical Structure of <br />Sake Token</h3>
-            <div className="flex justify-start max-md:pt-[clamp(10px,3vmin,30px)]">
+        <span className="ani-mix-blend absolute h-full left-0 md:w-[28%] w-[36%] bg-[#BF2A2A] mix-blend-overlay"></span>
+        <div className="w-full max-w-[1400px] mx-auto pt-[clamp(10px,5vmin,50px)] md:pt-[clamp(20px,7.778vmin,70px)] px-5 max-md:flex max-md:justify-center max-md:flex-col h-full relative">
+            <h3 className="ani-text text-[clamp(16px,10.667vmin,28px)] md:text-[clamp(28px,10.667vmin,96px)] font-medium tracking-wide text-white">Technical Structure of <br />Sake Token</h3>
+            <div className="ani-content flex justify-start max-md:pt-[clamp(10px,3vmin,30px)]">
                 <div className="relative p-[clamp(1px,1.333vmin,12px)]">
                 <div className="w-full md:w-[665px] bg-[#552323]/[0.4] border border-white p-[clamp(5px,3.333vmin,30px)]">
                 <div className="absolute frame-white inset-0"></div>

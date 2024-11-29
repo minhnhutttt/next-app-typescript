@@ -1,14 +1,16 @@
 "use client";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useCallback, useState } from "react";
 
 const FV = () => {
+  const ref = useScrollAnimations()
   const [NavOpen, setNavOpen] = useState(false);
 
   const close = useCallback(() => {
     setNavOpen(false);
   }, []);
   return (
-    <section className="relative h-screen bg-[url(/assets/images/bg-01.png)] bg-cover overflow-hidden">
+    <section ref={ref} className="relative h-screen bg-[url(/assets/images/bg-01.png)] bg-cover overflow-hidden">
       <a href="/" className="absolute top-6 left-5 md:left-10">
         <img
           className="max-md:w-[124px]"
@@ -44,19 +46,19 @@ const FV = () => {
 
       <div className="text-white px-5 h-full max-md:flex max-md:items-start">
         <div className="w-full max-w-[1360px] mx-auto flex gap-[1.667vw] dt:gap-6 md:h-full max-md:flex-wrap">
-          <div className="flex items-center flex-1 max-md:order-2">
+          <div className="fade-up flex items-center flex-1 max-md:order-2">
             <h1 className="text-[5vw] md:text-[5.417vw] dt:text-[78px] leading-[1.3]">
               Cheers to Sake. <br  />
               Cheers to Rewards <br  />
               That Last Forever.
             </h1>
           </div>
-          <div className="flex flex-col justify-between items-center max-md:w-full max-md:order-1 max-md:mb-[4vw]">
+          <div className="fade-up flex flex-col justify-between items-center max-md:w-full max-md:order-1 max-md:mb-[4vw]">
             <figure className="pt-[100px] md:pt-7 max-md:w-[80px] max-dt:w-[13.056vw]">
               <img src="/assets/images/sake.svg" alt="" />
             </figure>
           </div>
-          <div className="flex items-center flex-1 max-md:order-3">
+          <div className="fade-up flex items-center flex-1 max-md:order-3">
             <p className="dt:text-[28px] text-[3vw] md:text-[1.944vw] leading-[1.3] tracking-wider">
               Sake Coin is a permanent sake point system. <br />
               The points you earn cannot be infringed upon by anyone, not even

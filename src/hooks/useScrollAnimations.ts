@@ -16,8 +16,8 @@ const useScrollAnimations = () => {
       "fade-up": (el: HTMLElement) =>
         gsap.from(el, {
           autoAlpha: 0,
-          y: 30,
-          duration: 0.5,
+          y: 50,
+          duration: 1,
           ease: "Power2.easeInOut",
           scrollTrigger: { trigger: el },
         }),

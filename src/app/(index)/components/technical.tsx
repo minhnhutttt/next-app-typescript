@@ -101,13 +101,14 @@ const data = [
 const Technical = () => {
   return (
     <section className="relative h-screen bg-[url(/assets/images/technical-bg.png)] bg-cover overflow-hidden bg-center">
-        <div className="h-full max-md:flex max-md:flex-col max-md:justify-center">
+      <span className="ani-mix-blend absolute h-full right-0 md:w-[28%] w-[36%] bg-[#BF2A2A] mix-blend-overlay"></span>
+        <div className="h-full max-md:flex max-md:flex-col max-md:justify-center relative">
         <div className="w-full max-w-[1400px] mx-auto pt-[clamp(10px,5vmin,50px)] md:pt-[clamp(20px,7.778vmin,70px)] px-5">
-            <h3 className="text-[clamp(16px,10.667vmin,28px)] md:text-[clamp(28px,10.667vmin,96px)] font-medium tracking-wide text-right text-white">
+            <h3 className="ani-text text-[clamp(16px,10.667vmin,28px)] md:text-[clamp(28px,10.667vmin,96px)] font-medium tracking-wide text-right text-white">
             Technical Advantages
             </h3>
         </div>
-        <div className="w-full max-md:pt-[clamp(10px,3vmin,30px)]">
+        <div className="ani-content w-full max-md:pt-[clamp(10px,3vmin,30px)]">
             <Swiper
                 slidesPerView={"auto"}
                 loop={true}
