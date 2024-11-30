@@ -10,7 +10,7 @@ const Footer = () => {
           <img src="/assets/images/logo-ft.png" alt="" />
         </a>
       </div>
-      <ul className="mx-auto mb-[30px] mt-[27px] flex max-w-[266px] flex-wrap items-center gap-8 max-md:mt-3 max-md:justify-center">
+      <ul className="mx-auto mb-[30px] mt-[27px] flex justify-center flex-wrap items-center gap-8 max-md:mt-3 max-md:justify-center">
         <li>
           <a href="#faq" className="text-[16px] font-bold md:text-[18px]">
             よくある質問
@@ -25,6 +25,16 @@ const Footer = () => {
           >
             お問い合わせ
           </button>
+        </li>
+        <li>
+          <a href="/company" className="text-[16px] font-bold md:text-[18px]">
+          運営会社
+          </a>
+        </li>
+        <li>
+          <a href="/privacy-policy" className="text-[16px] font-bold md:text-[18px]">
+          プライバシーポリシー
+          </a>
         </li>
       </ul>
       <p className="text-center text-[12px] font-light text-[#0F0F0F] md:text-[14px]">

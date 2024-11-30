@@ -16,6 +16,7 @@ import {
 } from '@/config/constants'
 
 import './globals.scss'
+import Header from '@/components/header'
 
 const kaiseiOpti = Kaisei_Opti({
   subsets: ['latin'],
@@ -54,6 +55,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
         className={`${sans.variable} ${kaiseiOpti.variable} bg-[#FFFFF4] text-black`}
       >
         <ScrollContainer>
+          <Header />
           {children}
           <Footer />
         </ScrollContainer>
