@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
 interface ButtonProps {
-  large?: boolean;
-  children: ReactNode;
+  large?: boolean
+  children: ReactNode
 }
 
 const Button = ({ large = false, children }: ButtonProps) => {
@@ -13,17 +13,18 @@ const Button = ({ large = false, children }: ButtonProps) => {
       href="#"
       target="_blank"
       rel="noopener noreferrer"
-      className={`sway relative bg-[#F2E206] md:rounded-[10px] rounded-[5px] border-[3px] border-[#000] flex justify-center items-center mx-auto md:h-[67px] h-14 max-w-[100%] text-[#000F12] text-center font-bold transition duration-300 tracking-wides gap-2 hover:opacity-75
-      ${large ? 'md:w-[380px] w-[320px]' : 'md:w-[320px] w-[300px]'} md:text-[24px] text-[16px] 
-      md:shadow-[0_5px_0_#0F0F0F] shadow-[0_2px_0_#0F0F0F]`}
+      className={`sway tracking-wides relative mx-auto flex h-14 max-w-[100%] items-center justify-center gap-2 rounded-[5px] border-[3px] border-[#000] bg-[#F2E206] text-center font-bold text-[#000F12] transition duration-300 hover:opacity-75 md:h-[67px] md:rounded-[10px]
+      ${
+        large ? 'w-[320px] md:w-[380px]' : 'w-[300px] md:w-[320px]'
+      } text-[16px] shadow-[0_2px_0_#0F0F0F] 
+      md:text-[24px] md:shadow-[0_5px_0_#0F0F0F]`}
     >
       {children}
       <figure>
         <img className="" src="/assets/images/ic-btn.svg" alt="Arrow" />
       </figure>
     </a>
-  );
-};
+  )
+}
 
-
-export default Button;
+export default Button

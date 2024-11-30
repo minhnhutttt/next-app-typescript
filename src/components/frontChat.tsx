@@ -11,8 +11,8 @@ const FrontChat = () => {
   const initialize = () => {
     if (window.FrontChat) {
       window.FrontChat('init', {
-      chatId,
-      useDefaultLauncher: false,
+        chatId,
+        useDefaultLauncher: false,
       })
     }
   }

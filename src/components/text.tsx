@@ -1,12 +1,17 @@
-"use client";
-import { ReactNode } from "react";
+'use client'
+
+import { ReactNode } from 'react'
+
 type PageTextPropsType = {
-  children: ReactNode;
-};
-export default function Text({ children }: PageTextPropsType) {
-  return (
-    <p className="fade-up text-black md:text-[18px] text-[14px] md:leading-[27px] max-w-[600px]">
-        {children}
-      </p>
-  );
+  children: ReactNode
 }
+
+const Text = ({ children }: PageTextPropsType) => {
+  return (
+    <p className="fade-up max-w-[600px] text-[14px] text-black md:text-[18px] md:leading-[27px]">
+      {children}
+    </p>
+  )
+}
+
+export default Text

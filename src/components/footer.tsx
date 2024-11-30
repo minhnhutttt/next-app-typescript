@@ -1,37 +1,37 @@
-"use client";
-import { frontOpen } from "@/lib/front";
-const links = [
-  {
-   title:'よくある質問',
-   url:'/#faq',
-  },
-  {
-    title:'お問い合わせ',
-    url:'#',
-   },
-];
+'use client'
+
+import { frontOpen } from '@/lib/front'
 
 const Footer = () => {
   return (
-    <footer className="bg-[url(/assets/images/bg-ft.jpg);] pt-[50px] pb-[20px]">
-      <div className="flex justify-center items-center">
+    <footer className="bg-[url(/assets/images/bg-ft.jpg);] pb-[20px] pt-[50px]">
+      <div className="flex items-center justify-center">
         <a href="#">
           <img src="/assets/images/logo-ft.png" alt="" />
         </a>
       </div>
-      <ul className="flex items-center max-md:justify-center max-md:mt-3 mt-[27px] mb-[30px] flex-wrap gap-8 max-w-[266px] mx-auto">
+      <ul className="mx-auto mb-[30px] mt-[27px] flex max-w-[266px] flex-wrap items-center gap-8 max-md:mt-3 max-md:justify-center">
         <li>
-          <a href="#faq" className="md:text-[18px] text-[16px] font-bold">よくある質問</a>
+          <a href="#faq" className="text-[16px] font-bold md:text-[18px]">
+            よくある質問
+          </a>
         </li>
         <li>
-          <button onClick={()=> {frontOpen()}} className="md:text-[18px] text-[16px] font-bold">お問い合わせ</button>
+          <button
+            onClick={() => {
+              frontOpen()
+            }}
+            className="text-[16px] font-bold md:text-[18px]"
+          >
+            お問い合わせ
+          </button>
         </li>
       </ul>
-      <p className="md:text-[14px] text-[12px] text-[#0F0F0F] text-center font-light">
+      <p className="text-center text-[12px] font-light text-[#0F0F0F] md:text-[14px]">
         Copyright © META Earth
       </p>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

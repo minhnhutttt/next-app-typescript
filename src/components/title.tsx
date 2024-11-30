@@ -1,12 +1,19 @@
-"use client";
-import { ReactNode } from "react";
+'use client'
+
+import { ReactNode } from 'react'
+
 export type PageTitlePropsType = {
-  text: ReactNode;
-};
-export default function Title({ text}: PageTitlePropsType) {
-  return (
-   <h2 className={`fade-up md:text-[48px] text-[24px] text-black font-bold z-10 relative tracking-[0.2em] text-center inter`}>
-    {text}
-   </h2>
-  );
+  text: ReactNode
 }
+
+const Title = ({ text }: PageTitlePropsType) => {
+  return (
+    <h2
+      className={`fade-up inter relative z-10 text-center text-[24px] font-bold tracking-[0.2em] text-black md:text-[48px]`}
+    >
+      {text}
+    </h2>
+  )
+}
+
+export default Title

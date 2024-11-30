@@ -1,145 +1,212 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaisei+Opti&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-@font-face {
-	font-family: 'Tsukushi A Round Gothic';
-	src: url('/assets/fonts/TsukushiARoundGothicRegular.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+@layer base {
+  * {
+    @apply box-border;
   }
 
-
-html {
-  scroll-behavior: smooth !important;
-}
-
-body {
-  color: #fff;
-  font-family: 'Tsukushi A Round Gothic', sans-serif;
-}
-
-.box:before,
-.box:after {
-	position: absolute;
-	left: 50%;
-	content: "";
-	height: 0;
-	width: 0;
-}
-
-.box:before {
-	top: 100%;
-	border: 18px solid;
-	border-color: transparent;
-	border-top-color: #333;
-	margin-left: -18px;
-}
-
-.box:after {
-	top: 99%;
-	border: 13px solid;
-	border-color: transparent;
-	border-top-color: #B6E1F2;
-	margin-left: -13px;
-}
-
-
-
-.ani-zoom-out, .ani-zoom-out2 {
-	opacity: 0;
+  html {
+    scroll-behavior: smooth !important;
   }
+
+  body {
+    color: #fff;
+    font-family: 'fot-tsukuardgothic-std', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  a {
+    @apply no-underline;
+  }
+
+  .box {
+    &::after,
+    &::before {
+      position: absolute;
+      left: 50%;
+      content: '';
+      height: 0;
+      width: 0;
+    }
+
+    &::before {
+      top: 100%;
+      border: 18px solid;
+      border-color: transparent;
+      border-top-color: #333;
+      margin-left: -18px;
+    }
+
+    &::after {
+      top: 99%;
+      border: 13px solid;
+      border-color: transparent;
+      border-top-color: #b6e1f2;
+      margin-left: -13px;
+    }
+  }
+
+  .ani-zoom-out,
+  .ani-zoom-out2 {
+    opacity: 0;
+  }
+
   [data-scroll='in'].ani-zoom-out {
-	animation: ani-zoom-out 0.25s forwards;
+    animation: ani-zoom-out 0.25s forwards;
   }
-  
+
   [data-scroll='in'].ani-zoom-out2 {
-	animation: ani-zoom-out2 0.5s forwards;
+    animation: ani-zoom-out2 0.5s forwards;
   }
 
   [data-scroll='in'].ani-zoom-out {
-	animation: ani-zoom-out 0.25s forwards;
+    animation: ani-zoom-out 0.25s forwards;
   }
+
   .korokoro {
-	animation: korokoro 2.5s linear 0s 1 normal forwards,
-	korokoro 2.5s linear 3s infinite normal forwards;
+    animation: korokoro 2.5s linear 0s 1 normal forwards,
+      korokoro 2.5s linear 3s infinite normal forwards;
   }
+
   .sway {
     animation: sway 1s infinite alternate;
   }
+
   @keyframes sway {
-    0%, 100% { transform: translateX(0); }
-    25%, 75% { transform: translateX(-5px); }
-    50% { transform: translateY(0); }
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    25%,
+    75% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateY(0);
+    }
   }
-@keyframes ani-zoom-out {
-	0% {
-	  scale: 2;
-	  opacity: 0;
-	}
-	1% {
-	  scale: 2;
-	  opacity: 100;
-	}
-	50% {
-	  scale: 0.8;
-	}
-	70% {
-	  scale: 1.5;
-	}
-	100% {
-	  opacity: 100;
-	  scale: 1;
-	}
+
+  @keyframes ani-zoom-out {
+    0% {
+      scale: 2;
+      opacity: 0;
+    }
+    1% {
+      scale: 2;
+      opacity: 100;
+    }
+    50% {
+      scale: 0.8;
+    }
+    70% {
+      scale: 1.5;
+    }
+    100% {
+      opacity: 100;
+      scale: 1;
+    }
   }
-  
+
   @keyframes ani-zoom-out2 {
-	0% {
-	  scale: 2;
-	}
-	20% {
-	  scale: 0.5;
-	}
-	50% {
-	  scale: 1.5;
-	}
-	70% {
-	  scale: 0.5;
-	}
-	100% {
-	  opacity: 100;
-	  scale: 1;
-	}
+    0% {
+      scale: 2;
+    }
+    20% {
+      scale: 0.5;
+    }
+    50% {
+      scale: 1.5;
+    }
+    70% {
+      scale: 0.5;
+    }
+    100% {
+      opacity: 100;
+      scale: 1;
+    }
   }
-  
+
   @keyframes bound {
-	0% { transform:translateY(0) }
-	5% { transform:translateY(0) }
-	10% { transform:translateY(0) }
-	20% { transform:translateY(-25px) }
-	25% { transform:translateY(0) }
-	30% { transform:translateY(-15px) }
-	50% { transform:translateY(0) }
-	100% { transform:translateY(0) }
+    0% {
+      transform: translateY(0);
+    }
+    5% {
+      transform: translateY(0);
+    }
+    10% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-25px);
+    }
+    25% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-15px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 
   @keyframes korokoro {
-	0%   { transform: translate(0%, 0%); }
-	5%   { transform: translate(10%, 0%) rotate(2deg); }
-	25%  { transform: translate(20%, 0%) rotate(4deg); }
-	30%  { transform: translate(-10%, 0%) rotate(-2deg); }
-	35%  { transform: translate(-15%, 0%) rotate(-4deg); }
-	45%  { transform: translate(10%, 0%) rotate(2deg); }
-	50%  { transform: translate(15%, 0%) rotate(5deg); }
-	60%  { transform: translate(-5%, 0%) rotate(-0.2deg); }
-	65%  { transform: translate(-7%, 0%) rotate(-1deg); }
-	75%  { transform: translate(0%, 0%) rotate(0deg); }
-	100% { transform: translate(0%, 0%) rotate(0deg); }
+    0% {
+      transform: translate(0%, 0%);
+    }
+    5% {
+      transform: translate(10%, 0%) rotate(2deg);
+    }
+    25% {
+      transform: translate(20%, 0%) rotate(4deg);
+    }
+    30% {
+      transform: translate(-10%, 0%) rotate(-2deg);
+    }
+    35% {
+      transform: translate(-15%, 0%) rotate(-4deg);
+    }
+    45% {
+      transform: translate(10%, 0%) rotate(2deg);
+    }
+    50% {
+      transform: translate(15%, 0%) rotate(5deg);
+    }
+    60% {
+      transform: translate(-5%, 0%) rotate(-0.2deg);
+    }
+    65% {
+      transform: translate(-7%, 0%) rotate(-1deg);
+    }
+    75% {
+      transform: translate(0%, 0%) rotate(0deg);
+    }
+    100% {
+      transform: translate(0%, 0%) rotate(0deg);
+    }
   }
 
   @keyframes tikatika {
-	0% { opacity: 1; }
-	50% { opacity: 0; }
-	100% { opacity: 1; }
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
+}
+
+@layer components {
+}
+
+@layer utilities {
+}
