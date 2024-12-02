@@ -21,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="no-scrollbar">
+    <html lang="en" className="">
        <body
-        className={`${garamond.className} no-scrollbar`}
+        className={`${garamond.className} `}
       >
         <ScrollContainer>
           {children}

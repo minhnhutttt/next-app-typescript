@@ -1,7 +1,8 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Pagination } from 'swiper/modules';
 import "swiper/css";
+import 'swiper/css/pagination';
 const data = [
   {
     id: "01",
@@ -111,14 +112,12 @@ const Technical = () => {
         <div className="ani-content w-full max-md:pt-[clamp(10px,3vmin,30px)]">
             <Swiper
                 slidesPerView={"auto"}
-                loop={true}
                 spaceBetween={30}
-                modules={[Autoplay]}
-                autoplay={{
-                delay: 4000,
-                disableOnInteraction: false,
+                pagination={{
+                  dynamicBullets: false,
                 }}
-                className="mySwiper"
+                modules={[Pagination]}
+                className="mySwiper !pb-10"
             >
                 {data.map((item, index) => (
                 <SwiperSlide key={index} className="!size-[clamp(300px,55.556vmin,500px)] bg-[url('/assets/images/technical-item.png')] bg-cover">

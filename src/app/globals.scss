@@ -11,6 +11,15 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+:root {
+  --swiper-pagination-bottom: 0;
+  --swiper-pagination-color: #f10;
+  --swiper-pagination-bullet-size: 12px;
+  --swiper-pagination-bullet-inactive-color: #F7F4EF;
+  --swiper-pagination-bullet-inactive-opacity: 0.8
+}
+
+
 .frame-black{
 	background:
 	radial-gradient(circle at top left, transparent 50%, #000 50%, #000 calc(50% + 2px), transparent calc(50% + 2px)),
