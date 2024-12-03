@@ -3,7 +3,6 @@ import { EB_Garamond} from "next/font/google";
 import "./globals.scss";
 import Footer from "@/components/footer";
 import ScrollContainer from "@/components/scrollContainer";
-import SmoothScroll from "@/components/smoothSCroll";
 
 const garamond = EB_Garamond({
   weight: ["400", "500", "700", "800"],
@@ -21,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="">
+    <html lang="en" className="no-scrollbar">
        <body
-        className={`${garamond.className} `}
+        className={`${garamond.className} no-scrollbar`}
       >
         <ScrollContainer>
           {children}
