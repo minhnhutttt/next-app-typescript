@@ -10,9 +10,9 @@ const data = [
     title: 'Corporate Implementation',
     content: (
       <>
-        Organizations can use DONATION Coin to foster an entirely new &quot;culture
-        of expressing gratitude&quot; and enhance trust relationships with
-        employees.
+        Organizations can use DONATION Coin to foster an entirely new
+        &quot;culture of expressing gratitude&quot; and enhance trust
+        relationships with employees.
       </>
     ),
     items: [
@@ -137,8 +137,8 @@ const Cases = () => {
           Revitalizing Local Communities
         </h3>
         <p className="fade-up mt-4 text-center text-[15px] font-medium md:mt-6 md:text-[18px]">
-          Using DONATION Coin can strengthen social bonds in local communities and
-          support community revitalization.
+          Using DONATION Coin can strengthen social bonds in local communities
+          and support community revitalization.
         </p>
         <div className="mx-auto grid w-full max-w-[960px] divide-[#D8D8D8] max-md:divide-y md:mt-20 md:grid-cols-3 md:divide-x">
           {dataLocal.map((item, index) => (

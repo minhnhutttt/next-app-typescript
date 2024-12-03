@@ -72,9 +72,9 @@ const data = [
     title: 'Data Analytics and Continuous Improvement',
     content: (
       <>
-        The DONATION Coin system incorporates advanced data analytics for refinement.
-        Machine learning algorithms analyze transaction patterns to detect
-        trends and anomalies, enabling fraud detection and user behavior
+        The DONATION Coin system incorporates advanced data analytics for
+        refinement. Machine learning algorithms analyze transaction patterns to
+        detect trends and anomalies, enabling fraud detection and user behavior
         predictions. Privacy-preserving analysis using differential privacy
         protects individual user data while extracting valuable insights. A
         feedback loop continuously updates system parameters based on user

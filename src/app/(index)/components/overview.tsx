@@ -143,8 +143,8 @@ const Overview = () => {
                   Key features of DONATION Coin
                 </h4>
                 <p className="pt-5 text-[14px] leading-none md:text-[18px]">
-                  By eliminating transaction fees, DONATION Coin removes barriers to
-                  small-scale financial transactions. <br />
+                  By eliminating transaction fees, DONATION Coin removes
+                  barriers to small-scale financial transactions. <br />
                   <br />
                   It opens up new possibilities for peer-to-peer support
                   (directly from one individual to another without
@@ -153,8 +153,8 @@ const Overview = () => {
                   <br />
                   <br />
                   This white paper outlines the scientific basis, technical
-                  implementation, and potential social impact of the DONATION Coin
-                  ecosystem.
+                  implementation, and potential social impact of the DONATION
+                  Coin ecosystem.
                 </p>
               </div>
               <div className="mt-5 flex justify-end">

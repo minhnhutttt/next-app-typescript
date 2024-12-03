@@ -38,7 +38,7 @@ const Future = () => {
               the Project
             </h4>
             <p className="fade-up mt-8 text-[16px] leading-[1.3] md:mt-[42px] md:text-[18px]">
-            DONATION Coin aims to digitize the expression of gratitude and
+              DONATION Coin aims to digitize the expression of gratitude and
               visualize the value of social contributions. It is a project that
               aims to create a new economic system. By introducing fee-free
               transactions, a design based on scientific evidence, and a
