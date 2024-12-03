@@ -35,30 +35,31 @@ const data = [
 ];
 
 const Service = () => {
+  
   return (
-    <section className="pt-[9em]">
-        <div className="mb-[1em] text-[1em] font-medium uppercase text-gray-500">Services</div>
-        <div className="mb-[3em]">
-          <h2 className="text-[3em] font-bold leading-[1.3]">
+    <section className="md:pt-[9em] pt-[3em]">
+        <div className="md:mb-[1em] text-[1em] font-medium uppercase text-gray-500">Services</div>
+        <div className="mb-[2em] md:mb-[3em]">
+          <h2 className="md:text-[3em] text-[1.3em] font-bold leading-[1.3]">
           新しい技術で作られるサービスは世界のスタンダードに。<br />
           古い技術のままでは使いづらいサービスの代表格に。
           </h2>
         </div>
         
-        <div className="ani-content w-full max-md:pt-[clamp(10px,3vmin,30px)]">
+        <div className="ani-content w-full ">
             <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={30}
                 className="mySwiper"
             >
                 {data.map((item, index) => (
-                <SwiperSlide key={index} className="!w-[23.25em] !h-[27.5em] bg-white rounded-[0.75em] relative">
+                <SwiperSlide key={index} className="shake !w-[16em] md:!w-[23.25em] md:!h-[27.5em] !h-[22.5em] bg-white rounded-[0.75em] relative">
                   <div className="w-full h-full absolute z-[-1] flex items-center justify-end flex-col">
                     <img className="object-cover h-[65%]" src={item.image} alt="" />
                     </div>
                     <div className="text-black p-[1em]">
-                      <h3 className="text-[1.2em] font-bold mb-[1em]">{item.title}</h3>
-                      <p className="border-black border inline-block py-[.25em] px-[1em] rounded-full text-[1em] font-medium">{item.label}</p>
+                      <h3 className="md:text-[1.2em] text-[1em] font-bold mb-[1em]">{item.title}</h3>
+                      <p className="border-black border inline-block py-[.25em] px-[1em] rounded-full text-[0.8em] md:text-[1em] font-medium">{item.label}</p>
                     </div>
                 </SwiperSlide>
                 ))}
