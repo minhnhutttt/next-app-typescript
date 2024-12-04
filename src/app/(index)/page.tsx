@@ -14,10 +14,8 @@ export default function Home() {
           <FV />
         </div>
         <div ref={triggerRef}>
-          <div className="md:px-[2em] px-[1em]">
             <Service />
             <Reason />
-          </div>
           <Project />
         </div>
       </div>

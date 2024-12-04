@@ -24,11 +24,11 @@ const FV = () => {
           </div>
           <div className="max-w-[42em]">
             <p className="text-[0.7em] md:text-[1.2em] text-center">
-            私たちは<br />私たちの売りたいものを売りません。<br />ビジネスの“限界”を“出発点”に変革するために<br />お客様に必要なものを提案します。
+            私たちは<br className="max-md:hidden" />私たちの売りたいものを売りません。<br />ビジネスの“限界”を“出発点”に変革するために<br />お客様に必要なものを提案します。
             </p>
           </div>
           <div className="mt-[2em]">
-          <a href="/contact" className="shake bg-white dark:border-black block leading-[1.3] font-bold uppercase text-[1em] md:py-[0.75em] py-[0.5em] md:px-[2em] px-[1em] rounded-full text-center text-black dark:text-white dark:bg-black">Let’s Talk</a>
+          <a href="/contact" className="shake bg-white dark:border-black block leading-[1.3] font-bold uppercase text-[1em] md:py-[0.75em] py-[0.5em] md:px-[2em] px-[1em] rounded-full text-center text-black dark:text-white dark:bg-black">無料相談を予約</a>
           </div>
         </div>
       </section>
