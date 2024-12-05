@@ -115,12 +115,12 @@ const Service = () => {
         <div className="relative">
           <div
             ref={sliderRef}
-            className="flex w-[calc(((16em_*_5)_+_(4vw_*_4))_+_41vw)] gap-[4vw] md:w-[calc(((23.25em_*_5)_+_(3vw_*_4))_+_80vw)] mx-[10vw] md:gap-[3vw] my-[7rem] h-[60rem] md:max-h-[calc(100vh-10rem)] max-h-[calc(100vh-10rem)]"
+            className="flex items-center w-[calc(((16em_*_5)_+_(4vw_*_4))_+_41vw)] gap-[4vw] md:w-[calc(((23.25em_*_5)_+_(3vw_*_4))_+_80vw)] mx-[10vw] md:gap-[3vw] my-[7rem] h-[60rem] md:max-h-[calc(100vh-10rem)] max-h-[calc(100vh-8rem)]"
           >
             {data.map((item, index) => (
               <div
                 key={index}
-                className="panel !w-[16em] md:!w-[23.25em] h-full relative"
+                className="panel !w-[16em] md:!w-[23.25em] h-full relative overflow-hidden max-md:max-h-[550px]"
               >
                 <div className="relative shake  rounded-[0.75em] w-full h-full" 
                 style={{backgroundColor: item.color}}
@@ -134,9 +134,9 @@ const Service = () => {
                       {item.label}
                     </p>
                     </div>
-                    <div className="flex h-[60%] max-h-[60%] justify-center mt-6">
+                    <div className="flex w-full h-[60%] max-h-[60%] justify-center mt-2 md:mt-6">
                     <img
-                      className="object-cover h-full"
+                      className="object-contain h-full w-full"
                       src={item.image}
                       alt=""
                     />
