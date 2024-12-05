@@ -11,7 +11,7 @@ const data = [
   {
     id: "01",
     title:
-      "御社とユーザーにはモダン技術が必要です。ウェブを通じたユーザーとの対話を実装しましょう。",
+      (<>御社とユーザーには<span className="text-black">モダン技術</span>が必要です。ウェブを通じた<span className="text-black">ユーザーとの対話を実装</span>しましょう。</>),
     label: "ウェブサイト制作",
     image: "/assets/images/service-05.svg",
     color: '#FFE1CB'
@@ -19,15 +19,15 @@ const data = [
   {
     id: "02",
     title:
-      "単なる情報発信では、もう不十分です。ユーザーの行動を導く、直感的な体験を。",
+      (<><span className="text-black">単なる情報発信</span>では、もう不十分です。ユーザーの行動を導く、<span className="text-black">直感的な体験</span>を。</>),
     label: "ランディングペイジ制作",
     image: "/assets/images/service-01.svg",
-    color: '#90C3CD'
+    color: '#d1ffff'
   },
   {
     id: "03",
     title:
-      "成長の鍵は、効率化された業務環境にあります。スピーディーな意思決定を可能にするシステムを。",
+      (<>成長の鍵は、<span className="text-black">効率化された業務環境</span>にあります。<span className="text-black">スピーディーな意思決定</span>を可能にするシステムを。</>),
     label: "システム開発",
     image: "/assets/images/service-04.svg",
     color: '#ffffc6'
@@ -35,7 +35,7 @@ const data = [
   {
     id: "04",
     title:
-      "AI活用は、もはや選択肢ではありません。御社の強みを最大化する、必然の一手です。",
+      (<>AI活用は、もはや選択肢ではありません。御社の<span className="text-black">強みを最大化</span>する、<span className="text-black">必然の一手</span>です。</>),
     label: "AI事業開発",
     image: "/assets/images/service-02.svg",
     color: '#e2c6ff'
@@ -43,7 +43,7 @@ const data = [
   {
     id: "05",
     title:
-      "効果のない広告に、価値はありません。データと技術で、確実な成果を生み出します。",
+      (<>効果のない広告に、価値はありません。<span className="text-black">データと技術</span>で、<span className="text-black">確実な成果</span>を生み出します。</>),
     label: "広告運用",
     image: "/assets/images/service-03.svg",
     color: '#ffc6ff'
@@ -129,18 +129,19 @@ const Service = () => {
                     <h3 className="md:text-[clamp(15px,2.889vmin,26px)] text-[clamp(10px,5vmin,20px)] font-bold mb-[1em] text-[#848484]">
                       {item.title}
                     </h3>
-                    <div className="flex h-[60%] max-h-[60%] justify-center">
+                    <div className="flex justify-center mt-[1em]">
+                    <p className="border-black border inline-block py-[.25em] px-[1em] rounded-full text-[0.8em] md:text-[1em] font-medium">
+                      {item.label}
+                    </p>
+                    </div>
+                    <div className="flex h-[60%] max-h-[60%] justify-center mt-6">
                     <img
                       className="object-cover h-full"
                       src={item.image}
                       alt=""
                     />
                   </div>
-                  <div className="flex justify-center mt-[1em]">
-                    <p className="border-black border inline-block py-[.25em] px-[1em] rounded-full text-[0.8em] md:text-[1em] font-medium">
-                      {item.label}
-                    </p>
-                    </div>
+                  
                   </div>
                 </div>
               </div>
