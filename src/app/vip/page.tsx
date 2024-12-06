@@ -9,11 +9,11 @@ export default function Vip() {
       hueJitter: 0,
       trailLength: 0.8,
       baseSpeed: 2,
-      maxAcceleration: 2,
-      accelerationRate: 0.05,
-      decelerationRate: 0.05,
-      minSpawnRadius: 10,
-      maxSpawnRadius: 300,
+      maxAcceleration: 0.3,
+      accelerationRate: 0.2,
+      decelerationRate: 0.2,
+      minSpawnRadius: 50,
+      maxSpawnRadius: 600,
     });
   });
 
@@ -23,30 +23,26 @@ export default function Vip() {
         <span className="starfield-origin absolute left-1/2 top-1/2 size-px pointer-events-none opacity-0"></span>
         <div className="size-full flex items-center justify-center">
           <div className="text-white text-center ">
-            <h3 className="md:text-[80px] text-[40px] font-bold leading-tight">
+            <h3 className="md:text-[80px] text-[40px] font-bold leading-tight mb-8">
               SKALE's <br />
               VIP-only <br />
               information
             </h3>
-            <p className="md:text-[24px] text-[18px] md:py-12 py-8">
-              - 特別な情報が確認できます -
-            </p>
-            <button className="button-starfield-origin h-[50px] w-[200px] bg-white/10 flex items-center justify-center rounded-[10px] md:text-[24px] text-[18px]  mx-auto font-bold">
-              ログイン
+            <button className="button-starfield-origin h-[50px] w-[200px] bg-black flex items-center justify-center rounded-[10px] md:text-[24px] text-[20px] mx-auto  border whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 gradient-rainbow-button px-4 py-2 jumper-shadow shaky">
+            Login
             </button>
-            <p className="md:text-[12px] text-[12px] py-5 flex items-center justify-center gap-2">
-              <svg
-                width="15"
-                height="16"
-                viewBox="0 0 15 16"
+            <p className="md:text-[12px] text-[12px] py-5 flex items-center justify-center gap-2 leading-none">
+            <svg
+              className="w-[20px]"
+                viewBox="0 0 15 14"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M7.5 10.5V8M7.5 5.5H7.50625M13.75 8C13.75 11.4518 10.9518 14.25 7.5 14.25C4.04822 14.25 1.25 11.4518 1.25 8C1.25 4.54822 4.04822 1.75 7.5 1.75C10.9518 1.75 13.75 4.54822 13.75 8Z"
+                  d="M7.5 9.5V7M7.5 4.5H7.50625M13.75 7C13.75 10.4518 10.9518 13.25 7.5 13.25C4.04822 13.25 1.25 10.4518 1.25 7C1.25 3.54822 4.04822 0.75 7.5 0.75C10.9518 0.75 13.75 3.54822 13.75 7Z"
                   stroke="white"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
               VIP申請はこちらから

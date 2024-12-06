@@ -4,6 +4,58 @@
 
 :root {
   --bg: url("https://www.messup.it/images/ALL-EYES-ON-US-Sticker_08.png");
+  --color-cyan: #00ffff8c;
+  --color-purple: #c568ff8b;
+  --color-pink: #ff8fff5a
+}
+.gradient-rainbow-button {
+  background-image: linear-gradient(110deg,#fff 33%,#875cf5,#6186ff,#00c0ea,#fff8e8,#ffa5cc,#333 66%)!important;
+  background-size: 350% 100%;
+  background-position: 95% 0;
+  transition: background-position .4s ease-in-out,color .4s ease-in-out!important
+}
+.gradient-rainbow-button:hover {
+  background-position: 5% 0;
+  color: #2b384b;
+}
+
+.jumper-shadow {
+  animation: jumper-shadow-pulse 8s ease-in-out infinite
+}
+
+@keyframes jumper-shadow-pulse {
+  0%,to {
+      box-shadow: 0 0 10px 0 var(--color-cyan),0 0 0 0 var(--color-purple),0 0 20px 0 var(--color-pink)
+  }
+
+  50% {
+      box-shadow: 0 0 20px 0 var(--color-cyan),0 0 30px 0 var(--color-purple),0 0 90px 0 var(--color-pink)
+  }
+}
+
+.shaky:hover {
+  animation: shaky .3s infinite
+}
+@keyframes shaky {
+  0% {
+      transform: rotate(0) translate(0)
+  }
+
+  25% {
+      transform: rotate(1deg) translate(1px,-1px)
+  }
+
+  50% {
+      transform: rotate(-1deg) translate(-1px,1px)
+  }
+
+  75% {
+      transform: rotate(1deg) translate(1px,1px)
+  }
+
+  to {
+      transform: rotate(0) translate(0)
+  }
 }
 
 /* Smooth Scroll */
