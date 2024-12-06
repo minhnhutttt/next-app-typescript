@@ -133,7 +133,7 @@ export default function ShowImge() {
               SKALE's <br />
               Showcase
             </h3>
-            <a href="/view-works" className="button-starfield-origin h-[50px] w-[200px] bg-black flex items-center justify-center rounded-[10px] md:text-[24px] text-[20px] mx-auto  border whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 gradient-rainbow-button px-4 py-2 jumper-shadow shaky">
+            <a href="/view-works" className="button-starfield-origin leading-none h-[50px] w-[200px] bg-black flex items-center justify-center rounded-[10px] md:text-[24px] text-[20px] mx-auto  border whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 gradient-rainbow-button px-4 py-2 jumper-shadow shaky">
             View Works
             </a>
             <p className="md:text-[12px] text-[12px] py-5 flex items-center justify-center gap-2 leading-none">

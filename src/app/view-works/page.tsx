@@ -101,7 +101,7 @@ export default function ViewWorks() {
             SHOWCASE
             </div>
 
-            <div className="py-[13rem] px-5 md:px-10">
+            <div className="md:py-[13rem] py-[8rem] px-5 md:px-10">
                 <p className="text-[1.6rem] mb-5">Selected Projects
                 </p>
                 <div className="border-t border-white divide-y divide-white">
