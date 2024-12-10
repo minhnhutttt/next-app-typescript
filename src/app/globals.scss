@@ -16,6 +16,9 @@ body {
   --swiper-navigation-sides-offset: 5px;
 }
 
+.b-canvas:nth-last-child {
+  display: none;
+}
 .swiper-slide {
   height: auto !important;
 }

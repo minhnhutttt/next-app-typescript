@@ -4,6 +4,7 @@ import "./globals.scss";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ScrollContainer from "@/components/scrollContainer";
+import Script from "next/script";
 
 const lagueSpartan = League_Spartan({
   weight: ["400", "500", "700", "800", "900"],
@@ -42,11 +43,16 @@ export default function RootLayout({
        <body
         className={`${lagueSpartan.className} ${poppins.variable} ${inter.variable} ${roboto.variable}  bg-main bg-[linear-gradient(145deg,_#5F93FF_33.61%,_#0B3FAD_79.25%)]`}
       >
+        <Script 
+        src="https://unpkg.com/blotterjs-fork@0.1.0/build/blotter.min.js" 
+        strategy="beforeInteractive" 
+      />
         <ScrollContainer>
         <Header />
         {children}
         <Footer />
         </ScrollContainer>
+        
       </body>
     </html>
   );
