@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/button";
-import WaterText from "@/components/waterText";
+import PixiCanvas from "@/components/PixiCanvas";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 const dataStats = [
   {
@@ -64,8 +64,8 @@ const FV = () => {
       </div>
       <div className="fade-up relative text-center md:text-[128px] text-[45px] font-bold leading-none [text-shadow:2px_4px_4px_#18539E] mt-8">
       </div>
-       <WaterText />
 
+    <PixiCanvas />
       <p className="fade-up text-center md:text-[48px] text-[24px] leading-none [text-shadow:2px_4px_4px_#18539E] max-md:mt-7 mb-9">
         - Dive into a world created by free -
       </p>
