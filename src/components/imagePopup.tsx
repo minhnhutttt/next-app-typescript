@@ -12,14 +12,14 @@ const ImagePopup = ({imageSrc, isHovered} : {imageSrc: string, isHovered: boolea
       const displacementFilter = new PIXI.filters.DisplacementFilter(displacementRef.current);
       displacementRef.current.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
   
+      const scaleX = 1000;
+      const scaleY = 1000;
       const app = displacementRef.current.parent;
       if (app) {
         app.filters = [displacementFilter];
   
         let dx = 0;
         let dy = 0;
-        const scaleX = 2000;
-        const scaleY = 2000;
         displacementFilter.scale.x = scaleX;
         displacementFilter.scale.y = scaleY;
         displacementRef.current.anchor.set(0.5);
@@ -52,8 +52,8 @@ const ImagePopup = ({imageSrc, isHovered} : {imageSrc: string, isHovered: boolea
         });
   
         gsap.to(displacementFilter.scale, {
-          x: 2000,
-          y: 2000,
+          x: scaleX,
+          y: scaleY,
           duration: 0.5,
         });
       }
@@ -65,7 +65,6 @@ const ImagePopup = ({imageSrc, isHovered} : {imageSrc: string, isHovered: boolea
     <div ref={wrapperRef}>
       <Stage
         options={{
-          backgroundColor: 'transparent',
           backgroundAlpha: 0,
           width: 1000,
           height: 1000,
