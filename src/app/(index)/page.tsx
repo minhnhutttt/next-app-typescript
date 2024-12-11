@@ -1,10 +1,11 @@
 "use client";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextAnataDakeNo from "./texts/text-anata-dake-no";
 import TextKyujitsu from "./texts/text-kyujitsu";
 import TextKonsheruju from "./texts/text-konsheruju";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -12,15 +13,18 @@ gsap.config({
 });
 
 export default function Home() {
+  const isMobile = useMediaQuery("(max-width: 768px)", false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [color01, setColor01] = useState<string>("white");
   const [color02, setColor02] = useState<string>("white");
+  const [hovered, setHovered] = useState<boolean>(false);
 
   useEffect(() => {
     const overlay = document.querySelector("#overlay");
     const main = document.querySelector("#main");
+    const bg = document.querySelector("#bg");
     const container = document.querySelector("#container");
-    
-    const logo = document.querySelector("#logo");
+
     const text01 = document.querySelector("#text01");
     const text02 = document.querySelector("#text02");
     const text03 = document.querySelector("#text03");
@@ -30,17 +34,19 @@ export default function Home() {
 
     const textSvg = document.querySelectorAll(".text-svg");
 
+    const aniImage = document.querySelectorAll(".ani-image");
+
     let ctx = gsap.context(() => {
       const tl = gsap.timeline();
 
       gsap.set(main, {
-        height: '100vh'
+        height: "100vh",
       });
       gsap.set(text01, {
-        x: -50,
+        x: -20,
       });
       gsap.set(text03, {
-        x: 50,
+        x: 20,
       });
 
       gsap.set(container, {
@@ -58,7 +64,7 @@ export default function Home() {
           yPercent: 0,
           opacity: 100,
           duration: 1,
-          ease: 'expo.out'
+          ease: "expo.out",
         },
         "<"
       )
@@ -72,7 +78,7 @@ export default function Home() {
             yPercent: 0,
             opacity: 100,
             duration: 1,
-            ease: 'expo.out'
+            ease: "expo.out",
           },
           "<"
         )
@@ -86,19 +92,19 @@ export default function Home() {
             yPercent: 0,
             opacity: 100,
             duration: 1,
-            ease: 'expo.out'
+            ease: "expo.out",
           },
           "<"
         )
         .to(text01, {
           x: 0,
-            ease: 'expo.inOut'
+          ease: "expo.inOut",
         })
         .to(
           text03,
           {
             x: 0,
-            ease: 'expo.inOut',
+            ease: "expo.inOut",
             onComplete: () => {
               setColor01("black");
               setColor02("black");
@@ -109,22 +115,23 @@ export default function Home() {
         .to(overlay, {
           yPercent: -100,
           duration: 1,
-          ease: 'expo.out'
+          ease: "expo.out",
         })
         .to(container, {
           top: 0,
           yPercent: 0,
-          ease: 'expo.out',
+          ease: "expo.out",
           onStart: () => {
             setColor02("#F52895");
           },
         })
-        .to(main, {
-          height: 'auto',
-        },'<')
-        .to(logo, {
-          opacity: 1
-        },'<')
+        .to(
+          main,
+          {
+            height: "auto",
+          },
+          "<"
+        )
         .fromTo(
           svgCircle01,
           {
@@ -139,36 +146,76 @@ export default function Home() {
             strokeDasharray: 697.7505493164062,
             strokeDashoffset: 697.7505493164062,
           },
-          { strokeDashoffset: 0, duration: 0.5, ease: "expo.inOut",
-           },
+          { strokeDashoffset: 0, duration: 0.5, ease: "expo.inOut" },
           "-=0.3"
         )
-        .to(
-          textSvg,
-          {
-            y: 0,
-            stagger: 0.3,
-            duration: 0.3, ease: "linear"
-          }
-        );
+        .to(textSvg, {
+          y: 0,
+          stagger: 0.3,
+          duration: 0.3,
+          ease: "linear",
+        })
+        .to(bg, {
+          opacity: 1,
+        })
+        .to(aniImage, {
+          opacity: 1,
+          stagger: 0.1,
+        });
     });
 
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        setHovered(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleHover = () => {
+    setHovered(true);
+  };
+
+  const handleLeave = () => {
+    setHovered(false);
+  };
+
+  const handleClick = () => {
+    setHovered(true);
+  };
+
   return (
     <main>
       <div className="relative overflow-hidden">
-        <div id="overlay" className="fixed inset-0 bg-black"></div>
-        {/* <div className="fixed inset-0  bg-[url('/assets/images/bg.png')] bg-cover bg-right-bottom"></div> */}
-        <div id="main" className="relative px-5 md:px-[30px] py-5 md:py-10 z-10">
-          <div id="container" className="flex md:items-center relative max-md:flex-col max-md:gap-10">
-            <a id="logo" href="/" className="opacity-0 max-md:w-[70px]"><img src="/assets/images/logo.svg" alt="" /></a>
-            <div className="flex items-center px-2 md:px-6">
+        <div id="overlay" className="fixed inset-0 bg-black z-20"></div>
+        <div
+          id="bg"
+          className="absolute inset-0 opacity-0 bg-[url('/assets/images/bg.png')] bg-cover bg-right-bottom"
+        ></div>
+        <div
+          id="main"
+          className="relative px-5 md:px-[30px] py-5 md:py-10 z-30"
+        >
+          <div
+            id="container"
+            className="flex md:items-center relative max-md:flex-col max-md:gap-10"
+          >
+            <div className="flex items-center px-2 md:px-6 md:ml-20 max-md:mt-24">
               <div id="text01" className="relative opacity-0">
                 <div className="absolute top-1/2 -left-4 -right-4 -translate-y-1/2">
                   <svg
-                  className="w-full"
+                    className="w-full"
                     viewBox="0 0 332 101"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -200,20 +247,61 @@ export default function Home() {
             </div>
           </div>
           <div className="flex items-end flex-col w-full max-w-[1000px] md:mt-8 mt-6 gap-1">
-              <h3 className="md:pr-5 relative overflow-hidden max-md:w-[90vw]"><img className="text-svg translate-y-full relative" src="/assets/images/text-svg-01.svg" alt="" /></h3>
-              <h3 className="relative overflow-hidden max-md:w-[63vw]"><img className="text-svg translate-y-full relative" src="/assets/images/text-svg-02.svg" alt="" /></h3>
+            <h3 className="md:pr-5 relative overflow-hidden max-md:w-[90vw]">
+              <img
+                className="text-svg translate-y-full relative"
+                src="/assets/images/text-svg-01.svg"
+                alt=""
+              />
+            </h3>
+            <h3 className="relative overflow-hidden max-md:w-[63vw]">
+              <img
+                className="text-svg translate-y-full relative"
+                src="/assets/images/text-svg-02.svg"
+                alt=""
+              />
+            </h3>
           </div>
-          <div className="relative flex flex-col items-start -mt-20">
-            <div className="inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s]"><img src="/assets/images/img-01.png" alt="" /></div>
-            <div className="inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.1s] mt-10 ml-10 relative z-10"><img src="/assets/images/img-02.png" alt="" /></div>
-            <div className="inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.5s] relative -mt-10 ml-32"><img src="/assets/images/img-03.png" alt="" /></div>
-          </div>
-
-          <div className="absolute right-32 top-0">
-            <div className="inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s]"><img src="/assets/images/img-04.png" alt="" /></div>
-          </div>
-          <div className="absolute right-0 top-[300px]">
-            <div className="inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s]"><img src="/assets/images/img-05.png" alt="" /></div>
+          <div className="flex max-md:items-center justify-between max-md:mt-10 dt:-mt-20 relative max-md:flex-col">
+            <div className="relative flex md:flex-col items-start max-lg:flex-1">
+              <div className="ani-image opacity-0 inline-flex relative">
+                <div className="animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s]">
+                <img className="" src="/assets/images/img-01.png" alt="" />
+                <button className="absolute -bottom-0 max-md:right-0 md:-right-4 cursor-pointer" onMouseEnter={!isMobile ? () => handleHover() : undefined}
+                                onMouseLeave={!isMobile ? handleLeave : undefined}
+                                onClick={isMobile ? () => handleClick() : undefined}>
+                  <img className="max-md:w-8" src="/assets/images/ic-info.svg" alt="" />
+                </button>
+                </div>
+                <div ref={containerRef} className={`md:w-[556px] w-[80%] bg-white/[0.88] rounded-[31px] border border-black fixed md:absolute left-1/2 max-md:top-1/2 max-md:-translate-x-1/2 max-md:-translate-y-1/2 md:left-[110%] p-5 z-40 max-md:text-[13px] ${hovered ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                文化と食の散策ツアー（上野・浅草）<br /><br />午前：上野恩賜公園 & 国立西洋美術館<br />上野恩賜公園で朝の散歩をしながら、自然を満喫。公園内にある国立西洋美術館で、ヨーロッパ美術に触れる。<br />入場料: 500-1,000円（特別展による）<br /><br />昼食：浅草「天丼浅草 ○○屋」<br />天ぷらの名店で江戸前の天丼を堪能。<br />昼食予算: 2,000円<br /><br />午後：浅草寺と仲見世通り散策<br />浅草寺で参拝し、仲見世通りでお土産を探しながら歩く。<br />人力車で夕食のお店へ<br />人力車：10分 5,000円<br /><br />夕食：浅草「○○屋」<br />歴史ある店でどじょう鍋を楽しむ。<br />夕食予算: 3,000円<br />合計予算：11,500円～12,500円
+                </div>
+              </div>
+              <div className="ani-image opacity-0 inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.1s] mt-10 lg:ml-10 relative z-10">
+                <img src="/assets/images/img-02.png" alt="" />
+              </div>
+              <div className="ani-image opacity-0 inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.5s] relative -mt-5 lg:-mt-10 lg:ml-32">
+                <img src="/assets/images/img-03.png" alt="" />
+              </div>
+            </div>
+            <div className="ani-image opacity-0 mt-12 md:mt-40 max-md:w-[240px]">
+              <a href="/login" className="flex duration-150 hover:opacity-75">
+                <img src="/assets/images/btn-main.png" alt="" />
+              </a>
+            </div>
+            <div className="flex md:flex-col items-start md:items-end dt:-mt-32 max-lg:flex-1 relative">
+              <div className="flex flex-col items-end">
+                <div className="ani-image opacity-0 inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s] lg:mr-20  max-md:w-[150px]">
+                  <img src="/assets/images/img-04.png" alt="" />
+                </div>
+                <div className="ani-image opacity-0 inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s] -mt-10  max-md:w-[150px]">
+                  <img src="/assets/images/img-05.png" alt="" />
+                </div>
+              </div>
+              <div className="ani-image opacity-0 inline-flex md:absolute bottom-0 max-lg:w-[300px]">
+                <img src="/assets/images/img-06.png" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -28,6 +28,13 @@ export default function RootLayout({
        <body
         className={`${archivo.className} ${inter.variable} text-[#000A23]`}
       >
+        <a
+          id="logo"
+          href="/"
+          className="absolute max-md:w-[70px] block top-5 left-5 z-10"
+        >
+          <img src="/assets/images/logo.svg" alt="" />
+        </a>
           {children}
       </body>
     </html>
