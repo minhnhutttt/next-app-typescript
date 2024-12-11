@@ -1,19 +1,35 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Sprite, Stage, Container } from '@pixi/react';
 import * as PIXI from 'pixi.js';
 import gsap from "gsap";
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const ImagePopup = ({imageSrc, isHovered} : {imageSrc: string, isHovered: boolean}) => {
   const displacementRef = useRef<PIXI.Sprite>(null);
-  const wrapperRef = useRef<HTMLDivElement>(null)
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMediaQuery("(max-width: 768px)", false);
+ const [stageSize, setStageSize] = useState({ width: 0, height: 0 });
 
+ const updateStageSize = useCallback(()=> {
+  const width = Math.min(window.innerWidth * 0.8, 800);
+  const height = width / 16 * 9;
+  setStageSize({ width, height });
+ },[isMobile])
+
+ useEffect(() => {
+   updateStageSize();
+   window.addEventListener("resize", updateStageSize); 
+   return () => {
+     window.removeEventListener("resize", updateStageSize);
+   };
+ }, []);
   useEffect(() => {
     if (displacementRef.current) {
       const displacementFilter = new PIXI.filters.DisplacementFilter(displacementRef.current);
       displacementRef.current.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
   
-      const scaleX = 1000;
-      const scaleY = 1000;
+      const scaleX = 2000;
+      const scaleY = 2000;
       const app = displacementRef.current.parent;
       if (app) {
         app.filters = [displacementFilter];
@@ -22,12 +38,12 @@ const ImagePopup = ({imageSrc, isHovered} : {imageSrc: string, isHovered: boolea
         let dy = 0;
         displacementFilter.scale.x = scaleX;
         displacementFilter.scale.y = scaleY;
-        displacementRef.current.anchor.set(0.5);
+        displacementRef.current.anchor.set(0);
   
         const animate = () => {
-          dx -= 5;
-          dy += 3;
-          displacementRef.current!.x = -dx;
+          dx += 5;
+          dy -= 5;
+          displacementRef.current!.x = dx;
           displacementRef.current!.y = dy;
           requestAnimationFrame(animate);
         };
@@ -64,18 +80,18 @@ const ImagePopup = ({imageSrc, isHovered} : {imageSrc: string, isHovered: boolea
   return (
     <div ref={wrapperRef}>
       <Stage
+      width={stageSize.width}
+      height={stageSize.height}
         options={{
           backgroundAlpha: 0,
-          width: 1000,
-          height: 1000,
-          resolution: 2,
+          resolution: 1,
         }}
       >
         <Container>
           <Sprite
             image={imageSrc}
-            width={800}
-            height={500}
+            width={stageSize.width}
+            height={stageSize.height}
             x={0}
             y={0}
           />
@@ -83,8 +99,6 @@ const ImagePopup = ({imageSrc, isHovered} : {imageSrc: string, isHovered: boolea
           <Sprite
             image="/assets/images/clouds.jpg"
             ref={displacementRef}
-            width={1000}
-            height={1000}
             x={0}
             y={0}
           />

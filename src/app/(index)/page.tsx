@@ -514,7 +514,6 @@ export default function Home() {
   }
 
   function stripe(): void {
-    console.log("stripe");
     isStripe = gsap.to("#wrapContainer", {
       id: "STRIPE",
       scale: stripeC.zoom,
