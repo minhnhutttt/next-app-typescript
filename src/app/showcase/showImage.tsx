@@ -13,11 +13,11 @@ export default function ShowImge() {
       starColor: "rgb(255, 255, 255)",
       hueJitter: 0,
       trailLength: 0.8,
-      baseSpeed: 2,
-      maxAcceleration: 0.4,
+      baseSpeed: 0.4,
+      maxAcceleration: 0.3,
       accelerationRate: 0.2,
       decelerationRate: 0.2,
-      minSpawnRadius: 50,
+      minSpawnRadius: 100,
       maxSpawnRadius: 600,
     });
   });

@@ -200,8 +200,8 @@
       draw() {
         const velMag = Math.sqrt(this.vel.x * this.vel.x + this.vel.y * this.vel.y);
         const alpha = map(velMag, 0, 10, 0, 1);
-        const weight = map(velMag, 0, 10, 1, 3);
-  
+        const weight = map(velMag, 0, 15, 7, 3);
+
         ctx.lineWidth = weight;
   
         const [r, g, b] = parseRGBA(config.starColor);

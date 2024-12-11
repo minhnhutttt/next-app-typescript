@@ -20,7 +20,7 @@
 }
 
 .jumper-shadow {
-  animation: jumper-shadow-pulse 8s ease-in-out infinite
+  animation: jumper-shadow-pulse 4s ease-in-out infinite
 }
 
 @keyframes jumper-shadow-pulse {
@@ -34,7 +34,7 @@
 }
 
 .shaky:hover {
-  animation: shaky .3s infinite
+  animation: shaky .15s infinite
 }
 @keyframes shaky {
   0% {
@@ -96,7 +96,7 @@ summary {
 audio,
 canvas,
 video {
-  display: inline-block;
+  display: block;
 }
 audio:not([controls]) {
   display: none;
