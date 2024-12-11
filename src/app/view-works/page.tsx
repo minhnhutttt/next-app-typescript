@@ -81,6 +81,7 @@ const data = [
 export default function ViewWorks() {
     const isMobile = useMediaQuery("(max-width: 768px)", false);
     const containerRef = useRef<HTMLDivElement>(null);
+    const containerWorkRef = useRef<HTMLDivElement>(null);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     useEffect(() => {
@@ -109,8 +110,8 @@ export default function ViewWorks() {
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             if (
-                containerRef.current &&
-                !containerRef.current.contains(event.target as Node)
+                containerWorkRef.current &&
+                !containerWorkRef.current.contains(event.target as Node)
             ) {
                 setHoveredIndex(null);
             }
@@ -135,7 +136,7 @@ export default function ViewWorks() {
     };
 
     return (
-        <main className="bg-black overflow-hidden">
+        <main ref={containerRef} className="bg-black overflow-hidden">
             <div className="pt-[2rem]">
                 <div className="flex justify-center items-center py-5">
                     <a href="/" className="">
@@ -152,7 +153,7 @@ export default function ViewWorks() {
 
                 <div className="md:py-[13rem] py-[8rem] px-5 md:px-10">
                     <p className="text-[1.6rem] mb-5">Selected Projects</p>
-                    <div ref={containerRef} className="border-t border-white divide-y divide-white">
+                    <div ref={containerWorkRef} className="border-t border-white divide-y divide-white">
                         {data.map((item, index) => (
                             <div
                                 className={`group relative py-[2rem] grid items-center gap-x-[2rem] grid-cols-6 md:grid-cols-12 md:gap-x-[4.8rem] md:text-[1.6rem] text-[4vw] text-white font-bold duration-200 ${hoveredIndex === index && 'z-30'}`}
@@ -203,7 +204,7 @@ export default function ViewWorks() {
                                     className="w-[100px] bg-white text-black flex items-center justify-center rounded-full py-1 gap-2 relative hover:opacity-70 duration-150"
                                 >
                                     Launch
-                                    <span className={`bg-white duration-200 rounded-full flex-[0_0_24px] h-6 flex items-center justify-center ${hoveredIndex === index ? 'scale-110 rotate-0' : '-rotate-45 scale-100'}`}>
+                                    <span className={`bg-white duration-200 rounded-full flex-[0_0_24px] h-6 flex items-center justify-center`}>
                                         <img
                                             src="/assets/images/arrow.svg"
                                             alt=""
