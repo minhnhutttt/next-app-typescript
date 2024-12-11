@@ -1,7 +1,6 @@
 "use client";
 
-import Button from "@/components/button";
-import PixiCanvas from "@/components/PixiCanvas";
+import WaterEffect from "@/components/waterEffect";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 const dataStats = [
   {
@@ -64,20 +63,16 @@ const FV = () => {
       </div>
       <div className="fade-up relative text-center md:text-[128px] text-[45px] font-bold leading-none [text-shadow:2px_4px_4px_#18539E] mt-8">
       </div>
-
-    <PixiCanvas />
+      <div className="overflow-hidden">
+      <WaterEffect />
+      </div>
       <p className="fade-up text-center md:text-[48px] text-[24px] leading-none [text-shadow:2px_4px_4px_#18539E] max-md:mt-7 mb-9">
         - Dive into a world created by free -
       </p>
       <p className="fade-up text-center md:text-[24px] text-[18px] leading-none [text-shadow:2px_4px_4px_#18539E] mb-9">
         The world's only blockchain with completely free transaction costs.
       </p>
-      <div className="fade-up ugb-button-container kp-wave-button">
-          <Button href="/" rect=" flex text-white/90 font-bold md:text-[36px] text-[24px] [text-shadow:1px_1px_1px_rgba(0,_0,_0,_0.25)] font-poppins md:px-[90px] md:py-[25px] px-10 py-3 bg-[#005FD7] rounded-[80px] [box-shadow:-3px_-4px_20px_0px_rgba(255,_255,_255,_0.15)_inset,_4px_22px_50px_0px_rgba(24,_83,_158,_0.80)]">
-          Learn DIVER
-          </Button>
-      </div>
-      <p className="fade-up text-center md:text-[48px] text-[24px] font-bold mt-[90px] tracking-wide">
+      <p className="fade-up text-center md:text-[48px] text-[24px] font-bold mt-10 tracking-wide">
         A new economic sphere pioneered by DIVER
       </p>
       <p className="fade-up text-center text-[20px] md:text-[32px] flex items-center gap-2 tracking-wide">
