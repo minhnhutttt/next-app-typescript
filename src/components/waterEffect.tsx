@@ -37,8 +37,7 @@ const WaterEffect = () => {
       displacementRef.current.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
 
       const app = displacementRef.current.parent;
-      var mouseX, mouseY,
-      intt = 0
+      let intt = 0
       if (app) {
         app.filters = [displacementFilter];
 
@@ -54,26 +53,17 @@ const WaterEffect = () => {
         animate();
       }
 
-      const rotateSprite = () => {
-        displacementRef.current!.rotation += 0.0005;
-        intt = requestAnimationFrame(rotateSprite);
-      }
       const sprite = containerRef.current;
 
         if (sprite) {
           sprite.interactive = true;
           
           sprite.on('pointerover', (mouseData: any) => {
-            mouseX = mouseData.data.global.x;
-            mouseY = mouseData.data.global.y;
-
-            console.log(mouseData.data.global)
             gsap.to(displacementFilter.scale,{
               duration: 1.3,
-              x: `+=${Math.sin(mouseX) * 20}` + '',
-              y: `+=${Math.cos(mouseY) * 20}` + '',
+              x: `+=${10}` + '',
+              y: `+=${10}` + '',
             });
-            rotateSprite()
           });
 
           sprite.on('pointerout', () => {
