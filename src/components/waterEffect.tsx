@@ -70,8 +70,8 @@ const WaterEffect = () => {
             console.log(mouseData.data.global)
             gsap.to(displacementFilter.scale,{
               duration: 1.3,
-              x: `+=${Math.sin(mouseX) * 10}` + '',
-              y: `+=${Math.cos(mouseY) * 10}` + '',
+              x: `+=${Math.sin(mouseX) * 20}` + '',
+              y: `+=${Math.cos(mouseY) * 20}` + '',
             });
             rotateSprite()
           });
