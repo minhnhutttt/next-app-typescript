@@ -1,5 +1,6 @@
 import Champion from "./components/champion";
 import CoinTogether from "./components/coinTogether";
+import FAQ from "./components/faq/faq";
 import FV from "./components/fv";
 import Howto from "./components/howto";
 import Introduction from "./components/introduction";
@@ -14,6 +15,7 @@ export default function Home() {
         <Service />
         <Champion />
         <Howto />
+        <FAQ />
     </main>
   );
 }
