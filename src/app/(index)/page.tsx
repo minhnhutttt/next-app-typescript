@@ -1,9 +1,11 @@
 import FV from "./components/fv";
+import Introduction from "./components/introduction";
 
 export default function Home() {
   return (
-    <main className="min-h-[200vh]">
+    <main>
       <FV />
+      <Introduction />
     </main>
   );
 }

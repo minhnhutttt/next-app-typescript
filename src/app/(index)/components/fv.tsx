@@ -55,6 +55,10 @@ const FV = () => {
           </div>
         </div>
       </div>
+      
+      <div className="absolute top-[calc(100%-120px)] max-w-[60%] right-0 z-10">
+            <img src="/assets/images/img-r.png" alt="" />
+        </div>
     </section>
   );
 };
