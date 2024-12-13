@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import {  Inter} from "next/font/google";
+import { Orbitron} from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ScrollContainer from "@/components/scrollContainer";
 import SmoothScroll from "@/components/smoothSCroll";
 
-const inter = Inter({
+
+
+const orbitron = Orbitron({
   subsets: ["latin"],
 });
 
@@ -23,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${inter.className} bg-[#FFFEEA]`}
+        className={`${orbitron.className} bg-[#FFFEEA]`}
       >
         <ScrollContainer>
         <SmoothScroll>
