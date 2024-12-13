@@ -1,7 +1,6 @@
 "use client";
 
 export default function TermsOfService() {
-
   return (
     <main>
       <div className="p-5">
@@ -15,7 +14,7 @@ export default function TermsOfService() {
             第1条（目的）
             <br />
             本利用規約（以下、「本規約」といいます）は、株式会社[会社名]
-            （以下、「当社」といいます）が提供するサービス「AITI」
+            （以下、「当社」といいます）が提供するサービス「休日AIコンシェルジュ」
             （以下、「本サービス」といいます）の利用条件を定めるものです。
             本サービスを利用する全てのユーザー（以下、「ユーザー」といいます）は、
             本規約に同意したものとみなされます。
@@ -139,7 +138,7 @@ export default function TermsOfService() {
             <br />
             附則
             <br />
-            本規約は、2024年9月9日から施行します。
+            本規約は、2024年X月X日から施行します。
           </div>
         </div>
       </div>
