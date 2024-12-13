@@ -1,6 +1,7 @@
 "use client";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from 'swiper/modules';
 import "swiper/css";
 const data = [
     {
@@ -11,7 +12,7 @@ const data = [
     {
         image: '/assets/images/service-img-02.png',
         title: "薬局・ドラッグストア",
-        content: (<>日用品や医薬品の購入時にデジタル資産を獲得できます。 生活必需品を買うだけで、デジタル資産が貯まるので、日常の買い物がさらにお得になります。</>)
+        content: (<>日用品や医薬品の購入時にデジタル資産を獲得できます。<br />生活必需品を買うだけで、デジタル資産が貯まるので、日常の買い物がさらにお得になります。</>)
     },
     {
         image: '/assets/images/service-img-03.png',
@@ -87,6 +88,12 @@ const Service = () => {
         <div className="ani-content w-full mt-10">
             <Swiper
                 slidesPerView={"auto"}
+                loop={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                modules={[Autoplay]}
                 className="mySwiper"
             >
                 {data.map((item, index) => (
