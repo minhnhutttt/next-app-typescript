@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${orbitron.className} bg-[#FFFEEA]`}
+        className={`${orbitron.className} bg-black`}
       >
         <ScrollContainer>
         <SmoothScroll>

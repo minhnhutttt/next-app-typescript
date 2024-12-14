@@ -1,4 +1,5 @@
 import FV from "./components/fv";
+import Highways from "./components/highways";
 import Introduction from "./components/introduction";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <main>
       <FV />
       <Introduction />
+      <Highways />
     </main>
   );
 }

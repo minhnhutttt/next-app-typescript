@@ -27,7 +27,7 @@ const data = [
 const Introduction = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="bg-black pt-[140px] md:pt-[204px] text-white">
+    <section className="bg-black pt-[140px] md:pt-[204px] text-white">
       <div className="w-full max-w-[1400px] mx-auto px-5">
         <div className="max-w-[830px]">
         <h3 className="md:text-[64px] text-[32px] font-extrabold leading-[1.2] mb-[30px]">
@@ -39,20 +39,23 @@ const Introduction = () => {
         </p>
         </div>
       </div>
-      <div className="grid md:grid-cols-4 grid-cols-2 mt-20 md:mt-32">
-        {data.map((item,index) => (
-            <a href={item.href} className="fade-up-group relative group" key={index}>
-                <div className="w-full">
-                    <img className="max-w-none w-full" src={item.image} alt="" />
-                </div>
-                <div className="absolute inset-0 p-3 md:p-6 md:pb-10 pb-6 flex items-end overflow-hidden">
-                    <div className="absolute h-full w-full inset-0 bg-black/70 group-hover:opacity-0 duration-1000"></div>
-                    <div className="md:min-h-[120px] md:text-[24px] font-medium leading-[1.2] relative">
-                        {item.text}
+      <div className="fade-up grid md:grid-cols-4 grid-cols-2 mt-20 md:mt-[120px]">
+        {data.map((item,index) => {
+            const delayClass = index === 0 ? 'delay-100' : index === 1 ? 'delay-300' : index === 2 ? 'md:delay-500 delay-100' : 'md:delay-700 delay-300'; 
+            return (
+                <a data-scroll  href={item.href} className={`fade-up relative group ${delayClass}`} key={index}>
+                    <div className="w-full">
+                        <img className="max-w-none w-full" src={item.image} alt="" />
                     </div>
-                </div>
-            </a>
-        ))}
+                    <div className="absolute inset-0 p-3 md:p-6 md:pb-10 pb-6 flex items-end overflow-hidden">
+                        <div className="absolute h-full w-full inset-0 bg-black/70 group-hover:opacity-0 duration-1000"></div>
+                        <div className="md:min-h-[120px] md:text-[24px] font-medium leading-[1.2] relative">
+                            {item.text}
+                        </div>
+                    </div>
+                </a>
+            )
+        })}
       </div>
     </section>
   );

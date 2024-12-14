@@ -36,3 +36,27 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+
+[data-scroll].fade-up,
+[data-scroll] .fade-up {
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+[data-scroll='in'].fade-up,
+[data-scroll='in'] .fade-up {
+  transform: translate(0) !important;
+  opacity: 1 !important;
+  scale: 1 !important;
+  transition-duration: 1.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.dd {
+  -webkit-perspective:300px;
+    -moz-perspective:300px;
+    -webkit-perspective-origin:50% 50%;
+    -moz-perspective-origin:50% 50%;
+    -moz-transform-style: preserve-3d;
+}
