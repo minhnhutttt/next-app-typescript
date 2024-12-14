@@ -49,14 +49,12 @@ html.lenis {
   transform: translate(0) !important;
   opacity: 1 !important;
   scale: 1 !important;
-  transition-duration: 1.2s;
+  transition-duration: 0.8s;
   transition-timing-function: ease-in-out;
 }
 
-.dd {
-  -webkit-perspective:300px;
-    -moz-perspective:300px;
-    -webkit-perspective-origin:50% 50%;
-    -moz-perspective-origin:50% 50%;
-    -moz-transform-style: preserve-3d;
+.u-perspective {
+  perspective: 300px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
 }

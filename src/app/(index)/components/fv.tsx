@@ -35,7 +35,7 @@ const FV = () => {
               >
                 WHITEPAPER
                 <svg
-                className="absolute right-2"
+                className="absolute right-4"
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
                   height="16"
