@@ -1,9 +1,6 @@
-"use client";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 const FV = () => {
-  const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="bg-cover relative">
+    <section className="bg-cover relative">
       <div className="absolute inset-0">
         <video
           autoPlay

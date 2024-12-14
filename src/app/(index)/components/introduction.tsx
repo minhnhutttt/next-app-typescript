@@ -30,20 +30,19 @@ const Introduction = () => {
     <section className="bg-black pt-[140px] md:pt-[204px] text-white">
       <div className="w-full max-w-[1400px] mx-auto px-5">
         <div className="max-w-[830px]">
-        <h3 className="md:text-[64px] text-[32px] font-extrabold leading-[1.2] mb-[30px]">
+        <h3 data-scroll className="fade-up md:text-[64px] text-[32px] font-extrabold leading-[1.2] mb-[30px]">
             Transform the Sky 
             into Our New Highway
         </h3>
-        <p className="md:text-[32px] text-[20px] font-medium leading-[1.2]">
+        <p data-scroll className="fade-up md:text-[32px] text-[20px] font-medium leading-[1.2]">
             RIDE creates a new payment standard in the era of flying cars.
         </p>
         </div>
       </div>
       <div className="fade-up grid md:grid-cols-4 grid-cols-2 mt-20 md:mt-[120px]">
         {data.map((item,index) => {
-            const delayClass = index === 0 ? 'delay-100' : index === 1 ? 'delay-300' : index === 2 ? 'md:delay-500 delay-100' : 'md:delay-700 delay-300'; 
             return (
-                <a data-scroll  href={item.href} className={`fade-up relative group ${delayClass}`} key={index}>
+                <a data-scroll href={item.href} className="fade-up relative group ani-group" key={index}>
                     <div className="w-full">
                         <img className="max-w-none w-full" src={item.image} alt="" />
                     </div>

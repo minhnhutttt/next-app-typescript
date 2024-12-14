@@ -65,8 +65,6 @@ useEffect(() => {
 }, []);
 
   
-
-
   return (
     <section ref={containerRef} className="relative px-5 bg-white  pb-[90px] overflow-hidden">
       <div ref={sliderRef} className="w-full relative py-10 md:pb-[145px]">
@@ -95,7 +93,7 @@ useEffect(() => {
         </div>
         <div className="w-full max-w-[900px] mx-auto relative">
             <div className="flex justify-center md:px-5">
-                <h3 className="md:text-[64px] text-[32px] font-extrabold leading-[1.2]">
+                <h3 className=" md:text-[64px] text-[32px] font-extrabold leading-[1.2]">
                   In 2050, our skies will become highways
                 </h3>
             </div>
