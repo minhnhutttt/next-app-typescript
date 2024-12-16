@@ -13,10 +13,11 @@ const FV = () => {
           <h1 className="slide-skew">
             <img src="/assets/images/fv-main.png" alt="" />
           </h1>
-          <div className="zoom-in md:-mb-10 md:-ml-16 max-md:w-[50%] max-md:ml-auto"><img className="animate-[anim-bounce_1.6s_infinite_ease-in-out]" src="/assets/images/bubble.svg" alt="" /></div>
+          <div className="zoom-in max-md:absolute max-md:right-7 md:-mb-10 md:-ml-16 max-md:w-[55%] max-md:ml-auto"><img className="animate-[anim-bounce_1.6s_infinite_ease-in-out]" src="/assets/images/bubble.svg" alt="" /></div>
         </div>
-        <div className="fade-up flex justify-center md:-mt-10 relative z-20">
-          <img src="/assets/images/fv-image.png" alt="" />
+        <div className="fade-up flex justify-center md:-mt-10 relative z-20 mt-[16%]">
+          <img className="max-md:hidden" src="/assets/images/fv-image.png" alt="" />
+          <img className="md:hidden" src="/assets/images/fv-image-sp.png" alt="" />
         </div>
       </div>
       <div className="absolute bottom-[-30px] left-1/2 -translate-x-1/2 z-10">

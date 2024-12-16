@@ -22,8 +22,7 @@ const Champion = () => {
           <div className="w-full max-w-[840px] rounded-[30px] md:border-[8px] border-[4px] border-black bg-[url('/assets/images/champion-bg.png')] bg-cover md:mt-[54px] mt-8 md:pt-[70px] pt-8 md:pb-[24px] pb-7 px-5 md:mb-[100px] mb-16">
             <div className="w-full max-w-[640px] mx-auto tracking-widest">
               <p className="fade-up md:text-[20px] text-[16px] font-bold ">
-                期間中に最も多くのイーサリアム（ETH）を獲得したユーザーをランキング形式で競い合い、年間チャンピオンを決定するイベント開催中！「COIN
-                TOGETHER イーサリアムエンペラー」の称号を手に入れろ！
+              期間中に最も多くのイーサリアム（ETH）を獲得したユーザーをランキング形式で競い合い、年間チャンピオンを決定するイベント開催中！<span className="text-[#E90212] font-bold">「イーサリアムエンペラー」</span>の称号を手に入れろ！
               </p>
 
               <div className="fade-up flex justify-center w-full mt-5 md:mt-7">
@@ -52,12 +51,13 @@ const Champion = () => {
             </div>
           </div>
 
-          <a href="/" className="fade-up flex items-center justify-center max-md:flex-col gap-6">
+          <a href="/ranking" className="fade-up flex items-center justify-center max-md:flex-col md:gap-6 gap-3">
             <div className="flex items-center gap-1 md:text-[32px] text-[22px] font-black">
                 <img src="/assets/images/ic_ranking.svg" alt="" />
                 ランキングページを見る
             </div>
-            <img className="max-md:w-[200px]" src="/assets/images/ic-link.png" alt="" />
+            <img className="max-md:w-[200px] max-md:hidden" src="/assets/images/ic-link.png" alt="" />
+            <img className="max-md:w-[75px] md:hidden" src="/assets/images/ic-link-sp.png" alt="" />
           </a>
         </div>
         <div className="fade-up w-full mt-5">

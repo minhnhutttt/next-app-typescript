@@ -17,9 +17,9 @@ const Howto = () => {
                         <img className="max-md:w-12 my-[-4px]" src="/assets/images/ic-01.svg" alt="" />
                         <span className="md:text-[24px] text-[18px] font-black leading-none flex-1 pl-2 md:pl-4">アプリをダウンロード</span>
                     </div>
-                    <div className="md:mt-10 mt-7">
+                    <a href="https://metamask.io/" target="_blank" className="md:mt-10 mt-7 duration-150 hover:opacity-75">
                         <img src="/assets/images/metamask-logo.png" alt="" />
-                    </div>
+                    </a>
                 </div>
                 <div className="lg:px-[55px] px-5 flex flex-col items-center md:w-1/2 pt-10 md:pb-[60px] pb-12">
                     <div className="w-full max-w-[350px] bg-[#FFE746] rounded-[70px] flex items-center">

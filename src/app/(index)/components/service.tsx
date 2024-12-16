@@ -80,7 +80,7 @@ const data = [
 const Service = () => {
   const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="relative md:pt-[240px] pt-[120px]">
+    <section ref={ref} className="relative md:pt-[240px] pt-20">
         <h3 className="flex items-start px-5 md:px-10 md:text-[48px] font-black text-[24px] gap-4 tracking-widest">
             <img src="/assets/images/diamond.png" alt="" />
             イーサリアムがもらえるサービス
