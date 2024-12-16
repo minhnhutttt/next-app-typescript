@@ -1,6 +1,6 @@
 const FV = () => {
   return (
-    <section className="bg-cover relative">
+    <section className="relative">
       <div className="absolute inset-0">
         <video
           autoPlay
@@ -28,7 +28,7 @@ const FV = () => {
             <div className="md:mt-16 mt-7 max-md:flex max-md:justify-center">
               <a
                 href="/"
-                className="w-[280px] md:w-[320px] h-[50px] md:h-[64px] rounded-[50px] flex items-center justify-center relative bg-[linear-gradient(274deg,_#CE0016_21.7%,_#FF384A_97.85%)] [box-shadow:0px_4px_20px_0px_rgba(255,_56,_74,_0.50)] md:text-[20px] text-[16px]"
+                className="w-[280px] md:w-[320px] h-[50px] md:h-[64px] rounded-[50px] flex items-center justify-center relative bg-[linear-gradient(274deg,_#CE0016_21.7%,_#FF384A_97.85%)] [box-shadow:0px_4px_20px_0px_rgba(255,_56,_74,_0.50)] md:text-[20px] text-[16px] duration-150 hover:opacity-70"
               >
                 WHITEPAPER
                 <svg

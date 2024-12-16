@@ -42,7 +42,7 @@ const Introduction = () => {
       <div className="fade-up grid md:grid-cols-4 grid-cols-2 mt-20 md:mt-[120px]">
         {data.map((item,index) => {
             return (
-                <a data-scroll href={item.href} className="fade-up relative group ani-group" key={index}>
+                <a data-scroll href={item.href} className="fade-up ani-group relative group" key={index}>
                     <div className="w-full">
                         <img className="max-w-none w-full" src={item.image} alt="" />
                     </div>

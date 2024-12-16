@@ -1,11 +1,16 @@
 
 const Footer = () => {
     return (
-      <footer className="relative px-5 md:px-10 bg-[#060607] md:pt-[152px] pt-[100px] pb-5">
-          <div className="flex items-center justify-center lg:gap-[200px] md:gap-[100px] max-md:flex-col gap-10 md:mb-[105px] mb-16">
-            <a href="/" className="flex"><img className="max-md:w-[200px]" src="/assets/images/logo-footer.svg" alt="" /></a>
-            </div>
-          <p className="text-center text-[13px] text-white font-medium">Copyright © 2024 COIN TOGETHER.</p>
+      <footer className="relative px-5 md:px-9 bg-[#060607] md:pt-[90px] pt-[60px] pb-5 border-t border-[#CE0016] text-white">
+          <div className="flex items-center max-w-[1000px] mx-auto w-full md:gap-[220px] gap-12 md:mb-11 mb-7">
+            <a href="/" className="flex duration-150 hover:opacity-70"><img className="max-md:w-[200px]" src="/assets/images/footer-logo.svg" alt="" /></a>
+            <ul className="md:text-[20px] text-[16px] text-wrap list-disc">
+              <li>
+                <a href="/" className="duration-150 hover:opacity-70">WHITEPEPAR</a>
+              </li>
+            </ul>
+          </div>
+          <p className="text-right text-[13px] text-white">Copyright © 2024 RIDE Coin.</p>
       </footer>
     );
   };

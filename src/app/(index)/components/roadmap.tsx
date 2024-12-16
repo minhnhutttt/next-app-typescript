@@ -47,7 +47,7 @@ const dataRoadmap = [
 
 const Roadmap = () => {
     return (
-      <section className="relative bg-[url('/assets/images/bg-roadmap.png')] bg-[size:100%_auto] bg-no-repeat -mt-[120px] pt-[255px]">
+      <section className="relative -mt-[120px] pt-[255px]">
         <div className="w-full max-w-[1440px] mx-auto">
             <h4 data-scroll className="fade-up text-center md:text-[64px] text-[32px] font-black leaidng-none text-white">Roadmap</h4>
             <div className="w-full max-w-[1080px] mx-auto relative md:mt-12 mt-8 space-y-12 max-md:px-3">
