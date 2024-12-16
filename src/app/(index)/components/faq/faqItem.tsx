@@ -67,7 +67,7 @@ const FaqItem = ({ id, question, answer }: FaqItemPropsType) => {
             <path
               d="M28.2666 21.8667L24 26.1334L19.7333 21.8667"
               stroke="black"
-              stroke-width="2"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
