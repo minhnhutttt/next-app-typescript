@@ -186,7 +186,7 @@ const Introduction = () => {
   return (
     <section
       ref={ref}
-      className="relative bg-[#F0F1F3] pt-16 md:pt-[120px] pb-20 md:pb-[130px]"
+      className="relative bg-[#F0F1F3] pt-12 md:pt-[120px] pb-20 md:pb-[130px]"
     >
       <div className="w-full md:max-w-[1440px] max-w-[540px] mx-auto">
         <h3 className="text-center font-black text-[6vw] md:text-[6.667vw] dt:text-[96px] leading-none tracking-widest">

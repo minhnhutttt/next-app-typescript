@@ -7,7 +7,7 @@ const CoinTogether = () => {
       <section ref={ref} className="relative bg-[url('/assets/images/bg-coin.png')] bg-cover pt-20 md:pt-[120px] pb-16 px-5">
         <div className="w-full max-w-[1326px] mx-auto">
             <div className="flex justify-between max-md:flex-col">
-                <div className="md:flex grid max-md:grid-cols-3 md:flex-col items-center gap-5 md:gap-10">
+                <div className="max-md:hidden md:flex grid max-md:grid-cols-3 md:flex-col items-center gap-5 md:gap-10">
                     <img className="fade-up" src="/assets/images/coin-img-01.png" alt="" />
                     <img className="fade-up" src="/assets/images/coin-img-02.png" alt="" />
                     <img className="fade-up" src="/assets/images/coin-img-03.png" alt="" />

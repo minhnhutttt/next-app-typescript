@@ -5,7 +5,7 @@ import TextBlock from "@/components/textBlock";
 
 export default function TermsOfService() {
   return (
-    <section className="bg-[#73E3DC]">
+    <section className="bg-[#FFFEEA]">
       <PageTitle>利用規約</PageTitle>
       <div className="px-5 mt-7 md:mt-10">
         <div className="mx-auto pb-16 pt-5 w-full max-w-[1000px] space-y-14 md:pb-20 md:pt-11">

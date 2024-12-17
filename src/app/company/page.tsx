@@ -4,7 +4,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 export default function Company() {
   const ref = useScrollAnimations();
   return (
-    <section className="bg-[#73E3DC]">
+    <section className="bg-[#FFFEEA]">
       <div className="px-5 md:pb-[120px] pb-20">
         <div className="md:pb-16 pb-12"><PageTitle>運営会社</PageTitle></div>
           <div className="mx-auto w-full max-w-[1350px] bg-black max-md:bg-[length:140%_auto] bg-no-repeat bg-right bg-cover px-5 py-12 md:py-16">

@@ -7,7 +7,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 export default function PrivacyPolicy() {
   const ref = useScrollAnimations();
   return (
-    <section className="bg-[#73E3DC]">
+    <section className="bg-[#FFFEEA]">
       <PageTitle>プライバシーポリシー</PageTitle>
       <div className="px-5 mt-7 md:mt-10">
         <div className="font-worksans mx-auto w-full max-w-[1190px]">

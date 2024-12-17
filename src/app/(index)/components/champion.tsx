@@ -72,7 +72,7 @@ const Champion = () => {
           <div className="w-full max-w-[790px] h-full py-10 px-5">
             <p className="md:text-[18px] text-[15px] font-bold md:py-10 py-5 px-2">
               期間限定のスペシャルイベント <br />
-            「年間獲得チャンピオンは誰だ？！」が開催中！<br /><br />COIN TOGETHERでイーサリアム(ETH)をたくさん獲得して、頂点を目指そう！<br />
+            <span className="font-bold text-[20px] md:text-[28px] lg:text-[32px]">「年間獲得チャンピオンは誰だ？！」が開催中！</span><br /><br />COIN TOGETHERでイーサリアム(ETH)をたくさん獲得して、頂点を目指そう！<br />
               期間中に最も多くのETHを獲得したユーザーには、栄光の称号「COIN TOGETHER イーサリアムエンペラー」が授与されます！
             </p>
             <div className="border-y border-black md:py-10 py-5 space-y-3 md:text-[18px] text-[15px] font-bold">
@@ -80,18 +80,16 @@ const Champion = () => {
               <p className="text-center pb-5">2024年12月10日〜2024年12月10日</p>
               <p className="text-center">【参加方法】</p>
               <div className="w-full max-w-[600px] mx-auto">
-                ①アプリをダウンロードし、アカウントを作成 <br />
-                <br />
+                ①METAMASKをダウンロードし、アカウントを作成 <br /><br />
                 ②提携店舗やサービスでお買い物・お支払いをして、ETHを獲得。獲得したETHは自動的にランキングに反映されます。
               </div>
             </div>
-            <div className="md:py-10 pt-5 pb-10">
-              <p className="text-center md:text-[24px] text-[20px]">イベント詳細</p>
-
-              <div className="flex justify-center md:mt-[30px] mt-5 gap-5">
-                <a href="http://" target="_blank" rel="noopener noreferrer"><img src="/assets/images/btn-google.png" alt="" /></a>
-                <a href="http://" target="_blank" rel="noopener noreferrer"><img src="/assets/images/btn-apple.png" alt="" /></a>
-              </div>
+            <div className="md:py-10 pt-5 pb-10 border-t border-black/30">
+            <div className="flex items-center justify-center flex-col">
+                        <p className="md:text-[18px] text-[16px] font-black mb-3 leading-none text-center">METAMASKをダウンロード</p>
+                        <a href="https://metamask.io/" target="_blank" className="duration-150 hover:opacity-75">
+                        <img src="/assets/images/metamask.png" alt="" /></a>
+                    </div>
             </div>
             </div>
           </div>
