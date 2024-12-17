@@ -9,18 +9,18 @@
   }(this, function() {
     const Starfield = {};
   
-    const config = {
+    let config = {
       numStars: 250,                    // Number of stars
-      baseSpeed: 1,                     // Base speed of stars (will affect acceleration)
-      trailLength: 0.8,                 // Length of star trail (0-1)
+      baseSpeed: 0.3,                     // Base speed of stars (will affect acceleration)
+      trailLength: 1,                 // Length of star trail (0-1)
       starColor: "rgb(255, 255, 255)",  // Color of stars (only rgb)
       canvasColor: "rgb(0, 0, 0)",      // Canvas background color (only rgb)
-      hueJitter: 0,                     // Maximum hue variation in degrees (0-360)
-      maxAcceleration: 10,              // Maximum acceleration
-      accelerationRate: 0.2,            // Rate of acceleration
-      decelerationRate: 0.2,            // Rate of deceleration
-      minSpawnRadius: 80,               // Minimum spawn distance from origin
-      maxSpawnRadius: 500,              // Maximum spawn distance from origin
+      hueJitter: 160,                     // Maximum hue variation in degrees (0-360)
+      maxAcceleration: 1.6,              // Maximum acceleration
+      accelerationRate: 1,            // Rate of acceleration
+      decelerationRate: 1,            // Rate of deceleration
+      minSpawnRadius: 50,               // Minimum spawn distance from origin
+      maxSpawnRadius: 1000,              // Maximum spawn distance from origin
       auto: true,
       originX: null,
       originY: null,
@@ -45,6 +45,13 @@
     let origin;
     let buttonOrigin;
     let container;
+
+    let tail = 0.8;
+
+    let color = "rgb(255, 255, 255)";
+
+    
+
   
     const mouseEnterHandler = () => (accelerate = true);
     const mouseLeaveHandler = () => (accelerate = false);
@@ -170,6 +177,7 @@
         this.angle = Math.atan2(y - originY, x - originX);
         this.baseSpeed = random(config.baseSpeed * 0.5, config.baseSpeed * 1.5);
         this.hueOffset = random(-config.hueJitter, config.hueJitter);
+        this.color = "rgb(255, 255, 255)";
       }
   
       reset() {
@@ -185,7 +193,7 @@
         this.hueOffset = random(-config.hueJitter, config.hueJitter);
       }
   
-      update(acc, deltaTime) {
+      update(acc, deltaTime, color) {
         const adjustedAcc = acc * this.baseSpeed;
   
         this.vel.x += Math.cos(this.angle) * adjustedAcc * deltaTime;
@@ -195,16 +203,17 @@
         this.prevpos.y = this.pos.y;
         this.pos.x += this.vel.x * deltaTime;
         this.pos.y += this.vel.y * deltaTime;
+        this.color = color;
       }
   
       draw() {
         const velMag = Math.sqrt(this.vel.x * this.vel.x + this.vel.y * this.vel.y);
-        const alpha = map(velMag, 0, 10, 0, 1);
-        const weight = map(velMag, 0, 15, 7, 3);
+        const alpha = map(velMag, 0, 10, 1, 1);
+        const weight = map(velMag, 0, 20, 3, 1.5);
 
         ctx.lineWidth = weight;
   
-        const [r, g, b] = parseRGBA(config.starColor);
+        const [r, g, b] = parseRGBA(this.color);
         const [h, s, l] = rgbToHsl(r, g, b);
         const adjustedH = (h + this.hueOffset + 360) % 360;
         const [newR, newG, newB] = hslToRgb(adjustedH, s, l).map(v => Math.round(v));
@@ -247,20 +256,24 @@
         lastCanvasColor = config.canvasColor;
       }
       const [bgR, bgG, bgB] = canvasRGB;
-      ctx.fillStyle = `rgba(${bgR}, ${bgG}, ${bgB}, ${1 - config.trailLength})`;
+      ctx.fillStyle = `rgba(${bgR}, ${bgG}, ${bgB}, ${1 - tail})`;
       ctx.fillRect(0, 0, width, height);
   
       if (accelerate) {
         accelerationFactor = Math.min(accelerationFactor + config.accelerationRate * deltaTime, config.maxAcceleration);
+        tail = 0.96;
+        color = "rgb(125, 196, 232)";
       } else {
         accelerationFactor = Math.max(accelerationFactor - config.decelerationRate * deltaTime, 0);
+        tail = 0.8;
+        color = "rgb(255, 255, 255)";
       }
   
       const baseAcc = 0.01;
-      const currentAcc = baseAcc * (1 + accelerationFactor * 10);
+      const currentAcc = baseAcc * (1 + accelerationFactor * 550);
   
       for (let star of stars) {
-        star.update(currentAcc, deltaTime);
+        star.update(currentAcc, deltaTime, color);
         star.draw();
         if (!star.isActive()) {
           star.reset();

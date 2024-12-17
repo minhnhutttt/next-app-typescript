@@ -1,23 +1,23 @@
 "use client";
-import ImagePopup from "@/components/imagePopup";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useEffect, useRef, useState } from "react";
-
+import ImagePopup from "@/components/imagePopup";
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.config({
   nullTargetWarn: false,
 })
-
 const data = [
     {
         id: '01',
         client: 'Lab',
         title: 'Dracays',
         au: '(FWA) (SOTD)',
-        image: '/assets/images/MessUp_Holo.jpg',
+        video01: '/assets/videos/6.mp4',
+        video02: '/assets/videos/6.mp4',
+        video03: '/assets/videos/6.mp4',
         href: "#"
     },
     {
@@ -25,7 +25,9 @@ const data = [
         client: 'Lab',
         title: 'Dracays',
         au: '(FWA) (SOTD)',
-        image: '/assets/images/GET-REAL-Sticker_08.png',
+        video01: '/assets/videos/6.mp4',
+        video02: '/assets/videos/6.mp4',
+        video03: '/assets/videos/6.mp4',
         href: "#"
     },
     {
@@ -33,47 +35,9 @@ const data = [
         client: 'Lab',
         title: 'Dracays',
         au: '(FWA) (SOTD)',
-        image: '/assets/images/LETS-ROLL-Sticker_01.png',
-        href: "#"
-    },
-    {
-        id: '04',
-        client: 'Lab',
-        title: 'Dracays',
-        au: '(FWA) (SOTD)',
-        image: '/assets/images/MessUp_Holo.jpg',
-        href: "#"
-    },
-    {
-        id: '05',
-        client: 'Lab',
-        title: 'Dracays',
-        au: '(FWA) (SOTD)',
-        image: '/assets/images/MessUp_Holo_Circle.png',
-        href: "#"
-    },
-    {
-        id: '06',
-        client: 'Lab',
-        title: 'Dracays',
-        au: '(FWA) (SOTD)',
-        image: '/assets/images/MessUp_Holo.jpg',
-        href: "#"
-    },
-    {
-        id: '07',
-        client: 'Lab',
-        title: 'Dracays',
-        au: '(FWA) (SOTD)',
-        image: '/assets/images/WTF-Sticker_01.png',
-        href: "#"
-    },
-    {
-        id: '08',
-        client: 'Lab',
-        title: 'Dracays',
-        au: '(FWA) (SOTD)',
-        image: '/assets/images/MessUp_Holo.jpg',
+        video01: '/assets/videos/6.mp4',
+        video02: '/assets/videos/6.mp4',
+        video03: '/assets/videos/6.mp4',
         href: "#"
     },
 ]
@@ -147,8 +111,8 @@ export default function ViewWorks() {
                         />
                     </a>
                 </div>
-                <div className="mt-20 w-[140vw] max-w-none text-white font-bold text-[24vw] leading-none marquise-right flex whitespace-nowrap">
-                    WORKS WORKS
+                <div className="mt-20 w-[140vw] max-w-none text-white font-bold text-[24vw] leading-none marquise-right flex whitespace-nowrap ">
+                Gallery Gallery
                 </div>
 
                 <div className="md:py-[13rem] py-[8rem] px-5 md:px-10">
@@ -166,13 +130,15 @@ export default function ViewWorks() {
                                 <div className={`fixed inset-0 pointer-events-none duration-1000  ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'}`}>
                                     <div className="w-full h-full absolute opacity-70 bg-black"></div>
                                     <div className="flex items-center justify-center h-full relative">
+              
                                         <ImagePopup
-                                            imageSrc={item.image}
+                                        id={item.id}
+                                            videoSrc01={item.video01}
+                                            videoSrc02={item.video02}
+                                            videoSrc03={item.video03}
                                             isHovered={hoveredIndex === index}
                                         />
                                     </div>
-                                    
-                                    
                                 </div>
                                 <div className="col-[1_/_span_1] max-md:hidden relative">
                                     {item.id}
