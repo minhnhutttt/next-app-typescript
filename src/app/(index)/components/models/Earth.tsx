@@ -19,46 +19,66 @@ const Earth = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
     rotations: [] as THREE.Euler[],
   });
   const [mousePosition, setMousePosition] = useState<THREE.Vector3 | null>(null);
-  const [brushSize] = useState(3);
-  const [minScale] = useState(1);
-  const [maxScale] = useState(3);
-  const numPoints = 5000;
+  const [brushSize] = useState(1.5);
+  const [minScale] = useState(0.6);
+  const [maxScale] = useState(1);
+  const numPoints = 6500;
   const rotationSpeed = 0.012;
 
   const obj = useLoader(OBJLoader, "/assets/models/earth.obj");
   const ipdcModel = useLoader(OBJLoader, "/assets/models/ipdc.obj");
 
-  const colors = ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"];
+  const colors = ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5"];
 
   useEffect(() => {
-    const modelMesh = obj.children[0] as THREE.Mesh;
-    const sampler = new MeshSurfaceSampler(modelMesh).build();
-    samplerRef.current = sampler;
-
+    const mesh1 = obj.children[0] as THREE.Mesh;
+    const mesh0 = obj.children[1] as THREE.Mesh;
+  
+    const sampler0 = new MeshSurfaceSampler(mesh0).build();
+    const sampler1 = new MeshSurfaceSampler(mesh1).build();
+  
     const positions: THREE.Vector3[] = [];
     const scales: number[] = Array(numPoints).fill(minScale);
     const pointColors: THREE.Color[] = [];
-    const pointRotations: THREE.Euler[] = []; 
-
-    for (let i = 0; i < numPoints; i++) {
+    const pointRotations: THREE.Euler[] = [];
+  
+    for (let i = 0; i < 6000; i++) {
       const tempPosition = new THREE.Vector3();
-      sampler.sample(tempPosition);
+      sampler0.sample(tempPosition);
       positions.push(tempPosition);
-
+  
       const randomColor = new THREE.Color(colors[Math.floor(Math.random() * colors.length)]);
       pointColors.push(randomColor);
-
+  
       const randomRotation = new THREE.Euler(
         Math.random() * Math.PI * 3,
         Math.random() * Math.PI * 3,
-        Math.random() * Math.PI * 3 
+        Math.random() * Math.PI * 3
       );
       pointRotations.push(randomRotation);
     }
-
+  
+    for (let i = 0; i < 500; i++) {
+      const tempPosition = new THREE.Vector3();
+      sampler1.sample(tempPosition);
+      positions.push(tempPosition);
+  
+      const whiteColor = new THREE.Color("#FFFFFF"); 
+      pointColors.push(whiteColor);
+  
+      const randomRotation = new THREE.Euler(
+        Math.random() * Math.PI * 3,
+        Math.random() * Math.PI * 3,
+        Math.random() * Math.PI * 3
+      );
+      pointRotations.push(randomRotation);
+    }
+  
     pointsRef.current = { positions, scales, colors: pointColors, rotations: pointRotations };
+    samplerRef.current = sampler0;
     setModel(obj);
   }, [obj]);
+  
 
   const updateInstancesWithEffect = (mousePosition?: THREE.Vector3) => {
     if (!instancedMeshRef.current) return;
@@ -136,7 +156,7 @@ const Earth = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
     <group dispose={null} ref={ref} {...props}>
       {model && (
         <Float>
-          <group ref={modelRef}  scale={0.58} position={[0, -3, 0]}>
+          <group ref={modelRef} scale={1} position={[0, 0, 0]}>
             <mesh
               geometry={(model.children[0] as THREE.Mesh).geometry}
               onPointerMove={handlePointerMove}
