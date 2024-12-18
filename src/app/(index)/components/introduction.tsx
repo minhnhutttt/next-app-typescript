@@ -94,31 +94,6 @@ const data = [
   },
   {
     number: "05",
-    title: (<>QRコード、NFC、Mapピン、URLからも簡単受け取り！</>),
-    content: (
-      <>
-        QRコードをスマホでスキャンすることはもちろん、タッチ決済のようなNFCによるワンタッチ接続、Map上のピンをタップ、URLリンク経由など、多彩な方法でイーサリアムを誰でも簡単に受け取れます。
-        <br />
-        面倒な手続きや複雑な操作は一切不要で、誰でも自由に資産形成を始めることができます。
-      </>
-    ),
-    image: (<>
-      <img src="/assets/images/introduction-img-05.png" alt="" />
-      <img style={{ "--delay": 2.2 } as React.CSSProperties} className="blink absolute top-[49%] left-[7%] w-[4.2424%]" src="/assets/images/star-05-01.png" alt="" />
-      <img style={{ "--delay": 0.4 } as React.CSSProperties} className="blink absolute top-[26%] left-[19.8%] w-[4.697%]" src="/assets/images/star-05-02.png" alt="" />
-      <img style={{ "--delay": 1.6 } as React.CSSProperties} className="blink absolute top-[30.5%] left-[31%] w-[4.697%]" src="/assets/images/star-05-02.png" alt="" />
-      <img style={{ "--delay": 1.8 } as React.CSSProperties} className="blink absolute top-[44%] left-[31%] w-[4.2%]" src="/assets/images/star-05-02.png" alt="" />
-      <img style={{ "--delay": 2.4 } as React.CSSProperties} className="blink absolute top-[14%] left-[33%] w-[4.2424%]" src="/assets/images/star-05-03.png" alt="" />
-      <img style={{ "--delay": 2 } as React.CSSProperties} className="blink absolute top-[48%] left-[59%] w-[4.2424%]" src="/assets/images/star-05-04.png" alt="" />
-      <img style={{ "--delay": 0.6 } as React.CSSProperties} className="blink absolute top-[40%] left-[66%] w-[4.4%]" src="/assets/images/star-05-02.png" alt="" />
-      <img style={{ "--delay": 1 } as React.CSSProperties} className="blink absolute top-[22%] left-[66%] w-[4.2424%]" src="/assets/images/star-05-05.png" alt="" />
-      <img style={{ "--delay": 0.2 } as React.CSSProperties} className="blink absolute top-[30.5%] left-[76.4%] w-[4.697%]" src="/assets/images/star-05-02.png" alt="" />
-      <img style={{ "--delay": 0.8 } as React.CSSProperties} className="blink absolute top-[51%] left-[90.5%] w-[4.2424%]" src="/assets/images/star-05-06.png" alt="" />
-    </>),
-    color: '#FFC28F'
-  },
-  {
-    number: "06",
     title: (<>様々な種類のデジタル資産が<br />もらえちゃう！</>),
     content: (
       <>
@@ -131,15 +106,14 @@ const data = [
     image: (<>
       <img src="/assets/images/introduction-img-06.png" alt="" />
       <div data-scroll className="absolute inset-0 flex items-center justify-center flex-col px-[7.1212%] space-y-[3.9394%] [filter:drop-shadow(4px_4px_10px_rgba(0,_0,_0,_0.25))]">
-        <div className="flex w-full gap-[6.06%]">
+        <div className="flex w-full justify-center gap-[6.06%]">
           <img className="ani-fade-up delay-[200ms] w-[24.734%]" src="/assets/images/star-06-01.png" alt="" />
           <img className="ani-fade-up delay-[400ms] w-[24.734%]" src="/assets/images/star-06-02.png" alt="" />
           <img className="ani-fade-up delay-[600ms] w-[24.734%]" src="/assets/images/star-06-03.png" alt="" />
         </div>
-        <div className="flex w-full justify-end gap-[6.06%]">
+        <div className="flex w-full justify-center gap-[6.06%]">
           <img className="ani-fade-up delay-[800ms] w-[24.734%]" src="/assets/images/star-06-04.png" alt="" />
           <img className="ani-fade-up delay-[1000ms] w-[24.734%]" src="/assets/images/star-06-05.png" alt="" />
-          <img className="ani-fade-up delay-[1200ms] w-[24.734%]" src="/assets/images/star-06-06.png" alt="" />
         </div>
       </div>
     </>),
