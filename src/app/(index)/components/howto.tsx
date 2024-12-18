@@ -50,7 +50,7 @@ const Howto = () => {
                     <div className=" md:gap-10 gap-5 md:mt-6 mt-4 md:text-[16px] text-[13px] w-full max-w-[322px] mx-auto">
                     <a href="https://lin.ee/xxmM4oe" target="_blank" className="text-[#07C655] border-b border-[#07C655] hover:opacity-75 duration-150">
                     <svg className="inline" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.125 6.95C1.125 10.2358 4.2589 12.9 8.125 12.9C8.60567 12.8995 9.07233 12.8599 9.525 12.781V15C10.694 13.8555 12.675 11.85 13.9042 10.3079C14.6742 9.3524 15.125 8.196 15.125 6.95C15.125 3.6642 11.9911 1 8.125 1C4.2589 1 1.125 3.6642 1.125 6.95Z" stroke="#07C655" stroke-linecap="round" strokeLinejoin="round"/>
+                    <path d="M1.125 6.95C1.125 10.2358 4.2589 12.9 8.125 12.9C8.60567 12.8995 9.07233 12.8599 9.525 12.781V15C10.694 13.8555 12.675 11.85 13.9042 10.3079C14.6742 9.3524 15.125 8.196 15.125 6.95C15.125 3.6642 11.9911 1 8.125 1C4.2589 1 1.125 3.6642 1.125 6.95Z" stroke="#07C655" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M3.92505 5.54932V8.34932H4.62505M6.02505 5.54932V8.34932M7.49505 8.34932V5.54932L9.17505 8.34932V5.54932M11.9751 5.54932H10.6451V6.94932M10.6451 6.94932V8.34932H11.9751M10.6451 6.94932H11.6531" stroke="#07C655" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg> LINE
 </a>からウォレットアドレスとレシート(領収書)の写真をアップロード
