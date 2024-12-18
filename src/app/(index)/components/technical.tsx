@@ -77,8 +77,7 @@ const dataSpecifications = [
 
 const Technical = () => {
   return (
-    <section className="relative bg-[#18539E]/[0.2]">
-      <div className="h-[30px] bg-[url(/assets/images/d-line.png)] bg-cover"></div>
+    <section className="relative bg-[#18539E]/[0.2] overflow-hidden">
       <div className="w-full max-w-[1440px] mx-auto md:mt-[124px] mt-20">
         <h3
           data-scroll
@@ -201,6 +200,7 @@ const Technical = () => {
             </div>
         </div>
       </div>
+      <div className="h-[30px] bg-[url(/assets/images/d-line.png)] bg-cover"></div>
     </section>
   );
 };

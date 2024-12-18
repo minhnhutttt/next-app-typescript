@@ -6,7 +6,7 @@ const Footer = () => {
             <a href="/" className="flex duration-150 hover:opacity-70"><img className="max-md:w-[200px]" src="/assets/images/footer-logo.svg" alt="" /></a>
             <ul className="md:text-[20px] text-[16px] text-wrap list-disc">
               <li>
-                <a href="/" className="duration-150 hover:opacity-70">WHITEPEPAR</a>
+                <a href="/" className="duration-150 hover:opacity-70">Whitepaper</a>
               </li>
             </ul>
           </div>

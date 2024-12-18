@@ -25,25 +25,26 @@ useEffect(() => {
         panels.forEach((panel) => {
             gsap.set(panel, {
                 opacity: 0,
-                autoAlpha: 1,
                 z: '-300vh',
             });
         });
+        
 
         gsap.to(panels, {
             z: '100dvh',
             duration: 1.3,
-            stagger: 0.1,
+            stagger: 0.2,
             scrollTrigger: {
                 trigger: container,
                 pin: true,
                 scrub: 1,
                 start: "top top",
-                end: "+=" + sliderContainer.offsetWidth * 4,
+                end: "+=" + sliderContainer.offsetWidth * 7,
                 onUpdate: (self) => {
                     const progress = self.progress;
+                    console.log(progress);
                     panels.forEach((panel) => {
-                        const opacity = progress >= 0.5 ? 1 : progress / 0.5;
+                        const opacity = progress >= 0.3 ? 1 : progress / 0.3;
                         gsap.set(panel, { opacity });
                     });
                 },
@@ -69,26 +70,26 @@ useEffect(() => {
     <section ref={containerRef} className="relative px-5 bg-white  pb-[90px] overflow-hidden">
       <div ref={sliderRef} className="w-full relative py-10 md:pb-[145px]">
         <div className="absolute top-0 left-0 h-screen w-full u-perspective z-20">
-        <div className="panel z-10 absolute w-[21.875vmax] top-[35vmax] md:top-[4vmax] left-[1vmax]">
-              <img src="/assets/images/hw-01.png" alt="" />
+        <div className="panel z-10 absolute md:w-[31vmax] top-[35vmax] md:top-[4vmax] left-[1vmax]">
+              <img className="w-full max-w-none" src="/assets/images/hw-01.png" alt="" />
           </div>
-          <div className="panel z-10 absolute w-[27.778vmax] bottom-[4vmax] md:right-[10vmax] right-[1vmax]">
-              <img src="/assets/images/hw-02.png" alt="" />
+          <div className="panel z-10 absolute w-[37vmax] bottom-[4vmax] right-[1vmax]">
+              <img className="w-full max-w-none" src="/assets/images/hw-02.png" alt="" />
           </div>
-          <div className="panel z-10 absolute w-[32.361vmax] top-[14vmax] left-[5vmax]">
-              <img src="/assets/images/hw-03.png" alt="" />
+          <div className="panel z-10 absolute w-[42vmax] top-[14vmax] left-[5vmax]">
+              <img className="w-full max-w-none" src="/assets/images/hw-03.png" alt="" />
           </div>
-          <div className="panel z-10 absolute w-[19.931vmax] top-[1vmax] right-0 md:right-[10vmax]">
-              <img src="/assets/images/hw-05.png" alt="" />
+          <div className="panel z-10 absolute w-[29vmax] top-[1vmax] right-0 md:right-[10vmax]">
+              <img className="w-full max-w-none" src="/assets/images/hw-05.png" alt="" />
           </div>
-          <div className="panel z-10 absolute w-[24.931vmax] top-[20vmax] left-[10vmax]">
-              <img src="/assets/images/hw-04.png" alt="" />
+          <div className="panel z-10 absolute w-[34vmax] top-[20vmax] left-[10vmax]">
+              <img className="w-full max-w-none" src="/assets/images/hw-04.png" alt="" />
           </div>
-          <div className="panel z-10 absolute w-[26.528vmax] top-[24vmax] right-[14vmax]">
-              <img src="/assets/images/hw-06.png" alt="" />
+          <div className="panel z-10 absolute w-[36.528vmax] top-[24vmax] right-[14vmax]">
+              <img className="w-full max-w-none" src="/assets/images/hw-06.png" alt="" />
           </div>
-          <div className="panel z-10 absolute w-[23vmax] md:w-[12.778vmax] max-md:bottom-0 md:top-[14vmax] right-[24vmax]">
-              <img src="/assets/images/hw-07.png" alt="" />
+          <div className="panel z-10 absolute w-[33vmax] md:w-[12.778vmax] max-md:bottom-0 md:top-[14vmax] right-[24vmax]">
+              <img className="w-full max-w-none" src="/assets/images/hw-07.png" alt="" />
           </div>
         </div>
         <div className="w-full max-w-[900px] mx-auto relative">
