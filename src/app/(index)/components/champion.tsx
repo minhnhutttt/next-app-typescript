@@ -72,8 +72,9 @@ const Champion = () => {
           <div className="w-full max-w-[790px] h-full py-10 px-5">
             <p className="md:text-[18px] text-[15px] font-bold md:py-10 py-5 px-2">
               期間限定のスペシャルイベント <br />
-            <span className="font-bold text-[20px] md:text-[28px] lg:text-[32px]">「年間獲得チャンピオンは誰だ？！」が開催中！</span><br /><br />COIN TOGETHERでイーサリアム(ETH)をたくさん獲得して、頂点を目指そう！<br />
-              期間中に最も多くのETHを獲得したユーザーには、栄光の称号「COIN TOGETHER イーサリアムエンペラー」が授与されます！
+            <span className="font-bold text-[20px] md:text-[28px] lg:text-[32px]">「年間獲得チャンピオンは誰だ？！」が開催中！</span><br /><br />
+            COIN TOGETHERでイーサリアム(ETH)をたくさん獲得して、頂点を目指そう！<br />
+              期間中に最も多くのETHを獲得したユーザーには、栄光の称号「イーサリアムエンペラー」が授与されます！
             </p>
             <div className="border-y border-black md:py-10 py-5 space-y-3 md:text-[18px] text-[15px] font-bold">
               <p className="text-center md:text-[24px] text-[20px]">イベント詳細</p>
