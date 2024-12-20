@@ -37,25 +37,6 @@ const data = [
         video02: '/assets/videos/6.mp4',
         video03: '/assets/videos/6.mp4',
     },
-    {
-        id: '04',
-        client: 'Lab',
-        title: 'Dracays',
-        au: '(FWA) (SOTD)',
-        video01: '/assets/videos/6.mp4',
-        video02: '/assets/videos/6.mp4',
-        video03: '/assets/videos/6.mp4',
-    },
-    {
-        id: '05',
-        client: 'Lab',
-        title: 'Dracays',
-        au: '(FWA) (SOTD)',
-        video01: '/assets/videos/6.mp4',
-        video02: '/assets/videos/6.mp4',
-        video03: '/assets/videos/6.mp4',
-    },
-
 ]
 
 export default function ViewWorks() {
