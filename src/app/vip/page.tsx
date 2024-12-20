@@ -3,7 +3,10 @@ import React, { useEffect } from "react";
 import Starfield from "@/module/starfield.js";
 export default function Vip() {
   useEffect(() => {
-    Starfield.setup({});
+    Starfield.setup({
+      endColor: "rgb(20, 118, 56)",
+      hueJitter: 10,  
+    });
   });
 
   return (

@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { Sprite, Stage, Container } from "@pixi/react";
 import * as PIXI from "pixi.js";
 import gsap from "gsap";
@@ -19,13 +25,12 @@ const ImagePopup = ({
 }) => {
   const displacementRef = useRef<PIXI.Sprite>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const isMobile = useMediaQuery("(max-width: 768px)", false);
+  const isMobile = useMediaQuery("(max-width: 1024px)", false);
   const [stageSize, setStageSize] = useState({ width: 0, height: 0 });
-  const [isPlay, setIsPlay] = useState(false);
 
-  const video01Ref= useRef<HTMLVideoElement>(null);
-  const video02Ref= useRef<HTMLVideoElement>(null);
-  const video03Ref= useRef<HTMLVideoElement>(null);
+  const video01Ref = useRef<HTMLVideoElement>(null);
+  const video02Ref = useRef<HTMLVideoElement>(null);
+  const video03Ref = useRef<HTMLVideoElement>(null);
 
   const updateStageSize = useCallback(() => {
     const width = Math.min(window.innerWidth * 0.9, 1200);
@@ -84,19 +89,15 @@ const ImagePopup = ({
         gsap.to(displacementFilter.scale, {
           x: 0,
           y: 0,
-          duration: 0.5,
+          duration: 0.75,
         });
-        setIsPlay(true);
-        
-    if (video01Ref.current && video02Ref.current && video03Ref.current) {
-      video01Ref.current.play();
-      video02Ref.current.play();
-      video03Ref.current.play();
-    }
 
+        if (video01Ref.current && video02Ref.current && video03Ref.current) {
+          video01Ref.current.play();
+          video02Ref.current.play();
+          video03Ref.current.play();
+        }
       } else {
-        setIsPlay(false);
-        
         gsap.to(wrapperRef.current, {
           opacity: 0,
           duration: 1,
@@ -105,14 +106,14 @@ const ImagePopup = ({
         gsap.to(displacementFilter.scale, {
           x: scaleX,
           y: scaleY,
-          duration: 0.5,
+          duration: 0.75,
         });
-        
-    if (video01Ref.current && video02Ref.current && video03Ref.current) {
-      video01Ref.current.pause();
-      video02Ref.current.pause();
-      video03Ref.current.pause();
-    }
+
+        if (video01Ref.current && video02Ref.current && video03Ref.current) {
+          video01Ref.current.pause();
+          video02Ref.current.pause();
+          video03Ref.current.pause();
+        }
       }
     }
   }, [isHovered]);
@@ -155,35 +156,29 @@ const ImagePopup = ({
         }}
       >
         <Container>
-          {isPlay && (
+          {video01Ref.current && video02Ref.current && video03Ref.current && (
             <>
-            <Sprite
-              source={
-                (document.querySelector("#video-main-" + id) as any)
-              }
-              width={stageSize.width * 0.7}
-              height={stageSize.height * 0.7}
-              x={(stageSize.width - (stageSize.width * 0.7)) / 2}
-              y={(stageSize.height - (stageSize.height * 0.7)) / 2}
-            />
-            <Sprite
-              source={
-                (document.querySelector("#video-left-" + id) as any)
-              }
-              width={stageSize.width / 3}
-              height={stageSize.height / 3}
-              x={0}
-              y={0}
-            />
-            <Sprite
-              source={
-                (document.querySelector("#video-right-" + id) as any)
-              }
-              width={stageSize.width / 3}
-              height={stageSize.height / 3}
-              x={stageSize.width * 2/3}
-              y={stageSize.height * 2/3}
-            />
+              <Sprite
+                source={document.querySelector("#video-main-" + id) as any}
+                width={stageSize.width * 0.7}
+                height={stageSize.height * 0.7}
+                x={(stageSize.width - stageSize.width * 0.7) / 2}
+                y={(stageSize.height - stageSize.height * 0.7) / 2}
+              />
+              <Sprite
+                source={document.querySelector("#video-left-" + id) as any}
+                width={stageSize.width / 3}
+                height={stageSize.height / 3}
+                x={0}
+                y={0}
+              />
+              <Sprite
+                source={document.querySelector("#video-right-" + id) as any}
+                width={stageSize.width / 3}
+                height={stageSize.height / 3}
+                x={(stageSize.width * 2) / 3}
+                y={(stageSize.height * 2) / 3}
+              />
             </>
           )}
 

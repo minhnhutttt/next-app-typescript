@@ -14,6 +14,7 @@
       baseSpeed: 0.3,                     // Base speed of stars (will affect acceleration)
       trailLength: 1,                 // Length of star trail (0-1)
       starColor: "rgb(255, 255, 255)",  // Color of stars (only rgb)
+      endColor: "rgb(125, 196, 232)",  // Color of stars (only rgb)
       canvasColor: "rgb(0, 0, 0)",      // Canvas background color (only rgb)
       hueJitter: 160,                     // Maximum hue variation in degrees (0-360)
       maxAcceleration: 1.6,              // Maximum acceleration
@@ -48,7 +49,7 @@
 
     let tail = 0.8;
 
-    let color = "rgb(255, 255, 255)";
+    let color = config.starColor;
 
     
 
@@ -177,7 +178,7 @@
         this.angle = Math.atan2(y - originY, x - originX);
         this.baseSpeed = random(config.baseSpeed * 0.5, config.baseSpeed * 1.5);
         this.hueOffset = random(-config.hueJitter, config.hueJitter);
-        this.color = "rgb(255, 255, 255)";
+        this.color = config.starColor;
       }
   
       reset() {
@@ -262,11 +263,11 @@
       if (accelerate) {
         accelerationFactor = Math.min(accelerationFactor + config.accelerationRate * deltaTime, config.maxAcceleration);
         tail = 0.96;
-        color = "rgb(125, 196, 232)";
+        color = config.endColor;
       } else {
         accelerationFactor = Math.max(accelerationFactor - config.decelerationRate * deltaTime, 0);
         tail = 0.8;
-        color = "rgb(255, 255, 255)";
+        color = config.starColor;
       }
   
       const baseAcc = 0.01;
