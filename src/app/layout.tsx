@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Inter} from "next/font/google";
+import { ThemeProvider } from "@material-tailwind/react";
 import "./globals.scss";
 
 const archivo = Archivo({
@@ -31,7 +32,7 @@ export default function RootLayout({
         <a
           id="logo"
           href="/"
-          className="absolute max-md:w-[70px] block top-5 left-5 z-10"
+          className="absolute max-md:w-[60px] block top-5 left-5 z-50"
         >
           <img src="/assets/images/logo.svg" alt="" />
         </a>
