@@ -406,11 +406,6 @@
   resolved "https://registry.yarnpkg.com/@pixi/filter-rgb-split/-/filter-rgb-split-5.1.1.tgz#f76b022edf47f8bd478944f0ec768397309f7867"
   integrity sha512-DEeAYoPU2lbUTeNYK8e6q89jqtLeUYSkEdFK/a9IyxYkvJP2CPk+nVXIe48v3wORUf5DdP20k6yQzqoPZyP3ww==
 
-"@pixi/gif@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@pixi/gif/-/gif-3.0.1.tgz#2709d6559d316161cde1821b0f29cc2c05f88794"
-  integrity sha512-oGl0nkbFAe1vaRLyIvGbJc3fcIrS8vF1E00cwjiV+9f1pYe072D+yijJxHsgYnXs6jdzERh+D0MqSrEag0jRzg==
-
 "@pixi/graphics@7.4.2":
   version "7.4.2"
   resolved "https://registry.yarnpkg.com/@pixi/graphics/-/graphics-7.4.2.tgz#b4fcc39f6a0af4c74d66b3d45b6728c33467bc78"
@@ -456,14 +451,7 @@
   resolved "https://registry.yarnpkg.com/@pixi/prepare/-/prepare-7.4.2.tgz#36fa8f5a044e6c4f46e7d2df1bef82dce7d40455"
   integrity sha512-PugyMzReCHXUzc3so9PPJj2OdHwibpUNWyqG4mWY2UUkb6c8NAGK1AnAPiscOvLilJcv/XQSFoNhX+N1jrvJEg==
 
-"@pixi/react-animated@^7.1.3":
-  version "7.1.3"
-  resolved "https://registry.yarnpkg.com/@pixi/react-animated/-/react-animated-7.1.3.tgz#248c9106462af8ddae207b86615c3cb5eea080d5"
-  integrity sha512-48k7qbKzWvZE4mqz3zK+i8UCUCCznrxaFwSrJsp58gqDS9BUN8rSxmqr+U2+1wIpqe9d0NaRQNLwGlUa8STcdw==
-  dependencies:
-    "@pixi/react" "^7.1.2"
-
-"@pixi/react@7", "@pixi/react@^7.1.2":
+"@pixi/react@7":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@pixi/react/-/react-7.1.2.tgz#f7491456e2176274e2536cb4de62fcdbc7aa42e8"
   integrity sha512-ZhqeXcFCRfFYCvncGW6Bxc3PFCYN1PgpF60iZwQJA6/UD3DB70JQvtDkRnyQcy5yqsjNtdxS8HB42oNjQFnZrA==

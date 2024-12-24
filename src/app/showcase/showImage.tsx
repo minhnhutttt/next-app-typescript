@@ -31,7 +31,7 @@ export default function ShowImge() {
           "/assets/images/GET-REAL-Sticker_08.png",
           "/assets/images/GET-REAL-Sticker_08.png",
         ];
-        let distThreshold = 100;
+        let distThreshold = 300;
         let scaleFactor = 4;
   
         let images: any[] = [];
@@ -58,46 +58,98 @@ export default function ShowImge() {
   
         p.draw = () => {
           p.clear();
-  
+        
           let d = p.dist(p.mouseX, p.mouseY, lastMousePos.x, lastMousePos.y);
-  
+        
           if (d > distThreshold) {
             queue.unshift({ x: p.mouseX, y: p.mouseY, index: imgIndex });
             imageTimes.unshift(p.millis());
             lastMousePos = { x: p.mouseX, y: p.mouseY };
             imgIndex = (imgIndex + 1) % images.length;
           }
-  
+        
           if (queue.length > images.length) {
             queue.pop();
             imageTimes.pop();
           }
-  
-          for (let i = 0; i < queue.length; i++) {
-            if (p.millis() - imageTimes[i] > 1000) {
-              queue.splice(i, 1);
-              imageTimes.splice(i, 1);
-              i--;
-            }
-          }
-  
+        
           let scale = p.width / scaleFactor;
-  
+        
           for (let i = queue.length - 1; i >= 0; i--) {
             let img = images[queue[i].index];
             if (img) {
-              let imgWidth = (img.width * scale) / img.width / 2;
-              let imgHeight = (img.height * scale) / img.width / 2;
+              // Tính thời gian từ khi ảnh được thêm vào
+              let elapsedTime = p.millis() - imageTimes[i];
+              let totalDisplayTime = 1000; // Tổng thời gian hiển thị (1 giây)
+        
+              if (elapsedTime > totalDisplayTime) {
+                // Loại bỏ ảnh khi hết thời gian hiển thị
+                queue.splice(i, 1);
+                imageTimes.splice(i, 1);
+                continue;
+              }
+        
+              // Lưu lại hướng chuột ban đầu khi ảnh được tạo ra
+              if (!queue[i].mouseDirectionX) {
+                queue[i].mouseDirectionX = p.mouseX - queue[i].x;
+                queue[i].mouseDirectionY = p.mouseY - queue[i].y;
+              }
+        
+              // Tính vector hướng di chuyển từ vị trí ảnh đến vị trí con trỏ chuột lúc ảnh xuất hiện
+              let mouseDirectionX = queue[i].mouseDirectionX;
+              let mouseDirectionY = queue[i].mouseDirectionY;
+        
+              // Tính giá trị scale và vị trí trượt:
+              let currentScale = 1;
+              let currentX = queue[i].x;
+              let currentY = queue[i].y;
+        
+              // Giai đoạn xuất hiện: scale từ 0.5 → 1 trong 200ms
+              if (elapsedTime <= 200) {
+                currentScale = p.map(elapsedTime, 0, 200, 0.5, 1);
+              }
+        
+              // Sau khi ảnh xuất hiện hoàn toàn, sẽ trượt theo hướng của con trỏ chuột lúc ảnh xuất hiện
+              else if (elapsedTime > 200 && elapsedTime <= 800) {
+                // Tính khoảng cách trượt theo hướng con trỏ chuột lúc ảnh xuất hiện
+                let offsetX = mouseDirectionX * (elapsedTime - 200) / 3000;
+                let offsetY = mouseDirectionY * (elapsedTime - 200) / 3000;
+        
+                currentX = queue[i].x + offsetX;
+                currentY = queue[i].y + offsetY;
+        
+                currentScale = 1;  // Khi trượt thì không thay đổi scale
+              }
+        
+              // Giai đoạn biến mất: scale từ 1 → 0.5 trong 200ms
+              else if (elapsedTime > 800) {
+                currentScale = p.map(elapsedTime, 800, 1000, 1, 0.5);
+              }
+        
+              // Tính kích thước ảnh
+              let imgWidth = (img.width * scale * currentScale) / img.width;
+              let imgHeight = (img.height * scale * currentScale) / img.width;
+        
+              // Vẽ ảnh với giá trị scale và vị trí
               p.image(
                 img,
-                queue[i].x - imgWidth / 2,
-                queue[i].y - imgHeight / 2,
+                currentX - imgWidth / 2,
+                currentY - imgHeight / 2,
                 imgWidth,
                 imgHeight
               );
             }
           }
         };
+        
+        
+        
+        
+        
+        
+        
+        
+        
   
         p.windowResized = () => {
           p.resizeCanvas(p.windowWidth, p.windowHeight);
