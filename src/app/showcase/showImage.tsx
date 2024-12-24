@@ -78,59 +78,48 @@ export default function ShowImge() {
           for (let i = queue.length - 1; i >= 0; i--) {
             let img = images[queue[i].index];
             if (img) {
-              // Tính thời gian từ khi ảnh được thêm vào
               let elapsedTime = p.millis() - imageTimes[i];
-              let totalDisplayTime = 1000; // Tổng thời gian hiển thị (1 giây)
+              let totalDisplayTime = 1000; 
         
               if (elapsedTime > totalDisplayTime) {
-                // Loại bỏ ảnh khi hết thời gian hiển thị
                 queue.splice(i, 1);
                 imageTimes.splice(i, 1);
                 continue;
               }
         
-              // Lưu lại hướng chuột ban đầu khi ảnh được tạo ra
               if (!queue[i].mouseDirectionX) {
                 queue[i].mouseDirectionX = p.mouseX - queue[i].x;
                 queue[i].mouseDirectionY = p.mouseY - queue[i].y;
               }
         
-              // Tính vector hướng di chuyển từ vị trí ảnh đến vị trí con trỏ chuột lúc ảnh xuất hiện
               let mouseDirectionX = queue[i].mouseDirectionX;
               let mouseDirectionY = queue[i].mouseDirectionY;
         
-              // Tính giá trị scale và vị trí trượt:
               let currentScale = 1;
               let currentX = queue[i].x;
               let currentY = queue[i].y;
         
-              // Giai đoạn xuất hiện: scale từ 0.5 → 1 trong 200ms
               if (elapsedTime <= 200) {
                 currentScale = p.map(elapsedTime, 0, 200, 0.5, 1);
               }
         
-              // Sau khi ảnh xuất hiện hoàn toàn, sẽ trượt theo hướng của con trỏ chuột lúc ảnh xuất hiện
               else if (elapsedTime > 200 && elapsedTime <= 800) {
-                // Tính khoảng cách trượt theo hướng con trỏ chuột lúc ảnh xuất hiện
                 let offsetX = mouseDirectionX * (elapsedTime - 200) / 3000;
                 let offsetY = mouseDirectionY * (elapsedTime - 200) / 3000;
         
                 currentX = queue[i].x + offsetX;
                 currentY = queue[i].y + offsetY;
         
-                currentScale = 1;  // Khi trượt thì không thay đổi scale
+                currentScale = 1; 
               }
         
-              // Giai đoạn biến mất: scale từ 1 → 0.5 trong 200ms
               else if (elapsedTime > 800) {
                 currentScale = p.map(elapsedTime, 800, 1000, 1, 0.5);
               }
         
-              // Tính kích thước ảnh
               let imgWidth = (img.width * scale * currentScale) / img.width;
               let imgHeight = (img.height * scale * currentScale) / img.width;
         
-              // Vẽ ảnh với giá trị scale và vị trí
               p.image(
                 img,
                 currentX - imgWidth / 2,
@@ -141,15 +130,6 @@ export default function ShowImge() {
             }
           }
         };
-        
-        
-        
-        
-        
-        
-        
-        
-        
   
         p.windowResized = () => {
           p.resizeCanvas(p.windowWidth, p.windowHeight);
