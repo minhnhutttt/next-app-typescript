@@ -200,14 +200,14 @@ export default function Home() {
   return (
     <main>
       <div className="relative overflow-hidden md:h-screen">
-        <div id="overlay" className="fixed inset-0 bg-black z-20"></div>
+        <div id="overlay" className="fixed inset-0 bg-black z-50"></div>
         <div
           id="bg"
           className="absolute inset-0 opacity-0 bg-[url('/assets/images/bg.png')] bg-cover bg-right-bottom"
         ></div>
         <div
           id="main"
-          className="relative px-5 md:px-[30px] py-5 md:py-[clamp(1px,4vmin,40px)] z-30"
+          className="relative px-5 md:px-[30px] py-5 md:py-[clamp(1px,4vmin,40px)] z-[60]"
         >
           <div
             id="container"

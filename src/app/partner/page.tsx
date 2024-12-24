@@ -12,11 +12,10 @@ import { useState } from "react";
 import "react-day-picker/style.css";
 import Button from "@/components/button";
 import FormLabel from "@/components/form/formLabel";
-import { Slider } from "@material-tailwind/react";
+
 import FormSlider from "@/components/form/formSlider";
 
 export default function Partner() {
-  const [birthday, setBirthday] = useState<Date>();
   const [planneDate, setPlanneDate] = useState<Date>();
 
   const [isSaving, setIsSaving] = useState<boolean>(false);
