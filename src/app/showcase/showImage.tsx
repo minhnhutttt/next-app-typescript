@@ -79,7 +79,7 @@ export default function ShowImge() {
             let img = images[queue[i].index];
             if (img) {
               let elapsedTime = p.millis() - imageTimes[i];
-              let totalDisplayTime = 1000; 
+              let totalDisplayTime = 1500; 
         
               if (elapsedTime > totalDisplayTime) {
                 queue.splice(i, 1);
@@ -100,10 +100,10 @@ export default function ShowImge() {
               let currentY = queue[i].y;
         
               if (elapsedTime <= 200) {
-                currentScale = p.map(elapsedTime, 0, 200, 0.5, 1);
+                currentScale = p.map(elapsedTime, 0, 200, 0.1, 1);
               }
         
-              else if (elapsedTime > 200 && elapsedTime <= 800) {
+              else if (elapsedTime > 200 && elapsedTime <= 1300) {
                 let offsetX = mouseDirectionX * (elapsedTime - 200) / 3000;
                 let offsetY = mouseDirectionY * (elapsedTime - 200) / 3000;
         
@@ -113,8 +113,8 @@ export default function ShowImge() {
                 currentScale = 1; 
               }
         
-              else if (elapsedTime > 800) {
-                currentScale = p.map(elapsedTime, 800, 1000, 1, 0.5);
+              else if (elapsedTime > 1300) {
+                currentScale = p.map(elapsedTime, 1300, 1500, 1, 0.1);
               }
         
               let imgWidth = (img.width * scale * currentScale) / img.width;
