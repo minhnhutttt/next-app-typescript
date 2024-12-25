@@ -155,6 +155,7 @@ export default function Partner() {
                               ? format(planneDate, "yyyy/MM/dd")
                               : format(new Date(), "yyyy/MM/dd")
                           }
+                          readOnly
                         />
                         <span className="absolute right-2.5 top-2.5 cursor-pointer">
                           <img src="/assets/images/ic-calendar.svg" alt="" />
@@ -307,7 +308,7 @@ export default function Partner() {
           </div>
         </div>
         <div
-          className={`absolute inset-0 flex items-center justify-center bg-[url('/assets/images/bg.png')] bg-cover bg-right-bottom bg-no-repeat z-20 ${
+          className={`fixed inset-0 flex items-center justify-center bg-[url('/assets/images/bg.png')] bg-cover bg-right-bottom bg-no-repeat z-20 ${
             isSaving
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"

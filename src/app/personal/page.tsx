@@ -243,7 +243,7 @@ export default function Personal() {
             </form>
           </div>
         </div>
-        <div className={`absolute inset-0 flex items-center justify-center bg-[url('/assets/images/bg.png')] bg-cover bg-right-bottom bg-no-repeat ${isSaving ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        <div className={`fixed inset-0 flex items-center justify-center bg-[url('/assets/images/bg.png')] bg-cover bg-right-bottom bg-no-repeat ${isSaving ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
           <div className="w-full max-w-[375px] border border-[#B4B4B4] py-9 px-5 flex flex-col items-center justify-center bg-white relative">
             <p className="text-[18px] font-semibold">登録済み一覧</p>
             <div className="flex flex-col gap-11 mt-20">
