@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import FormBlock from "@/components/form/formBlock";
 import {
   Popover,
@@ -15,14 +15,61 @@ import FormLabel from "@/components/form/formLabel";
 
 import FormSlider from "@/components/form/formSlider";
 
+interface FormData {
+  men: number,
+  women: number,
+  children: number,
+  age: number,
+  work: string;
+  hobbies: string;
+  planneDate: string;
+  budget: string;
+  food1: string;
+  food2: string;
+  areas: string;
+  atmosphere: string;
+  transportation: string;
+  avoid: string;
+}
+
 export default function Partner() {
+  const router = useRouter();
+
   const [planneDate, setPlanneDate] = useState<Date>();
-
   const [isSaving, setIsSaving] = useState<boolean>(false);
+  const [formData, setFormData] = useState<FormData>({
+      men: 50,
+      women: 50,
+      children: 50,
+      age: 0,
+      work: "",
+      hobbies: "",
+      planneDate: "",
+      budget: "",
+      food1: "",
+      food2: "",
+      areas: "",
+      atmosphere: "",
+      transportation: "",
+      avoid: "",
+    });
 
-  const handleSliderChange = (value: number) => {
-    console.log("Current Slider Value:", value);
-  };
+    const handleChange = (key: keyof FormData, value: string | number) => {
+      setFormData((prev) => ({
+        ...prev,
+        [key]: value,
+      }));
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+      e.preventDefault();
+      const convertedFormData: Record<string, string> = Object.fromEntries(
+        Object.entries(formData).map(([key, value]) => [key, String(value)])
+      );
+  
+      const query = new URLSearchParams(convertedFormData).toString();
+      router.push(`/result?${query}`);
+    };
   return (
     <main>
       <div className="p-5 bg-[url('/assets/images/bg.png')] bg-cover bg-right-bottom bg-no-repeat h-screen relative">
@@ -36,7 +83,7 @@ export default function Partner() {
             </h1>
           </div>
           <div className="w-full max-w-[460px] mx-auto mt-[clamp(10px,4.444vmin,40px)] flex-1 flex flex-col overflow-hidden">
-            <form action="" className="w-full flex flex-col h-full">
+            <form action="" onSubmit={handleSubmit} className="w-full flex flex-col h-full">
               <div className="overflow-auto max-w-[390px] mx-auto divide-y divide-[#ACACAC] flex-1">
                 <div className="py-5 relative">
                   <div className="absolute right-2 space-y-2">
@@ -61,7 +108,7 @@ export default function Partner() {
                           max={100}
                           step={1}
                           initialValue={50}
-                          onChange={handleSliderChange}
+                          onChange={(value) => handleChange("men", value)}
                         />
                       </div>
                     </div>
@@ -75,7 +122,7 @@ export default function Partner() {
                           max={100}
                           step={1}
                           initialValue={50}
-                          onChange={handleSliderChange}
+                          onChange={(value) => handleChange("women", value)}
                         />
                       </div>
                     </div>
@@ -89,7 +136,7 @@ export default function Partner() {
                           max={100}
                           step={1}
                           initialValue={50}
-                          onChange={handleSliderChange}
+                          onChange={(value) => handleChange("children", value)}
                         />
                       </div>
                     </div>
@@ -105,6 +152,7 @@ export default function Partner() {
                     <input
                       id="age"
                       className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
+                      onChange={(e) => handleChange("age", e.target.value)}
                     />
                   </FormBlock>
                 </div>
@@ -115,7 +163,7 @@ export default function Partner() {
                     label="相手の職種"
                     inputText="(必須) 相手の職業を選んでください"
                   >
-                    <select name="work" id="work" className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none">
+                    <select name="work" id="work" className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" onChange={(e) => handleChange("work", e.target.value)}>
                           <option value="学生">学生</option>
                           <option value="浪人生">浪人生</option>
                           <option value="社会人">社会人</option>
@@ -134,6 +182,7 @@ export default function Partner() {
                     <input
                       id="hobbies"
                       className="w-full focus:outline-none bg-transparent font-bold h-6 focus:bg-none"
+                      onChange={(e) => handleChange("hobbies", e.target.value)} 
                     />
                   </FormBlock>
                 </div>
@@ -150,11 +199,7 @@ export default function Partner() {
                         </span>
                         <input
                           className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
-                          value={
-                            planneDate
-                              ? format(planneDate, "yyyy/MM/dd")
-                              : format(new Date(), "yyyy/MM/dd")
-                          }
+                          value={planneDate ? format(planneDate, "yyyy/MM/dd") : format(new Date(), "yyyy/MM/dd")}
                           readOnly
                         />
                         <span className="absolute right-2.5 top-2.5 cursor-pointer">
@@ -167,7 +212,13 @@ export default function Partner() {
                         id="planneDate"
                         mode="single"
                         selected={planneDate}
-                        onSelect={setPlanneDate}
+                        onSelect={(date) => {
+                          setPlanneDate(date);
+                          handleChange(
+                            "planneDate",
+                            date ? format(date, "yyyy/MM/dd") : ""
+                          );
+                        }}
                         captionLayout="dropdown"
                         endMonth={new Date(2030, 12)}
                       />
@@ -185,6 +236,7 @@ export default function Partner() {
                     <input
                       id="budget"
                       className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
+                      onChange={(e) => handleChange("budget", e.target.value)}
                     />
                   </FormBlock>
                 </div>
@@ -199,6 +251,7 @@ export default function Partner() {
                     <input
                       id="food1"
                       className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
+                      onChange={(e) => handleChange("food1", e.target.value)}
                     />
                   </FormBlock>
                 </div>
@@ -212,6 +265,7 @@ export default function Partner() {
                     <input
                       id="food2"
                       className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
+                      onChange={(e) => handleChange("food2", e.target.value)}
                     />
                   </FormBlock>
                 </div>
@@ -225,6 +279,7 @@ export default function Partner() {
                     <input
                       id="areas"
                       className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
+                      onChange={(e) => handleChange("areas", e.target.value)}
                     />
                   </FormBlock>
                 </div>
@@ -238,6 +293,7 @@ export default function Partner() {
                     <input
                       id="atmosphere"
                       className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
+                      onChange={(e) => handleChange("atmosphere", e.target.value)}
                     />
                   </FormBlock>
                 </div>
@@ -251,6 +307,7 @@ export default function Partner() {
                     <input
                       id="transportation"
                       className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
+                      onChange={(e) => handleChange("transportation", e.target.value)}
                     />
                   </FormBlock>
                 </div>
@@ -265,6 +322,7 @@ export default function Partner() {
                     <textarea
                       id="avoid"
                       className="w-full focus:outline-none bg-transparent font-bold h-9"
+                      onChange={(e) => handleChange("avoid", e.target.value)}
                     ></textarea>
                   </FormBlock>
                 </div>
@@ -285,13 +343,13 @@ export default function Partner() {
                   </button>
                 </div>
                 <div className="flex justify-center gap-5 ">
-                  <Button href="/" kind="link">
+                  <Button type="submit" kind="button">
                     相手との <br />
                     プランを
                     <br />
                     お願いする
                   </Button>
-                  <Button href="/" kind="link">
+                  <Button href="/personal" kind="link">
                     プランを <br />
                     お願いする
                   </Button>

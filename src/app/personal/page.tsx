@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-
+import { useRouter } from "next/navigation";
 import FormBlock from "@/components/form/formBlock";
 import {
   Popover,
@@ -29,9 +29,10 @@ interface FormData {
 }
 
 export default function Personal() {
+  const router = useRouter();
+
   const [birthday, setBirthday] = useState<Date>();
   const [planneDate, setPlanneDate] = useState<Date>();
-
   const [isSaving, setIsSaving] = useState<boolean>(false);
 
   const [formData, setFormData] = useState<FormData>({
@@ -46,7 +47,7 @@ export default function Personal() {
     areas: "",
     atmosphere: "",
     transportation: "",
-    avoid: ""
+    avoid: "",
   });
 
 
@@ -59,7 +60,12 @@ export default function Personal() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    const convertedFormData: Record<string, string> = Object.fromEntries(
+      Object.entries(formData).map(([key, value]) => [key, String(value)])
+    );
+
+    const query = new URLSearchParams(convertedFormData).toString();
+    router.push(`/result?${query}`);
   };
   return (
     <main>
@@ -151,7 +157,6 @@ export default function Personal() {
                         <input
                           className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
                           value={planneDate ? format(planneDate, "yyyy/MM/dd") : format(new Date(), "yyyy/MM/dd")}
-                          onChange={(e) => handleChange("planneDate", e.target.value)}
                           readOnly
                         />
                         <span className="absolute right-2.5 top-2.5 cursor-pointer">

@@ -69,19 +69,19 @@ export default function Login() {
               <span>休日AIコンシェルジュへようこそ<br />希望ログイン方法をお聞かせください</span>
             </h1>
           </div>
-          <div className="flex justify-center mt-12 md:mt-[clamp(5px,10.444vmin,94px)]">
+          <div className="flex justify-center mt-10 md:mt-[clamp(5px,10.444vmin,94px)]">
             <div className="w-[404px]">
-                <div className="p-2 rounded-[33px] flex items-center justify-center flex-col bg-[linear-gradient(133deg,_rgba(244,136,71,1)_0%,_rgba(227,97,118,1)_54%,_rgba(91,112,236,1)_100%)]">
-                    <div className="bg-white w-full rounded-[33px] py-[clamp(10px,3.556vmin,32px)] flex items-center justify-center flex-col">
-                        <div className=""><img className="h-[clamp(4px,8.889vmin,80px)]" src="/assets/images/logo2.svg" alt="" /></div>
-                        <div className="space-y-[clamp(4px,2.222vmin,20px)] mt-[clamp(10px,4.444vmin,40px)] flex flex-col items-center justify-center">
-                        <button><img className="h-[clamp(4px,6.222vmin,56px)]" src="/assets/images/btn-google.png" alt="" /></button>
-                        <button><img className="h-[clamp(4px,6.222vmin,56px)]" src="/assets/images/btn-apple.png" alt="" /></button>
-                        <button><img className="h-[clamp(4px,6.222vmin,56px)]" src="/assets/images/btn-x.png" alt="" /></button>
+                <div className="p-1.5 md:p-2 rounded-[33px] flex items-center justify-center flex-col bg-[linear-gradient(133deg,_rgba(244,136,71,1)_0%,_rgba(227,97,118,1)_54%,_rgba(91,112,236,1)_100%)]">
+                    <div className="bg-white w-full rounded-[33px] py-10 md:py-[clamp(10px,3.556vmin,32px)] flex items-center justify-center flex-col">
+                        <div className=""><img className="h-16 md:h-[clamp(4px,8.889vmin,80px)]" src="/assets/images/logo2.svg" alt="" /></div>
+                        <div className="space-y-5 md:space-y-[clamp(4px,2.222vmin,20px)] mt-[clamp(20px,4.444vmin,40px)] flex flex-col items-center justify-center">
+                        <button><img className="h-12 md:h-[clamp(32px,6.222vmin,56px)]" src="/assets/images/btn-google.png" alt="" /></button>
+                        <button><img className="h-12 md:h-[clamp(32px,6.222vmin,56px)]" src="/assets/images/btn-apple.png" alt="" /></button>
+                        <button><img className="h-12 md:h-[clamp(32px,6.222vmin,56px)]" src="/assets/images/btn-x.png" alt="" /></button>
                         </div>
                     </div>
                 </div>
-                <div className="py-[clamp(4px,3.111vmin,28px)] px-3 md:text-[clamp(4px,1.667vmin,15px)] text-[14px]">
+                <div className="py-[clamp(10px,3.111vmin,28px)] px-3 md:text-[clamp(4px,1.667vmin,15px)] text-[14px]">
                 続行することにより、休日AI休日コンシェルジュの<a href="/terms-of-service" className="text-[#001AFF]">利用規約</a> に同意したことになります<br />
                 詳しくは、<a href="/privacy-policy" className="text-[#001AFF]">プライバシーポリシー</a> をお読みください。ご不明な点がございましたら、 お問い合わせ ください。
                 </div>

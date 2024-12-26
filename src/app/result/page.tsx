@@ -1,7 +1,8 @@
 "use client";
 
 import Button from "@/components/button";
-import { ReactNode, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { ReactNode, useEffect, useState } from "react";
 
 interface WeatherProps {
   weather?: "sun" | "rain";
@@ -141,7 +142,7 @@ const PlanneItem = ({ type, weather = "sun", modal }: PlanneItemProps) => {
 };
 
 const ResultItem = ({ type, weather = "sun", text, note, data }: ResultItemProps) => {
-    const { textColor, bgImage, borderSp, borderMd, modalborder, deco } = weatherAssets[weather];
+  const { textColor, bgImage, borderSp, borderMd, modalborder, deco } = weatherAssets[weather];
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <>
@@ -186,7 +187,7 @@ const ResultItem = ({ type, weather = "sun", text, note, data }: ResultItemProps
             </div>
             <div>
                 {data.map((item, index) => (
-                    <div className="group">
+                    <div className="group" key={index}>
                     <div className="md:text-[14px] text-[13px] text-[#020200] py-5" key={index}>
                         <p className="flex">
                             <span className="min-w-[40px]">午前：</span>
@@ -219,6 +220,20 @@ const ResultItem = ({ type, weather = "sun", text, note, data }: ResultItemProps
 };
 
 export default function Result() {
+  const searchParams = useSearchParams();
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(()=> {
+    
+  })
+  setTimeout(() => {
+    console.log(searchParams);
+    setIsLoading(false);
+  }, 2000); 
+  if (isLoading) {
+    return <div className="h-screen flex items-center justify-center bg-[url('/assets/images/bg.png')] bg-cover bg-right-bottom bg-no-repeat p-5 relative">
+      <img src="/assets/images/loading.png" alt="" />
+    </div>;
+  }
   return (
     <main>
       <div className="p-5 bg-[url('/assets/images/bg.png')] bg-cover bg-right-bottom bg-no-repeat max-md:min-h-screen md:h-screen relative">

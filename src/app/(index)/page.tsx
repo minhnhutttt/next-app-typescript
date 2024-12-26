@@ -265,8 +265,8 @@ export default function Home() {
             </h3>
           </div>
           <div className="flex max-md:items-center justify-between max-md:mt-10 max-dt:-mt-[clamp(1px,9vmin,90px)] dt:-mt-[clamp(1px,9vmin,90px)] relative max-md:flex-col">
-            <div className="relative flex md:flex-col items-start max-lg:flex-1">
-              <div className="ani-image opacity-0 inline-flex relative">
+            <div className="relative flex md:flex-col items-start max-md:justify-between max-md:w-full max-lg:flex-1">
+              <div className="ani-image max-md:-left-5 max-md:top-[-10vw] max-md:w-[36vw] opacity-0 inline-flex relative max-md:z-20">
                 <div className="animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s]">
                 <img className="md:h-[clamp(1px,31.8vmin,319px)]" src="/assets/images/img-01.png" alt="" />
                 <button className="absolute -bottom-0 max-md:right-0 md:-right-4 cursor-pointer" onMouseEnter={!isMobile ? () => handleHover() : undefined}
@@ -279,10 +279,10 @@ export default function Home() {
                 文化と食の散策ツアー（上野・浅草）<br /><br />午前：上野恩賜公園 & 国立西洋美術館<br />上野恩賜公園で朝の散歩をしながら、自然を満喫。公園内にある国立西洋美術館で、ヨーロッパ美術に触れる。<br />入場料: 500-1,000円（特別展による）<br /><br />昼食：浅草「天丼浅草 ○○屋」<br />天ぷらの名店で江戸前の天丼を堪能。<br />昼食予算: 2,000円<br /><br />午後：浅草寺と仲見世通り散策<br />浅草寺で参拝し、仲見世通りでお土産を探しながら歩く。<br />人力車で夕食のお店へ<br />人力車：10分 5,000円<br /><br />夕食：浅草「○○屋」<br />歴史ある店でどじょう鍋を楽しむ。<br />夕食予算: 3,000円<br />合計予算：11,500円～12,500円
                 </div>
               </div>
-              <div className="ani-image opacity-0 inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.1s] -mt-[clamp(1px,2vmin,20px)] lg:ml-5 relative z-10">
+              <div className="ani-image max-md:absolute max-md:left-[30%] max-md:top-[20%] max-md:w-[36vw] opacity-0 inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.1s] -mt-[clamp(1px,2vmin,20px)] lg:ml-5 relative z-10">
                 <img className="md:h-[clamp(1px,30.6vmin,306px)]" src="/assets/images/img-02.png" alt="" />
               </div>
-              <div className="ani-image opacity-0 inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.5s] relative -mt-5 lg:-mt-[clamp(1px,5vmin,50px)] lg:ml-32">
+              <div className="ani-image max-md:w-[36vw] max-md:-right-4 opacity-0 inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.5s] relative -mt-5 lg:-mt-[clamp(1px,5vmin,50px)] lg:ml-32">
                 <img className="md:h-[clamp(1px,31.7vmin,317px)]" src="/assets/images/img-03.png" alt="" />
               </div>
             </div>
@@ -293,14 +293,14 @@ export default function Home() {
             </div>
             <div className="flex md:flex-col items-start md:items-end dt:-mt-32 max-lg:flex-1 relative">
               <div className="flex flex-col items-end">
-                <div className="ani-image opacity-0 inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s] lg:mr-20  max-md:w-[150px]">
+                <div className="ani-image opacity-0 max-md:w-[36vw] inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s] lg:mr-20">
                   <img className="md:h-[clamp(1px,35.9vmin,300px)]" src="/assets/images/img-04.png" alt="" />
                 </div>
-                <div className="ani-image opacity-0 inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s] -mt-10  max-md:w-[150px]">
+                <div className="ani-image opacity-0 max-md:w-[36vw] inline-flex animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s] md:-mt-10">
                   <img className="md:h-[clamp(1px,26vmin,260px)]" src="/assets/images/img-05.png" alt="" />
                 </div>
               </div>
-              <div className="ani-image opacity-0 inline-flex md:absolute bottom-0 right-0 max-md:w-[300px]">
+              <div className="ani-image opacity-0 inline-flex md:absolute bottom-0 right-0 max-md:w-[60vw]">
                 <img className="md:h-[clamp(1px,36vmin,360px)]" src="/assets/images/img-06.png" alt="" />
               </div>
             </div>
