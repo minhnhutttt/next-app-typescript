@@ -1,6 +1,6 @@
 import Image from "next/image";
 import MainVisual from "./components/MainVisual";
-import Fv from "./components/fv";
+import Fv from "./components/Fv";
 
 export default function Home() {
   return (
