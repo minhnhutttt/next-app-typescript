@@ -17,7 +17,7 @@ const useScrollAnimations = () => {
         gsap.from(el, {
           autoAlpha: 0,
           y: 30,
-          duration: 0.5,
+          duration: 1,
           ease: "Power2.easeInOut",
           scrollTrigger: { trigger: el },
         }),
@@ -51,6 +51,13 @@ const useScrollAnimations = () => {
           scale: 0.8,
           duration: 0.5,
           ease: "Power2.easeInOut",
+          scrollTrigger: { trigger: el },
+        }),
+        'gradient-background': (el: HTMLElement) =>
+        gsap.to('.gradient-background', {
+          backgroundSize: '100% 100%',
+          duration: 0.8,
+          ease: 'linear',
           scrollTrigger: { trigger: el },
         }),
     };
