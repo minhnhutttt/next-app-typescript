@@ -1,19 +1,44 @@
 "use client";
 
+import { useState, useEffect, useCallback } from "react";
 import useScrollAnimations from "@/app/hooks/useScrollAnimations";
 import ButtonLine from "@/components/buttonLine";
-import { useCallback, useState } from "react";
 
 const MainVisual = () => {
   const ref = useScrollAnimations();
   const [NavOpen, setNavOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   const close = useCallback(() => {
     setNavOpen(false);
   }, []);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const handleScroll = () => {
+      let currentSection = "";
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          currentSection = section.id;
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Trigger once on mount
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section ref={ref}>
-      <div className="fixed w-full inset-0 z-[2000] pointer-events-none ">
+      <div className="fixed w-full inset-0 z-[2000] pointer-events-none">
         <div>
           <div className="max-lg:hidden absolute xl:w-[calc(50%-320px)] w-[calc(50%-250px)] left-0 top-0 bottom-0 flex items-center justify-center flex-col gap-5 md:gap-[50px] p-5 pointer-events-auto">
             <h1>
@@ -47,60 +72,28 @@ const MainVisual = () => {
                 <div className="bg-white/10 absolute inset-0"></div>
 
                 <ul className="dt:text-[clamp(10px,2.6vw,28px)] lg:text-[clamp(10px,2vw,20px)] text-[20px] font-medium text-center flex flex-col gap-[clamp(10px,5vmin,40px)] dt:gap-[clamp(10px,5.556vmin,60px)] relative">
-                  <li>
-                    <a
-                      href="/"
-                      className="text-[#21012D]/[0.5]"
-                      onClick={close}
-                    >
-                      見るから所有するへ
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-[#21012D]/[0.5]"
-                      onClick={close}
-                    >
-                      What’s OPEN FAVE
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-[#21012D]/[0.5]"
-                      onClick={close}
-                    >
-                      8つの未来
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-[#21012D]/[0.5]"
-                      onClick={close}
-                    >
-                      スペシャルイベント
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-[#21012D]/[0.5]"
-                      onClick={close}
-                    >
-                      はじめ方
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-[#21012D]/[0.5]"
-                      onClick={close}
-                    >
-                      FAQ
-                    </a>
-                  </li>
+                  {[
+                    { href: "/#introduction", label: "見るから所有するへ" },
+                    { href: "/#open-fave", label: "What’s OPEN FAVE" },
+                    { href: "/#features", label: "8つの未来" },
+                    { href: "/#event", label: "スペシャルイベント" },
+                    { href: "/#getting-started", label: "はじめ方" },
+                    { href: "/#faq", label: "FAQ" },
+                  ].map(({ href, label }) => (
+                    <li key={href}>
+                      <a
+                        href={href}
+                        className={` ${
+                          activeSection === href.substring(2)
+                            ? "text-[#21012D]"
+                            : "text-[#21012D]/[0.5]"
+                        }`}
+                        onClick={close}
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

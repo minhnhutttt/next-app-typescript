@@ -17,7 +17,7 @@ const sliderImages = [
 const Fv = () => {
   const ref = useScrollAnimations();
   return (
-    <section id="introduction" ref={ref} className="relative overflow-hidden">
+    <section ref={ref} className="relative overflow-hidden">
       <div className="bg-[linear-gradient(180deg,_rgba(255,_255,_255,_0.00)_0%,_rgba(255,_255,_255,_0.00)_40%,_#EC9DBC_100%)] pt-[88px] md:pb-[185px] pb-[155px]">
         <span className="absolute top-5 left-4 md:left-8">
           <img
