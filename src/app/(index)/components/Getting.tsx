@@ -12,7 +12,7 @@ const Getting = () => {
                 <img className="animate-[anim-bounce_1.6s_infinite_ease-in-out]" src="/assets/images/step-bubble.svg" alt='ただ消費されるだけだった"投稿"が"資産価値"を帯びるSNSの世界へ。さあ、今すぐ飛び込もう！' />
             </h4>
         </div>
-        <p className="text-center md:text-[25px] text-[18px] font-bold">
+        <p className="fade-up text-center md:text-[25px] text-[18px] font-bold">
         簡単2ステップで始めよう！
         </p>
         <div className="flex justify-center gap-5 md:mt-8 mb-10 md:mb-12 mt-5">

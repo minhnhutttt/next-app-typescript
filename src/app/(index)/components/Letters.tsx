@@ -57,7 +57,7 @@ const Letters = () => {
           <source src="/assets/videos/end.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute bg-black/80 inset-0 bg-[url(/assets/images/open-fave-bg.png)] bg-no-repeat bg-center"></div>
+        <div className="absolute bg-black/80 inset-0 bg-[url(/assets/images/open-fave-bg.png)] max-md:bg-[size:360px_auto] bg-no-repeat bg-center"></div>
       </div>
                     <h4 data-splitting className="md:text-[26px] text-[20px] text-white text-center font-bold leading-[2] w-full max-w-[485px] mx-auto relative z-10">
                         あなたには、これまでにないSNS体験と新たな価値創造の場を、<br />
