@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import useScrollAnimations from "@/app/hooks/useScrollAnimations";
-import ButtonLine from "@/components/buttonLine";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const MainVisual = () => {
   const ref = useScrollAnimations();
@@ -20,7 +19,10 @@ const MainVisual = () => {
 
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        if (
+          rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2
+        ) {
           currentSection = section.id;
         }
       });
@@ -44,7 +46,20 @@ const MainVisual = () => {
             <h1>
               <img src="/assets/images/open-fave.png" alt="" />
             </h1>
-            <ButtonLine />
+            <div className="w-full md:max-w-[360px] h-[45px] md:h-[86px] flex group">
+              <a
+                href="/"
+                target="_blank"
+                className="group-hover:mt-[6px] group-hover:[box-shadow:0px_0px_0px_0px_#005100] duration-150 flex items-center w-full h-10 md:h-20 justify-center md:gap-2.5 gap-2 bg-[#01B902] rounded-[60px] font-medium [box-shadow:0px_6px_0px_0px_#005100] xl:text-[24px] text-[18px] text-white"
+              >
+                <img
+                  className="max-md:w-5"
+                  src="/assets/images/ic-line.svg"
+                  alt=""
+                />
+                お問い合わせLINE
+              </a>
+            </div>
           </div>
           <div className="absolute xl:w-[calc(50%-320px)] w-full lg:w-[calc(50%-250px)] right-0 bottom-0 top-0 flex items-center justify-center flex-col gap-5 md:gap-[50px] lg:p-5">
             <div

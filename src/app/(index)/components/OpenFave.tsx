@@ -1,6 +1,6 @@
 "use client";
 
-import useScrollAnimations from "@/app/hooks/useScrollAnimations";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const data = [
     {

@@ -19,6 +19,7 @@ const config: Config = {
     },
     fontFamily: {
       sansita: ["var(--font-sansita)", "sans-serif"],
+      inter: ["var(--font-inter)", "sans-serif"],
     },
   },
   plugins: [],

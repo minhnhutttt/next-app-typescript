@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Zen_Maru_Gothic, Sansita_Swashed } from "next/font/google";
+import { Zen_Maru_Gothic, Sansita_Swashed, Inter } from "next/font/google";
 import "./globals.scss";
+import ScrollContainer from "@/components/scrollContainer";
 
 const zen = Zen_Maru_Gothic({ 
   weight: ['300','400','500','700','900'],
@@ -11,6 +12,12 @@ const zen = Zen_Maru_Gothic({
   weight: ['300','400','500','700'],
   subsets: ["latin"],
   variable: '--font-sansita'
+ });
+
+ const inter = Inter({ 
+  weight: ['300','400','500','700'],
+  subsets: ["latin"],
+  variable: '--font-inter'
  });
 
 export const metadata: Metadata = {
@@ -25,7 +32,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${zen.className} ${sansita.variable}`}>{children}</body>
+      <body className={`${zen.className} ${sansita.variable} ${inter.variable}`}>
+        <ScrollContainer>
+          {children}
+        </ScrollContainer>
+        </body>
     </html>
   );
 }

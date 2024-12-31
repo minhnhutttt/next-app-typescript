@@ -1,6 +1,6 @@
 "use client";
 
-import useScrollAnimations from "@/app/hooks/useScrollAnimations";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";

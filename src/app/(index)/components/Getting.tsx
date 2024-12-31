@@ -1,6 +1,6 @@
 "use client";
 
-import useScrollAnimations from "@/app/hooks/useScrollAnimations";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import Button from "@/components/button";
 
 const Getting = () => {
@@ -16,8 +16,8 @@ const Getting = () => {
         簡単2ステップで始めよう！
         </p>
         <div className="flex justify-center gap-5 md:mt-8 mb-10 md:mb-12 mt-5">
-          <div><img src="/assets/images/step-01.png" alt="open-fave.comへアクセス" /></div>
-          <div><img src="/assets/images/step-02.png" alt="アカウント登録" /></div>
+          <div className="fade-up"><img src="/assets/images/step-01.png" alt="open-fave.comへアクセス" /></div>
+          <div className="fade-up"><img src="/assets/images/step-02.png" alt="アカウント登録" /></div>
         </div>
         <div className="flex justify-center">
           <Button />

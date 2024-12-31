@@ -1,6 +1,6 @@
 "use client";
 
-import useScrollAnimations from "@/app/hooks/useScrollAnimations";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from 'swiper/modules';
 import "swiper/css";
@@ -17,6 +17,7 @@ const sliderImages = [
 
 const Fv = () => {
   const ref = useScrollAnimations();
+  
   return (
     <section ref={ref} className="relative overflow-hidden">
       <div className="bg-[linear-gradient(180deg,_rgba(255,_255,_255,_0.00)_0%,_rgba(255,_255,_255,_0.00)_40%,_#EC9DBC_100%)] pt-[88px] md:pb-[185px] pb-[155px]">
@@ -120,7 +121,11 @@ const Fv = () => {
           </div>
         </div>
       </div>
-      <div className="fade-up -mt-[120px]">
+      <div className="fade-up md:-mt-[137px] -mt-[110px]">
+        <div className="flex justify-center px-5">
+          <img src="/assets/images/phone.png" alt="" />
+        </div>
+        <div className="-mt-[137px]">
         <Swiper
           slidesPerView={"auto"}
           loop={true}
@@ -143,6 +148,7 @@ const Fv = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        </div>
       </div>
     </section>
   );
