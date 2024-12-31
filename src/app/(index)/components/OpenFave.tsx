@@ -52,14 +52,14 @@ const data = [
 const OpenFave = () => {
   const ref = useScrollAnimations();
   return (
-    <section id="open-fave" ref={ref} className="relative overflow-hidden md:pt-[100px] px-5 bg-[linear-gradient(180deg,_rgba(255,255,255,1)_0%,_rgba(142,129,185,1)_100%)]">
-        <div className="text-center">
-            <h3 className="md:text-[36px] text-[20px] font-bold tracking-wider">What’s OPEN FAVE</h3>
+    <section id="open-fave" ref={ref} className="relative overflow-hidden md:pt-[100px] pt-16 px-5 bg-[linear-gradient(180deg,_rgba(255,255,255,1)_0%,_rgba(142,129,185,1)_100%)]">
+        <div className="fade-up text-center">
+            <h3 className="md:text-[36px] text-[24px] font-bold tracking-wider">What’s OPEN FAVE</h3>
             <span className="w-20 h-[3px] bg-[#21012D] block mx-auto mt-5"></span>
         </div>
         <div className="divide-y divide-[#8E81B9]">
             {data.map((item,index) => (
-                <div className="md:pb-[60px] md:pt-[82px] pt-14 pb-10" key={index}>
+                <div className="fade-up md:pb-[60px] md:pt-[82px] pt-14 pb-10" key={index}>
                     <figure className="flex justify-center items-center">
                         <img src={item.image} alt="" />
                     </figure>

@@ -76,7 +76,7 @@ const MainVisual = () => {
                     { href: "/#introduction", label: "見るから所有するへ" },
                     { href: "/#open-fave", label: "What’s OPEN FAVE" },
                     { href: "/#features", label: "8つの未来" },
-                    { href: "/#event", label: "スペシャルイベント" },
+                    { href: "/#special", label: "スペシャルイベント" },
                     { href: "/#getting-started", label: "はじめ方" },
                     { href: "/#faq", label: "FAQ" },
                   ].map(({ href, label }) => (

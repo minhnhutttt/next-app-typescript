@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Zen_Maru_Gothic } from "next/font/google";
+import { Zen_Maru_Gothic, Sansita_Swashed } from "next/font/google";
 import "./globals.scss";
 
 const zen = Zen_Maru_Gothic({ 
   weight: ['300','400','500','700','900'],
   subsets: ["latin"]
+ });
+
+ const sansita = Sansita_Swashed({ 
+  weight: ['300','400','500','700'],
+  subsets: ["latin"],
+  variable: '--font-sansita'
  });
 
 export const metadata: Metadata = {
@@ -19,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={zen.className}>{children}</body>
+      <body className={`${zen.className} ${sansita.variable}`}>{children}</body>
     </html>
   );
 }

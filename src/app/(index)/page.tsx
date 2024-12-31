@@ -3,6 +3,9 @@ import MainVisual from "./components/MainVisual";
 import Fv from "./components/Fv";
 import Introduction from "./components/Introduction";
 import OpenFave from "./components/OpenFave";
+import Features from "./components/Features";
+import Special from "./components/Special";
+import Getting from "./components/Getting";
 
 export default function Home() {
   return (
@@ -12,6 +15,9 @@ export default function Home() {
             <Fv />
             <Introduction />
             <OpenFave />
+            <Features />
+            <Special />
+            <Getting />
         </div>
     </main>
   );

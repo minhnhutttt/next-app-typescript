@@ -18,7 +18,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      sansita: ["var(--font-sansita)", "sans-serif"],
     },
   },
   plugins: [],

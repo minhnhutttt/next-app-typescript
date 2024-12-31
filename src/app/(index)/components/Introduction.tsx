@@ -11,13 +11,13 @@ const Introduction = () => {
             ただ<span className="font-bold">"<span className="md:text-[32px] text-[24px]">見る</span>"</span>から、<span className="font-bold">"<span className="md:text-[32px] text-[24px]">所有する</span>"</span>へ
             </span>
         </h3>
-        <p className="text-center md:text-[18px] text-[15px] font-medium md:mt-7 mt-5">SNSを価値ある資産のプラットフォームへ進化させる</p>
+        <p className="fade-up text-center md:text-[18px] text-[15px] font-medium md:mt-7 mt-5">SNSを価値ある資産のプラットフォームへ進化させる</p>
         <div className="md:mt-[52px] mt-10">
             <div className="fade-up flex">
                 <span className="h-0.5 bg-[#21012D] w-3/5"></span>
             </div>
             <div className="md:px-5 relative w-full max-md:max-w-[400px] max-md:mx-auto">
-                <div className="fade-up absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center">
+                <div className="fade-up absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center z-10">
                     <span className="bg-[#21012D] w-[3px] -rotate-6"></span>
                     <span className="md:text-[48px] text-[32px] font-black [writing-mode:vertical-rl] [text-orientation:upright] tracking-[0.3em]">しかし!</span>
                     <span className="bg-[#21012D] w-[3px] rotate-6"></span>
