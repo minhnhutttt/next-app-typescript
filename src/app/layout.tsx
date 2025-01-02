@@ -3,6 +3,7 @@ import { Albert_Sans,  Inter } from "next/font/google";
 import "./globals.scss";
 import ScrollContainer from "@/components/scrollContainer";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const albert = Albert_Sans({ 
   weight: ['300','400','500','700','900'],
@@ -31,6 +32,7 @@ export default function RootLayout({
         <ScrollContainer>
           <Header />
           {children}
+          <Footer />
         </ScrollContainer>
         </body>
     </html>

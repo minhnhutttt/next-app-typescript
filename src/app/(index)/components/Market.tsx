@@ -38,10 +38,10 @@ const Market = () => {
       className="relative overflow-hidden px-5 md:pt-12 pt-10"
     >
       <div className="w-full max-w-[1360px] mx-auto md:pt-14 pt-10">
-        <h5 className="text-center md:text-[64px] text-[40px] font-bold">Market analysis</h5>
+        <h5 className="fade-up text-center md:text-[64px] text-[40px] font-bold">Market analysis</h5>
         <div className="md:mt-7 mt-5 md:space-y-16 space-y-10">
           {data.map((item, index) => (
-            <div className="group flex items-center max-md:flex-col max-md:gap-5 md:even:flex-row-reverse" key={index}>
+            <div className="fade-up group flex items-center max-md:flex-col max-md:gap-5 md:even:flex-row-reverse" key={index}>
                 <figure>
                     <img src={item.image} alt="" />
                 </figure>
