@@ -54,7 +54,7 @@ const Introduction = () => {
   return (
     <section
     ref={containerRef}
-      className="relative bg-[url(/assets/images/intro-bg.png)] bg-[size:100%_auto] bg-no-repeat md:mb-[155px] mb-24"
+      className="relative bg-[url(/assets/images/intro-bg.png)] bg-[size:auto_100%] bg-right-top bg-no-repeat md:mb-[155px] mb-24"
     >
         <div ref={ref} className="">
         <div ref={sliderRef} className="w-full max-w-[1440px] mx-auto md:px-10 md:pt-[72px] pt-10 relative">
