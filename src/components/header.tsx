@@ -8,7 +8,7 @@ const Header = () => {
     setNavOpen(false);
   }, []);
   return (
-    <header className="absolute top-0 inset-x-0 flex justify-between items-center py-6 px-3 md:px-10 z-10">
+    <header className="absolute top-0 inset-x-0 flex justify-between items-center py-6 px-3 md:px-10 z-[99]">
      <a href="/" className="block">
       <img className="max-md:w-[180px]" src="/assets/images/logo.svg" alt="" />
      </a>
@@ -24,8 +24,8 @@ const Header = () => {
      </ul>
      </div>
      <button
-          className={`group relative z-[99] md:h-10 h-8 md:w-[46px] w-[36px] ${
-            NavOpen ? "active fixed" : ""
+          className={`group  z-[99] md:h-10 h-8 md:w-[46px] w-[36px] ${
+            NavOpen ? "active fixed top-5 right-3 md:right-10" : "relative"
           }`}
           onClick={() => setNavOpen((prev) => !prev)}
         >

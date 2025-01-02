@@ -50,7 +50,7 @@ const Conclusion = () => {
         <p className="fade-up text-ceter md:text-[48px] text-[24px] font-medium w-full max-w-[952px] mx-auto">
         We provide the following value in payment of usage fee of 3.99% of advertising cost
         </p>
-        <div className="flex flex-wrap w-full max-md:max-w-[400px] md:max-w-[1408px] mx-auto gap-[30px] md:mt-16 mt-10">
+        <div className="flex flex-wrap justify-center w-full max-md:max-w-[400px] md:max-w-[1408px] mx-auto gap-[30px] md:mt-16 mt-10">
             {data.map((item, index) => (
                 <div className="fade-up w-full md:w-[423px] md:pl-[90px] flex relative" key={index}>
                     <figure className="absolute top-0">

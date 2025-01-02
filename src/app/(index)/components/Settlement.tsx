@@ -16,7 +16,7 @@ const Settlement = () => {
         <p className="fade-up text-center md:text-[16px] text-[13px]">Easy and accurate payment of subscription fees in AIAD coins</p>
         <div className="w-full max-w-[1200px] mx-auto md:mt-12 mt-8">
             <div className="grid md:grid-cols-2 gap-10 md:mb-11 mb-7">
-                <div className="fade-up lg:w-[580px] bg-[#FFFA99]/[0.5] rounded-[30px] lg:p-[60px] md:p-10 p-6 divide-y divide-[#D7D7D7]">
+                <div className="fade-up bg-[#FFFA99]/[0.5] rounded-[30px] lg:p-[60px] md:p-10 p-6 divide-y divide-[#D7D7D7]">
                     <div className="min-h-[90px] pb-5">
                         <p className="text-center md:text-[24px] text-[18px] font-bold leading-none">Payment process</p>
                         <p className="text-center font-medium md:text-[18px] text-[15px] leading-none pt-2">
@@ -42,7 +42,7 @@ const Settlement = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="fade-up lg:w-[580px] bg-[#FFFA99]/[0.5] rounded-[30px] lg:p-[60px] md:p-10 p-6 divide-y divide-[#D7D7D7]">
+                <div className="fade-up bg-[#FFFA99]/[0.5] rounded-[30px] lg:p-[60px] md:p-10 p-6 divide-y divide-[#D7D7D7]">
                     <div className="min-h-[90px] pb-5">
                         <p className="text-center md:text-[24px] text-[18px] font-bold leading-none">User interface</p>
                         <p className="text-center font-medium md:text-[18px] text-[15px] leading-none pt-2">
