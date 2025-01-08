@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth !important;
+}
+body {
+  color: #000;
+  background-color: #eff6ff;
+}
+
+.u-graident {
+  @apply bg-[linear-gradient(90deg,_#4B2D01_0%,_#9E742F_12%,_#D9B367_23%,_#E7C87A_33%,_#F0D586_42%,_#F3DA8A_51%,_#E9CB7C_63%,_#D8B165_80%,_#C29A51_82%,_#AE853E_85%,_#A27832_88%,_#9E742F_91%,_#4B2D01_100%)] [box-shadow:0px_1.393px_2.786px_0px_rgba(198,_228,_246,_0.05)];
+}
+
+.u-perspective {
+  perspective: 500px;
+}
+.char {
+  opacity: 0;
+  display: inline-block;
+  animation-delay: calc(0.25s + var(--char-index) * 0.1s);
+  transition: all 0.25s calc(0.25s + var(--char-index) * 0.1s);
+}
+
+[data-scroll="in"] .char {
+  animation-name: fade-in;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+[data-scroll="in"] .ani-text {
+  animation-name: slide-up;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  transform-origin: top left;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(10px) translateX(20px) translateZ(50px) rotateX(5deg)
+      rotateY(-5deg);
+  }
+  to {
+    transform: translateY(0%) translateZ(0px);
+  }
+}
+.ani-bg {
+  background-size: 0% 0%;
+}
+[data-scroll="in"] .ani-bg {
+  animation-name: indown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  background-repeat: no-repeat;
+  animation-timing-function: ease;
+}
+
+@keyframes indown {
+  0% {
+    background-size: 0% 0%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
