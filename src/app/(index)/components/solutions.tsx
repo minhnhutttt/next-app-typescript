@@ -37,7 +37,7 @@ const Solutions = () => {
       <div className="w-full max-w-[1440px] mx-auto">
         <h3 className="fade-up text-center xl:text-[64px] md:text-[44px] text-[32px] font-medium tracking-[0.095em]">EXO DAO <br className="md:hidden" />strategic goals</h3>
         <div className="relative md:mt-20 mt-12">
-            <div className="absolute lg:top-1/2 top-0 max-md:bottom-0 lg:-translate-y-1/2 left-1/2 max-lg:-translate-x-1/2 lg:left-0">
+            <div className="absolute lg:top-1/2 top-0 max-md:bottom-0 lg:-translate-y-1/2 left-1/2 max-lg:-translate-x-1/2 lg:left-0 md:[filter:drop-shadow(0px_4px_110px_#2786A8)]">
                 <img className="fade-up max-lg:hidden" src="/assets/images/arrow.png" alt="" />
                 <img className="fade-up lg:hidden h-full" src="/assets/images/arrow-sp.png" alt="" />
             </div>

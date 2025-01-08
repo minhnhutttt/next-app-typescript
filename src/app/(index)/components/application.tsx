@@ -12,7 +12,7 @@ gsap.config({
 
 const data = [
   {
-    image: "/assets/images/application-img-01.png",
+    image: "/assets/images/application-img-01.jpg",
     title: "Regenerative medicine and tissue repair",
     text: (
       <>
@@ -31,7 +31,7 @@ const data = [
     ),
   },
   {
-    image: "/assets/images/application-img-02.png",
+    image: "/assets/images/application-img-02.jpg",
     title: "Cancer treatment and immunotherapy",
     text: (
       <>
@@ -46,7 +46,7 @@ const data = [
     ),
   },
   {
-    image: "/assets/images/application-img-03.png",
+    image: "/assets/images/application-img-03.jpg",
     title: "Environmental protection and eco technology",
     text: (
       <>
