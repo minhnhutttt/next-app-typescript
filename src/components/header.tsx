@@ -9,7 +9,7 @@ const Header = () => {
   }, []);
   return (
     <header className="absolute top-0 inset-x-0 flex justify-between items-center h-16 md:h-20 px-3 md:px-10 z-[99] bg-white/80">
-     <a href="/" className="block">
+     <a href="/" className="block hover:opacity-75 duration-150">
       <img className="max-md:w-[130px]" src="/assets/images/logo.svg" alt="" />
      </a>
      <div

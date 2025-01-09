@@ -18,7 +18,6 @@ const SolutionExpansion  = ({image, title}:{image: string, title: string}) => (
     <div className="fade-up flex flex-col items-center w-[380px]">
         <span className=""><img src={image} alt={title} /></span>
         <span className="md:text-[20px] text-[17px] text-[#1B1B2E] mt-5 md:mt-8">{title}</span>
-       
     </div>
 )
 

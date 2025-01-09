@@ -41,8 +41,8 @@ const Fv = () => {
           </div>
           <div className="fade-up flex items-center justify-center flex-col mt-9 relative">
             <p className="text-center md:text-[24px] text-[18px] tracking-wide mb-2">A new circulation of value starts here!</p>
-            <a href="/" className="w-[240px] md:w-[280px] h-[60px] md:h-[70px] flex items-center justify-center rounded-full p-[3px] overflow-hidden u-graident">
-            <span className="flex w-full h-full rounded-full items-center justify-center relative md:text-[24px] text-[18px] tracking-[0.3em] bg-[url('/assets/images/btn-bg.png')] bg-cover hover:opacity-75 duration-150 after:w-[9px] after:h-[16px] after:bg-[url(/assets/images/ic-arrow.svg)] after:bg-cover after:absolute after:right-4">WHITEPAPER</span></a>
+            <a href="/" className="w-[240px] md:w-[280px] h-[60px] md:h-[70px] flex items-center justify-center rounded-full p-[3px] overflow-hidden u-graident hover:opacity-75 duration-150">
+            <span className="flex w-full h-full rounded-full items-center justify-center relative md:text-[24px] text-[18px] tracking-[0.3em] bg-[url('/assets/images/btn-bg.png')] bg-cover after:w-[9px] after:h-[16px] after:bg-[url(/assets/images/ic-arrow.svg)] after:bg-cover after:absolute after:right-4">WHITEPAPER</span></a>
           </div>
         </div>
       </div>
