@@ -7,6 +7,7 @@ import {
   PopoverHandler,
   PopoverContent,
 } from "@material-tailwind/react";
+import { z } from "zod";
 import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/style.css";
@@ -28,13 +29,21 @@ interface FormData {
   avoid: string;
 }
 
+const formSchema = z.object({
+  work: z.string().min(1, '必須項目です。'),
+  budget: z.string().min(1, '必須項目です。'),
+  food1: z.string().min(1, '必須項目です。'),
+  planneDate: z.string().min(1, '必須項目です。'),
+});
+
 export default function Personal() {
   const router = useRouter();
 
   const [birthday, setBirthday] = useState<Date>();
   const [planneDate, setPlanneDate] = useState<Date>();
   const [isSaving, setIsSaving] = useState<boolean>(false);
-
+  const [errors, setErrors] = useState<Record<string, string>>({}); 
+  
   const [formData, setFormData] = useState<FormData>({
     birthday: "",
     work: "",
@@ -60,6 +69,24 @@ export default function Personal() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const validationResult = formSchema.safeParse({
+      work: formData.work,
+      budget: formData.budget,
+      food1: formData.food1,
+      planneDate: formData.planneDate,
+    });
+
+    if (!validationResult.success) {
+      const newErrors: Record<string, string> = {};
+      validationResult.error.errors.forEach((err) => {
+        newErrors[err.path[0] as string] = err.message;
+      });
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
     const convertedFormData: Record<string, string> = Object.fromEntries(
       Object.entries(formData).map(([key, value]) => [key, String(value)])
     );
@@ -97,10 +124,11 @@ export default function Personal() {
                   <Popover placement="bottom">
                     <PopoverHandler>
                       <label htmlFor="birthday" className="relative h-[60px] w-full block text-[13px] transition rounded-md duration-300 ease  border border-[#2687E2] shadow-sm overflow-hidden px-3 pt-1.5 bg-[#EBFCFE]">
-                        <span className="block mb-1">(任意) あなたの誕生日を選んでください</span>
+                        <span className="block mb-1">(任意) あなたの誕生日を選んでください
+                        </span>
                         <input
                           className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
-                          value={birthday ? format(birthday, "yyyy/MM/dd") : format(new Date(), "yyyy/MM/dd")}
+                          value={birthday ? format(birthday, "yyyy/MM/dd") : ''}
                           readOnly
                         />
                         <span className="absolute right-2.5 top-2.5 cursor-pointer">
@@ -127,7 +155,8 @@ export default function Personal() {
                 </div>
                 <div className="py-5">
                   <FormBlock required id="work" number="2" label="あなたの職種" inputText="(必須) あなたの職業を選んでください">
-                        <select name="work" id="work" className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" onChange={(e) => handleChange("work", e.target.value)}>
+                        <select defaultValue="" name="work" id="work" className="w-full focus:outline-none bg-transparent font-bold h-6 focus:bg-none" onChange={(e) => handleChange("work", e.target.value)}>
+                          <option disabled hidden value=""></option>
                           <option value="学生">学生</option>
                           <option value="浪人生">浪人生</option>
                           <option value="社会人">社会人</option>
@@ -135,17 +164,38 @@ export default function Personal() {
                           <option value="答えたくない">答えたくない</option>
                         </select>
                   </FormBlock>
+                  {errors.work && <p className="text-red-600 pt-2 font-bold">{errors.work}</p>}
+
                 </div>
                 <div className="py-5">
                   <FormBlock id="personality" number="3" label="あなたのパーソナリティー" inputText="(任意) あなたのパーソナリティーを選んでください"
                   >
-                    <input id="personality"  onChange={(e) => handleChange("personality", e.target.value)} className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" />
+                    <select defaultValue="" name="personality" id="personality" className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" onChange={(e) => handleChange("personality", e.target.value)}>
+                    <option disabled hidden value=""></option>
+                          <option value="わからない">わからない</option>
+                          <option value="ESTP">起業家(ESTP)</option>
+                          <option value="ESFP">エンターテイナー(ESFP)</option>
+                          <option value="ISTP">巨匠(ISTP)</option>
+                          <option value="ISFP">冒険家(ISFP)</option>
+                          <option value="ESTJ">幹部(ESTJ)</option>
+                          <option value="ESFJ">領事(ESFJ)</option>
+                          <option value="ISTJ">管理者(ISTJ)</option>
+                          <option value="ISFJ">擁護者(ISFJ)</option>
+                          <option value="ENTJ">指揮官(ENTJ)</option>
+                          <option value="ENTP">討論者(ENTP)</option>
+                          <option value="INTJ">建築家(INTJ)</option>
+                          <option value="INTP">論理学者(INTP)</option>
+                          <option value="ENFJ">主人公(ENFJ)</option>
+                          <option value="ENFP">運動家(ENFP)</option>
+                          <option value="INFJ">提唱者(INFJ)</option>
+                          <option value="INFP">仲介者(INFP)</option>
+                        </select>
                   </FormBlock>
                 </div>
                 <div className="py-5">
-                  <FormBlock id="hobbies" number="4" label="あなたの趣味・興味" inputText="(任意) あなたの趣味・興味があること (任意最大100文字)"
+                  <FormBlock id="hobbies" number="4" label="あなたの趣味・興味" inputText="(任意) あなたの趣味・興味があること (任意入力最大100文字)"
                   >
-                    <input id="hobbies"  onChange={(e) => handleChange("hobbies", e.target.value)} className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" />
+                    <input id="hobbies" onChange={(e) => handleChange("hobbies", e.target.value)} className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" />
                   </FormBlock>
                 </div>
                 <div className="py-5">
@@ -156,7 +206,7 @@ export default function Personal() {
                         <span className="block mb-1">(必須) プランがほしい日付けを選んでください</span>
                         <input
                           className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
-                          value={planneDate ? format(planneDate, "yyyy/MM/dd") : format(new Date(), "yyyy/MM/dd")}
+                          value={planneDate ? format(planneDate, "yyyy/MM/dd") : ""}
                           readOnly
                         />
                         <span className="absolute right-2.5 top-2.5 cursor-pointer">
@@ -181,23 +231,62 @@ export default function Personal() {
                       />
                     </PopoverContent>
                   </Popover>
+                  {errors.planneDate && <p className="text-red-600 pt-2 font-bold">{errors.planneDate}</p>}
                 </div>
                 <div className="py-5">
-                  <FormBlock required id="budget" number="6" label="プランの予算の上限金額" inputText="(必須) 1日の上限予算を決めてください 例：10,000円"
+                  <FormBlock required id="budget" number="6" label="プランの予算の上限金額" inputText="(必須) 合計の上限予算を決めてください"
                   >
                     <input id="budget" onChange={(e) => handleChange("budget", e.target.value)} className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" />
                   </FormBlock>
+                  {errors.budget && <p className="text-red-600 pt-2 font-bold">{errors.budget}</p>}
+
                 </div>
                 <div className="py-5">
                 <FormBlock required id="food1" number="7" label="あなたの好きなジャンルの食事①" inputText="(必須) あなたが一番好きな食事のジャンルを選んでください"
                   >
-                    <input id="food1" onChange={(e) => handleChange("food1", e.target.value)} className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" />
+                    <select defaultValue="" name="food1" id="food1" className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" onChange={(e) => handleChange("food1", e.target.value)}>
+                    <option disabled hidden value=""></option>
+                          <option value="お肉メイン">お肉メイン</option>
+                          <option value="魚メイン">魚メイン</option>
+                          <option value="野菜メイン">野菜メイン</option>
+                          <option value="ジャンクフード">ジャンクフード</option>
+                          <option value="和食">和食</option>
+                          <option value="洋食">洋食</option>
+                          <option value="中華">中華</option>
+                          <option value="エスニック料理">エスニック料理</option>
+                          <option value="イタリアン">イタリアン</option>
+                          <option value="フレンチ">フレンチ</option>
+                          <option value="韓国料理">韓国料理</option>
+                          <option value="アメリカン料理">アメリカン料理</option>
+                          <option value="地中海料理">地中海料理</option>
+                          <option value="カフェ・軽食">カフェ・軽食</option>
+                          <option value="ベジタリアン・ヴィーガン料理">ベジタリアン・ヴィーガン料理</option>
+                        </select>
                   </FormBlock>
+                  {errors.food1 && <p className="text-red-600 pt-2 font-bold">{errors.food1}</p>}
+
                 </div>
                 <div className="py-5">
                 <FormBlock id="food2" number="8" label="あなたの好きなジャンルの食事②" inputText="(任意) あなたが2番目に好きな食事のジャンルを選んでください"
                   >
-                    <input id="food2" onChange={(e) => handleChange("food2", e.target.value)} className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" />
+                    <select defaultValue="" name="food2" id="food2" className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" onChange={(e) => handleChange("food2", e.target.value)}>
+                    <option disabled hidden value=""></option>
+                          <option value="お肉メイン">お肉メイン</option>
+                          <option value="魚メイン">魚メイン</option>
+                          <option value="野菜メイン">野菜メイン</option>
+                          <option value="ジャンクフード">ジャンクフード</option>
+                          <option value="和食">和食</option>
+                          <option value="洋食">洋食</option>
+                          <option value="中華">中華</option>
+                          <option value="エスニック料理">エスニック料理</option>
+                          <option value="イタリアン">イタリアン</option>
+                          <option value="フレンチ">フレンチ</option>
+                          <option value="韓国料理">韓国料理</option>
+                          <option value="アメリカン料理">アメリカン料理</option>
+                          <option value="地中海料理">地中海料理</option>
+                          <option value="カフェ・軽食">カフェ・軽食</option>
+                          <option value="ベジタリアン・ヴィーガン料理">ベジタリアン・ヴィーガン料理</option>
+                        </select>
                   </FormBlock>
                 </div>
                 <div className="py-5">
@@ -209,13 +298,34 @@ export default function Personal() {
                 <div className="py-5">
                 <FormBlock id="atmosphere" number="10" label="あなたの希望するアクティビティの雰囲気" inputText="あなたが過ごしたい休日プランの雰囲気を選択してください"
                   >
-                    <input id="atmosphere" onChange={(e) => handleChange("atmosphere", e.target.value)} className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" />
+                    <select defaultValue="" name="atmosphere" id="atmosphere" className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" onChange={(e) => handleChange("atmosphere", e.target.value)}>
+                    <option disabled hidden value=""></option>
+                          <option value="リラックスしたい">リラックスしたい</option>
+                          <option value="アクティブに動きたい">アクティブに動きたい</option>
+                          <option value="観光したい">観光したい</option>
+                          <option value="静かに過ごしたい">静かに過ごしたい</option>
+                          <option value="穴場スポットを巡りたい">穴場スポットを巡りたい</option>
+                          <option value="新しい体験をしたい">新しい体験をしたい</option>
+                          <option value="自然を楽しみたい">自然を楽しみたい</option>
+                          <option value="美術館や博物館を巡りたい">美術館や博物館を巡りたい</option>
+                          <option value="ショッピングを楽しみたい">ショッピングを楽しみたい</option>
+                          <option value="グルメ巡りをしたい">グルメ巡りをしたい</option>
+                        </select>
                   </FormBlock>
                 </div>
                 <div className="py-5">
                   <FormBlock id="transportation" number="11" label="あなたの移動手段" inputText="あなたのメインの移動手段を選んでください"
                   >
-                    <input id="transportation" onChange={(e) => handleChange("transportation", e.target.value)} className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" />
+                    <select defaultValue="" name="transportation" id="transportation" className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" onChange={(e) => handleChange("transportation", e.target.value)}>
+                    <option disabled hidden value=""></option>
+                          <option value="公共交通機関">公共交通機関</option>
+                          <option value="自家用車">自家用車</option>
+                          <option value="バイク">バイク</option>
+                          <option value="タクシー">タクシー</option>
+                          <option value="自転車">自転車</option>
+                          <option value="電動キックボード">電動キックボード</option>
+                          <option value="徒歩">徒歩</option>
+                        </select>
                   </FormBlock>
                 </div>
                 <div className="py-5">

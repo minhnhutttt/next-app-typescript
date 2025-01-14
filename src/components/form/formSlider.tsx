@@ -19,7 +19,7 @@ const FormSlider: React.FC<RangeSliderProps> = ({
   const [value, setValue] = useState(initialValue);
 
   const handleChange = (newValue: number) => {
-    const clampedValue = Math.min(max, Math.max(min, newValue)); // Đảm bảo giá trị trong khoảng [min, max]
+    const clampedValue = Math.min(max, Math.max(min, newValue));
     setValue(clampedValue);
     onChange(clampedValue);
   };
@@ -48,9 +48,6 @@ const FormSlider: React.FC<RangeSliderProps> = ({
           min={min}
           max={max}
           step={step}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            handleChange(Number(e.target.value))
-          }
           barClassName="rounded-lg bg-[#3383C8] h-2"
           className="text-[#3383C8] flex-1"
         />

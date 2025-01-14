@@ -21,6 +21,7 @@
     "react-dom": "^18",
     "scroll-out": "^2.2.12",
     "splitting": "^1.1.0",
+    "zod": "^3.22.4",
     "tsparticles": "^3.5.0"
   },
   "devDependencies": {
