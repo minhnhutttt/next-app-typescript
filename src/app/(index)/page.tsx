@@ -15,7 +15,7 @@ export default function Home() {
       <Introduction />
       <WhatIs />
       <Market />
-      <div className="bg-[url(/assets/images/token-bg.png)] bg-cover bg-top relative z-10">
+      <div className="bg-[url(/assets/images/token-bg.png)] bg-[size:100%_100%] relative z-10">
       <Token />
       <Settlement />
       </div>
