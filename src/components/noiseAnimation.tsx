@@ -31,6 +31,7 @@ const NoiseAnimation: React.FC<NoiseAnimationProps> = ({ triggerAnimation }) => 
       '#a9a4da',
       '#1b1b19',
       '#c6e5aa',
+      '#000'
     ];
 
     const duration = 1000;
@@ -52,12 +53,12 @@ const NoiseAnimation: React.FC<NoiseAnimationProps> = ({ triggerAnimation }) => 
             return color;
           } else if (index === colorIndex) {
             const alpha = displayProgress * colors.length - colorIndex;
-            return interpolateColor(color, 'rgba(0, 0, 0, 0)', alpha);
+            return interpolateColor(color, 'rgba(255, 255, 255, 0)', alpha);
           } else {
             if (triggerAnimation) {
-              return 'rgba(0, 0, 0, 0.5)';
+              return 'rgba(255, 255, 255, 0.5)';
             } else {
-              return 'rgba(0, 0, 0, 1)';
+              return 'rgba(255, 255, 255, 1)';
             }
             
           }
@@ -71,10 +72,10 @@ const NoiseAnimation: React.FC<NoiseAnimationProps> = ({ triggerAnimation }) => 
         const colorIndex = Math.floor(progress * colors.length);
         currentColors = colors.map((color, index) => {
           if (index < colorIndex) {
-            return 'rgba(0, 0, 0, 0)';
+            return 'rgba(255, 255, 255, 0)';
           } else if (index === colorIndex) {
             const alpha = progress * colors.length - colorIndex;
-            return interpolateColor(color, 'rgba(0, 0, 0, 0)', alpha);
+            return interpolateColor(color, 'rgba(255, 255, 255, 0)', alpha);
           } else {
             return color;
           }

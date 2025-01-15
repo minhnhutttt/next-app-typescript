@@ -15,22 +15,40 @@ export default function ShowImge() {
     if (typeof window !== "undefined") {
       const sketch = (p: any) => {
         let imageUrls = [
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
-          "/assets/images/GET-REAL-Sticker_08.png",
+          "/assets/images/SKALE_img1.png",
+          "/assets/images/SKALE_img2.png",
+          "/assets/images/SKALE_img3.png",
+          "/assets/images/SKALE_img4.png",
+          "/assets/images/SKALE_img5.png",
+          "/assets/images/SKALE_img6.png",
+          "/assets/images/SKALE_img7.png",
+          "/assets/images/SKALE_img8.png",
+          "/assets/images/SKALE_img9.png",
+          "/assets/images/SKALE_img10.png",
+          "/assets/images/SKALE_img11.png",
+          "/assets/images/SKALE_img13.png",
+          "/assets/images/SKALE_img14.png",
+          "/assets/images/SKALE_img15.png",
+          "/assets/images/SKALE_img16.png",
+          "/assets/images/SKALE_img17.png",
+          "/assets/images/SKALE_img18.png",
+          "/assets/images/SKALE_img19.png",
+          "/assets/images/SKALE_img20.png",
+          "/assets/images/SKALE_img21.png",
+          "/assets/images/SKALE_img22.png",
+          "/assets/images/SKALE_img23.png",
+          "/assets/images/SKALE_img24.png",
+          "/assets/images/SKALE_img25.png",
         ];
+
+        const shuffleArray = (array: string[]) => {
+          for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+        };
+  
+        shuffleArray(imageUrls);
         let distThreshold = 300;
         let scaleFactor = 4;
   
@@ -117,8 +135,8 @@ export default function ShowImge() {
                 currentScale = p.map(elapsedTime, 1300, 1500, 1, 0.1);
               }
         
-              let imgWidth = (img.width * scale * currentScale) / img.width;
-              let imgHeight = (img.height * scale * currentScale) / img.width;
+              let imgWidth = (img.width * scale * currentScale) / img.width * 0.7;
+              let imgHeight = (img.height * scale * currentScale) / img.width * 0.7;
         
               p.image(
                 img,
