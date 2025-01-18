@@ -15,6 +15,7 @@ import Button from "@/components/button";
 import FormLabel from "@/components/form/formLabel";
 
 import FormSlider from "@/components/form/formSlider";
+import Slider from '@mui/material/Slider';
 
 interface FormData {
   men: number,
@@ -133,9 +134,9 @@ export default function Partner() {
                       <div className="">
                         <FormSlider
                           min={0}
-                          max={150}
-                          step={10}
-                          initialValue={1}
+                          max={10}
+                          step={1}
+                          initialValue={0}
                           onChange={(value) => handleChange("men", value)}
                         />
                       </div>
@@ -147,9 +148,9 @@ export default function Partner() {
                       <div>
                         <FormSlider
                           min={0}
-                          max={100}
-                          step={10}
-                          initialValue={1}
+                          max={10}
+                          step={1}
+                          initialValue={0}
                           onChange={(value) => handleChange("women", value)}
                         />
                       </div>
@@ -161,9 +162,9 @@ export default function Partner() {
                       <div>
                         <FormSlider
                           min={0}
-                          max={100}
-                          step={10}
-                          initialValue={1}
+                          max={10}
+                          step={1}
+                          initialValue={0}
                           onChange={(value) => handleChange("children", value)}
                         />
                       </div>

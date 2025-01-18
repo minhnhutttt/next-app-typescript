@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Archivo, Inter} from "next/font/google";
-import { ThemeProvider } from "@material-tailwind/react";
 import "./globals.scss";
 
 const archivo = Archivo({

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Slider } from "@material-tailwind/react";
+import Slider from '@mui/material/Slider';
 
 interface RangeSliderProps {
   min: number;
@@ -26,7 +26,7 @@ const FormSlider: React.FC<RangeSliderProps> = ({
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex items-center gap-2 w-full">
+      <div className="flex items-center gap-4 w-full">
         <button
           type="button"
           className="size-10 md:size-[55px] flex items-center justify-center bg-white rounded-full border border-[#3383C8]"
@@ -43,14 +43,16 @@ const FormSlider: React.FC<RangeSliderProps> = ({
             <line y1="1.02429" x2="13" y2="1.02429" stroke="#3383C8" />
           </svg>
         </button>
-        <Slider
-          value={value}
-          min={min}
-          max={max}
-          step={step}
-          barClassName="rounded-lg bg-[#3383C8] h-2"
-          className="text-[#3383C8] flex-1"
-        />
+          <div className="flex-1">
+          <Slider 
+            defaultValue={0} 
+            min={min} 
+            max={max} 
+            value={value}
+            onChange={(e: any) =>
+            handleChange(Number(e.target.value))} 
+          />
+          </div>
         <button
           type="button"
           className="size-10 md:size-[55px] flex items-center justify-center bg-white rounded-full border border-[#3383C8]"
