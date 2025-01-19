@@ -7,6 +7,23 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
+"@cfcs/core@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@cfcs/core/-/core-0.1.0.tgz#64346f7634b46de6e9b1d4c195743b9b8e603162"
+  integrity sha512-kvYX0RpL45XTHJ5sW7teNbKeAa7pK3nNqaJPoFfZDPTIBJOkTtRD3QhkBG+O3Hu69a8xeMoPvF6y/RtJ6JUOdA==
+  dependencies:
+    "@egjs/component" "^3.0.4"
+
+"@daybrush/utils@^1.1.1", "@daybrush/utils@^1.10.2", "@daybrush/utils@^1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@daybrush/utils/-/utils-1.13.0.tgz#ea70a60864130da476406fdd1d465e3068aea0ff"
+  integrity sha512-ALK12C6SQNNHw1enXK+UO8bdyQ+jaWNQ1Af7Z3FNxeAwjYhQT7do+TRE4RASAJ3ObaS2+TJ7TXR3oz2Gzbw0PQ==
+
+"@egjs/component@^3.0.4":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@egjs/component/-/component-3.0.5.tgz#2dc86e835d5dc5055cdf46c7cd794eb45330e1b6"
+  integrity sha512-cLcGizTrrUNA2EYE3MBmEDt2tQv1joVP1Q3oDisZ5nw0MZDx2kcgEXM+/kZpfa/PAkFvYVhRUZwytIQWoN3V/w==
+
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.1.tgz#d1145bf2c20132d6400495d6df4bf59362fd9d56"
@@ -288,6 +305,13 @@
   version "1.10.5"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.10.5.tgz#3a1c12c959010a55c17d46b395ed3047b545c246"
   integrity sha512-kkKUDVlII2DQiKy7UstOR1ErJP8kUKAQ4oa+SQtM0K+lPdmmjj0YnnxBgtTVYH7mUKtbsxeFC9y0AmK7Yb78/A==
+
+"@scena/event-emitter@^1.0.3":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@scena/event-emitter/-/event-emitter-1.0.5.tgz#047e3acef93cf238d7ce3a8cc5a12ec6bd9c3bb1"
+  integrity sha512-AzY4OTb0+7ynefmWFQ6hxDdk0CySAq/D4efljfhtRHCOP7MBF9zUfhKG3TJiroVjASqVgkRJFdenS8ArZo6Olg==
+  dependencies:
+    "@daybrush/utils" "^1.1.1"
 
 "@splidejs/splide@^4.1.3":
   version "4.1.4"
@@ -1102,6 +1126,13 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.2:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
     which "^2.0.1"
+
+css-styled@^1.0.6:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/css-styled/-/css-styled-1.0.8.tgz#c9c05dc4abdef5571033090bfb8cfc5e19429974"
+  integrity sha512-tCpP7kLRI8dI95rCh3Syl7I+v7PP+2JYOzWkl0bUEoSbJM+u8ITbutjlQVf0NC2/g4ULROJPi16sfwDIO8/84g==
+  dependencies:
+    "@daybrush/utils" "^1.13.0"
 
 cssesc@^3.0.0:
   version "3.0.0"
@@ -2497,6 +2528,11 @@ optionator@^0.9.3:
     type-check "^0.4.0"
     word-wrap "^1.2.5"
 
+order-map@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/order-map/-/order-map-0.3.1.tgz#0d519e2ad79c1606eb037d59fb191ab9bd5ce37b"
+  integrity sha512-RSuElIGwzPuBLzS9Io7G8fpcnQeudg0XswOyOiwRNLX7lkf+eQ/KUp+kcAP7z7nTOdkrfxhZycyXwzFW75iJ6A==
+
 own-keys@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/own-keys/-/own-keys-1.0.1.tgz#e4006910a2bf913585289676eebd6f390cf51358"
@@ -2839,6 +2875,17 @@ sass@^1.70.0:
   optionalDependencies:
     "@parcel/watcher" "^2.4.1"
 
+scenejs@^1.10.3:
+  version "1.10.3"
+  resolved "https://registry.yarnpkg.com/scenejs/-/scenejs-1.10.3.tgz#8ace9dab59ecb5db0a8eb2c07268cb30876ad60f"
+  integrity sha512-o1Xrz5sRMeVOD5R9MizY2tYVPYeRnQNttiNRD7vtfi4j4+su1nuP2R/1yv3jDNol1zFfFHwwh2G0jxyt0SIqUA==
+  dependencies:
+    "@cfcs/core" "^0.1.0"
+    "@daybrush/utils" "^1.10.2"
+    "@scena/event-emitter" "^1.0.3"
+    css-styled "^1.0.6"
+    order-map "^0.3.1"
+
 scheduler@^0.23.2:
   version "0.23.2"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.23.2.tgz#414ba64a3b282892e944cf2108ecc078d115cdc3"
@@ -2975,6 +3022,7 @@ streamsearch@^1.1.0:
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==

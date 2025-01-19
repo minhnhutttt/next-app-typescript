@@ -9,7 +9,6 @@ body {
   color: #21012D;
 }
 .u-text-gradient {
-  background: linear-gradient(90deg, rgba(25, 83, 157, 0.30) 0.02%, rgba(98, 126, 234, 0.30) 99.97%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -18,6 +17,10 @@ body {
 .u-text-stroke {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000;
+}
+
+.swiper .swiper-slide {
+  height: auto;
 }
 
 .u-transform {
@@ -31,4 +34,14 @@ body {
   to {
     transform: translateX(calc(-100% - 20px));
   }
+}
+
+
+.char {
+  opacity: 0;
+  transition: all 0.1s calc(0.25s + var(--char-index) * 0.05s);
+}
+
+[data-scroll="in"] .char {
+  opacity: 1;
 }
