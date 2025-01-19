@@ -51,7 +51,7 @@ const FaqItem = ({ id, question, answer }: FaqItemPropsType) => {
           className="relative ml-2 flex w-8 items-center justify-center  duration-150 md:w-[50px]"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-            <path d="M29.2667 22.8667L25 27.1333L20.7333 22.8667M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" stroke="#343A3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M29.2667 22.8667L25 27.1333L20.7333 22.8667M49 25C49 38.2548 38.2548 49 25 49C11.7452 49 1 38.2548 1 25C1 11.7452 11.7452 1 25 1C38.2548 1 49 11.7452 49 25Z" stroke="#343A3F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
       </button>
