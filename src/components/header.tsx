@@ -12,7 +12,7 @@ const links: NavLink[] = [
     text: "Home",
   },
   {
-    link: "/#feature",
+    link: "/#features",
     text: "Features",
   },
   {
@@ -41,12 +41,12 @@ const Header = () => {
             NavOpen ? "" : "max-lg:invisible max-lg:opacity-0"
           }`}
         >
-          <ul className="flex items-center max-md:flex-col mr-6">
+          <ul className="flex items-center max-md:flex-col md:mr-6 max-md:mb-6">
             {links.map(({ link, text }, index) => (
               <li key={index} className="relative">
                 <a
                   href={link}
-                  className="flex px-6 py-3 text-[16px] font-medium tracking-widest"
+                  className="flex px-6 py-3 text-[20px] md:text-[16px] font-medium tracking-widest"
                   onClick={close}
                 >
                     <span>{text}</span>

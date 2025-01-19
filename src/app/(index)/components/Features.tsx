@@ -31,10 +31,11 @@ const Features = () => {
 
   return (
     <section
+    id="features"
       ref={ref}
       className="relative overflow-hidden bg-[url(/assets/images/features-bg.png)] bg-cover pt-20 md:pt-[160px] md:pb-[230px] pb-[150px]"
     >
-      <h4 className="px-5 text-center md:text-[80px] text-[40px] text-white font-bold leading-none">Features</h4>
+      <h4 className="fade-in px-5 text-center md:text-[80px] text-[40px] text-white font-bold leading-none">Features</h4>
       <div className="ani-content w-full mt-16 max-w-[1800px] mx-auto">
             <Swiper
                 slidesPerView={"auto"}

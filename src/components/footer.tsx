@@ -2,17 +2,52 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-[#F2F2F2] md:pt-[124px] pt-20 pb-6">
-      <div className="flex justify-center md:pb-10 pb-7">
+    <footer className="bg-[#080A1A] md:pt-[90px] pt-20 pb-6">
+      <div className="flex max-md:flex-col justify-center items-center md:pb-10 pb-7 md:gap-[55px] gap-10 md:mb-12 mb-8">
         <a href="/" className="">
-          <img className="max-md:w-[200px]" src="/assets/images/logo-footer.svg" alt="" />
+          <img
+            className="max-md:w-[200px]"
+            src="/assets/images/logo.svg"
+            alt=""
+          />
         </a>
+        <div className="flex justify-center">
+          <ul className="text-white md:text-[16px] text-[14px] font-medium md:pr-9">
+            <li>
+              <a href="/#features" className="block px-6 py-[5px]">
+                Features
+              </a>
+            </li>
+            <li>
+              <a href="/#how-to-use" className="block px-6 py-[5px]">
+                How to use
+              </a>
+            </li>
+            <li>
+              <a href="/#faq" className="block px-6 py-[5px]">
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a href="/" className="block px-6 py-[5px]">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="">
+          <a
+            href="/"
+            className="w-[240px] md:h-[55px] h-12 rounded-[10px] flex justify-center items-center font-extrabold text-[20px] text-white tracking-[0.2em] bg-[linear-gradient(90deg,_#19539D_0.02%,_#627EEA_99.97%)]"
+          >
+            EXCHANGE
+          </a>
+        </div>
       </div>
-      <div className="flex justify-center md:mb-20 mb-14">
-        <a href="/" className="md:text-[18px] text-[15px] text-[#212121] tracking-widest">WHITEPAPER</a>
-      </div>
-      <p className="md:text-[13px] text-[12px] text-center">
-      Copyright © 2025 AIAD Coin.
+
+      <p className="md:text-[16px] text-[12px] text-white text-center">
+        Copyright © 2025 TELEPORT EXCHANGE
       </p>
     </footer>
   );
