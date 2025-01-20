@@ -10,7 +10,7 @@ export default function HowToUse() {
       <section className="bg-[#080A1A] rounded-t-[90px] py-7">
         <div className="w-full max-w-[990px] mx-auto text-white px-5 md:pb-[200px] pb-[100px]">
           <h3 className="md:text-[80px] text-[40px] font-bold text-center">How to use Bridge</h3>
-          <div className="mt-10 space-y-28">
+          <div className="mt-10 md:space-y-28 space-y-16">
             <div>
               <h3 className="md:text-[80px] text-[40px] font-bold text-center">Wrap</h3>
               <div className="relative overflow-hidden pt-5">
