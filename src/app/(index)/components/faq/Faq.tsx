@@ -15,10 +15,10 @@ const faqData: FaqItemPropsType[] = [
   },
   {
     id: '02',
-    question: 'Which wallets can I use with Teleport Exchange?',
+    question: 'What wallets can I use on Teleport Exchange?',
     answer: (
       <>
-        You will need a compatible wallet that supports DwETH. Currently, the only wallet that can receive DwETH is DIVER Wallet Pro.
+        You will need a compatible wallet that supports DwETH, such as DIVER Wallet Pro. 
       </>
     ),
   },
@@ -27,7 +27,7 @@ const faqData: FaqItemPropsType[] = [
     question: 'What networks does Teleport Exchange support?',
     answer: (
       <>
-        It supports the DIVER Time chain.
+        It supports the DIVER Time Chain.
       </>
     ),
   },
@@ -36,22 +36,12 @@ const faqData: FaqItemPropsType[] = [
     question: 'What is DIVER (DIV)?',
     answer: (
       <>
-        Native tokens used on the DIVER Chain ecosystem.
+        It is the native token used in the DIVER chain ecosystem.
       </>
     ),
   },
   {
     id: '05',
-    question: 'What is Price Slippage?',
-    answer: (
-      <>
-        Price Slippage is the change in token price caused by the total movement of the market. <br />
-        Price Slippage is shown as the difference between the price you expect to receive after swapping vs what you actually receive after the swap is complete.
-      </>
-    ),
-  },
-  {
-    id: '06',
     question: 'What is gas?',
     answer: (
       <>
@@ -60,20 +50,30 @@ const faqData: FaqItemPropsType[] = [
     ),
   },
   {
-    id: '07',
-    question: 'How can I provide liquidity to Teleport Exchange?',
+    id: '06',
+    question: 'How do I provide liquidity to Teleport Exchange?',
     answer: (
       <>
-        Teleport Exchange does not provide a staking function to provide liquidity.
+        Teleport Exchange does not provide a staking function for providing liquidity.
+      </>
+    ),
+  },
+  {
+    id: '07',
+    question: 'How are bridge fees calculated?',
+    answer: (
+      <>
+        There is no fee for converting ETH to DwETH. <br />
+        The fee for converting DwETH to ETH is 5%.
       </>
     ),
   },
   {
     id: '08',
-    question: 'How are the fees for Swaps calculated?',
+    question: 'How are swap fees calculated?',
     answer: (
       <>
-        There are no fees for Swaps from DwETH to DRC20Token or from DRC20Token to DwETH.
+        There is no fee for swapping from DwETH to DRC20Token or from DRC20Token to DwETH.
       </>
     ),
   },
@@ -88,43 +88,42 @@ const faqData: FaqItemPropsType[] = [
   },
   {
     id: '10',
-    question: 'What happens if my transaction fails?',
+    question: 'What happens if the transaction fails?',
     answer: (
       <>
-        Tokens and crypto assets remain in the sender's wallet, so there is basically no loss of assets. <br />
-        If the transaction is successful, you can check the transaction status on DIVER Scan (<a href="https://scan.diver.io/" target="_blank" rel="noopener noreferrer">https://scan.diver.io/</a> ).
+      There is no loss of assets, as the tokens or crypto assets will remain in the sender's wallet. If the transaction is successful, you can check the transaction status on DIVER Scan (<a href="https://scan.diver.io/" target="_blank" rel="noopener noreferrer">https://scan.diver.io/</a>).
       </>
     ),
   },
   {
     id: '11',
-    question: 'Is there a minimum transaction volume limit?',
+    question: 'Is there a minimum transaction amount?',
     answer: (
       <>
-        No, you can trade any amount you want.
+        You can basically trade any amount you like, but there is a 5% fee for the DwETH to ETH bridge.
       </>
     ),
   },
   {
     id: '12',
-    question: 'Why did my trade fail?',
+    question: 'Why did the trade fail?',
     answer: (
       <>
-        The trade will fail if the price of the underlying pools moves past your Slippage Tolerance settings. Increasing the tolerance in local settings will raise the chances of your trade succeeding, but also increase the probability of another party front-running your trade.
-      </>
-    ),
-  },
-  {
-    id: '12',
-    question: 'How can I report a bug?',
-    answer: (
-      <>
-        Please contact us using the “Contact” below.
+        If the price of the underlying asset pool moves beyond the slippage tolerance setting you have set, the trade will fail. If you increase the tolerance range in the local settings, the chances of the trade being successful will increase, but the chances of another party front-running the trade will also increase.
       </>
     ),
   },
   {
     id: '13',
+    question: 'How do I report a bug?',
+    answer: (
+      <>
+        Please contact us using the “Contact Us” form below.
+      </>
+    ),
+  },
+  {
+    id: '14',
     question: 'テレポート・エクスチェンジとは？',
     answer: (
       <>
@@ -133,25 +132,25 @@ const faqData: FaqItemPropsType[] = [
     ),
   },
   {
-    id: '14',
+    id: '15',
     question: 'Teleport Exchangeで使用できるウォレットは？',
     answer: (
       <>
-        DwETHをサポートする互換性のあるウォレットが必要です。 現在、DwETHを受け取ることができる唯一のウォレットはDIVER Wallet Proです。
-      </>
-    ),
-  },
-  {
-    id: '15',
-    question: 'Teleport Exchangeはどんなネットワークをサポートしていますか？',
-    answer: (
-      <>
-        DIVERタイムチェーンに対応しています。
+        DIVER Wallet ProをはじめとしたDwETHをサポートする互換性のあるウォレットが必要です。 
       </>
     ),
   },
   {
     id: '16',
+    question: 'Teleport Exchangeはどんなネットワークをサポートしていますか？',
+    answer: (
+      <>
+        DIVER Time Chainに対応しています。
+      </>
+    ),
+  },
+  {
+    id: '17',
     question: 'DIVER（DIV）とは何ですか？',
     answer: (
       <>
@@ -160,7 +159,7 @@ const faqData: FaqItemPropsType[] = [
     ),
   },
   {
-    id: '17',
+    id: '18',
     question: 'ガスとは何ですか？',
     answer: (
       <>
@@ -169,7 +168,7 @@ const faqData: FaqItemPropsType[] = [
     ),
   },
   {
-    id: '18',
+    id: '19',
     question: 'Teleport Exchangeに流動性を提供するにはどうすればいいですか？',
     answer: (
       <>
@@ -178,7 +177,17 @@ const faqData: FaqItemPropsType[] = [
     ),
   },
   {
-    id: '19',
+    id: '20',
+    question: 'ブリッジの手数料はどのように計算されますか？',
+    answer: (
+      <>
+        ETHからDwETHへの手数料は無料です。<br />
+        DwETHからETHの手数料は5%です。
+      </>
+    ),
+  },
+  {
+    id: '21',
     question: 'スワップの手数料はどのように計算されますか？',
     answer: (
       <>
@@ -187,16 +196,16 @@ const faqData: FaqItemPropsType[] = [
     ),
   },
   {
-    id: '20',
+    id: '22',
     question: 'スワップを完了させるのにどのくらい時間がかかりますか？',
     answer: (
       <>
-        ほとんどの場合、数十秒で完了します。
+      ほとんどの場合、数十秒で完了します。
       </>
     ),
   },
   {
-    id: '21',
+    id: '23',
     question: '取引に失敗した場合はどうなりますか？',
     answer: (
       <>
@@ -206,16 +215,16 @@ const faqData: FaqItemPropsType[] = [
     ),
   },
   {
-    id: '22',
+    id: '24',
     question: '取引量の下限はありますか？',
     answer: (
       <>
-        いいえ、お好きな金額をお取引いただけます。
+        基本的にお好きな金額をお取引いただけますが、DwETHからETHへのブリッジは5%の手数料が掛かります。
       </>
     ),
   },
   {
-    id: '23',
+    id: '25',
     question: 'なぜ取引に失敗したのですか？',
     answer: (
       <>
@@ -224,7 +233,7 @@ const faqData: FaqItemPropsType[] = [
     ),
   },
   {
-    id: '24',
+    id: '26',
     question: 'バグを報告するには？',
     answer: (
       <>

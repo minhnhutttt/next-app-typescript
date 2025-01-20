@@ -19,7 +19,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/#how-to-use" className="block px-6 py-[5px]">
+              <a href="/how-to-use" className="block px-6 py-[5px]">
                 How to use
               </a>
             </li>
