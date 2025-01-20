@@ -30,10 +30,10 @@ const Howto = () => {
                 <div className="flex flex-col items-center justify-center">
                     <span><img src="/assets/images/ic-wallet.png" alt="" /></span>
                     <div className="space-y-7 mt-8">
-                        <a href="http://" target="_blank" rel="noopener noreferrer" className="block hover:opacity-75 duration-150">
+                        <a href="https://apps.apple.com/jp/app/diver-wallet-pro/id6739527739" target="_blank" rel="noopener noreferrer" className="block hover:opacity-75 duration-150">
                         <img src="/assets/images/btn-appstore.png" alt="" /></a>
-                        <a href="http://" target="_blank" rel="noopener noreferrer" className="block hover:opacity-75 duration-150">
-                        <img src="/assets/images/btn-google.png" alt="" /></a>
+                        <span className="block bg-[#D9D9D9] rounded-[5px] border border-[#A6A6A6]">
+                            <img className="opacity-10" src="/assets/images/btn-google.png" alt="" /></span>
                     </div>
                     <span className="text-center md:text-[13px] text-[12px] mt-2">* Coming soon to googleplay</span>
                 </div>
@@ -57,10 +57,10 @@ const Howto = () => {
                 <div className="flex flex-col items-center justify-center">
                     <span><img src="/assets/images/ic-wallet.png" alt="" /></span>
                     <div className="space-y-7 mt-8">
-                        <a href="http://" target="_blank" rel="noopener noreferrer" className="block hover:opacity-75 duration-150">
+                        <a href="https://apps.apple.com/jp/app/diver-wallet-pro/id6739527739" target="_blank" rel="noopener noreferrer" className="block hover:opacity-75 duration-150">
                         <img src="/assets/images/btn-appstore.png" alt="" /></a>
-                        <a href="http://" target="_blank" rel="noopener noreferrer" className="block hover:opacity-75 duration-150">
-                        <img src="/assets/images/btn-google.png" alt="" /></a>
+                        <span className="block bg-[#D9D9D9] rounded-[5px] border border-[#A6A6A6]">
+                            <img className="opacity-10" src="/assets/images/btn-google.png" alt="" /></span>
                     </div>
                     <span className="text-center md:text-[13px] text-[12px] mt-2">* Coming soon to googleplay</span>
                 </div>

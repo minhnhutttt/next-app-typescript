@@ -16,7 +16,7 @@ const links: NavLink[] = [
     text: "Features",
   },
   {
-    link: "/#how-to-use",
+    link: "/how-to-use",
     text: "How to use",
   },
   {
@@ -54,7 +54,7 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          <a href="/" className="w-[240px] md:h-[55px] h-12 rounded-[10px] flex justify-center items-center font-extrabold text-[20px] text-white tracking-[0.2em] bg-[linear-gradient(90deg,_#19539D_0.02%,_#627EEA_99.97%)]">
+          <a href="https://teleport-exchange.io/" target="_blank" className="w-[240px] md:h-[55px] h-12 rounded-[10px] flex justify-center items-center font-extrabold text-[20px] text-white tracking-[0.2em] bg-[linear-gradient(90deg,_#19539D_0.02%,_#627EEA_99.97%)]">
             EXCHANGE
           </a>
         </div>

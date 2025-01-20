@@ -39,10 +39,10 @@ const Assets = () => {
                     <div className="flex-1"><img src="/assets/images/logo-diver.png" alt="" /></div>
                     <div className="md:mt-5">
                         <div className="flex gap-5">
-                            <a href="http://" target="_blank" rel="noopener noreferrer" className="block hover:opacity-75 duration-150">
+                            <a href="https://apps.apple.com/jp/app/diver-wallet-pro/id6739527739" target="_blank" rel="noopener noreferrer" className="block hover:opacity-75 duration-150">
                             <img src="/assets/images/btn-appstore.png" alt="" /></a>
-                            <a href="http://" target="_blank" rel="noopener noreferrer" className="block hover:opacity-75 duration-150">
-                            <img src="/assets/images/btn-google.png" alt="" /></a>
+                            <span className="block bg-[#D9D9D9] rounded-[5px] border border-[#A6A6A6]">
+                            <img className="opacity-10" src="/assets/images/btn-google.png" alt="" /></span>
                         </div>
                         <p className="text-right md:text-[13px] text-[12px] text-white mt-1">* Coming soon to googleplay</p>
                     </div>

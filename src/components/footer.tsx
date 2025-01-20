@@ -29,7 +29,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/" className="block px-6 py-[5px]">
+              <a href="mailto:info@teleport-exchange.io" className="block px-6 py-[5px]">
                 Contact
               </a>
             </li>
@@ -38,7 +38,8 @@ const Footer = () => {
 
         <div className="">
           <a
-            href="/"
+            href="https://teleport-exchange.io/"
+            target="_blank"
             className="w-[240px] md:h-[55px] h-12 rounded-[10px] flex justify-center items-center font-extrabold text-[20px] text-white tracking-[0.2em] bg-[linear-gradient(90deg,_#19539D_0.02%,_#627EEA_99.97%)]"
           >
             EXCHANGE
