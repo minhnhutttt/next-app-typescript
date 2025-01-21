@@ -24,7 +24,7 @@ const Assets = () => {
                     </div>
                 </div>
                 <div className="flex justify-center items-center md:mt-14 mt-8">
-                    <a href="/" className="flex items-center justify-center gap-2 border-4 border-[#18539E] rounded-[10px] w-[300px] md:w-[360px] h-[60px] md:h-[78px] bg-white md:text-[20px] text-[16px] font-extrabold text-[#18539E] tracking-widest">
+                    <a href="https://teleport-exchange.io/" target="_blank" className="flex items-center justify-center gap-2 border-4 border-[#18539E] rounded-[10px] w-[300px] md:w-[360px] h-[60px] md:h-[78px] bg-white md:text-[20px] text-[16px] font-extrabold text-[#18539E] tracking-widest">
                     <span><img src="/assets/images/ic-btn.svg" alt="" /></span>
                     <span>TELEPORT EXCHANGE</span>
                     </a>
