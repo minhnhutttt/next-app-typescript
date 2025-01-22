@@ -28,19 +28,19 @@ const Howto = () => {
         <div className="w-full max-w-[1070px] mx-auto flex flex-wrap justify-center mt-9 md:gap-[70px] gap-10">
             <HowtoItem id="01" title="Prepare your DIVER Wallet Pro" text="Download wallet & set up wallet">
                 <div className="flex flex-col items-center justify-center">
-                    <span><img src="/assets/images/ic-wallet.png" alt="" /></span>
+                    <span><img src="/assets/images/ic-wallet.svg" alt="" /></span>
                     <div className="space-y-7 mt-8">
                         <a href="https://apps.apple.com/jp/app/diver-wallet-pro/id6739527739" target="_blank" rel="noopener noreferrer" className="block hover:opacity-75 duration-150">
-                        <img src="/assets/images/btn-appstore.png" alt="" /></a>
+                        <img src="/assets/images/btn-appstore.svg" alt="" /></a>
                         <span className="block bg-[#D9D9D9] rounded-[5px] border border-[#A6A6A6]">
-                            <img className="opacity-10" src="/assets/images/btn-google.png" alt="" /></span>
+                            <img className="opacity-10" src="/assets/images/btn-google.svg" alt="" /></span>
                     </div>
                     <span className="text-center md:text-[13px] text-[12px] mt-2">* Coming soon to googleplay</span>
                 </div>
             </HowtoItem>
             <HowtoItem id="02" title="Exchange tokens" text={(<>&nbsp;</>)}>
                 <div className="flex flex-col items-center justify-center">
-                    <span><img src="/assets/images/how-to-img-01-02.png" alt="" /></span>
+                    <span><img src="/assets/images/how-to-img-01-02.svg" alt="" /></span>
                 </div>
             </HowtoItem>
             <HowtoItem id="03" title="Swap With Teleport Exchange" text="Easy-to-use swap">
@@ -55,19 +55,19 @@ const Howto = () => {
         <div className="w-full max-w-[1070px] mx-auto flex flex-wrap justify-center mt-9 md:gap-[70px] gap-10">
             <HowtoItem id="01" title="Prepare your DIVER Wallet Pro" text="Download wallet & set up wallet">
                 <div className="flex flex-col items-center justify-center">
-                    <span><img src="/assets/images/ic-wallet.png" alt="" /></span>
+                    <span><img src="/assets/images/ic-wallet.svg" alt="" /></span>
                     <div className="space-y-7 mt-8">
                         <a href="https://apps.apple.com/jp/app/diver-wallet-pro/id6739527739" target="_blank" rel="noopener noreferrer" className="block hover:opacity-75 duration-150">
-                        <img src="/assets/images/btn-appstore.png" alt="" /></a>
+                        <img src="/assets/images/btn-appstore.svg" alt="" /></a>
                         <span className="block bg-[#D9D9D9] rounded-[5px] border border-[#A6A6A6]">
-                            <img className="opacity-10" src="/assets/images/btn-google.png" alt="" /></span>
+                            <img className="opacity-10" src="/assets/images/btn-google.svg" alt="" /></span>
                     </div>
                     <span className="text-center md:text-[13px] text-[12px] mt-2">* Coming soon to googleplay</span>
                 </div>
             </HowtoItem>
             <HowtoItem id="02" title="Exchange tokens" text="Transfer currency to wallet">
                 <div className="flex flex-col items-center justify-center">
-                    <span><img src="/assets/images/how-to-img-02-02.png" alt="" /></span>
+                    <span><img src="/assets/images/how-to-img-02-02.svg" alt="" /></span>
                 </div>
             </HowtoItem>
             <HowtoItem id="03" title="Bridge with Anchor Bridge" text={(<>Bridge currencies with <br />easy operations</>)}>

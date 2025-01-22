@@ -12,15 +12,15 @@ export default function HowToUse() {
           <h3 className="md:text-[80px] text-[40px] font-bold text-center">How to use Bridge</h3>
           <div className="mt-10 md:space-y-28 space-y-16">
             <div>
-              <h3 className="md:text-[80px] text-[40px] font-bold text-center">Wrap</h3>
+              <h3 className="md:text-[80px] text-[40px] font-bold text-center">Deposit</h3>
               <div className="relative overflow-hidden pt-5">
-              <div className="relative w-full h-0 overflow-hidden pb-[66.67%]"><iframe allowFullScreen src="https://komododecks.com/embed/guides/CkSp6dfdN9Che486McIx?view=interactive" width="100%" height="100%" className="border-0 absolute inset-0"></iframe></div>
+              <div className="relative w-full h-0 overflow-hidden pb-[66.67%]"><iframe allowFullScreen src="https://komododecks.com/embed/guides/VjeEZGTU5bnKOdVFqzyB?view=interactive" width="100%" height="100%" className="border-0 absolute inset-0"></iframe></div>
               </div>
             </div>
             <div>
-              <h3 className="md:text-[80px] text-[40px] font-bold text-center">Unwrap</h3>
+              <h3 className="md:text-[80px] text-[40px] font-bold text-center">Withdraw</h3>
               <div className="relative overflow-hidden pt-5">
-              <div className="relative w-full h-0 overflow-hidden pb-[66.67%]"><iframe allowFullScreen src="https://komododecks.com/embed/guides/CkSp6dfdN9Che486McIx?view=interactive" width="100%" height="100%" className="border-0 absolute inset-0"></iframe></div>
+              <div className="relative w-full h-0 overflow-hidden pb-[66.67%]"><iframe allowFullScreen src="https://komododecks.com/embed/guides/LoBZFO2tzkWnZM4wLhWP?view=interactive" width="100%" height="100%" className="border-0 absolute inset-0"></iframe></div>
               </div>
             </div>
           </div>
@@ -31,7 +31,7 @@ export default function HowToUse() {
             <div>
               <h3 className="md:text-[80px] text-[40px] font-bold text-center">How to use Swap</h3>
               <div className="relative overflow-hidden pt-5">
-              <div className="relative w-full h-0 overflow-hidden pb-[66.67%]"><iframe allowFullScreen src="https://komododecks.com/embed/guides/CkSp6dfdN9Che486McIx?view=interactive" width="100%" height="100%" className="border-0 absolute inset-0"></iframe></div>
+              <div className="relative w-full h-0 overflow-hidden pb-[66.67%]"><iframe allowFullScreen src="https://komododecks.com/embed/guides/Bdqtgc65ahc0zU1T6pHo?view=interactive" width="100%" height="100%" className="border-0 absolute inset-0"></iframe></div>
               </div>
             </div>
           </div>
