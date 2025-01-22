@@ -147,7 +147,7 @@ const ResultItem = ({ type, weather = "sun", text, note, data }: ResultItemProps
   return (
     <>
     <button type="button"  onClick={() => setIsOpen((prev) => !prev)}
-      className={`w-[330px] md:w-[294px] max-md:py-1.5 border border-[#8C7366] ${textColor} ${bgImage}`}
+      className={`w-[330px] md:w-[294px] max-md:py-1.5 border border-[#8C7366] select-text ${textColor} ${bgImage}`}
     >
       <div
         className={`flex py-2.5 px-1.5 md:p-2.5 bg-no-repeat bg-[position:top_center,_bottom_center] md:flex-col items-center max-md:gap-3 ${borderSp}`}
