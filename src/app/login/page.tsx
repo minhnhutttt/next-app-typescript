@@ -75,9 +75,9 @@ export default function Login() {
                     <div className="bg-white w-full rounded-[33px] py-10 md:py-[clamp(10px,3.556vmin,32px)] flex items-center justify-center flex-col">
                         <div className=""><img className="h-16 md:h-[clamp(4px,8.889vmin,80px)]" src="/assets/images/logo2.svg" alt="" /></div>
                         <div className="space-y-5 md:space-y-[clamp(4px,2.222vmin,20px)] mt-[clamp(20px,4.444vmin,40px)] flex flex-col items-center justify-center">
-                        <button><img className="h-12 md:h-[clamp(32px,6.222vmin,56px)]" src="/assets/images/btn-google.png" alt="" /></button>
-                        <button><img className="h-12 md:h-[clamp(32px,6.222vmin,56px)]" src="/assets/images/btn-apple.png" alt="" /></button>
-                        <button><img className="h-12 md:h-[clamp(32px,6.222vmin,56px)]" src="/assets/images/btn-x.png" alt="" /></button>
+                        <a href="/personal"><img className="h-12 md:h-[clamp(32px,6.222vmin,56px)]" src="/assets/images/btn-google.png" alt="" /></a>
+                        <a href="/personal"><img className="h-12 md:h-[clamp(32px,6.222vmin,56px)]" src="/assets/images/btn-apple.png" alt="" /></a>
+                        <a href="/personal"><img className="h-12 md:h-[clamp(32px,6.222vmin,56px)]" src="/assets/images/btn-x.png" alt="" /></a>
                         </div>
                     </div>
                 </div>

@@ -92,7 +92,7 @@ export default function Personal() {
     );
 
     const query = new URLSearchParams(convertedFormData).toString();
-    router.push(`/result?${query}`);
+    router.push(`/personal/result?${query}`);
   };
   return (
     <main>

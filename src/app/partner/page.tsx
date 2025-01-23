@@ -97,7 +97,7 @@ export default function Partner() {
       );
   
       const query = new URLSearchParams(convertedFormData).toString();
-      router.push(`/result?${query}`);
+      router.push(`/partner/result?${query}`);
     };
   return (
     <main>
@@ -178,11 +178,19 @@ export default function Partner() {
                     label="相手の年代"
                     inputText="(任意) 相手の年代を選んでください"
                   >
-                    <input
-                      id="age"
-                      className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none"
-                      onChange={(e) => handleChange("age", e.target.value)}
-                    />
+                    <select defaultValue="" name="age" id="age" className="w-full focus:outline-none bg-transparent font-bold h-6  focus:bg-none" onChange={(e) => handleChange("age", e.target.value)}>
+                        <option disabled hidden value=""></option>
+                          <option value="10代">10代</option>
+                          <option value="20代">20代</option>
+                          <option value="30代">30代</option>
+                          <option value="40代">40代</option>
+                          <option value="50代">50代</option>
+                          <option value="60代">60代</option>
+                          <option value="70代">70代</option>
+                          <option value="80代">80代</option>
+                          <option value="90代">90代</option>
+                          <option value="答えたくない">答えたくない</option>
+                        </select>
                   </FormBlock>
                 </div>
                 <div className="py-5">
@@ -387,13 +395,11 @@ export default function Partner() {
                   </button>
                 </div>
                 <div className="flex justify-center gap-5 ">
+                  <Button href="/personal" kind="link">
+                  戻る
+                  </Button>
                   <Button type="submit" kind="button">
                     相手との <br />
-                    プランを
-                    <br />
-                    お願いする
-                  </Button>
-                  <Button href="/personal" kind="link">
                     プランを <br />
                     お願いする
                   </Button>
