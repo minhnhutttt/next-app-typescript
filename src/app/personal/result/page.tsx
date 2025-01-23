@@ -145,7 +145,7 @@ export default function Result() {
             </div>
           </div>
           <div className="flex justify-center gap-5 mt-5">
-            <Button href="/partner" kind="link">
+            <Button href="/personal" kind="link">
               戻る
             </Button>
             <Button href="/" kind="link">
