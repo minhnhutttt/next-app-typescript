@@ -1,7 +1,7 @@
 const TextAnataDakeNo = ({color = 'white'} : {color?: string}) => {
   return (
     <svg
-    className="w-full max-w-[308px]"
+    className="w-full max-w-[308px] max-md:max-w-[40vw] max-3xl:max-w-[18vw]"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 308 51"
       fill="none"

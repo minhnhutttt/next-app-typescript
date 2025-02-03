@@ -4,6 +4,8 @@ const nextConfig = {
     experimental: {
       missingSuspenseWithCSRBailout: false,
     },
+    reactStrictMode: true,
+  trailingSlash: true,
   };
   
   export default nextConfig;

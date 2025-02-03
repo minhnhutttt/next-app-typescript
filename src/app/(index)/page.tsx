@@ -215,7 +215,7 @@ export default function Home() {
               id="container"
               className="flex md:items-center relative max-md:flex-col max-md:gap-10 z-30"
             >
-              <div className="flex items-center px-2 md:px-6 md:ml-20 max-md:mt-24">
+              <div className="flex items-center px-2 md:px-6 md:ml-20 max-md:mt-16">
                 <div id="text01" className="relative opacity-0">
                   <div className="absolute top-1/2 -left-4 -right-4 -translate-y-1/2">
                     <svg
@@ -242,7 +242,7 @@ export default function Home() {
                   </div>
                   <TextAnataDakeNo color={color01} />
                 </div>
-                <div id="text02" className="relative opacity-0 px-4">
+                <div id="text02" className="relative opacity-0 max-md:pl-4 max-md:pr-2 md:px-4">
                   <TextKyujitsu color={color02} />
                 </div>
                 <div id="text03" className="relative opacity-0">
@@ -251,14 +251,14 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-end flex-col w-full max-w-[1000px] md:mt-[clamp(1px,1.6vmin,16px)] mt-6 gap-1 relative z-10">
-              <h3 className="md:pr-5 relative overflow-hidden max-md:w-[90vw]">
+              <h3 className="md:pr-5 relative overflow-hidden max-md:w-[90vw] max-md:max-w-[70vw] max-3xl:max-w-[37vw]">
                 <img
                   className="text-svg translate-y-full relative h-[clamp(1px,5vmin,50px)]"
                   src="/assets/images/text-svg-01.svg"
                   alt=""
                 />
               </h3>
-              <h3 className="relative overflow-hidden max-md:w-[63vw]">
+              <h3 className="relative overflow-hidden max-md:w-[63vw] max-md:max-w-[50vw] max-3xl:max-w-[25vw]">
                 <img
                   className="text-svg translate-y-full relative h-[clamp(1px,5.1vmin,52px)]"
                   src="/assets/images/text-svg-02.svg"
@@ -268,7 +268,7 @@ export default function Home() {
             </div>
             </div>
           </div>
-          <div className="flex max-md:items-center justify-between max-md:mt-10 max-dt:-mt-[clamp(1px,9vmin,90px)] dt:-mt-[clamp(1px,9vmin,90px)] relative max-md:flex-col">
+          <div className="flex max-md:items-center justify-between max-md:mt-10 -mt-[clamp(1px,9vmin,90px)] relative max-md:flex-col">
             <div className="relative flex md:flex-col items-start max-md:justify-between max-md:w-full flex-1">
               <div className="ani-image max-md:-left-5 max-md:top-[-10vw] max-md:w-[36vw] opacity-0 inline-flex relative z-20">
                 <div className="animate-[fuwafuwa_3s_ease-in-out_infinite_alternate] [animation-delay:0.3s]">
@@ -290,7 +290,7 @@ export default function Home() {
                 <img className="md:h-[clamp(1px,31.7vmin,317px)] dt:h-[clamp(1px,36vmin,360px)]" src="/assets/images/img-03.png" alt="" />
               </div>
             </div>
-            <div className="ani-image opacity-0 mt-12 md:mt-[clamp(1px,16vmin,160px)] max-md:w-[240px]">
+            <div className="ani-image opacity-0 mt-12 md:mt-[clamp(1px,26vmin,260px)] max-md:w-[240px]">
               <a href="/login" className="flex duration-150 hover:opacity-75">
                 <img className="md:h-[clamp(1px,31.8vmin,318px)]" src="/assets/images/btn-main.png" alt="" />
               </a>
@@ -304,7 +304,7 @@ export default function Home() {
                   <img className="md:h-[clamp(1px,26vmin,260px)] dt:h-[clamp(1px,35vmin,350px)]" src="/assets/images/img-05.png" alt="" />
                 </div>
               </div>
-              <div className="ani-image opacity-0 inline-flex md:absolute bottom-0 right-0 max-md:w-[60vw] dt:left-0">
+              <div className="ani-image opacity-0 inline-flex md:absolute bottom-0 left-0 max-md:w-[60vw]">
                 <img className="md:h-[clamp(1px,36vmin,360px)] dt:h-[clamp(1px,46vmin,460px)]" src="/assets/images/img-06.png" alt="" />
               </div>
             </div>
