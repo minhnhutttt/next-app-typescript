@@ -67,46 +67,64 @@ const Menu = () => {
         </div>
         
         <div onClick={closeExpand} className={`fixed inset-0 z-[99] ${NavOpen ? "" : "hidden"}`}></div>
-        <div ref={boxRef} className={`md:!hidden md:px-2 max-md:fixed max-md:right-0 max-md:top-1/2 max-md:-translate-y-1/2 max-md:max-h-[90%] max-md:max-w-[80%] max-md:w-full max-md:rounded-[25px] max-md:rounded-r-none z-[99] max-md:bg-[#F2F0E6]/[0.98] dark:bg-black/[0.98] max-md:border max-md:border-[#797979] max-md:translate-x-full origin-right`}>
+        <div ref={boxRef} className={`md:!hidden md:px-2 max-md:fixed max-md:right-0 max-md:top-1/2 max-md:-translate-y-1/2 max-md:max-h-[90%] h-full max-md:max-w-[80%] max-md:w-full max-md:rounded-[25px] max-md:rounded-r-none z-[99] max-md:bg-[#F2F0E6]/[0.98] dark:bg-black/[0.98] max-md:border max-md:border-[#797979] max-md:translate-x-full origin-right flex flex-col`}>
         <button
           className={`group absolute left-[-67px] bg-[#F2F0E6] top-[61px] py-3 pl-4 pr-1.5 border border-[#BABABA]  rounded-[30px] rounded-r-none z-[99] md:hidden`}
           onClick={toggleExpand}
         >
           <Anime />
         </button>
-            <p className="md:hidden pt-6 pb-[18px] px-[18px] border-b-4 border-[#464646] dark:border-[#C6C6C6]">
-                <img className="dark:hidden" src="/assets/images/ardorex-title.png" alt="" />
-                <img className="hidden dark:block" src="/assets/images/ardorex-title-dark.png" alt="" />
+            <p className="md:hidden pt-6 pb-[18px] px-[18px] border-b-4 border-[#464646] dark:border-[#C6C6C6] flex-1 text-[24px] font-bold italic text-[#464646] dark:text-[#C6C6C6]">
+                RANKING
             </p>
-            <div className="max-md:pr-14">
-            <Link onClick={close} href="/ai" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
-                <span className={`h-full bg-[#FF5660] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/ai" && "!opacity-100"}`}></span>
-                <TitleAI rect="md:h-[11.5px] h-[13.5px]" />
-            </Link>
-            <Link onClick={close} href="/blockchain" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
-                <span className={`h-full bg-[#E445AE] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/blockchain" && "!opacity-100"}`}></span>
-                <TitleBlockChain rect="md:h-[11.5px] h-[13.5px]" />
-            </Link>
-            <Link onClick={close} href="/website" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            <div className="max-md:pr-14 overflow-auto">
+            <div className="flex flex-col  border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
+                <Link onClick={close} href="/ai" className="flex items-center  relative  duration-150 hover:opacity-75">
+                    <span className={`h-full bg-[#FF5660] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/ai" && "!opacity-100"}`}></span>
+                    <TitleAI rect="md:h-[11.5px] h-[13.5px]" />
+                </Link>
+                <p className="text-[13px] font-hiragino dark:text-white leading-snug">イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない</p>
+            </div>
+            <div className="flex flex-col  border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
+                <Link onClick={close} href="/blockchain" className="flex items-center relative duration-150 hover:opacity-75">
+                    <span className={`h-full bg-[#E445AE] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/blockchain" && "!opacity-100"}`}></span>
+                    <TitleBlockChain rect="md:h-[11.5px] h-[13.5px]" />
+                </Link>
+                <p className="text-[13px] font-hiragino dark:text-white leading-snug">ビットコインに価値がないと言うのなら、人類は皆まともに歩けないと言っているようなものにすぎない</p>
+            </div>
+            <div className="flex flex-col  border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
+            <Link onClick={close} href="/website" className="flex items-center relative duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#7940F3] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/website" && "!opacity-100"}`}></span>
                 <TitleWebSite rect="md:h-[11.5px] h-[13.5px]" />
             </Link>
-            <Link onClick={close} href="/ad" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            <p className="text-[13px] font-hiragino dark:text-white leading-snug">イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない</p>
+            </div>
+            <div className="flex flex-col  border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
+            <Link onClick={close} href="/ad" className="flex items-center relative duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#153DCA] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/ad" && "!opacity-100"}`}></span>
                 <TitleAD rect="md:h-[11.5px] h-[13.5px]" />
             </Link>
-            <Link onClick={close} href="/marketing" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            <p className="text-[13px] font-hiragino dark:text-white leading-snug">広告代理店の見極め方〜失敗の責任を負いたくなければ「大手」に群がれ！成功したければ規模に目を向けるな！〜</p>
+            </div>
+            <div className="flex flex-col border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
+            <Link onClick={close} href="/marketing" className="flex items-center relative duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#1A8CBD] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/marketing" && "!opacity-100"}`}></span>
                 <TitleMarketing rect="md:h-[11.5px] h-[13.5px]" />
             </Link>
-            <Link onClick={close} href="/fx" className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75">
+            <p className="text-[13px] font-hiragino dark:text-white leading-snug">イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない</p>
+            </div>
+            <div className="flex flex-col border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
+            <Link onClick={close} href="/fx" className="flex items-center relative duration-150 hover:opacity-75">
                 <span className={`h-full bg-[#1ABD48] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/fx" && "!opacity-100"}`}></span>
                 <TitleFx rect="md:h-[11.5px] h-[13.5px]" />
             </Link>
+            <p className="text-[13px] font-hiragino dark:text-white leading-snug">イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない</p>
             </div>
-            <div className="absolute md:hidden right-5 bottom-8">
-                <img className="dark:hidden" src="/assets/images/content-menu.png" alt="" />
-                <img className="hidden dark:block" src="/assets/images/content-menu-dark.png" alt="" />
+            </div>
+            <div className="absolute md:hidden right-4 bottom-8">
+            <p className=" dark:border-[#C6C6C6] flex-1 text-[24px] font-bold  text-[#464646] dark:text-[#C6C6C6] [writing-mode:sideways-lr] [text-orientation:mixed]">
+            CONTACT
+            </p>
             </div>
             <div className="md:hidden top-0 right-0 bottom-0 absolute w-2.5 bg-[linear-gradient(180deg,_#F4963A_0%,_#C5329D_37%,_#AD22E9_80%)]"></div>
         </div>

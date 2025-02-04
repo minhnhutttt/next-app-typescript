@@ -10,74 +10,44 @@ import BarCode from "@/components/barcode";
 export const dataAI: dataArticle[] = [
   {
     date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
+    title: 'イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない',
     link: 'ai/id'
   },
-  {
-    date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'ai/id'
-  }
 ]
 export const dataBlockChain: dataArticle[] = [
   {
     date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
+    title: 'ビットコインに価値がないと言うのなら、人類は皆まともに歩けないと言っているようなものにすぎない',
     link: 'blockchain/id'
   },
-  {
-    date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'blockchain/id'
-  }
 ]
 export const dataWebSite: dataArticle[] = [
   {
     date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
+    title: 'イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない',
     link: 'website/id'
   },
-  {
-    date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'website/id'
-  }
 ]
 export const dataAD: dataArticle[] = [
   {
     date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
+    title: '広告代理店の見極め方〜失敗の責任を負いたくなければ「大手」に群がれ！成功したければ規模に目を向けるな！〜',
     link: 'ad/id'
   },
-  {
-    date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'ad/id'
-  }
 ]
 export const dataMarketing: dataArticle[] = [
   {
     date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
+    title: 'イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない',
     link: 'marketing/id'
   },
-  {
-    date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'marketing/id'
-  }
 ]
 export const dataFx: dataArticle[] = [
   {
     date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
+    title: 'イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない',
     link: 'fx/id'
   },
-  {
-    date: '2024.4.18',
-    title: 'AIが駆動するノンプレイヤーキャラクターがゲームの未来をつくる',
-    link: 'fx/id'
-  }
 ]
 
 export default function Home() {
