@@ -21,8 +21,8 @@ const Puzzle = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   const [mousePosition, setMousePosition] = useState<THREE.Vector3 | null>(null);
   const [brushSize] = useState(2.5);
   const [minScale] = useState(1);
-  const [maxScale] = useState(3);
-  const numPoints = 8000;
+  const [maxScale] = useState(2);
+  const numPoints = 7000;
   const rotationSpeed = 0.012;
 
   const obj = useLoader(OBJLoader, "/assets/models/puzzle.obj");
@@ -93,7 +93,7 @@ const Puzzle = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
       scales[i] = currentScale;
   
       tempObject.position.copy(currentPosition);
-      tempObject.scale.setScalar(currentScale * 0.3);
+      tempObject.scale.setScalar(currentScale * 0.25);
       tempObject.rotation.copy(rotations[i]);
       tempObject.updateMatrix();
   if (instancedMeshRef.current) {
