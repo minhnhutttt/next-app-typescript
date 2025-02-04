@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState, useMemo, useCallback } from "react";
 import { useLoader, useFrame } from "@react-three/fiber";
 // @ts-ignore
 import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler"; 
@@ -26,9 +26,9 @@ const Cloud = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   const rotationSpeed = 0.012;
 
   const obj = useLoader(OBJLoader, "/assets/models/cloud.obj");
-  const boxGeometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
+  const boxGeometry = useMemo(() => new THREE.BoxGeometry(0.1, 0.1, 0.1), []);
 
-  const colors = ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"];
+  const colors = useMemo(() => ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"], []);
 
   useEffect(() => {
     const modelMesh = obj.children[0] as THREE.Mesh;
@@ -58,9 +58,9 @@ const Cloud = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
 
     pointsRef.current = { positions, scales, colors: pointColors, rotations: pointRotations };
     setModel(obj);
-  }, [obj]);
+  }, [obj, colors, numPoints, minScale]);
 
-  const updateInstancesWithEffect = (mousePosition?: THREE.Vector3) => {
+  const updateInstancesWithEffect = useCallback((mousePosition?: THREE.Vector3) => {
     if (!instancedMeshRef.current) return;
   
     const tempObject = new THREE.Object3D();
@@ -96,47 +96,44 @@ const Cloud = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
       tempObject.scale.setScalar(currentScale * 0.8);
       tempObject.rotation.copy(rotations[i]);
       tempObject.updateMatrix();
-  
-      instancedMeshRef.current?.setMatrixAt(i, tempObject.matrix);
-      instancedMeshRef.current?.setColorAt(i, colors[i]);
+      if (instancedMeshRef.current) {
+      instancedMeshRef.current.setMatrixAt(i, tempObject.matrix);
+      instancedMeshRef.current.setColorAt(i, colors[i]);
+    }
     });
   
     instancedMeshRef.current.instanceMatrix.needsUpdate = true;
     if (instancedMeshRef.current.instanceColor) {
       instancedMeshRef.current.instanceColor.needsUpdate = true;
     }
-  };
-  
+  }, [brushSize, minScale, maxScale, rotationSpeed]);
+
   useEffect(() => {
     if (model) updateInstancesWithEffect();
-  }, [model, mousePosition]);
+  }, [model, updateInstancesWithEffect]);
 
-  const handlePointerMove = (e: any) => {
+  const handlePointerMove = useCallback((e: any) => {
     if (!modelRef.current || !instancedMeshRef.current) return;
   
     const worldMousePosition = new THREE.Vector3(e.point.x, e.point.y, e.point.z);
     const localMousePosition = modelRef.current.worldToLocal(worldMousePosition);
   
-    updateInstancesWithEffect(localMousePosition);
     setMousePosition(localMousePosition);
-  };
-  
-  const handlePointerOut = () => {
+  }, []);
+
+  const handlePointerOut = useCallback(() => {
     setMousePosition(null);
-    updateInstancesWithEffect(); 
-  };
+  }, []);
 
   useFrame(() => {
-    if (mousePosition) {
-      updateInstancesWithEffect(mousePosition);
-    }
+    updateInstancesWithEffect(mousePosition || undefined);
   });
   
   return (
     <group dispose={null} {...props} ref={ref}>
       {model && (
         <Float>
-          <group ref={modelRef} scale={0.08} position={[-1.5,-1.5,0]}>
+          <group ref={modelRef} scale={0.08} position={[-1.5, -1.5, 0]}>
             <mesh
               geometry={(model.children[0] as THREE.Mesh).geometry}
               onPointerMove={handlePointerMove}
