@@ -22,11 +22,11 @@ const Puzzle = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   const [brushSize] = useState(2.5);
   const [minScale] = useState(1);
   const [maxScale] = useState(3);
-  const numPoints = 5000;
+  const numPoints = 8000;
   const rotationSpeed = 0.012;
 
   const obj = useLoader(OBJLoader, "/assets/models/puzzle.obj");
-  const ipdcModel = useLoader(OBJLoader, "/assets/models/ipdc.obj");
+  const boxGeometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
 
   const colors = ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"];
 
@@ -93,7 +93,7 @@ const Puzzle = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
       scales[i] = currentScale;
   
       tempObject.position.copy(currentPosition);
-      tempObject.scale.setScalar(currentScale * 0.003);
+      tempObject.scale.setScalar(currentScale * 0.3);
       tempObject.rotation.copy(rotations[i]);
       tempObject.updateMatrix();
   
@@ -147,7 +147,7 @@ const Puzzle = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
 
             <instancedMesh
               ref={instancedMeshRef}
-              args={[(ipdcModel.children[0] as THREE.Mesh).geometry, undefined, numPoints]}
+              args={[boxGeometry, undefined, numPoints]}
             >
               <meshStandardMaterial  />
             </instancedMesh>

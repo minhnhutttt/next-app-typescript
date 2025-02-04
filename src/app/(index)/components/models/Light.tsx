@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState, useMemo, useCallback } from "react";
 import { useLoader, useFrame } from "@react-three/fiber";
 // @ts-ignore
 import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler"; 
@@ -22,13 +22,13 @@ const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   const [brushSize] = useState(2.5);
   const [minScale] = useState(1);
   const [maxScale] = useState(3);
-  const numPoints = 5000;
+  const numPoints = 10000;
   const rotationSpeed = 0.012;
 
   const obj = useLoader(OBJLoader, "/assets/models/light.obj");
-  const ipdcModel = useLoader(OBJLoader, "/assets/models/ipdc.obj");
+  const boxGeometry = useMemo(() => new THREE.BoxGeometry(0.1, 0.1, 0.1), []);
 
-  const colors = ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"];
+  const colors = useMemo(() => ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"], []);
 
   useEffect(() => {
     const modelMesh = obj.children[0] as THREE.Mesh;
@@ -58,9 +58,9 @@ const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
 
     pointsRef.current = { positions, scales, colors: pointColors, rotations: pointRotations };
     setModel(obj);
-  }, [obj]);
+  }, [obj, colors, numPoints, minScale]);
 
-  const updateInstancesWithEffect = (mousePosition?: THREE.Vector3) => {
+  const updateInstancesWithEffect = useCallback((mousePosition?: THREE.Vector3) => {
     if (!instancedMeshRef.current) return;
   
     const tempObject = new THREE.Object3D();
@@ -93,43 +93,41 @@ const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
       scales[i] = currentScale;
   
       tempObject.position.copy(currentPosition);
-      tempObject.scale.setScalar(currentScale * 0.003);
+      tempObject.scale.setScalar(currentScale * 0.2);
       tempObject.rotation.copy(rotations[i]);
       tempObject.updateMatrix();
   
-      instancedMeshRef.current?.setMatrixAt(i, tempObject.matrix);
-      instancedMeshRef.current?.setColorAt(i, colors[i]);
+      if (instancedMeshRef.current) {
+      instancedMeshRef.current.setMatrixAt(i, tempObject.matrix);
+      instancedMeshRef.current.setColorAt(i, colors[i]);
+    }
     });
   
     instancedMeshRef.current.instanceMatrix.needsUpdate = true;
     if (instancedMeshRef.current.instanceColor) {
       instancedMeshRef.current.instanceColor.needsUpdate = true;
     }
-  };
-  
+  }, [brushSize, minScale, maxScale, rotationSpeed]);
+
   useEffect(() => {
     if (model) updateInstancesWithEffect();
-  }, [model, mousePosition]);
+  }, [model, updateInstancesWithEffect]);
 
-  const handlePointerMove = (e: any) => {
+  const handlePointerMove = useCallback((e: any) => {
     if (!modelRef.current || !instancedMeshRef.current) return;
   
     const worldMousePosition = new THREE.Vector3(e.point.x, e.point.y, e.point.z);
     const localMousePosition = modelRef.current.worldToLocal(worldMousePosition);
   
-    updateInstancesWithEffect(localMousePosition);
     setMousePosition(localMousePosition);
-  };
-  
-  const handlePointerOut = () => {
+  }, []);
+
+  const handlePointerOut = useCallback(() => {
     setMousePosition(null);
-    updateInstancesWithEffect(); 
-  };
+  }, []);
 
   useFrame(() => {
-    if (mousePosition) {
-      updateInstancesWithEffect(mousePosition);
-    }
+    updateInstancesWithEffect(mousePosition || undefined);
   });
   
   return (
@@ -147,7 +145,7 @@ const Light = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
 
             <instancedMesh
               ref={instancedMeshRef}
-              args={[(ipdcModel.children[0] as THREE.Mesh).geometry, undefined, numPoints]}
+              args={[boxGeometry, undefined, numPoints]}
             >
               <meshStandardMaterial  />
             </instancedMesh>

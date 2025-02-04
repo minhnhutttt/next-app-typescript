@@ -22,11 +22,11 @@ const Cloud = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   const [brushSize] = useState(10);
   const [minScale] = useState(1);
   const [maxScale] = useState(3.5);
-  const numPoints = 3000;
+  const numPoints = 10000;
   const rotationSpeed = 0.012;
 
   const obj = useLoader(OBJLoader, "/assets/models/cloud.obj");
-  const ipdcModel = useLoader(OBJLoader, "/assets/models/ipdc.obj");
+  const boxGeometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
 
   const colors = ["#4AF492", "#4AC7FA", "#F2DA4C", "#E649F5", "#FFFFFF"];
 
@@ -93,7 +93,7 @@ const Cloud = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
       scales[i] = currentScale;
   
       tempObject.position.copy(currentPosition);
-      tempObject.scale.setScalar(currentScale * 0.02);
+      tempObject.scale.setScalar(currentScale * 0.8);
       tempObject.rotation.copy(rotations[i]);
       tempObject.updateMatrix();
   
@@ -147,7 +147,7 @@ const Cloud = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
 
             <instancedMesh
               ref={instancedMeshRef}
-              args={[(ipdcModel.children[0] as THREE.Mesh).geometry, undefined, numPoints]}
+              args={[boxGeometry, undefined, numPoints]}
             >
               <meshStandardMaterial  />
             </instancedMesh>
