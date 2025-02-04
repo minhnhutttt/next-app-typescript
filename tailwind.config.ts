@@ -18,7 +18,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      sansita: ["var(--font-sansita)", "sans-serif"],
+      lalezar: ["var(--font-lalezar)", "sans-serif"],
       inter: ["var(--font-inter)", "sans-serif"],
     },
   },

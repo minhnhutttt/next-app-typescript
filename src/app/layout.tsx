@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
-import { Roboto,  Inter } from "next/font/google";
+import { Lalezar, Noto_Sans_JP, Inter } from "next/font/google";
 import "./globals.scss";
 import ScrollContainer from "@/components/scrollContainer";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
-const roboto = Roboto({ 
+const lalezar = Lalezar({ 
+  weight: ['400'],
+  subsets: ["latin"],
+  variable: '--font-lalezar'
+ });
+
+const noto = Noto_Sans_JP({ 
   weight: ['300','400','500','700','900'],
-  subsets: ["latin"]
+  subsets: ["latin"],
  });
 
  const inter = Inter({ 
@@ -28,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} ${inter.variable}`}>
+      <body className={`${noto.className} ${lalezar.variable} ${inter.variable}`}>
         <ScrollContainer>
           <Header />
           {children}
