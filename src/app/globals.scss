@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth !important;
+}
+body {
+  color: #21012D;
+}
+.u-text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.u-text-stroke {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+}
+
+.swiper .swiper-slide {
+  height: auto;
+}
+
+.u-transform {
+  will-change: transform;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
+
+.char {
+  opacity: 0;
+  transition: all 0.1s calc(0.25s + var(--char-index) * 0.03s);
+}
+
+[data-scroll="in"] .char {
+  opacity: 1;
+}
