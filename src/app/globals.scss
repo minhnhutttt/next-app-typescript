@@ -8,3 +8,19 @@ html {
 body {
   color: #21012D;
 }
+
+.clippedDiv {
+  width: 100vw;
+  background: red;
+  inset: 0;
+  z-index: 99;
+  clip-path: url('#maskTitle');
+}
+
+.clippedDiv2 {
+  width: 100vw;
+  background: red;
+  inset: 0;
+  z-index: 99;
+  clip-path: url('#poskaClipPath');
+}
