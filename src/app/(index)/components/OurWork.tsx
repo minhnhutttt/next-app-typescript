@@ -11,7 +11,7 @@ gsap.config({
   nullTargetWarn: false,
 });
 
-const Work = () => {
+const OurWork = () => {
   const workContainer = useRef<HTMLDivElement>(null);
   const cloneDrawRef = useRef<HTMLDivElement>(null);
   const animPoskaRef = useRef<any>(null);
@@ -41,21 +41,22 @@ const Work = () => {
               cloneDrawRef.current &&
               cloneDrawRef.current.querySelector("path")
             ) {
-            const progress = self.progress;
-            const totalFrames = animPoska.totalFrames;
-            const frame = Math.round(progress * totalFrames);
-            
-            animPoska.goToAndStop(frame, true);
-            
+              const progress = self.progress;
+              const totalFrames = animPoska.totalFrames;
+              const frame = Math.round(progress * totalFrames);
+
+              animPoska.goToAndStop(frame, true);
+
               drawRef.current.setAttribute(
                 "d",
-                cloneDrawRef.current.querySelector("path")!.getAttribute("d") as string
+                cloneDrawRef.current
+                  .querySelector("path")!
+                  .getAttribute("d") as string
               );
-              if(frame === 0){
-                drawRef.current.setAttribute('d', '');
+              if (frame === 0) {
+                drawRef.current.setAttribute("d", "");
               }
             }
-            
           },
         },
         onComplete: () => {
@@ -67,7 +68,9 @@ const Work = () => {
           ) {
             drawRef.current.setAttribute(
               "d",
-              cloneDrawRef.current.querySelector("path")!.getAttribute("d") as string
+              cloneDrawRef.current
+                .querySelector("path")!
+                .getAttribute("d") as string
             );
           }
         },
@@ -82,9 +85,51 @@ const Work = () => {
   }, []);
 
   return (
-    <section className="relative">
+    <section className="relative bg-[#DDDDDD] overflow-hidden">
       <div ref={workContainer} className="works relative">
-        <div className="clippedDiv2">
+        <div className="absolute top-0 inset-x-0 w-screen h-screen flex items-center justify-center">
+          <div className="overflow-hidden">
+            <div className="md:text-[50px] text-[32px] px-5 md:px-[100px] mb-10 md:mb-20">OurWork</div>
+            <div className="flex justify-center overflow-hidden relative max-md:mt-12">
+              <div className="whitespace-nowrap space-y-5">
+                <div className="flex gap-5 animate-[scroll-1-3_32s_linear_infinite] font-bold">
+                  <div className="text-[30px] md:text-[60px] text-center">
+                    Coroprate Site Landing Page Coroprate Site Landing Page
+                  </div>
+                  <div className="text-[30px] md:text-[60px] text-center">
+                    Coroprate Site Landing Page Coroprate Site Landing Page
+                  </div>
+                  <div className="text-[30px] md:text-[60px] text-center">
+                    Coroprate Site Landing Page Coroprate Site Landing Page
+                  </div>
+                </div>
+                <div className="flex gap-5 animate-[scroll-1-3-left_32s_linear_infinite] font-bold">
+                  <div className="text-[30px] md:text-[60px] text-center">
+                    Coroprate Site Landing Page Coroprate Site Landing Page
+                  </div>
+                  <div className="text-[30px] md:text-[60px] text-center">
+                    Coroprate Site Landing Page Coroprate Site Landing Page
+                  </div>
+                  <div className="text-[30px] md:text-[60px] text-center">
+                    Coroprate Site Landing Page Coroprate Site Landing Page
+                  </div>
+                </div>
+                <div className="flex gap-5 animate-[scroll-1-3_32s_linear_infinite] font-bold">
+                  <div className="text-[30px] md:text-[60px] text-center">
+                    Coroprate Site Landing Page Coroprate Site Landing Page
+                  </div>
+                  <div className="text-[30px] md:text-[60px] text-center">
+                    Coroprate Site Landing Page Coroprate Site Landing Page
+                  </div>
+                  <div className="text-[30px] md:text-[60px] text-center">
+                    Coroprate Site Landing Page Coroprate Site Landing Page
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-screen bg-white [clip-path:url('#poskaClipPath')]">
           <div
             id="revealPoska"
             className="absolute w-full h-full top-0 left-0 pointer-events-none"
@@ -114,7 +159,6 @@ const Work = () => {
               </defs>
             </svg>
           </div>
-          <FAQ />
           <div ref={cloneDrawRef} id="revealPoskaProxy" className="hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -155,10 +199,12 @@ const Work = () => {
               </g>
             </svg>
           </div>
+
+          <FAQ />
         </div>
       </div>
     </section>
   );
 };
 
-export default Work;
+export default OurWork;

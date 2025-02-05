@@ -10,7 +10,7 @@ const Mission = () => {
       ref={ref}
       className="relative overflow-hidden"
     >
-        <div className="text-center px-5 pt-[72px] flex flex-col items-center justify-center w-full max-w-[940px] mx-auto">
+        <div className="text-center px-5 py-[72px] flex flex-col items-center justify-center w-full max-w-[940px] mx-auto">
             <p className="md:text-[30px] text-[20px]">ROGYXのMission</p>
             <p className="md:text-[50px] text-[32px] leading-[1.4] mt-5 max-w-[857px]">
             Webデザインとシステム開発を通じて

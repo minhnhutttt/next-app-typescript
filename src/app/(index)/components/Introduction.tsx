@@ -2,7 +2,6 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
-import FAQ from "./faq/Faq";
 import Mission from "./Mission";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -10,8 +9,47 @@ gsap.config({
   nullTargetWarn: false,
 });
 
+const IntroductionItem = ({
+  rogyx,
+  text,
+  link,
+}: {
+  rogyx: string;
+  text: string;
+  link: string;
+}) => (
+  <div>
+    <div className="flex justify-center gap-[3vw] md:gap-8 items-center">
+      <p className="md:text-[55px] lg:text-[80px] text-[7vw] font-lalezar leading-none">
+        <span className="md:text-[75px] lg:text-[100px] text-[8vw]">ROGYX</span>
+        {rogyx}
+      </p>
+      <a
+        href={link}
+        className="flex items-center justify-center md:flex-[0_0_103px] flex-[0_0_10vw] size-[10vw] md:size-[103px] bg-[#D9D9D9] rounded-full duration-150 hover:opacity-75"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 54 15"
+          fill="none"
+          className="md:w-[54px] w-[8vw]"
+        >
+          <path
+            d="M53.5852 8.20711C53.9757 7.81658 53.9757 7.18342 53.5852 6.79289L47.2212 0.428932C46.8307 0.0384078 46.1975 0.0384078 45.807 0.428932C45.4165 0.819457 45.4165 1.45262 45.807 1.84315L51.4638 7.5L45.807 13.1569C45.4165 13.5474 45.4165 14.1805 45.807 14.5711C46.1975 14.9616 46.8307 14.9616 47.2212 14.5711L53.5852 8.20711ZM0.75 8.5H52.878V6.5H0.75V8.5Z"
+            fill="black"
+          />
+        </svg>
+      </a>
+    </div>
+    <p className="text-center md:text-[30px] text-[5vw] leading-none">
+      {text}
+    </p>
+  </div>
+);
+
 const Introduction = () => {
-  const titleRef = useRef<SVGPathElement>(null);
+  const introductionContainer = useRef<HTMLDivElement>(null);
+  const blobTitle = useRef<SVGPathElement>(null);
 
   useEffect(() => {
     let shapes = [
@@ -37,20 +75,24 @@ const Introduction = () => {
       "M-894.84 65.29 C-360.04 1258.1 -879.5 1707.96 -310.05 2018.78 259.38 2329.59 550.01 1582.71 1119.79 1493 1689.58 1403.29 2413.52 2427.23 2781.73 1537.41 3149.94 647.58 2545.33 -503.29 1707.49 -738.35 869.65 -973.41 -1429.65 -1127.5 -894.84 65.29",
       "M-1131.22 -6.19 C-615.59 1275.92 -1166.08 1821.5 -471.82 2157.91 222.42 2494.31 526.69 1719.35 1107.47 1632.08 1688.26 1544.8 2463.23 2670.35 2954.6 1644.45 3445.97 618.54 2761.21 -694.8 1792.87 -910.51 824.53 -1126.22 -1646.86 -1288.31 -1131.22 -6.19",
       "M-3588.32 -749.38C-3271.96 1461.07 -4144.98 3001.64 -2153.36 3604.09C-161.732 4206.54 284.229 3139.61 979.37 3077.7C1674.51 3015.78 2979.92 5197.55 4751.56 2757.09C6523.19 316.641 5005.22 -2685.47 2680.32 -2700.06C355.416 -2714.66 -3904.69 -2959.83 -3588.32 -749.38Z",
-  ]
+    ];
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".homeContainer",
+        trigger: introductionContainer.current,
         start: "top top",
-        end: "+=3000",
+        end: "+=5000",
         pin: true,
-        markers: true,
+        scrub: true,
         onUpdate: (self) => {
           const progress = self.progress;
           const index = Math.floor(progress * (shapes.length - 1));
-          if (titleRef.current) {
-            titleRef.current.setAttribute("d", shapes[index]);
+          console.log(index);
+          if (blobTitle.current) {
+            blobTitle.current.setAttribute("d", shapes[index]);
+            if (index === 0) {
+              blobTitle.current.setAttribute("d", '');
+            }
           }
         },
       },
@@ -58,32 +100,41 @@ const Introduction = () => {
 
     return () => {
       tl.scrollTrigger?.refresh();
-      tl.kill(); 
-      
+      tl.kill();
     };
   }, []);
 
   return (
-    <section className="relative">
-      <div className="homeContainer relative">
-        <div className="absolute w-full top-0">
+    <section className="relative overflow-hidden">
+      <div ref={introductionContainer} className="relative w-full">
+        <div className="absolute top-0 inset-x-0 w-screen h-screen flex items-center justify-center">
           <Mission />
         </div>
-        
-        <div className="clippedDiv">
-        <svg className="maskSvg inset-0 absolute">
-          <defs>
-            <clipPath id="maskTitle" clipPathUnits="objectBoundingBox" transform="scale(0.0005, 0.00033333333333333)">
-              <path
-                ref={titleRef}
-                id="blobTitle"
-                fill="#fff"
-                d="M951.5 596.5C946.127 600.346 940.051 604 946.401 607.369C952.751 610.738 955.312 605.54 961.487 604.641C967.662 603.742 969.144 607.65 974.71 604.641C980.276 601.632 976.254 597.929 967.451 593.103C958.648 588.277 956.873 592.654 951.5 596.5Z"
-              />
-            </clipPath>
-          </defs>
-        </svg>
-          <FAQ />
+
+        <div className="w-screen bg-[#DDDDDD] [clip-path:url('#maskTitle')]">
+          <svg className="maskSvg inset-0 absolute">
+            <defs>
+              <clipPath
+                id="maskTitle"
+                clipPathUnits="objectBoundingBox"
+                transform="scale(0.0005, 0.00033333333333333)"
+              >
+                <path
+                  ref={blobTitle}
+                  id="blobTitle"
+                  fill="#fff"
+                  d=""
+                />
+              </clipPath>
+            </defs>
+          </svg>
+          <div className="">
+            <div className="flex flex-col items-center justify-center min-h-[120vh] md:gap-[180px] gap-[100px] md:py-[200px] py-[120px]">
+              <IntroductionItem rogyx="の特徴" text="ROGYXの特徴を2つの柱" link="/" />
+              <IntroductionItem rogyx="の考え方" text="ROGYXの特徴を2つの柱" link="/" />
+              <IntroductionItem rogyx="ってこんな会社" text="ROGYXの特徴を2つの柱" link="/" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
