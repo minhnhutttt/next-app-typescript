@@ -122,7 +122,7 @@ const Menu = () => {
             </div>
             </div>
             <div className="absolute md:hidden right-4 bottom-8">
-            <p className=" dark:border-[#C6C6C6] flex-1 text-[24px] font-bold  text-[#464646] dark:text-[#C6C6C6] [writing-mode:sideways-lr] [text-orientation:mixed]">
+            <p className=" border border-[#C6C6C6] flex-1 text-[24px] font-bold bg-[#F8D0B2] rounded-full py-4 text-black [writing-mode:sideways-lr] [text-orientation:mixed]">
             CONTACT
             </p>
             </div>

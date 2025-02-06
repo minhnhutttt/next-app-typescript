@@ -112,7 +112,7 @@ export default function BlockchainSingle() {
                   <br />
                   <ol className="list-inside list-decimal">
                     <li>ビットコインは速い</li>
-                    <li>ビットコインのボラティリティは小さい</li>
+                    <li>ビットコインの<span className="hightlight">ボラティリティ</span>は小さい</li>
                     <li>ビットコインの価値を裏付けられる資産がそもそも存在しない</li>
                   </ol>
                   <br />
@@ -194,16 +194,17 @@ export default function BlockchainSingle() {
                   ここまで記事を読んで暗号資産の本質的な価値が理解できた方は、<br />
                   暗号資産のビジネス活用について今すぐ我々に連絡をください。<br />
                 </div>
-                <div className="flex justify-end mt-12">
-                  <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/images/download.png" alt="" />
+                <div className="flex justify-start mt-12">
+                  <a href="http://" target="_blank" rel="noopener noreferrer" className="text-[24px] font-bold  text-[black] bg-[#F8D0B2] px-12 py-2 rounded-full duration-150 hover:opacity-75 border border-[#C6C6C6]">
+                    CONTACT
                   </a>
+                  
                 </div>
               </div>
             </div>
           </div>
           <div className="max-xl:hidden w-[295px] bg-[#F1E4F6] dark:bg-[#996894]/[0.68] border-l border-[#A06778] dark:border-white flex flex-col justify-between">
-            <div className="fade-up px-3 pt-6">
+            <div className="fade-up px-3 pt-6 sticky top-0">
               <figure className="pb-7">
                 <img
                   className="dark:hidden"
@@ -231,6 +232,14 @@ export default function BlockchainSingle() {
                     more
                   </a>
                 </div>
+              </div>
+              <div className="w-[272px] mx-auto dark:text-white bg-white/70 dark:bg-white/30 border border-[#A06778]/[0.7] dark:border-[#996894]/[0.7] p-2.5">
+                <p className="md:text-[13px] text-[15px] border-b border-[#E01652] dark:border-white pb-1 font-semibold">
+                ボラティリティ
+                </p>
+                <p className="md:text-[12px] text-[14px] py-2.5">
+                価格や数値の変動性を示す指標。主に金融市場で使用され、値動きの激しさを表現する。
+                </p>
               </div>
               <div className="flex justify-end mt-[680px]">
                 <LogoDots

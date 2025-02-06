@@ -70,7 +70,7 @@ export default function MarketingSingle() {
                 </div>
             </div>
             <div className="max-xl:hidden w-[295px] bg-[#C8E8E1] dark:bg-[#507F8E]/[0.68] border-l border-[#358D93] dark:border-white flex flex-col justify-between">
-                <div className="fade-up px-3 pt-6">
+                <div className="fade-up px-3 pt-6 sticky top-0">
                     <figure className="pb-7">
                         <img className="dark:hidden" src="/assets/images/annotation.png" alt="" />
                         <img className="dark:block hidden" src="/assets/images/annotation-dark.png" alt="" />

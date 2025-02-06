@@ -70,7 +70,7 @@ export default function WebsiteSingle() {
                 </div>
             </div>
             <div className="max-xl:hidden w-[295px] bg-[#E4E7F3] dark:bg-[#9C89D2]/[0.68] border-l border-[#A06778] dark:border-white flex flex-col justify-between">
-                <div className="fade-up px-3 pt-6">
+                <div className="fade-up px-3 pt-6 sticky top-0">
                     <figure className="pb-7">
                         <img className="dark:hidden" src="/assets/images/annotation.png" alt="" />
                         <img className="dark:block hidden" src="/assets/images/annotation-dark.png" alt="" />
