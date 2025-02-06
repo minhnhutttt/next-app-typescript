@@ -25,7 +25,7 @@ body {
 	.road-prerspective {
 		transform-style: preserve-3d;
 		height: 100%;
-		transform: perspective(550px) rotateX(33deg) rotateY(0) rotate(0);
+		transform: perspective(550px) rotateX(0) rotateY(0) rotate(0);
 	}
 
 	.no-scrollbar::-webkit-scrollbar {
