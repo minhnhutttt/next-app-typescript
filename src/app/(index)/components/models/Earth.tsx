@@ -22,7 +22,7 @@ const Earth = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
   const [brushSize] = useState(1);
   const [minScale] = useState(1);
   const [maxScale] = useState(1.2);
-  const numPoints = 20000;
+  const numPoints = 12000;
   const rotationSpeed = 0.002;
 
   const obj = useLoader(OBJLoader, "/assets/models/earth.obj");
@@ -42,29 +42,17 @@ const Earth = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
     const pointColors: THREE.Color[] = [];
     const pointRotations: THREE.Euler[] = [];
   
-    for (let i = 0; i < 19500; i++) {
+    for (let i = 0; i < numPoints; i++) {
       const tempPosition = new THREE.Vector3();
-      sampler0.sample(tempPosition);
+      if (i < numPoints * 0.95) {
+        sampler0.sample(tempPosition);
+        const randomColor = new THREE.Color(colors[Math.floor(Math.random() * colors.length)]);
+        pointColors.push(randomColor);
+      } else {
+        sampler1.sample(tempPosition);
+        pointColors.push(new THREE.Color("#FFFFFF"));
+      }
       positions.push(tempPosition);
-  
-      const randomColor = new THREE.Color(colors[Math.floor(Math.random() * colors.length)]);
-      pointColors.push(randomColor);
-  
-      const randomRotation = new THREE.Euler(
-        Math.random() * Math.PI * 3,
-        Math.random() * Math.PI * 3,
-        Math.random() * Math.PI * 3
-      );
-      pointRotations.push(randomRotation);
-    }
-  
-    for (let i = 0; i < 1000; i++) {
-      const tempPosition = new THREE.Vector3();
-      sampler1.sample(tempPosition);
-      positions.push(tempPosition);
-  
-      const whiteColor = new THREE.Color("#FFFFFF"); 
-      pointColors.push(whiteColor);
   
       const randomRotation = new THREE.Euler(
         Math.random() * Math.PI * 3,
@@ -85,7 +73,8 @@ const Earth = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
     const tempObject = new THREE.Object3D();
     const { positions, scales, colors, rotations } = pointsRef.current;
   
-    positions.forEach((originalPosition, i) => {
+    for (let i = 0; i < positions.length; i++) {
+      const originalPosition = positions[i];
       const currentPosition = originalPosition.clone();
       let currentScale = minScale;
       if (mousePosition) {
@@ -112,14 +101,12 @@ const Earth = forwardRef((props: JSX.IntrinsicElements['group'], ref: any) => {
       scales[i] = currentScale;
   
       tempObject.position.copy(currentPosition);
-      tempObject.scale.setScalar(currentScale * 0.1);
+      tempObject.scale.setScalar(currentScale * 0.11);
       tempObject.rotation.copy(rotations[i]);
       tempObject.updateMatrix();
-  if (instancedMeshRef.current) {
       instancedMeshRef.current.setMatrixAt(i, tempObject.matrix);
       instancedMeshRef.current.setColorAt(i, colors[i]);
     }
-    });
   
     instancedMeshRef.current.instanceMatrix.needsUpdate = true;
     if (instancedMeshRef.current.instanceColor) {

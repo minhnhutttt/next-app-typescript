@@ -81,7 +81,7 @@ const Roadmap = ({loaded}: {loaded?: any}) => {
         gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
-                start: `${isDesktop() ? "top center" : "top center"}`,
+                start: `${isDesktop() ? "top top" : "top top"}`,
                 end: isDesktop() ? "bottom top" : "bottom top",
                 scrub: 0.5,
             }
@@ -89,8 +89,9 @@ const Roadmap = ({loaded}: {loaded?: any}) => {
             top: isDesktop() ? 0.6 * -n : 0.4 * -n,
             z: isDesktop() ? -250 : -70,
             ease: "linear",
-        });
-        
+        }).to(containerRef.current, {
+          rotateX: '33deg',
+      }, "<");
       }
     });
 
