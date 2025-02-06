@@ -81,13 +81,12 @@ const Introduction = () => {
       scrollTrigger: {
         trigger: introductionContainer.current,
         start: "top top",
-        end: "+=5000",
+        end: "bottom top",
         pin: true,
         scrub: true,
         onUpdate: (self) => {
           const progress = self.progress;
           const index = Math.floor(progress * (shapes.length - 1));
-          console.log(index);
           if (blobTitle.current) {
             blobTitle.current.setAttribute("d", shapes[index]);
             if (index === 0) {
