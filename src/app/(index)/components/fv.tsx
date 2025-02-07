@@ -1,13 +1,7 @@
 "use client";
-
-import { View } from "@react-three/drei";
-import Earth from "./models/Earth";
-import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Light from "./models/Light";
-import Scane from "./scene/scene";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const FV = () => {

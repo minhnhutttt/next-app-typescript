@@ -121,7 +121,7 @@ export default function Scane({}: Props) {
         duration: 2,
       },
       scrollTrigger: {
-        trigger: "#brain",
+        trigger: "#issue",
         start: "top bottom",
         end: "bottom bottom",
         scrub: 0.7,
@@ -136,7 +136,7 @@ export default function Scane({}: Props) {
         duration: 2,
       },
       scrollTrigger: {
-        trigger: "#brain",
+        trigger: "#issue",
         start: "top bottom-=50%",
         end: "bottom bottom",
         scrub: 0.7,

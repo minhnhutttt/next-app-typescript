@@ -1,10 +1,9 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import { useScroll } from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {  useEffect, useLayoutEffect, useRef } from "react";
+import {  useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -81,7 +80,7 @@ const Roadmap = ({loaded}: {loaded?: any}) => {
         gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
-                start: `${isDesktop() ? "top top" : "top top"}`,
+                start: `${isDesktop() ? "top center" : "top center"}`,
                 end: isDesktop() ? "bottom top" : "bottom top",
                 scrub: 0.5,
             }
@@ -103,7 +102,7 @@ const Roadmap = ({loaded}: {loaded?: any}) => {
     <div className="md:mb-[280px] mb-[150px] relative z-50">
       <section
         ref={containerRef}
-        id="brain"
+        id="roadmap"
         className="road-prerspective relative pt-20 md:pt-[50px] md:pb-10 pb-[60px] px-8 w-screen"
       >
         <div ref={roadRef} className="road-move relative w-full max-w-[1310px] mx-auto max-md:mb-[0] max-xl:mb-[400px] ">

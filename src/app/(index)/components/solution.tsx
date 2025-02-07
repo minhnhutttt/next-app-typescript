@@ -1,9 +1,6 @@
 "use client";
 
-import Puzzle from "./models/Puzzle";
-import { View } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

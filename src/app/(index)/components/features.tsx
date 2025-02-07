@@ -85,7 +85,7 @@ const Features = () => {
         <div className="relative">
           <div
             ref={sliderRef}
-            className="flex items-center w-[calc(((320px_*_5)_+_(4vw_*_4))_+_41vw)] gap-[4vw] md:w-[calc(((480px_*_5)_+_(3vw_*_4))_+_80vw)] mx-[10vw] md:gap-[3vw] my-[7rem] md:max-h-[calc(100vh-10rem)] max-md:h-[495px] md:h-[640px] max-h-[calc(100vh-8rem)]">
+            className="flex items-center w-[calc(((320px_*_3)_+_(4vw_*_2))_+_41vw)] gap-[4vw] md:w-[calc(((480px_*_3)_+_(3vw_*_2))_+_80vw)] mx-[10vw] md:gap-[3vw] my-[7rem] md:max-h-[calc(100vh-10rem)] max-md:h-[495px] md:h-[640px] max-h-[calc(100vh-8rem)]">
             {featuresData.map((feature, index) => (
                 <div className="panel !w-[320px] md:!w-[480px] h-full relative overflow-hidden md:rounded-[60px] rounded-[40px] border border-white" key={index}>
                 <figure>

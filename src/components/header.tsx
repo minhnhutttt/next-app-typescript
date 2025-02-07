@@ -25,7 +25,7 @@ const Header = () => {
         <ul className="flex items-center max-md:flex-col text-[18px] gap-10 xl:mr-10 max-xl:mb-10">
           <li>
             <a
-              href="/"
+              href="/#issue"
               onClick={close}
               className=""
             >
@@ -34,7 +34,7 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="/"
+              href="/#solution"
               onClick={close}
               className=""
             >
@@ -43,16 +43,7 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="/"
-              onClick={close}
-              className=""
-            >
-              TOKENOMICS
-            </a>
-          </li>
-          <li>
-            <a
-              href="/"
+              href="/#roadmap"
               onClick={close}
               className=""
             >

@@ -14,7 +14,7 @@ const Footer = () => {
       <ul className="flex items-center max-md:flex-col text-[18px] gap-10 md:mr-10 max-md:mb-10">
           <li>
             <a
-              href="/"
+              href="/#issue"
               className=""
             >
               ISSUES
@@ -22,7 +22,7 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href="/"
+              href="/#solution"
               className=""
             >
               IPDC SOLUTION
@@ -30,15 +30,7 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href="/"
-              className=""
-            >
-              TOKENOMICS
-            </a>
-          </li>
-          <li>
-            <a
-              href="/"
+              href="/#roadmap"
               className=""
             >
               ROADMAP
