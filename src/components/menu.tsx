@@ -11,6 +11,7 @@ import TitleFx from './titles/title-fx';
 import Link from 'next/link';
 import Anime from './anime';
 import gsap from "gsap";
+import { ranking } from '@/app/(index)/page';
 
 const Menu = () => {
     const [NavOpen, setNavOpen] = useState(false);
@@ -78,48 +79,13 @@ const Menu = () => {
                 RANKING
             </p>
             <div className="max-md:pr-14 overflow-auto">
-            <div className="flex flex-col  border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
-                <Link onClick={close} href="/ai" className="flex items-center  relative  duration-150 hover:opacity-75">
-                    <span className={`h-full bg-[#FF5660] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/ai" && "!opacity-100"}`}></span>
-                    <TitleAI rect="md:h-[11.5px] h-[13.5px]" />
-                </Link>
-                <p className="text-[13px] font-hiragino dark:text-white leading-snug">イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない</p>
-            </div>
-            <div className="flex flex-col  border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
-                <Link onClick={close} href="/blockchain" className="flex items-center relative duration-150 hover:opacity-75">
-                    <span className={`h-full bg-[#E445AE] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/blockchain" && "!opacity-100"}`}></span>
-                    <TitleBlockChain rect="md:h-[11.5px] h-[13.5px]" />
-                </Link>
-                <p className="text-[13px] font-hiragino dark:text-white leading-snug">ビットコインに価値がないと言うのなら、人類は皆まともに歩けないと言っているようなものにすぎない</p>
-            </div>
-            <div className="flex flex-col  border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
-            <Link onClick={close} href="/website" className="flex items-center relative duration-150 hover:opacity-75">
-                <span className={`h-full bg-[#7940F3] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/website" && "!opacity-100"}`}></span>
-                <TitleWebSite rect="md:h-[11.5px] h-[13.5px]" />
-            </Link>
-            <p className="text-[13px] font-hiragino dark:text-white leading-snug">イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない</p>
-            </div>
-            <div className="flex flex-col  border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
-            <Link onClick={close} href="/ad" className="flex items-center relative duration-150 hover:opacity-75">
-                <span className={`h-full bg-[#153DCA] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/ad" && "!opacity-100"}`}></span>
-                <TitleAD rect="md:h-[11.5px] h-[13.5px]" />
-            </Link>
-            <p className="text-[13px] font-hiragino dark:text-white leading-snug">広告代理店の見極め方〜失敗の責任を負いたくなければ「大手」に群がれ！成功したければ規模に目を向けるな！〜</p>
-            </div>
-            <div className="flex flex-col border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
-            <Link onClick={close} href="/marketing" className="flex items-center relative duration-150 hover:opacity-75">
-                <span className={`h-full bg-[#1A8CBD] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/marketing" && "!opacity-100"}`}></span>
-                <TitleMarketing rect="md:h-[11.5px] h-[13.5px]" />
-            </Link>
-            <p className="text-[13px] font-hiragino dark:text-white leading-snug">イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない</p>
-            </div>
-            <div className="flex flex-col border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
-            <Link onClick={close} href="/fx" className="flex items-center relative duration-150 hover:opacity-75">
-                <span className={`h-full bg-[#1ABD48] w-[5px] absolute top-0 left-0 md:-left-[13px] opacity-0 ${pathname === "/fx" && "!opacity-100"}`}></span>
-                <TitleFx rect="md:h-[11.5px] h-[13.5px]" />
-            </Link>
-            <p className="text-[13px] font-hiragino dark:text-white leading-snug">イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない</p>
-            </div>
+            {ranking.map((item, index) => (
+                     <div key={index} className="flex flex-col  border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
+                     <Link onClick={close} href={item.link} className="flex items-center  relative  duration-150 hover:opacity-75">
+                         <p className="text-[13px] font-hiragino dark:text-white leading-snug">{item.title}</p>
+                     </Link>
+                 </div>
+                ))}
             </div>
             <div className="absolute md:hidden right-4 bottom-8">
             <p className=" border border-[#C6C6C6] flex-1 text-[24px] font-bold bg-[#F8D0B2] rounded-full py-4 text-black [writing-mode:sideways-lr] [text-orientation:mixed]">

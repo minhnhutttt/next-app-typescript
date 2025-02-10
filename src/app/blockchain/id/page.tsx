@@ -112,7 +112,7 @@ export default function BlockchainSingle() {
                   <br />
                   <ol className="list-inside list-decimal">
                     <li>ビットコインは速い</li>
-                    <li>ビットコインの<span className="hightlight">ボラティリティ</span>は小さい</li>
+                    <li>ビットコインの<button className="font-bold underline xl:hidden" onClick={openModal}>ボラティリティ</button><span className="font-bold underline max-xl:hidden">ボラティリティ</span>は小さい</li>
                     <li>ビットコインの価値を裏付けられる資産がそもそも存在しない</li>
                   </ol>
                   <br />
@@ -219,22 +219,6 @@ export default function BlockchainSingle() {
               </figure>
               <div className="w-[272px] mx-auto dark:text-white bg-white/70 dark:bg-white/30 border border-[#A06778]/[0.7] dark:border-[#996894]/[0.7] p-2.5">
                 <p className="md:text-[13px] text-[15px] border-b border-[#E01652] dark:border-white pb-1 font-semibold">
-                  イーロンマスク
-                </p>
-                <p className="md:text-[12px] text-[14px] py-2.5">
-                  新たな決済サービスを作り出したほか、電気自動車、宇宙開発、太陽光発電などのビジネスで成功を収め、当時没落していたそれらの業界を再興させた。「影の米大統領」の異名を持つピーター・ティールやYouTube創業者のチャド・ハーリーなどと共にペイパルマフィアの一人としても語られる。
-                </p>
-                <div className="flex justify-end">
-                  <a
-                    href="/"
-                    className="text-white/80 text-[16px] px-3 h-6 flex justify-center items-center bg-[#FF5660] rounded-[12px]"
-                  >
-                    more
-                  </a>
-                </div>
-              </div>
-              <div className="w-[272px] mx-auto dark:text-white bg-white/70 dark:bg-white/30 border border-[#A06778]/[0.7] dark:border-[#996894]/[0.7] p-2.5">
-                <p className="md:text-[13px] text-[15px] border-b border-[#E01652] dark:border-white pb-1 font-semibold">
                 ボラティリティ
                 </p>
                 <p className="md:text-[12px] text-[14px] py-2.5">
@@ -256,19 +240,11 @@ export default function BlockchainSingle() {
           <Modal isOpen={isModalOpen} onClose={closeModal}>
             <div className="w-[300px] md:w-[500px] mx-auto dark:text-white bg-white dark:bg-[#666666] border border-[#A06778]/[0.7] dark:border-[#996894]/[0.7] p-2.5">
               <p className="md:text-[17px] text-[15px] font-semibold border-b border-[#E01652] dark:border-white pb-1">
-                イーロンマスク
+              ボラティリティ
               </p>
               <p className="md:text-[16px] text-[14px] py-2.5">
-                新たな決済サービスを作り出したほか、電気自動車、宇宙開発、太陽光発電などのビジネスで成功を収め、当時没落していたそれらの業界を再興させた。「影の米大統領」の異名を持つピーター・ティールやYouTube創業者のチャド・ハーリーなどと共にペイパルマフィアの一人としても語られる。
+              価格や数値の変動性を示す指標。主に金融市場で使用され、値動きの激しさを表現する。
               </p>
-              <div className="flex justify-end">
-                <a
-                  href="/"
-                  className="text-white/80 text-[16px] px-3 h-6 flex justify-center items-center bg-[#FF5660] rounded-[12px]"
-                >
-                  more
-                </a>
-              </div>
             </div>
           </Modal>
         </div>

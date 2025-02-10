@@ -50,6 +50,29 @@ export const dataFx: dataArticle[] = [
   },
 ]
 
+export const ranking: dataArticle[] = [
+  {
+    date: '2024.4.18',
+    title: 'ビットコインに価値がないと言うのなら、人類は皆まともに歩けないと言っているようなものにすぎない',
+    link: '/blockchain/id'
+  },
+  {
+    date: '2024.4.18',
+    title: '広告代理店の見極め方〜失敗の責任を負いたくなければ「大手」に群がれ！成功したければ規模に目を向けるな！〜',
+    link: '/ad/id'
+  },
+  {
+    date: '2024.4.18',
+    title: 'イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない',
+    link: '/fx/id'
+  },
+  {
+    date: '2024.4.18',
+    title: 'イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない',
+    link: '/website/id'
+  },
+]
+
 export default function Home() {
   return (
     <main>
