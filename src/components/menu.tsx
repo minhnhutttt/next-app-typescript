@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { usePathname } from "next/navigation";
 import TitleAI from './titles/title-ai';
 import TitleBlockChain from './titles/title-block-chain';
@@ -11,7 +11,30 @@ import TitleFx from './titles/title-fx';
 import Link from 'next/link';
 import Anime from './anime';
 import gsap from "gsap";
-import { ranking } from '@/app/(index)/page';
+import type { dataArticle } from './article';
+
+export const dataRank: dataArticle[] = [
+    {
+      date: '2024.4.18',
+      title: 'ビットコインに価値がないと言うのなら、人類は皆まともに歩けないと言っているようなものにすぎない',
+      link: '/blockchain/id'
+    },
+    {
+      date: '2024.4.18',
+      title: '広告代理店の見極め方〜失敗の責任を負いたくなければ「大手」に群がれ！成功したければ規模に目を向けるな！〜',
+      link: '/ad/id'
+    },
+    {
+      date: '2024.4.18',
+      title: 'イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない',
+      link: '/fx/id'
+    },
+    {
+      date: '2024.4.18',
+      title: 'イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない',
+      link: '/website/id'
+    },
+  ]
 
 const Menu = () => {
     const [NavOpen, setNavOpen] = useState(false);
@@ -79,7 +102,7 @@ const Menu = () => {
                 RANKING
             </p>
             <div className="max-md:pr-14 overflow-auto">
-            {ranking.map((item, index) => (
+            {dataRank.map((item, index) => (
                      <div key={index} className="flex flex-col  border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4">
                      <Link onClick={close} href={item.link} className="flex items-center  relative  duration-150 hover:opacity-75">
                          <p className="text-[13px] font-hiragino dark:text-white leading-snug">{item.title}</p>
