@@ -1,17 +1,10 @@
-import FAQ from "./components/faq/Faq";
 import Fv from "./components/Fv";
-import Introduction from "./components/Introduction";
-import Mission from "./components/Mission";
-import OurWork from "./components/OurWork";
-import Talk from "./components/Talk";
+import Sections from "./components/Sections";
 export default function Home() {
   return (
-    <main className="relative">
+    <main className="relative bg-[url(/assets/images/bg-gradient.png)] bg-[size:100%_auto] bg-no-repeat">
       <Fv />
-      <Introduction />
-      <OurWork />
-      <FAQ />
-      <Talk />
+      <Sections />
     </main>
   );
 }

@@ -5,7 +5,7 @@ type ScrollContainerPropsType = {
     children: ReactNode;
   };
 export default function ScrollContainer({children}: ScrollContainerPropsType) {
-    useLayoutEffect(()=>{
+  useEffect(()=>{
     ScrollOut({
       once: true,
       threshold: 0.5

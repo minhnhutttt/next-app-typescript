@@ -1,11 +1,10 @@
 const Header = () => {
 
   return (
-    <header className="flex items-center absolute z-[99] left-5 md:left-14 top-5 md:top-12 gap-8">
+    <header className="flex items-center absolute z-[99] left-3 md:left-8 top-5 md:top-12 gap-8">
       <a href="/" className="block hover:opacity-75 duration-150">
-        <img className="max-md:w-[140px]" src="/assets/images/logo.svg" alt="" />
+        <img className="max-md:w-[23px]" src="/assets/images/logo.svg" alt="" />
       </a>
-      <h1 className=""><img className="max-md:w-[110px]" src="/assets/images/recruiting-site.svg" alt="RECRUITING SITE" /></h1>
     </header>
   );
 };
