@@ -81,7 +81,7 @@ body {
 }
 
 .ani-slide-left {
-  translate: -20% 0%;
+  translate: -100% 0%;
   opacity: 0;
 }
 [data-scroll='in'].ani-slide-left {
@@ -93,7 +93,7 @@ body {
 }
 
 .ani-slide-right {
-  translate: 20% 0%;
+  translate: 100% 0%;
   opacity: 0;
 }
 [data-scroll='in'].ani-slide-right {
