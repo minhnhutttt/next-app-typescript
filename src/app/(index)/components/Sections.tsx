@@ -7,7 +7,7 @@ const Sections = () => {
 
   return (
     <section ref={ref} className="relative mt-14 md:mt-[215px] overflow-hidden">
-      <div className="w-full max-w-[1440px] mx-auto">
+      <div className="w-full mx-auto">
         <h3 data-scroll className="ani-slide-bottom text-center text-[30px] font-bold mb-[90px]">ROGYXが選ばれる理由</h3>
         <div className="space-y-[190px]">
         <div className="xl:pr-[173px] md:pr-16 pr-3">

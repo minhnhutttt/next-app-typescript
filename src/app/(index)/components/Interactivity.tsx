@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import Lottie from "lottie-web";
 import lottieRevealPoska from "@/data/lottie-revealPoska";
+import Model from "./Model";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -47,7 +48,7 @@ const WorkItem = ({
   </div>
 );
 
-const OurWork = () => {
+const Interactivity = () => {
   const workContainer = useRef<HTMLDivElement>(null);
   const cloneDrawRef = useRef<HTMLDivElement>(null);
   const animPoskaRef = useRef<any>(null);
@@ -120,48 +121,22 @@ const OurWork = () => {
   }, []);
 
   return (
-    <section className="relative bg-[#DDDDDD] overflow-hidden">
+    <section className="relative overflow-hidden">
       <div ref={workContainer} className="works relative">
         <div className="absolute top-0 inset-x-0 w-screen h-screen flex items-center justify-center">
           <div className="overflow-hidden">
-            <div className="md:text-[50px] text-[32px] px-5 md:px-[100px] mb-10 md:mb-20">OurWork</div>
-            <div className="flex justify-center overflow-hidden relative max-md:mt-12">
-              <div className="whitespace-nowrap space-y-5">
-                <div className="flex gap-5 animate-[scroll-1-3_32s_linear_infinite] font-bold">
-                  <div className="text-[30px] md:text-[60px] text-center">
-                    Coroprate Site Landing Page Coroprate Site Landing Page
-                  </div>
-                  <div className="text-[30px] md:text-[60px] text-center">
-                    Coroprate Site Landing Page Coroprate Site Landing Page
-                  </div>
-                  <div className="text-[30px] md:text-[60px] text-center">
-                    Coroprate Site Landing Page Coroprate Site Landing Page
-                  </div>
-                </div>
-                <div className="flex gap-5 animate-[scroll-1-3-left_32s_linear_infinite] font-bold">
-                  <div className="text-[30px] md:text-[60px] text-center">
-                    Coroprate Site Landing Page Coroprate Site Landing Page
-                  </div>
-                  <div className="text-[30px] md:text-[60px] text-center">
-                    Coroprate Site Landing Page Coroprate Site Landing Page
-                  </div>
-                  <div className="text-[30px] md:text-[60px] text-center">
-                    Coroprate Site Landing Page Coroprate Site Landing Page
-                  </div>
-                </div>
-                <div className="flex gap-5 animate-[scroll-1-3_32s_linear_infinite] font-bold">
-                  <div className="text-[30px] md:text-[60px] text-center">
-                    Coroprate Site Landing Page Coroprate Site Landing Page
-                  </div>
-                  <div className="text-[30px] md:text-[60px] text-center">
-                    Coroprate Site Landing Page Coroprate Site Landing Page
-                  </div>
-                  <div className="text-[30px] md:text-[60px] text-center">
-                    Coroprate Site Landing Page Coroprate Site Landing Page
-                  </div>
-                </div>
-              </div>
+            <div className="flex justify-center relative flex-col">
+                <p data-scroll className="ani-slide-left aspect-[194/82] bg-[url('/assets/images/bubble.svg')] bg-cover bg-no-repeat w-[49.744vw] md:w-[388px] md:text-[28px] text-[3.59vw] font-bold text-center md:pt-8 pt-[4vw]">
+                ここまで読んでくれた <br />
+                あなたへ！
+                </p>
+            <h3 data-scroll className="ani-slide-bottom md:text-[56px] text-[7.179vw] font-bold text-center">
+            インタラクティブを <br className="md:hidden" />
+            体感してみよう！
+            </h3>
+            <p data-scroll className="ani-slide-bottom text-center md:text-[30px] text-[3.846vw] md:mt-5 mt-[5.128vw]">マウスを入れると…おっ！おもちゃが追従する！</p>
             </div>
+            
           </div>
         </div>
         <div className="w-screen bg-white [clip-path:url('#poskaClipPath')]">
@@ -197,21 +172,8 @@ const OurWork = () => {
           <div ref={cloneDrawRef} id="revealPoskaProxy" className="hidden">
             
           </div>
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="grid lg:grid-cols-2 w-full max-w-[1440px] mx-auto max-lg:divide-y lg:divide-x divide-black">
-            <WorkItem
-              title="ROGYXでの働き方"
-              sub="ROGYX社員の一日"
-              content="ROGYXの社員がどのような1日を過ごしているのか、その働き方をご紹介します。"
-              link="/"
-            />
-            <WorkItem
-              title="ROGYXが求める人材"
-              sub="デザイナーとフロントエンドエンジニア"
-              content="クリエイティブな発想力と柔軟な対応力を持つ、デザイナーとフロントエンドエンジニアを求めています。"
-              link="/"
-            />
-          </div>
+        <div className="min-h-screen h-[110vh] flex items-center justify-center">
+          <Model />
           </div>
         </div>
       </div>
@@ -219,4 +181,4 @@ const OurWork = () => {
   );
 };
 
-export default OurWork;
+export default Interactivity;

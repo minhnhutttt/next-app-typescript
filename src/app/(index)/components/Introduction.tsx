@@ -15,39 +15,38 @@ const Introduction = () => {
     const ref = useScrollAnimations();
 
     const containerRef = useRef<HTMLDivElement>(null)
-    useEffect(() => {
+    useLayoutEffect(() => {
         Splitting();
-        let ctx = gsap.context(() => {
-            const chars = document.querySelectorAll(".char");
-            gsap.set(chars, {
-                display: 'inline-block',
-                opacity: 0.4,
-            });
-            const tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top top",
-                end: "bottom top",
-                pin: true,
-                scrub: 0.9,
-              },
-            });
-            tl.to(chars, {
-              opacity: 1,
-              stagger: 1,
-              duration: 1,
-            }, 0.1);
-          }, [containerRef]);
-      
-          return () => ctx.revert();
-        
+          const chars = document.querySelectorAll(".char");
+              gsap.set(chars, {
+                  display: 'inline-block',
+                  opacity: 0.4,
+              });
+              const tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: containerRef.current,
+                  start: "top top",
+                  end: "bottom top",
+                  pin: true,
+                  scrub: 0.9,
+                },
+              });
+              tl.to(chars, {
+                opacity: 1,
+                stagger: 1,
+                duration: 1,
+              }, 0.1);
+              return () => {
+                tl.scrollTrigger?.refresh();
+                tl.kill();
+              };
       }, []);
     
     return (
-        <section ref={ref} id="introduction" className="relative overflow-hidden md:px-10 px-5 md:pt-[100px] pt-16">
+        <section ref={ref} id="introduction" className="relative overflow-hidden md:px-10 px-5 ">
             <div className="w-full max-w-[1282px] mx-auto">
-                <div ref={containerRef} className="md:mt-[160px] mt-[100px] h-screen flex flex-col justify-center items-center">
-                    <h4 data-splitting className="md:text-[44px] text-[24px] text-center font-bold leading-[1.2]">
+                <div ref={containerRef} className="h-screen flex flex-col justify-center items-center">
+                    <h4 data-splitting className="md:text-[44px] text-[6.154vw] text-center font-bold leading-[1.3]">
                     「作るだけ」の時代は終わった。<br />
                     <br />
                     ROGYXは<br />

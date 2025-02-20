@@ -4,52 +4,30 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const data = [
   {
-    image: '/assets/images/case-img-01.png',
-    title: 'Corporate Implementation',
+    title: '1. 実は…結構仲良しなんです！',
     content: (<>
-    Organizations can use CIP Coin to foster an entirely new "culture of expressing gratitude" and enhance trust relationships with employees.
+      ROGYXでは、フラットでオープンなコミュニケーションを大切にし、誰でも気軽に相談しやすい環境を整えています。<br />
+      社員は30代を中心としたメンバーで、経験を活かしながらお互いにサポートし合える関係性が魅力です。<br />
+      達成感や挑戦の楽しさを共有しながら、ともにスキルを磨き合える仲間がいることが、ROGYXの働きやすさにつながっています。
     </>),
-    items: ['Internal recognition system','Performance evaluation','Corporate Social Responsibility (CSR)']
+    color: '#835050'
   },
   {
-    image: '/assets/images/case-img-02.png',
-    title: (<>Educational Support and <br />Skill Development</>),
+    title: '2. 仕事に没頭できる環境！',
     content: (<>
-    CIP Coin has the potential to revolutionize educational support and peer-to-peer skill sharing.
+      集中したいときは黙々と作業に取り組み、アイデアを出したいときは活発なディスカッションができる、メリハリのある職場です。<br />
+      スマートフォンやPCの支給はもちろん、FigmaやAdobe製品、AIなどの最新ツールを思う存分活用できるため、クリエイティブな作業に最適な環境が整っています。
     </>),
-    items: ['Micro-scholarships','Peer-to-peer learning support:','Skill sharing platform']
+    color: '#4B74A6'
   },
   {
-    image: '/assets/images/case-img-03.png',
-    title: (<>Support for Creator Economy</>),
+    title: '3. 充実した福利厚生！',
     content: (<>
-    Content creators can benefit from CIP Coin's seamless micro-donation functionality.
+      社員全員が快適に働けるよう、ウォーターサーバー完備や常備お菓子の食べ放題など、ユニークな福利厚生を用意しています。また、有給休暇も取得しやすく、ワークライフバランスを大切にできる制度が整っています。<br />
+      ライフステージの変化にも柔軟に対応し、安心して長く働ける環境を提供しています。
     </>),
-    items: ['Direct fan support','Subscription model','Collaborative projects']
+    color: '#456B43'
   },
-  {
-    image: '/assets/images/case-img-04.png',
-    title: (<>Revitalizing Local Communities</>),
-    content: (<>
-    Using CIP Coin can strengthen social bonds in local communities and support community revitalization.
-    </>),
-    items: ['Integration with local currencies','Funding for community projects','Recognition of social services']
-  }
-]
-
-const dataLocal = [
-  {
-    image: '/assets/images/local-img-01.png',
-    text: 'Integration with local currencies'
-  },
-  {
-    image: '/assets/images/local-img-02.png',
-    text: 'Funding for community projects'
-  },
-  {
-    image: '/assets/images/local-img-03.png',
-    text: 'Recognition of social services'
-  }
 ]
 
 const Cases = () => {
@@ -57,20 +35,14 @@ const Cases = () => {
   return (
     <section ref={ref} className="relative md:pt-[130px] pt-[100px] z-10 ">
       <div className="w-full">
-        <h3 className="text-center md:text-[64px] text-[32px] font-bold leading-none">Use Cases and Potential Applications</h3>
-        <div className="w-full relative border-y border-[#777] md:mt-16 mt-10">
+        <div className="w-full relative md:mt-16 mt-10">
           {data.map((item,index) => (
-            <div className="w-full h-[1040px] last:h-[520px] last:mb-0 -mb-[520px] block relative border-y border-[#777] bg-[#FFFAFA]" key={index}>
-              <div className="w-full h-[520px] flex max-md:flex-col max-md:items-center md:justify-between gap-5 sticky top-0 overflow-hidden">
-                <div className="fade-up max-md:pr-5 pl-5 pt-[15px]">
-                  <h5 className="md:text-[48px] text-[28px] font-bold leading-[1.3]">{item.title}</h5>
-                  <div className="md:pl-[30px] w-full max-w-[542px] mt-5">
-                    <p className="md:text-[22px] text-[18px] leading-none">{item.content}</p>
-                    <div className="md:text-[18px] text-[16px] leading-none space-y-5 md:mt-10 mt-7">
-                      {item.items.map((i, index)=> (
-                        <p className="" key={index}>{i}</p>
-                      ))}
-                    </div>
+            <div className="w-full text-white h-[1000px] last:h-[500px] last:mb-0 -mb-[500px] block relative" style={{backgroundColor: item.color}} key={index}>
+              <div className="w-full h-[500px] max-w-[1040px] mx-auto flex flex-col items-center justify-center sticky top-0 overflow-hidden">
+                <div className="p-5">
+                  <h5 className="md:text-[24px] text-center text-[28px] font-bold">{item.title}</h5>
+                  <div className="w-full max-w-[800px] mt-5 mx-auto">
+                    <p className="md:text-[20px] text-[16px]">{item.content}</p>
                   </div>
                 </div>
               </div>
