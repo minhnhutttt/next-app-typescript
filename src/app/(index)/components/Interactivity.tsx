@@ -1,7 +1,7 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import Lottie from "lottie-web";
 import lottieRevealPoska from "@/data/lottie-revealPoska";
 import Model from "./Model";
@@ -54,7 +54,7 @@ const Interactivity = () => {
   const animPoskaRef = useRef<any>(null);
   const drawRef = useRef<SVGPathElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (cloneDrawRef.current) {
       const animPoska = Lottie.loadAnimation({
         container: cloneDrawRef.current,
@@ -113,16 +113,16 @@ const Interactivity = () => {
       });
 
       return () => {
+        animPoska.destroy();
         tl.scrollTrigger?.refresh();
         tl.kill();
-        animPoska.destroy();
       };
     }
   }, []);
 
   return (
     <section className="relative overflow-hidden">
-      <div ref={workContainer} className="works relative">
+      <div ref={workContainer} className="works relative h-[110vh] ">
         <div className="absolute top-0 inset-x-0 w-screen h-screen flex items-center justify-center">
           <div className="overflow-hidden">
             <div className="flex justify-center relative flex-col">
