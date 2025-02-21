@@ -126,15 +126,15 @@ const Interactivity = () => {
         <div className="absolute top-0 inset-x-0 w-screen h-screen flex items-center justify-center">
           <div className="overflow-hidden">
             <div className="flex justify-center relative flex-col">
-                <p data-scroll className="ani-slide-left aspect-[194/82] bg-[url('/assets/images/bubble.svg')] bg-cover bg-no-repeat w-[49.744vw] md:w-[388px] md:text-[28px] text-[3.59vw] font-bold text-center md:pt-8 pt-[4vw]">
+                <p className=" aspect-[194/82] bg-[url('/assets/images/bubble.svg')] bg-cover bg-no-repeat w-[49.744vw] md:w-[388px] md:text-[28px] text-[3.59vw] font-bold text-center md:pt-8 pt-[4vw]">
                 ここまで読んでくれた <br />
                 あなたへ！
                 </p>
-            <h3 data-scroll className="ani-slide-bottom md:text-[56px] text-[7.179vw] font-bold text-center">
+            <h3 className=" md:text-[56px] text-[7.179vw] font-bold text-center">
             インタラクティブを <br className="md:hidden" />
             体感してみよう！
             </h3>
-            <p data-scroll className="ani-slide-bottom text-center md:text-[30px] text-[3.846vw] md:mt-5 mt-[5.128vw]">マウスを入れると…おっ！おもちゃが追従する！</p>
+            <p className="text-center md:text-[30px] text-[3.846vw] md:mt-5 mt-[5.128vw]">マウスを入れると…おっ！おもちゃが追従する！</p>
             </div>
             
           </div>

@@ -141,6 +141,18 @@ body {
   -webkit-transition-timing-function: cubic-bezier(0.06, 0.78, 0.65, 1.48);
   transition-timing-function: cubic-bezier(0.06, 0.78, 0.65, 1.48);
 }
+.ani-fadein {
+  opacity: 0;
+}
+[data-scroll='in'].ani-fadein {
+  translate: none !important;
+  scale: 1 !important;
+  opacity: 1 !important;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transition-timing-function: cubic-bezier(0.06, 0.78, 0.65, 1.48);
+  transition-timing-function: cubic-bezier(0.06, 0.78, 0.65, 1.48);
+}
 
 .ani-fade-rotate-r {
   translate: 0 10%;
