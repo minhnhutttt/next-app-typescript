@@ -35,7 +35,7 @@ const Cases = () => {
   return (
     <section ref={ref} className="relative md:pt-[130px] pt-[100px] z-10 ">
       <div className="w-full">
-        <div className="text-center md:text-[48px] text-[24px] font-bold">ROGYXってこんな会社</div>
+        <div data-scroll className="ani-zoom-out text-center md:text-[48px] text-[24px] font-bold">ROGYXってこんな会社</div>
         <div className="w-full relative md:mt-10 mt-8">
           {data.map((item,index) => (
             <div className="w-full text-white h-[1000px] last:h-[500px] last:mb-0 -mb-[500px] block relative" style={{backgroundColor: item.color}} key={index}>

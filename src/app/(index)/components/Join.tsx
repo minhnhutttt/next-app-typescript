@@ -39,16 +39,16 @@ const Join = () => {
                   scrub: 1,
                 },
               });
-              tl.to(charScroll, {
+              tl.to(charScroll02, {
                 opacity: 1,
                 stagger: 1,
                 duration: 2,
               }, 0.1)
-              .to(charScroll02, {
+              .to(charScroll, {
                 opacity: 1,
                 stagger: 1,
                 duration: 2,
-              }, '<');
+              });
               return () => {
                 tl.scrollTrigger?.refresh();
                 tl.kill();
