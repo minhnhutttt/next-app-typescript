@@ -134,7 +134,7 @@ const Interactivity = () => {
             インタラクティブを <br className="md:hidden" />
             体感してみよう！
             </h3>
-            <p className="text-center md:text-[30px] text-[3.846vw] md:mt-5 mt-[5.128vw]">マウスを入れると…おっ！おもちゃが追従する！</p>
+            <p className="text-center md:text-[30px] text-[3.846vw] md:mt-5 mt-[5.128vw]">スクロールするとアヒルが現れて<br />マウスを動かすと…おっ！アヒルが追従する！</p>
             </div>
             
           </div>
