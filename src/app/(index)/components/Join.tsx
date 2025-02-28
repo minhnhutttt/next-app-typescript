@@ -73,7 +73,7 @@ const Join = () => {
                 <br />
                 美しいデザインや <br />
                 便利なシステムを通じて <br />
-                暮らしとビジネスを <br className="max-md:hidden" />
+                暮らしとビジネスを<br className="max-md:hidden" />
                 より良い未来へ導くことです
                 <br />
                 個々のスキルとアイデアを結集し

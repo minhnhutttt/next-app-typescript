@@ -59,7 +59,7 @@ const Introduction = () => {
         <section ref={ref} id="introduction" className="relative overflow-hidden md:px-10 px-5 ">
             <div className="w-full max-w-[1282px] mx-auto">
                 <div ref={containerRef} className="h-screen flex flex-col justify-center items-center">
-                    <h4 ref={charScrollRef} data-splitting className="md:text-[44px] text-[6.154vw] text-center font-bold leading-[1.3]">
+                    <h4 ref={charScrollRef} data-splitting className="md:text-[44px] text-[5.7vw] text-center font-bold leading-[1.3]">
                     「作るだけ」の時代は終わった。<br />
                     <br />
                     ROGYXは<br />
