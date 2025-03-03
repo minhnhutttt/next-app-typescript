@@ -6,7 +6,7 @@ const Banner = () => {
   const ref = useScrollAnimations();
 
   return (
-    <section ref={ref} className="relative overflow-hidden my-[100px] max-md:pb-[4%]">
+    <section ref={ref} className="relative overflow-hidden mt-20 md:mt-[100px] md:mb-12 max-md:pb-[4%] mb-10">
       <div>
         <img className="max-md:hidden w-full max-w-none" src="/assets/images/wow.png" alt="" />
         <img className="md:hidden w-full max-w-none" src="/assets/images/wow-sp.png" alt="" />

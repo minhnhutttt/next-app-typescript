@@ -28,11 +28,11 @@ const Sections = () => {
                 </div>
                 <div className="max-md:right-[-24px] md:mr-[-84px] md:mt-[-36px] mt-[-50px] max-md:w-[calc(100%+12px)] max-xl:w-2/5 max-lg:w-1/2 relative">
                   <img data-scroll className="ani-slide-right w-full max-w-none" src="/assets/images/item-img-01.png" alt="" />
-                  <p data-scroll className="ani-slide-top md:hidden absolute bottom-0 pl-1.5"><img src="/assets/images/item-text-01-sp.png" alt="Interactive" /></p>
+                  <p data-scroll className="ani-slide-top md:hidden absolute bottom-0 pl-1.5"><img src="/assets/images/item-text-01-sp.svg" alt="Interactive" /></p>
                 </div>
               </div>
               <div data-scroll className="ani-slide-top flex justify-end pr-20 pt-16 max-md:hidden">
-                <p><img src="/assets/images/item-text-01.png" alt="Interactive" /></p>
+                <p><img className="opacity-[0.72]" src="/assets/images/item-text-01.svg" alt="Interactive" /></p>
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@ const Sections = () => {
               <div className="flex max-md:flex-col md:px-5 max-md:pb-3">
               <div className="max-md:left-[-32px] md:ml-[-84px] md:mt-[-36px] mt-[-50px] max-md:w-[calc(100%+12px)] max-xl:w-2/5 max-lg:w-1/2 relative">
                   <img data-scroll className="ani-slide-left w-full max-w-none" src="/assets/images/item-img-02.png" alt="" />
-                  <p data-scroll className="ani-slide-top md:hidden absolute bottom-0 right-10 pr-1.5"><img src="/assets/images/item-text-02-sp.png" alt="Speed&Quality" /></p>
+                  <p data-scroll className="ani-slide-top md:hidden absolute bottom-0 right-10 pr-1.5"><img src="/assets/images/item-text-02-sp.svg" alt="Speed&Quality" /></p>
                 </div>
                 <div className="flex-1 flex flex-col md:items-center mt-2 md:mt-[60px] max-md:px-7">
                   <p data-scroll className="ani-slide-right md:text-center text-[5.128vw] md:text-[24px] xl:text-[2vw] font-bold text-white flex"><span>2.</span><span>スピードとクオリティを両立</span></p>
@@ -64,7 +64,7 @@ const Sections = () => {
                 
               </div>
               <div data-scroll className="ani-slide-top flex justify-end pr-20 pt-16 max-md:hidden">
-                <p className="-mb-5"><img src="/assets/images/item-text-02.png" alt="Speed&Quality" /></p>
+                <p className="-mb-5 opacity-[0.72]"><img src="/assets/images/item-text-02.svg" alt="Speed&Quality" /></p>
               </div>
             </div>
           </div>
@@ -88,11 +88,11 @@ const Sections = () => {
                 </div>
                 <div className="max-md:right-[-24px] md:mr-[-84px] md:mt-[-36px] mt-[-50px] max-md:w-[calc(100%+12px)] max-xl:w-2/5 max-lg:w-1/2 relative">
                   <img data-scroll className="ani-slide-right w-full max-w-none" src="/assets/images/item-img-03.png" alt="" />
-                  <p data-scroll className="ani-slide-top md:hidden absolute bottom-0 pl-1.5"><img src="/assets/images/item-text-03-sp.png" alt="Interactive" /></p>
+                  <p data-scroll className="ani-slide-top md:hidden absolute bottom-0 pl-1.5"><img src="/assets/images/item-text-03-sp.svg" alt="Interactive" /></p>
                 </div>
               </div>
               <div data-scroll className="ani-slide-top flex justify-end pr-20 pt-16 max-md:hidden px-4">
-                <p><img src="/assets/images/item-text-03.png" alt="Interactive" /></p>
+                <p><img src="/assets/images/item-text-03.svg" alt="Interactive" /></p>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ const Sections = () => {
               <div className="flex max-md:flex-col md:px-5 max-md:pb-3">
               <div className="max-md:left-[-32px] md:ml-[-84px] md:mt-[-36px] mt-[-50px] max-md:w-[calc(100%+12px)] max-xl:w-2/5 max-lg:w-1/2 relative">
                   <img data-scroll className="ani-slide-left w-full max-w-none" src="/assets/images/item-img-04.png" alt="" />
-                  <p data-scroll className="ani-slide-top md:hidden absolute bottom-0 right-10 pr-1.5"><img src="/assets/images/item-text-04-sp.png" alt="Speed&Quality" /></p>
+                  <p data-scroll className="ani-slide-top md:hidden absolute bottom-0 right-10 pr-1.5"><img src="/assets/images/item-text-04-sp.svg" alt="Speed&Quality" /></p>
                 </div>
                 <div className="flex-1 flex flex-col md:items-center mt-2 md:mt-[60px] max-md:px-7">
                   <p data-scroll className="ani-slide-right md:text-center text-[5.128vw] md:text-[24px] xl:text-[2vw] font-bold text-white flex"><span>4.</span><span>最新技術を積極的に採用</span></p>
@@ -123,7 +123,7 @@ const Sections = () => {
                 
               </div>
               <div data-scroll className="ani-slide-top flex justify-end pr-20 pt-16 max-md:hidden">
-                <p className="-mb-5"><img src="/assets/images/item-text-04.png" alt="Speed&Quality" /></p>
+                <p className="-mb-5"><img src="/assets/images/item-text-04.svg" alt="Speed&Quality" /></p>
               </div>
             </div>
           </div>

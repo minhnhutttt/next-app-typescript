@@ -172,7 +172,7 @@ const Interactivity = () => {
           <div ref={cloneDrawRef} id="revealPoskaProxy" className="hidden">
             
           </div>
-        <div className="min-h-screen h-[110vh] flex items-center justify-center">
+        <div className="min-h-screen h-[100vh] flex items-center justify-center">
           <Model />
           </div>
         </div>

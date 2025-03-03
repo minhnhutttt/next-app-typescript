@@ -39,8 +39,8 @@ const Scene: React.FC<SceneProps> = ({}) => {
 
 export default function Model() {
   return (
-    <div className="h-screen w-full">
-      <div className="h-[90%] w-[90%] mx-auto">
+    <div className="h-screen w-full flex items-center justify-center">
+      <div className="md:h-[90vh] max-md:aspect-square md:w-[90%] w-[70%] mx-auto  pointer-events-none">
         <Canvas gl={{ toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.5 }}>
           <Suspense fallback={null}>
             <ambientLight intensity={4} />
