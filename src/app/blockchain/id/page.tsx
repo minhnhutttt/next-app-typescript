@@ -112,7 +112,7 @@ export default function BlockchainSingle() {
                   <br />
                   <ol className="list-inside list-decimal">
                     <li>ビットコインは速い</li>
-                    <li>ビットコインの<button className="font-bold underline xl:hidden" onClick={openModal}>ボラティリティ</button><span className="font-bold underline max-xl:hidden">ボラティリティ</span>は小さい</li>
+                    <li>ビットコインの<button className="font-bold border-b-[2px] border-dashed border-[#F8D0B2] xl:hidden leading-none" onClick={openModal}>ボラティリティ</button><span className="font-bold border-b-[2px] leading-none border-dashed border-[#F8D0B2] max-xl:hidden">ボラティリティ</span>は小さい</li>
                     <li>ビットコインの価値を裏付けられる資産がそもそも存在しない</li>
                   </ol>
                   <br />
