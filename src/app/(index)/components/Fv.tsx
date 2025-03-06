@@ -114,7 +114,7 @@ const Fv = () => {
 
   return (
     <section ref={ref} className="relative">
-      <div className="h-[500px] md:h-[695px] bg-top md:bg-[size:100%_auto] bg-[url(/assets/images/fv.png)] bg-no-repeat">
+      <div className="h-[500px] md:h-[695px] bg-bottom md:bg-cover bg-[url(/assets/images/fv.png)] bg-no-repeat">
         <div className="h-full flex justify-center items-center relative">
           <div className="md:hidden w-full h-full">
             <svg
