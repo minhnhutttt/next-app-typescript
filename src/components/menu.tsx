@@ -133,13 +133,13 @@ const Menu = () => {
         <div className="flex items-center gap-2 pr-3">
           <button
             onClick={() => setTab(0)}
-            className={`md:hidden pt-6 pb-[18px] px-[5px] border-b-4  flex-1 text-[18px] text-center font-bold italic text-[#464646] dark:text-[#C6C6C6] ${tab === 0 ? 'border-[#464646] dark:border-[#C6C6C6]' : ''}`}
+            className={`md:hidden pt-6 pb-[18px] px-[5px] border-b-4  flex-1 text-[18px] text-center font-bold italic text-[#464646] dark:text-[#C6C6C6] ${tab === 0 ? 'border-[#464646] dark:border-[#C6C6C6]' : 'border-transparent'}`}
           >
             RANKING
           </button>
           <button
             onClick={() => setTab(1)}
-            className={`md:hidden pt-6 pb-[18px] px-[5px] border-b-4  flex-1 text-[18px] text-center font-bold italic text-[#464646] dark:text-[#C6C6C6] ${tab !== 0 ? 'border-[#464646] dark:border-[#C6C6C6]' : ''}`}
+            className={`md:hidden pt-6 pb-[18px] px-[5px] border-b-4  flex-1 text-[18px] text-center font-bold italic text-[#464646] dark:text-[#C6C6C6] ${tab !== 0 ? 'border-[#464646] dark:border-[#C6C6C6]' : 'border-transparent'}`}
           >
             CATEGORY
           </button>
