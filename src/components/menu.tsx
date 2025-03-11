@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import TitleAI from "./titles/title-ai";
 import TitleBlockChain from "./titles/title-block-chain";
@@ -12,6 +12,8 @@ import Link from "next/link";
 import Anime from "./anime";
 import gsap from "gsap";
 import type { dataArticle } from "./article";
+import LanguageDropdown from "./languageDropdown";
+import { useTheme } from "next-themes";
 
 export const dataRank: dataArticle[] = [
   {
@@ -44,6 +46,12 @@ const Menu = () => {
   const [NavOpen, setNavOpen] = useState(false);
   const [tab, setTab] = useState(0);
   const pathname = usePathname();
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  
+    useEffect(() => {
+      setMounted(true);
+    }, []);
   const close = useCallback(() => {
     if (!NavOpen) {
       closeExpand();
@@ -74,9 +82,64 @@ const Menu = () => {
       setNavOpen(true);
     }
   };
+  if (!mounted) {
+    return null;
+  }
 
   return (
-    <div className="md:mt-12 md:pt-5 w-full md:w-[250px]">
+    <div className="md:mt-12 md:pt-5 w-full md:w-[250px] relative">
+      <div className="fixed right-0 top-0 px-0 md:hidden z-[99] flex">
+        <LanguageDropdown />
+
+        <button
+          onClick={() =>
+            resolvedTheme === "dark" ? setTheme("light") : setTheme("dark")
+          }
+          className={`flex w-[80px]  items-center justify-center h-8 pr-2 pl-1 md:px-3 max-md:rounded-l-none  max-md:border-l-0 rounded-[20px] text-white/60 border border-[#CFCFCF] text-[14px] text-helvetica ${
+            resolvedTheme === "dark" ? "bg-[#EF9B1D]" : "bg-[#2B3E81]"
+          }`}
+        >
+          <p className="max-md:hidden">
+            {resolvedTheme === "dark" ? "Sun mode" : "Night Shift"}
+          </p>
+          <span className="md:hidden">
+            {resolvedTheme === "dark" ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="15"
+                viewBox="0 0 16 15"
+                fill="none"
+              >
+                <g clipPath="url(#clip0_840_8559)">
+                  <path
+                    d="M8 0L10.4725 4.93759L16 5.73L12.0005 9.5731L12.944 15L8 12.4376L3.05601 15L4.00052 9.5731L0 5.73L5.52748 4.93759L8 0Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_840_8559">
+                    <rect width="16" height="15" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            )}
+          </span>
+        </button>
+      </div>
       <div className="px-2">
         <div className="md:hidden">
           <div className="px-2 pt-5 pb-4">
@@ -95,8 +158,7 @@ const Menu = () => {
           </div>
           <span className="block h-0.5 bg-[#464646] dark:bg-[#C6C6C6]"></span>
         </div>
-        <div className="flex justify-center max-md:py-10">
-        </div>
+        <div className="flex justify-center max-md:py-10"></div>
         <div className="max-md:hidden">
           <div className="px-2 pt-5 pb-2.5">
             <a href="/">
@@ -133,13 +195,21 @@ const Menu = () => {
         <div className="flex items-center gap-2 pr-3">
           <button
             onClick={() => setTab(0)}
-            className={`md:hidden pt-6 pb-[18px] px-[5px] border-b-4  flex-1 text-[18px] text-center font-bold italic text-[#464646] dark:text-[#C6C6C6] ${tab === 0 ? 'border-[#464646] dark:border-[#C6C6C6]' : 'border-transparent'}`}
+            className={`md:hidden pt-6 pb-[18px] px-[5px] border-b-4  flex-1 text-[18px] text-center font-bold italic text-[#464646] dark:text-[#C6C6C6] ${
+              tab === 0
+                ? "border-[#464646] dark:border-[#C6C6C6]"
+                : "border-transparent"
+            }`}
           >
             RANKING
           </button>
           <button
             onClick={() => setTab(1)}
-            className={`md:hidden pt-6 pb-[18px] px-[5px] border-b-4  flex-1 text-[18px] text-center font-bold italic text-[#464646] dark:text-[#C6C6C6] ${tab !== 0 ? 'border-[#464646] dark:border-[#C6C6C6]' : 'border-transparent'}`}
+            className={`md:hidden pt-6 pb-[18px] px-[5px] border-b-4  flex-1 text-[18px] text-center font-bold italic text-[#464646] dark:text-[#C6C6C6] ${
+              tab !== 0
+                ? "border-[#464646] dark:border-[#C6C6C6]"
+                : "border-transparent"
+            }`}
           >
             CATEGORY
           </button>

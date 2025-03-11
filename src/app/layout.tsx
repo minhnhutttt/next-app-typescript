@@ -22,7 +22,7 @@ export default function RootLayout({
         <Provider>
             <div className="flex">
               <div className="flex">
-                <div className="w-10 md:w-11 flex items-center pl-2 md:pl-4 relative">
+                <div className="w-10 md:w-11 flex items-center pl-2 md:pl-4 relative max-md:hidden">
                   <figure className="max-md:hidden dark:hidden">
                     <img src="/assets/images/ardorex-blog-vertical.png" alt="" />
                   </figure>
@@ -33,6 +33,7 @@ export default function RootLayout({
                   <span className="fixed max-md:hidden w-px top-0 left-11 h-full bottom-0 bg-[#989898] dark:bg-white"></span>
                 </div>
               </div>
+              <span className="w-[2px] md:hidden absolute left-0 h-full bg-[linear-gradient(40deg,_rgba(200,200,141,1)_0%,_rgba(175,34,227,1)_65%,_rgba(248,183,76,1)_100%)]"></span>
               <div className="flex-1 flex max-md:flex-col">
                 <div className="flex max-md:w-full top-0 left-0">
                   <Menu />

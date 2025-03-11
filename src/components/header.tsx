@@ -35,7 +35,7 @@ const Header = () => {
 
 
   return (
-    <header className="flex md:items-center md:justify-end max-md:flex-col md:px-4 h-full md:h-12 z-40 gap-9 md:gap-1 border-b border-dashed border-black/50 dark:border-white absolute top-0 left-0 md:inset-x-0 max-md:pt-10">
+    <header className="flex md:items-center md:justify-end max-md:flex-col md:px-4 h-full md:h-12 z-40 gap-9 md:gap-1 border-b border-dashed border-black/50 dark:border-white absolute top-0 left-0 md:inset-x-0 max-md:pt-10 max-md:hidden">
       <button
         className="flex items-center justify-center h-7 pr-2 pl-1 md:px-3 max-md:rounded-l-none max-md:border-l-0 rounded-[14px] bg-white border border-[#CFCFCF] text-[14px] text-helvetica"
       >
