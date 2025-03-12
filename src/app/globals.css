@@ -18,39 +18,73 @@ body {
   overflow: hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  height: 100vh;
-  width: 100vw;
+.btn-line-top-l {
+  transform: scaleX(1);
+  transition: transform var(--duration) var(--ease-out);
+  transition-delay: var(--duration)
 }
 
-/* Canvas specific styles */
-.webgl {
-  position: fixed;
-  top: 0;
-  left: 0;
-  outline: none;
-  z-index: 1;
+.btn-line-top-r,.btn:hover .btn-line-top-l {
+  transform: scaleX(0);
+  transition: transform var(--duration) var(--ease-in);
+  transition-delay: 0s
 }
 
-/* Loading styles */
-.loading {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  color: white;
-  font-size: 1.5rem;
-  z-index: 100;
+.btn:hover .btn-line-top-r {
+  transform: scaleX(1)
 }
+
+.btn-line-side-l,.btn:hover .btn-line-top-r {
+  transition: transform var(--duration) var(--ease-out);
+  transition-delay: var(--duration)
+}
+
+.btn-line-side-l {
+  transform: translateY(calc(-100% + 1.2rem))
+}
+
+.btn:hover .btn-line-side-l {
+  transform: translateY(calc(100% - 1.2rem));
+  transition: transform var(--duration) var(--ease-in);
+  transition-delay: 0s
+}
+
+.btn-line-side-r {
+  transform: translateY(calc(100% - 1.2rem));
+  transition: transform var(--duration) var(--ease-out);
+  transition-delay: var(--duration)
+}
+
+.btn:hover .btn-line-side-r {
+  transform: translateY(calc(-100% + 1.2rem))
+}
+
+.btn-line-bottom-l,.btn:hover .btn-line-side-r {
+  transition: transform var(--duration) var(--ease-in);
+  transition-delay: 0s
+}
+
+.btn-line-bottom-l {
+  transform: scaleX(0)
+}
+
+.btn-line-bottom-r,.btn:hover .btn-line-bottom-l {
+  transform: scaleX(1);
+  transition: transform var(--duration) var(--ease-out);
+  transition-delay: var(--duration)
+}
+
+.btn:hover .btn-line-bottom-r {
+  transform: scaleX(0);
+  transition: transform var(--duration) var(--ease-in);
+  transition-delay: 0s
+}
+
+.btn.router-link-exact-active {
+  pointer-events: none
+}
+
+.btn.router-link-exact-active:before {
+  transform: scale(1)
+}
+
