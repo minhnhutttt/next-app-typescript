@@ -15,9 +15,6 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ isLoading }) => {
         <div className="mb-6">
           <img className="w-[200px] mx-auto" src="images/logo.svg" alt="Logo" />
         </div>
-        <div className="relative w-64 h-2 bg-gray-800 rounded-full overflow-hidden">
-          <div className="absolute top-0 left-0 h-full bg-[#D8C115] animate-pulse rounded-full" style={{ width: '100%' }}></div>
-        </div>
         <p className="text-white mt-4 uppercase text-sm tracking-wider">Loading...</p>
       </div>
     </div>

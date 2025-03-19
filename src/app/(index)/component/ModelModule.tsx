@@ -290,5 +290,5 @@ const ModelModule: React.FC<ModelModuleProps> = ({ modelPath }) => {
 
   return null; // Component này không render gì, chỉ thêm objects vào scene
 };
-
+ModelModule.displayName = 'ModelModule';
 export default ModelModule;

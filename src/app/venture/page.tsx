@@ -1,30 +1,92 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import ModularScene from "./component/ModularScene";
 import TextureModule from "./component/TextureModule";
 import ModelModule from "./component/ModelModule";
 import LoadingScreen from "../components/LoadingScreen";
+import ModelScroller from "./component/ModelScroller"; // Import the new ModelScroller
+// @ts-ignore
+import gsap from 'gsap';
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  // Model paths - you can expand this array with more models
+  const modelPaths = [
+    "/models/letters_simple_a4.obj",
+    "/models/letters_simple_a4.obj",
+    "/models/letters_simple_a4.obj",
+  ];
   
-  const handleLoadingComplete = useCallback(() => {
-    setTimeout(() => {
+  // State for loading and current model
+  const [isLoading, setIsLoading] = useState(true);
+  const [currentModelIndex, setCurrentModelIndex] = useState(0);
+  
+  // Ref to store model switcher controller
+  const modelSwitcherRef = useRef(null);
+  
+  // State to track whether all models are loaded
+  const [allModelsLoaded, setAllModelsLoaded] = useState(false);
+  
+  // Force hide loading screen after a maximum time
+  useEffect(() => {
+    const forceHideLoadingScreen = setTimeout(() => {
       setIsLoading(false);
-    }, 500);
+      setAllModelsLoaded(true);
+    }, 1000); // 10 seconds
+    
+    return () => clearTimeout(forceHideLoadingScreen);
+  }, []);
+  
+  // Handle loading complete for initial loading screen
+  const handleLoadingComplete = useCallback(() => {
+    // Use GSAP for a smoother loading transition
+    gsap.to({}, {
+      duration: 2,
+      onComplete: () => {
+        setIsLoading(false);
+        setAllModelsLoaded(true);
+      }
+    });
+  }, []);
+
+  // Handle model switch triggered by scroll
+  const handleModelSwitch = useCallback((index: number) => {
+    if (modelSwitcherRef.current) {
+      try {
+        // @ts-ignore
+        modelSwitcherRef.current.switchModel(index);
+        // Note: setCurrentModelIndex is now called within the ModelModule 
+        // after the animation completes for better synchronization
+      } catch (error) {
+        console.error("Error switching model:", error);
+      }
+    }
   }, []);
 
   return (
-    <main className="w-full h-screen overflow-hidden relative">
+    <main className="w-full h-screen overflow-hidden relative bg-black">
         {/* Loading Screen */}
         <LoadingScreen isLoading={isLoading} />
         
         {/* 3D Scene */}
         <ModularScene onLoadingComplete={handleLoadingComplete}>
           <TextureModule texturePath="/textures/pattern.jpg" />
-          <ModelModule modelPath="/models/letters_simple_a.obj" />
+          <ModelModule 
+            modelPaths={modelPaths} 
+            ref={modelSwitcherRef}
+            onModelChange={setCurrentModelIndex}
+          />
         </ModularScene>
+        
+        {/* Replace ModelSwitcher with ModelScroller */}
+        {!isLoading && (
+          <ModelScroller
+            modelCount={modelPaths.length}
+            onModelSwitch={handleModelSwitch}
+            currentModelIndex={currentModelIndex}
+            isLoading={!allModelsLoaded}
+          />
+        )}
         
       {/* Static UI Elements */}
       <div className="absolute md:top-10 md:left-10 top-7 left-7 z-20">
@@ -61,7 +123,7 @@ export default function Home() {
             <div className="relative z-2 uppercase">Liquid</div>
           </a>
           <a
-            href="/venture"
+            href="/"
             className="btn inline-flex relative py-2 px-5 leading-none text-white text-[14px]"
           >
             <div className="absolute inset-0">
