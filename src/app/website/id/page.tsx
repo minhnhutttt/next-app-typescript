@@ -22,7 +22,6 @@ export default function WebsiteSingle() {
                         イーロン・マスクが中国を訪問しても、テスラにとっての <br />
                         根本的な課題は解決しない
                     </h3>
-                    <p className="font-helvetica md:text-[15px] text-[14px] md:mt-2.5 dark:text-white">2024.4.18</p>
                 </div>
                 <div className="px-3">
                     <div className="flex py-2.5">

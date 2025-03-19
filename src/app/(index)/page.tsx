@@ -79,7 +79,7 @@ export default function Home() {
               <TitleFx rect="md:h-[12.5px] h-[14px]" />
             </Article>
           </div>
-          <div className="absolute bottom-8 right-0 max-md:w-[80%]">
+          <div className="absolute bottom-8 right-0 max-md:w-[80%] max-md:hidden">
             <figure>
             <img src="/assets/images/f-logo.png" alt="" />
             </figure>

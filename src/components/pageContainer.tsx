@@ -15,7 +15,7 @@ const PageContainer = ({ children }: {children: ReactNode}) => {
           <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-x-8 md:gap-y-12 max-md:border-t border-black dark:border-white relative z-10">
             {children}
           </div>
-          <div className="absolute bottom-8 right-0 max-md:w-[80%]">
+          <div className="absolute bottom-8 right-0 max-md:w-[80%] max-md:hidden">
             <figure>
             <img src="/assets/images/f-logo.png" alt="" />
             </figure>

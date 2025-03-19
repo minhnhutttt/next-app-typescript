@@ -39,8 +39,7 @@ const Article = ({ children, data, disable }: ArticleProps) => {
             <div className={`max-md:pl-8 max-md:divide-y divide-black/60 dark:divide-white/60 ${disable && '!block'} ${isVisible ? "block" : "hidden md:block"}`}>
                 {data.map((item, index) => (
                     <Link href={item.link} className="block w-full md:border-b border-black/60 dark:border-white/60 py-2 pr-4" key={index}>
-                        <p className="text-[16px] md:text-[15px] font-helvetica dark:text-white">{item.date}</p>
-                        <p className="text-[16px] md:text-[15px] font-hiragino dark:text-white leading-snug">{item.title}</p>
+                        <p className="text-[16px] md:text-[15px] font-hiragino dark:text-white leading-snug py-1">{item.title}</p>
                     </Link>
                 ))}
             </div>

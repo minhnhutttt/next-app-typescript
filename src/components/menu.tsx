@@ -105,24 +105,20 @@ const Menu = () => {
           <span className="md:hidden">
             {resolvedTheme === "dark" ? (
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="15"
-                viewBox="0 0 16 15"
-                fill="none"
-              >
-                <g clipPath="url(#clip0_840_8559)">
-                  <path
-                    d="M8 0L10.4725 4.93759L16 5.73L12.0005 9.5731L12.944 15L8 12.4376L3.05601 15L4.00052 9.5731L0 5.73L5.52748 4.93759L8 0Z"
-                    fill="white"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_840_8559">
-                    <rect width="16" height="15" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
+               className="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="white"
+            >
+              <path
+                d="M12 2.25V4.5M12 19.5v2.25M4.5 12H2.25M21.75 12H19.5M18.364 5.636l-1.59 1.59M7.227 16.773l-1.59 1.59M5.636 5.636l1.59 1.59M16.773 16.773l1.59 1.59"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              
+              <circle cx="12" cy="12" r="5" fill="white" />
+            </svg>
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
