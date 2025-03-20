@@ -74,7 +74,7 @@ const MediaItem: React.FC<MediaItemProps> = ({ item, index }) => {
     const element = itemRef.current;
     if (!element) return;
 
-    const speedFactor = 0.03 + Math.random() * 0.07;
+    const speedFactor = 0.03 + Math.random() * 0.1;
     const depthFactor = 15 + Math.random() * 15;
 
     const handleMouseMove = (e: MouseEvent) => {
