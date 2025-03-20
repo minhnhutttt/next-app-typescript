@@ -289,6 +289,7 @@ const Fv: React.FC = () => {
           items={MEDIA_ITEMS03}
           className="marquise-right-3 mr-[-35%] "
         />
+        
       </div>
       <div className="absolute inset-0 h-screen w-full overflow-hidden" ref={containerRef}>
         <div className="w-full absolute h-screen inset-0">
