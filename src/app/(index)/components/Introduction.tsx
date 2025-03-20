@@ -17,32 +17,42 @@ const Introduction = () => {
     const containe2rRef = useRef<HTMLDivElement>(null);
     const charScrollRef = useRef<HTMLDivElement>(null);
     useLayoutEffect(() => {
-        Splitting();
-        if (charScrollRef.current  ) {
-          const charScroll = charScrollRef.current.querySelectorAll(".char");
-              gsap.set(charScroll, {
-                  display: 'inline-block',
-                  opacity: 0.4,
-              });
-              const tl = gsap.timeline({
-                scrollTrigger: {
-                  trigger: containe2rRef.current,
-                  start: "top top",
-                  end: "bottom top",
-                  scrub: 0.9,
-                },
-              });
-              tl.to(charScroll, {
-                opacity: 1,
-                stagger: 1,
-                duration: 1,
-              }, 0.1);
-              return () => {
-                tl.scrollTrigger?.refresh();
-                tl.kill();
-              };
-            }
-      }, []);
+      Splitting();
+      
+      if (charScrollRef.current) {
+        const charScroll = charScrollRef.current.querySelectorAll(".char");
+        
+        gsap.set(charScroll, {
+          display: 'inline-block',
+          opacity: 0.4,
+        });
+        
+        ScrollTrigger.refresh();
+        
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containe2rRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.9,
+            pin: true
+          },
+        });
+        
+        tl.to(charScroll, {
+          opacity: 1,
+          stagger: 1,
+          duration: 1,
+        }, 0.1);
+        
+        return () => {
+          if (tl.scrollTrigger) {
+            tl.scrollTrigger.kill();
+          }
+          tl.kill();
+        };
+      }
+  }, []);
     
     return (
         <section ref={ref} id="introduction" className="relative overflow-hidden md:px-10 px-5 bg-[linear-gradient(180deg,_#000_0%,_rgba(250,_226,_215,_0.50)_100%)]">
