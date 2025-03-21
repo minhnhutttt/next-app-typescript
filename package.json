@@ -11,7 +11,10 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,vue,json,html,css,scss}\""
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.5",
+    "@studio-freight/react-lenis": "^0.0.43",
     "@tsparticles/react": "^3.0.0",
+    "@use-gesture/react": "^10.3.1",
     "gsap": "^3.12.5",
     "lottie-web": "^5.12.2",
     "next": "14.1.0",
@@ -19,7 +22,6 @@
     "react-dom": "^18",
     "react-splide-ts": "^0.7.14",
     "scenejs": "^1.10.3",
-    "@studio-freight/react-lenis": "^0.0.43",
     "scroll-out": "^2.2.12",
     "splitting": "^1.1.0",
     "swiper": "^11.1.14"
