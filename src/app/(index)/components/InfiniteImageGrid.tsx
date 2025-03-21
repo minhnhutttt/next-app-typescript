@@ -16,6 +16,7 @@ interface InfiniteImageGridProps {
   imgURLArray?: string[];
 }
 
+
 const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   rowNum = 5,
   imgNum = 9,
