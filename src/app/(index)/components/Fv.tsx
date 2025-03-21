@@ -107,7 +107,7 @@ const MediaItem: React.FC<MediaItemProps> = ({ item, index }) => {
   return (
     <div
       ref={itemRef}
-      className="flex-none transition-transform will-change-transform"
+      className="flex-none transition-transform will-change-transform "
       style={{ transformStyle: "preserve-3d" }}
     >
       <span className="overflow-hidden flex items-center justify-center relative md:size-[160px] size-[20vw] rounded-[20px] shadow-lg">
@@ -262,7 +262,7 @@ const Fv: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen h-[200vh]  p-4 overflow-hidden bg-black">
+    <main className="min-h-screen h-[200vh]  p-4 overflow-hidden bg-black pointer-events-none">
       <div
         ref={scrollAnimationsRef}
         className="flex flex-col overflow-hidden md:justify-between justify-center bg-[url(/assets/images/svg-deco.svg)] bg-no-repeat inset-0 h-[200vh] bg-center py-[10vw] max-md:gap-[30vw] md:py-[130px]"

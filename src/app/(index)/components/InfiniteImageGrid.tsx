@@ -665,7 +665,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       <div className="overflow-hidden w-full h-screen">
       <div
         ref={containerRef}
-        className="absolute will-change-transform touch-none inset-0"
+        className=" will-change-transform touch-none inset-0"
       >
         {/* Rows */}
         <div className="w-screen h-screen overflow-hidden">

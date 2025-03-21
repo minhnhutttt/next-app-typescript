@@ -1,7 +1,12 @@
 import dynamic from 'next/dynamic';
+import Fv from './components/Fv';
 
-// Dynamically import the InfiniteImageGrid component with SSR disabled
-// This is necessary because it uses browser-specific APIs
+const DynamicFv = dynamic(() => import('./components/Fv'), {
+  ssr: false
+})
+const DynamicIntroduction = dynamic(() => import('./components/Introduction'), {
+  ssr: false
+})
 const InfiniteImageGrid = dynamic(
   () => import('./components/InfiniteImageGrid'),
   { ssr: false }
@@ -35,15 +40,17 @@ const MEDIA_ITEMS: MediaItemData[] = [
 export default function Home() {
   
   return (
-    <div className="w-full h-full overflow-hidden">
-    <main className="w-full h-screen overflow-hidden" style={{ scrollbarWidth: 'none' }}>
-    <InfiniteImageGrid
-      rowNum={5}
-      imgNum={9}
-      mediaItems={MEDIA_ITEMS}
-    />
+    <main className="">
+      <div className="w-full h-screen overflow-hidden" style={{ scrollbarWidth: 'none' }}>
+      <InfiniteImageGrid
+        rowNum={5}
+        imgNum={9}
+        mediaItems={MEDIA_ITEMS}
+      />
+    </div>
+    <DynamicFv />
+      <DynamicIntroduction />
   </main>
-  </div>
 
   );
 }
