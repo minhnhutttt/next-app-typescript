@@ -3,10 +3,10 @@
 import BarCode from "@/app/components/barcode";
 import LogoDots from "@/app/components/logo-dots";
 import TitleAI from "@/app/components/titles/title-ai";
-import { ArticleData } from "@/app/data/data";
+import { ArticleContent } from "@/app/data/data";
 
 
-export default function SingleAi({ article }: {article: ArticleData}) {
+export default function SingleAi({ article } : {article: ArticleContent}) {
 
   return (
     <main>

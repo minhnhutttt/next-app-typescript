@@ -5,12 +5,12 @@ import { ReactNode, useState } from "react";
 import { useParams } from 'next/navigation';
 import { Locale } from '../dictionaries';
 import Link from 'next/link';
-import { ArticleData, getAllArticlesByLang } from '../data/data';
+import { ArticleType, getAllArticlesByLang2 } from '../data/data';
 
 
 interface ArticleProps {
     type: string;
-    data: ArticleData[];
+    data: ArticleType[];
     children: ReactNode;
     disable?: boolean;
 }
@@ -29,7 +29,7 @@ const Article = ({ children, data, disable, type }: ArticleProps) => {
         setIsVisible(!isVisible);
     };
 
-    const articles = getAllArticlesByLang(data, lang);
+    const articles = getAllArticlesByLang2(data, lang);
 
     return (
         <div className={`${disable && '!border-b !border-black dark:!border-white'} ${isVisible ? "border-b border-black dark:border-white" : ""}`}>

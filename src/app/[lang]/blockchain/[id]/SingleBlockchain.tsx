@@ -3,9 +3,9 @@
 import BarCode from "@/app/components/barcode";
 import LogoDots from "@/app/components/logo-dots";
 import TitleBlockChain from "@/app/components/titles/title-block-chain";
-import { ArticleData } from "@/app/data/data";
+import { ArticleContent } from "@/app/data/data";
 
-export default function SingleBlockchain({ article }: {article: ArticleData}) {
+export default function SingleBlockchain({ article }: {article: ArticleContent}) {
   return (
     <main>
       <div className="relative">

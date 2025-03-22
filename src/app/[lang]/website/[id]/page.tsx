@@ -1,18 +1,17 @@
-import {  dataWebSite, getAllArticleIds, getArticleByIdAndLang } from '@/app/data/data';
+import { dataWebSite, getArticleByIdAndLang2 } from '@/app/data/data';
 import { notFound } from 'next/navigation';
 import SingleWebsite from './SingleWebsite';
 
 export async function generateStaticParams() {
-  const langs = ['ja', 'en', 'zh'];
-  const ids = getAllArticleIds(dataWebSite);
-  
   const params = [];
   
-  for (const lang of langs) {
-    for (const id of ids) {
+  for (const article of dataWebSite) {
+    const availableLanguages = Object.keys(article.translations);
+    
+    for (const lang of availableLanguages) {
       params.push({
-        lang,
-        id
+        id: article.id,
+        lang: lang
       });
     }
   }
@@ -23,11 +22,11 @@ export async function generateStaticParams() {
 export default function BlockchainArticlePage({ params }: { params: { lang: string, id: string } }) {
   const { lang, id } = params;
   
-  const article = getArticleByIdAndLang(dataWebSite,id, lang);
+  const article = getArticleByIdAndLang2(dataWebSite, id, lang);
   
   if (!article) {
     return notFound();
   }
-
+  
   return <SingleWebsite article={article} />;
 }

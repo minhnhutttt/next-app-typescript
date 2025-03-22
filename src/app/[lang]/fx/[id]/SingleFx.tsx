@@ -3,9 +3,9 @@
 import BarCode from "@/app/components/barcode";
 import LogoDots from "@/app/components/logo-dots";
 import TitleFx from "@/app/components/titles/title-fx";
-import { ArticleData } from "@/app/data/data";
+import { ArticleContent } from "@/app/data/data";
 
-export default function SingleFx({ article }: {article: ArticleData}) {
+export default function SingleFx({ article }: {article: ArticleContent}) {
   return (
     <main>
       <div className="relative">

@@ -3,9 +3,9 @@
 import BarCode from "@/app/components/barcode";
 import LogoDots from "@/app/components/logo-dots";
 import TitleMarketing from "@/app/components/titles/title-marketing";
-import { ArticleData } from "@/app/data/data";
+import { ArticleContent } from "@/app/data/data";
 
-export default function SingleWebsite({ article }: {article: ArticleData}) {
+export default function SingleWebsite({ article }: {article: ArticleContent}) {
   return (
     <main>
       <div className="relative">

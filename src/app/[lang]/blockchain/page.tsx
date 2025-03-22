@@ -1,24 +1,15 @@
-import { dataBlockChain, getAllArticlesByLang } from "@/app/data/data";
-import PageContainer from "@/app/components/pageContainer";
-import Article from "@/app/components/article";
-import TitleBlockChain from "@/app/components/titles/title-block-chain";
+import Article from "../../components/article";
+import TitleAD from "../../components/titles/title-ad";
+import PageContainer from "../../components/pageContainer";
+import { dataBlockChain } from "@/app/data/data";
 
-export async function generateStaticParams() {
-  return [
-    { lang: 'ja' },
-    { lang: 'en' },
-    { lang: 'zh' }
-  ];
-}
 
-export default function BlockchainListPage({ params }: { params: { lang: string } }) {
-  const { lang } = params;
-  
-  const articles = getAllArticlesByLang(dataBlockChain ,lang);
-
-  return <PageContainer>
-    <Article data={articles} disable type="blockchain">
-            <TitleBlockChain rect="md:h-[12.5px] h-[14px]" />
+export default function BlockchainListPage() {
+  return (
+    <PageContainer>
+        <Article type="blockchain" data={dataBlockChain} disable>
+            <TitleAD rect="md:h-[12.5px] h-[14px]" />
         </Article>
-  </PageContainer>;
+    </PageContainer>
+  );
 }

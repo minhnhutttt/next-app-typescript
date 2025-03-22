@@ -3,9 +3,9 @@
 import BarCode from "@/app/components/barcode";
 import LogoDots from "@/app/components/logo-dots";
 import TitleAD from "@/app/components/titles/title-ad";
-import { ArticleData } from "@/app/data/data";
+import { ArticleContent } from "@/app/data/data";
 
-export default function SingleAd({ article }: {article: ArticleData}) {
+export default function SingleAd({ article }: {article: ArticleContent}) {
 
   return (
     <main>
