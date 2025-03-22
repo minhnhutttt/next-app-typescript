@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: {
@@ -15,7 +16,8 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      hiragino: ["Hiragino Kaku Gothic Pro", "sans-serif"],
+      helvetica: ["Helvetica", "sans-serif"],
     },
   },
   plugins: [],
