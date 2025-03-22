@@ -1,5 +1,5 @@
 "use client"
-import { TitleProps } from '@/type';
+import { TitleProps } from '../../type';
 
 
 const TitleWebSite = ({ rect }: TitleProps) => {

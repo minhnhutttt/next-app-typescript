@@ -1,26 +1,34 @@
 "use client"
 
-import Link from "next/link";
+import { getLocalizedPath } from '../lib/routes';
 import { ReactNode, useState } from "react";
+import { useParams } from 'next/navigation';
+import { Locale } from '../dictionaries';
+import Link from 'next/link';
+import { ArticleData, getAllArticlesByLang } from '../data/data';
 
-export interface dataArticle {
-    date: string;
-    title: string;
-    link: string;
-}
 
 interface ArticleProps {
-    data: dataArticle[];
+    data: ArticleData[];
     children: ReactNode;
     disable?: boolean;
 }
-
+export async function generateStaticParams() {
+    return [
+      { lang: 'ja' },
+      { lang: 'en' },
+      { lang: 'zh' }
+    ];
+  }
 const Article = ({ children, data, disable }: ArticleProps) => {
     const [isVisible, setIsVisible] = useState(false);
-
+    const params = useParams();
+    const lang = params.lang as Locale;
     const toggleVisibility = () => {
         setIsVisible(!isVisible);
     };
+
+    const articles = getAllArticlesByLang(data, lang);
 
     return (
         <div className={`${disable && '!border-b !border-black dark:!border-white'} ${isVisible ? "border-b border-black dark:border-white" : ""}`}>
@@ -37,8 +45,8 @@ const Article = ({ children, data, disable }: ArticleProps) => {
                 }
             </button>
             <div className={`max-md:pl-8 max-md:divide-y divide-black/60 dark:divide-white/60 ${disable && '!block'} ${isVisible ? "block" : "hidden md:block"}`}>
-                {data.map((item, index) => (
-                    <Link href={item.link} className="block w-full md:border-b border-black/60 dark:border-white/60 py-2 pr-4" key={index}>
+                {articles.map((item, index) => (
+                    <Link href={getLocalizedPath('/blockchain/01', lang)} className="block w-full md:border-b border-black/60 dark:border-white/60 py-2 pr-4" key={index}>
                         <p className="text-[16px] md:text-[15px] font-hiragino dark:text-white leading-snug py-1">{item.title}</p>
                     </Link>
                 ))}

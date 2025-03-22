@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import TitleAI from "./titles/title-ai";
 import TitleBlockChain from "./titles/title-block-chain";
 import TitleWebSite from "./titles/title-web-site";
@@ -11,30 +11,31 @@ import TitleFx from "./titles/title-fx";
 import Link from "next/link";
 import Anime from "./anime";
 import gsap from "gsap";
-import type { dataArticle } from "./article";
 import LanguageDropdown from "./languageDropdown";
 import { useTheme } from "next-themes";
+import { Locale } from "../dictionaries";
+import { getLocalizedPath } from "../lib/routes";
 
 export const dataRank: dataArticle[] = [
-  {
+  {id: '01',
     date: "2024.4.18",
     title:
       "ビットコインに価値がないと言うのなら、人類は皆まともに歩けないと言っているようなものにすぎない",
     link: "/blockchain/id",
   },
-  {
+  {id: '01',
     date: "2024.4.18",
     title:
       "広告代理店の見極め方〜失敗の責任を負いたくなければ「大手」に群がれ！成功したければ規模に目を向けるな！〜",
     link: "/ad/id",
   },
-  {
+  {id: '01',
     date: "2024.4.18",
     title:
       "イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない",
     link: "/fx/id",
   },
-  {
+  {id: '01',
     date: "2024.4.18",
     title:
       "イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない",
@@ -48,6 +49,9 @@ const Menu = () => {
   const pathname = usePathname();
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
+  const params = useParams();
+      const lang = params.lang as Locale;
   
     useEffect(() => {
       setMounted(true);
@@ -139,7 +143,7 @@ const Menu = () => {
       <div className="px-2">
         <div className="md:hidden">
           <div className="px-2 pt-5 pb-4">
-            <a href="/">
+            <Link href={getLocalizedPath('/', lang)}>
               <img
                 className="dark:hidden"
                 src="/assets/images/logo-sp.png"
@@ -150,14 +154,14 @@ const Menu = () => {
                 src="/assets/images/logo-sp-dark.png"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <span className="block h-0.5 bg-[#464646] dark:bg-[#C6C6C6]"></span>
         </div>
         <div className="flex justify-center max-md:py-10"></div>
         <div className="max-md:hidden">
           <div className="px-2 pt-5 pb-2.5">
-            <a href="/">
+            <Link href={getLocalizedPath('/', lang)}>
               <img
                 className="dark:hidden"
                 src="/assets/images/ardorex-title.png"
@@ -168,7 +172,7 @@ const Menu = () => {
                 src="/assets/images/ardorex-title-dark.png"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <span className="block h-1 bg-[#464646] dark:bg-[#C6C6C6]"></span>
         </div>
@@ -220,7 +224,7 @@ const Menu = () => {
                 >
                   <Link
                     onClick={close}
-                    href={item.link}
+                    href={getLocalizedPath(item.link, lang)}
                     className="flex items-center  relative  duration-150 hover:opacity-75"
                   >
                     <p className="text-[13px] font-hiragino dark:text-white leading-snug">
@@ -234,7 +238,7 @@ const Menu = () => {
             <div className="">
               <Link
                 onClick={close}
-                href="/ai"
+                href={getLocalizedPath('/ai', lang)}
                 className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
               >
                 <span
@@ -246,7 +250,7 @@ const Menu = () => {
               </Link>
               <Link
                 onClick={close}
-                href="/blockchain"
+                href={getLocalizedPath('/blockchain', lang)}
                 className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
               >
                 <span
@@ -258,7 +262,7 @@ const Menu = () => {
               </Link>
               <Link
                 onClick={close}
-                href="/website"
+                href={getLocalizedPath('/website', lang)}
                 className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
               >
                 <span
@@ -270,7 +274,7 @@ const Menu = () => {
               </Link>
               <Link
                 onClick={close}
-                href="/ad"
+                href={getLocalizedPath('/ad', lang)}
                 className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
               >
                 <span
@@ -282,7 +286,7 @@ const Menu = () => {
               </Link>
               <Link
                 onClick={close}
-                href="/marketing"
+                href={getLocalizedPath('/marketing', lang)}
                 className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
               >
                 <span
@@ -294,7 +298,7 @@ const Menu = () => {
               </Link>
               <Link
                 onClick={close}
-                href="/fx"
+                href={getLocalizedPath('/fx', lang)}
                 className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
               >
                 <span
@@ -332,7 +336,7 @@ const Menu = () => {
         </p>
         <div className="max-md:pr-14">
           <Link
-            href="/ai"
+            href={getLocalizedPath('/ai', lang)}
             className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
           >
             <span
@@ -343,7 +347,7 @@ const Menu = () => {
             <TitleAI rect="md:h-[11.5px] h-[13.5px]" />
           </Link>
           <Link
-            href="/blockchain"
+            href={getLocalizedPath('/blockchain', lang)}
             className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
           >
             <span
@@ -354,7 +358,7 @@ const Menu = () => {
             <TitleBlockChain rect="md:h-[11.5px] h-[13.5px]" />
           </Link>
           <Link
-            href="/website"
+            href={getLocalizedPath('/website', lang)}
             className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
           >
             <span
@@ -365,7 +369,7 @@ const Menu = () => {
             <TitleWebSite rect="md:h-[11.5px] h-[13.5px]" />
           </Link>
           <Link
-            href="/ad"
+            href={getLocalizedPath('/ad', lang)}
             className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
           >
             <span
@@ -376,7 +380,7 @@ const Menu = () => {
             <TitleAD rect="md:h-[11.5px] h-[13.5px]" />
           </Link>
           <Link
-            href="/marketing"
+            href={getLocalizedPath('/marketing', lang)}
             className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
           >
             <span
@@ -387,7 +391,7 @@ const Menu = () => {
             <TitleMarketing rect="md:h-[11.5px] h-[13.5px]" />
           </Link>
           <Link
-            href="/fx"
+            href={getLocalizedPath('/fx', lang)}
             className="flex items-center h-20 md:h-12 px-5 md:px-2 relative border-b border-black/30 dark:border-white/30 duration-150 hover:opacity-75"
           >
             <span

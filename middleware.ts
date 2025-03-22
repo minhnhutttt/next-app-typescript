@@ -4,8 +4,8 @@ import type { NextRequest } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 
-const locales = ['en', 'vi'];
-const defaultLocale = 'en';
+const locales = ['en', 'ja', 'zh'];
+const defaultLocale = 'ja';
 
 // Hàm xác định ngôn ngữ dựa trên Accept-Language header
 function getLocale(request: NextRequest): string {
@@ -40,6 +40,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   // Chỉ áp dụng cho các đường dẫn không có locale
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|en/|vi/|ja/|zh/).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|en/|ja/|zh/).*)',
   ],
 };

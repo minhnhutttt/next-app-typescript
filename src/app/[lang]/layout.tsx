@@ -27,30 +27,6 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
-      {/* <head>
-        <title>{dict.common.title}</title>
-        <meta name="description" content={dict.common.description} />
-      </head> */}
-      {/* <body>
-        <header className='bg-black'>
-          <nav>
-            <ul>
-              <li><a href={`/${lang}`}>{dict.navigation.home}</a></li>
-              <li><a href={`/${lang}/about`}>{dict.navigation.about}</a></li>
-              <li><a href={`/${lang}/products`}>{dict.navigation.products}</a></li>
-              <li><a href={`/${lang}/contact`}>{dict.navigation.contact}</a></li>
-            </ul>
-          </nav>
-        </header>
-        {children}
-        <footer>
-          <p>{dict.footer.copyright}</p>
-          <ul>
-            <li><a href={`/${lang}/terms`}>{dict.footer.terms}</a></li>
-            <li><a href={`/${lang}/privacy`}>{dict.footer.privacy}</a></li>
-          </ul>
-        </footer>
-      </body> */}
       <body className="font-hiragino bg-[#F2F0E6] dark:bg-black relative">
         <Provider>
             <div className="flex">
