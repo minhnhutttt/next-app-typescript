@@ -20,6 +20,7 @@
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-responsive": "^10.0.1",
     "react-splide-ts": "^0.7.14",
     "scenejs": "^1.10.3",
     "scroll-out": "^2.2.12",

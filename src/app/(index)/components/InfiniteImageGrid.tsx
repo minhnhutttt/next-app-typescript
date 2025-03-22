@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
-
-// Define media types
+import { useMediaQuery } from 'react-responsive';
 export type MediaType = "image" | "video";
 
 export interface MediaItemData {
@@ -9,7 +8,6 @@ export interface MediaItemData {
   src: string;
 }
 
-// Utility function to move array elements
 function moveArrayIndex<T>(array: T[], oldIndex: number, newIndex: number) {
   if (newIndex >= array.length) {
     newIndex = array.length - 1;
@@ -32,14 +30,15 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef(false);
   
-  // Track positions with refs to avoid re-renders
   const positionRef = useRef({ x: 0, y: 0 });
   const startPosRef = useRef({ x: 0, y: 0 });
   const velocityRef = useRef({ x: 0, y: 0 });
   const lastTimeRef = useRef(0);
   const animationFrameRef = useRef<number | null>(null);
+  const lastScrollYRef = useRef(0);
+  const mousePositionRef = useRef({ x: 0, y: 0 });
+  const parallaxAnimationRef = useRef<number | null>(null);
   
-  // Grid layout parameters
   const dimensionsRef = useRef({
     boxWidth: 0,
     boxHeight: 0,
@@ -51,8 +50,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     winMidX: 0,
     winMidY: 0
   });
-
-  // Grid structure refs
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const rowsRef = useRef<HTMLDivElement[]>([]);
   const imgRepRef = useRef<HTMLDivElement[][]>([]);
   const rowArrayRef = useRef<HTMLDivElement[]>([]);
@@ -62,11 +60,9 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   
   const lastCenteredElemRef = useRef<HTMLDivElement | null>(null);
   
-  // References to control video playback based on visibility
   const videoRefs = useRef<{[key: string]: HTMLVideoElement}>({});
   const observerRef = useRef<IntersectionObserver | null>(null);
   
-  // To toggle play/pause based on visibility
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') return;
     
@@ -75,12 +71,10 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
         const video = entry.target as HTMLVideoElement;
         
         if (entry.isIntersecting) {
-          // When video becomes visible and is in viewport center region
           if (video.paused && video.dataset.autoplay === 'true') {
             video.play().catch(err => console.log('Auto-play prevented:', err));
           }
         } else {
-          // When video is not visible
           if (!video.paused) {
             video.pause();
           }
@@ -89,10 +83,9 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }, {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5, // 50% visibility required
+      threshold: 0.5,
     });
     
-    // Cleanup function
     return () => {
       if (observerRef.current) {
         observerRef.current.disconnect();
@@ -100,9 +93,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     };
   }, []);
 
-  // Update video elements observing when refs update
   useEffect(() => {
-    // Reobserve videos when they're created/updated
     Object.values(videoRefs.current).forEach(video => {
       if (observerRef.current) {
         observerRef.current.observe(video);
@@ -110,14 +101,12 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     });
     
     return () => {
-      // Pause all videos on cleanup
       Object.values(videoRefs.current).forEach(video => {
         video.pause();
       });
     };
   }, [rowNum, imgNum]);
   
-  // Check and update positions
   const checkPositions = (elem: HTMLDivElement) => {
     if (!elem) return;
     
@@ -125,7 +114,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     const rowArray = rowArrayRef.current;
     const { boxWidth, boxHeight, gutter } = dimensionsRef.current;
     
-    // Find the location in our array of the element
     let rowIndex = -1;
     let imgIndex = -1;
     
@@ -138,14 +126,10 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       });
     });
     
-    // Element not found, return
     if (rowIndex === -1) return;
     
-    // Reposition elements as necessary so that our element is in the center
-    // Reposition the rows as necessary
     if (rowIndex < rowMidIndex) {
       for (let i = rowIndex; i < rowMidIndex; i++) {
-        // Update the row's actual position
         if (rowArray.length === 0) continue;
         
         const firstRow = rowArray[0];
@@ -155,12 +139,12 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
         
         const firstRowTransform = window.getComputedStyle(firstRow).transform;
         const matrix = new DOMMatrix(firstRowTransform === 'none' ? 'matrix(1, 0, 0, 1, 0, 0)' : firstRowTransform);
-        const rowY = matrix.m42; // Y transform value
+        const rowY = matrix.m42; 
         
-        if (rowArray.length % 2 === 1) { // Odd number of rows means we have to handle offset
+        if (rowArray.length % 2 === 1) {
           const lastRowTransform = window.getComputedStyle(lastRow).transform;
           const lastMatrix = new DOMMatrix(lastRowTransform === 'none' ? 'matrix(1, 0, 0, 1, 0, 0)' : lastRowTransform);
-          const lastRowX = lastMatrix.m41; // X transform value
+          const lastRowX = lastMatrix.m41; 
           
           const isOffset = lastRow.dataset.offset === "true";
           
@@ -171,21 +155,19 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
             lastRow.style.transform = `translate(${lastRowX - boxWidth / 2}px, ${rowY - gutter - boxHeight}px)`;
             lastRow.dataset.offset = "true";
           }
-        } else { // Equal number of rows; don't have to handle offset
+        } else { 
           const lastRowTransform = window.getComputedStyle(lastRow).transform;
           const lastMatrix = new DOMMatrix(lastRowTransform === 'none' ? 'matrix(1, 0, 0, 1, 0, 0)' : lastRowTransform);
-          const lastRowX = lastMatrix.m41; // X transform value
+          const lastRowX = lastMatrix.m41;
           
           lastRow.style.transform = `translate(${lastRowX}px, ${rowY - gutter - boxHeight}px)`;
         }
         
-        // Update our representations
         moveArrayIndex(imgRep, imgRep.length - 1, 0);
         moveArrayIndex(rowArray, rowArray.length - 1, 0);
       }
     } else if (rowIndex > rowMidIndex) {
       for (let i = rowMidIndex; i < rowIndex; i++) {
-        // Update the row's actual position
         if (rowArray.length === 0) continue;
         
         const firstRow = rowArray[0];
@@ -195,12 +177,12 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
         
         const lastRowTransform = window.getComputedStyle(lastRow).transform;
         const matrix = new DOMMatrix(lastRowTransform === 'none' ? 'matrix(1, 0, 0, 1, 0, 0)' : lastRowTransform);
-        const rowY = matrix.m42; // Y transform value
+        const rowY = matrix.m42; 
         
-        if (rowArray.length % 2 === 1) { // Odd number of rows means we have to handle offset
+        if (rowArray.length % 2 === 1) { 
           const firstRowTransform = window.getComputedStyle(firstRow).transform;
           const firstMatrix = new DOMMatrix(firstRowTransform === 'none' ? 'matrix(1, 0, 0, 1, 0, 0)' : firstRowTransform);
-          const firstRowX = firstMatrix.m41; // X transform value
+          const firstRowX = firstMatrix.m41;
           
           const isOffset = firstRow.dataset.offset === "true";
           
@@ -211,67 +193,60 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
             firstRow.style.transform = `translate(${firstRowX + boxWidth / 2}px, ${rowY + gutter + boxHeight}px)`;
             firstRow.dataset.offset = "true";
           }
-        } else { // Equal number of rows; don't have to handle offset
+        } else { 
           const firstRowTransform = window.getComputedStyle(firstRow).transform;
           const firstMatrix = new DOMMatrix(firstRowTransform === 'none' ? 'matrix(1, 0, 0, 1, 0, 0)' : firstRowTransform);
-          const firstRowX = firstMatrix.m41; // X transform value
+          const firstRowX = firstMatrix.m41; 
           
           firstRow.style.transform = `translate(${firstRowX}px, ${rowY + gutter + boxHeight}px)`;
         }
         
-        // Update our representations
         moveArrayIndex(imgRep, 0, imgRep.length - 1);
         moveArrayIndex(rowArray, 0, rowArray.length - 1);
       }
     }
     
-    // Reposition the images as necessary
     if (imgIndex < imgMidIndex) {
-      for (let rowNum = 0; rowNum < rowsRef.current.length; rowNum++) { // Do it for every row
+      for (let rowNum = 0; rowNum < rowsRef.current.length; rowNum++) { 
         const row = imgRep[rowNum];
         if (!row || row.length === 0) continue;
         
         for (let i = imgIndex; i < imgMidIndex; i++) {
-          // Update the images's actual position
           const firstImg = row[0];
           const lastImg = row[row.length - 1];
           if (!firstImg || !lastImg) continue;
           
           const firstImgTransform = window.getComputedStyle(firstImg).transform;
           const matrix = new DOMMatrix(firstImgTransform === 'none' ? 'matrix(1, 0, 0, 1, 0, 0)' : firstImgTransform);
-          const imgX = matrix.m41; // X transform value
+          const imgX = matrix.m41; 
           
           lastImg.style.transform = `translate(${imgX - gutter - boxWidth}px, 0)`;
           
-          // Update our representation
           moveArrayIndex(row, row.length - 1, 0);
         }
       }
     } else if (imgIndex > imgMidIndex) {
-      for (let rowNum = 0; rowNum < rowsRef.current.length; rowNum++) { // Do it for every row
+      for (let rowNum = 0; rowNum < rowsRef.current.length; rowNum++) { 
         const row = imgRep[rowNum];
         if (!row || row.length === 0) continue;
         
         for (let i = imgMidIndex; i < imgIndex; i++) {
-          // Update the images's actual position
           const lastImg = row[row.length - 1];
           const firstImg = row[0];
           if (!lastImg || !firstImg) continue;
           
           const lastImgTransform = window.getComputedStyle(lastImg).transform;
           const matrix = new DOMMatrix(lastImgTransform === 'none' ? 'matrix(1, 0, 0, 1, 0, 0)' : lastImgTransform);
-          const imgX = matrix.m41; // X transform value
+          const imgX = matrix.m41; 
           
           firstImg.style.transform = `translate(${imgX + gutter + boxWidth}px, 0)`;
           
-          // Update our representation
           moveArrayIndex(row, 0, row.length - 1);
         }
       }
     }
   };
   
-  // Update the currently centered element
   const updateCenterElem = () => {
     if (typeof document === 'undefined') return;
     
@@ -287,59 +262,51 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
   };
   
-  // Apply inertia effect with heavier, smoother feel like Lenis
   const applyInertia = () => {
     if (!containerRef.current) return;
     
     const now = Date.now();
-    const elapsed = Math.min(now - lastTimeRef.current, 64); // Cap at 64ms to prevent huge jumps
+    const elapsed = Math.min(now - lastTimeRef.current, 64); 
     
-    // Use a much slower decay rate for heavier, more viscous feel
-    // Higher power means slower initial decay but longer tail
     const decay = Math.pow(0.97, elapsed / 16); 
     
-    // Smooth damping with easing (similar to Lenis)
     velocityRef.current.x *= decay;
     velocityRef.current.y *= decay;
     
-    // Apply some additional easing to make large movements more pleasant
     const easeFactor = 0.95;
     
-    // Stop if velocity is very small - using a lower threshold for longer trail
+    // Dừng animation khi vận tốc rất nhỏ
     if (Math.abs(velocityRef.current.x) < 0.3 && Math.abs(velocityRef.current.y) < 0.3) {
       cancelAnimationFrame(animationFrameRef.current!);
       animationFrameRef.current = null;
       return;
     }
     
-    // Calculate the movement delta for this frame with easing
     const deltaX = velocityRef.current.x * easeFactor;
     const deltaY = velocityRef.current.y * easeFactor;
     
-    // Apply velocity to position with smooth easing
     positionRef.current.x += deltaX;
     positionRef.current.y += deltaY;
     
-    // Update transform with smooth easing using cubic-bezier style timing
-    // The cubic-bezier effect is simulated by how we apply the velocity
-    containerRef.current.style.transform = `translate3d(${positionRef.current.x}px, ${positionRef.current.y}px, 0)`;
-    
-    // Check for central element changes
+    updateTransform();
     updateCenterElem();
     
-    // Continue inertia
     lastTimeRef.current = now;
     animationFrameRef.current = requestAnimationFrame(applyInertia);
   };
   
-  // Mouse/touch event handlers
   const handleMouseDown = (e: React.MouseEvent) => {
     e.preventDefault();
     
-    // Cancel any ongoing animation
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
       animationFrameRef.current = null;
+    }
+    
+    // Dừng hiệu ứng parallax khi đang kéo
+    if (parallaxAnimationRef.current) {
+      cancelAnimationFrame(parallaxAnimationRef.current);
+      parallaxAnimationRef.current = null;
     }
     
     isDraggingRef.current = true;
@@ -350,74 +317,64 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     velocityRef.current = { x: 0, y: 0 };
     lastTimeRef.current = Date.now();
     
-    // Add global mouse move/up listeners
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleDragMove);
     window.addEventListener('mouseup', handleMouseUp);
   };
   
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleDragMove = (e: MouseEvent) => {
     if (!isDraggingRef.current || !containerRef.current) return;
     
     const now = Date.now();
-    const elapsed = Math.min(now - lastTimeRef.current, 64); // Cap elapsed time to prevent jumps
+    const elapsed = Math.min(now - lastTimeRef.current, 64);
     
-    // Calculate new position
     const newX = e.clientX - startPosRef.current.x;
     const newY = e.clientY - startPosRef.current.y;
     
-    // Apply some smoothing during the drag itself (not just during inertia)
-    // This makes the drag feel heavier and more controlled
-    const dragSmoothingFactor = 0.2; // Lower = more smoothing/heaviness
+    const dragSmoothingFactor = 0.2;
     
-    // Calculate smoothed position with lerp
     const smoothedX = positionRef.current.x + (newX - positionRef.current.x) * dragSmoothingFactor;
     const smoothedY = positionRef.current.y + (newY - positionRef.current.y) * dragSmoothingFactor;
     
-    // Calculate velocity (pixels per millisecond) with some dampening
     if (elapsed > 0) {
-      // Calculate raw velocity
       const rawVelocityX = (newX - positionRef.current.x) / elapsed * 16;
       const rawVelocityY = (newY - positionRef.current.y) / elapsed * 16;
       
-      // Apply smoothing to velocity (typical for Lenis-like behavior)
-      // Blend previous velocity with new velocity for smoothness
-      const velocityBlendFactor = 0.6; // Higher = more responsive to changes
+      const velocityBlendFactor = 0.6;
       velocityRef.current = {
         x: velocityRef.current.x * (1 - velocityBlendFactor) + rawVelocityX * velocityBlendFactor,
         y: velocityRef.current.y * (1 - velocityBlendFactor) + rawVelocityY * velocityBlendFactor,
       };
     }
     
-    // Update position reference (using the raw position for calculations)
     positionRef.current = { x: newX, y: newY };
     
-    // Apply transform (using smoothed position for actual display)
     containerRef.current.style.transform = `translate3d(${smoothedX}px, ${smoothedY}px, 0)`;
     
-    // Check for central element changes
     updateCenterElem();
     
     lastTimeRef.current = now;
+    
+    // Cập nhật vị trí chuột cho hiệu ứng parallax
+    mousePositionRef.current = { x: e.clientX, y: e.clientY };
   };
   
   const handleMouseUp = () => {
     isDraggingRef.current = false;
     
-    // Remove global mouse move/up listeners
-    window.removeEventListener('mousemove', handleMouseMove);
+    window.removeEventListener('mousemove', handleDragMove);
     window.removeEventListener('mouseup', handleMouseUp);
     
-    // Always apply inertia for a more consistent feel
-    // This makes even small movements have a slight trail
-    // Typical of Lenis-like smoothing
+    // Khởi động lại hiệu ứng parallax sau khi kéo xong
+    if (!parallaxAnimationRef.current) {
+      parallaxAnimationRef.current = requestAnimationFrame(updateParallaxEffect);
+    }
+    
     animationFrameRef.current = requestAnimationFrame(applyInertia);
   };
   
-  // Touch event handlers
   const handleTouchStart = (e: React.TouchEvent) => {
     if (e.touches.length !== 1) return;
     
-    // Cancel any ongoing animation
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
       animationFrameRef.current = null;
@@ -432,7 +389,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     velocityRef.current = { x: 0, y: 0 };
     lastTimeRef.current = Date.now();
     
-    // Add global touch move/end listeners
     window.addEventListener('touchmove', handleTouchMove, { passive: false });
     window.addEventListener('touchend', handleTouchEnd);
   };
@@ -444,42 +400,31 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     const touch = e.touches[0];
     const now = Date.now();
-    const elapsed = Math.min(now - lastTimeRef.current, 64); // Cap elapsed time to prevent jumps
+    const elapsed = Math.min(now - lastTimeRef.current, 64);
     
-    // Calculate new position
     const newX = touch.clientX - startPosRef.current.x;
     const newY = touch.clientY - startPosRef.current.y;
     
-    // Apply some smoothing during the drag itself (not just during inertia)
-    // This makes the drag feel heavier and more controlled
-    const dragSmoothingFactor = 0.2; // Lower = more smoothing/heaviness
+    const dragSmoothingFactor = 0.2; 
     
-    // Calculate smoothed position with lerp
     const smoothedX = positionRef.current.x + (newX - positionRef.current.x) * dragSmoothingFactor;
     const smoothedY = positionRef.current.y + (newY - positionRef.current.y) * dragSmoothingFactor;
     
-    // Calculate velocity (pixels per millisecond) with some dampening
     if (elapsed > 0) {
-      // Calculate raw velocity
       const rawVelocityX = (newX - positionRef.current.x) / elapsed * 16;
       const rawVelocityY = (newY - positionRef.current.y) / elapsed * 16;
       
-      // Apply smoothing to velocity (typical for Lenis-like behavior)
-      // Blend previous velocity with new velocity for smoothness
-      const velocityBlendFactor = 0.6; // Higher = more responsive to changes
+      const velocityBlendFactor = 0.6;
       velocityRef.current = {
         x: velocityRef.current.x * (1 - velocityBlendFactor) + rawVelocityX * velocityBlendFactor,
         y: velocityRef.current.y * (1 - velocityBlendFactor) + rawVelocityY * velocityBlendFactor,
       };
     }
     
-    // Update position reference (using the raw position for calculations)
     positionRef.current = { x: newX, y: newY };
     
-    // Apply transform (using smoothed position for actual display)
     containerRef.current.style.transform = `translate3d(${smoothedX}px, ${smoothedY}px, 0)`;
     
-    // Check for central element changes
     updateCenterElem();
     
     lastTimeRef.current = now;
@@ -488,17 +433,119 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   const handleTouchEnd = () => {
     isDraggingRef.current = false;
     
-    // Remove global touch move/end listeners
     window.removeEventListener('touchmove', handleTouchMove);
     window.removeEventListener('touchend', handleTouchEnd);
     
-    // Always apply inertia for a more consistent feel
-    // This makes even small movements have a slight trail
-    // Typical of Lenis-like smoothing
     animationFrameRef.current = requestAnimationFrame(applyInertia);
   };
   
-  // Resize handler
+  // Xử lý hiệu ứng parallax theo chuyển động của chuột
+  const handleMouseMove = (e: MouseEvent) => {
+    if (isDraggingRef.current) return;
+    
+    // Lưu vị trí chuột hiện tại
+    mousePositionRef.current = { 
+      x: e.clientX, 
+      y: e.clientY 
+    };
+    
+    // Nếu chưa có animation frame cho parallax, khởi tạo một cái
+    if (!parallaxAnimationRef.current) {
+      parallaxAnimationRef.current = requestAnimationFrame(updateParallaxEffect);
+    }
+  };
+  
+  // Hàm tập trung xử lý việc cập nhật transform 
+  const updateTransform = () => {
+    if (!containerRef.current) return;
+    
+    let finalX = positionRef.current.x;
+    let finalY = positionRef.current.y;
+    
+    // Nếu hiệu ứng parallax đang hoạt động và không đang kéo
+    if (!isDraggingRef.current) {
+      // Lấy kích thước cửa sổ
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      
+      // Tính vị trí tương đối của chuột (-1 đến 1)
+      const relativeX = (mousePositionRef.current.x / windowWidth) * 2 - 1;
+      const relativeY = (mousePositionRef.current.y / windowHeight) * 2 - 1;
+      
+      // Hệ số parallax - điều chỉnh để hiệu ứng mạnh/nhẹ
+      const parallaxFactor = 15;
+      
+      // Thêm hiệu ứng parallax vào vị trí cuối cùng
+      finalX += -relativeX * parallaxFactor;
+      finalY += -relativeY * parallaxFactor;
+    }
+    
+    containerRef.current.style.transform = `translate3d(${finalX}px, ${finalY}px, 0)`;
+  };
+  
+  // Cập nhật hiệu ứng parallax - chỉ chạy khi không có animation nào khác đang hoạt động
+  const updateParallaxEffect = () => {
+    if (!containerRef.current || isDraggingRef.current || animationFrameRef.current) {
+      parallaxAnimationRef.current = null;
+      return;
+    }
+    
+    updateTransform();
+    parallaxAnimationRef.current = requestAnimationFrame(updateParallaxEffect);
+  };
+  
+  // Xử lý sự kiện scroll chuột
+  const handleWheel = (e: WheelEvent) => {
+    e.preventDefault();
+    
+    if (!containerRef.current) return;
+    
+    // Dừng animation trước đó nếu có
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+    
+    // Tỷ lệ di chuyển chéo
+    const diagonalRatio = 50.5;
+    
+    // Scroll xuống (e.deltaY > 0): Di chuyển chéo lên từ phải qua trái
+    // Scroll lên (e.deltaY < 0): Di chuyển chéo xuống từ trái qua phải
+    const deltaY = e.deltaY;
+    const speed = 0.002; // Giảm tốc độ xuống để mượt hơn
+    
+    let deltaX, moveY;
+    
+    if (deltaY > 0) {
+      // Scroll xuống: Di chuyển chéo lên từ phải qua trái
+      deltaX = -Math.abs(deltaY) * diagonalRatio * speed; // Sang trái
+      moveY = -Math.abs(deltaY) * speed; // Lên trên
+    } else {
+      // Scroll lên: Di chuyển chéo xuống từ trái qua phải
+      deltaX = Math.abs(deltaY) * diagonalRatio * speed; // Sang phải
+      moveY = Math.abs(deltaY) * speed; // Xuống dưới
+    }
+    
+    // Cập nhật vị trí
+    positionRef.current.x += deltaX;
+    positionRef.current.y += moveY;
+    
+    // Cập nhật vận tốc với hệ số thấp hơn
+    velocityRef.current = {
+      x: velocityRef.current.x * 0.4 + deltaX * 0.6,
+      y: velocityRef.current.y * 0.4 + moveY * 0.6,
+    };
+    
+    // Áp dụng transform
+    updateTransform();
+    
+    // Cập nhật phần tử trung tâm
+    updateCenterElem();
+    
+    // Khởi động animation frame
+    lastTimeRef.current = Date.now();
+    animationFrameRef.current = requestAnimationFrame(applyInertia);
+  };
+  
   const resize = () => {
     if (typeof window === 'undefined') return;
     
@@ -508,8 +555,8 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     const winMidX = windowWidth / 2;
     const winMidY = windowHeight / 2;
     
-    const boxWidth = windowWidth * 0.35;
-    const boxHeight = windowHeight * 0.35;
+    const boxWidth = isMobile ? 120 : 160;
+    const boxHeight = isMobile ? 120 : 160;
     const gutter = windowWidth * 0.05;
     
     const horizSpacing = boxWidth + gutter;
@@ -517,7 +564,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     const horizOffset = -(imgMidIndex * horizSpacing + boxWidth / 2) + windowWidth / 2;
     const vertOffset = -(rowMidIndex * vertSpacing + boxHeight / 2) + windowHeight / 2;
     
-    // Update dimensions ref
     dimensionsRef.current = {
       boxWidth,
       boxHeight,
@@ -530,28 +576,23 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       winMidY
     };
     
-    // Reset our container
     positionRef.current = { x: 0, y: 0 };
     velocityRef.current = { x: 0, y: 0 };
     if (containerRef.current) {
       containerRef.current.style.transform = `translate3d(0px, 0px, 0)`;
     }
     
-    // Update positions for rows and images
     rowsRef.current.forEach((row, i) => {
       if (!row) return;
       
-      // Set data-offset attribute
       const isOffset = i % 2 !== 0;
       row.dataset.offset = isOffset ? "true" : "false";
       
-      // Position the row
       const rowX = isOffset ? horizOffset - boxWidth / 2 : horizOffset;
       const rowY = i * vertSpacing + vertOffset;
       
       row.style.transform = `translate(${rowX}px, ${rowY}px)`;
       
-      // Position images within the row
       const images = Array.from(row.querySelectorAll('.sliderImage')) as HTMLDivElement[];
       images.forEach((img, index) => {
         img.style.width = `${boxWidth}px`;
@@ -559,34 +600,19 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
         img.style.transform = `translate(${index * horizSpacing}px, 0)`;
       });
       
-      // Update our representation
       rowArrayRef.current[i] = row;
     });
     
-    // Set the initial centered element
     if (rowsRef.current.length > rowMidIndex - 1 && 
         rowsRef.current[rowMidIndex - 1]?.querySelectorAll('.sliderImage').length > imgMidIndex) {
       lastCenteredElemRef.current = rowsRef.current[rowMidIndex - 1]?.querySelectorAll('.sliderImage')[imgMidIndex] as HTMLDivElement || null;
     }
   };
   
-  // Get media item at a specific index
   const getMediaItem = (index: number): MediaItemData => {
-    if (mediaItems.length === 0) {
-      // If no media items provided, generate a random image
-      const randImgSize = Math.floor(Math.max(typeof window !== 'undefined' ? window.innerWidth : 1000, 
-                                             typeof window !== 'undefined' ? window.innerHeight : 1000) / 3);
-      return {
-        type: "image",
-        src: `https://picsum.photos/${randImgSize}/${randImgSize}?random=${index}`
-      };
-    }
-    
-    // Return the media item at the specified index (with wrapping)
     return mediaItems[index % mediaItems.length];
   };
   
-  // Create media element based on type
   const createMediaElement = (item: MediaItemData, key: string) => {
     if (item.type === "video") {
       return (
@@ -595,7 +621,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
             if (el) {
               videoRefs.current[key] = el;
               
-              // Observe for autoplay
               if (observerRef.current) {
                 observerRef.current.observe(el);
               }
@@ -619,14 +644,17 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
   };
   
-  // Initialize the grid
-  useEffect(() => {
-    // Create image representation
+  useEffect(() => { 
     imgRepRef.current = Array(rowNum).fill(0).map(() => []);
     
-    // Setup resize handler and initial layout
     resize();
     window.addEventListener('resize', resize);
+    
+    // Thêm event listener cho wheel event
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    
+    // Thêm event listener cho hiệu ứng parallax
+    window.addEventListener('mousemove', handleMouseMove);
     
     return () => {
       window.removeEventListener('resize', resize);
@@ -634,14 +662,18 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       window.removeEventListener('mouseup', handleMouseUp);
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
+      window.removeEventListener('wheel', handleWheel);
       
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
+      
+      if (parallaxAnimationRef.current) {
+        cancelAnimationFrame(parallaxAnimationRef.current);
+      }
     };
   }, []);
   
-  // Update row references and image representation when DOM is ready
   useEffect(() => {
     if (rowsRef.current.length === rowNum) {
       rowsRef.current.forEach((row, i) => {
@@ -655,20 +687,19 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
   }, [rowNum]);
   
+  
   return (
     <div 
-      className="overflow-hidden w-full h-screen cursor-grab"
+      className="overflow-hidden w-full h-[200vh] cursor-grab"
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
     >
-      {/* Draggable container */}
-      <div className="overflow-hidden w-full h-screen">
+      <div className="overflow-hidden w-full h-[200vh]">
       <div
         ref={containerRef}
-        className=" will-change-transform touch-none inset-0"
+        className="will-change-transform touch-none inset-0"
       >
-        {/* Rows */}
-        <div className="w-screen h-screen overflow-hidden">
+        <div className="w-screen h-[200vh] overflow-hidden">
         {Array.from({ length: rowNum }).map((_, rowIndex) => (
           <div
             key={`row-${rowIndex}`}
@@ -676,7 +707,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
             className="row absolute"
             data-offset={rowIndex % 2 !== 0 ? "true" : "false"}
           >
-            {/* Images in each row */}
             {Array.from({ length: imgNum }).map((_, imgIndex) => {
               const mediaIndex = rowIndex * imgNum + imgIndex;
               const mediaItem = getMediaItem(mediaIndex);
@@ -684,7 +714,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
               return (
                 <div
                   key={`media-${rowIndex}-${imgIndex}`}
-                  className="sliderImage absolute top-0 left-0 overflow-hidden"
+                  className="sliderImage absolute top-0 left-0 overflow-hidden rounded-[20px]"
                 >
                   {createMediaElement(mediaItem, `media-${mediaIndex}`)}
                 </div>

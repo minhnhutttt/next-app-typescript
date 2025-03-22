@@ -5,6 +5,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Splitting from "splitting";
+import InfiniteImageGrid from "./InfiniteImageGrid";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -28,18 +29,6 @@ interface MarqueeProps {
   className: string;
 }
 
-const MEDIA_ITEMS: MediaItemData[] = [
-  { type: "image", src: "/assets/images/fv-01.png" },
-  { type: "video", src: "/assets/images/fv-02.mp4" },
-  { type: "image", src: "/assets/images/fv-03.png" },
-  { type: "image", src: "/assets/images/fv-04.png" },
-  { type: "video", src: "/assets/images/fv-05.mp4" },
-  { type: "image", src: "/assets/images/fv-06.png" },
-  { type: "image", src: "/assets/images/fv-07.png" },
-  { type: "video", src: "/assets/images/fv-08.mp4" },
-  { type: "image", src: "/assets/images/fv-09.png" },
-  { type: "image", src: "/assets/images/fv-10.png" },
-];
 
 const MEDIA_ITEMS02: MediaItemData[] = [
   { type: "video", src: "/assets/images/fv-08.mp4" },
@@ -65,6 +54,27 @@ const MEDIA_ITEMS03: MediaItemData[] = [
   { type: "video", src: "/assets/images/fv-02.mp4" },
   { type: "image", src: "/assets/images/fv-03.png" },
   { type: "image", src: "/assets/images/fv-04.png" },
+];
+
+const MEDIA_ITEMS: MediaItemData[] = [
+  { type: "image", src: "/assets/images/fv-01.png" },
+  { type: "video", src: "/assets/images/fv-02.mp4" },
+  { type: "image", src: "/assets/images/fv-03.png" },
+  { type: "image", src: "/assets/images/fv-04.png" },
+  { type: "video", src: "/assets/images/fv-05.mp4" },
+  { type: "image", src: "/assets/images/fv-06.png" },
+  { type: "image", src: "/assets/images/fv-07.png" },
+  { type: "video", src: "/assets/images/fv-08.mp4" },
+  { type: "image", src: "/assets/images/fv-09.png" },
+  { type: "image", src: "/assets/images/fv-10.png" },
+  { type: "image", src: "/assets/images/fv-11.png" },
+  { type: "image", src: "/assets/images/fv-12.png" },
+  { type: "image", src: "/assets/images/fv-13.png" },
+  { type: "image", src: "/assets/images/fv-14.png" },
+  { type: "video", src: "/assets/images/fv-15.mp4" },
+  { type: "image", src: "/assets/images/fv-16.png" },
+  { type: "image", src: "/assets/images/fv-17.png" },
+  { type: "video", src: "/assets/images/fv-18.mp4" },
 ];
 
 const MediaItem: React.FC<MediaItemProps> = ({ item, index }) => {
@@ -221,6 +231,9 @@ const Fv: React.FC = () => {
         display: "inline-block",
         opacity: 0.4,
       });
+      gsap.set(containerRef.current, {
+        opacity: 0,
+      });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -232,7 +245,9 @@ const Fv: React.FC = () => {
         },
       });
 
-      tl.to(
+      tl.to(containerRef.current, {
+        opacity: 1
+      }).to(
         charScroll,
         {
           opacity: 1,
@@ -262,37 +277,19 @@ const Fv: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen h-[200vh]  p-4 overflow-hidden bg-black pointer-events-none">
+    <main className="min-h-screen h-[200vh] p-4 overflow-hidden bg-black">
       <div
-        ref={scrollAnimationsRef}
-        className="flex flex-col overflow-hidden md:justify-between justify-center bg-[url(/assets/images/svg-deco.svg)] bg-no-repeat inset-0 h-[200vh] bg-center py-[10vw] max-md:gap-[30vw] md:py-[130px]"
+        className="flex flex-col h-full overflow-hidden md:justify-between justify-center bg-[url(/assets/images/svg-deco.svg)] bg-no-repeat  bg-center relative z-30"
       >
-        <Marquee items={MEDIA_ITEMS} className="marquise-right-1 mr-[-45%]" />
-
-        <Marquee
-          items={MEDIA_ITEMS02}
-          className="marquise-right-2 mr-[-25%] "
-        />
-
-        <Marquee
-          items={MEDIA_ITEMS03}
-          className="marquise-right-3 mr-[-35%] "
-        />
-        <Marquee items={MEDIA_ITEMS} className="marquise-right-1 mr-[-45%]" />
-
-        <Marquee
-          items={MEDIA_ITEMS02}
-          className="marquise-right-2 mr-[-25%] "
-        />
-
-        <Marquee
-          items={MEDIA_ITEMS03}
-          className="marquise-right-3 mr-[-35%] "
-        />
-        
+        <InfiniteImageGrid
+        rowNum={12}
+        imgNum={20}
+        mediaItems={MEDIA_ITEMS}
+      />
       </div>
-      <div className="absolute inset-0 h-screen w-full overflow-hidden" ref={containerRef}>
-        <div className="w-full absolute h-screen inset-0">
+      <div className="md:pointer-events-none">
+      <div className="absolute inset-0 h-screen w-full overflow-hidden md:pointer-events-none z-50" ref={containerRef}>
+        <div className="w-full absolute h-screen inset-0 md:pointer-events-none">
           <div
             className="h-full flex flex-col justify-center items-center"
             style={getTextParallaxStyle()}
@@ -300,14 +297,15 @@ const Fv: React.FC = () => {
             <h4
               ref={charScrollRef}
               data-splitting
-              className="text-[8vw] text-center leading-[1.8] text-white md:text-[64px] font-bold"
+              className="text-[8vw] text-center leading-[1.8] text-white md:text-[64px] font-bold relative z-50"
             >
               Unleashing Global <br />
               Entertainment Value <br />
               Across Borders 
             </h4>
           </div>
-        </div>{" "}
+        </div>
+        </div>
       </div>
     </main>
   );
