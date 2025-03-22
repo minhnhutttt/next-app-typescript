@@ -15,13 +15,13 @@ import LanguageDropdown from "./languageDropdown";
 import { useTheme } from "next-themes";
 import { Locale } from "../dictionaries";
 import { getLocalizedPath } from "../lib/routes";
+import { ArticleData } from "../data/data";
 
-export const dataRank: dataArticle[] = [
+export const dataRank: ArticleData[] = [
   {id: '01',
     date: "2024.4.18",
     title:
       "ビットコインに価値がないと言うのなら、人類は皆まともに歩けないと言っているようなものにすぎない",
-    link: "/blockchain/id",
   },
   {id: '01',
     date: "2024.4.18",

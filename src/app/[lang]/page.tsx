@@ -25,22 +25,22 @@ export default async function Home({ params: { lang } }: HomePageProps) {
               <img className="hidden dark:block" src="/assets/images/logo-dark.png" alt="" />
           </h2>
           <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-x-8 md:gap-y-12 max-md:border-t border-black dark:border-white relative z-10">
-            <Article data={dataAI}>
+            <Article type="ai" data={dataAI}>
               <TitleAI rect="md:h-[12.5px] h-[14px]" />
             </Article>
-            <Article data={dataBlockChain}>
+            <Article type="blockchain" data={dataBlockChain}>
               <TitleBlockChain rect="md:h-[12.5px] h-[14px]" />
             </Article>
-            <Article data={dataWebSite}>
+            <Article type="website" data={dataWebSite}>
               <TitleWebSite rect="md:h-[12.5px] h-[14px]" />
             </Article>
-            <Article data={dataAD}>
+            <Article type="ad" data={dataAD}>
               <TitleAD rect="md:h-[12.5px] h-[14px]" />
             </Article>
-            <Article data={dataMarketing}>
+            <Article type="marketing" data={dataMarketing}>
               <TitleMarketing rect="md:h-[12.5px] h-[14px]" />
             </Article>
-            <Article data={dataFx}>
+            <Article type="fx" data={dataFx}>
               <TitleFx rect="md:h-[12.5px] h-[14px]" />
             </Article>
           </div>

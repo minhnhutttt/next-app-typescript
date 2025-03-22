@@ -1,10 +1,12 @@
-import { dataBlockChain, getAllArticleIds, getArticleByIdAndLang } from '@/app/data/data';
+import { dataAD,  getAllArticleIds, getArticleByIdAndLang } from '@/app/data/data';
 import { notFound } from 'next/navigation';
-import SingleBlockchain from './SingleBlockchain';
+import SingleAd from './SingleAd';
 
 export async function generateStaticParams() {
   const langs = ['ja', 'en', 'zh'];
-  const ids = getAllArticleIds(dataBlockChain);
+  
+  
+  const ids = getAllArticleIds(dataAD);
   
   const params = [];
   
@@ -23,11 +25,11 @@ export async function generateStaticParams() {
 export default function BlockchainArticlePage({ params }: { params: { lang: string, id: string } }) {
   const { lang, id } = params;
   
-  const article = getArticleByIdAndLang(dataBlockChain,id, lang);
+  const article = getArticleByIdAndLang(dataAD, id, lang);
   
   if (!article) {
     return notFound();
   }
 
-  return <SingleBlockchain article={article} />;
+  return <SingleAd article={article} />;
 }

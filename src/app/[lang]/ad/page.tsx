@@ -7,7 +7,7 @@ import { dataAD } from "@/app/data/data";
 export default function Ad() {
   return (
     <PageContainer>
-        <Article data={dataAD} disable>
+        <Article type="ad" data={dataAD} disable>
             <TitleAD rect="md:h-[12.5px] h-[14px]" />
         </Article>
     </PageContainer>

@@ -9,6 +9,7 @@ import { ArticleData, getAllArticlesByLang } from '../data/data';
 
 
 interface ArticleProps {
+    type: string;
     data: ArticleData[];
     children: ReactNode;
     disable?: boolean;
@@ -20,7 +21,7 @@ export async function generateStaticParams() {
       { lang: 'zh' }
     ];
   }
-const Article = ({ children, data, disable }: ArticleProps) => {
+const Article = ({ children, data, disable, type }: ArticleProps) => {
     const [isVisible, setIsVisible] = useState(false);
     const params = useParams();
     const lang = params.lang as Locale;
@@ -46,7 +47,7 @@ const Article = ({ children, data, disable }: ArticleProps) => {
             </button>
             <div className={`max-md:pl-8 max-md:divide-y divide-black/60 dark:divide-white/60 ${disable && '!block'} ${isVisible ? "block" : "hidden md:block"}`}>
                 {articles.map((item, index) => (
-                    <Link href={getLocalizedPath('/blockchain/01', lang)} className="block w-full md:border-b border-black/60 dark:border-white/60 py-2 pr-4" key={index}>
+                    <Link href={getLocalizedPath(`/${type}/${item.id}`, lang)} className="block w-full md:border-b border-black/60 dark:border-white/60 py-2 pr-4" key={index}>
                         <p className="text-[16px] md:text-[15px] font-hiragino dark:text-white leading-snug py-1">{item.title}</p>
                     </Link>
                 ))}
