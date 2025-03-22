@@ -1,0 +1,90 @@
+{
+    "common": {
+      "title": "Multilingual Website",
+      "description": "A simple example of a multilingual website with Next.js 14",
+      "language": "Language"
+    },
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "products": "Products",
+      "contact": "Contact",
+      "blog": "Blog"
+    },
+    "homepage": {
+      "title": "Welcome to our Website",
+      "description": "Discover our amazing products and services",
+      "hero": {
+        "title": "Your Journey Starts Here",
+        "subtitle": "The best solutions for your business",
+        "cta": "Get Started"
+      },
+      "features": {
+        "title": "Our Features",
+        "feature1": {
+          "title": "High Quality",
+          "description": "We provide the highest quality products on the market"
+        },
+        "feature2": {
+          "title": "24/7 Support",
+          "description": "Our team is always available to help you"
+        },
+        "feature3": {
+          "title": "Best Prices",
+          "description": "Competitive prices for premium products"
+        }
+      }
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Learn more about our company and mission",
+      "mission": {
+        "title": "Our Mission",
+        "description": "To provide excellent products and services to our customers"
+      },
+      "vision": {
+        "title": "Our Vision",
+        "description": "To become the leading provider in our industry"
+      },
+      "team": {
+        "title": "Our Team",
+        "description": "Meet the people behind our success"
+      }
+    },
+    "products": {
+      "title": "Our Products",
+      "description": "Browse our collection of premium products",
+      "filter": "Filter by category",
+      "sort": "Sort by",
+      "price": "Price",
+      "category": "Category",
+      "search": "Search products",
+      "noResults": "No products found",
+      "addToCart": "Add to Cart",
+      "viewDetails": "View Details"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with our team",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "submit": "Send Message"
+      },
+      "info": {
+        "address": "Address",
+        "phone": "Phone",
+        "email": "Email"
+      },
+      "success": "Your message has been sent successfully!",
+      "error": "There was an error sending your message. Please try again."
+    },
+    "footer": {
+      "copyright": "© 2025 Your Company. All rights reserved.",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy"
+    }
+  }

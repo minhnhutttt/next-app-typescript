@@ -1,0 +1,90 @@
+{
+    "common": {
+      "title": "Trang Web Đa Ngôn Ngữ",
+      "description": "Một ví dụ đơn giản về trang web đa ngôn ngữ với Next.js 14",
+      "language": "Ngôn ngữ"
+    },
+    "navigation": {
+      "home": "Trang chủ",
+      "about": "Giới thiệu",
+      "products": "Sản phẩm",
+      "contact": "Liên hệ",
+      "blog": "Tin tức"
+    },
+    "homepage": {
+      "title": "Chào mừng đến với Trang Web của chúng tôi",
+      "description": "Khám phá các sản phẩm và dịch vụ tuyệt vời của chúng tôi",
+      "hero": {
+        "title": "Hành trình của bạn bắt đầu từ đây",
+        "subtitle": "Những giải pháp tốt nhất cho doanh nghiệp của bạn",
+        "cta": "Bắt đầu ngay"
+      },
+      "features": {
+        "title": "Tính năng của chúng tôi",
+        "feature1": {
+          "title": "Chất lượng cao",
+          "description": "Chúng tôi cung cấp các sản phẩm chất lượng cao nhất trên thị trường"
+        },
+        "feature2": {
+          "title": "Hỗ trợ 24/7",
+          "description": "Đội ngũ của chúng tôi luôn sẵn sàng hỗ trợ bạn"
+        },
+        "feature3": {
+          "title": "Giá tốt nhất",
+          "description": "Giá cả cạnh tranh cho các sản phẩm cao cấp"
+        }
+      }
+    },
+    "about": {
+      "title": "Về chúng tôi",
+      "description": "Tìm hiểu thêm về công ty và sứ mệnh của chúng tôi",
+      "mission": {
+        "title": "Sứ mệnh của chúng tôi",
+        "description": "Cung cấp các sản phẩm và dịch vụ xuất sắc cho khách hàng"
+      },
+      "vision": {
+        "title": "Tầm nhìn của chúng tôi",
+        "description": "Trở thành nhà cung cấp hàng đầu trong ngành của chúng tôi"
+      },
+      "team": {
+        "title": "Đội ngũ của chúng tôi",
+        "description": "Gặp gỡ những người đứng sau thành công của chúng tôi"
+      }
+    },
+    "products": {
+      "title": "Sản phẩm của chúng tôi",
+      "description": "Duyệt qua bộ sưu tập các sản phẩm cao cấp của chúng tôi",
+      "filter": "Lọc theo danh mục",
+      "sort": "Sắp xếp theo",
+      "price": "Giá",
+      "category": "Danh mục",
+      "search": "Tìm kiếm sản phẩm",
+      "noResults": "Không tìm thấy sản phẩm nào",
+      "addToCart": "Thêm vào giỏ hàng",
+      "viewDetails": "Xem chi tiết"
+    },
+    "contact": {
+      "title": "Liên hệ với chúng tôi",
+      "description": "Liên hệ với đội ngũ của chúng tôi",
+      "form": {
+        "name": "Tên",
+        "email": "Email",
+        "subject": "Chủ đề",
+        "message": "Tin nhắn",
+        "submit": "Gửi tin nhắn"
+      },
+      "info": {
+        "address": "Địa chỉ",
+        "phone": "Điện thoại",
+        "email": "Email"
+      },
+      "success": "Tin nhắn của bạn đã được gửi thành công!",
+      "error": "Đã xảy ra lỗi khi gửi tin nhắn của bạn. Vui lòng thử lại."
+    },
+    "footer": {
+      "copyright": "© 2025 Công ty của bạn. Đã đăng ký bản quyền.",
+      "terms": "Điều khoản & Điều kiện",
+      "privacy": "Chính sách bảo mật",
+      "cookies": "Chính sách cookie"
+    }
+  }
