@@ -15,33 +15,7 @@ import LanguageDropdown from "./languageDropdown";
 import { useTheme } from "next-themes";
 import { Locale } from "../dictionaries";
 import { getLocalizedPath } from "../lib/routes";
-import { ArticleData } from "../data/data";
-
-export const dataRank: ArticleData[] = [
-  {id: '01',
-    date: "2024.4.18",
-    title:
-      "ビットコインに価値がないと言うのなら、人類は皆まともに歩けないと言っているようなものにすぎない",
-  },
-  {id: '01',
-    date: "2024.4.18",
-    title:
-      "広告代理店の見極め方〜失敗の責任を負いたくなければ「大手」に群がれ！成功したければ規模に目を向けるな！〜",
-    link: "/ad/id",
-  },
-  {id: '01',
-    date: "2024.4.18",
-    title:
-      "イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない",
-    link: "/fx/id",
-  },
-  {id: '01',
-    date: "2024.4.18",
-    title:
-      "イーロン・マスクが中国を訪問しても、テスラにとっての根本的な課題は解決しない",
-    link: "/website/id",
-  },
-];
+import { getTranslationByLang, RankData } from "../data/data";
 
 const Menu = () => {
   const [NavOpen, setNavOpen] = useState(false);
@@ -86,6 +60,7 @@ const Menu = () => {
       setNavOpen(true);
     }
   };
+
   if (!mounted) {
     return null;
   }
@@ -217,7 +192,7 @@ const Menu = () => {
         <div className="max-md:pr-14 overflow-auto">
           {tab === 0 ? (
             <div className="">
-              {dataRank.map((item, index) => (
+              {RankData.map((item, index) => (
                 <div
                   key={index}
                   className="flex flex-col  border-b border-black/30 dark:border-white/30 gap-2 px-5 md:px-2 py-4"
@@ -228,7 +203,7 @@ const Menu = () => {
                     className="flex items-center  relative  duration-150 hover:opacity-75"
                   >
                     <p className="text-[13px] font-hiragino dark:text-white leading-snug">
-                      {item.title}
+                     {getTranslationByLang(item, lang)?.title}
                     </p>
                   </Link>
                 </div>

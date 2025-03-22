@@ -1,42 +1,20 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { Locale } from "../dictionaries";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
-interface Language {
-  code: string;
-}
 
-interface LanguageDropdownProps {
-  initialLanguage?: string;
-  onLanguageChange?: (langCode: string) => void;
-}
-
-const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
-  initialLanguage = "ja",
-  onLanguageChange
-}) => {
+const LanguageDropdown = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedLang, setSelectedLang] = useState<string>(initialLanguage);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const languages: Language[] = [
-    { code: "Ja" },
-    { code: "En" },
-    { code: "Ch" }
-  ];
+
+  const languages: Locale[] = [ 'ja','en', 'zh'];
 
   const toggleDropdown = (): void => {
     setIsOpen(!isOpen);
-  };
-
-  const selectLanguage = (langCode: string): void => {
-    setSelectedLang(langCode);
-    setIsOpen(false);
-    
-    if (onLanguageChange) {
-      onLanguageChange(langCode);
-    }
-    
   };
 
   useEffect(() => {
@@ -52,18 +30,49 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
     };
   }, []);
 
-  const currentLanguage = languages.find(lang => lang.code === selectedLang) || languages[0];
+  const locales: Locale[] = [ 'ja','en', 'zh'];
+  const defaultLocale: Locale = 'ja';
+  const pathname = usePathname();
+    
+    const getCurrentLocale = (): Locale => {
+      const firstSegment = pathname.split('/')[1];
+      return locales.includes(firstSegment as Locale) 
+        ? (firstSegment as Locale) 
+        : defaultLocale;
+    };
+    
+    const currentLocale = getCurrentLocale();
+    
+    const getLocalizedUrl = (newLocale: Locale): string => {
+      if (pathname === `/${currentLocale}` || pathname === `/${currentLocale}/`) {
+        return newLocale === defaultLocale ? '/' : `/${newLocale}/`;
+      }
+      
+      if (pathname === '/' || pathname === '') {
+        return newLocale === defaultLocale ? '/' : `/${newLocale}/`;
+      }
+      
+      if (locales.includes(pathname.split('/')[1] as Locale)) {
+        const pathAfterLocale = pathname.substring(pathname.indexOf('/', 1));
+        
+        return `/${newLocale}${pathAfterLocale}`;
+      }
+      
+      return newLocale === defaultLocale 
+        ? pathname 
+        : `/${newLocale}${pathname}`;
+    };
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
         type="button"
-        className="flex items-center w-[80px] justify-center h-8 px-1.5 md:px-3  max-md:rounded-r-none rounded-[20px] bg-white border border-[#CFCFCF] text-[14px] text-helvetica"
+        className="flex items-center uppercase w-[80px] justify-center h-8 px-1.5 md:px-3  max-md:rounded-r-none rounded-[20px] bg-white border border-[#CFCFCF] text-[14px] text-helvetica"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        {currentLanguage.code}
+        {currentLocale}
         <svg 
           className={`ml-0.5 h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
           xmlns="http://www.w3.org/2000/svg" 
@@ -83,18 +92,17 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
         <div className="absolute right-0 z-10 w-full rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {languages.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => selectLanguage(lang.code)}
+              <a href={getLocalizedUrl(lang)}
+                key={lang}
                 className={`block w-full px-4 py-2 text-sm text-center ${
-                  selectedLang === lang.code 
+                  currentLocale === lang 
                     ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white' 
                     : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700'
                 }`}
                 role="menuitem"
               >
-                {lang.code}
-              </button>
+                {lang}
+              </a>
             ))}
           </div>
         </div>
