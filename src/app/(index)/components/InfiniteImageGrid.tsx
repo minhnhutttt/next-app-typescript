@@ -348,7 +348,8 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     positionRef.current = { x: newX, y: newY };
     
-    containerRef.current.style.transform = `translate3d(${smoothedX}px, ${smoothedY}px, 0)`;
+    // Sử dụng hàm updateTransform thay vì set trực tiếp
+    updateTransform();
     
     updateCenterElem();
     
@@ -371,6 +372,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     animationFrameRef.current = requestAnimationFrame(applyInertia);
   };
+  
   
   const handleTouchStart = (e: React.TouchEvent) => {
     if (e.touches.length !== 1) return;
@@ -441,16 +443,14 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   
   // Xử lý hiệu ứng parallax theo chuyển động của chuột
   const handleMouseMove = (e: MouseEvent) => {
-    if (isDraggingRef.current) return;
-    
-    // Lưu vị trí chuột hiện tại
+    // Luôn cập nhật vị trí chuột, bất kể đang kéo hay không
     mousePositionRef.current = { 
       x: e.clientX, 
       y: e.clientY 
     };
     
-    // Nếu chưa có animation frame cho parallax, khởi tạo một cái
-    if (!parallaxAnimationRef.current) {
+    // Chỉ khởi tạo hiệu ứng nếu không có hiệu ứng nào đang chạy
+    if (!isDraggingRef.current && !animationFrameRef.current && !parallaxAnimationRef.current) {
       parallaxAnimationRef.current = requestAnimationFrame(updateParallaxEffect);
     }
   };
@@ -506,12 +506,12 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
     
     // Tỷ lệ di chuyển chéo
-    const diagonalRatio = 50.5;
+    const diagonalRatio = 5.0;
     
     // Scroll xuống (e.deltaY > 0): Di chuyển chéo lên từ phải qua trái
     // Scroll lên (e.deltaY < 0): Di chuyển chéo xuống từ trái qua phải
     const deltaY = e.deltaY;
-    const speed = 0.002; // Giảm tốc độ xuống để mượt hơn
+    const speed = 0.01; // Giảm tốc độ xuống để mượt hơn
     
     let deltaX, moveY;
     
@@ -541,6 +541,33 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     // Cập nhật phần tử trung tâm
     updateCenterElem();
     
+    // Kiểm tra và xác định xem cần reposition items hay không
+    // Lấy phần tử ở trung tâm màn hình
+    const { winMidX, winMidY } = dimensionsRef.current;
+    const elems = document.elementsFromPoint(winMidX, winMidY);
+    
+    // Tìm sliderImage gần trung tâm nhất
+    let centerElem = null;
+    for (const elem of elems) {
+      if (elem.classList.contains('sliderImage')) {
+        centerElem = elem as HTMLDivElement;
+        break;
+      }
+    }
+    
+    // Nếu có phần tử ở trung tâm, kiểm tra vị trí và kích hoạt reposition nếu cần
+    if (centerElem) {
+      // Phát hiện khi cuộn wheel đã đi quá xa bằng cách kiểm tra
+      // vị trí của phần tử trung tâm so với vị trí mong đợi
+      checkPositions(centerElem);
+      
+      // Nếu scroll mạnh, gọi lại checkPositions để đảm bảo
+      // các items được reposition đúng cách
+      if (Math.abs(deltaY) > 50) {
+        setTimeout(() => checkPositions(centerElem!), 100);
+      }
+    }
+    
     // Khởi động animation frame
     lastTimeRef.current = Date.now();
     animationFrameRef.current = requestAnimationFrame(applyInertia);
@@ -555,8 +582,8 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     const winMidX = windowWidth / 2;
     const winMidY = windowHeight / 2;
     
-    const boxWidth = isMobile ? 120 : 160;
-    const boxHeight = isMobile ? 120 : 160;
+    const boxWidth = isMobile ? windowWidth * 0.3 : 160;
+    const boxHeight = isMobile ? windowWidth * 0.3 : 160;
     const gutter = windowWidth * 0.05;
     
     const horizSpacing = boxWidth + gutter;
@@ -580,6 +607,20 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     velocityRef.current = { x: 0, y: 0 };
     if (containerRef.current) {
       containerRef.current.style.transform = `translate3d(0px, 0px, 0)`;
+    }
+    
+    // Để đảm bảo vị trí ban đầu được cập nhật đúng
+    positionRef.current = { x: 0, y: 0 };
+    
+    // Đảm bảo không có hiệu ứng nào đang chạy
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    }
+    
+    if (parallaxAnimationRef.current) {
+      cancelAnimationFrame(parallaxAnimationRef.current);
+      parallaxAnimationRef.current = null;
     }
     
     rowsRef.current.forEach((row, i) => {
@@ -644,7 +685,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
   };
   
-  useEffect(() => { 
+  useEffect(() => {
     imgRepRef.current = Array(rowNum).fill(0).map(() => []);
     
     resize();
@@ -686,6 +727,9 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       rowArrayRef.current = [...rowsRef.current];
     }
   }, [rowNum]);
+
+
+  
   
   
   return (

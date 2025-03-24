@@ -287,9 +287,9 @@ const Fv: React.FC = () => {
         mediaItems={MEDIA_ITEMS}
       />
       </div>
-      <div className="md:pointer-events-none">
-      <div className="absolute inset-0 h-screen w-full overflow-hidden md:pointer-events-none z-50" ref={containerRef}>
-        <div className="w-full absolute h-screen inset-0 md:pointer-events-none">
+      <div className="pointer-events-none">
+      <div className="absolute inset-0 h-screen w-full overflow-hidden  z-50" ref={containerRef}>
+        <div className="w-full absolute h-screen inset-0 ">
           <div
             className="h-full flex flex-col justify-center items-center"
             style={getTextParallaxStyle()}
