@@ -267,7 +267,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     velocityRef.current.x *= decay;
     velocityRef.current.y *= decay;
     
-    const easeFactor = 0.75;
+    const easeFactor = 0.95;
     
     if (Math.abs(velocityRef.current.x) < 0.3 && Math.abs(velocityRef.current.y) < 0.3) {
       cancelAnimationFrame(animationFrameRef.current!);
@@ -323,8 +323,8 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     const newY = e.clientY - startPosRef.current.y;
     
     if (elapsed > 0) {
-      const rawVelocityX = (newX - positionRef.current.x) / elapsed * 10;
-      const rawVelocityY = (newY - positionRef.current.y) / elapsed * 10;
+      const rawVelocityX = (newX - positionRef.current.x) / elapsed * 16;
+      const rawVelocityY = (newY - positionRef.current.y) / elapsed * 16;
       
       const velocityBlendFactor = 0.6;
       velocityRef.current = {
@@ -464,6 +464,63 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     parallaxAnimationRef.current = requestAnimationFrame(updateParallaxEffect);
   };
   
+  const handleWheel = (e: WheelEvent) => {
+    e.preventDefault();
+    
+    if (!containerRef.current) return;
+    
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+    
+    const diagonalRatio = 5.0;
+    
+    const deltaY = e.deltaY;
+    const speed = 0.01;
+    let deltaX, moveY;
+    
+    if (deltaY > 0) {
+      deltaX = -Math.abs(deltaY) * diagonalRatio * speed;
+      moveY = -Math.abs(deltaY) * speed;
+    } else {
+      deltaX = Math.abs(deltaY) * diagonalRatio * speed;
+      moveY = Math.abs(deltaY) * speed;
+    }
+    
+    positionRef.current.x += deltaX;
+    positionRef.current.y += moveY;
+    
+    velocityRef.current = {
+      x: velocityRef.current.x * 0.4 + deltaX * 0.6,
+      y: velocityRef.current.y * 0.4 + moveY * 0.6,
+    };
+    
+    updateTransform();
+    
+    updateCenterElem();
+    
+    const { winMidX, winMidY } = dimensionsRef.current;
+    const elems = document.elementsFromPoint(winMidX, winMidY);
+    
+    let centerElem = null;
+    for (const elem of elems) {
+      if (elem.classList.contains('sliderImage')) {
+        centerElem = elem as HTMLDivElement;
+        break;
+      }
+    }
+    
+    if (centerElem) {
+      checkPositions(centerElem);
+      
+      if (Math.abs(deltaY) > 50) {
+        setTimeout(() => checkPositions(centerElem!), 100);
+      }
+    }
+    
+    lastTimeRef.current = Date.now();
+    animationFrameRef.current = requestAnimationFrame(applyInertia);
+  };
   
   const resize = () => {
     if (typeof window === 'undefined') return;
@@ -580,7 +637,8 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     resize();
     window.addEventListener('resize', resize);
-
+    
+    window.addEventListener('wheel', handleWheel, { passive: false });
     
     window.addEventListener('mousemove', handleMouseMove);
     
@@ -590,6 +648,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       window.removeEventListener('mouseup', handleMouseUp);
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
+      window.removeEventListener('wheel', handleWheel);
       
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
@@ -617,16 +676,16 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   
   return (
     <div 
-      className="overflow-hidden w-full cursor-grab h-screen"
+      className="overflow-hidden w-full h-[200vh] cursor-grab"
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
     >
-      <div className="overflow-hidden w-full h-screen">
+      <div className="overflow-hidden w-full h-[200vh]">
       <div
         ref={containerRef}
-        className="will-change-transform touch-none inset-0  ease-linear"
+        className="will-change-transform touch-none inset-0 "
       >
-        <div className="w-screen h-screen overflow-hidden">
+        <div className="w-screen h-[200vh] overflow-hidden">
         {Array.from({ length: rowNum }).map((_, rowIndex) => (
           <div
             key={`row-${rowIndex}`}
