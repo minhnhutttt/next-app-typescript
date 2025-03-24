@@ -658,7 +658,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
         cancelAnimationFrame(parallaxAnimationRef.current);
       }
     };
-  }, []);
+  }, [isMobile]);
   
   useEffect(() => {
     if (rowsRef.current.length === rowNum) {
