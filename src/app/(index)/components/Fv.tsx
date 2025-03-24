@@ -168,6 +168,7 @@ const Marquee: React.FC<MarqueeProps> = ({ items, className }) => {
 const Fv: React.FC = () => {
   const scrollAnimationsRef = useScrollAnimations();
   const containerRef = useRef<HTMLDivElement>(null);
+  const containerWrapRef = useRef<HTMLDivElement>(null);
   const charScrollRef = useRef<HTMLHeadingElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -189,40 +190,6 @@ const Fv: React.FC = () => {
   useEffect(() => {
     Splitting();
 
-    const marqueeConfigs = [
-      { selector: ".marquise-right-1", xPercent: -40 },
-      { selector: ".marquise-right-2", xPercent: -25 },
-      { selector: ".marquise-right-3", xPercent: -35 },
-    ];
-
-    const createMarqueeAnimation = (
-      selector: string,
-      xPercentValue: number
-    ): void => {
-      const elements = document.querySelectorAll(selector);
-
-      elements.forEach((element) => {
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: scrollAnimationsRef.current,
-              start: "top bottom",
-              end: "bottom top",
-              toggleActions: "play pause reverse pause",
-              scrub: true,
-            },
-          })
-          .to(element, {
-            xPercent: xPercentValue,
-            duration: 1,
-            ease: "linear",
-          });
-      });
-    };
-
-    marqueeConfigs.forEach((config) => {
-      createMarqueeAnimation(config.selector, config.xPercent);
-    });
 
     if (charScrollRef.current) {
       const charScroll = charScrollRef.current.querySelectorAll(".char");
@@ -231,7 +198,7 @@ const Fv: React.FC = () => {
         display: "inline-block",
         opacity: 0.4,
       });
-      gsap.set(containerRef.current, {
+      gsap.set(containerWrapRef.current, {
         opacity: 0,
       });
 
@@ -245,7 +212,7 @@ const Fv: React.FC = () => {
         },
       });
 
-      tl.to(containerRef.current, {
+      tl.to(containerWrapRef.current, {
         opacity: 1
       }).to(
         charScroll,
@@ -277,20 +244,22 @@ const Fv: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen h-[200vh] p-4 overflow-hidden bg-black">
+    <main className="min-h-screen h-screen p-4 overflow-hidden bg-black">
+      
+      <div className="bg-[url(/assets/images/svg-deco.svg)] bg-no-repeat  bg-center ">
+      <div className="absolute inset-0 h-screen w-full overflow-hidden" ref={containerRef}>
       <div
-        className="flex flex-col h-full overflow-hidden md:justify-between justify-center bg-[url(/assets/images/svg-deco.svg)] bg-no-repeat  bg-center relative z-30"
+        className="flex flex-col h-full overflow-hidden md:justify-between justify-center relative z-30"
       >
         <InfiniteImageGrid
-        rowNum={12}
-        imgNum={20}
+        rowNum={10}
+        imgNum={28}
         mediaItems={MEDIA_ITEMS}
       />
       </div>
-      <div className="md:pointer-events-none">
-      <div className="absolute inset-0 h-screen w-full overflow-hidden  z-50" ref={containerRef}>
-        <div className="w-full absolute h-screen inset-0 ">
+        <div className="w-full absolute h-screen inset-0 md:pointer-events-none z-50">
           <div
+          ref={containerWrapRef}
             className="h-full flex flex-col justify-center items-center"
             style={getTextParallaxStyle()}
           >

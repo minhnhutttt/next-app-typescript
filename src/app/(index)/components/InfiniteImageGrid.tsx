@@ -617,7 +617,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   
   return (
     <div 
-      className="overflow-hidden w-full h-screen cursor-grab"
+      className="overflow-hidden w-full cursor-grab h-screen"
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
     >

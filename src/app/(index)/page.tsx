@@ -10,7 +10,7 @@ const DynamicIntroduction = dynamic(() => import('./components/Introduction'), {
 export default function Home() {
   
   return (
-    <main className="">
+    <main className="bg-black">
       
     <DynamicFv />
       <DynamicIntroduction />

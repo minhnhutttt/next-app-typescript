@@ -55,7 +55,7 @@ const Introduction = () => {
   }, []);
     
     return (
-        <section ref={ref} id="introduction" className="relative overflow-hidden md:px-10 px-5 bg-[linear-gradient(180deg,_#000_0%,_rgba(250,_226,_215,_0.50)_100%)]">
+        <section ref={ref} id="introduction" className="mt-[100vh] relative overflow-hidden md:px-10 px-5 bg-[linear-gradient(180deg,_#000_0%,_rgba(250,_226,_215,_0.50)_100%)]">
             <div className="w-full max-w-[980px] mx-auto text-white">
                 <div ref={containe2rRef} className="h-screen flex flex-col justify-center items-center">
                     <h4 ref={charScrollRef2} data-splitting className="md:text-[24px] text-[4vw] text-center font-medium leading-[1.8]">
