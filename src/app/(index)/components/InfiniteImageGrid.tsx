@@ -2,12 +2,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 export type MediaType = "image" | "video";
-
 export interface MediaItemData {
   type: MediaType;
   src: string;
 }
-
 function moveArrayIndex<T>(array: T[], oldIndex: number, newIndex: number) {
   if (newIndex >= array.length) {
     newIndex = array.length - 1;
@@ -15,13 +13,11 @@ function moveArrayIndex<T>(array: T[], oldIndex: number, newIndex: number) {
   array.splice(newIndex, 0, array.splice(oldIndex, 1)[0]);
   return array;
 }
-
 interface InfiniteImageGridProps {
   rowNum?: number;
   imgNum?: number;
   mediaItems?: MediaItemData[];
 }
-
 const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   rowNum = 5,
   imgNum = 9,
@@ -29,7 +25,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef(false);
-  
   const positionRef = useRef({ x: 0, y: 0 });
   const startPosRef = useRef({ x: 0, y: 0 });
   const velocityRef = useRef({ x: 0, y: 0 });
@@ -38,7 +33,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   const lastScrollYRef = useRef(0);
   const mousePositionRef = useRef({ x: 0, y: 0 });
   const parallaxAnimationRef = useRef<number | null>(null);
-  
   const dimensionsRef = useRef({
     boxWidth: 0,
     boxHeight: 0,
@@ -50,7 +44,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     winMidX: 0,
     winMidY: 0
   });
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const rowsRef = useRef<HTMLDivElement[]>([]);
   const imgRepRef = useRef<HTMLDivElement[][]>([]);
   const rowArrayRef = useRef<HTMLDivElement[]>([]);
@@ -275,7 +269,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     const easeFactor = 0.95;
     
-    // Dừng animation khi vận tốc rất nhỏ
     if (Math.abs(velocityRef.current.x) < 0.3 && Math.abs(velocityRef.current.y) < 0.3) {
       cancelAnimationFrame(animationFrameRef.current!);
       animationFrameRef.current = null;
@@ -303,7 +296,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       animationFrameRef.current = null;
     }
     
-    // Dừng hiệu ứng parallax khi đang kéo
     if (parallaxAnimationRef.current) {
       cancelAnimationFrame(parallaxAnimationRef.current);
       parallaxAnimationRef.current = null;
@@ -347,15 +339,10 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
     
     positionRef.current = { x: newX, y: newY };
-    
-    // Sử dụng hàm updateTransform thay vì set trực tiếp
     updateTransform();
-    
     updateCenterElem();
-    
     lastTimeRef.current = now;
     
-    // Cập nhật vị trí chuột cho hiệu ứng parallax
     mousePositionRef.current = { x: e.clientX, y: e.clientY };
   };
   
@@ -364,8 +351,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     window.removeEventListener('mousemove', handleDragMove);
     window.removeEventListener('mouseup', handleMouseUp);
-    
-    // Khởi động lại hiệu ứng parallax sau khi kéo xong
     if (!parallaxAnimationRef.current) {
       parallaxAnimationRef.current = requestAnimationFrame(updateParallaxEffect);
     }
@@ -441,41 +426,32 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     animationFrameRef.current = requestAnimationFrame(applyInertia);
   };
   
-  // Xử lý hiệu ứng parallax theo chuyển động của chuột
   const handleMouseMove = (e: MouseEvent) => {
-    // Luôn cập nhật vị trí chuột, bất kể đang kéo hay không
     mousePositionRef.current = { 
       x: e.clientX, 
       y: e.clientY 
     };
     
-    // Chỉ khởi tạo hiệu ứng nếu không có hiệu ứng nào đang chạy
     if (!isDraggingRef.current && !animationFrameRef.current && !parallaxAnimationRef.current) {
       parallaxAnimationRef.current = requestAnimationFrame(updateParallaxEffect);
     }
   };
   
-  // Hàm tập trung xử lý việc cập nhật transform 
   const updateTransform = () => {
     if (!containerRef.current) return;
     
     let finalX = positionRef.current.x;
     let finalY = positionRef.current.y;
     
-    // Nếu hiệu ứng parallax đang hoạt động và không đang kéo
     if (!isDraggingRef.current) {
-      // Lấy kích thước cửa sổ
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
       
-      // Tính vị trí tương đối của chuột (-1 đến 1)
       const relativeX = (mousePositionRef.current.x / windowWidth) * 2 - 1;
       const relativeY = (mousePositionRef.current.y / windowHeight) * 2 - 1;
       
-      // Hệ số parallax - điều chỉnh để hiệu ứng mạnh/nhẹ
       const parallaxFactor = 15;
       
-      // Thêm hiệu ứng parallax vào vị trí cuối cùng
       finalX += -relativeX * parallaxFactor;
       finalY += -relativeY * parallaxFactor;
     }
@@ -483,7 +459,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     containerRef.current.style.transform = `translate3d(${finalX}px, ${finalY}px, 0)`;
   };
   
-  // Cập nhật hiệu ứng parallax - chỉ chạy khi không có animation nào khác đang hoạt động
   const updateParallaxEffect = () => {
     if (!containerRef.current || isDraggingRef.current || animationFrameRef.current) {
       parallaxAnimationRef.current = null;
@@ -494,59 +469,44 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     parallaxAnimationRef.current = requestAnimationFrame(updateParallaxEffect);
   };
   
-  // Xử lý sự kiện scroll chuột
   const handleWheel = (e: WheelEvent) => {
     e.preventDefault();
     
     if (!containerRef.current) return;
     
-    // Dừng animation trước đó nếu có
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
     }
     
-    // Tỷ lệ di chuyển chéo
     const diagonalRatio = 5.0;
     
-    // Scroll xuống (e.deltaY > 0): Di chuyển chéo lên từ phải qua trái
-    // Scroll lên (e.deltaY < 0): Di chuyển chéo xuống từ trái qua phải
     const deltaY = e.deltaY;
-    const speed = 0.01; // Giảm tốc độ xuống để mượt hơn
-    
+    const speed = 0.01;
     let deltaX, moveY;
     
     if (deltaY > 0) {
-      // Scroll xuống: Di chuyển chéo lên từ phải qua trái
-      deltaX = -Math.abs(deltaY) * diagonalRatio * speed; // Sang trái
-      moveY = -Math.abs(deltaY) * speed; // Lên trên
+      deltaX = -Math.abs(deltaY) * diagonalRatio * speed;
+      moveY = -Math.abs(deltaY) * speed;
     } else {
-      // Scroll lên: Di chuyển chéo xuống từ trái qua phải
-      deltaX = Math.abs(deltaY) * diagonalRatio * speed; // Sang phải
-      moveY = Math.abs(deltaY) * speed; // Xuống dưới
+      deltaX = Math.abs(deltaY) * diagonalRatio * speed;
+      moveY = Math.abs(deltaY) * speed;
     }
     
-    // Cập nhật vị trí
     positionRef.current.x += deltaX;
     positionRef.current.y += moveY;
     
-    // Cập nhật vận tốc với hệ số thấp hơn
     velocityRef.current = {
       x: velocityRef.current.x * 0.4 + deltaX * 0.6,
       y: velocityRef.current.y * 0.4 + moveY * 0.6,
     };
     
-    // Áp dụng transform
     updateTransform();
     
-    // Cập nhật phần tử trung tâm
     updateCenterElem();
     
-    // Kiểm tra và xác định xem cần reposition items hay không
-    // Lấy phần tử ở trung tâm màn hình
     const { winMidX, winMidY } = dimensionsRef.current;
     const elems = document.elementsFromPoint(winMidX, winMidY);
     
-    // Tìm sliderImage gần trung tâm nhất
     let centerElem = null;
     for (const elem of elems) {
       if (elem.classList.contains('sliderImage')) {
@@ -555,20 +515,14 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       }
     }
     
-    // Nếu có phần tử ở trung tâm, kiểm tra vị trí và kích hoạt reposition nếu cần
     if (centerElem) {
-      // Phát hiện khi cuộn wheel đã đi quá xa bằng cách kiểm tra
-      // vị trí của phần tử trung tâm so với vị trí mong đợi
       checkPositions(centerElem);
       
-      // Nếu scroll mạnh, gọi lại checkPositions để đảm bảo
-      // các items được reposition đúng cách
       if (Math.abs(deltaY) > 50) {
         setTimeout(() => checkPositions(centerElem!), 100);
       }
     }
     
-    // Khởi động animation frame
     lastTimeRef.current = Date.now();
     animationFrameRef.current = requestAnimationFrame(applyInertia);
   };
@@ -582,8 +536,11 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     const winMidX = windowWidth / 2;
     const winMidY = windowHeight / 2;
     
-    const boxWidth = isMobile ? windowWidth * 0.3 : 160;
-    const boxHeight = isMobile ? windowWidth * 0.3 : 160;
+    // Tính toán kích thước dựa trên cửa sổ hiện tại, không phụ thuộc vào isMobile
+    // để tránh sự nhảy đột ngột khi chuyển đổi breakpoint
+    const currentIsMobile = windowWidth <= 768;
+    const boxWidth = currentIsMobile ? windowWidth * 0.25 : 160;
+    const boxHeight = currentIsMobile ? windowWidth * 0.25 : 160;
     const gutter = windowWidth * 0.05;
     
     const horizSpacing = boxWidth + gutter;
@@ -605,14 +562,11 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     positionRef.current = { x: 0, y: 0 };
     velocityRef.current = { x: 0, y: 0 };
+    
     if (containerRef.current) {
       containerRef.current.style.transform = `translate3d(0px, 0px, 0)`;
     }
     
-    // Để đảm bảo vị trí ban đầu được cập nhật đúng
-    positionRef.current = { x: 0, y: 0 };
-    
-    // Đảm bảo không có hiệu ứng nào đang chạy
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
       animationFrameRef.current = null;
@@ -623,32 +577,87 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       parallaxAnimationRef.current = null;
     }
     
-    rowsRef.current.forEach((row, i) => {
-      if (!row) return;
-      
-      const isOffset = i % 2 !== 0;
-      row.dataset.offset = isOffset ? "true" : "false";
-      
-      const rowX = isOffset ? horizOffset - boxWidth / 2 : horizOffset;
-      const rowY = i * vertSpacing + vertOffset;
-      
-      row.style.transform = `translate(${rowX}px, ${rowY}px)`;
-      
-      const images = Array.from(row.querySelectorAll('.sliderImage')) as HTMLDivElement[];
-      images.forEach((img, index) => {
-        img.style.width = `${boxWidth}px`;
-        img.style.height = `${boxHeight}px`;
-        img.style.transform = `translate(${index * horizSpacing}px, 0)`;
+    // Sử dụng requestAnimationFrame để đảm bảo tất cả các styles được áp dụng đúng
+    requestAnimationFrame(() => {
+      rowsRef.current.forEach((row, i) => {
+        if (!row) return;
+        
+        const isOffset = i % 2 !== 0;
+        row.dataset.offset = isOffset ? "true" : "false";
+        
+        const rowX = isOffset ? horizOffset - boxWidth / 2 : horizOffset;
+        const rowY = i * vertSpacing + vertOffset;
+        
+        row.style.transform = `translate(${rowX}px, ${rowY}px)`;
+        
+        const images = Array.from(row.querySelectorAll('.sliderImage')) as HTMLDivElement[];
+        images.forEach((img, index) => {
+          // Đặt width và height trực tiếp
+          img.style.width = `${boxWidth}px`;
+          img.style.height = `${boxHeight}px`;
+          img.style.transform = `translate(${index * horizSpacing}px, 0)`;
+        });
+        
+        imgRepRef.current[i] = images;
+        rowArrayRef.current[i] = row;
       });
       
-      rowArrayRef.current[i] = row;
+      if (rowsRef.current.length > rowMidIndex - 1 && 
+          rowsRef.current[rowMidIndex - 1]?.querySelectorAll('.sliderImage').length > imgMidIndex) {
+        lastCenteredElemRef.current = rowsRef.current[rowMidIndex - 1]?.querySelectorAll('.sliderImage')[imgMidIndex] as HTMLDivElement || null;
+      }
+    });
+  };
+
+  useEffect(() => {
+    // Gọi resize khi isMobile thay đổi để cập nhật kích thước
+    resize();
+  }, [isMobile]);
+  
+  // Phần 3: Thêm debounce vào sự kiện resize để tránh gọi quá nhiều lần
+  
+  useEffect(() => {
+    imgRepRef.current = Array(rowNum).fill(0).map(() => []);
+    
+    resize();
+    
+    let resizeTimeout: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        resize();
+      }, 150); // Đợi 150ms sau khi resize kết thúc
+    };
+    
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    // Thêm sự kiện orientationchange để xử lý khi thiết bị xoay màn hình
+    window.addEventListener('orientationchange', () => {
+      // Sử dụng timeout ngắn để đảm bảo kích thước màn hình đã được cập nhật
+      setTimeout(resize, 250);
     });
     
-    if (rowsRef.current.length > rowMidIndex - 1 && 
-        rowsRef.current[rowMidIndex - 1]?.querySelectorAll('.sliderImage').length > imgMidIndex) {
-      lastCenteredElemRef.current = rowsRef.current[rowMidIndex - 1]?.querySelectorAll('.sliderImage')[imgMidIndex] as HTMLDivElement || null;
-    }
-  };
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('orientationchange', resize);
+      clearTimeout(resizeTimeout);
+      
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      
+      if (parallaxAnimationRef.current) {
+        cancelAnimationFrame(parallaxAnimationRef.current);
+      }
+    };
+  }, []);
   
   const getMediaItem = (index: number): MediaItemData => {
     return mediaItems[index % mediaItems.length];
@@ -739,35 +748,47 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       onTouchStart={handleTouchStart}
     >
       <div className="overflow-hidden w-full h-[200vh]">
-      <div
-        ref={containerRef}
-        className="will-change-transform touch-none inset-0"
-      >
-        <div className="w-screen h-[200vh] overflow-hidden">
-        {Array.from({ length: rowNum }).map((_, rowIndex) => (
-          <div
-            key={`row-${rowIndex}`}
-            ref={(el) => { if (el) rowsRef.current[rowIndex] = el; }}
-            className="row absolute"
-            data-offset={rowIndex % 2 !== 0 ? "true" : "false"}
-          >
-            {Array.from({ length: imgNum }).map((_, imgIndex) => {
-              const mediaIndex = rowIndex * imgNum + imgIndex;
-              const mediaItem = getMediaItem(mediaIndex);
-              
-              return (
-                <div
-                  key={`media-${rowIndex}-${imgIndex}`}
-                  className="sliderImage absolute top-0 left-0 overflow-hidden rounded-[20px]"
-                >
-                  {createMediaElement(mediaItem, `media-${mediaIndex}`)}
-                </div>
-              );
-            })}
+        <div
+          ref={containerRef}
+          className="will-change-transform touch-none inset-0"
+        >
+          <div className="w-screen h-[200vh] overflow-hidden">
+            {Array.from({ length: rowNum }).map((_, rowIndex) => (
+              <div
+                key={`row-${rowIndex}`}
+                ref={(el) => { 
+                  if (el) {
+                    rowsRef.current[rowIndex] = el;
+                    // Đảm bảo rowArrayRef.current cũng được cập nhật khi ref được gán
+                    rowArrayRef.current[rowIndex] = el;
+                  }
+                }}
+                className="row absolute"
+                data-offset={rowIndex % 2 !== 0 ? "true" : "false"}
+              >
+                {Array.from({ length: imgNum }).map((_, imgIndex) => {
+                  const mediaIndex = rowIndex * imgNum + imgIndex;
+                  const mediaItem = getMediaItem(mediaIndex);
+                  
+                  return (
+                    <div
+                      key={`media-${rowIndex}-${imgIndex}`}
+                      className="sliderImage absolute top-0 left-0 overflow-hidden rounded-[20px]"
+                      // Áp dụng style inline để đảm bảo kích thước được duy trì
+                      style={{
+                        width: isMobile ? `${window.innerWidth * 0.3}px` : '160px',
+                        height: isMobile ? `${window.innerWidth * 0.3}px` : '160px',
+                        transform: `translate(${imgIndex * (isMobile ? (window.innerWidth * 0.3 + window.innerWidth * 0.05) : (160 + window.innerWidth * 0.05))}px, 0)`
+                      }}
+                    >
+                      {createMediaElement(mediaItem, `media-${mediaIndex}`)}
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      </div>
+        </div>
       </div>
     </div>
   );
