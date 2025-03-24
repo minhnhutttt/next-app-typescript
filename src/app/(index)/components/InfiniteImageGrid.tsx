@@ -322,16 +322,16 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     const newX = e.clientX - startPosRef.current.x;
     const newY = e.clientY - startPosRef.current.y;
     
-    const dragSmoothingFactor = 0.2;
+    const dragSmoothingFactor = 0.001;
     
     const smoothedX = positionRef.current.x + (newX - positionRef.current.x) * dragSmoothingFactor;
     const smoothedY = positionRef.current.y + (newY - positionRef.current.y) * dragSmoothingFactor;
     
     if (elapsed > 0) {
-      const rawVelocityX = (newX - positionRef.current.x) / elapsed * 16;
-      const rawVelocityY = (newY - positionRef.current.y) / elapsed * 16;
+      const rawVelocityX = (newX - positionRef.current.x) / elapsed * 0.1;
+      const rawVelocityY = (newY - positionRef.current.y) / elapsed * 0.1;
       
-      const velocityBlendFactor = 0.6;
+      const velocityBlendFactor = 0.05;
       velocityRef.current = {
         x: velocityRef.current.x * (1 - velocityBlendFactor) + rawVelocityX * velocityBlendFactor,
         y: velocityRef.current.y * (1 - velocityBlendFactor) + rawVelocityY * velocityBlendFactor,
@@ -339,6 +339,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
     
     positionRef.current = { x: newX, y: newY };
+    containerRef.current.style.transform = `translate3d(${smoothedX}px, ${smoothedY}px, 0)`;
     updateTransform();
     updateCenterElem();
     lastTimeRef.current = now;
@@ -680,6 +681,9 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
   }, [rowNum]);
 
+
+  
+  
   
   return (
     <div 
@@ -690,7 +694,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       <div className="overflow-hidden w-full h-[200vh]">
       <div
         ref={containerRef}
-        className="will-change-transform touch-none inset-0"
+        className="will-change-transform touch-none inset-0 duration-700 ease-linear"
       >
         <div className="w-screen h-[200vh] overflow-hidden">
         {Array.from({ length: rowNum }).map((_, rowIndex) => (

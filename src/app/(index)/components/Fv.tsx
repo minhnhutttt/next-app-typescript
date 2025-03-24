@@ -287,7 +287,7 @@ const Fv: React.FC = () => {
         mediaItems={MEDIA_ITEMS}
       />
       </div>
-      <div className="pointer-events-none">
+      <div className="md:pointer-events-none">
       <div className="absolute inset-0 h-screen w-full overflow-hidden  z-50" ref={containerRef}>
         <div className="w-full absolute h-screen inset-0 ">
           <div
