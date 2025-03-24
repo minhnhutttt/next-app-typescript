@@ -536,11 +536,8 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     const winMidX = windowWidth / 2;
     const winMidY = windowHeight / 2;
     
-    // Tính toán kích thước dựa trên cửa sổ hiện tại, không phụ thuộc vào isMobile
-    // để tránh sự nhảy đột ngột khi chuyển đổi breakpoint
-    const currentIsMobile = windowWidth <= 768;
-    const boxWidth = currentIsMobile ? windowWidth * 0.25 : 160;
-    const boxHeight = currentIsMobile ? windowWidth * 0.25 : 160;
+    const boxWidth = isMobile ? windowWidth * 0.3 : 160;
+    const boxHeight = isMobile ? windowWidth * 0.3 : 160;
     const gutter = windowWidth * 0.05;
     
     const horizSpacing = boxWidth + gutter;
@@ -562,10 +559,11 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     positionRef.current = { x: 0, y: 0 };
     velocityRef.current = { x: 0, y: 0 };
-    
     if (containerRef.current) {
       containerRef.current.style.transform = `translate3d(0px, 0px, 0)`;
     }
+    
+    positionRef.current = { x: 0, y: 0 };
     
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
@@ -577,87 +575,32 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       parallaxAnimationRef.current = null;
     }
     
-    // Sử dụng requestAnimationFrame để đảm bảo tất cả các styles được áp dụng đúng
-    requestAnimationFrame(() => {
-      rowsRef.current.forEach((row, i) => {
-        if (!row) return;
-        
-        const isOffset = i % 2 !== 0;
-        row.dataset.offset = isOffset ? "true" : "false";
-        
-        const rowX = isOffset ? horizOffset - boxWidth / 2 : horizOffset;
-        const rowY = i * vertSpacing + vertOffset;
-        
-        row.style.transform = `translate(${rowX}px, ${rowY}px)`;
-        
-        const images = Array.from(row.querySelectorAll('.sliderImage')) as HTMLDivElement[];
-        images.forEach((img, index) => {
-          // Đặt width và height trực tiếp
-          img.style.width = `${boxWidth}px`;
-          img.style.height = `${boxHeight}px`;
-          img.style.transform = `translate(${index * horizSpacing}px, 0)`;
-        });
-        
-        imgRepRef.current[i] = images;
-        rowArrayRef.current[i] = row;
+    rowsRef.current.forEach((row, i) => {
+      if (!row) return;
+      
+      const isOffset = i % 2 !== 0;
+      row.dataset.offset = isOffset ? "true" : "false";
+      
+      const rowX = isOffset ? horizOffset - boxWidth / 2 : horizOffset;
+      const rowY = i * vertSpacing + vertOffset;
+      
+      row.style.transform = `translate(${rowX}px, ${rowY}px)`;
+      
+      const images = Array.from(row.querySelectorAll('.sliderImage')) as HTMLDivElement[];
+      images.forEach((img, index) => {
+        img.style.width = `${boxWidth}px`;
+        img.style.height = `${boxHeight}px`;
+        img.style.transform = `translate(${index * horizSpacing}px, 0)`;
       });
       
-      if (rowsRef.current.length > rowMidIndex - 1 && 
-          rowsRef.current[rowMidIndex - 1]?.querySelectorAll('.sliderImage').length > imgMidIndex) {
-        lastCenteredElemRef.current = rowsRef.current[rowMidIndex - 1]?.querySelectorAll('.sliderImage')[imgMidIndex] as HTMLDivElement || null;
-      }
+      rowArrayRef.current[i] = row;
     });
+    
+    if (rowsRef.current.length > rowMidIndex - 1 && 
+        rowsRef.current[rowMidIndex - 1]?.querySelectorAll('.sliderImage').length > imgMidIndex) {
+      lastCenteredElemRef.current = rowsRef.current[rowMidIndex - 1]?.querySelectorAll('.sliderImage')[imgMidIndex] as HTMLDivElement || null;
+    }
   };
-
-  useEffect(() => {
-    // Gọi resize khi isMobile thay đổi để cập nhật kích thước
-    resize();
-  }, [isMobile]);
-  
-  // Phần 3: Thêm debounce vào sự kiện resize để tránh gọi quá nhiều lần
-  
-  useEffect(() => {
-    imgRepRef.current = Array(rowNum).fill(0).map(() => []);
-    
-    resize();
-    
-    let resizeTimeout: NodeJS.Timeout;
-    const handleResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        resize();
-      }, 150); // Đợi 150ms sau khi resize kết thúc
-    };
-    
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    window.addEventListener('mousemove', handleMouseMove);
-    
-    // Thêm sự kiện orientationchange để xử lý khi thiết bị xoay màn hình
-    window.addEventListener('orientationchange', () => {
-      // Sử dụng timeout ngắn để đảm bảo kích thước màn hình đã được cập nhật
-      setTimeout(resize, 250);
-    });
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
-      window.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('touchend', handleTouchEnd);
-      window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('orientationchange', resize);
-      clearTimeout(resizeTimeout);
-      
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-      
-      if (parallaxAnimationRef.current) {
-        cancelAnimationFrame(parallaxAnimationRef.current);
-      }
-    };
-  }, []);
   
   const getMediaItem = (index: number): MediaItemData => {
     return mediaItems[index % mediaItems.length];
@@ -737,9 +680,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
   }, [rowNum]);
 
-
-  
-  
   
   return (
     <div 
@@ -748,47 +688,35 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       onTouchStart={handleTouchStart}
     >
       <div className="overflow-hidden w-full h-[200vh]">
-        <div
-          ref={containerRef}
-          className="will-change-transform touch-none inset-0"
-        >
-          <div className="w-screen h-[200vh] overflow-hidden">
-            {Array.from({ length: rowNum }).map((_, rowIndex) => (
-              <div
-                key={`row-${rowIndex}`}
-                ref={(el) => { 
-                  if (el) {
-                    rowsRef.current[rowIndex] = el;
-                    // Đảm bảo rowArrayRef.current cũng được cập nhật khi ref được gán
-                    rowArrayRef.current[rowIndex] = el;
-                  }
-                }}
-                className="row absolute"
-                data-offset={rowIndex % 2 !== 0 ? "true" : "false"}
-              >
-                {Array.from({ length: imgNum }).map((_, imgIndex) => {
-                  const mediaIndex = rowIndex * imgNum + imgIndex;
-                  const mediaItem = getMediaItem(mediaIndex);
-                  
-                  return (
-                    <div
-                      key={`media-${rowIndex}-${imgIndex}`}
-                      className="sliderImage absolute top-0 left-0 overflow-hidden rounded-[20px]"
-                      // Áp dụng style inline để đảm bảo kích thước được duy trì
-                      style={{
-                        width: isMobile ? `${window.innerWidth * 0.3}px` : '160px',
-                        height: isMobile ? `${window.innerWidth * 0.3}px` : '160px',
-                        transform: `translate(${imgIndex * (isMobile ? (window.innerWidth * 0.3 + window.innerWidth * 0.05) : (160 + window.innerWidth * 0.05))}px, 0)`
-                      }}
-                    >
-                      {createMediaElement(mediaItem, `media-${mediaIndex}`)}
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
+      <div
+        ref={containerRef}
+        className="will-change-transform touch-none inset-0"
+      >
+        <div className="w-screen h-[200vh] overflow-hidden">
+        {Array.from({ length: rowNum }).map((_, rowIndex) => (
+          <div
+            key={`row-${rowIndex}`}
+            ref={(el) => { if (el) rowsRef.current[rowIndex] = el; }}
+            className="row absolute"
+            data-offset={rowIndex % 2 !== 0 ? "true" : "false"}
+          >
+            {Array.from({ length: imgNum }).map((_, imgIndex) => {
+              const mediaIndex = rowIndex * imgNum + imgIndex;
+              const mediaItem = getMediaItem(mediaIndex);
+              
+              return (
+                <div
+                  key={`media-${rowIndex}-${imgIndex}`}
+                  className="sliderImage absolute top-0 left-0 overflow-hidden rounded-[20px]"
+                >
+                  {createMediaElement(mediaItem, `media-${mediaIndex}`)}
+                </div>
+              );
+            })}
           </div>
-        </div>
+        ))}
+      </div>
+      </div>
       </div>
     </div>
   );
