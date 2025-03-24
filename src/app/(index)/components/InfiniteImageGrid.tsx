@@ -326,7 +326,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       const rawVelocityX = (newX - positionRef.current.x) / elapsed * 16;
       const rawVelocityY = (newY - positionRef.current.y) / elapsed * 16;
       
-      const velocityBlendFactor = 0.6;
+      const velocityBlendFactor = 0.1;
       velocityRef.current = {
         x: velocityRef.current.x * (1 - velocityBlendFactor) + rawVelocityX * velocityBlendFactor,
         y: velocityRef.current.y * (1 - velocityBlendFactor) + rawVelocityY * velocityBlendFactor,
@@ -387,11 +387,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     const newX = touch.clientX - startPosRef.current.x;
     const newY = touch.clientY - startPosRef.current.y;
     
-    const dragSmoothingFactor = 0.2; 
-    
-    const smoothedX = positionRef.current.x + (newX - positionRef.current.x) * dragSmoothingFactor;
-    const smoothedY = positionRef.current.y + (newY - positionRef.current.y) * dragSmoothingFactor;
-    
     if (elapsed > 0) {
       const rawVelocityX = (newX - positionRef.current.x) / elapsed * 16;
       const rawVelocityY = (newY - positionRef.current.y) / elapsed * 16;
@@ -405,7 +400,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     positionRef.current = { x: newX, y: newY };
     
-    containerRef.current.style.transform = `translate3d(${smoothedX}px, ${smoothedY}px, 0)`;
     
     updateCenterElem();
     
@@ -676,16 +670,16 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   
   return (
     <div 
-      className="overflow-hidden w-full h-[200vh] cursor-grab"
+      className="overflow-hidden w-full h-screen cursor-grab"
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
     >
-      <div className="overflow-hidden w-full h-[200vh]">
+      <div className="overflow-hidden w-full h-screen">
       <div
         ref={containerRef}
-        className="will-change-transform touch-none inset-0 "
+        className="will-change-transform touch-none inset-0 ease-linear"
       >
-        <div className="w-screen h-[200vh] overflow-hidden">
+        <div className="w-screen h-screen overflow-hidden">
         {Array.from({ length: rowNum }).map((_, rowIndex) => (
           <div
             key={`row-${rowIndex}`}
