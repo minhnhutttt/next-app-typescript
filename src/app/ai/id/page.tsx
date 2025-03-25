@@ -32,7 +32,7 @@ export default function AISingle() {
                         <TitleAI rect="md:h-[15px] h-[12px]" />
                     </div>
                     <div className="bg-white dark:bg-white/40 dark:text-white md:text-[17px] text-[15px] p-4 md:p-6 leading-[1.8]">
-                    <button className="font-bold underline xl:hidden" onClick={openModal}>イーロン・マスク</button><span className="font-bold underline max-xl:hidden">イーロン・マスク</span>が4月28日に中国を訪問し、李強首相と会談した。その成果にはバイドゥ（百度）との提携拡大などが含まれるとされているが、中国メーカーの技術の進展が著しいなかテスラが厳しい競争を強いられることには変わりないだろう。
+                    <span className="font-bold underline xl:hidden">イーロン・マスク</span><span className="font-bold underline max-xl:hidden">イーロン・マスク</span>が4月28日に中国を訪問し、李強首相と会談した。その成果にはバイドゥ（百度）との提携拡大などが含まれるとされているが、中国メーカーの技術の進展が著しいなかテスラが厳しい競争を強いられることには変わりないだろう。
                     </div>
                     <div className="px-3 dark:text-white font-light">
                         <div className="md:text-[17px] text-[15px] md:pt-10 pt-7 leading-[1.9]">
@@ -48,7 +48,6 @@ export default function AISingle() {
                         </div>
                         <div className="flex gap-6 mt-4 max-lg:flex-col">
                             <div className="">
-                                <figure><img src="/assets/images/img.png" alt="" /></figure>
                                 <p className="text-[12px] mt-3">イーロンと中国は仲悪いのだろうか？</p>
                             </div>
                             <p className="md:text-[17px] text-[15px] flex-1 leading-[1.9]">
