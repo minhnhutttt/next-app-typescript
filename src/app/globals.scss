@@ -69,6 +69,21 @@ body {
   animation-delay: 2s !important;
 }
 
+.text--enter .char {
+  display: inline-block;
+  -webkit-animation-delay: calc(0.25s + var(--char-index) * 0.1s);
+          animation-delay: calc(0.25s + var(--char-index) * 0.1s);
+  transition: all 0.25s calc(0.25s + var(--char-index) * 0.1s);
+}
+[data-scroll='out'].text--enter  .char {
+  opacity: 0;
+  transform: translate(0, 150%);
+}
+.text--enter .char {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 .ani-zoom-out, .ani-zoom-out2 {
   opacity: 0;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Splitting from "splitting";
@@ -39,12 +39,10 @@ const MEDIA_ITEMS: MediaItemData[] = [
   { type: "video", src: "/assets/images/fv-18.mp4" },
 ];
 
-
 const Fv: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWrapRef = useRef<HTMLDivElement>(null);
   const charScrollRef = useRef<HTMLHeadingElement>(null);
-
 
   useEffect(() => {
     Splitting();
@@ -54,7 +52,6 @@ const Fv: React.FC = () => {
 
       gsap.set(charScroll, {
         display: "inline-block",
-        opacity: 0.4,
       });
       gsap.set(containerWrapRef.current, {
         opacity: 0,
@@ -75,9 +72,9 @@ const Fv: React.FC = () => {
       }).to(
         charScroll,
         {
-          opacity: 1,
           stagger: 1,
           duration: 1,
+          color: '#000'
         },
         0.1
       );
@@ -91,22 +88,20 @@ const Fv: React.FC = () => {
     }
   }, []);
 
-
   return (
-    <main className="min-h-screen h-screen p-4 overflow-hidden bg-black">
-      <div className="bg-[url(/assets/images/svg-deco.svg)] bg-no-repeat  bg-center ">
+    <div className="min-h-screen h-screen p-4 overflow-hidden">
         <div
           className="absolute inset-0 h-screen w-full overflow-hidden"
           ref={containerRef}
         >
-          <div className="flex flex-col h-full overflow-hidden md:justify-between justify-center relative z-30">
+          <div className="flex flex-col h-full overflow-hidden md:justify-between justify-center relative z-30 bg-[url(/assets/images/svg-deco.svg)] bg-no-repeat bg-center">
             <InfiniteImageGrid
               rowNum={10}
               imgNum={28}
               mediaItems={MEDIA_ITEMS}
             />
           </div>
-          <div className="w-full absolute h-screen inset-0 md:pointer-events-none z-50">
+          <div className="w-full absolute h-screen inset-0 md:pointer-events-none z-40">
             <div
               ref={containerWrapRef}
               className="h-full flex flex-col justify-center items-center"
@@ -114,17 +109,16 @@ const Fv: React.FC = () => {
               <h4
                 ref={charScrollRef}
                 data-splitting
-                className="text-[8vw] text-center leading-[1.8] text-white md:text-[64px] font-bold relative z-50"
+                className="text-[8vw] text-center leading-[1.8] text-[#FAE2D7] md:text-[64px] font-bold relative z-50"
               >
                 Unleashing Global <br />
                 Entertainment Value <br />
-                Across Borders 
+                Across Borders 
               </h4>
             </div>
           </div>
         </div>
-      </div>
-    </main>
+    </div>
   );
 };
 

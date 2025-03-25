@@ -25,7 +25,7 @@
     "scenejs": "^1.10.3",
     "scroll-out": "^2.2.12",
     "splitting": "^1.1.0",
-    "swiper": "^11.1.14"
+    "swiper": "^11.2.6"
   },
   "devDependencies": {
     "@types/node": "^20",

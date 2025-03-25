@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {  Inter } from "next/font/google";
+import {  Inter, Inspiration } from "next/font/google";
 import "./globals.scss";
 import ScrollContainer from "@/components/scrollContainer";
 import Header from "@/components/header";
@@ -9,6 +9,12 @@ import SmoothScroll from "@/components/smoothSCroll";
 
  const inter = Inter({ 
   weight: ['300','400','500','700'],
+  subsets: ["latin"],
+ });
+
+ const inspiration = Inspiration({ 
+  variable: '--font-inspiration',
+  weight: ['400'],
   subsets: ["latin"],
  });
 
@@ -24,14 +30,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
-        <ScrollContainer>
+      <body className={`${inter.className} ${inspiration.variable}`}>
         <SmoothScroll>
+        <ScrollContainer>
+
           <Header />
           {children}
           <Footer />
+          </ScrollContainer>
           </SmoothScroll>
-        </ScrollContainer>
+        
         </body>
     </html>
   );
