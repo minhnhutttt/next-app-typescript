@@ -5,6 +5,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Splitting from "splitting";
 import InfiniteImageGrid from "./InfiniteImageGrid";
+import MediaSlider from "./MediaSlider";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -13,7 +14,7 @@ gsap.config({
 
 type MediaType = "image" | "video";
 
-interface MediaItemData {
+export interface MediaItemData {
   type: MediaType;
   src: string;
 }
@@ -97,11 +98,16 @@ const Fv: React.FC = () => {
           ref={containerRef}
         >
           <div className="flex flex-col h-full overflow-hidden md:justify-between justify-center relative z-30 bg-[url(/assets/images/svg-deco.svg)] bg-no-repeat bg-center">
+          <div className="max-md:hidden">
             <InfiniteImageGrid
               rowNum={10}
               imgNum={28}
               mediaItems={MEDIA_ITEMS}
             />
+            </div>
+            <div className="md:hidden">
+            <MediaSlider items={MEDIA_ITEMS} />
+            </div>
           </div>
           <div className="w-full absolute h-screen inset-0 md:pointer-events-none z-40">
             <div

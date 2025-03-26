@@ -82,12 +82,10 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       threshold: 0.5,
     });
     
-    // Create a separate observer to track component visibility
     visibilityObserverRef.current = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         isComponentVisibleRef.current = entry.isIntersecting;
         
-        // Add or remove wheel event listener based on visibility
         if (entry.isIntersecting) {
           window.addEventListener('wheel', handleWheel, { passive: false });
         } else {
@@ -97,10 +95,9 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }, {
       root: null,
       rootMargin: '0px',
-      threshold: 0.1, // Even slight visibility will trigger
+      threshold: 0.1, 
     });
     
-    // Start observing the wrapper element
     if (wrapperRef.current && visibilityObserverRef.current) {
       visibilityObserverRef.current.observe(wrapperRef.current);
     }
@@ -392,68 +389,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   };
   
   
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (!isComponentVisibleRef.current || e.touches.length !== 1) return;
-    
-    if (animationFrameRef.current) {
-      cancelAnimationFrame(animationFrameRef.current);
-      animationFrameRef.current = null;
-    }
-    
-    const touch = e.touches[0];
-    isDraggingRef.current = true;
-    startPosRef.current = { 
-      x: touch.clientX - positionRef.current.x, 
-      y: touch.clientY - positionRef.current.y 
-    };
-    velocityRef.current = { x: 0, y: 0 };
-    lastTimeRef.current = Date.now();
-    
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
-    window.addEventListener('touchend', handleTouchEnd);
-  };
   
-  const handleTouchMove = (e: TouchEvent) => {
-    e.preventDefault();
-    
-    if (!isDraggingRef.current || !containerRef.current || !isComponentVisibleRef.current || e.touches.length !== 1) return;
-    
-    const touch = e.touches[0];
-    const now = Date.now();
-    const elapsed = Math.min(now - lastTimeRef.current, 64);
-    
-    const newX = touch.clientX - startPosRef.current.x;
-    const newY = touch.clientY - startPosRef.current.y;
-    
-    if (elapsed > 0) {
-      const rawVelocityX = (newX - positionRef.current.x) / elapsed * 16;
-      const rawVelocityY = (newY - positionRef.current.y) / elapsed * 16;
-      
-      const velocityBlendFactor = 0.6;
-      velocityRef.current = {
-        x: velocityRef.current.x * (1 - velocityBlendFactor) + rawVelocityX * velocityBlendFactor,
-        y: velocityRef.current.y * (1 - velocityBlendFactor) + rawVelocityY * velocityBlendFactor,
-      };
-    }
-    
-    positionRef.current = { x: newX, y: newY };
-    
-    updateTransform();
-    updateCenterElem();
-    
-    lastTimeRef.current = now;
-  };
-  
-  const handleTouchEnd = () => {
-    isDraggingRef.current = false;
-    
-    window.removeEventListener('touchmove', handleTouchMove);
-    window.removeEventListener('touchend', handleTouchEnd);
-    
-    if (isComponentVisibleRef.current) {
-      animationFrameRef.current = requestAnimationFrame(applyInertia);
-    }
-  };
   
   const handleMouseMove = (e: MouseEvent) => {
     if (!isComponentVisibleRef.current) return;
@@ -501,7 +437,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   };
   
   const handleWheel = (e: WheelEvent) => {
-    // Only handle wheel events when component is visible
     if (!isComponentVisibleRef.current || !containerRef.current) return;
     
     e.preventDefault();
@@ -675,17 +610,12 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     resize();
     window.addEventListener('resize', resize);
     
-    // Note: we no longer add wheel event listener here
-    // It's handled by the visibility observer instead
-    
     window.addEventListener('mousemove', handleMouseMove);
     
     return () => {
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
-      window.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('touchend', handleTouchEnd);
       window.removeEventListener('wheel', handleWheel);
       
       if (animationFrameRef.current) {
@@ -716,12 +646,11 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       ref={wrapperRef}
       className="overflow-hidden w-full h-screen cursor-grab"
       onMouseDown={handleMouseDown}
-      onTouchStart={handleTouchStart}
     >
       <div className="overflow-hidden w-full h-screen">
       <div
         ref={containerRef}
-        className="will-change-transform touch-none inset-0 ease-linear"
+        className="will-change-transform inset-0 ease-linear"
       >
         <div className="w-screen h-screen overflow-hidden">
         {Array.from({ length: rowNum }).map((_, rowIndex) => (
