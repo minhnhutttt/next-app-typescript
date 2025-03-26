@@ -37,6 +37,8 @@ const MEDIA_ITEMS: MediaItemData[] = [
   { type: "image", src: "/assets/images/fv-16.png" },
   { type: "video", src: "/assets/images/fv-17.mp4" },
   { type: "image", src: "/assets/images/fv-18.png" },
+  { type: "video", src: "/assets/images/fv-19.mp4" },
+  { type: "video", src: "/assets/images/fv-20.mp4" },
 ];
 
 const Fv: React.FC = () => {
