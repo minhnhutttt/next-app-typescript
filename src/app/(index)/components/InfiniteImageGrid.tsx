@@ -24,13 +24,13 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   mediaItems = [],
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef(false);
   const positionRef = useRef({ x: 0, y: 0 });
   const startPosRef = useRef({ x: 0, y: 0 });
   const velocityRef = useRef({ x: 0, y: 0 });
   const lastTimeRef = useRef(0);
   const animationFrameRef = useRef<number | null>(null);
-  const lastScrollYRef = useRef(0);
   const mousePositionRef = useRef({ x: 0, y: 0 });
   const parallaxAnimationRef = useRef<number | null>(null);
   const dimensionsRef = useRef({
@@ -48,6 +48,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   const rowsRef = useRef<HTMLDivElement[]>([]);
   const imgRepRef = useRef<HTMLDivElement[][]>([]);
   const rowArrayRef = useRef<HTMLDivElement[]>([]);
+  const isComponentVisibleRef = useRef<boolean>(false);
   
   const imgMidIndex = Math.floor(imgNum / 2);
   const rowMidIndex = Math.floor(rowNum / 2);
@@ -56,6 +57,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   
   const videoRefs = useRef<{[key: string]: HTMLVideoElement}>({});
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const visibilityObserverRef = useRef<IntersectionObserver | null>(null);
   
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') return;
@@ -80,9 +82,35 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       threshold: 0.5,
     });
     
+    // Create a separate observer to track component visibility
+    visibilityObserverRef.current = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isComponentVisibleRef.current = entry.isIntersecting;
+        
+        // Add or remove wheel event listener based on visibility
+        if (entry.isIntersecting) {
+          window.addEventListener('wheel', handleWheel, { passive: false });
+        } else {
+          window.removeEventListener('wheel', handleWheel);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1, // Even slight visibility will trigger
+    });
+    
+    // Start observing the wrapper element
+    if (wrapperRef.current && visibilityObserverRef.current) {
+      visibilityObserverRef.current.observe(wrapperRef.current);
+    }
+    
     return () => {
       if (observerRef.current) {
         observerRef.current.disconnect();
+      }
+      if (visibilityObserverRef.current) {
+        visibilityObserverRef.current.disconnect();
       }
     };
   }, []);
@@ -257,7 +285,13 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   };
   
   const applyInertia = () => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || !isComponentVisibleRef.current) {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+      return;
+    }
     
     const now = Date.now();
     const elapsed = Math.min(now - lastTimeRef.current, 64); 
@@ -289,6 +323,8 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   };
   
   const handleMouseDown = (e: React.MouseEvent) => {
+    if (!isComponentVisibleRef.current) return;
+    
     e.preventDefault();
     
     if (animationFrameRef.current) {
@@ -308,13 +344,12 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     };
     velocityRef.current = { x: 0, y: 0 };
     lastTimeRef.current = Date.now();
-    
     window.addEventListener('mousemove', handleDragMove);
     window.addEventListener('mouseup', handleMouseUp);
   };
   
   const handleDragMove = (e: MouseEvent) => {
-    if (!isDraggingRef.current || !containerRef.current) return;
+    if (!isDraggingRef.current || !containerRef.current || !isComponentVisibleRef.current) return;
     
     const now = Date.now();
     const elapsed = Math.min(now - lastTimeRef.current, 64);
@@ -346,16 +381,19 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     window.removeEventListener('mousemove', handleDragMove);
     window.removeEventListener('mouseup', handleMouseUp);
-    if (!parallaxAnimationRef.current) {
-      parallaxAnimationRef.current = requestAnimationFrame(updateParallaxEffect);
-    }
     
-    animationFrameRef.current = requestAnimationFrame(applyInertia);
+    if (isComponentVisibleRef.current) {
+      if (!parallaxAnimationRef.current) {
+        parallaxAnimationRef.current = requestAnimationFrame(updateParallaxEffect);
+      }
+      
+      animationFrameRef.current = requestAnimationFrame(applyInertia);
+    }
   };
   
   
   const handleTouchStart = (e: React.TouchEvent) => {
-    if (e.touches.length !== 1) return;
+    if (!isComponentVisibleRef.current || e.touches.length !== 1) return;
     
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
@@ -378,7 +416,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   const handleTouchMove = (e: TouchEvent) => {
     e.preventDefault();
     
-    if (!isDraggingRef.current || !containerRef.current || e.touches.length !== 1) return;
+    if (!isDraggingRef.current || !containerRef.current || !isComponentVisibleRef.current || e.touches.length !== 1) return;
     
     const touch = e.touches[0];
     const now = Date.now();
@@ -400,7 +438,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     positionRef.current = { x: newX, y: newY };
     
-    
+    updateTransform();
     updateCenterElem();
     
     lastTimeRef.current = now;
@@ -412,10 +450,14 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     window.removeEventListener('touchmove', handleTouchMove);
     window.removeEventListener('touchend', handleTouchEnd);
     
-    animationFrameRef.current = requestAnimationFrame(applyInertia);
+    if (isComponentVisibleRef.current) {
+      animationFrameRef.current = requestAnimationFrame(applyInertia);
+    }
   };
   
   const handleMouseMove = (e: MouseEvent) => {
+    if (!isComponentVisibleRef.current) return;
+    
     mousePositionRef.current = { 
       x: e.clientX, 
       y: e.clientY 
@@ -449,7 +491,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   };
   
   const updateParallaxEffect = () => {
-    if (!containerRef.current || isDraggingRef.current || animationFrameRef.current) {
+    if (!containerRef.current || !isComponentVisibleRef.current || isDraggingRef.current || animationFrameRef.current) {
       parallaxAnimationRef.current = null;
       return;
     }
@@ -459,9 +501,10 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   };
   
   const handleWheel = (e: WheelEvent) => {
-    e.preventDefault();
+    // Only handle wheel events when component is visible
+    if (!isComponentVisibleRef.current || !containerRef.current) return;
     
-    if (!containerRef.current) return;
+    e.preventDefault();
     
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
@@ -632,7 +675,8 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     resize();
     window.addEventListener('resize', resize);
     
-    window.addEventListener('wheel', handleWheel, { passive: false });
+    // Note: we no longer add wheel event listener here
+    // It's handled by the visibility observer instead
     
     window.addEventListener('mousemove', handleMouseMove);
     
@@ -667,9 +711,9 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
   }, [rowNum]);
 
-  
   return (
     <div 
+      ref={wrapperRef}
       className="overflow-hidden w-full h-screen cursor-grab"
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
@@ -693,20 +737,20 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
               
               return (
                 <div
-                  key={`media-${rowIndex}-${imgIndex}`}
-                  className="sliderImage absolute top-0 left-0 overflow-hidden rounded-[20px]"
-                >
-                  {createMediaElement(mediaItem, `media-${mediaIndex}`)}
-                </div>
-              );
-            })}
-          </div>
-        ))}
-      </div>
-      </div>
+                key={`media-${rowIndex}-${imgIndex}`}
+                className="sliderImage absolute top-0 left-0 overflow-hidden rounded-[20px]"
+              >
+                {createMediaElement(mediaItem, `media-${mediaIndex}`)}
+              </div>
+            );
+          })}
+        </div>
+      ))}
       </div>
     </div>
-  );
+    </div>
+  </div>
+);
 };
 
 export default InfiniteImageGrid;

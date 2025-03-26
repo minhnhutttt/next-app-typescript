@@ -32,7 +32,6 @@ export default function RootLayout({
           <Footer />
           </ScrollContainer>
           </SmoothScroll>
-        
         </body>
     </html>
   );

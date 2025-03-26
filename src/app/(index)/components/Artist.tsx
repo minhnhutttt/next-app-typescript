@@ -99,7 +99,7 @@ const Artist = () => {
             <SwiperSlide key={item.id} className="!w-[82%] relative md:mx-[25px] mx-[10px] rounded-[10px] overflow-hidden h-auto">
                 <span className="bg-[linear-gradient(109deg,_rgba(255,_255,_255,_0.10)_11.71%,_rgba(255,_255,_255,_0.10)_95.46%)] backdrop-filter backdrop-blur-[5px] absolute inset-0"></span>
                 <div className="slide-content px-5 md:px-10 xl:px-[64px] md:py-8 py-6 xl:py-[54px] flex relative gap-5 xl:gap-[70px] items-center max-md:flex-col" style={{minHeight: slideHeight > 0 ? `${slideHeight}px` : 'auto'}}>
-                    <div className="max-md:w-full max-xl:w-1/2"><img src={item.image} alt="" /></div>
+                    <div className="max-md:w-full max-xl:w-1/2 [box-shadow:0px_4px_100px_0px_rgba(97,_169,_197,_0.25)]"><img src={item.image} alt="" /></div>
                     <div className="text-white flex-1">
                         <p className="md:text-[24px] font-medium text-[18px] leading-[1.2]">{item.name}</p>
                         <p className="md:text-[16px] leading-[2] font-medium text-[14px] mt-4 md:mt-[30px]">

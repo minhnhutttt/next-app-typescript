@@ -1,6 +1,9 @@
 "use client"
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
+import Contact from './components/Contact';
+import Apply from './components/Apply';
+import Company from './components/Company';
 
 const Fv = dynamic(() => import('./components/Fv'), {ssr: false})
 const Introduction = dynamic(() => import('./components/Introduction'), {ssr: false})
@@ -222,6 +225,9 @@ useEffect(() => {
               <Artist />
               <Showcase />
               <Message />
+              <Contact />
+              <Apply />
+              <Company />
             </>
         </main>
     </>
