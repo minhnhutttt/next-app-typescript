@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ScrollOut from "scroll-out";
 import Splitting from "splitting";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,8 +44,6 @@ const slides: SlideItem[] = [
     },
   ];
 const News = () => {
- 
-
   const [swiperRef, setSwiperRef] = useState<any>(null);
 
   useEffect(() => {
@@ -56,12 +54,12 @@ const News = () => {
   return (
     <div className="relative w-full mx-auto">
       <span className="bg-white absolute h-[60%] bottom-0 inset-x-0"></span>
-      <div className="md:px-[60px] px-5 ">
-        <h2 data-scroll className="text--enter md:text-[128px] text-[64px] font-semibold overflow-hidden">
+      <div className="md:px-[60px] px-5">
+        <h2 data-scroll className="text--enter md:text-[64px] xl:text-[128px] text-[clamp(20px,7.5vw,60px)] font-semibold overflow-hidden tracking-widest">
             <span data-splitting>NEWS</span>
             </h2>
       </div>
-      <div className="w-full max-w-[1410px] mx-auto relative pb-20 md:mt-[70px] mt-[50px]">
+      <div className="w-full max-w-[1410px] mx-auto relative pb-20 md:mt-[52px] mt-[36px]">
         <Swiper
           modules={[Navigation]}
           slidesPerView={"auto"}
@@ -69,7 +67,7 @@ const News = () => {
           className="w-full"
         >
           {slides.map((slide) => (
-            <SwiperSlide key={slide.id} className="md:!w-[430px] !w-[330px] mx-5">
+            <SwiperSlide key={slide.id} className="md:!w-[430px] !w-[330px] md:mx-5 mx-1.5">
               <div className="relative">
                 <div className="relative overflow-hidden rounded-[30px] group ">
                   <div className="w-full h-full [box-shadow:0px_0px_80px_0px_rgba(250,_226,_215,_0.10)]">
@@ -105,7 +103,7 @@ const News = () => {
           ))}
         </Swiper>
 
-        <div className="justify-end flex space-x-5 z-20 py-5 md:px-10 px-5">
+        <div className="justify-end flex space-x-5 z-20 py-5 md:px-12 px-5">
           <button
             onClick={() => swiperRef?.slidePrev()}
             className=" flex items-center justify-center transition-colors md:size-[72px] size-[40px]"

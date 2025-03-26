@@ -1,18 +1,15 @@
 "use client"
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
-import BoardMember from './components/BoardMember';
 
-const News = dynamic(() => import('./components/News'), {
-  ssr: false
-})
+const Fv = dynamic(() => import('./components/Fv'), {ssr: false})
+const Introduction = dynamic(() => import('./components/Introduction'), {ssr: false})
+const News = dynamic(() => import('./components/News'), {ssr: false})
+const BoardMember = dynamic(() => import('./components/BoardMember'), {ssr: false})
+const Artist = dynamic(() => import('./components/Artist'), {ssr: false})
+const Showcase = dynamic(() => import('./components/Showcase'), {ssr: false})
+const Message = dynamic(() => import('./components/Message'), {ssr: false})
 
-const Fv = dynamic(() => import('./components/Fv'), {
-  ssr: false
-})
-const Introduction = dynamic(() => import('./components/Introduction'), {
-  ssr: false
-})
 
 type MediaType = "image" | "video";
 
@@ -25,38 +22,41 @@ const ALL_MEDIA_ITEMS: MediaItemData[] = [
   { type: "image", src: "/assets/images/fv-01.png" },
   { type: "video", src: "/assets/images/fv-02.mp4" },
   { type: "image", src: "/assets/images/fv-03.png" },
-  { type: "image", src: "/assets/images/fv-04.png" },
-  { type: "video", src: "/assets/images/fv-05.mp4" },
-  { type: "image", src: "/assets/images/fv-06.png" },
+  { type: "video", src: "/assets/images/fv-04.mp4" },
+  { type: "image", src: "/assets/images/fv-05.png" },
+  { type: "video", src: "/assets/images/fv-06.mp4" },
   { type: "image", src: "/assets/images/fv-07.png" },
-  { type: "video", src: "/assets/images/fv-08.mp4" },
+  { type: "image", src: "/assets/images/fv-08.png" },
   { type: "image", src: "/assets/images/fv-09.png" },
-  { type: "image", src: "/assets/images/fv-10.png" },
+  { type: "video", src: "/assets/images/fv-10.mp4" },
   { type: "image", src: "/assets/images/fv-11.png" },
   { type: "image", src: "/assets/images/fv-12.png" },
   { type: "image", src: "/assets/images/fv-13.png" },
-  { type: "image", src: "/assets/images/fv-14.png" },
-  { type: "video", src: "/assets/images/fv-15.mp4" },
+  { type: "video", src: "/assets/images/fv-14.mp4" },
+  { type: "image", src: "/assets/images/fv-15.png" },
   { type: "image", src: "/assets/images/fv-16.png" },
-  { type: "image", src: "/assets/images/fv-17.png" },
-  { type: "video", src: "/assets/images/fv-18.mp4" },
+  { type: "video", src: "/assets/images/fv-17.mp4" },
+  { type: "image", src: "/assets/images/fv-18.png" },
+  { type: "video", src: "/assets/images/fv-19.mp4" },
+  { type: "video", src: "/assets/images/fv-20.mp4" },
+  { type: "video", src: "/assets/images/about.mp4" },
 ];
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadProgress, setLoadProgress] = useState(0);
-  const [currentDisplayIndex, setCurrentDisplayIndex] = useState(0);
   const [loadedItems, setLoadedItems] = useState<MediaItemData[]>([]);
-  const [componentsReady, setComponentsReady] = useState(false);
+  const [loadedImageItems, setLoadedImageItems] = useState<MediaItemData[]>([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const preloadAllMedia = async () => {
-    const imageItems = ALL_MEDIA_ITEMS.filter(item => item.type === "image");
-    
-    let loaded = 0;
-    const totalItems = ALL_MEDIA_ITEMS.length;
-    const updatedItems: MediaItemData[] = [];
+  let loaded = 0;
+  const totalItems = ALL_MEDIA_ITEMS.length;
+  const updatedItems: MediaItemData[] = [];
+  const updatedImageItems: MediaItemData[] = [];
 
-    for (const item of imageItems) {
+  for (const item of ALL_MEDIA_ITEMS) {
+    if (item.type === "image") {
       await new Promise<void>((resolve) => {
         const img = new Image();
         
@@ -65,9 +65,11 @@ export default function Home() {
           const progress = Math.floor((loaded / totalItems) * 100);
           setLoadProgress(progress);
           
-          const loadedItem = { ...item, loaded: true };
-          updatedItems.push(loadedItem);
+          updatedItems.push(item);
           setLoadedItems([...updatedItems]);
+          
+          updatedImageItems.push(item);
+          setLoadedImageItems([...updatedImageItems]);
           
           resolve();
         };
@@ -82,37 +84,87 @@ export default function Home() {
         
         img.src = item.src;
       });
+    } else if (item.type === "video") {
+      await new Promise<void>((resolve) => {
+        const video = document.createElement('video');
+        
+        video.onloadeddata = () => {
+          loaded++;
+          const progress = Math.floor((loaded / totalItems) * 100);
+          setLoadProgress(progress);
+          
+          updatedItems.push(item);
+          setLoadedItems([...updatedItems]);
+          
+          resolve();
+        };
+        
+        video.onerror = () => {
+          console.error(`Failed to load video: ${item.src}`);
+          loaded++;
+          const progress = Math.floor((loaded / totalItems) * 100);
+          setLoadProgress(progress);
+          resolve();
+        };
+        
+        const timeout = setTimeout(() => {
+          console.warn(`Video loading timeout: ${item.src}`);
+          loaded++;
+          const progress = Math.floor((loaded / totalItems) * 100);
+          setLoadProgress(progress);
+          updatedItems.push(item);
+          setLoadedItems([...updatedItems]);
+          resolve();
+        }, 10000);
+        
+        video.onloadeddata = () => {
+          clearTimeout(timeout);
+          loaded++;
+          const progress = Math.floor((loaded / totalItems) * 100);
+          setLoadProgress(progress);
+          
+          updatedItems.push(item);
+          setLoadedItems([...updatedItems]);
+          
+          resolve();
+        };
+        
+        video.preload = 'auto';
+        video.src = item.src;
+        video.load();
+      });
     }
+  }
 
-    setLoadProgress(100);
+  setLoadProgress(100);
+  
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 500);
+};
+
+useEffect(() => {
+  if (isLoading && loadedImageItems.length > 0) {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex < loadedImageItems.length - 1 ? prevIndex + 1 : 0
+      );
+    }, 150);
     
-    setComponentsReady(true);
-    
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-  };
+    return () => clearInterval(interval);
+  }
+}, [isLoading, loadedImageItems.length]);
 
   useEffect(() => {
-    if (isLoading && loadedItems.length > 0) {
-      const interval = setInterval(() => {
-        setCurrentDisplayIndex((prevIndex) => 
-          prevIndex < loadedItems.length - 1 ? prevIndex + 1 : 0
-        );
-      }, 150);
-      
-      return () => clearInterval(interval);
-    }
-  }, [isLoading, loadedItems.length]);
-
-  useEffect(() => {
-    setComponentsReady(false);
     preloadAllMedia();
     
     const preloadComponents = async () => {
       await Promise.all([
         import('./components/News'),
         import('./components/BoardMember'),
+        import('./components/Artist'),
+        import('./components/Showcase'),
+        import('./components/Message'),
       ]);
     };
     
@@ -120,36 +172,45 @@ export default function Home() {
   }, []);
 
   const renderCurrentItem = () => {
-    if (loadedItems.length === 0) return null;
+    if (loadedImageItems.length === 0) return null;
     
-    const item = loadedItems[currentDisplayIndex];
+    const item = loadedImageItems[currentImageIndex];
     
-    if (item.type === "image") {
-      return (
-        <div className="w-[100px] h-[100px] md:w-[168px] md:h-[168px] overflow-hidden rounded-md shadow-lg relative">
-          <img 
-            src={item.src} 
-            alt="Loading preview" 
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
-      );
-    }
+    return (
+      <div className="w-[100px] h-[100px] md:w-[168px] md:h-[168px] overflow-hidden rounded-md shadow-lg relative">
+        <img 
+          src={item.src} 
+          alt="Loading preview" 
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+    );
   };
 
   return (
     <>
       {isLoading && (
-        <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50">
-          <div className="flex flex-col items-center">
-            {loadedItems.length > 0 && (
-              <div className="mb-8 transition-all duration-500 ease-in-out transform hover:scale-105">
-                {renderCurrentItem()}
-              </div>
-            )}
-          </div>
+  <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50">
+    <div className="flex flex-col items-center">
+      {loadedImageItems.length > 0 && (
+        <div className="mb-4 transition-all duration-500 ease-in-out transform hover:scale-105">
+          {renderCurrentItem()}
         </div>
-      ) }
+      )}
+      
+      <div className="w-[150px] md:w-[200px] bg-gray-700 rounded-full h-2.5 mb-2">
+        <div 
+          className="bg-orange-500 h-2.5 rounded-full transition-all duration-300" 
+          style={{ width: `${loadProgress}%` }}
+        ></div>
+      </div>
+      
+      <div className="text-white text-sm font-medium">
+        {loadProgress}%
+      </div>
+    </div>
+  </div>
+)}
       <main className="relative">
             <>
               <Fv />
@@ -158,6 +219,9 @@ export default function Home() {
                 <News />
               </div>
               <BoardMember />
+              <Artist />
+              <Showcase />
+              <Message />
             </>
         </main>
     </>

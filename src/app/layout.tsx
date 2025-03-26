@@ -6,15 +6,8 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import SmoothScroll from "@/components/smoothSCroll";
 
-
  const inter = Inter({ 
   weight: ['300','400','500','700'],
-  subsets: ["latin"],
- });
-
- const inspiration = Inspiration({ 
-  variable: '--font-inspiration',
-  weight: ['400'],
   subsets: ["latin"],
  });
 
@@ -30,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${inspiration.variable}`}>
+      <body className={`${inter.className}`}>
         <SmoothScroll>
         <ScrollContainer>
 
