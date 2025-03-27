@@ -388,9 +388,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
   };
   
-  
-  
-  
   const handleMouseMove = (e: MouseEvent) => {
     if (!isComponentVisibleRef.current) return;
     

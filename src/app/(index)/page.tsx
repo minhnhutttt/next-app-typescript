@@ -174,33 +174,12 @@ useEffect(() => {
     preloadComponents();
   }, []);
 
-  const renderCurrentItem = () => {
-    if (loadedImageItems.length === 0) return null;
-    
-    const item = loadedImageItems[currentImageIndex];
-    
-    return (
-      <div className="w-[100px] h-[100px] md:w-[168px] md:h-[168px] overflow-hidden rounded-md shadow-lg relative">
-        <img 
-          src={item.src} 
-          alt="Loading preview" 
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
-    );
-  };
 
   return (
     <>
       {isLoading && (
   <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-50">
     <div className="flex flex-col items-center">
-      {loadedImageItems.length > 0 && (
-        <div className="mb-4 transition-all duration-500 ease-in-out transform hover:scale-105">
-          {renderCurrentItem()}
-        </div>
-      )}
-      
       <div className="w-[150px] md:w-[200px] rounded-full h-2.5 mb-2">
         <div 
           className="bg-[#F34927] h-2.5 rounded-full transition-all duration-300" 
