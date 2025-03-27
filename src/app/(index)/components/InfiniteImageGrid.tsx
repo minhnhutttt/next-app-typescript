@@ -436,7 +436,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   const handleWheel = (e: WheelEvent) => {
     if (!isComponentVisibleRef.current || !containerRef.current) return;
     
-    e.preventDefault();
     
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);

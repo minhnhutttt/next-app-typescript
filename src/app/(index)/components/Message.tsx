@@ -27,7 +27,7 @@ const Message = () => {
                 <div className="w-full max-w-[886px] mx-auto max-md:py-[150px] md:pt-[285px]">
                     <p data-scroll className="ani-slide-bottom md:text-[36px] text-[20px] tracking-widest">A NEXUS offers comprehensive production and promotion services, from stage design to  original content creation and global marketing campaigns. </p>
                     <div data-scroll className="ani-slide-bottom flex justify-end md:mt-12 mt-8">
-                        <a href="#" className="flex items-center md:text-[32px] text-[20px] font-semibold tracking-widest gap-2 border-b border-[#111] px-4">
+                        <a href="/about" className="flex items-center md:text-[32px] text-[20px] font-semibold tracking-widest gap-2 border-b border-[#111] px-4">
                         <span className="md:text-[21px] text-[17px">★</span><span>ABOUT US</span>
                         </a>
                     </div>
