@@ -48,7 +48,7 @@ const News = () => {
 
   useEffect(() => {
     Splitting()
-    ScrollOut({once: true,})
+    ScrollOut({once: true})
   })
 
   return (

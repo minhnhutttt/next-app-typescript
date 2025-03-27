@@ -17,7 +17,7 @@ const SmoothScroll = ({ children }: SmoothScrollPropsType) => {
 
   useLayoutEffect(() => {
     const update = (time: number) => {
-      lenisRef.current?.lenis?.raf(time * 1000)
+      lenisRef.current?.lenis?.raf(time * 1)
     }
 
     gsap.ticker.add(update)

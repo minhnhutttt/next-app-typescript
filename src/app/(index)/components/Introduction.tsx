@@ -26,7 +26,6 @@ const Introduction = () => {
         display: "inline-block",
       });
 
-      ScrollTrigger.refresh();
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -52,10 +51,11 @@ const Introduction = () => {
       return () => {
         if (tl.scrollTrigger) {
           tl.scrollTrigger.kill();
+          tl.scrollTrigger?.refresh();
+          tl.kill();
         }
         ScrollTrigger.refresh();
-        tl.scrollTrigger?.refresh();
-        tl.kill();
+        
       };
     }
   }, []);
@@ -64,7 +64,7 @@ const Introduction = () => {
     <section
       ref={ref}
       id="introduction"
-      className="mt-[100vh] relative overflow-hidden md:px-10 px-5 "
+      className="mt-[calc(100vh)] relative overflow-hidden md:px-10 px-5 "
     >
       <div className="w-full max-w-[980px] mx-auto text-[#ADADAD]">
         <div

@@ -24,14 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <SmoothScroll>
         <ScrollContainer>
+        <SmoothScroll>
 
           <Header />
           {children}
           <Footer />
-          </ScrollContainer>
           </SmoothScroll>
+
+          </ScrollContainer>
         </body>
     </html>
   );

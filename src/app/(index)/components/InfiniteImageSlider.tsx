@@ -2,58 +2,45 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MediaItemData } from './InfiniteImageGrid';
 
-interface SlideItem {
+interface SlideItem extends MediaItemData {
   id: number;
-  imageSrc: string;
 }
 
-const InfiniteImageSlider = () => {
-  // Tăng số lượng ảnh lên 10
-  const imagesList: SlideItem[] = [
-    { id: 1, imageSrc: "/assets/images/fv-01.png" },
-    { id: 2, imageSrc: "/assets/images/fv-02.png" },
-    { id: 3, imageSrc: "/assets/images/fv-03.png" },
-    { id: 4, imageSrc: "/assets/images/fv-04.png" },
-    { id: 5, imageSrc: "/assets/images/fv-05.png" },
-    { id: 6, imageSrc: "/assets/images/fv-06.png" },
-    { id: 7, imageSrc: "/assets/images/fv-07.png" },
-    { id: 8, imageSrc: "/assets/images/fv-08.png" },
-    { id: 9, imageSrc: "/assets/images/fv-09.png" },
-    { id: 10, imageSrc: "/assets/images/fv-10.png" },
-  ];
+const InfiniteImageSlider = ({mediaItems} : {mediaItems: MediaItemData[]} ) => {
+  const mediaList: SlideItem[] = mediaItems.map((item, index) => ({
+    ...item,
+    id: index + 1
+  }));
 
-  const [slides, setSlides] = useState<SlideItem[]>(imagesList);
+  const [slides, setSlides] = useState<SlideItem[]>(mediaList);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   
-  // Số lượng slide hiển thị tối đa
-  const maxVisibleSlides = 6;
+  const maxVisibleSlides = 5;
   
-  // Hàm để tính position dựa vào index
+  const slideGap = 40;
+  
   const getPosition = (index: number): number => {
-    return index * 50;
+    return index * slideGap;
   };
 
-  // Hàm để chuyển slide
   const rotateSlides = () => {
     if (isAnimating) return;
     
     setIsAnimating(true);
     
-    // Đợi animation hoàn thành rồi cập nhật thứ tự slides
     setTimeout(() => {
       setSlides(prevSlides => {
         const newSlides = [...prevSlides];
-        // Lấy slide cuối và đưa nó lên đầu
         const lastSlide = newSlides.pop()!;
         return [lastSlide, ...newSlides];
       });
       
       setIsAnimating(false);
-    }, 500);
+    }, 250);
   };
 
-  // Tự động chuyển slide sau một khoảng thời gian
   useEffect(() => {
     const intervalId = setInterval(() => {
       rotateSlides();
@@ -63,30 +50,42 @@ const InfiniteImageSlider = () => {
   }, [isAnimating]);
 
   return (
-    <section className="relative flex justify-center">
-      <div className="w-[320px] relative h-[420px]">
+    <section className="md:hidden relative flex justify-center pt-[200px] bg-[url(/assets/images/svg-deco.svg)] bg-contain bg-no-repeat bg-center">
+      <div 
+        className="w-[80vw] max-w-[400px] max-h-[560px] relative h-[calc(160px+80vw)]" 
+      >
         <AnimatePresence>
           {slides.slice(0, maxVisibleSlides).map((slide, index) => {
-            // Tính vị trí dựa trên index
             const position = getPosition(index);
             
             return (
               <motion.div
                 key={slide.id}
-                className="size-[320px] absolute inset-0"
+                className="w-full aspect-square absolute inset-0 rounded-[30px] overflow-hidden"
                 initial={{ y: position }}
                 animate={{ 
-                  y: index === maxVisibleSlides - 1 && isAnimating ? position + 100 : position,
+                  y: index === maxVisibleSlides - 1 && isAnimating ? position + slideGap * 2 : position,
                   opacity: index === maxVisibleSlides - 1 && isAnimating ? 0 : 1
                 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                style={{ zIndex: index }}
+                style={{ zIndex:  index }}
               >
-                <img 
-                  src={slide.imageSrc} 
-                  alt={`Slide ${slide.id}`} 
-                  className="w-full h-full object-cover"
-                />
+                {slide.type === "image" ? (
+                  <img 
+                    src={slide.src} 
+                    alt={`Slide ${slide.id}`} 
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <video 
+                    src={slide.src}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                )}
               </motion.div>
             );
           })}

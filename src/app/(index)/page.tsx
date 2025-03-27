@@ -193,7 +193,7 @@ useEffect(() => {
   return (
     <>
       {isLoading && (
-  <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50">
+  <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-50">
     <div className="flex flex-col items-center">
       {loadedImageItems.length > 0 && (
         <div className="mb-4 transition-all duration-500 ease-in-out transform hover:scale-105">
@@ -201,14 +201,14 @@ useEffect(() => {
         </div>
       )}
       
-      <div className="w-[150px] md:w-[200px] bg-gray-700 rounded-full h-2.5 mb-2">
+      <div className="w-[150px] md:w-[200px] rounded-full h-2.5 mb-2">
         <div 
-          className="bg-orange-500 h-2.5 rounded-full transition-all duration-300" 
+          className="bg-[#F34927] h-2.5 rounded-full transition-all duration-300" 
           style={{ width: `${loadProgress}%` }}
         ></div>
       </div>
       
-      <div className="text-white text-sm font-medium">
+      <div className="text-black text-sm font-medium">
         {loadProgress}%
       </div>
     </div>

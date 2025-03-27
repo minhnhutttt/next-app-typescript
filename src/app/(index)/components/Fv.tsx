@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import dynamic from 'next/dynamic';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Splitting from "splitting";
 import InfiniteImageGrid from "./InfiniteImageGrid";
-import MediaSlider from "./MediaSlider";
 import InfiniteImageSlider from "./InfiniteImageSlider";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -48,8 +48,44 @@ const Fv: React.FC = () => {
   const containerWrapRef = useRef<HTMLDivElement>(null);
   const charScrollRef = useRef<HTMLHeadingElement>(null);
 
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const debounce = <F extends (...args: any[]) => any>(
+    func: F,
+    delay: number
+  ): ((...args: Parameters<F>) => void) => {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    return (...args: Parameters<F>) => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+  };
+  const checkDevice = useCallback(
+    debounce(() => {
+      setIsMobile(window.innerWidth < 768);
+    }, 100),
+    []
+  );
   useEffect(() => {
-    Splitting();
+    checkDevice();
+    const resizeObserver = new ResizeObserver(() => {
+      checkDevice();
+    });
+    resizeObserver.observe(document.body);
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [checkDevice]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      Splitting();
+    }
+
+    let st: ScrollTrigger | null = null;
 
     if (charScrollRef.current) {
       const charScroll = charScrollRef.current.querySelectorAll(".char");
@@ -63,13 +99,20 @@ const Fv: React.FC = () => {
 
       const tl = gsap.timeline({
         scrollTrigger: {
+          id: "fv-scroll-trigger",
           trigger: containerRef.current,
           start: "top top",
           end: "bottom top",
           pin: true,
+          pinSpacing: true, 
           scrub: 0.9,
+          anticipatePin: 1
         },
       });
+
+      if (tl.scrollTrigger) {
+        st = tl.scrollTrigger as ScrollTrigger;
+      }
 
       tl.to(containerWrapRef.current, {
         opacity: 1,
@@ -83,47 +126,55 @@ const Fv: React.FC = () => {
         0.1
       );
 
-      return () => {
-        if (tl.scrollTrigger) {
-          tl.scrollTrigger.kill();
-        }
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      };
+      ScrollTrigger.refresh();
     }
+
+    return () => {
+      if (st) {
+        st.kill();
+        
+      }
+      
+      ScrollTrigger.getById("fv-scroll-trigger")?.kill();
+    };
   }, []);
 
   return (
-    <div className="min-h-screen h-screen p-4 overflow-hidden">
-      <InfiniteImageSlider />
-        {/* <div
-          className="absolute inset-0 h-screen w-full overflow-hidden"
-          ref={containerRef}
-        >
-          <div className="flex flex-col h-full overflow-hidden md:justify-between justify-center relative z-30 bg-[url(/assets/images/svg-deco.svg)] bg-no-repeat bg-center">
-            <InfiniteImageGrid
-              rowNum={10}
-              imgNum={28}
-              mediaItems={MEDIA_ITEMS}
-            />
-          </div>
-          <div className="w-full absolute h-screen inset-0 md:pointer-events-none z-40">
-            <div
-              ref={containerWrapRef}
-              className="h-full flex flex-col justify-center items-center"
-            >
-              <h4
-                ref={charScrollRef}
-                data-splitting
-                className="text-[8vw] text-center leading-[1.8] text-[#FAE2D7] md:text-[64px] font-bold relative z-50"
+    <section className="fv-section">
+      <div className="min-h-screen h-screen p-4 overflow-hidden">
+        <InfiniteImageSlider mediaItems={MEDIA_ITEMS} />
+          <div
+            className="absolute inset-0 h-screen w-full overflow-hidden z-30"
+            ref={containerRef}
+          >
+            <div className="flex flex-col h-full overflow-hidden md:justify-between justify-center relative z-30 md:bg-[url(/assets/images/svg-deco.svg)] bg-contain bg-no-repeat bg-center">
+            {!isMobile && (
+              <InfiniteImageGrid
+                rowNum={10}
+                imgNum={28}
+                mediaItems={MEDIA_ITEMS}
+              />
+            )}
+            </div>
+            <div className="w-full absolute h-screen inset-0 md:pointer-events-none z-40">
+              <div
+                ref={containerWrapRef}
+                className="h-full flex flex-col justify-center items-center"
               >
-                Unleashing Global <br />
-                Entertainment Value <br />
-                Across Borders 
-              </h4>
+                <h4
+                  ref={charScrollRef}
+                  data-splitting
+                  className="text-[8vw] text-center leading-[1.8] text-[#FAE2D7] md:text-[64px] font-bold relative z-50"
+                >
+                  Unleashing Global <br />
+                  Entertainment Value <br />
+                  Across Borders 
+                </h4>
+              </div>
             </div>
           </div>
-        </div> */}
-    </div>
+      </div>
+    </section>
   );
 };
 
