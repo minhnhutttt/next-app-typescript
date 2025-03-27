@@ -50,7 +50,7 @@ const InfiniteImageSlider = ({mediaItems} : {mediaItems: MediaItemData[]} ) => {
   }, [isAnimating]);
 
   return (
-    <section className="md:hidden relative flex justify-center pt-[200px] bg-[url(/assets/images/svg-deco.svg)] bg-contain bg-no-repeat bg-center">
+    <section className="md:hidden relative flex justify-center pt-[25vw] bg-[url(/assets/images/svg-deco.svg)] bg-contain bg-no-repeat bg-center">
       <div 
         className="w-[80vw] max-w-[400px] max-h-[560px] relative h-[calc(160px+80vw)]" 
       >
