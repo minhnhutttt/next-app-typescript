@@ -20,30 +20,8 @@ export interface MediaItemData {
   src: string;
 }
 
-const MEDIA_ITEMS: MediaItemData[] = [
-  { type: "image", src: "/assets/images/fv-01.png" },
-  { type: "video", src: "/assets/images/fv-02.mp4" },
-  { type: "image", src: "/assets/images/fv-03.png" },
-  { type: "video", src: "/assets/images/fv-04.mp4" },
-  { type: "image", src: "/assets/images/fv-05.png" },
-  { type: "video", src: "/assets/images/fv-06.mp4" },
-  { type: "image", src: "/assets/images/fv-07.png" },
-  { type: "image", src: "/assets/images/fv-08.png" },
-  { type: "image", src: "/assets/images/fv-09.png" },
-  { type: "video", src: "/assets/images/fv-10.mp4" },
-  { type: "image", src: "/assets/images/fv-11.png" },
-  { type: "image", src: "/assets/images/fv-12.png" },
-  { type: "image", src: "/assets/images/fv-13.png" },
-  { type: "video", src: "/assets/images/fv-14.mp4" },
-  { type: "image", src: "/assets/images/fv-15.png" },
-  { type: "image", src: "/assets/images/fv-16.png" },
-  { type: "video", src: "/assets/images/fv-17.mp4" },
-  { type: "image", src: "/assets/images/fv-18.png" },
-  { type: "video", src: "/assets/images/fv-19.mp4" },
-  { type: "video", src: "/assets/images/fv-20.mp4" },
-];
 
-const Fv: React.FC = () => {
+const Fv = ({mediaItems} : {mediaItems: MediaItemData[]}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const containerWrapRef = useRef<HTMLDivElement>(null);
   const charScrollRef = useRef<HTMLHeadingElement>(null);
@@ -142,7 +120,7 @@ const Fv: React.FC = () => {
   return (
     <section className="fv-section">
       <div className="min-h-screen h-screen p-4 overflow-hidden">
-        <InfiniteImageSlider mediaItems={MEDIA_ITEMS} />
+        <InfiniteImageSlider mediaItems={mediaItems} />
           <div
             className="absolute inset-0 h-screen w-full overflow-hidden z-30"
             ref={containerRef}
@@ -152,7 +130,7 @@ const Fv: React.FC = () => {
               <InfiniteImageGrid
                 rowNum={10}
                 imgNum={28}
-                mediaItems={MEDIA_ITEMS}
+                mediaItems={mediaItems}
               />
             )}
             </div>
@@ -164,7 +142,7 @@ const Fv: React.FC = () => {
                 <h4
                   ref={charScrollRef}
                   data-splitting
-                  className="text-[8vw] text-center leading-[1.8] text-[#FAE2D7] md:text-[64px] font-bold relative z-50"
+                  className="text-[8vw] text-center leading-[1.8] text-[#FAE2D7] md:text-[64px] font-bold relative z-50 [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff]"
                 >
                   Unleashing Global <br />
                   Entertainment Value <br />

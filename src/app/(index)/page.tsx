@@ -42,7 +42,6 @@ const ALL_MEDIA_ITEMS: MediaItemData[] = [
   { type: "image", src: "/assets/images/fv-18.png" },
   { type: "video", src: "/assets/images/fv-19.mp4" },
   { type: "video", src: "/assets/images/fv-20.mp4" },
-  { type: "video", src: "/assets/images/about.mp4" },
 ];
 
 export default function Home() {
@@ -195,7 +194,7 @@ useEffect(() => {
 )}
       <main className="relative">
             <>
-              <Fv />
+              <Fv mediaItems={ALL_MEDIA_ITEMS} />
               <div className="bg-[linear-gradient(180deg,_#FFF_0%,_#FF711C_100%)]">
                 <Introduction />
                 <News />
