@@ -53,7 +53,7 @@ const News = () => {
             <span data-splitting>NEWS</span>
             </h2>
       </div>
-      <div className="w-full max-w-[1410px] mx-auto relative pb-20 md:mt-[52px] mt-[36px]">
+      <div data-scroll className="ani-fade-up w-full max-w-[1410px] mx-auto relative pb-20 md:mt-[52px] mt-[36px]">
         <Swiper
           modules={[Navigation]}
           slidesPerView={"auto"}

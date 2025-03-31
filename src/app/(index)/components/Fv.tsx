@@ -120,21 +120,18 @@ const Fv = ({mediaItems} : {mediaItems: MediaItemData[]}) => {
   return (
     <section className="fv-section">
       <div className="min-h-screen h-screen p-4 overflow-hidden">
-        <InfiniteImageSlider mediaItems={mediaItems} />
           <div
             className="absolute inset-0 h-screen w-full overflow-hidden z-30"
             ref={containerRef}
           >
-            <div className="flex flex-col h-full overflow-hidden md:justify-between justify-center relative z-30 md:bg-[url(/assets/images/svg-deco.svg)] bg-contain bg-no-repeat bg-center">
-            {!isMobile && (
+            <div className="flex flex-col h-full overflow-hidden md:justify-between justify-center relative z-30 bg-[url(/assets/images/svg-deco.svg)] bg-contain bg-no-repeat bg-center">
               <InfiniteImageGrid
-                rowNum={10}
+                rowNum={5}
                 imgNum={28}
                 mediaItems={mediaItems}
               />
-            )}
             </div>
-            <div className="w-full absolute h-screen inset-0 md:pointer-events-none z-40">
+            <div className="w-full absolute h-screen inset-0 pointer-events-none z-40">
               <div
                 ref={containerWrapRef}
                 className="h-full flex flex-col justify-center items-center"
