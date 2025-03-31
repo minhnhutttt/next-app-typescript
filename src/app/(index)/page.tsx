@@ -5,14 +5,16 @@ import Contact from './components/Contact';
 import Apply from './components/Apply';
 import Company from './components/Company';
 
-const Fv = dynamic(() => import('./components/Fv'), {ssr: false})
+const Fv = dynamic(() => import('./components/Fv'), {
+  ssr: false,
+  loading: () => <div className="min-h-screen bg-white"></div>
+})
 const Introduction = dynamic(() => import('./components/Introduction'), {ssr: false})
 const News = dynamic(() => import('./components/News'), {ssr: false})
 const BoardMember = dynamic(() => import('./components/BoardMember'), {ssr: false})
 const Artist = dynamic(() => import('./components/Artist'), {ssr: false})
 const Showcase = dynamic(() => import('./components/Showcase'), {ssr: false})
 const Message = dynamic(() => import('./components/Message'), {ssr: false})
-
 
 type MediaType = "image" | "video";
 
@@ -44,170 +46,149 @@ const ALL_MEDIA_ITEMS: MediaItemData[] = [
   { type: "video", src: "/assets/images/fv-20.mp4" },
 ];
 
+const PRIORITY_MEDIA_ITEMS = ALL_MEDIA_ITEMS.slice(0, 20);
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadProgress, setLoadProgress] = useState(0);
   const [loadedItems, setLoadedItems] = useState<MediaItemData[]>([]);
   const [loadedImageItems, setLoadedImageItems] = useState<MediaItemData[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showFv, setShowFv] = useState(false);
 
-  const preloadAllMedia = async () => {
-  let loaded = 0;
-  const totalItems = ALL_MEDIA_ITEMS.length;
-  const updatedItems: MediaItemData[] = [];
-  const updatedImageItems: MediaItemData[] = [];
+  const preloadPriorityMedia = async () => {
+    let loaded = 0;
+    const totalItems = PRIORITY_MEDIA_ITEMS.length;
+    const updatedItems: MediaItemData[] = [];
+    const updatedImageItems: MediaItemData[] = [];
 
-  for (const item of ALL_MEDIA_ITEMS) {
-    if (item.type === "image") {
-      await new Promise<void>((resolve) => {
-        const img = new Image();
-        
-        img.onload = () => {
-          loaded++;
-          const progress = Math.floor((loaded / totalItems) * 100);
-          setLoadProgress(progress);
+    const loadPromises = PRIORITY_MEDIA_ITEMS.map(item => {
+      return new Promise<void>((resolve) => {
+        if (item.type === "image") {
+          const img = new Image();
           
-          updatedItems.push(item);
-          setLoadedItems([...updatedItems]);
+          img.onload = () => {
+            loaded++;
+            const progress = Math.floor((loaded / totalItems) * 100);
+            setLoadProgress(progress);
+            
+            updatedItems.push(item);
+            updatedImageItems.push(item);
+            
+            resolve();
+          };
           
-          updatedImageItems.push(item);
-          setLoadedImageItems([...updatedImageItems]);
+          img.onerror = () => {
+            console.error(`Failed to load image: ${item.src}`);
+            loaded++;
+            setLoadProgress(Math.floor((loaded / totalItems) * 100));
+            resolve();
+          };
           
-          resolve();
-        };
-        
-        img.onerror = () => {
-          console.error(`Failed to load image: ${item.src}`);
-          loaded++;
-          const progress = Math.floor((loaded / totalItems) * 100);
-          setLoadProgress(progress);
-          resolve();
-        };
-        
-        img.src = item.src;
+          img.src = item.src;
+        } else {
+          const video = document.createElement('video');
+          video.preload = 'metadata';
+          video.src = item.src;
+          
+          setTimeout(() => {
+            loaded++;
+            setLoadProgress(Math.floor((loaded / totalItems) * 100));
+            updatedItems.push(item);
+            resolve();
+          }, 600);
+        }
       });
-    } else if (item.type === "video") {
-      await new Promise<void>((resolve) => {
-        const video = document.createElement('video');
-        
-        video.onloadeddata = () => {
-          loaded++;
-          const progress = Math.floor((loaded / totalItems) * 100);
-          setLoadProgress(progress);
-          
-          updatedItems.push(item);
-          setLoadedItems([...updatedItems]);
-          
-          resolve();
-        };
-        
-        video.onerror = () => {
-          console.error(`Failed to load video: ${item.src}`);
-          loaded++;
-          const progress = Math.floor((loaded / totalItems) * 100);
-          setLoadProgress(progress);
-          resolve();
-        };
-        
-        const timeout = setTimeout(() => {
-          console.warn(`Video loading timeout: ${item.src}`);
-          loaded++;
-          const progress = Math.floor((loaded / totalItems) * 100);
-          setLoadProgress(progress);
-          updatedItems.push(item);
-          setLoadedItems([...updatedItems]);
-          resolve();
-        }, 10000);
-        
-        video.onloadeddata = () => {
-          clearTimeout(timeout);
-          loaded++;
-          const progress = Math.floor((loaded / totalItems) * 100);
-          setLoadProgress(progress);
-          
-          updatedItems.push(item);
-          setLoadedItems([...updatedItems]);
-          
-          resolve();
-        };
-        
-        video.preload = 'auto';
-        video.src = item.src;
-        video.load();
-      });
-    }
-  }
+    });
 
-  setLoadProgress(100);
-  
-  setTimeout(() => {
-    setIsLoading(false);
-  }, 500);
-};
-
-useEffect(() => {
-  if (isLoading && loadedImageItems.length > 0) {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex < loadedImageItems.length - 1 ? prevIndex + 1 : 0
-      );
-    }, 150);
+    await Promise.all(loadPromises);
     
-    return () => clearInterval(interval);
-  }
-}, [isLoading, loadedImageItems.length]);
+    setLoadedItems(updatedItems);
+    setLoadedImageItems(updatedImageItems.filter(item => item.type === "image"));
+    
+    setShowFv(true);
+    
+    setTimeout(() => {
+      setIsLoading(false);
+      preloadRemainingMedia();
+    }, 500);
+  };
+
+  const preloadRemainingMedia = () => {
+    const remainingItems = ALL_MEDIA_ITEMS.slice(PRIORITY_MEDIA_ITEMS.length);
+    
+    remainingItems.forEach(item => {
+      if (item.type === "image") {
+        const img = new Image();
+        img.src = item.src;
+      } else if (item.type === "video") {
+        const video = document.createElement('video');
+        video.preload = 'metadata';
+        video.src = item.src;
+      }
+    });
+  };
 
   useEffect(() => {
-    preloadAllMedia();
+    preloadPriorityMedia();
     
     const preloadComponents = async () => {
-      await Promise.all([
+      await Promise.allSettled([
         import('./components/News'),
-        import('./components/BoardMember'),
-        import('./components/Artist'),
-        import('./components/Showcase'),
-        import('./components/Message'),
       ]);
     };
     
     preloadComponents();
   }, []);
 
+  useEffect(() => {
+    if (isLoading && loadedImageItems.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => 
+          prevIndex < loadedImageItems.length - 1 ? prevIndex + 1 : 0
+        );
+      }, 150);
+      
+      return () => clearInterval(interval);
+    }
+  }, [isLoading, loadedImageItems.length]);
 
   return (
     <>
       {isLoading && (
-  <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-50">
-    <div className="flex flex-col items-center">
-      <div className="w-[150px] md:w-[200px] rounded-full h-2.5 mb-2">
-        <div 
-          className="bg-[#F34927] h-2.5 rounded-full transition-all duration-300" 
-          style={{ width: `${loadProgress}%` }}
-        ></div>
-      </div>
-      
-      <div className="text-black text-sm font-medium">
-        {loadProgress}%
-      </div>
-    </div>
-  </div>
-)}
+        <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-50">
+          <div className="flex flex-col items-center">
+            <div className="w-[150px] md:w-[200px] rounded-full h-2.5 mb-2">
+              <div 
+                className="bg-[#F34927] h-2.5 rounded-full transition-all duration-300" 
+                style={{ width: `${loadProgress}%` }}
+              ></div>
+            </div>
+            
+            <div className="text-black text-sm font-medium">
+              {loadProgress}%
+            </div>
+          </div>
+        </div>
+      )}
       <main className="relative">
-            <>
-              <Fv mediaItems={ALL_MEDIA_ITEMS} />
-              <div className="bg-[linear-gradient(180deg,_#FFF_0%,_#FF711C_100%)]">
-                <Introduction />
-                <News />
-              </div>
-              <BoardMember />
-              <Artist />
-              <Showcase />
-              <Message />
-              <Contact />
-              <Apply />
-              <Company />
-            </>
-        </main>
+        {showFv && (
+          <>
+            <Fv mediaItems={loadedItems.length > 0 ? loadedItems : PRIORITY_MEDIA_ITEMS} />
+            <div className="bg-[linear-gradient(180deg,_#FFF_0%,_#FF711C_100%)]">
+              <Introduction />
+              <News />
+            </div>
+            <BoardMember />
+            <Artist />
+            <Showcase />
+            <Message />
+            <Contact />
+            <Apply />
+            <Company />
+          </>
+        )}
+      </main>
     </>
   );
 }
