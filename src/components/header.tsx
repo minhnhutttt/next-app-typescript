@@ -33,7 +33,8 @@ const Header = () => {
             NavOpen ? "" : "invisible opacity-0"
           }`}
         >
-          <ul className="flex items-center max-md:flex-col md:mr-6 max-md:mb-6">
+          <a href="/" className="max-md:w-[120px]"><img src="/assets/images/logo.svg" alt="" /></a>
+          <ul className="flex items-center max-md:flex-col mt-8 md:mt-10">
               <li className="relative">
                 <a
                   href="/"

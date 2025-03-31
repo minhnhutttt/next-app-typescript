@@ -1,8 +1,6 @@
 "use client"
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
-import Contact from './components/Contact';
-import Apply from './components/Apply';
 import Company from './components/Company';
 
 const Fv = dynamic(() => import('./components/Fv'), {
@@ -15,6 +13,7 @@ const BoardMember = dynamic(() => import('./components/BoardMember'), {ssr: fals
 const Artist = dynamic(() => import('./components/Artist'), {ssr: false})
 const Showcase = dynamic(() => import('./components/Showcase'), {ssr: false})
 const Message = dynamic(() => import('./components/Message'), {ssr: false})
+const Contact = dynamic(() => import('./components/Contact'), {ssr: false})
 
 type MediaType = "image" | "video";
 
@@ -184,7 +183,6 @@ export default function Home() {
             <Showcase />
             <Message />
             <Contact />
-            <Apply />
             <Company />
           </>
         )}

@@ -6,16 +6,18 @@ type ScrollContainerPropsType = {
   };
 export default function ScrollContainer({children}: ScrollContainerPropsType) {
   useEffect(()=>{
-    ScrollOut({
-      once: true,
-      threshold: 0.5
-    });
     setTimeout(() => {
       if ( window && document ) {
           const splitting = require('splitting');
           splitting();
       }
     });
+    setTimeout(() => {
+      ScrollOut({
+        once: true,
+      threshold: 0.5
+      });
+    }, 10);
 },[])
   return (
     <div>

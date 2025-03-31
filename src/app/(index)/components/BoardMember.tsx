@@ -1,15 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
-import ScrollOut from "scroll-out";
-import Splitting from "splitting";
 
 const BoardMember = () => {
  
-  useEffect(() => {
-      Splitting()
-      ScrollOut({once: true})
-    })
-
   return (
     <section className="relative overflow-hidden md:mt-8 mt-4 px-5 md:pb-[272px] pb-[180px]">
       <div className="px-5 text-[#F34927]">

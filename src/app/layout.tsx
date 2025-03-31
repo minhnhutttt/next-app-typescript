@@ -4,7 +4,6 @@ import "./globals.scss";
 import ScrollContainer from "@/components/scrollContainer";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import SmoothScroll from "@/components/smoothSCroll";
 
  const inter = Inter({ 
   weight: ['300','400','500','700'],

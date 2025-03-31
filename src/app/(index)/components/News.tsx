@@ -1,7 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
-import ScrollOut from "scroll-out";
-import Splitting from "splitting";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -46,10 +44,6 @@ const slides: SlideItem[] = [
 const News = () => {
   const [swiperRef, setSwiperRef] = useState<any>(null);
 
-  useEffect(() => {
-    Splitting()
-    ScrollOut({once: true})
-  })
 
   return (
     <div className="relative w-full mx-auto">

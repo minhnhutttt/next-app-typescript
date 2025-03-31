@@ -142,7 +142,7 @@ const Fv = ({mediaItems} : {mediaItems: MediaItemData[]}) => {
                 <h4
                   ref={charScrollRef}
                   data-splitting
-                  className="text-[8vw] text-center leading-[1.8] text-[#FAE2D7] md:text-[64px] font-bold relative z-50 [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff]"
+                  className="text-[8vw] text-center leading-[1.8] text-[#F34927] md:text-[64px] font-bold relative z-50 [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff]"
                 >
                   Unleashing Global <br />
                   Entertainment Value <br />
