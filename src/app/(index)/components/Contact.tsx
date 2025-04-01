@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Button from "@/components/button";
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
   nullTargetWarn: false,
@@ -25,6 +26,8 @@ const Contact = () => {
     if (applyRef.current) {
       gsap.set(applyRef.current, {
         opacity: 0,
+        scale: 0,
+        yPercent: -100
       });
     }
 
@@ -33,23 +36,22 @@ const Contact = () => {
         trigger: contactSectionRef.current,
         start: "top top",
         end: "bottom top",
-        scrub: true,
-        pin: true,
-        anticipatePin: 1
       }
     });
 
     tl.to(bgLineRef.current, {
       height: "100%",
-      duration: 1.5,
+      duration: 1,
       ease: "power2.out",
     });
-
-    tl.to(applyRef.current, {
-      opacity: 1,
-      duration: 2,
-      ease: "power2.out"
-    });
+      tl.to(applyRef.current, {
+        opacity: 1,
+        yPercent: 0,
+        scale: 1,
+        duration: 1,
+        ease: "power2.in"
+      }, '-=1.1');
+    
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -78,12 +80,12 @@ const Contact = () => {
             Interested in learning more about investment opportunities or media inquiries? Our team is ready to assist you. 
           </p>
           <div className="flex justify-center md:mt-[72px] mt-[50px]">
-            <a 
-              href="#" 
-              className="md:w-[340px] w-[300px] h-20 md:h-[110px] flex items-center justify-center bg-[#F34927] rounded-full md:text-[30px] text-[20px] text-[#FAE2D7]"
-            >
-              CONTACT US
-            </a>
+            <Button
+            href="#" 
+            rect="md:w-[340px] w-[300px] h-20 md:h-[110px] flex items-center justify-center bg-[#F34927] rounded-full md:text-[30px] text-[20px] text-[#FAE2D7]"
+          >
+            CONTACT US
+          </Button>
           </div>
           </div>
         </div>
@@ -98,12 +100,12 @@ const Contact = () => {
             Aspiring Artists & Performers
           </p>
           <div className="flex justify-center md:mt-[60px] mt-[30px]">
-            <a 
-              href="#" 
-              className="md:w-[340px] w-[300px] h-20 md:h-[110px] flex items-center justify-center bg-white rounded-full md:text-[30px] text-[20px] text-[#F34927]"
-            >
-              Apply as Artist
-            </a>
+            <Button
+            href="#" 
+            rect="md:w-[340px] w-[300px] h-20 md:h-[110px] flex items-center justify-center bg-white rounded-full md:text-[30px] text-[20px] text-[#F34927]"
+          >
+            Apply as Artist
+          </Button>
           </div>
         </div>
       </section>

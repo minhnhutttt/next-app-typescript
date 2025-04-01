@@ -16,7 +16,7 @@ const MemberContent = () => {
               </p>
               <p
                 data-scroll
-                className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(24px,10vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3"
+                className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(18px,9vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3 whitespace-nowrap"
               >
                 <span data-splitting>Nariyuki Terada</span>
               </p>
@@ -134,7 +134,7 @@ const MemberContent = () => {
               <div className="text-[#111]">
                 <p
                   data-scroll
-                  className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(24px,10vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3 whitespace-nowrap"
+                  className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(18px,9vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3 whitespace-nowrap"
                 >
                   <span data-splitting>Hideyoshi Akita</span>
                 </p>
@@ -172,7 +172,7 @@ const MemberContent = () => {
               <div className="text-[#111]">
                 <p
                   data-scroll
-                  className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(24px,10vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3 whitespace-nowrap"
+                  className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(18px,9vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3 whitespace-nowrap"
                 >
                   <span data-splitting>Yutaka Kanagawa</span>
                 </p>
@@ -238,7 +238,7 @@ const MemberContent = () => {
             <div className="bg-[#69F0AE] rounded-[20px] md:py-10 md:px-10 lg:px-[78px] py-10 px-5 relative flex md:justify-between justify-center items-center gap-5 max-md:flex-col md:min-h-[600px] min-h-[400px]">
             <span className="absolute md:w-[432px] w-[200px] aspect-[432/427] bg-[url(/assets/images/member-star.png)] bg-no-repeat [background-size:100%_100%] pointer-events-none animate-[bounceRandomly4_80s_linear_infinite]"></span>
               <div className="text-[#111]">
-                <p data-scroll className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(24px,10vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3 whitespace-nowrap">
+                <p data-scroll className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(18px,9vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3 whitespace-nowrap">
                   <span data-splitting>Yoshiya Kato</span>
                 </p>
               </div>

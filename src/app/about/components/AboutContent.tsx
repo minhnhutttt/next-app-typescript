@@ -1,5 +1,7 @@
 "use client";
-import { ReactNode, useLayoutEffect, useRef } from "react";
+import { ReactNode, useEffect, useLayoutEffect, useRef } from "react";
+import ScrollOut from "scroll-out";
+import Splitting from "splitting";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -75,6 +77,7 @@ const business = [
   },
 ];
 
+
 const AboutItem = ({
   title,
   content,
@@ -85,33 +88,105 @@ const AboutItem = ({
   content: ReactNode;
   image: string;
   even?: boolean;
-}) => (
-  <div className="w-full max-w-[1440px] mx-auto">
-    <p
-      data-scroll="out"
-      className="text--enter overflow-hidden xl:text-[260px] md:text-[20vw] text-[12vw] font-bold leading-[0.88] tracking-[-0.07em] xl:ml-[-24px] md:ml-[-12px]"
-    >
-      <span data-splitting>{title}</span>
-    </p>
-    <div
-      className={`flex md:gap-10 gap-7  xl:-mt-[110px] md:-mt-[5vw] -mt-[3vw] max-xl:flex-col-reverse max-xl:items-center max-xl:justify-center ${
-        even ? "flex-row-reverse xl:pr-[100px]" : "xl:pl-[100px]"
-      }`}
-    >
-      <div className="flex-1 xl:pt-[260px]">
+}) => {
+  const titleRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !titleRef.current) return;
+
+    const timer = setTimeout(() => {
+      const chars = titleRef.current?.querySelectorAll('.char');
+      console.log('Chars found:', chars?.length);
+
+      if (chars && chars.length > 0) {
+        gsap.set(chars, {
+          opacity: 0,
+          display: 'inline-block',
+          y: '150%'
+        });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          }
+        });
+
+        chars.forEach((char, index) => {
+          tl.to(char, {
+            opacity: 1,
+            y: 0,
+            duration: 0.25,
+            delay: 0.25 + index * 0.1,
+            ease: 'power2.out',
+          }, 0);
+        });
+
+        if (imageRef.current) {
+          tl.fromTo(imageRef.current,
+            { opacity: 0, filter: 'blur(10px)' },
+            {
+              opacity: 1,
+              filter: 'blur(0px)',
+              duration: 1,
+            });
+        }
+
+        if (contentRef.current) {
+          tl.fromTo(contentRef.current,
+            { opacity: 0, y: 50 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+            }, 0.5
+          );
+        }
+      }
+    }, 100); 
+
+    return () => {
+      clearTimeout(timer);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [title, content, image]);
+
+  return (
+    <div className="w-full max-w-[1440px] mx-auto">
+      <p
+        ref={titleRef}
+        className="overflow-hidden xl:text-[260px] md:text-[20vw] text-[12vw] font-bold leading-[0.88] tracking-[-0.07em] xl:ml-[-24px] md:ml-[-12px]"
+        data-splitting="chars"
+      >
+        {title}
+      </p>
+      <div
+        className={`flex md:gap-10 gap-7 xl:-mt-[110px] md:-mt-[5vw] -mt-[3vw] max-xl:flex-col-reverse max-xl:items-center max-xl:justify-center ${
+          even ? "flex-row-reverse xl:pr-[100px]" : "xl:pl-[100px]"
+        }`}
+      >
+        <div className="flex-1 xl:pt-[260px]">
+          <div
+            ref={contentRef}
+            className="leading-loose md:text-[20px] text-[16px] font-medium w-full max-w-[860px] xl:max-w-[440px] max-xl:px-5"
+          >
+            {content}
+          </div>
+        </div>
         <div
-          data-scroll="out"
-          className="ani-fade-up leading-loose md:text-[20px] text-[16px] font-medium w-full max-w-[860px] xl:max-w-[440px] max-xl:px-5"
+          ref={imageRef}
+          className="max-w-[860px] w-full xl:w-[65%]"
         >
-          {content}
+          <img src={image} alt="" className="w-full h-auto" />
         </div>
       </div>
-      <div data-scroll className="ani-blur max-w-[860px] w-full xl:w-[65%]">
-        <img src={image} alt="" />
-      </div>
     </div>
-  </div>
-);
+  );
+};
+
 const AboutContent = () => {
   const animationRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -149,7 +224,7 @@ const AboutContent = () => {
 
     return () => ctx.revert();
   }, []);
-
+  
   return (
     <div>
       <div className="md:mb-[210px] mb-[110px]">

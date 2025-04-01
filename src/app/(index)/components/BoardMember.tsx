@@ -35,10 +35,6 @@ const BoardMember = () => {
         </div>
         <div data-scroll className="ani-slide-bottom rounded-[20px] relative overflow-hidden max-md:w-full max-lg:w-1/2">
           <img src="/assets/images/member.png" alt="" />
-          <span className="absolute md:bottom-10 left-4 bottom-7">
-            <span className="block text-[12px] text-[#111111]/[0.7]">CEO & Founder</span>
-            <span className="block text-[15px] font-bold">Nariyuki Terada</span>
-          </span>
         </div>
       </div>
     </section>

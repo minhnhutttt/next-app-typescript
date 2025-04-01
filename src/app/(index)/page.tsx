@@ -110,7 +110,7 @@ export default function Home() {
     setTimeout(() => {
       setIsLoading(false);
       preloadRemainingMedia();
-    }, 500);
+    }, 1200);
   };
 
   const preloadRemainingMedia = () => {
@@ -157,16 +157,7 @@ export default function Home() {
       {isLoading && (
         <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-50">
           <div className="flex flex-col items-center">
-            <div className="w-[150px] md:w-[200px] rounded-full h-2.5 mb-2">
-              <div 
-                className="bg-[#F34927] h-2.5 rounded-full transition-all duration-300" 
-                style={{ width: `${loadProgress}%` }}
-              ></div>
-            </div>
-            
-            <div className="text-black text-sm font-medium">
-              {loadProgress}%
-            </div>
+            <span className="size-[80px] md:size-[100px] inline-block relative text-[#FFF] animate-[spin_1s_linear_infinite] before:absolute before:size-6 md:before:size-[36px] before:rounded-[50%] before:animate-[scale50_1s_infinite_ease-in-out] after:absolute md:after:size-[36px] after:size-6 after:top-[0] after:bg-[#111] after:rounded-[50%] after:animate-[scale50_1s_infinite_ease-in-out] before:top-auto before:bottom-[0] before:bg-[#F34927] before:[animation-delay:0.5s]"> </span>
           </div>
         </div>
       )}
