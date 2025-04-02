@@ -463,32 +463,32 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!isTouchingRef.current || !containerRef.current || !isComponentVisibleRef.current) return;
+  
+  if (e.touches.length !== 1) return;
+  
+  const touch = e.touches[0];
+  
+  if (initialTouchRef.current) {
+    const deltaX = Math.abs(touch.clientX - initialTouchRef.current.x);
+    const deltaY = Math.abs(touch.clientY - initialTouchRef.current.y);
     
-    if (e.touches.length !== 1) return;
-    
-    const touch = e.touches[0];
-    
-    if (initialTouchRef.current) {
-      const deltaX = Math.abs(touch.clientX - initialTouchRef.current.x);
-      const deltaY = Math.abs(touch.clientY - initialTouchRef.current.y);
+    if (!touchDirectionDeterminedRef.current) {
+      const movementThreshold = 10;
+      const verticalThreshold = 1.2;
       
-      if (!touchDirectionDeterminedRef.current) {
-        const movementThreshold = 10; 
-        const verticalThreshold = 1.5;
+      if (deltaX > movementThreshold || deltaY > movementThreshold) {
+        touchDirectionDeterminedRef.current = true;
         
-        if (deltaX > movementThreshold || deltaY > movementThreshold) {
-          touchDirectionDeterminedRef.current = true;
-          
-          if (deltaY > deltaX * verticalThreshold) {
-            shouldHandleTouchRef.current = false;
-            return; 
-          } else {
-            shouldHandleTouchRef.current = true;
-            e.preventDefault(); 
-          }
+        if (deltaY > deltaX * verticalThreshold) {
+          shouldHandleTouchRef.current = false;
+          return;
+        } else {
+          shouldHandleTouchRef.current = true;
+          e.preventDefault(); 
         }
       }
     }
+  }
     
     if (touchDirectionDeterminedRef.current && shouldHandleTouchRef.current) {
       e.preventDefault();
@@ -819,78 +819,98 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
   }, [rowNum]);
 
-  useEffect(() => {
-    // Tham chiếu đến element để có thể gỡ bỏ event listener sau này
-    const overlayElement = document.querySelector('.touch-overlay');
+  // Cập nhật cách đăng ký các touch event listeners
+useEffect(() => {
+  // Tham chiếu đến element để có thể gỡ bỏ event listener sau này
+  const overlayElement = document.querySelector('.touch-overlay');
+  
+  // Khai báo các hàm xử lý sự kiện với kiểu đúng
+  const touchStartHandler = (e: Event) => {
+    const touchEvent = e as TouchEvent;
+    const syntheticEvent = {
+      nativeEvent: touchEvent,
+      touches: touchEvent.touches,
+      targetTouches: touchEvent.targetTouches,
+      changedTouches: touchEvent.changedTouches,
+      preventDefault: () => touchEvent.preventDefault(),
+      stopPropagation: () => touchEvent.stopPropagation(),
+      target: touchEvent.target,
+      currentTarget: touchEvent.currentTarget,
+    } as unknown as React.TouchEvent;
     
-    // Khai báo các hàm xử lý sự kiện với kiểu đúng
-    const touchStartHandler = (e: Event) => {
-      // Ép kiểu sự kiện sang TouchEvent để truy cập các thuộc tính cảm ứng
-      const touchEvent = e as TouchEvent;
-      // Tạo một đối tượng giống React.TouchEvent từ TouchEvent gốc
-      const syntheticEvent = {
-        nativeEvent: touchEvent,
-        touches: touchEvent.touches,
-        targetTouches: touchEvent.targetTouches,
-        changedTouches: touchEvent.changedTouches,
-        preventDefault: () => touchEvent.preventDefault(),
-        stopPropagation: () => touchEvent.stopPropagation(),
-        target: touchEvent.target,
-        currentTarget: touchEvent.currentTarget,
-        // Các trường React event khác nếu cần
-      } as unknown as React.TouchEvent;
+    handleTouchStart(syntheticEvent);
+  };
+  
+  const touchMoveHandler = (e: Event) => {
+    const touchEvent = e as TouchEvent;
+    
+    // Kiểm tra nhanh xem có phải chuyển động dọc không
+    if (initialTouchRef.current) {
+      const touch = touchEvent.touches[0];
+      const deltaX = Math.abs(touch.clientX - initialTouchRef.current.x);
+      const deltaY = Math.abs(touch.clientY - initialTouchRef.current.y);
       
-      handleTouchStart(syntheticEvent);
-    };
-    
-    const touchMoveHandler = (e: Event) => {
-      const touchEvent = e as TouchEvent;
-      const syntheticEvent = {
-        nativeEvent: touchEvent,
-        touches: touchEvent.touches,
-        targetTouches: touchEvent.targetTouches,
-        changedTouches: touchEvent.changedTouches,
-        preventDefault: () => touchEvent.preventDefault(),
-        stopPropagation: () => touchEvent.stopPropagation(),
-        target: touchEvent.target,
-        currentTarget: touchEvent.currentTarget,
-      } as unknown as React.TouchEvent;
+      // Nếu đã xác định là chuyển động dọc, để trình duyệt xử lý scroll
+      if (touchDirectionDeterminedRef.current && !shouldHandleTouchRef.current) {
+        return;
+      }
       
-      handleTouchMove(syntheticEvent);
-    };
-    
-    const touchEndHandler = (e: Event) => {
-      const touchEvent = e as TouchEvent;
-      const syntheticEvent = {
-        nativeEvent: touchEvent,
-        touches: touchEvent.touches,
-        targetTouches: touchEvent.targetTouches,
-        changedTouches: touchEvent.changedTouches,
-        preventDefault: () => touchEvent.preventDefault(),
-        stopPropagation: () => touchEvent.stopPropagation(),
-        target: touchEvent.target,
-        currentTarget: touchEvent.currentTarget,
-      } as unknown as React.TouchEvent;
-      
-      handleTouchEnd(syntheticEvent);
-    };
-    
-    if (overlayElement) {
-      overlayElement.addEventListener('touchstart', touchStartHandler, { passive: false });
-      overlayElement.addEventListener('touchmove', touchMoveHandler, { passive: false });
-      overlayElement.addEventListener('touchend', touchEndHandler, { passive: false });
-      overlayElement.addEventListener('touchcancel', touchEndHandler, { passive: false });
+      // Nếu chưa xác định hướng nhưng rõ ràng là chuyển động dọc
+      if (!touchDirectionDeterminedRef.current && deltaY > deltaX * 1.5 && deltaY > 10) {
+        touchDirectionDeterminedRef.current = true;
+        shouldHandleTouchRef.current = false;
+        return;
+      }
     }
     
-    return () => {
-      if (overlayElement) {
-        overlayElement.removeEventListener('touchstart', touchStartHandler);
-        overlayElement.removeEventListener('touchmove', touchMoveHandler);
-        overlayElement.removeEventListener('touchend', touchEndHandler);
-        overlayElement.removeEventListener('touchcancel', touchEndHandler);
-      }
-    };
-  }, [handleTouchStart, handleTouchMove, handleTouchEnd]);
+    const syntheticEvent = {
+      nativeEvent: touchEvent,
+      touches: touchEvent.touches,
+      targetTouches: touchEvent.targetTouches,
+      changedTouches: touchEvent.changedTouches,
+      preventDefault: () => touchEvent.preventDefault(),
+      stopPropagation: () => touchEvent.stopPropagation(),
+      target: touchEvent.target,
+      currentTarget: touchEvent.currentTarget,
+    } as unknown as React.TouchEvent;
+    
+    handleTouchMove(syntheticEvent);
+  };
+  
+  const touchEndHandler = (e: Event) => {
+    const touchEvent = e as TouchEvent;
+    const syntheticEvent = {
+      nativeEvent: touchEvent,
+      touches: touchEvent.touches,
+      targetTouches: touchEvent.targetTouches,
+      changedTouches: touchEvent.changedTouches,
+      preventDefault: () => touchEvent.preventDefault(),
+      stopPropagation: () => touchEvent.stopPropagation(),
+      target: touchEvent.target,
+      currentTarget: touchEvent.currentTarget,
+    } as unknown as React.TouchEvent;
+    
+    handleTouchEnd(syntheticEvent);
+  };
+  
+  if (overlayElement) {
+    // Đăng ký touchstart với passive: true để cải thiện hiệu suất vì không cần preventDefault
+    overlayElement.addEventListener('touchstart', touchStartHandler, { passive: true });
+    // Chỉ đặt passive: false cho touchmove để có thể gọi preventDefault khi cần
+    overlayElement.addEventListener('touchmove', touchMoveHandler, { passive: false });
+    overlayElement.addEventListener('touchend', touchEndHandler, { passive: true });
+    overlayElement.addEventListener('touchcancel', touchEndHandler, { passive: true });
+  }
+  
+  return () => {
+    if (overlayElement) {
+      overlayElement.removeEventListener('touchstart', touchStartHandler);
+      overlayElement.removeEventListener('touchmove', touchMoveHandler);
+      overlayElement.removeEventListener('touchend', touchEndHandler);
+      overlayElement.removeEventListener('touchcancel', touchEndHandler);
+    }
+  };
+}, []);
 
   return (
     <div 
