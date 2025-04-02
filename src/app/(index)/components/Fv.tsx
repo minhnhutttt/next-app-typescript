@@ -124,14 +124,15 @@ const Fv = ({mediaItems} : {mediaItems: MediaItemData[]}) => {
             className="absolute inset-0 h-screen w-full overflow-hidden z-30"
             ref={containerRef}
           >
-            <div className="flex flex-col h-full overflow-hidden md:justify-between justify-center relative z-30 md:bg-[url(/assets/images/svg-deco.svg)] bg-contain bg-no-repeat bg-center">
+            <div className="flex flex-col h-full overflow-hidden md:justify-between justify-center relative z-30 ">
+            <span className="absolute inset-0 bg-[url(/assets/images/svg-deco.svg)] bg-contain bg-no-repeat bg-center opacity-30"></span>
               <InfiniteImageGrid
                 rowNum={5}
                 imgNum={28}
                 mediaItems={mediaItems}
               />
             </div>
-            <div className="w-full absolute h-screen inset-0 md:pointer-events-none z-40">
+            <div className="w-full absolute h-screen inset-0 pointer-events-none z-40">
               <div
                 ref={containerWrapRef}
                 className="h-full flex flex-col justify-center items-center"
@@ -139,10 +140,10 @@ const Fv = ({mediaItems} : {mediaItems: MediaItemData[]}) => {
                 <h4
                   ref={charScrollRef}
                   data-splitting
-                  className="text-[8vw] text-center leading-[1.8] text-[#FAE2D7] md:text-[64px] font-bold relative z-50 [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff]"
+                  className="text-[10vw] text-center leading-[1.8] text-[#FAE2D7] md:text-[72px] font-bold relative z-50 [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff]"
                 >
-                  Unleashing Global <br />
-                  Entertainment Value <br />
+                  Unleashing <br className="md:hidden"/>Global <br />
+                  Entertainment <br className="md:hidden"/>Value <br />
                   Across Borders 
                 </h4>
               </div>

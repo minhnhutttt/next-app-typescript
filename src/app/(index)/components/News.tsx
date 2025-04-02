@@ -72,13 +72,13 @@ const News = () => {
                     />
                   </div>
 
-                  <div className="absolute bottom-20 left-5 z-10 group-hover:opacity-0 max-md:opacity-0">
+                  <div className="absolute bottom-20 left-5 z-10 group-hover:opacity-0 ">
                     <span className="text-[16px] md:text-[20px] text-[#F34927] font-semibold">
                       {slide.title}
                     </span>
                   </div>
 
-                  <div className="absolute bottom-0 inset-x-0 h-[80%] max-md:translate-y-0 translate-y-full flex flex-col justify-center items-center py-8 px-6 md:px-[50px] bg-black/60 rounded-[30px] group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="absolute bottom-0 inset-x-0 h-[80%] translate-y-full flex flex-col justify-center items-center py-8 px-6 md:px-[50px] bg-black/60 rounded-[30px] group-hover:translate-y-0 transition-transform duration-300">
                     <div className="text-white md:space-y-10 space-y-6">
                       <p className="md:text-[20px] text-[16px] text-[#F34927] font-semibold">
                         {slide.title}

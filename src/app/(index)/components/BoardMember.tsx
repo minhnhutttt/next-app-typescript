@@ -29,7 +29,7 @@ const BoardMember = () => {
           </p>
           <div data-scroll className="ani-slide-bottom flex justify-end md:mt-12 mt-8">
             <a href="/members" className="flex items-center md:text-[32px] text-[20px] font-semibold tracking-widest gap-2 border-b border-[#F34927] px-4">
-              <span className="md:text-[21px] text-[17px] text-[#F34927]">★</span><span>LEARN MORE</span>
+              <span className="md:text-[21px] text-[17px] text-[#F34927] animate-[spin_2s_linear_infinite]">★</span><span>LEARN MORE</span>
             </a>
           </div>
         </div>

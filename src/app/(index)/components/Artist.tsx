@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ScrollOut from "scroll-out";
 import Splitting from "splitting";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -75,14 +75,18 @@ const Artist = () => {
     <section className="relative overflow-hidden">
       <div className="artist-swiper w-full bg-[url(/assets/images/artist-bg.png)] bg-cover bg-center pt-10 md:pt-[60px] pb-14 md:pb-20 relative">
       <Swiper
-          slidesPerView={"auto"}
-          onSwiper={setSwiperRef}
-          modules={[Pagination]}
-          pagination={{
-            clickable: true,
-            el: '.swiper-pagination',
-            type: 'bullets',
-          }}
+           slidesPerView={"auto"}
+           onSwiper={setSwiperRef}
+           modules={[Pagination, Autoplay]}
+           pagination={{
+             clickable: true,
+             el: '.swiper-pagination',
+             type: 'bullets',
+           }}
+           autoplay={{
+             delay: 3000,
+             disableOnInteraction: false,
+           }}
           onSlideChange={() => {
             setTimeout(() => {
               const slides = document.querySelectorAll('.slide-content');

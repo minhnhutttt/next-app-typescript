@@ -69,12 +69,12 @@ const Introduction = () => {
       <div className="w-full max-w-[980px] mx-auto text-[#ADADAD]">
         <div
           ref={containe2rRef}
-          className="h-screen flex flex-col justify-center items-center"
+          className="flex flex-col justify-center items-center max-md:py-[200px] max-h-screen md:h-screen"
         >
           <h4
             ref={charScrollRef2}
             data-splitting
-            className="md:text-[24px] text-[4vw] text-center font-medium leading-[1.8]"
+            className="md:text-[28px] text-[clamp(14px,3.8vw,24px)] text-center font-medium leading-[1.8]"
           >
             A NEXUS connects North America, ASEAN, and East Asian markets,
             creating a seamless  flow of entertainment content and bringing

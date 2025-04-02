@@ -18,6 +18,14 @@ interface InfiniteImageGridProps {
   imgNum?: number;
   mediaItems?: MediaItemData[];
 }
+
+// Interface cho thông tin touch
+interface TouchInfo {
+  clientX: number;
+  clientY: number;
+  identifier: number;
+}
+
 const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   rowNum = 5,
   imgNum = 9,
@@ -26,12 +34,14 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef(false);
+  const isTouchingRef = useRef(false);
   const positionRef = useRef({ x: 0, y: 0 });
   const startPosRef = useRef({ x: 0, y: 0 });
   const velocityRef = useRef({ x: 0, y: 0 });
   const lastTimeRef = useRef(0);
   const animationFrameRef = useRef<number | null>(null);
   const mousePositionRef = useRef({ x: 0, y: 0 });
+  const touchPositionRef = useRef({ x: 0, y: 0 });
   const parallaxAnimationRef = useRef<number | null>(null);
   const dimensionsRef = useRef({
     boxWidth: 0,
@@ -49,6 +59,13 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   const imgRepRef = useRef<HTMLDivElement[][]>([]);
   const rowArrayRef = useRef<HTMLDivElement[]>([]);
   const isComponentVisibleRef = useRef<boolean>(false);
+  const lastTouchRef = useRef<TouchInfo | null>(null);
+  
+  // Refs cho smart touch detection
+  const initialTouchRef = useRef<{ x: number, y: number } | null>(null);
+  const touchDirectionDeterminedRef = useRef<boolean>(false);
+  const shouldHandleTouchRef = useRef<boolean>(false);
+  const touchStartTimeRef = useRef<number>(0);
   
   const imgMidIndex = Math.floor(imgNum / 2);
   const rowMidIndex = Math.floor(rowNum / 2);
@@ -396,9 +413,144 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       y: e.clientY 
     };
     
-    if (!isDraggingRef.current && !animationFrameRef.current && !parallaxAnimationRef.current) {
+    if (!isDraggingRef.current && !isTouchingRef.current && !animationFrameRef.current && !parallaxAnimationRef.current) {
       parallaxAnimationRef.current = requestAnimationFrame(updateParallaxEffect);
     }
+  };
+  
+  // Smart Touch Detection Handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!isComponentVisibleRef.current) return;
+    
+    if (e.touches.length !== 1) return;
+    
+    const touch = e.touches[0];
+    
+    // Reset touch detection state
+    initialTouchRef.current = { x: touch.clientX, y: touch.clientY };
+    touchDirectionDeterminedRef.current = false;
+    shouldHandleTouchRef.current = false;
+    touchStartTimeRef.current = Date.now();
+    
+    // Store basic touch info
+    lastTouchRef.current = {
+      clientX: touch.clientX,
+      clientY: touch.clientY,
+      identifier: touch.identifier
+    };
+    
+    // Don't commit to handling the touch yet - we'll decide in touchMove
+    isTouchingRef.current = true;
+    startPosRef.current = { 
+      x: touch.clientX - positionRef.current.x, 
+      y: touch.clientY - positionRef.current.y 
+    };
+    
+    // Reset velocity
+    velocityRef.current = { x: 0, y: 0 };
+    lastTimeRef.current = Date.now();
+    
+    // Update touch position for other calculations
+    touchPositionRef.current = {
+      x: touch.clientX,
+      y: touch.clientY
+    };
+    
+    // Stop any ongoing animations
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    }
+    
+    if (parallaxAnimationRef.current) {
+      cancelAnimationFrame(parallaxAnimationRef.current);
+      parallaxAnimationRef.current = null;
+    }
+  };
+  
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isTouchingRef.current || !containerRef.current || !isComponentVisibleRef.current) return;
+    
+    if (e.touches.length !== 1) return;
+    
+    const touch = e.touches[0];
+    
+    // Calculate distance moved from initial touch
+    if (initialTouchRef.current) {
+      const deltaX = Math.abs(touch.clientX - initialTouchRef.current.x);
+      const deltaY = Math.abs(touch.clientY - initialTouchRef.current.y);
+      
+      // Determine direction and decide if we should handle this touch
+      if (!touchDirectionDeterminedRef.current) {
+        const movementThreshold = 10; // Pixels of movement before deciding
+        const verticalThreshold = 1.5; // How much more vertical than horizontal to be considered a scroll
+        
+        if (deltaX > movementThreshold || deltaY > movementThreshold) {
+          touchDirectionDeterminedRef.current = true;
+          
+          // If movement is significantly more vertical than horizontal, let the browser handle it (scroll)
+          if (deltaY > deltaX * verticalThreshold) {
+            shouldHandleTouchRef.current = false;
+            return; // Let browser handle the scroll
+          } else {
+            shouldHandleTouchRef.current = true;
+            e.preventDefault(); // Prevent default to avoid scrolling
+          }
+        }
+      }
+    }
+    
+    // If we've determined this is a touch we should handle, process it
+    if (touchDirectionDeterminedRef.current && shouldHandleTouchRef.current) {
+      e.preventDefault(); // Prevent default scrolling behavior
+      
+      lastTouchRef.current = {
+        clientX: touch.clientX,
+        clientY: touch.clientY,
+        identifier: touch.identifier
+      };
+      
+      const now = Date.now();
+      const elapsed = Math.min(now - lastTimeRef.current, 64);
+      
+      const newX = touch.clientX - startPosRef.current.x;
+      const newY = touch.clientY - startPosRef.current.y;
+      
+      if (elapsed > 0) {
+        const rawVelocityX = (newX - positionRef.current.x) / elapsed * 16;
+        const rawVelocityY = (newY - positionRef.current.y) / elapsed * 16;
+        
+        const velocityBlendFactor = 0.1;
+        velocityRef.current = {
+          x: velocityRef.current.x * (1 - velocityBlendFactor) + rawVelocityX * velocityBlendFactor,
+          y: velocityRef.current.y * (1 - velocityBlendFactor) + rawVelocityY * velocityBlendFactor,
+        };
+      }
+      
+      positionRef.current = { x: newX, y: newY };
+      updateTransform();
+      updateCenterElem();
+      lastTimeRef.current = now;
+      
+      touchPositionRef.current = {
+        x: touch.clientX,
+        y: touch.clientY
+      };
+    }
+  };
+  
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    isTouchingRef.current = false;
+    initialTouchRef.current = null;
+    lastTouchRef.current = null;
+    touchDirectionDeterminedRef.current = false;
+    
+    // Only apply inertia if we were handling this touch
+    if (shouldHandleTouchRef.current && isComponentVisibleRef.current) {
+      animationFrameRef.current = requestAnimationFrame(applyInertia);
+    }
+    
+    shouldHandleTouchRef.current = false;
   };
   
   const updateTransform = () => {
@@ -407,12 +559,14 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     let finalX = positionRef.current.x;
     let finalY = positionRef.current.y;
     
-    if (!isDraggingRef.current) {
+    if (!isDraggingRef.current && !isTouchingRef.current) {
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
       
-      const relativeX = (mousePositionRef.current.x / windowWidth) * 2 - 1;
-      const relativeY = (mousePositionRef.current.y / windowHeight) * 2 - 1;
+      const positionToUse = isMobile ? touchPositionRef.current : mousePositionRef.current;
+      
+      const relativeX = (positionToUse.x / windowWidth) * 2 - 1;
+      const relativeY = (positionToUse.y / windowHeight) * 2 - 1;
       
       const parallaxFactor = 15;
       
@@ -424,7 +578,7 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
   };
   
   const updateParallaxEffect = () => {
-    if (!containerRef.current || !isComponentVisibleRef.current || isDraggingRef.current || animationFrameRef.current) {
+    if (!containerRef.current || !isComponentVisibleRef.current || isDraggingRef.current || isTouchingRef.current || animationFrameRef.current) {
       parallaxAnimationRef.current = null;
       return;
     }
@@ -682,6 +836,10 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
       ref={wrapperRef}
       className="overflow-hidden w-full h-screen cursor-grab"
       onMouseDown={handleMouseDown}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onTouchCancel={handleTouchEnd}
     >
       <div className="overflow-hidden w-full h-screen">
       <div

@@ -20,7 +20,7 @@ const Showcase = () => {
             <div className="flex justify-center flex-wrap gap-10 md:gap-[120px] w-full max-w-[870px] mx-auto md:mt-24 mt-16">
               <div data-scroll className="ani-slide-bottom relative overflow-hidden w-[210px]">
                   <div className="relative overflow-hidden bg-[linear-gradient(45deg,_#FBB03B_6.65%,_#ED1E79_93.35%)] size-[210px] rounded-[44px] flex justify-center items-center">
-                      <img className="absolute animate-[spin_2s_linear_infinite]"  src="/assets/images/case-01-star.png" alt="" />
+                      <img className="absolute animate-[spin_2s_linear_infinite] origin-center top-[50px] left-[49.5px]"  src="/assets/images/case-01-star.png" alt="" />
                       <img src="/assets/images/case-01-play.png" alt="" />
                   </div>
                   <span className="block text-center md:text-[20px] text-[16px] tracking-wider md:mt-8 mt-5">

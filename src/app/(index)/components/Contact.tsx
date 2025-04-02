@@ -64,11 +64,11 @@ const Contact = () => {
         ref={contactSectionRef}
         className="relative md:pt-[150px] pt-[100px] "
       >
-        <div className=" overflow-hidden bg-[#FAE2D7] md:rounded-t-[100px] rounded-t-[40px] px-5 md:pb-[130px] pb-20">
-        <div className="relative md:pt-[130px] pt-[60px]">
+        <div className=" overflow-hidden bg-[#FAE2D7] md:rounded-t-[100px] rounded-t-[40px] md:pb-[130px] pb-20">
+        <div className="relative md:pt-[130px] pt-[60px] px-5 ">
           <div 
             ref={bgLineRef}
-            className="absolute overflow-hidden top-0 inset-x-0 bg-[url(/assets/images/line.svg)] bg-no-repeat bg-top max-md:bg-[size:auto_200px] md:bg-[position:top_40px_center]"
+            className="absolute overflow-hidden top-0 inset-x-0 md:bg-[url(/assets/images/line.svg)] bg-[url(/assets/images/line-sp.svg)] bg-no-repeat bg-top max-md:bg-[size:100%_500px] md:bg-[position:top_40px_center]"
           ></div>
           <h3 className="md:text-[64px] xl:text-[128px] text-[clamp(20px,7.5vw,60px)] leading-[1.2] font-semibold text-center overflow-hidden tracking-widest">
             <span>CONTACT</span>
@@ -76,7 +76,7 @@ const Contact = () => {
           <p className="md:text-[32px] text-[20px] font-semibold text-center tracking-widest mt-6 md:mt-10">
             For Investors & Media 
           </p>
-          <p className="md:w-[640px] md:text-[18px] text-[15px] mx-auto mt-7">
+          <p className="md:w-[640px] w-[340px] md:text-[18px] text-[15px] mx-auto mt-7">
             Interested in learning more about investment opportunities or media inquiries? Our team is ready to assist you. 
           </p>
           <div className="flex justify-center md:mt-[72px] mt-[50px]">

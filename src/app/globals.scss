@@ -564,14 +564,31 @@ body {
 // Slider
 
 .artist-swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
- @apply md:bottom-10 bottom-6
+  @apply md:bottom-10 bottom-6;
 }
+
 .artist-swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  @apply w-5 md:w-[29px] h-2.5 md:h-[14px] rounded-full bg-[#404040] opacity-100 duration-150
+  @apply w-5 md:w-[29px] h-2.5 md:h-[14px] rounded-full bg-[#404040] opacity-100 duration-150 relative overflow-hidden;
 }
 
 .artist-swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  @apply w-12 md:w-[70px] bg-[#F0F0F0]
+  @apply w-12 md:w-[70px] bg-[#404040];
+}
+
+.artist-swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+  content: '';
+  @apply absolute top-0 left-0 h-full bg-[#F0F0F0] rounded-full;
+  width: 0%;
+  animation: bulletProgress var(--swiper-autoplay-delay, 3000ms) linear forwards;
+}
+
+@keyframes bulletProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .button--stroke .button__flair {
