@@ -372,10 +372,10 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     const newY = e.clientY - startPosRef.current.y;
     
     if (elapsed > 0) {
-      const rawVelocityX = (newX - positionRef.current.x) / elapsed * 16;
-      const rawVelocityY = (newY - positionRef.current.y) / elapsed * 16;
+      const rawVelocityX = (newX - positionRef.current.x) / elapsed * 6;
+      const rawVelocityY = (newY - positionRef.current.y) / elapsed * 6;
       
-      const velocityBlendFactor = 0.1;
+      const velocityBlendFactor = 0.01;
       velocityRef.current = {
         x: velocityRef.current.x * (1 - velocityBlendFactor) + rawVelocityX * velocityBlendFactor,
         y: velocityRef.current.y * (1 - velocityBlendFactor) + rawVelocityY * velocityBlendFactor,
@@ -418,7 +418,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
   };
   
-  // Smart Touch Detection Handlers
   const handleTouchStart = (e: React.TouchEvent) => {
     if (!isComponentVisibleRef.current) return;
     
@@ -426,37 +425,31 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     const touch = e.touches[0];
     
-    // Reset touch detection state
     initialTouchRef.current = { x: touch.clientX, y: touch.clientY };
     touchDirectionDeterminedRef.current = false;
     shouldHandleTouchRef.current = false;
     touchStartTimeRef.current = Date.now();
     
-    // Store basic touch info
     lastTouchRef.current = {
       clientX: touch.clientX,
       clientY: touch.clientY,
       identifier: touch.identifier
     };
     
-    // Don't commit to handling the touch yet - we'll decide in touchMove
     isTouchingRef.current = true;
     startPosRef.current = { 
       x: touch.clientX - positionRef.current.x, 
       y: touch.clientY - positionRef.current.y 
     };
     
-    // Reset velocity
     velocityRef.current = { x: 0, y: 0 };
     lastTimeRef.current = Date.now();
     
-    // Update touch position for other calculations
     touchPositionRef.current = {
       x: touch.clientX,
       y: touch.clientY
     };
     
-    // Stop any ongoing animations
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
       animationFrameRef.current = null;
@@ -475,34 +468,30 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     
     const touch = e.touches[0];
     
-    // Calculate distance moved from initial touch
     if (initialTouchRef.current) {
       const deltaX = Math.abs(touch.clientX - initialTouchRef.current.x);
       const deltaY = Math.abs(touch.clientY - initialTouchRef.current.y);
       
-      // Determine direction and decide if we should handle this touch
       if (!touchDirectionDeterminedRef.current) {
-        const movementThreshold = 10; // Pixels of movement before deciding
-        const verticalThreshold = 1.5; // How much more vertical than horizontal to be considered a scroll
+        const movementThreshold = 10; 
+        const verticalThreshold = 1.5;
         
         if (deltaX > movementThreshold || deltaY > movementThreshold) {
           touchDirectionDeterminedRef.current = true;
           
-          // If movement is significantly more vertical than horizontal, let the browser handle it (scroll)
           if (deltaY > deltaX * verticalThreshold) {
             shouldHandleTouchRef.current = false;
-            return; // Let browser handle the scroll
+            return; 
           } else {
             shouldHandleTouchRef.current = true;
-            e.preventDefault(); // Prevent default to avoid scrolling
+            e.preventDefault(); 
           }
         }
       }
     }
     
-    // If we've determined this is a touch we should handle, process it
     if (touchDirectionDeterminedRef.current && shouldHandleTouchRef.current) {
-      e.preventDefault(); // Prevent default scrolling behavior
+      e.preventDefault();
       
       lastTouchRef.current = {
         clientX: touch.clientX,
@@ -545,7 +534,6 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     lastTouchRef.current = null;
     touchDirectionDeterminedRef.current = false;
     
-    // Only apply inertia if we were handling this touch
     if (shouldHandleTouchRef.current && isComponentVisibleRef.current) {
       animationFrameRef.current = requestAnimationFrame(applyInertia);
     }
@@ -831,49 +819,123 @@ const InfiniteImageGrid: React.FC<InfiniteImageGridProps> = ({
     }
   }, [rowNum]);
 
+  useEffect(() => {
+    // Tham chiếu đến element để có thể gỡ bỏ event listener sau này
+    const overlayElement = document.querySelector('.touch-overlay');
+    
+    // Khai báo các hàm xử lý sự kiện với kiểu đúng
+    const touchStartHandler = (e: Event) => {
+      // Ép kiểu sự kiện sang TouchEvent để truy cập các thuộc tính cảm ứng
+      const touchEvent = e as TouchEvent;
+      // Tạo một đối tượng giống React.TouchEvent từ TouchEvent gốc
+      const syntheticEvent = {
+        nativeEvent: touchEvent,
+        touches: touchEvent.touches,
+        targetTouches: touchEvent.targetTouches,
+        changedTouches: touchEvent.changedTouches,
+        preventDefault: () => touchEvent.preventDefault(),
+        stopPropagation: () => touchEvent.stopPropagation(),
+        target: touchEvent.target,
+        currentTarget: touchEvent.currentTarget,
+        // Các trường React event khác nếu cần
+      } as unknown as React.TouchEvent;
+      
+      handleTouchStart(syntheticEvent);
+    };
+    
+    const touchMoveHandler = (e: Event) => {
+      const touchEvent = e as TouchEvent;
+      const syntheticEvent = {
+        nativeEvent: touchEvent,
+        touches: touchEvent.touches,
+        targetTouches: touchEvent.targetTouches,
+        changedTouches: touchEvent.changedTouches,
+        preventDefault: () => touchEvent.preventDefault(),
+        stopPropagation: () => touchEvent.stopPropagation(),
+        target: touchEvent.target,
+        currentTarget: touchEvent.currentTarget,
+      } as unknown as React.TouchEvent;
+      
+      handleTouchMove(syntheticEvent);
+    };
+    
+    const touchEndHandler = (e: Event) => {
+      const touchEvent = e as TouchEvent;
+      const syntheticEvent = {
+        nativeEvent: touchEvent,
+        touches: touchEvent.touches,
+        targetTouches: touchEvent.targetTouches,
+        changedTouches: touchEvent.changedTouches,
+        preventDefault: () => touchEvent.preventDefault(),
+        stopPropagation: () => touchEvent.stopPropagation(),
+        target: touchEvent.target,
+        currentTarget: touchEvent.currentTarget,
+      } as unknown as React.TouchEvent;
+      
+      handleTouchEnd(syntheticEvent);
+    };
+    
+    if (overlayElement) {
+      overlayElement.addEventListener('touchstart', touchStartHandler, { passive: false });
+      overlayElement.addEventListener('touchmove', touchMoveHandler, { passive: false });
+      overlayElement.addEventListener('touchend', touchEndHandler, { passive: false });
+      overlayElement.addEventListener('touchcancel', touchEndHandler, { passive: false });
+    }
+    
+    return () => {
+      if (overlayElement) {
+        overlayElement.removeEventListener('touchstart', touchStartHandler);
+        overlayElement.removeEventListener('touchmove', touchMoveHandler);
+        overlayElement.removeEventListener('touchend', touchEndHandler);
+        overlayElement.removeEventListener('touchcancel', touchEndHandler);
+      }
+    };
+  }, [handleTouchStart, handleTouchMove, handleTouchEnd]);
+
   return (
     <div 
       ref={wrapperRef}
-      className="overflow-hidden w-full h-screen cursor-grab"
-      onMouseDown={handleMouseDown}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      onTouchCancel={handleTouchEnd}
+      className="overflow-hidden w-full h-screen cursor-grab relative"
+      style={{ touchAction: "pan-y" }}
     >
+      <div 
+        className="absolute inset-0 z-10 touch-overlay"
+        onMouseDown={handleMouseDown}
+      />
+      
       <div className="overflow-hidden w-full h-screen">
-      <div
-        ref={containerRef}
-        className="will-change-transform inset-0 ease-linear"
-      >
-        <div className="w-screen h-screen overflow-hidden">
-        {Array.from({ length: rowNum }).map((_, rowIndex) => (
-          <div
-            key={`row-${rowIndex}`}
-            ref={(el) => { if (el) rowsRef.current[rowIndex] = el; }}
-            className="row absolute"
-            data-offset={rowIndex % 2 !== 0 ? "true" : "false"}
-          >
-            {Array.from({ length: imgNum }).map((_, imgIndex) => {
-              const mediaIndex = rowIndex * imgNum + imgIndex;
-              const mediaItem = getMediaItem(mediaIndex);
-              
-              return (
-                <div
-                key={`media-${rowIndex}-${imgIndex}`}
-                className="sliderImage absolute top-0 left-0 overflow-hidden rounded-[20px]"
+        <div
+          ref={containerRef}
+          className="will-change-transform inset-0 ease-linear"
+        >
+          <div className="w-screen h-screen overflow-hidden">
+            {Array.from({ length: rowNum }).map((_, rowIndex) => (
+              <div
+                key={`row-${rowIndex}`}
+                ref={(el) => { if (el) rowsRef.current[rowIndex] = el; }}
+                className="row absolute"
+                data-offset={rowIndex % 2 !== 0 ? "true" : "false"}
               >
-                {createMediaElement(mediaItem, `media-${mediaIndex}`)}
+                {Array.from({ length: imgNum }).map((_, imgIndex) => {
+                  const mediaIndex = rowIndex * imgNum + imgIndex;
+                  const mediaItem = getMediaItem(mediaIndex);
+                  
+                  return (
+                    <div
+                      key={`media-${rowIndex}-${imgIndex}`}
+                      className="sliderImage absolute top-0 left-0 overflow-hidden rounded-[20px]"
+                    >
+                      {createMediaElement(mediaItem, `media-${mediaIndex}`)}
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
-      ))}
       </div>
     </div>
-    </div>
-  </div>
-);
+  );
 };
 
 export default InfiniteImageGrid;
