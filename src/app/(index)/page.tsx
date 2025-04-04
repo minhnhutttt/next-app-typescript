@@ -9,8 +9,8 @@ export default function Home() {
       <Fv />
       <Introduction />
       <OpenFave />
-            <Getting />
-            <FAQ />
+      <Getting />
+      <FAQ />
     </main>
   );
 }

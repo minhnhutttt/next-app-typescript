@@ -99,7 +99,7 @@ const faqData: FaqItemPropsType[] = [
   {
     id: "12",
     question: "OpenFaveに掲載したいのですが、どうすればよいですか？",
-    answer: <>Faver<a href="/contact" className="underline">申請フォーム</a>からお申し込みください。</>,
+    answer: <>Faver<a href="/" className="underline">申請フォーム</a>からお申し込みください。</>,
   },
 ];
 
@@ -129,10 +129,10 @@ export default function FAQ() {
       </div>
       <div className="border-y border-[#00B900] bg-[#ECFFEC] md:py-[60px] py-10">
         <div className="flex justify-center items-center">
-          <img src="/assets/images/line-title.svg" alt="LINEサポート" />
+          <img className="max-md:max-w-[280px]" src="/assets/images/line-title.svg" alt="LINEサポート" />
         </div>
         <div className="fade-up flex justify-center md:mt-8 mt-5">
-          <div className="w-full md:max-w-[360px] h-[50px] md:h-[86px] flex group">
+          <div className="w-full md:max-w-[360px] max-w-[320px] h-[50px] md:h-[86px] flex group">
             <a
               href="/"
               target="_blank"
