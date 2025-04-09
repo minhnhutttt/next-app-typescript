@@ -1,70 +1,84 @@
-"use client";
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-interface SlideItem {
-  id: number;
-  image: string;
-  title: string;
-  type: string;
-  head: string;
-  content: string;
-}
-const slides: SlideItem[] = [
-    {
-      id: 1,
-      image: "/assets/images/slider-img-01.png",
-      title: "PRESS RELEASE",
-      type: "press",
-      head: "A NEXUS to Host Press Conference in the Philippines ",
-      content:
-        "A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.",
-    },
-    {
-      id: 2,
-      image: "/assets/images/slider-img-02.png",
-      title: "PRESS RELEASE",
-      type: "press",
-      head: "A NEXUS to Host Press Conference in the Philippines ",
-      content:
-        "A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.",
-    },
-    {
-      id: 3,
-      image: "/assets/images/slider-img-03.png",
-      title: "EVENT",
-      type: "event",
-      head: "A NEXUS to Host Press Conference in the Philippines ",
-      content:
-        "A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.",
-    },
-  ];
-const News = () => {
-  const [swiperRef, setSwiperRef] = useState<any>(null);
+'use client'
 
+import { useState } from 'react'
+
+import { Swiper as SwiperClass } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+
+interface SlideItem {
+  id: number
+  image: string
+  title: string
+  type: string
+  head: string
+  content: string
+}
+
+const slides: SlideItem[] = [
+  {
+    id: 1,
+    image: '/assets/images/home/news/slider-img-01.jpg',
+    title: 'PRESS RELEASE',
+    type: 'press',
+    head: 'A NEXUS to Host Press Conference in the Philippines ',
+    content:
+      'A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.',
+  },
+  {
+    id: 2,
+    image: '/assets/images/home/news/slider-img-02.jpg',
+    title: 'PRESS RELEASE',
+    type: 'press',
+    head: 'A NEXUS to Host Press Conference in the Philippines ',
+    content:
+      'A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.',
+  },
+  {
+    id: 3,
+    image: '/assets/images/home/news/slider-img-03.jpg',
+    title: 'EVENT',
+    type: 'event',
+    head: 'A NEXUS to Host Press Conference in the Philippines ',
+    content:
+      'A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.',
+  },
+]
+
+const News = () => {
+  const [swiperRef, setSwiperRef] = useState<SwiperClass | null>(null)
 
   return (
-    <div className="relative w-full mx-auto">
-      <span className="bg-white absolute h-[60%] bottom-0 inset-x-0"></span>
-      <div className="md:px-[60px] px-5">
-        <h2 data-scroll className="text--enter md:text-[64px] xl:text-[128px] text-[clamp(20px,7.5vw,60px)] font-semibold overflow-hidden tracking-widest">
-            <span data-splitting>NEWS</span>
-            </h2>
+    <div className="relative mx-auto w-full">
+      <span className="absolute inset-x-0 bottom-0 h-[60%] bg-white"></span>
+      <div className="px-5 md:px-[60px]">
+        <h2
+          data-scroll
+          className="text--enter overflow-hidden text-[clamp(20px,7.5vw,60px)] font-semibold tracking-widest md:text-[64px] xl:text-[128px]"
+        >
+          <span data-splitting>NEWS</span>
+        </h2>
       </div>
-      <div data-scroll className="ani-fade-up w-full max-w-[1410px] mx-auto relative pb-20 md:mt-[52px] mt-[36px]">
+      <div
+        data-scroll
+        className="ani-fade-up relative mx-auto mt-[36px] w-full max-w-[1410px] pb-20 md:mt-[52px]"
+      >
         <Swiper
           modules={[Navigation]}
-          slidesPerView={"auto"}
+          slidesPerView={'auto'}
           onSwiper={setSwiperRef}
           className="w-full"
         >
           {slides.map((slide) => (
-            <SwiperSlide key={slide.id} className="md:!w-[430px] !w-[330px] md:mx-5 mx-1.5">
+            <SwiperSlide
+              key={slide.id}
+              className="mx-1.5 !w-[330px] md:mx-5 md:!w-[430px]"
+            >
               <div className="relative">
-                <div className="relative overflow-hidden rounded-[30px] group ">
-                  <div className="w-full h-full [box-shadow:0px_0px_80px_0px_rgba(250,_226,_215,_0.10)]">
+                <div className="group relative overflow-hidden rounded-[30px]">
+                  <div className="h-full w-full [box-shadow:0px_0px_80px_0px_rgba(250,_226,_215,_0.10)]">
                     <img
                       src={slide.image}
                       alt={slide.title}
@@ -72,18 +86,18 @@ const News = () => {
                     />
                   </div>
 
-                  <div className="absolute bottom-20 left-5 z-10 group-hover:opacity-0 ">
-                    <span className="text-[16px] md:text-[20px] text-[#F34927] font-semibold">
+                  <div className="absolute bottom-20 left-5 z-10 group-hover:opacity-0">
+                    <span className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
                       {slide.title}
                     </span>
                   </div>
 
-                  <div className="absolute bottom-0 inset-x-0 h-[80%] translate-y-full flex flex-col justify-center items-center py-8 px-6 md:px-[50px] bg-black/60 rounded-[30px] group-hover:translate-y-0 transition-transform duration-300">
-                    <div className="text-white md:space-y-10 space-y-6">
-                      <p className="md:text-[20px] text-[16px] text-[#F34927] font-semibold">
+                  <div className="absolute inset-x-0 bottom-0 flex h-[80%] translate-y-full flex-col items-center justify-center rounded-[30px] bg-black/60 px-6 py-8 transition-transform duration-300 group-hover:translate-y-0 md:px-[50px]">
+                    <div className="space-y-6 text-white md:space-y-10">
+                      <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
                         {slide.title}
                       </p>
-                      <p className="md:text-[20px] text-[16px] text-[#F34927] font-semibold">
+                      <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
                         {slide.head}
                       </p>
                       <p className="text-[13px] md:text-[16px]">
@@ -97,10 +111,10 @@ const News = () => {
           ))}
         </Swiper>
 
-        <div className="justify-end flex space-x-5 z-20 py-5 md:px-12 px-5">
+        <div className="z-20 flex justify-end space-x-5 px-5 py-5 md:px-12">
           <button
             onClick={() => swiperRef?.slidePrev()}
-            className=" flex items-center justify-center transition-colors md:size-[72px] size-[40px]"
+            className="flex size-[40px] items-center justify-center transition-colors md:size-[72px]"
           >
             <svg
               width="50"
@@ -128,7 +142,7 @@ const News = () => {
           </button>
           <button
             onClick={() => swiperRef?.slideNext()}
-            className=" flex items-center justify-center transition-colors md:size-[72px] size-[40px]"
+            className="flex size-[40px] items-center justify-center transition-colors md:size-[72px]"
           >
             <svg
               width="50"
@@ -156,7 +170,7 @@ const News = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default News;
+export default News

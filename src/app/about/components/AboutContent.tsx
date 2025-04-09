@@ -1,56 +1,57 @@
-"use client";
-import { ReactNode, useEffect, useLayoutEffect, useRef } from "react";
-import ScrollOut from "scroll-out";
-import Splitting from "splitting";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+'use client'
+
+import { ReactNode, useEffect, useLayoutEffect, useRef } from 'react'
+
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 gsap.config({
   nullTargetWarn: false,
-});
+})
 
 const trends = [
   {
-    title: "Content Convergence",
+    title: 'Content Convergence',
     description:
-      "Boundaries between anime, gaming, film, and music continue to blur, creating demand for comprehensive rights management",
+      'Boundaries between anime, gaming, film, and music continue to blur, creating demand for comprehensive rights management',
   },
   {
-    title: "Digital Transformation",
+    title: 'Digital Transformation',
     description:
-      "Streaming platforms are revolutionizing content consumption patterns globally",
+      'Streaming platforms are revolutionizing content consumption patterns globally',
   },
   {
-    title: "Cross-Cultural Appeal",
+    title: 'Cross-Cultural Appeal',
     description:
-      "Asian entertainment content is experiencing explosive popularity in Western markets",
+      'Asian entertainment content is experiencing explosive popularity in Western markets',
   },
   {
-    title: "Emerging Markets",
+    title: 'Emerging Markets',
     description:
-      "ASEAN countries represent the next frontier of entertainment consumption growth",
+      'ASEAN countries represent the next frontier of entertainment consumption growth',
   },
-];
+]
 
 const business = [
   {
     id: 1,
-    title: "Rights Acquisition & Management",
+    title: 'Rights Acquisition & Management',
     description:
-      "Strategic acquisition and optimization of  entertainment IP rights across multiple markets, with specialized legal expertise in cross border licensing ",
+      'Strategic acquisition and optimization of  entertainment IP rights across multiple markets, with specialized legal expertise in cross border licensing ',
   },
   {
     id: 2,
-    title: "Cross-Platform Distribution",
+    title: 'Cross-Platform Distribution',
     description:
-      "Facilitating content distribution across diverse platforms and  regions, leveraging proprietary technology and market intelligence ",
+      'Facilitating content distribution across diverse platforms and  regions, leveraging proprietary technology and market intelligence ',
   },
   {
     id: 3,
-    title: "Production Services",
+    title: 'Production Services',
     description: (
       <>
-        Enabling content creation through financing, production support, 
+        Enabling content creation through financing, production support,
         <br />
         and creative development tailored to both local and global audience
         preferences
@@ -59,24 +60,23 @@ const business = [
   },
   {
     id: 4,
-    title: "Market Access",
+    title: 'Market Access',
     description:
-      "Providing established channels and cultural expertise for content creators  to successfully enter and thrive in new markets ",
+      'Providing established channels and cultural expertise for content creators  to successfully enter and thrive in new markets ',
   },
   {
     id: 5,
-    title: "Brand Development",
+    title: 'Brand Development',
     description:
-      "Transforming entertainment properties into global franchises  through strategic promotion and localized marketing approaches",
+      'Transforming entertainment properties into global franchises  through strategic promotion and localized marketing approaches',
   },
   {
     id: 6,
-    title: "Technology Integration",
+    title: 'Technology Integration',
     description:
-      "Implementing cutting-edge digital solutions that enhance  discovery, consumption, and monetization of content across borders",
+      'Implementing cutting-edge digital solutions that enhance  discovery, consumption, and monetization of content across borders',
   },
-];
-
+]
 
 const AboutItem = ({
   title,
@@ -84,131 +84,137 @@ const AboutItem = ({
   image,
   even = false,
 }: {
-  title: ReactNode;
-  content: ReactNode;
-  image: string;
-  even?: boolean;
+  title: ReactNode
+  content: ReactNode
+  image: string
+  even?: boolean
 }) => {
-  const titleRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const imageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !titleRef.current) return;
+    if (typeof window === 'undefined' || !titleRef.current) return
 
-    const timer = setTimeout(() => {
-      const chars = titleRef.current?.querySelectorAll('.char');
-      console.log('Chars found:', chars?.length);
+    import('splitting').then((Splitting) => {
+      requestAnimationFrame(() => {
+        Splitting.default()
 
-      if (chars && chars.length > 0) {
-        gsap.set(chars, {
-          opacity: 0,
-          display: 'inline-block',
-          y: '150%'
-        });
+        const chars = titleRef.current?.querySelectorAll('.char')
+        if (chars && chars.length > 0) {
+          gsap.set(chars, {
+            opacity: 0,
+            display: 'inline-block',
+            y: '150%',
+          })
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: titleRef.current,
+              start: 'top 80%',
+              toggleActions: 'play none none none',
+            },
+          })
+
+          chars.forEach((char, index) => {
+            tl.to(
+              char,
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.25,
+                delay: 0.25 + index * 0.1,
+                ease: 'power2.out',
+              },
+              0
+            )
+          })
+
+          if (imageRef.current) {
+            tl.fromTo(
+              imageRef.current,
+              { opacity: 0, filter: 'blur(10px)' },
+              {
+                opacity: 1,
+                filter: 'blur(0px)',
+                duration: 1,
+              }
+            )
           }
-        });
 
-        chars.forEach((char, index) => {
-          tl.to(char, {
-            opacity: 1,
-            y: 0,
-            duration: 0.25,
-            delay: 0.25 + index * 0.1,
-            ease: 'power2.out',
-          }, 0);
-        });
-
-        if (imageRef.current) {
-          tl.fromTo(imageRef.current,
-            { opacity: 0, filter: 'blur(10px)' },
-            {
-              opacity: 1,
-              filter: 'blur(0px)',
-              duration: 1,
-            });
+          if (contentRef.current) {
+            tl.fromTo(
+              contentRef.current,
+              { opacity: 0, y: 50 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+              },
+              0.5
+            )
+          }
         }
-
-        if (contentRef.current) {
-          tl.fromTo(contentRef.current,
-            { opacity: 0, y: 50 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-            }, 0.5
-          );
-        }
-      }
-    }, 100); 
+      })
+    })
 
     return () => {
-      clearTimeout(timer);
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, [title, content, image]);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+    }
+  }, [title, content, image])
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto">
+    <div className="mx-auto w-full max-w-[1440px]">
       <p
         ref={titleRef}
-        className="overflow-hidden xl:text-[260px] md:text-[20vw] text-[12vw] font-bold leading-[0.88] tracking-[-0.07em] xl:ml-[-24px] md:ml-[-12px]"
+        className="overflow-hidden text-[12vw] font-bold leading-[0.88] tracking-[-0.07em] md:ml-[-12px] md:text-[20vw] xl:ml-[-24px] xl:text-[260px]"
         data-splitting="chars"
       >
         {title}
       </p>
       <div
-        className={`flex md:gap-10 gap-7 xl:-mt-[110px] md:-mt-[5vw] -mt-[3vw] max-xl:flex-col-reverse max-xl:items-center max-xl:justify-center ${
-          even ? "flex-row-reverse xl:pr-[100px]" : "xl:pl-[100px]"
+        className={`-mt-[3vw] flex gap-7 max-xl:flex-col-reverse max-xl:items-center max-xl:justify-center md:-mt-[5vw] md:gap-10 xl:-mt-[110px] ${
+          even ? 'flex-row-reverse xl:pr-[100px]' : 'xl:pl-[100px]'
         }`}
       >
         <div className="flex-1 xl:pt-[260px]">
           <div
             ref={contentRef}
-            className="leading-loose md:text-[20px] text-[16px] font-medium w-full max-w-[860px] xl:max-w-[440px] max-xl:px-5"
+            className="w-full max-w-[860px] text-[16px] font-medium leading-loose max-xl:px-5 md:text-[20px] xl:max-w-[440px]"
           >
             {content}
           </div>
         </div>
-        <div
-          ref={imageRef}
-          className="max-w-[860px] w-full xl:w-[65%]"
-        >
-          <img src={image} alt="" className="w-full h-auto" />
+        <div ref={imageRef} className="w-full max-w-[860px] xl:w-[65%]">
+          <img src={image} alt="" className="h-auto w-full" />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const AboutContent = () => {
-  const animationRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const sliderRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const sliderRef = useRef<HTMLDivElement>(null)
+
   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      const panels = gsap.utils.toArray<HTMLElement>(".panel");
-      const sliderContainer = sliderRef.current;
-      const container = containerRef.current;
+    const ctx = gsap.context(() => {
+      const panels = gsap.utils.toArray<HTMLElement>('.panel')
+      const sliderContainer = sliderRef.current
+      const container = containerRef.current
 
-      if (!sliderContainer || !container) return;
+      if (!sliderContainer || !container) return
 
-
-      const endValue = () => "+=" + sliderContainer.offsetWidth;
+      const endValue = () => '+=' + sliderContainer.offsetWidth
 
       gsap.to(panels, {
         left: 0,
         scrollTrigger: {
           trigger: animationRef.current,
-          start: "top top",
+          start: 'top top',
         },
-      });
+      })
 
       gsap.to(panels, {
         x: -sliderContainer.offsetWidth + window.innerWidth,
@@ -216,18 +222,18 @@ const AboutContent = () => {
           trigger: container,
           pin: true,
           scrub: 1,
-          start: "center center",
+          start: 'center center',
           end: endValue,
         },
-      });
-    }, containerRef);
+      })
+    }, containerRef)
 
-    return () => ctx.revert();
-  }, []);
-  
+    return () => ctx.revert()
+  }, [])
+
   return (
     <div>
-      <div className="md:mb-[210px] mb-[110px]">
+      <div className="mb-[110px] md:mb-[210px]">
         <AboutItem
           title={
             <>
@@ -248,10 +254,10 @@ const AboutContent = () => {
               expertise and strategic global presence.
             </p>
           }
-          image="/assets/images/about-01.png"
+          image="/assets/images/about/about-01.png"
         />
       </div>
-      <div className="md:mb-[210px] mb-[110px]">
+      <div className="mb-[110px] md:mb-[210px]">
         <AboutItem
           title={
             <>
@@ -266,27 +272,33 @@ const AboutContent = () => {
               fastest-growing region. Key trends driving our strategic position
             </p>
           }
-          image="/assets/images/about-02.png"
+          image="/assets/images/about/about-02.png"
           even
         />
-        <div className="max-w-[1120px] mx-auto px-5 md:mt-16 mt-10">
-          <div data-scroll="out" className="ani-fade-up border border-[#111]/[0.2]">
+        <div className="mx-auto mt-10 max-w-[1120px] px-5 md:mt-16">
+          <div
+            data-scroll="out"
+            className="ani-fade-up border border-[#111]/[0.2]"
+          >
             {trends.map((trend, index) => (
               <div
                 key={index}
                 className="flex border-b border-[#111]/[0.2] last:border-b-0"
               >
-                <div className="xl:w-[400px] md:w-[280px] w-[120px] md:text-[18px] text-[14px] font-bold p-5 border-r border-[#111]/[0.2] bg-[#EEEEEE] text-center flex items-center justify-center min-h-[94px]">
+                <div className="flex min-h-[94px] w-[120px] items-center justify-center border-r border-[#111]/[0.2] bg-[#EEEEEE] p-5 text-center text-[14px] font-bold md:w-[280px] md:text-[18px] xl:w-[400px]">
                   {trend.title}
                 </div>
-                <div className="flex items-center max-w-[680px] md:text-[18px] text-[14px] flex-1 p-5">
+                <div className="flex max-w-[680px] flex-1 items-center p-5 text-[14px] md:text-[18px]">
                   {trend.description}
                 </div>
               </div>
             ))}
           </div>
 
-          <div data-scroll="out" className="ani-fade-up mt-8 md:mt-[60px] text-center font-bold md:text-[24px] text-[18px]">
+          <div
+            data-scroll="out"
+            className="ani-fade-up mt-8 text-center text-[18px] font-bold md:mt-[60px] md:text-[24px]"
+          >
             <p>
               A NEXUS is uniquely positioned at the center of these converging
               trends.
@@ -308,39 +320,39 @@ const AboutContent = () => {
               to entertainment businessa
             </p>
           }
-          image="/assets/images/about-03.png"
+          image="/assets/images/about/about-03.png"
         />
-        <div className="w-full relative pb-20 md:mt-[-60px] mt-12">
+        <div className="relative mt-12 w-full pb-20 md:mt-[-60px]">
           <div
             ref={animationRef}
-            className="md:pt-[9em] pt-[3em] overflow-hidden"
+            className="overflow-hidden pt-[3em] md:pt-[9em]"
           >
             <div ref={containerRef} className="flex items-center">
               <div className="relative">
                 <div
                   ref={sliderRef}
-                  className="flex items-center w-[calc(((350px_*_6)_+_(4vw_*_5))_+_41vw)] gap-[4vw] md:w-[calc(((564px_*_6)_+_(3vw_*_5))_+_80vw)] mx-[10vw] md:gap-[3vw] my-[7rem] h-[60rem] md:max-h-[calc(100vh-10rem)] max-h-[calc(100vh-8rem)]"
+                  className="mx-[10vw] my-[7rem] flex h-[60rem] max-h-[calc(100vh-8rem)] w-[calc(((350px_*_6)_+_(4vw_*_5))_+_41vw)] items-center gap-[4vw] md:max-h-[calc(100vh-10rem)] md:w-[calc(((564px_*_6)_+_(3vw_*_5))_+_80vw)] md:gap-[3vw]"
                 >
                   {business.map((item) => (
                     <div
                       key={item.id}
-                      className="panel md:!w-[564px] md:!h-[472px] !h-[350px] bg-[#EEEEEE] !w-[330px] mx-2.5 rounded-[30px] border border-[#F34927]"
+                      className="panel mx-2.5 !h-[350px] !w-[330px] rounded-[30px] border border-[#F34927] bg-[#EEEEEE] md:!h-[472px] md:!w-[564px]"
                     >
                       <div className="relative p-5 md:p-[30px]">
-                        <div className="md:w-[130px] md:h-[167px] w-16 h-[90px] flex justify-between relative">
-                          <span className="md:text-[120px] text-[50px] leading-none font-medium text-[#F34927]">
+                        <div className="relative flex h-[90px] w-16 justify-between md:h-[167px] md:w-[130px]">
+                          <span className="text-[50px] font-medium leading-none text-[#F34927] md:text-[120px]">
                             {item.id}
                           </span>
-                          <span className="w-px h-[80px] md:h-[160px] absolute bg-[#111] rotate-[30deg] md:left-10 left-4 top-0 origin-bottom"></span>
-                          <span className="md:text-[64px] text-[32px] leading-none font-medium flex items-end pb-3">
+                          <span className="absolute left-4 top-0 h-[80px] w-px origin-bottom rotate-[30deg] bg-[#111] md:left-10 md:h-[160px]"></span>
+                          <span className="flex items-end pb-3 text-[32px] font-medium leading-none md:text-[64px]">
                             {business.length}
                           </span>
                         </div>
-                        <div className="md:py-10 py-5 px-2 md:px-[18px]">
-                          <p className="text-center md:text-[24px] font-semibold text-[20px]">
+                        <div className="px-2 py-5 md:px-[18px] md:py-10">
+                          <p className="text-center text-[20px] font-semibold md:text-[24px]">
                             {item.title}
                           </p>
-                          <p className="md:text-[18px] text-[15px] md:mt-[30px] mt-[20px]">
+                          <p className="mt-[20px] text-[15px] md:mt-[30px] md:text-[18px]">
                             {item.description}
                           </p>
                         </div>
@@ -354,7 +366,7 @@ const AboutContent = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AboutContent;
+export default AboutContent

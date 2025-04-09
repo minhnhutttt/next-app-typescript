@@ -1,44 +1,73 @@
-"use client";
+'use client'
 
 const BoardMember = () => {
- 
   return (
-    <section className="relative overflow-hidden md:mt-8 mt-4 px-5 md:pb-[272px] pb-[180px]">
+    <section className="relative mt-4 overflow-hidden px-5 pb-[180px] md:mt-8 md:pb-[272px]">
       <div className="px-5 text-[#F34927]">
-        <h3 data-scroll className="text--enter md:text-[64px] xl:text-[128px] text-[clamp(20px,7.5vw,60px)] font-semibold text-center overflow-hidden tracking-widest">
+        <h2
+          data-scroll
+          className="text--enter overflow-hidden text-center text-[clamp(20px,7.5vw,60px)] font-semibold tracking-widest md:text-[64px] xl:text-[128px]"
+        >
           <span data-splitting>BOARD MEMBERS</span>
-        </h3>
-        <p data-scroll className="ani-slide-bottom md:text-[24px] text-[16px] leading-[1.8] w-full max-w-[910px] mx-auto tracking-widest max-md:mt-5">
+        </h2>
+        <p
+          data-scroll
+          className="ani-slide-bottom mx-auto w-full max-w-[910px] text-[16px] leading-[1.8] tracking-widest max-md:mt-5 md:text-[24px]"
+        >
           Meet our visionary leadership team bringing together decades of
           experience in global entertainment markets.
         </p>
       </div>
-      <div className="w-full max-w-[440px] md:max-w-[1090px] mx-auto flex justify-between items-center md:mt-[240px] mt-[100px] xl:gap-[100px] gap-8 max-md:flex-col-reverse">
+      <div className="mx-auto mt-[100px] flex w-full max-w-[440px] items-center justify-between gap-8 max-md:flex-col-reverse md:mt-[240px] md:max-w-[1090px] xl:gap-[100px]">
         <div className="flex-1">
-          <div data-scroll className="ani-slide-bottom flex items-center relative">
-            <div className="w-px md:h-[200px] h-[160px] bg-[#F34927] rotate-[30deg] origin-bottom"></div>
-            <div className="leading-[1.2] md:pl-[88px] pl-[66px] md:pt-16 pt-12">
-              <p className="text-[clamp(15px,4vw,20px)] md:text-[18px] mb-1">CEO & Founder</p>
-              <p className="md:text-[36px] lg:text-[48px] text-[clamp(24px,10vw,44px)] font-['Inspiration'] font-normal tracking-widest">Nariyuki Terada</p>
+          <div
+            data-scroll
+            className="ani-slide-bottom relative flex items-center"
+          >
+            <div className="h-[160px] w-px origin-bottom rotate-[30deg] bg-[#F34927] md:h-[200px]"></div>
+            <div className="pl-[66px] pt-12 leading-[1.2] md:pl-[88px] md:pt-16">
+              <p className="mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]">
+                CEO & Founder
+              </p>
+              <p className="font-['Inspiration'] text-[clamp(24px,10vw,44px)] font-normal tracking-widest md:text-[36px] lg:text-[48px]">
+                Nariyuki Terada
+              </p>
             </div>
           </div>
-          <p data-scroll className="ani-slide-bottom md:text-[18px] text-[15px] leading-[1.8] md:mt-20 mt-12 tracking-widest">
+          <p
+            data-scroll
+            className="ani-slide-bottom mt-12 text-[15px] leading-[1.8] tracking-widest md:mt-20 md:text-[18px]"
+          >
             Meet the exceptional minds behind our vision. <br />
-            From leading global entertainment companies to launching international icons, our board brings unmatched expertise and proven success. <br />
+            From leading global entertainment companies to launching
+            international icons, our board brings unmatched expertise and proven
+            success. <br />
             Discover how each member is shaping the future.
           </p>
-          <div data-scroll className="ani-slide-bottom flex justify-end md:mt-12 mt-8">
-            <a href="/members" className="flex items-center md:text-[32px] text-[20px] font-semibold tracking-widest gap-2 border-b border-[#F34927] px-4">
-              <span className="md:text-[21px] text-[17px] text-[#F34927] animate-[spin_2s_linear_infinite]">★</span><span>LEARN MORE</span>
+          <div
+            data-scroll
+            className="ani-slide-bottom mt-8 flex justify-end md:mt-12"
+          >
+            <a
+              href="/members"
+              className="flex items-center gap-2 border-b border-[#F34927] px-4 text-[20px] font-semibold tracking-widest md:text-[32px]"
+            >
+              <span className="animate-[spin_2s_linear_infinite] text-[17px] text-[#F34927] md:text-[21px]">
+                ★
+              </span>
+              <span>LEARN MORE</span>
             </a>
           </div>
         </div>
-        <div data-scroll className="ani-slide-bottom rounded-[20px] relative overflow-hidden max-md:w-full max-lg:w-1/2">
-          <img src="/assets/images/member.png" alt="" />
+        <div
+          data-scroll
+          className="ani-slide-bottom relative overflow-hidden rounded-[20px] max-lg:w-1/2 max-md:w-full"
+        >
+          <img src="/assets/images/home/members/ceo.png" alt="" />
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default BoardMember;
+export default BoardMember

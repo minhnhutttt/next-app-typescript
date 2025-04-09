@@ -1,80 +1,78 @@
-"use client";
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
+'use client'
 
-import Splitting from "splitting";
+import { useLayoutEffect, useRef } from 'react'
 
-gsap.registerPlugin(ScrollTrigger);
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 gsap.config({
   nullTargetWarn: false,
-});
+})
 
 const Introduction = () => {
-  const ref = useScrollAnimations();
+  const containerRef = useRef<HTMLDivElement>(null)
+  const charScrollRef = useRef<HTMLDivElement>(null)
 
-  const containe2rRef = useRef<HTMLDivElement>(null);
-  const charScrollRef2 = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
-    Splitting();
+    let ctx: gsap.Context | null = null
 
-    if (charScrollRef2.current) {
-      const charScroll = charScrollRef2.current.querySelectorAll(".char");
+    import('splitting').then(({ default: Splitting }) => {
+      Splitting()
+
+      if (!charScrollRef.current || !containerRef.current) return
+
+      const charScroll = charScrollRef.current.querySelectorAll('.char')
 
       gsap.set(charScroll, {
-        display: "inline-block",
-      });
+        display: 'inline-block',
+      })
 
+      ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.9,
+            pin: true,
+          },
+        })
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containe2rRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 0.9,
-          pin: true,
-        },
-      });
+        tl.to(
+          charScroll,
+          {
+            opacity: 1,
+            stagger: 1,
+            duration: 1,
+            color: '#000',
+          },
+          0.1
+        )
+      })
 
-      tl.to(
-        charScroll,
-        {
-          opacity: 1,
-          stagger: 1,
-          duration: 1,
-          color: "#000",
-        },
-        0.1
-      );
+      ScrollTrigger.refresh()
+    })
 
-      return () => {
-        if (tl.scrollTrigger) {
-          tl.scrollTrigger.kill();
-          tl.scrollTrigger?.refresh();
-          tl.kill();
-        }
-        ScrollTrigger.refresh();
-        
-      };
+    return () => {
+      ctx?.revert()
     }
-  }, []);
+  }, [])
 
   return (
     <section
-      ref={ref}
       id="introduction"
-      className="mt-[calc(100vh)] relative overflow-hidden md:px-10 px-5 "
+      className="relative mt-[calc(100vh)] overflow-hidden px-5 md:px-10"
     >
-      <div className="w-full max-w-[980px] mx-auto text-[#ADADAD]">
+      <div className="mx-auto w-full max-w-[980px] text-[#ADADAD]">
         <div
-          ref={containe2rRef}
-          className="flex flex-col justify-center items-center max-md:py-[200px] max-h-screen md:h-screen"
+          ref={containerRef}
+          className="flex max-h-screen flex-col items-center justify-center max-md:py-[200px] md:h-screen"
         >
-          <h4
-            ref={charScrollRef2}
+          <div
+            ref={charScrollRef}
             data-splitting
-            className="md:text-[28px] text-[clamp(14px,3.8vw,24px)] text-center font-medium leading-[1.8]"
+            className="text-center text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] md:text-[28px]"
           >
             A NEXUS connects North America, ASEAN, and East Asian markets,
             creating a seamless  flow of entertainment content and bringing
@@ -86,12 +84,12 @@ const Introduction = () => {
             <br />
             We aim to be the definitive platform holder that delivers  premium
             entertainment experiences worldwide through strategic integration
-            across the entire  value chain. 
-          </h4>
+            across the entire  value chain.
+          </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Introduction;
+export default Introduction

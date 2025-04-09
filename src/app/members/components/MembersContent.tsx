@@ -1,34 +1,34 @@
-"use client";
+'use client'
 
 const MemberContent = () => {
   return (
-    <div className="px-5 md:mb-[160px] mb-24">
-      <div className="w-full max-w-[1200px] mx-auto md:space-y-[160px] space-y-24">
-        <div className=" bg-[#536DFE]/[0.05] border border-[#536DFE] rounded-[40px] py-10 md:py-20 px-5 lg:px-[60px]">
-          <div className="relative  bg-[#536DFE] rounded-[20px] md:py-[60px] md:px-10 lg:px-[78px] py-10 px-5 flex md:justify-between justify-center items-center gap-5 max-md:flex-col-reverse">
-            <span className="absolute md:w-[432px] w-[200px] aspect-[432/427] bg-[url(/assets/images/member-star.png)] bg-no-repeat [background-size:100%_100%] pointer-events-none animate-[bounceRandomly1_80s_linear_infinite]"></span>
+    <div className="mb-24 px-5 md:mb-[160px]">
+      <div className="mx-auto w-full max-w-[1200px] space-y-24 md:space-y-[160px]">
+        <div className="rounded-[40px] border border-[#536DFE] bg-[#536DFE]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+          <div className="relative flex items-center justify-center gap-5 rounded-[20px] bg-[#536DFE] px-5 py-10 max-md:flex-col-reverse md:justify-between md:px-10 md:py-[60px] lg:px-[78px]">
+            <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly1_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
             <div className="text-[#111]">
               <p
                 data-scroll
-                className="ani-fade-up text-[clamp(15px,4vw,20px)] md:text-[18px] mb-1"
+                className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
               >
                 CEO & Founder
               </p>
               <p
                 data-scroll
-                className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(18px,9vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3 whitespace-nowrap"
+                className="text--enter mb-3 overflow-hidden whitespace-nowrap font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
               >
                 <span data-splitting>Nariyuki Terada</span>
               </p>
               <p
                 data-scroll
-                className="ani-fade-up text-[clamp(18px,4.5vw,26px)] md:text-[24px] mb-6"
+                className="ani-fade-up mb-6 text-[clamp(18px,4.5vw,26px)] md:text-[24px]"
               >
                 寺田 成昇
               </p>
               <p
                 data-scroll
-                className="ani-fade-up md:text-[14px] text-[12px] leading-[1.1]"
+                className="ani-fade-up text-[12px] leading-[1.1] md:text-[14px]"
               >
                 November 2005 – March 2010 <br />
                 Executive Officer, Avex Group Holdings
@@ -67,82 +67,82 @@ const MemberContent = () => {
               </p>
             </div>
             <div data-scroll className="ani-fade-up">
-              <img src="/assets/images/img-terada.png" alt="" />
+              <img src="/assets/images/members/img-terada.png" alt="" />
             </div>
           </div>
 
-          <div data-scroll className="ani-fade-up md:mt-[50px] mt-[35px]">
+          <div data-scroll className="ani-fade-up mt-[35px] md:mt-[50px]">
             <div className="flex items-center justify-center gap-4">
-              <span className="flex-1 h-px bg-[#111]"></span>
-              <span className="md:text-[16px] text-[13px] leading-loose">
+              <span className="h-px flex-1 bg-[#111]"></span>
+              <span className="text-[13px] leading-loose md:text-[16px]">
                 Message
               </span>
-              <span className="flex-1 h-px bg-[#111]"></span>
+              <span className="h-px flex-1 bg-[#111]"></span>
             </div>
-            <p className="md:text-[14px] text-[12px] leading-loose md:px-[30px] px-4 mt-4 tracking-widest">
+            <p className="mt-4 px-4 text-[12px] leading-loose tracking-widest md:px-[30px] md:text-[14px]">
               With over 25 years of experience in the Asian entertainment
               industry, Hiroshi has pioneered  cross-border content distribution
-              and rights management. He is recognized as a visionary 
+              and rights management. He is recognized as a visionary
               <br />
               leader who foresaw the global convergence of entertainment markets
-              long before it became  industry standard. 
+              long before it became  industry standard.
               <br />
               Previously serving as Executive Director at [Major Entertainment
               Company], he established  groundbreaking partnerships between
               Japanese content creators and international platforms  that
               transformed how Asian content is monetized globally. During his
               tenure, he oversaw the  international expansion of five major
-              anime franchises, resulting in a 300% increase in overseas 
-              revenue and establishing new benchmarks for cross-cultural content
-              adaptation. 
+              anime franchises, resulting in a 300% increase in overseas revenue
+              and establishing new benchmarks for cross-cultural content
+              adaptation.
               <br />
               Hiroshi began his career as a production coordinator for anime
               studios in Tokyo, giving him  invaluable ground-level insights
-              into content creation. He quickly rose through the ranks, 
+              into content creation. He quickly rose through the ranks,
               developing expertise in international licensing and distribution
               while working for [Japanese  Media Conglomerate], where he led
               negotiations for landmark co-production deals with  American and
-              European studios. 
+              European studios.
               <br />
               His academic background includes a Master's degree in
               International Business from Keio  University and specialized
-              training in entertainment law. He has been a featured speaker at 
+              training in entertainment law. He has been a featured speaker at
               major industry conferences including AnimeExpo, MIPCOM, and the
               Tokyo International  Film Festival. Hiroshi has authored numerous
               articles on the future of global entertainment  and co-authored
               the influential industry book "Cross-Border Content: The New
-              Entertainment  Economy." 
+              Entertainment  Economy."
               <br />
               His founding vision for A NEXUS stems from his belief that the
               most significant opportunities  in entertainment lie at the
               intersection of Asian creative development and global
               distribution  infrastructure. He has assembled a world-class team
               that reflects his commitment to building  bridges between
-              entertainment markets. 
+              entertainment markets.
               <br />
               Areas of Expertise: Anime Production, IP Rights Management,
               International Distribution,  Media Partnerships, M&A, Strategic
-              Vision, Entertainment Law, Cross-Cultural Business  Development 
+              Vision, Entertainment Law, Cross-Cultural Business  Development
             </p>
           </div>
         </div>
 
-        <div className="md:space-y-[160px] space-y-24">
-          <div className=" bg-[#FDD213]/[0.05] border border-[#FDD213] rounded-[40px] py-10 md:py-20 px-5 lg:px-[60px]">
-            <div className="bg-[#FDD213] relative rounded-[20px] md:py-10 md:px-10 lg:px-[78px] py-10 px-5 flex md:justify-between justify-center items-center gap-5 max-md:flex-col md:min-h-[600px] min-h-[400px]">
-            <span className="absolute md:w-[432px] w-[200px] aspect-[432/427] bg-[url(/assets/images/member-star.png)] bg-no-repeat [background-size:100%_100%] pointer-events-none animate-[bounceRandomly2_80s_linear_infinite]"></span>
+        <div className="space-y-24 md:space-y-[160px]">
+          <div className="rounded-[40px] border border-[#FDD213] bg-[#FDD213]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+            <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#FDD213] px-5 py-10 max-md:flex-col md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+              <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly2_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
               <div className="text-[#111]">
                 <p
                   data-scroll
-                  className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(18px,9vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3 whitespace-nowrap"
+                  className="text--enter mb-3 overflow-hidden whitespace-nowrap font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
                 >
                   <span data-splitting>Hideyoshi Akita</span>
                 </p>
               </div>
-              <div className="lg:max-w-[478px] ">
+              <div className="lg:max-w-[478px]">
                 <p
                   data-scroll
-                  className="ani-fade-up md:text-[14px] text-[12px] leading-[1.4]"
+                  className="ani-fade-up text-[12px] leading-[1.4] md:text-[14px]"
                 >
                   1996 – Joined GE Capital Finance Corporation (Japan) <br />
                   <br />
@@ -166,24 +166,24 @@ const MemberContent = () => {
             </div>
           </div>
 
-          <div className=" bg-[#1EF1FF]/[0.05] border border-[#1EF1FF] rounded-[40px] py-10 md:py-20 px-5 lg:px-[60px]">
-            <div className="bg-[#1EF1FF] rounded-[20px] md:py-10 md:px-10 lg:px-[78px] py-10 px-5 relative flex md:justify-between justify-center items-center gap-5 max-md:flex-col md:min-h-[600px] min-h-[400px]">
-            <span className="absolute md:w-[432px] w-[200px] aspect-[432/427] bg-[url(/assets/images/member-star.png)] bg-no-repeat [background-size:100%_100%] pointer-events-none animate-[bounceRandomly3_80s_linear_infinite]"></span>
+          <div className="rounded-[40px] border border-[#1EF1FF] bg-[#1EF1FF]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+            <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#1EF1FF] px-5 py-10 max-md:flex-col md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+              <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly3_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
               <div className="text-[#111]">
                 <p
                   data-scroll
-                  className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(18px,9vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3 whitespace-nowrap"
+                  className="text--enter mb-3 overflow-hidden whitespace-nowrap font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
                 >
                   <span data-splitting>Yutaka Kanagawa</span>
                 </p>
               </div>
-              <div className="lg:max-w-[478px] ">
+              <div className="lg:max-w-[478px]">
                 <p
                   data-scroll
-                  className="ani-fade-up md:text-[14px] text-[12px] leading-[1.4]"
+                  className="ani-fade-up text-[12px] leading-[1.4] md:text-[14px]"
                 >
                   July 2006 – October 2009 <br />
-                  Corporate Planning Division, International Strategy Office{" "}
+                  Corporate Planning Division, International Strategy Office{' '}
                   <br />
                   Avex Group Holdings Inc.
                   <br />
@@ -204,7 +204,7 @@ const MemberContent = () => {
                   <br />
                   <br />
                   March 2011 – November 2014 <br />
-                  Transferred to Yamax Entertainment Co., Ltd. (Amuse Taiwan){" "}
+                  Transferred to Yamax Entertainment Co., Ltd. (Amuse Taiwan){' '}
                   <br />
                   Appointed as the local representative responsible for
                   launching and establishing the Taiwan office
@@ -234,16 +234,22 @@ const MemberContent = () => {
             </div>
           </div>
 
-          <div className=" bg-[#69F0AE]/[0.05] border border-[#69F0AE] rounded-[40px] py-10 md:py-20 px-5 lg:px-[60px]">
-            <div className="bg-[#69F0AE] rounded-[20px] md:py-10 md:px-10 lg:px-[78px] py-10 px-5 relative flex md:justify-between justify-center items-center gap-5 max-md:flex-col md:min-h-[600px] min-h-[400px]">
-            <span className="absolute md:w-[432px] w-[200px] aspect-[432/427] bg-[url(/assets/images/member-star.png)] bg-no-repeat [background-size:100%_100%] pointer-events-none animate-[bounceRandomly4_80s_linear_infinite]"></span>
+          <div className="rounded-[40px] border border-[#69F0AE] bg-[#69F0AE]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+            <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#69F0AE] px-5 py-10 max-md:flex-col md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+              <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly4_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
               <div className="text-[#111]">
-                <p data-scroll className="text--enter overflow-hidden md:text-[36px] lg:text-[64px] text-[clamp(18px,9vw,44px)] font-['Inspiration'] font-normal tracking-wider mb-3 whitespace-nowrap">
+                <p
+                  data-scroll
+                  className="text--enter mb-3 overflow-hidden whitespace-nowrap font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
+                >
                   <span data-splitting>Yoshiya Kato</span>
                 </p>
               </div>
-              <div className="lg:max-w-[478px] ">
-                <p data-scroll className="md:text-[14px] text-[12px] leading-[1.4]">
+              <div className="lg:max-w-[478px]">
+                <p
+                  data-scroll
+                  className="text-[12px] leading-[1.4] md:text-[14px]"
+                >
                   Venture capital, professional sports league management. <br />
                   <br />
                   In the past, he was involved in managing the AKB48 sister
@@ -258,7 +264,7 @@ const MemberContent = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MemberContent;
+export default MemberContent

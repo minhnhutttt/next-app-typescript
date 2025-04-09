@@ -1,17 +1,35 @@
-"use client";
+import type { Metadata } from 'next'
 
-import AboutContent from "./components/AboutContent";
+import { SITE_URL, OG, TWITTER } from '@/config/constants'
+import AboutContent from './components/aboutContent'
 
+export const metadata: Metadata = {
+  title: 'About',
+  openGraph: {
+    ...OG,
+    title: 'About',
+    url: SITE_URL + '/about',
+  },
+  twitter: {
+    ...TWITTER,
+    title: 'About',
+  },
+  alternates: {
+    canonical: SITE_URL + '/about',
+  },
+}
 
-export default function About() {
+const AboutPage = () => {
   return (
     <main className="mt-[150px] overflow-hidden">
       <section>
-        <h1 className="md:text-[64px] font-bold text-[32px] text-center md:py-[60px] py-8 leading-[1.8]">
+        <h1 className="py-8 text-center text-[32px] font-bold leading-[1.8] md:py-[60px] md:text-[64px]">
           ABOUT US
         </h1>
         <AboutContent />
       </section>
     </main>
-  );
+  )
 }
+
+export default AboutPage

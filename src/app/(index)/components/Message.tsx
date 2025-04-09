@@ -1,40 +1,61 @@
-"use client";
-import { useEffect } from "react";
-import ScrollOut from "scroll-out";
-import Splitting from "splitting";
+'use client'
+
+import { useEffect } from 'react'
 
 const Message = () => {
   useEffect(() => {
-    Splitting();
-    ScrollOut({once: true});
-  });
+    const init = async () => {
+      const Splitting = await import('splitting')
+      await Splitting.default()
 
- 
+      const ScrollOut = (await import('scroll-out')).default
+      ScrollOut({ once: true })
+    }
+
+    init()
+  }, [])
+
   return (
     <section className="relative overflow-hidden md:h-[833px]">
       <video
-            autoPlay
-            muted
-            playsInline
-            loop
-            preload="auto"
-            className="w-full h-full object-cover absolute inset-0"
+        autoPlay
+        muted
+        playsInline
+        loop
+        preload="auto"
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src="/assets/videos/about.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="relative flex h-full justify-center bg-[linear-gradient(0deg,_rgba(250,_226,_215,_0.60)_0%,_rgba(250,_226,_215,_0.60)_100%)] p-5">
+        <div className="mx-auto w-full max-w-[886px] max-md:py-[150px] md:pt-[285px]">
+          <p
+            data-scroll
+            className="ani-slide-bottom text-[20px] tracking-widest md:text-[36px]"
           >
-            <source src="/assets/images/about.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="h-full bg-[linear-gradient(0deg,_rgba(250,_226,_215,_0.60)_0%,_rgba(250,_226,_215,_0.60)_100%)] flex justify-center p-5 relative">
-                <div className="w-full max-w-[886px] mx-auto max-md:py-[150px] md:pt-[285px]">
-                    <p data-scroll className="ani-slide-bottom md:text-[36px] text-[20px] tracking-widest">A NEXUS offers comprehensive production and promotion services, from stage design to  original content creation and global marketing campaigns. </p>
-                    <div data-scroll className="ani-slide-bottom flex justify-end md:mt-12 mt-8">
-                        <a href="/about" className="flex items-center md:text-[32px] text-[20px] font-semibold tracking-widest gap-2 border-b border-[#F34927] px-4">
-                        <span className="md:text-[21px] text-[17px] text-[#F34927] animate-[spin_2s_linear_infinite]">★</span><span>ABOUT US</span>
-                        </a>
-                    </div>
-                </div>
+            A NEXUS offers comprehensive production and promotion services, from
+            stage design to  original content creation and global marketing
+            campaigns.
+          </p>
+          <div
+            data-scroll
+            className="ani-slide-bottom mt-8 flex justify-end md:mt-12"
+          >
+            <a
+              href="/about"
+              className="flex items-center gap-2 border-b border-[#F34927] px-4 text-[20px] font-semibold tracking-widest md:text-[32px]"
+            >
+              <span className="animate-[spin_2s_linear_infinite] text-[17px] text-[#F34927] md:text-[21px]">
+                ★
+              </span>
+              <span>ABOUT US</span>
+            </a>
           </div>
+        </div>
+      </div>
     </section>
-  );
-};
+  )
+}
 
-export default Message;
+export default Message

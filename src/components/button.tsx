@@ -11,18 +11,16 @@ interface ButtonProps {
   children: ReactNode
 }
 
-const Button: React.FC<ButtonProps> = ({
-  rect,
-  children,
-  href = '#',
-}) => {
-  const buttonRef = useRef<HTMLAnchorElement | any | null>(null)
+const Button: React.FC<ButtonProps> = ({ rect, children, href = '#' }) => {
+  const buttonRef = useRef<HTMLAnchorElement | null>(null)
 
   useEffect(() => {
     if (!buttonRef.current) return
 
     const buttonElement = buttonRef.current
-    const el = gsap.utils.selector(buttonElement)
+    const el = gsap.utils.selector(buttonElement) as (
+      selector: string
+    ) => HTMLElement[]
 
     const DOM = {
       button: buttonElement,
@@ -119,19 +117,19 @@ const Button: React.FC<ButtonProps> = ({
     }
   }, [])
 
-    return (
-      <a
-        href={href}
-        ref={buttonRef}
-        className={`button button--stroke border-box relative -translate-x-[-3px] overflow-hidden  ${rect}`}
-        data-block="button"
-      >
-        <span className="button__flair bottom-[0] left-[0] pointer-events-none absolute right-[0] top-[0] before:[aspect-ratio:1] before:bg-[#111] before:rounded-[100%] before:content-[''] before:block before:left-[0] before:pointer-events-none before:absolute before:top-[0] before:-translate-x-1/2 before:-translate-y-1/2 before:w-[170%] z-10"></span>
-        <span className="absolute inset-0 z-20 flex items-center justify-center gap-2.5 ">
-          {children}
-        </span>
-      </a>
-    )
+  return (
+    <a
+      href={href}
+      ref={buttonRef}
+      className={`button button--stroke border-box relative -translate-x-[-3px] overflow-hidden ${rect}`}
+      data-block="button"
+    >
+      <span className="button__flair pointer-events-none absolute bottom-[0] left-[0] right-[0] top-[0] z-10 before:pointer-events-none before:absolute before:left-[0] before:top-[0] before:block before:w-[170%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-[100%] before:bg-[#111] before:content-[''] before:[aspect-ratio:1]"></span>
+      <span className="absolute inset-0 z-20 flex items-center justify-center gap-2.5">
+        {children}
+      </span>
+    </a>
+  )
 }
 
 export default Button

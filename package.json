@@ -1,43 +1,37 @@
 {
-  "name": "next-app-typescript",
+  "name": "a-nexus",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "prettier --write src/ && next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && next export",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,vue,json,html,css,scss}\""
+    "format": "prettier --write src/"
   },
   "dependencies": {
-    "@react-spring/web": "^9.7.5",
-    "@studio-freight/react-lenis": "^0.0.43",
-    "@tsparticles/react": "^3.0.0",
-    "@use-gesture/react": "^10.3.1",
-    "gsap": "^3.12.5",
-    "lottie-web": "^5.12.2",
-    "next": "14.1.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "gsap": "^3.12.7",
+    "next": "15.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-responsive": "^10.0.1",
-    "react-splide-ts": "^0.7.14",
-    "scenejs": "^1.10.3",
     "scroll-out": "^2.2.12",
     "splitting": "^1.1.0",
     "swiper": "^11.2.6"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.7",
     "postcss": "^8",
-    "prettier-plugin-tailwindcss": "^0.3.0",
-    "sass": "^1.70.0",
-    "tailwindcss": "^3.3.0",
-    "typescript": "5.6.3"
+    "prettier": "^3.5.0",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "sass": "^1.84.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
