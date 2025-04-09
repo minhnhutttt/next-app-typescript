@@ -316,8 +316,7 @@ const AboutContent = () => {
           }
           content={
             <p>
-              A NEXUS creates value through an integrated, end-to-end approach
-              to entertainment businessa
+              A NEXUS creates value through an integrated, end-to-end approach to entertainment business
             </p>
           }
           image="/assets/images/about/about-03.png"

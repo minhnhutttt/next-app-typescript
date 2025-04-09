@@ -5,65 +5,44 @@ import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
-import InfiniteImageGrid from './infiniteImageGrid'
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.config({
   nullTargetWarn: false,
 })
 
-type MediaType = 'image' | 'video'
-interface MediaItemData {
-  type: MediaType
-  src: string
-}
-
-const ALL_MEDIA_ITEMS: MediaItemData[] = [
-  { type: 'image', src: '/assets/images/home/icons/fv-01.png' },
-  { type: 'video', src: '/assets/videos/home/icons/fv-02.mp4' },
-  { type: 'image', src: '/assets/images/home/icons/fv-03.png' },
-  { type: 'video', src: '/assets/videos/home/icons/fv-04.mp4' },
-  { type: 'image', src: '/assets/images/home/icons/fv-05.png' },
-  { type: 'video', src: '/assets/videos/home/icons/fv-06.mp4' },
-  { type: 'image', src: '/assets/images/home/icons/fv-07.png' },
-  { type: 'image', src: '/assets/images/home/icons/fv-08.png' },
-  { type: 'image', src: '/assets/images/home/icons/fv-09.png' },
-  { type: 'video', src: '/assets/videos/home/icons/fv-10.mp4' },
-  { type: 'image', src: '/assets/images/home/icons/fv-11.png' },
-  { type: 'image', src: '/assets/images/home/icons/fv-12.png' },
-  { type: 'image', src: '/assets/images/home/icons/fv-13.png' },
-  { type: 'video', src: '/assets/videos/home/icons/fv-14.mp4' },
-  { type: 'image', src: '/assets/images/home/icons/fv-15.png' },
-  { type: 'image', src: '/assets/images/home/icons/fv-16.png' },
-  { type: 'video', src: '/assets/videos/home/icons/fv-17.mp4' },
-  { type: 'image', src: '/assets/images/home/icons/fv-18.png' },
-  { type: 'video', src: '/assets/videos/home/icons/fv-19.mp4' },
-  { type: 'video', src: '/assets/videos/home/icons/fv-20.mp4' },
-]
-
-const PRIORITY_MEDIA_ITEMS = ALL_MEDIA_ITEMS.slice(0, 20)
-
 const FV = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true)
+  
 
   const containerRef = useRef<HTMLDivElement>(null)
   const containerWrapRef = useRef<HTMLDivElement>(null)
+  const anexusTop = useRef<HTMLDivElement>(null)
+  const anexusMid = useRef<HTMLDivElement>(null)
+  const anexusBottom = useRef<HTMLDivElement>(null)
+  const anexus = useRef<HTMLDivElement>(null)
   const charScrollRef = useRef<HTMLHeadingElement>(null)
-
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   useEffect(() => {
     if (isLoading) {
-      document.body.style.overflow = 'hidden'
-      document.body.style.touchAction = 'none'
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+      
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+      
+      return () => {
+        clearTimeout(timer);
+        document.body.style.overflow = '';
+        document.body.style.touchAction = '';
+      };
     } else {
-      document.body.style.overflow = ''
-      document.body.style.touchAction = ''
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      
+        
     }
-
-    return () => {
-      document.body.style.overflow = ''
-      document.body.style.touchAction = ''
-    }
-  }, [isLoading])
+  }, [isLoading]);
 
   useEffect(() => {
     let st: ScrollTrigger | null = null
@@ -86,6 +65,27 @@ const FV = () => {
         gsap.set(containerWrapRef.current, {
           opacity: 0,
         })
+
+        const startTl = gsap.timeline();
+        gsap.set(anexus.current, {
+          opacity: 0
+        })
+        if (isLoading) {
+          startTl.to(anexus.current, {
+            opacity: 1,
+            duration: 1,
+            delay: 2
+          }).to(anexusTop.current, {
+            yPercent: -70,
+            duration: 1,
+          }).to(anexusBottom.current, {
+            yPercent: 70,
+            duration: 1,
+          }, '<').to(anexus.current, {
+            opacity: 0.7,
+            duration: 0.2,
+          })
+        }
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -132,25 +132,24 @@ const FV = () => {
 
   return (
     <>
-      <div className="fv-section">
-        <div className="h-screen min-h-screen overflow-hidden p-4">
+      <div className="fv-section ">
+        <div className="h-screen min-h-screen relative">
           <div
-            className="absolute inset-0 z-30 h-screen w-full overflow-hidden"
+            className="h-full w-screen overflow-hidden"
             ref={containerRef}
           >
-            <div className="relative z-30 flex h-full flex-col justify-center overflow-hidden md:justify-between">
-              <span className="absolute inset-0 bg-[url(/assets/images/home/svg-deco.svg)] bg-contain bg-center bg-no-repeat opacity-30"></span>
-              <InfiniteImageGrid
-                rowNum={5}
-                imgNum={28}
-                mediaItems={PRIORITY_MEDIA_ITEMS}
-                onLoadComplete={() => setIsLoading(false)}
-              />
+            <div ref={anexus} className="flex justify-center items-center absolute inset-0 p-5">
+              <div className="w-full h-full relative flex justify-center items-center">
+              <p ref={anexusTop} className="absolute"><img src="/assets/images/home/anexus-top.svg" alt="" /></p>
+              <p ref={anexusMid} className=""><img src="/assets/images/home/anexus-mid.svg" alt="" /></p>
+              <p ref={anexusBottom} className="absolute"><img src="/assets/images/home/anexus-bottom.svg" alt="" /></p>
+              </div>
             </div>
-            <div className="pointer-events-none absolute inset-0 z-40 h-screen w-full">
+            <div className="w-screen h-full relative">
+                
               <div
                 ref={containerWrapRef}
-                className="flex h-full flex-col items-center justify-center"
+                className="flex h-full flex-col items-center justify-center overflow-hidden w-screen relative"
               >
                 <h1
                   ref={charScrollRef}

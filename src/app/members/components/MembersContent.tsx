@@ -18,7 +18,7 @@ const MemberContent = () => {
                 data-scroll
                 className="text--enter mb-3 overflow-hidden whitespace-nowrap font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
               >
-                <span data-splitting>Nariyuki Terada</span>
+                <span data-splitting>Nariaki Terada</span>
               </p>
               <p
                 data-scroll
@@ -67,7 +67,7 @@ const MemberContent = () => {
               </p>
             </div>
             <div data-scroll className="ani-fade-up">
-              <img src="/assets/images/members/img-terada.png" alt="" />
+              <img className="w-full max-w-[480px]" src="/assets/images/members/ceo.jpg" alt="" />
             </div>
           </div>
 

@@ -2,7 +2,7 @@
 
 const BoardMember = () => {
   return (
-    <section className="relative mt-4 overflow-hidden px-5 pb-[180px] md:mt-8 md:pb-[272px]">
+    <section className="relative mt-4 overflow-hidden px-5 pb-[120px] md:mt-8 md:pb-[272px]">
       <div className="px-5 text-[#F34927]">
         <h2
           data-scroll
@@ -30,7 +30,7 @@ const BoardMember = () => {
                 CEO & Founder
               </p>
               <p className="font-['Inspiration'] text-[clamp(24px,10vw,44px)] font-normal tracking-widest md:text-[36px] lg:text-[48px]">
-                Nariyuki Terada
+              Nariaki Terada
               </p>
             </div>
           </div>
@@ -63,7 +63,7 @@ const BoardMember = () => {
           data-scroll
           className="ani-slide-bottom relative overflow-hidden rounded-[20px] max-lg:w-1/2 max-md:w-full"
         >
-          <img src="/assets/images/home/members/ceo.png" alt="" />
+          <img className="w-full max-w-[480px]" src="/assets/images/members/ceo.jpg" alt="" />
         </div>
       </div>
     </section>
