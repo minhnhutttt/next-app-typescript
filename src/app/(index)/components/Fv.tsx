@@ -5,15 +5,12 @@ import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
-
 gsap.registerPlugin(ScrollTrigger)
 gsap.config({
   nullTargetWarn: false,
 })
 
 const FV = () => {
-  
-
   const containerRef = useRef<HTMLDivElement>(null)
   const containerWrapRef = useRef<HTMLDivElement>(null)
   const anexusTop = useRef<HTMLDivElement>(null)
@@ -24,25 +21,23 @@ const FV = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   useEffect(() => {
     if (isLoading) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.touchAction = 'none';
-      
+      document.body.style.overflow = 'hidden'
+      document.body.style.touchAction = 'none'
+
       const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 2000);
-      
+        setIsLoading(false)
+      }, 2000)
+
       return () => {
-        clearTimeout(timer);
-        document.body.style.overflow = '';
-        document.body.style.touchAction = '';
-      };
+        clearTimeout(timer)
+        document.body.style.overflow = ''
+        document.body.style.touchAction = ''
+      }
     } else {
-      document.body.style.overflow = '';
-      document.body.style.touchAction = '';
-      
-        
+      document.body.style.overflow = ''
+      document.body.style.touchAction = ''
     }
-  }, [isLoading]);
+  }, [isLoading])
 
   useEffect(() => {
     let st: ScrollTrigger | null = null
@@ -66,25 +61,33 @@ const FV = () => {
           opacity: 0,
         })
 
-        const startTl = gsap.timeline();
+        const startTl = gsap.timeline()
         gsap.set(anexus.current, {
-          opacity: 0
+          opacity: 0,
         })
         if (isLoading) {
-          startTl.to(anexus.current, {
-            opacity: 1,
-            duration: 1,
-            delay: 2
-          }).to(anexusTop.current, {
-            yPercent: -70,
-            duration: 1,
-          }).to(anexusBottom.current, {
-            yPercent: 70,
-            duration: 1,
-          }, '<').to(anexus.current, {
-            opacity: 0.7,
-            duration: 0.2,
-          })
+          startTl
+            .to(anexus.current, {
+              opacity: 1,
+              duration: 1,
+              delay: 2,
+            })
+            .to(anexusTop.current, {
+              yPercent: -70,
+              duration: 1,
+            })
+            .to(
+              anexusBottom.current,
+              {
+                yPercent: 70,
+                duration: 1,
+              },
+              '<'
+            )
+            .to(anexus.current, {
+              opacity: 0.7,
+              duration: 0.2,
+            })
         }
 
         const tl = gsap.timeline({
@@ -132,24 +135,29 @@ const FV = () => {
 
   return (
     <>
-      <div className="fv-section ">
-        <div className="h-screen min-h-screen relative">
-          <div
-            className="h-full w-screen overflow-hidden"
-            ref={containerRef}
-          >
-            <div ref={anexus} className="flex justify-center items-center absolute inset-0 p-5">
-              <div className="w-full h-full relative flex justify-center items-center">
-              <p ref={anexusTop} className="absolute"><img src="/assets/images/home/anexus-top.svg" alt="" /></p>
-              <p ref={anexusMid} className=""><img src="/assets/images/home/anexus-mid.svg" alt="" /></p>
-              <p ref={anexusBottom} className="absolute"><img src="/assets/images/home/anexus-bottom.svg" alt="" /></p>
+      <div className="fv-section">
+        <div className="relative h-screen min-h-screen">
+          <div className="h-full w-screen overflow-hidden" ref={containerRef}>
+            <div
+              ref={anexus}
+              className="absolute inset-0 flex items-center justify-center p-5"
+            >
+              <div className="relative flex h-full w-full items-center justify-center">
+                <p ref={anexusTop} className="absolute">
+                  <img src="/assets/images/home/anexus-top.svg" alt="" />
+                </p>
+                <p ref={anexusMid} className="">
+                  <img src="/assets/images/home/anexus-mid.svg" alt="" />
+                </p>
+                <p ref={anexusBottom} className="absolute">
+                  <img src="/assets/images/home/anexus-bottom.svg" alt="" />
+                </p>
               </div>
             </div>
-            <div className="w-screen h-full relative">
-                
+            <div className="relative h-full w-screen">
               <div
                 ref={containerWrapRef}
-                className="flex h-full flex-col items-center justify-center overflow-hidden w-screen relative"
+                className="relative flex h-full w-screen flex-col items-center justify-center overflow-hidden"
               >
                 <h1
                   ref={charScrollRef}

@@ -67,7 +67,11 @@ const MemberContent = () => {
               </p>
             </div>
             <div data-scroll className="ani-fade-up">
-              <img className="w-full max-w-[480px]" src="/assets/images/members/ceo.jpg" alt="" />
+              <img
+                className="w-full max-w-[480px]"
+                src="/assets/images/members/ceo.jpg"
+                alt=""
+              />
             </div>
           </div>
 

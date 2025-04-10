@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const IndexPage = () => {
   return (
-    <div className='overflow-hidden'>
+    <div className="overflow-hidden">
       <FV />
       <div className="bg-[linear-gradient(180deg,_#FFF_0%,_#FF711C_100%)]">
         <Introduction />

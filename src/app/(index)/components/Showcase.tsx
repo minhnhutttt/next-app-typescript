@@ -1,11 +1,11 @@
 'use client'
 
-import Artist from "./artist"
+import Artist from './artist'
 
 const Showcase = () => {
   return (
     <section className="relative overflow-hidden">
-      <div className="px-5 ">
+      <div className="px-5">
         <div className="mx-auto w-full max-w-[1300px]">
           <div className="px-5 pb-10 text-[#F34927] md:pb-16">
             <h2
@@ -20,7 +20,7 @@ const Showcase = () => {
           </div>
         </div>
       </div>
-        <Artist />
+      <Artist />
     </section>
   )
 }

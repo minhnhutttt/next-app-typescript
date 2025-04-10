@@ -30,7 +30,7 @@ const BoardMember = () => {
                 CEO & Founder
               </p>
               <p className="font-['Inspiration'] text-[clamp(24px,10vw,44px)] font-normal tracking-widest md:text-[36px] lg:text-[48px]">
-              Nariaki Terada
+                Nariaki Terada
               </p>
             </div>
           </div>
@@ -63,7 +63,11 @@ const BoardMember = () => {
           data-scroll
           className="ani-slide-bottom relative overflow-hidden rounded-[20px] max-lg:w-1/2 max-md:w-full"
         >
-          <img className="w-full max-w-[480px]" src="/assets/images/members/ceo.jpg" alt="" />
+          <img
+            className="w-full max-w-[480px]"
+            src="/assets/images/members/ceo.jpg"
+            alt=""
+          />
         </div>
       </div>
     </section>
