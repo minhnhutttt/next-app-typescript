@@ -10,7 +10,6 @@ import Showcase from './components/showcase'
 import Message from './components/message'
 import Contact from './components/contact'
 import Company from './components/company'
-import { useTranslations } from 'next-intl'
 export const metadata: Metadata = {
   openGraph: {
     ...OG,

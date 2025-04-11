@@ -13,7 +13,6 @@ gsap.config({
 
 const Introduction = () => {
   const t = useTranslations('Home.Introduction')
-  const locale = useLocale()
   const containerRef = useRef<HTMLDivElement>(null)
   const charScrollRef = useRef<HTMLDivElement>(null)
 
