@@ -13,7 +13,7 @@ gsap.config({
 
 const Introduction = () => {
   const t = useTranslations('Home.Introduction')
-    const locale = useLocale()
+  const locale = useLocale()
   const containerRef = useRef<HTMLDivElement>(null)
   const charScrollRef = useRef<HTMLDivElement>(null)
 
@@ -75,7 +75,7 @@ const Introduction = () => {
           <div
             ref={charScrollRef}
             data-splitting
-            className="text-center text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] md:text-[28px] break-keep"
+            className="break-keep text-center text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] md:text-[28px]"
           >
             {t('Headline1')} <br />
             <br />

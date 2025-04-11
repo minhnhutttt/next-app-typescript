@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 }
 
 const IndexPage = () => {
-  
   return (
     <div className="overflow-hidden">
       <FV />

@@ -1,10 +1,10 @@
 'use client'
 
-import { useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl'
 import { useEffect } from 'react'
 
 const Message = () => {
-  const t = useTranslations('Home.Message');
+  const t = useTranslations('Home.Message')
   useEffect(() => {
     const init = async () => {
       const Splitting = await import('splitting')

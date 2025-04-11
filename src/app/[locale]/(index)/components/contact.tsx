@@ -14,7 +14,7 @@ gsap.config({
 })
 
 const Contact = () => {
-  const t = useTranslations('Home.Contact');
+  const t = useTranslations('Home.Contact')
   const bgLineRef = useRef<HTMLDivElement>(null)
   const applyRef = useRef<HTMLElement>(null)
   const contactSectionRef = useRef<HTMLElement>(null)

@@ -7,7 +7,7 @@ export default function LangSwitcher() {
 
   const createLanguageLink = (targetLocale: string) => {
     const pathWithoutLocale = pathname.replace(`/${locale}`, '')
-    
+
     return `/${targetLocale}${pathWithoutLocale}`
   }
 
@@ -17,14 +17,14 @@ export default function LangSwitcher() {
   return (
     <div className="flex h-[50px] w-[100px] items-center justify-center rounded-[80px] border border-black bg-white md:w-[128px]">
       <p className="flex h-[25px] items-center justify-center text-[16px] text-[#111111]/[0.4] md:text-[21px]">
-        <a 
+        <a
           href={enLink}
           className={`${locale === 'en' ? 'text-[#F34927]' : ''}`}
         >
           EN
         </a>
         <span className="mx-2 h-[25px] w-px bg-[#111111]"></span>
-        <a 
+        <a
           href={jpLink}
           className={`${locale === 'jp' ? 'text-[#F34927]' : ''}`}
         >

@@ -125,7 +125,7 @@ const FV = () => {
         ScrollTrigger.refresh()
       }
     }
-      initAnimation()
+    initAnimation()
 
     return () => {
       if (st) {
@@ -164,7 +164,7 @@ const FV = () => {
                 <h1
                   ref={charScrollRef}
                   data-splitting
-                  className="relative z-50 text-center text-[10vw] font-bold leading-[1.8] text-[#FAE2D7] [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff] md:text-[72px]"
+                  className="relative z-50 text-center text-[10vw] font-bold leading-[1.8] text-[#FAE2D7] [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff] md:text-[72px] px-4"
                 >
                   {locale === 'en' ? (
                     <>
@@ -177,9 +177,9 @@ const FV = () => {
                   ) : (
                     <>
                       {t('Unleashing')}
-                      <br />
+                      <br className="max-md:hidden" />
                       {t('Global')}
-                      <br />
+                      <br className="max-md:hidden" />
                       {t('Entertainment')}
                     </>
                   )}

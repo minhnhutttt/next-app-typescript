@@ -11,8 +11,6 @@ gsap.config({
   nullTargetWarn: false,
 })
 
-
-
 const AboutItem = ({
   title,
   content,
@@ -129,9 +127,9 @@ const AboutItem = ({
 }
 
 const AboutContent = () => {
-  const t = useTranslations('About');
-  const tTrends = useTranslations('About.Trends');
-  const tBusinesss = useTranslations('About.Business');
+  const t = useTranslations('About')
+  const tTrends = useTranslations('About.Trends')
+  const tBusinesss = useTranslations('About.Business')
   const animationRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const sliderRef = useRef<HTMLDivElement>(null)
@@ -147,15 +145,14 @@ const AboutContent = () => {
     },
     {
       title: tTrends('CrossCulturalAppeal'),
-      description:
-      tTrends('CrossCulturalAppealDescription'),
+      description: tTrends('CrossCulturalAppealDescription'),
     },
     {
       title: tTrends('EmergingMarkets'),
       description: tTrends('EmergingMarketsDescription'),
     },
   ]
-  
+
   const business = [
     {
       id: 1,
@@ -232,11 +229,7 @@ const AboutContent = () => {
               VISION
             </>
           }
-          content={
-            <p>
-              {t('CompanyVision')}
-            </p>
-          }
+          content={<p>{t('CompanyVision')}</p>}
           image="/assets/images/about/about-01.png"
         />
       </div>
@@ -248,11 +241,7 @@ const AboutContent = () => {
               OVERVIEW
             </>
           }
-          content={
-            <p>
-              {t('MarketOverview')}
-            </p>
-          }
+          content={<p>{t('MarketOverview')}</p>}
           image="/assets/images/about/about-02.png"
           even
         />
@@ -280,9 +269,7 @@ const AboutContent = () => {
             data-scroll="out"
             className="ani-fade-up mt-8 text-center text-[18px] font-bold md:mt-[60px] md:text-[24px]"
           >
-            <p>
-            {tTrends('Text')}
-            </p>
+            <p>{tTrends('Text')}</p>
           </div>
         </div>
       </div>
@@ -294,11 +281,7 @@ const AboutContent = () => {
               APPROACH
             </>
           }
-          content={
-            <p>
-              {t('BusinessApproach')}
-            </p>
-          }
+          content={<p>{t('BusinessApproach')}</p>}
           image="/assets/images/about/about-03.png"
         />
         <div className="relative mt-12 w-full pb-20 md:mt-[-60px]">

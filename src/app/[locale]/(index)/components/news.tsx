@@ -18,7 +18,7 @@ interface SlideItem {
 }
 
 const News = () => {
-  const t = useTranslations('Home.News');
+  const t = useTranslations('Home.News')
   const [swiperRef, setSwiperRef] = useState<SwiperClass | null>(null)
 
   const slidesData: SlideItem[] = [
@@ -26,7 +26,7 @@ const News = () => {
       id: 1,
       image: '/assets/images/home/news/slider-img-01.jpg',
       title: t('slide1_title'),
-      type: "press",
+      type: 'press',
       head: t('slide1_head'),
       content: t('slide1_content'),
     },
@@ -34,7 +34,7 @@ const News = () => {
       id: 2,
       image: '/assets/images/home/news/slider-img-02.jpg',
       title: t('slide2_title'),
-      type: "press",
+      type: 'press',
       head: t('slide2_head'),
       content: t('slide2_content'),
     },
@@ -42,7 +42,7 @@ const News = () => {
       id: 3,
       image: '/assets/images/home/news/slider-img-03.jpg',
       title: t('slide3_title'),
-      type: "event",
+      type: 'event',
       head: t('slide3_head'),
       content: t('slide3_content'),
     },

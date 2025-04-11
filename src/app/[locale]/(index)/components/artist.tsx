@@ -9,10 +9,8 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { useTranslations } from 'next-intl'
 
-
-
 const Artist = () => {
-  const t = useTranslations('Home.Artist');
+  const t = useTranslations('Home.Artist')
   const data = [
     {
       id: 1,

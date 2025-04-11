@@ -1,13 +1,13 @@
 'use client'
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl'
 
 const MemberContent = () => {
-  const tNariyukiTerada = useTranslations('Members.NariyukiTerada');
-  const tHideyoshiAkita = useTranslations('Members.HideyoshiAkita');
-  const tYutakaKanagawa = useTranslations('Members.YutakaKanagawa');
-  const tYoshiyaKato = useTranslations('Members.YoshiyaKato');
-  
+  const tNariyukiTerada = useTranslations('Members.NariyukiTerada')
+  const tHideyoshiAkita = useTranslations('Members.HideyoshiAkita')
+  const tYutakaKanagawa = useTranslations('Members.YutakaKanagawa')
+  const tYoshiyaKato = useTranslations('Members.YoshiyaKato')
+
   return (
     <div className="mb-24 px-5 md:mb-[160px]">
       <div className="mx-auto w-full max-w-[1200px] space-y-24 md:space-y-[160px]">
@@ -36,9 +36,10 @@ const MemberContent = () => {
               <p
                 data-scroll
                 className="ani-fade-up text-[12px] leading-[1.1] md:text-[14px]"
-                dangerouslySetInnerHTML={{ __html: tNariyukiTerada.raw('Introduction') }}
-              >
-              </p>
+                dangerouslySetInnerHTML={{
+                  __html: tNariyukiTerada.raw('Introduction'),
+                }}
+              ></p>
             </div>
             <div data-scroll className="ani-fade-up">
               <img
@@ -57,8 +58,12 @@ const MemberContent = () => {
               </span>
               <span className="h-px flex-1 bg-[#111]"></span>
             </div>
-            <p className="mt-4 px-4 text-[12px] leading-loose tracking-widest md:px-[30px] md:text-[14px]" dangerouslySetInnerHTML={{ __html: tNariyukiTerada.raw('Mesage') }}>
-            </p>
+            <p
+              className="mt-4 px-4 text-[12px] leading-loose tracking-widest md:px-[30px] md:text-[14px]"
+              dangerouslySetInnerHTML={{
+                __html: tNariyukiTerada.raw('Mesage'),
+              }}
+            ></p>
           </div>
         </div>
 
@@ -78,9 +83,10 @@ const MemberContent = () => {
                 <p
                   data-scroll
                   className="ani-fade-up text-[12px] leading-[1.4] md:text-[14px]"
-                  dangerouslySetInnerHTML={{ __html: tHideyoshiAkita.raw('Introduction') }}
-                >
-                </p>
+                  dangerouslySetInnerHTML={{
+                    __html: tHideyoshiAkita.raw('Introduction'),
+                  }}
+                ></p>
               </div>
             </div>
           </div>
@@ -100,9 +106,10 @@ const MemberContent = () => {
                 <p
                   data-scroll
                   className="ani-fade-up text-[12px] leading-[1.4] md:text-[14px]"
-                  dangerouslySetInnerHTML={{ __html: tYutakaKanagawa.raw('Introduction') }}
-                >
-                </p>
+                  dangerouslySetInnerHTML={{
+                    __html: tYutakaKanagawa.raw('Introduction'),
+                  }}
+                ></p>
               </div>
             </div>
           </div>
@@ -122,10 +129,10 @@ const MemberContent = () => {
                 <p
                   data-scroll
                   className="text-[12px] leading-[1.4] md:text-[14px]"
-                  dangerouslySetInnerHTML={{ __html: tYoshiyaKato.raw('Introduction') }}
-                >
-                  
-                </p>
+                  dangerouslySetInnerHTML={{
+                    __html: tYoshiyaKato.raw('Introduction'),
+                  }}
+                ></p>
               </div>
             </div>
           </div>

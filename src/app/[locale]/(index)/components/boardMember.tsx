@@ -1,9 +1,9 @@
 'use client'
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl'
 
 const BoardMember = () => {
-  const t = useTranslations('Home.BoardMember');
+  const t = useTranslations('Home.BoardMember')
   return (
     <section className="relative mt-4 overflow-hidden px-5 pb-[120px] md:mt-8 md:pb-[272px]">
       <div className="px-5 text-[#F34927]">
@@ -40,8 +40,7 @@ const BoardMember = () => {
             data-scroll
             className="ani-slide-bottom mt-12 text-[15px] leading-[1.8] tracking-widest md:mt-20 md:text-[18px]"
             dangerouslySetInnerHTML={{ __html: t.raw('MemberIntro') }}
-          >
-          </p>
+          ></p>
           <div
             data-scroll
             className="ani-slide-bottom mt-8 flex justify-end md:mt-12"
