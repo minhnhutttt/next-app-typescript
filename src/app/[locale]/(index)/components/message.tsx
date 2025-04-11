@@ -1,8 +1,10 @@
 'use client'
 
+import { useTranslations } from 'next-intl';
 import { useEffect } from 'react'
 
 const Message = () => {
+  const t = useTranslations('Home.Message');
   useEffect(() => {
     const init = async () => {
       const Splitting = await import('splitting')
@@ -34,9 +36,7 @@ const Message = () => {
             data-scroll
             className="ani-slide-bottom text-[20px] tracking-widest md:text-[36px]"
           >
-            A NEXUS offers comprehensive production and promotion services, from
-            stage design to  original content creation and global marketing
-            campaigns.
+            {t('Headline')}
           </p>
           <div
             data-scroll

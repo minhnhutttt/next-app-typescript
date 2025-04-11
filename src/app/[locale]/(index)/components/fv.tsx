@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import { useLocale, useTranslations } from 'next-intl'
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.config({
@@ -11,6 +12,8 @@ gsap.config({
 })
 
 const FV = () => {
+  const t = useTranslations('Home.Fv')
+  const locale = useLocale()
   const containerRef = useRef<HTMLDivElement>(null)
   const containerWrapRef = useRef<HTMLDivElement>(null)
   const anexusTop = useRef<HTMLDivElement>(null)
@@ -26,7 +29,7 @@ const FV = () => {
 
       const timer = setTimeout(() => {
         setIsLoading(false)
-      }, 2000)
+      }, 1000)
 
       return () => {
         clearTimeout(timer)
@@ -70,7 +73,7 @@ const FV = () => {
             .to(anexus.current, {
               opacity: 1,
               duration: 1,
-              delay: 2,
+              delay: 1,
             })
             .to(anexusTop.current, {
               yPercent: -70,
@@ -122,11 +125,7 @@ const FV = () => {
         ScrollTrigger.refresh()
       }
     }
-    setTimeout(() => {
       initAnimation()
-      console.log(1)
-    }, 1000)
-    
 
     return () => {
       if (st) {
@@ -167,11 +166,23 @@ const FV = () => {
                   data-splitting
                   className="relative z-50 text-center text-[10vw] font-bold leading-[1.8] text-[#FAE2D7] [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff] md:text-[72px]"
                 >
-                  Unleashing <br className="md:hidden" />
-                  Global <br />
-                  Entertainment <br className="md:hidden" />
-                  Value <br />
-                  Across Borders
+                  {locale === 'en' ? (
+                    <>
+                      {t('Unleashing')} <br className="md:hidden" />
+                      {t('Global')} <br />
+                      {t('Entertainment')} <br className="md:hidden" />
+                      {t('Value')} <br />
+                      {t('AcrossBorders')}
+                    </>
+                  ) : (
+                    <>
+                      {t('Unleashing')}
+                      <br />
+                      {t('Global')}
+                      <br />
+                      {t('Entertainment')}
+                    </>
+                  )}
                 </h1>
               </div>
             </div>

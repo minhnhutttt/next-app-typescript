@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-
 import { Swiper as SwiperClass } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import { useTranslations, useLocale } from 'next-intl'
 
 interface SlideItem {
   id: number
@@ -17,38 +17,36 @@ interface SlideItem {
   content: string
 }
 
-const slides: SlideItem[] = [
-  {
-    id: 1,
-    image: '/assets/images/home/news/slider-img-01.jpg',
-    title: 'PRESS RELEASE',
-    type: 'press',
-    head: 'A NEXUS to Host Press Conference in the Philippines ',
-    content:
-      'A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.',
-  },
-  {
-    id: 2,
-    image: '/assets/images/home/news/slider-img-02.jpg',
-    title: 'PRESS RELEASE',
-    type: 'press',
-    head: 'A NEXUS to Host Press Conference in the Philippines ',
-    content:
-      'A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.',
-  },
-  {
-    id: 3,
-    image: '/assets/images/home/news/slider-img-03.jpg',
-    title: 'EVENT',
-    type: 'event',
-    head: 'A NEXUS to Host Press Conference in the Philippines ',
-    content:
-      'A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.',
-  },
-]
-
 const News = () => {
+  const t = useTranslations('Home.News');
   const [swiperRef, setSwiperRef] = useState<SwiperClass | null>(null)
+
+  const slidesData: SlideItem[] = [
+    {
+      id: 1,
+      image: '/assets/images/home/news/slider-img-01.jpg',
+      title: t('slide1_title'),
+      type: "press",
+      head: t('slide1_head'),
+      content: t('slide1_content'),
+    },
+    {
+      id: 2,
+      image: '/assets/images/home/news/slider-img-02.jpg',
+      title: t('slide2_title'),
+      type: "press",
+      head: t('slide2_head'),
+      content: t('slide2_content'),
+    },
+    {
+      id: 3,
+      image: '/assets/images/home/news/slider-img-03.jpg',
+      title: t('slide3_title'),
+      type: "event",
+      head: t('slide3_head'),
+      content: t('slide3_content'),
+    },
+  ]
 
   return (
     <div className="relative mx-auto w-full">
@@ -71,7 +69,7 @@ const News = () => {
           onSwiper={setSwiperRef}
           className="w-full"
         >
-          {slides.map((slide) => (
+          {slidesData.map((slide) => (
             <SwiperSlide
               key={slide.id}
               className="mx-1.5 !w-[330px] md:mx-5 md:!w-[430px]"

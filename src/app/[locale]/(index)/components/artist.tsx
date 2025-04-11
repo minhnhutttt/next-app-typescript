@@ -7,51 +7,33 @@ import { Autoplay, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import { useTranslations } from 'next-intl'
 
-const data = [
-  {
-    id: 1,
-    image: '/assets/images/home/artists/artist-img-02.png',
-    name: 'Quadlips',
-    content: (
-      <>
-        Quadlips is the first AKB48 group unit formed by selected members from
-        sister groups across Asia. <br />
-        Announced on October 29, 2023 at BNK48 Cherprang's graduation concert,
-        the group begins activities in Bangkok.
-        <br />
-        Their global digital debut is scheduled for March 2024.
-        <br />
-        Starting from Thailand, Indonesia, Japan, and the Philippines, Quadlips
-        will expand across Southeast Asia.
-      </>
-    ),
-  },
-  {
-    id: 2,
-    image: '/assets/images/home/artists/artist-img-01.png',
-    name: 'SHEKI ARZAGA',
-    content: (
-      <>
-        Singer-Songwriter SHEKI ARZAGA has been playing a major role as a lead
-        vocalist in MNL48 Manila, Philippines which since 2018 has been a very
-        popular sister affiliate of AKB48, the all-female, theatre-based "idol"
-        collective from Japan. Named after the Akihabara area in Tokyo, where
-        the group's theater is located AKB48 is certified as the largest pop
-        group in the world by The Guinness World Records.
-      </>
-    ),
-  },
-  {
-    id: 3,
-    image: '',
-    name: '',
-    content: <></>,
-    comming: true,
-  },
-]
+
 
 const Artist = () => {
+  const t = useTranslations('Home.Artist');
+  const data = [
+    {
+      id: 1,
+      image: '/assets/images/home/artists/artist-img-02.png',
+      name: 'Quadlips',
+      content: t('slide1_content'),
+    },
+    {
+      id: 2,
+      image: '/assets/images/home/artists/artist-img-01.png',
+      name: 'SHEKI ARZAGA',
+      content: t('slide2_content'),
+    },
+    {
+      id: 3,
+      image: '',
+      name: '',
+      content: <></>,
+      comming: true,
+    },
+  ]
   const [slideHeight, setSlideHeight] = useState(0)
 
   useEffect(() => {

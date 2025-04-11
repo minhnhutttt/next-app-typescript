@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import Button from '@/app/[locale]/components/button'
+import { useTranslations } from 'next-intl'
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.config({
@@ -13,6 +14,7 @@ gsap.config({
 })
 
 const Contact = () => {
+  const t = useTranslations('Home.Contact');
   const bgLineRef = useRef<HTMLDivElement>(null)
   const applyRef = useRef<HTMLElement>(null)
   const contactSectionRef = useRef<HTMLElement>(null)
@@ -79,11 +81,10 @@ const Contact = () => {
               <span>CONTACT</span>
             </h2>
             <p className="mt-6 text-center text-[20px] font-semibold tracking-widest md:mt-10 md:text-[32px]">
-              For Investors & Media
+              {t('InvestorsMedia')}
             </p>
             <p className="mx-auto mt-7 w-[340px] text-[15px] md:w-[640px] md:text-[18px]">
-              Interested in learning more about investment opportunities or
-              media inquiries? Our team is ready to assist you.
+              {t('Content')}
             </p>
             <div className="mt-[50px] flex justify-center md:mt-[72px]">
               <Button
@@ -103,14 +104,14 @@ const Contact = () => {
       >
         <div className="">
           <p className="text-center text-[24px] font-semibold tracking-widest text-white md:text-[32px]">
-            Aspiring Artists & Performers
+            {t('InvestorsMedia')}
           </p>
           <div className="mt-[30px] flex justify-center md:mt-[60px]">
             <Button
               href="maito:info@a-nexus.com"
               rect="md:w-[340px] w-[300px] h-20 md:h-[110px] flex items-center justify-center bg-white rounded-full md:text-[30px] text-[20px] text-[#F34927]"
             >
-              Apply as Artist
+              {t('Apply')}
             </Button>
           </div>
         </div>

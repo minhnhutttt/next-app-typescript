@@ -4,6 +4,7 @@ import { useLayoutEffect, useRef } from 'react'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useLocale, useTranslations } from 'use-intl'
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.config({
@@ -11,6 +12,8 @@ gsap.config({
 })
 
 const Introduction = () => {
+  const t = useTranslations('Home.Introduction')
+    const locale = useLocale()
   const containerRef = useRef<HTMLDivElement>(null)
   const charScrollRef = useRef<HTMLDivElement>(null)
 
@@ -64,7 +67,7 @@ const Introduction = () => {
       id="introduction"
       className="relative mt-[calc(100vh)] overflow-hidden px-5 md:px-10"
     >
-      <div className="mx-auto w-full max-w-[980px] text-[#ADADAD]">
+      <div className="mx-auto w-full max-w-[990px] text-[#ADADAD]">
         <div
           ref={containerRef}
           className="flex max-h-screen flex-col items-center justify-center max-md:py-[200px] md:h-screen"
@@ -72,19 +75,14 @@ const Introduction = () => {
           <div
             ref={charScrollRef}
             data-splitting
-            className="text-center text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] md:text-[28px]"
+            className="text-center text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] md:text-[28px] break-keep"
           >
-            A NEXUS connects North America, ASEAN, and East Asian markets,
-            creating a seamless  flow of entertainment content and bringing
-            mutual benefits to all regions. <br />
+            {t('Headline1')} <br />
             <br />
-            Through our  comprehensive business approach, we maximize the value
-            of entertainment rights while  supporting creators and artists.
+            {t('Headline2')}
             <br />
             <br />
-            We aim to be the definitive platform holder that delivers  premium
-            entertainment experiences worldwide through strategic integration
-            across the entire  value chain.
+            {t('Headline3')}
           </div>
         </div>
       </div>

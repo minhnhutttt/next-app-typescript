@@ -4,79 +4,14 @@ import { ReactNode, useEffect, useLayoutEffect, useRef } from 'react'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useTranslations } from 'next-intl'
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.config({
   nullTargetWarn: false,
 })
 
-const trends = [
-  {
-    title: 'Content Convergence',
-    description:
-      'Boundaries between anime, gaming, film, and music continue to blur, creating demand for comprehensive rights management',
-  },
-  {
-    title: 'Digital Transformation',
-    description:
-      'Streaming platforms are revolutionizing content consumption patterns globally',
-  },
-  {
-    title: 'Cross-Cultural Appeal',
-    description:
-      'Asian entertainment content is experiencing explosive popularity in Western markets',
-  },
-  {
-    title: 'Emerging Markets',
-    description:
-      'ASEAN countries represent the next frontier of entertainment consumption growth',
-  },
-]
 
-const business = [
-  {
-    id: 1,
-    title: 'Rights Acquisition & Management',
-    description:
-      'Strategic acquisition and optimization of  entertainment IP rights across multiple markets, with specialized legal expertise in cross border licensing ',
-  },
-  {
-    id: 2,
-    title: 'Cross-Platform Distribution',
-    description:
-      'Facilitating content distribution across diverse platforms and  regions, leveraging proprietary technology and market intelligence ',
-  },
-  {
-    id: 3,
-    title: 'Production Services',
-    description: (
-      <>
-        Enabling content creation through financing, production support,
-        <br />
-        and creative development tailored to both local and global audience
-        preferences
-      </>
-    ),
-  },
-  {
-    id: 4,
-    title: 'Market Access',
-    description:
-      'Providing established channels and cultural expertise for content creators  to successfully enter and thrive in new markets ',
-  },
-  {
-    id: 5,
-    title: 'Brand Development',
-    description:
-      'Transforming entertainment properties into global franchises  through strategic promotion and localized marketing approaches',
-  },
-  {
-    id: 6,
-    title: 'Technology Integration',
-    description:
-      'Implementing cutting-edge digital solutions that enhance  discovery, consumption, and monetization of content across borders',
-  },
-]
 
 const AboutItem = ({
   title,
@@ -194,9 +129,65 @@ const AboutItem = ({
 }
 
 const AboutContent = () => {
+  const t = useTranslations('About');
+  const tTrends = useTranslations('About.Trends');
+  const tBusinesss = useTranslations('About.Business');
   const animationRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const sliderRef = useRef<HTMLDivElement>(null)
+
+  const trends = [
+    {
+      title: tTrends('ContentConvergence'),
+      description: tTrends('ContentConvergenceDescription'),
+    },
+    {
+      title: tTrends('DigitalTransformation'),
+      description: tTrends('DigitalTransformationDescription'),
+    },
+    {
+      title: tTrends('CrossCulturalAppeal'),
+      description:
+      tTrends('CrossCulturalAppealDescription'),
+    },
+    {
+      title: tTrends('EmergingMarkets'),
+      description: tTrends('EmergingMarketsDescription'),
+    },
+  ]
+  
+  const business = [
+    {
+      id: 1,
+      title: tBusinesss('RightsAcquisitionManagement'),
+      description: tBusinesss('RightsAcquisitionManagementDescription'),
+    },
+    {
+      id: 2,
+      title: tBusinesss('CrossPlatformDistribution'),
+      description: tBusinesss('CrossPlatformDistributionDescription'),
+    },
+    {
+      id: 3,
+      title: tBusinesss('ProductionServices'),
+      description: tBusinesss('ProductionServicesDescription'),
+    },
+    {
+      id: 4,
+      title: tBusinesss('MarketAccess'),
+      description: tBusinesss('MarketAccessDescription'),
+    },
+    {
+      id: 5,
+      title: tBusinesss('BrandDevelopment'),
+      description: tBusinesss('BrandDevelopmentDescription'),
+    },
+    {
+      id: 6,
+      title: tBusinesss('TechnologyIntegration'),
+      description: tBusinesss('TechnologyIntegrationDescription'),
+    },
+  ]
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -243,15 +234,7 @@ const AboutContent = () => {
           }
           content={
             <p>
-              A NEXUS stands at the intersection of global entertainment
-              markets, serving as the vital gateway connecting North America,
-              ASEAN, and East Asian creative economies. We envision a world
-              where cultural exchange through entertainment transcends
-              traditional barriers, creating unprecedented value for creators,
-              investors, and audiences alike. Our mission is to establish the
-              definitive platform for cross-border entertainment rights
-              management and content distribution, leveraging our deep industry
-              expertise and strategic global presence.
+              {t('CompanyVision')}
             </p>
           }
           image="/assets/images/about/about-01.png"
@@ -267,9 +250,7 @@ const AboutContent = () => {
           }
           content={
             <p>
-              The global entertainment and media market continues to experience
-              unprecedented growth, with Asia Pacific emerging as the
-              fastest-growing region. Key trends driving our strategic position
+              {t('MarketOverview')}
             </p>
           }
           image="/assets/images/about/about-02.png"
@@ -300,8 +281,7 @@ const AboutContent = () => {
             className="ani-fade-up mt-8 text-center text-[18px] font-bold md:mt-[60px] md:text-[24px]"
           >
             <p>
-              A NEXUS is uniquely positioned at the center of these converging
-              trends.
+            {tTrends('Text')}
             </p>
           </div>
         </div>
@@ -316,8 +296,7 @@ const AboutContent = () => {
           }
           content={
             <p>
-              A NEXUS creates value through an integrated, end-to-end approach
-              to entertainment business
+              {t('BusinessApproach')}
             </p>
           }
           image="/assets/images/about/about-03.png"

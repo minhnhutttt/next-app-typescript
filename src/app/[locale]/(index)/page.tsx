@@ -23,12 +23,9 @@ export const metadata: Metadata = {
 }
 
 const IndexPage = () => {
-  const t = useTranslations('Index')
+  
   return (
     <div className="overflow-hidden">
-      <div>
-        <h1>{t('title')}</h1>
-      </div>
       <FV />
       <div className="bg-[linear-gradient(180deg,_#FFF_0%,_#FF711C_100%)]">
         <Introduction />

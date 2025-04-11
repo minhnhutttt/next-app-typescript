@@ -1,6 +1,9 @@
 'use client'
 
+import { useTranslations } from "next-intl";
+
 const BoardMember = () => {
+  const t = useTranslations('Home.BoardMember');
   return (
     <section className="relative mt-4 overflow-hidden px-5 pb-[120px] md:mt-8 md:pb-[272px]">
       <div className="px-5 text-[#F34927]">
@@ -14,8 +17,7 @@ const BoardMember = () => {
           data-scroll
           className="ani-slide-bottom mx-auto w-full max-w-[910px] text-[16px] leading-[1.8] tracking-widest max-md:mt-5 md:text-[24px]"
         >
-          Meet our visionary leadership team bringing together decades of
-          experience in global entertainment markets.
+          <span dangerouslySetInnerHTML={{ __html: t.raw('Headline') }}></span>
         </p>
       </div>
       <div className="mx-auto mt-[100px] flex w-full max-w-[440px] items-center justify-between gap-8 max-md:flex-col-reverse md:mt-[240px] md:max-w-[1090px] xl:gap-[100px]">
@@ -37,12 +39,8 @@ const BoardMember = () => {
           <p
             data-scroll
             className="ani-slide-bottom mt-12 text-[15px] leading-[1.8] tracking-widest md:mt-20 md:text-[18px]"
+            dangerouslySetInnerHTML={{ __html: t.raw('MemberIntro') }}
           >
-            Meet the exceptional minds behind our vision. <br />
-            From leading global entertainment companies to launching
-            international icons, our board brings unmatched expertise and proven
-            success. <br />
-            Discover how each member is shaping the future.
           </p>
           <div
             data-scroll
