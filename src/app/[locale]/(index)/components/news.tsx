@@ -1,0 +1,176 @@
+'use client'
+
+import { useState } from 'react'
+
+import { Swiper as SwiperClass } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+
+interface SlideItem {
+  id: number
+  image: string
+  title: string
+  type: string
+  head: string
+  content: string
+}
+
+const slides: SlideItem[] = [
+  {
+    id: 1,
+    image: '/assets/images/home/news/slider-img-01.jpg',
+    title: 'PRESS RELEASE',
+    type: 'press',
+    head: 'A NEXUS to Host Press Conference in the Philippines ',
+    content:
+      'A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.',
+  },
+  {
+    id: 2,
+    image: '/assets/images/home/news/slider-img-02.jpg',
+    title: 'PRESS RELEASE',
+    type: 'press',
+    head: 'A NEXUS to Host Press Conference in the Philippines ',
+    content:
+      'A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.',
+  },
+  {
+    id: 3,
+    image: '/assets/images/home/news/slider-img-03.jpg',
+    title: 'EVENT',
+    type: 'event',
+    head: 'A NEXUS to Host Press Conference in the Philippines ',
+    content:
+      'A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.',
+  },
+]
+
+const News = () => {
+  const [swiperRef, setSwiperRef] = useState<SwiperClass | null>(null)
+
+  return (
+    <div className="relative mx-auto w-full">
+      <span className="absolute inset-x-0 bottom-0 h-[60%] bg-white"></span>
+      <div className="px-5 md:px-[60px]">
+        <h2
+          data-scroll
+          className="text--enter overflow-hidden text-[clamp(20px,7.5vw,60px)] font-semibold tracking-widest md:text-[64px] xl:text-[128px]"
+        >
+          <span data-splitting>NEWS</span>
+        </h2>
+      </div>
+      <div
+        data-scroll
+        className="ani-fade-up relative mx-auto mt-[36px] w-full max-w-[1410px] pb-20 md:mt-[52px]"
+      >
+        <Swiper
+          modules={[Navigation]}
+          slidesPerView={'auto'}
+          onSwiper={setSwiperRef}
+          className="w-full"
+        >
+          {slides.map((slide) => (
+            <SwiperSlide
+              key={slide.id}
+              className="mx-1.5 !w-[330px] md:mx-5 md:!w-[430px]"
+            >
+              <div className="relative">
+                <div className="group relative overflow-hidden rounded-[30px]">
+                  <div className="h-full w-full [box-shadow:0px_0px_80px_0px_rgba(250,_226,_215,_0.10)]">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+
+                  <div className="absolute bottom-20 left-5 z-10 group-hover:opacity-0">
+                    <span className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
+                      {slide.title}
+                    </span>
+                  </div>
+
+                  <div className="absolute inset-x-0 bottom-0 flex h-[80%] translate-y-full flex-col items-center justify-center rounded-[30px] bg-black/60 px-6 py-8 transition-transform duration-300 group-hover:translate-y-0 md:px-[50px]">
+                    <div className="space-y-6 text-white md:space-y-10">
+                      <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
+                        {slide.title}
+                      </p>
+                      <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
+                        {slide.head}
+                      </p>
+                      <p className="text-[13px] md:text-[16px]">
+                        {slide.content}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className="z-20 flex justify-end space-x-5 px-5 py-5 md:px-12">
+          <button
+            onClick={() => swiperRef?.slidePrev()}
+            className="flex size-[40px] items-center justify-center transition-colors md:size-[72px]"
+          >
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="24"
+                cy="24"
+                r="24"
+                transform="matrix(-1 0 0 1 49 1)"
+                stroke="#111111"
+                strokeWidth="2"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M30.25 13.75C25.5637 18.4363 22.9363 21.0637 18.25 25.75L30.25 37.75"
+                stroke="#111111"
+                strokeWidth="2"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={() => swiperRef?.slideNext()}
+            className="flex size-[40px] items-center justify-center transition-colors md:size-[72px]"
+          >
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="24"
+                stroke="#111111"
+                strokeWidth="2"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M19.75 13.75C24.4363 18.4363 27.0637 21.0637 31.75 25.75L19.75 37.75"
+                stroke="#111111"
+                strokeWidth="2"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default News

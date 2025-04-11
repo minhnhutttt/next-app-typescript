@@ -1,0 +1,11 @@
+{
+    "Index": {
+      "title": "Chào mừng đến với trang web của chúng tôi",
+      "description": "Đây là trang web đa ngôn ngữ được xây dựng bằng Next.js và TypeScript"
+    },
+    "Navigation": {
+      "home": "Trang chủ",
+      "about": "Giới thiệu",
+      "contact": "Liên hệ"
+    }
+  }
