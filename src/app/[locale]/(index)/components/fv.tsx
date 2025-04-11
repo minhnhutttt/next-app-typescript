@@ -20,6 +20,7 @@ const FV = () => {
   const anexusMid = useRef<HTMLDivElement>(null)
   const anexusBottom = useRef<HTMLDivElement>(null)
   const anexus = useRef<HTMLDivElement>(null)
+  const arrowRef = useRef<HTMLDivElement>(null)
   const charScrollRef = useRef<HTMLHeadingElement>(null)
   const [isLoading, setIsLoading] = useState<boolean>(true)
   useEffect(() => {
@@ -43,8 +44,6 @@ const FV = () => {
   }, [isLoading])
 
   useEffect(() => {
-    let st: ScrollTrigger | null = null
-
     const initAnimation = async () => {
       const Splitting: { default: () => void } = await import('splitting')
       Splitting.default()
@@ -67,6 +66,16 @@ const FV = () => {
         const startTl = gsap.timeline()
         gsap.set(anexus.current, {
           opacity: 0,
+        })
+        gsap.set(
+          charScroll,
+          {
+            opacity: 0,
+            filter: "blur(4px)",
+          },
+        )
+        gsap.set(containerWrapRef.current, {
+          scale: 0.94
         })
         if (isLoading) {
           startTl
@@ -91,48 +100,26 @@ const FV = () => {
               opacity: 0.7,
               duration: 0.2,
             })
+            .to(containerWrapRef.current, {
+              opacity: 1,
+              scale: 1,
+              duration: 2
+            }).to(
+              charScroll,
+              {
+                stagger: 0.04,
+                opacity: 1,
+                duration: 0.8,
+                filter: "blur(0px)",
+              }, "<"
+            ).to(arrowRef.current, {
+              opacity: 1,
+              duration: 0.8
+            })
         }
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            id: 'fv-scroll-trigger',
-            trigger: containerRef.current,
-            start: 'top top',
-            end: 'bottom top',
-            pin: true,
-            pinSpacing: true,
-            scrub: 0.9,
-            anticipatePin: 1,
-          },
-        })
-
-        if (tl.scrollTrigger) {
-          st = tl.scrollTrigger as ScrollTrigger
-        }
-
-        tl.to(containerWrapRef.current, {
-          opacity: 1,
-        }).to(
-          charScroll,
-          {
-            stagger: 1,
-            duration: 1,
-            color: '#F34927',
-          },
-          0.1
-        )
-
-        ScrollTrigger.refresh()
       }
     }
     initAnimation()
-
-    return () => {
-      if (st) {
-        st.kill()
-      }
-      ScrollTrigger.getById('fv-scroll-trigger')?.kill()
-    }
   }, [])
 
   return (
@@ -164,26 +151,33 @@ const FV = () => {
                 <h1
                   ref={charScrollRef}
                   data-splitting
-                  className="relative z-50 text-center text-[10vw] font-bold leading-[1.8] text-[#FAE2D7] [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff] md:text-[72px] px-4"
+                  className="relative z-50 px-4 text-center text-[10vw] font-bold leading-[1.8] text-[#F34927] [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff] md:text-[72px]"
                 >
                   {locale === 'en' ? (
                     <>
-                      {t('Unleashing')} <br className="md:hidden" />
-                      {t('Global')} <br />
-                      {t('Entertainment')} <br className="md:hidden" />
-                      {t('Value')} <br />
+                      {t('Unleashing')}<br className="md:hidden" />
+                      {t('Global')}<br />
+                      {t('Entertainment')}<br className="md:hidden" />
+                      {t('Value')}<br />
                       {t('AcrossBorders')}
                     </>
                   ) : (
                     <>
                       {t('Unleashing')}
-                      <br className="max-md:hidden" />
+                      <br className="max-lg:hidden" />
                       {t('Global')}
-                      <br className="max-md:hidden" />
+                      <br className="max-lg:hidden" />
                       {t('Entertainment')}
                     </>
                   )}
                 </h1>
+                <div ref={arrowRef} className="absolute opacity-0 md:bottom-10 bottom-6 left-1/2 -translate-x-1/2 flex justify-center items-center">
+                <svg className="arrows w-10 md:w-[60px] aspect-[60/72]" viewBox="0 0 60 72">
+                  <path className="animate-[arrow_2s_infinite] [animation-delay:-1s] stroke-[#F34927] fill-transparent stroke-1" d="M0 0 L30 32 L60 0"></path>
+                  <path className="animate-[arrow_2s_infinite] [animation-delay:-0.5s] stroke-[#F34927] fill-transparent stroke-1" d="M0 20 L30 52 L60 20"></path>
+                  <path className="animate-[arrow_2s_infinite] [animation-delay:0s] stroke-[#F34927] fill-transparent stroke-1" d="M0 40 L30 72 L60 40"></path>
+                </svg>
+                </div>
               </div>
             </div>
           </div>

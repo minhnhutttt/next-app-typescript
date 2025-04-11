@@ -64,7 +64,7 @@ const Introduction = () => {
   return (
     <section
       id="introduction"
-      className="relative mt-[calc(100vh)] overflow-hidden px-5 md:px-10"
+      className="relative overflow-hidden px-5 md:px-10"
     >
       <div className="mx-auto w-full max-w-[990px] text-[#ADADAD]">
         <div
