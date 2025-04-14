@@ -21,8 +21,8 @@ const Getting = () => {
             </div>
             <p className="text-center md:text-[28px] text-[18px] font-medium md:mt-7 mt-4">DIVER Wallet Proをダウンロード</p>
             <div className="flex gap-5 md:mt-11 mt-7">
-              <a href="/" className=""><img src="/assets/images/btn-appstore.png" alt="" /></a>
-              <a href="/" className=""><img src="/assets/images/btn-google.png" alt="" /></a>
+              <a href="https://apps.apple.com/jp/app/diver-wallet-pro/id6739527739" target="_blank" rel="noopener noreferrer" className=""><img src="/assets/images/btn-appstore.png" alt="" /></a>
+              <a href="https://play.google.com/store/apps/details?id=com.bigant.diver.limited.wallet.pro&hl=ja"  target="_blank" rel="noopener noreferrer" className=""><img src="/assets/images/btn-google.png" alt="" /></a>
             </div>
           </div>
         </div>

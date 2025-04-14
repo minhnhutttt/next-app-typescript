@@ -4,7 +4,6 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from 'swiper/modules';
 import "swiper/css";
-import Button from "@/components/button";
 
 const sliderImages = [
   "/assets/images/slider-01.png",
@@ -52,9 +51,8 @@ const Fv = () => {
                   <div className="flex justify-start">
                     <div className="pl-[2.8vw] md:pl-6 text-[6vw] leading-[1.3] [text-shadow:0px_4px_10px_#FFF4F2] md:text-[40px]">
                       <p className="flex items-center justify-center">
-                        <span className="font-medium">友達への</span>
                         <span className="bg-[#E3F1FB] px-[0.1em] text-[8vw] md:text-[48px] font-bold leading-[1.2] tracking-tighter">
-                          シェア
+                        メッセージ
                         </span>
                         <span className="font-medium">が</span>
                       </p>
@@ -74,7 +72,7 @@ const Fv = () => {
                       <div className="mb-2 flex items-center justify-center gap-2.5 md:w-[400px] w-[56vw]">
                         <span className="h-px md:flex-[0_0_30px] flex-[0_0_12px] bg-[#21012D]"></span>
                         <span className="text-[4vw] max-md:text-center font-bold md:whitespace-nowrap md:text-[18px]">
-                          投稿を所有できるソーシャルメディア
+                        投稿を所有できるSNS
                         </span>
                         <span className="h-px md:flex-[0_0_30px] flex-[0_0_12px] bg-[#21012D]"></span>
                       </div>
@@ -123,7 +121,7 @@ const Fv = () => {
                   応援が直接価値ある資産に変わる
                   <br />
                   <span className="font-bold">
-                    「投稿を所有できるソーシャルメディア」
+                  「投稿を所有できるSNS」
                   </span>
                   <br />
                   それがOPEN FAVE

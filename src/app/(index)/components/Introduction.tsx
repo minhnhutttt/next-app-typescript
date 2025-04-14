@@ -52,10 +52,10 @@ const Introduction = () => {
             </div>
         </div>
         <div className="fade-up md:mt-[90px] mt-16">
-            <h5 className="text-center md:text-[24px] text-[20px] font-medium">「<span className="font-bold">消費されないSNS</span>」<br className="md:hidden" />それがOPEN FAVE</h5>
+            <h5 className="text-center md:text-[24px] text-[20px] font-medium">「<span className="font-bold">投稿を所有できるSNS</span>」<br className="md:hidden" />それがOPEN FAVE</h5>
             <p className="md:text-[18px] text-[15px] font-medium md:mt-6 mt-4">
-            ここでは、あなたの共感や応援が、クリエイターの未来を拓き、あなた自身もその価値の一部を手にする。<br />
-            これまでにない、新しいSNS体験が、今あなたの手の中に広がります。
+            ここでは、あなたの共感や応援がクリエイターの未来を拓き、あなた自身もその価値の一部を手にする。<br />
+            これまでにない新しいSNS体験が、今、あなたの手の中に広がります。
             </p>
         </div>
     </section>

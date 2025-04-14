@@ -8,7 +8,7 @@ const faqData: FaqItemPropsType[] = [
     question: "NFTって何ですか？",
     answer: (
       <>
-        Non-Fungible Token（非代替性トークン）とは、デジタルコンテンツに唯一無二の所有権を与えるブロックチェーン技術です。
+        Non-Fungible Token（ノン-ファンジブル-トークン：非代替性トークン）とは、デジタルコンテンツに唯一無二の所有権を与えるブロックチェーン技術です。
       </>
     ),
   },
@@ -17,7 +17,7 @@ const faqData: FaqItemPropsType[] = [
     question: "DIVER Wallet Proとは何ですか？",
     answer: (
       <>
-        暗号資産の管理やNFTを無料で送受信できる暗号資産ウォレットです。
+        暗号資産の管理やNFTを無料で送受信できる暗号資産ウォレットです。（有料NFTを受け取る場合は、表示される対価を支払う必要があります。）
       </>
     ),
   },
@@ -26,7 +26,7 @@ const faqData: FaqItemPropsType[] = [
     question: "登録や基本的な利用は有料ですか？",
     answer: (
       <>
-        登録自体は無料で、FaveコインやNFT購入などに応じてコストが発生する場合があります。
+      登録は無料です。有料NFT購入時には対価の支払いが、SCSを通じたコイン購入時は少額の手数料が発生します。
       </>
     ),
   },
@@ -35,7 +35,7 @@ const faqData: FaqItemPropsType[] = [
     question: "どんなデジタルデータをNFT化できますか？",
     answer: (
       <>
-        画像、イラスト、音声、動画、3Dモデル、テキストなど幅広いコンテンツが対象です。
+        画像、イラスト、音声、動画、PDFなど幅広いコンテンツが対象です。
       </>
     ),
   },
@@ -65,16 +65,16 @@ const faqData: FaqItemPropsType[] = [
     question: "アカウントやウォレットの紛失時はどうなりますか？",
     answer: (
       <>
-        リカバリーフレーズを使うことで、安全にデータや資産を回復できます。
+      復元フレーズを使うことで、安全にデータや資産を回復できます。
       </>
     ),
   },
   {
     id: "09",
-    question: "リカバリーフレーズとは何ですか？",
+    question: "復元フレーズとは何ですか？",
     answer: (
       <>
-        リカバリーフレーズとは、ウォレットを復元するための一連の単語です。これを正しく保管しておくことで、デバイスの紛失や故障時でも資産を安全に復元できます。ただし、第三者に知られると不正にアクセスされる可能性があるため、厳重に管理することが重要です。
+        復元フレーズとは、ウォレットを復元するための12個の英単語です。順番も含め正確に記録・保管しておくことで、デバイスの紛失や故障時でも資産を安全に復元できます。ただし、第三者に知られると不正にアクセスされる可能性があるため、厳重に管理することが重要です。
       </>
     ),
   },
@@ -83,7 +83,7 @@ const faqData: FaqItemPropsType[] = [
     question: "NFTを発行・購入する際に手数料はかかりますか？",
     answer: (
       <>
-        NFTの発行手数料は永年無料です。
+      NFTの発行手数料は無料です。無料で受け取れる無料NFTと、受け取り側に対価を請求できる有料NFTが発行できます。
       </>
     ),
   },
@@ -92,14 +92,14 @@ const faqData: FaqItemPropsType[] = [
     question: "使用しているブロックチェーンは何ですか？",
     answer: (
       <>
-        DIVER Chainを使用しています。
+        DIVER Time Chainを使用しています。
       </>
     ),
   },
   {
     id: "12",
-    question: "OpenFaveに掲載したいのですが、どうすればよいですか？",
-    answer: <>Faver<a href="/" className="underline">申請フォーム</a>からお申し込みください。</>,
+    question: "OPEN FAVEに投稿したいのですが、どうすればよいですか？",
+    answer: <><a href="https://register.open-fave.com/" className="underline" target="_blank" rel="noopener noreferrer">クリエイター申請フォーム</a>からお申し込みください。</>,
   },
 ];
 
@@ -126,22 +126,6 @@ export default function FAQ() {
           ))}
         </div>
       </div>
-      </div>
-      <div className="border-y border-[#00B900] bg-[#ECFFEC] md:py-[60px] py-10">
-        <div className="flex justify-center items-center">
-          <img className="max-md:max-w-[280px]" src="/assets/images/line-title.svg" alt="LINEサポート" />
-        </div>
-        <div className="fade-up flex justify-center md:mt-8 mt-5">
-          <div className="w-full md:max-w-[360px] max-w-[320px] h-[50px] md:h-[86px] flex group">
-            <a
-              href="/"
-              target="_blank"
-              className="group-hover:mt-[6px] group-hover:[box-shadow:0px_0px_0px_0px_#005100] duration-150 flex items-center w-full h-11 md:h-20 justify-center md:gap-2.5 gap-2 bg-[#01B902] rounded-[20px] font-medium [box-shadow:0px_6px_0px_0px_#005100] xl:text-[24px] text-[22px] text-white"
-            >
-              お問い合わせLINE
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

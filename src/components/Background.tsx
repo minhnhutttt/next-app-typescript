@@ -27,6 +27,12 @@ const Background = () => {
           >
             / privacy policy
           </a>
+          <a
+            className="transition-opacity hover:opacity-80"
+            href="mailto:info@open-fave.com"
+          >
+            / contact
+          </a>
         </div>
       </div>
 
