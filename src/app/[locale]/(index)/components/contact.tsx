@@ -91,7 +91,7 @@ const Contact = () => {
                 href="maito:info@a-nexus.com"
                 rect="md:w-[340px] w-[300px] h-20 md:h-[110px] flex items-center justify-center bg-[#F34927] rounded-full md:text-[30px] text-[20px] text-[#FAE2D7]"
               >
-                CONTACT US
+                {t('Contact')}
               </Button>
             </div>
           </div>

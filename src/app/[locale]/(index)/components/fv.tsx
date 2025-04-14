@@ -67,15 +67,12 @@ const FV = () => {
         gsap.set(anexus.current, {
           opacity: 0,
         })
-        gsap.set(
-          charScroll,
-          {
-            opacity: 0,
-            filter: "blur(4px)",
-          },
-        )
+        gsap.set(charScroll, {
+          opacity: 0,
+          filter: 'blur(4px)',
+        })
         gsap.set(containerWrapRef.current, {
-          scale: 0.94
+          scale: 0.94,
         })
         if (isLoading) {
           startTl
@@ -103,18 +100,21 @@ const FV = () => {
             .to(containerWrapRef.current, {
               opacity: 1,
               scale: 1,
-              duration: 2
-            }).to(
+              duration: 2,
+            })
+            .to(
               charScroll,
               {
                 stagger: 0.04,
                 opacity: 1,
                 duration: 0.8,
-                filter: "blur(0px)",
-              }, "<"
-            ).to(arrowRef.current, {
+                filter: 'blur(0px)',
+              },
+              '<'
+            )
+            .to(arrowRef.current, {
               opacity: 1,
-              duration: 0.8
+              duration: 0.8,
             })
         }
       }
@@ -155,10 +155,14 @@ const FV = () => {
                 >
                   {locale === 'en' ? (
                     <>
-                      {t('Unleashing')}<br className="md:hidden" />
-                      {t('Global')}<br />
-                      {t('Entertainment')}<br className="md:hidden" />
-                      {t('Value')}<br />
+                      {t('Unleashing')}
+                      <br className="md:hidden" />
+                      {t('Global')}
+                      <br />
+                      {t('Entertainment')}
+                      <br className="md:hidden" />
+                      {t('Value')}
+                      <br />
                       {t('AcrossBorders')}
                     </>
                   ) : (
@@ -171,12 +175,27 @@ const FV = () => {
                     </>
                   )}
                 </h1>
-                <div ref={arrowRef} className="absolute opacity-0 md:bottom-10 bottom-6 left-1/2 -translate-x-1/2 flex justify-center items-center">
-                <svg className="arrows w-10 md:w-[60px] aspect-[60/72]" viewBox="0 0 60 72">
-                  <path className="animate-[arrow_2s_infinite] [animation-delay:-1s] stroke-[#F34927] fill-transparent stroke-1" d="M0 0 L30 32 L60 0"></path>
-                  <path className="animate-[arrow_2s_infinite] [animation-delay:-0.5s] stroke-[#F34927] fill-transparent stroke-1" d="M0 20 L30 52 L60 20"></path>
-                  <path className="animate-[arrow_2s_infinite] [animation-delay:0s] stroke-[#F34927] fill-transparent stroke-1" d="M0 40 L30 72 L60 40"></path>
-                </svg>
+                <div
+                  ref={arrowRef}
+                  className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center justify-center opacity-0 md:bottom-10"
+                >
+                  <svg
+                    className="arrows aspect-[60/72] w-10 md:w-[60px]"
+                    viewBox="0 0 60 72"
+                  >
+                    <path
+                      className="animate-[arrow_2s_infinite] fill-transparent stroke-[#F34927] stroke-1 [animation-delay:-1s]"
+                      d="M0 0 L30 32 L60 0"
+                    ></path>
+                    <path
+                      className="animate-[arrow_2s_infinite] fill-transparent stroke-[#F34927] stroke-1 [animation-delay:-0.5s]"
+                      d="M0 20 L30 52 L60 20"
+                    ></path>
+                    <path
+                      className="animate-[arrow_2s_infinite] fill-transparent stroke-[#F34927] stroke-1 [animation-delay:0s]"
+                      d="M0 40 L30 72 L60 40"
+                    ></path>
+                  </svg>
                 </div>
               </div>
             </div>

@@ -4,7 +4,7 @@ import { useLayoutEffect, useRef } from 'react'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useLocale, useTranslations } from 'use-intl'
+import { useTranslations } from 'use-intl'
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.config({
@@ -66,7 +66,7 @@ const Introduction = () => {
       id="introduction"
       className="relative overflow-hidden px-5 md:px-10"
     >
-      <div className="mx-auto w-full max-w-[990px] text-[#ADADAD]">
+      <div className="mx-auto w-full max-w-[990px]">
         <div
           ref={containerRef}
           className="flex max-h-screen flex-col items-center justify-center max-md:py-[200px] md:h-screen"
@@ -74,7 +74,7 @@ const Introduction = () => {
           <div
             ref={charScrollRef}
             data-splitting
-            className="break-keep text-center text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] md:text-[28px]"
+            className="break-keep text-center text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] md:text-[28px] text-[#ADADAD]/[0.25]"
           >
             {t('Headline1')} <br />
             <br />

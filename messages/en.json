@@ -14,16 +14,15 @@
     },
     "News": {
       "slide1_title": "PRESS RELEASE",
-      "slide1_head": "A NEXUS to Host Press Conference in the Philippines",
-      "slide1_content": "A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.",
-      
+      "slide1_head": "A NEXUS Begins North American Operations",
+      "slide1_content": "A NEXUS has officially established its North American headquarters in Los Angeles, marking a significant milestone in the company's global expansion strategy. This strategic move strengthens A NEXUS's position as the gateway connecting North American entertainment markets with ASEAN and East Asian regions, enabling seamless rights management and content flow across these diverse entertainment ecosystems.",
       "slide2_title": "PRESS RELEASE",
       "slide2_head": "A NEXUS to Host Press Conference in the Philippines",
       "slide2_content": "A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets.",
       
       "slide3_title": "EVENT",
-      "slide3_head": "A NEXUS to Host Press Conference in the Philippines",
-      "slide3_content": "A NEXUS to Host Press Conference in the Philippines. April 28, 2025 A NEXUS will be hosting a major press conference in Manila, Philippines to announce our comprehensive entertainment business approach and strategic vision for connecting North American, ASEAN, and East Asian markets."
+      "slide3_head": "A NEXUS Unveils Global Official Website",
+      "slide3_content": "A NEXUS today launched its global official website, showcasing the company's vision to connect entertainment markets across North America, ASEAN, and East Asia. The new platform highlights A NEXUS's comprehensive business approach to maximizing entertainment value through strategic integration of rights management, content production, and cross-border distribution."
     },
     "BoardMember": {
       "Headline": "Meet our visionary leadership team bringing together decades of experience in global entertainment markets.",
@@ -39,14 +38,20 @@
     "Contact": {
       "InvestorsMedia": "For Investors & Media",
       "Content": "Interested in learning more about investment opportunities or media inquiries? Our team is ready to assist you.",
+      "Contact": "CONTACT US",
       "Aspiring": "Aspiring Artists & Performers",
       "Apply": "Apply as Artist"
+    },
+    "Profile": {
+      "CorporateProfile": "Corporate Profile <br />of A-NEXUS",
+      "Profile01": "Established: 2025 ",
+      "Profile02": "Office Location: 6605 Grand Montecito Pkwy, Suite 100, Las Vegas, NV 89149, USA",
+      "Profile03": "Business: Comprehensive entertainment business solutions spanning rights management,content production, cross-border distribution, marketing, and strategic market development across North America, ASEAN, and East Asia"
     }
   },
   "Members": {
     "NariyukiTerada": {
-      "Introduction": "November 2005 – March 2010<br />Executive Officer, Avex Group Holdings<br /><br />November 2006 – March 2010<br />Director & President of Asia Region, Avex Asia Holdings<br /><br />November 2006 – September 2011<br />President & CEO, Avex China<br /><br />April 2009 – January 2011<br />Co-President & Director, Avex Taiwan<br /><br />March 2010 – May 2013<br />Director, Avex International Holdings<br /><br />May 2013 – March 2020<br />Director, AKS Co., Ltd.<br /><br />April 2020 – Present<br />Director, Vernalossom Co., Ltd.<br /><br />July 2020 – Present<br />President & CEO, Superball Inc.<br /><br />January 2024 – Present<br />General Producer of the Overseas 48 Groups",
-      "Mesage": "With over 25 years of experience in the Asian entertainment industry, Hiroshi has pioneered  cross-border content distribution and rights management. He is recognized as a visionary<br />leader who foresaw the global convergence of entertainment markets long before it became  industry standard.<br />Previously serving as Executive Director at [Major Entertainment Company], he established  groundbreaking partnerships between Japanese content creators and international platforms  that transformed how Asian content is monetized globally. During his tenure, he oversaw the  international expansion of five major anime franchises, resulting in a 300% increase in overseas revenue and establishing new benchmarks for cross-cultural content adaptation.<br />Hiroshi began his career as a production coordinator for anime studios in Tokyo, giving him  invaluable ground-level insights into content creation. He quickly rose through the ranks, developing expertise in international licensing and distribution while working for [Japanese  Media Conglomerate], where he led negotiations for landmark co-production deals with  American and European studios.<br />His academic background includes a Master's degree in International Business from Keio  University and specialized training in entertainment law. He has been a featured speaker at major industry conferences including AnimeExpo, MIPCOM, and the Tokyo International  Film Festival. Hiroshi has authored numerous articles on the future of global entertainment  and co-authored the influential industry book \"Cross-Border Content: The New Entertainment  Economy.\"<br />His founding vision for A NEXUS stems from his belief that the most significant opportunities  in entertainment lie at the intersection of Asian creative development and global distribution  infrastructure. He has assembled a world-class team that reflects his commitment to building  bridges between entertainment markets.<br />Areas of Expertise: Anime Production, IP Rights Management, International Distribution,  Media Partnerships, M&A, Strategic Vision, Entertainment Law, Cross-Cultural Business  Development"
+      "Introduction": "November 2005 – March 2010<br />Executive Officer, Avex Group Holdings<br /><br />November 2006 – March 2010<br />Director & President of Asia Region, Avex Asia Holdings<br /><br />November 2006 – September 2011<br />President & CEO, Avex China<br /><br />April 2009 – January 2011<br />Co-President & Director, Avex Taiwan<br /><br />March 2010 – May 2013<br />Director, Avex International Holdings<br /><br />May 2013 – March 2020<br />Director, AKS Co., Ltd.<br /><br />April 2020 – Present<br />Director, Vernalossom Co., Ltd.<br /><br />July 2020 – Present<br />President & CEO, Superball Inc.<br /><br />January 2024 – Present<br />General Producer of the Overseas 48 Groups"
     },
     "HideyoshiAkita": {
       "Introduction": "1996 – Joined GE Capital Finance Corporation (Japan)<br /><br />December 2014 – Present<br />Director, Genbu Corporation<br /><br />October 2017 – Appointed Director, Dera Game Inc. (currently serves as Auditor)<br /><br />August 2018 – Appointed Auditor, AKS Co., Ltd.<br /><br />April 2019 – Appointed Director, Cave Co., Ltd.<br /><br />September 2019 – Present<br />President & CEO, Cave Co., Ltd.<br /><br />November 2019 – Present<br />Auditor, Capable Co., Ltd."

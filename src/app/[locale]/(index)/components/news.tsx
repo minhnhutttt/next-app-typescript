@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Swiper as SwiperClass } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
@@ -20,6 +20,8 @@ interface SlideItem {
 const News = () => {
   const t = useTranslations('Home.News')
   const [swiperRef, setSwiperRef] = useState<SwiperClass | null>(null)
+  const [isBeginning, setIsBeginning] = useState(true)
+  const [isEnd, setIsEnd] = useState(false)
 
   const slidesData: SlideItem[] = [
     {
@@ -47,6 +49,29 @@ const News = () => {
       content: t('slide3_content'),
     },
   ]
+
+  // Update arrow state when swiper changes
+  useEffect(() => {
+    if (!swiperRef) return;
+
+    const updateArrowState = () => {
+      setIsBeginning(swiperRef.isBeginning);
+      setIsEnd(swiperRef.isEnd);
+    };
+
+    // Initial check
+    updateArrowState();
+
+    // Add event listeners
+    swiperRef.on('slideChange', updateArrowState);
+    swiperRef.on('resize', updateArrowState);
+
+    // Clean up
+    return () => {
+      swiperRef.off('slideChange', updateArrowState);
+      swiperRef.off('resize', updateArrowState);
+    };
+  }, [swiperRef]);
 
   return (
     <div className="relative mx-auto w-full">
@@ -112,7 +137,9 @@ const News = () => {
         <div className="z-20 flex justify-end space-x-5 px-5 py-5 md:px-12">
           <button
             onClick={() => swiperRef?.slidePrev()}
-            className="flex size-[40px] items-center justify-center transition-colors md:size-[72px]"
+            className={`flex size-[40px] items-center justify-center transition-colors md:size-[72px] duration-150 ${
+              isBeginning ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            }`}
           >
             <svg
               width="50"
@@ -140,7 +167,9 @@ const News = () => {
           </button>
           <button
             onClick={() => swiperRef?.slideNext()}
-            className="flex size-[40px] items-center justify-center transition-colors md:size-[72px]"
+            className={`flex size-[40px] items-center justify-center transition-colors md:size-[72px] duration-150 ${
+              isEnd ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            }`}
           >
             <svg
               width="50"

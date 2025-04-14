@@ -1,9 +1,9 @@
 {
   "Home": {
     "Fv": {
-      "Unleashing": "国境を越えて広がるエン",
-      "Global": "ターテイメントの価値を解",
-      "Entertainment": "き放つ",
+      "Unleashing": "国境を超えて広がる",
+      "Global": "エンターテイメントの",
+      "Entertainment": "価値を解き放つ",
       "Value": "",
       "AcrossBorders": ""
     },
@@ -14,37 +14,43 @@
     },
     "News": {
       "slide1_title": "プレスリリース",
-      "slide1_head": "A NEXUS、フィリピンで記者会見を開催",
-      "slide1_content": "2025 年 4 月 25 日 A NEXUS は、マニラ（フィリピン）で主要な記者会見を開催し、北米、 ASEAN、東アジア市場を結ぶ包括的なエンターテイメントビジネスアプローチと戦略的ビジ ョンを発表します。",
+      "slide1_head": "A NEXUS、北米での活動を開始",
+      "slide1_content": "A NEXUSはラスベガスに北米本社を正式に設立し、同社のグローバル展開戦略における重要な節目を迎えました。この戦略的な動きにより、北米のエンターテイメント市場とASEANおよび東アジア地域を結ぶゲートウェイとしてのA NEXUSの立場が強化され、これらの多様なエンターテイメントエコシステム間でのシームレスな権利管理とコンテンツの流れが可能になります。",
       "slide2_title": "プレスリリース",
       "slide2_head": "A NEXUS、フィリピンで記者会見を開催",
       "slide2_content": "2025 年 4 月 25 日 A NEXUS は、マニラ（フィリピン）で主要な記者会見を開催し、北米、 ASEAN、東アジア市場を結ぶ包括的なエンターテイメントビジネスアプローチと戦略的ビジ ョンを発表します。",
       "slide3_title": "プレスリリース",
-      "slide3_head": "A NEXUS、フィリピンで記者会見を開催",
-      "slide3_content": "2025 年 4 月 25 日 A NEXUS は、マニラ（フィリピン）で主要な記者会見を開催し、北米、 ASEAN、東アジア市場を結ぶ包括的なエンターテイメントビジネスアプローチと戦略的ビジ ョンを発表します。"
+      "slide3_head": "A NEXUS、グローバル公式サイトをオープン",
+      "slide3_content": "A NEXUSは本日、北米、ASEAN、東アジアのエンターテイメント市場を結ぶという会社のビジョンを紹介するグローバル公式サイトをオープンしました。新サイトでは、権利管理、コンテンツ制作、国境を越えた配信の戦略的統合を通じてエンターテイメント価値を最大化するA NEXUSの包括的なビジネスアプローチを紹介しています。"
     },
     "BoardMember": {
       "Headline": "グローバルエンターテイメント市場での数十年の経験を結集した、先見性のあるリーダ ーシップチームをご紹介します。",
-      "MemberIntro": "私たちのビジョンを支える卓越した頭脳をご紹介します。世界的なエンターテインメント企業のトップから、世界的なアイコンの立ち上げまで、私たちの役員は比類のない専門知識と確かな成功をもたらしています。<br />各メンバーがどのように未来を切り開いているかをご覧ください。"
+      "MemberIntro": "私たちのビジョンを支える卓越した頭脳をご紹介します。世界的なエンターテインメント企業のトップから、世界的なアイコンの立ち上げまで、私たちの役員は比類のない専門知識と確かな成功をもたらしています。<br />各メンバーがどのように未来を切り開いていきたかをご覧ください。"
     },
     "Artist": {
-      "slide1_content": "アジア各国の姉妹グループから選抜されたメンバーで結成されたAKB48グループ初のユニット「Quadlips」。<br />2023年10月29日、BNK48チェルパンの卒業コンサートで発表され、バンコクで活動を開始。<br />グローバルデジタルデビューは2024年3月を予定。<br />タイ、インドネシア、日本、フィリピンを皮切りに、東南アジア全域に展開する。",
+      "slide1_content": "アジア各国の姉妹グループから選抜されたメンバーで結成されたAKB48グループ初のユニット「Quadlips」。<br />2023年10月29日、BNK48チェルパンの卒業コンサートで発表され、<br />バンコクで活動を開始。<br />グローバルデジタルデビューは2024年3月を予定。<br />タイ、インドネシア、日本、フィリピンを皮切りに、東南アジア全域に展開する。",
       "slide2_content": "シンガーソングライターのSHEKI ARZAGAは、2018年からAKB48の姉妹グループとして大人気のMNL48マニラ（フィリピン）のリードボーカルを務めている。グループの劇場がある東京の秋葉原にちなんで名付けられたAKB48は、ギネス・ワールド・レコーズによって世界最大のポップ・グループとして認定されている。"
     },
     "Message": {
-      "Headline": "A NEXUS は、舞台設計からオリジナルコンテンツ制作、グローバルマーケティングキャン ペーンまで、包括的な制作・プロモーションサービスを提供しています。 "
+      "Headline": "A-Nexusは、舞台設計からオリジナルコンテンツ制作、グローバルマーケティングキャンペーンまで、包括的な制作・プロモーションサービスを提供しています。 "
     },
     "Contact": {
-      "InvestorsMedia": "投資家・メディアの皆様へ",
+      "InvestorsMedia": "アーティスト希望者の方はこちら",
       "Content": "投資機会やメディア関連のお問い合わせについて詳しく知りたいですか？私たちのチームが お手伝いします。 ",
+      "Contact": "お問い合わせ",
       "Aspiring": "アーティストやパフォーマー志望",
-      "Apply": "アーティスト応募"
+      "Apply": "応募する"
+    },
+    "Profile": {
+      "CorporateProfile": "A-NEXUS <br />会社概要",
+      "Profile01": "設立年: 2025年",
+      "Profile02": "オフィス所在地: 6605 Grand Montecito Pkwy, Suite 100, Las Vegas, NV 89149, USA",
+      "Profile03": "事業内容: 北米、ASEAN、東アジアの各市場にまたがる権利管理、コンテンツ制作、国境を越えた配信、マーケティング、戦略的市場開発を含む包括的なエンターテイメントビジネスソリューション"
     }
   },
   "Members": {
     "NariyukiTerada": {
-      "Introduction": "2005年11月-2010年3月Avex Group Holdings 執行役員<br /><br />2006年11月-2010年3月Avex Asia Holdings 取締役亜洲区総裁<br /><br />2006年11月-2011年9月Avex China 代表取締役社長<br /><br />2009年4月-2011年1月Avex Taiwan 取締役共同社長<br /><br />2010年3月-2013年5月Avex International Holdings取締役<br /><br />2013年5月-2020年3月株式会社AKS 取締役<br /><br />2020年4月株式会社Vernalossom取締役（現任）<br /><br />2020年7月株式会社Superball 代表取締役社長（現任）<br /><br />2024年1月海外48グループ総合プロデューサー（現任）",
-      "Mesage": "アジアのエンターテイメント業界で 25 年以上の経験を持つ宏は、国境を越えたコンテンツ 配信と権利管理のパイオニアです。彼は、エンターテイメント市場のグローバルな融合を業 界標準になるはるか前に予見した先見的リーダーとして認められています。<br />以前は[大手エンターテイメント企業]のエグゼクティブディレクターを務め、日本のコンテ ンツクリエイターと国際プラットフォームの間に、アジアコンテンツのグローバルな収益化 方法を変革する画期的なパートナーシップを確立しました。在任中、5 つの主要アニメフラ ンチャイズの国際展開を監督し、海外収益が 300％増加し、異文化間コンテンツ適応の新し いベンチマークを確立しました。<br />宏は東京のアニメスタジオのプロダクションコーディネーターとしてキャリアをスタートし、 コンテンツ制作に関する貴重な現場レベルの洞察を得ました。彼はすぐに昇進し、[日本のメ ディア複合企業]で働きながら国際的なライセンスと配信の専門知識を身につけ、アメリカと ヨーロッパのスタジオとの画期的な共同制作契約の交渉をリードしました。<br />彼の学歴には慶應義塾大学の国際ビジネス修士号とエンターテイメント法の専門トレーニン グが含まれます。彼は AnimeExpo、MIPCOM、東京国際映画祭などの主要な業界会議で注 目のスピーカーを務めてきました。宏はグローバルエンターテイメントの未来に関する数多 くの記事を執筆し、影響力のある業界書籍「Cross-Border Content: The New Entertainment  Economy」を共著しています。<br />A NEXUS に対する彼の創業ビジョンは、エンターテイメントにおける最も重要な機会がア ジアのクリエイティブ開発とグローバルな配信インフラの交差点にあるという彼の信念に由 来しています。彼はエンターテイメント市場間の架け橋を築くという彼のコミットメントを 反映した世界クラスのチームを組み立てました。<br />【専門分野】アニメ制作、IP 権利管理、国際配信、メディアパートナーシップ、M&A、戦略的 ビジョン、エンターテイメント法、異文化間ビジネス開発"
+      "Introduction": "2005年11月-2010年3月Avex Group Holdings 執行役員<br /><br />2006年11月-2010年3月Avex Asia Holdings 取締役亜洲区総裁<br /><br />2006年11月-2011年9月Avex China 代表取締役社長<br /><br />2009年4月-2011年1月Avex Taiwan 取締役共同社長<br /><br />2010年3月-2013年5月Avex International Holdings取締役<br /><br />2013年5月-2020年3月株式会社AKS 取締役<br /><br />2020年4月株式会社Vernalossom取締役（現任）<br /><br />2020年7月株式会社Superball 代表取締役社長（現任）<br /><br />2024年1月海外48グループ総合プロデューサー（現任）"
     },
     "HideyoshiAkita": {
       "Introduction": "1996年　株式会社GEキャピタルファイナンス入社<br /><br />2014年12月　株式会社玄武取締役就（現任）<br /><br />2017年10月　株式会社でらゲー取締役就任＊現在監査役<br /><br />2018年8月　株式会社AKS監査役就任<br /><br />2019年4月　株式会社ケイブ取締役就任<br /><br />2019年9月　株式会社ケイブ代表取締役<br /><br />就任(現任)<br /><br />＊2019年11月　株式会社capable 監査役(現任)"
@@ -57,33 +63,33 @@
     }
   },
   "About": {
-    "CompanyVision": "A NEXUS は、グローバルエンターテイメント市場の交差点に位置し、北米、ASEAN、東ア ジアのクリエイティブ経済をつなぐ重要なゲートウェイとして機能しています。私たちは、 エンターテイメントを通じた文化交流が従来の障壁を超え、クリエイター、投資家、視聴者 の全てに前例のない価値を創造する世界を描いています。 私たちの使命は、深い業界専門知識と戦略的なグローバルプレゼンスを活用して、国境を越 えたエンターテイメント権利管理とコンテンツ配信のための決定的なプラットフォームを確 立することです。",
-    "MarketOverview": "グローバルエンターテインメント・メディア市場は前例のない成長を続けており、アジア太 平洋地域が最も急成長している地域として浮上しています。私たちの戦略的ポジションを推進する主要トレンド",
-    "BusinessApproach": "A NEXUS はエンターテイメントビジネスへの統合的かつエンドツーエンドのアプローチを 通じて価値を創造します。",
+    "CompanyVision": "A-Nexusは、グローバルエンターテイメント市場の交差点に位置し、北米、ASEAN、東アジアのクリエイティブ経済をつなぐ重要なゲートウェイとして機能します。私たちは、エンターテイメントを通じた文化交流が従来の障壁を超え、クリエイター、投資家、視聴者の全てに前例のない価値を創造する世界を描いています。私たちの使命は、深い業界専門知識と戦略的なグローバルプレゼンスを活用して、国境を越えたエンターテイメント権利管理とコンテンツ配信のための決定的なプラットフォームを確立することです。",
+    "MarketOverview": "グローバルエンターテインメント・メディア市場は前例のない成長を続けており、アジア太平洋地域が最も急成長している地域として浮上しています。私たちの戦略的ポジションを推進する主要トレンドは以下のとおりです。",
+    "BusinessApproach": "A-Nexusはエンターテイメントビジネスへの統合的かつエンドツーエンドのアプローチを通じて価値を創造します。",
     "Trends": {
       "ContentConvergence": "コンテンツの収束",
-      "ContentConvergenceDescription": "アニメ、ゲーム、映画、音楽の境界は引き続き曖昧になり、包括的 な権利管理の需要を生み出しています。",
+      "ContentConvergenceDescription": "音楽、映画、アニメ、ゲームの境界は引き続き曖昧になり、包括的な権利管理の需要を生み出しています。",
       "DigitalTransformation": "デジタルトランスフォーメーション",
-      "DigitalTransformationDescription": "ストリーミングプラットフォームはグローバルに コンテンツ消費パターンに革命をもたらしています。",
+      "DigitalTransformationDescription": "ストリーミングプラットフォームはコンテンツ消費パターンにグローバルな革命をもたらしています。",
       "CrossCulturalAppeal": "異文化間の魅力",
-      "CrossCulturalAppealDescription": "アジアのエンターテイメントコンテンツは西洋市場で爆発的な人気を 経験しています。",
+      "CrossCulturalAppealDescription": "アジアのエンターテイメントコンテンツは西洋市場で爆発的な人気を経験しています。",
       "EmergingMarkets": "新興市場",
-      "EmergingMarketsDescription": "ASEAN諸国はエンターテイメント消費成長の次のフロンティアを代表して います。",
-      "Text": "A NEXUS はこれらの収束するトレンドの中心に独自のポジションを占めています。"
+      "EmergingMarketsDescription": "ASEAN諸国はエンターテイメント消費成長の次のフロンティアを代表しています。",
+      "Text": "A-Nexusはこれらの収束するトレンドの中心に独自のポジションを占めています。"
     },
     "Business": {
-      "RightsAcquisitionManagement": "Rights Acquisition & Management",
-      "RightsAcquisitionManagementDescription": "Strategic acquisition and optimization of  entertainment IP rights across multiple markets, with specialized legal expertise in cross border licensing ",
-      "CrossPlatformDistribution": "Cross-Platform Distribution",
-      "CrossPlatformDistributionDescription": "Facilitating content distribution across diverse platforms and  regions, leveraging proprietary technology and market intelligence",
-      "ProductionServices": "Production Services",
-      "ProductionServicesDescription": "Enabling content creation through financing, production support, and creative development tailored to both local and global audience preferences",
-      "MarketAccess": "Market Access",
-      "MarketAccessDescription": "Providing established channels and cultural expertise for content creators  to successfully enter and thrive in new markets ",
-      "BrandDevelopment": "Brand Development",
-      "BrandDevelopmentDescription": "Transforming entertainment properties into global franchises  through strategic promotion and localized marketing approaches",
-      "TechnologyIntegration": "Technology Integration",
-      "TechnologyIntegrationDescription": "Implementing cutting-edge digital solutions that enhance  discovery, consumption, and monetization of content across borders"
+      "RightsAcquisitionManagement": "権利取得と管理",
+      "RightsAcquisitionManagementDescription": "国境を越えたライセンス供与に関する専門的な法的知識の活用により、複数の市場にわたるエンターテイメントIP権の戦略的取得と最適化を行う。",
+      "CrossPlatformDistribution": "クロスプラットフォーム配信",
+      "CrossPlatformDistributionDescription": "独自の技術と市場情報を活用し、多様なプラットフォームと地域にわたるコンテンツ配信を促進する。",
+      "ProductionServices": "制作サービス",
+      "ProductionServicesDescription": "地域および世界的な視聴者の嗜好に合わせた資金調達、制作支援、クリエイティブ開発を通じたコンテンツ制作を実現する。",
+      "MarketAccess": "市場アクセス",
+      "MarketAccessDescription": "コンテンツクリエイターが新しい市場に成功裏に参入し繁栄するための確立されたチャネルと文化的専門知識を提供する。",
+      "BrandDevelopment": "ブランド開発",
+      "BrandDevelopmentDescription": "戦略的プロモーションとローカライズされたマーケティングアプローチを通じて、エンターテイメント資産をグローバルフランチャイズに変換する。",
+      "TechnologyIntegration": "テクノロジー統合",
+      "TechnologyIntegrationDescription": "国境を越えたコンテンツの発見、消費、収益化を強化する最先端のデジタルソリューションを実装する。"
     }
   }
 }
