@@ -116,7 +116,7 @@ const News = () => {
                   </div>
 
                   <div className="absolute inset-x-0 bottom-0 flex h-[80%] translate-y-full flex-col items-center justify-center rounded-[30px] bg-black/60 px-6 py-8 transition-transform duration-300 group-hover:translate-y-0 md:px-[50px]">
-                    <div className="space-y-6 text-white md:space-y-10">
+                    <div className="space-y-6 text-[#FAE2D7] md:space-y-10">
                       <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
                         {slide.title}
                       </p>
