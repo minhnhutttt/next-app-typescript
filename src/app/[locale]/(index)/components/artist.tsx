@@ -138,7 +138,7 @@ const Artist = () => {
             type: 'bullets',
           }}
           autoplay={{
-            delay: 3000,
+            delay: 4500,
             disableOnInteraction: false,
           }}
           onSwiper={(swiper) => {
@@ -191,12 +191,14 @@ const Artist = () => {
                   <p className="text-[18px] font-medium leading-[1.2] md:text-[24px]">
                     {item.name && item.name}
                   </p>
+                  {item.content &&
                   <p
                     className="mt-4 text-[14px] font-medium leading-[2] md:mt-[30px] md:text-[16px]"
                     dangerouslySetInnerHTML={{
                       __html: item.content,
                     }}
                   ></p>
+                }
                 </div>
               </div>
             </SwiperSlide>

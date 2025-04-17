@@ -75,7 +75,7 @@ const Contact = () => {
           <div className="relative px-5 pt-[60px] md:pt-[130px]">
             <div
               ref={bgLineRef}
-              className="absolute inset-x-0 top-0 overflow-hidden bg-[url(/assets/images/home/line-sp.svg)] bg-top bg-no-repeat max-md:bg-[size:100%_500px] md:bg-[url(/assets/images/home/line.svg)] md:bg-[position:top_40px_center]"
+              className="pointer-events-none absolute inset-x-0 top-0 overflow-hidden bg-[url(/assets/images/home/line-sp.svg)] bg-top bg-no-repeat max-md:bg-[size:100%_500px] md:bg-[url(/assets/images/home/line.svg)] md:bg-[position:top_40px_center]"
             ></div>
             <h2 className="overflow-hidden text-center text-[clamp(20px,7.5vw,60px)] font-semibold leading-[1.2] tracking-widest md:text-[64px] xl:text-[128px]">
               <span>CONTACT</span>

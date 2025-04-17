@@ -39,7 +39,7 @@
     content: '';
     @apply absolute left-0 top-0 h-full rounded-full bg-[#F0F0F0];
     width: var(--bullet-progress-width, 0%);
-    animation: bulletProgress var(--swiper-autoplay-delay, 3000ms) linear
+    animation: bulletProgress var(--swiper-autoplay-delay, 4500ms) linear
       forwards;
     animation-play-state: var(--bullet-animation-state, running);
   }

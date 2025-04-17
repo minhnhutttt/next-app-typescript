@@ -26,7 +26,7 @@ const News = () => {
   const slidesData: SlideItem[] = [
     {
       id: 1,
-      image: '/assets/images/home/news/slider-img-01.jpg',
+      image: '/assets/images/home/news/news-card.jpg',
       title: t('slide1_title'),
       type: 'press',
       head: t('slide1_head'),
@@ -34,7 +34,7 @@ const News = () => {
     },
     {
       id: 2,
-      image: '/assets/images/home/news/slider-img-02.jpg',
+      image: '/assets/images/home/news/news-card.jpg',
       title: t('slide2_title'),
       type: 'press',
       head: t('slide2_head'),
@@ -42,7 +42,7 @@ const News = () => {
     },
     {
       id: 3,
-      image: '/assets/images/home/news/slider-img-03.jpg',
+      image: '/assets/images/home/news/news-card.jpg',
       title: t('slide3_title'),
       type: 'event',
       head: t('slide3_head'),
@@ -123,8 +123,12 @@ const News = () => {
                       <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
                         {slide.head}
                       </p>
-                      <p className="text-[13px] md:text-[16px]">
+                      <p className="text-[13px] md:text-[16px] leading-[1.8]">
                         {slide.content}
+                      </p>
+                      <p className="text-[13px] md:text-[16px] leading-[1.8]">
+                        {t('contact')} <br />
+                        <a href="mailto:info@a-nexus.com" className="underline">info@a-nexus.com</a>
                       </p>
                     </div>
                   </div>
