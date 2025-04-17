@@ -23,7 +23,7 @@ const MemberContent = () => {
               </p>
               <p
                 data-scroll
-                className="text--enter mb-3 overflow-hidden whitespace-nowrap font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px] px-1"
+                className="text--enter mb-3 overflow-hidden whitespace-nowrap px-1 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
               >
                 <span data-splitting>Nariaki Terada</span>
               </p>
@@ -58,16 +58,16 @@ const MemberContent = () => {
               <div className="text-[#111]">
                 <p
                   data-scroll
-                  className="text--enter mb-3 overflow-hidden whitespace-nowrap font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px] px-1"
+                  className="text--enter mb-3 overflow-hidden whitespace-nowrap px-1 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
                 >
                   <span data-splitting>Hideyoshi Akita</span>
                 </p>
                 <p
-                data-scroll
-                className="ani-fade-up mb-6 text-[clamp(18px,4.5vw,26px)] md:text-[24px]"
-              >
-                秋田 英好
-              </p>
+                  data-scroll
+                  className="ani-fade-up mb-6 text-[clamp(18px,4.5vw,26px)] md:text-[24px]"
+                >
+                  秋田 英好
+                </p>
               </div>
               <div className="lg:max-w-[478px]">
                 <p
@@ -87,7 +87,7 @@ const MemberContent = () => {
               <div className="text-[#111]">
                 <p
                   data-scroll
-                  className="text--enter mb-3 overflow-hidden whitespace-nowrap font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px] px-1"
+                  className="text--enter mb-3 overflow-hidden whitespace-nowrap px-1 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
                 >
                   <span data-splitting>Yutaka Kanagawa</span>
                 </p>
@@ -110,7 +110,7 @@ const MemberContent = () => {
               <div className="text-[#111]">
                 <p
                   data-scroll
-                  className="text--enter mb-3 overflow-hidden whitespace-nowrap font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px] px-1"
+                  className="text--enter mb-3 overflow-hidden whitespace-nowrap px-1 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
                 >
                   <span data-splitting>Yoshiya Kato</span>
                 </p>

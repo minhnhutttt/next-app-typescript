@@ -74,7 +74,7 @@ const Introduction = () => {
           <div
             ref={charScrollRef}
             data-splitting
-            className="break-keep text-center text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] md:text-[28px] text-[#ADADAD]/[0.25]"
+            className="break-keep text-center text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] text-[#ADADAD]/[0.25] md:text-[28px]"
           >
             {t('Headline1')} <br />
             <br />

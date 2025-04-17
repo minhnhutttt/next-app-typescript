@@ -34,14 +34,15 @@
   }
 
   .artist-swiper
-  .swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
-  content: '';
-  @apply absolute left-0 top-0 h-full rounded-full bg-[#F0F0F0];
-  width: var(--bullet-progress-width, 0%);
-  animation: bulletProgress var(--swiper-autoplay-delay, 3000ms) linear forwards;
-  animation-play-state: var(--bullet-animation-state, running);
-}
+    .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+    content: '';
+    @apply absolute left-0 top-0 h-full rounded-full bg-[#F0F0F0];
+    width: var(--bullet-progress-width, 0%);
+    animation: bulletProgress var(--swiper-autoplay-delay, 3000ms) linear
+      forwards;
+    animation-play-state: var(--bullet-animation-state, running);
+  }
 
   @keyframes bulletProgress {
     0% {

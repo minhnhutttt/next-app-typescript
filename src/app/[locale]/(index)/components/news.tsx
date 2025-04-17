@@ -52,26 +52,26 @@ const News = () => {
 
   // Update arrow state when swiper changes
   useEffect(() => {
-    if (!swiperRef) return;
+    if (!swiperRef) return
 
     const updateArrowState = () => {
-      setIsBeginning(swiperRef.isBeginning);
-      setIsEnd(swiperRef.isEnd);
-    };
+      setIsBeginning(swiperRef.isBeginning)
+      setIsEnd(swiperRef.isEnd)
+    }
 
     // Initial check
-    updateArrowState();
+    updateArrowState()
 
     // Add event listeners
-    swiperRef.on('slideChange', updateArrowState);
-    swiperRef.on('resize', updateArrowState);
+    swiperRef.on('slideChange', updateArrowState)
+    swiperRef.on('resize', updateArrowState)
 
     // Clean up
     return () => {
-      swiperRef.off('slideChange', updateArrowState);
-      swiperRef.off('resize', updateArrowState);
-    };
-  }, [swiperRef]);
+      swiperRef.off('slideChange', updateArrowState)
+      swiperRef.off('resize', updateArrowState)
+    }
+  }, [swiperRef])
 
   return (
     <div className="relative mx-auto w-full">
@@ -137,8 +137,8 @@ const News = () => {
         <div className="z-20 flex justify-end space-x-5 px-5 py-5 md:px-12">
           <button
             onClick={() => swiperRef?.slidePrev()}
-            className={`flex size-[40px] items-center justify-center transition-colors md:size-[72px] duration-150 ${
-              isBeginning ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            className={`flex size-[40px] items-center justify-center transition-colors duration-150 md:size-[72px] ${
+              isBeginning ? 'pointer-events-none opacity-0' : 'opacity-100'
             }`}
           >
             <svg
@@ -167,8 +167,8 @@ const News = () => {
           </button>
           <button
             onClick={() => swiperRef?.slideNext()}
-            className={`flex size-[40px] items-center justify-center transition-colors md:size-[72px] duration-150 ${
-              isEnd ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            className={`flex size-[40px] items-center justify-center transition-colors duration-150 md:size-[72px] ${
+              isEnd ? 'pointer-events-none opacity-0' : 'opacity-100'
             }`}
           >
             <svg
