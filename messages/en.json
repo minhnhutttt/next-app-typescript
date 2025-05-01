@@ -14,6 +14,15 @@
     },
     "News": {
       "slide1_title": "COMING SOON",
+<<<<<<< HEAD
+      "slide1_head": "Announcement Coming Soon",
+      "slide1_content": "We are currently preparing announcements from A-Nexus. For inquiries, please contact us at the email address below with details of your request.",
+      "slide2_title": "COMING SOON",
+      "slide2_head": "Announcement Coming Soon",
+      "slide2_content": "We are currently preparing announcements from A-Nexus. For inquiries, please contact us at the email address below with details of your request.",
+      "slide3_title": "COMING SOON",
+      "slide3_head": "Announcement Coming Soon",
+=======
       "slide1_head": "A NEXUS Begins North American Operations",
       "slide1_content": "We are currently preparing announcements from A-Nexus. For inquiries, please contact us at the email address below with details of your request.",
       "slide2_title": "COMING SOON",
@@ -21,6 +30,7 @@
       "slide2_content": "We are currently preparing announcements from A-Nexus. For inquiries, please contact us at the email address below with details of your request.",
       "slide3_title": "COMING SOON",
       "slide3_head": "A NEXUS Unveils Global Official Website",
+>>>>>>> ab3cff83ce959bd01b865572eb4580381c0a79e8
       "slide3_content": "We are currently preparing announcements from A-Nexus. For inquiries, please contact us at the email address below with details of your request.",
       "contact": "★Contact Information"
     },
@@ -39,7 +49,7 @@
       "InvestorsMedia": "For prospective artists",
       "Content": "Interested in learning more about investment opportunities or media inquiries? Our team is ready to assist you.",
       "Contact": "CONTACT US",
-      "Aspiring": "Aspiring Artists & Performers",
+      "Aspiring": "For prospective artists",
       "Apply": "Apply as Artist"
     },
     "Profile": {

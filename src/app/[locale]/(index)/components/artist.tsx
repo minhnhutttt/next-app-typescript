@@ -29,7 +29,7 @@ const Artist = () => {
       id: 3,
       image: '',
       name: '',
-      content: <></>,
+      content: null,
       comming: true,
     },
   ]
@@ -181,16 +181,22 @@ const Artist = () => {
                 }}
               >
                 <div className="[box-shadow:0px_4px_100px_0px_rgba(97,_169,_197,_0.25)] max-xl:w-1/2 max-md:w-full">
-                  {item.image ? (
-                    <img src={item.image} alt="" />
-                  ) : (
-                    <img src="/assets/images/dummy.png" alt="" />
-                  )}
+                  {item.image && <img src={item.image} alt="" />}
                 </div>
                 <div className="flex-1 text-white">
                   <p className="text-[18px] font-medium leading-[1.2] md:text-[24px]">
                     {item.name && item.name}
                   </p>
+<<<<<<< HEAD
+                  {item.content && (
+                    <p
+                      className="mt-4 text-[14px] font-medium leading-[2] md:mt-[30px] md:text-[16px]"
+                      dangerouslySetInnerHTML={{
+                        __html: item.content,
+                      }}
+                    ></p>
+                  )}
+=======
                   {item.content &&
                   <p
                     className="mt-4 text-[14px] font-medium leading-[2] md:mt-[30px] md:text-[16px]"
@@ -199,6 +205,7 @@ const Artist = () => {
                     }}
                   ></p>
                 }
+>>>>>>> ab3cff83ce959bd01b865572eb4580381c0a79e8
                 </div>
               </div>
             </SwiperSlide>

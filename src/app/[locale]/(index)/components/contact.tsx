@@ -104,7 +104,7 @@ const Contact = () => {
       >
         <div className="">
           <p className="text-center text-[24px] font-semibold tracking-widest text-white md:text-[32px]">
-            {t('InvestorsMedia')}
+            {t('Aspiring')}
           </p>
           <div className="mt-[30px] flex justify-center md:mt-[60px]">
             <Button

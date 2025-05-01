@@ -115,7 +115,11 @@ const News = () => {
                     </span>
                   </div>
 
+<<<<<<< HEAD
+                  <div className="absolute inset-x-0 bottom-0 z-10 flex h-[80%] translate-y-full flex-col items-center justify-center rounded-[30px] bg-black/60 px-6 py-8 transition-transform duration-300 group-hover:translate-y-0 md:px-[50px]">
+=======
                   <div className="absolute inset-x-0 bottom-0 flex h-[80%] translate-y-full flex-col items-center justify-center rounded-[30px] bg-black/60 px-6 py-8 transition-transform duration-300 group-hover:translate-y-0 md:px-[50px]">
+>>>>>>> ab3cff83ce959bd01b865572eb4580381c0a79e8
                     <div className="space-y-6 text-[#FAE2D7] md:space-y-10">
                       <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
                         {slide.title}
@@ -123,12 +127,23 @@ const News = () => {
                       <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
                         {slide.head}
                       </p>
+<<<<<<< HEAD
+                      <p className="text-[13px] leading-[1.8] md:text-[16px]">
+                        {slide.content}
+                      </p>
+                      <p className="text-[13px] leading-[1.8] md:text-[16px]">
+                        {t('contact')} <br />
+                        <a href="mailto:info@a-nexus.com" className="underline">
+                          info@a-nexus.com
+                        </a>
+=======
                       <p className="text-[13px] md:text-[16px] leading-[1.8]">
                         {slide.content}
                       </p>
                       <p className="text-[13px] md:text-[16px] leading-[1.8]">
                         {t('contact')} <br />
                         <a href="mailto:info@a-nexus.com" className="underline">info@a-nexus.com</a>
+>>>>>>> ab3cff83ce959bd01b865572eb4580381c0a79e8
                       </p>
                     </div>
                   </div>
