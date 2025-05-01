@@ -187,7 +187,6 @@ const Artist = () => {
                   <p className="text-[18px] font-medium leading-[1.2] md:text-[24px]">
                     {item.name && item.name}
                   </p>
-<<<<<<< HEAD
                   {item.content && (
                     <p
                       className="mt-4 text-[14px] font-medium leading-[2] md:mt-[30px] md:text-[16px]"
@@ -196,16 +195,6 @@ const Artist = () => {
                       }}
                     ></p>
                   )}
-=======
-                  {item.content &&
-                  <p
-                    className="mt-4 text-[14px] font-medium leading-[2] md:mt-[30px] md:text-[16px]"
-                    dangerouslySetInnerHTML={{
-                      __html: item.content,
-                    }}
-                  ></p>
-                }
->>>>>>> ab3cff83ce959bd01b865572eb4580381c0a79e8
                 </div>
               </div>
             </SwiperSlide>
