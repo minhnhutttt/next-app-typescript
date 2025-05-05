@@ -37,7 +37,7 @@ export default function Home() {
         <div className="fixed inset-0">
           <div
             data-js="butterfly-layer"
-            className="flex absolute max-md:w-[30vw] md:w-[10vw]"
+            className="flex absolute max-md:w-[30vw] md:w-[160px]"
           >
             <div data-js="butterfly-inner">
               <img
@@ -54,13 +54,13 @@ export default function Home() {
             >
               <img
                 data-js="brandj-img"
-                className="w-[10vw] md:w-[6vw]"
+                className="w-[10vw] md:w-[100px]"
                 src="/assets/images/home/brand__j.webp"
                 alt=""
               />
               <img
                 data-js="stickbottle-img"
-                className="w-[3vw] md:w-[1vw] -mt-[4vw] -ml-[1.5vw]"
+                className="w-[3vw] md:w-[20px] -mt-[4vw] -ml-[1.5vw]"
                 src="/assets/images/home/brand__stick-bottle.webp"
                 alt=""
               />
@@ -76,13 +76,13 @@ export default function Home() {
             >
               <img
                 data-js="framer-framer"
-                className="w-[30vw] md:w-[12vw]"
+                className="w-[30vw] md:w-[300px]"
                 src="/assets/images/home/brand__farmer.webp"
                 alt=""
               />
               <img
                 data-js="framer-avocado"
-                className="w-[10vw] md:w-[4vw]"
+                className="w-[10vw] md:w-[80px]"
                 src="/assets/images/home/brand__avocado.webp"
                 alt=""
               />
@@ -98,19 +98,19 @@ export default function Home() {
             >
               <img
                 data-js="bag-tree"
-                className="w-[16vw] md:w-[8vw]"
+                className="w-[16vw] md:w-[140px]"
                 src="/assets/images/home/brand__bg-bag-lady.webp"
                 alt=""
               />
               <img
                 data-js="bag-bird"
-                className="w-[8vw] md:w-[4vw] md:-ml-[3.5vw] -ml-[5vw] md:mt-[3vw] mt-[6vw]"
+                className="w-[8vw] md:w-[80px] md:-ml-[60px] -ml-[5vw] md:mt-[50px] mt-[6vw]"
                 src="/assets/images/home/brand__flag-bird.webp"
                 alt=""
               />
               <img
                 data-js="bag-flag"
-                className="md:w-[8vw] w-[18vw] md:-mt-[5vw] -mt-[10vw] md:-ml-[0.5vw] -ml-[1vw]"
+                className="md:w-[160px] w-[18vw] md:-mt-[110px] -mt-[10vw] md:-ml-[10px] -ml-[1vw]"
                 src="/assets/images/home/brand__flag-002.webp"
                 alt=""
               />
@@ -126,25 +126,25 @@ export default function Home() {
             >
               <img
                 data-js="earth-arm"
-                className="absolute left-0 top-0 w-[60vw] md:w-[40vw]"
+                className="absolute left-1/2 top-1/2 w-[90vw] md:w-[700px]"
                 src="/assets/images/home/brand__arm.webp"
                 alt=""
               />
               <img
                 data-js="earth-earth"
-                className="absolute left-0 top-0 w-[80vw] md:w-[30vw]"
+                className="absolute left-1/2 top-1/2 w-[70vw] md:w-[550px]"
                 src="/assets/images/home/brand__earth.webp"
                 alt=""
               />
               <img
                 data-js="earth-john"
-                className="absolute left-0 top-0 w-[40vw] md:w-[12vw]"
+                className="absolute left-1/2 top-1/2 w-[30vw] md:w-[200px]"
                 src="/assets/images/home/brand__john.webp"
                 alt=""
               />
               <img
                 data-js="earth-sunflower"
-                className="absolute left-0 top-0 w-[30vw] md:w-[14vw]"
+                className="absolute left-1/2 top-1/2 w-[40vw] md:w-[240px]"
                 src="/assets/images/home/brand__sunflower.webp"
                 alt=""
               />
@@ -158,14 +158,28 @@ export default function Home() {
             <div data-js="plate-inner" className="flex justify-center items-center">
               <img
                 data-js="plate-one"
-                className="md:w-[10vw] w-[20vw]"
+                className="md:w-[190px] w-[20vw]"
                 src="/assets/images/home/brand__plate-one.webp"
                 alt=""
               />
               <img
                 data-js="plate-earth"
-                className="md:w-[16vw] w-[32vw]"
+                className="md:w-[310px] w-[32vw]"
                 src="/assets/images/home/brand__plate-earth.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div
+            data-js="skyscraper-layer"
+            className="absolute flex justify-center items-center"
+          >
+            <div data-js="skyscraper-inner" className="flex justify-center items-center">
+              <img
+                data-js="skyscraper-one"
+                className="md:w-[10vw] w-[20vw]"
+                src="/assets/images/home/brand__skyscraper.webp"
                 alt=""
               />
             </div>

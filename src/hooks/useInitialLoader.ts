@@ -36,6 +36,7 @@ interface MouseMoveRatios {
   bag: number;
   plate: number;
   earth: number;
+  skyscraper: number;
 }
 
 export function useInitialLoader() {
@@ -49,6 +50,7 @@ export function useInitialLoader() {
     bag?: gsap.core.Timeline;
     plate?: gsap.core.Timeline;
     earth?: gsap.core.Timeline;
+    skyscraper?: gsap.core.Timeline;
     scrollTriggers: any[];
   }>({ scrollTriggers: [] });
 
@@ -63,6 +65,7 @@ export function useInitialLoader() {
     bag: 0.15,
     plate: 0.25,
     earth: 0.25,
+    skyscraper: 0.25,
   });
 
   const mousePositionRef = useRef({ x: 0, y: 0 });
@@ -119,6 +122,9 @@ export function useInitialLoader() {
         earth: document.querySelector('[data-js="earth-earth"]'),
         sunflower: document.querySelector('[data-js="earth-sunflower"]'),
         arm: document.querySelector('[data-js="earth-arm"]'),
+      },
+      skyscraper: {
+        
       }
     };
 
@@ -430,7 +436,7 @@ export function useInitialLoader() {
             .timeline({
               scrollTrigger: {
                 trigger: ".scene-1",
-                endTrigger: ".scene-7",
+                endTrigger: ".scene-8",
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 1,
@@ -487,7 +493,7 @@ export function useInitialLoader() {
             .timeline({
               scrollTrigger: {
                 trigger: ".scene-1",
-                endTrigger: ".scene-7",
+                endTrigger: ".scene-8",
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 1,
@@ -524,7 +530,9 @@ export function useInitialLoader() {
               opacity: 1,
               y: windowHeight * 0.5 + plateEarth.clientHeight * 0.7,
               x: windowWidth * 0.5 - plateEarth.clientWidth * 0.7,
-            },'<');
+            },'<').to(plateLayer, {
+              y: -windowHeight,
+            });
 
           const plateFlutterTl = createFlutterTimeline();
           plateFlutterTl
@@ -549,7 +557,7 @@ export function useInitialLoader() {
             .timeline({
               scrollTrigger: {
                 trigger: ".scene-3",
-                endTrigger: ".scene-7",
+                endTrigger: ".scene-8",
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 1,
@@ -566,23 +574,23 @@ export function useInitialLoader() {
 
           // ScrollTrigger Earth
           gsap.set(earthArm, {
-            y: windowHeight * 0.5 + earthArm.clientHeight * 0.9 + earthEarth.clientHeight,
-            x: windowWidth * 0.5 - earthArm.clientWidth * 0.5,
+            y: -earthArm.clientHeight * 0.8 + earthEarth.clientHeight,
+            x: -earthArm.clientWidth * 0.5,
           });
 
           gsap.set(earthJohn, {
-            y: windowHeight * 0.5 + earthJohn.clientHeight * 0.1,
-            x: windowWidth * 0.5 - earthJohn.clientWidth * 0.5,
+            y: -earthJohn.clientHeight * 1.1,
+            x: -earthJohn.clientWidth * 0.5,
           });
 
           gsap.set(earthEarth, {
-            y: windowHeight - earthJohn.clientHeight * 0.5,
-            x: windowWidth * 0.5 - earthEarth.clientWidth * 0.5,
+            y: -earthJohn.clientHeight * 0.5,
+            x: -earthEarth.clientWidth * 0.5,
           });
 
           gsap.set(earthSunflower, {
-            y: windowHeight - earthSunflower.clientHeight * 0.3,
-            x: windowWidth * 0.5 - earthSunflower.clientWidth * 1.2,
+            y: -earthSunflower.clientHeight * 0.3,
+            x: -earthSunflower.clientWidth * 1.2,
           });
 
           gsap.set(earthLayer, {
@@ -591,19 +599,16 @@ export function useInitialLoader() {
           });
 
           const earthTl = gsap
-            .timeline()
-            .from(earthLayer, {
-              duration: 0.2, autoAlpha: 0
-            }).to(earthLayer, {
+            .timeline().to(earthLayer, {
               ease: "power1.inOut",
               y: windowHeight * 0.5 + earthLayer.clientHeight * 0.05,
               scale: 1
-            },"-=0.2")
+            },"-=0.5")
             .to(earthLayer, {
               ease: "power1.inOut",
               y: -earthLayer.clientHeight,
               scale: 0.7
-            },"-=0.2")
+            })
           const earthFlutterTl = createFlutterTimeline();
           earthFlutterTl
             .to(earthInner, {
