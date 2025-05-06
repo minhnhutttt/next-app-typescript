@@ -116,6 +116,47 @@ export default function Home() {
               />
             </div>
           </div>
+
+          <div
+            data-js="tree-layer"
+            className="inline-flex justify-center items-center"
+          >
+            <div data-js="tree-inner" className="flex justify-center items-center">
+              <img
+                data-js="tree-sisters"
+                className="md:w-[280px] object-top object-contain size-[30vw]"
+                src="/assets/images/home/brand__tree-sisters.webp"
+                alt=""
+              />
+              <img
+                data-js="tree-cloud"
+                className="absolute left-1/2 top-1/2 md:w-[500px] w-[70vw] max-w-fit"
+                src="/assets/images/home/brand__cloud-lg.webp"
+                alt=""
+              />
+            </div>
+          </div>
+          
+          <div
+            data-js="skyscraper-layer"
+            className="absolute inset-0 flex justify-center items-center"
+          >
+            <div data-js="skyscraper-inner" className="flex justify-center items-center w-full h-full">
+              <img
+                data-js="skyscraper-glory"
+                className="absolute left-1/2 top-1/2 md:size-[280px] object-top object-contain size-[50vw]"
+                src="/assets/images/home/brand__glory.webp"
+                alt=""
+              />
+              <img
+                data-js="skyscraper-tower"
+                className="absolute left-1/2 top-1/2 md:w-[550px] w-[70vw]"
+                src="/assets/images/home/brand__skyscraper.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
           <div
             data-js="earth-layer"
             className="absolute inset-0 flex justify-center items-center"
@@ -153,7 +194,7 @@ export default function Home() {
           
           <div
             data-js="plate-layer"
-            className="absolute flex justify-center items-center"
+            className="inline-flex justify-center items-center"
           >
             <div data-js="plate-inner" className="flex justify-center items-center">
               <img
@@ -172,18 +213,39 @@ export default function Home() {
           </div>
 
           <div
-            data-js="skyscraper-layer"
-            className="absolute flex justify-center items-center"
+            data-js="stick-layer"
+            className="inline-flex justify-center items-center"
           >
-            <div data-js="skyscraper-inner" className="flex justify-center items-center">
+            <div data-js="stick-inner" className="flex justify-center items-center">
               <img
-                data-js="skyscraper-one"
-                className="md:w-[10vw] w-[20vw]"
-                src="/assets/images/home/brand__skyscraper.webp"
+                data-js="stick-tree"
+                className="object-top object-contain max-w-fit w-[70px] md:w-[120px]"
+                src="/assets/images/home/brand__stick-tree.webp"
+                alt=""
+              />
+              <img
+                data-js="stick-cloud"
+                className="object-top w-[200px] md:w-[380px] left-1/2 top-1/2 absolute object-contain max-w-fit"
+                src="/assets/images/home/brand__cloud-sm.webp"
                 alt=""
               />
             </div>
           </div>
+
+          <div
+            data-js="bird-layer"
+            className="inline-flex justify-center items-center"
+          >
+            <div data-js="bird-inner" className="flex justify-center items-center">
+              <img
+                data-js="bird-frame01"
+                className="object-top object-contain max-w-fit w-[40px] md:w-[60px]"
+                src="/assets/images/home/brand__bird-001.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
         </div>
       </div>
       <div className="absolute top-0 inset-x-0">
