@@ -130,6 +130,7 @@ const Introduction = () => {
             </p>
           </div>
         </div>
+        <div className="h-[5px] bg-[linear-gradient(90deg,_#FF7DD3_0%,_#3CE8FF_100%)]"></div>
       </div>
       <div className="md:hidden mt-8">
         <LineButton />
