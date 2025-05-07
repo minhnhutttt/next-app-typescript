@@ -53,6 +53,9 @@ interface MouseMoveRatios {
   tree: number;
   stick: number;
   birds: number;
+  bottle: number;
+  jc: number;
+  balloon: number;
 }
 // TODO: Step 2
 export function useInitialLoader() {
@@ -71,6 +74,10 @@ export function useInitialLoader() {
     tree?: gsap.core.Timeline;
     stick?: gsap.core.Timeline;
     birds?: gsap.core.Timeline;
+    text01?: gsap.core.Timeline;
+    bottle?: gsap.core.Timeline;
+    balloon?: gsap.core.Timeline;
+    jc?: gsap.core.Timeline;
     scrollTriggers: any[];
   }>({ scrollTriggers: [] });
 
@@ -89,6 +96,9 @@ export function useInitialLoader() {
     tree: 0.1,
     stick: 0.1,
     birds: 0.07,
+    bottle: 0.1,
+    jc: 0.1,
+    balloon: 0.1,
   });
 
   const mousePositionRef = useRef({ x: 0, y: 0 });
@@ -168,6 +178,27 @@ export function useInitialLoader() {
         layer: document.querySelector('[data-js="birds-layer"]'),
         inner: document.querySelector('[data-js="birds-inner"]'),
         frame: document.querySelectorAll('[data-js="birds-frame"]') as NodeListOf<HTMLImageElement>,
+      },
+      text01: {
+        layer: document.querySelector('[data-js="text01-layer"]'),
+        inner: document.querySelector('[data-js="text01-inner"]'),
+      },
+      bottle: {
+        layer: document.querySelector('[data-js="bottle-layer"]'),
+        inner: document.querySelector('[data-js="bottle-inner"]'),
+        wash: document.querySelector('[data-js="bottle-wash"]'),
+        o: document.querySelector('[data-js="bottle-o"]'),
+      },
+      jc: {
+        layer: document.querySelector('[data-js="jc-layer"]'),
+        inner: document.querySelector('[data-js="jc-inner"]'),
+        cloud: document.querySelector('[data-js="jc-cloud"]'),
+        j: document.querySelector('[data-js="jc-j"]'),
+      },
+      balloon: {
+        layer: document.querySelector('[data-js="balloon-layer"]'),
+        inner: document.querySelector('[data-js="balloon-inner"]'),
+        flower: document.querySelector('[data-js="balloon-flower"]'),
       },
     };
 
@@ -262,6 +293,10 @@ export function useInitialLoader() {
       if (timelineRefs.current.tree) timelineRefs.current.tree.kill();
       if (timelineRefs.current.stick) timelineRefs.current.stick.kill();
       if (timelineRefs.current.birds) timelineRefs.current.birds.kill();
+      if (timelineRefs.current.text01) timelineRefs.current.text01.kill();
+      if (timelineRefs.current.bottle) timelineRefs.current.bottle.kill();
+      if (timelineRefs.current.jc) timelineRefs.current.jc.kill();
+      if (timelineRefs.current.balloon) timelineRefs.current.balloon.kill();
     };
 
     const initScrollTriggers = () => {
@@ -335,6 +370,27 @@ export function useInitialLoader() {
           const birdsInner = elements.birds.inner;
           const birdsFrame = elements.birds.frame;
 
+          // text01
+          const text01Layer = elements.text01.layer;
+          const text01Inner = elements.text01.inner;
+
+          // bottle
+          const bottleLayer = elements.bottle.layer;
+          const bottleInner = elements.bottle.inner;
+          const bottleWash = elements.bottle.wash;
+          const bottleO = elements.bottle.o;
+
+          // jc
+          const jcLayer = elements.jc.layer;
+          const jcInner = elements.jc.inner;
+          const jcCloud = elements.jc.cloud;
+          const jcJ = elements.jc.j;
+
+          // balloon
+          const balloonLayer = elements.balloon.layer;
+          const balloonInner = elements.balloon.inner;
+          const balloonFlower = elements.balloon.flower;
+
           // TODO: Step 6
           if (
             !butterflyLayer ||
@@ -363,7 +419,20 @@ export function useInitialLoader() {
             !stickCloud ||
             !birdsLayer ||
             !birdsInner ||
-            !birdsFrame 
+            !birdsFrame ||
+            !text01Layer ||
+            !text01Inner ||
+            !bottleLayer ||
+            !bottleInner||
+            !bottleWash ||
+            !bottleO ||
+            !jcLayer ||
+            !jcInner ||
+            !jcCloud ||
+            !jcJ ||
+            !balloonLayer ||
+            !balloonInner ||
+            !balloonFlower 
           ) {
             return {
               butterflyTl: null,
@@ -376,6 +445,10 @@ export function useInitialLoader() {
               treeTl: null,
               stickTl: null,
               birdsTl: null,
+              text01Tl: null,
+              bottleTl: null,
+              jcTl: null,
+              balloonTl: null,
             };
           }
 
@@ -868,25 +941,21 @@ export function useInitialLoader() {
           });
 
           gsap.set(stickLayer, {
-            x: -Math.max(
-              windowWidth * 0.5 - stickLayer.clientWidth * 2.5,
-              stickLayer.clientWidth * 0.4
-            ),
-            y: windowHeight + stickLayer.clientHeight,
+            x: isMd ? -(windowWidth * 0.5 - stickLayer.clientWidth * 2.5) :  -windowWidth * 0.7,
+            y: windowHeight + stickLayer.clientHeight + stickTree.clientHeight,
             scale: 1.25
           });
 
           const stickTl = gsap
             .timeline().to(stickLayer, {
               ease: "power1.inOut",
-                y: window.innerHeight * 0.5 + stickLayer.clientHeight * 0.6,
+                y: isMd ?  windowHeight * 0.5 + stickLayer.clientHeight * 0.6 : windowHeight * 0.5 + stickLayer.clientHeight * 2,
                 scale: 1,
             })
             .to(stickLayer, {
               ease: "power1.inOut",
-                y: -stickLayer.clientHeight * 7,
-            })
-            ;
+                y: isMd ? -stickLayer.clientHeight * 7 : -stickLayer.clientHeight * 7,
+            });
 
           const stickFlutterTl = createFlutterTimeline();
           stickFlutterTl.to(stickCloud, {
@@ -919,47 +988,40 @@ export function useInitialLoader() {
 
           // ScrollTrigger birds
 
-
+          const birdsFlutterTl = createFlutterTimeline();
           birdsFrame.forEach((bird) => {
             gsap.set(bird, {
               scale: gsap.utils.random(0.8, 1.1),
               x: bird.clientWidth * gsap.utils.random(0.5, 2.2),
               y: bird.clientHeight * gsap.utils.random(-1.2, 1.2),
             });
+            
+            birdsFlutterTl.to(bird, {
+              duration: gsap.utils.random(1.6, 2.2),
+              ease: "sine.inOut",
+              y: `+=${gsap.utils.random(-60, 60)}`,
+            },'<');
           })
 
           gsap.set(birdsLayer, {
-            x: -Math.max(
-              windowWidth * 0.5 - birdsLayer.clientWidth * 2.5,
-              birdsLayer.clientWidth * 0.4
-            ),
-            y: windowHeight + birdsLayer.clientHeight,
-            scale: 1.25
+            x: windowWidth,
+            y: birdsLayer.clientHeight,
           });
 
           const birdsTl = gsap
             .timeline().to(birdsLayer, {
+              delay: 0.1,
               ease: "power1.inOut",
-                y: window.innerHeight * 0.5 + birdsLayer.clientHeight * 0.6,
-                scale: 1,
-            })
-            .to(birdsLayer, {
-              ease: "power1.inOut",
-                y: -birdsLayer.clientHeight * 7,
-            })
-            ;
+                y: -birdsLayer.clientHeight,
+                x: -birdsLayer.clientWidth * 3,
+                scale: 0.75,
+            });
 
-          const birdsFlutterTl = createFlutterTimeline();
-          birdsFlutterTl.to(birdsFrame, {
-            duration: gsap.utils.random(2.6, 4),
-            delay: gsap.utils.random(0, 0.2),
-            ease: "power1.inOut",
-            x: `-=${gsap.utils.random(8, 12)}`,
-          });
+          
           timelineRefs.current.birds = gsap
             .timeline({
               scrollTrigger: {
-                trigger: ".scene-2",
+                trigger: ".scene-3",
                 endTrigger: ".scene-9",
                 start: "top top",
                 end: "bottom bottom",
@@ -971,6 +1033,175 @@ export function useInitialLoader() {
           if (timelineRefs.current.birds.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
               timelineRefs.current.birds.scrollTrigger
+            );
+          }
+          gsap.set(text01Inner.querySelectorAll('.char'), {
+            duration: 6,
+          autoAlpha: 0,
+          x: "0.5rem",
+          ease: "power1.inOut",
+          })
+          // ScrollTrigger text01
+          const text01Tl = gsap
+            .timeline().to(text01Inner.querySelectorAll('.char'), {
+              duration: 6,
+            autoAlpha: 1,
+            x: "0.5rem",
+            stagger: { each: 0.1 },
+            ease: "power1.inOut",
+            }).to(text01Inner.querySelectorAll('.char'), {
+              duration: 6,
+            autoAlpha: 0,
+            x: "0.5rem",
+            stagger: { each: 0.1 },
+            ease: "power1.inOut",
+            },"+=5");
+
+          timelineRefs.current.text01 = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-6",
+                endTrigger: ".scene-8",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(text01Tl);
+
+          if (timelineRefs.current.text01.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.text01.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger bottle
+          gsap.set(bottleWash, {
+            x: 20,
+            y: -180
+          });
+
+          gsap.set(bottleLayer, {
+            x: isMd ? bottleLayer.clientWidth * 2 : bottleLayer.clientWidth * 0.5,
+            y: windowHeight + bottleLayer.clientHeight,
+          });
+
+          const bottleTl = gsap
+            .timeline().to(bottleLayer, {
+              ease: "power1.inOut",
+               y: windowHeight * 0.9,
+            })
+            .to(bottleLayer, {
+              ease: "power1.inOut",
+              y: -bottleLayer.clientHeight * 0.6,
+            }).to(bottleLayer, {
+              ease: "power1.inOut",
+              y: -bottleLayer.clientHeight * 5,
+            });
+
+          const bottleFlutterTl = createFlutterTimeline();
+          bottleFlutterTl.to(bottleO, {
+            duration: gsap.utils.random(1.8, 2.2),
+            ease: "sine.inOut",
+            x: `-=${gsap.utils.random(10, 20)}`,
+          });
+          timelineRefs.current.bottle = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-4",
+                endTrigger: ".scene-10",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(bottleTl);
+
+          if (timelineRefs.current.bottle.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.bottle.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger jc
+          gsap.set(jcCloud, {
+            x: -20,
+            y: -60,
+          });
+
+          gsap.set(jcLayer, {
+            x: -windowWidth * 0.4,
+            y: windowHeight + jcLayer.clientHeight,
+          });
+
+          const jcTl = gsap
+            .timeline().to(jcLayer, {
+              ease: "power1.inOut",
+               y: -windowHeight,
+            });
+
+          const jcFlutterTl = createFlutterTimeline();
+          jcFlutterTl.to(jcCloud, {
+            duration: gsap.utils.random(2, 3.6),
+            ease: "power1.inOut",
+            x: `-=${gsap.utils.random(-20, 20)}`,
+          }).to(jcJ, {
+            duration: gsap.utils.random(2.2, 2.8),
+            ease: "sine.inOut",
+            y: `-=${gsap.utils.random(-30, 30)}`,
+          }, '<');
+          timelineRefs.current.jc = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-3",
+                endTrigger: ".scene-13",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(jcTl);
+
+          if (timelineRefs.current.jc.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.jc.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger balloon
+
+          gsap.set(balloonLayer, {
+            x: balloonLayer.clientWidth * 0.5,
+            y: windowHeight + balloonLayer.clientHeight * 4,
+          });
+
+          const balloonTl = gsap
+            .timeline().to(balloonLayer, {
+              ease: "power1.inOut",
+               y: -balloonLayer.clientHeight * 4,
+            });
+
+          const balloonFlutterTl = createFlutterTimeline();
+          balloonFlutterTl.to(balloonFlower, {
+            duration: gsap.utils.random(1.8, 2.2),
+            ease: "sine.inOut",
+            y: `-=${gsap.utils.random(60, 100)}`,
+          });
+          timelineRefs.current.balloon = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-4",
+                endTrigger: ".scene-12",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(balloonTl);
+
+          if (timelineRefs.current.balloon.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.balloon.scrollTrigger
             );
           }
 
@@ -1093,6 +1324,26 @@ export function useInitialLoader() {
           gsap.to(elements.birds.inner, {
             x: moveX * mouseMoveRatios.current.birds,
             y: moveY * mouseMoveRatios.current.birds / 2,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
+
+        // bottle
+        if (elements.bottle.inner) {
+          gsap.to(elements.bottle.inner, {
+            x: moveX * mouseMoveRatios.current.bottle,
+            y: moveY * mouseMoveRatios.current.bottle / 2,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
+
+        // jc
+        if (elements.jc.inner) {
+          gsap.to(elements.jc.inner, {
+            x: moveX * mouseMoveRatios.current.jc,
+            y: moveY * mouseMoveRatios.current.jc / 2,
             duration: 0.4,
             ease: "power1.out",
           });

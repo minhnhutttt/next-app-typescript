@@ -121,7 +121,10 @@ export default function Home() {
             data-js="tree-layer"
             className="inline-flex justify-center items-center"
           >
-            <div data-js="tree-inner" className="flex justify-center items-center">
+            <div
+              data-js="tree-inner"
+              className="flex justify-center items-center"
+            >
               <img
                 data-js="tree-sisters"
                 className="md:w-[280px] object-top object-contain size-[30vw]"
@@ -136,12 +139,15 @@ export default function Home() {
               />
             </div>
           </div>
-          
+
           <div
             data-js="skyscraper-layer"
             className="absolute inset-0 flex justify-center items-center"
           >
-            <div data-js="skyscraper-inner" className="flex justify-center items-center w-full h-full">
+            <div
+              data-js="skyscraper-inner"
+              className="flex justify-center items-center w-full h-full"
+            >
               <img
                 data-js="skyscraper-glory"
                 className="absolute left-1/2 top-1/2 md:size-[280px] object-top object-contain size-[50vw]"
@@ -191,12 +197,15 @@ export default function Home() {
               />
             </div>
           </div>
-          
+
           <div
             data-js="plate-layer"
             className="inline-flex justify-center items-center"
           >
-            <div data-js="plate-inner" className="flex justify-center items-center">
+            <div
+              data-js="plate-inner"
+              className="flex justify-center items-center"
+            >
               <img
                 data-js="plate-one"
                 className="md:w-[190px] w-[20vw]"
@@ -216,7 +225,10 @@ export default function Home() {
             data-js="stick-layer"
             className="inline-flex justify-center items-center"
           >
-            <div data-js="stick-inner" className="flex justify-center items-center">
+            <div
+              data-js="stick-inner"
+              className="flex justify-center items-center"
+            >
               <img
                 data-js="stick-tree"
                 className="object-top object-contain max-w-fit w-[70px] md:w-[120px]"
@@ -236,7 +248,10 @@ export default function Home() {
             data-js="birds-layer"
             className="inline-flex justify-center items-center"
           >
-            <div data-js="birds-inner" className="flex justify-center items-center">
+            <div
+              data-js="birds-inner"
+              className="flex justify-center items-center"
+            >
               <img
                 data-js="birds-frame"
                 className="object-top object-contain max-w-fit w-[40px] md:w-[60px]"
@@ -288,7 +303,93 @@ export default function Home() {
             </div>
           </div>
 
+          <div
+            data-js="text01-layer"
+            className="absolute inset-0 flex justify-center items-center"
+          >
+            <div
+              data-js="text01-inner"
+              className="flex justify-center items-center"
+            >
+              <h2>
+                <span className="block text-[4.6vw] md:text-[32px]" data-splitting>
+                  1994年、NY SOHOに誕生した
+                </span>
+                <span className="block text-[4.6vw] md:text-[32px]" data-splitting>
+                  化学物質を一切使用しない<strong>世界初</strong>の
+                </span>
+                <span className="block text-[4.6vw] md:text-[32px]" data-splitting>
+                  クリーンエアサロン。
+                </span>
+              </h2>
+            </div>
+          </div>
+
         </div>
+        <div className="fixed inset-0 flex justify-center items-center">
+          <div
+            data-js="bottle-layer"
+            className="absolute inline-flex justify-center items-center"
+          >
+            <div
+              data-js="bottle-inner"
+              className="flex justify-center items-center"
+            >
+              <img
+                data-js="bottle-wash"
+                className="object-top left-1/2 top-1/2 absolute object-contain md:w-[150px] w-[24vw] max-w-fit"
+                src="/assets/images/home/brand__body-wash-bottle-wh.webp"
+                alt=""
+              />
+              <img
+                data-js="bottle-o"
+                className="object-top object-contain max-w-fit w-[36vw] md:w-[200px]"
+                src="/assets/images/home/brand__o.webp"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            data-js="jc-layer"
+            className="absolute inline-flex justify-center items-center"
+          >
+            <div
+              data-js="jc-inner"
+              className="flex justify-center items-center "
+            >
+              <img
+                data-js="jc-cloud"
+                className="object-top left-1/2 top-1/2 absolute object-contain max-w-fit md:w-[400px]"
+                src="/assets/images/home/brand__cloud-lg.webp"
+                alt=""
+              />
+              <img
+                data-js="jc-j"
+                className="object-top object-contain max-w-fit md:w-[360px]"
+                src="/assets/images/home/brand__j-lg.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div
+            data-js="balloon-layer"
+            className="absolute inline-flex justify-center items-center"
+          >
+            <div
+              data-js="balloon-inner"
+              className="flex justify-center items-center "
+            >
+              <img
+                data-js="balloon-flower"
+                className="object-top object-contain max-w-fit md:w-[400px]"
+                src="/assets/images/home/brand__balloon.webp"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        
       </div>
       <div className="absolute top-0 inset-x-0">
         <div className="scene h-screen scene-1" data-scene-index="1"></div>
