@@ -233,12 +233,54 @@ export default function Home() {
           </div>
 
           <div
-            data-js="bird-layer"
+            data-js="birds-layer"
             className="inline-flex justify-center items-center"
           >
-            <div data-js="bird-inner" className="flex justify-center items-center">
+            <div data-js="birds-inner" className="flex justify-center items-center">
               <img
-                data-js="bird-frame01"
+                data-js="birds-frame"
+                className="object-top object-contain max-w-fit w-[40px] md:w-[60px]"
+                src="/assets/images/home/brand__bird-001.webp"
+                alt=""
+              />
+              <img
+                data-js="birds-frame"
+                className="object-top object-contain max-w-fit w-[40px] md:w-[60px]"
+                src="/assets/images/home/brand__bird-001.webp"
+                alt=""
+              />
+              <img
+                data-js="birds-frame"
+                className="object-top object-contain max-w-fit w-[40px] md:w-[60px]"
+                src="/assets/images/home/brand__bird-001.webp"
+                alt=""
+              />
+              <img
+                data-js="birds-frame"
+                className="object-top object-contain max-w-fit w-[40px] md:w-[60px]"
+                src="/assets/images/home/brand__bird-001.webp"
+                alt=""
+              />
+              <img
+                data-js="birds-frame"
+                className="object-top object-contain max-w-fit w-[40px] md:w-[60px]"
+                src="/assets/images/home/brand__bird-001.webp"
+                alt=""
+              />
+              <img
+                data-js="birds-frame"
+                className="object-top object-contain max-w-fit w-[40px] md:w-[60px]"
+                src="/assets/images/home/brand__bird-001.webp"
+                alt=""
+              />
+              <img
+                data-js="birds-frame"
+                className="object-top object-contain max-w-fit w-[40px] md:w-[60px]"
+                src="/assets/images/home/brand__bird-001.webp"
+                alt=""
+              />
+              <img
+                data-js="birds-frame"
                 className="object-top object-contain max-w-fit w-[40px] md:w-[60px]"
                 src="/assets/images/home/brand__bird-001.webp"
                 alt=""

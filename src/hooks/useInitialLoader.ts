@@ -28,6 +28,10 @@ const BIRD_FRAMES = [
   "/assets/images/home/brand__bird-004.webp",
   "/assets/images/home/brand__bird-005.webp",
   "/assets/images/home/brand__bird-006.webp",
+  "/assets/images/home/brand__bird-005.webp",
+  "/assets/images/home/brand__bird-004.webp",
+  "/assets/images/home/brand__bird-003.webp",
+  "/assets/images/home/brand__bird-002.webp",
 ];
 
 const createFlutterTimeline = () =>
@@ -48,6 +52,7 @@ interface MouseMoveRatios {
   skyscraper: number;
   tree: number;
   stick: number;
+  birds: number;
 }
 // TODO: Step 2
 export function useInitialLoader() {
@@ -65,6 +70,7 @@ export function useInitialLoader() {
     skyscraper?: gsap.core.Timeline;
     tree?: gsap.core.Timeline;
     stick?: gsap.core.Timeline;
+    birds?: gsap.core.Timeline;
     scrollTriggers: any[];
   }>({ scrollTriggers: [] });
 
@@ -82,6 +88,7 @@ export function useInitialLoader() {
     skyscraper: 0.1,
     tree: 0.1,
     stick: 0.1,
+    birds: 0.07,
   });
 
   const mousePositionRef = useRef({ x: 0, y: 0 });
@@ -157,10 +164,10 @@ export function useInitialLoader() {
         tree: document.querySelector('[data-js="stick-tree"]'),
         cloud: document.querySelector('[data-js="stick-cloud"]'),
       },
-      bird: {
-        layer: document.querySelector('[data-js="bird-layer"]'),
-        inner: document.querySelector('[data-js="bird-inner"]'),
-        frame01: document.querySelector('[data-js="bird-frame01"]') as HTMLImageElement,
+      birds: {
+        layer: document.querySelector('[data-js="birds-layer"]'),
+        inner: document.querySelector('[data-js="birds-inner"]'),
+        frame: document.querySelectorAll('[data-js="birds-frame"]') as NodeListOf<HTMLImageElement>,
       },
     };
 
@@ -195,16 +202,21 @@ export function useInitialLoader() {
 
     // Animation bird
     const animateBirdFrames = () => {
-      if (!elements.butterfly.img) return;
-
+      if (!elements.birds.frame || elements.birds.frame.length === 0) return;
+    
       if (birdIntervalRef.current) {
         clearInterval(birdIntervalRef.current);
       }
-
-      let currentFrame = 0;
+    
+      const birdFrameIndices = Array.from(elements.birds.frame).map(() => {
+        return Math.floor(Math.random() * BIRD_FRAMES.length);
+      });
+    
       birdIntervalRef.current = window.setInterval(() => {
-        currentFrame = (currentFrame + 1) % BIRD_FRAMES.length;
-        elements.bird.frame01.src = BIRD_FRAMES[currentFrame];
+        elements.birds.frame.forEach((birdFrame, index) => {
+          birdFrameIndices[index] = (birdFrameIndices[index] + 1) % BIRD_FRAMES.length;
+          birdFrame.src = BIRD_FRAMES[birdFrameIndices[index]];
+        });
       }, 100);
     };
 
@@ -249,6 +261,7 @@ export function useInitialLoader() {
         timelineRefs.current.skyscraper.kill();
       if (timelineRefs.current.tree) timelineRefs.current.tree.kill();
       if (timelineRefs.current.stick) timelineRefs.current.stick.kill();
+      if (timelineRefs.current.birds) timelineRefs.current.birds.kill();
     };
 
     const initScrollTriggers = () => {
@@ -317,6 +330,11 @@ export function useInitialLoader() {
           const stickTree = elements.stick.tree;
           const stickCloud = elements.stick.cloud;
 
+          // stick
+          const birdsLayer = elements.birds.layer;
+          const birdsInner = elements.birds.inner;
+          const birdsFrame = elements.birds.frame;
+
           // TODO: Step 6
           if (
             !butterflyLayer ||
@@ -342,7 +360,10 @@ export function useInitialLoader() {
             !stickLayer ||
             !stickInner ||
             !stickTree ||
-            !stickCloud 
+            !stickCloud ||
+            !birdsLayer ||
+            !birdsInner ||
+            !birdsFrame 
           ) {
             return {
               butterflyTl: null,
@@ -354,6 +375,7 @@ export function useInitialLoader() {
               skyscraperTl: null,
               treeTl: null,
               stickTl: null,
+              birdsTl: null,
             };
           }
 
@@ -895,6 +917,63 @@ export function useInitialLoader() {
             );
           }
 
+          // ScrollTrigger birds
+
+
+          birdsFrame.forEach((bird) => {
+            gsap.set(bird, {
+              scale: gsap.utils.random(0.8, 1.1),
+              x: bird.clientWidth * gsap.utils.random(0.5, 2.2),
+              y: bird.clientHeight * gsap.utils.random(-1.2, 1.2),
+            });
+          })
+
+          gsap.set(birdsLayer, {
+            x: -Math.max(
+              windowWidth * 0.5 - birdsLayer.clientWidth * 2.5,
+              birdsLayer.clientWidth * 0.4
+            ),
+            y: windowHeight + birdsLayer.clientHeight,
+            scale: 1.25
+          });
+
+          const birdsTl = gsap
+            .timeline().to(birdsLayer, {
+              ease: "power1.inOut",
+                y: window.innerHeight * 0.5 + birdsLayer.clientHeight * 0.6,
+                scale: 1,
+            })
+            .to(birdsLayer, {
+              ease: "power1.inOut",
+                y: -birdsLayer.clientHeight * 7,
+            })
+            ;
+
+          const birdsFlutterTl = createFlutterTimeline();
+          birdsFlutterTl.to(birdsFrame, {
+            duration: gsap.utils.random(2.6, 4),
+            delay: gsap.utils.random(0, 0.2),
+            ease: "power1.inOut",
+            x: `-=${gsap.utils.random(8, 12)}`,
+          });
+          timelineRefs.current.birds = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-2",
+                endTrigger: ".scene-9",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(birdsTl);
+
+          if (timelineRefs.current.birds.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.birds.scrollTrigger
+            );
+          }
+
           // TODO: step 8
 
           // animation frame
@@ -994,6 +1073,26 @@ export function useInitialLoader() {
           gsap.to(elements.tree.inner, {
             x: moveX * mouseMoveRatios.current.tree,
             y: moveY * mouseMoveRatios.current.tree / 2,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
+
+        // stick
+        if (elements.stick.inner) {
+          gsap.to(elements.stick.inner, {
+            x: moveX * mouseMoveRatios.current.stick,
+            y: moveY * mouseMoveRatios.current.stick / 2,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
+
+        // birds
+        if (elements.birds.inner) {
+          gsap.to(elements.birds.inner, {
+            x: moveX * mouseMoveRatios.current.birds,
+            y: moveY * mouseMoveRatios.current.birds / 2,
             duration: 0.4,
             ease: "power1.out",
           });
