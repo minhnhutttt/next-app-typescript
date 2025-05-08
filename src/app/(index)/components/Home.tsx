@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div data-js="initial-overlay_preload" className="relative ">
-      <div data-js="initial-overlay" className="fixed bg-white inset-0"></div>
+      <div data-js="initial-overlay" className="fixed bg-white inset-0 z-50"></div>
       <div
         data-js="scenes"
         className="w-full origin-center items-center justify-center"
@@ -359,13 +359,13 @@ export default function Home() {
             >
               <img
                 data-js="jc-cloud"
-                className="object-top left-1/2 top-1/2 absolute object-contain max-w-fit md:w-[400px]"
+                className="object-top left-1/2 top-1/2 absolute object-contain max-w-fit w-[50vw] md:w-[400px]"
                 src="/assets/images/home/brand__cloud-lg.webp"
                 alt=""
               />
               <img
                 data-js="jc-j"
-                className="object-top object-contain max-w-fit md:w-[360px]"
+                className="object-top object-contain max-w-fit w-[32vw] md:w-[360px]"
                 src="/assets/images/home/brand__j-lg.webp"
                 alt=""
               />
@@ -382,8 +382,30 @@ export default function Home() {
             >
               <img
                 data-js="balloon-flower"
-                className="object-top object-contain max-w-fit md:w-[400px]"
+                className="object-top object-contain max-w-fit w-[30vw] md:w-[320px]"
                 src="/assets/images/home/brand__balloon.webp"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            data-js="windmill-layer"
+            className="absolute inline-flex justify-center items-center"
+          >
+            <div
+              data-js="windmill-inner"
+              className="flex justify-center items-center "
+            >
+              <img
+                data-js="windmill-windmill"
+                className="object-top object-contain max-w-fit md:w-[300px]"
+                src="/assets/images/home/brand__windmill.webp"
+                alt=""
+              />
+              <img
+                data-js="windmill-wave-block"
+                className="object-top object-contain max-w-fit left-1/2 top-1/2 absolute"
+                src="/assets/images/home/brand__wave-block.webp"
                 alt=""
               />
             </div>

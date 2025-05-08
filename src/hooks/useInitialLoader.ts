@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { preloadImages } from "@/utils/imageUtils";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -37,8 +37,9 @@ const BIRD_FRAMES = [
 const createFlutterTimeline = () =>
   gsap.timeline({
     repeat: -1,
-    yoyo: true,
-    repeatDelay: 0.5,
+    yoyo: !0,
+    yoyoEase: !0,
+    repeatRefresh: !1,
   });
 // TODO: Step 1
 interface MouseMoveRatios {
@@ -56,6 +57,7 @@ interface MouseMoveRatios {
   bottle: number;
   jc: number;
   balloon: number;
+  windmill: number;
 }
 // TODO: Step 2
 export function useInitialLoader() {
@@ -78,6 +80,7 @@ export function useInitialLoader() {
     bottle?: gsap.core.Timeline;
     balloon?: gsap.core.Timeline;
     jc?: gsap.core.Timeline;
+    windmill?: gsap.core.Timeline;
     scrollTriggers: any[];
   }>({ scrollTriggers: [] });
 
@@ -99,11 +102,12 @@ export function useInitialLoader() {
     bottle: 0.1,
     jc: 0.1,
     balloon: 0.1,
+    windmill: 0.1,
   });
 
   const mousePositionRef = useRef({ x: 0, y: 0 });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     timelineRefs.current.scrollTriggers = [];
 // TODO: Step 4
     const elements = {
@@ -200,6 +204,12 @@ export function useInitialLoader() {
         inner: document.querySelector('[data-js="balloon-inner"]'),
         flower: document.querySelector('[data-js="balloon-flower"]'),
       },
+      windmill: {
+        layer: document.querySelector('[data-js="windmill-layer"]'),
+        inner: document.querySelector('[data-js="windmill-inner"]'),
+        windmill: document.querySelector('[data-js="windmill-windmill"]'),
+        wave: document.querySelector('[data-js="windmill-wave-block"]'),
+      },
     };
 
     elementsRef.current = elements;
@@ -207,9 +217,14 @@ export function useInitialLoader() {
     if (elements.initialOverlay.el) {
       preloadImages(elements.initialOverlay.preloadImages)
         .then(() => {
-          requestAnimationFrame(() => {
-            gsap.to(elements.initialOverlay.el, { autoAlpha: 0 });
-          });
+          import('splitting').then((Splitting) => {
+            Splitting.default()
+            requestAnimationFrame(() => {
+              gsap.to(elements.initialOverlay.el, { autoAlpha: 0 });
+            });
+            initScrollTriggers();
+          })
+          
         })
         .catch((error) => {
           console.error("Error preloading images:", error);
@@ -391,6 +406,12 @@ export function useInitialLoader() {
           const balloonInner = elements.balloon.inner;
           const balloonFlower = elements.balloon.flower;
 
+          // windmill
+          const windmillLayer = elements.windmill.layer;
+          const windmillInner = elements.windmill.inner;
+          const windmillWindmill = elements.windmill.windmill;
+          const windmillWave = elements.windmill.wave;
+
           // TODO: Step 6
           if (
             !butterflyLayer ||
@@ -432,7 +453,11 @@ export function useInitialLoader() {
             !jcJ ||
             !balloonLayer ||
             !balloonInner ||
-            !balloonFlower 
+            !balloonFlower ||
+            !windmillLayer ||
+            !windmillInner ||
+            !windmillWindmill ||
+            !windmillWave
           ) {
             return {
               butterflyTl: null,
@@ -449,6 +474,7 @@ export function useInitialLoader() {
               bottleTl: null,
               jcTl: null,
               balloonTl: null,
+              windmillTl: null,
             };
           }
 
@@ -907,7 +933,6 @@ export function useInitialLoader() {
           const treeFlutterTl = createFlutterTimeline();
           treeFlutterTl.to(treeCloud, {
             duration: gsap.utils.random(2.6, 4),
-            delay: gsap.utils.random(0, 0.2),
             ease: "power1.inOut",
             x: `-=${gsap.utils.random(40, 60)}`,
           });
@@ -1082,7 +1107,7 @@ export function useInitialLoader() {
           });
 
           gsap.set(bottleLayer, {
-            x: isMd ? bottleLayer.clientWidth * 2 : bottleLayer.clientWidth * 0.5,
+            x: isMd ? bottleLayer.clientWidth * 2 : bottleLayer.clientWidth,
             y: windowHeight + bottleLayer.clientHeight,
           });
 
@@ -1171,14 +1196,14 @@ export function useInitialLoader() {
           // ScrollTrigger balloon
 
           gsap.set(balloonLayer, {
-            x: balloonLayer.clientWidth * 0.5,
+            x: balloonLayer.clientWidth,
             y: windowHeight + balloonLayer.clientHeight * 4,
           });
 
           const balloonTl = gsap
             .timeline().to(balloonLayer, {
               ease: "power1.inOut",
-               y: -balloonLayer.clientHeight * 4,
+               y: -(balloonLayer.clientHeight * 4),
             });
 
           const balloonFlutterTl = createFlutterTimeline();
@@ -1190,7 +1215,7 @@ export function useInitialLoader() {
           timelineRefs.current.balloon = gsap
             .timeline({
               scrollTrigger: {
-                trigger: ".scene-4",
+                trigger: ".scene-5",
                 endTrigger: ".scene-12",
                 start: "top top",
                 end: "bottom bottom",
@@ -1202,6 +1227,43 @@ export function useInitialLoader() {
           if (timelineRefs.current.balloon.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
               timelineRefs.current.balloon.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger windmill
+
+          gsap.set(windmillLayer, {
+            x: windmillLayer.clientWidth,
+            y: windowHeight + windmillLayer.clientHeight * 4,
+          });
+
+          const windmillTl = gsap
+            .timeline().to(windmillLayer, {
+              ease: "power1.inOut",
+               y: -(windmillLayer.clientHeight * 4),
+            });
+
+          const windmillFlutterTl = createFlutterTimeline();
+          windmillFlutterTl.to(windmillWave, {
+            duration: gsap.utils.random(1.8, 2.2),
+            ease: "sine.inOut",
+            y: `-=${gsap.utils.random(60, 100)}`,
+          });
+          timelineRefs.current.windmill = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-5",
+                endTrigger: ".scene-12",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(windmillTl);
+
+          if (timelineRefs.current.windmill.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.windmill.scrollTrigger
             );
           }
 
@@ -1349,11 +1411,21 @@ export function useInitialLoader() {
           });
         }
 
+        // balloon
+        if (elements.balloon.inner) {
+          gsap.to(elements.balloon.inner, {
+            x: moveX * mouseMoveRatios.current.balloon,
+            y: moveY * mouseMoveRatios.current.balloon / 2,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
+
         // TODO: step 9
       }
     };
 
-    initScrollTriggers();
+    
 
     window.addEventListener("mousemove", handleMouseMove);
 
