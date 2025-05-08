@@ -72,7 +72,7 @@ const Introduction = () => {
             </h4>
           </div>
         </div>
-        <div>
+        <div className="fade-up">
           <video autoPlay muted loop playsInline preload="auto" className="">
             <source
               src="/assets/videos/Goodfellows_17LIVE_no1.mp4"
@@ -81,7 +81,7 @@ const Introduction = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="md:py-[47px] py-8">
+        <div className="fade-up md:py-[47px] py-8">
           <button
             className="flex justify-between gap-5 w-full border border-[#D2953F] bg-[url(/assets/images/bg-top.png)] bg-cover bg-no-repeat relative"
             onClick={handleExpanderClick}
