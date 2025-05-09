@@ -519,19 +519,19 @@ export default function Home() {
             >
               <img
                 data-js="berry-01"
-                className="relative w-[5vw] md:w-[70px]"
+                className="relative w-[10vw] md:w-[70px]"
                 src="/assets/images/home/brand__red-berry-1.webp"
                 alt=""
               />
               <img
                 data-js="berry-02"
-                className="w-[5vw] md:w-[70px] absolute left-full"
+                className="w-[10vw] md:w-[70px] absolute left-full"
                 src="/assets/images/home/brand__red-berry-2.webp"
                 alt=""
               />
               <img
                 data-js="berry-03"
-                className="w-[5vw] md:w-[70px] absolute left-full top-full"
+                className="w-[10vw] md:w-[70px] absolute left-full top-full"
                 src="/assets/images/home/brand__red-berry-3.webp"
                 alt=""
               />
@@ -549,13 +549,13 @@ export default function Home() {
             >
               <img
                 data-js="orange-01"
-                className="relative w-[5vw] md:w-[90px]"
+                className="relative w-[12vw] md:w-[90px]"
                 src="/assets/images/home/brand__orange-fruit-1.webp"
                 alt=""
               />
               <img
                 data-js="orange-02"
-                className="w-[8vw] md:w-[100px] absolute top-1/2 left-full"
+                className="w-[12vw] md:w-[100px] absolute top-1/2 left-full"
                 src="/assets/images/home/brand__orange-fruit-2.webp"
                 alt=""
               />
@@ -598,6 +598,24 @@ export default function Home() {
             </div>
           </div>
 
+          {/* cloud */}
+          <div
+            data-js="cloud-layer"
+            className="absolute inline-flex justify-center items-center left-[-10%]"
+          >
+            <div
+              data-js="cloud-inner"
+              className="flex justify-center items-center relative"
+            >
+              <img
+                data-js="cloud-main"
+                className="relative md:w-[800px] w-[40vw] "
+                src="/assets/images/home/brand__cloud-lg.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
           {/* hand */}
           <div
             data-js="hand-layer"
@@ -609,7 +627,7 @@ export default function Home() {
             >
               <img
                 data-js="hand-body"
-                className="relative md:w-[188px] w-[40vw] "
+                className="relative md:w-[188px] w-[26vw] "
                 src="/assets/images/home/brand__hand.webp"
                 alt=""
               />
@@ -622,28 +640,77 @@ export default function Home() {
             </div>
           </div>
 
-          {/* cloud */}
-          {/* <div
-            data-js="cloud-layer"
-            className="absolute inline-flex justify-center items-center left-[10%]"
+          {/* tractor */}
+          <div
+            data-js="tractor-layer"
+            className="absolute inline-flex justify-center items-center right-[20%]"
           >
             <div
-              data-js="cloud-inner"
+              data-js="tractor-inner"
+              className="flex justify-center items-center relative"
+            >
+              <div data-js="tractor-flu" className="flex justify-center items-center relative">
+              <img
+                data-js="tractor-back"
+                className="absolute w-[70.7%] top-[-2%] right-[25%]"
+                src="/assets/images/home/brand__tractor-back.webp"
+                alt=""
+              />
+              <img
+                data-js="tractor-butter"
+                className="absolute w-[38.53%] top-[-50%] right-[20%]"
+                src="/assets/images/home/brand__butter-tube.webp"
+                alt=""
+              />
+              <img
+                data-js="tractor-shampoo"
+                className="absolute w-[39.52%] top-[-50%] right-[55%]"
+                src="/assets/images/home/brand__shampoo-bottle.webp"
+                alt=""
+              />
+              <img
+                data-js="tractor-bar"
+                className="absolute w-[44.46%] top-[-12%] right-1/3"
+                src="/assets/images/home/brand__body-bar.webp"
+                alt=""
+              />
+              <img
+                data-js="tractor-lavender"
+                className="absolute w-[51.58%] top-[-50%] right-0"
+                src="/assets/images/home/brand__lavender.webp"
+                alt=""
+              />
+              <img
+                data-js="tractor-front"
+                className="relative md:w-[303px] w-[40vw] "
+                src="/assets/images/home/brand__tractor-front.webp"
+                alt=""
+              />
+              </div>
+            </div>
+          </div>
+
+          {/* letter-o */}
+          <div
+            data-js="letter-o-layer"
+            className="absolute inline-flex justify-center items-center left-0 md:left-[10%]"
+          >
+            <div
+              data-js="letter-o-inner"
               className="flex justify-center items-center relative"
             >
               <img
-                data-js="cloud-main"
-                className="relative md:w-[1072px] w-[40vw] "
-                src="/assets/images/home/brand__cloud-lg.webp"
+                data-js="letter-o-main"
+                className="relative md:w-[400px] w-[26vw] "
+                src="/assets/images/home/brand__o-lg.webp"
                 alt=""
               />
             </div>
-          </div> */}
-
+          </div>
         </div>
 
         {/* Text */}
-        <div className="fixed inset-0">
+        <div className="fixed inset-0 leading-loose">
           {/* Text 01 */}
           <div
             data-js="text01-layer"
@@ -711,13 +778,13 @@ export default function Home() {
             >
               <h2>
                 <span
-                  className="block text-[4.6vw] md:text-[32px]"
+                  className="block text-[5.5vw] md:text-[44px]"
                   data-splitting
                 >
                   ONE EARTH
                 </span>
                 <span
-                  className="block text-[4.6vw] md:text-[32px]"
+                  className="block text-[5.5vw] md:text-[44px]"
                   data-splitting
                 >
                   地球に敬意を。
@@ -746,6 +813,37 @@ export default function Home() {
                   data-splitting
                 >
                   そしてあなたから、あなたに関わる人々へ、
+                </span>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  自分を慈しむように、<strong>自然を大切</strong> にする。
+                </span>
+              </h2>
+            </div>
+          </div>
+          {/* Text 05 */}
+          <div
+            data-js="text05-layer"
+            className="absolute inset-0 flex justify-center items-center"
+          >
+            <div
+              data-js="text05-inner"
+              className="flex justify-start items-center font-bold [text-shadow:2px_2px_2px_#fff] md:w-[70%]"
+            >
+              <h2>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  自然は私たちに幸福感をもたらし、
+                </span>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  身も心も豊かにしてくれる。
                 </span>
                 <span
                   className="block text-[4.6vw] md:text-[32px]"

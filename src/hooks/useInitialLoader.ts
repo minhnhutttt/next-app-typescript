@@ -66,6 +66,8 @@ interface MouseMoveRatios {
   orange: number;
   scissors: number;
   hand: number;
+  cloud: number;
+  tractor: number;
 }
 // TODO: Step 2
 export function useInitialLoader() {
@@ -96,10 +98,13 @@ export function useInitialLoader() {
     orange?: gsap.core.Timeline;
     scissors?: gsap.core.Timeline;
     hand?: gsap.core.Timeline;
+    cloud?: gsap.core.Timeline;
+    tractor?: gsap.core.Timeline;
     text01?: gsap.core.Timeline;
     text02?: gsap.core.Timeline;
     text03?: gsap.core.Timeline;
     text04?: gsap.core.Timeline;
+    text05?: gsap.core.Timeline;
     scrollTriggers: any[];
   }>({ scrollTriggers: [] });
 
@@ -130,13 +135,15 @@ export function useInitialLoader() {
     orange: 0.1,
     scissors: 0.1,
     hand: 0.1,
+    cloud: 0.15,
+    tractor: 0.25,
   });
 
   const mousePositionRef = useRef({ x: 0, y: 0 });
 
   useLayoutEffect(() => {
     timelineRefs.current.scrollTriggers = [];
-// TODO: Step 4
+    // TODO: Step 4
     const elements = {
       initialOverlay: {
         el: document.querySelector(
@@ -167,6 +174,10 @@ export function useInitialLoader() {
       text04: {
         layer: document.querySelector('[data-js="text04-layer"]'),
         inner: document.querySelector('[data-js="text04-inner"]'),
+      },
+      text05: {
+        layer: document.querySelector('[data-js="text05-layer"]'),
+        inner: document.querySelector('[data-js="text05-inner"]'),
       },
       butterfly: {
         layer: document.querySelector('[data-js="butterfly-layer"]'),
@@ -303,6 +314,22 @@ export function useInitialLoader() {
         body: document.querySelector('[data-js="hand-body"]'),
         leaf: document.querySelector('[data-js="hand-leaf"]'),
       },
+      cloud: {
+        layer: document.querySelector('[data-js="cloud-layer"]'),
+        inner: document.querySelector('[data-js="cloud-inner"]'),
+        main: document.querySelector('[data-js="cloud-main"]'),
+      },
+      tractor: {
+        layer: document.querySelector('[data-js="tractor-layer"]'),
+        inner: document.querySelector('[data-js="tractor-inner"]'),
+        flu: document.querySelector('[data-js="tractor-flu"]'),
+        back: document.querySelector('[data-js="tractor-back"]'),
+        butter: document.querySelector('[data-js="tractor-butter"]'),
+        shampoo: document.querySelector('[data-js="tractor-shampoo"]'),
+        bar: document.querySelector('[data-js="tractor-bar"]'),
+        front: document.querySelector('[data-js="tractor-front"]'),
+        lavender: document.querySelector('[data-js="tractor-lavender"]'),
+      },
     };
 
     elementsRef.current = elements;
@@ -388,7 +415,7 @@ export function useInitialLoader() {
         if (trigger) trigger.kill();
       });
       timelineRefs.current.scrollTriggers = [];
-// TODO: Step 5
+      // TODO: Step 5
       if (timelineRefs.current.intro) timelineRefs.current.intro.kill();
       if (timelineRefs.current.butterfly) timelineRefs.current.butterfly.kill();
       if (timelineRefs.current.letterJ) timelineRefs.current.letterJ.kill();
@@ -416,6 +443,9 @@ export function useInitialLoader() {
       if (timelineRefs.current.orange) timelineRefs.current.orange.kill();
       if (timelineRefs.current.scissors) timelineRefs.current.scissors.kill();
       if (timelineRefs.current.hand) timelineRefs.current.hand.kill();
+      if (timelineRefs.current.cloud) timelineRefs.current.cloud.kill();
+      if (timelineRefs.current.text05) timelineRefs.current.text05.kill();
+      if (timelineRefs.current.tractor) timelineRefs.current.tractor.kill();
     };
 
     const initScrollTriggers = () => {
@@ -451,18 +481,15 @@ export function useInitialLoader() {
 
           // Bag
           const bagLayer = elements.bag.layer;
-          const bagInner = elements.bag.inner;
           const bagFlu = elements.bag.flu;
 
           // Plate
           const plateLayer = elements.plate.layer;
-          const plateInner = elements.plate.inner;
           const plateOne = elements.plate.one;
           const plateEarth = elements.plate.earth;
 
           // Earth
           const earthLayer = elements.earth.layer;
-          const earthInner = elements.earth.inner;
           const earthJohn = elements.earth.john;
           const earthEarth = elements.earth.earth;
           const earthSunflower = elements.earth.sunflower;
@@ -542,6 +569,10 @@ export function useInitialLoader() {
           const text04Layer = elements.text04.layer;
           const text04Inner = elements.text04.inner;
 
+          // text05
+          const text05Layer = elements.text05.layer;
+          const text05Inner = elements.text05.inner;
+
           // working
           const workingLayer = elements.working.layer;
           const workingInner = elements.working.inner;
@@ -580,6 +611,22 @@ export function useInitialLoader() {
           const handInner = elements.hand.inner;
           const handBody = elements.hand.body;
           const handLeaf = elements.hand.leaf;
+
+          // cloud
+          const cloudLayer = elements.cloud.layer;
+          const cloudInner = elements.cloud.inner;
+          const cloudMain = elements.cloud.main;
+
+          // tractor
+          const tractorLayer = elements.tractor.layer;
+          const tractorInner = elements.tractor.inner;
+          const tractorFlu = elements.tractor.flu;
+          const tractorBack = elements.tractor.back;
+          const tractorButter = elements.tractor.butter;
+          const tractorShampoo = elements.tractor.shampoo;
+          const tractorBar = elements.tractor.bar;
+          const tractorLavender = elements.tractor.lavender;
+          const tractorFront = elements.tractor.front;
 
           // TODO: Step 6
           if (
@@ -633,6 +680,8 @@ export function useInitialLoader() {
             !text03Inner ||
             !text04Layer ||
             !text04Inner ||
+            !text05Layer ||
+            !text05Inner ||
             !arganLayer ||
             !arganInner ||
             !arganBottle ||
@@ -667,7 +716,19 @@ export function useInitialLoader() {
             !handLayer ||
             !handInner ||
             !handBody ||
-            !handLeaf
+            !handLeaf ||
+            !cloudLayer ||
+            !cloudInner ||
+            !cloudMain ||
+            !tractorLayer ||
+            !tractorInner ||
+            !tractorFlu ||
+            !tractorBack ||
+            !tractorButter ||
+            !tractorShampoo ||
+            !tractorBar ||
+            !tractorLavender ||
+            !tractorFront
           ) {
             return {
               butterflyTl: null,
@@ -688,6 +749,7 @@ export function useInitialLoader() {
               text02Tl: null,
               text03Tl: null,
               text04Tl: null,
+              text05Tl: null,
               arganTl: null,
               chairTl: null,
               workingTl: null,
@@ -696,6 +758,8 @@ export function useInitialLoader() {
               orangeTl: null,
               scissorsTl: null,
               handTl: null,
+              cloudTl: null,
+              tractorTl: null,
             };
           }
 
@@ -1554,7 +1618,7 @@ export function useInitialLoader() {
             .timeline({
               scrollTrigger: {
                 trigger: ".scene-8",
-                endTrigger: ".scene-11",
+                endTrigger: ".scene-10",
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 1,
@@ -1593,8 +1657,8 @@ export function useInitialLoader() {
           timelineRefs.current.text03 = gsap
             .timeline({
               scrollTrigger: {
-                trigger: ".scene-11",
-                endTrigger: ".scene-13",
+                trigger: ".scene-10",
+                endTrigger: ".scene-12",
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 1,
@@ -1633,8 +1697,8 @@ export function useInitialLoader() {
           timelineRefs.current.text04 = gsap
             .timeline({
               scrollTrigger: {
-                trigger: ".scene-13",
-                endTrigger: ".scene-15",
+                trigger: ".scene-12",
+                endTrigger: ".scene-14",
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 1,
@@ -1645,6 +1709,46 @@ export function useInitialLoader() {
           if (timelineRefs.current.text04.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
               timelineRefs.current.text04.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger text05
+          gsap.set(text05Inner.querySelectorAll('.char'), {
+            duration: 6,
+          autoAlpha: 0,
+          x: "0.5rem",
+          ease: "power1.inOut",
+          })
+          const text05Tl = gsap
+            .timeline().to(text05Inner.querySelectorAll('.char'), {
+              duration: 6,
+            autoAlpha: 1,
+            x: "0.5rem",
+            stagger: { each: 0.1 },
+            ease: "power1.inOut",
+            }).to(text05Inner.querySelectorAll('.char'), {
+              duration: 6,
+            autoAlpha: 0,
+            x: "0.5rem",
+            stagger: { each: 0.1 },
+            ease: "power1.inOut",
+            },"+=5");
+
+          timelineRefs.current.text05 = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-14",
+                endTrigger: ".scene-16",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(text05Tl);
+
+          if (timelineRefs.current.text05.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.text05.scrollTrigger
             );
           }
 
@@ -2073,6 +2177,112 @@ export function useInitialLoader() {
               timelineRefs.current.hand.scrollTrigger
             );
           }
+
+           // ScrollTrigger cloud
+
+           gsap.set(cloudLayer, {
+            y: windowHeight + cloudLayer.clientHeight * 3
+          });
+          const cloudTl = gsap
+            .timeline().to(cloudLayer, {
+              ease: "power1.inOut",
+              y: windowHeight + cloudLayer.clientHeight
+            }).to(cloudLayer, {
+              ease: "power1.inOut",
+              y: -(windowHeight + cloudLayer.clientHeight * 2),
+            });
+
+          const cloudMainFlutterTl = createFlutterTimeline();
+          cloudMainFlutterTl.to(cloudMain, {
+            duration: "random(2.2, 2.8)",
+            ease: "sine.inOut",
+              y: "random(-30, 30)",
+          });
+
+          timelineRefs.current.cloud = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-11",
+                endTrigger: ".scene-15",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(cloudTl);
+
+          if (timelineRefs.current.cloud.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.cloud.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger tractor
+
+          gsap.set(tractorLayer, {
+            y: windowHeight + tractorLayer.clientHeight * 2
+          });
+          const tractorTl = gsap
+            .timeline().to(tractorLayer, {
+              ease: "power1.inOut",
+              y: -(windowHeight * 0.5 - tractorLayer.clientHeight * 1.5)
+            }).to(tractorLayer, {
+              ease: "power1.inOut",
+              y: -(windowHeight + tractorLayer.clientHeight * 2),
+              scale: 0.8
+            });
+
+          const tractorFluFlutterTl = createFlutterTimeline();
+          tractorFluFlutterTl.to(tractorFlu, {
+            duration: 0.05,
+            ease: "steps (1)",
+            y: 4,
+          })
+          .to(tractorFlu, {
+            duration: 0.05,
+            ease: "steps (1)",
+            y: 0 
+          });
+
+          [tractorButter, tractorShampoo, tractorBar].forEach((t) => {
+            const tractorFlutterTl = createFlutterTimeline();
+            tractorFlutterTl.to(t, {
+              delay: "random(0, 0.2)",
+              duration: 0.05,
+                y: `+=${gsap.utils.random(2, 6)}`,
+                rotation: "random(-1, 1)",
+            })
+            .to(t, { duration: 0.05,  y: 0, rotation: 0 })
+          });
+
+          const tractorLavenderFlutterTl = createFlutterTimeline();
+          tractorLavenderFlutterTl.to(tractorLavender, {
+            delay: "random(0, 0.2)",
+            duration: 0.05,
+            y: `+=${gsap.utils.random(2, 4)}`
+          })
+          .to(tractorLavender, {
+            duration: 0.05,
+            y: 0
+          });
+
+          timelineRefs.current.tractor = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-13",
+                endTrigger: ".scene-17",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(tractorTl);
+
+          if (timelineRefs.current.tractor.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.tractor.scrollTrigger
+            );
+          }
           // TODO: step 8
 
           // animation frame
@@ -2097,185 +2307,19 @@ export function useInitialLoader() {
       if (elementsRef.current) {
         const elements = elementsRef.current;
 
-        // butterfly
-        if (elements.butterfly.inner) {
-          gsap.to(elements.butterfly.inner, {
-            x: moveX * mouseMoveRatios.current.butterfly,
-            y: moveY * mouseMoveRatios.current.butterfly / 2,
-            duration: 0.5,
-            ease: "power1.out",
-          });
-        }
+        const elementsToAnimate: (keyof MouseMoveRatios)[] = ['argan','chair','brandm', 'berry', 'orange', 'hand', 'scissors', 'balloon', 'jc', 'bottle', 'birds', 'stick', 'tree', 'skyscraper', 'earth', 'plate', 'bag', 'framer', 'brandj', 'butterfly', 'cloud'];
 
-        // brandj
-        if (elements.brandj.inner) {
-          gsap.to(elements.brandj.inner, {
-            x: moveX * mouseMoveRatios.current.brandj,
-            y: moveY * mouseMoveRatios.current.brandj / 2,
-            duration: 0.6,
-            ease: "power1.out",
-          });
-        }
-
-        // framer
-        if (elements.framer.inner) {
-          gsap.to(elements.framer.inner, {
-            x: moveX * mouseMoveRatios.current.framer,
-            y: moveY * mouseMoveRatios.current.framer / 2,
-            duration: 0.6,
-            ease: "power1.out",
-          });
-        }
-
-        // bag
-        if (elements.bag.inner) {
-          gsap.to(elements.bag.inner, {
-            x: moveX * mouseMoveRatios.current.bag,
-            y: moveY * mouseMoveRatios.current.bag / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // plate
-        if (elements.plate.inner) {
-          gsap.to(elements.plate.inner, {
-            x: moveX * mouseMoveRatios.current.plate,
-            y: moveY * mouseMoveRatios.current.plate / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // earth
-        if (elements.earth.inner) {
-          gsap.to(elements.earth.inner, {
-            x: moveX * mouseMoveRatios.current.earth,
-            y: moveY * mouseMoveRatios.current.earth / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // skyscraper
-        if (elements.skyscraper.inner) {
-          gsap.to(elements.skyscraper.inner, {
-            x: moveX * mouseMoveRatios.current.skyscraper,
-            y: moveY * mouseMoveRatios.current.skyscraper / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // tree
-        if (elements.tree.inner) {
-          gsap.to(elements.tree.inner, {
-            x: moveX * mouseMoveRatios.current.tree,
-            y: moveY * mouseMoveRatios.current.tree / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // stick
-        if (elements.stick.inner) {
-          gsap.to(elements.stick.inner, {
-            x: moveX * mouseMoveRatios.current.stick,
-            y: moveY * mouseMoveRatios.current.stick / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // birds
-        if (elements.birds.inner) {
-          gsap.to(elements.birds.inner, {
-            x: moveX * mouseMoveRatios.current.birds,
-            y: moveY * mouseMoveRatios.current.birds / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // bottle
-        if (elements.bottle.inner) {
-          gsap.to(elements.bottle.inner, {
-            x: moveX * mouseMoveRatios.current.bottle,
-            y: moveY * mouseMoveRatios.current.bottle / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // jc
-        if (elements.jc.inner) {
-          gsap.to(elements.jc.inner, {
-            x: moveX * mouseMoveRatios.current.jc,
-            y: moveY * mouseMoveRatios.current.jc / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // balloon
-        if (elements.balloon.inner) {
-          gsap.to(elements.balloon.inner, {
-            x: moveX * mouseMoveRatios.current.balloon,
-            y: moveY * mouseMoveRatios.current.balloon / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // argan
-        if (elements.argan.inner) {
-          gsap.to(elements.argan.inner, {
-            x: moveX * mouseMoveRatios.current.argan,
-            y: moveY * mouseMoveRatios.current.argan / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // chair
-        if (elements.chair.inner) {
-          gsap.to(elements.chair.inner, {
-            x: moveX * mouseMoveRatios.current.chair,
-            y: moveY * mouseMoveRatios.current.chair / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // brandm
-        if (elements.brandm.inner) {
-          gsap.to(elements.brandm.inner, {
-            x: moveX * mouseMoveRatios.current.brandm,
-            y: moveY * mouseMoveRatios.current.brandm / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // berry
-        if (elements.berry.inner) {
-          gsap.to(elements.berry.inner, {
-            x: moveX * mouseMoveRatios.current.berry,
-            y: moveY * mouseMoveRatios.current.berry / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
-
-        // orange
-        if (elements.orange.inner) {
-          gsap.to(elements.orange.inner, {
-            x: moveX * mouseMoveRatios.current.orange,
-            y: moveY * mouseMoveRatios.current.orange / 2,
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        }
+        elementsToAnimate.forEach(elementName => {
+          if (elements[elementName]?.inner) {
+            const ratio = mouseMoveRatios.current[elementName];
+            gsap.to(elements[elementName].inner, {
+              x: moveX * ratio,
+              y: moveY * ratio / 2,
+              duration: 0.4,
+              ease: "power1.out",
+            });
+          }
+        });
 
         // TODO: step 9
       }
