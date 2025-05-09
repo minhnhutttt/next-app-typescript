@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { preloadImages } from "@/utils/imageUtils";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -58,6 +58,14 @@ interface MouseMoveRatios {
   jc: number;
   balloon: number;
   windmill: number;
+  argan: number;
+  chair: number;
+  working: number;
+  brandm: number;
+  berry: number;
+  orange: number;
+  scissors: number;
+  hand: number;
 }
 // TODO: Step 2
 export function useInitialLoader() {
@@ -76,16 +84,27 @@ export function useInitialLoader() {
     tree?: gsap.core.Timeline;
     stick?: gsap.core.Timeline;
     birds?: gsap.core.Timeline;
-    text01?: gsap.core.Timeline;
     bottle?: gsap.core.Timeline;
     balloon?: gsap.core.Timeline;
     jc?: gsap.core.Timeline;
     windmill?: gsap.core.Timeline;
+    argan?: gsap.core.Timeline;
+    chair?: gsap.core.Timeline;
+    working?: gsap.core.Timeline;
+    brandm?: gsap.core.Timeline;
+    berry?: gsap.core.Timeline;
+    orange?: gsap.core.Timeline;
+    scissors?: gsap.core.Timeline;
+    hand?: gsap.core.Timeline;
+    text01?: gsap.core.Timeline;
+    text02?: gsap.core.Timeline;
+    text03?: gsap.core.Timeline;
+    text04?: gsap.core.Timeline;
     scrollTriggers: any[];
   }>({ scrollTriggers: [] });
 
   const elementsRef = useRef<any>(null);
-// TODO: Step 3
+  // TODO: Step 3
   // Set mouse ratios
   const mouseMoveRatios = useRef<MouseMoveRatios>({
     butterfly: 0.05,
@@ -103,6 +122,14 @@ export function useInitialLoader() {
     jc: 0.1,
     balloon: 0.1,
     windmill: 0.1,
+    argan: 0.14,
+    chair: 0.11,
+    working: 0.08,
+    brandm: 0.04,
+    berry: 0.1,
+    orange: 0.1,
+    scissors: 0.1,
+    hand: 0.1,
   });
 
   const mousePositionRef = useRef({ x: 0, y: 0 });
@@ -125,6 +152,22 @@ export function useInitialLoader() {
         heading02: document.querySelector('[data-js="text-heading02"]'),
       },
       scenes: document.querySelector('[data-js="scenes"]'),
+      text01: {
+        layer: document.querySelector('[data-js="text01-layer"]'),
+        inner: document.querySelector('[data-js="text01-inner"]'),
+      },
+      text02: {
+        layer: document.querySelector('[data-js="text02-layer"]'),
+        inner: document.querySelector('[data-js="text02-inner"]'),
+      },
+      text03: {
+        layer: document.querySelector('[data-js="text03-layer"]'),
+        inner: document.querySelector('[data-js="text03-inner"]'),
+      },
+      text04: {
+        layer: document.querySelector('[data-js="text04-layer"]'),
+        inner: document.querySelector('[data-js="text04-inner"]'),
+      },
       butterfly: {
         layer: document.querySelector('[data-js="butterfly-layer"]'),
         inner: document.querySelector('[data-js="butterfly-inner"]'),
@@ -135,6 +178,8 @@ export function useInitialLoader() {
       brandj: {
         layer: document.querySelector('[data-js="brandj-layer"]'),
         inner: document.querySelector('[data-js="brandj-inner"]'),
+        img: document.querySelector('[data-js="brandj-img"]'),
+        stickbottle: document.querySelector('[data-js="brandj-stickbottle"]'),
       },
       framer: {
         layer: document.querySelector('[data-js="framer-layer"]'),
@@ -145,6 +190,7 @@ export function useInitialLoader() {
       bag: {
         layer: document.querySelector('[data-js="bag-layer"]'),
         inner: document.querySelector('[data-js="bag-inner"]'),
+        flu: document.querySelector('[data-js="bag-flu"]'),
       },
       plate: {
         layer: document.querySelector('[data-js="plate-layer"]'),
@@ -183,10 +229,6 @@ export function useInitialLoader() {
         inner: document.querySelector('[data-js="birds-inner"]'),
         frame: document.querySelectorAll('[data-js="birds-frame"]') as NodeListOf<HTMLImageElement>,
       },
-      text01: {
-        layer: document.querySelector('[data-js="text01-layer"]'),
-        inner: document.querySelector('[data-js="text01-inner"]'),
-      },
       bottle: {
         layer: document.querySelector('[data-js="bottle-layer"]'),
         inner: document.querySelector('[data-js="bottle-inner"]'),
@@ -209,6 +251,57 @@ export function useInitialLoader() {
         inner: document.querySelector('[data-js="windmill-inner"]'),
         windmill: document.querySelector('[data-js="windmill-windmill"]'),
         wave: document.querySelector('[data-js="windmill-wave-block"]'),
+      },
+      argan: {
+        layer: document.querySelector('[data-js="argan-layer"]'),
+        inner: document.querySelector('[data-js="argan-inner"]'),
+        bottle: document.querySelector('[data-js="argan-bottle"]'),
+        cloud: document.querySelector('[data-js="argan-cloud"]'),
+      },
+      chair: {
+        layer: document.querySelector('[data-js="chair-layer"]'),
+        inner: document.querySelector('[data-js="chair-inner"]'),
+        main: document.querySelector('[data-js="chair-main"]'),
+        brush: document.querySelector('[data-js="chair-brush"]'),
+      },
+      working: {
+        layer: document.querySelector('[data-js="working-layer"]'),
+        inner: document.querySelector('[data-js="working-inner"]'),
+        earth: document.querySelector('[data-js="working-earth"]'),
+        leaves: document.querySelector('[data-js="working-leaves"]'),
+        woman: document.querySelector('[data-js="working-woman"]'),
+      },
+      brandm: {
+        layer: document.querySelector('[data-js="brandm-layer"]'),
+        inner: document.querySelector('[data-js="brandm-inner"]'),
+        main: document.querySelector('[data-js="brandm-main"]'),
+      },
+      berry: {
+        layer: document.querySelector('[data-js="berry-layer"]'),
+        inner: document.querySelector('[data-js="berry-inner"]'),
+        '01': document.querySelector('[data-js="berry-01"]'),
+        '02': document.querySelector('[data-js="berry-02"]'),
+        '03': document.querySelector('[data-js="berry-03"]'),
+      },
+      orange: {
+        layer: document.querySelector('[data-js="orange-layer"]'),
+        inner: document.querySelector('[data-js="orange-inner"]'),
+        '01': document.querySelector('[data-js="orange-01"]'),
+        '02': document.querySelector('[data-js="orange-02"]'),
+      },
+      scissors: {
+        layer: document.querySelector('[data-js="scissors-layer"]'),
+        inner: document.querySelector('[data-js="scissors-inner"]'),
+        body: document.querySelector('[data-js="scissors-body"]'),
+        cactus: document.querySelector('[data-js="scissors-cactus"]'),
+        front: document.querySelector('[data-js="scissors-head-front"]'),
+        back: document.querySelector('[data-js="scissors-head-back"]'),
+      },
+      hand: {
+        layer: document.querySelector('[data-js="hand-layer"]'),
+        inner: document.querySelector('[data-js="hand-inner"]'),
+        body: document.querySelector('[data-js="hand-body"]'),
+        leaf: document.querySelector('[data-js="hand-leaf"]'),
       },
     };
 
@@ -312,6 +405,17 @@ export function useInitialLoader() {
       if (timelineRefs.current.bottle) timelineRefs.current.bottle.kill();
       if (timelineRefs.current.jc) timelineRefs.current.jc.kill();
       if (timelineRefs.current.balloon) timelineRefs.current.balloon.kill();
+      if (timelineRefs.current.text02) timelineRefs.current.text02.kill();
+      if (timelineRefs.current.argan) timelineRefs.current.argan.kill();
+      if (timelineRefs.current.chair) timelineRefs.current.chair.kill();
+      if (timelineRefs.current.working) timelineRefs.current.working.kill();
+      if (timelineRefs.current.text03) timelineRefs.current.text03.kill();
+      if (timelineRefs.current.text04) timelineRefs.current.text04.kill();
+      if (timelineRefs.current.brandm) timelineRefs.current.brandm.kill();
+      if (timelineRefs.current.berry) timelineRefs.current.berry.kill();
+      if (timelineRefs.current.orange) timelineRefs.current.orange.kill();
+      if (timelineRefs.current.scissors) timelineRefs.current.scissors.kill();
+      if (timelineRefs.current.hand) timelineRefs.current.hand.kill();
     };
 
     const initScrollTriggers = () => {
@@ -337,7 +441,8 @@ export function useInitialLoader() {
 
           // BrandJ
           const brandjLayer = elements.brandj.layer;
-          const brandjInner = elements.brandj.inner;
+          const brandjImg = elements.brandj.img;
+          const brandjStickbottle = elements.brandj.stickbottle;
 
           // Framer
           const framerLayer = elements.framer.layer;
@@ -347,6 +452,7 @@ export function useInitialLoader() {
           // Bag
           const bagLayer = elements.bag.layer;
           const bagInner = elements.bag.inner;
+          const bagFlu = elements.bag.flu;
 
           // Plate
           const plateLayer = elements.plate.layer;
@@ -385,10 +491,6 @@ export function useInitialLoader() {
           const birdsInner = elements.birds.inner;
           const birdsFrame = elements.birds.frame;
 
-          // text01
-          const text01Layer = elements.text01.layer;
-          const text01Inner = elements.text01.inner;
-
           // bottle
           const bottleLayer = elements.bottle.layer;
           const bottleInner = elements.bottle.inner;
@@ -411,6 +513,73 @@ export function useInitialLoader() {
           const windmillInner = elements.windmill.inner;
           const windmillWindmill = elements.windmill.windmill;
           const windmillWave = elements.windmill.wave;
+
+          // argan
+          const arganLayer = elements.argan.layer;
+          const arganInner = elements.argan.inner;
+          const arganBottle = elements.argan.bottle;
+          const arganCloud = elements.argan.cloud;
+
+          // chair
+          const chairLayer = elements.chair.layer;
+          const chairInner = elements.chair.inner;
+          const chairMain = elements.chair.main;
+          const chairBrush = elements.chair.brush;
+
+          // text01
+          const text01Layer = elements.text01.layer;
+          const text01Inner = elements.text01.inner;
+
+          // text02
+          const text02Layer = elements.text02.layer;
+          const text02Inner = elements.text02.inner;
+
+          // text03
+          const text03Layer = elements.text03.layer;
+          const text03Inner = elements.text03.inner;
+
+          // text04
+          const text04Layer = elements.text04.layer;
+          const text04Inner = elements.text04.inner;
+
+          // working
+          const workingLayer = elements.working.layer;
+          const workingInner = elements.working.inner;
+          const workingEarth = elements.working.earth;
+          const workingWoman = elements.working.woman;
+          const workingLeaves = elements.working.leaves;
+
+          // brandm
+          const brandmLayer = elements.brandm.layer;
+          const brandmInner = elements.brandm.inner;
+          const brandmMain = elements.brandm.main;
+
+          // berry
+          const berryLayer = elements.berry.layer;
+          const berryInner = elements.berry.inner;
+          const berry01 = elements.berry['01'];
+          const berry02 = elements.berry['02'];
+          const berry03 = elements.berry['03'];
+
+          // orange
+          const orangeLayer = elements.orange.layer;
+          const orangeInner = elements.orange.inner;
+          const orange01 = elements.orange['01'];
+          const orange02 = elements.orange['02'];
+
+          // scissors
+          const scissorsLayer = elements.scissors.layer;
+          const scissorsInner = elements.scissors.inner;
+          const scissorsBody = elements.scissors.body;
+          const scissorsFront = elements.scissors.front;
+          const scissorsBack = elements.scissors.back;
+          const scissorsCactus = elements.scissors.cactus;
+
+          // hand
+          const handLayer = elements.hand.layer;
+          const handInner = elements.hand.inner;
+          const handBody = elements.hand.body;
+          const handLeaf = elements.hand.leaf;
 
           // TODO: Step 6
           if (
@@ -457,7 +626,48 @@ export function useInitialLoader() {
             !windmillLayer ||
             !windmillInner ||
             !windmillWindmill ||
-            !windmillWave
+            !windmillWave ||
+            !text02Layer ||
+            !text02Inner ||
+            !text03Layer ||
+            !text03Inner ||
+            !text04Layer ||
+            !text04Inner ||
+            !arganLayer ||
+            !arganInner ||
+            !arganBottle ||
+            !arganCloud ||
+            !chairLayer ||
+            !chairInner ||
+            !chairMain ||
+            !chairBrush ||
+            !workingLayer ||
+            !workingInner ||
+            !workingEarth ||
+            !workingWoman ||
+            !workingLeaves ||
+            !brandmLayer ||
+            !brandmInner ||
+            !brandmMain ||
+            !berryLayer ||
+            !berryInner ||
+            !berry01 ||
+            !berry02 ||
+            !berry03 ||
+            !orangeLayer ||
+            !orangeInner ||
+            !orange01 ||
+            !orange02 ||
+            !scissorsLayer ||
+            !scissorsInner ||
+            !scissorsBody ||
+            !scissorsFront ||
+            !scissorsBack ||
+            !scissorsCactus ||
+            !handLayer ||
+            !handInner ||
+            !handBody ||
+            !handLeaf
           ) {
             return {
               butterflyTl: null,
@@ -475,6 +685,17 @@ export function useInitialLoader() {
               jcTl: null,
               balloonTl: null,
               windmillTl: null,
+              text02Tl: null,
+              text03Tl: null,
+              text04Tl: null,
+              arganTl: null,
+              chairTl: null,
+              workingTl: null,
+              brandmTl: null,
+              berryTl: null,
+              orangeTl: null,
+              scissorsTl: null,
+              handTl: null,
             };
           }
 
@@ -513,18 +734,18 @@ export function useInitialLoader() {
               ease: "power1.inOut",
             })
             .to(butterflyLayer, {
-              y: -butterflyLayer.clientHeight,
+              y: -butterflyLayer.clientHeight * 2,
               x: windowWidth * 0.4 - butterflyLayer.clientWidth * 1.2,
               ease: "power1.in",
             });
 
           const butterflyFlutterTl = createFlutterTimeline();
           butterflyFlutterTl.to(butterflyInner, {
-            duration: gsap.utils.random(1.8, 2.2),
+            duration: "random(2.2, 2.8)",
             ease: "sine.inOut",
-            y: `-=${gsap.utils.random(10, 20)}`,
-            scale: gsap.utils.random(0.94, 0.98),
-            rotation: gsap.utils.random(-4, 4),
+            y: "random(10, 40)",
+            scale: "random(0.94, 0.98)",
+            rotation: "random(-10, 10)",
           });
           timelineRefs.current.butterfly = gsap
             .timeline({
@@ -565,11 +786,20 @@ export function useInitialLoader() {
             });
 
           const letterJFlutterTl = createFlutterTimeline();
-          letterJFlutterTl.to(brandjInner, {
-            duration: gsap.utils.random(1.8, 2.2),
-            ease: "sine.inOut",
-            scaleX: gsap.utils.random(0.9, 0.96),
+          letterJFlutterTl.to(brandjImg, {
+            duration: "random(2.2, 2.8)",
+            ease: "power1.inOut",
+            y: "random(10, 30)",
           });
+
+          const stickbottleFlutterTl = createFlutterTimeline();
+          stickbottleFlutterTl.to(brandjStickbottle, {
+            duration: "random(2, 2.3)",
+            ease: "power1.inOut",
+            y: "random(-20, 30)",
+          });
+
+          
           timelineRefs.current.letterJ = gsap
             .timeline({
               scrollTrigger: {
@@ -596,11 +826,11 @@ export function useInitialLoader() {
 
           const framerFlutterTl = createFlutterTimeline();
           framerFlutterTl.to(framerFramer, {
-            duration: gsap.utils.random(1.8, 2.2),
+            duration: "random(2.2, 2.8)",
             ease: "sine.inOut",
-            y: `-=${gsap.utils.random(10, 20)}`,
-            scale: gsap.utils.random(0.94, 0.98),
-            rotation: gsap.utils.random(-4, 4),
+            y: "random(10, 30)",
+            scale: "random(0.94, 0.99)",
+            rotation: "random(-4, 4)",
           });
 
           const framerTl = gsap
@@ -620,16 +850,10 @@ export function useInitialLoader() {
           const avocadoFlutterTl = createFlutterTimeline();
           avocadoFlutterTl
             .to(framerAvocado, {
-              duration: gsap.utils.random(1.6, 1.9),
+              duration: "random(1.6, 1.9)",
               ease: "power1.out",
-              y: `-=${gsap.utils.random(-8, -14)}`,
-              rotation: gsap.utils.random(-40, -20),
-            })
-            .to(framerAvocado, {
-              duration: gsap.utils.random(1.6, 1.9),
-              ease: "power1.in",
-              y: 50,
-              rotation: gsap.utils.random(-40, -20),
+              y: "random(20, -60)",
+              rotation: "random(-40, -20)",
             });
           timelineRefs.current.framer = gsap
             .timeline({
@@ -665,17 +889,17 @@ export function useInitialLoader() {
               ease: "power1.inOut",
             })
             .to(bagLayer, {
-              y: -bagLayer.clientHeight,
+              y: -bagLayer.clientHeight * 1.5,
               ease: "power1.inOut",
             });
 
           const bagFlutterTl = createFlutterTimeline();
-          bagFlutterTl.to(bagInner, {
-            duration: gsap.utils.random(1.8, 2.2),
+          bagFlutterTl.to(bagFlu, {
+            duration: 2,
             ease: "sine.inOut",
-            y: `-=${gsap.utils.random(10, 20)}`,
-            scale: gsap.utils.random(0.94, 0.98),
-            rotation: gsap.utils.random(-4, 4),
+            y: "random(10, 29)",
+            scale: "random(0.96, 0.98)",
+            rotation: "random(-4, 4)",
           });
           timelineRefs.current.bag = gsap
             .timeline({
@@ -735,14 +959,22 @@ export function useInitialLoader() {
               y: -windowHeight,
             });
 
-          const plateFlutterTl = createFlutterTimeline();
-          plateFlutterTl.to(plateInner, {
-            duration: gsap.utils.random(1.8, 2.2),
+          const plateOneFlutterTl = createFlutterTimeline();
+          plateOneFlutterTl.to(plateOne, {
+            duration: "random(1.8, 2.2)",
             ease: "sine.inOut",
             y: `-=${gsap.utils.random(10, 20)}`,
-            scale: gsap.utils.random(0.94, 0.98),
-            rotation: gsap.utils.random(-4, 4),
+            rotation: "random(-5, 5)",
           });
+
+          const plateEarthFlutterTl = createFlutterTimeline();
+          plateEarthFlutterTl.to(plateEarth, {
+            duration: "random(1.8, 2.4)",
+            ease: "sine.inOut",
+            y: `-=${gsap.utils.random(20, 30)}`,
+            rotation: "random(-5, 5)",
+          });
+
           timelineRefs.current.plate = gsap
             .timeline({
               scrollTrigger: {
@@ -811,12 +1043,28 @@ export function useInitialLoader() {
               y: -earthLayer.clientHeight,
               scale: 0.7,
             });
-          const earthFlutterTl = createFlutterTimeline();
-          earthFlutterTl.to(earthInner, {
-            duration: gsap.utils.random(1.8, 2.2),
+          const earthEarthFlutterTl = createFlutterTimeline();
+          earthEarthFlutterTl.to(earthEarth, {
+            duration: "random(2.2, 2.8)",
+            ease: "sine.inOut",
+            rotation: gsap.utils.random(-4, 4),
+          });
+
+          const earthSunflowerFlutterTl = createFlutterTimeline();
+          earthSunflowerFlutterTl.to(earthSunflower, {
+            duration: "random(2.2, 2.8)",
+            ease: "sine.inOut",
+            y: `-=${gsap.utils.random(5, 10)}`,
+            rotation: "random(0, -4)",
+            scaleX: "random(0.9, 0.96)",
+          });
+
+          const earthArmFlutterTl = createFlutterTimeline();
+          earthArmFlutterTl.to(earthArm, {
+            duration: "random(1.8, 2.2)",
             ease: "sine.inOut",
             y: `-=${gsap.utils.random(10, 20)}`,
-            rotation: gsap.utils.random(-4, 4),
+            scaleX: "random(0.93, 0.96)",
           });
           timelineRefs.current.earth = gsap
             .timeline({
@@ -872,11 +1120,11 @@ export function useInitialLoader() {
             }, "-=3");
 
           const skyscraperFlutterTl = createFlutterTimeline();
-          skyscraperFlutterTl.to(skyscraperInner, {
-            duration: gsap.utils.random(1.8, 2.2),
+          skyscraperFlutterTl.to(skyscraperTower, {
+            duration: "random(2.2, 2.8)",
             ease: "sine.inOut",
             y: `-=${gsap.utils.random(10, 20)}`,
-            scale: gsap.utils.random(0.94, 0.98),
+            scale: "random(0.94, 0.98)",
           });
           timelineRefs.current.skyscraper = gsap
             .timeline({
@@ -932,7 +1180,7 @@ export function useInitialLoader() {
 
           const treeFlutterTl = createFlutterTimeline();
           treeFlutterTl.to(treeCloud, {
-            duration: gsap.utils.random(2.6, 4),
+            duration: "random(2.6, 4)",
             ease: "power1.inOut",
             x: `-=${gsap.utils.random(40, 60)}`,
           });
@@ -962,7 +1210,7 @@ export function useInitialLoader() {
           });
           gsap.set(stickCloud, {
             y: -80,
-            x: -20,
+            x: -100,
           });
 
           gsap.set(stickLayer, {
@@ -982,17 +1230,20 @@ export function useInitialLoader() {
                 y: isMd ? -stickLayer.clientHeight * 7 : -stickLayer.clientHeight * 7,
             });
 
-          const stickFlutterTl = createFlutterTimeline();
-          stickFlutterTl.to(stickCloud, {
+          const stickCloudFlutterTl = createFlutterTimeline();
+          stickCloudFlutterTl.to(stickCloud, {
             duration: gsap.utils.random(2.6, 4),
-            delay: gsap.utils.random(0, 0.2),
             ease: "power1.inOut",
-            x: `-=${gsap.utils.random(8, 12)}`,
-          }).to(stickTree, {
+            x: `-=${gsap.utils.random(4, 24)}`,
+          })
+
+          const stickTreeFlutterTl = createFlutterTimeline();
+          stickTreeFlutterTl.to(stickTree, {
             duration: gsap.utils.random(1.2, 2),
             ease: "power1.inOut",
             y: `-=${gsap.utils.random(30, 36)}`,
-          },'<');
+          });
+
           timelineRefs.current.stick = gsap
             .timeline({
               scrollTrigger: {
@@ -1013,8 +1264,9 @@ export function useInitialLoader() {
 
           // ScrollTrigger birds
 
-          const birdsFlutterTl = createFlutterTimeline();
           birdsFrame.forEach((bird) => {
+          const birdsFlutterTl = createFlutterTimeline();
+
             gsap.set(bird, {
               scale: gsap.utils.random(0.8, 1.1),
               x: bird.clientWidth * gsap.utils.random(0.5, 2.2),
@@ -1022,10 +1274,10 @@ export function useInitialLoader() {
             });
             
             birdsFlutterTl.to(bird, {
-              duration: gsap.utils.random(1.6, 2.2),
+              duration: "random(1.6, 2.2)",
               ease: "sine.inOut",
               y: `+=${gsap.utils.random(-60, 60)}`,
-            },'<');
+            });
           })
 
           gsap.set(birdsLayer, {
@@ -1060,13 +1312,15 @@ export function useInitialLoader() {
               timelineRefs.current.birds.scrollTrigger
             );
           }
+
+          // ScrollTrigger text01
+          
           gsap.set(text01Inner.querySelectorAll('.char'), {
             duration: 6,
           autoAlpha: 0,
           x: "0.5rem",
           ease: "power1.inOut",
           })
-          // ScrollTrigger text01
           const text01Tl = gsap
             .timeline().to(text01Inner.querySelectorAll('.char'), {
               duration: 6,
@@ -1126,7 +1380,7 @@ export function useInitialLoader() {
 
           const bottleFlutterTl = createFlutterTimeline();
           bottleFlutterTl.to(bottleO, {
-            duration: gsap.utils.random(1.8, 2.2),
+            duration: "random(2.2, 2.8)",
             ease: "sine.inOut",
             x: `-=${gsap.utils.random(10, 20)}`,
           });
@@ -1150,12 +1404,12 @@ export function useInitialLoader() {
 
           // ScrollTrigger jc
           gsap.set(jcCloud, {
-            x: -20,
+            x: -60,
             y: -60,
           });
 
           gsap.set(jcLayer, {
-            x: -windowWidth * 0.4,
+            x: isMd ? -windowWidth * 0.4 : -windowWidth * 0.3,
             y: windowHeight + jcLayer.clientHeight,
           });
 
@@ -1167,14 +1421,17 @@ export function useInitialLoader() {
 
           const jcFlutterTl = createFlutterTimeline();
           jcFlutterTl.to(jcCloud, {
-            duration: gsap.utils.random(2, 3.6),
+            duration: "random(2, 3.6)",
             ease: "power1.inOut",
-            x: `-=${gsap.utils.random(-20, 20)}`,
-          }).to(jcJ, {
-            duration: gsap.utils.random(2.2, 2.8),
+            x: `+=${gsap.utils.random(-20, 30)}`,
+          });
+
+          const jcJTl = createFlutterTimeline();
+          jcJTl.to(jcJ, {
+            duration: "random(2.2, 2.8)",
             ease: "sine.inOut",
             y: `-=${gsap.utils.random(-30, 30)}`,
-          }, '<');
+          });
           timelineRefs.current.jc = gsap
             .timeline({
               scrollTrigger: {
@@ -1208,7 +1465,7 @@ export function useInitialLoader() {
 
           const balloonFlutterTl = createFlutterTimeline();
           balloonFlutterTl.to(balloonFlower, {
-            duration: gsap.utils.random(1.8, 2.2),
+            duration: "random(2.2, 2.8)",
             ease: "sine.inOut",
             y: `-=${gsap.utils.random(60, 100)}`,
           });
@@ -1216,7 +1473,7 @@ export function useInitialLoader() {
             .timeline({
               scrollTrigger: {
                 trigger: ".scene-5",
-                endTrigger: ".scene-12",
+                endTrigger: ".scene-13",
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 1,
@@ -1233,26 +1490,30 @@ export function useInitialLoader() {
           // ScrollTrigger windmill
 
           gsap.set(windmillLayer, {
-            x: windmillLayer.clientWidth,
+            x: Math.min(
+               windmillLayer.clientWidth * 2.5,
+              windowWidth * 0.5 - windmillLayer.clientWidth * 0.25
+            ),
             y: windowHeight + windmillLayer.clientHeight * 4,
           });
 
           const windmillTl = gsap
             .timeline().to(windmillLayer, {
               ease: "power1.inOut",
-               y: -(windmillLayer.clientHeight * 4),
+               y: -(windmillLayer.clientHeight * 2.5),
+               scale: 0.75
             });
 
           const windmillFlutterTl = createFlutterTimeline();
           windmillFlutterTl.to(windmillWave, {
-            duration: gsap.utils.random(1.8, 2.2),
+            duration: "random(2.2, 2.8)",
             ease: "sine.inOut",
-            y: `-=${gsap.utils.random(60, 100)}`,
+            scaleY: `-=${gsap.utils.random(0.1, 0.2)}`,
           });
           timelineRefs.current.windmill = gsap
             .timeline({
               scrollTrigger: {
-                trigger: ".scene-5",
+                trigger: ".scene-4",
                 endTrigger: ".scene-12",
                 start: "top top",
                 end: "bottom bottom",
@@ -1267,6 +1528,551 @@ export function useInitialLoader() {
             );
           }
 
+          // ScrollTrigger text02
+          gsap.set(text02Inner.querySelectorAll('.char'), {
+            duration: 6,
+          autoAlpha: 0,
+          x: "0.5rem",
+          ease: "power1.inOut",
+          })
+          const text02Tl = gsap
+            .timeline().to(text02Inner.querySelectorAll('.char'), {
+              duration: 6,
+            autoAlpha: 1,
+            x: "0.5rem",
+            stagger: { each: 0.1 },
+            ease: "power1.inOut",
+            }).to(text02Inner.querySelectorAll('.char'), {
+              duration: 6,
+            autoAlpha: 0,
+            x: "0.5rem",
+            stagger: { each: 0.1 },
+            ease: "power1.inOut",
+            },"+=5");
+
+          timelineRefs.current.text02 = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-8",
+                endTrigger: ".scene-11",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(text02Tl);
+
+          if (timelineRefs.current.text02.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.text02.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger text03
+          gsap.set(text03Inner.querySelectorAll('.char'), {
+            duration: 6,
+          autoAlpha: 0,
+          x: "0.5rem",
+          ease: "power1.inOut",
+          })
+          const text03Tl = gsap
+            .timeline().to(text03Inner.querySelectorAll('.char'), {
+              duration: 6,
+            autoAlpha: 1,
+            x: "0.5rem",
+            stagger: { each: 0.1 },
+            ease: "power1.inOut",
+            }).to(text03Inner.querySelectorAll('.char'), {
+              duration: 6,
+            autoAlpha: 0,
+            x: "0.5rem",
+            stagger: { each: 0.1 },
+            ease: "power1.inOut",
+            },"+=5");
+
+          timelineRefs.current.text03 = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-11",
+                endTrigger: ".scene-13",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(text03Tl);
+
+          if (timelineRefs.current.text03.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.text03.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger text04
+          gsap.set(text04Inner.querySelectorAll('.char'), {
+            duration: 6,
+          autoAlpha: 0,
+          x: "0.5rem",
+          ease: "power1.inOut",
+          })
+          const text04Tl = gsap
+            .timeline().to(text04Inner.querySelectorAll('.char'), {
+              duration: 6,
+            autoAlpha: 1,
+            x: "0.5rem",
+            stagger: { each: 0.1 },
+            ease: "power1.inOut",
+            }).to(text04Inner.querySelectorAll('.char'), {
+              duration: 6,
+            autoAlpha: 0,
+            x: "0.5rem",
+            stagger: { each: 0.1 },
+            ease: "power1.inOut",
+            },"+=5");
+
+          timelineRefs.current.text04 = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-13",
+                endTrigger: ".scene-15",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(text04Tl);
+
+          if (timelineRefs.current.text04.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.text04.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger argan
+
+          gsap.set(arganCloud, {
+            x: arganBottle.clientWidth * 0.6,
+            y: arganBottle.clientHeight * 0.4,
+          })
+
+          gsap.set(arganLayer, {
+            x: -Math.max(
+              windowWidth * 0.25,
+              windowWidth * 0.5 - arganLayer.clientWidth * 1.25
+            ),
+            y: windowHeight + arganLayer.clientHeight * 4,
+          });
+
+          const arganTl = gsap
+            .timeline().to(arganLayer, {
+              ease: "power1.inOut",
+               y: -(arganLayer.clientHeight * 4),
+              scale: 0.5
+            });
+
+          const arganCloudFlutterTl = createFlutterTimeline();
+          arganCloudFlutterTl.to(arganCloud, {
+            duration: "random(1.6, 2.2)",
+            ease: "sine.inOut",
+            x: `-=${gsap.utils.random(-30, -40)}`,
+          });
+
+          const arganBottleFlutterTl = createFlutterTimeline();
+          arganBottleFlutterTl.to(arganBottle, {
+            duration: "random(1.8, 2.2)",
+            ease: "sine.inOut",
+            y: `-=${gsap.utils.random(30, 40)}`,
+          });
+
+          timelineRefs.current.argan = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-6",
+                endTrigger: ".scene-14",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(arganTl);
+
+          if (timelineRefs.current.argan.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.argan.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger chair
+
+          gsap.set(chairBrush, {
+            x: chairMain.clientWidth / 1.5,
+          })
+
+          gsap.set(chairLayer, {
+            x: isMd ? - (windowWidth * 0.5 - chairLayer.clientWidth * 0.5) : -windowWidth * 2,
+            y: windowHeight + chairLayer.clientHeight * 2,
+            scale: 1.5
+          });
+          const chairTl = gsap
+            .timeline().to(chairLayer, {
+              ease: "power1.inOut",
+              x: isMd ? chairLayer.clientWidth * 4 : chairLayer.clientWidth * 2,
+              y: -chairLayer.clientHeight,
+               scale: 1
+            });
+
+          const chairMainFlutterTl = createFlutterTimeline();
+          chairMainFlutterTl.to(chairMain, {
+            duration: "random(2, 3.6)",
+            ease: "power1.inOut",
+            y: `+=${gsap.utils.random(20, 30)}`,
+            rotation: "random(-5, -10)"
+          });
+
+          const chairBrushFlutterTl = createFlutterTimeline();
+          chairBrushFlutterTl.to(chairBrush, {
+            duration: "random(2, 3.6)",
+            ease: "sine.inOut",
+            y: `+=${gsap.utils.random(30, 60)}`,
+            rotation: "random(10, 20)"
+          });
+
+          timelineRefs.current.chair = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-6",
+                endTrigger: ".scene-13",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(chairTl);
+
+          if (timelineRefs.current.chair.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.chair.scrollTrigger
+            );
+          }
+
+           // ScrollTrigger working
+           gsap.set(workingEarth, {
+            scale: 0.75
+          });
+
+          gsap.set(workingLayer, {
+            x: isMd ? -(windowWidth * 0.5 - workingLayer.clientWidth * 1.1) : 0,
+            y: windowHeight + workingLayer.clientHeight,
+            scale: 0.5
+          });
+          const workingTl = gsap
+            .timeline().to(workingLayer, {
+              ease: "power1.inOut",
+              y: -(windowHeight * 0.5 + workingLayer.clientHeight),
+              scale: 1
+            });
+
+          const workingWomanFlutterTl = createFlutterTimeline();
+          workingWomanFlutterTl.to(workingWoman, {
+            duration: "random(2, 3.6)",
+            ease: "power1.inOut",
+            y: `+=${gsap.utils.random(20, 30)}`,
+            rotation: "random(-5, -10)"
+          });
+
+          const workingLeavesFlutterTl = createFlutterTimeline();
+          workingLeavesFlutterTl.to(workingLeaves, {
+            duration: "random(2, 3.6)",
+            ease: "sine.inOut",
+            y: `+=${gsap.utils.random(30, 60)}`,
+            rotation: "random(10, 20)"
+          });
+
+          timelineRefs.current.working = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-10",
+                endTrigger: ".scene-12",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(workingTl);
+
+          if (timelineRefs.current.working.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.working.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger brandm
+
+          gsap.set(brandmLayer, {
+            x: -brandmLayer.clientWidth * 2,
+            y: windowHeight + brandmLayer.clientHeight,
+            scale: 0.5
+          });
+          const brandmTl = gsap
+            .timeline().to(brandmLayer, {
+              ease: "power1.inOut",
+              y: -(windowHeight * 0.5 + brandmLayer.clientHeight),
+              scale: 1
+            });
+
+          const brandmFlutterTl = createFlutterTimeline();
+          brandmFlutterTl.to(brandmMain, {
+            duration: "random(2, 3.6)",
+            ease: "power1.inOut",
+            y: `+=${gsap.utils.random(20, 30)}`,
+          });
+          timelineRefs.current.brandm = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-10",
+                endTrigger: ".scene-13",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(brandmTl);
+
+          if (timelineRefs.current.brandm.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.brandm.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger berry
+
+          gsap.set(berryLayer, {
+            x: -windowWidth * 0.5 + berryLayer.clientWidth,
+            scale: 1.25,
+            autoAlpha: 0
+          });
+          const berryTl = gsap
+            .timeline().to(berryLayer, {
+              ease: "power1.inOut",
+              x: -windowWidth * 0.2 + berryLayer.clientWidth,
+              y: -(windowHeight * 0.4 - berryLayer.clientHeight),
+              scale: 1
+            }).to(
+              berryLayer,
+              { duration: 0.2, ease: "power1.inOut", autoAlpha: 1 },
+              "-=0.4"
+            )
+            .to(berryLayer, {
+              ease: "power1.inOut",
+                x: -windowWidth * 0.1 + berryLayer.clientWidth,
+                y: -(windowHeight * 0.5 + berryLayer.clientHeight * 4),
+                scale: 0.75,
+            });
+
+          const berry01FlutterTl = createFlutterTimeline();
+          berry01FlutterTl.to(berry01, {
+            duration: "random(2.2, 2.8)",
+            ease: "sine.inOut",
+            y: "random(-6, -10)",
+          });
+          const berry02FlutterTl = createFlutterTimeline();
+          berry02FlutterTl.to(berry02, {
+            duration: "random(2.2, 2.8)",
+            ease: "sine.inOut",
+            y: "random(0, 15)",
+          });
+          const berry03FlutterTl = createFlutterTimeline();
+          berry03FlutterTl.to(berry03, {
+            duration: "random(2.2, 2.8)",
+            ease: "sine.inOut",
+            y: "random(0, 5)",
+          });
+          timelineRefs.current.berry = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-11",
+                endTrigger: ".scene-15",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(berryTl);
+
+          if (timelineRefs.current.berry.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.berry.scrollTrigger
+            );
+          }
+
+          // ScrollTrigger orange
+
+          gsap.set(orangeLayer, {
+            x: -windowWidth * 0.2 + orangeLayer.clientWidth,
+            scale: 1.25,
+            autoAlpha: 0
+          });
+          const orangeTl = gsap
+            .timeline().to(orangeLayer, {
+              ease: "power1.inOut",
+              x: -orangeLayer.clientWidth * 8,
+              y: -orangeLayer.clientHeight * 0.8,
+              scale: 0.75
+            }).to(
+              orangeLayer,
+              { duration: 0.2, ease: "power1.inOut", autoAlpha: 1 },
+              "-=0.3"
+            )
+            .to(orangeLayer, {
+              ease: "power1.inOut",
+                y: -(windowHeight * 0.5 + orangeLayer.clientHeight * 3),
+                scale: 0.5,
+            });
+
+          const orange01FlutterTl = createFlutterTimeline();
+          orange01FlutterTl.to(orange01, {
+            duration: "random(2.2, 2.8)",
+            ease: "sine.inOut",
+            y: "random(-6, -10)",
+          });
+          const orange02FlutterTl = createFlutterTimeline();
+          orange02FlutterTl.to(orange02, {
+            duration: "random(2.2, 2.8)",
+            ease: "sine.inOut",
+            y: "random(0, 15)",
+          });
+          timelineRefs.current.orange = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-10",
+                endTrigger: ".scene-15",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(orangeTl);
+
+          if (timelineRefs.current.orange.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.orange.scrollTrigger
+            );
+          }
+
+
+          // ScrollTrigger scissors
+
+          gsap.set(scissorsLayer, {
+            y: windowHeight + scissorsLayer.clientHeight*2
+          });
+          const scissorsTl = gsap
+            .timeline().to(scissorsLayer, {
+              ease: "power1.inOut",
+              y: windowHeight * 0.5 + scissorsLayer.clientHeight
+            }).to(scissorsLayer, {
+              ease: "power1.in",
+              y: -(windowHeight + scissorsLayer.clientHeight * 0.75),
+              scale: 0.75
+            });
+
+            let t = gsap.utils.random(1, 1.6),
+            s = gsap.utils.random(4, 8),
+            h = gsap.utils.random(10, 20),
+            n = gsap.utils.random(1, 2)
+          const scissorsBodyFlutterTl = createFlutterTimeline();
+          scissorsBodyFlutterTl.to(scissorsBody, {
+            duration: n,
+            ease: "sine.inOut",
+              y: `-=${gsap.utils.random(7, 10)}`,
+              scaleY: "random(0.90, 0.96)",
+          });
+
+          const scissorsFrontFlutterTl = createFlutterTimeline();
+          scissorsFrontFlutterTl.to(scissorsFront, {
+            duration: t,
+            ease: "expo.inOut",
+            rotation: s + h,
+          }).to(
+            scissorsBack,
+            { duration: t, ease: "expo.inOut", rotation: -s + h },
+            `-=${t}`
+          );
+
+          const scissorsCactusFlutterTl = createFlutterTimeline();
+          scissorsCactusFlutterTl.to(scissorsCactus, {
+            duration: n,
+            ease: "sine.inOut",
+              y: `-=${gsap.utils.random(7, 10)}`,
+              scaleY: "random(0.96, 0.99)",
+          });
+          timelineRefs.current.scissors = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-10",
+                endTrigger: ".scene-14",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(scissorsTl);
+
+          if (timelineRefs.current.scissors.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.scissors.scrollTrigger
+            );
+          }
+
+
+          // ScrollTrigger hand
+
+          gsap.set(handLayer, {
+            y: windowHeight + handLayer.clientHeight * 2
+          });
+          const handTl = gsap
+            .timeline().to(handLayer, {
+              ease: "power1.inOut",
+              y: windowHeight - handLayer.clientHeight * 0.2
+            }).to(handLayer, {
+              ease: "power1.inOut",
+              x: handLayer.clientWidth,
+              y: -(windowHeight + handLayer.clientHeight * 2),
+              scale: 0.75
+            });
+
+          const handBodyFlutterTl = createFlutterTimeline();
+          handBodyFlutterTl.to(handBody, {
+            duration: "random(1.8, 2.2)",
+            ease: "sine.inOut",
+              y: `-=${gsap.utils.random(10, 20)}`,
+              scaleX: "random(0.92, 0.94)",
+          });
+
+          const handLeafFlutterTl = createFlutterTimeline();
+          handLeafFlutterTl.to(handLeaf, {
+            duration: "random(2, 3.6)",
+            ease: "power1.inOut",
+              y: `-=${gsap.utils.random(20, 60)}`,
+              scaleX: "random(0.9, 0.96)",
+          });
+
+          timelineRefs.current.hand = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-11",
+                endTrigger: ".scene-15",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(handTl);
+
+          if (timelineRefs.current.hand.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.hand.scrollTrigger
+            );
+          }
           // TODO: step 8
 
           // animation frame
@@ -1416,6 +2222,56 @@ export function useInitialLoader() {
           gsap.to(elements.balloon.inner, {
             x: moveX * mouseMoveRatios.current.balloon,
             y: moveY * mouseMoveRatios.current.balloon / 2,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
+
+        // argan
+        if (elements.argan.inner) {
+          gsap.to(elements.argan.inner, {
+            x: moveX * mouseMoveRatios.current.argan,
+            y: moveY * mouseMoveRatios.current.argan / 2,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
+
+        // chair
+        if (elements.chair.inner) {
+          gsap.to(elements.chair.inner, {
+            x: moveX * mouseMoveRatios.current.chair,
+            y: moveY * mouseMoveRatios.current.chair / 2,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
+
+        // brandm
+        if (elements.brandm.inner) {
+          gsap.to(elements.brandm.inner, {
+            x: moveX * mouseMoveRatios.current.brandm,
+            y: moveY * mouseMoveRatios.current.brandm / 2,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
+
+        // berry
+        if (elements.berry.inner) {
+          gsap.to(elements.berry.inner, {
+            x: moveX * mouseMoveRatios.current.berry,
+            y: moveY * mouseMoveRatios.current.berry / 2,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
+
+        // orange
+        if (elements.orange.inner) {
+          gsap.to(elements.orange.inner, {
+            x: moveX * mouseMoveRatios.current.orange,
+            y: moveY * mouseMoveRatios.current.orange / 2,
             duration: 0.4,
             ease: "power1.out",
           });

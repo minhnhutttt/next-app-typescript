@@ -1,12 +1,15 @@
 export default function Home() {
   return (
     <div data-js="initial-overlay_preload" className="relative ">
-      <div data-js="initial-overlay" className="fixed bg-white inset-0 z-50"></div>
+      <div
+        data-js="initial-overlay"
+        className="fixed bg-white inset-0 z-50"
+      ></div>
       <div
         data-js="scenes"
         className="w-full origin-center items-center justify-center"
       >
-        <section>
+        <section className="absolute inset-0">
           <div className="h-screen flex items-center justify-center">
             <div className="space-y-5">
               <h1
@@ -35,6 +38,7 @@ export default function Home() {
           </div>
         </section>
         <div className="fixed inset-0">
+          {/* Butterfly */}
           <div
             data-js="butterfly-layer"
             className="flex absolute max-md:w-[30vw] md:w-[160px]"
@@ -47,6 +51,8 @@ export default function Home() {
               />
             </div>
           </div>
+
+          {/* BrandJ */}
           <div data-js="brandj-layer" className="flex absolute">
             <div
               data-js="brandj-inner"
@@ -59,13 +65,15 @@ export default function Home() {
                 alt=""
               />
               <img
-                data-js="stickbottle-img"
+                data-js="brandj-stickbottle"
                 className="w-[3vw] md:w-[20px] -mt-[4vw] -ml-[1.5vw]"
                 src="/assets/images/home/brand__stick-bottle.webp"
                 alt=""
               />
             </div>
           </div>
+
+          {/* Framer */}
           <div
             data-js="framer-layer"
             className="absolute flex justify-center items-center"
@@ -88,6 +96,8 @@ export default function Home() {
               />
             </div>
           </div>
+
+          {/* Bag */}
           <div
             data-js="bag-layer"
             className="absolute flex justify-center items-center"
@@ -96,6 +106,7 @@ export default function Home() {
               data-js="bag-inner"
               className="flex items-center justify-center"
             >
+              <div data-js="bag-flu" className="flex items-center justify-center">
               <img
                 data-js="bag-tree"
                 className="w-[16vw] md:w-[140px]"
@@ -104,7 +115,7 @@ export default function Home() {
               />
               <img
                 data-js="bag-bird"
-                className="w-[8vw] md:w-[80px] md:-ml-[60px] -ml-[5vw] md:mt-[50px] mt-[6vw]"
+                className="w-[8vw] md:w-[80px] md:-ml-[60px] -ml-[5vw] md:mt-[50px] mt-[6vw] relative z-10"
                 src="/assets/images/home/brand__flag-bird.webp"
                 alt=""
               />
@@ -114,9 +125,11 @@ export default function Home() {
                 src="/assets/images/home/brand__flag-002.webp"
                 alt=""
               />
+              </div>
             </div>
           </div>
 
+          {/* Tree */}
           <div
             data-js="tree-layer"
             className="inline-flex justify-center items-center"
@@ -140,6 +153,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Skyscraper */}
           <div
             data-js="skyscraper-layer"
             className="absolute inset-0 flex justify-center items-center"
@@ -163,6 +177,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Earth */}
           <div
             data-js="earth-layer"
             className="absolute inset-0 flex justify-center items-center"
@@ -198,6 +213,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Plate */}
           <div
             data-js="plate-layer"
             className="inline-flex justify-center items-center"
@@ -221,6 +237,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Stick */}
           <div
             data-js="stick-layer"
             className="inline-flex justify-center items-center"
@@ -244,6 +261,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Birds */}
           <div
             data-js="birds-layer"
             className="inline-flex justify-center items-center"
@@ -302,31 +320,9 @@ export default function Home() {
               />
             </div>
           </div>
-
-          <div
-            data-js="text01-layer"
-            className="absolute inset-0 flex justify-center items-center"
-          >
-            <div
-              data-js="text01-inner"
-              className="flex justify-center items-center"
-            >
-              <h2>
-                <span className="block text-[4.6vw] md:text-[32px]" data-splitting>
-                  1994年、NY SOHOに誕生した
-                </span>
-                <span className="block text-[4.6vw] md:text-[32px]" data-splitting>
-                  化学物質を一切使用しない<strong>世界初</strong>の
-                </span>
-                <span className="block text-[4.6vw] md:text-[32px]" data-splitting>
-                  クリーンエアサロン。
-                </span>
-              </h2>
-            </div>
-          </div>
-
         </div>
         <div className="fixed inset-0 flex justify-center items-center">
+          {/* Bottle */}
           <div
             data-js="bottle-layer"
             className="absolute inline-flex justify-center items-center"
@@ -349,6 +345,8 @@ export default function Home() {
               />
             </div>
           </div>
+
+          {/* jc */}
           <div
             data-js="jc-layer"
             className="absolute inline-flex justify-center items-center"
@@ -359,19 +357,20 @@ export default function Home() {
             >
               <img
                 data-js="jc-cloud"
-                className="object-top left-1/2 top-1/2 absolute object-contain max-w-fit w-[50vw] md:w-[400px]"
+                className="object-top left-1/2 top-1/2 absolute object-contain max-w-fit w-[65vw] md:w-[400px]"
                 src="/assets/images/home/brand__cloud-lg.webp"
                 alt=""
               />
               <img
                 data-js="jc-j"
-                className="object-top object-contain max-w-fit w-[32vw] md:w-[360px]"
+                className="object-top object-contain max-w-fit w-[42vw] md:w-[360px]"
                 src="/assets/images/home/brand__j-lg.webp"
                 alt=""
               />
             </div>
           </div>
 
+          {/* balloon */}
           <div
             data-js="balloon-layer"
             className="absolute inline-flex justify-center items-center"
@@ -388,30 +387,376 @@ export default function Home() {
               />
             </div>
           </div>
+
+          {/* windmill */}
           <div
             data-js="windmill-layer"
             className="absolute inline-flex justify-center items-center"
           >
             <div
               data-js="windmill-inner"
-              className="flex justify-center items-center "
+              className="flex-col-reverse flex justify-center items-center "
             >
               <img
-                data-js="windmill-windmill"
-                className="object-top object-contain max-w-fit md:w-[300px]"
-                src="/assets/images/home/brand__windmill.webp"
+                data-js="windmill-wave-block"
+                className="object-top object-contain origin-top absolute top-[90%] max-w-fit w-[16vw] md:w-[80px]"
+                src="/assets/images/home/brand__wave-block.webp"
                 alt=""
               />
               <img
-                data-js="windmill-wave-block"
-                className="object-top object-contain max-w-fit left-1/2 top-1/2 absolute"
-                src="/assets/images/home/brand__wave-block.webp"
+                data-js="windmill-windmill"
+                className="object-top object-contain max-w-fit md:w-[300px] relative w-[60vw]"
+                src="/assets/images/home/brand__windmill.webp"
                 alt=""
               />
             </div>
           </div>
+
+          {/* argan */}
+          <div
+            data-js="argan-layer"
+            className="absolute inline-flex justify-center items-center"
+          >
+            <div
+              data-js="argan-inner"
+              className="flex-col-reverse flex justify-center items-center relative"
+            >
+              <img
+                data-js="argan-bottle"
+                className="object-top object-contain max-w-fit relative md:w-[350px] w-[48vw]"
+                src="/assets/images/home/brand__argan-bottle.webp"
+                alt=""
+              />
+              <img
+                data-js="argan-cloud"
+                className="object-top object-contain origin-top absolute top-1/2 left-0 max-w-fit md:w-[600px] w-[60vw]"
+                src="/assets/images/home/brand__cloud-sm.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
+          {/* chair */}
+          <div
+            data-js="chair-layer"
+            className="absolute inline-flex justify-center items-center"
+          >
+            <div
+              data-js="chair-inner"
+              className="flex justify-center items-center relative"
+            >
+              <img
+                data-js="chair-main"
+                className="relative w-[45vw] md:w-[300px]"
+                src="/assets/images/home/brand__cut-chair.webp"
+                alt=""
+              />
+              <img
+                data-js="chair-brush"
+                className="object-top object-contain origin-top absolute top-0 right-1/5 max-w-fit md:w-[100px] w-[14vw]"
+                src="/assets/images/home/brand__brush.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
+          {/* working */}
+          <div
+            data-js="working-layer"
+            className="absolute inline-flex justify-center items-center"
+          >
+            <div
+              data-js="working-inner"
+              className="flex justify-center items-center relative"
+            >
+              <img
+                data-js="working-earth"
+                className="relative w-[60vw] md:w-[440px]"
+                src="/assets/images/home/brand__earth.webp"
+                alt=""
+              />
+              <img
+                data-js="working-leaves"
+                className="object-top object-contain origin-bottom absolute bottom-[75%] right-[60%] max-w-fit w-[23vw] md:w-[250px]"
+                src="/assets/images/home/brand__two-leaves.webp"
+                alt=""
+              />
+              <img
+                data-js="working-woman"
+                className="object-top object-contain origin-top absolute bottom-2/3 left-0 max-w-fit w-[22vw] md:w-[240px]"
+                src="/assets/images/home/brand__working-woman.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
+          {/* BrandM */}
+          <div
+            data-js="brandm-layer"
+            className="absolute inline-flex justify-center items-center"
+          >
+            <div
+              data-js="brandm-inner"
+              className="flex justify-center items-center relative"
+            >
+              <img
+                data-js="brandm-main"
+                className="relative w-[45vw] md:w-[440px]"
+                src="/assets/images/home/brand__m-lg.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
+          {/* Berry */}
+          <div
+            data-js="berry-layer"
+            className="absolute inline-flex justify-center items-center"
+          >
+            <div
+              data-js="berry-inner"
+              className="flex justify-center items-center relative w-full"
+            >
+              <img
+                data-js="berry-01"
+                className="relative w-[5vw] md:w-[70px]"
+                src="/assets/images/home/brand__red-berry-1.webp"
+                alt=""
+              />
+              <img
+                data-js="berry-02"
+                className="w-[5vw] md:w-[70px] absolute left-full"
+                src="/assets/images/home/brand__red-berry-2.webp"
+                alt=""
+              />
+              <img
+                data-js="berry-03"
+                className="w-[5vw] md:w-[70px] absolute left-full top-full"
+                src="/assets/images/home/brand__red-berry-3.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
+          {/* orange */}
+          <div
+            data-js="orange-layer"
+            className="absolute inline-flex justify-center items-center"
+          >
+            <div
+              data-js="orange-inner"
+              className="flex justify-center items-center relative w-full"
+            >
+              <img
+                data-js="orange-01"
+                className="relative w-[5vw] md:w-[90px]"
+                src="/assets/images/home/brand__orange-fruit-1.webp"
+                alt=""
+              />
+              <img
+                data-js="orange-02"
+                className="w-[8vw] md:w-[100px] absolute top-1/2 left-full"
+                src="/assets/images/home/brand__orange-fruit-2.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
+          {/* scissors */}
+          <div
+            data-js="scissors-layer"
+            className="absolute inline-flex justify-center items-center right-0"
+          >
+            <div
+              data-js="scissors-inner"
+              className="flex justify-center items-center relative"
+            ><img
+            data-js="scissors-cactus"
+            className="object-top object-contain bottom-[-10%] right-[-20%] absolute max-w-fit w-[192%]"
+            src="/assets/images/home/brand__bg-cactus.webp"
+            alt=""
+          />
+              <img
+                data-js="scissors-body"
+                className="relative md:w-[232px] w-[40vw] "
+                src="/assets/images/home/brand__scissors-bird-body.webp"
+                alt=""
+              />
+              <img
+                data-js="scissors-head-front"
+                className="object-top object-contain absolute origin-top max-w-fit right-1/2 top-[-15%] w-[102%]"
+                src="/assets/images/home/brand__scissors-bird-head-front.webp"
+                alt=""
+              />
+              <img
+                data-js="scissors-head-back"
+                className="right-1/2 object-top object-contain absolute origin-top max-w-fit top-[0] w-[108%]"
+                src="/assets/images/home/brand__scissors-bird-head-back.webp"
+                alt=""
+              />
+              
+            </div>
+          </div>
+
+          {/* hand */}
+          <div
+            data-js="hand-layer"
+            className="absolute inline-flex justify-center items-center left-0 md:left-[10%]"
+          >
+            <div
+              data-js="hand-inner"
+              className="flex justify-center items-center relative"
+            >
+              <img
+                data-js="hand-body"
+                className="relative md:w-[188px] w-[40vw] "
+                src="/assets/images/home/brand__hand.webp"
+                alt=""
+              />
+              <img
+                data-js="hand-leaf"
+                className="object-top object-contain absolute origin-top max-w-fit left-[-50%] bottom-[-30%] w-[97.97%]"
+                src="/assets/images/home/brand__leaf.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
+          {/* cloud */}
+          {/* <div
+            data-js="cloud-layer"
+            className="absolute inline-flex justify-center items-center left-[10%]"
+          >
+            <div
+              data-js="cloud-inner"
+              className="flex justify-center items-center relative"
+            >
+              <img
+                data-js="cloud-main"
+                className="relative md:w-[1072px] w-[40vw] "
+                src="/assets/images/home/brand__cloud-lg.webp"
+                alt=""
+              />
+            </div>
+          </div> */}
+
         </div>
-        
+
+        {/* Text */}
+        <div className="fixed inset-0">
+          {/* Text 01 */}
+          <div
+            data-js="text01-layer"
+            className="absolute inset-0 flex justify-center items-center"
+          >
+            <div
+              data-js="text01-inner"
+              className="flex justify-center items-center font-bold [text-shadow:2px_2px_2px_#fff]"
+            >
+              <h2>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  1994年、NY SOHOに誕生した
+                </span>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  化学物質を一切使用しない<strong>世界初</strong>の
+                </span>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  クリーンエアサロン。
+                </span>
+              </h2>
+            </div>
+          </div>
+          {/* Text 02 */}
+          <div
+            data-js="text02-layer"
+            className="absolute inset-0 flex justify-center items-center"
+          >
+            <div
+              data-js="text02-inner"
+              className="flex justify-center items-center font-bold [text-shadow:2px_2px_2px_#fff]"
+            >
+              <h2>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  john masters organicsのはじまりから、
+                </span>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  いまも<strong>変わらない想い</strong>。
+                </span>
+              </h2>
+            </div>
+          </div>
+          {/* Text 03 */}
+          <div
+            data-js="text03-layer"
+            className="absolute inset-0 flex justify-center items-center"
+          >
+            <div
+              data-js="text03-inner"
+              className="flex justify-center items-center font-bold [text-shadow:2px_2px_2px_#fff]"
+            >
+              <h2>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  ONE EARTH
+                </span>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  地球に敬意を。
+                </span>
+              </h2>
+            </div>
+          </div>
+          {/* Text 04 */}
+          <div
+            data-js="text04-layer"
+            className="absolute inset-0 flex justify-center items-center"
+          >
+            <div
+              data-js="text04-inner"
+              className="flex justify-center items-center font-bold [text-shadow:2px_2px_2px_#fff]"
+            >
+              <h2>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  私たちから、あなたへ。
+                </span>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  そしてあなたから、あなたに関わる人々へ、
+                </span>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  自分を慈しむように、<strong>自然を大切</strong> にする。
+                </span>
+              </h2>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="absolute top-0 inset-x-0">
         <div className="scene h-screen scene-1" data-scene-index="1"></div>

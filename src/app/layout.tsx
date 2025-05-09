@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import type { Metadata } from 'next'
-import { Noto_Sans_JP } from 'next/font/google'
+import { Zen_Kurenaido } from 'next/font/google'
 
 import ScrollContainer from '@/components/scrollContainer'
 import SmoothScroll from '@/components/smoothSCroll'
@@ -15,8 +15,8 @@ import {
 
 import './globals.scss'
 
-const noto = Noto_Sans_JP({
-  weight: ['400', '500', '700', '800'],
+const zen = Zen_Kurenaido({
+  weight: ['400'],
   subsets: ['latin'],
 })
 
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
-      <body className={`${noto.className}`}>
+      <body className={`${zen.className}`}>
         <ScrollContainer>
           <SmoothScroll>
             {children}
