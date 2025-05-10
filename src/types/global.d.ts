@@ -1,2 +1,2 @@
-declare module 'scroll-out'
-declare module 'splitting'
+declare module "scroll-out";
+declare module "splitting";

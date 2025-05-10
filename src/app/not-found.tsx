@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const NotFoundPage = () => {
   return (
@@ -13,7 +13,7 @@ const NotFoundPage = () => {
         </Link>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

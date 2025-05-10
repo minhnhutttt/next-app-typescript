@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import { ReactNode, useEffect } from 'react'
+import { ReactNode, useEffect } from "react";
 
-import ScrollOut from 'scroll-out'
+import ScrollOut from "scroll-out";
 
 type ScrollContainerPropsType = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 const ScrollContainer = ({ children }: ScrollContainerPropsType) => {
   useEffect(() => {
@@ -14,10 +14,10 @@ const ScrollContainer = ({ children }: ScrollContainerPropsType) => {
       ScrollOut({
         once: true,
         threshold: 0.5,
-      })
-    }, 10)
-  }, [])
-  return <div>{children}</div>
-}
+      });
+    }, 10);
+  }, []);
+  return <div>{children}</div>;
+};
 
-export default ScrollContainer
+export default ScrollContainer;
