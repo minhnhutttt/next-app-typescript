@@ -87,6 +87,7 @@ type TimelineKey =
   | "text08"
   | "text09"
   | "text10"
+  | "text11"
   | "intro"
   | "butterfly"
   | "letterJ"
@@ -118,7 +119,12 @@ type TimelineKey =
   | "cloud02"
   | "cloud03"
   | "balloon02"
-  ;
+  | "circle"
+  | "circle1"
+  | "circle2"
+  | "circle3"
+  | "circle4"
+  | "circle5";
 
 type TimelineRefs = {
   [key in TimelineKey]?: gsap.core.Timeline;
@@ -220,6 +226,12 @@ export function useInitialLoader() {
       text10: {
         inner: document.querySelector('[data-js="text10-inner"]'),
         button: document.querySelector('[data-js="text10-button"]'),
+        border: document.querySelector('[data-js="text10-border"]'),
+      },
+      text11: {
+        inner: document.querySelector('[data-js="text11-inner"]'),
+        button: document.querySelector('[data-js="text11-button"]'),
+        border: document.querySelector('[data-js="text11-border"]'),
       },
       butterfly: {
         layer: document.querySelector('[data-js="butterfly-layer"]'),
@@ -970,9 +982,11 @@ export function useInitialLoader() {
               );
             }
           }
+
           // text10
           const text10Inner = elements.text10.inner;
           const text10Button = elements.text10.button;
+          const text10Border = elements.text10.border;
           if (text10Inner && text10Button) {
             gsap.set(text10Inner.querySelectorAll(".char"), {
               duration: 6,
@@ -985,6 +999,11 @@ export function useInitialLoader() {
               autoAlpha: 0,
               x: "0.5rem",
               ease: "power1.inOut",
+            });
+            gsap.set(text10Border, {
+              autoAlpha: 0,
+              scaleX: 0,
+              ease: "power1.out",
             });
             gsap.set(text10Inner, {
               pointerEvents: "none"
@@ -1001,6 +1020,16 @@ export function useInitialLoader() {
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
               }, '<')
+              .to(
+                text10Border,
+                {
+                  duration: 3,
+                  autoAlpha: 1,
+                  scaleX: 1,
+                  transformOrigin: "center left",
+                  ease: "power1.out",
+                }
+              )
               .to(
                 text10Button,
                 {
@@ -1021,13 +1050,22 @@ export function useInitialLoader() {
                 },
                 "+=5",
               ).to(
+                text10Border,
+                {
+                  duration: 3,
+                  autoAlpha: 0,
+                  scaleX: 0,
+                  transformOrigin: "center right",
+                  ease: "power1.out",
+                }
+              ).to(
                 text10Button,
                 {
                   duration: 6,
                   autoAlpha: 0,
                   x: "0.5rem",
                   ease: "power1.inOut",
-                }, "<"
+                }
               );
 
             timelineRefs.current.text10 = gsap
@@ -1045,6 +1083,110 @@ export function useInitialLoader() {
             if (timelineRefs.current.text10.scrollTrigger) {
               timelineRefs.current.scrollTriggers.push(
                 timelineRefs.current.text10.scrollTrigger,
+              );
+            }
+          }
+
+          // text11
+          const text11Inner = elements.text11.inner;
+          const text11Button = elements.text11.button;
+          const text11Border = elements.text11.border;
+          if (text11Inner && text11Button) {
+            gsap.set(text11Inner.querySelectorAll(".char"), {
+              duration: 6,
+              autoAlpha: 0,
+              x: "0.5rem",
+              ease: "power1.inOut",
+            });
+            gsap.set(text11Button, {
+              duration: 6,
+              autoAlpha: 0,
+              x: "0.5rem",
+              ease: "power1.inOut",
+            });
+            gsap.set(text11Border, {
+              autoAlpha: 0,
+              scaleX: 0,
+              ease: "power1.out",
+            });
+            gsap.set(text11Inner, {
+              pointerEvents: "none"
+            });
+            const text11Tl = gsap
+              .timeline()
+              .to(text11Inner, {
+                pointerEvents: "auto"
+              })
+              .to(text11Inner.querySelectorAll(".char"), {
+                duration: 6,
+                autoAlpha: 1,
+                x: "0.5rem",
+                stagger: { each: 0.1 },
+                ease: "power1.inOut",
+              }, '<')
+              .to(
+                text11Border,
+                {
+                  duration: 3,
+                  autoAlpha: 1,
+                  scaleX: 1,
+                  transformOrigin: "center left",
+                  ease: "power1.out",
+                }
+              )
+              .to(
+                text11Button,
+                {
+                  duration: 6,
+                  autoAlpha: 1,
+                  x: "0.5rem",
+                  ease: "power1.inOut",
+                }, "<"
+              )
+              .to(
+                text11Inner.querySelectorAll(".char"),
+                {
+                  duration: 6,
+                  autoAlpha: 0,
+                  x: "0.5rem",
+                  stagger: { each: 0.1 },
+                  ease: "power1.inOut",
+                },
+                "+=5",
+              ).to(
+                text11Border,
+                {
+                  duration: 3,
+                  autoAlpha: 0,
+                  scaleX: 0,
+                  transformOrigin: "center right",
+                  ease: "power1.out",
+                }
+              ).to(
+                text11Button,
+                {
+                  duration: 6,
+                  autoAlpha: 0,
+                  x: "0.5rem",
+                  ease: "power1.inOut",
+                }
+              );
+
+            timelineRefs.current.text11 = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-26",
+                  endTrigger: ".scene-28",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(text11Tl);
+
+            if (timelineRefs.current.text11.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.text11.scrollTrigger,
               );
             }
           }
