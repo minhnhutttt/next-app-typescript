@@ -165,10 +165,10 @@ export function useInitialLoader() {
     const elements = {
       initialOverlay: {
         el: document.querySelector(
-          '[data-js="initial-overlay"]'
+          '[data-js="initial-overlay"]',
         ) as HTMLElement,
         preloadImages: document.querySelectorAll(
-          '[data-js="initial-overlay_preload"] img'
+          '[data-js="initial-overlay_preload"] img',
         ) as NodeListOf<HTMLImageElement>,
       },
       hero: {
@@ -209,7 +209,7 @@ export function useInitialLoader() {
         layer: document.querySelector('[data-js="butterfly-layer"]'),
         inner: document.querySelector('[data-js="butterfly-inner"]'),
         img: document.querySelector(
-          '[data-js="butterfly-img"]'
+          '[data-js="butterfly-img"]',
         ) as HTMLImageElement,
       },
       brandj: {
@@ -265,7 +265,7 @@ export function useInitialLoader() {
         layer: document.querySelector('[data-js="birds-layer"]'),
         inner: document.querySelector('[data-js="birds-inner"]'),
         frame: document.querySelectorAll(
-          '[data-js="birds-frame"]'
+          '[data-js="birds-frame"]',
         ) as NodeListOf<HTMLImageElement>,
       },
       bottle: {
@@ -445,12 +445,12 @@ export function useInitialLoader() {
         .to(
           elements.hero.heading,
           { y: -30, duration: 1.5, autoAlpha: 0, ease: "power3.out" },
-          "<"
+          "<",
         )
         .to(
           elements.hero.heading02,
           { y: -20, duration: 1.5, autoAlpha: 0, ease: "power3.out" },
-          "<"
+          "<",
         );
     };
 
@@ -500,7 +500,7 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.intro.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.intro.scrollTrigger
+              timelineRefs.current.intro.scrollTrigger,
             );
           }
 
@@ -551,7 +551,7 @@ export function useInitialLoader() {
 
             if (timelineRefs.current.butterfly.scrollTrigger) {
               timelineRefs.current.scrollTriggers.push(
-                timelineRefs.current.butterfly.scrollTrigger
+                timelineRefs.current.butterfly.scrollTrigger,
               );
             }
           }
@@ -561,686 +561,689 @@ export function useInitialLoader() {
           const brandjImg = elements.brandj.img;
           const brandjStickbottle = elements.brandj.stickbottle;
           if (brandjLayer) {
-          gsap.set(brandjLayer, {
-            y: windowHeight + brandjLayer.clientHeight * 3,
-            x: windowWidth * 0.5 + brandjLayer.clientWidth * 0.75,
-            scale: 1.5,
-          });
-
-          const letterJTl = gsap
-            .timeline()
-            .to(brandjLayer, {
-              y: windowHeight * 0.1,
-              duration: 1,
-              scale: 1,
-              ease: "power1.inOut",
-            })
-            .to(brandjLayer, {
-              y: -(brandjLayer.clientHeight + windowHeight),
-              ease: "power1.inOut",
+            gsap.set(brandjLayer, {
+              y: windowHeight + brandjLayer.clientHeight * 3,
+              x: windowWidth * 0.5 + brandjLayer.clientWidth * 0.75,
+              scale: 1.5,
             });
 
-          const letterJFlutterTl = createFlutterTimeline();
-          letterJFlutterTl.to(brandjImg, {
-            duration: "random(2.2, 2.8)",
-            ease: "power1.inOut",
-            y: "random(10, 30)",
-          });
+            const letterJTl = gsap
+              .timeline()
+              .to(brandjLayer, {
+                y: windowHeight * 0.1,
+                duration: 1,
+                scale: 1,
+                ease: "power1.inOut",
+              })
+              .to(brandjLayer, {
+                y: -(brandjLayer.clientHeight + windowHeight),
+                ease: "power1.inOut",
+              });
 
-          const stickbottleFlutterTl = createFlutterTimeline();
-          stickbottleFlutterTl.to(brandjStickbottle, {
-            duration: "random(2, 2.3)",
-            ease: "power1.inOut",
-            y: "random(-20, 30)",
-          });
-
-          timelineRefs.current.letterJ = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-1",
-                endTrigger: ".scene-8",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(letterJTl);
-
-          if (timelineRefs.current.letterJ.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.letterJ.scrollTrigger
-            );
-          }
-        }
-           // text01
-           const text01Layer = elements.text01.layer;
-           const text01Inner = elements.text01.inner;
-           if (text01Inner) {
-          gsap.set(text01Inner.querySelectorAll(".char"), {
-            duration: 6,
-            autoAlpha: 0,
-            x: "0.5rem",
-            ease: "power1.inOut",
-          });
-          const text01Tl = gsap
-            .timeline()
-            .to(text01Inner.querySelectorAll(".char"), {
-              duration: 6,
-              autoAlpha: 1,
-              x: "0.5rem",
-              stagger: { each: 0.1 },
+            const letterJFlutterTl = createFlutterTimeline();
+            letterJFlutterTl.to(brandjImg, {
+              duration: "random(2.2, 2.8)",
               ease: "power1.inOut",
-            })
-            .to(
-              text01Inner.querySelectorAll(".char"),
-              {
+              y: "random(10, 30)",
+            });
+
+            const stickbottleFlutterTl = createFlutterTimeline();
+            stickbottleFlutterTl.to(brandjStickbottle, {
+              duration: "random(2, 2.3)",
+              ease: "power1.inOut",
+              y: "random(-20, 30)",
+            });
+
+            timelineRefs.current.letterJ = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-1",
+                  endTrigger: ".scene-8",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(letterJTl);
+
+            if (timelineRefs.current.letterJ.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.letterJ.scrollTrigger,
+              );
+            }
+          }
+          // text01
+          const text01Layer = elements.text01.layer;
+          const text01Inner = elements.text01.inner;
+          if (text01Inner) {
+            gsap.set(text01Inner.querySelectorAll(".char"), {
+              duration: 6,
+              autoAlpha: 0,
+              x: "0.5rem",
+              ease: "power1.inOut",
+            });
+            const text01Tl = gsap
+              .timeline()
+              .to(text01Inner.querySelectorAll(".char"), {
                 duration: 6,
-                autoAlpha: 0,
+                autoAlpha: 1,
                 x: "0.5rem",
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
-              },
-              "+=5"
-            );
+              })
+              .to(
+                text01Inner.querySelectorAll(".char"),
+                {
+                  duration: 6,
+                  autoAlpha: 0,
+                  x: "0.5rem",
+                  stagger: { each: 0.1 },
+                  ease: "power1.inOut",
+                },
+                "+=5",
+              );
 
-          timelineRefs.current.text01 = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-6",
-                endTrigger: ".scene-8",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(text01Tl);
+            timelineRefs.current.text01 = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-6",
+                  endTrigger: ".scene-8",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(text01Tl);
 
-          if (timelineRefs.current.text01.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text01.scrollTrigger
-            );
+            if (timelineRefs.current.text01.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.text01.scrollTrigger,
+              );
+            }
           }
-        }
           // text02
           const text02Layer = elements.text02.layer;
           const text02Inner = elements.text02.inner;
           if (text02Inner) {
-          gsap.set(text02Inner.querySelectorAll(".char"), {
-            duration: 6,
-            autoAlpha: 0,
-            x: "0.5rem",
-            ease: "power1.inOut",
-          });
-          const text02Tl = gsap
-            .timeline()
-            .to(text02Inner.querySelectorAll(".char"), {
+            gsap.set(text02Inner.querySelectorAll(".char"), {
               duration: 6,
-              autoAlpha: 1,
+              autoAlpha: 0,
               x: "0.5rem",
-              stagger: { each: 0.1 },
               ease: "power1.inOut",
-            })
-            .to(
-              text02Inner.querySelectorAll(".char"),
-              {
+            });
+            const text02Tl = gsap
+              .timeline()
+              .to(text02Inner.querySelectorAll(".char"), {
                 duration: 6,
-                autoAlpha: 0,
+                autoAlpha: 1,
                 x: "0.5rem",
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
-              },
-              "+=5"
-            );
+              })
+              .to(
+                text02Inner.querySelectorAll(".char"),
+                {
+                  duration: 6,
+                  autoAlpha: 0,
+                  x: "0.5rem",
+                  stagger: { each: 0.1 },
+                  ease: "power1.inOut",
+                },
+                "+=5",
+              );
 
-          timelineRefs.current.text02 = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-8",
-                endTrigger: ".scene-10",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(text02Tl);
+            timelineRefs.current.text02 = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-8",
+                  endTrigger: ".scene-10",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(text02Tl);
 
-          if (timelineRefs.current.text02.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text02.scrollTrigger
-            );
+            if (timelineRefs.current.text02.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.text02.scrollTrigger,
+              );
+            }
           }
-        }
-          
-        // text03
-        const text03Layer = elements.text03.layer;
-        const text03Inner = elements.text03.inner;
-        if (text03Inner) {
-          gsap.set(text03Inner.querySelectorAll(".char"), {
-            duration: 6,
-            autoAlpha: 0,
-            x: "0.5rem",
-            ease: "power1.inOut",
-          });
-          const text03Tl = gsap
-            .timeline()
-            .to(text03Inner.querySelectorAll(".char"), {
+
+          // text03
+          const text03Layer = elements.text03.layer;
+          const text03Inner = elements.text03.inner;
+          if (text03Inner) {
+            gsap.set(text03Inner.querySelectorAll(".char"), {
               duration: 6,
-              autoAlpha: 1,
+              autoAlpha: 0,
               x: "0.5rem",
-              stagger: { each: 0.1 },
               ease: "power1.inOut",
-            })
-            .to(
-              text03Inner.querySelectorAll(".char"),
-              {
+            });
+            const text03Tl = gsap
+              .timeline()
+              .to(text03Inner.querySelectorAll(".char"), {
                 duration: 6,
-                autoAlpha: 0,
+                autoAlpha: 1,
                 x: "0.5rem",
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
-              },
-              "+=5"
-            );
+              })
+              .to(
+                text03Inner.querySelectorAll(".char"),
+                {
+                  duration: 6,
+                  autoAlpha: 0,
+                  x: "0.5rem",
+                  stagger: { each: 0.1 },
+                  ease: "power1.inOut",
+                },
+                "+=5",
+              );
 
-          timelineRefs.current.text03 = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-10",
-                endTrigger: ".scene-12",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(text03Tl);
+            timelineRefs.current.text03 = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-10",
+                  endTrigger: ".scene-12",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(text03Tl);
 
-          if (timelineRefs.current.text03.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text03.scrollTrigger
-            );
+            if (timelineRefs.current.text03.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.text03.scrollTrigger,
+              );
+            }
           }
-        }
           // text04
           const text04Layer = elements.text04.layer;
           const text04Inner = elements.text04.inner;
           if (text04Inner) {
-          gsap.set(text04Inner.querySelectorAll(".char"), {
-            duration: 6,
-            autoAlpha: 0,
-            x: "0.5rem",
-            ease: "power1.inOut",
-          });
-          const text04Tl = gsap
-            .timeline()
-            .to(text04Inner.querySelectorAll(".char"), {
+            gsap.set(text04Inner.querySelectorAll(".char"), {
               duration: 6,
-              autoAlpha: 1,
+              autoAlpha: 0,
               x: "0.5rem",
-              stagger: { each: 0.1 },
               ease: "power1.inOut",
-            })
-            .to(
-              text04Inner.querySelectorAll(".char"),
-              {
+            });
+            const text04Tl = gsap
+              .timeline()
+              .to(text04Inner.querySelectorAll(".char"), {
                 duration: 6,
-                autoAlpha: 0,
+                autoAlpha: 1,
                 x: "0.5rem",
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
-              },
-              "+=5"
-            );
+              })
+              .to(
+                text04Inner.querySelectorAll(".char"),
+                {
+                  duration: 6,
+                  autoAlpha: 0,
+                  x: "0.5rem",
+                  stagger: { each: 0.1 },
+                  ease: "power1.inOut",
+                },
+                "+=5",
+              );
 
-          timelineRefs.current.text04 = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-12",
-                endTrigger: ".scene-14",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(text04Tl);
+            timelineRefs.current.text04 = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-12",
+                  endTrigger: ".scene-14",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(text04Tl);
 
-          if (timelineRefs.current.text04.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text04.scrollTrigger
-            );
+            if (timelineRefs.current.text04.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.text04.scrollTrigger,
+              );
+            }
           }
-        }
           // text05
           const text05Layer = elements.text05.layer;
           const text05Inner = elements.text05.inner;
           if (text05Inner) {
-          gsap.set(text05Inner.querySelectorAll(".char"), {
-            duration: 6,
-            autoAlpha: 0,
-            x: "0.5rem",
-            ease: "power1.inOut",
-          });
-          const text05Tl = gsap
-            .timeline()
-            .to(text05Inner.querySelectorAll(".char"), {
+            gsap.set(text05Inner.querySelectorAll(".char"), {
               duration: 6,
-              autoAlpha: 1,
+              autoAlpha: 0,
               x: "0.5rem",
-              stagger: { each: 0.1 },
               ease: "power1.inOut",
-            })
-            .to(
-              text05Inner.querySelectorAll(".char"),
-              {
+            });
+            const text05Tl = gsap
+              .timeline()
+              .to(text05Inner.querySelectorAll(".char"), {
                 duration: 6,
-                autoAlpha: 0,
+                autoAlpha: 1,
                 x: "0.5rem",
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
-              },
-              "+=5"
-            );
+              })
+              .to(
+                text05Inner.querySelectorAll(".char"),
+                {
+                  duration: 6,
+                  autoAlpha: 0,
+                  x: "0.5rem",
+                  stagger: { each: 0.1 },
+                  ease: "power1.inOut",
+                },
+                "+=5",
+              );
 
-          timelineRefs.current.text05 = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-14",
-                endTrigger: ".scene-16",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(text05Tl);
+            timelineRefs.current.text05 = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-14",
+                  endTrigger: ".scene-16",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(text05Tl);
 
-          if (timelineRefs.current.text05.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text05.scrollTrigger
-            );
+            if (timelineRefs.current.text05.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.text05.scrollTrigger,
+              );
+            }
           }
-        }
           // text06
           const text06Layer = elements.text06.layer;
           const text06Inner = elements.text06.inner;
           if (text06Inner) {
-          gsap.set(text06Inner.querySelectorAll(".char"), {
-            duration: 6,
-            autoAlpha: 0,
-            x: "0.5rem",
-            ease: "power1.inOut",
-          });
-          const text06Tl = gsap
-            .timeline()
-            .to(text06Inner.querySelectorAll(".char"), {
+            gsap.set(text06Inner.querySelectorAll(".char"), {
               duration: 6,
-              autoAlpha: 1,
+              autoAlpha: 0,
               x: "0.5rem",
-              stagger: { each: 0.1 },
               ease: "power1.inOut",
-            })
-            .to(
-              text06Inner.querySelectorAll(".char"),
-              {
+            });
+            const text06Tl = gsap
+              .timeline()
+              .to(text06Inner.querySelectorAll(".char"), {
                 duration: 6,
-                autoAlpha: 0,
+                autoAlpha: 1,
                 x: "0.5rem",
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
-              },
-              "+=5"
-            );
+              })
+              .to(
+                text06Inner.querySelectorAll(".char"),
+                {
+                  duration: 6,
+                  autoAlpha: 0,
+                  x: "0.5rem",
+                  stagger: { each: 0.1 },
+                  ease: "power1.inOut",
+                },
+                "+=5",
+              );
 
-          timelineRefs.current.text06 = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-16",
-                endTrigger: ".scene-18",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(text06Tl);
+            timelineRefs.current.text06 = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-16",
+                  endTrigger: ".scene-18",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(text06Tl);
 
-          if (timelineRefs.current.text06.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text06.scrollTrigger
-            );
+            if (timelineRefs.current.text06.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.text06.scrollTrigger,
+              );
+            }
           }
-        }
-          
-        // text07
-        const text07Layer = elements.text07.layer;
-        const text07Inner = elements.text07.inner;
-        if (text07Inner) {
-          gsap.set(text07Inner.querySelectorAll(".char"), {
-            duration: 6,
-            autoAlpha: 0,
-            x: "0.5rem",
-            ease: "power1.inOut",
-          });
-          const text07Tl = gsap
-            .timeline()
-            .to(text07Inner.querySelectorAll(".char"), {
+
+          // text07
+          const text07Layer = elements.text07.layer;
+          const text07Inner = elements.text07.inner;
+          if (text07Inner) {
+            gsap.set(text07Inner.querySelectorAll(".char"), {
               duration: 6,
-              autoAlpha: 1,
+              autoAlpha: 0,
               x: "0.5rem",
-              stagger: { each: 0.1 },
               ease: "power1.inOut",
-            })
-            .to(
-              text07Inner.querySelectorAll(".char"),
-              {
+            });
+            const text07Tl = gsap
+              .timeline()
+              .to(text07Inner.querySelectorAll(".char"), {
                 duration: 6,
-                autoAlpha: 0,
+                autoAlpha: 1,
                 x: "0.5rem",
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
-              },
-              "+=5"
-            );
+              })
+              .to(
+                text07Inner.querySelectorAll(".char"),
+                {
+                  duration: 6,
+                  autoAlpha: 0,
+                  x: "0.5rem",
+                  stagger: { each: 0.1 },
+                  ease: "power1.inOut",
+                },
+                "+=5",
+              );
 
-          timelineRefs.current.text07 = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-18",
-                endTrigger: ".scene-20",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(text07Tl);
+            timelineRefs.current.text07 = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-18",
+                  endTrigger: ".scene-20",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(text07Tl);
 
-          if (timelineRefs.current.text07.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text07.scrollTrigger
-            );
+            if (timelineRefs.current.text07.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.text07.scrollTrigger,
+              );
+            }
           }
-        }
           // Framer
           const framerLayer = elements.framer.layer;
           const framerFramer = elements.framer.framer;
           const framerAvocado = elements.framer.avocado;
           if (framerLayer) {
-          gsap.set(framerLayer, {
-            y: windowHeight + framerLayer.clientHeight * 6,
-            x: windowWidth * 0.5 - framerLayer.clientWidth,
-          });
-
-          const framerFlutterTl = createFlutterTimeline();
-          framerFlutterTl.to(framerFramer, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: "random(10, 30)",
-            scale: "random(0.94, 0.99)",
-            rotation: "random(-4, 4)",
-          });
-
-          const framerTl = gsap
-            .timeline()
-            .to(framerLayer, {
-              y: windowHeight * 0.4,
-              x: isMd
-                ? windowWidth * 0.5 - framerLayer.clientWidth * 2
-                : windowWidth * 0.5 - framerLayer.clientWidth * 1.5,
-              ease: "power1.inOut",
-            })
-            .to(framerLayer, {
-              y: -(framerLayer.clientHeight * 2),
-              ease: "power1.inOut",
+            gsap.set(framerLayer, {
+              y: windowHeight + framerLayer.clientHeight * 6,
+              x: windowWidth * 0.5 - framerLayer.clientWidth,
             });
 
-          const avocadoFlutterTl = createFlutterTimeline();
-          avocadoFlutterTl.to(framerAvocado, {
-            duration: "random(1.6, 1.9)",
-            ease: "power1.out",
-            y: "random(20, -60)",
-            rotation: "random(-40, -20)",
-          });
-          timelineRefs.current.framer = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-1",
-                endTrigger: ".scene-8",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(framerTl);
+            const framerFlutterTl = createFlutterTimeline();
+            framerFlutterTl.to(framerFramer, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: "random(10, 30)",
+              scale: "random(0.94, 0.99)",
+              rotation: "random(-4, 4)",
+            });
 
-          if (timelineRefs.current.framer.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.framer.scrollTrigger
-            );
+            const framerTl = gsap
+              .timeline()
+              .to(framerLayer, {
+                y: windowHeight * 0.4,
+                x: isMd
+                  ? windowWidth * 0.5 - framerLayer.clientWidth * 2
+                  : windowWidth * 0.5 - framerLayer.clientWidth * 1.5,
+                ease: "power1.inOut",
+              })
+              .to(framerLayer, {
+                y: -(framerLayer.clientHeight * 2),
+                ease: "power1.inOut",
+              });
+
+            const avocadoFlutterTl = createFlutterTimeline();
+            avocadoFlutterTl.to(framerAvocado, {
+              duration: "random(1.6, 1.9)",
+              ease: "power1.out",
+              y: "random(20, -60)",
+              rotation: "random(-40, -20)",
+            });
+            timelineRefs.current.framer = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-1",
+                  endTrigger: ".scene-8",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(framerTl);
+
+            if (timelineRefs.current.framer.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.framer.scrollTrigger,
+              );
+            }
           }
-        }
 
           // Bag
           const bagLayer = elements.bag.layer;
           const bagFlu = elements.bag.flu;
           if (bagLayer) {
-          gsap.set(bagLayer, {
-            y: windowHeight + bagLayer.clientHeight * 5,
-            x: windowWidth * 0.6,
-            scale: 1.25,
-          });
-
-          const bagTl = gsap
-            .timeline()
-            .to(bagLayer, {
-              x: windowWidth * 0.7,
-              y: windowHeight * 0.45 - bagLayer.clientHeight * 0.5,
-              scale: 1,
-              ease: "power1.inOut",
-            })
-            .to(bagLayer, {
-              y: -bagLayer.clientHeight * 1.5,
-              ease: "power1.inOut",
+            gsap.set(bagLayer, {
+              y: windowHeight + bagLayer.clientHeight * 5,
+              x: windowWidth * 0.6,
+              scale: 1.25,
             });
 
-          const bagFlutterTl = createFlutterTimeline();
-          bagFlutterTl.to(bagFlu, {
-            duration: 2,
-            ease: "sine.inOut",
-            y: "random(10, 29)",
-            scale: "random(0.96, 0.98)",
-            rotation: "random(-4, 4)",
-          });
-          timelineRefs.current.bag = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-1",
-                endTrigger: ".scene-7",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(bagTl);
+            const bagTl = gsap
+              .timeline()
+              .to(bagLayer, {
+                x: windowWidth * 0.7,
+                y: windowHeight * 0.45 - bagLayer.clientHeight * 0.5,
+                scale: 1,
+                ease: "power1.inOut",
+              })
+              .to(bagLayer, {
+                y: -bagLayer.clientHeight * 1.5,
+                ease: "power1.inOut",
+              });
 
-          if (timelineRefs.current.bag.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.bag.scrollTrigger
-            );
+            const bagFlutterTl = createFlutterTimeline();
+            bagFlutterTl.to(bagFlu, {
+              duration: 2,
+              ease: "sine.inOut",
+              y: "random(10, 29)",
+              scale: "random(0.96, 0.98)",
+              rotation: "random(-4, 4)",
+            });
+            timelineRefs.current.bag = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-1",
+                  endTrigger: ".scene-7",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(bagTl);
+
+            if (timelineRefs.current.bag.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.bag.scrollTrigger,
+              );
+            }
           }
-        }
 
           // Plate
           const plateLayer = elements.plate.layer;
           const plateOne = elements.plate.one;
           const plateEarth = elements.plate.earth;
           if (plateLayer && plateOne && plateEarth) {
-          gsap.set(plateOne, {
-            y: -plateOne.clientHeight * 0.5,
-            x: -plateOne.clientWidth * 1.25,
-            opacity: 0,
-          });
-
-          gsap.set(plateEarth, {
-            y: plateEarth.clientHeight * 0.5,
-            x: plateEarth.clientWidth * 1.25,
-            opacity: 0,
-          });
-
-          gsap.set(plateLayer, {
-            scale: 1.5,
-            x: windowWidth / 2 - plateLayer.clientWidth,
-            y: isMd ? windowHeight * 0.1 : windowHeight * 0.5,
-          });
-
-          const plateTl = gsap
-            .timeline()
-            .to(plateLayer, {
-              scale: 1,
-            })
-            .to(plateOne, {
-              x: -plateOne.clientWidth * 0.5,
-              opacity: 1,
-            })
-            .to(
-              plateEarth,
-              {
-                opacity: 1,
-                x: -plateEarth.clientWidth * 0.28,
-              },
-              "<"
-            )
-            .to(plateLayer, {
-              y: -windowHeight,
+            gsap.set(plateOne, {
+              y: -plateOne.clientHeight * 0.5,
+              x: -plateOne.clientWidth * 1.25,
+              opacity: 0,
             });
 
-          const plateOneFlutterTl = createFlutterTimeline();
-          plateOneFlutterTl.to(plateOne, {
-            duration: "random(1.8, 2.2)",
-            ease: "sine.inOut",
-            y: `-=${gsap.utils.random(10, 20)}`,
-            rotation: "random(-5, 5)",
-          });
+            gsap.set(plateEarth, {
+              y: plateEarth.clientHeight * 0.5,
+              x: plateEarth.clientWidth * 1.25,
+              opacity: 0,
+            });
 
-          const plateEarthFlutterTl = createFlutterTimeline();
-          plateEarthFlutterTl.to(plateEarth, {
-            duration: "random(1.8, 2.4)",
-            ease: "sine.inOut",
-            y: `-=${gsap.utils.random(20, 30)}`,
-            rotation: "random(-5, 5)",
-          });
+            gsap.set(plateLayer, {
+              scale: 1.5,
+              x: windowWidth / 2 - plateLayer.clientWidth,
+              y: isMd ? windowHeight * 0.1 : windowHeight * 0.5,
+            });
 
-          timelineRefs.current.plate = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-3",
-                endTrigger: ".scene-7",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(plateTl);
+            const plateTl = gsap
+              .timeline()
+              .to(plateLayer, {
+                scale: 1,
+              })
+              .to(plateOne, {
+                x: -plateOne.clientWidth * 0.5,
+                opacity: 1,
+              })
+              .to(
+                plateEarth,
+                {
+                  opacity: 1,
+                  x: -plateEarth.clientWidth * 0.28,
+                },
+                "<",
+              )
+              .to(plateLayer, {
+                y: -windowHeight,
+              });
 
-          if (timelineRefs.current.plate.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.plate.scrollTrigger
-            );
+            const plateOneFlutterTl = createFlutterTimeline();
+            plateOneFlutterTl.to(plateOne, {
+              duration: "random(1.8, 2.2)",
+              ease: "sine.inOut",
+              y: `-=${gsap.utils.random(10, 20)}`,
+              rotation: "random(-5, 5)",
+            });
+
+            const plateEarthFlutterTl = createFlutterTimeline();
+            plateEarthFlutterTl.to(plateEarth, {
+              duration: "random(1.8, 2.4)",
+              ease: "sine.inOut",
+              y: `-=${gsap.utils.random(20, 30)}`,
+              rotation: "random(-5, 5)",
+            });
+
+            timelineRefs.current.plate = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-3",
+                  endTrigger: ".scene-7",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(plateTl);
+
+            if (timelineRefs.current.plate.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.plate.scrollTrigger,
+              );
+            }
           }
-        }
-           // Earth
-           const earthLayer = elements.earth.layer;
-           const earthJohn = elements.earth.john;
-           const earthEarth = elements.earth.earth;
-           const earthSunflower = elements.earth.sunflower;
-           const earthArm = elements.earth.arm;
-           if (earthLayer && earthJohn && earthEarth && earthSunflower && earthArm) {
-          gsap.set(earthArm, {
-            y: -earthArm.clientHeight * 0.8 + earthEarth.clientHeight,
-            x: -earthArm.clientWidth * 0.5,
-          });
+          // Earth
+          const earthLayer = elements.earth.layer;
+          const earthJohn = elements.earth.john;
+          const earthEarth = elements.earth.earth;
+          const earthSunflower = elements.earth.sunflower;
+          const earthArm = elements.earth.arm;
+          if (
+            earthLayer &&
+            earthJohn &&
+            earthEarth &&
+            earthSunflower &&
+            earthArm
+          ) {
+            gsap.set(earthArm, {
+              y: -earthArm.clientHeight * 0.8 + earthEarth.clientHeight,
+              x: -earthArm.clientWidth * 0.5,
+            });
 
-          gsap.set(earthJohn, {
-            y: -earthJohn.clientHeight * 1.1,
-            x: -earthJohn.clientWidth * 0.5,
-            opacity: 0,
-          });
+            gsap.set(earthJohn, {
+              y: -earthJohn.clientHeight * 1.1,
+              x: -earthJohn.clientWidth * 0.5,
+              opacity: 0,
+            });
 
-          gsap.set(earthEarth, {
-            y: -earthJohn.clientHeight * 0.5,
-            x: -earthEarth.clientWidth * 0.5,
-          });
+            gsap.set(earthEarth, {
+              y: -earthJohn.clientHeight * 0.5,
+              x: -earthEarth.clientWidth * 0.5,
+            });
 
-          gsap.set(earthSunflower, {
-            y: -earthSunflower.clientHeight * 0.3,
-            x: -earthSunflower.clientWidth * 1.2,
-          });
+            gsap.set(earthSunflower, {
+              y: -earthSunflower.clientHeight * 0.3,
+              x: -earthSunflower.clientWidth * 1.2,
+            });
 
-          gsap.set(earthLayer, {
-            scale: 2,
-            y: windowHeight * 1.5,
-          });
+            gsap.set(earthLayer, {
+              scale: 2,
+              y: windowHeight * 1.5,
+            });
 
-          const earthTl = gsap
-            .timeline()
-            .to(earthLayer, {
-              ease: "power1.inOut",
-              y: windowHeight * 0.5 + earthLayer.clientHeight * 0.05,
-              scale: 1,
-            })
-            .to(
-              earthJohn,
-              {
+            const earthTl = gsap
+              .timeline()
+              .to(earthLayer, {
                 ease: "power1.inOut",
-                opacity: 1,
-              },
-              "<"
-            )
-            .to(earthLayer, {
-              ease: "power1.inOut",
-              y: -earthLayer.clientHeight,
-              scale: 0.7,
+                y: windowHeight * 0.5 + earthLayer.clientHeight * 0.05,
+                scale: 1,
+              })
+              .to(
+                earthJohn,
+                {
+                  ease: "power1.inOut",
+                  opacity: 1,
+                },
+                "<",
+              )
+              .to(earthLayer, {
+                ease: "power1.inOut",
+                y: -earthLayer.clientHeight,
+                scale: 0.7,
+              });
+            const earthEarthFlutterTl = createFlutterTimeline();
+            earthEarthFlutterTl.to(earthEarth, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              rotation: gsap.utils.random(-4, 4),
             });
-          const earthEarthFlutterTl = createFlutterTimeline();
-          earthEarthFlutterTl.to(earthEarth, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            rotation: gsap.utils.random(-4, 4),
-          });
 
-          const earthSunflowerFlutterTl = createFlutterTimeline();
-          earthSunflowerFlutterTl.to(earthSunflower, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: `-=${gsap.utils.random(5, 10)}`,
-            rotation: "random(0, -4)",
-            scaleX: "random(0.9, 0.96)",
-          });
+            const earthSunflowerFlutterTl = createFlutterTimeline();
+            earthSunflowerFlutterTl.to(earthSunflower, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: `-=${gsap.utils.random(5, 10)}`,
+              rotation: "random(0, -4)",
+              scaleX: "random(0.9, 0.96)",
+            });
 
-          const earthArmFlutterTl = createFlutterTimeline();
-          earthArmFlutterTl.to(earthArm, {
-            duration: "random(1.8, 2.2)",
-            ease: "sine.inOut",
-            y: `-=${gsap.utils.random(10, 20)}`,
-            scaleX: "random(0.93, 0.96)",
-          });
-          timelineRefs.current.earth = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-2",
-                endTrigger: ".scene-7",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(earthTl);
+            const earthArmFlutterTl = createFlutterTimeline();
+            earthArmFlutterTl.to(earthArm, {
+              duration: "random(1.8, 2.2)",
+              ease: "sine.inOut",
+              y: `-=${gsap.utils.random(10, 20)}`,
+              scaleX: "random(0.93, 0.96)",
+            });
+            timelineRefs.current.earth = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-2",
+                  endTrigger: ".scene-7",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(earthTl);
 
-          if (timelineRefs.current.earth.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.earth.scrollTrigger
-            );
+            if (timelineRefs.current.earth.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.earth.scrollTrigger,
+              );
+            }
           }
-        }
-
-          
-
 
           // skyscraper
           const skyscraperLayer = elements.skyscraper.layer;
@@ -1248,260 +1251,261 @@ export function useInitialLoader() {
           const skyscraperTower = elements.skyscraper.tower;
           const skyscraperGlory = elements.skyscraper.glory;
           if (skyscraperGlory && skyscraperTower) {
-          gsap.set(skyscraperGlory, {
-            y: -skyscraperGlory.clientHeight * 0.5,
-            x: -skyscraperGlory.clientWidth * 0.5,
-          });
+            gsap.set(skyscraperGlory, {
+              y: -skyscraperGlory.clientHeight * 0.5,
+              x: -skyscraperGlory.clientWidth * 0.5,
+            });
 
-          gsap.set(skyscraperTower, {
-            y: -skyscraperTower.clientHeight * 0.5,
-            x: -skyscraperTower.clientWidth * 0.5,
-          });
+            gsap.set(skyscraperTower, {
+              y: -skyscraperTower.clientHeight * 0.5,
+              x: -skyscraperTower.clientWidth * 0.5,
+            });
 
-          gsap.set(skyscraperLayer, {
-            scale: 1.5,
-            y: windowHeight + skyscraperTower.clientHeight,
-          });
+            gsap.set(skyscraperLayer, {
+              scale: 1.5,
+              y: windowHeight + skyscraperTower.clientHeight,
+            });
 
-          const skyscraperTl = gsap
-            .timeline()
-            .to(skyscraperLayer, {
-              duration: 1,
-              ease: "power1.inOut",
-              y: Math.min(
-                windowHeight * 0.5 + skyscraperTower.clientHeight * 2,
-                windowHeight * 0.9
-              ),
-              scale: 1,
-            })
-            .to(skyscraperLayer, {
-              duration: 2,
-              ease: "power1.inOut",
-              y: -windowHeight * 2,
-              scale: 0.75,
-            })
-            .to(
-              skyscraperGlory,
-              {
-                duration: 3,
+            const skyscraperTl = gsap
+              .timeline()
+              .to(skyscraperLayer, {
+                duration: 1,
                 ease: "power1.inOut",
-                rotation: 90,
-              },
-              "-=3"
-            );
+                y: Math.min(
+                  windowHeight * 0.5 + skyscraperTower.clientHeight * 2,
+                  windowHeight * 0.9,
+                ),
+                scale: 1,
+              })
+              .to(skyscraperLayer, {
+                duration: 2,
+                ease: "power1.inOut",
+                y: -windowHeight * 2,
+                scale: 0.75,
+              })
+              .to(
+                skyscraperGlory,
+                {
+                  duration: 3,
+                  ease: "power1.inOut",
+                  rotation: 90,
+                },
+                "-=3",
+              );
 
-          const skyscraperFlutterTl = createFlutterTimeline();
-          skyscraperFlutterTl.to(skyscraperTower, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: `-=${gsap.utils.random(10, 20)}`,
-            scale: "random(0.94, 0.98)",
-          });
-          timelineRefs.current.skyscraper = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-2",
-                endTrigger: ".scene-9",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(skyscraperTl);
+            const skyscraperFlutterTl = createFlutterTimeline();
+            skyscraperFlutterTl.to(skyscraperTower, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: `-=${gsap.utils.random(10, 20)}`,
+              scale: "random(0.94, 0.98)",
+            });
+            timelineRefs.current.skyscraper = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-2",
+                  endTrigger: ".scene-9",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(skyscraperTl);
 
-          if (timelineRefs.current.skyscraper.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.skyscraper.scrollTrigger
-            );
+            if (timelineRefs.current.skyscraper.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.skyscraper.scrollTrigger,
+              );
+            }
           }
-        }
           // tree
           const treeLayer = elements.tree.layer;
           const treeInner = elements.tree.inner;
           const treeSisters = elements.tree.sisters;
           const treeCloud = elements.tree.cloud;
           if (treeSisters && treeCloud) {
-          gsap.set(treeSisters, {
-            y: -treeSisters.clientHeight * 0.5,
-            x: -treeSisters.clientWidth * 0.5,
-          });
-
-          gsap.set(treeCloud, {
-            y: -treeCloud.clientHeight * 1.8,
-            x: -treeCloud.clientWidth * 1.1,
-          });
-
-          gsap.set(treeLayer, {
-            x: windowWidth * 0.5 + treeCloud.clientWidth * 3,
-            y: windowHeight + treeCloud.clientHeight,
-            scale: 1.5,
-          });
-
-          const treeTl = gsap
-            .timeline()
-            .to(treeLayer, {
-              ease: "power1.inOut",
-              x: Math.min(
-                windowWidth * 0.5 + treeCloud.clientWidth * 1.1,
-                windowWidth
-              ),
-              y: windowHeight * 0.5 + treeCloud.clientHeight * 0.3,
-              scale: 1,
-            })
-            .to(treeLayer, {
-              ease: "power1.inOut",
-              x: windowWidth * 0.5 + treeCloud.clientWidth,
-              y: -treeCloud.clientHeight * 3,
+            gsap.set(treeSisters, {
+              y: -treeSisters.clientHeight * 0.5,
+              x: -treeSisters.clientWidth * 0.5,
             });
-          const treeFlutterTl = createFlutterTimeline();
-          treeFlutterTl.to(treeCloud, {
-            duration: "random(2.6, 4)",
-            ease: "power1.inOut",
-            x: `-=${gsap.utils.random(40, 60)}`,
-          });
-          timelineRefs.current.tree = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-4",
-                endTrigger: ".scene-8",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(treeTl);
 
-          if (timelineRefs.current.tree.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.tree.scrollTrigger
-            );
+            gsap.set(treeCloud, {
+              y: -treeCloud.clientHeight * 1.8,
+              x: -treeCloud.clientWidth * 1.1,
+            });
+
+            gsap.set(treeLayer, {
+              x: windowWidth * 0.5 + treeCloud.clientWidth * 3,
+              y: windowHeight + treeCloud.clientHeight,
+              scale: 1.5,
+            });
+
+            const treeTl = gsap
+              .timeline()
+              .to(treeLayer, {
+                ease: "power1.inOut",
+                x: Math.min(
+                  windowWidth * 0.5 + treeCloud.clientWidth * 1.1,
+                  windowWidth,
+                ),
+                y: windowHeight * 0.5 + treeCloud.clientHeight * 0.3,
+                scale: 1,
+              })
+              .to(treeLayer, {
+                ease: "power1.inOut",
+                x: windowWidth * 0.5 + treeCloud.clientWidth,
+                y: -treeCloud.clientHeight * 3,
+              });
+            const treeFlutterTl = createFlutterTimeline();
+            treeFlutterTl.to(treeCloud, {
+              duration: "random(2.6, 4)",
+              ease: "power1.inOut",
+              x: `-=${gsap.utils.random(40, 60)}`,
+            });
+            timelineRefs.current.tree = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-4",
+                  endTrigger: ".scene-8",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(treeTl);
+
+            if (timelineRefs.current.tree.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.tree.scrollTrigger,
+              );
+            }
           }
-        }
 
-           // stick
-           const stickLayer = elements.stick.layer;
-           const stickInner = elements.stick.inner;
-           const stickTree = elements.stick.tree;
-           const stickCloud = elements.stick.cloud;
+          // stick
+          const stickLayer = elements.stick.layer;
+          const stickInner = elements.stick.inner;
+          const stickTree = elements.stick.tree;
+          const stickCloud = elements.stick.cloud;
           if (stickLayer && stickTree) {
-          gsap.set(stickTree, {
-            y: -140,
-            x: -10,
-          });
-          gsap.set(stickCloud, {
-            y: -80,
-            x: -100,
-          });
-
-          gsap.set(stickLayer, {
-            x: isMd
-              ? -(windowWidth * 0.5 - stickLayer.clientWidth * 2.5)
-              : -windowWidth * 0.7,
-            y: windowHeight + stickLayer.clientHeight + stickTree.clientHeight,
-            scale: 1.25,
-          });
-
-          const stickTl = gsap
-            .timeline()
-            .to(stickLayer, {
-              ease: "power1.inOut",
-              y: isMd
-                ? windowHeight * 0.5 + stickLayer.clientHeight * 0.6
-                : windowHeight * 0.5 + stickLayer.clientHeight * 2,
-              scale: 1,
-            })
-            .to(stickLayer, {
-              ease: "power1.inOut",
-              y: isMd
-                ? -stickLayer.clientHeight * 7
-                : -stickLayer.clientHeight * 7,
+            gsap.set(stickTree, {
+              y: -140,
+              x: -10,
+            });
+            gsap.set(stickCloud, {
+              y: -80,
+              x: -100,
             });
 
-          const stickCloudFlutterTl = createFlutterTimeline();
-          stickCloudFlutterTl.to(stickCloud, {
-            duration: gsap.utils.random(2.6, 4),
-            ease: "power1.inOut",
-            x: `-=${gsap.utils.random(4, 24)}`,
-          });
+            gsap.set(stickLayer, {
+              x: isMd
+                ? -(windowWidth * 0.5 - stickLayer.clientWidth * 2.5)
+                : -windowWidth * 0.7,
+              y:
+                windowHeight + stickLayer.clientHeight + stickTree.clientHeight,
+              scale: 1.25,
+            });
 
-          const stickTreeFlutterTl = createFlutterTimeline();
-          stickTreeFlutterTl.to(stickTree, {
-            duration: gsap.utils.random(1.2, 2),
-            ease: "power1.inOut",
-            y: `-=${gsap.utils.random(30, 36)}`,
-          });
+            const stickTl = gsap
+              .timeline()
+              .to(stickLayer, {
+                ease: "power1.inOut",
+                y: isMd
+                  ? windowHeight * 0.5 + stickLayer.clientHeight * 0.6
+                  : windowHeight * 0.5 + stickLayer.clientHeight * 2,
+                scale: 1,
+              })
+              .to(stickLayer, {
+                ease: "power1.inOut",
+                y: isMd
+                  ? -stickLayer.clientHeight * 7
+                  : -stickLayer.clientHeight * 7,
+              });
 
-          timelineRefs.current.stick = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-2",
-                endTrigger: ".scene-9",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(stickTl);
+            const stickCloudFlutterTl = createFlutterTimeline();
+            stickCloudFlutterTl.to(stickCloud, {
+              duration: gsap.utils.random(2.6, 4),
+              ease: "power1.inOut",
+              x: `-=${gsap.utils.random(4, 24)}`,
+            });
 
-          if (timelineRefs.current.stick.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.stick.scrollTrigger
-            );
+            const stickTreeFlutterTl = createFlutterTimeline();
+            stickTreeFlutterTl.to(stickTree, {
+              duration: gsap.utils.random(1.2, 2),
+              ease: "power1.inOut",
+              y: `-=${gsap.utils.random(30, 36)}`,
+            });
+
+            timelineRefs.current.stick = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-2",
+                  endTrigger: ".scene-9",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(stickTl);
+
+            if (timelineRefs.current.stick.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.stick.scrollTrigger,
+              );
+            }
           }
-        }
 
           // Birds
           const birdsLayer = elements.birds.layer;
           const birdsInner = elements.birds.inner;
           const birdsFrame = elements.birds.frame;
-        if (birdsLayer) {
-          birdsFrame.forEach((bird) => {
-            const birdsFlutterTl = createFlutterTimeline();
+          if (birdsLayer) {
+            birdsFrame.forEach((bird) => {
+              const birdsFlutterTl = createFlutterTimeline();
 
-            gsap.set(bird, {
-              scale: gsap.utils.random(0.8, 1.1),
-              x: bird.clientWidth * gsap.utils.random(0.5, 2.2),
-              y: bird.clientHeight * gsap.utils.random(-1.2, 1.2),
+              gsap.set(bird, {
+                scale: gsap.utils.random(0.8, 1.1),
+                x: bird.clientWidth * gsap.utils.random(0.5, 2.2),
+                y: bird.clientHeight * gsap.utils.random(-1.2, 1.2),
+              });
+
+              birdsFlutterTl.to(bird, {
+                duration: "random(1.6, 2.2)",
+                ease: "sine.inOut",
+                y: `+=${gsap.utils.random(-60, 60)}`,
+              });
             });
 
-            birdsFlutterTl.to(bird, {
-              duration: "random(1.6, 2.2)",
-              ease: "sine.inOut",
-              y: `+=${gsap.utils.random(-60, 60)}`,
+            gsap.set(birdsLayer, {
+              x: windowWidth,
+              y: birdsLayer.clientHeight,
             });
-          });
 
-          gsap.set(birdsLayer, {
-            x: windowWidth,
-            y: birdsLayer.clientHeight,
-          });
+            const birdsTl = gsap.timeline().to(birdsLayer, {
+              delay: 0.1,
+              ease: "power1.inOut",
+              y: -birdsLayer.clientHeight,
+              x: -birdsLayer.clientWidth * 3,
+              scale: 0.75,
+            });
 
-          const birdsTl = gsap.timeline().to(birdsLayer, {
-            delay: 0.1,
-            ease: "power1.inOut",
-            y: -birdsLayer.clientHeight,
-            x: -birdsLayer.clientWidth * 3,
-            scale: 0.75,
-          });
+            timelineRefs.current.birds = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-3",
+                  endTrigger: ".scene-9",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(birdsTl);
 
-          timelineRefs.current.birds = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-3",
-                endTrigger: ".scene-9",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(birdsTl);
-
-          if (timelineRefs.current.birds.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.birds.scrollTrigger
-            );
+            if (timelineRefs.current.birds.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.birds.scrollTrigger,
+              );
+            }
           }
-        }
 
           // Bottle
           const bottleLayer = elements.bottle.layer;
@@ -1509,832 +1513,829 @@ export function useInitialLoader() {
           const bottleWash = elements.bottle.wash;
           const bottleO = elements.bottle.o;
           if (bottleLayer) {
-          gsap.set(bottleWash, {
-            x: 20,
-            y: -180,
-          });
-
-          gsap.set(bottleLayer, {
-            x: isMd ? bottleLayer.clientWidth * 2 : bottleLayer.clientWidth,
-            y: windowHeight + bottleLayer.clientHeight,
-          });
-
-          const bottleTl = gsap
-            .timeline()
-            .to(bottleLayer, {
-              ease: "power1.inOut",
-              y: windowHeight * 0.9,
-            })
-            .to(bottleLayer, {
-              ease: "power1.inOut",
-              y: -bottleLayer.clientHeight * 0.6,
-            })
-            .to(bottleLayer, {
-              ease: "power1.inOut",
-              y: -bottleLayer.clientHeight * 5,
+            gsap.set(bottleWash, {
+              x: 20,
+              y: -180,
             });
 
-          const bottleFlutterTl = createFlutterTimeline();
-          bottleFlutterTl.to(bottleO, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            x: `-=${gsap.utils.random(10, 20)}`,
-          });
-          timelineRefs.current.bottle = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-4",
-                endTrigger: ".scene-10",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(bottleTl);
+            gsap.set(bottleLayer, {
+              x: isMd ? bottleLayer.clientWidth * 2 : bottleLayer.clientWidth,
+              y: windowHeight + bottleLayer.clientHeight,
+            });
 
-          if (timelineRefs.current.bottle.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.bottle.scrollTrigger
-            );
+            const bottleTl = gsap
+              .timeline()
+              .to(bottleLayer, {
+                ease: "power1.inOut",
+                y: windowHeight * 0.9,
+              })
+              .to(bottleLayer, {
+                ease: "power1.inOut",
+                y: -bottleLayer.clientHeight * 0.6,
+              })
+              .to(bottleLayer, {
+                ease: "power1.inOut",
+                y: -bottleLayer.clientHeight * 5,
+              });
+
+            const bottleFlutterTl = createFlutterTimeline();
+            bottleFlutterTl.to(bottleO, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              x: `-=${gsap.utils.random(10, 20)}`,
+            });
+            timelineRefs.current.bottle = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-4",
+                  endTrigger: ".scene-10",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(bottleTl);
+
+            if (timelineRefs.current.bottle.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.bottle.scrollTrigger,
+              );
+            }
           }
-        }
-          
 
-        // JC
-        const jcLayer = elements.jc.layer;
-        const jcInner = elements.jc.inner;
-        const jcCloud = elements.jc.cloud;
-        const jcJ = elements.jc.j;
-        if (jcLayer) {
-          gsap.set(jcCloud, {
-            x: -60,
-            y: -60,
-          });
+          // JC
+          const jcLayer = elements.jc.layer;
+          const jcInner = elements.jc.inner;
+          const jcCloud = elements.jc.cloud;
+          const jcJ = elements.jc.j;
+          if (jcLayer) {
+            gsap.set(jcCloud, {
+              x: -60,
+              y: -60,
+            });
 
-          gsap.set(jcLayer, {
-            x: isMd ? -windowWidth * 0.4 : -windowWidth * 0.3,
-            y: windowHeight + jcLayer.clientHeight,
-          });
+            gsap.set(jcLayer, {
+              x: isMd ? -windowWidth * 0.4 : -windowWidth * 0.3,
+              y: windowHeight + jcLayer.clientHeight,
+            });
 
-          const jcTl = gsap.timeline().to(jcLayer, {
-            ease: "power1.inOut",
-            y: -windowHeight,
-          });
+            const jcTl = gsap.timeline().to(jcLayer, {
+              ease: "power1.inOut",
+              y: -windowHeight,
+            });
 
-          const jcFlutterTl = createFlutterTimeline();
-          jcFlutterTl.to(jcCloud, {
-            duration: "random(2, 3.6)",
-            ease: "power1.inOut",
-            x: `+=${gsap.utils.random(-20, 30)}`,
-          });
+            const jcFlutterTl = createFlutterTimeline();
+            jcFlutterTl.to(jcCloud, {
+              duration: "random(2, 3.6)",
+              ease: "power1.inOut",
+              x: `+=${gsap.utils.random(-20, 30)}`,
+            });
 
-          const jcJTl = createFlutterTimeline();
-          jcJTl.to(jcJ, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: `-=${gsap.utils.random(-30, 30)}`,
-          });
-          timelineRefs.current.jc = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-3",
-                endTrigger: ".scene-13",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(jcTl);
+            const jcJTl = createFlutterTimeline();
+            jcJTl.to(jcJ, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: `-=${gsap.utils.random(-30, 30)}`,
+            });
+            timelineRefs.current.jc = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-3",
+                  endTrigger: ".scene-13",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(jcTl);
 
-          if (timelineRefs.current.jc.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.jc.scrollTrigger
-            );
+            if (timelineRefs.current.jc.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.jc.scrollTrigger,
+              );
+            }
           }
-        }
           // balloon
           const balloonLayer = elements.balloon.layer;
           const balloonInner = elements.balloon.inner;
           const balloonFlower = elements.balloon.flower;
           if (balloonLayer) {
-          gsap.set(balloonLayer, {
-            x: balloonLayer.clientWidth,
-            y: windowHeight + balloonLayer.clientHeight * 4,
-          });
+            gsap.set(balloonLayer, {
+              x: balloonLayer.clientWidth,
+              y: windowHeight + balloonLayer.clientHeight * 4,
+            });
 
-          const balloonTl = gsap.timeline().to(balloonLayer, {
-            ease: "power1.inOut",
-            y: -(balloonLayer.clientHeight * 4),
-          });
+            const balloonTl = gsap.timeline().to(balloonLayer, {
+              ease: "power1.inOut",
+              y: -(balloonLayer.clientHeight * 4),
+            });
 
-          const balloonFlutterTl = createFlutterTimeline();
-          balloonFlutterTl.to(balloonFlower, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: `-=${gsap.utils.random(60, 100)}`,
-          });
-          timelineRefs.current.balloon = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-5",
-                endTrigger: ".scene-13",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(balloonTl);
+            const balloonFlutterTl = createFlutterTimeline();
+            balloonFlutterTl.to(balloonFlower, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: `-=${gsap.utils.random(60, 100)}`,
+            });
+            timelineRefs.current.balloon = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-5",
+                  endTrigger: ".scene-13",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(balloonTl);
 
-          if (timelineRefs.current.balloon.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.balloon.scrollTrigger
-            );
+            if (timelineRefs.current.balloon.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.balloon.scrollTrigger,
+              );
+            }
           }
-        }
-          
 
-        // Windmill
-        const windmillLayer = elements.windmill.layer;
-        const windmillInner = elements.windmill.inner;
-        const windmillWindmill = elements.windmill.windmill;
-        const windmillWave = elements.windmill.wave;
+          // Windmill
+          const windmillLayer = elements.windmill.layer;
+          const windmillInner = elements.windmill.inner;
+          const windmillWindmill = elements.windmill.windmill;
+          const windmillWave = elements.windmill.wave;
           if (windmillLayer) {
-          gsap.set(windmillLayer, {
-            x: Math.min(
-              windmillLayer.clientWidth * 2.5,
-              windowWidth * 0.5 - windmillLayer.clientWidth * 0.25
-            ),
-            y: windowHeight + windmillLayer.clientHeight * 4,
-          });
+            gsap.set(windmillLayer, {
+              x: Math.min(
+                windmillLayer.clientWidth * 2.5,
+                windowWidth * 0.5 - windmillLayer.clientWidth * 0.25,
+              ),
+              y: windowHeight + windmillLayer.clientHeight * 4,
+            });
 
-          const windmillTl = gsap.timeline().to(windmillLayer, {
-            ease: "power1.inOut",
-            y: -(windmillLayer.clientHeight * 2.5),
-            scale: 0.75,
-          });
-
-          const windmillFlutterTl = createFlutterTimeline();
-          windmillFlutterTl.to(windmillWave, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            scaleY: `-=${gsap.utils.random(0.1, 0.2)}`,
-          });
-          timelineRefs.current.windmill = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-4",
-                endTrigger: ".scene-12",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(windmillTl);
-
-          if (timelineRefs.current.windmill.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.windmill.scrollTrigger
-            );
-          }
-        }
-          
-
-        // argan
-        const arganLayer = elements.argan.layer;
-        const arganInner = elements.argan.inner;
-        const arganBottle = elements.argan.bottle;
-        const arganCloud = elements.argan.cloud;
-        if (arganLayer && arganBottle) {
-          gsap.set(arganCloud, {
-            x: arganBottle.clientWidth * 0.6,
-            y: arganBottle.clientHeight * 0.4,
-          });
-
-          gsap.set(arganLayer, {
-            x: -Math.max(
-              windowWidth * 0.25,
-              windowWidth * 0.5 - arganLayer.clientWidth * 1.25
-            ),
-            y: windowHeight + arganLayer.clientHeight * 4,
-          });
-
-          const arganTl = gsap.timeline().to(arganLayer, {
-            ease: "power1.inOut",
-            y: -(arganLayer.clientHeight * 4),
-            scale: 0.5,
-          });
-
-          const arganCloudFlutterTl = createFlutterTimeline();
-          arganCloudFlutterTl.to(arganCloud, {
-            duration: "random(1.6, 2.2)",
-            ease: "sine.inOut",
-            x: `-=${gsap.utils.random(-30, -40)}`,
-          });
-
-          const arganBottleFlutterTl = createFlutterTimeline();
-          arganBottleFlutterTl.to(arganBottle, {
-            duration: "random(1.8, 2.2)",
-            ease: "sine.inOut",
-            y: `-=${gsap.utils.random(30, 40)}`,
-          });
-
-          timelineRefs.current.argan = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-6",
-                endTrigger: ".scene-14",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(arganTl);
-
-          if (timelineRefs.current.argan.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.argan.scrollTrigger
-            );
-          }
-        }
-          
-
-        // chair
-        const chairLayer = elements.chair.layer;
-        const chairInner = elements.chair.inner;
-        const chairMain = elements.chair.main;
-        const chairBrush = elements.chair.brush;
-        if (chairLayer && chairMain) {
-          gsap.set(chairBrush, {
-            x: chairMain.clientWidth / 1.5,
-          });
-
-          gsap.set(chairLayer, {
-            x: isMd
-              ? -(windowWidth * 0.5 - chairLayer.clientWidth * 0.5)
-              : -windowWidth * 2,
-            y: windowHeight + chairLayer.clientHeight * 2,
-            scale: 1.5,
-          });
-          const chairTl = gsap.timeline().to(chairLayer, {
-            ease: "power1.inOut",
-            x: isMd ? chairLayer.clientWidth * 4 : chairLayer.clientWidth * 2,
-            y: -chairLayer.clientHeight,
-            scale: 1,
-          });
-
-          const chairMainFlutterTl = createFlutterTimeline();
-          chairMainFlutterTl.to(chairMain, {
-            duration: "random(2, 3.6)",
-            ease: "power1.inOut",
-            y: `+=${gsap.utils.random(20, 30)}`,
-            rotation: "random(-5, -10)",
-          });
-
-          const chairBrushFlutterTl = createFlutterTimeline();
-          chairBrushFlutterTl.to(chairBrush, {
-            duration: "random(2, 3.6)",
-            ease: "sine.inOut",
-            y: `+=${gsap.utils.random(30, 60)}`,
-            rotation: "random(10, 20)",
-          });
-
-          timelineRefs.current.chair = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-6",
-                endTrigger: ".scene-13",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(chairTl);
-
-          if (timelineRefs.current.chair.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.chair.scrollTrigger
-            );
-          }
-        }
-          
-
-        // working
-        const workingLayer = elements.working.layer;
-        const workingInner = elements.working.inner;
-        const workingEarth = elements.working.earth;
-        const workingWoman = elements.working.woman;
-        const workingLeaves = elements.working.leaves;
-        if (workingLayer) {
-          gsap.set(workingEarth, {
-            scale: 0.75,
-          });
-
-          gsap.set(workingLayer, {
-            x: isMd ? -(windowWidth * 0.5 - workingLayer.clientWidth * 1.1) : 0,
-            y: windowHeight + workingLayer.clientHeight,
-            scale: 0.5,
-          });
-          const workingTl = gsap.timeline().to(workingLayer, {
-            ease: "power1.inOut",
-            y: -(windowHeight * 0.5 + workingLayer.clientHeight),
-            scale: 1,
-          });
-
-          const workingWomanFlutterTl = createFlutterTimeline();
-          workingWomanFlutterTl.to(workingWoman, {
-            duration: "random(2, 3.6)",
-            ease: "power1.inOut",
-            y: `+=${gsap.utils.random(20, 30)}`,
-            rotation: "random(-5, -10)",
-          });
-
-          const workingLeavesFlutterTl = createFlutterTimeline();
-          workingLeavesFlutterTl.to(workingLeaves, {
-            duration: "random(2, 3.6)",
-            ease: "sine.inOut",
-            y: `+=${gsap.utils.random(30, 60)}`,
-            rotation: "random(10, 20)",
-          });
-
-          timelineRefs.current.working = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-10",
-                endTrigger: ".scene-12",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(workingTl);
-
-          if (timelineRefs.current.working.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.working.scrollTrigger
-            );
-          }
-        }
-// brandm
-const brandmLayer = elements.brandm.layer;
-const brandmInner = elements.brandm.inner;
-const brandmMain = elements.brandm.main;
-if (brandmLayer) {
-          gsap.set(brandmLayer, {
-            x: -brandmLayer.clientWidth * 2,
-            y: windowHeight + brandmLayer.clientHeight,
-            scale: 0.5,
-          });
-          const brandmTl = gsap.timeline().to(brandmLayer, {
-            ease: "power1.inOut",
-            y: -(windowHeight * 0.5 + brandmLayer.clientHeight),
-            scale: 1,
-          });
-
-          const brandmFlutterTl = createFlutterTimeline();
-          brandmFlutterTl.to(brandmMain, {
-            duration: "random(2, 3.6)",
-            ease: "power1.inOut",
-            y: `+=${gsap.utils.random(20, 30)}`,
-          });
-          timelineRefs.current.brandm = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-10",
-                endTrigger: ".scene-13",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(brandmTl);
-
-          if (timelineRefs.current.brandm.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.brandm.scrollTrigger
-            );
-          }
-        }
-// berry
-const berryLayer = elements.berry.layer;
-const berryInner = elements.berry.inner;
-const berry01 = elements.berry["01"];
-const berry02 = elements.berry["02"];
-const berry03 = elements.berry["03"];
-if (berryLayer) {
-          gsap.set(berryLayer, {
-            x: -windowWidth * 0.5 + berryLayer.clientWidth,
-            scale: 1.25,
-            autoAlpha: 0,
-          });
-          const berryTl = gsap
-            .timeline()
-            .to(berryLayer, {
+            const windmillTl = gsap.timeline().to(windmillLayer, {
               ease: "power1.inOut",
-              x: -windowWidth * 0.2 + berryLayer.clientWidth,
-              y: -(windowHeight * 0.4 - berryLayer.clientHeight),
-              scale: 1,
-            })
-            .to(
-              berryLayer,
-              { duration: 0.2, ease: "power1.inOut", autoAlpha: 1 },
-              "-=0.4"
-            )
-            .to(berryLayer, {
-              ease: "power1.inOut",
-              x: -windowWidth * 0.1 + berryLayer.clientWidth,
-              y: -(windowHeight * 0.5 + berryLayer.clientHeight * 4),
+              y: -(windmillLayer.clientHeight * 2.5),
               scale: 0.75,
             });
 
-          const berry01FlutterTl = createFlutterTimeline();
-          berry01FlutterTl.to(berry01, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: "random(-6, -10)",
-          });
-          const berry02FlutterTl = createFlutterTimeline();
-          berry02FlutterTl.to(berry02, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: "random(0, 15)",
-          });
-          const berry03FlutterTl = createFlutterTimeline();
-          berry03FlutterTl.to(berry03, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: "random(0, 5)",
-          });
-          timelineRefs.current.berry = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-11",
-                endTrigger: ".scene-15",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(berryTl);
+            const windmillFlutterTl = createFlutterTimeline();
+            windmillFlutterTl.to(windmillWave, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              scaleY: `-=${gsap.utils.random(0.1, 0.2)}`,
+            });
+            timelineRefs.current.windmill = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-4",
+                  endTrigger: ".scene-12",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(windmillTl);
 
-          if (timelineRefs.current.berry.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.berry.scrollTrigger
-            );
+            if (timelineRefs.current.windmill.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.windmill.scrollTrigger,
+              );
+            }
           }
-        }
-// orange
-const orangeLayer = elements.orange.layer;
-const orangeInner = elements.orange.inner;
-const orange01 = elements.orange["01"];
-const orange02 = elements.orange["02"];
-if (orangeLayer) {
-          gsap.set(orangeLayer, {
-            x: -windowWidth * 0.2 + orangeLayer.clientWidth,
-            scale: 1.25,
-            autoAlpha: 0,
-          });
-          const orangeTl = gsap
-            .timeline()
-            .to(orangeLayer, {
+
+          // argan
+          const arganLayer = elements.argan.layer;
+          const arganInner = elements.argan.inner;
+          const arganBottle = elements.argan.bottle;
+          const arganCloud = elements.argan.cloud;
+          if (arganLayer && arganBottle) {
+            gsap.set(arganCloud, {
+              x: arganBottle.clientWidth * 0.6,
+              y: arganBottle.clientHeight * 0.4,
+            });
+
+            gsap.set(arganLayer, {
+              x: -Math.max(
+                windowWidth * 0.25,
+                windowWidth * 0.5 - arganLayer.clientWidth * 1.25,
+              ),
+              y: windowHeight + arganLayer.clientHeight * 4,
+            });
+
+            const arganTl = gsap.timeline().to(arganLayer, {
               ease: "power1.inOut",
-              x: -orangeLayer.clientWidth * 8,
-              y: -orangeLayer.clientHeight * 0.8,
-              scale: 0.75,
-            })
-            .to(
-              orangeLayer,
-              { duration: 0.2, ease: "power1.inOut", autoAlpha: 1 },
-              "-=0.3"
-            )
-            .to(orangeLayer, {
-              ease: "power1.inOut",
-              y: -(windowHeight * 0.5 + orangeLayer.clientHeight * 3),
+              y: -(arganLayer.clientHeight * 4),
               scale: 0.5,
             });
 
-          const orange01FlutterTl = createFlutterTimeline();
-          orange01FlutterTl.to(orange01, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: "random(-6, -10)",
-          });
-          const orange02FlutterTl = createFlutterTimeline();
-          orange02FlutterTl.to(orange02, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: "random(0, 15)",
-          });
-          timelineRefs.current.orange = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-10",
-                endTrigger: ".scene-15",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(orangeTl);
+            const arganCloudFlutterTl = createFlutterTimeline();
+            arganCloudFlutterTl.to(arganCloud, {
+              duration: "random(1.6, 2.2)",
+              ease: "sine.inOut",
+              x: `-=${gsap.utils.random(-30, -40)}`,
+            });
 
-          if (timelineRefs.current.orange.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.orange.scrollTrigger
-            );
+            const arganBottleFlutterTl = createFlutterTimeline();
+            arganBottleFlutterTl.to(arganBottle, {
+              duration: "random(1.8, 2.2)",
+              ease: "sine.inOut",
+              y: `-=${gsap.utils.random(30, 40)}`,
+            });
+
+            timelineRefs.current.argan = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-6",
+                  endTrigger: ".scene-14",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(arganTl);
+
+            if (timelineRefs.current.argan.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.argan.scrollTrigger,
+              );
+            }
           }
-        }
-// scissors
-const scissorsLayer = elements.scissors.layer;
-const scissorsInner = elements.scissors.inner;
-const scissorsBody = elements.scissors.body;
-const scissorsFront = elements.scissors.front;
-const scissorsBack = elements.scissors.back;
-const scissorsCactus = elements.scissors.cactus;
-if (scissorsLayer) {
-          gsap.set(scissorsLayer, {
-            y: windowHeight + scissorsLayer.clientHeight * 2,
-          });
-          const scissorsTl = gsap
-            .timeline()
-            .to(scissorsLayer, {
+
+          // chair
+          const chairLayer = elements.chair.layer;
+          const chairInner = elements.chair.inner;
+          const chairMain = elements.chair.main;
+          const chairBrush = elements.chair.brush;
+          if (chairLayer && chairMain) {
+            gsap.set(chairBrush, {
+              x: chairMain.clientWidth / 1.5,
+            });
+
+            gsap.set(chairLayer, {
+              x: isMd
+                ? -(windowWidth * 0.5 - chairLayer.clientWidth * 0.5)
+                : -windowWidth * 2,
+              y: windowHeight + chairLayer.clientHeight * 2,
+              scale: 1.5,
+            });
+            const chairTl = gsap.timeline().to(chairLayer, {
               ease: "power1.inOut",
-              y: windowHeight * 0.5 + scissorsLayer.clientHeight,
-            })
-            .to(scissorsLayer, {
-              ease: "power1.in",
-              y: -(windowHeight + scissorsLayer.clientHeight * 0.75),
+              x: isMd ? chairLayer.clientWidth * 4 : chairLayer.clientWidth * 2,
+              y: -chairLayer.clientHeight,
+              scale: 1,
+            });
+
+            const chairMainFlutterTl = createFlutterTimeline();
+            chairMainFlutterTl.to(chairMain, {
+              duration: "random(2, 3.6)",
+              ease: "power1.inOut",
+              y: `+=${gsap.utils.random(20, 30)}`,
+              rotation: "random(-5, -10)",
+            });
+
+            const chairBrushFlutterTl = createFlutterTimeline();
+            chairBrushFlutterTl.to(chairBrush, {
+              duration: "random(2, 3.6)",
+              ease: "sine.inOut",
+              y: `+=${gsap.utils.random(30, 60)}`,
+              rotation: "random(10, 20)",
+            });
+
+            timelineRefs.current.chair = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-6",
+                  endTrigger: ".scene-13",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(chairTl);
+
+            if (timelineRefs.current.chair.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.chair.scrollTrigger,
+              );
+            }
+          }
+
+          // working
+          const workingLayer = elements.working.layer;
+          const workingInner = elements.working.inner;
+          const workingEarth = elements.working.earth;
+          const workingWoman = elements.working.woman;
+          const workingLeaves = elements.working.leaves;
+          if (workingLayer) {
+            gsap.set(workingEarth, {
               scale: 0.75,
             });
 
-          let t = gsap.utils.random(1, 1.6),
-            s = gsap.utils.random(4, 8),
-            h = gsap.utils.random(10, 20),
-            n = gsap.utils.random(1, 2);
-          const scissorsBodyFlutterTl = createFlutterTimeline();
-          scissorsBodyFlutterTl.to(scissorsBody, {
-            duration: n,
-            ease: "sine.inOut",
-            y: `-=${gsap.utils.random(7, 10)}`,
-            scaleY: "random(0.90, 0.96)",
-          });
+            gsap.set(workingLayer, {
+              x: isMd
+                ? -(windowWidth * 0.5 - workingLayer.clientWidth * 1.1)
+                : 0,
+              y: windowHeight + workingLayer.clientHeight,
+              scale: 0.5,
+            });
+            const workingTl = gsap.timeline().to(workingLayer, {
+              ease: "power1.inOut",
+              y: -(windowHeight * 0.5 + workingLayer.clientHeight),
+              scale: 1,
+            });
 
-          const scissorsFrontFlutterTl = createFlutterTimeline();
-          scissorsFrontFlutterTl
-            .to(scissorsFront, {
-              duration: t,
-              ease: "expo.inOut",
-              rotation: s + h,
-            })
-            .to(
-              scissorsBack,
-              { duration: t, ease: "expo.inOut", rotation: -s + h },
-              `-=${t}`
-            );
+            const workingWomanFlutterTl = createFlutterTimeline();
+            workingWomanFlutterTl.to(workingWoman, {
+              duration: "random(2, 3.6)",
+              ease: "power1.inOut",
+              y: `+=${gsap.utils.random(20, 30)}`,
+              rotation: "random(-5, -10)",
+            });
 
-          const scissorsCactusFlutterTl = createFlutterTimeline();
-          scissorsCactusFlutterTl.to(scissorsCactus, {
-            duration: n,
-            ease: "sine.inOut",
-            y: `-=${gsap.utils.random(7, 10)}`,
-            scaleY: "random(0.96, 0.99)",
-          });
-          timelineRefs.current.scissors = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-10",
-                endTrigger: ".scene-14",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(scissorsTl);
+            const workingLeavesFlutterTl = createFlutterTimeline();
+            workingLeavesFlutterTl.to(workingLeaves, {
+              duration: "random(2, 3.6)",
+              ease: "sine.inOut",
+              y: `+=${gsap.utils.random(30, 60)}`,
+              rotation: "random(10, 20)",
+            });
 
-          if (timelineRefs.current.scissors.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.scissors.scrollTrigger
-            );
+            timelineRefs.current.working = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-10",
+                  endTrigger: ".scene-12",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(workingTl);
+
+            if (timelineRefs.current.working.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.working.scrollTrigger,
+              );
+            }
           }
-        }
-
-// hand
-const handLayer = elements.hand.layer;
-const handInner = elements.hand.inner;
-const handBody = elements.hand.body;
-const handLeaf = elements.hand.leaf;
-if (handLayer) {
-          gsap.set(handLayer, {
-            y: windowHeight + handLayer.clientHeight * 2,
-          });
-          const handTl = gsap
-            .timeline()
-            .to(handLayer, {
+          // brandm
+          const brandmLayer = elements.brandm.layer;
+          const brandmInner = elements.brandm.inner;
+          const brandmMain = elements.brandm.main;
+          if (brandmLayer) {
+            gsap.set(brandmLayer, {
+              x: -brandmLayer.clientWidth * 2,
+              y: windowHeight + brandmLayer.clientHeight,
+              scale: 0.5,
+            });
+            const brandmTl = gsap.timeline().to(brandmLayer, {
               ease: "power1.inOut",
-              y: windowHeight - handLayer.clientHeight * 0.2,
-            })
-            .to(handLayer, {
-              ease: "power1.inOut",
-              x: handLayer.clientWidth,
-              y: -(windowHeight + handLayer.clientHeight * 2),
-              scale: 0.75,
+              y: -(windowHeight * 0.5 + brandmLayer.clientHeight),
+              scale: 1,
             });
 
-          const handBodyFlutterTl = createFlutterTimeline();
-          handBodyFlutterTl.to(handBody, {
-            duration: "random(1.8, 2.2)",
-            ease: "sine.inOut",
-            y: `-=${gsap.utils.random(10, 20)}`,
-            scaleX: "random(0.92, 0.94)",
-          });
+            const brandmFlutterTl = createFlutterTimeline();
+            brandmFlutterTl.to(brandmMain, {
+              duration: "random(2, 3.6)",
+              ease: "power1.inOut",
+              y: `+=${gsap.utils.random(20, 30)}`,
+            });
+            timelineRefs.current.brandm = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-10",
+                  endTrigger: ".scene-13",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(brandmTl);
 
-          const handLeafFlutterTl = createFlutterTimeline();
-          handLeafFlutterTl.to(handLeaf, {
-            duration: "random(2, 3.6)",
-            ease: "power1.inOut",
-            y: `-=${gsap.utils.random(20, 60)}`,
-            scaleX: "random(0.9, 0.96)",
-          });
-
-          timelineRefs.current.hand = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-11",
-                endTrigger: ".scene-15",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(handTl);
-
-          if (timelineRefs.current.hand.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.hand.scrollTrigger
-            );
+            if (timelineRefs.current.brandm.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.brandm.scrollTrigger,
+              );
+            }
           }
-        }
-// cloud
-const cloudLayer = elements.cloud.layer;
-const cloudInner = elements.cloud.inner;
-const cloudMain = elements.cloud.main;
-if (cloudLayer) {
-          gsap.set(cloudLayer, {
-            y: windowHeight + cloudLayer.clientHeight * 3,
-          });
-          const cloudTl = gsap
-            .timeline()
-            .to(cloudLayer, {
-              ease: "power1.inOut",
-              y: windowHeight + cloudLayer.clientHeight,
-            })
-            .to(cloudLayer, {
-              ease: "power1.inOut",
-              y: -(windowHeight + cloudLayer.clientHeight * 2),
+          // berry
+          const berryLayer = elements.berry.layer;
+          const berryInner = elements.berry.inner;
+          const berry01 = elements.berry["01"];
+          const berry02 = elements.berry["02"];
+          const berry03 = elements.berry["03"];
+          if (berryLayer) {
+            gsap.set(berryLayer, {
+              x: -windowWidth * 0.5 + berryLayer.clientWidth,
+              scale: 1.25,
+              autoAlpha: 0,
             });
+            const berryTl = gsap
+              .timeline()
+              .to(berryLayer, {
+                ease: "power1.inOut",
+                x: -windowWidth * 0.2 + berryLayer.clientWidth,
+                y: -(windowHeight * 0.4 - berryLayer.clientHeight),
+                scale: 1,
+              })
+              .to(
+                berryLayer,
+                { duration: 0.2, ease: "power1.inOut", autoAlpha: 1 },
+                "-=0.4",
+              )
+              .to(berryLayer, {
+                ease: "power1.inOut",
+                x: -windowWidth * 0.1 + berryLayer.clientWidth,
+                y: -(windowHeight * 0.5 + berryLayer.clientHeight * 4),
+                scale: 0.75,
+              });
 
-          const cloudMainFlutterTl = createFlutterTimeline();
-          cloudMainFlutterTl.to(cloudMain, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: "random(-30, 30)",
-          });
+            const berry01FlutterTl = createFlutterTimeline();
+            berry01FlutterTl.to(berry01, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: "random(-6, -10)",
+            });
+            const berry02FlutterTl = createFlutterTimeline();
+            berry02FlutterTl.to(berry02, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: "random(0, 15)",
+            });
+            const berry03FlutterTl = createFlutterTimeline();
+            berry03FlutterTl.to(berry03, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: "random(0, 5)",
+            });
+            timelineRefs.current.berry = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-11",
+                  endTrigger: ".scene-15",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(berryTl);
 
-          timelineRefs.current.cloud = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-11",
-                endTrigger: ".scene-15",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(cloudTl);
-
-          if (timelineRefs.current.cloud.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.cloud.scrollTrigger
-            );
+            if (timelineRefs.current.berry.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.berry.scrollTrigger,
+              );
+            }
           }
-        }
-// tractor
-const tractorLayer = elements.tractor.layer;
-const tractorInner = elements.tractor.inner;
-const tractorFlu = elements.tractor.flu;
-const tractorBack = elements.tractor.back;
-const tractorButter = elements.tractor.butter;
-const tractorShampoo = elements.tractor.shampoo;
-const tractorBar = elements.tractor.bar;
-const tractorLavender = elements.tractor.lavender;
-const tractorFront = elements.tractor.front;
-if (tractorLayer) {
-          gsap.set(tractorLayer, {
-            y: windowHeight + tractorLayer.clientHeight * 2,
-          });
-          const tractorTl = gsap
-            .timeline()
-            .to(tractorLayer, {
-              ease: "power1.inOut",
-              y: -(windowHeight * 0.5 - tractorLayer.clientHeight * 1.5),
-            })
-            .to(tractorLayer, {
-              ease: "power1.inOut",
-              y: -(windowHeight + tractorLayer.clientHeight * 2),
-              scale: 0.8,
+          // orange
+          const orangeLayer = elements.orange.layer;
+          const orangeInner = elements.orange.inner;
+          const orange01 = elements.orange["01"];
+          const orange02 = elements.orange["02"];
+          if (orangeLayer) {
+            gsap.set(orangeLayer, {
+              x: -windowWidth * 0.2 + orangeLayer.clientWidth,
+              scale: 1.25,
+              autoAlpha: 0,
+            });
+            const orangeTl = gsap
+              .timeline()
+              .to(orangeLayer, {
+                ease: "power1.inOut",
+                x: -orangeLayer.clientWidth * 8,
+                y: -orangeLayer.clientHeight * 0.8,
+                scale: 0.75,
+              })
+              .to(
+                orangeLayer,
+                { duration: 0.2, ease: "power1.inOut", autoAlpha: 1 },
+                "-=0.3",
+              )
+              .to(orangeLayer, {
+                ease: "power1.inOut",
+                y: -(windowHeight * 0.5 + orangeLayer.clientHeight * 3),
+                scale: 0.5,
+              });
+
+            const orange01FlutterTl = createFlutterTimeline();
+            orange01FlutterTl.to(orange01, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: "random(-6, -10)",
+            });
+            const orange02FlutterTl = createFlutterTimeline();
+            orange02FlutterTl.to(orange02, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: "random(0, 15)",
+            });
+            timelineRefs.current.orange = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-10",
+                  endTrigger: ".scene-15",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(orangeTl);
+
+            if (timelineRefs.current.orange.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.orange.scrollTrigger,
+              );
+            }
+          }
+          // scissors
+          const scissorsLayer = elements.scissors.layer;
+          const scissorsInner = elements.scissors.inner;
+          const scissorsBody = elements.scissors.body;
+          const scissorsFront = elements.scissors.front;
+          const scissorsBack = elements.scissors.back;
+          const scissorsCactus = elements.scissors.cactus;
+          if (scissorsLayer) {
+            gsap.set(scissorsLayer, {
+              y: windowHeight + scissorsLayer.clientHeight * 2,
+            });
+            const scissorsTl = gsap
+              .timeline()
+              .to(scissorsLayer, {
+                ease: "power1.inOut",
+                y: windowHeight * 0.5 + scissorsLayer.clientHeight,
+              })
+              .to(scissorsLayer, {
+                ease: "power1.in",
+                y: -(windowHeight + scissorsLayer.clientHeight * 0.75),
+                scale: 0.75,
+              });
+
+            let t = gsap.utils.random(1, 1.6),
+              s = gsap.utils.random(4, 8),
+              h = gsap.utils.random(10, 20),
+              n = gsap.utils.random(1, 2);
+            const scissorsBodyFlutterTl = createFlutterTimeline();
+            scissorsBodyFlutterTl.to(scissorsBody, {
+              duration: n,
+              ease: "sine.inOut",
+              y: `-=${gsap.utils.random(7, 10)}`,
+              scaleY: "random(0.90, 0.96)",
             });
 
-          const tractorFluFlutterTl = createFlutterTimeline();
-          tractorFluFlutterTl
-            .to(tractorFlu, {
-              duration: 0.05,
-              ease: "steps (1)",
-              y: 4,
-            })
-            .to(tractorFlu, {
-              duration: 0.05,
-              ease: "steps (1)",
-              y: 0,
+            const scissorsFrontFlutterTl = createFlutterTimeline();
+            scissorsFrontFlutterTl
+              .to(scissorsFront, {
+                duration: t,
+                ease: "expo.inOut",
+                rotation: s + h,
+              })
+              .to(
+                scissorsBack,
+                { duration: t, ease: "expo.inOut", rotation: -s + h },
+                `-=${t}`,
+              );
+
+            const scissorsCactusFlutterTl = createFlutterTimeline();
+            scissorsCactusFlutterTl.to(scissorsCactus, {
+              duration: n,
+              ease: "sine.inOut",
+              y: `-=${gsap.utils.random(7, 10)}`,
+              scaleY: "random(0.96, 0.99)",
+            });
+            timelineRefs.current.scissors = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-10",
+                  endTrigger: ".scene-14",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(scissorsTl);
+
+            if (timelineRefs.current.scissors.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.scissors.scrollTrigger,
+              );
+            }
+          }
+
+          // hand
+          const handLayer = elements.hand.layer;
+          const handInner = elements.hand.inner;
+          const handBody = elements.hand.body;
+          const handLeaf = elements.hand.leaf;
+          if (handLayer) {
+            gsap.set(handLayer, {
+              y: windowHeight + handLayer.clientHeight * 2,
+            });
+            const handTl = gsap
+              .timeline()
+              .to(handLayer, {
+                ease: "power1.inOut",
+                y: windowHeight - handLayer.clientHeight * 0.2,
+              })
+              .to(handLayer, {
+                ease: "power1.inOut",
+                x: handLayer.clientWidth,
+                y: -(windowHeight + handLayer.clientHeight * 2),
+                scale: 0.75,
+              });
+
+            const handBodyFlutterTl = createFlutterTimeline();
+            handBodyFlutterTl.to(handBody, {
+              duration: "random(1.8, 2.2)",
+              ease: "sine.inOut",
+              y: `-=${gsap.utils.random(10, 20)}`,
+              scaleX: "random(0.92, 0.94)",
             });
 
-          [tractorButter, tractorShampoo, tractorBar].forEach((t) => {
-            const tractorFlutterTl = createFlutterTimeline();
-            tractorFlutterTl
-              .to(t, {
+            const handLeafFlutterTl = createFlutterTimeline();
+            handLeafFlutterTl.to(handLeaf, {
+              duration: "random(2, 3.6)",
+              ease: "power1.inOut",
+              y: `-=${gsap.utils.random(20, 60)}`,
+              scaleX: "random(0.9, 0.96)",
+            });
+
+            timelineRefs.current.hand = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-11",
+                  endTrigger: ".scene-15",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(handTl);
+
+            if (timelineRefs.current.hand.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.hand.scrollTrigger,
+              );
+            }
+          }
+          // cloud
+          const cloudLayer = elements.cloud.layer;
+          const cloudInner = elements.cloud.inner;
+          const cloudMain = elements.cloud.main;
+          if (cloudLayer) {
+            gsap.set(cloudLayer, {
+              y: windowHeight + cloudLayer.clientHeight * 3,
+            });
+            const cloudTl = gsap
+              .timeline()
+              .to(cloudLayer, {
+                ease: "power1.inOut",
+                y: windowHeight + cloudLayer.clientHeight,
+              })
+              .to(cloudLayer, {
+                ease: "power1.inOut",
+                y: -(windowHeight + cloudLayer.clientHeight * 2),
+              });
+
+            const cloudMainFlutterTl = createFlutterTimeline();
+            cloudMainFlutterTl.to(cloudMain, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: "random(-30, 30)",
+            });
+
+            timelineRefs.current.cloud = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-11",
+                  endTrigger: ".scene-15",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(cloudTl);
+
+            if (timelineRefs.current.cloud.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.cloud.scrollTrigger,
+              );
+            }
+          }
+          // tractor
+          const tractorLayer = elements.tractor.layer;
+          const tractorInner = elements.tractor.inner;
+          const tractorFlu = elements.tractor.flu;
+          const tractorBack = elements.tractor.back;
+          const tractorButter = elements.tractor.butter;
+          const tractorShampoo = elements.tractor.shampoo;
+          const tractorBar = elements.tractor.bar;
+          const tractorLavender = elements.tractor.lavender;
+          const tractorFront = elements.tractor.front;
+          if (tractorLayer) {
+            gsap.set(tractorLayer, {
+              y: windowHeight + tractorLayer.clientHeight * 2,
+            });
+            const tractorTl = gsap
+              .timeline()
+              .to(tractorLayer, {
+                ease: "power1.inOut",
+                y: -(windowHeight * 0.5 - tractorLayer.clientHeight * 1.5),
+              })
+              .to(tractorLayer, {
+                ease: "power1.inOut",
+                y: -(windowHeight + tractorLayer.clientHeight * 2),
+                scale: 0.8,
+              });
+
+            const tractorFluFlutterTl = createFlutterTimeline();
+            tractorFluFlutterTl
+              .to(tractorFlu, {
+                duration: 0.05,
+                ease: "steps (1)",
+                y: 4,
+              })
+              .to(tractorFlu, {
+                duration: 0.05,
+                ease: "steps (1)",
+                y: 0,
+              });
+
+            [tractorButter, tractorShampoo, tractorBar].forEach((t) => {
+              const tractorFlutterTl = createFlutterTimeline();
+              tractorFlutterTl
+                .to(t, {
+                  delay: "random(0, 0.2)",
+                  duration: 0.05,
+                  y: `+=${gsap.utils.random(2, 6)}`,
+                  rotation: "random(-1, 1)",
+                })
+                .to(t, { duration: 0.05, y: 0, rotation: 0 });
+            });
+
+            const tractorLavenderFlutterTl = createFlutterTimeline();
+            tractorLavenderFlutterTl
+              .to(tractorLavender, {
                 delay: "random(0, 0.2)",
                 duration: 0.05,
-                y: `+=${gsap.utils.random(2, 6)}`,
-                rotation: "random(-1, 1)",
+                y: `+=${gsap.utils.random(2, 4)}`,
               })
-              .to(t, { duration: 0.05, y: 0, rotation: 0 });
-          });
+              .to(tractorLavender, {
+                duration: 0.05,
+                y: 0,
+              });
 
-          const tractorLavenderFlutterTl = createFlutterTimeline();
-          tractorLavenderFlutterTl
-            .to(tractorLavender, {
-              delay: "random(0, 0.2)",
-              duration: 0.05,
-              y: `+=${gsap.utils.random(2, 4)}`,
-            })
-            .to(tractorLavender, {
-              duration: 0.05,
-              y: 0,
+            timelineRefs.current.tractor = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-13",
+                  endTrigger: ".scene-17",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(tractorTl);
+
+            if (timelineRefs.current.tractor.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.tractor.scrollTrigger,
+              );
+            }
+          }
+          // brando
+          const brandoLayer = elements.brando.layer;
+          const brandoInner = elements.brando.inner;
+          const brandoMain = elements.brando.main;
+          if (brandoLayer) {
+            gsap.set(brandoLayer, {
+              y: windowHeight + brandoLayer.clientHeight * 0.5,
+            });
+            const brandoTl = gsap.timeline().to(brandoLayer, {
+              ease: "power1.inOut",
+              y: -(windowHeight + brandoLayer.clientHeight * 2),
             });
 
-          timelineRefs.current.tractor = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-13",
-                endTrigger: ".scene-17",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(tractorTl);
+            const brandoMainFlutterTl = createFlutterTimeline();
+            brandoMainFlutterTl.to(brandoMain, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: "random(-30, 30)",
+            });
 
-          if (timelineRefs.current.tractor.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.tractor.scrollTrigger
-            );
+            timelineRefs.current.brando = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-13",
+                  endTrigger: ".scene-19",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(brandoTl);
+
+            if (timelineRefs.current.brando.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.brando.scrollTrigger,
+              );
+            }
           }
-        }
-// brando
-const brandoLayer = elements.brando.layer;
-const brandoInner = elements.brando.inner;
-const brandoMain = elements.brando.main;
-if (brandoLayer) {
-          gsap.set(brandoLayer, {
-            y: windowHeight + brandoLayer.clientHeight * 0.5,
-          });
-          const brandoTl = gsap.timeline().to(brandoLayer, {
-            ease: "power1.inOut",
-            y: -(windowHeight + brandoLayer.clientHeight * 2),
-          });
-
-          const brandoMainFlutterTl = createFlutterTimeline();
-          brandoMainFlutterTl.to(brandoMain, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: "random(-30, 30)",
-          });
-
-          timelineRefs.current.brando = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-13",
-                endTrigger: ".scene-19",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(brandoTl);
-
-          if (timelineRefs.current.brando.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.brando.scrollTrigger
-            );
-          }
-        }
 
           // girl
           const girlLayer = elements.girl.layer;
@@ -2342,127 +2343,127 @@ if (brandoLayer) {
           const girlHead = elements.girl.head;
           const girlArm = elements.girl.arm;
           if (girlLayer) {
-          gsap.set(girlLayer, {
-            x: windowWidth * 0.5,
-            y: windowHeight + girlLayer.clientHeight * 0.5,
-            scale: 0.75,
-          });
-          const girlTl = gsap
-            .timeline()
-            .to(
-              girlLayer,
-              {
+            gsap.set(girlLayer, {
+              x: windowWidth * 0.5,
+              y: windowHeight + girlLayer.clientHeight * 0.5,
+              scale: 0.75,
+            });
+            const girlTl = gsap
+              .timeline()
+              .to(
+                girlLayer,
+                {
+                  ease: "power1.inOut",
+                  x: isMd
+                    ? girlLayer.clientWidth * 0.1
+                    : girlLayer.clientWidth * 0.3,
+                  y: isMd
+                    ? girlLayer.clientHeight * 0.2
+                    : girlLayer.clientHeight * 0.9,
+                  scale: 1,
+                },
+                "+=0.01",
+              )
+              .to(girlLayer, {
                 ease: "power1.inOut",
-                x: isMd
-                  ? girlLayer.clientWidth * 0.1
-                  : girlLayer.clientWidth * 0.3,
-                y: isMd
-                  ? girlLayer.clientHeight * 0.2
-                  : girlLayer.clientHeight * 0.9,
-                scale: 1,
-              },
-              "+=0.01"
-            )
-            .to(girlLayer, {
-              ease: "power1.inOut",
-              y: -girlLayer.clientHeight,
-              x: girlLayer.clientWidth * gsap.utils.random(0.2, 1),
-              scale: 1.5,
-            })
-            .to(girlLayer, { duration: 0.2, autoAlpha: 0 }, "-=0.2");
+                y: -girlLayer.clientHeight,
+                x: girlLayer.clientWidth * gsap.utils.random(0.2, 1),
+                scale: 1.5,
+              })
+              .to(girlLayer, { duration: 0.2, autoAlpha: 0 }, "-=0.2");
 
-          const girlHeadFlutterTl = createFlutterTimeline();
-          girlHeadFlutterTl.to(girlHead, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: "random(-30, 30)",
-          });
+            const girlHeadFlutterTl = createFlutterTimeline();
+            girlHeadFlutterTl.to(girlHead, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: "random(-30, 30)",
+            });
 
-          timelineRefs.current.girl = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-14",
-                endTrigger: ".scene-20",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(girlTl);
+            timelineRefs.current.girl = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-14",
+                  endTrigger: ".scene-20",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(girlTl);
 
-          if (timelineRefs.current.girl.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.girl.scrollTrigger
-            );
+            if (timelineRefs.current.girl.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.girl.scrollTrigger,
+              );
+            }
           }
-        }
-// mirror
-const mirrorLayer = elements.mirror.layer;
-const mirrorInner = elements.mirror.inner;
-const mirrorMain = elements.mirror.main;
-const mirrorMountain = elements.mirror.mountain;
-const mirrorBottles = elements.mirror.bottles;
-if (mirrorLayer) {
-          gsap.set(mirrorLayer, {
-            x: windowWidth * 0.5,
-            y: windowHeight + mirrorLayer.clientHeight * 0.5,
-            scale: 0.75,
-          });
-          const mirrorTl = gsap
-            .timeline()
-            .to(
-              mirrorLayer,
-              {
+          // mirror
+          const mirrorLayer = elements.mirror.layer;
+          const mirrorInner = elements.mirror.inner;
+          const mirrorMain = elements.mirror.main;
+          const mirrorMountain = elements.mirror.mountain;
+          const mirrorBottles = elements.mirror.bottles;
+          if (mirrorLayer) {
+            gsap.set(mirrorLayer, {
+              x: windowWidth * 0.5,
+              y: windowHeight + mirrorLayer.clientHeight * 0.5,
+              scale: 0.75,
+            });
+            const mirrorTl = gsap
+              .timeline()
+              .to(
+                mirrorLayer,
+                {
+                  ease: "power1.inOut",
+                  x: isMd
+                    ? mirrorLayer.clientWidth * 0.1
+                    : mirrorLayer.clientWidth * 0.3,
+                  y: isMd
+                    ? mirrorLayer.clientHeight * 0.2
+                    : mirrorLayer.clientHeight * 0.9,
+                  scale: 1,
+                },
+                "+=0.01",
+              )
+              .to(mirrorLayer, {
                 ease: "power1.inOut",
-                x: isMd
-                  ? mirrorLayer.clientWidth * 0.1
-                  : mirrorLayer.clientWidth * 0.3,
-                y: isMd
-                  ? mirrorLayer.clientHeight * 0.2
-                  : mirrorLayer.clientHeight * 0.9,
-                scale: 1,
-              },
-              "+=0.01"
-            )
-            .to(mirrorLayer, {
-              ease: "power1.inOut",
-              y: -mirrorLayer.clientHeight,
-              x: mirrorLayer.clientWidth * gsap.utils.random(0.2, 1),
-              scale: 1.5,
-            })
-            .to(mirrorLayer, { duration: 0.2, autoAlpha: 0 }, "-=0.2");
+                y: -mirrorLayer.clientHeight,
+                x: mirrorLayer.clientWidth * gsap.utils.random(0.2, 1),
+                scale: 1.5,
+              })
+              .to(mirrorLayer, { duration: 0.2, autoAlpha: 0 }, "-=0.2");
 
-          const mirrorBottlesFlutterTl = createFlutterTimeline();
-          mirrorBottlesFlutterTl.to(mirrorBottles, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: "random(-30, 30)",
-          });
+            const mirrorBottlesFlutterTl = createFlutterTimeline();
+            mirrorBottlesFlutterTl.to(mirrorBottles, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: "random(-30, 30)",
+            });
 
-          timelineRefs.current.mirror = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-14",
-                endTrigger: ".scene-20",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(mirrorTl);
+            timelineRefs.current.mirror = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-14",
+                  endTrigger: ".scene-20",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(mirrorTl);
 
-          if (timelineRefs.current.mirror.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.mirror.scrollTrigger
-            );
+            if (timelineRefs.current.mirror.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.mirror.scrollTrigger,
+              );
+            }
           }
-        }
           // TODO: step 8
 
           // animation frame
           animateButterflyFrames();
           animateBirdFrames();
-        }
+        },
       );
     };
 
