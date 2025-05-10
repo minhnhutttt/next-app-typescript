@@ -70,49 +70,28 @@ interface MouseMoveRatios {
   tractor: number;
   brando: number;
   girl: number;
+  mirror: number;
 }
+
+type TimelineKey = 
+  | 'text01' | 'text02' | 'text03' | 'text04' | 'text05' | 'text06' | 'text07'
+  | 'intro' | 'butterfly' | 'letterJ' | 'framer' | 'bag' | 'plate' | 'earth'
+  | 'skyscraper' | 'tree' | 'stick' | 'birds' | 'bottle' | 'balloon' | 'jc'
+  | 'windmill' | 'argan' | 'chair' | 'working' | 'brandm' | 'berry' | 'orange'
+  | 'scissors' | 'hand' | 'cloud' | 'tractor' | 'brando' | 'girl' | 'mirror';
+
+type TimelineRefs = {
+  [key in TimelineKey]?: gsap.core.Timeline;
+} & {
+  scrollTriggers: any[];
+};
+
 // TODO: Step 2
 export function useInitialLoader() {
   const butterflyIntervalRef = useRef<number>();
   const birdIntervalRef = useRef<number>();
   const contextRef = useRef<any>(null);
-  const timelineRefs = useRef<{
-    text01?: gsap.core.Timeline;
-    text02?: gsap.core.Timeline;
-    text03?: gsap.core.Timeline;
-    text04?: gsap.core.Timeline;
-    text05?: gsap.core.Timeline;
-    text06?: gsap.core.Timeline;
-    text07?: gsap.core.Timeline;
-    intro?: gsap.core.Timeline;
-    butterfly?: gsap.core.Timeline;
-    letterJ?: gsap.core.Timeline;
-    framer?: gsap.core.Timeline;
-    bag?: gsap.core.Timeline;
-    plate?: gsap.core.Timeline;
-    earth?: gsap.core.Timeline;
-    skyscraper?: gsap.core.Timeline;
-    tree?: gsap.core.Timeline;
-    stick?: gsap.core.Timeline;
-    birds?: gsap.core.Timeline;
-    bottle?: gsap.core.Timeline;
-    balloon?: gsap.core.Timeline;
-    jc?: gsap.core.Timeline;
-    windmill?: gsap.core.Timeline;
-    argan?: gsap.core.Timeline;
-    chair?: gsap.core.Timeline;
-    working?: gsap.core.Timeline;
-    brandm?: gsap.core.Timeline;
-    berry?: gsap.core.Timeline;
-    orange?: gsap.core.Timeline;
-    scissors?: gsap.core.Timeline;
-    hand?: gsap.core.Timeline;
-    cloud?: gsap.core.Timeline;
-    tractor?: gsap.core.Timeline;
-    brando?: gsap.core.Timeline;
-    girl?: gsap.core.Timeline;
-    scrollTriggers: any[];
-  }>({ scrollTriggers: [] });
+  const timelineRefs = useRef<TimelineRefs>({ scrollTriggers: [] });
 
   const elementsRef = useRef<any>(null);
   // TODO: Step 3
@@ -145,6 +124,7 @@ export function useInitialLoader() {
     tractor: 0.25,
     brando: 0.08,
     girl: 0.1,
+    mirror: 0.1,
   });
 
   const mousePositionRef = useRef({ x: 0, y: 0 });
@@ -359,6 +339,13 @@ export function useInitialLoader() {
         head: document.querySelector('[data-js="girl-head"]'),
         arm: document.querySelector('[data-js="girl-arm"]'),
       },
+      mirror: {
+        layer: document.querySelector('[data-js="mirror-layer"]'),
+        inner: document.querySelector('[data-js="mirror-inner"]'),
+        main: document.querySelector('[data-js="mirror-main"]'),
+        mountain: document.querySelector('[data-js="mirror-mountain"]'),
+        bottles: document.querySelector('[data-js="mirror-bottles"]'),
+      },
     };
 
     elementsRef.current = elements;
@@ -440,45 +427,15 @@ export function useInitialLoader() {
     const sceneIntro = createSceneIntro();
 
     const clearScrollTriggers = () => {
-      timelineRefs.current.scrollTriggers.forEach((trigger) => {
-        if (trigger) trigger.kill();
-      });
+      timelineRefs.current.scrollTriggers.forEach(trigger => trigger?.kill());
       timelineRefs.current.scrollTriggers = [];
-      // TODO: Step 5
-      if (timelineRefs.current.text01) timelineRefs.current.text01.kill();
-      if (timelineRefs.current.text02) timelineRefs.current.text02.kill();
-      if (timelineRefs.current.text03) timelineRefs.current.text03.kill();
-      if (timelineRefs.current.text04) timelineRefs.current.text04.kill();
-      if (timelineRefs.current.text05) timelineRefs.current.text05.kill();
-      if (timelineRefs.current.text06) timelineRefs.current.text06.kill();
-      if (timelineRefs.current.text07) timelineRefs.current.text07.kill();
-      if (timelineRefs.current.intro) timelineRefs.current.intro.kill();
-      if (timelineRefs.current.butterfly) timelineRefs.current.butterfly.kill();
-      if (timelineRefs.current.letterJ) timelineRefs.current.letterJ.kill();
-      if (timelineRefs.current.framer) timelineRefs.current.framer.kill();
-      if (timelineRefs.current.bag) timelineRefs.current.bag.kill();
-      if (timelineRefs.current.plate) timelineRefs.current.plate.kill();
-      if (timelineRefs.current.earth) timelineRefs.current.earth.kill();
-      if (timelineRefs.current.skyscraper)
-        timelineRefs.current.skyscraper.kill();
-      if (timelineRefs.current.tree) timelineRefs.current.tree.kill();
-      if (timelineRefs.current.stick) timelineRefs.current.stick.kill();
-      if (timelineRefs.current.birds) timelineRefs.current.birds.kill();
-      if (timelineRefs.current.bottle) timelineRefs.current.bottle.kill();
-      if (timelineRefs.current.jc) timelineRefs.current.jc.kill();
-      if (timelineRefs.current.balloon) timelineRefs.current.balloon.kill();
-      if (timelineRefs.current.argan) timelineRefs.current.argan.kill();
-      if (timelineRefs.current.chair) timelineRefs.current.chair.kill();
-      if (timelineRefs.current.working) timelineRefs.current.working.kill();
-      if (timelineRefs.current.brandm) timelineRefs.current.brandm.kill();
-      if (timelineRefs.current.berry) timelineRefs.current.berry.kill();
-      if (timelineRefs.current.orange) timelineRefs.current.orange.kill();
-      if (timelineRefs.current.scissors) timelineRefs.current.scissors.kill();
-      if (timelineRefs.current.hand) timelineRefs.current.hand.kill();
-      if (timelineRefs.current.cloud) timelineRefs.current.cloud.kill();
-      if (timelineRefs.current.tractor) timelineRefs.current.tractor.kill();
-      if (timelineRefs.current.brando) timelineRefs.current.brando.kill();
-      if (timelineRefs.current.girl) timelineRefs.current.girl.kill();
+      
+      Object.keys(timelineRefs.current).forEach(key => {
+        if (key !== 'scrollTriggers') {
+          const timelineKey = key as TimelineKey;
+          timelineRefs.current[timelineKey]?.kill();
+        }
+      });
     };
 
     const initScrollTriggers = () => {
@@ -2498,7 +2455,7 @@ export function useInitialLoader() {
           });
           const brandoTl = gsap.timeline().to(brandoLayer, {
             ease: "power1.inOut",
-            y: -windowHeight + brandoLayer.clientHeight,
+            y: -(windowHeight + brandoLayer.clientHeight * 2),
           });
 
           const brandoMainFlutterTl = createFlutterTimeline();

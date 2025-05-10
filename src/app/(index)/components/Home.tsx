@@ -737,6 +737,36 @@ export default function Home() {
               />
             </div>
           </div>
+
+          {/* mirror */}
+          <div
+            data-js="mirror-layer"
+            className="absolute inline-flex justify-center items-center opacity-0"
+          >
+            <div
+              data-js="mirror-inner"
+              className="flex justify-center items-end relative"
+            >
+              <img
+                data-js="mirror-main"
+                className="absolute w-[33%] left-[10%]"
+                src="/assets/images/home/brand__mirror.webp"
+                alt=""
+              />
+              <img
+                data-js="mirror-mountain"
+                className="relative md:w-[410px]"
+                src="/assets/images/home/brand__mountain.webp"
+                alt=""
+              />
+              <img
+                data-js="mirror-bottles"
+                className="relative md:w-[288px] -ml-px"
+                src="/assets/images/home/brand__bottles.webp"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
 
         {/* Text */}
