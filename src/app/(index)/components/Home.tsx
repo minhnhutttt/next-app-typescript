@@ -106,25 +106,28 @@ export default function Home() {
               data-js="bag-inner"
               className="flex items-center justify-center"
             >
-              <div data-js="bag-flu" className="flex items-center justify-center">
-              <img
-                data-js="bag-tree"
-                className="w-[16vw] md:w-[140px]"
-                src="/assets/images/home/brand__bg-bag-lady.webp"
-                alt=""
-              />
-              <img
-                data-js="bag-bird"
-                className="w-[8vw] md:w-[80px] md:-ml-[60px] -ml-[5vw] md:mt-[50px] mt-[6vw] relative z-10"
-                src="/assets/images/home/brand__flag-bird.webp"
-                alt=""
-              />
-              <img
-                data-js="bag-flag"
-                className="md:w-[160px] w-[18vw] md:-mt-[110px] -mt-[10vw] md:-ml-[10px] -ml-[1vw]"
-                src="/assets/images/home/brand__flag-002.webp"
-                alt=""
-              />
+              <div
+                data-js="bag-flu"
+                className="flex items-center justify-center"
+              >
+                <img
+                  data-js="bag-tree"
+                  className="w-[16vw] md:w-[140px]"
+                  src="/assets/images/home/brand__bg-bag-lady.webp"
+                  alt=""
+                />
+                <img
+                  data-js="bag-bird"
+                  className="w-[8vw] md:w-[80px] md:-ml-[60px] -ml-[5vw] md:mt-[50px] mt-[6vw] relative z-10"
+                  src="/assets/images/home/brand__flag-bird.webp"
+                  alt=""
+                />
+                <img
+                  data-js="bag-flag"
+                  className="md:w-[160px] w-[18vw] md:-mt-[110px] -mt-[10vw] md:-ml-[10px] -ml-[1vw]"
+                  src="/assets/images/home/brand__flag-002.webp"
+                  alt=""
+                />
               </div>
             </div>
           </div>
@@ -570,12 +573,13 @@ export default function Home() {
             <div
               data-js="scissors-inner"
               className="flex justify-center items-center relative"
-            ><img
-            data-js="scissors-cactus"
-            className="object-top object-contain bottom-[-10%] right-[-20%] absolute max-w-fit w-[192%]"
-            src="/assets/images/home/brand__bg-cactus.webp"
-            alt=""
-          />
+            >
+              <img
+                data-js="scissors-cactus"
+                className="object-top object-contain bottom-[-10%] right-[-20%] absolute max-w-fit w-[192%]"
+                src="/assets/images/home/brand__bg-cactus.webp"
+                alt=""
+              />
               <img
                 data-js="scissors-body"
                 className="relative md:w-[232px] w-[40vw] "
@@ -594,7 +598,6 @@ export default function Home() {
                 src="/assets/images/home/brand__scissors-bird-head-back.webp"
                 alt=""
               />
-              
             </div>
           </div>
 
@@ -649,60 +652,87 @@ export default function Home() {
               data-js="tractor-inner"
               className="flex justify-center items-center relative"
             >
-              <div data-js="tractor-flu" className="flex justify-center items-center relative">
-              <img
-                data-js="tractor-back"
-                className="absolute w-[70.7%] top-[-2%] right-[25%]"
-                src="/assets/images/home/brand__tractor-back.webp"
-                alt=""
-              />
-              <img
-                data-js="tractor-butter"
-                className="absolute w-[38.53%] top-[-50%] right-[20%]"
-                src="/assets/images/home/brand__butter-tube.webp"
-                alt=""
-              />
-              <img
-                data-js="tractor-shampoo"
-                className="absolute w-[39.52%] top-[-50%] right-[55%]"
-                src="/assets/images/home/brand__shampoo-bottle.webp"
-                alt=""
-              />
-              <img
-                data-js="tractor-bar"
-                className="absolute w-[44.46%] top-[-12%] right-1/3"
-                src="/assets/images/home/brand__body-bar.webp"
-                alt=""
-              />
-              <img
-                data-js="tractor-lavender"
-                className="absolute w-[51.58%] top-[-50%] right-0"
-                src="/assets/images/home/brand__lavender.webp"
-                alt=""
-              />
-              <img
-                data-js="tractor-front"
-                className="relative md:w-[303px] w-[40vw] "
-                src="/assets/images/home/brand__tractor-front.webp"
-                alt=""
-              />
+              <div
+                data-js="tractor-flu"
+                className="flex justify-center items-center relative"
+              >
+                <img
+                  data-js="tractor-back"
+                  className="absolute w-[70.7%] top-[-2%] right-[25%]"
+                  src="/assets/images/home/brand__tractor-back.webp"
+                  alt=""
+                />
+                <img
+                  data-js="tractor-butter"
+                  className="absolute w-[38.53%] top-[-50%] right-[20%]"
+                  src="/assets/images/home/brand__butter-tube.webp"
+                  alt=""
+                />
+                <img
+                  data-js="tractor-shampoo"
+                  className="absolute w-[39.52%] top-[-50%] right-[55%]"
+                  src="/assets/images/home/brand__shampoo-bottle.webp"
+                  alt=""
+                />
+                <img
+                  data-js="tractor-bar"
+                  className="absolute w-[44.46%] top-[-12%] right-1/3"
+                  src="/assets/images/home/brand__body-bar.webp"
+                  alt=""
+                />
+                <img
+                  data-js="tractor-lavender"
+                  className="absolute w-[51.58%] top-[-50%] right-0"
+                  src="/assets/images/home/brand__lavender.webp"
+                  alt=""
+                />
+                <img
+                  data-js="tractor-front"
+                  className="relative md:w-[303px] w-[40vw] "
+                  src="/assets/images/home/brand__tractor-front.webp"
+                  alt=""
+                />
               </div>
             </div>
           </div>
 
-          {/* letter-o */}
+          {/* brando */}
           <div
-            data-js="letter-o-layer"
-            className="absolute inline-flex justify-center items-center left-0 md:left-[10%]"
+            data-js="brando-layer"
+            className="absolute inline-flex justify-center items-center left-0"
           >
             <div
-              data-js="letter-o-inner"
+              data-js="brando-inner"
               className="flex justify-center items-center relative"
             >
               <img
-                data-js="letter-o-main"
+                data-js="brando-main"
                 className="relative md:w-[400px] w-[26vw] "
                 src="/assets/images/home/brand__o-lg.webp"
+                alt=""
+              />
+            </div>
+          </div>
+
+          {/* girl */}
+          <div
+            data-js="girl-layer"
+            className="absolute inline-flex justify-center items-center md:right-[10%]"
+          >
+            <div
+              data-js="girl-inner"
+              className="flex justify-center items-center relative"
+            >
+              <img
+                data-js="girl-head"
+                className="relative md:w-[400px] w-[60vw] "
+                src="/assets/images/home/brand__frame-girl-head.webp"
+                alt=""
+              />
+              <img
+                data-js="girl-arm"
+                className="w-[91%] right-[45%] absolute"
+                src="/assets/images/home/brand__frame-girl-arm.webp"
                 alt=""
               />
             </div>
@@ -830,7 +860,7 @@ export default function Home() {
           >
             <div
               data-js="text05-inner"
-              className="flex justify-start items-center font-bold [text-shadow:2px_2px_2px_#fff] md:w-[70%]"
+              className="flex justify-start items-center font-bold [text-shadow:2px_2px_2px_#fff] md:w-[60%]"
             >
               <h2>
                 <span
@@ -850,6 +880,62 @@ export default function Home() {
                   data-splitting
                 >
                   自分を慈しむように、<strong>自然を大切</strong> にする。
+                </span>
+              </h2>
+            </div>
+          </div>
+          {/* Text 06 */}
+          <div
+            data-js="text06-layer"
+            className="absolute inset-0 flex justify-center items-center"
+          >
+            <div
+              data-js="text06-inner"
+              className="flex justify-start items-center font-bold [text-shadow:2px_2px_2px_#fff] md:w-[60%]"
+            >
+              <h2>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  green beauty
+                </span>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  オーガニックコスメを通じて、
+                </span>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  <strong>人と地球の未来に</strong> 貢献すること。
+                </span>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  それが私たちのミッション。
+                </span>
+              </h2>
+            </div>
+          </div>
+          {/* Text 07 */}
+          <div
+            data-js="text07-layer"
+            className="absolute inset-0 flex justify-center items-center"
+          >
+            <div
+              data-js="text07-inner"
+              className="flex justify-start items-center font-bold [text-shadow:2px_2px_2px_#fff] md:w-[60%]"
+            >
+              <h2>
+                <span
+                  className="block text-[4.6vw] md:text-[32px]"
+                  data-splitting
+                >
+                  美しい未来を、願うのではなく、<strong>自らの手で</strong>。
                 </span>
               </h2>
             </div>
