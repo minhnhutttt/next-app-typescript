@@ -119,6 +119,7 @@ type TimelineKey =
   | "cloud02"
   | "cloud03"
   | "balloon02"
+  | "circleGroup"
   | "circle"
   | "circle1"
   | "circle2"
@@ -422,6 +423,11 @@ export function useInitialLoader() {
       circle: {
         group: document.querySelector('[data-text-transition-group-circle]'),
         ['0']: document.querySelector('[data-text-transition-group-circle]'),
+        ['1']: document.querySelector('[data-text-transition-circle="1"]'),
+        ['2']: document.querySelector('[data-text-transition-circle="2"]'),
+        ['3']: document.querySelector('[data-text-transition-circle="3"]'),
+        ['4']: document.querySelector('[data-text-transition-circle="4"]'),
+        ['5']: document.querySelector('[data-text-transition-circle="5"]'),
       }
     };
 
@@ -1201,22 +1207,22 @@ export function useInitialLoader() {
 
           if (butterflyLayer) {
             gsap.set(butterflyLayer, {
-              y: butterflyLayer.clientHeight + windowHeight,
-              x: windowWidth * 0.5 + butterflyLayer.clientWidth * 0.25,
+              y: windowHeight + butterflyLayer.clientHeight,
+              x: butterflyLayer.clientWidth * 0.25,
               scale: 1.5,
             });
 
             const butterflyTl = gsap
               .timeline()
               .to(butterflyLayer, {
-                x: windowWidth * 0.4 - butterflyLayer.clientWidth * 0.5,
-                y: windowHeight * 0.17,
+                x: -butterflyLayer.clientWidth * 0.5,
+                y: butterflyLayer.clientHeight * 1.5,
                 scale: 1,
                 ease: "power1.inOut",
               })
               .to(butterflyLayer, {
-                y: -butterflyLayer.clientHeight * 2,
-                x: windowWidth * 0.4 - butterflyLayer.clientWidth * 1.2,
+                y: -butterflyLayer.clientHeight * 1.5,
+                x: -butterflyLayer.clientWidth * 0.8,
                 ease: "power1.in",
               });
 
@@ -1432,8 +1438,7 @@ export function useInitialLoader() {
 
             gsap.set(plateLayer, {
               scale: 1.5,
-              x: windowWidth / 2 - plateLayer.clientWidth,
-              y: isMd ? windowHeight * 0.1 : windowHeight * 0.5,
+              y: windowHeight * 0.1,
             });
 
             const plateTl = gsap
@@ -1442,14 +1447,14 @@ export function useInitialLoader() {
                 scale: 1,
               })
               .to(plateOne, {
-                x: -plateOne.clientWidth * 0.5,
+                x: -plateOne.clientWidth * 0.1,
                 opacity: 1,
               })
               .to(
                 plateEarth,
                 {
                   opacity: 1,
-                  x: -plateEarth.clientWidth * 0.28,
+                  x: plateEarth.clientWidth * 0.2,
                 },
                 "<",
               )
@@ -1731,19 +1736,10 @@ export function useInitialLoader() {
           const stickTree = elements.stick.tree;
           const stickCloud = elements.stick.cloud;
           if (stickLayer && stickTree) {
-            gsap.set(stickTree, {
-              y: -140,
-              x: -10,
-            });
-            gsap.set(stickCloud, {
-              y: -80,
-              x: -100,
-            });
-
             gsap.set(stickLayer, {
               x: isMd
-                ? -(windowWidth * 0.5 - stickLayer.clientWidth * 2.5)
-                : -windowWidth * 0.7,
+                ? -windowWidth * 0.2
+                : -windowWidth * 0.1,
               y:
                 windowHeight + stickLayer.clientHeight + stickTree.clientHeight,
               scale: 1.25,
@@ -1819,15 +1815,15 @@ export function useInitialLoader() {
             });
 
             gsap.set(birdsLayer, {
-              x: windowWidth,
-              y: birdsLayer.clientHeight,
+              x: windowWidth * 0.5 + birdsLayer.clientWidth * 1.5,
+              y: windowHeight * 0.5 + birdsLayer.clientHeight * 1.5,
             });
 
             const birdsTl = gsap.timeline().to(birdsLayer, {
               delay: 0.1,
               ease: "power1.inOut",
               y: -birdsLayer.clientHeight,
-              x: -birdsLayer.clientWidth * 3,
+              x: -birdsLayer.clientWidth * 4,
               scale: 0.75,
             });
 
@@ -2936,6 +2932,153 @@ export function useInitialLoader() {
             if (timelineRefs.current.balloon02.scrollTrigger) {
               timelineRefs.current.scrollTriggers.push(
                 timelineRefs.current.balloon02.scrollTrigger,
+              );
+            }
+          }
+
+          // circle
+          const circleGroup = elements.circle.group;
+          const circle = elements.circle['0'];
+          const circle1 = elements.circle['1'];
+          const circle2 = elements.circle['2'];
+          const circle3 = elements.circle['3'];
+          const circle4 = elements.circle['4'];
+          const circle5 = elements.circle['5'];
+          if (circleGroup && circle && circle1 && circle2 && circle3 && circle4 && circle5) {
+            // circleGroup
+            gsap.set(circleGroup, {
+              autoAlpha: 1,
+              pointerEvents: "none"
+            });
+            const circleGroupTl = gsap.timeline().to(circleGroup, {
+              ease: "power1.inOut",
+              autoAlpha: 1,
+              pointerEvents: "auto"
+            });
+            timelineRefs.current.circleGroup = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-21",
+                endTrigger: ".scene-28",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+                onLeaveBack: () => {
+                  gsap.set([circle2, circle3, circle4, circle5], { scale: 0.8, autoAlpha: 0 });
+                },
+                onLeave: () => {
+                  gsap.set(circle, { autoAlpha: 0, scale: 1.25 });
+                },
+              },
+            })
+            .add(circleGroupTl);
+            if (timelineRefs.current.circleGroup.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.circleGroup.scrollTrigger,
+              );
+            }
+
+            // circleTl
+            gsap.set(circleGroup, {
+              x: windowWidth,
+            });
+            const circleTl = gsap.timeline().to(circleGroup, {
+              ease: "power1.inOut",
+              x: 0,
+              duration: 4,
+            });
+            timelineRefs.current.circle = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-20",
+                endTrigger: ".scene-24",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(circleTl);
+            if (timelineRefs.current.circle.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.circle.scrollTrigger,
+              );
+            }
+
+            // circle2Tl
+            gsap.set([circle2, circle4], {
+              scale: 0.8, autoAlpha: 0
+            });
+            const circle2Tl = gsap.timeline().to([circle2, circle4], {
+              scale: 1,
+              autoAlpha: 1,
+              ease: "circ.inOut",
+              stagger: 0.04,
+            });
+            timelineRefs.current.circle2 = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-24",
+                endTrigger: ".scene-25",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(circle2Tl);
+            if (timelineRefs.current.circle2.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.circle2.scrollTrigger,
+              );
+            }
+
+            // circle3Tl
+            gsap.set([circle3, circle5], {
+              scale: 0.8, autoAlpha: 0
+            });
+            const circle3Tl = gsap.timeline().to([circle3, circle5], {
+              scale: 1,
+              autoAlpha: 1,
+              ease: "circ.inOut",
+              stagger: 0.04,
+            });
+            timelineRefs.current.circle3 = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-26",
+                endTrigger: ".scene-27",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(circle3Tl);
+            if (timelineRefs.current.circle3.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.circle3.scrollTrigger,
+              );
+            }
+
+            // circle4Tl
+            const circle4Tl = gsap.timeline().to(circle, {
+              autoAlpha: 0,
+              scale: 1.25,
+              ease: "circ.inOut",
+              stagger: { each: 0.04, from: "end" },
+            });
+            timelineRefs.current.circle4 = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-27",
+                endTrigger: ".scene-28",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(circle4Tl);
+            if (timelineRefs.current.circle4.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.circle4.scrollTrigger,
               );
             }
           }
