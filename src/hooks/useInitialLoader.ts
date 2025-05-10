@@ -419,6 +419,10 @@ export function useInitialLoader() {
         inner: document.querySelector('[data-js="balloon02-inner"]'),
         flower: document.querySelector('[data-js="balloon02-flower"]'),
       },
+      circle: {
+        group: document.querySelector('[data-text-transition-group-circle]'),
+        ['0']: document.querySelector('[data-text-transition-group-circle]'),
+      }
     };
 
     elementsRef.current = elements;
