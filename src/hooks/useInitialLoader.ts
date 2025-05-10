@@ -73,12 +73,42 @@ interface MouseMoveRatios {
   mirror: number;
 }
 
-type TimelineKey = 
-  | 'text01' | 'text02' | 'text03' | 'text04' | 'text05' | 'text06' | 'text07'
-  | 'intro' | 'butterfly' | 'letterJ' | 'framer' | 'bag' | 'plate' | 'earth'
-  | 'skyscraper' | 'tree' | 'stick' | 'birds' | 'bottle' | 'balloon' | 'jc'
-  | 'windmill' | 'argan' | 'chair' | 'working' | 'brandm' | 'berry' | 'orange'
-  | 'scissors' | 'hand' | 'cloud' | 'tractor' | 'brando' | 'girl' | 'mirror';
+type TimelineKey =
+  | "text01"
+  | "text02"
+  | "text03"
+  | "text04"
+  | "text05"
+  | "text06"
+  | "text07"
+  | "intro"
+  | "butterfly"
+  | "letterJ"
+  | "framer"
+  | "bag"
+  | "plate"
+  | "earth"
+  | "skyscraper"
+  | "tree"
+  | "stick"
+  | "birds"
+  | "bottle"
+  | "balloon"
+  | "jc"
+  | "windmill"
+  | "argan"
+  | "chair"
+  | "working"
+  | "brandm"
+  | "berry"
+  | "orange"
+  | "scissors"
+  | "hand"
+  | "cloud"
+  | "tractor"
+  | "brando"
+  | "girl"
+  | "mirror";
 
 type TimelineRefs = {
   [key in TimelineKey]?: gsap.core.Timeline;
@@ -135,10 +165,10 @@ export function useInitialLoader() {
     const elements = {
       initialOverlay: {
         el: document.querySelector(
-          '[data-js="initial-overlay"]',
+          '[data-js="initial-overlay"]'
         ) as HTMLElement,
         preloadImages: document.querySelectorAll(
-          '[data-js="initial-overlay_preload"] img',
+          '[data-js="initial-overlay_preload"] img'
         ) as NodeListOf<HTMLImageElement>,
       },
       hero: {
@@ -179,7 +209,7 @@ export function useInitialLoader() {
         layer: document.querySelector('[data-js="butterfly-layer"]'),
         inner: document.querySelector('[data-js="butterfly-inner"]'),
         img: document.querySelector(
-          '[data-js="butterfly-img"]',
+          '[data-js="butterfly-img"]'
         ) as HTMLImageElement,
       },
       brandj: {
@@ -235,7 +265,7 @@ export function useInitialLoader() {
         layer: document.querySelector('[data-js="birds-layer"]'),
         inner: document.querySelector('[data-js="birds-inner"]'),
         frame: document.querySelectorAll(
-          '[data-js="birds-frame"]',
+          '[data-js="birds-frame"]'
         ) as NodeListOf<HTMLImageElement>,
       },
       bottle: {
@@ -415,23 +445,23 @@ export function useInitialLoader() {
         .to(
           elements.hero.heading,
           { y: -30, duration: 1.5, autoAlpha: 0, ease: "power3.out" },
-          "<",
+          "<"
         )
         .to(
           elements.hero.heading02,
           { y: -20, duration: 1.5, autoAlpha: 0, ease: "power3.out" },
-          "<",
+          "<"
         );
     };
 
     const sceneIntro = createSceneIntro();
 
     const clearScrollTriggers = () => {
-      timelineRefs.current.scrollTriggers.forEach(trigger => trigger?.kill());
+      timelineRefs.current.scrollTriggers.forEach((trigger) => trigger?.kill());
       timelineRefs.current.scrollTriggers = [];
-      
-      Object.keys(timelineRefs.current).forEach(key => {
-        if (key !== 'scrollTriggers') {
+
+      Object.keys(timelineRefs.current).forEach((key) => {
+        if (key !== "scrollTriggers") {
           const timelineKey = key as TimelineKey;
           timelineRefs.current[timelineKey]?.kill();
         }
@@ -455,338 +485,6 @@ export function useInitialLoader() {
           const windowHeight = window.innerHeight;
           const windowWidth = window.innerWidth;
 
-          // text01
-          const text01Layer = elements.text01.layer;
-          const text01Inner = elements.text01.inner;
-
-          // text02
-          const text02Layer = elements.text02.layer;
-          const text02Inner = elements.text02.inner;
-
-          // text03
-          const text03Layer = elements.text03.layer;
-          const text03Inner = elements.text03.inner;
-
-          // text04
-          const text04Layer = elements.text04.layer;
-          const text04Inner = elements.text04.inner;
-
-          // text05
-          const text05Layer = elements.text05.layer;
-          const text05Inner = elements.text05.inner;
-
-          // text06
-          const text06Layer = elements.text06.layer;
-          const text06Inner = elements.text06.inner;
-
-          // text07
-          const text07Layer = elements.text07.layer;
-          const text07Inner = elements.text07.inner;
-
-          // Butterfly
-          const butterflyLayer = elements.butterfly.layer;
-          const butterflyInner = elements.butterfly.inner;
-
-          // BrandJ
-          const brandjLayer = elements.brandj.layer;
-          const brandjImg = elements.brandj.img;
-          const brandjStickbottle = elements.brandj.stickbottle;
-
-          // Framer
-          const framerLayer = elements.framer.layer;
-          const framerFramer = elements.framer.framer;
-          const framerAvocado = elements.framer.avocado;
-
-          // Bag
-          const bagLayer = elements.bag.layer;
-          const bagFlu = elements.bag.flu;
-
-          // Plate
-          const plateLayer = elements.plate.layer;
-          const plateOne = elements.plate.one;
-          const plateEarth = elements.plate.earth;
-
-          // Earth
-          const earthLayer = elements.earth.layer;
-          const earthJohn = elements.earth.john;
-          const earthEarth = elements.earth.earth;
-          const earthSunflower = elements.earth.sunflower;
-          const earthArm = elements.earth.arm;
-
-          // skyscraper
-          const skyscraperLayer = elements.skyscraper.layer;
-          const skyscraperInner = elements.skyscraper.inner;
-          const skyscraperTower = elements.skyscraper.tower;
-          const skyscraperGlory = elements.skyscraper.glory;
-
-          // tree
-          const treeLayer = elements.tree.layer;
-          const treeInner = elements.tree.inner;
-          const treeSisters = elements.tree.sisters;
-          const treeCloud = elements.tree.cloud;
-
-          // stick
-          const stickLayer = elements.stick.layer;
-          const stickInner = elements.stick.inner;
-          const stickTree = elements.stick.tree;
-          const stickCloud = elements.stick.cloud;
-
-          // stick
-          const birdsLayer = elements.birds.layer;
-          const birdsInner = elements.birds.inner;
-          const birdsFrame = elements.birds.frame;
-
-          // bottle
-          const bottleLayer = elements.bottle.layer;
-          const bottleInner = elements.bottle.inner;
-          const bottleWash = elements.bottle.wash;
-          const bottleO = elements.bottle.o;
-
-          // jc
-          const jcLayer = elements.jc.layer;
-          const jcInner = elements.jc.inner;
-          const jcCloud = elements.jc.cloud;
-          const jcJ = elements.jc.j;
-
-          // balloon
-          const balloonLayer = elements.balloon.layer;
-          const balloonInner = elements.balloon.inner;
-          const balloonFlower = elements.balloon.flower;
-
-          // windmill
-          const windmillLayer = elements.windmill.layer;
-          const windmillInner = elements.windmill.inner;
-          const windmillWindmill = elements.windmill.windmill;
-          const windmillWave = elements.windmill.wave;
-
-          // argan
-          const arganLayer = elements.argan.layer;
-          const arganInner = elements.argan.inner;
-          const arganBottle = elements.argan.bottle;
-          const arganCloud = elements.argan.cloud;
-
-          // chair
-          const chairLayer = elements.chair.layer;
-          const chairInner = elements.chair.inner;
-          const chairMain = elements.chair.main;
-          const chairBrush = elements.chair.brush;
-
-          // working
-          const workingLayer = elements.working.layer;
-          const workingInner = elements.working.inner;
-          const workingEarth = elements.working.earth;
-          const workingWoman = elements.working.woman;
-          const workingLeaves = elements.working.leaves;
-
-          // brandm
-          const brandmLayer = elements.brandm.layer;
-          const brandmInner = elements.brandm.inner;
-          const brandmMain = elements.brandm.main;
-
-          // berry
-          const berryLayer = elements.berry.layer;
-          const berryInner = elements.berry.inner;
-          const berry01 = elements.berry["01"];
-          const berry02 = elements.berry["02"];
-          const berry03 = elements.berry["03"];
-
-          // orange
-          const orangeLayer = elements.orange.layer;
-          const orangeInner = elements.orange.inner;
-          const orange01 = elements.orange["01"];
-          const orange02 = elements.orange["02"];
-
-          // scissors
-          const scissorsLayer = elements.scissors.layer;
-          const scissorsInner = elements.scissors.inner;
-          const scissorsBody = elements.scissors.body;
-          const scissorsFront = elements.scissors.front;
-          const scissorsBack = elements.scissors.back;
-          const scissorsCactus = elements.scissors.cactus;
-
-          // hand
-          const handLayer = elements.hand.layer;
-          const handInner = elements.hand.inner;
-          const handBody = elements.hand.body;
-          const handLeaf = elements.hand.leaf;
-
-          // cloud
-          const cloudLayer = elements.cloud.layer;
-          const cloudInner = elements.cloud.inner;
-          const cloudMain = elements.cloud.main;
-
-          // tractor
-          const tractorLayer = elements.tractor.layer;
-          const tractorInner = elements.tractor.inner;
-          const tractorFlu = elements.tractor.flu;
-          const tractorBack = elements.tractor.back;
-          const tractorButter = elements.tractor.butter;
-          const tractorShampoo = elements.tractor.shampoo;
-          const tractorBar = elements.tractor.bar;
-          const tractorLavender = elements.tractor.lavender;
-          const tractorFront = elements.tractor.front;
-
-          // brando
-          const brandoLayer = elements.brando.layer;
-          const brandoInner = elements.brando.inner;
-          const brandoMain = elements.brando.main;
-
-          // girl
-          const girlLayer = elements.girl.layer;
-          const girlInner = elements.girl.inner;
-          const girlHead = elements.girl.head;
-          const girlArm = elements.girl.arm;
-
-          // TODO: Step 6
-          if (
-            !text01Layer ||
-            !text01Inner ||
-            !text02Layer ||
-            !text02Inner ||
-            !text03Layer ||
-            !text03Inner ||
-            !text04Layer ||
-            !text04Inner ||
-            !text05Layer ||
-            !text05Inner ||
-            !text06Layer ||
-            !text06Inner ||
-            !text07Layer ||
-            !text07Inner ||
-            !butterflyLayer ||
-            !brandjLayer ||
-            !framerLayer ||
-            !bagLayer ||
-            !plateLayer ||
-            !plateOne ||
-            !plateEarth ||
-            !earthLayer ||
-            !earthJohn ||
-            !earthEarth ||
-            !earthSunflower ||
-            !earthArm ||
-            !skyscraperLayer ||
-            !skyscraperInner ||
-            !skyscraperTower ||
-            !skyscraperGlory ||
-            !treeLayer ||
-            !treeInner ||
-            !treeSisters ||
-            !treeCloud ||
-            !stickLayer ||
-            !stickInner ||
-            !stickTree ||
-            !stickCloud ||
-            !birdsLayer ||
-            !birdsInner ||
-            !birdsFrame ||
-            !bottleLayer ||
-            !bottleInner ||
-            !bottleWash ||
-            !bottleO ||
-            !jcLayer ||
-            !jcInner ||
-            !jcCloud ||
-            !jcJ ||
-            !balloonLayer ||
-            !balloonInner ||
-            !balloonFlower ||
-            !windmillLayer ||
-            !windmillInner ||
-            !windmillWindmill ||
-            !windmillWave ||
-            !arganLayer ||
-            !arganInner ||
-            !arganBottle ||
-            !arganCloud ||
-            !chairLayer ||
-            !chairInner ||
-            !chairMain ||
-            !chairBrush ||
-            !workingLayer ||
-            !workingInner ||
-            !workingEarth ||
-            !workingWoman ||
-            !workingLeaves ||
-            !brandmLayer ||
-            !brandmInner ||
-            !brandmMain ||
-            !berryLayer ||
-            !berryInner ||
-            !berry01 ||
-            !berry02 ||
-            !berry03 ||
-            !orangeLayer ||
-            !orangeInner ||
-            !orange01 ||
-            !orange02 ||
-            !scissorsLayer ||
-            !scissorsInner ||
-            !scissorsBody ||
-            !scissorsFront ||
-            !scissorsBack ||
-            !scissorsCactus ||
-            !handLayer ||
-            !handInner ||
-            !handBody ||
-            !handLeaf ||
-            !cloudLayer ||
-            !cloudInner ||
-            !cloudMain ||
-            !tractorLayer ||
-            !tractorInner ||
-            !tractorFlu ||
-            !tractorBack ||
-            !tractorButter ||
-            !tractorShampoo ||
-            !tractorBar ||
-            !tractorLavender ||
-            !tractorFront ||
-            !brandoLayer ||
-            !brandoInner ||
-            !brandoMain ||
-            !girlLayer ||
-            !girlInner ||
-            !girlHead ||
-            !girlArm
-          ) {
-            return {
-              text01Tl: null,
-              text02Tl: null,
-              text03Tl: null,
-              text04Tl: null,
-              text05Tl: null,
-              text06Tl: null,
-              text07Tl: null,
-              butterflyTl: null,
-              letterJTl: null,
-              framerTl: null,
-              bagTl: null,
-              plateTl: null,
-              earthTl: null,
-              skyscraperTl: null,
-              treeTl: null,
-              stickTl: null,
-              birdsTl: null,
-              bottleTl: null,
-              jcTl: null,
-              balloonTl: null,
-              windmillTl: null,
-              arganTl: null,
-              chairTl: null,
-              workingTl: null,
-              brandmTl: null,
-              berryTl: null,
-              orangeTl: null,
-              scissorsTl: null,
-              handTl: null,
-              cloudTl: null,
-              tractorTl: null,
-              brandoTl: null,
-              girlTl: null,
-            };
-          }
-
           // ScrollTrigger intro
           timelineRefs.current.intro = gsap
             .timeline({
@@ -802,58 +500,67 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.intro.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.intro.scrollTrigger,
+              timelineRefs.current.intro.scrollTrigger
             );
           }
 
           // Butterfly
-          gsap.set(butterflyLayer, {
-            y: butterflyLayer.clientHeight + windowHeight,
-            x: windowWidth * 0.5 + butterflyLayer.clientWidth * 0.25,
-            scale: 1.5,
-          });
+          const butterflyLayer = elements.butterfly.layer;
+          const butterflyInner = elements.butterfly.inner;
 
-          const butterflyTl = gsap
-            .timeline()
-            .to(butterflyLayer, {
-              x: windowWidth * 0.4 - butterflyLayer.clientWidth * 0.5,
-              y: windowHeight * 0.17,
-              scale: 1,
-              ease: "power1.inOut",
-            })
-            .to(butterflyLayer, {
-              y: -butterflyLayer.clientHeight * 2,
-              x: windowWidth * 0.4 - butterflyLayer.clientWidth * 1.2,
-              ease: "power1.in",
+          if (butterflyLayer) {
+            gsap.set(butterflyLayer, {
+              y: butterflyLayer.clientHeight + windowHeight,
+              x: windowWidth * 0.5 + butterflyLayer.clientWidth * 0.25,
+              scale: 1.5,
             });
 
-          const butterflyFlutterTl = createFlutterTimeline();
-          butterflyFlutterTl.to(butterflyInner, {
-            duration: "random(2.2, 2.8)",
-            ease: "sine.inOut",
-            y: "random(10, 40)",
-            scale: "random(0.94, 0.98)",
-            rotation: "random(-10, 10)",
-          });
-          timelineRefs.current.butterfly = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-1",
-                endTrigger: ".scene-6",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(butterflyTl);
+            const butterflyTl = gsap
+              .timeline()
+              .to(butterflyLayer, {
+                x: windowWidth * 0.4 - butterflyLayer.clientWidth * 0.5,
+                y: windowHeight * 0.17,
+                scale: 1,
+                ease: "power1.inOut",
+              })
+              .to(butterflyLayer, {
+                y: -butterflyLayer.clientHeight * 2,
+                x: windowWidth * 0.4 - butterflyLayer.clientWidth * 1.2,
+                ease: "power1.in",
+              });
 
-          if (timelineRefs.current.butterfly.scrollTrigger) {
-            timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.butterfly.scrollTrigger,
-            );
+            const butterflyFlutterTl = createFlutterTimeline();
+            butterflyFlutterTl.to(butterflyInner, {
+              duration: "random(2.2, 2.8)",
+              ease: "sine.inOut",
+              y: "random(10, 40)",
+              scale: "random(0.94, 0.98)",
+              rotation: "random(-10, 10)",
+            });
+            timelineRefs.current.butterfly = gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-1",
+                  endTrigger: ".scene-6",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(butterflyTl);
+
+            if (timelineRefs.current.butterfly.scrollTrigger) {
+              timelineRefs.current.scrollTriggers.push(
+                timelineRefs.current.butterfly.scrollTrigger
+              );
+            }
           }
 
-          // ScrollTrigger letterJ
+          // BrandJ
+          const brandjLayer = elements.brandj.layer;
+          const brandjImg = elements.brandj.img;
+          const brandjStickbottle = elements.brandj.stickbottle;
+          if (brandjLayer) {
           gsap.set(brandjLayer, {
             y: windowHeight + brandjLayer.clientHeight * 3,
             x: windowWidth * 0.5 + brandjLayer.clientWidth * 0.75,
@@ -901,11 +608,14 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.letterJ.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.letterJ.scrollTrigger,
+              timelineRefs.current.letterJ.scrollTrigger
             );
           }
-
-          // ScrollTrigger text01
+        }
+           // text01
+           const text01Layer = elements.text01.layer;
+           const text01Inner = elements.text01.inner;
+           if (text01Inner) {
           gsap.set(text01Inner.querySelectorAll(".char"), {
             duration: 6,
             autoAlpha: 0,
@@ -930,7 +640,7 @@ export function useInitialLoader() {
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
               },
-              "+=5",
+              "+=5"
             );
 
           timelineRefs.current.text01 = gsap
@@ -947,11 +657,14 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.text01.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text01.scrollTrigger,
+              timelineRefs.current.text01.scrollTrigger
             );
           }
-
-          // ScrollTrigger text02
+        }
+          // text02
+          const text02Layer = elements.text02.layer;
+          const text02Inner = elements.text02.inner;
+          if (text02Inner) {
           gsap.set(text02Inner.querySelectorAll(".char"), {
             duration: 6,
             autoAlpha: 0,
@@ -976,7 +689,7 @@ export function useInitialLoader() {
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
               },
-              "+=5",
+              "+=5"
             );
 
           timelineRefs.current.text02 = gsap
@@ -993,11 +706,15 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.text02.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text02.scrollTrigger,
+              timelineRefs.current.text02.scrollTrigger
             );
           }
-
-          // ScrollTrigger text03
+        }
+          
+        // text03
+        const text03Layer = elements.text03.layer;
+        const text03Inner = elements.text03.inner;
+        if (text03Inner) {
           gsap.set(text03Inner.querySelectorAll(".char"), {
             duration: 6,
             autoAlpha: 0,
@@ -1022,7 +739,7 @@ export function useInitialLoader() {
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
               },
-              "+=5",
+              "+=5"
             );
 
           timelineRefs.current.text03 = gsap
@@ -1039,11 +756,14 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.text03.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text03.scrollTrigger,
+              timelineRefs.current.text03.scrollTrigger
             );
           }
-
-          // ScrollTrigger text04
+        }
+          // text04
+          const text04Layer = elements.text04.layer;
+          const text04Inner = elements.text04.inner;
+          if (text04Inner) {
           gsap.set(text04Inner.querySelectorAll(".char"), {
             duration: 6,
             autoAlpha: 0,
@@ -1068,7 +788,7 @@ export function useInitialLoader() {
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
               },
-              "+=5",
+              "+=5"
             );
 
           timelineRefs.current.text04 = gsap
@@ -1085,11 +805,14 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.text04.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text04.scrollTrigger,
+              timelineRefs.current.text04.scrollTrigger
             );
           }
-
-          // ScrollTrigger text05
+        }
+          // text05
+          const text05Layer = elements.text05.layer;
+          const text05Inner = elements.text05.inner;
+          if (text05Inner) {
           gsap.set(text05Inner.querySelectorAll(".char"), {
             duration: 6,
             autoAlpha: 0,
@@ -1114,7 +837,7 @@ export function useInitialLoader() {
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
               },
-              "+=5",
+              "+=5"
             );
 
           timelineRefs.current.text05 = gsap
@@ -1131,11 +854,14 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.text05.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text05.scrollTrigger,
+              timelineRefs.current.text05.scrollTrigger
             );
           }
-
-          // ScrollTrigger text06
+        }
+          // text06
+          const text06Layer = elements.text06.layer;
+          const text06Inner = elements.text06.inner;
+          if (text06Inner) {
           gsap.set(text06Inner.querySelectorAll(".char"), {
             duration: 6,
             autoAlpha: 0,
@@ -1160,7 +886,7 @@ export function useInitialLoader() {
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
               },
-              "+=5",
+              "+=5"
             );
 
           timelineRefs.current.text06 = gsap
@@ -1177,11 +903,15 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.text06.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text06.scrollTrigger,
+              timelineRefs.current.text06.scrollTrigger
             );
           }
-
-          // ScrollTrigger text07
+        }
+          
+        // text07
+        const text07Layer = elements.text07.layer;
+        const text07Inner = elements.text07.inner;
+        if (text07Inner) {
           gsap.set(text07Inner.querySelectorAll(".char"), {
             duration: 6,
             autoAlpha: 0,
@@ -1206,7 +936,7 @@ export function useInitialLoader() {
                 stagger: { each: 0.1 },
                 ease: "power1.inOut",
               },
-              "+=5",
+              "+=5"
             );
 
           timelineRefs.current.text07 = gsap
@@ -1223,11 +953,15 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.text07.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.text07.scrollTrigger,
+              timelineRefs.current.text07.scrollTrigger
             );
           }
-
-          // ScrollTrigger framer
+        }
+          // Framer
+          const framerLayer = elements.framer.layer;
+          const framerFramer = elements.framer.framer;
+          const framerAvocado = elements.framer.avocado;
+          if (framerLayer) {
           gsap.set(framerLayer, {
             y: windowHeight + framerLayer.clientHeight * 6,
             x: windowWidth * 0.5 - framerLayer.clientWidth,
@@ -1277,11 +1011,15 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.framer.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.framer.scrollTrigger,
+              timelineRefs.current.framer.scrollTrigger
             );
           }
+        }
 
-          // ScrollTrigger bag
+          // Bag
+          const bagLayer = elements.bag.layer;
+          const bagFlu = elements.bag.flu;
+          if (bagLayer) {
           gsap.set(bagLayer, {
             y: windowHeight + bagLayer.clientHeight * 5,
             x: windowWidth * 0.6,
@@ -1323,11 +1061,16 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.bag.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.bag.scrollTrigger,
+              timelineRefs.current.bag.scrollTrigger
             );
           }
+        }
 
-          // ScrollTrigger plate
+          // Plate
+          const plateLayer = elements.plate.layer;
+          const plateOne = elements.plate.one;
+          const plateEarth = elements.plate.earth;
+          if (plateLayer && plateOne && plateEarth) {
           gsap.set(plateOne, {
             y: -plateOne.clientHeight * 0.5,
             x: -plateOne.clientWidth * 1.25,
@@ -1361,7 +1104,7 @@ export function useInitialLoader() {
                 opacity: 1,
                 x: -plateEarth.clientWidth * 0.28,
               },
-              "<",
+              "<"
             )
             .to(plateLayer, {
               y: -windowHeight,
@@ -1397,11 +1140,17 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.plate.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.plate.scrollTrigger,
+              timelineRefs.current.plate.scrollTrigger
             );
           }
-
-          // ScrollTrigger Earth
+        }
+           // Earth
+           const earthLayer = elements.earth.layer;
+           const earthJohn = elements.earth.john;
+           const earthEarth = elements.earth.earth;
+           const earthSunflower = elements.earth.sunflower;
+           const earthArm = elements.earth.arm;
+           if (earthLayer && earthJohn && earthEarth && earthSunflower && earthArm) {
           gsap.set(earthArm, {
             y: -earthArm.clientHeight * 0.8 + earthEarth.clientHeight,
             x: -earthArm.clientWidth * 0.5,
@@ -1441,7 +1190,7 @@ export function useInitialLoader() {
                 ease: "power1.inOut",
                 opacity: 1,
               },
-              "<",
+              "<"
             )
             .to(earthLayer, {
               ease: "power1.inOut",
@@ -1485,11 +1234,20 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.earth.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.earth.scrollTrigger,
+              timelineRefs.current.earth.scrollTrigger
             );
           }
+        }
 
-          // ScrollTrigger skyscraper
+          
+
+
+          // skyscraper
+          const skyscraperLayer = elements.skyscraper.layer;
+          const skyscraperInner = elements.skyscraper.inner;
+          const skyscraperTower = elements.skyscraper.tower;
+          const skyscraperGlory = elements.skyscraper.glory;
+          if (skyscraperGlory && skyscraperTower) {
           gsap.set(skyscraperGlory, {
             y: -skyscraperGlory.clientHeight * 0.5,
             x: -skyscraperGlory.clientWidth * 0.5,
@@ -1512,7 +1270,7 @@ export function useInitialLoader() {
               ease: "power1.inOut",
               y: Math.min(
                 windowHeight * 0.5 + skyscraperTower.clientHeight * 2,
-                windowHeight * 0.9,
+                windowHeight * 0.9
               ),
               scale: 1,
             })
@@ -1529,7 +1287,7 @@ export function useInitialLoader() {
                 ease: "power1.inOut",
                 rotation: 90,
               },
-              "-=3",
+              "-=3"
             );
 
           const skyscraperFlutterTl = createFlutterTimeline();
@@ -1553,11 +1311,16 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.skyscraper.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.skyscraper.scrollTrigger,
+              timelineRefs.current.skyscraper.scrollTrigger
             );
           }
-
-          // ScrollTrigger tree
+        }
+          // tree
+          const treeLayer = elements.tree.layer;
+          const treeInner = elements.tree.inner;
+          const treeSisters = elements.tree.sisters;
+          const treeCloud = elements.tree.cloud;
+          if (treeSisters && treeCloud) {
           gsap.set(treeSisters, {
             y: -treeSisters.clientHeight * 0.5,
             x: -treeSisters.clientWidth * 0.5,
@@ -1580,7 +1343,7 @@ export function useInitialLoader() {
               ease: "power1.inOut",
               x: Math.min(
                 windowWidth * 0.5 + treeCloud.clientWidth * 1.1,
-                windowWidth,
+                windowWidth
               ),
               y: windowHeight * 0.5 + treeCloud.clientHeight * 0.3,
               scale: 1,
@@ -1610,12 +1373,17 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.tree.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.tree.scrollTrigger,
+              timelineRefs.current.tree.scrollTrigger
             );
           }
+        }
 
-          // ScrollTrigger stick
-
+           // stick
+           const stickLayer = elements.stick.layer;
+           const stickInner = elements.stick.inner;
+           const stickTree = elements.stick.tree;
+           const stickCloud = elements.stick.cloud;
+          if (stickLayer && stickTree) {
           gsap.set(stickTree, {
             y: -140,
             x: -10,
@@ -1677,12 +1445,16 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.stick.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.stick.scrollTrigger,
+              timelineRefs.current.stick.scrollTrigger
             );
           }
+        }
 
-          // ScrollTrigger birds
-
+          // Birds
+          const birdsLayer = elements.birds.layer;
+          const birdsInner = elements.birds.inner;
+          const birdsFrame = elements.birds.frame;
+        if (birdsLayer) {
           birdsFrame.forEach((bird) => {
             const birdsFlutterTl = createFlutterTimeline();
 
@@ -1726,11 +1498,17 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.birds.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.birds.scrollTrigger,
+              timelineRefs.current.birds.scrollTrigger
             );
           }
+        }
 
-          // ScrollTrigger bottle
+          // Bottle
+          const bottleLayer = elements.bottle.layer;
+          const bottleInner = elements.bottle.inner;
+          const bottleWash = elements.bottle.wash;
+          const bottleO = elements.bottle.o;
+          if (bottleLayer) {
           gsap.set(bottleWash, {
             x: 20,
             y: -180,
@@ -1776,11 +1554,18 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.bottle.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.bottle.scrollTrigger,
+              timelineRefs.current.bottle.scrollTrigger
             );
           }
+        }
+          
 
-          // ScrollTrigger jc
+        // JC
+        const jcLayer = elements.jc.layer;
+        const jcInner = elements.jc.inner;
+        const jcCloud = elements.jc.cloud;
+        const jcJ = elements.jc.j;
+        if (jcLayer) {
           gsap.set(jcCloud, {
             x: -60,
             y: -60,
@@ -1823,12 +1608,15 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.jc.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.jc.scrollTrigger,
+              timelineRefs.current.jc.scrollTrigger
             );
           }
-
-          // ScrollTrigger balloon
-
+        }
+          // balloon
+          const balloonLayer = elements.balloon.layer;
+          const balloonInner = elements.balloon.inner;
+          const balloonFlower = elements.balloon.flower;
+          if (balloonLayer) {
           gsap.set(balloonLayer, {
             x: balloonLayer.clientWidth,
             y: windowHeight + balloonLayer.clientHeight * 4,
@@ -1859,16 +1647,22 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.balloon.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.balloon.scrollTrigger,
+              timelineRefs.current.balloon.scrollTrigger
             );
           }
+        }
+          
 
-          // ScrollTrigger windmill
-
+        // Windmill
+        const windmillLayer = elements.windmill.layer;
+        const windmillInner = elements.windmill.inner;
+        const windmillWindmill = elements.windmill.windmill;
+        const windmillWave = elements.windmill.wave;
+          if (windmillLayer) {
           gsap.set(windmillLayer, {
             x: Math.min(
               windmillLayer.clientWidth * 2.5,
-              windowWidth * 0.5 - windmillLayer.clientWidth * 0.25,
+              windowWidth * 0.5 - windmillLayer.clientWidth * 0.25
             ),
             y: windowHeight + windmillLayer.clientHeight * 4,
           });
@@ -1899,12 +1693,18 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.windmill.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.windmill.scrollTrigger,
+              timelineRefs.current.windmill.scrollTrigger
             );
           }
+        }
+          
 
-          // ScrollTrigger argan
-
+        // argan
+        const arganLayer = elements.argan.layer;
+        const arganInner = elements.argan.inner;
+        const arganBottle = elements.argan.bottle;
+        const arganCloud = elements.argan.cloud;
+        if (arganLayer && arganBottle) {
           gsap.set(arganCloud, {
             x: arganBottle.clientWidth * 0.6,
             y: arganBottle.clientHeight * 0.4,
@@ -1913,7 +1713,7 @@ export function useInitialLoader() {
           gsap.set(arganLayer, {
             x: -Math.max(
               windowWidth * 0.25,
-              windowWidth * 0.5 - arganLayer.clientWidth * 1.25,
+              windowWidth * 0.5 - arganLayer.clientWidth * 1.25
             ),
             y: windowHeight + arganLayer.clientHeight * 4,
           });
@@ -1952,12 +1752,18 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.argan.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.argan.scrollTrigger,
+              timelineRefs.current.argan.scrollTrigger
             );
           }
+        }
+          
 
-          // ScrollTrigger chair
-
+        // chair
+        const chairLayer = elements.chair.layer;
+        const chairInner = elements.chair.inner;
+        const chairMain = elements.chair.main;
+        const chairBrush = elements.chair.brush;
+        if (chairLayer && chairMain) {
           gsap.set(chairBrush, {
             x: chairMain.clientWidth / 1.5,
           });
@@ -2006,11 +1812,19 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.chair.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.chair.scrollTrigger,
+              timelineRefs.current.chair.scrollTrigger
             );
           }
+        }
+          
 
-          // ScrollTrigger working
+        // working
+        const workingLayer = elements.working.layer;
+        const workingInner = elements.working.inner;
+        const workingEarth = elements.working.earth;
+        const workingWoman = elements.working.woman;
+        const workingLeaves = elements.working.leaves;
+        if (workingLayer) {
           gsap.set(workingEarth, {
             scale: 0.75,
           });
@@ -2056,12 +1870,15 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.working.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.working.scrollTrigger,
+              timelineRefs.current.working.scrollTrigger
             );
           }
-
-          // ScrollTrigger brandm
-
+        }
+// brandm
+const brandmLayer = elements.brandm.layer;
+const brandmInner = elements.brandm.inner;
+const brandmMain = elements.brandm.main;
+if (brandmLayer) {
           gsap.set(brandmLayer, {
             x: -brandmLayer.clientWidth * 2,
             y: windowHeight + brandmLayer.clientHeight,
@@ -2093,12 +1910,17 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.brandm.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.brandm.scrollTrigger,
+              timelineRefs.current.brandm.scrollTrigger
             );
           }
-
-          // ScrollTrigger berry
-
+        }
+// berry
+const berryLayer = elements.berry.layer;
+const berryInner = elements.berry.inner;
+const berry01 = elements.berry["01"];
+const berry02 = elements.berry["02"];
+const berry03 = elements.berry["03"];
+if (berryLayer) {
           gsap.set(berryLayer, {
             x: -windowWidth * 0.5 + berryLayer.clientWidth,
             scale: 1.25,
@@ -2115,7 +1937,7 @@ export function useInitialLoader() {
             .to(
               berryLayer,
               { duration: 0.2, ease: "power1.inOut", autoAlpha: 1 },
-              "-=0.4",
+              "-=0.4"
             )
             .to(berryLayer, {
               ease: "power1.inOut",
@@ -2156,12 +1978,16 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.berry.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.berry.scrollTrigger,
+              timelineRefs.current.berry.scrollTrigger
             );
           }
-
-          // ScrollTrigger orange
-
+        }
+// orange
+const orangeLayer = elements.orange.layer;
+const orangeInner = elements.orange.inner;
+const orange01 = elements.orange["01"];
+const orange02 = elements.orange["02"];
+if (orangeLayer) {
           gsap.set(orangeLayer, {
             x: -windowWidth * 0.2 + orangeLayer.clientWidth,
             scale: 1.25,
@@ -2178,7 +2004,7 @@ export function useInitialLoader() {
             .to(
               orangeLayer,
               { duration: 0.2, ease: "power1.inOut", autoAlpha: 1 },
-              "-=0.3",
+              "-=0.3"
             )
             .to(orangeLayer, {
               ease: "power1.inOut",
@@ -2212,12 +2038,18 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.orange.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.orange.scrollTrigger,
+              timelineRefs.current.orange.scrollTrigger
             );
           }
-
-          // ScrollTrigger scissors
-
+        }
+// scissors
+const scissorsLayer = elements.scissors.layer;
+const scissorsInner = elements.scissors.inner;
+const scissorsBody = elements.scissors.body;
+const scissorsFront = elements.scissors.front;
+const scissorsBack = elements.scissors.back;
+const scissorsCactus = elements.scissors.cactus;
+if (scissorsLayer) {
           gsap.set(scissorsLayer, {
             y: windowHeight + scissorsLayer.clientHeight * 2,
           });
@@ -2255,7 +2087,7 @@ export function useInitialLoader() {
             .to(
               scissorsBack,
               { duration: t, ease: "expo.inOut", rotation: -s + h },
-              `-=${t}`,
+              `-=${t}`
             );
 
           const scissorsCactusFlutterTl = createFlutterTimeline();
@@ -2279,12 +2111,17 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.scissors.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.scissors.scrollTrigger,
+              timelineRefs.current.scissors.scrollTrigger
             );
           }
+        }
 
-          // ScrollTrigger hand
-
+// hand
+const handLayer = elements.hand.layer;
+const handInner = elements.hand.inner;
+const handBody = elements.hand.body;
+const handLeaf = elements.hand.leaf;
+if (handLayer) {
           gsap.set(handLayer, {
             y: windowHeight + handLayer.clientHeight * 2,
           });
@@ -2331,12 +2168,15 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.hand.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.hand.scrollTrigger,
+              timelineRefs.current.hand.scrollTrigger
             );
           }
-
-          // ScrollTrigger cloud
-
+        }
+// cloud
+const cloudLayer = elements.cloud.layer;
+const cloudInner = elements.cloud.inner;
+const cloudMain = elements.cloud.main;
+if (cloudLayer) {
           gsap.set(cloudLayer, {
             y: windowHeight + cloudLayer.clientHeight * 3,
           });
@@ -2372,12 +2212,21 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.cloud.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.cloud.scrollTrigger,
+              timelineRefs.current.cloud.scrollTrigger
             );
           }
-
-          // ScrollTrigger tractor
-
+        }
+// tractor
+const tractorLayer = elements.tractor.layer;
+const tractorInner = elements.tractor.inner;
+const tractorFlu = elements.tractor.flu;
+const tractorBack = elements.tractor.back;
+const tractorButter = elements.tractor.butter;
+const tractorShampoo = elements.tractor.shampoo;
+const tractorBar = elements.tractor.bar;
+const tractorLavender = elements.tractor.lavender;
+const tractorFront = elements.tractor.front;
+if (tractorLayer) {
           gsap.set(tractorLayer, {
             y: windowHeight + tractorLayer.clientHeight * 2,
           });
@@ -2444,12 +2293,15 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.tractor.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.tractor.scrollTrigger,
+              timelineRefs.current.tractor.scrollTrigger
             );
           }
-
-          // ScrollTrigger brando
-
+        }
+// brando
+const brandoLayer = elements.brando.layer;
+const brandoInner = elements.brando.inner;
+const brandoMain = elements.brando.main;
+if (brandoLayer) {
           gsap.set(brandoLayer, {
             y: windowHeight + brandoLayer.clientHeight * 0.5,
           });
@@ -2479,12 +2331,17 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.brando.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.brando.scrollTrigger,
+              timelineRefs.current.brando.scrollTrigger
             );
           }
+        }
 
-          // ScrollTrigger girl
-
+          // girl
+          const girlLayer = elements.girl.layer;
+          const girlInner = elements.girl.inner;
+          const girlHead = elements.girl.head;
+          const girlArm = elements.girl.arm;
+          if (girlLayer) {
           gsap.set(girlLayer, {
             x: windowWidth * 0.5,
             y: windowHeight + girlLayer.clientHeight * 0.5,
@@ -2504,7 +2361,7 @@ export function useInitialLoader() {
                   : girlLayer.clientHeight * 0.9,
                 scale: 1,
               },
-              "+=0.01",
+              "+=0.01"
             )
             .to(girlLayer, {
               ease: "power1.inOut",
@@ -2535,15 +2392,77 @@ export function useInitialLoader() {
 
           if (timelineRefs.current.girl.scrollTrigger) {
             timelineRefs.current.scrollTriggers.push(
-              timelineRefs.current.girl.scrollTrigger,
+              timelineRefs.current.girl.scrollTrigger
             );
           }
+        }
+// mirror
+const mirrorLayer = elements.mirror.layer;
+const mirrorInner = elements.mirror.inner;
+const mirrorMain = elements.mirror.main;
+const mirrorMountain = elements.mirror.mountain;
+const mirrorBottles = elements.mirror.bottles;
+if (mirrorLayer) {
+          gsap.set(mirrorLayer, {
+            x: windowWidth * 0.5,
+            y: windowHeight + mirrorLayer.clientHeight * 0.5,
+            scale: 0.75,
+          });
+          const mirrorTl = gsap
+            .timeline()
+            .to(
+              mirrorLayer,
+              {
+                ease: "power1.inOut",
+                x: isMd
+                  ? mirrorLayer.clientWidth * 0.1
+                  : mirrorLayer.clientWidth * 0.3,
+                y: isMd
+                  ? mirrorLayer.clientHeight * 0.2
+                  : mirrorLayer.clientHeight * 0.9,
+                scale: 1,
+              },
+              "+=0.01"
+            )
+            .to(mirrorLayer, {
+              ease: "power1.inOut",
+              y: -mirrorLayer.clientHeight,
+              x: mirrorLayer.clientWidth * gsap.utils.random(0.2, 1),
+              scale: 1.5,
+            })
+            .to(mirrorLayer, { duration: 0.2, autoAlpha: 0 }, "-=0.2");
+
+          const mirrorBottlesFlutterTl = createFlutterTimeline();
+          mirrorBottlesFlutterTl.to(mirrorBottles, {
+            duration: "random(2.2, 2.8)",
+            ease: "sine.inOut",
+            y: "random(-30, 30)",
+          });
+
+          timelineRefs.current.mirror = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".scene-14",
+                endTrigger: ".scene-20",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+              },
+            })
+            .add(mirrorTl);
+
+          if (timelineRefs.current.mirror.scrollTrigger) {
+            timelineRefs.current.scrollTriggers.push(
+              timelineRefs.current.mirror.scrollTrigger
+            );
+          }
+        }
           // TODO: step 8
 
           // animation frame
           animateButterflyFrames();
           animateBirdFrames();
-        },
+        }
       );
     };
 
@@ -2586,6 +2505,7 @@ export function useInitialLoader() {
           "cloud",
           "brando",
           "girl",
+          "mirror",
         ];
 
         elementsToAnimate.forEach((elementName) => {

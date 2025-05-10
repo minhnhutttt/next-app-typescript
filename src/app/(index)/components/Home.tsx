@@ -741,7 +741,7 @@ export default function Home() {
           {/* mirror */}
           <div
             data-js="mirror-layer"
-            className="absolute inline-flex justify-center items-center opacity-0"
+            className="absolute inline-flex justify-center items-center"
           >
             <div
               data-js="mirror-inner"
