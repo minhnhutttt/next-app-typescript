@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Zen_Kurenaido } from "next/font/google";
+import { Zen_Kurenaido, Inter } from "next/font/google";
 
 import ScrollContainer from "@/components/scrollContainer";
 import SmoothScroll from "@/components/smoothSCroll";
@@ -20,6 +20,11 @@ const zen = Zen_Kurenaido({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: '--font-inter'
+});
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL ?? "http://localhost:3000"),
   icons: [
@@ -42,7 +47,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
-      <body className={`${zen.className}`}>
+      <body className={`${zen.className} ${inter.variable}`}>
         <ScrollContainer>
           <SmoothScroll>{children}</SmoothScroll>
         </ScrollContainer>
