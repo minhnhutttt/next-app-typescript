@@ -101,7 +101,7 @@ export default function Home() {
             <path
               fill="none"
               stroke="#000"
-              stroke-width="3"
+              strokeWidth="3"
               d="M0 1.5h37M0 10.5h37M0 19.5h37"
             />
           </symbol>
@@ -151,9 +151,9 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <div className="fixed inset-0">
-            
-
+          
+          <div className="fixed inset-0 flex justify-center items-center">
+          <div className="absolute inset-0">
             {/* BrandJ */}
             <div data-js="brandj-layer" className="flex absolute">
               <div
@@ -258,7 +258,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="fixed inset-0 flex justify-center items-center">
             {/* Butterfly */}
             <div
               data-js="butterfly-layer"
@@ -1170,8 +1169,8 @@ export default function Home() {
               </div>
             </div>
             <div className="absolute inset-0 p-5 flex items-center justify-center">
-              <div className="w-full max-w-[1400px] grid grid-cols-2">
-                <div className="relative">
+              <div className="w-full max-w-[1400px] flex max-md:flex-col-reverse max-md:gap-[5vw]">
+                <div className="relative md:w-1/2 min-h-[30vh]">
                   {/* Text 09 */}
                   <div
                     data-js="text09-inner"
@@ -1179,13 +1178,13 @@ export default function Home() {
                   >
                     <p>
                       <span
-                        className="block text-[4.6vw] md:text-[32px]"
+                        className="block text-[4.6vw] md:text-[22px] lg:text-[32px]"
                         data-splitting
                       >
                         そのすべてが、
                       </span>
                       <span
-                        className="block text-[4.6vw] md:text-[32px]"
+                        className="block text-[4.6vw] md:text-[22px] lg:text-[32px]"
                         data-splitting
                       >
                         green beauty という輪となり、広がっていく。
@@ -1199,7 +1198,7 @@ export default function Home() {
                   >
                     <p>
                       <span
-                        className="block text-[4.6vw] md:text-[32px]"
+                        className="block text-[4.6vw] md:text-[22px] lg:text-[32px]"
                         data-splitting
                       >
                         green beauty community を、社会へ。
@@ -1222,9 +1221,9 @@ export default function Home() {
                             <path
                               d="M9 6l6 6-6 6"
                               stroke="white"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               fill="none"
                             />
                           </svg>
@@ -1241,13 +1240,13 @@ export default function Home() {
                   >
                     <p>
                       <span
-                        className="block text-[4.6vw] md:text-[32px]"
+                        className="block text-[4.6vw] md:text-[22px] lg:text-[32px]"
                         data-splitting
                       >
                         人、自然、地球のつながりを大切に。
                       </span>
                       <span
-                        className="block text-[4.6vw] md:text-[32px]"
+                        className="block text-[4.6vw] md:text-[22px] lg:text-[32px]"
                         data-splitting
                       >
                         想いが<strong>循環する営み</strong>を。
@@ -1270,9 +1269,9 @@ export default function Home() {
                             <path
                               d="M9 6l6 6-6 6"
                               stroke="white"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               fill="none"
                             />
                           </svg>
@@ -1282,10 +1281,10 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="relative">
-                  <div className="transitionTextColumn w-full min-h-[30vh] relative">
+                <div className="relative md:w-1/2">
+                  <div className="w-full min-h-[30vh] flex items-center justify-center relative">
                     <figure
-                      className="w-full h-full aspect-square"
+                      className="w-full h-full aspect-square mx-auto max-md:w-[60%]"
                       role="presentation"
                       data-text-transition-group-circle
                     >
