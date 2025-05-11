@@ -23,7 +23,7 @@ const zen = Zen_Kurenaido({
 const inter = Inter({
   weight: ["400"],
   subsets: ["latin"],
-  variable: '--font-inter'
+  variable: "--font-inter",
 });
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL ?? "http://localhost:3000"),

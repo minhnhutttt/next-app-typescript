@@ -421,14 +421,14 @@ export function useInitialLoader() {
         flower: document.querySelector('[data-js="balloon02-flower"]'),
       },
       circle: {
-        group: document.querySelector('[data-text-transition-group-circle]'),
-        ['0']: document.querySelector('[data-text-transition-group-circle]'),
-        ['1']: document.querySelector('[data-text-transition-circle="1"]'),
-        ['2']: document.querySelector('[data-text-transition-circle="2"]'),
-        ['3']: document.querySelector('[data-text-transition-circle="3"]'),
-        ['4']: document.querySelector('[data-text-transition-circle="4"]'),
-        ['5']: document.querySelector('[data-text-transition-circle="5"]'),
-      }
+        group: document.querySelector("[data-text-transition-group-circle]"),
+        ["0"]: document.querySelector("[data-text-transition-group-circle]"),
+        ["1"]: document.querySelector('[data-text-transition-circle="1"]'),
+        ["2"]: document.querySelector('[data-text-transition-circle="2"]'),
+        ["3"]: document.querySelector('[data-text-transition-circle="3"]'),
+        ["4"]: document.querySelector('[data-text-transition-circle="4"]'),
+        ["5"]: document.querySelector('[data-text-transition-circle="5"]'),
+      },
     };
 
     elementsRef.current = elements;
@@ -1016,30 +1016,31 @@ export function useInitialLoader() {
               ease: "power1.out",
             });
             gsap.set(text10Inner, {
-              pointerEvents: "none"
+              pointerEvents: "none",
             });
             const text10Tl = gsap
               .timeline()
               .to(text10Inner, {
-                pointerEvents: "auto"
+                pointerEvents: "auto",
               })
-              .to(text10Inner.querySelectorAll(".char"), {
-                duration: 6,
-                autoAlpha: 1,
-                x: "0.5rem",
-                stagger: { each: 0.1 },
-                ease: "power1.inOut",
-              }, '<')
               .to(
-                text10Border,
+                text10Inner.querySelectorAll(".char"),
                 {
-                  duration: 3,
+                  duration: 6,
                   autoAlpha: 1,
-                  scaleX: 1,
-                  transformOrigin: "center left",
-                  ease: "power1.out",
-                }
+                  x: "0.5rem",
+                  stagger: { each: 0.1 },
+                  ease: "power1.inOut",
+                },
+                "<",
               )
+              .to(text10Border, {
+                duration: 3,
+                autoAlpha: 1,
+                scaleX: 1,
+                transformOrigin: "center left",
+                ease: "power1.out",
+              })
               .to(
                 text10Button,
                 {
@@ -1047,7 +1048,8 @@ export function useInitialLoader() {
                   autoAlpha: 1,
                   x: "0.5rem",
                   ease: "power1.inOut",
-                }, "<"
+                },
+                "<",
               )
               .to(
                 text10Inner.querySelectorAll(".char"),
@@ -1059,24 +1061,20 @@ export function useInitialLoader() {
                   ease: "power1.inOut",
                 },
                 "+=5",
-              ).to(
-                text10Border,
-                {
-                  duration: 3,
-                  autoAlpha: 0,
-                  scaleX: 0,
-                  transformOrigin: "center right",
-                  ease: "power1.out",
-                }
-              ).to(
-                text10Button,
-                {
-                  duration: 6,
-                  autoAlpha: 0,
-                  x: "0.5rem",
-                  ease: "power1.inOut",
-                }
-              );
+              )
+              .to(text10Border, {
+                duration: 3,
+                autoAlpha: 0,
+                scaleX: 0,
+                transformOrigin: "center right",
+                ease: "power1.out",
+              })
+              .to(text10Button, {
+                duration: 6,
+                autoAlpha: 0,
+                x: "0.5rem",
+                ease: "power1.inOut",
+              });
 
             timelineRefs.current.text10 = gsap
               .timeline({
@@ -1120,30 +1118,31 @@ export function useInitialLoader() {
               ease: "power1.out",
             });
             gsap.set(text11Inner, {
-              pointerEvents: "none"
+              pointerEvents: "none",
             });
             const text11Tl = gsap
               .timeline()
               .to(text11Inner, {
-                pointerEvents: "auto"
+                pointerEvents: "auto",
               })
-              .to(text11Inner.querySelectorAll(".char"), {
-                duration: 6,
-                autoAlpha: 1,
-                x: "0.5rem",
-                stagger: { each: 0.1 },
-                ease: "power1.inOut",
-              }, '<')
               .to(
-                text11Border,
+                text11Inner.querySelectorAll(".char"),
                 {
-                  duration: 3,
+                  duration: 6,
                   autoAlpha: 1,
-                  scaleX: 1,
-                  transformOrigin: "center left",
-                  ease: "power1.out",
-                }
+                  x: "0.5rem",
+                  stagger: { each: 0.1 },
+                  ease: "power1.inOut",
+                },
+                "<",
               )
+              .to(text11Border, {
+                duration: 3,
+                autoAlpha: 1,
+                scaleX: 1,
+                transformOrigin: "center left",
+                ease: "power1.out",
+              })
               .to(
                 text11Button,
                 {
@@ -1151,7 +1150,8 @@ export function useInitialLoader() {
                   autoAlpha: 1,
                   x: "0.5rem",
                   ease: "power1.inOut",
-                }, "<"
+                },
+                "<",
               )
               .to(
                 text11Inner.querySelectorAll(".char"),
@@ -1163,24 +1163,20 @@ export function useInitialLoader() {
                   ease: "power1.inOut",
                 },
                 "+=5",
-              ).to(
-                text11Border,
-                {
-                  duration: 3,
-                  autoAlpha: 0,
-                  scaleX: 0,
-                  transformOrigin: "center right",
-                  ease: "power1.out",
-                }
-              ).to(
-                text11Button,
-                {
-                  duration: 6,
-                  autoAlpha: 0,
-                  x: "0.5rem",
-                  ease: "power1.inOut",
-                }
-              );
+              )
+              .to(text11Border, {
+                duration: 3,
+                autoAlpha: 0,
+                scaleX: 0,
+                transformOrigin: "center right",
+                ease: "power1.out",
+              })
+              .to(text11Button, {
+                duration: 6,
+                autoAlpha: 0,
+                x: "0.5rem",
+                ease: "power1.inOut",
+              });
 
             timelineRefs.current.text11 = gsap
               .timeline({
@@ -1309,7 +1305,7 @@ export function useInitialLoader() {
               );
             }
           }
-          
+
           // Framer
           const framerLayer = elements.framer.layer;
           const framerFramer = elements.framer.framer;
@@ -1737,9 +1733,7 @@ export function useInitialLoader() {
           const stickCloud = elements.stick.cloud;
           if (stickLayer && stickTree) {
             gsap.set(stickLayer, {
-              x: isMd
-                ? -windowWidth * 0.2
-                : -windowWidth * 0.1,
+              x: isMd ? -windowWidth * 0.2 : -windowWidth * 0.1,
               y:
                 windowHeight + stickLayer.clientHeight + stickTree.clientHeight,
               scale: 1.25,
@@ -2727,7 +2721,7 @@ export function useInitialLoader() {
               x: windowWidth * 0.5,
               y: mirrorLayer.clientHeight,
               scale: 3,
-              alpha: 0
+              alpha: 0,
             });
             gsap.set(mirrorMountain, {
               y: mirrorMountain.clientHeight * 2,
@@ -2737,24 +2731,22 @@ export function useInitialLoader() {
             });
             const mirrorTl = gsap
               .timeline()
+              .to(mirrorLayer, {
+                duration: 1,
+                ease: "power1.out",
+                x: mirrorLayer.clientWidth,
+                y: 0,
+                scale: 1,
+              })
               .to(
                 mirrorLayer,
-                {
-                  duration: 1,
-                  ease: "power1.out",
-                  x: mirrorLayer.clientWidth,
-                  y: 0,
-                  scale: 1,
-                },
-              ).to(
-                mirrorLayer,
                 { duration: 0.2, ease: "power1.out", alpha: 1 },
-                "-=0.6"
+                "-=0.6",
               )
               .to(
                 [mirrorMountain, mirrorBottles],
-                { stagger: 0.01,  y: 0  },
-                "-=0.5"
+                { stagger: 0.01, y: 0 },
+                "-=0.5",
               )
               .to(mirrorLayer, {
                 duration: 1,
@@ -2763,7 +2755,6 @@ export function useInitialLoader() {
                 scale: 0.5,
                 alpha: 0.75,
               });
-
 
             timelineRefs.current.mirror = gsap
               .timeline({
@@ -2790,7 +2781,7 @@ export function useInitialLoader() {
           if (cloud02Layer) {
             gsap.set(cloud02Layer, {
               x: windowWidth,
-              scale: 0.5
+              scale: 0.5,
             });
             const cloud02Tl = gsap
               .timeline()
@@ -2810,8 +2801,8 @@ export function useInitialLoader() {
                 duration: 2,
                 ease: "power1.inOut",
                 scale: 1.5,
-                  x: -(windowWidth * 0.5 - cloud02Layer.clientWidth * 0.2),
-                  y: cloud02Layer.clientHeight * 0.5
+                x: -(windowWidth * 0.5 - cloud02Layer.clientWidth * 0.2),
+                y: cloud02Layer.clientHeight * 0.5,
               })
               .to(cloud02Layer, { duration: 2, alpha: 0 }, "-=1");
 
@@ -2847,7 +2838,7 @@ export function useInitialLoader() {
           if (cloud03Layer) {
             gsap.set(cloud03Layer, {
               x: windowWidth,
-              scale: 0.5
+              scale: 0.5,
             });
             const cloud03Tl = gsap
               .timeline()
@@ -2866,8 +2857,8 @@ export function useInitialLoader() {
               .to(cloud03Layer, {
                 duration: 2,
                 ease: "power1.inOut",
-                  x: (windowWidth * 0.5 - cloud03Layer.clientWidth * 0.1),
-                  y: -cloud03Layer.clientHeight * 0.5
+                x: windowWidth * 0.5 - cloud03Layer.clientWidth * 0.1,
+                y: -cloud03Layer.clientHeight * 0.5,
               })
               .to(cloud03Layer, { duration: 2, alpha: 0 }, "-=1");
 
@@ -2896,7 +2887,6 @@ export function useInitialLoader() {
               );
             }
           }
-
 
           // balloon02
           const balloon02Layer = elements.balloon02.layer;
@@ -2938,40 +2928,51 @@ export function useInitialLoader() {
 
           // circle
           const circleGroup = elements.circle.group;
-          const circle = elements.circle['0'];
-          const circle1 = elements.circle['1'];
-          const circle2 = elements.circle['2'];
-          const circle3 = elements.circle['3'];
-          const circle4 = elements.circle['4'];
-          const circle5 = elements.circle['5'];
-          if (circleGroup && circle && circle1 && circle2 && circle3 && circle4 && circle5) {
+          const circle = elements.circle["0"];
+          const circle1 = elements.circle["1"];
+          const circle2 = elements.circle["2"];
+          const circle3 = elements.circle["3"];
+          const circle4 = elements.circle["4"];
+          const circle5 = elements.circle["5"];
+          if (
+            circleGroup &&
+            circle &&
+            circle1 &&
+            circle2 &&
+            circle3 &&
+            circle4 &&
+            circle5
+          ) {
             // circleGroup
             gsap.set(circleGroup, {
               autoAlpha: 1,
-              pointerEvents: "none"
+              pointerEvents: "none",
             });
             const circleGroupTl = gsap.timeline().to(circleGroup, {
               ease: "power1.inOut",
               autoAlpha: 1,
-              pointerEvents: "auto"
+              pointerEvents: "auto",
             });
             timelineRefs.current.circleGroup = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-21",
-                endTrigger: ".scene-28",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-                onLeaveBack: () => {
-                  gsap.set([circle2, circle3, circle4, circle5], { scale: 0.8, autoAlpha: 0 });
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-21",
+                  endTrigger: ".scene-28",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                  onLeaveBack: () => {
+                    gsap.set([circle2, circle3, circle4, circle5], {
+                      scale: 0.8,
+                      autoAlpha: 0,
+                    });
+                  },
+                  onLeave: () => {
+                    gsap.set(circle, { autoAlpha: 0, scale: 1.25 });
+                  },
                 },
-                onLeave: () => {
-                  gsap.set(circle, { autoAlpha: 0, scale: 1.25 });
-                },
-              },
-            })
-            .add(circleGroupTl);
+              })
+              .add(circleGroupTl);
             if (timelineRefs.current.circleGroup.scrollTrigger) {
               timelineRefs.current.scrollTriggers.push(
                 timelineRefs.current.circleGroup.scrollTrigger,
@@ -2988,16 +2989,16 @@ export function useInitialLoader() {
               duration: 4,
             });
             timelineRefs.current.circle = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-20",
-                endTrigger: ".scene-24",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(circleTl);
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-20",
+                  endTrigger: ".scene-24",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(circleTl);
             if (timelineRefs.current.circle.scrollTrigger) {
               timelineRefs.current.scrollTriggers.push(
                 timelineRefs.current.circle.scrollTrigger,
@@ -3006,7 +3007,8 @@ export function useInitialLoader() {
 
             // circle2Tl
             gsap.set([circle2, circle4], {
-              scale: 0.8, autoAlpha: 0
+              scale: 0.8,
+              autoAlpha: 0,
             });
             const circle2Tl = gsap.timeline().to([circle2, circle4], {
               scale: 1,
@@ -3015,16 +3017,16 @@ export function useInitialLoader() {
               stagger: 0.04,
             });
             timelineRefs.current.circle2 = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-24",
-                endTrigger: ".scene-25",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(circle2Tl);
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-24",
+                  endTrigger: ".scene-25",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(circle2Tl);
             if (timelineRefs.current.circle2.scrollTrigger) {
               timelineRefs.current.scrollTriggers.push(
                 timelineRefs.current.circle2.scrollTrigger,
@@ -3033,7 +3035,8 @@ export function useInitialLoader() {
 
             // circle3Tl
             gsap.set([circle3, circle5], {
-              scale: 0.8, autoAlpha: 0
+              scale: 0.8,
+              autoAlpha: 0,
             });
             const circle3Tl = gsap.timeline().to([circle3, circle5], {
               scale: 1,
@@ -3042,16 +3045,16 @@ export function useInitialLoader() {
               stagger: 0.04,
             });
             timelineRefs.current.circle3 = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-26",
-                endTrigger: ".scene-27",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(circle3Tl);
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-26",
+                  endTrigger: ".scene-27",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(circle3Tl);
             if (timelineRefs.current.circle3.scrollTrigger) {
               timelineRefs.current.scrollTriggers.push(
                 timelineRefs.current.circle3.scrollTrigger,
@@ -3066,16 +3069,16 @@ export function useInitialLoader() {
               stagger: { each: 0.04, from: "end" },
             });
             timelineRefs.current.circle4 = gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: ".scene-27",
-                endTrigger: ".scene-28",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-              },
-            })
-            .add(circle4Tl);
+              .timeline({
+                scrollTrigger: {
+                  trigger: ".scene-27",
+                  endTrigger: ".scene-28",
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1,
+                },
+              })
+              .add(circle4Tl);
             if (timelineRefs.current.circle4.scrollTrigger) {
               timelineRefs.current.scrollTriggers.push(
                 timelineRefs.current.circle4.scrollTrigger,
@@ -3146,15 +3149,15 @@ export function useInitialLoader() {
             });
           }
         });
-      // Mirror
-      if (elements.mirror.inner) {
-        gsap.to(elements.mirror.inner, {
-          x: moveX * mouseMoveRatios.current.mirror,
-          y: 0,
-          duration: 0.4,
-          ease: "power1.out",
-        });
-      }
+        // Mirror
+        if (elements.mirror.inner) {
+          gsap.to(elements.mirror.inner, {
+            x: moveX * mouseMoveRatios.current.mirror,
+            y: 0,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
         // TODO: step 9
       }
     };

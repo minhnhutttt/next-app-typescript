@@ -151,113 +151,113 @@ export default function Home() {
               </div>
             </div>
           </section>
-          
+
           <div className="fixed inset-0 flex justify-center items-center">
-          <div className="absolute inset-0">
-            {/* BrandJ */}
-            <div data-js="brandj-layer" className="flex absolute">
-              <div
-                data-js="brandj-inner"
-                className="flex items-center justify-center"
-              >
-                <img
-                  data-js="brandj-img"
-                  className="w-[10vw] md:w-[100px]"
-                  src="/assets/images/home/brand__j.webp"
-                  alt=""
-                />
-                <img
-                  data-js="brandj-stickbottle"
-                  className="w-[3vw] md:w-[20px] -mt-[4vw] -ml-[1.5vw]"
-                  src="/assets/images/home/brand__stick-bottle.webp"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            {/* Framer */}
-            <div
-              data-js="framer-layer"
-              className="absolute flex justify-center items-center"
-            >
-              <div
-                data-js="framer-inner"
-                className="flex items-center justify-center"
-              >
-                <img
-                  data-js="framer-framer"
-                  className="w-[30vw] md:w-[300px]"
-                  src="/assets/images/home/brand__farmer.webp"
-                  alt=""
-                />
-                <img
-                  data-js="framer-avocado"
-                  className="w-[10vw] md:w-[80px]"
-                  src="/assets/images/home/brand__avocado.webp"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            {/* Bag */}
-            <div
-              data-js="bag-layer"
-              className="absolute flex justify-center items-center"
-            >
-              <div
-                data-js="bag-inner"
-                className="flex items-center justify-center"
-              >
+            <div className="absolute inset-0">
+              {/* BrandJ */}
+              <div data-js="brandj-layer" className="flex absolute">
                 <div
-                  data-js="bag-flu"
+                  data-js="brandj-inner"
                   className="flex items-center justify-center"
                 >
                   <img
-                    data-js="bag-tree"
-                    className="w-[16vw] md:w-[140px]"
-                    src="/assets/images/home/brand__bg-bag-lady.webp"
+                    data-js="brandj-img"
+                    className="w-[10vw] md:w-[100px]"
+                    src="/assets/images/home/brand__j.webp"
                     alt=""
                   />
                   <img
-                    data-js="bag-bird"
-                    className="w-[8vw] md:w-[80px] md:-ml-[60px] -ml-[5vw] md:mt-[50px] mt-[6vw] relative z-10"
-                    src="/assets/images/home/brand__flag-bird.webp"
+                    data-js="brandj-stickbottle"
+                    className="w-[3vw] md:w-[20px] -mt-[4vw] -ml-[1.5vw]"
+                    src="/assets/images/home/brand__stick-bottle.webp"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              {/* Framer */}
+              <div
+                data-js="framer-layer"
+                className="absolute flex justify-center items-center"
+              >
+                <div
+                  data-js="framer-inner"
+                  className="flex items-center justify-center"
+                >
+                  <img
+                    data-js="framer-framer"
+                    className="w-[30vw] md:w-[300px]"
+                    src="/assets/images/home/brand__farmer.webp"
                     alt=""
                   />
                   <img
-                    data-js="bag-flag"
-                    className="md:w-[160px] w-[18vw] md:-mt-[110px] -mt-[10vw] md:-ml-[10px] -ml-[1vw]"
-                    src="/assets/images/home/brand__flag-002.webp"
+                    data-js="framer-avocado"
+                    className="w-[10vw] md:w-[80px]"
+                    src="/assets/images/home/brand__avocado.webp"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              {/* Bag */}
+              <div
+                data-js="bag-layer"
+                className="absolute flex justify-center items-center"
+              >
+                <div
+                  data-js="bag-inner"
+                  className="flex items-center justify-center"
+                >
+                  <div
+                    data-js="bag-flu"
+                    className="flex items-center justify-center"
+                  >
+                    <img
+                      data-js="bag-tree"
+                      className="w-[16vw] md:w-[140px]"
+                      src="/assets/images/home/brand__bg-bag-lady.webp"
+                      alt=""
+                    />
+                    <img
+                      data-js="bag-bird"
+                      className="w-[8vw] md:w-[80px] md:-ml-[60px] -ml-[5vw] md:mt-[50px] mt-[6vw] relative z-10"
+                      src="/assets/images/home/brand__flag-bird.webp"
+                      alt=""
+                    />
+                    <img
+                      data-js="bag-flag"
+                      className="md:w-[160px] w-[18vw] md:-mt-[110px] -mt-[10vw] md:-ml-[10px] -ml-[1vw]"
+                      src="/assets/images/home/brand__flag-002.webp"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Tree */}
+              <div
+                data-js="tree-layer"
+                className="inline-flex justify-center items-center"
+              >
+                <div
+                  data-js="tree-inner"
+                  className="flex justify-center items-center"
+                >
+                  <img
+                    data-js="tree-sisters"
+                    className="md:w-[280px] object-top object-contain size-[30vw]"
+                    src="/assets/images/home/brand__tree-sisters.webp"
+                    alt=""
+                  />
+                  <img
+                    data-js="tree-cloud"
+                    className="absolute left-1/2 top-1/2 md:w-[500px] w-[70vw] max-w-fit"
+                    src="/assets/images/home/brand__cloud-lg.webp"
                     alt=""
                   />
                 </div>
               </div>
             </div>
-
-            {/* Tree */}
-            <div
-              data-js="tree-layer"
-              className="inline-flex justify-center items-center"
-            >
-              <div
-                data-js="tree-inner"
-                className="flex justify-center items-center"
-              >
-                <img
-                  data-js="tree-sisters"
-                  className="md:w-[280px] object-top object-contain size-[30vw]"
-                  src="/assets/images/home/brand__tree-sisters.webp"
-                  alt=""
-                />
-                <img
-                  data-js="tree-cloud"
-                  className="absolute left-1/2 top-1/2 md:w-[500px] w-[70vw] max-w-fit"
-                  src="/assets/images/home/brand__cloud-lg.webp"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
             {/* Butterfly */}
             <div
               data-js="butterfly-layer"
