@@ -31,7 +31,7 @@ const Footer = () => {
             MANAGEMENT TEAM
           </a>
         </div>
-        <div className="relative flex justify-center pb-10 md:pb-14 md:gap-[60px] gap-7">
+        <div className="relative flex justify-center gap-7 pb-10 md:gap-[60px] md:pb-14">
           <a
             href="https://www.facebook.com/share/1AbGdUJcw2/?mibextid=wwXIfr"
             target="_blank"

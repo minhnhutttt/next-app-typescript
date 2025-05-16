@@ -29,7 +29,7 @@ const BoardMember = () => {
             <div className="h-[160px] w-px origin-bottom rotate-[30deg] bg-[#F34927] md:h-[200px]"></div>
             <div className="pl-[66px] pt-12 leading-[1.2] md:pl-[88px] md:pt-16">
               <p className="mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]">
-                CEO & Founder
+              CEO
               </p>
               <p className="font-['Inspiration'] text-[clamp(24px,10vw,44px)] font-normal tracking-widest md:text-[36px] lg:text-[48px]">
                 Nariaki Terada

@@ -18,7 +18,7 @@ const Message = () => {
   }, [])
 
   return (
-    <section className="relative overflow-hidden md:h-[833px]">
+    <section className="relative overflow-hidden">
       <video
         autoPlay
         muted
@@ -31,12 +31,22 @@ const Message = () => {
         Your browser does not support the video tag.
       </video>
       <div className="relative flex h-full justify-center bg-[linear-gradient(0deg,_rgba(250,_226,_215,_0.60)_0%,_rgba(250,_226,_215,_0.60)_100%)] p-5">
-        <div className="mx-auto w-full max-w-[886px] max-md:py-[150px] md:pt-[285px]">
+        <div className="mx-auto w-full max-w-[886px] max-md:py-[150px] md:py-[150px]">
+        <h2
+        data-scroll
+        className="text--enter overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest mb-[3vw] md:mb-5 md:text-[50px] xl:text-[96px] text-[#F34927]"
+      >
+        <span data-splitting>OUR BUSINESS</span>
+      </h2>
           <p
             data-scroll
-            className="ani-slide-bottom text-[20px] tracking-widest md:text-[36px]"
+            className="ani-slide-bottom text-[16px] tracking-widest md:text-[22px]"
           >
-            {t('Headline')}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: t('Headline'),
+              }}
+            ></span>
           </p>
           <div
             data-scroll

@@ -7,6 +7,7 @@ const MemberContent = () => {
   const tHideyoshiAkita = useTranslations('Members.HideyoshiAkita')
   const tYutakaKanagawa = useTranslations('Members.YutakaKanagawa')
   const tYoshiyaKato = useTranslations('Members.YoshiyaKato')
+  const tHajiTaniguchi = useTranslations('Members.HajiTaniguchi')
 
   return (
     <div className="mb-24 px-5 md:mb-[160px]">
@@ -154,84 +155,33 @@ const MemberContent = () => {
                 data-scroll
                 className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
               >
-                CFO
+                Adviser
               </p>
               <p
                 data-scroll
                 className="text--enter mb-3 overflow-hidden whitespace-nowrap px-2 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
               >
-                <span data-splitting>Yoshiya Kato</span>
+                <span data-splitting>Haji Taniguchi</span>
               </p>
-            </div>
-            <div className="lg:max-w-[478px]">
               <p
                 data-scroll
-                className="text-[12px] leading-[1.4] md:text-[14px]"
+                className="ani-fade-up mb-6 text-[clamp(18px,4.5vw,26px)] md:text-[24px]"
+              >
+                谷口 元
+              </p>
+            </div>
+            <div className="lg:max-w-[550px]">
+              <p
+                data-scroll
+                className="text-[12px] leading-[1.8] md:text-[14px]"
                 dangerouslySetInnerHTML={{
-                  __html: tYoshiyaKato.raw('Introduction'),
+                  __html: tHajiTaniguchi.raw('Introduction'),
                 }}
               ></p>
             </div>
           </div>
         </div>
 
-        <div className="rounded-[40px] border border-[#FF6E40] bg-[#69F0AE]/[0.05] px-5 py-10 md:py-20 lg:px-[60px] text-[#fff]">
-          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#555] px-5 py-10 max-md:flex-col md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
-            <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly2_95s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
-            <div>
-              <p
-                data-scroll
-                className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
-              >
-                CFO
-              </p>
-              <p
-                data-scroll
-                className="text--enter mb-3 overflow-hidden whitespace-nowrap px-2 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
-              >
-                <span data-splitting>Yoshiya Kato</span>
-              </p>
-            </div>
-            <div className="lg:max-w-[478px]">
-              <p
-                data-scroll
-                className="text-[12px] leading-[1.4] md:text-[14px]"
-                dangerouslySetInnerHTML={{
-                  __html: tYoshiyaKato.raw('Introduction'),
-                }}
-              ></p>
-            </div>
-          </div>
-        </div>
-
-        <div className="rounded-[40px] border border-[#FF6E40] bg-[#69F0AE]/[0.05] px-5 py-10 md:py-20 lg:px-[60px] text-[#fff]">
-          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#555] px-5 py-10 max-md:flex-col md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
-            <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly1_65s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
-            <div>
-              <p
-                data-scroll
-                className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
-              >
-                CFO
-              </p>
-              <p
-                data-scroll
-                className="text--enter mb-3 overflow-hidden whitespace-nowrap px-2 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
-              >
-                <span data-splitting>Yoshiya Kato</span>
-              </p>
-            </div>
-            <div className="lg:max-w-[478px]">
-              <p
-                data-scroll
-                className="text-[12px] leading-[1.4] md:text-[14px]"
-                dangerouslySetInnerHTML={{
-                  __html: tYoshiyaKato.raw('Introduction'),
-                }}
-              ></p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   )

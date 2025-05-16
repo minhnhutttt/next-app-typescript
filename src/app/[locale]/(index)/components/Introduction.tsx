@@ -70,18 +70,27 @@ const Introduction = () => {
         <div
           ref={containerRef}
           className="flex max-h-screen flex-col items-center justify-center max-md:py-[200px] md:h-screen"
-        >
+        ><h2
+        data-scroll
+        className="text--enter overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest mb-[3vw] md:mb-5 md:text-[50px] xl:text-[96px] text-[#F34927]"
+      >
+        <span data-splitting>OUR MISSION</span>
+      </h2>
           <div
             ref={charScrollRef}
             data-splitting
-            className="break-keep text-center text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] text-[#ADADAD]/[0.25] md:text-[28px]"
+            className="break-keep text-left text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] text-[#ADADAD]/[0.25] md:text-[28px]"
           >
             {t('Headline1')} <br />
             <br />
             {t('Headline2')}
             <br />
             <br />
-            {t('Headline3')}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: t('Headline3'),
+              }}
+            ></span>
           </div>
         </div>
       </div>
