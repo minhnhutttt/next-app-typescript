@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${noto.className} ${inter.variable}`}>
+      <body className={`${noto.className} ${inter.variable} bg-[url(/assets/images/bg-main.jpg)] text-white`}>
         <ScrollContainer>
           <Header />
           {children}
