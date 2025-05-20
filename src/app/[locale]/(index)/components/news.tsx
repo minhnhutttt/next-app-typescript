@@ -11,10 +11,12 @@ import { useTranslations } from 'next-intl'
 interface SlideItem {
   id: number
   image: string
+  date: string,
   title: string
   type: string
   head: string
   content: string
+  link: string
 }
 
 const News = () => {
@@ -26,27 +28,33 @@ const News = () => {
   const slidesData: SlideItem[] = [
     {
       id: 1,
-      image: '/assets/images/home/news/news-card.jpg',
+      image: '/assets/images/home/news/news-card-b.jpg',
+      date: t('slide1_date'),
       title: t('slide1_title'),
       type: 'press',
       head: t('slide1_head'),
       content: t('slide1_content'),
+      link: "/assets/pdf/2025-05-23 PRESS RELEASE_EN.pdf"
     },
     {
       id: 2,
       image: '/assets/images/home/news/news-card.jpg',
+      date: t('slide2_date'),
       title: t('slide2_title'),
       type: 'press',
       head: t('slide2_head'),
       content: t('slide2_content'),
+      link: "/"
     },
     {
       id: 3,
       image: '/assets/images/home/news/news-card.jpg',
+      date: t('slide3_date'),
       title: t('slide3_title'),
-      type: 'event',
+      type: 'press',
       head: t('slide3_head'),
       content: t('slide3_content'),
+      link: "/"
     },
   ]
 
@@ -109,29 +117,46 @@ const News = () => {
                     />
                   </div>
 
-                  <div className="absolute bottom-20 left-5 z-10 group-hover:opacity-0">
-                    <span className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
+                  <div className="absolute bottom-8 left-5 z-10 group-hover:opacity-0">
+                    <p className="text-[13px] font-semibold text-[#F34927] md:text-[16px]">
+                      {slide.date}
+                    </p>
+                    <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
                       {slide.title}
-                    </span>
+                    </p>
+                    <p className="text-[13px] font-semibold text-[#FAE2D7] md:text-[16px] mt-3 md:mt-6">
+                      {slide.head}
+                    </p>
                   </div>
 
-                  <div className="absolute inset-x-0 bottom-0 z-10 flex h-[80%] translate-y-full flex-col items-center justify-center rounded-[30px] bg-black/60 px-6 py-8 transition-transform duration-300 group-hover:translate-y-0 md:px-[50px]">
+                  <div className="absolute inset-x-0 bottom-0 z-10 flex h-[90%] translate-y-full flex-col items-center justify-center rounded-[30px] bg-black/60 px-6 py-8 transition-transform duration-300 group-hover:translate-y-0 md:px-[50px] overflow-auto">
                     <div className="space-y-6 text-[#FAE2D7] md:space-y-10">
-                      <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
-                        {slide.title}
-                      </p>
+                      <div>
+                        <p className="text-[13px] font-semibold text-[#F34927] md:text-[16px]">
+                          {slide.date}
+                        </p>
+                        <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
+                          {slide.title}
+                        </p>
+                      </div>
                       <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
                         {slide.head}
                       </p>
-                      <p className="text-[13px] leading-[1.8] md:text-[16px]">
+                      <p className="text-[12px] md:text-[14px]">
                         {slide.content}
                       </p>
-                      <p className="text-[13px] leading-[1.8] md:text-[16px]">
-                        {t('contact')} <br />
-                        <a href="mailto:info@a-nexus.com" className="underline">
-                          info@a-nexus.com
-                        </a>
-                      </p>
+                      <div className="flex">
+                      <a
+                        href={slide.link}
+                        target='_blank'
+                        className="flex items-center gap-2 border-b border-[#F34927] pr-2 text-[13px] leading-[1.8] md:text-[16px]"
+                      >
+                        <span className="animate-[spin_2s_linear_infinite] text-[#F34927]">
+                          ★
+                        </span>
+                        <span>{t('contact')} <br /></span>
+                      </a>
+                      </div>
                     </div>
                   </div>
                 </div>
