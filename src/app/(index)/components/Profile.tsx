@@ -34,7 +34,7 @@ const Profile = () => {
           <div className="flex-1 max-lg:px-5 lg:pr-11">
             <h4 className="leading-none">
               <span className="md:text-[48px] text-[10vw] font-semibold tracking-[0.2em]">加藤慶也</span>
-              <span className="md:text-[32px] text-[5vw] font-['Times New Roman'] ml-[2vw] md:ml-7 tracking-[0.12em]">Yoshiya Kato</span>
+              <span className="md:text-[32px] text-[5vw] font-['Times_New_Roman'] ml-[2vw] md:ml-7 tracking-[0.12em]">Yoshiya Kato</span>
             </h4>
             <p className="md:text-[18px] text-[4vw] leading-loose mt-[7vw] md:mt-8 tracking-widest">
               ベンチャー投資、スポーツビジネス、エンターテインメント、ITソリューションなど、幅広い分野での経験と実績を持ち、企業の成長戦略や新規事業開発において的確なアドバイスを提供します。また、国際的な視野を活かし、海外展開やクロスボーダーM&Aなど、グローバルなビジネス展開にも精通しています。
