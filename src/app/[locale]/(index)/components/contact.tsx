@@ -88,7 +88,7 @@ const Contact = () => {
             </p>
             <div className="mt-[50px] flex justify-center md:mt-[72px]">
               <Button
-                href="maito:info@a-nexus.com"
+                href="maito:contact@a-nexus.com"
                 rect="md:w-[340px] w-[300px] h-20 md:h-[110px] flex items-center justify-center bg-[#F34927] rounded-full md:text-[30px] text-[20px] text-[#FAE2D7]"
               >
                 {t('Contact')}
@@ -103,21 +103,21 @@ const Contact = () => {
         className="relative flex items-center justify-center overflow-hidden bg-[url(/assets/images/home/apply-bg.png)] bg-cover px-5 py-[100px] md:py-[178px]"
       >
         <div className="">
-        <h2
-        data-scroll
-        className="text--enter overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest mb-[3vw] md:mb-5 md:text-[50px] xl:text-[96px] text-white"
-      >
-        <span data-splitting>JOIN US</span>
-      </h2>
+          <h2
+            data-scroll
+            className="text--enter mb-[3vw] overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest text-white md:mb-5 md:text-[50px] xl:text-[96px]"
+          >
+            <span data-splitting>JOIN US</span>
+          </h2>
           <p className="text-center text-[24px] font-semibold tracking-widest text-white md:text-[32px]">
             {t('Aspiring')}
           </p>
-          <p className="mx-auto mt-7 w-[340px] text-[16px] md:w-[640px] md:text-[20px] text-white">
-          {t('Message')}
-            </p>
+          <p className="mx-auto mt-7 w-[340px] text-[16px] text-white md:w-[640px] md:text-[20px]">
+            {t('Message')}
+          </p>
           <div className="mt-[30px] flex justify-center md:mt-[60px]">
             <Button
-              href="maito:info@a-nexus.com"
+              href="maito:contact@a-nexus.com"
               rect="md:w-[340px] w-[300px] h-20 md:h-[110px] flex items-center justify-center bg-white rounded-full md:text-[30px] text-[20px] text-[#F34927]"
             >
               {t('Apply')}

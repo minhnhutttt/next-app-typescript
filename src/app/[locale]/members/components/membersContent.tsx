@@ -82,9 +82,9 @@ const MemberContent = () => {
         </div>
 
         <div className="rounded-[40px] border border-[#1EF1FF] bg-[#1EF1FF]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
-          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#1EF1FF] px-5 py-10 max-md:flex-col md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#1EF1FF] px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
             <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly3_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
-            <div className="text-[#111]">
+            <div className="text-[#111] flex-1">
               <p
                 data-scroll
                 className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
@@ -106,7 +106,7 @@ const MemberContent = () => {
               ></p>
             </div>
 
-            <div className="lg:max-w-[478px]">
+            <div className="lg:max-w-[480px]">
               <div data-scroll className="ani-fade-up">
                 <img
                   className="w-full max-w-[480px]"
@@ -119,23 +119,27 @@ const MemberContent = () => {
         </div>
 
         <div className="rounded-[40px] border border-[#FDD213] bg-[#FDD213]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
-          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#FDD213] px-5 py-10 max-md:flex-col md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#FDD213] px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
             <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly2_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
-            <div className="text-[#111]">
+            <div className="text-[#111] flex-1">
+              <p
+                data-scroll
+                className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
+              >
+                CSO
+              </p>
               <p
                 data-scroll
                 className="text--enter mb-3 overflow-hidden whitespace-nowrap px-1 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
               >
-                <span data-splitting>Hideyoshi Akita</span>
+                <span data-splitting>Brandon Tatum</span>
               </p>
               <p
                 data-scroll
                 className="ani-fade-up mb-6 text-[clamp(18px,4.5vw,26px)] md:text-[24px]"
               >
-                秋田 英好
+                ブランドン・テイタム
               </p>
-            </div>
-            <div className="lg:max-w-[478px]">
               <p
                 data-scroll
                 className="ani-fade-up text-[12px] leading-[1.4] md:text-[14px]"
@@ -144,13 +148,57 @@ const MemberContent = () => {
                 }}
               ></p>
             </div>
+            <div className="lg:max-w-[480px]">
+              <div data-scroll className="ani-fade-up">
+                <img
+                  className="w-full max-w-[480px]"
+                  src="/assets/images/members/brandon-tatum.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="rounded-[40px] border border-[#FF6E40] bg-[#69F0AE]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
-          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#FF6E40] px-5 py-10 max-md:flex-col md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+        <div className="rounded-[40px] border border-gray-500 bg-gray-700/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+          <div className="relative flex min-h-[400px] max-md:items-center justify-center gap-5 rounded-[20px] bg-gray-400 px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
             <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly4_65s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
-            <div className="text-[#111]">
+            <div className="text-[#111] flex-1">
+              <p
+                data-scroll
+                className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
+              >
+                Adviser
+              </p>
+              <p
+                data-scroll
+                className="text--enter mb-3 overflow-hidden whitespace-nowrap px-2 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
+              >
+                <span data-splitting>Leo Sakai</span>
+              </p>
+              <p
+                data-scroll
+                className="ani-fade-up mb-6 text-[clamp(18px,4.5vw,26px)] md:text-[24px]"
+              >
+                酒井レオ
+              </p>
+              <p
+                data-scroll
+                className="text-[12px] leading-[1.8] md:text-[14px]"
+              ></p>
+            </div>
+            <div className="lg:max-w-[480px]">
+              <div data-scroll className="ani-fade-up md:mt-20">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-[40px] border border-gray-500 bg-gray-700/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+          <div className="relative flex min-h-[400px] max-md:items-center justify-center gap-5 rounded-[20px] bg-gray-400 px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+            <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly4_65s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
+            <div className="text-[#111] flex-1">
               <p
                 data-scroll
                 className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
@@ -169,8 +217,6 @@ const MemberContent = () => {
               >
                 谷口 元
               </p>
-            </div>
-            <div className="lg:max-w-[550px]">
               <p
                 data-scroll
                 className="text-[12px] leading-[1.8] md:text-[14px]"
@@ -179,9 +225,17 @@ const MemberContent = () => {
                 }}
               ></p>
             </div>
+            <div className="lg:max-w-[480px]">
+              <div data-scroll className="ani-fade-up md:mt-20">
+                <img
+                  className="w-full max-w-[480px]"
+                  src="/assets/images/members/taniguchi.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   )

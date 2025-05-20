@@ -70,12 +70,13 @@ const Introduction = () => {
         <div
           ref={containerRef}
           className="flex max-h-screen flex-col items-center justify-center max-md:py-[200px] md:h-screen"
-        ><h2
-        data-scroll
-        className="text--enter overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest mb-[3vw] md:mb-5 md:text-[50px] xl:text-[96px] text-[#F34927]"
-      >
-        <span data-splitting>OUR MISSION</span>
-      </h2>
+        >
+          <h2
+            data-scroll
+            className="text--enter mb-[3vw] overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest text-[#F34927] md:mb-5 md:text-[50px] xl:text-[96px]"
+          >
+            <span data-splitting>OUR MISSION</span>
+          </h2>
           <div
             ref={charScrollRef}
             data-splitting
