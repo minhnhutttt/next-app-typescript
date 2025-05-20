@@ -10,8 +10,11 @@ export default function Home() {
       <div className="bg-[url(/assets/images/bg-1.png)] bg-cover bg-no-repeat">
         <Introduction />
         <Diagnosis />
-        <Profile />
       </div>
+      <div className="bg-[url(/assets/images/bg-2.png)] bg-cover bg-no-repeat bg-right-bottom">
+        <Profile />
+        </div>
+
     </main>
   );
 }
