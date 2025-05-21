@@ -37,7 +37,7 @@ const data = [
 ]
 
 const FeatureItem = ({id, title, text, image, list}: {id: string, title: string, text: ReactNode,image: string, list?: string[]}) => (
-    <div className="border border-[#01A92E] bg-[linear-gradient(17deg,_#012200_2.14%,_#00320D_22.45%,_#003F18_43.68%,_#004914_49.22%,_#00650C_67.68%,_#007606_82.45%,_#007C05_94.45%)] [box-shadow:0px_4px_80px_0px_rgba(8,_90,_29,_0.60)] py-[15vw] md:py-[95px] px-5 relative overflow-hidden
+    <div className="fade-up border border-[#01A92E] bg-[linear-gradient(17deg,_#012200_2.14%,_#00320D_22.45%,_#003F18_43.68%,_#004914_49.22%,_#00650C_67.68%,_#007606_82.45%,_#007C05_94.45%)] [box-shadow:0px_4px_80px_0px_rgba(8,_90,_29,_0.60)] py-[15vw] md:py-[95px] px-5 relative overflow-hidden
 ">
     <span className="absolute top-0 left-0 md:left-[-25px] leading-[0.7] font-['Times_New_Roman'] text-white/20 font-bold italic text-[20vw] md:text-[400px]">{id}</span>
     <div className="w-full max-w-[1210px] mx-auto flex items-center gap-10 lg:gap-2 max-lg:flex-col-reverse">
@@ -69,7 +69,7 @@ const Features = () => {
       className="px-5 mt-10"
     >
       <div className="w-full max-w-[1440px] mx-auto">
-        <h3 className="md:text-[80px] text-[10vw] font-semibold text-center tracking-wider">経愛はこう使う！<br />使用ステップ</h3>
+        <h3 className="fade-up md:text-[80px] text-[10vw] font-semibold text-center tracking-wider">経愛はこう使う！<br />使用ステップ</h3>
         <div className="w-full max-w-[1360px] mx-auto md:mt-16 mt-[10vw] md:space-y-20 space-y-[10vw]">
             {data.map((item)=>
             <FeatureItem

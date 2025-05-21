@@ -30,9 +30,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${noto.className} ${inter.variable} bg-[url(/assets/images/bg-main.jpg)] text-white`}>
         <ScrollContainer>
-          <Header />
-          {children}
-          <Footer />
+          <div className="bg-[url(/assets/images/text-footer.svg)] md:bg-right-bottom bg-[bottom_200px_right] bg-no-repeat max-lg:bg-[size:70%_auto] max-md:bg-[size:300px_auto]">
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </ScrollContainer>
         </body>
     </html>

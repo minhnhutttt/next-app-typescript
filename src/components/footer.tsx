@@ -2,53 +2,28 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-[#080A1A] md:pt-[90px] pt-20 pb-6">
-      <div className="flex max-md:flex-col justify-center items-center md:pb-10 pb-7 md:gap-[55px] gap-10 md:mb-12 mb-8">
-        <a href="/" className="">
+    <footer className="border-t border-white pb-5">
+      <div className="flex justify-center items-center py-20">
+        <a href="/" className="block hover:opacity-75 duration-150 transition-opacity">
           <img
-            className="max-md:w-[200px]"
+            className="max-md:w-[160px]"
             src="/assets/images/logo.svg"
             alt=""
           />
         </a>
-        <div className="flex justify-center">
-          <ul className="text-white md:text-[16px] text-[14px] font-medium md:pr-9">
-            <li>
-              <a href="/#features" className="block px-6 py-[5px]">
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="/how-to-use" className="block px-6 py-[5px]">
-                How to use
-              </a>
-            </li>
-            <li>
-              <a href="/#faq" className="block px-6 py-[5px]">
-                FAQ
-              </a>
-            </li>
-            <li>
-              <a href="mailto:info@teleport-exchange.io" className="block px-6 py-[5px]">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="">
-          <a
-            href="https://teleport-exchange.io/"
-            target="_blank"
-            className="w-[240px] md:h-[55px] h-12 rounded-[10px] flex justify-center items-center font-extrabold text-[20px] text-white tracking-[0.2em] bg-[linear-gradient(90deg,_#19539D_0.02%,_#627EEA_99.97%)]"
-          >
-            EXCHANGE
-          </a>
-        </div>
       </div>
 
+      <ul className="flex flex-col items-center justify-center md:text-[16px] text-[14px] font-bold gap-[30px] pb-16 md:pb-[116px]">
+        <li>
+          <a href="/" className="hover:opacity-75 duration-150 transition-opacity">利用規約</a>
+        </li>
+        <li>
+          <a href="/" className="hover:opacity-75 duration-150 transition-opacity">プライバシーポリシー</a>
+        </li>
+      </ul>
+
       <p className="md:text-[16px] text-[12px] text-white text-center">
-        Copyright © 2025 TELEPORT EXCHANGE
+        Copyright 2025 KEI-AI
       </p>
     </footer>
   );

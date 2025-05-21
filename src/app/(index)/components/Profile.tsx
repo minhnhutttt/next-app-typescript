@@ -4,7 +4,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode } from "react";
 
 const ProfileItem = ({title, children}: {title: string, children: ReactNode}) => (
-  <div className="space-y-2">
+  <div className="fade-up space-y-2">
     <p className="md:text-[20px] text-[5vw] font-semibold tracking-[0.1em]">{title}</p>
     <p className="md:text-[18px] text-[4vw] tracking-[0.08em]">{children}</p>
   </div>
@@ -18,7 +18,7 @@ const Profile = () => {
       ref={ref}
     >
       <div className="flex justify-center items-center px-5">
-        <h3 className="font-semibold relative px-5 md:pl-10 md:pr-7 flex items-center justify-center py-6 md:py-9">
+        <h3 className="fade-up font-semibold relative px-5 md:pl-10 md:pr-7 flex items-center justify-center py-6 md:py-9">
             <span className="w-[5vw] md:w-[92px] h-full border border-white absolute left-0 border-r-0"></span>
             <div className="">
                 <p className="text-[6.5vw] md:text-[52px] xl:text-[80px] tracking-[0.2em] leading-none">経愛に宿した経営人格</p>
@@ -28,18 +28,18 @@ const Profile = () => {
         </h3>
       </div>
       <div className="flex gap-[60px] mt-[5vw] md:mt-16 pb-[208px] max-lg:flex-col max-lg:items-center max-lg:justify-center">
-          <span className="max-lg:w-auto max-xl:w-1/2">
+          <span className="fade-up max-lg:w-auto max-xl:w-1/2">
             <img src="/assets/images/img-profile.png" alt="" />
           </span>
           <div className="flex-1 max-lg:px-5 lg:pr-11">
-            <h4 className="leading-none">
+            <h4 className="fade-up leading-none">
               <span className="md:text-[48px] text-[10vw] font-semibold tracking-[0.2em]">加藤慶也</span>
               <span className="md:text-[32px] text-[5vw] font-['Times_New_Roman'] ml-[2vw] md:ml-7 tracking-[0.12em]">Yoshiya Kato</span>
             </h4>
-            <p className="md:text-[18px] text-[4vw] leading-loose mt-[7vw] md:mt-8 tracking-widest">
+            <p className="fade-up md:text-[18px] text-[4vw] leading-loose mt-[7vw] md:mt-8 tracking-widest">
               ベンチャー投資、スポーツビジネス、エンターテインメント、ITソリューションなど、幅広い分野での経験と実績を持ち、企業の成長戦略や新規事業開発において的確なアドバイスを提供します。また、国際的な視野を活かし、海外展開やクロスボーダーM&Aなど、グローバルなビジネス展開にも精通しています。
             </p>
-            <div className="flex mt-[7vw] md:mt-6 items-center gap-9">
+            <div className="fade-up flex mt-[7vw] md:mt-6 items-center gap-9">
               <p className="md:text-[24px] text-[5.5vw] tracking-[0.2em]">主な経歴と実績</p>
               <span className="flex-1 h-px bg-white"></span>
             </div>
