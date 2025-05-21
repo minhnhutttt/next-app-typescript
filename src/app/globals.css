@@ -55,3 +55,82 @@ body {
   font-size: 1.5rem;
   color: #ccc;
 }
+
+
+.btn {
+    --ease-out: cubic-bezier(.165,.84,.44,1);
+    --ease-in: cubic-bezier(.895,.03,.685,.22);
+    --duration: .35s
+}
+
+
+
+.btn-line-top-l {
+    transform: scaleX(1);
+    transition: transform var(--duration) var(--ease-out);
+    transition-delay: var(--duration)
+}
+
+.btn-line-top-r,.btn:hover .btn-line-top-l {
+    transform: scaleX(0);
+    transition: transform var(--duration) var(--ease-in);
+    transition-delay: 0s
+}
+
+.btn:hover .btn-line-top-r {
+    transform: scaleX(1)
+}
+
+.btn-line-side-l,.btn:hover .btn-line-top-r {
+    transition: transform var(--duration) var(--ease-out);
+    transition-delay: var(--duration)
+}
+
+.btn-line-side-l {
+    transform: translateY(calc(-100% + 1.2rem))
+}
+
+.btn:hover .btn-line-side-l {
+    transform: translateY(calc(100% - 1.2rem));
+    transition: transform var(--duration) var(--ease-in);
+    transition-delay: 0s
+}
+
+.btn-line-side-r {
+    transform: translateY(calc(100% - 1.2rem));
+    transition: transform var(--duration) var(--ease-out);
+    transition-delay: var(--duration)
+}
+
+.btn:hover .btn-line-side-r {
+    transform: translateY(calc(-100% + 1.2rem))
+}
+
+.btn-line-bottom-l,.btn:hover .btn-line-side-r {
+    transition: transform var(--duration) var(--ease-in);
+    transition-delay: 0s
+}
+
+.btn-line-bottom-l {
+    transform: scaleX(0)
+}
+
+.btn-line-bottom-r,.btn:hover .btn-line-bottom-l {
+    transform: scaleX(1);
+    transition: transform var(--duration) var(--ease-out);
+    transition-delay: var(--duration)
+}
+
+.btn:hover .btn-line-bottom-r {
+    transform: scaleX(0);
+    transition: transform var(--duration) var(--ease-in);
+    transition-delay: 0s
+}
+
+.btn.router-link-exact-active {
+    pointer-events: none
+}
+
+.btn.router-link-exact-active:before {
+    transform: scale(1)
+}

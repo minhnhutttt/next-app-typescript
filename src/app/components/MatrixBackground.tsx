@@ -2,20 +2,25 @@
 import React, { useRef, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 
+// Create a proper component for the matrix effect
+// @ts-ignore
+const MatrixEffectComponent = ({ canvasRef, cleanup }) => {
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (cleanup) cleanup();
+    };
+  }, [cleanup]);
+  
+  return null;
+};
+
 // Import conditionally with dynamic import
 const DynamicMatrixEffect = dynamic(
   () => import('../hooks/useMatrixEffect').then(mod => ({ 
     default: ({ canvasRef }: { canvasRef: React.RefObject<HTMLCanvasElement> }) => {
       const { cleanup } = mod.default(canvasRef);
-      
-      // Cleanup on unmount
-      useEffect(() => {
-        return () => {
-          if (cleanup) cleanup();
-        };
-      }, [cleanup]);
-      
-      return null;
+      return <MatrixEffectComponent canvasRef={canvasRef} cleanup={cleanup} />;
     }
   })),
   { ssr: false } // Important: disable SSR
@@ -38,7 +43,7 @@ const MatrixBackground: React.FC<MatrixBackgroundProps> = ({ className }) => {
     <>
       <canvas 
         ref={canvasRef} 
-        className="fixed inset-0"
+        className={`fixed inset-0 ${className || ''}`}
       />
       {isMounted && <DynamicMatrixEffect canvasRef={canvasRef} />}
     </>

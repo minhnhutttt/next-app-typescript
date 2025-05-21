@@ -374,6 +374,25 @@ const useMatrixEffect = (
         const plane = new THREE.Mesh(geometry, material);
         plane.position.z = 5;
         scene.add(plane);
+
+        const donutGeometry = new THREE.TorusGeometry(2, 0.5, 16, 32);
+  
+        // Tạo material cho donut - có thể dùng material đơn giản hoặc shader material
+        const donutMaterial = new THREE.MeshBasicMaterial({ 
+          color: 0x00ff88, 
+          wireframe: true,  // Hiệu ứng wireframe phù hợp với theme Matrix
+          transparent: true,
+          opacity: 0.7
+        });
+        
+        // Tạo mesh từ geometry và material
+        const donut = new THREE.Mesh(donutGeometry, donutMaterial);
+        
+        // Đặt vị trí donut phía trước plane để nó hiển thị
+        donut.position.z = 1;
+        
+        // Thêm donut vào scene
+        scene.add(donut);
         
         // Animation loop with smooth timing
         let frameId: number = 0;
