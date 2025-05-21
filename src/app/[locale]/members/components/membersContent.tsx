@@ -44,76 +44,10 @@ const MemberContent = () => {
             </div>
             <div data-scroll className="ani-fade-up">
               <img
-                className="w-full max-w-[480px]"
+                className="w-full max-w-[480px] rounded-[10px] [box-shadow:0px_4px_70px_0px_rgba(0,_0,_0,_0.25)]"
                 src="/assets/images/members/ceo.jpg"
                 alt=""
               />
-            </div>
-          </div>
-        </div>
-
-        <div className="rounded-[40px] border border-[#69F0AE] bg-[#69F0AE]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
-          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#69F0AE] px-5 py-10 max-md:flex-col md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
-            <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly4_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
-            <div className="text-[#111]">
-              <p
-                data-scroll
-                className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
-              >
-                CFO
-              </p>
-              <p
-                data-scroll
-                className="text--enter mb-3 overflow-hidden whitespace-nowrap px-2 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
-              >
-                <span data-splitting>Yoshiya Kato</span>
-              </p>
-            </div>
-            <div className="lg:max-w-[478px]">
-              <p
-                data-scroll
-                className="text-[12px] leading-[1.4] md:text-[14px]"
-                dangerouslySetInnerHTML={{
-                  __html: tYoshiyaKato.raw('Introduction'),
-                }}
-              ></p>
-            </div>
-          </div>
-        </div>
-
-        <div className="rounded-[40px] border border-[#1EF1FF] bg-[#1EF1FF]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
-          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#1EF1FF] px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
-            <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly3_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
-            <div className="flex-1 text-[#111]">
-              <p
-                data-scroll
-                className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
-              >
-                CMO
-              </p>
-              <p
-                data-scroll
-                className="text--enter mb-3 overflow-hidden whitespace-nowrap px-2 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
-              >
-                <span data-splitting>Yutaka Kanagawa</span>
-              </p>
-              <p
-                data-scroll
-                className="ani-fade-up text-[12px] leading-[1.4] md:text-[14px]"
-                dangerouslySetInnerHTML={{
-                  __html: tYutakaKanagawa.raw('Introduction'),
-                }}
-              ></p>
-            </div>
-
-            <div className="lg:max-w-[480px]">
-              <div data-scroll className="ani-fade-up">
-                <img
-                  className="w-full max-w-[480px]"
-                  src="/assets/images/members/cmo.jpg"
-                  alt=""
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -151,7 +85,7 @@ const MemberContent = () => {
             <div className="lg:max-w-[480px]">
               <div data-scroll className="ani-fade-up">
                 <img
-                  className="w-full max-w-[480px]"
+                  className="w-full max-w-[480px] rounded-[10px] [box-shadow:0px_4px_70px_0px_rgba(0,_0,_0,_0.25)]"
                   src="/assets/images/members/brandon-tatum.jpg"
                   alt=""
                 />
@@ -160,7 +94,80 @@ const MemberContent = () => {
           </div>
         </div>
 
-        <div className="rounded-[40px] border border-gray-500 bg-gray-700/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+        <div className="rounded-[40px] border border-[#69F0AE] bg-[#69F0AE]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#69F0AE] px-5 py-10 max-md:flex-col md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+            <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly4_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
+            <div className="text-[#111]">
+              <p
+                data-scroll
+                className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
+              >
+                CFO
+              </p>
+              <p
+                data-scroll
+                className="text--enter mb-3 overflow-hidden whitespace-nowrap px-2 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
+              >
+                <span data-splitting>Yoshiya Kato</span>
+              </p>
+              <p
+                data-scroll
+                className="text-[12px] leading-[1.4] md:text-[14px]"
+                dangerouslySetInnerHTML={{
+                  __html: tYoshiyaKato.raw('Introduction'),
+                }}
+              ></p>
+            </div>
+            <div className="lg:max-w-[478px] w-full">
+              <div data-scroll className="ani-fade-up">
+                <img
+                  className="w-full max-w-[480px] rounded-[10px] [box-shadow:0px_4px_70px_0px_rgba(0,_0,_0,_0.25)]"
+                  src="/assets/images/members/kato.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-[40px] border border-[#1EF1FF] bg-[#1EF1FF]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#1EF1FF] px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+            <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly3_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
+            <div className="flex-1 text-[#111]">
+              <p
+                data-scroll
+                className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
+              >
+                CMO
+              </p>
+              <p
+                data-scroll
+                className="text--enter mb-3 overflow-hidden whitespace-nowrap px-2 font-['Inspiration'] text-[clamp(18px,9vw,44px)] font-normal tracking-wider md:text-[36px] lg:text-[64px]"
+              >
+                <span data-splitting>Yutaka Kanagawa</span>
+              </p>
+              <p
+                data-scroll
+                className="ani-fade-up text-[12px] leading-[1.4] md:text-[14px]"
+                dangerouslySetInnerHTML={{
+                  __html: tYutakaKanagawa.raw('Introduction'),
+                }}
+              ></p>
+            </div>
+
+            <div className="lg:max-w-[480px]">
+              <div data-scroll className="ani-fade-up">
+                <img
+                  className="w-full max-w-[480px] rounded-[10px] [box-shadow:0px_4px_70px_0px_rgba(0,_0,_0,_0.25)]"
+                  src="/assets/images/members/cmo.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="rounded-[40px] border border-gray-500 bg-gray-700/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
           <div className="relative flex min-h-[400px] justify-center gap-5 rounded-[20px] bg-gray-400 px-5 py-10 max-md:flex-col-reverse max-md:items-center md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
             <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly4_65s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
             <div className="flex-1 text-[#111]">
@@ -191,7 +198,7 @@ const MemberContent = () => {
               <div data-scroll className="ani-fade-up md:mt-20"></div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="rounded-[40px] border border-gray-500 bg-gray-700/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
           <div className="relative flex min-h-[400px] justify-center gap-5 rounded-[20px] bg-gray-400 px-5 py-10 max-md:flex-col-reverse max-md:items-center md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
@@ -201,7 +208,7 @@ const MemberContent = () => {
                 data-scroll
                 className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
               >
-                Adviser
+                Advisor
               </p>
               <p
                 data-scroll
@@ -226,7 +233,7 @@ const MemberContent = () => {
             <div className="lg:max-w-[480px]">
               <div data-scroll className="ani-fade-up md:mt-20">
                 <img
-                  className="w-full max-w-[480px]"
+                  className="w-full max-w-[480px] rounded-[10px] [box-shadow:0px_4px_70px_0px_rgba(0,_0,_0,_0.25)]"
                   src="/assets/images/members/taniguchi.jpg"
                   alt=""
                 />

@@ -11,12 +11,13 @@ import { useTranslations } from 'next-intl'
 interface SlideItem {
   id: number
   image: string
-  date: string,
+  date: string
   title: string
   type: string
   head: string
   content: string
   link: string
+  available?: boolean
 }
 
 const News = () => {
@@ -34,7 +35,8 @@ const News = () => {
       type: 'press',
       head: t('slide1_head'),
       content: t('slide1_content'),
-      link: "/assets/pdf/2025-05-23 PRESS RELEASE_EN.pdf"
+      link: '/assets/pdf/2025-05-23 PRESS RELEASE_EN.pdf',
+      available: true,
     },
     {
       id: 2,
@@ -44,7 +46,7 @@ const News = () => {
       type: 'press',
       head: t('slide2_head'),
       content: t('slide2_content'),
-      link: "/"
+      link: '/',
     },
     {
       id: 3,
@@ -54,7 +56,8 @@ const News = () => {
       type: 'press',
       head: t('slide3_head'),
       content: t('slide3_content'),
-      link: "/"
+      link: '/',
+      
     },
   ]
 
@@ -124,12 +127,12 @@ const News = () => {
                     <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
                       {slide.title}
                     </p>
-                    <p className="text-[13px] font-semibold text-[#FAE2D7] md:text-[16px] mt-3 md:mt-6">
+                    <p className="mt-3 text-[13px] font-semibold text-[#FAE2D7] md:mt-6 md:text-[16px]">
                       {slide.head}
                     </p>
                   </div>
 
-                  <div className="absolute inset-x-0 bottom-0 z-10 flex h-[90%] translate-y-full flex-col items-center justify-center rounded-[30px] bg-black/60 px-6 py-8 transition-transform duration-300 group-hover:translate-y-0 md:px-[50px] overflow-auto">
+                  <div className="absolute inset-x-0 bottom-0 z-10 flex h-[90%] translate-y-full flex-col items-center justify-center overflow-auto rounded-[30px] bg-black/60 px-6 py-8 transition-transform duration-300 group-hover:translate-y-0 md:px-[50px]">
                     <div className="space-y-6 text-[#FAE2D7] md:space-y-10">
                       <div>
                         <p className="text-[13px] font-semibold text-[#F34927] md:text-[16px]">
@@ -145,18 +148,22 @@ const News = () => {
                       <p className="text-[12px] md:text-[14px]">
                         {slide.content}
                       </p>
+                      {slide.available &&
                       <div className="flex">
-                      <a
-                        href={slide.link}
-                        target='_blank'
-                        className="flex items-center gap-2 border-b border-[#F34927] pr-2 text-[13px] leading-[1.8] md:text-[16px]"
-                      >
-                        <span className="animate-[spin_2s_linear_infinite] text-[#F34927]">
-                          ★
-                        </span>
-                        <span>{t('contact')} <br /></span>
-                      </a>
+                        <a
+                          href={slide.link}
+                          target="_blank"
+                          className="flex items-center gap-2 border-b border-[#F34927] pr-2 text-[13px] leading-[1.8] md:text-[16px]"
+                        >
+                          <span className="animate-[spin_2s_linear_infinite] text-[#F34927]">
+                            ★
+                          </span>
+                          <span>
+                            {t('contact')} <br />
+                          </span>
+                        </a>
                       </div>
+                      } 
                     </div>
                   </div>
                 </div>

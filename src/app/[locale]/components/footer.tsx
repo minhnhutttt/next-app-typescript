@@ -44,42 +44,6 @@ const Footer = () => {
               alt="Facebook"
             />
           </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="duration-100 hover:opacity-75"
-          >
-            <img
-              className="max-md:w-14"
-              src="/assets/images/ic-instagram.svg"
-              alt="Instagram"
-            />
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="duration-100 hover:opacity-75"
-          >
-            <img
-              className="max-md:w-14"
-              src="/assets/images/ic-tiktok.svg"
-              alt="Tiktok"
-            />
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="duration-100 hover:opacity-75"
-          >
-            <img
-              className="max-md:w-14"
-              src="/assets/images/ic-x.svg"
-              alt="X"
-            />
-          </a>
         </div>
       </div>
       <p className="text-center text-[12px] font-light md:text-[14px]">

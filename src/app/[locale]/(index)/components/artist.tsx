@@ -18,12 +18,26 @@ const Artist = () => {
       image: '/assets/images/home/artists/artist-img-02.jpg',
       name: 'Quadlips',
       content: t('slide1_content'),
+      social: {
+        instagram: "/",
+        tiktok: "/",
+        youtube: "/",
+        facebook: "/",
+        x: "/",
+      }
     },
     {
       id: 2,
       image: '/assets/images/home/artists/artist-img-01.png',
       name: 'SHEKI ARZAGA',
       content: t('slide2_content'),
+      social: {
+        instagram: "/",
+        tiktok: "/",
+        youtube: "/",
+        facebook: "/",
+        x: "/",
+      }
     },
     {
       id: 3,
@@ -180,13 +194,78 @@ const Artist = () => {
                   minHeight: slideHeight > 0 ? `${slideHeight}px` : 'auto',
                 }}
               >
-                <div className="[box-shadow:0px_4px_100px_0px_rgba(97,_169,_197,_0.25)] max-xl:w-1/2 max-md:w-full">
+                <div className="[box-shadow:0px_4px_100px_0px_rgba(97,_169,_197,_0.25)] max-xl:w-1/2 max-md:w-full rounded-[10px] overflow-hidden">
                   {item.image && <img src={item.image} alt="" />}
                 </div>
                 <div className="flex-1 text-white">
                   <p className="text-[18px] font-medium leading-[1.2] md:text-[24px]">
                     {item.name && item.name}
                   </p>
+                  {item.social && (
+                    <div className="mt-6 flex gap-5">
+                      <a
+                        href={item.social.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="duration-100 hover:opacity-75"
+                      >
+                        <img
+                          className="max-md:w-14"
+                          src="/assets/images/ic-instagram.svg"
+                          alt="Instagram"
+                        />
+                      </a>
+                      <a
+                        href={item.social.tiktok}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="duration-100 hover:opacity-75"
+                      >
+                        <img
+                          className="max-md:w-14"
+                          src="/assets/images/ic-tiktok.svg"
+                          alt="Tiktok"
+                        />
+                      </a>
+                      <a
+                        href={item.social.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="duration-100 hover:opacity-75"
+                      >
+                        <img
+                          className="max-md:w-14"
+                          src="/assets/images/ic-youtube.svg"
+                          alt="Youtube"
+                        />
+                      </a>
+                      <a
+                        href={item.social.facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="duration-100 hover:opacity-75"
+                      >
+                        <img
+                          className="max-md:w-14"
+                          src="/assets/images/ic-facebook.svg"
+                          alt="Facebook"
+                        />
+                      </a>
+
+                      <a
+                        href={item.social.x}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="duration-100 hover:opacity-75"
+                      >
+                        <img
+                          className="max-md:w-14"
+                          src="/assets/images/ic-x.svg"
+                          alt="X"
+                        />
+                      </a>
+                    </div>
+                  )}
                   {item.content && (
                     <p
                       className="mt-4 text-[14px] font-medium leading-[2] md:mt-[30px] md:text-[16px]"
