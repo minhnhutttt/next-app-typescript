@@ -93,7 +93,7 @@ function CaseItem({ id, head, title, text }: CaseItemPropsType) {
         </div>
       </button>
       <div ref={contentRef} className="h-0 overflow-hidden">
-        <p className="mx-auto w-full max-w-[960px] px-5 pb-8 pt-1 text-[16px] leading-[1.4] md:pb-7 md:pt-6 md:text-[28px]">
+        <p className="mx-auto w-full max-w-[960px] px-5 pb-8 pt-1 text-[16px] leading-[1.4] md:pb-7 md:pt-4 md:text-[28px]">
           {text}
         </p>
       </div>
