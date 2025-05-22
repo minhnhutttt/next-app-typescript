@@ -1950,6 +1950,11 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
+lil-gui@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/lil-gui/-/lil-gui-0.20.0.tgz#c970391fcde9f88d5425b2648114c24d9bd30243"
+  integrity sha512-k7Ipr0ztqslMA2XvM5z5ZaWhxQtnEOwJBfI/hmSuRh6q4iMG9L0boqqrnZSzBR1jzyJ28OMl47l65ILzRe1TdA==
+
 lilconfig@^3.0.0, lilconfig@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-3.1.3.tgz#a1bcfd6257f9585bf5ae14ceeebb7b559025e4c4"
