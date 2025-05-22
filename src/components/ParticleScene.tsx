@@ -1,4 +1,4 @@
-// components/ParticleScene.tsx - Updated version with props
+// components/ParticleScene.tsx - Updated version with single shape support
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -57,7 +57,6 @@ interface ParticleSceneProps {
   className?: string;
 }
 
-
 const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
@@ -72,14 +71,12 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
     const scene = new THREE.Scene();
     sceneRef.current = scene;
 
-    // Sizes
     const sizes: Sizes = {
       width: window.innerWidth,
       height: window.innerHeight,
       pixelRatio: Math.min(window.devicePixelRatio, 2),
     };
 
-    // Camera
     const camera = new THREE.PerspectiveCamera(
       35,
       sizes.width / sizes.height,
@@ -89,7 +86,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
     camera.position.set(0, 0, 16);
     scene.add(camera);
 
-    // Renderer
     const renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.current,
       antialias: true,
@@ -101,17 +97,14 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     rendererRef.current = renderer;
 
-    // Mouse and raycaster
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
     const moveFactor = 0.05;
     const initialPosition = new THREE.Vector3(0, 0, 0);
 
-    // Intersection checking variables
     let intersectionCheckCounter = 0;
     const INTERSECTION_CHECK_FREQUENCY = 2;
 
-    // Background effect variables
     const uvCoords = new THREE.Vector2(0.5, 0.5);
     let lastMouseMoveTime = 0;
     let isMouseMoving = false;
@@ -123,7 +116,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
     let pointsMesh: THREE.Points | null = null;
     let isLoaded = false;
 
-    // Create dynamic vertex shader with config
     const createVertexShader = (particleSize: number) => `
       uniform vec2 uResolution;
       uniform float uSize;
@@ -224,7 +216,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       }
     `;
 
-    // Create dynamic fragment shader with config colors
     const createFragmentShader = (hoverColor: [number, number, number], normalColor: [number, number, number]) => `
       varying float vDistance;
       
@@ -248,7 +239,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       }
     `;
 
-    // Create dynamic background fragment shader
     const createBackgroundFragmentShader = (speed: number, intensity: number) => `
       uniform float iTime;
       uniform sampler2D iTexture;
@@ -380,6 +370,70 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       }
     `;
 
+    // Function to create variations from a single position array
+    const createVariations = (originalPosition: THREE.Float32BufferAttribute, maxCount: number): THREE.Float32BufferAttribute[] => {
+      const variations: THREE.Float32BufferAttribute[] = [];
+      
+      // Original position (normalized to maxCount)
+      const normalizedOriginal = new Float32Array(maxCount * 3);
+      const originalCount = originalPosition.count;
+      
+      for (let i = 0; i < maxCount; i++) {
+        const i3 = i * 3;
+        if (i < originalCount) {
+          normalizedOriginal[i3] = originalPosition.array[i3];
+          normalizedOriginal[i3 + 1] = originalPosition.array[i3 + 1];
+          normalizedOriginal[i3 + 2] = originalPosition.array[i3 + 2];
+        } else {
+          const randomIndex = Math.floor(originalCount * Math.random()) * 3;
+          normalizedOriginal[i3] = originalPosition.array[randomIndex];
+          normalizedOriginal[i3 + 1] = originalPosition.array[randomIndex + 1];
+          normalizedOriginal[i3 + 2] = originalPosition.array[randomIndex + 2];
+        }
+      }
+      
+      variations.push(new THREE.Float32BufferAttribute(normalizedOriginal, 3));
+
+      // Variation 1: Spherical distribution
+      const sphericalArray = new Float32Array(maxCount * 3);
+      for (let i = 0; i < maxCount; i++) {
+        const i3 = i * 3;
+        const phi = Math.acos(2 * Math.random() - 1);
+        const theta = 2 * Math.PI * Math.random();
+        const radius = 2 + Math.random() * 2;
+        
+        sphericalArray[i3] = radius * Math.sin(phi) * Math.cos(theta);
+        sphericalArray[i3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+        sphericalArray[i3 + 2] = radius * Math.cos(phi);
+      }
+      variations.push(new THREE.Float32BufferAttribute(sphericalArray, 3));
+
+      // Variation 2: Spiral pattern
+      const spiralArray = new Float32Array(maxCount * 3);
+      for (let i = 0; i < maxCount; i++) {
+        const i3 = i * 3;
+        const t = (i / maxCount) * Math.PI * 8;
+        const radius = 0.5 + (i / maxCount) * 3;
+        
+        spiralArray[i3] = radius * Math.cos(t);
+        spiralArray[i3 + 1] = (i / maxCount - 0.5) * 4;
+        spiralArray[i3 + 2] = radius * Math.sin(t);
+      }
+      variations.push(new THREE.Float32BufferAttribute(spiralArray, 3));
+
+      // Variation 3: Cube pattern
+      const cubeArray = new Float32Array(maxCount * 3);
+      for (let i = 0; i < maxCount; i++) {
+        const i3 = i * 3;
+        cubeArray[i3] = (Math.random() - 0.5) * 4;
+        cubeArray[i3 + 1] = (Math.random() - 0.5) * 4;
+        cubeArray[i3 + 2] = (Math.random() - 0.5) * 4;
+      }
+      variations.push(new THREE.Float32BufferAttribute(cubeArray, 3));
+
+      return variations;
+    };
+
     // Helper functions
     const morphTo = (index: number) => {
       const particles = particlesRef.current;
@@ -466,7 +520,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       }
     };
 
-    // Load model with dynamic path
     const gltfLoader = new GLTFLoader();
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath('/draco/');
@@ -474,7 +527,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
 
     gltfLoader.load(config.modelPath, (gltf) => {
       const particles: ParticleSystem = {
-        index: 1,
+        index: 0,
         positions: [],
         maxCount: 0,
         currentTween: null,
@@ -486,12 +539,46 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
         morph2: () => morphTo(2),
       };
 
-      const positions = gltf.scene.children.map(
-        (child) => (child as THREE.Mesh).geometry.attributes.position
-      );
+      // Extract positions from scene children
+      const originalPositions = gltf.scene.children
+        .filter(child => child instanceof THREE.Mesh)
+        .map(child => {
+          const mesh = child as THREE.Mesh;
+          const position = mesh.geometry.attributes.position;
+          // Ensure we have a Float32BufferAttribute
+          if (position instanceof THREE.Float32BufferAttribute) {
+            return position;
+          } else if (position instanceof THREE.BufferAttribute) {
+            // Convert BufferAttribute to Float32BufferAttribute if needed
+            return new THREE.Float32BufferAttribute(position.array as Float32Array, position.itemSize);
+          } else {
+            console.warn('Unsupported position attribute type');
+            return null;
+          }
+        })
+        .filter(position => position !== null) as THREE.Float32BufferAttribute[];
 
-      particles.maxCount = Math.max(...positions.map((pos) => pos.count));
+      // Handle case where there are no positions or only one position
+      if (originalPositions.length === 0) {
+        console.warn('No mesh positions found in model');
+        return;
+      }
 
+      let positions: THREE.Float32BufferAttribute[];
+
+      if (originalPositions.length === 1) {
+        // If only one shape, create variations
+        const originalPosition = originalPositions[0];
+        particles.maxCount = originalPosition.count;
+        positions = createVariations(originalPosition, particles.maxCount);
+        console.log('Single shape detected, created variations for morphing');
+      } else {
+        // Multiple shapes exist, use them as is
+        positions = originalPositions;
+        particles.maxCount = Math.max(...positions.map((pos) => pos.count));
+      }
+
+      // Normalize all positions to maxCount
       particles.positions = positions.map((position) => {
         const originalArray = position.array;
         const newArray = new Float32Array(particles.maxCount * 3);
@@ -518,10 +605,9 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       particles.geometry.setAttribute('position', particles.positions[particles.index]);
       particles.geometry.setAttribute(
         'aPositionTarget',
-        particles.positions[3] || particles.positions[0]
+        particles.positions[1] || particles.positions[0]
       );
 
-      // Create material with dynamic shaders
       particles.material = new THREE.ShaderMaterial({
         vertexShader: createVertexShader(config.particleSize),
         fragmentShader: createFragmentShader(config.particleColor.hover, config.particleColor.normal),
@@ -545,9 +631,10 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
 
       particlesRef.current = particles;
       isLoaded = true;
+
+      console.log(`Particle system initialized with ${particles.positions.length} morphing states`);
     });
 
-    // Load texture with dynamic path
     const textureLoader = new THREE.TextureLoader();
     textureLoader.load(config.texturePath, (loadedTexture) => {
       const originalWidth = loadedTexture.image.width;
@@ -602,7 +689,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       scene.add(backgroundPlane);
     });
 
-    // Mouse event handlers
     const onMouseMove = (event: MouseEvent) => {
       const rect = renderer.domElement.getBoundingClientRect();
       const mouseX = ((event.clientX - rect.left) / rect.width) * 2 - 1;
@@ -615,7 +701,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       isMouseMoving = true;
     };
 
-    // Resize handler
     const handleResize = () => {
       sizes.width = window.innerWidth;
       sizes.height = window.innerHeight;
@@ -651,7 +736,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       }
     };
 
-    // Animation loop
     const clock = new THREE.Clock();
     let frameCount = 0;
 
@@ -739,15 +823,12 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       animationIdRef.current = requestAnimationFrame(tick);
     };
 
-    // Event listeners
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('resize', handleResize);
     renderer.domElement.addEventListener('mousemove', onMouseMove);
 
-    // Start animation
     tick();
 
-    // Cleanup
     return () => {
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
@@ -756,7 +837,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       window.removeEventListener('resize', handleResize);
       renderer.domElement.removeEventListener('mousemove', onMouseMove);
       
-      // Dispose of Three.js objects
       scene.traverse((object) => {
         if (object instanceof THREE.Mesh) {
           object.geometry?.dispose();
@@ -768,7 +848,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       
       renderer.dispose();
     };
-  }, [config]); // Important: Re-run effect when config changes
+  }, [config]);
 
   // Add keyboard controls for morphing
   useEffect(() => {
@@ -800,13 +880,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
         className="block w-full h-full"
         style={{ background: 'transparent' }}
       />
-      
-      {/* Controls UI - Only show if enabled in config */}
-      {config.controls?.showUI && (
-        <div className="absolute top-4 left-4 z-10 bg-black bg-opacity-50 text-white p-4 rounded-lg">
-          
-        </div>
-      )}
     </div>
   );
 };
