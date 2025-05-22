@@ -8,6 +8,7 @@ const MemberContent = () => {
   const tYutakaKanagawa = useTranslations('Members.YutakaKanagawa')
   const tYoshiyaKato = useTranslations('Members.YoshiyaKato')
   const tHajiTaniguchi = useTranslations('Members.HajiTaniguchi')
+  const tLeoSakai = useTranslations('Members.LeoSakai')
 
   return (
     <div className="mb-24 px-5 md:mb-[160px]">
@@ -167,7 +168,7 @@ const MemberContent = () => {
           </div>
         </div>
 
-        {/* <div className="rounded-[40px] border border-gray-500 bg-gray-700/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+        <div className="rounded-[40px] border border-gray-500 bg-gray-700/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
           <div className="relative flex min-h-[400px] justify-center gap-5 rounded-[20px] bg-gray-400 px-5 py-10 max-md:flex-col-reverse max-md:items-center md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
             <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly4_65s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
             <div className="flex-1 text-[#111]">
@@ -175,7 +176,7 @@ const MemberContent = () => {
                 data-scroll
                 className="ani-fade-up mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]"
               >
-                Adviser
+                advisor
               </p>
               <p
                 data-scroll
@@ -187,18 +188,27 @@ const MemberContent = () => {
                 data-scroll
                 className="ani-fade-up mb-6 text-[clamp(18px,4.5vw,26px)] md:text-[24px]"
               >
-                酒井レオ
+                酒井 レオ
               </p>
               <p
                 data-scroll
-                className="text-[12px] leading-[1.8] md:text-[14px]"
+                className="ani-fade-up text-[12px] leading-[1.4] md:text-[14px]"
+                dangerouslySetInnerHTML={{
+                  __html: tLeoSakai.raw('Introduction'),
+                }}
               ></p>
             </div>
             <div className="lg:max-w-[480px]">
-              <div data-scroll className="ani-fade-up md:mt-20"></div>
+              <div data-scroll className="ani-fade-up">
+                <img
+                  className="w-full max-w-[480px] rounded-[10px] [box-shadow:0px_4px_70px_0px_rgba(0,_0,_0,_0.25)]"
+                  src="/assets/images/members/leosakai.jpeg"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
-        </div> */}
+        </div>
 
         <div className="rounded-[40px] border border-gray-500 bg-gray-700/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
           <div className="relative flex min-h-[400px] justify-center gap-5 rounded-[20px] bg-gray-400 px-5 py-10 max-md:flex-col-reverse max-md:items-center md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">

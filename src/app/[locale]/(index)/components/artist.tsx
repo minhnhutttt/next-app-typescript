@@ -216,20 +216,6 @@ const Artist = () => {
                           />
                         </a>
                       )}
-                      {item.social.tiktok && (
-                        <a
-                          href={item.social.tiktok}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="duration-100 hover:opacity-75"
-                        >
-                          <img
-                            className="max-md:w-14"
-                            src="/assets/images/ic-tiktok.svg"
-                            alt="Tiktok"
-                          />
-                        </a>
-                      )}
                       {item.social.youtube && (
                         <a
                           href={item.social.youtube}
@@ -241,6 +227,20 @@ const Artist = () => {
                             className="max-md:w-14"
                             src="/assets/images/ic-youtube.svg"
                             alt="Youtube"
+                          />
+                        </a>
+                      )}
+                      {item.social.tiktok && (
+                        <a
+                          href={item.social.tiktok}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="duration-100 hover:opacity-75"
+                        >
+                          <img
+                            className="max-md:w-14"
+                            src="/assets/images/ic-tiktok.svg"
+                            alt="Tiktok"
                           />
                         </a>
                       )}

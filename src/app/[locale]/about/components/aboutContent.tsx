@@ -5,6 +5,7 @@ import { ReactNode, useEffect, useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useTranslations } from 'next-intl'
+import AboutCase from './aboutCase'
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.config({
@@ -100,7 +101,7 @@ const AboutItem = ({
     <div className="mx-auto w-full max-w-[1440px]">
       <p
         ref={titleRef}
-        className="overflow-hidden text-[12vw] font-bold leading-[0.88] tracking-[-0.07em] md:ml-[-12px] md:text-[20vw] xl:ml-[-24px] xl:text-[260px]"
+        className="overflow-hidden text-[12vw] font-bold leading-[0.88] tracking-[-0.07em] md:ml-[-12px] md:text-[18vw] xl:ml-[-24px] xl:text-[260px]"
         data-splitting="chars"
       >
         {title}
@@ -122,11 +123,7 @@ const AboutItem = ({
           <img
             src={image}
             alt=""
-            className={`h-auto w-full ${
-              even
-                ? 'max-xl:rounded-[20px] xl:rounded-r-[40px]'
-                : 'max-xl:rounded-[20px] xl:rounded-l-[40px]'
-            }`}
+            className={`h-auto w-full rounded-[20px] md:rounded-[40px]`}
           />
         </div>
       </div>
@@ -241,6 +238,7 @@ const AboutContent = () => {
           image="/assets/images/about/about-01.png"
         />
       </div>
+      <AboutCase />
       <div className="mb-[110px] md:mb-[210px]">
         <AboutItem
           title={

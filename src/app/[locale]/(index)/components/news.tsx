@@ -29,14 +29,13 @@ const News = () => {
   const slidesData: SlideItem[] = [
     {
       id: 1,
-      image: '/assets/images/home/news/news-card-b.jpg',
-      date: t('slide1_date'),
-      title: t('slide1_title'),
+      image: '/assets/images/home/news/news-card.jpg',
+      date: t('slide2_date'),
+      title: t('slide2_title'),
       type: 'press',
-      head: t('slide1_head'),
-      content: t('slide1_content'),
+      head: t('slide2_head'),
+      content: t('slide2_content'),
       link: '/assets/pdf/2025-05-23 PRESS RELEASE_EN.pdf',
-      available: true,
     },
     {
       id: 2,
