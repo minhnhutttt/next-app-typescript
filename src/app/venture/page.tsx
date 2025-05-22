@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import ParticleScene, {  SceneConfig } from '../components/ParticleScene';
+import ParticleScene, {  SceneConfig } from '../../components/ParticleScene';
 import type { NextPage } from 'next';
 
 // Predefined configurations for different pages
