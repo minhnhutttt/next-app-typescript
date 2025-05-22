@@ -57,7 +57,6 @@ const News = () => {
       head: t('slide3_head'),
       content: t('slide3_content'),
       link: '/',
-      
     },
   ]
 
@@ -148,22 +147,22 @@ const News = () => {
                       <p className="text-[12px] md:text-[14px]">
                         {slide.content}
                       </p>
-                      {slide.available &&
-                      <div className="flex">
-                        <a
-                          href={slide.link}
-                          target="_blank"
-                          className="flex items-center gap-2 border-b border-[#F34927] pr-2 text-[13px] leading-[1.8] md:text-[16px]"
-                        >
-                          <span className="animate-[spin_2s_linear_infinite] text-[#F34927]">
-                            ★
-                          </span>
-                          <span>
-                            {t('contact')} <br />
-                          </span>
-                        </a>
-                      </div>
-                      } 
+                      {slide.available && (
+                        <div className="flex">
+                          <a
+                            href={slide.link}
+                            target="_blank"
+                            className="flex items-center gap-2 border-b border-[#F34927] pr-2 text-[13px] leading-[1.8] md:text-[16px]"
+                          >
+                            <span className="animate-[spin_2s_linear_infinite] text-[#F34927]">
+                              ★
+                            </span>
+                            <span>
+                              {t('contact')} <br />
+                            </span>
+                          </a>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

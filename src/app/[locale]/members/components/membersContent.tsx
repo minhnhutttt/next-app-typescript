@@ -118,7 +118,7 @@ const MemberContent = () => {
                 }}
               ></p>
             </div>
-            <div className="lg:max-w-[478px] w-full">
+            <div className="w-full lg:max-w-[478px]">
               <div data-scroll className="ani-fade-up">
                 <img
                   className="w-full max-w-[480px] rounded-[10px] [box-shadow:0px_4px_70px_0px_rgba(0,_0,_0,_0.25)]"

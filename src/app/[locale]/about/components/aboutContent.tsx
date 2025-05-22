@@ -119,9 +119,15 @@ const AboutItem = ({
           </div>
         </div>
         <div ref={imageRef} className="w-full max-w-[860px] xl:w-[65%]">
-          <img src={image} alt="" className={`h-auto w-full ${
-          even ? 'xl:rounded-r-[40px] max-xl:rounded-[20px]' : 'xl:rounded-l-[40px] max-xl:rounded-[20px]'
-        }`} />
+          <img
+            src={image}
+            alt=""
+            className={`h-auto w-full ${
+              even
+                ? 'max-xl:rounded-[20px] xl:rounded-r-[40px]'
+                : 'max-xl:rounded-[20px] xl:rounded-l-[40px]'
+            }`}
+          />
         </div>
       </div>
     </div>
