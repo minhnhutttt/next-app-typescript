@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-black relative`}>
-        <div className="absolute md:top-10 md:left-10 top-7 left-7 z-50">
+        <div className="fixed md:top-10 md:left-10 top-7 left-7 z-50">
           <Link href="/" className="">
             <img className="max-md:w-[150px]" src="/assets/images/logo.svg" alt="" />
           </Link>

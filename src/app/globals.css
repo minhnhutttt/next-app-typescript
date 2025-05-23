@@ -134,3 +134,8 @@ body {
 .btn.router-link-exact-active:before {
     transform: scale(1)
 }
+
+* {
+	-ms-overflow-style: none; 
+  scrollbar-width: none;
+}

@@ -1,4 +1,3 @@
-// components/ParticleScene.tsx - Updated version with single shape support
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -18,6 +17,7 @@ interface ParticleSystem {
   morph0: () => void;
   morph1: () => void;
   morph2: () => void;
+  morphTo: (index: number) => void; // Add morphTo method
 }
 
 interface MouseTrailEntry {
@@ -51,18 +51,43 @@ export interface SceneConfig {
   };
 }
 
-// Props interface
+// Props interface - UPDATED
 interface ParticleSceneProps {
   config: SceneConfig;
   className?: string;
+  indexMorph?: number; // NEW: Add indexMorph prop
+  enableKeyboardControls?: boolean; // NEW: Option to disable keyboard controls
 }
 
-const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' }) => {
+const ParticleScene: React.FC<ParticleSceneProps> = ({ 
+  config, 
+  className = '',
+  indexMorph = 0, // NEW: Default to first morph
+  enableKeyboardControls = true // NEW: Default to enabled
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const particlesRef = useRef<ParticleSystem | null>(null);
   const animationIdRef = useRef<number | null>(null);
+  const prevIndexMorphRef = useRef<number>(indexMorph); // NEW: Track previous indexMorph
+
+  // NEW: Effect to handle indexMorph changes
+  useEffect(() => {
+    const particles = particlesRef.current;
+    if (!particles) return;
+
+    // Check if indexMorph has changed and is within valid range
+    if (
+      indexMorph !== prevIndexMorphRef.current && 
+      indexMorph >= 0 && 
+      indexMorph < particles.positions.length
+    ) {
+      console.log(`Morphing to index: ${indexMorph}`);
+      particles.morphTo(indexMorph);
+      prevIndexMorphRef.current = indexMorph;
+    }
+  }, [indexMorph]);
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -434,7 +459,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       return variations;
     };
 
-    // Helper functions
+    // UPDATED: Morph function moved inside useEffect for access to particles
     const morphTo = (index: number) => {
       const particles = particlesRef.current;
       if (!particles || index >= particles.positions.length) return;
@@ -537,6 +562,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
         morph0: () => morphTo(0),
         morph1: () => morphTo(1),
         morph2: () => morphTo(2),
+        morphTo: morphTo, // NEW: Add morphTo method to particle system
       };
 
       // Extract positions from scene children
@@ -602,10 +628,14 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
         return new THREE.Float32BufferAttribute(newArray, 3);
       });
 
+      // NEW: Set initial morph based on indexMorph prop
+      const initialIndex = Math.min(indexMorph, particles.positions.length - 1);
+      particles.index = initialIndex;
+
       particles.geometry.setAttribute('position', particles.positions[particles.index]);
       particles.geometry.setAttribute(
         'aPositionTarget',
-        particles.positions[1] || particles.positions[0]
+        particles.positions[particles.index] // Start with same position
       );
 
       particles.material = new THREE.ShaderMaterial({
@@ -620,7 +650,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
             )
           ),
           uHoverPosition: { value: new THREE.Vector3(100, 100, 100) },
-          uProgress: new THREE.Uniform(0),
+          uProgress: new THREE.Uniform(1), // NEW: Start with progress = 1 (completed)
         },
         depthWrite: true,
       });
@@ -632,7 +662,10 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
       particlesRef.current = particles;
       isLoaded = true;
 
-      console.log(`Particle system initialized with ${particles.positions.length} morphing states`);
+      // NEW: Set initial prevIndexMorphRef after particles are loaded
+      prevIndexMorphRef.current = initialIndex;
+
+      console.log(`Particle system initialized with ${particles.positions.length} morphing states, starting at index ${initialIndex}`);
     });
 
     const textureLoader = new THREE.TextureLoader();
@@ -850,8 +883,10 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
     };
   }, [config]);
 
-  // Add keyboard controls for morphing
+  // UPDATED: Keyboard controls - now conditional based on enableKeyboardControls prop
   useEffect(() => {
+    if (!enableKeyboardControls) return;
+
     const handleKeyDown = (event: KeyboardEvent) => {
       const particles = particlesRef.current;
       if (!particles) return;
@@ -871,10 +906,10 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ config, className = '' })
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [enableKeyboardControls]);
 
   return (
-    <div className={`relative w-full h-screen overflow-hidden ${className}`}>
+    <div className={`w-full h-screen overflow-hidden fixed inset-0 ${className}`}>
       <canvas 
         ref={canvasRef} 
         className="block w-full h-full"
