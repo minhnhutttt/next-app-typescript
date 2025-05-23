@@ -253,7 +253,7 @@ const HomePage: NextPage = () => {
     <main className="w-full h-screen overflow-hidden">
        <ReactLenis root options={{ autoRaf: false, infinite: true,
 	syncTouch: true, wheelMultiplier: 0.07 }} ref={lenisRef} />
-      <ParticleScene config={SCENE_CONFIGS.venture} indexMorph={morphIndex} />
+      <ParticleScene config={SCENE_CONFIGS.venture} indexMorph={morphIndex} isLeft />
       <div className="flex justify-end absolute inset-0 font-bold">
         <div className="w-1/2 space-y-20">
           {data.map((item, index) => (

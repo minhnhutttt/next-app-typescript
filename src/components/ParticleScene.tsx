@@ -57,13 +57,15 @@ interface ParticleSceneProps {
   className?: string;
   indexMorph?: number;
   enableKeyboardControls?: boolean;
+  isLeft?: boolean;
 }
 
 const ParticleScene: React.FC<ParticleSceneProps> = ({ 
   config, 
   className = '',
   indexMorph = 0,
-  enableKeyboardControls = true
+  enableKeyboardControls = true,
+  isLeft = false
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
@@ -71,6 +73,36 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
   const particlesRef = useRef<ParticleSystem | null>(null);
   const animationIdRef = useRef<number | null>(null);
   const prevIndexMorphRef = useRef<number>(indexMorph);
+  const isMobileRef = useRef<boolean>(false);
+
+  // Helper function to check if mobile
+  const checkIsMobile = () => {
+    return window.innerWidth < 768;
+  };
+
+  // Helper function to get target position based on screen size and isLeft
+  const getTargetPosition = () => {
+    const isMobile = checkIsMobile();
+    if (isMobile) {
+      return 0; // Always center on mobile
+    }
+    return isLeft ? -3 : 0; // Left/Right on desktop
+  };
+
+  // Effect to handle isLeft changes and screen size changes
+  useEffect(() => {
+    const particles = particlesRef.current;
+    if (!particles) return;
+
+    // Get target position based on screen size and isLeft prop
+    const targetX = getTargetPosition();
+    
+    gsap.to(particles.points.position, {
+      x: targetX,
+      duration: 0.8,
+      ease: "power2.out"
+    });
+  }, [isLeft]);
 
   // Effect to handle indexMorph changes
   useEffect(() => {
@@ -124,8 +156,9 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
 
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
-    const moveFactor = 0.05;
-    const initialPosition = new THREE.Vector3(0, 0, 0);
+    const moveFactor = 0.1;
+    // ✅ FIXED: Tính toán vị trí dựa trên screen size và prop isLeft
+    const initialPosition = new THREE.Vector3(getTargetPosition(), 0, 0);
 
     let intersectionCheckCounter = 0;
     const INTERSECTION_CHECK_FREQUENCY = 2;
@@ -395,8 +428,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       }
     `;
 
-    // REMOVED: createVariations function - no longer needed
-
     // Morph function moved inside useEffect for access to particles
     const morphTo = (index: number) => {
       const particles = particlesRef.current;
@@ -427,7 +458,11 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       intersectionCheckCounter++;
       if (intersectionCheckCounter % INTERSECTION_CHECK_FREQUENCY !== 0) return;
 
+      // ✅ FIXED: Luôn luôn cập nhật position/rotation/scale cho raycaster
+      raycaster.setFromCamera(mouse, camera);
+
       if (particles.material.uniforms.uProgress.value > 0.01) {
+        // Tạo geometry tạm thời cho morphing animation
         const tempGeometry = new THREE.BufferGeometry();
         const positions = particles.geometry.attributes.position;
         const targetPositions = particles.geometry.attributes.aPositionTarget;
@@ -456,27 +491,31 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
           tempGeometry,
           new THREE.PointsMaterial({ size: 0.1, visible: false })
         );
+        
+        // ✅ FIXED: Đồng bộ hóa transform với particles.points hiện tại
         tempPoints.position.copy(particles.points.position);
         tempPoints.rotation.copy(particles.points.rotation);
         tempPoints.scale.copy(particles.points.scale);
+        tempPoints.updateMatrixWorld(); // Quan trọng: cập nhật matrix world
 
-        raycaster.setFromCamera(mouse, camera);
         const intersects = raycaster.intersectObject(tempPoints);
 
         if (intersects.length > 0) {
           const point = intersects[0].point;
-          particles.material.uniforms.uHoverPosition.value = point;
+          particles.material.uniforms.uHoverPosition.value.copy(point);
         } else {
           particles.material.uniforms.uHoverPosition.value.set(100, 100, 100);
         }
 
         tempGeometry.dispose();
       } else {
-        raycaster.setFromCamera(mouse, camera);
+        // ✅ FIXED: Đảm bảo particles.points có matrix world được cập nhật
+        particles.points.updateMatrixWorld();
+        
         const intersects = raycaster.intersectObject(particles.points);
         if (intersects.length > 0) {
           const point = intersects[0].point;
-          particles.material.uniforms.uHoverPosition.value = point;
+          particles.material.uniforms.uHoverPosition.value.copy(point);
         } else {
           particles.material.uniforms.uHoverPosition.value.set(100, 100, 100);
         }
@@ -520,17 +559,14 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         })
         .filter(position => position !== null) as THREE.Float32BufferAttribute[];
 
-      // MODIFIED: Handle case where there are no positions
       if (originalPositions.length === 0) {
         console.warn('No mesh positions found in model');
         return;
       }
 
-      // MODIFIED: Use original positions as-is, no auto-generated variations
       const positions: THREE.Float32BufferAttribute[] = originalPositions;
       particles.maxCount = Math.max(...positions.map((pos) => pos.count));
 
-      // Log info about what was loaded
       if (originalPositions.length === 1) {
         console.log('Single shape detected - morphing disabled');
       } else {
@@ -568,7 +604,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       particles.geometry.setAttribute('position', particles.positions[particles.index]);
       particles.geometry.setAttribute(
         'aPositionTarget',
-        particles.positions[particles.index] // Start with same position
+        particles.positions[particles.index]
       );
 
       particles.material = new THREE.ShaderMaterial({
@@ -583,23 +619,27 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
             )
           ),
           uHoverPosition: { value: new THREE.Vector3(100, 100, 100) },
-          uProgress: new THREE.Uniform(1), // Start with progress = 1 (completed)
+          uProgress: new THREE.Uniform(1),
         },
         depthWrite: true,
       });
 
       particles.points = new THREE.Points(particles.geometry, particles.material);
 
-      // Set initial scale to 0 for entrance animation
+      // ✅ FIXED: Set position tại vị trí mong muốn dựa trên isLeft
+      particles.points.position.copy(initialPosition);
       particles.points.scale.setScalar(0);
-      particles.points.position.set(-30, 0, 0)
+      
+      // Khởi tạo userData để tracking offset
+      particles.points.userData.lastOffsetX = 0;
+      particles.points.userData.lastOffsetY = 0;
+      
       scene.add(particles.points);
       pointsMesh = particles.points;
 
       particlesRef.current = particles;
       isLoaded = true;
 
-      // Set initial prevIndexMorphRef after particles are loaded
       prevIndexMorphRef.current = initialIndex;
 
       // Entrance animation - scale from 0 to 1
@@ -686,6 +726,24 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       sizes.height = window.innerHeight;
       sizes.pixelRatio = Math.min(window.devicePixelRatio, 2);
 
+      // ✅ ADDED: Check if mobile status changed and update position accordingly
+      const wasMobile = isMobileRef.current;
+      const isMobile = checkIsMobile();
+      isMobileRef.current = isMobile;
+
+      // If mobile status changed, animate to new position
+      if (wasMobile !== isMobile) {
+        const particles = particlesRef.current;
+        if (particles) {
+          const targetX = getTargetPosition();
+          gsap.to(particles.points.position, {
+            x: targetX,
+            duration: 0.8,
+            ease: "power2.out"
+          });
+        }
+      }
+
       const particles = particlesRef.current;
       if (particles?.material?.uniforms?.uResolution) {
         particles.material.uniforms.uResolution.value.set(
@@ -728,7 +786,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       if (backgroundMaterial) {
         backgroundMaterial.uniforms.iTime.value = elapsedTime;
 
-        if (isMouseMoving && elapsedTime - lastMouseMoveTime > 0.1) {
+        if (isMouseMoving && elapsedTime - lastMouseMoveTime > 0.05) {
           isMouseMoving = false;
         }
 
@@ -787,6 +845,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         }
       }
 
+      // ✅ FIXED: Tính toán mouse movement nhưng giữ nguyên base position hiện tại
       if (pointsMesh && frameCount % 2 === 0) {
         const maxOffset = 1;
         let offsetX = -mouse.x * moveFactor;
@@ -795,8 +854,17 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         offsetX = Math.max(Math.min(offsetX, maxOffset), -maxOffset);
         offsetY = Math.max(Math.min(offsetY, maxOffset), -maxOffset);
 
-        pointsMesh.position.x = initialPosition.x - offsetX;
-        pointsMesh.position.y = initialPosition.y - offsetY;
+        // Sử dụng position hiện tại làm base thay vì initialPosition cố định
+        const currentBaseX = pointsMesh.position.x - (pointsMesh.userData.lastOffsetX || 0);
+        const currentBaseY = pointsMesh.position.y - (pointsMesh.userData.lastOffsetY || 0);
+
+        pointsMesh.position.x = currentBaseX + offsetX;
+        pointsMesh.position.y = currentBaseY + offsetY;
+        // pointsMesh.position.z giữ nguyên
+
+        // Lưu offset hiện tại để tính toán base position
+        pointsMesh.userData.lastOffsetX = offsetX;
+        pointsMesh.userData.lastOffsetY = offsetY;
       }
 
       renderer.render(scene, camera);
