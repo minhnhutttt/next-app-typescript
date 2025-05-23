@@ -24,11 +24,11 @@ export default function RootLayout({
           </Link>
         </div>
         {children}
-      <footer className="fixed bottom-0 left-0 w-full z-[999] pb-10 md:pb-20 px-10">
+      <footer className="fixed bottom-0 left-0 w-full z-[999] pb-10 md:pb-20 px-5 md:px-10">
         <div className="relative site-max flex justify-between items-end">
           <a
             href="/"
-            className="btn inline-flex relative py-2 px-5 leading-none text-white text-[14px]"
+            className="btn inline-flex relative py-2 px-5 leading-none text-white md:text-[14px] text-[12px]"
             ><div className="absolute inset-0">
               <div className="absolute inset-0 overflow-hidden">
                 <div
@@ -57,7 +57,7 @@ export default function RootLayout({
           </a>
           <Link
             href="/venture/"
-            className="btn inline-flex relative py-2 px-5 leading-none text-white text-[14px]"
+            className="btn inline-flex relative py-2 px-5 leading-none text-white md:text-[14px] text-[12px]"
             ><div className="absolute inset-0">
               <div className="absolute inset-0 overflow-hidden">
                 <div
@@ -86,7 +86,7 @@ export default function RootLayout({
           </Link>
           <a
             href="mailto:INFO@ARDOREX.NET"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex text-gray transition-colors duration-300 ease-out has-hover:hover:text-yellow pointer-events-auto text-gray-300 uppercase"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex text-gray transition-colors duration-300 ease-out has-hover:hover:text-yellow pointer-events-auto text-gray-300  max-md:text-[12px]"
           >
             <span>[email&nbsp;protected]</span>
           </a>

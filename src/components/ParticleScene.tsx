@@ -74,6 +74,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
   const animationIdRef = useRef<number | null>(null);
   const prevIndexMorphRef = useRef<number>(indexMorph);
   const isMobileRef = useRef<boolean>(false);
+  const hasMouseMovedRef = useRef<boolean>(false); // ✅ ADDED: Track if mouse has moved
 
   // Helper function to check if mobile
   const checkIsMobile = () => {
@@ -157,7 +158,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
     const moveFactor = 0.1;
-    // ✅ FIXED: Tính toán vị trí dựa trên screen size và prop isLeft
     const initialPosition = new THREE.Vector3(getTargetPosition(), 0, 0);
 
     let intersectionCheckCounter = 0;
@@ -258,8 +258,25 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
 
         vec4 modelPosition = modelMatrix * vec4(mixedPosition, 1.0);
 
+        // ✅ IMPROVED: Create organic hover effect with noise
         float distanceToHover = distance(modelPosition.xyz, uHoverPosition);
-        float pushStrength = smoothstep(1.5, 0.0, distanceToHover);
+        
+        // Add organic variation to the hover distance using noise
+        float hoverNoise = simplexNoise3d(modelPosition.xyz * 2.0) * 0.15; // ✅ Reduced from 0.3 to 0.15
+        float organicDistance = distanceToHover + hoverNoise;
+        
+        float pushStrength = 0.0;
+        
+        // Only apply push effect if hover position is reasonable (not the default far position)
+        if (length(uHoverPosition) < 50.0) {
+          // Use organic distance for more natural falloff - ✅ Reduced range from 2.0 to 1.2
+          pushStrength = smoothstep(1.2, 0.0, organicDistance);
+          
+          // Add some variation to push strength based on position
+          float pushNoise = simplexNoise3d(modelPosition.xyz * 1.5) * 0.4 + 0.6;
+          pushStrength *= pushNoise;
+        }
+        
         vec3 normal = normalize(modelPosition.xyz - uHoverPosition);
         modelPosition.xyz += normal * pushStrength * 0.05;
 
@@ -270,7 +287,8 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         gl_PointSize = uSize * uResolution.y;
         gl_PointSize *= (1.0 / -viewPosition.z);
 
-        vDistance = distanceToHover;
+        // Pass both original and organic distance for color mixing
+        vDistance = organicDistance;
       }
     `;
 
@@ -284,7 +302,30 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         if(distanceToCenter > 0.5)
           discard;
           
-        float intensity = smoothstep(0.0, 2.0, vDistance);
+        // ✅ IMPROVED: More organic color transition with multiple falloff zones (SMALLER ZONES)
+        float intensity = 1.0;
+        
+        // Create multiple zones with different falloff rates for organic feel
+        if (vDistance < 0.4) { // ✅ Reduced from 0.8 to 0.4
+          // Inner core - strong hover color
+          intensity = 0.0;
+        } else if (vDistance < 0.8) { // ✅ Reduced from 1.5 to 0.8
+          // Transition zone 1 - smooth blend
+          float t = (vDistance - 0.4) / (0.8 - 0.4);
+          intensity = smoothstep(0.0, 1.0, t) * 0.3;
+        } else if (vDistance < 1.3) { // ✅ Reduced from 2.5 to 1.3
+          // Transition zone 2 - gradual fade
+          float t = (vDistance - 0.8) / (1.3 - 0.8);
+          intensity = 0.3 + smoothstep(0.0, 1.0, t) * 0.4;
+        } else if (vDistance < 2.0) { // ✅ Reduced from 4.0 to 2.0
+          // Outer zone - subtle influence
+          float t = (vDistance - 1.3) / (2.0 - 1.3);
+          intensity = 0.7 + smoothstep(0.0, 1.0, t) * 0.3;
+        } else {
+          // No influence - normal color
+          intensity = 1.0;
+        }
+        
         vec4 color = mix(
           vec4(${hoverColor[0]}, ${hoverColor[1]}, ${hoverColor[2]}, 1.0), 
           vec4(${normalColor[0]}, ${normalColor[1]}, ${normalColor[2]}, 1.0), 
@@ -455,10 +496,15 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       const particles = particlesRef.current;
       if (!particles) return;
 
+      // ✅ FIXED: Don't run intersection checks until mouse has moved
+      if (!hasMouseMovedRef.current) {
+        particles.material.uniforms.uHoverPosition.value.set(1000, 1000, 1000);
+        return;
+      }
+
       intersectionCheckCounter++;
       if (intersectionCheckCounter % INTERSECTION_CHECK_FREQUENCY !== 0) return;
 
-      // ✅ FIXED: Luôn luôn cập nhật position/rotation/scale cho raycaster
       raycaster.setFromCamera(mouse, camera);
 
       if (particles.material.uniforms.uProgress.value > 0.01) {
@@ -492,11 +538,10 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
           new THREE.PointsMaterial({ size: 0.1, visible: false })
         );
         
-        // ✅ FIXED: Đồng bộ hóa transform với particles.points hiện tại
         tempPoints.position.copy(particles.points.position);
         tempPoints.rotation.copy(particles.points.rotation);
         tempPoints.scale.copy(particles.points.scale);
-        tempPoints.updateMatrixWorld(); // Quan trọng: cập nhật matrix world
+        tempPoints.updateMatrixWorld();
 
         const intersects = raycaster.intersectObject(tempPoints);
 
@@ -504,12 +549,11 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
           const point = intersects[0].point;
           particles.material.uniforms.uHoverPosition.value.copy(point);
         } else {
-          particles.material.uniforms.uHoverPosition.value.set(100, 100, 100);
+          particles.material.uniforms.uHoverPosition.value.set(1000, 1000, 1000);
         }
 
         tempGeometry.dispose();
       } else {
-        // ✅ FIXED: Đảm bảo particles.points có matrix world được cập nhật
         particles.points.updateMatrixWorld();
         
         const intersects = raycaster.intersectObject(particles.points);
@@ -517,7 +561,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
           const point = intersects[0].point;
           particles.material.uniforms.uHoverPosition.value.copy(point);
         } else {
-          particles.material.uniforms.uHoverPosition.value.set(100, 100, 100);
+          particles.material.uniforms.uHoverPosition.value.set(1000, 1000, 1000);
         }
       }
     };
@@ -618,7 +662,8 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
               sizes.height * sizes.pixelRatio
             )
           ),
-          uHoverPosition: { value: new THREE.Vector3(100, 100, 100) },
+          // ✅ FIXED: Set hover position far away initially
+          uHoverPosition: { value: new THREE.Vector3(1000, 1000, 1000) },
           uProgress: new THREE.Uniform(1),
         },
         depthWrite: true,
@@ -626,7 +671,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
 
       particles.points = new THREE.Points(particles.geometry, particles.material);
 
-      // ✅ FIXED: Set position tại vị trí mong muốn dựa trên isLeft
       particles.points.position.copy(initialPosition);
       particles.points.scale.setScalar(0);
       
@@ -644,9 +688,9 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
 
       // Entrance animation - scale from 0 to 1
       gsap.to(particles.points.scale, {
-        x: 1,
-        y: 1,
-        z: 1,
+        x: 0.8,
+        y: 0.8,
+        z: 0.8,
         duration: 1.2,
         ease: "back.out(1.7)",
         delay: 0.2
@@ -667,8 +711,8 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       loadedTexture.wrapT = THREE.RepeatWrapping;
 
       const geometry = new THREE.PlaneGeometry(
-        window.innerWidth / 100,
-        window.innerHeight / 100
+        window.innerWidth / 75,
+        window.innerHeight / 75
       );
 
       backgroundMaterial = new THREE.ShaderMaterial({
@@ -705,11 +749,14 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       });
 
       backgroundPlane = new THREE.Mesh(geometry, backgroundMaterial);
-      backgroundPlane.position.z = 5;
+      backgroundPlane.position.z = -1;
       scene.add(backgroundPlane);
     });
 
     const onMouseMove = (event: MouseEvent) => {
+      // ✅ FIXED: Mark that mouse has moved
+      hasMouseMovedRef.current = true;
+      
       const rect = renderer.domElement.getBoundingClientRect();
       const mouseX = ((event.clientX - rect.left) / rect.width) * 2 - 1;
       const mouseY = -((event.clientY - rect.top) / rect.height) * 2 + 1;
@@ -726,7 +773,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       sizes.height = window.innerHeight;
       sizes.pixelRatio = Math.min(window.devicePixelRatio, 2);
 
-      // ✅ ADDED: Check if mobile status changed and update position accordingly
+      // Check if mobile status changed and update position accordingly
       const wasMobile = isMobileRef.current;
       const isMobile = checkIsMobile();
       isMobileRef.current = isMobile;
@@ -768,8 +815,8 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       if (backgroundPlane) {
         backgroundPlane.geometry.dispose();
         backgroundPlane.geometry = new THREE.PlaneGeometry(
-          sizes.width / 100,
-          sizes.height / 100
+          sizes.width / 75,
+          sizes.height / 75
         );
       }
     };
@@ -845,7 +892,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         }
       }
 
-      // ✅ FIXED: Tính toán mouse movement nhưng giữ nguyên base position hiện tại
+      // Calculate mouse movement but keep current base position
       if (pointsMesh && frameCount % 2 === 0) {
         const maxOffset = 1;
         let offsetX = -mouse.x * moveFactor;
@@ -854,15 +901,14 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         offsetX = Math.max(Math.min(offsetX, maxOffset), -maxOffset);
         offsetY = Math.max(Math.min(offsetY, maxOffset), -maxOffset);
 
-        // Sử dụng position hiện tại làm base thay vì initialPosition cố định
+        // Use current position as base instead of fixed initialPosition
         const currentBaseX = pointsMesh.position.x - (pointsMesh.userData.lastOffsetX || 0);
         const currentBaseY = pointsMesh.position.y - (pointsMesh.userData.lastOffsetY || 0);
 
         pointsMesh.position.x = currentBaseX + offsetX;
         pointsMesh.position.y = currentBaseY + offsetY;
-        // pointsMesh.position.z giữ nguyên
 
-        // Lưu offset hiện tại để tính toán base position
+        // Save current offset for base position calculation
         pointsMesh.userData.lastOffsetX = offsetX;
         pointsMesh.userData.lastOffsetY = offsetY;
       }
