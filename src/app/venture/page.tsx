@@ -69,6 +69,13 @@ const data = [
     image: "/assets/images/agnostic-gray.svg",
     morph: 0,
   },
+  {
+    id: "7",
+    name: "Agnostic 08",
+    text: "A platform that helps teams build and analyse indexed-blockchain data",
+    image: "/assets/images/agnostic-gray.svg",
+    morph: 1,
+  },
 ]
 
 const HomePage: NextPage = () => {
@@ -167,7 +174,7 @@ const HomePage: NextPage = () => {
     
     // Tìm item gần nhất với vị trí hiện tại để scroll tới
     const screenCenter = window.innerHeight / 2;
-    let bestRef = null;
+    let bestRef: HTMLDivElement | null = null;
     let minDistance = Infinity;
 
     allItemRefs.current.forEach((ref, refIndex) => {
@@ -183,7 +190,7 @@ const HomePage: NextPage = () => {
     });
     
     if (bestRef && lenisRef.current?.lenis) {
-      const rect = bestRef.getBoundingClientRect();
+      const rect = (bestRef as HTMLDivElement).getBoundingClientRect();
       const targetScroll = window.scrollY + rect.top + (rect.height / 2) - screenCenter;
       
       lenisRef.current.lenis.scrollTo(targetScroll, {
@@ -245,7 +252,7 @@ const HomePage: NextPage = () => {
   return (
     <main className="w-full h-screen overflow-hidden">
        <ReactLenis root options={{ autoRaf: false, infinite: true,
-	syncTouch: true, wheelMultiplier: 0.1 }} ref={lenisRef} />
+	syncTouch: true, wheelMultiplier: 0.07 }} ref={lenisRef} />
       <ParticleScene config={SCENE_CONFIGS.venture} indexMorph={morphIndex} />
       <div className="flex justify-end absolute inset-0 font-bold">
         <div className="w-1/2 space-y-20">

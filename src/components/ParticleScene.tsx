@@ -17,7 +17,7 @@ interface ParticleSystem {
   morph0: () => void;
   morph1: () => void;
   morph2: () => void;
-  morphTo: (index: number) => void; // Add morphTo method
+  morphTo: (index: number) => void;
 }
 
 interface MouseTrailEntry {
@@ -51,28 +51,28 @@ export interface SceneConfig {
   };
 }
 
-// Props interface - UPDATED
+// Props interface
 interface ParticleSceneProps {
   config: SceneConfig;
   className?: string;
-  indexMorph?: number; // NEW: Add indexMorph prop
-  enableKeyboardControls?: boolean; // NEW: Option to disable keyboard controls
+  indexMorph?: number;
+  enableKeyboardControls?: boolean;
 }
 
 const ParticleScene: React.FC<ParticleSceneProps> = ({ 
   config, 
   className = '',
-  indexMorph = 0, // NEW: Default to first morph
-  enableKeyboardControls = true // NEW: Default to enabled
+  indexMorph = 0,
+  enableKeyboardControls = true
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const particlesRef = useRef<ParticleSystem | null>(null);
   const animationIdRef = useRef<number | null>(null);
-  const prevIndexMorphRef = useRef<number>(indexMorph); // NEW: Track previous indexMorph
+  const prevIndexMorphRef = useRef<number>(indexMorph);
 
-  // NEW: Effect to handle indexMorph changes
+  // Effect to handle indexMorph changes
   useEffect(() => {
     const particles = particlesRef.current;
     if (!particles) return;
@@ -395,71 +395,9 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       }
     `;
 
-    // Function to create variations from a single position array
-    const createVariations = (originalPosition: THREE.Float32BufferAttribute, maxCount: number): THREE.Float32BufferAttribute[] => {
-      const variations: THREE.Float32BufferAttribute[] = [];
-      
-      // Original position (normalized to maxCount)
-      const normalizedOriginal = new Float32Array(maxCount * 3);
-      const originalCount = originalPosition.count;
-      
-      for (let i = 0; i < maxCount; i++) {
-        const i3 = i * 3;
-        if (i < originalCount) {
-          normalizedOriginal[i3] = originalPosition.array[i3];
-          normalizedOriginal[i3 + 1] = originalPosition.array[i3 + 1];
-          normalizedOriginal[i3 + 2] = originalPosition.array[i3 + 2];
-        } else {
-          const randomIndex = Math.floor(originalCount * Math.random()) * 3;
-          normalizedOriginal[i3] = originalPosition.array[randomIndex];
-          normalizedOriginal[i3 + 1] = originalPosition.array[randomIndex + 1];
-          normalizedOriginal[i3 + 2] = originalPosition.array[randomIndex + 2];
-        }
-      }
-      
-      variations.push(new THREE.Float32BufferAttribute(normalizedOriginal, 3));
+    // REMOVED: createVariations function - no longer needed
 
-      // Variation 1: Spherical distribution
-      const sphericalArray = new Float32Array(maxCount * 3);
-      for (let i = 0; i < maxCount; i++) {
-        const i3 = i * 3;
-        const phi = Math.acos(2 * Math.random() - 1);
-        const theta = 2 * Math.PI * Math.random();
-        const radius = 2 + Math.random() * 2;
-        
-        sphericalArray[i3] = radius * Math.sin(phi) * Math.cos(theta);
-        sphericalArray[i3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
-        sphericalArray[i3 + 2] = radius * Math.cos(phi);
-      }
-      variations.push(new THREE.Float32BufferAttribute(sphericalArray, 3));
-
-      // Variation 2: Spiral pattern
-      const spiralArray = new Float32Array(maxCount * 3);
-      for (let i = 0; i < maxCount; i++) {
-        const i3 = i * 3;
-        const t = (i / maxCount) * Math.PI * 8;
-        const radius = 0.5 + (i / maxCount) * 3;
-        
-        spiralArray[i3] = radius * Math.cos(t);
-        spiralArray[i3 + 1] = (i / maxCount - 0.5) * 4;
-        spiralArray[i3 + 2] = radius * Math.sin(t);
-      }
-      variations.push(new THREE.Float32BufferAttribute(spiralArray, 3));
-
-      // Variation 3: Cube pattern
-      const cubeArray = new Float32Array(maxCount * 3);
-      for (let i = 0; i < maxCount; i++) {
-        const i3 = i * 3;
-        cubeArray[i3] = (Math.random() - 0.5) * 4;
-        cubeArray[i3 + 1] = (Math.random() - 0.5) * 4;
-        cubeArray[i3 + 2] = (Math.random() - 0.5) * 4;
-      }
-      variations.push(new THREE.Float32BufferAttribute(cubeArray, 3));
-
-      return variations;
-    };
-
-    // UPDATED: Morph function moved inside useEffect for access to particles
+    // Morph function moved inside useEffect for access to particles
     const morphTo = (index: number) => {
       const particles = particlesRef.current;
       if (!particles || index >= particles.positions.length) return;
@@ -562,7 +500,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         morph0: () => morphTo(0),
         morph1: () => morphTo(1),
         morph2: () => morphTo(2),
-        morphTo: morphTo, // NEW: Add morphTo method to particle system
+        morphTo: morphTo,
       };
 
       // Extract positions from scene children
@@ -571,11 +509,9 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         .map(child => {
           const mesh = child as THREE.Mesh;
           const position = mesh.geometry.attributes.position;
-          // Ensure we have a Float32BufferAttribute
           if (position instanceof THREE.Float32BufferAttribute) {
             return position;
           } else if (position instanceof THREE.BufferAttribute) {
-            // Convert BufferAttribute to Float32BufferAttribute if needed
             return new THREE.Float32BufferAttribute(position.array as Float32Array, position.itemSize);
           } else {
             console.warn('Unsupported position attribute type');
@@ -584,24 +520,21 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         })
         .filter(position => position !== null) as THREE.Float32BufferAttribute[];
 
-      // Handle case where there are no positions or only one position
+      // MODIFIED: Handle case where there are no positions
       if (originalPositions.length === 0) {
         console.warn('No mesh positions found in model');
         return;
       }
 
-      let positions: THREE.Float32BufferAttribute[];
+      // MODIFIED: Use original positions as-is, no auto-generated variations
+      const positions: THREE.Float32BufferAttribute[] = originalPositions;
+      particles.maxCount = Math.max(...positions.map((pos) => pos.count));
 
+      // Log info about what was loaded
       if (originalPositions.length === 1) {
-        // If only one shape, create variations
-        const originalPosition = originalPositions[0];
-        particles.maxCount = originalPosition.count;
-        positions = createVariations(originalPosition, particles.maxCount);
-        console.log('Single shape detected, created variations for morphing');
+        console.log('Single shape detected - morphing disabled');
       } else {
-        // Multiple shapes exist, use them as is
-        positions = originalPositions;
-        particles.maxCount = Math.max(...positions.map((pos) => pos.count));
+        console.log(`Multiple shapes detected (${originalPositions.length}) - morphing enabled`);
       }
 
       // Normalize all positions to maxCount
@@ -628,7 +561,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         return new THREE.Float32BufferAttribute(newArray, 3);
       });
 
-      // NEW: Set initial morph based on indexMorph prop
+      // Set initial morph based on indexMorph prop (clamp to available positions)
       const initialIndex = Math.min(indexMorph, particles.positions.length - 1);
       particles.index = initialIndex;
 
@@ -650,22 +583,36 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
             )
           ),
           uHoverPosition: { value: new THREE.Vector3(100, 100, 100) },
-          uProgress: new THREE.Uniform(1), // NEW: Start with progress = 1 (completed)
+          uProgress: new THREE.Uniform(1), // Start with progress = 1 (completed)
         },
         depthWrite: true,
       });
 
       particles.points = new THREE.Points(particles.geometry, particles.material);
+
+      // Set initial scale to 0 for entrance animation
+      particles.points.scale.setScalar(0);
+      particles.points.position.set(-30, 0, 0)
       scene.add(particles.points);
       pointsMesh = particles.points;
 
       particlesRef.current = particles;
       isLoaded = true;
 
-      // NEW: Set initial prevIndexMorphRef after particles are loaded
+      // Set initial prevIndexMorphRef after particles are loaded
       prevIndexMorphRef.current = initialIndex;
 
-      console.log(`Particle system initialized with ${particles.positions.length} morphing states, starting at index ${initialIndex}`);
+      // Entrance animation - scale from 0 to 1
+      gsap.to(particles.points.scale, {
+        x: 1,
+        y: 1,
+        z: 1,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        delay: 0.2
+      });
+
+      console.log(`Particle system initialized with ${particles.positions.length} shapes, starting at index ${initialIndex}`);
     });
 
     const textureLoader = new THREE.TextureLoader();
@@ -883,13 +830,19 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
     };
   }, [config]);
 
-  // UPDATED: Keyboard controls - now conditional based on enableKeyboardControls prop
+  // Keyboard controls - now conditional based on enableKeyboardControls prop
   useEffect(() => {
     if (!enableKeyboardControls) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       const particles = particlesRef.current;
       if (!particles) return;
+
+      // Only allow keyboard controls if there are multiple shapes
+      if (particles.positions.length <= 1) {
+        console.log('Morphing not available - only one shape loaded');
+        return;
+      }
 
       switch (event.key) {
         case '1':
