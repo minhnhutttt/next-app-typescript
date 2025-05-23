@@ -15,9 +15,6 @@ export default function SingleMarketing({ article }: {article: ArticleContent}) 
               <h3 className="md:text-[21px] text-[19px] font-semibold leading-snug dark:text-white">
                 {article.title}
               </h3>
-              <p className="font-helvetica md:text-[15px] text-[14px] md:mt-2.5 dark:text-white">
-                {article.date}
-              </p>
             </div>
 
             <div className="px-3">
