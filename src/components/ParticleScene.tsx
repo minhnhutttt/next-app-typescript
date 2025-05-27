@@ -175,122 +175,140 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
     let isLoaded = false;
 
     const createVertexShader = (particleSize: number) => `
-      uniform vec2 uResolution;
-      uniform float uSize;
-      uniform vec3 uHoverPosition;
-      uniform float uProgress;
+  uniform vec2 uResolution;
+  uniform float uSize;
+  uniform vec3 uHoverPosition;
+  uniform float uProgress;
 
-      attribute vec3 aPositionTarget;
+  attribute vec3 aPositionTarget;
 
-      varying float vDistance;
+  varying float vDistance;
 
-      vec4 permute(vec4 x){ return mod(((x*34.0)+1.0)*x, 289.0); }
-      vec4 taylorInvSqrt(vec4 r){ return 1.79284291400159 - 0.85373472095314 * r; }
+  vec4 permute(vec4 x){ return mod(((x*34.0)+1.0)*x, 289.0); }
+  vec4 taylorInvSqrt(vec4 r){ return 1.79284291400159 - 0.85373472095314 * r; }
 
-      float simplexNoise3d(vec3 v) {
-        const vec2 C = vec2(1.0/6.0, 1.0/3.0);
-        const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
+  float simplexNoise3d(vec3 v) {
+    const vec2 C = vec2(1.0/6.0, 1.0/3.0);
+    const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
 
-        vec3 i = floor(v + dot(v, C.yyy));
-        vec3 x0 = v - i + dot(i, C.xxx);
+    vec3 i = floor(v + dot(v, C.yyy));
+    vec3 x0 = v - i + dot(i, C.xxx);
 
-        vec3 g = step(x0.yzx, x0.xyz);
-        vec3 l = 1.0 - g;
-        vec3 i1 = min(g.xyz, l.zxy);
-        vec3 i2 = max(g.xyz, l.zxy);
+    vec3 g = step(x0.yzx, x0.xyz);
+    vec3 l = 1.0 - g;
+    vec3 i1 = min(g.xyz, l.zxy);
+    vec3 i2 = max(g.xyz, l.zxy);
 
-        vec3 x1 = x0 - i1 + 1.0 * C.xxx;
-        vec3 x2 = x0 - i2 + 2.0 * C.xxx;
-        vec3 x3 = x0 - 1. + 3.0 * C.xxx;
+    vec3 x1 = x0 - i1 + 1.0 * C.xxx;
+    vec3 x2 = x0 - i2 + 2.0 * C.xxx;
+    vec3 x3 = x0 - 1. + 3.0 * C.xxx;
 
-        i = mod(i, 289.0);
-        vec4 p = permute(permute(permute(i.z + vec4(0.0, i1.z, i2.z, 1.0)) + i.y + vec4(0.0, i1.y, i2.y, 1.0)) + i.x + vec4(0.0, i1.x, i2.x, 1.0));
+    i = mod(i, 289.0);
+    vec4 p = permute(permute(permute(i.z + vec4(0.0, i1.z, i2.z, 1.0)) + i.y + vec4(0.0, i1.y, i2.y, 1.0)) + i.x + vec4(0.0, i1.x, i2.x, 1.0));
 
-        float n_ = 1.0/7.0;
-        vec3 ns = n_ * D.wyz - D.xzx;
+    float n_ = 1.0/7.0;
+    vec3 ns = n_ * D.wyz - D.xzx;
 
-        vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
+    vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
 
-        vec4 x_ = floor(j * ns.z);
-        vec4 y_ = floor(j - 7.0 * x_);
+    vec4 x_ = floor(j * ns.z);
+    vec4 y_ = floor(j - 7.0 * x_);
 
-        vec4 x = x_ * ns.x + ns.yyyy;
-        vec4 y = y_ * ns.x + ns.yyyy;
-        vec4 h = 1.0 - abs(x) - abs(y);
+    vec4 x = x_ * ns.x + ns.yyyy;
+    vec4 y = y_ * ns.x + ns.yyyy;
+    vec4 h = 1.0 - abs(x) - abs(y);
 
-        vec4 b0 = vec4(x.xy, y.xy);
-        vec4 b1 = vec4(x.zw, y.zw);
+    vec4 b0 = vec4(x.xy, y.xy);
+    vec4 b1 = vec4(x.zw, y.zw);
 
-        vec4 s0 = floor(b0) * 2.0 + 1.0;
-        vec4 s1 = floor(b1) * 2.0 + 1.0;
-        vec4 sh = -step(h, vec4(0.0));
+    vec4 s0 = floor(b0) * 2.0 + 1.0;
+    vec4 s1 = floor(b1) * 2.0 + 1.0;
+    vec4 sh = -step(h, vec4(0.0));
 
-        vec4 a0 = b0.xzyw + s0.xzyw * sh.xxyy;
-        vec4 a1 = b1.xzyw + s1.xzyw * sh.zzww;
+    vec4 a0 = b0.xzyw + s0.xzyw * sh.xxyy;
+    vec4 a1 = b1.xzyw + s1.xzyw * sh.zzww;
 
-        vec3 p0 = vec3(a0.xy, h.x);
-        vec3 p1 = vec3(a0.zw, h.y);
-        vec3 p2 = vec3(a1.xy, h.z);
-        vec3 p3 = vec3(a1.zw, h.w);
+    vec3 p0 = vec3(a0.xy, h.x);
+    vec3 p1 = vec3(a0.zw, h.y);
+    vec3 p2 = vec3(a1.xy, h.z);
+    vec3 p3 = vec3(a1.zw, h.w);
 
-        vec4 norm = taylorInvSqrt(vec4(dot(p0, p0), dot(p1, p1), dot(p2, p2), dot(p3, p3)));
-        p0 *= norm.x;
-        p1 *= norm.y;
-        p2 *= norm.z;
-        p3 *= norm.w;
+    vec4 norm = taylorInvSqrt(vec4(dot(p0, p0), dot(p1, p1), dot(p2, p2), dot(p3, p3)));
+    p0 *= norm.x;
+    p1 *= norm.y;
+    p2 *= norm.z;
+    p3 *= norm.w;
 
-        vec4 m = max(0.6 - vec4(dot(x0, x0), dot(x1, x1), dot(x2, x2), dot(x3, x3)), 0.0);
-        m = m * m;
-        return 42.0 * dot(m * m, vec4(dot(p0, x0), dot(p1, x1), dot(p2, x2), dot(p3, x3)));
-      }
+    vec4 m = max(0.6 - vec4(dot(x0, x0), dot(x1, x1), dot(x2, x2), dot(x3, x3)), 0.0);
+    m = m * m;
+    return 42.0 * dot(m * m, vec4(dot(p0, x0), dot(p1, x1), dot(p2, x2), dot(p3, x3)));
+  }
 
-      void main() {
-        float noiseOrigin = simplexNoise3d(position * 0.2);
-        float noiseTarget = simplexNoise3d(aPositionTarget * 0.2);
-        float noise = mix(noiseOrigin, noiseTarget, uProgress);
-        noise = smoothstep(-1.0, 1.0, noise);
-        
-        float duration = 0.4;
-        float delay = (1.0 - duration) * noise;
-        float end = delay + duration;
-        float progress = smoothstep(delay, end, uProgress);
-        vec3 mixedPosition = mix(position, aPositionTarget, progress);
+  void main() {
+    float noiseOrigin = simplexNoise3d(position * 0.2);
+    float noiseTarget = simplexNoise3d(aPositionTarget * 0.2);
+    float noise = mix(noiseOrigin, noiseTarget, uProgress);
+    noise = smoothstep(-1.0, 1.0, noise);
+    
+    float duration = 0.4;
+    float delay = (1.0 - duration) * noise;
+    float end = delay + duration;
+    float progress = smoothstep(delay, end, uProgress);
+    vec3 mixedPosition = mix(position, aPositionTarget, progress);
 
-        vec4 modelPosition = modelMatrix * vec4(mixedPosition, 1.0);
+    vec4 modelPosition = modelMatrix * vec4(mixedPosition, 1.0);
 
-        // ✅ IMPROVED: Create organic hover effect with noise
-        float distanceToHover = distance(modelPosition.xyz, uHoverPosition);
-        
-        // Add organic variation to the hover distance using noise
-        float hoverNoise = simplexNoise3d(modelPosition.xyz * 2.0) * 0.15; // ✅ Reduced from 0.3 to 0.15
-        float organicDistance = distanceToHover + hoverNoise;
-        
-        float pushStrength = 0.0;
-        
-        // Only apply push effect if hover position is reasonable (not the default far position)
-        if (length(uHoverPosition) < 50.0) {
-          // Use organic distance for more natural falloff - ✅ Reduced range from 2.0 to 1.2
-          pushStrength = smoothstep(1.2, 0.0, organicDistance);
-          
-          // Add some variation to push strength based on position
-          float pushNoise = simplexNoise3d(modelPosition.xyz * 1.5) * 0.4 + 0.6;
-          pushStrength *= pushNoise;
-        }
-        
-        vec3 normal = normalize(modelPosition.xyz - uHoverPosition);
-        modelPosition.xyz += normal * pushStrength * 0.05;
+    // ✅ NEW: Bulge effect - phồng lên về phía camera
+    float bulgeStrength = 0.0;
+    
+    // Chỉ áp dụng bulge effect khi hover position hợp lệ
+    if (length(uHoverPosition) < 50.0) {
+      // Tính khoảng cách 2D trong mặt phẳng XY (bỏ qua Z để tập trung vào vị trí hover)
+      vec2 hoverPos2D = uHoverPosition.xy;
+      vec2 particlePos2D = modelPosition.xy;
+      float distance2D = distance(particlePos2D, hoverPos2D);
+      
+      // Thêm organic variation với noise
+      float bulgeNoise = simplexNoise3d(modelPosition.xyz * 2.0) * 0.1;
+      float organicDistance = distance2D + bulgeNoise;
+      
+      // Tính cường độ bulge với gradient mượt mà
+      // Vùng ảnh hưởng: 2.0 units từ tâm hover (khớp với color zones)
+      float maxBulgeDistance = 2.0;
+      
+      // Tạo gradient mượt mà từ 1.0 (tại tâm) về 0.0 (ở rìa)
+      bulgeStrength = smoothstep(maxBulgeDistance, 0.0, organicDistance);
+      
+      // Thêm curve để tập trung bulge mạnh hơn ở tâm
+      bulgeStrength = pow(bulgeStrength, 0.8); // Curve nhẹ hơn để mượt mà
+      
+      // Thêm variation để tạo hiệu ứng tự nhiên hơn (giảm noise để mượt hơn)
+      float strengthNoise = simplexNoise3d(modelPosition.xyz * 1.5) * 0.15 + 0.85;
+      bulgeStrength *= strengthNoise;
+      
+      // Curve để tạo bulge mạnh hơn ở center (optional)
+      bulgeStrength = pow(bulgeStrength, 1.2);
+    }
+    
+    // Áp dụng bulge effect: di chuyển particle về phía camera (positive Z direction)
+    float bulgeAmount = 1.2; // Tăng từ 0.8 lên 1.2 (+50%)
+    modelPosition.z += bulgeStrength * bulgeAmount;
 
-        vec4 viewPosition = viewMatrix * modelPosition;
-        vec4 projectedPosition = projectionMatrix * viewPosition;
-        gl_Position = projectedPosition;
+    vec4 viewPosition = viewMatrix * modelPosition;
+    vec4 projectedPosition = projectionMatrix * viewPosition;
+    gl_Position = projectedPosition;
 
-        gl_PointSize = uSize * uResolution.y;
-        gl_PointSize *= (1.0 / -viewPosition.z);
+    gl_PointSize = uSize * uResolution.y;
+    gl_PointSize *= (1.0 / -viewPosition.z);
 
-        // Pass both original and organic distance for color mixing
-        vDistance = organicDistance;
-      }
-    `;
+    // Pass distance for color mixing (sử dụng distance2D thay vì 3D)
+    vec2 hoverPos2D = uHoverPosition.xy;
+    vec2 particlePos2D = (modelMatrix * vec4(mixedPosition, 1.0)).xy;
+    float distance2D = distance(particlePos2D, hoverPos2D);
+    float bulgeNoise = simplexNoise3d((modelMatrix * vec4(mixedPosition, 1.0)).xyz * 2.0) * 0.1;
+    vDistance = distance2D + bulgeNoise;
+  }
+`;
 
     const createFragmentShader = (hoverColor: [number, number, number], normalColor: [number, number, number]) => `
       varying float vDistance;

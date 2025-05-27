@@ -5,7 +5,7 @@ import type { NextPage } from 'next';
   home: {
     modelPath: '/models/models.glb',
     texturePath: '/textures/pattern.jpg',
-    particleSize: 0.07,
+    particleSize: 0.08,
     particleColor: {
       hover: [1.0, 0.7, 0.0],
       normal: [0.04, 0.04, 0.04],
