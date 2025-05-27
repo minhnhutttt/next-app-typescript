@@ -5,7 +5,6 @@ import * as THREE from 'three';
 import { DRACOLoader, GLTFLoader } from 'three/examples/jsm/Addons.js';
 import { gsap } from 'gsap';
 
-// Define types
 interface ParticleSystem {
   index: number;
   positions: THREE.Float32BufferAttribute[];
@@ -14,9 +13,6 @@ interface ParticleSystem {
   geometry: THREE.BufferGeometry;
   material: THREE.ShaderMaterial;
   points: THREE.Points;
-  morph0: () => void;
-  morph1: () => void;
-  morph2: () => void;
   morphTo: (index: number) => void;
 }
 
@@ -32,7 +28,6 @@ interface Sizes {
   pixelRatio: number;
 }
 
-// Configuration interface for different scenes
 export interface SceneConfig {
   modelPath: string;
   texturePath: string;
@@ -45,18 +40,12 @@ export interface SceneConfig {
     speed: number;
     intensity: number;
   };
-  controls?: {
-    showUI: boolean;
-    morphLabels: string[];
-  };
 }
 
-// Props interface
 interface ParticleSceneProps {
   config: SceneConfig;
   className?: string;
   indexMorph?: number;
-  enableKeyboardControls?: boolean;
   isLeft?: boolean;
 }
 
@@ -64,7 +53,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
   config, 
   className = '',
   indexMorph = 0,
-  enableKeyboardControls = true,
   isLeft = false
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -74,28 +62,24 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
   const animationIdRef = useRef<number | null>(null);
   const prevIndexMorphRef = useRef<number>(indexMorph);
   const isMobileRef = useRef<boolean>(false);
-  const hasMouseMovedRef = useRef<boolean>(false); // ✅ ADDED: Track if mouse has moved
+  const hasMouseMovedRef = useRef<boolean>(false);
 
-  // Helper function to check if mobile
   const checkIsMobile = () => {
     return window.innerWidth < 768;
   };
 
-  // Helper function to get target position based on screen size and isLeft
   const getTargetPosition = () => {
     const isMobile = checkIsMobile();
     if (isMobile) {
-      return 0; // Always center on mobile
+      return 0;
     }
-    return isLeft ? -3 : 0; // Left/Right on desktop
+    return isLeft ? -3 : 0;
   };
 
-  // Effect to handle isLeft changes and screen size changes
   useEffect(() => {
     const particles = particlesRef.current;
     if (!particles) return;
 
-    // Get target position based on screen size and isLeft prop
     const targetX = getTargetPosition();
     
     gsap.to(particles.points.position, {
@@ -105,12 +89,10 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
     });
   }, [isLeft]);
 
-  // Effect to handle indexMorph changes
   useEffect(() => {
     const particles = particlesRef.current;
     if (!particles) return;
 
-    // Check if indexMorph has changed and is within valid range
     if (
       indexMorph !== prevIndexMorphRef.current && 
       indexMorph >= 0 && 
@@ -125,7 +107,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
   useEffect(() => {
     if (!canvasRef.current) return;
 
-    // Scene setup
     const scene = new THREE.Scene();
     sceneRef.current = scene;
 
@@ -258,40 +239,29 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
 
     vec4 modelPosition = modelMatrix * vec4(mixedPosition, 1.0);
 
-    // ✅ NEW: Bulge effect - phồng lên về phía camera
     float bulgeStrength = 0.0;
     
-    // Chỉ áp dụng bulge effect khi hover position hợp lệ
     if (length(uHoverPosition) < 50.0) {
-      // Tính khoảng cách 2D trong mặt phẳng XY (bỏ qua Z để tập trung vào vị trí hover)
       vec2 hoverPos2D = uHoverPosition.xy;
       vec2 particlePos2D = modelPosition.xy;
       float distance2D = distance(particlePos2D, hoverPos2D);
       
-      // Thêm organic variation với noise
       float bulgeNoise = simplexNoise3d(modelPosition.xyz * 2.0) * 0.1;
       float organicDistance = distance2D + bulgeNoise;
       
-      // Tính cường độ bulge với gradient mượt mà
-      // Vùng ảnh hưởng: 2.0 units từ tâm hover (khớp với color zones)
       float maxBulgeDistance = 2.0;
       
-      // Tạo gradient mượt mà từ 1.0 (tại tâm) về 0.0 (ở rìa)
       bulgeStrength = smoothstep(maxBulgeDistance, 0.0, organicDistance);
       
-      // Thêm curve để tập trung bulge mạnh hơn ở tâm
-      bulgeStrength = pow(bulgeStrength, 0.8); // Curve nhẹ hơn để mượt mà
+      bulgeStrength = pow(bulgeStrength, 0.8);
       
-      // Thêm variation để tạo hiệu ứng tự nhiên hơn (giảm noise để mượt hơn)
       float strengthNoise = simplexNoise3d(modelPosition.xyz * 1.5) * 0.15 + 0.85;
       bulgeStrength *= strengthNoise;
       
-      // Curve để tạo bulge mạnh hơn ở center (optional)
       bulgeStrength = pow(bulgeStrength, 1.2);
     }
     
-    // Áp dụng bulge effect: di chuyển particle về phía camera (positive Z direction)
-    float bulgeAmount = 1.2; // Tăng từ 0.8 lên 1.2 (+50%)
+    float bulgeAmount = 1.2;
     modelPosition.z += bulgeStrength * bulgeAmount;
 
     vec4 viewPosition = viewMatrix * modelPosition;
@@ -301,7 +271,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
     gl_PointSize = uSize * uResolution.y;
     gl_PointSize *= (1.0 / -viewPosition.z);
 
-    // Pass distance for color mixing (sử dụng distance2D thay vì 3D)
     vec2 hoverPos2D = uHoverPosition.xy;
     vec2 particlePos2D = (modelMatrix * vec4(mixedPosition, 1.0)).xy;
     float distance2D = distance(particlePos2D, hoverPos2D);
@@ -320,27 +289,20 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         if(distanceToCenter > 0.5)
           discard;
           
-        // ✅ IMPROVED: More organic color transition with multiple falloff zones (SMALLER ZONES)
         float intensity = 1.0;
         
-        // Create multiple zones with different falloff rates for organic feel
-        if (vDistance < 0.4) { // ✅ Reduced from 0.8 to 0.4
-          // Inner core - strong hover color
+        if (vDistance < 0.4) {
           intensity = 0.0;
-        } else if (vDistance < 0.8) { // ✅ Reduced from 1.5 to 0.8
-          // Transition zone 1 - smooth blend
+        } else if (vDistance < 0.8) {
           float t = (vDistance - 0.4) / (0.8 - 0.4);
           intensity = smoothstep(0.0, 1.0, t) * 0.3;
-        } else if (vDistance < 1.3) { // ✅ Reduced from 2.5 to 1.3
-          // Transition zone 2 - gradual fade
+        } else if (vDistance < 1.3) { 
           float t = (vDistance - 0.8) / (1.3 - 0.8);
           intensity = 0.3 + smoothstep(0.0, 1.0, t) * 0.4;
-        } else if (vDistance < 2.0) { // ✅ Reduced from 4.0 to 2.0
-          // Outer zone - subtle influence
+        } else if (vDistance < 2.0) { 
           float t = (vDistance - 1.3) / (2.0 - 1.3);
           intensity = 0.7 + smoothstep(0.0, 1.0, t) * 0.3;
         } else {
-          // No influence - normal color
           intensity = 1.0;
         }
         
@@ -487,7 +449,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       }
     `;
 
-    // Morph function moved inside useEffect for access to particles
     const morphTo = (index: number) => {
       const particles = particlesRef.current;
       if (!particles || index >= particles.positions.length) return;
@@ -514,7 +475,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       const particles = particlesRef.current;
       if (!particles) return;
 
-      // ✅ FIXED: Don't run intersection checks until mouse has moved
       if (!hasMouseMovedRef.current) {
         particles.material.uniforms.uHoverPosition.value.set(1000, 1000, 1000);
         return;
@@ -526,7 +486,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       raycaster.setFromCamera(mouse, camera);
 
       if (particles.material.uniforms.uProgress.value > 0.01) {
-        // Tạo geometry tạm thời cho morphing animation
         const tempGeometry = new THREE.BufferGeometry();
         const positions = particles.geometry.attributes.position;
         const targetPositions = particles.geometry.attributes.aPositionTarget;
@@ -598,13 +557,9 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         geometry: new THREE.BufferGeometry(),
         material: new THREE.ShaderMaterial({}),
         points: new THREE.Points(),
-        morph0: () => morphTo(0),
-        morph1: () => morphTo(1),
-        morph2: () => morphTo(2),
         morphTo: morphTo,
       };
 
-      // Extract positions from scene children
       const originalPositions = gltf.scene.children
         .filter(child => child instanceof THREE.Mesh)
         .map(child => {
@@ -635,7 +590,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         console.log(`Multiple shapes detected (${originalPositions.length}) - morphing enabled`);
       }
 
-      // Normalize all positions to maxCount
       particles.positions = positions.map((position) => {
         const originalArray = position.array;
         const newArray = new Float32Array(particles.maxCount * 3);
@@ -659,7 +613,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         return new THREE.Float32BufferAttribute(newArray, 3);
       });
 
-      // Set initial morph based on indexMorph prop (clamp to available positions)
       const initialIndex = Math.min(indexMorph, particles.positions.length - 1);
       particles.index = initialIndex;
 
@@ -680,7 +633,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
               sizes.height * sizes.pixelRatio
             )
           ),
-          // ✅ FIXED: Set hover position far away initially
           uHoverPosition: { value: new THREE.Vector3(1000, 1000, 1000) },
           uProgress: new THREE.Uniform(1),
         },
@@ -692,7 +644,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       particles.points.position.copy(initialPosition);
       particles.points.scale.setScalar(0);
       
-      // Khởi tạo userData để tracking offset
       particles.points.userData.lastOffsetX = 0;
       particles.points.userData.lastOffsetY = 0;
       
@@ -704,7 +655,8 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
 
       prevIndexMorphRef.current = initialIndex;
 
-      // Entrance animation - scale from 0 to 1
+      particles.points.lookAt(camera.position)
+
       gsap.to(particles.points.scale, {
         x: 0.8,
         y: 0.8,
@@ -772,7 +724,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
     });
 
     const onMouseMove = (event: MouseEvent) => {
-      // ✅ FIXED: Mark that mouse has moved
       hasMouseMovedRef.current = true;
       
       const rect = renderer.domElement.getBoundingClientRect();
@@ -791,12 +742,10 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       sizes.height = window.innerHeight;
       sizes.pixelRatio = Math.min(window.devicePixelRatio, 2);
 
-      // Check if mobile status changed and update position accordingly
       const wasMobile = isMobileRef.current;
       const isMobile = checkIsMobile();
       isMobileRef.current = isMobile;
 
-      // If mobile status changed, animate to new position
       if (wasMobile !== isMobile) {
         const particles = particlesRef.current;
         if (particles) {
@@ -910,7 +859,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         }
       }
 
-      // Calculate mouse movement but keep current base position
       if (pointsMesh && frameCount % 2 === 0) {
         const maxOffset = 1;
         let offsetX = -mouse.x * moveFactor;
@@ -919,14 +867,12 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         offsetX = Math.max(Math.min(offsetX, maxOffset), -maxOffset);
         offsetY = Math.max(Math.min(offsetY, maxOffset), -maxOffset);
 
-        // Use current position as base instead of fixed initialPosition
         const currentBaseX = pointsMesh.position.x - (pointsMesh.userData.lastOffsetX || 0);
         const currentBaseY = pointsMesh.position.y - (pointsMesh.userData.lastOffsetY || 0);
 
         pointsMesh.position.x = currentBaseX + offsetX;
         pointsMesh.position.y = currentBaseY + offsetY;
 
-        // Save current offset for base position calculation
         pointsMesh.userData.lastOffsetX = offsetX;
         pointsMesh.userData.lastOffsetY = offsetY;
       }
@@ -961,37 +907,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       renderer.dispose();
     };
   }, [config]);
-
-  // Keyboard controls - now conditional based on enableKeyboardControls prop
-  useEffect(() => {
-    if (!enableKeyboardControls) return;
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const particles = particlesRef.current;
-      if (!particles) return;
-
-      // Only allow keyboard controls if there are multiple shapes
-      if (particles.positions.length <= 1) {
-        console.log('Morphing not available - only one shape loaded');
-        return;
-      }
-
-      switch (event.key) {
-        case '1':
-          particles.morph0();
-          break;
-        case '2':
-          particles.morph1();
-          break;
-        case '3':
-          particles.morph2();
-          break;
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [enableKeyboardControls]);
 
   return (
     <div className={`w-full h-screen overflow-hidden fixed inset-0 ${className}`}>
