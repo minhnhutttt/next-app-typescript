@@ -19,7 +19,7 @@ const NavButton: React.FC<NavButtonProps> = ({ href, pathname, children }) => {
     >
       <div className="absolute inset-0">
         <span 
-          className={`absolute bg-[#D8C115] inset-0 [transition:transform_.75s_cubic-bezier(.19,1,.22,1)] ${
+          className={`absolute bg-[#FF9016] inset-0 [transition:transform_.75s_cubic-bezier(.19,1,.22,1)] ${
             isActive ? 'scale-100' : 'scale-0'
           }`}
         ></span>

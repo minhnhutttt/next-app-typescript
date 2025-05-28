@@ -9,7 +9,7 @@ import type { NextPage } from 'next';
     texturePath: '/textures/pattern.png',
     particleSize: 0.08,
     particleColor: {
-      hover: [1.0, 0.7, 0.0],
+      hover: [1.0, 0.35, 0.05],
       normal: [0.04, 0.04, 0.04],
     },
     backgroundEffect: {
@@ -26,7 +26,7 @@ const HomePage: NextPage = () => {
       <div
         className="absolute top-16 md:top-1/2 md:-translate-y-1/2 inset-x-0 px-10 z-[10]"
       >
-        <p className="fade-up md:w-[30rem] text-[#D8C115]">
+        <p className="fade-up md:w-[30rem] text-[#FF9016]">
           ARDOREX supports advanced digital marketing practices and provides
           comprehensive solutions to customer challenges in collaboration with
           affiliated specialized business partners.

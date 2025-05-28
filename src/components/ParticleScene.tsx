@@ -40,6 +40,13 @@ export interface SceneConfig {
     speed: number;
     intensity: number;
   };
+  // Thêm config cho ripple effect
+  rippleEffect?: {
+    speed: number;        // Tốc độ lan truyền sóng
+    frequency: number;    // Tần suất xuất hiện sóng mới
+    width: number;        // Độ rộng của sóng
+    intensity: number;    // Cường độ màu trắng
+  };
 }
 
 interface ParticleSceneProps {
@@ -155,15 +162,30 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
     let pointsMesh: THREE.Points | null = null;
     let isLoaded = false;
 
+    // Ripple effect config với default values
+    const rippleConfig = {
+      speed: config.rippleEffect?.speed || 0.0,
+      frequency: config.rippleEffect?.frequency || 0.0,
+      width: config.rippleEffect?.width || 0.0,
+      intensity: config.rippleEffect?.intensity || 0.0,
+    };
+
     const createVertexShader = (particleSize: number) => `
   uniform vec2 uResolution;
   uniform float uSize;
   uniform vec3 uHoverPosition;
   uniform float uProgress;
+  
+  // Ripple effect uniforms
+  uniform float uTime;
+  uniform float uRippleSpeed;
+  uniform float uRippleFrequency;
+  uniform float uRippleWidth;
 
   attribute vec3 aPositionTarget;
 
   varying float vDistance;
+  varying float vRippleEffect; // Truyền ripple effect xuống fragment shader
 
   vec4 permute(vec4 x){ return mod(((x*34.0)+1.0)*x, 289.0); }
   vec4 taylorInvSqrt(vec4 r){ return 1.79284291400159 - 0.85373472095314 * r; }
@@ -239,6 +261,28 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
 
     vec4 modelPosition = modelMatrix * vec4(mixedPosition, 1.0);
 
+    // Tính toán ripple effect
+    float distanceFromCenter = length(mixedPosition.xy);
+    
+    // Tạo nhiều sóng với frequency khác nhau
+    float ripple1 = sin((distanceFromCenter - uTime * uRippleSpeed) * uRippleFrequency) * 0.5 + 0.5;
+    float ripple2 = sin((distanceFromCenter - uTime * uRippleSpeed * 0.7) * uRippleFrequency * 1.3) * 0.5 + 0.5;
+    float ripple3 = sin((distanceFromCenter - uTime * uRippleSpeed * 1.2) * uRippleFrequency * 0.8) * 0.5 + 0.5;
+    
+    // Kết hợp các sóng
+    float combinedRipple = (ripple1 + ripple2 * 0.6 + ripple3 * 0.4) / 2.0;
+    
+    // Tạo độ rộng sóng
+    float rippleWidth = uRippleWidth;
+    float rippleFade = 1.0 - smoothstep(0.0, rippleWidth, abs(sin((distanceFromCenter - uTime * uRippleSpeed) * uRippleFrequency)));
+    
+    // Áp dụng fade-out theo khoảng cách
+    float maxDistance = 8.0;
+    float distanceFade = 1.0 - smoothstep(0.0, maxDistance, distanceFromCenter);
+    
+    vRippleEffect = combinedRipple * rippleFade * distanceFade;
+
+    // Hover effect (giữ nguyên)
     float bulgeStrength = 0.0;
     
     if (length(uHoverPosition) < 50.0) {
@@ -280,7 +324,10 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
 `;
 
     const createFragmentShader = (hoverColor: [number, number, number], normalColor: [number, number, number]) => `
+      uniform float uRippleIntensity;
+      
       varying float vDistance;
+      varying float vRippleEffect;
       
       void main() {
         vec2 uv = gl_PointCoord;
@@ -297,7 +344,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
           float t = (vDistance - 0.4) / (0.8 - 0.4);
           intensity = smoothstep(0.0, 1.0, t) * 0.3;
         } else if (vDistance < 1.3) { 
-          float t = (vDistance - 0.8) / (1.3 - 0.8);
+          float t = (vDistance - 1.3) / (1.3 - 0.8);
           intensity = 0.3 + smoothstep(0.0, 1.0, t) * 0.4;
         } else if (vDistance < 2.0) { 
           float t = (vDistance - 1.3) / (2.0 - 1.3);
@@ -306,12 +353,19 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
           intensity = 1.0;
         }
         
-        vec4 color = mix(
+        vec4 baseColor = mix(
           vec4(${hoverColor[0]}, ${hoverColor[1]}, ${hoverColor[2]}, 1.0), 
           vec4(${normalColor[0]}, ${normalColor[1]}, ${normalColor[2]}, 1.0), 
           intensity
         );
-        gl_FragColor = vec4(color);
+        
+        // Áp dụng ripple effect - trộn với màu trắng
+        vec3 whiteColor = vec3(1.0, 1.0, 1.0);
+        float rippleStrength = vRippleEffect * uRippleIntensity;
+        
+        vec3 finalColor = mix(baseColor.rgb, whiteColor, rippleStrength);
+        
+        gl_FragColor = vec4(finalColor, baseColor.a);
 
         #include <tonemapping_fragment>
         #include <colorspace_fragment>
@@ -635,6 +689,12 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
           ),
           uHoverPosition: { value: new THREE.Vector3(1000, 1000, 1000) },
           uProgress: new THREE.Uniform(1),
+          // Thêm ripple uniforms
+          uTime: new THREE.Uniform(0),
+          uRippleSpeed: new THREE.Uniform(rippleConfig.speed),
+          uRippleFrequency: new THREE.Uniform(rippleConfig.frequency),
+          uRippleWidth: new THREE.Uniform(rippleConfig.width),
+          uRippleIntensity: new THREE.Uniform(rippleConfig.intensity),
         },
         depthWrite: true,
       });
@@ -796,6 +856,12 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       frameCount++;
 
       checkIntersections();
+
+      // Update ripple effect time
+      const particles = particlesRef.current;
+      if (particles?.material?.uniforms?.uTime) {
+        particles.material.uniforms.uTime.value = elapsedTime;
+      }
 
       if (backgroundMaterial) {
         backgroundMaterial.uniforms.iTime.value = elapsedTime;

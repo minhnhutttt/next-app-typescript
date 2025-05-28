@@ -14,7 +14,7 @@ const SCENE_CONFIGS: Record<string, SceneConfig> = {
     texturePath: "/textures/pattern.jpg",
     particleSize: 0.06,
     particleColor: {
-      hover: [1.0, 0.7, 0.0],
+      hover: [1.0, 0.35, 0.05],
       normal: [0.04, 0.04, 0.04],
     },
     backgroundEffect: {
@@ -125,7 +125,6 @@ const VenturePage: NextPage = () => {
     return closestItemIndex;
   };
 
-  // Function to scroll first item to center
   const scrollFirstItemToCenter = () => {
     const firstItemRef = allItemRefs.current[0];
     const lenis = lenisRef.current?.lenis;
@@ -136,7 +135,6 @@ const VenturePage: NextPage = () => {
       const itemCenter = rect.top + rect.height / 2;
       const scrollDistance = itemCenter - screenCenter;
       
-      // Scroll to position the first item in center
       lenis.scrollTo(window.scrollY + scrollDistance, {
         duration: 0.8,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
@@ -146,7 +144,6 @@ const VenturePage: NextPage = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only update active item if initialization is complete
       if (!isInitialized) return;
       
       const centerItemIndex = findCenterItem();
@@ -177,20 +174,16 @@ const VenturePage: NextPage = () => {
     }
   }, [activeItemIndex, isInitialized]);
 
-  // Initialize: Set first item as active and scroll it to center
   useEffect(() => {
     const timer = setTimeout(() => {
-      // Set first item as active
       setActiveItemIndex(0);
       setMorphIndex(data[0].morph);
       
-      // Scroll first item to center
       scrollFirstItemToCenter();
       
-      // Mark as initialized after scroll completes
       setTimeout(() => {
         setIsInitialized(true);
-      }, 1000); // Wait for scroll animation to complete
+      }, 1000);
     }, 200);
 
     return () => clearTimeout(timer);
@@ -231,7 +224,7 @@ const VenturePage: NextPage = () => {
           >
             <path
               d="M19.4727 1.38538C9.51215 1.38538 1.4375 9.46002 1.4375 19.4205C1.4375 29.381 9.51215 37.4557 19.4727 37.4557C29.4332 37.4557 37.5078 29.381 37.5078 19.4205C37.5078 9.46002 29.4335 1.38538 19.4727 1.38538ZM32.1455 21.1033L21.1554 32.0934C20.226 33.0229 18.719 33.0229 17.7899 32.0934L6.79982 21.1033C5.87032 20.1738 5.87032 18.6669 6.79982 17.7377L17.7899 6.74769C18.7194 5.8182 20.2263 5.8182 21.1554 6.74769L32.1455 17.7377C33.075 18.6672 33.075 20.1742 32.1455 21.1033Z"
-              fill={isActive ? "#FFB800" : "#999999"}
+              fill={isActive ? "#FF9016" : "#999999"}
               className="transition-colors duration-500"
             />
           </svg>
@@ -239,14 +232,14 @@ const VenturePage: NextPage = () => {
         <div className="">
           <p
             className={`md:text-[70px] text-[24px] font-bold transition-all duration-500 ${
-              isActive ? "text-[#FFB800] drop-shadow-md" : "text-[#999999]"
+              isActive ? "text-[#FF9016] drop-shadow-md" : "text-[#999999]"
             }`}
           >
             {item.name}
           </p>
           <p
             className={`md:text-[20px] text-[14px] font-bold transition-all duration-500 ${
-              isActive ? "text-[#FFB800] drop-shadow-sm" : "text-[#999999]"
+              isActive ? "text-[#FF9016] drop-shadow-sm" : "text-[#999999]"
             }`}
           >
             {item.text}
