@@ -87,6 +87,8 @@ const VenturePage: NextPage = () => {
   const ref = useScrollAnimations()
   const lenisRef = useRef<LenisRef>(null);
   const allItemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
     function update(time: number) {
@@ -123,8 +125,30 @@ const VenturePage: NextPage = () => {
     return closestItemIndex;
   };
 
+  // Function to scroll first item to center
+  const scrollFirstItemToCenter = () => {
+    const firstItemRef = allItemRefs.current[0];
+    const lenis = lenisRef.current?.lenis;
+    
+    if (firstItemRef && lenis) {
+      const rect = firstItemRef.getBoundingClientRect();
+      const screenCenter = window.innerHeight / 2;
+      const itemCenter = rect.top + rect.height / 2;
+      const scrollDistance = itemCenter - screenCenter;
+      
+      // Scroll to position the first item in center
+      lenis.scrollTo(window.scrollY + scrollDistance, {
+        duration: 0.8,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+      });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
+      // Only update active item if initialization is complete
+      if (!isInitialized) return;
+      
       const centerItemIndex = findCenterItem();
       if (centerItemIndex !== activeItemIndex) {
         setActiveItemIndex(centerItemIndex);
@@ -151,48 +175,26 @@ const VenturePage: NextPage = () => {
         lenis.off("scroll", throttledHandleScroll);
       };
     }
-  }, [activeItemIndex]);
+  }, [activeItemIndex, isInitialized]);
 
+  // Initialize: Set first item as active and scroll it to center
   useEffect(() => {
     const timer = setTimeout(() => {
-      const centerItemIndex = findCenterItem();
-      setActiveItemIndex(centerItemIndex);
-      setMorphIndex(data[centerItemIndex].morph);
+      // Set first item as active
+      setActiveItemIndex(0);
+      setMorphIndex(data[0].morph);
+      
+      // Scroll first item to center
+      scrollFirstItemToCenter();
+      
+      // Mark as initialized after scroll completes
+      setTimeout(() => {
+        setIsInitialized(true);
+      }, 1000); // Wait for scroll animation to complete
     }, 200);
 
     return () => clearTimeout(timer);
   }, []);
-
-  const handleItemClick = (item: (typeof data)[0], clickedIndex: number) => {
-    const actualIndex = data.findIndex((d) => d.id === item.id);
-
-    const screenCenter = window.innerHeight / 2;
-    let bestRef: HTMLDivElement | null = null;
-    let minDistance = Infinity;
-
-    allItemRefs.current.forEach((ref, refIndex) => {
-      if (ref && refIndex % data.length === actualIndex) {
-        const rect = ref.getBoundingClientRect();
-        const distance = Math.abs(rect.top + rect.height / 2 - screenCenter);
-
-        if (distance < minDistance) {
-          minDistance = distance;
-          bestRef = ref;
-        }
-      }
-    });
-
-    if (bestRef && lenisRef.current?.lenis) {
-      const rect = (bestRef as HTMLDivElement).getBoundingClientRect();
-      const targetScroll =
-        window.scrollY + rect.top + rect.height / 2 - screenCenter;
-
-      lenisRef.current.lenis.scrollTo(targetScroll, {
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      });
-    }
-  };
 
   const ItemComponent = ({
     item,
@@ -217,7 +219,6 @@ const VenturePage: NextPage = () => {
           isActive ? "opacity-100" : "opacity-60 hover:opacity-90"
         }`}
         key={`${isClone ? "clone-" : ""}${refIndex}`}
-        onClick={() => handleItemClick(item, index)}
       >
         <div>
           <svg
@@ -264,7 +265,6 @@ const VenturePage: NextPage = () => {
           infinite: true,
           syncTouch: true,
           wheelMultiplier: 0.1,
-          touchMultiplier: 0.1,
         }}
         ref={lenisRef}
       />
@@ -274,7 +274,10 @@ const VenturePage: NextPage = () => {
         isLeft
       />
       <div className="fade-up flex justify-end absolute inset-0 font-bold p-10">
-        <div className="md:w-1/2 space-y-20">
+        <div 
+          ref={containerRef}
+          className="md:w-1/2 space-y-20"
+        >
           {data.map((item, index) => (
             <ItemComponent
               key={`original-${item.id}`}
