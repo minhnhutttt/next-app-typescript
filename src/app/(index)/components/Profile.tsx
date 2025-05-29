@@ -22,7 +22,7 @@ const Profile = () => {
             <span className="w-[5vw] md:w-[92px] h-full border border-white absolute left-0 border-r-0"></span>
             <div className="">
                 <p className="text-[6.5vw] md:text-[52px] xl:text-[80px] tracking-[0.2em] leading-none">経愛に宿した経営人格</p>
-                <p className="text-[2.4vw] md:text-[19px] xl:text-[30px] tracking-[0.2em] max-md:mt-[2vw]">事業家、挑戦者、多角経営、海外展開、実践者、そして愛。</p>
+                <p className="text-[4vw] text-center md:text-[19px] xl:text-[30px] tracking-[0.2em] max-md:mt-[2vw]">事業家、挑戦者、多角経営、<br className="md:hidden" />海外展開、実践者、そして愛。</p>
             </div>
             <span className="w-[5vw] md:w-[92px] h-full border border-white absolute right-0 border-l-0"></span>
         </h3>

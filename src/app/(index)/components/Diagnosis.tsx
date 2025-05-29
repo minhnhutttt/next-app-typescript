@@ -21,11 +21,11 @@ const Diagnosis = () => {
       <div className="w-full max-w-[1440px] mx-auto">
         <h3 className="fade-up md:text-[80px] text-[12vw] font-semibold text-center md:leading-loose tracking-wider">今、どんな気持ちですか？</h3>
         <div className="flex justify-between w-full max-w-[1200px] mx-auto md:mt-20 mt-[10vw] gap-10 max-md:flex-wrap">
-            <div className="fade-up flex max-md:justify-center gap-10 max-md:w-[calc(50%-20px)]">
+            <div className="fade-up flex max-md:justify-center gap-10 max-md:w-[calc(50%-20px)] max-md:order-3">
                 <p><img src="/assets/images/text-feeling-04.svg" alt="" /></p>
                 <p><img src="/assets/images/text-feeling-03.svg" alt="" /></p>
             </div>
-            <div className="space-y-5 max-md:order-3">
+            <div className="space-y-5 max-md:order-1">
                 <Item>次の一手がいつまでたっても思いつかない</Item>
                 <Item>壁打ちできる相手が欲しい</Item>
                 <Item>時間がない、今すぐ動きたい</Item>
@@ -35,13 +35,17 @@ const Diagnosis = () => {
                 <Item>第三者の目で自社を見てみたい</Item>
                 <Item>受けた批判に納得できないが、反論もできない</Item>
             </div>
-            <div className="fade-up flex max-md:justify-center gap-10 max-md:w-[calc(50%-20px)] max-md:order-2">
+            <div className="fade-up flex max-md:justify-center gap-10 max-md:w-[calc(50%-20px)] max-md:order-4">
                 <p><img src="/assets/images/text-feeling-02.svg" alt="" /></p>
                 <p><img src="/assets/images/text-feeling-01.svg" alt="" /></p>
             </div>
+            <p className="fade-up text-center text-[5vw] md:text-[36px] font-semibold tracking-[0.2em] md:hidden max-md:order-2">
+                3分の診断で、<br />
+                あなたの経営難題に即答します
+            </p>
         </div>
         <div className="md:mt-16 mt-[10vw] md:mb-[186px] mb-[20vw]">
-            <p className="fade-up text-center text-[5vw] md:text-[36px] font-semibold tracking-[0.2em]">
+            <p className="fade-up text-center text-[5vw] md:text-[36px] font-semibold tracking-[0.2em] max-md:hidden">
                 3分の診断で、<br />
                 あなたの経営難題に即答します
             </p>
