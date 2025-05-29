@@ -18,7 +18,10 @@
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "three": "^0.176.0"
+    "scroll-out": "^2.2.12",
+    "splitting": "^1.1.0",
+    "three": "^0.176.0",
+    "use-scramble": "^2.2.15"
   },
   "devDependencies": {
     "@types/node": "^20",

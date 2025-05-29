@@ -1,4 +1,5 @@
 "use client"
+import { useLoading } from '@/contexts/LoadingContext';
 import { useState, useEffect } from 'react';
 
 interface Pattern {
@@ -10,7 +11,7 @@ interface Pattern {
 }
 
 const LoadingScreen: React.FC = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { isLoading, setIsLoading } = useLoading();
   const [patterns, setPatterns] = useState<Pattern[]>([]);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const LoadingScreen: React.FC = () => {
           x: Math.random() * 85,
           y: Math.random() * 85,
           delay: Math.random() * 1.5,
-          duration: 1 + Math.random() * 30,
+          duration: 1 + Math.random() * 3, // Giảm duration xuống để không quá dài
         });
       }
       setPatterns(patternArray);
@@ -31,11 +32,11 @@ const LoadingScreen: React.FC = () => {
     generatePatterns();
 
     const timer: NodeJS.Timeout = setTimeout(() => {
-      setIsLoading(false);
+      setIsLoading(false); // Cập nhật state global
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [setIsLoading]);
 
   return (
     <div 
@@ -43,7 +44,6 @@ const LoadingScreen: React.FC = () => {
         isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
-      
       {patterns.map((pattern: Pattern) => (
         <div
           key={pattern.id}
@@ -55,14 +55,11 @@ const LoadingScreen: React.FC = () => {
             animationDuration: `${pattern.duration}s`,
           }}
         >
-          <img
-            src="/textures/pattern02.png"
-            alt=""
-            className={`w-full h-full object-contain slow-fall-1`}
+          <div
+            className={`w-full h-full bg-[url(/textures/pattern02.png)] bg-cover slow-fall-1`}
             style={{
               animationDelay: `${pattern.delay}s`,
             }}
-            draggable={false}
           />
         </div>
       ))}

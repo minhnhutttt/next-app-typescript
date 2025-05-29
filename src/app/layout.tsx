@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import LoadingScreen from "@/components/LoadingScreen";
 import Footer from "@/components/Footer";
+import { LoadingProvider } from "@/contexts/LoadingContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,14 +21,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-black relative`}>
-        <LoadingScreen />
-        <div className="fixed md:top-10 md:left-10 top-7 left-7 z-50">
-          <Link href="/" className="">
-            <img className="max-md:w-[150px]" src="/assets/images/logo.svg" alt="" />
-          </Link>
-        </div>
-        {children}
-        <Footer />
+        <LoadingProvider>
+          <LoadingScreen />
+          <div className="fixed md:top-10 md:left-10 top-7 left-7 z-50">
+            <Link href="/" className="">
+              <img className="max-md:w-[150px]" src="/assets/images/logo.svg" alt="" />
+            </Link>
+          </div>
+          {children}
+          <Footer />
+        </LoadingProvider>
       </body>
     </html>
   );

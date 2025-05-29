@@ -1,9 +1,12 @@
 "use client"
 import useScrollAnimations from '@/hooks/useScrollAnimations';
-import ParticleScene, {  SceneConfig } from '../components/ParticleScene';
+import ParticleScene, { SceneConfig } from '../components/ParticleScene';
 import type { NextPage } from 'next';
+import { useLayoutEffect, useEffect, useState } from 'react';
+import { useScramble } from 'use-scramble';
+import { useLoading } from '@/contexts/LoadingContext';
 
- const SCENE_CONFIGS: Record<string, SceneConfig> = {
+const SCENE_CONFIGS: Record<string, SceneConfig> = {
   home: {
     modelPath: '/models/models.glb',
     texturePath: '/textures/pattern.png',
@@ -18,18 +21,51 @@ import type { NextPage } from 'next';
     },
   },
 };
+
 const HomePage: NextPage = () => {
-  const ref = useScrollAnimations()
+  const { isLoading } = useLoading();
+  const [shouldStartAnimations, setShouldStartAnimations] = useState(false);
+  const aniRef = useScrollAnimations();
+  
+  const { ref, replay } = useScramble({ 
+    text: "ARDOREX supports advanced digital marketing practices and provides comprehensive solutions to customer challenges in collaboration with affiliated specialized business partners." ,
+    speed: 0.7,
+    tick: 2,
+    step: 5,
+    scramble: 1,
+    seed: 1,
+    chance: 1,
+    overdrive: false,
+  });
+
+  useEffect(() => {
+    if (!isLoading) {
+      const timer = setTimeout(() => {
+        replay()
+      }, 500);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
+
+
   return (
-    <main ref={ref} className="w-full h-screen z-10">
+    <main ref={aniRef} className="w-full h-screen z-10">
       <ParticleScene config={SCENE_CONFIGS.home} />
       <div
         className="absolute top-16 md:top-1/2 md:-translate-y-1/2 inset-x-0 px-10 z-[10]"
       >
-        <p className="fade-up md:w-[30rem] text-[#FF9016]">
-          ARDOREX supports advanced digital marketing practices and provides
-          comprehensive solutions to customer challenges in collaboration with
-          affiliated specialized business partners.
+        <p 
+          ref={ref} 
+          className={`fade-up md:w-[30rem] text-[#FF9016] transition-opacity duration-500`}
+        >
+        </p>
+        <p 
+          className={`fade-up transition-opacity duration-500 ${
+            shouldStartAnimations ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          aaa
         </p>
       </div>
     </main>

@@ -2536,6 +2536,11 @@ scheduler@^0.23.2:
   dependencies:
     loose-envify "^1.1.0"
 
+scroll-out@^2.2.12:
+  version "2.2.12"
+  resolved "https://registry.yarnpkg.com/scroll-out/-/scroll-out-2.2.12.tgz#6b092e24fd726e73b81cd10519b4769d648c07b6"
+  integrity sha512-BPWQJat8mmcjQCq+l4DsibBopkmQQb5ngPJ6T9XRxRl86/LJo7V+0d3Sjd9fxzIJkZmkjoGxEAam+Urvem8VRw==
+
 semver@^6.3.1:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.1.tgz#556d2ef8689146e46dcea4bfdd095f3434dffcb4"
@@ -2643,6 +2648,11 @@ source-map-js@^1.0.2, source-map-js@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
   integrity sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==
+
+splitting@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/splitting/-/splitting-1.1.0.tgz#e89102aa21f4f459d62e9fc027164dfb4fb8298d"
+  integrity sha512-6Tj+4mvlSti4DUu1yl0PnkHIIoLchFYJHqz2DnwYkvEehXbjrR2epa4ds/xdto6ZdZsC+NP5IOOehi9VGjNlMQ==
 
 stable-hash@^0.0.5:
   version "0.0.5"
@@ -3005,6 +3015,11 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+use-scramble@^2.2.15:
+  version "2.2.15"
+  resolved "https://registry.yarnpkg.com/use-scramble/-/use-scramble-2.2.15.tgz#443b41f097000d4b5a67c39c0fd8077b4e6977f7"
+  integrity sha512-3+ngTV6OpkY9JT75FM4JYcspmpP7cd/h0/5KqsMU2jcdBD+SAuBMmLqLu0N3/7t8NsfdwJjD3BBeKtT+qZWKew==
 
 util-deprecate@^1.0.2:
   version "1.0.2"
