@@ -23,7 +23,7 @@ const LoadingScreen: React.FC = () => {
           x: Math.random() * 85,
           y: Math.random() * 85,
           delay: Math.random() * 1.5,
-          duration: 1 + Math.random() * 3, // Giảm duration xuống để không quá dài
+          duration: 1 + Math.random() * 25,
         });
       }
       setPatterns(patternArray);
@@ -32,7 +32,7 @@ const LoadingScreen: React.FC = () => {
     generatePatterns();
 
     const timer: NodeJS.Timeout = setTimeout(() => {
-      setIsLoading(false); // Cập nhật state global
+      setIsLoading(false);
     }, 2000);
 
     return () => clearTimeout(timer);

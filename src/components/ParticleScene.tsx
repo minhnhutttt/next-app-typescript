@@ -105,7 +105,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       indexMorph >= 0 && 
       indexMorph < particles.positions.length
     ) {
-      console.log(`Morphing to index: ${indexMorph}`);
       particles.morphTo(indexMorph);
       prevIndexMorphRef.current = indexMorph;
     }
@@ -624,25 +623,17 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
           } else if (position instanceof THREE.BufferAttribute) {
             return new THREE.Float32BufferAttribute(position.array as Float32Array, position.itemSize);
           } else {
-            console.warn('Unsupported position attribute type');
             return null;
           }
         })
         .filter(position => position !== null) as THREE.Float32BufferAttribute[];
 
       if (originalPositions.length === 0) {
-        console.warn('No mesh positions found in model');
         return;
       }
 
       const positions: THREE.Float32BufferAttribute[] = originalPositions;
       particles.maxCount = Math.max(...positions.map((pos) => pos.count));
-
-      if (originalPositions.length === 1) {
-        console.log('Single shape detected - morphing disabled');
-      } else {
-        console.log(`Multiple shapes detected (${originalPositions.length}) - morphing enabled`);
-      }
 
       particles.positions = positions.map((position) => {
         const originalArray = position.array;
@@ -725,8 +716,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         ease: "back.out(1.7)",
         delay: 0.2
       });
-
-      console.log(`Particle system initialized with ${particles.positions.length} shapes, starting at index ${initialIndex}`);
     });
 
     const textureLoader = new THREE.TextureLoader();
