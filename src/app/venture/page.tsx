@@ -7,6 +7,8 @@ import { ReactLenis } from "lenis/react";
 import type { LenisRef } from "lenis/react";
 import "lenis/dist/lenis.css";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { useScramble } from "use-scramble";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const SCENE_CONFIGS: Record<string, SceneConfig> = {
   venture: {
@@ -85,10 +87,27 @@ const data = [
 
 const VenturePage: NextPage = () => {
   const ref = useScrollAnimations()
+  const { isLoading } = useLoading();
   const lenisRef = useRef<LenisRef>(null);
   const allItemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [shouldStartScramble, setShouldStartScramble] = useState(false);
+
+  const scrambleInstances = [
+    ...data.map((item, index) => 
+      useScramble({
+        text: item.text,
+        speed: 2.0,
+      })
+    ),
+    ...data.map((item, index) => 
+      useScramble({
+        text: item.text,
+        speed: 2.0,
+      })
+    )
+  ];
 
   useEffect(() => {
     function update(time: number) {
@@ -175,19 +194,138 @@ const VenturePage: NextPage = () => {
   }, [activeItemIndex, isInitialized]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setActiveItemIndex(0);
-      setMorphIndex(data[0].morph);
-      
-      scrollFirstItemToCenter();
-      
-      setTimeout(() => {
-        setIsInitialized(true);
-      }, 1000);
-    }, 200);
+    if (!isLoading) { 
+      const timer = setTimeout(() => {
+        setActiveItemIndex(0);
+        setMorphIndex(data[0].morph);
+        
+        scrollFirstItemToCenter();
+        
+        setTimeout(() => {
+          setIsInitialized(true);
+          setShouldStartScramble(true); 
+        }, 500);
+      }, 200);
 
-    return () => clearTimeout(timer);
-  }, []);
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
+  useEffect(() => {
+    if (shouldStartScramble && !isLoading) {
+      const scrambleTimer = setTimeout(() => {
+        scrambleInstances.forEach(({ replay }) => {
+          replay();
+        });
+      }, 400);
+
+      const nameFlickerTimer = setTimeout(() => {
+        const nameElements = document.querySelectorAll('[data-name-element]');
+        
+        nameElements.forEach((element, index) => {
+          const delay = index * 0.1;
+          
+          gsap.set(element, { 
+            opacity: 0,
+            scale: 0.8
+          });
+          
+          const tl = gsap.timeline({ delay });
+          
+          tl.to(element, {
+            opacity: 1,
+            duration: 0.08,
+            ease: "power2.out"
+          })
+          .to(element, {
+            opacity: 0,
+            duration: 0.08,
+            ease: "power2.out"
+          })
+          .to(element, {
+            opacity: 1,
+            duration: 0.08,
+            ease: "power2.out"
+          })
+          .to(element, {
+            opacity: 0,
+            duration: 0.08,
+            ease: "power2.out"
+          })
+          .to(element, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            ease: "back.out(1.7)"
+          });
+        });
+      }, 10);
+
+      const iconFlickerTimer = setTimeout(() => {
+        const iconElements = document.querySelectorAll('[data-icon-element]');
+        
+        iconElements.forEach((element, index) => {
+          const delay = index * 0.15 + 0.3;
+          
+          gsap.set(element, { 
+            opacity: 0,
+            scale: 0.6,
+          });
+          
+          const tl = gsap.timeline({ delay });
+          
+          tl.to(element, {
+            opacity: 1,
+            duration: 0.1,
+            ease: "power2.out"
+          })
+          .to(element, {
+            opacity: 0,
+            duration: 0.1,
+            ease: "power2.out"
+          })
+          .to(element, {
+            opacity: 1,
+            duration: 0.1,
+            ease: "power2.out"
+          })
+          .to(element, {
+            opacity: 0,
+            duration: 0.1,
+            ease: "power2.out"
+          })
+          .to(element, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.5,
+            ease: "back.out(2)"
+          });
+        });
+      }, 150);
+
+        const textElements = document.querySelectorAll('[data-text-element]');
+        
+        textElements.forEach((element, index) => {
+          
+          gsap.set(element, { 
+            opacity: 0,
+          });
+          
+          const tl = gsap.timeline();
+          
+          tl.to(element, {
+            opacity: 1,
+            duration: 0.1,
+            ease: "power2.out"
+          })
+        });
+
+      return () => {
+        clearTimeout(scrambleTimer);
+        clearTimeout(nameFlickerTimer);
+        clearTimeout(iconFlickerTimer);
+      };
+    }
+  }, [shouldStartScramble, isLoading]);
 
   const ItemComponent = ({
     item,
@@ -202,6 +340,11 @@ const VenturePage: NextPage = () => {
   }) => {
     const actualIndex = index % data.length;
     const isActive = activeItemIndex === actualIndex;
+    const nameRef = useRef<HTMLParagraphElement>(null);
+    const iconRef = useRef<SVGSVGElement>(null);
+    
+    const scrambleInstanceIndex = isClone ? data.length + actualIndex : actualIndex;
+    const scrambleRef = scrambleInstances[scrambleInstanceIndex].ref;
 
     return (
       <div
@@ -215,8 +358,10 @@ const VenturePage: NextPage = () => {
       >
         <div>
           <svg
+            ref={iconRef}
+            data-icon-element
             xmlns="http://www.w3.org/2000/svg"
-            className={`w-8 md:w-20 transition-all duration-500 ${
+            className={`w-8 md:w-20 transition-colors duration-500 ${
               isActive ? "drop-shadow-lg" : ""
             }`}
             viewBox="0 0 39 39"
@@ -231,13 +376,17 @@ const VenturePage: NextPage = () => {
         </div>
         <div className="">
           <p
-            className={`md:text-[70px] text-[24px] font-bold transition-all duration-500 ${
+            ref={nameRef}
+            data-name-element
+            className={`md:text-[70px] text-[24px] font-bold transition-colors duration-500 origin-left ${
               isActive ? "text-[#FF9016] drop-shadow-md" : "text-[#999999]"
             }`}
           >
             {item.name}
           </p>
           <p
+            ref={scrambleRef}
+            data-text-element
             className={`md:text-[20px] text-[14px] font-bold transition-all duration-500 ${
               isActive ? "text-[#FF9016] drop-shadow-sm" : "text-[#999999]"
             }`}

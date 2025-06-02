@@ -29,19 +29,14 @@ const HomePage: NextPage = () => {
   
   const { ref, replay } = useScramble({ 
     text: "ARDOREX supports advanced digital marketing practices and provides comprehensive solutions to customer challenges in collaboration with affiliated specialized business partners." ,
-    speed: 0.7,
-    tick: 2,
-    step: 5,
-    scramble: 1,
-    seed: 1,
-    chance: 1,
-    overdrive: false,
+    speed: 2.0,
   });
 
   useEffect(() => {
     if (!isLoading) {
       const timer = setTimeout(() => {
         replay()
+        setShouldStartAnimations(true);
       }, 500);
       
       return () => clearTimeout(timer);
@@ -61,11 +56,11 @@ const HomePage: NextPage = () => {
         >
         </p>
         <p 
-          className={`fade-up transition-opacity duration-500 ${
+          className={` transition-opacity duration-[10s] text-[#FF9016]  ${
             shouldStartAnimations ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          aaa
+          aaaaaaa
         </p>
       </div>
     </main>
