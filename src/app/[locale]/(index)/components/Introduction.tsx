@@ -89,7 +89,7 @@ const Introduction = () => {
             {t('Headline2')}
             <br />
             <br />
-            <span
+            <span className="font-['Font_Awesome_5_Free']"
               dangerouslySetInnerHTML={{
                 __html: t('Headline3'),
               }}

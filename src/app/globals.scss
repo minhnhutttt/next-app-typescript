@@ -1,7 +1,7 @@
 @use 'tailwindcss/base';
 @use 'tailwindcss/components';
 @use 'tailwindcss/utilities';
-
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 @layer base {
   * {
     @apply box-border;
@@ -92,6 +92,11 @@
 
   .hamburger-menu.animate:before {
     @apply bottom-[0] -rotate-45 [transition:bottom_300ms_cubic-bezier(0.23,_1,_0.32,_1),_transform_300ms_300ms_cubic-bezier(0.23,_1,_0.32,_1)]
+  }
+
+  .ic-check:before {
+    content: '';
+    @apply content-[''] size-[25px] bg-[url(/assets/images/ic-check.svg)] inline-block mr-2
   }
 }
 
