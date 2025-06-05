@@ -1,6 +1,6 @@
 'use client'
 
-import { useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -16,7 +16,7 @@ const Introduction = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const charScrollRef = useRef<HTMLDivElement>(null)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let ctx: gsap.Context | null = null
 
     import('splitting').then(({ default: Splitting }) => {
@@ -64,18 +64,19 @@ const Introduction = () => {
   return (
     <section
       id="introduction"
-      className="relative overflow-hidden px-5 md:px-10"
+      className="relative overflow-hidden px-5 md:px-10 max-md:pb-[100px]"
     >
       <div className="mx-auto w-full max-w-[1440px]">
         <div
           ref={containerRef}
-          className="flex max-h-screen flex-col items-center justify-center max-md:py-[200px] md:h-screen"
+          className="flex flex-col items-center justify-center max-md:pt-[150px] md:h-screen"
         >
           <h2
-            className="flex items-center justify-center gap-5 md:gap-12 w-full mb-[3vw] overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest text-black md:mb-5 md:text-[50px] xl:text-[96px]"
+            data-scroll
+            className="text--enter flex items-center justify-center gap-5 md:gap-12 w-full mb-[3vw] overflow-hidden text-center text-[clamp(16px,6.5vw,50px)] font-semibold tracking-widest text-black md:mb-5 md:text-[50px] xl:text-[96px]"
           >
             <span className="h-px flex-1 bg-[linear-gradient(-283deg,_#FFF7E9_64.94%,_#EAC885_79.99%,_#A5884D_126.25%)]"></span>
-            <span>OUR MISSION</span>
+            <span data-splitting>OUR MISSION</span>
             <span className="h-px flex-1 bg-[linear-gradient(283deg,_#FFF7E9_64.94%,_#EAC885_79.99%,_#A5884D_126.25%)]"></span>
           </h2>
           <div

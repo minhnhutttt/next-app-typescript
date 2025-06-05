@@ -30,14 +30,11 @@ const Header = () => {
         <LangSwitcher />
         <button
           onClick={() => setNavOpen((prev) => !prev)}
-          className={`group z-[90] flex size-[40px] items-center justify-center rounded-[6px] border border-[#9C8651] bg-white md:size-[60px] ${
-            NavOpen ? 'active fixed right-6 md:right-10' : ''
+          className={`menu-wrapper relative group z-[90] flex size-[40px] items-center justify-center rounded-[6px] border border-[#9C8651] bg-white md:size-[60px] ${
+            NavOpen ? 'animate' : ''
           }`}
         >
-          <div className="w-[28px] space-y-2 group-[.active]:!space-y-0 md:w-[40px] md:space-y-4">
-            <span className="block h-[3px] origin-center rounded-full bg-[#9C8651] duration-500 ease-in-out group-[.active]:translate-y-1/2 group-[.active]:rotate-45"></span>
-            <span className="block h-[3px] origin-center rounded-full bg-[#9C8651] duration-500 ease-in-out group-[.active]:translate-y-1/2 group-[.active]:-rotate-45"></span>
-          </div>
+          <div className={`hamburger-menu ${NavOpen ? 'animate' : ''}`}></div>
         </button>
       </div>
       <div
@@ -45,38 +42,40 @@ const Header = () => {
           NavOpen ? '' : 'invisible opacity-0'
         }`}
       >
-        <a href="/" className="max-md:w-[120px]">
-          <img src="/assets/images/logo.svg" alt="" />
-        </a>
-        <ul className="mt-8 flex items-center max-md:flex-col md:mt-10">
-          <li className="relative">
-            <a
-              href="/"
-              className="flex px-6 py-3 text-[24px] font-medium tracking-widest md:text-[36px]"
-              onClick={close}
-            >
-              <span>HOME</span>
-            </a>
-          </li>
-          <li className="relative">
-            <a
-              href="/about"
-              className="flex px-6 py-3 text-[24px] font-medium tracking-widest md:text-[36px]"
-              onClick={close}
-            >
-              <span>ABOUT US</span>
-            </a>
-          </li>
-          <li className="relative">
-            <a
-              href="/members"
-              className="flex px-6 py-3 text-[24px] font-medium tracking-widest md:text-[36px]"
-              onClick={close}
-            >
-              <span>MANAGEMENT TEAM</span>
-            </a>
-          </li>
-        </ul>
+        <div className="w-full max-w-[440px] px-6 md:max-w-[740px]">
+          <a href="/" className="max-md:w-[120px]">
+            <img src="/assets/images/logo.svg" alt="" />
+          </a>
+          <ul className="mt-8 flex flex-col text-left md:mt-10">
+            <li className="relative">
+              <a
+                href="/"
+                className="flex py-3 text-[24px] font-medium tracking-widest md:text-[36px]"
+                onClick={close}
+              >
+                <span>HOME</span>
+              </a>
+            </li>
+            <li className="relative">
+              <a
+                href="/about"
+                className="flex py-3 text-[24px] font-medium tracking-widest md:text-[36px]"
+                onClick={close}
+              >
+                <span>ABOUT US</span>
+              </a>
+            </li>
+            <li className="relative">
+              <a
+                href="/members"
+                className="flex py-3 text-[24px] font-medium tracking-widest md:text-[36px]"
+                onClick={close}
+              >
+                <span>MANAGEMENT TEAM</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
   )
