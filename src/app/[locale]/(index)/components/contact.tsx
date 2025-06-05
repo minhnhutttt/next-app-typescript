@@ -88,7 +88,7 @@ const Contact = () => {
             </p>
             <div className="mt-[50px] flex justify-center md:mt-[72px]">
               <Button
-                href="maito:contact@a-nexus.com"
+                href="mailto:contact@a-nexus.com"
                 rect="md:w-[340px] w-[300px] h-20 md:h-[110px] flex items-center justify-center bg-[#F34927] rounded-full md:text-[30px] text-[20px] text-[#FAE2D7]"
               >
                 {t('Contact')}
@@ -117,7 +117,7 @@ const Contact = () => {
           </p>
           <div className="mt-[30px] flex justify-center md:mt-[60px]">
             <Button
-              href="maito:contact@a-nexus.com"
+              href="mailto:contact@a-nexus.com"
               rect="md:w-[340px] w-[300px] h-20 md:h-[110px] flex items-center justify-center bg-white rounded-full md:text-[30px] text-[20px] text-[#F34927]"
             >
               {t('Apply')}

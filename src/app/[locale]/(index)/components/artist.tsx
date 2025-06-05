@@ -19,11 +19,11 @@ const Artist = () => {
       name: 'Quadlips',
       content: t('slide1_content'),
       social: {
-        instagram: '/',
-        tiktok: '/',
-        youtube: '/',
-        facebook: '/',
-        x: '/',
+        instagram: 'https://www.instagram.com/quad_lips/',
+        tiktok: 'https://www.tiktok.com/@quadlips?_t=8guIRgpuZph&_r=1',
+        youtube: 'https://www.youtube.com/@QUADLIPS',
+        facebook: 'https://www.facebook.com/QUADLIPS?mibextid=LQQJ4d',
+        x: 'https://x.com/quadlips_staff',
       },
     },
     {
@@ -32,10 +32,10 @@ const Artist = () => {
       name: 'SHEKI ARZAGA',
       content: t('slide2_content'),
       social: {
-        instagram: '/',
-        tiktok: '/',
-        youtube: '/',
-        x: '/',
+        instagram: 'https://www.instagram.com/sheki.mnl48official',
+        tiktok: 'https://www.tiktok.com/@shekiarzaga_',
+        youtube: 'https://www.youtube.com/c/ShekiMusicOfficial',
+        x: 'https://x.com/shekiarzaga_',
       },
     },
     {

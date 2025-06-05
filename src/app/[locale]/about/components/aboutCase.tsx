@@ -143,15 +143,15 @@ const AboutCase = () => {
     if (!svgRef.current || !sectionRef.current) return
 
     const svgPaths = svgRef.current.querySelectorAll('path')
-    
+
     gsap.set(svgPaths, {
       fill: 'transparent',
       stroke: '#F34927',
-      strokeWidth: 1
+      strokeWidth: 1,
     })
 
     const triggers: ScrollTrigger[] = []
-    
+
     svgPaths.forEach((path) => {
       const trigger = ScrollTrigger.create({
         trigger: sectionRef.current,
@@ -172,8 +172,8 @@ const AboutCase = () => {
           gsap.fromTo(
             path,
             { fill: '#F34927', duration: 0 },
-            { 
-              fill: 'transparent', 
+            {
+              fill: 'transparent',
               duration: 0.4,
               ease: 'power2.in',
             }
@@ -194,25 +194,28 @@ const AboutCase = () => {
           gsap.fromTo(
             path,
             { fill: '#F34927', duration: 0 },
-            { 
-              fill: 'transparent', 
+            {
+              fill: 'transparent',
               duration: 0.4,
               ease: 'power2.in',
             }
           )
-        }
+        },
       })
-      
+
       triggers.push(trigger)
     })
 
     return () => {
-      triggers.forEach(trigger => trigger.kill())
+      triggers.forEach((trigger) => trigger.kill())
     }
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative z-10 mb-[140px] md:mb-[240px]">
+    <section
+      ref={sectionRef}
+      className="relative z-10 mb-[140px] md:mb-[240px]"
+    >
       <div className="relative mx-auto h-full w-full max-w-[480px] px-5 md:max-w-[1380px]">
         <h3 className="fade-up flex items-center justify-center">
           <svg

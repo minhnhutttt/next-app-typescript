@@ -1,5 +1,5 @@
 export const SITE_URL = 'https://a-nexus.com' // No trailing slash is required
-export const SITE_NAME = 'A NEXUS'
+export const SITE_NAME = 'A-Nexus'
 export const DEFAULT_DESCRIPTION =
   'Unleashing Global Entertainment Value Across Borders'
 export const OG = {

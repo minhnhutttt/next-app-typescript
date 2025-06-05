@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 
 interface SlideItem {
   id: number
@@ -21,6 +21,7 @@ interface SlideItem {
 }
 
 const News = () => {
+  const currentLocale = useLocale()
   const t = useTranslations('Home.News')
   const [swiperRef, setSwiperRef] = useState<SwiperClass | null>(null)
   const [isBeginning, setIsBeginning] = useState(true)
@@ -29,13 +30,17 @@ const News = () => {
   const slidesData: SlideItem[] = [
     {
       id: 1,
-      image: '/assets/images/home/news/news-card.jpg',
-      date: t('slide2_date'),
-      title: t('slide2_title'),
+      image: '/assets/images/home/news/news-card-b.jpg',
+      date: t('slide1_date'),
+      title: t('slide1_title'),
       type: 'press',
-      head: t('slide2_head'),
-      content: t('slide2_content'),
-      link: '/assets/pdf/2025-05-23 PRESS RELEASE_EN.pdf',
+      head: t('slide1_head'),
+      content: t('slide1_content'),
+      link:
+        currentLocale === 'jp'
+          ? '/assets/pdf/Superball_The_Orchard_Press_Release_20250528.pdf'
+          : '/assets/pdf/Superball_The_Orchard_press release_Eng_20250528.pdf',
+      available: true,
     },
     {
       id: 2,
