@@ -66,21 +66,22 @@ const Introduction = () => {
       id="introduction"
       className="relative overflow-hidden px-5 md:px-10"
     >
-      <div className="mx-auto w-full max-w-[990px]">
+      <div className="mx-auto w-full max-w-[1440px]">
         <div
           ref={containerRef}
           className="flex max-h-screen flex-col items-center justify-center max-md:py-[200px] md:h-screen"
         >
           <h2
-            data-scroll
-            className="text--enter mb-[3vw] overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest text-[#F34927] md:mb-5 md:text-[50px] xl:text-[96px]"
+            className="flex items-center justify-center gap-5 md:gap-12 w-full mb-[3vw] overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest text-black md:mb-5 md:text-[50px] xl:text-[96px]"
           >
-            <span data-splitting>OUR MISSION</span>
+            <span className="h-px flex-1 bg-[linear-gradient(-283deg,_#FFF7E9_64.94%,_#EAC885_79.99%,_#A5884D_126.25%)]"></span>
+            <span>OUR MISSION</span>
+            <span className="h-px flex-1 bg-[linear-gradient(283deg,_#FFF7E9_64.94%,_#EAC885_79.99%,_#A5884D_126.25%)]"></span>
           </h2>
           <div
             ref={charScrollRef}
             data-splitting
-            className="break-keep text-left text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] text-[#ADADAD]/[0.25] md:text-[28px]"
+            className="break-keep text-left text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] text-[#ADADAD]/[0.25] md:text-[28px] mx-auto w-full max-w-[990px]"
           >
             {t('Headline1')} <br />
             <br />

@@ -14,7 +14,7 @@ const Company = () => {
             }}
           ></span>
         </div>
-        <div className="max-w-[700px] border-y border-[#F34927] pb-[50px] pt-10 max-md:px-5 md:pb-[84px] md:pl-[46px] md:pt-[68px]">
+        <div className="max-w-[700px] border-y border-[#9C8651] pb-[50px] pt-10 max-md:px-5 md:pb-[84px] md:pl-[46px] md:pt-[68px]">
           <ul className="list-disc space-y-5 pl-6 text-[16px] md:space-y-7 md:text-[20px]">
             <li>{t('Profile01')}</li>
             <li>{t('Profile02')}</li>

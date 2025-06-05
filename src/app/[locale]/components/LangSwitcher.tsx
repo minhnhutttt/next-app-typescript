@@ -19,14 +19,14 @@ export default function LangSwitcher() {
       <p className="flex h-[25px] items-center justify-center text-[16px] text-[#111111]/[0.4] md:text-[21px]">
         <a
           href={enLink}
-          className={`${locale === 'en' ? 'text-[#F34927]' : ''}`}
+          className={`${locale === 'en' ? 'text-[#9C8651]' : ''}`}
         >
           EN
         </a>
         <span className="mx-2 h-[25px] w-px bg-[#111111]"></span>
         <a
           href={jpLink}
-          className={`${locale === 'jp' ? 'text-[#F34927]' : ''}`}
+          className={`${locale === 'jp' ? 'text-[#9C8651]' : ''}`}
         >
           JP
         </a>

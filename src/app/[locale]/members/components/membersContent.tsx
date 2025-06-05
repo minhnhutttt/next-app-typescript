@@ -14,8 +14,8 @@ const MemberContent = () => {
   return (
     <div className="mb-24 px-5 md:mb-[160px]">
       <div className="mx-auto w-full max-w-[1200px] space-y-24 md:space-y-[160px]">
-        <div className="rounded-[40px] border border-[#536DFE] bg-[#536DFE]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
-          <div className="relative flex items-center justify-center gap-5 rounded-[20px] bg-[#536DFE] px-5 py-10 max-md:flex-col-reverse md:justify-between md:px-10 md:py-[60px] lg:px-[78px]">
+        <div className="rounded-[40px] border border-[#747E86] bg-[#747E86]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+          <div className="relative flex items-center justify-center gap-5 rounded-[20px] bg-[linear-gradient(293deg,_#A5884D_2.02%,_#EAC885_34.94%,_#FFF2DB_50.31%,_#A5884D_96.89%)] px-5 py-10 max-md:flex-col-reverse md:justify-between md:px-10 md:py-[60px] lg:px-[78px]">
             <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly1_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
             <div className="text-[#111]">
               <p
@@ -54,8 +54,8 @@ const MemberContent = () => {
           </div>
         </div>
 
-        <div className="rounded-[40px] border border-[#FDD213] bg-[#FDD213]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
-          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#FDD213] px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+        <div className="rounded-[40px] border border-[#747E86] bg-[#747E86]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[linear-gradient(293deg,_#A5884D_2.02%,_#EAC885_34.94%,_#FFF2DB_50.31%,_#A5884D_96.89%)] px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
             <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly2_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
             <div className="flex-1 text-[#111]">
               <p
@@ -96,8 +96,8 @@ const MemberContent = () => {
           </div>
         </div>
 
-        <div className="rounded-[40px] border border-[#69F0AE] bg-[#69F0AE]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
-          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#69F0AE] px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+        <div className="rounded-[40px] border border-[#747E86] bg-[#747E86]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[linear-gradient(293deg,_#A5884D_2.02%,_#EAC885_34.94%,_#FFF2DB_50.31%,_#A5884D_96.89%)] px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
             <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly4_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
             <div className="text-[#111]">
               <p
@@ -147,8 +147,8 @@ const MemberContent = () => {
           </div>
         </div>
 
-        <div className="rounded-[40px] border border-[#1EF1FF] bg-[#1EF1FF]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
-          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[#1EF1FF] px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+        <div className="rounded-[40px] border border-[#747E86] bg-[#747E86]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+          <div className="relative flex min-h-[400px] items-center justify-center gap-5 rounded-[20px] bg-[linear-gradient(293deg,_#A5884D_2.02%,_#EAC885_34.94%,_#FFF2DB_50.31%,_#A5884D_96.89%)] px-5 py-10 max-md:flex-col-reverse md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
             <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly3_80s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
             <div className="flex-1 text-[#111]">
               <p
@@ -190,8 +190,8 @@ const MemberContent = () => {
           </div>
         </div>
 
-        <div className="rounded-[40px] border border-gray-500 bg-gray-700/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
-          <div className="relative flex min-h-[400px] justify-center gap-5 rounded-[20px] bg-gray-400 px-5 py-10 max-md:flex-col-reverse max-md:items-center md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+        <div className="rounded-[40px] border border-[#747E86] bg-[#747E86]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+          <div className="relative flex min-h-[400px] justify-center gap-5 rounded-[20px] bg-[linear-gradient(293deg,_#A5884D_2.02%,_#EAC885_34.94%,_#FFF2DB_50.31%,_#A5884D_96.89%)] px-5 py-10 max-md:flex-col-reverse max-md:items-center md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
             <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly4_65s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
             <div className="flex-1 text-[#111]">
               <p
@@ -233,7 +233,7 @@ const MemberContent = () => {
               <div data-scroll className="ani-fade-up">
                 <img
                   className="w-full max-w-[480px] rounded-[10px] [box-shadow:0px_4px_70px_0px_rgba(0,_0,_0,_0.25)]"
-                  src="/assets/images/members/leosakai.jpeg"
+                  src="/assets/images/members/leosakai.jpg"
                   alt=""
                 />
               </div>
@@ -241,8 +241,8 @@ const MemberContent = () => {
           </div>
         </div>
 
-        <div className="rounded-[40px] border border-gray-500 bg-gray-700/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
-          <div className="relative flex min-h-[400px] justify-center gap-5 rounded-[20px] bg-gray-400 px-5 py-10 max-md:flex-col-reverse max-md:items-center md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
+        <div className="rounded-[40px] border border-[#747E86] bg-[#747E86]/[0.05] px-5 py-10 md:py-20 lg:px-[60px]">
+          <div className="relative flex min-h-[400px] justify-center gap-5 rounded-[20px] bg-[linear-gradient(293deg,_#A5884D_2.02%,_#EAC885_34.94%,_#FFF2DB_50.31%,_#A5884D_96.89%)] px-5 py-10 max-md:flex-col-reverse max-md:items-center md:min-h-[600px] md:justify-between md:px-10 md:py-10 lg:px-[78px]">
             <span className="pointer-events-none absolute aspect-[432/427] w-[200px] animate-[bounceRandomly4_65s_linear_infinite] bg-[url(/assets/images/members/member-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[432px]"></span>
             <div className="flex-1 text-[#111]">
               <p

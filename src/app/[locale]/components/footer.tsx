@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-clip border-t border-[#F34927] px-5 pb-5 pt-[80px] md:pt-[132px]">
+    <footer className="relative overflow-clip border-t border-[#9C8651] px-5 pb-5 pt-[80px] md:pt-[132px]">
       <span className="pointer-events-none absolute aspect-[438/431] w-[200px] animate-[bounceRandomly1_80s_linear_infinite] bg-[url(/assets/images/footer-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[438px]"></span>
       <span className="pointer-events-none absolute aspect-[438/431] w-[200px] animate-[bounceRandomly3_80s_linear_infinite] bg-[url(/assets/images/footer-star.png)] bg-no-repeat [background-size:100%_100%] md:w-[438px]"></span>
       <div className="mx-auto w-full max-w-[936px]">

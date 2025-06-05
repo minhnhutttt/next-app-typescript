@@ -25,7 +25,7 @@ const IndexPage = () => {
   return (
     <div className="overflow-hidden">
       <FV />
-      <div className="bg-[linear-gradient(180deg,_#FFF_0%,_#FF711C_100%)]">
+      <div className="bg-[linear-gradient(180deg,_rgba(117,_122,_123,_0.0)_0%,_rgba(87,_98,_101,_0.3)_89.3%,_#ffffff_100%)]">
         <Introduction />
         <News />
       </div>

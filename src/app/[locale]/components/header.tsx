@@ -30,13 +30,13 @@ const Header = () => {
         <LangSwitcher />
         <button
           onClick={() => setNavOpen((prev) => !prev)}
-          className={`group z-[90] flex size-[40px] items-center justify-center rounded-[6px] border border-[#F34927] bg-white md:size-[60px] ${
+          className={`group z-[90] flex size-[40px] items-center justify-center rounded-[6px] border border-[#9C8651] bg-white md:size-[60px] ${
             NavOpen ? 'active fixed right-6 md:right-10' : ''
           }`}
         >
           <div className="w-[28px] space-y-2 group-[.active]:!space-y-0 md:w-[40px] md:space-y-4">
-            <span className="block h-[3px] origin-center rounded-full bg-[#F34927] duration-500 ease-in-out group-[.active]:translate-y-1/2 group-[.active]:rotate-45"></span>
-            <span className="block h-[3px] origin-center rounded-full bg-[#F34927] duration-500 ease-in-out group-[.active]:translate-y-1/2 group-[.active]:-rotate-45"></span>
+            <span className="block h-[3px] origin-center rounded-full bg-[#9C8651] duration-500 ease-in-out group-[.active]:translate-y-1/2 group-[.active]:rotate-45"></span>
+            <span className="block h-[3px] origin-center rounded-full bg-[#9C8651] duration-500 ease-in-out group-[.active]:translate-y-1/2 group-[.active]:-rotate-45"></span>
           </div>
         </button>
       </div>

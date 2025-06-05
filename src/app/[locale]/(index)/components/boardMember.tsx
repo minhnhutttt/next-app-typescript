@@ -1,15 +1,20 @@
 'use client'
 
+import { useGradientText } from '@/hooks/useGradientText'
 import { useTranslations } from 'next-intl'
+import { useRef } from 'react'
 
 const BoardMember = () => {
   const t = useTranslations('Home.BoardMember')
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  useGradientText(titleRef)
   return (
     <section className="relative mt-4 overflow-hidden px-5 pb-[120px] md:mt-8 md:pb-[272px]">
-      <div className="px-5 text-[#F34927]">
+      <div className="px-5">
         <h2
+        ref={titleRef}
           data-scroll
-          className="text--enter overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest md:text-[50px] xl:text-[96px]"
+          className="text--enter overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest md:text-[50px] xl:text-[96px] u-text-gradient u-gradient-02"
         >
           <span data-splitting>MANAGEMENT TEAM</span>
         </h2>
@@ -26,7 +31,7 @@ const BoardMember = () => {
             data-scroll
             className="ani-slide-bottom relative flex items-center"
           >
-            <div className="h-[160px] w-px origin-bottom rotate-[30deg] bg-[#F34927] md:h-[200px]"></div>
+            <div className="h-[160px] w-px origin-bottom rotate-[30deg] bg-[#9C8651] md:h-[200px]"></div>
             <div className="pl-[66px] pt-12 leading-[1.2] md:pl-[88px] md:pt-16">
               <p className="mb-1 text-[clamp(15px,4vw,20px)] md:text-[18px]">
                 CEO
@@ -47,9 +52,9 @@ const BoardMember = () => {
           >
             <a
               href="/members"
-              className="flex items-center gap-2 border-b border-[#F34927] px-4 text-[20px] font-semibold tracking-widest md:text-[32px]"
+              className="flex items-center gap-2 border-b border-black px-4 text-[20px] font-semibold tracking-widest md:text-[32px]"
             >
-              <span className="animate-[spin_2s_linear_infinite] text-[17px] text-[#F34927] md:text-[21px]">
+              <span className="animate-[spin_2s_linear_infinite] text-[17px] text-black md:text-[21px]">
                 ★
               </span>
               <span>LEARN MORE</span>

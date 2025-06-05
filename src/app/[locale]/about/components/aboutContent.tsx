@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useTranslations } from 'next-intl'
 import AboutCase from './aboutCase'
+import { useGradientText } from '@/hooks/useGradientText'
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.config({
@@ -26,6 +27,8 @@ const AboutItem = ({
   const titleRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLDivElement>(null)
+
+  useGradientText(titleRef)
 
   useEffect(() => {
     if (typeof window === 'undefined' || !titleRef.current) return
@@ -99,13 +102,13 @@ const AboutItem = ({
 
   return (
     <div className="mx-auto w-full max-w-[1440px]">
-      <p
+      <h2
         ref={titleRef}
-        className="overflow-hidden text-[12vw] font-bold leading-[0.88] tracking-[-0.07em] md:ml-[-12px] md:text-[18vw] xl:ml-[-24px] xl:text-[260px]"
-        data-splitting="chars"
+        className="text-[12vw] font-semibold leading-[0.88] md:ml-[-12px] md:text-[18vw] xl:ml-[-24px] xl:text-[240px] u-text-gradient u-gradient-02"
+        data-splitting
       >
         {title}
-      </p>
+      </h2>
       <div
         className={`-mt-[3vw] flex gap-7 max-xl:flex-col-reverse max-xl:items-center max-xl:justify-center md:-mt-[5vw] md:gap-10 xl:-mt-[110px] ${
           even ? 'flex-row-reverse xl:pr-[100px]' : 'xl:pl-[100px]'
@@ -304,11 +307,11 @@ const AboutContent = () => {
                   {business.map((item) => (
                     <div
                       key={item.id}
-                      className="panel mx-2.5 !h-[350px] !w-[330px] rounded-[30px] border border-[#F34927] bg-[#EEEEEE] md:!h-[472px] md:!w-[564px]"
+                      className="panel mx-2.5 !h-[350px] !w-[330px] rounded-[30px] bg-[#EEEEEE] md:!h-[472px] md:!w-[564px]"
                     >
                       <div className="relative p-5 md:p-[30px]">
                         <div className="relative flex h-[90px] w-16 justify-between md:h-[167px] md:w-[130px]">
-                          <span className="text-[50px] font-medium leading-none text-[#F34927] md:text-[120px]">
+                          <span className="text-[50px] font-medium leading-none text-black md:text-[120px]">
                             {item.id}
                           </span>
                           <span className="absolute left-4 top-0 h-[80px] w-px origin-bottom rotate-[30deg] bg-[#111] md:left-10 md:h-[160px]"></span>

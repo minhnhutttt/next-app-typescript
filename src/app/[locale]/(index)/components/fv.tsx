@@ -82,13 +82,15 @@ const FV = () => {
               delay: 1,
             })
             .to(anexusTop.current, {
-              yPercent: -70,
+              yPercent: -95,
+              xPercent: -10,
               duration: 1,
             })
             .to(
               anexusBottom.current,
               {
-                yPercent: 70,
+                yPercent: 95,
+                xPercent: 10,
                 duration: 1,
               },
               '<'
@@ -151,7 +153,7 @@ const FV = () => {
                 <h1
                   ref={charScrollRef}
                   data-splitting
-                  className="relative z-50 px-4 text-center text-[10vw] font-bold leading-[1.8] text-[#F34927] [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff] md:text-[72px]"
+                  className="relative z-50 px-4 text-center text-[10vw] font-bold leading-[1.8] text-[#9C8651] [text-shadow:2px_0_#fff,_-2px_0_#fff,_0_2px_#fff,_0_-2px_#fff,_1px_1px_#fff,_-1px_-1px_#fff,_1px_-1px_#fff,_-1px_1px_#fff] md:text-[72px]"
                 >
                   {locale === 'en' ? (
                     <>
@@ -184,15 +186,15 @@ const FV = () => {
                     viewBox="0 0 60 72"
                   >
                     <path
-                      className="animate-[arrow_2s_infinite] fill-transparent stroke-[#F34927] stroke-1 [animation-delay:-1s]"
+                      className="animate-[arrow_2s_infinite] fill-transparent stroke-[#9C8651] stroke-1 [animation-delay:-1s]"
                       d="M0 0 L30 32 L60 0"
                     ></path>
                     <path
-                      className="animate-[arrow_2s_infinite] fill-transparent stroke-[#F34927] stroke-1 [animation-delay:-0.5s]"
+                      className="animate-[arrow_2s_infinite] fill-transparent stroke-[#9C8651] stroke-1 [animation-delay:-0.5s]"
                       d="M0 20 L30 52 L60 20"
                     ></path>
                     <path
-                      className="animate-[arrow_2s_infinite] fill-transparent stroke-[#F34927] stroke-1 [animation-delay:0s]"
+                      className="animate-[arrow_2s_infinite] fill-transparent stroke-[#9C8651] stroke-1 [animation-delay:0s]"
                       d="M0 40 L30 72 L60 40"
                     ></path>
                   </svg>
@@ -205,7 +207,7 @@ const FV = () => {
       {isLoading && (
         <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white">
           <div className="flex flex-col items-center">
-            <span className="relative inline-block size-[80px] animate-[spin_1s_linear_infinite] text-[#FFF] before:absolute before:bottom-[0] before:top-auto before:size-6 before:animate-[scale50_1s_infinite_ease-in-out] before:rounded-[50%] before:bg-[#F34927] before:[animation-delay:0.5s] after:absolute after:top-[0] after:size-6 after:animate-[scale50_1s_infinite_ease-in-out] after:rounded-[50%] after:bg-[#111] md:size-[100px] md:before:size-[36px] md:after:size-[36px]" />
+            <span className="relative inline-block size-[80px] animate-[spin_1s_linear_infinite] text-[#FFF] before:absolute before:bottom-[0] before:top-auto before:size-6 before:animate-[scale50_1s_infinite_ease-in-out] before:rounded-[50%] before:bg-[#9C8651] before:[animation-delay:0.5s] after:absolute after:top-[0] after:size-6 after:animate-[scale50_1s_infinite_ease-in-out] after:rounded-[50%] after:bg-[#707F87] md:size-[100px] md:before:size-[36px] md:after:size-[36px]" />
           </div>
         </div>
       )}

@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Swiper as SwiperClass } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { useTranslations, useLocale } from 'next-intl'
+import { useGradientText } from '@/hooks/useGradientText'
 
 interface SlideItem {
   id: number
@@ -26,6 +27,9 @@ const News = () => {
   const [swiperRef, setSwiperRef] = useState<SwiperClass | null>(null)
   const [isBeginning, setIsBeginning] = useState(true)
   const [isEnd, setIsEnd] = useState(false)
+  const titleRef = useRef<HTMLHeadingElement>(null)
+
+  useGradientText(titleRef)
 
   const slidesData: SlideItem[] = [
     {
@@ -92,8 +96,9 @@ const News = () => {
       <span className="absolute inset-x-0 bottom-0 h-[60%] bg-white"></span>
       <div className="px-5 md:px-[60px]">
         <h2
+          ref={titleRef}
           data-scroll
-          className="text--enter overflow-hidden text-[clamp(20px,7.5vw,60px)] font-semibold tracking-widest md:text-[64px] xl:text-[128px]"
+          className="text--enter overflow-hidden text-[clamp(20px,7.5vw,60px)] font-semibold tracking-widest md:text-[64px] xl:text-[128px] u-text-gradient u-gradient-01"
         >
           <span data-splitting>NEWS</span>
         </h2>
@@ -124,10 +129,10 @@ const News = () => {
                   </div>
 
                   <div className="absolute bottom-8 left-5 z-10 group-hover:opacity-0">
-                    <p className="text-[13px] font-semibold text-[#F34927] md:text-[16px]">
+                    <p className="text-[13px] font-semibold text-white md:text-[16px]">
                       {slide.date}
                     </p>
-                    <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
+                    <p className="text-[16px] font-semibold text-white md:text-[20px]">
                       {slide.title}
                     </p>
                     <p className="mt-3 text-[13px] font-semibold text-[#FAE2D7] md:mt-6 md:text-[16px]">
@@ -138,14 +143,14 @@ const News = () => {
                   <div className="absolute inset-x-0 bottom-0 z-10 flex h-[90%] translate-y-full flex-col items-center justify-center overflow-auto rounded-[30px] bg-black/60 px-6 py-8 transition-transform duration-300 group-hover:translate-y-0 md:px-[50px]">
                     <div className="space-y-6 text-[#FAE2D7] md:space-y-10">
                       <div>
-                        <p className="text-[13px] font-semibold text-[#F34927] md:text-[16px]">
+                        <p className="text-[13px] font-semibold text-[#9C8651] md:text-[16px]">
                           {slide.date}
                         </p>
-                        <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
+                        <p className="text-[16px] font-semibold text-[#9C8651] md:text-[20px]">
                           {slide.title}
                         </p>
                       </div>
-                      <p className="text-[16px] font-semibold text-[#F34927] md:text-[20px]">
+                      <p className="text-[16px] font-semibold text-white md:text-[20px]">
                         {slide.head}
                       </p>
                       <p className="text-[12px] md:text-[14px]">
@@ -156,9 +161,9 @@ const News = () => {
                           <a
                             href={slide.link}
                             target="_blank"
-                            className="flex items-center gap-2 border-b border-[#F34927] pr-2 text-[13px] leading-[1.8] md:text-[16px]"
+                            className="flex items-center gap-2 border-b border-[#9C8651] pr-2 text-[13px] leading-[1.8] md:text-[16px]"
                           >
-                            <span className="animate-[spin_2s_linear_infinite] text-[#F34927]">
+                            <span className="animate-[spin_2s_linear_infinite] text-[#9C8651]">
                               ★
                             </span>
                             <span>
