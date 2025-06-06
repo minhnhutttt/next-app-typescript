@@ -13,7 +13,7 @@ export const useGradientText = <T extends HTMLElement>(
       if (gradientChars.length === 0) return
       
       let offset = 0
-      gradientChars.forEach(function(char, i) {
+      gradientChars.forEach(function(char) {
         const parentElement = char.parentElement as HTMLElement
         char.style.backgroundSize = parentElement.offsetWidth + 'px 100%'
         

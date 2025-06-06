@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -16,7 +16,7 @@ const Introduction = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const charScrollRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     let ctx: gsap.Context | null = null
 
     import('splitting').then(({ default: Splitting }) => {
