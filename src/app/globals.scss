@@ -70,34 +70,34 @@
   .hamburger-menu,
   .hamburger-menu:after,
   .hamburger-menu:before {
-    @apply w-8 md:w-12 md:h-[5px] h-[3px];
+    @apply h-[3px] w-8 md:h-[5px] md:w-12;
   }
 
   .hamburger-menu {
-    @apply relative bg-[#9c8651] [transition:all_0ms_300ms]
+    @apply relative bg-[#9c8651] [transition:all_0ms_300ms];
   }
 
   .hamburger-menu:before {
-    @apply content-[''] absolute left-[0] md:bottom-3 bottom-2 bg-[#9c8651] [transition:bottom_300ms_300ms_cubic-bezier(0.23,_1,_0.32,_1),_transform_300ms_cubic-bezier(0.23,_1,_0.32,_1)]
+    @apply absolute bottom-2 left-[0] bg-[#9c8651] content-[''] [transition:bottom_300ms_300ms_cubic-bezier(0.23,_1,_0.32,_1),_transform_300ms_cubic-bezier(0.23,_1,_0.32,_1)] md:bottom-3;
   }
 
   .hamburger-menu:after {
-    @apply content-[''] absolute left-[0] md:top-3 top-2 bg-[#9c8651] [transition:top_300ms_300ms_cubic-bezier(0.23,_1,_0.32,_1),_transform_300ms_cubic-bezier(0.23,_1,_0.32,_1)]
+    @apply absolute left-[0] top-2 bg-[#9c8651] content-[''] [transition:top_300ms_300ms_cubic-bezier(0.23,_1,_0.32,_1),_transform_300ms_cubic-bezier(0.23,_1,_0.32,_1)] md:top-3;
   }
   .hamburger-menu.animate {
-    @apply bg-transparent
+    @apply bg-transparent;
   }
   .hamburger-menu.animate:after {
-    @apply top-[0] rotate-45 [transition:top_300ms_cubic-bezier(0.23,_1,_0.32,_1),_transform_300ms_300ms_cubic-bezier(0.23,_1,_0.32,_1)]
+    @apply top-[0] rotate-45 [transition:top_300ms_cubic-bezier(0.23,_1,_0.32,_1),_transform_300ms_300ms_cubic-bezier(0.23,_1,_0.32,_1)];
   }
 
   .hamburger-menu.animate:before {
-    @apply bottom-[0] -rotate-45 [transition:bottom_300ms_cubic-bezier(0.23,_1,_0.32,_1),_transform_300ms_300ms_cubic-bezier(0.23,_1,_0.32,_1)]
+    @apply bottom-[0] -rotate-45 [transition:bottom_300ms_cubic-bezier(0.23,_1,_0.32,_1),_transform_300ms_300ms_cubic-bezier(0.23,_1,_0.32,_1)];
   }
 
   .ic-check:before {
     content: '';
-    @apply content-[''] size-[25px] bg-[url(/assets/images/ic-check.svg)] inline-block mr-2
+    @apply mr-2 inline-block size-[25px] bg-[url(/assets/images/ic-check.svg)] content-[''];
   }
 }
 

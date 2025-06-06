@@ -64,7 +64,7 @@ const Introduction = () => {
   return (
     <section
       id="introduction"
-      className="relative overflow-hidden px-5 md:px-10 max-md:pb-[100px]"
+      className="relative overflow-hidden px-5 max-md:pb-[100px] md:px-10"
     >
       <div className="mx-auto w-full max-w-[1440px]">
         <div
@@ -73,7 +73,7 @@ const Introduction = () => {
         >
           <h2
             data-scroll
-            className="text--enter flex items-center justify-center gap-5 md:gap-12 w-full mb-[3vw] overflow-hidden text-center text-[clamp(16px,6.5vw,50px)] font-semibold tracking-widest text-black md:mb-5 md:text-[50px] xl:text-[96px]"
+            className="text--enter mb-[3vw] flex w-full items-center justify-center gap-5 overflow-hidden text-center text-[clamp(16px,6.5vw,50px)] font-semibold tracking-widest text-black md:mb-5 md:gap-12 md:text-[50px] xl:text-[96px]"
           >
             <span className="h-px flex-1 bg-[linear-gradient(-283deg,_#FFF7E9_64.94%,_#EAC885_79.99%,_#A5884D_126.25%)]"></span>
             <span data-splitting>OUR MISSION</span>
@@ -82,14 +82,15 @@ const Introduction = () => {
           <div
             ref={charScrollRef}
             data-splitting
-            className="break-keep text-left text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] text-[#ADADAD]/[0.25] md:text-[28px] mx-auto w-full max-w-[990px]"
+            className="mx-auto w-full max-w-[990px] break-keep text-left text-[clamp(14px,3.8vw,24px)] font-medium leading-[1.8] text-[#ADADAD]/[0.25] md:text-[28px]"
           >
             {t('Headline1')} <br />
             <br />
             {t('Headline2')}
             <br />
             <br />
-            <span className="font-['Font_Awesome_5_Free']"
+            <span
+              className="font-['Font_Awesome_5_Free']"
               dangerouslySetInnerHTML={{
                 __html: t('Headline3'),
               }}

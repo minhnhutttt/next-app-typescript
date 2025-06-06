@@ -71,8 +71,7 @@ const Contact = () => {
         ref={contactSectionRef}
         className="relative pt-[100px] md:pt-[150px]"
       >
-        <div className="overflow-hidden rounded-t-[40px] bg-[linear-gradient(274deg,_rgba(165,_136,_77,_0.50)_5.81%,_rgba(234,_200,_133,_0.50)_36.83%,_rgba(255,_242,_219,_0.50)_51.31%,_rgba(165,_136,_77,_0.50)_95.2%)]
- pb-20 md:rounded-t-[100px] md:pb-[130px]">
+        <div className="overflow-hidden rounded-t-[40px] bg-[linear-gradient(274deg,_rgba(165,_136,_77,_0.50)_5.81%,_rgba(234,_200,_133,_0.50)_36.83%,_rgba(255,_242,_219,_0.50)_51.31%,_rgba(165,_136,_77,_0.50)_95.2%)] pb-20 md:rounded-t-[100px] md:pb-[130px]">
           <div className="relative px-5 pt-[60px] md:pt-[130px]">
             <div
               ref={bgLineRef}

@@ -30,7 +30,7 @@ const Header = () => {
         <LangSwitcher />
         <button
           onClick={() => setNavOpen((prev) => !prev)}
-          className={`menu-wrapper relative group z-[90] flex size-[40px] items-center justify-center rounded-[6px] border border-[#9C8651] bg-white md:size-[60px] ${
+          className={`menu-wrapper group relative z-[90] flex size-[40px] items-center justify-center rounded-[6px] border border-[#9C8651] bg-white md:size-[60px] ${
             NavOpen ? 'animate' : ''
           }`}
         >

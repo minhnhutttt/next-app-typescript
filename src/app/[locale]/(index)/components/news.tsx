@@ -98,7 +98,7 @@ const News = () => {
         <h2
           ref={titleRef}
           data-scroll
-          className="text--enter overflow-hidden text-[clamp(20px,7.5vw,60px)] font-semibold tracking-widest md:text-[64px] xl:text-[128px] u-text-gradient u-gradient-01"
+          className="text--enter u-text-gradient u-gradient-01 overflow-hidden text-[clamp(20px,7.5vw,60px)] font-semibold tracking-widest md:text-[64px] xl:text-[128px]"
         >
           <span data-splitting>NEWS</span>
         </h2>

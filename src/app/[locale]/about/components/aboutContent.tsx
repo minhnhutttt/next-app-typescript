@@ -104,7 +104,7 @@ const AboutItem = ({
     <div className="mx-auto w-full max-w-[1440px]">
       <h2
         ref={titleRef}
-        className="text-[12vw] font-semibold leading-[0.88] md:ml-[-12px] md:text-[18vw] xl:ml-[-24px] xl:text-[240px] u-text-gradient u-gradient-02"
+        className="u-text-gradient u-gradient-02 text-[12vw] font-semibold leading-[0.88] md:ml-[-12px] md:text-[18vw] xl:ml-[-24px] xl:text-[240px]"
         data-splitting
       >
         {title}

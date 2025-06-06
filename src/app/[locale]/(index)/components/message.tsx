@@ -40,7 +40,7 @@ const Message = () => {
           </h2>
           <p
             data-scroll
-            className="ani-slide-bottom text-[16px] tracking-widest md:text-[22px] font-['Font_Awesome_5_Free']"
+            className="ani-slide-bottom font-['Font_Awesome_5_Free'] text-[16px] tracking-widest md:text-[22px]"
           >
             <span
               dangerouslySetInnerHTML={{

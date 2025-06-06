@@ -12,9 +12,9 @@ const BoardMember = () => {
     <section className="relative mt-4 overflow-hidden px-5 pb-[120px] md:mt-8 md:pb-[272px]">
       <div className="px-5">
         <h2
-        ref={titleRef}
+          ref={titleRef}
           data-scroll
-          className="text--enter overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest md:text-[50px] xl:text-[96px] u-text-gradient u-gradient-02"
+          className="text--enter u-text-gradient u-gradient-02 overflow-hidden text-center text-[clamp(16px,6.5vw,60px)] font-semibold tracking-widest md:text-[50px] xl:text-[96px]"
         >
           <span data-splitting>MANAGEMENT TEAM</span>
         </h2>
