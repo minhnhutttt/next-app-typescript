@@ -65,6 +65,14 @@ export default async function LocaleLayout({
   setRequestLocale(locale)
   return (
     <html lang={locale}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </head>
       <body className={`${inter.className} ${inspiration.variable}`}>
         <NextIntlClientProvider>
           <ScrollContainer>
