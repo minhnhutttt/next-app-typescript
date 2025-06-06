@@ -54,7 +54,7 @@ const BoardMember = () => {
               href="/members"
               className="flex items-center gap-2 border-b border-[#9C8651] px-4 text-[20px] font-semibold tracking-widest md:text-[32px]"
             >
-              <span className="animate-[spin_2s_linear_infinite] text-[17px] text-black md:text-[21px]">
+              <span className="animate-[spin_2s_linear_infinite] text-[17px] text-[#9C8651] md:text-[21px]">
                 ★
               </span>
               <span>LEARN MORE</span>
