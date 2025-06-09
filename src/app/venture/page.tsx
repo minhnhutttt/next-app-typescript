@@ -94,19 +94,26 @@ const VenturePage: NextPage = () => {
   const [isInitialized, setIsInitialized] = useState(false);
   const [shouldStartScramble, setShouldStartScramble] = useState(false);
 
+  // Create scramble instances at top level - one for each original item and one for each clone
   const scrambleInstances = [
-    ...data.map((item, index) => 
-      useScramble({
-        text: item.text,
-        speed: 2.0,
-      })
-    ),
-    ...data.map((item, index) => 
-      useScramble({
-        text: item.text,
-        speed: 2.0,
-      })
-    )
+    // Original items
+    useScramble({ text: data[0].text, speed: 2.0 }),
+    useScramble({ text: data[1].text, speed: 2.0 }),
+    useScramble({ text: data[2].text, speed: 2.0 }),
+    useScramble({ text: data[3].text, speed: 2.0 }),
+    useScramble({ text: data[4].text, speed: 2.0 }),
+    useScramble({ text: data[5].text, speed: 2.0 }),
+    useScramble({ text: data[6].text, speed: 2.0 }),
+    useScramble({ text: data[7].text, speed: 2.0 }),
+    // Clone items
+    useScramble({ text: data[0].text, speed: 2.0 }),
+    useScramble({ text: data[1].text, speed: 2.0 }),
+    useScramble({ text: data[2].text, speed: 2.0 }),
+    useScramble({ text: data[3].text, speed: 2.0 }),
+    useScramble({ text: data[4].text, speed: 2.0 }),
+    useScramble({ text: data[5].text, speed: 2.0 }),
+    useScramble({ text: data[6].text, speed: 2.0 }),
+    useScramble({ text: data[7].text, speed: 2.0 }),
   ];
 
   useEffect(() => {
@@ -210,6 +217,7 @@ const VenturePage: NextPage = () => {
       return () => clearTimeout(timer);
     }
   }, [isLoading]);
+
   useEffect(() => {
     if (shouldStartScramble && !isLoading) {
       const scrambleTimer = setTimeout(() => {

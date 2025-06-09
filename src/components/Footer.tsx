@@ -1,6 +1,6 @@
 "use client"
 import { usePathname } from 'next/navigation'
-import NavButton from './NavButton' // Adjust path as needed
+import NavButton from './NavButton'
 
 const Footer: React.FC = () => {
   const pathname = usePathname()

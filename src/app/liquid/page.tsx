@@ -1,7 +1,6 @@
 "use client";
 import ParticleScene, { SceneConfig } from "../../components/ParticleScene";
 import type { NextPage } from "next";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useScramble } from "use-scramble";
 import { useEffect } from "react";
 import { useLoading } from "@/contexts/LoadingContext";
@@ -28,7 +27,6 @@ const SCENE_CONFIGS: Record<string, SceneConfig> = {
   },
 };
 
-
 const LiquidPage: NextPage = () => {
    const { isLoading } = useLoading();
   const { ref, replay } = useScramble({ 
@@ -53,7 +51,7 @@ const LiquidPage: NextPage = () => {
       <div
         className="absolute top-16 md:top-1/2 md:-translate-y-1/2 inset-x-0 px-10 z-[10] flex justify-end"
       >
-        <p ref={ref}  className="fade-up md:w-[30rem] text-[#FF9016]">
+        <p ref={ref} className="fade-up md:w-[30rem] text-[#FF9016]">
         </p>
       </div>
     </main>
