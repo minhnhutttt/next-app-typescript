@@ -10,3 +10,29 @@ body {
   color: #000;
   font-family: "Noto Sans", sans-serif;
 }
+
+.splide__pagination {
+  position: static !important;
+}
+.splide__pagination__page {
+  position: relative;
+  transform-origin: left;
+  transition: all 1s !important;
+  overflow: hidden;
+}
+.splide__pagination__page.is-active {
+  width: 50px;
+  transform: scale(1) !important;
+  background-color: #a1a1a2 !important;
+  border-radius: 10px;
+}
+.splide__pagination__page.is-active:before {
+  content: '';
+  position: absolute;
+  width: var(--progress);
+  background-color: #111;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all .3s;
+}
