@@ -13,12 +13,15 @@ body {
 
 .splide__pagination {
   position: static !important;
+  pointer-events: auto !important;
 }
 .splide__pagination__page {
   position: relative;
   transform-origin: left;
   transition: all 1s !important;
   overflow: hidden;
+  cursor: pointer;
+  
 }
 .splide__pagination__page.is-active {
   width: 50px;
