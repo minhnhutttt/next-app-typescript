@@ -18,6 +18,16 @@ body {
   @apply opacity-100 translate-y-0 rotate-0
 }
 
+.fade-up {
+  transform: translateY(30px);
+  opacity: 0;
+  transition: .8s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+[data-scroll='in'].fade-up {
+  transform: translate(0);
+  opacity: 1;
+}
+
 @media only screen and (max-width: 1023px) {
     .top-kv[data-current-slide="1"] .top-kv-item:nth-child(1) {
         z-index:1;

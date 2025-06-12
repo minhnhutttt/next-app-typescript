@@ -22,8 +22,8 @@ const FV = () => {
   return (
     <section className="relative w-full max-md:pt-5 max-md:px-3 max-lg:pb-20 max-md:pb-16">
       <div data-scroll="out" className="relative w-full flex items-center justify-start px-3 lg:max-w-[1440px] max-w-[540px] mx-auto md:pt-14 md:pb-[88px] pb-10">
-      <span className="absolute -top-5 lg:top-0 left-0 z-10 max-md:w-[200px] max-lg:w-[280px]"><img src="/assets/images/fv-deco-01.png" alt="" /></span>
-      <span className="absolute right-0 bottom-0 z-10 max-md:w-[60px] max-lg:w-[90px]"><img src="/assets/images/fv-deco-02.png" alt="" /></span>
+      <span className="animate-fv opacity-0 translate-y-5 lg:!delay-700 !delay-200 absolute -top-5 lg:top-0 left-0 z-10 max-md:w-[200px] max-lg:w-[280px]"><img src="/assets/images/fv-deco-01.png" alt="" /></span>
+      <span className="animate-fv opacity-0 translate-y-5 lg:!delay-700 !delay-200 absolute right-0 bottom-0 z-10 max-md:w-[60px] max-lg:w-[90px]"><img src="/assets/images/fv-deco-02.png" alt="" /></span>
         <div 
           id="slider" 
           data-current-slide={currentSlide}
@@ -36,7 +36,7 @@ const FV = () => {
               </div>
             </div>
           </div>
-          <div className="top-kv-item animate-fv max-lg:absolute max-lg:inset-0 lg:opacity-0 lg:translate-y-7 lg:-rotate-3lg: !delay-[.25s] md:rounded-[30px] rounded-[20px] shadow-lg overflow-hidden md:px-4 md:py-5 p-4 bg-gradient-to-br from-[#02D6FF] to-[#4DFEFF]">
+          <div className="top-kv-item animate-fv max-lg:absolute max-lg:inset-0 lg:opacity-0 lg:translate-y-7 lg:-rotate-3 lg:!delay-[.25s] md:rounded-[30px] rounded-[20px] shadow-lg overflow-hidden md:px-4 md:py-5 p-4 bg-gradient-to-br from-[#02D6FF] to-[#4DFEFF]">
             <div className="relative w-full h-full flex items-center justify-center">
               <div className="relative w-full h-full overflow-hidden md:rounded-[20px] rounded-[15px]">
                 <img className="max-lg:w-full max-lg:object-cover max-lg:h-full" src="/assets/images/fv-img-02.jpg" alt="" />

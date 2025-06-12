@@ -43,8 +43,8 @@ export default function RootLayout({
           <div className="bg-[url(/assets/images/fv-bg.png)] bg-[size:100%_auto] bg-top bg-no-repeat">
             <Header />
             {children}
+            <Footer />
           </div>
-          <Footer />
         </ScrollContainer>
       </body>
     </html>

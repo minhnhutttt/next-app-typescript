@@ -10,7 +10,7 @@ interface StepCardProps {
 
 const StepCard = ({ imageSrc, stepNumber, title, description, imageAlt }: StepCardProps) => {
   return (
-    <div className="text-center flex flex-col items-center relative h-full">
+    <div data-scroll className="fade-up text-center flex flex-col items-center relative h-full">
       <div>
         <img className="rounded-[20px] [box-shadow:0px_0px_40px_0px_rgba(0,_0,_0,_0.10)]" src={imageSrc}
             alt={imageAlt} />
@@ -60,11 +60,11 @@ const Setup = () => {
     <section className="relative pt-[120px] md:pt-[240px]">
       <div className="w-full md:max-w-[1440px] max-w-[480px] mx-auto px-5 md:px-10">
         <div>
-          <div className="flex w-full items-center">
+          <div data-scroll className="fade-up flex w-full items-center">
             <span className="bg-gradient-to-br from-[#10E188] to-[#05BAEA] w-10 md:w-[50px] h-1.5 md:h-2 mr-3 rounded-full"></span>
-            <p className=" text-[18px] md:text-[32px] font-bold font-syne">SETUP</p>
+            <p className=" text-[24px] md:text-[32px] font-bold font-syne">SETUP</p>
           </div>
-          <h3 className="text-[24px] md:text-[32px] lg:text-[40px] xl:text-[50px] min-[1366px]:text-[64px] font-black pt-3 tracking-[0.2em]">
+          <h3 data-scroll className="fade-up text-[32px] md:text-[36px] lg:text-[40px] xl:text-[50px] min-[1366px]:text-[64px] font-black pt-3 tracking-[0.2em]">
             導入方法<br />
             <div className="flex items-center md:mt-6 mt-2">
               <span className="font-bold text-[24px] md:text-[40px] lg:text-[60px] xl:text-[80px] min-[1366px]:text-[100px] text-white font-roboto md:size-16 size-12 lg:size-[80px] xl:size-[110px] rounded-full italic flex items-center justify-center bg-gradient-to-br from-[#10E188] to-[#05BAEA] mr-2 sm:mr-4">
@@ -81,7 +81,7 @@ const Setup = () => {
           ))}
         </div>
 
-        <div className="max-w-[722px] mx-auto bg-white p-6 sm:p-8 lg:p-10 rounded-3xl shadow-xl text-left">
+        <div data-scroll className="fade-up max-w-[722px] mx-auto bg-white p-6 sm:p-8 lg:p-10 rounded-3xl shadow-xl text-left">
           <p className="font-bold text-[18px] md:text-[24px] leading-relaxed">
             Unique Data Miningでは、ユーザー行動に基づいた設計により、導入されたウェブサイトは「成果を生む構造」へと進化します。
           </p>

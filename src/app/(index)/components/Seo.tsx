@@ -1,6 +1,4 @@
 import { memo } from 'react';
-import Image from 'next/image';
-
 interface FeatureItemProps {
   icon: string;
   title: string;
@@ -9,7 +7,7 @@ interface FeatureItemProps {
 }
 
 const FeatureItem = memo(({ icon, title, description, alt }: FeatureItemProps) => (
-  <div className="relative flex items-start p-3 sm:p-4 rounded-lg before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#10E188] before:to-[#05BAEA] before:opacity-40 before:rounded-lg z-30">
+  <div data-scroll className="fade-up relative flex items-start p-3 sm:p-4 rounded-lg before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#10E188] before:to-[#05BAEA] before:opacity-40 before:rounded-lg z-30">
     <div className="relative md:size-[50px] size-10">
       <img src={icon} alt={alt} />
     </div>
@@ -55,23 +53,23 @@ const Seo =() => {
       <div className="w-full md:max-w-[1440px] max-w-[480px] mx-auto px-5 md:px-10">
         <div className='flex flex-col md:flex-row md::items-center gap-6 lg:gap-8'>
           <div className="lg:w-1/2 ">
-            <div className="flex items-center">
+            <div data-scroll className="fade-up flex items-center">
               <span className="bg-gradient-to-br from-[#EFCB27] to-[#EC530C] w-10 md:w-[50px] h-1.5 md:h-2 mr-3 rounded-full"></span>
-              <p className=" text-[18px] md:text-[32px] font-bold font-syne">SEO</p>
+              <p className="text-[24px] md:text-[32px] font-bold font-syne">SEO</p>
             </div>
-            <h3 className="text-[24px] md:text-[32px] lg:text-[40px] xl:text-[50px]  min-[1366px]:text-[64px] font-black pt-3 tracking-[0.2em]">
+            <h3 data-scroll className="fade-up text-[32px] md:text-[36px] lg:text-[40px] xl:text-[50px]  min-[1366px]:text-[64px] font-black pt-3 tracking-[0.2em]">
               CVRだけじゃない<br/>
               SEOにも好影響
             </h3>
           </div>
-          <div className="relative flex justify-center items-center mx-auto lg:mx-0 lg:w-1/2">
+          <div data-scroll className="fade-up relative flex justify-center items-center mx-auto lg:mx-0 lg:w-1/2">
             <img className="md:max-lg:w-[300px]" src="/assets/images/logo-ga.png" alt="" />
           </div>
         </div>
         
         <div className="mx-auto flex flex-col lg:flex-row justify-between md:mt-24">
           <div className="text-center lg:text-left lg:flex-shrink-0 md:pl-7">
-            <p className="md:text-[32px] text-[18px] font-bold text-center tracking-[0.2em]">
+            <p data-scroll className="fade-up md:text-[32px] text-[18px] font-bold text-center tracking-[0.2em]">
               Google Analytics4の
               <br />
               トップページ平均滞在時間
@@ -94,21 +92,21 @@ const Seo =() => {
                 { label: "Eコマース", value: "2分23秒" }
               ].map((item, index) => (
                 <div key={index} className="">
-                  <p className="font-bold text-[14px] md:text-[18px] bg-white border border-[#05BAEA] px-3 lg:px-5 py-1.5 md:min-h-[58px] min-h-[44px] rounded-full  flex items-center justify-center whitespace-nowrap md:tracking-[0.2em]">
+                  <p data-scroll className="fade-up font-bold text-[14px] md:text-[18px] bg-white border border-[#05BAEA] px-3 lg:px-5 py-1.5 md:min-h-[58px] min-h-[44px] rounded-full  flex items-center justify-center whitespace-nowrap md:tracking-[0.2em]">
                     {item.label}: <span className="font-bold ml-1">{item.value}</span>
                   </p>
                 </div>
               ))}
             </div>
             
-            <p className="font-medium md:text-[14px] text-[12px] mt-3 sm:mt-5">
+            <p data-scroll className="fade-up font-medium md:text-[14px] text-[12px] mt-3 sm:mt-5">
               ※出典：Databox「Google Analytics 4 Industry Benchmarks for 2023 and Beyond」（2023年8月）
             </p>
           </div>
         </div>
       </div>
 <div className="px-5">
-      <div className="relative max-w-[1100px] w-full mx-auto bg-white flex p-6 md:p-10 md:mt-[100px] mt-16 max-md:flex-col">
+      <div data-scroll className="fade-up relative max-w-[1100px] w-full mx-auto bg-white flex p-6 md:p-10 md:mt-[100px] mt-16 max-md:flex-col">
         <div className="relative flex items-center justify-center md:pr-10">
           <img src="/assets/images/ic_seo.png" alt="" />
         </div>
@@ -127,7 +125,7 @@ const Seo =() => {
 
       <div className="mx-auto flex justify-center mb-8 sm:mb-20 mt-16 md:mt-[100px]">
         <div className="border-b border-black mx-auto px-5">
-          <h2 className="md:text-[32px] text-[18px] font-bold pb-5 tracking-widest text-center">
+          <h2 data-scroll className="fade-up md:text-[32px] text-[18px] font-bold pb-5 tracking-widest text-center">
             強力なデータ分析で訪問者を理解する
           </h2>
         </div>
@@ -141,7 +139,7 @@ const Seo =() => {
         </div>
         
         <div className="bg-white">
-          <div className="relative w-full">
+          <div data-scroll className="fade-up relative w-full">
             <img className="rounded-lg" src="/assets/images/seo-img.png" alt="" />
           </div>
         </div>

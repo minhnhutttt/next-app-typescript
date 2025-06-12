@@ -3,7 +3,7 @@ interface CompanyTypeItemProps {
 }
 
 const CompanyTypeItem = ({ text }: CompanyTypeItemProps) => (
-  <li className="flex items-center md:gap-4 gap-2">
+  <li data-scroll className="fade-up flex items-center md:gap-4 gap-2">
     <img className="max-md:w-6" src="/assets/images/ic_check.png" alt="check" />
     <span className="text-[17px] md:text-[28px]">{text}</span>
   </li>
@@ -16,7 +16,7 @@ interface CaseStudyCardProps {
 }
 
 const CaseStudyCard = ({ imageSrc, companyName, description }: CaseStudyCardProps) => (
-  <div className="bg-white md:rounded-[40px] rounded-[20px] [box-shadow:0px_0px_40px_0px_rgba(0,_0,_0,_0.10)] overflow-hidden flex flex-col h-full">
+  <div data-scroll className="fade-up bg-white md:rounded-[40px] rounded-[20px] [box-shadow:0px_0px_40px_0px_rgba(0,_0,_0,_0.10)] overflow-hidden flex flex-col h-full">
     <div className="w-full flex items-center justify-center overflow-hidden">
       <img className="w-full" src={imageSrc} alt={companyName}  />
     </div>
@@ -55,25 +55,25 @@ const caseStudies = [
 
 const Usecase = () => {
   return (
-    <section className="relative pt-[120px] md:pt-[310px]">
+    <section className="relative pt-[120px] md:pt-[310px] md:pb-[180px] pb-[100px]">
       <div className="w-full md:max-w-[1440px] max-w-[480px] mx-auto px-5 md:px-10">
-        <div className="flex flex-col md:flex-row items-start justify-between">
+        <div className="flex flex-col lg:flex-row items-start justify-between">
           <div className="flex flex-col text-center items-start">
-            <div className="flex items-center">
+            <div data-scroll className="fade-up flex items-center">
               <span className="bg-gradient-to-br from-[#CF2FF7] to-[#214BE6] w-10 md:w-[50px] h-1.5 md:h-2 mr-3 rounded-full"></span>
-              <p className=" text-[18px] md:text-[32px] font-bold font-syne">USE CASES</p>
+              <p className="text-[24px] md:text-[32px] font-bold font-syne">USE CASES</p>
             </div>
-            <h3 className="text-[24px] md:text-[32px] lg:text-[40px] xl:text-[50px] min-[1366px]:text-[64px] font-black pt-3 tracking-[0.2em]">
+            <h3 data-scroll className="fade-up text-[32px] md:text-[36px] lg:text-[40px] xl:text-[50px] min-[1366px]:text-[64px] font-black pt-3 tracking-[0.2em]">
               <span className="bg-gradient-to-r from-[#CF2FF7] to-[#214BE6] text-transparent bg-clip-text">導入実績多数</span>
             </h3>
-            <h4 className="text-[24px] md:text-[32px] lg:text-[40px] xl:text-[50px] min-[1366px]:text-[64px] font-black tracking-[0.2em]">
+            <h4 data-scroll className="fade-up text-[24px] md:text-[32px] lg:text-[40px] xl:text-[50px] min-[1366px]:text-[64px] font-black tracking-[0.2em]">
               こんな企業に
             </h4>
-            <h4 className="text-[24px] md:text-[32px] lg:text-[40px] xl:text-[50px] min-[1366px]:text-[64px] font-black tracking-[0.2em]">
+            <h4 data-scroll className="fade-up text-[24px] md:text-[32px] lg:text-[40px] xl:text-[50px] min-[1366px]:text-[64px] font-black tracking-[0.2em]">
               選ばれています。
             </h4>
           </div>
-          <div className="md:w-1/2 md:px-10">
+          <div className="lg:w-1/2 md:px-10">
           <ul className="flex flex-col gap-2 md:gap-8 pt-12">
             {companyTypes.map((text, index) => (
               <CompanyTypeItem key={index} text={text} />
@@ -83,11 +83,11 @@ const Usecase = () => {
         </div>
       </div>
 
-    <div className="relative mt-12 md:mt-28 max-w-full">
-        <img src="/assets/images/gallery.png" alt="Business person gallery" />
+    <div data-scroll className="fade-up relative mt-12 md:mt-28 max-w-full">
+        <img className="w-full" src="/assets/images/gallery.png" alt="Business person gallery" />
     </div>
-      <div className="mx-auto w-full max-w-[1400px] px-5 mt-20 md:mt-[150px]">
-        <div className="border-b border-black pb-2 sm:pb-4 mb-8 sm:mb-20 mx-auto max-w-[640px]">
+      <div className="mx-auto w-full md:max-w-[1440px] max-w-[520px] px-5 mt-20 md:mt-[150px]">
+        <div data-scroll className="fade-up border-b border-black pb-2 sm:pb-4 mb-8 sm:mb-20 mx-auto max-w-[640px]">
           <h2 className="text-[18px] md:text-[32px] font-extrabold text-center px-4 sm:px-6">
             導入事例
           </h2>
