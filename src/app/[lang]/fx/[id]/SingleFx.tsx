@@ -1,11 +1,16 @@
 "use client";
 
+import AnnotationPopup from "@/app/components/AnnotationPopup";
 import BarCode from "@/app/components/barcode";
 import LogoDots from "@/app/components/logo-dots";
 import TitleFx from "@/app/components/titles/title-fx";
 import { ArticleContent } from "@/app/data/data";
+import { useAnnotations } from "@/app/hooks/useAnnotations";
 
 export default function SingleFx({ article }: {article: ArticleContent}) {
+  const { selectedAnnotation, closeAnnotation } = useAnnotations(
+    article.annotations
+  );
   return (
     <main>
       <div className="relative">
@@ -18,11 +23,6 @@ export default function SingleFx({ article }: {article: ArticleContent}) {
             </div>
 
             <div className="px-3">
-              <div className="flex py-2.5">
-                <div className="h-6 flex items-center bg-[#F97373] px-2.5 text-white text-[13px]">
-                  {article.category}
-                </div>
-              </div>
               <div className="flex justify-end py-4">
               <TitleFx rect="md:h-[15px] h-[12px]" />
               </div>
@@ -41,8 +41,9 @@ export default function SingleFx({ article }: {article: ArticleContent}) {
             </div>
           </div>
           {article.annotations && article.annotations.length > 0 && (
-            <div className="max-xl:hidden w-[295px] bg-[#D7E7CD] dark:bg-[#4D7F64]/[0.68] border-l border-[#358D93] dark:border-white flex flex-col justify-between">
-              <div className="fade-up px-3 pt-6 sticky top-0">
+            <div className="max-xl:hidden w-[325px] bg-[#D7E7CD] dark:bg-[#4D7F64]/[0.68] border-l border-[#358D93] dark:border-white flex flex-col justify-between">
+              <div className="fade-up px-3 pt-6 sticky top-0 bottom-0">
+              <div className="overflow-auto h-[calc(100vh-100px)]">
                 <figure className="pb-7">
                   <img
                     className="dark:hidden"
@@ -65,19 +66,24 @@ export default function SingleFx({ article }: {article: ArticleContent}) {
                     </p>
                   </div>
                 ))}
-                <div className="flex justify-end mt-[680px]">
+                </div>
+                <div className="flex justify-end">
                 <LogoDots color="fill-[#3EB07A]" darkColor="dark:fill-[#CAF2A1]" />
                 </div>
               </div>
             </div>
           )}
 
-          <div className="h-[324px] flex justify-end items-end p-3 absolute bottom-0 right-0">
-          <BarCode  color="fill-[#5BBB8B]" darkColor="dark:fill-[#CAF2A1]"  />
+          <div className="h-[324px] flex justify-start items-end p-3 absolute bottom-0 right-24">
+          <BarCode color="fill-[#5BBB8B]" darkColor="dark:fill-[#CAF2A1]"  />
           </div>
           
         </div>
       </div>
+      <AnnotationPopup
+        annotation={selectedAnnotation}
+        onClose={closeAnnotation}
+      />
     </main>
   );
 }

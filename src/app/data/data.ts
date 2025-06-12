@@ -3,6 +3,7 @@ export interface ArticleTranslation {
   content: string;
   category: string;
   annotations: {
+    modal: string;
     term: string;
     definition: string;
   }[];
@@ -23,6 +24,7 @@ export interface ArticleContent {
   link: string;
   content: string;
   annotations: {
+    modal: string;
     term: string;
     definition: string;
   }[];
@@ -96,10 +98,65 @@ export const dataAI: ArticleType[] = [
         title:
           "AI開発とプロンプト開発をわからず騙される顧客の実態〜カニかまとカニだと信じてしまうようなアホなあなたへ〜",
         category: "",
-        content: `「プロンプト」って何のことか説明できますか?<br><br>ChatGPTなどの生成AIが注目されはじめてから1年以上がたちます。<br>ですがいまだに、「プロンプト」って何なのか、よくわからない人は多いでしょう。<br><br><span class=\"hightlight\">もし、あなたが、<br>AI開発とプロンプト開発を同じだと思っているのであれば、<br><br>ろうそくと電球と同じものだと思って生活し、<br>カニかまをカニだと思って食べ続け、<br>野球ゲームで高得点を取れる人を野球選手と呼ぶくらい、<br><br>アホな勘違いをしていると思ってください。<br><br></span>AIの必要性に気づいた経営者の方から「AIを使ったサービスを作りたい」<br>という依頼を受けることも増えてきました。<br><br>会社としてAI活用を推進するのは、時代の流れを踏まえれば当然のこと。<br>ですが実際にヒアリングをすると、どうやらAI開発という名<br>「言葉遊び」に気づいてない人が多いようです。<br><br>2024年現在、<br><span class=\"hightlight\">AI開発を謳っている企業の多くは、正確にはAI開発をしていません。</span><br>彼らがAI開発と呼んでいる開発の多くは、実は「プロンプト開発」です。<br>ここで言うプロンプト開発とは、生成AIにタスクを実行させるために、<br>プログラムではなく人間の言葉によって指示の出し方を工夫し、<br>最適化することを指します。<br><br>この与えられたプロンプトに基づいて、<br>AIはテキスト・画像・音楽などを生成するため、<br>与えるプロンプト次第でアウトプットの質は大きく左右されます。<br>コーヒーづくりで例えるなら、次のような感じです。<br><br><div class=\"border border-black dark:border-white p-5\"><strong>▼プロンプト開発</strong><br />役割<br />最適なコーヒーを淹れる方法を見つける<br />主な作業<br /><ul class=\"list-disc list-inside pl-6\"><li>既存のコーヒーメーカーを使用して、最高のコーヒーを淹れるための設定や手順を調整</li><li>異なる条件や好みに応じた最適なレシピや手順を開発</li><li>ユーザーが最適な結果を得られるように、具体的な指示やガイドラインを提供</li></ul></div><br /><div class=\"border border-black dark:border-white p-5\"><strong>▼AI開発</strong><br />役割<br />最適なコーヒーの淹れ方をもとに、最適なコーヒーメーカーを設計・構築する<br />主な作業<br /><ul class=\"list-disc list-inside pl-6\"><li>最適なコーヒーを淹れるための条件や手順を理解し、その情報をもとに新しいコーヒーメーカーの機能や構造を設計</li><li>コーヒー抽出プロセスを効率化するための技術やアルゴリズムを開発</li><li>製品が一貫して最高のコーヒーを淹れられるように、機械のテストと改良を繰り返す</li></ul></div><br />確かに広義では、プロンプト開発もAI開発といえるかもしれません。<br />より厳密には、プロンプトにシステムが付随する場合は「AI開発=システム開発」となります。<br>この「システム」が抜け落ちてしまった結果、プロンプト開発という言葉だけが先行しているのでしょう。<br><br>そのような会社は、LPに「AI開発できます！」とデカデカと掲げるのは控えるべきです。<br><br>もしあなたがAI開発を外部に委託する場合、<br>その企業が大規模言語モデルや機械学習を得意とするのか<br>ディープラーニングを開発しているのか、<br>プロンプトを開発しているのか<br>この点を見極めなければいけません。<br><br>これに付随して、「エンジニア」という言葉にも騙されないようにしてください。<br>生成AIの誕生と共に、「プロンプトエンジニア」という職業がこの世に生まれました。<br><br><span class=\"hightlight\">プロンプトエンジニアの仕事は、<br>AIに対する指示や質問(つまり、プロンプト)を設計し、最適化すること。</span><br>AIが生成するコンテンツの質や精度を高めるうえで、<br>プロンプトエンジニアは間違いなく重要な存在となります。<br><br>しかし、あなたが仕事を依頼する委託先の口から<br>「うちのエンジニアが・・・」<br>という言葉が出てきたときは要注意。<br><br>相手が「プロンプト」のことを単に「AI」と呼んだり、<br>「プロンプトエンジニア」のことを「エンジニア」と呼ぶのには、<br>以下の3パターンの理由があると考えられます。<br><br /><div class=\"border border-black dark:border-white p-5\">《パターン1:×》<br />ブランディングとして戦略的・営業的にそういった表現を使っている場合。<br />この場合、あなたが話している相手は技術者ではなく営業マンの可能性があります。<br />相手がAIの技術的なことを理解しているのかどうか、手元のChatGPTで裏を取りながら確認ましょう。</div><br /><div class=\"border border-black dark:border-white p-5\">《パターン2:×》<br />単に思考停止で「AI」「エンジニア」という言葉を使っている場合。<br />このケースは、特に実害もありませんがメリットもないです。このような相手はスルーで。</div><br /><div class=\"border border-black dark:border-white p-5\">《パターン3:◎》<br />お客様、つまりあなたが理解しやすいように、あえて馴染みのある言葉を使っている場合。<br />このような相手は、「プロンプト」「AI」「エンジニア」が指す内容について、きちんと開示してくれるはず。<br />付き合うべきパートナーです。</div><br />私が言いたいのは、「言葉は正しく使うべき」ということ。<br><br>扱うのがプロンプトならばAI開発ではなく<br>「プロンプト開発」「プロンプト実装」<br>と呼ぶべきです。<br><br>エンジニアという曖昧な言葉で濁すのではなく、<br>「プロンプトエンジニア」<br>「プロンプトディレクター」<br>という適切な呼び名を使えということなんです。<br><br>勘違いしてほしくないのは、<br>決してプロンプト開発を下に見ているわけではないということです。<br><span class=\"hightlight\">重要なのは、<br>「委託先が謳うAI開発は、蓋を開けたら実はプロンプト開発だった」<br>という可能性があることを、まずは知ること。</span><br><br>これに気づかないのは、<br>まさにコーヒーメーカーをコーヒーレシピだと思っているのに等しいわけです。<br>カニカマをカニだと思って食べていると表現した理由もわかったでしょう。<br><br>葱を背負っている鴨に成り下りたくなければ、しっかりと理解してください<br><br>。別にカニカマが悪いわけではありません。<br>でも、奥さんに「カニを買ってきて」と言われたのにカニカマを持って帰ってきたら<br>「なんてバカな旦那なんだろうか」と思われることはわかるでしょう。<br><br>プロンプト開発を頼みたいなら、委託先に対して明確にプロンプト開発を依頼すべき。<br><br>一方、AI開発を頼みたいのに、<br>実は委託先が「プロンプト開発企業」だったと気づいたならば、<br>正しくAI開発ができる企業に依頼すべきです。<br><br><span class=\"hightlight\">最も悲劇なのは、<br>今回解説したような真実を知らぬままに、<br>プロンプト開発しかできない企業にAI開発の仕事を発注してしまうことです。</span><br><br>おそらくその委託先は、あなたが望むアウトプットを出してくれません。<br>これに対して私は、かつてのSEOのような匂いを感じています。<br>システムと違い、AIもSEOも答えが明確ではなくコロコロ変わる。<br><br>その意味ではプロンプト開発は「終わりなき開発、ゴールなき開発」<br>であるにもかかわらず、言葉の曖昧さでうまく濁されてしまっている。<br><br>その「言葉の曖昧さ」をわかった上で<br>意図して「AI開発」と謳っている企業を見ると、あまり良い気分がしません。<br><br>この記事を読み、AI開発という言葉の裏にひそむ<br>「言葉遊び」について理解できたならば、<br>もう騙されることはないはずです。<br><br><span class=\"hightlight\">私たちは仕事の依頼を受ける時、<br>最初に「AI開発」と「プロンプト開発」の違いを明確に説明しています。</span>あなたがもし望むのであれば、<br>AI開発でもプロンプト開発でもよいので、<br>相談に乗りますよ。
-
+        content: `「<span data-modal='anno-01'>プロンプト</span>」って何のことか説明できますか?<br><br><span data-modal='anno-03'>ChatGPT</span>などの<span data-modal='anno-02'>生成AI</span>が注目されはじめてから1年以上がたちます。<br>ですがいまだに、「<span data-modal='anno-01'>プロンプト</span>」って何なのか、よくわからない人は多いでしょう。<br><br><span class="hightlight">もし、あなたが、<br><span data-modal='anno-04'>AI開発</span>と<span data-modal='anno-05'>プロンプト開発</span>を同じだと思っているのであれば、<br><br>ろうそくと電球と同じものだと思って生活し、<br>カニかまをカニだと思って食べ続け、<br>野球ゲームで高得点を取れる人を野球選手と呼ぶくらい、<br><br>アホな勘違いをしていると思ってください。<br><br></span>AIの必要性に気づいた経営者の方から「AIを使ったサービスを作りたい」<br>という依頼を受けることも増えてきました。<br><br>会社としてAI活用を推進するのは、時代の流れを踏まえれば当然のこと。<br>ですが実際にヒアリングをすると、どうやら<span data-modal='anno-04'>AI開発</span>という名<br>「言葉遊び」に気づいてない人が多いようです。<br><br>2024年現在、<br><span class="hightlight">AI開発を謳っている企業の多くは、正確にはAI開発をしていません。</span><br>彼らが<span data-modal='anno-04'>AI開発</span>と呼んでいる開発の多くは、実は「<span data-modal='anno-05'>プロンプト開発</span>」です。<br>ここで言う<span data-modal='anno-05'>プロンプト開発</span>とは、<span data-modal='anno-02'>生成AI</span>にタスクを実行させるために、<br>プログラムではなく人間の言葉によって指示の出し方を工夫し、<br>最適化することを指します。<br><br>この与えられた<span data-modal='anno-01'>プロンプト</span>に基づいて、<br>AIはテキスト・画像・音楽などを生成するため、<br>与える<span data-modal='anno-01'>プロンプト</span>次第でアウトプットの質は大きく左右されます。<br>コーヒーづくりで例えるなら、次のような感じです。<br><br><div class="border border-black dark:border-white p-5"><strong>▼<span data-modal='anno-05'>プロンプト開発</span></strong><br />役割<br />最適なコーヒーを淹れる方法を見つける<br />主な作業<br /><ul class="list-disc list-inside pl-6"><li>既存のコーヒーメーカーを使用して、最高のコーヒーを淹れるための設定や手順を調整</li><li>異なる条件や好みに応じた最適なレシピや手順を開発</li><li>ユーザーが最適な結果を得られるように、具体的な指示やガイドラインを提供</li></ul></div><br /><div class="border border-black dark:border-white p-5"><strong>▼<span data-modal='anno-04'>AI開発</span></strong><br />役割<br />最適なコーヒーの淹れ方をもとに、最適なコーヒーメーカーを設計・構築する<br />主な作業<br /><ul class="list-disc list-inside pl-6"><li>最適なコーヒーを淹れるための条件や手順を理解し、その情報をもとに新しいコーヒーメーカーの機能や構造を設計</li><li>コーヒー抽出プロセスを効率化するための技術や<span data-modal='anno-09'>アルゴリズム</span>を開発</li><li>製品が一貫して最高のコーヒーを淹れられるように、機械のテストと改良を繰り返す</li></ul></div><br />確かに広義では、<span data-modal='anno-05'>プロンプト開発</span>も<span data-modal='anno-04'>AI開発</span>といえるかもしれません。<br />より厳密には、<span data-modal='anno-01'>プロンプト</span>にシステムが付随する場合は「<span data-modal='anno-04'>AI開発</span>=システム開発」となります。<br>この「システム」が抜け落ちてしまった結果、<span data-modal='anno-05'>プロンプト開発</span>という言葉だけが先行しているのでしょう。<br><br>そのような会社は、<span data-modal='anno-10'>LP</span>に「<span data-modal='anno-04'>AI開発</span>できます！」とデカデカと掲げるのは控えるべきです。<br><br>もしあなたが<span data-modal='anno-04'>AI開発</span>を外部に委託する場合、<br>その企業が<span data-modal='anno-06'>大規模言語モデル</span>や<span data-modal='anno-07'>機械学習</span>を得意とするのか<br>ディープラーニングを開発しているのか、<br><span data-modal='anno-01'>プロンプト</span>を開発しているのか<br>この点を見極めなければいけません。<br><br>これに付随して、「エンジニア」という言葉にも騙されないようにしてください。<br><span data-modal='anno-02'>生成AI</span>の誕生と共に、「<span data-modal='anno-08'>プロンプトエンジニア</span>」という職業がこの世に生まれました。<br><br><span class="hightlight"><span data-modal='anno-08'>プロンプトエンジニア</span>の仕事は、<br>AIに対する指示や質問(つまり、プロンプト)を設計し、最適化すること。</span><br>AIが生成するコンテンツの質や精度を高めるうえで、<br><span data-modal='anno-08'>プロンプトエンジニア</span>は間違いなく重要な存在となります。<br><br>しかし、あなたが仕事を依頼する委託先の口から<br>「うちのエンジニアが・・・」<br>という言葉が出てきたときは要注意。<br><br>相手が「<span data-modal='anno-01'>プロンプト</span>」のことを単に「AI」と呼んだり、<br>「<span data-modal='anno-08'>プロンプトエンジニア</span>」のことを「エンジニア」と呼ぶのには、<br>以下の3パターンの理由があると考えられます。<br><br /><div class="border border-black dark:border-white p-5">《パターン1:×》<br />ブランディングとして戦略的・営業的にそういった表現を使っている場合。<br />この場合、あなたが話している相手は技術者ではなく営業マンの可能性があります。<br />相手がAIの技術的なことを理解しているのかどうか、手元の<span data-modal='anno-03'>ChatGPT</span>で裏を取りながら確認ましょう。</div><br /><div class="border border-black dark:border-white p-5">《パターン2:×》<br />単に思考停止で「AI」「エンジニア」という言葉を使っている場合。<br />このケースは、特に実害もありませんがメリットもないです。このような相手はスルーで。</div><br /><div class="border border-black dark:border-white p-5">《パターン3:◎》<br />お客様、つまりあなたが理解しやすいように、あえて馴染みのある言葉を使っている場合。<br />このような相手は、「<span data-modal='anno-01'>プロンプト</span>」「AI」「エンジニア」が指す内容について、きちんと開示してくれるはず。<br />付き合うべきパートナーです。</div><br />私が言いたいのは、「言葉は正しく使うべき」ということ。<br><br>扱うのが<span data-modal='anno-01'>プロンプト</span>ならば<span data-modal='anno-04'>AI開発</span>ではなく<br>「<span data-modal='anno-05'>プロンプト開発</span>」「<span data-modal='anno-01'>プロンプト</span>実装」<br>と呼ぶべきです。<br><br>エンジニアという曖昧な言葉で濁すのではなく、<br>「<span data-modal='anno-08'>プロンプトエンジニア</span>」<br>「<span data-modal='anno-01'>プロンプト</span>ディレクター」<br>という適切な呼び名を使えということなんです。<br><br>勘違いしてほしくないのは、<br>決して<span data-modal='anno-05'>プロンプト開発</span>を下に見ているわけではないということです。<br><span class="hightlight">重要なのは、<br>「委託先が謳う<span data-modal='anno-04'>AI開発</span>は、蓋を開けたら実は<span data-modal='anno-05'>プロンプト開発</span>だった」<br>という可能性があることを、まずは知ること。</span><br><br>これに気づかないのは、<br>まさにコーヒーメーカーをコーヒーレシピだと思っているのに等しいわけです。<br>カニカマをカニだと思って食べていると表現した理由もわかったでしょう。<br><br>葱を背負っている鴨に成り下りたくなければ、しっかりと理解してください<br><br>。別にカニカマが悪いわけではありません。<br>でも、奥さんに「カニを買ってきて」と言われたのにカニカマを持って帰ってきたら<br>「なんてバカな旦那なんだろうか」と思われることはわかるでしょう。<br><br><span data-modal='anno-05'>プロンプト開発</span>を頼みたいなら、委託先に対して明確に<span data-modal='anno-05'>プロンプト開発</span>を依頼すべき。<br><br>一方、<span data-modal='anno-04'>AI開発</span>を頼みたいのに、<br>実は委託先が「<span data-modal='anno-05'>プロンプト開発</span>企業」だったと気づいたならば、<br>正しく<span data-modal='anno-04'>AI開発</span>ができる企業に依頼すべきです。<br><br><span class="hightlight">最も悲劇なのは、<br>今回解説したような真実を知らぬままに、<br>プロンプト開発しかできない企業にAI開発の仕事を発注してしまうことです。</span><br><br>おそらくその委託先は、あなたが望むアウトプットを出してくれません。<br>これに対して私は、かつての<span data-modal='anno-11'>SEO</span>のような匂いを感じています。<br>システムと違い、AIも<span data-modal='anno-11'>SEO</span>も答えが明確ではなくコロコロ変わる。<br><br>その意味では<span data-modal='anno-05'>プロンプト開発</span>は「終わりなき開発、ゴールなき開発」<br>であるにもかかわらず、言葉の曖昧さでうまく濁されてしまっている。<br><br>その「言葉の曖昧さ」をわかった上で<br>意図して「<span data-modal='anno-04'>AI開発</span>」と謳っている企業を見ると、あまり良い気分がしません。<br><br>この記事を読み、<span data-modal='anno-04'>AI開発</span>という言葉の裏にひそむ<br>「言葉遊び」について理解できたならば、<br>もう騙されることはないはずです。<br><br><span class="hightlight">私たちは仕事の依頼を受ける時、<br>最初に「AI開発」と「プロンプト開発」の違いを明確に説明しています。</span>あなたがもし望むのであれば、<br><span data-modal='anno-04'>AI開発</span>でも<span data-modal='anno-05'>プロンプト開発</span>でもよいので、<br>相談に乗りますよ。
         `,
-        annotations: [],
+        annotations: [
+          {
+            modal: "anno-01",
+            term: "プロンプト",
+            definition: "AIに対して出す指示や質問のこと。人間の言葉でAIに何をしてほしいかを伝える文章。",
+          },
+          {
+            modal: "anno-02",
+            term: "生成AI",
+            definition: "テキスト、画像、音楽などを自動で作り出すAI技術。ChatGPTなどが代表例。",
+          },
+          {
+            modal: "anno-03",
+            term: "ChatGPT",
+            definition: "OpenAI社が開発した対話型AI。質問に答えたり、文章を作成したりできる。",
+          },
+          {
+            modal: "anno-04",
+            term: "AI開発",
+            definition: "AIの仕組み自体を設計・構築すること。機械学習モデルやアルゴリズムを作る技術開発。",
+          },
+          {
+            modal: "anno-05",
+            term: "プロンプト開発",
+            definition: "既存のAIに対する指示の出し方を工夫し、より良い結果を得るための手法開発。",
+          },
+          {
+            modal: "anno-06",
+            term: "大規模言語モデル",
+            definition: "膨大な文章データで学習した、言語を理解・生成できる巨大なAIシステム。",
+          },
+          {
+            modal: "anno-07",
+            term: "機械学習",
+            definition: "コンピューターがデータから自動的にパターンを見つけて学習する技術。ディープラーニング人間の脳の神経回路を模倣した、多層構造を持つ機械学習の手法。",
+          },
+          {
+            modal: "anno-08",
+            term: "プロンプトエンジニア",
+            definition: "AIへの指示文を設計・最適化して、AIの性能を最大化する専門職。",
+          },
+          {
+            modal: "anno-09",
+            term: "アルゴリズム",
+            definition: "問題を解決するための計算手順や処理方法を定めた規則・手順。",
+          },
+          {
+            modal: "anno-10",
+            term: "LP（ランディングページ）",
+            definition: "商品やサービスを紹介するためのウェブページ。訪問者の行動を促すのが目的。",
+          },
+          {
+            modal: "anno-11",
+            term: "SEO",
+            definition: "検索エンジン最適化。Googleなどの検索結果で上位表示されやすくする技術。",
+          },
+        ],
       },
       en: {
         title:
@@ -125,9 +182,70 @@ export const dataAI: ArticleType[] = [
         title:
           '令和版『桃太郎』AIを使う鬼との戦い 〜AIの"中身"が企業の明暗を分ける時代〜',
         category: "",
-        content: `<span class=\"hightlight\">「桃太郎」が令和の時代にいたら、鬼退治はどうなるでしょうか?</span><br><br>おじいさんは桃太郎に、<br>「村から金品を巻き上げた鬼を退治してくれ」<br>「これがあれば、楽に鬼退治ができるはずだ」<br><br>そう言って、<br>きびだんごではなく、AIツールを授けました。<br><br>このAIツールを使えば、<br>鬼の居場所を瞬時に把握できるし、戦略も立てやすい。<br><br>犬・猿・キジという仲間を連れずに、鬼ヶ島にも行かず、<br>遠隔操作でコスパよく鬼退治ができました。<br><br>しかし、めでたくお話は終わりません。<br><br>桃太郎の功績を知った力も頭脳もない村の商売人たちはこう考えました。<br>「そんな簡単なら俺たちでも同じことができるんじゃないか?」<br><br>そして、「AI搭載」という\"旗印\"を掲げ始めます。<br><br>「当店の武器はAIを搭載しています！」<br>「AIの力で楽々あなたも英雄に！」<br><br>一見すると本当にAIを搭載したかのようなハイテクに身を包んでいますが、<br>その実態は犬・猿・キジを共にして戦う旧式スタイルと変わりません。<br><br>\"AIを看板に掲げるだけ\"<br><br>の村の商売人は「AIブーム」に便乗して、<br>自分より弱い立場の人間を探しては鬼のように金儲けを試みるだけでした。<br>こうして村人の心に鬼は宿ってしまったのでした。<br><br>実際、世界はこの1年で、<br>「AI = なんかすごい= なんかすごいサービス =売れる 」<br>といった最強(短絡的)方程式を完成させました。<br><br>そんな方程式を見つけた企業は、<br>一目散に「AI搭載してます」ポーズを取り始めます。<br>言ってしまえば、<br><br><span class=\"hightlight\">「AIの皮を被っただけ」のニセモノが乱立している</span><br><br>というわけです。<br><br>だから、AIの中身は「カラッポ」なのです。<br><br>しかし、本当の勝負はこれからです。<br>「搭載するAIの\"中身\"」こそが、企業の優劣を決める時代がやってきます。<br><br><span class=\"hightlight\">表面的に「AI搭載」と言うだけでは、もう意味がありません。</span><br><br>「どれだけ\"高度な\"AIを搭載しているか」<br>「AIをどれだけ\"戦略的に\"活用しているか」<br><br>そうしたAIの「中身」が問われるようになるはずです。<br>そして、その「中身」こそがこれからのビジネスの勝敗を分けることになる。<br>私はそう確信しています。<br><br>とはいえ「AIの皮を被る」だけでも今のうちは十分に売上は立つかもしれません。<br><br><span class=\"hightlight\">でも、見せかけに頼っていては、いずれ時代に淘汰されるのは目に見えています。</span><br><br>そのような企業とは一線を画すべく、<br><span class=\"hightlight\">私たちは「AIの中身」にこだわり抜きます。</span><br><br><span class=\"hightlight\">クライアントのビジネスを、真に成功に導くためのAIソリューションを提供する。<br>世の中を本質的なサービスで満たしていく。</span><br><br>それが、私たちのミッションです。<br><br>あなたが善良なビジネスマンであれば、ともに人の心に宿った鬼退治をしましょう。<br>「本物でAIを活用したい!」と思ったなら、ぜひ我々に問い合わせをしましょう。<br>きびだんごはあげられませんが、本物のAIビジネス体験をさせてあげましょう。
+        content: `<span class="hightlight">「桃太郎」が令和の時代にいたら、鬼退治はどうなるでしょうか?</span><br><br>おじいさんは桃太郎に、<br>「村から金品を巻き上げた鬼を退治してくれ」<br>「これがあれば、楽に鬼退治ができるはずだ」<br><br>そう言って、<br>きびだんごではなく、<span data-modal='anno-01'>AIツール</span>を授けました。<br><br>この<span data-modal='anno-01'>AIツール</span>を使えば、<br>鬼の居場所を瞬時に把握できるし、戦略も立てやすい。<br><br>犬・猿・キジという仲間を連れずに、鬼ヶ島にも行かず、<br><span data-modal='anno-02'>遠隔操作</span>で<span data-modal='anno-11'>コスパ</span>よく鬼退治ができました。<br><br>しかし、めでたくお話は終わりません。<br><br>桃太郎の功績を知った力も頭脳もない村の商売人たちはこう考えました。<br>「そんな簡単なら俺たちでも同じことができるんじゃないか?」<br><br>そして、「<span data-modal='anno-03'>AI搭載</span>」という"旗印"を掲げ始めます。<br><br>「当店の武器はAIを搭載しています！」<br>「AIの力で楽々あなたも英雄に！」<br><br>一見すると本当にAIを搭載したかのような<span data-modal='anno-12'>ハイテク</span>に身を包んでいますが、<br>その実態は犬・猿・キジを共にして戦う旧式スタイルと変わりません。<br><br>"AIを看板に掲げるだけ"<br><br>の村の商売人は「<span data-modal='anno-04'>AIブーム</span>」に便乗して、<br>自分より弱い立場の人間を探しては鬼のように金儲けを試みるだけでした。<br>こうして村人の心に鬼は宿ってしまったのでした。<br><br>実際、世界はこの1年で、<br>「AI = なんかすごい= なんかすごいサービス =売れる 」<br>といった最強(短絡的)方程式を完成させました。<br><br>そんな方程式を見つけた企業は、<br>一目散に「<span data-modal='anno-03'>AI搭載</span>してます」ポーズを取り始めます。<br>言ってしまえば、<br><br><span class="hightlight">「AIの皮を被っただけ」のニセモノが乱立している</span><br><br>というわけです。<br><br>だから、AIの中身は「カラッポ」なのです。<br><br>しかし、本当の勝負はこれからです。<br>「搭載するAIの"中身"」こそが、企業の優劣を決める時代がやってきます。<br><br><span class="hightlight">表面的に「AI搭載」と言うだけでは、もう意味がありません。</span><br><br>「どれだけ"高度な"AIを搭載しているか」<br>「AIをどれだけ"<span data-modal='anno-09'>戦略的</span>に"活用しているか」<br><br>そうしたAIの「中身」が問われるようになるはずです。<br>そして、その「中身」こそがこれからの<span data-modal='anno-07'>ビジネス</span>の勝敗を分けることになる。<br>私はそう確信しています。<br><br>とはいえ「AIの皮を被る」だけでも今のうちは十分に売上は立つかもしれません。<br><br><span class="hightlight">でも、見せかけに頼っていては、いずれ時代に淘汰されるのは目に見えています。</span><br><br>そのような企業とは一線を画すべく、<br><span class="hightlight">私たちは「AIの中身」にこだわり抜きます。</span><br><br><span class="hightlight"><span data-modal='anno-06'>クライアント</span>の<span data-modal='anno-07'>ビジネス</span>を、真に成功に導くための<span data-modal='anno-05'>AIソリューション</span>を提供する。<br>世の中を本質的なサービスで満たしていく。</span><br><br>それが、私たちの<span data-modal='anno-08'>ミッション</span>です。<br><br>あなたが善良な<span data-modal='anno-07'>ビジネス</span>マンであれば、ともに人の心に宿った鬼退治をしましょう。<br>「本物でAIを活用したい!」と思ったなら、ぜひ我々に問い合わせをしましょう。<br>きびだんごはあげられませんが、本物のAI<span data-modal='anno-07'>ビジネス</span>体験をさせてあげましょう。
         `,
-        annotations: [],
+        annotations: [
+          {
+            modal: "anno-01",
+            term: "AIツール",
+            definition: "人工知能の機能を活用して作業を効率化するソフトウェアやアプリケーション。",
+          },
+          {
+            modal: "anno-02",
+            term: "遠隔操作",
+            definition: "離れた場所からコンピューターやシステムを操作すること。リモートコントロール。",
+          },
+          {
+            modal: "anno-03",
+            term: "AI搭載",
+            definition: "製品やサービスに人工知能の機能を組み込んでいること。AIを内蔵している状態。",
+          },
+          {
+            modal: "anno-04",
+            term: "AIブーム",
+            definition: "人工知能技術への注目が高まり、多くの企業がAI関連事業に参入する社会現象。",
+          },
+          {
+            modal: "anno-05",
+            term: "AIソリューション",
+            definition: "人工知能技術を使って企業の課題を解決するサービスや製品の総称。",
+          },
+          {
+            modal: "anno-06",
+            term: "クライアント",
+            definition: "サービスや商品を利用する顧客・依頼主のこと。取引先やお客様を指すビジネス用語。",
+          },
+          {
+            modal: "anno-07",
+            term: "ビジネス",
+            definition: "利益を目的とした商業活動や事業のこと。商売や企業活動全般を指す。",
+          },
+          {
+            modal: "anno-08",
+            term: "ミッション",
+            definition: "企業や組織が果たすべき使命や存在意義。社会に対する役割や目標を表す。",
+          },
+          {
+            modal: "anno-09",
+            term: "戦略的",
+            definition: "長期的な目標達成のために計画的・効果的に行動すること。戦略に基づいた。",
+          },
+          {
+            modal: "anno-10",
+            term: "淘汰",
+            definition: "競争により劣ったものが自然に排除され、優れたものだけが生き残ること。",
+          },
+          {
+            modal: "anno-11",
+            term: "コスパ",
+            definition: "コストパフォーマンスの略。費用に対する効果や成果の割合。費用対効果。",
+          },
+          {
+            modal: "anno-12",
+            term: "ハイテク",
+            definition: "ハイテクノロジーの略。最新の高度な技術を使った製品やサービス。",
+          },
+        ],
       },
       en: {
         title:
@@ -156,9 +274,88 @@ export const dataBlockChain: ArticleType[] = [
         title:
           "99%の企業は未だにアンフェアな”みかじめ料”を払っていることに気づいているのか",
         category: "",
-        content: `関所<br>昔の商売人は、主要な町を通過するたびに、通行料を払っていました。<br>当然、今はありません。<br><br>みかじめ料<br>暴力団に力があった頃、飲食店や小売店は用心棒代として<br>半ば強制的に金銭を徴収されていました。<br>まだ文化としては残っていますが、ほとんどなくなっています。<br>時代が経るにつれて理不尽な徴収は少なくなり、<br>商売がしやすくなっているようにも思えます。<br><br>しかし、それはあくまで目に見える世界での話です。<br><br><span class=\"hightlight\">今、経営者たちは、常に上納をし続けています。</span><br>目には見えない<span class=\"hightlight\">\"電子決済手数料\"</span>を。<br><br>当然、そんなことは意識はして商売をしていることでしょう。<br><br>大手ペイ払いサービスでも約3パーセント。<br>クレカ決済ではそれ以上の手数料がかかることも。<br><br>手数料が3パーセントの場合、<br>売上10億円の企業の「上納」金額は、少なくとも3,000万円となります。<br><br>取引手数料、固定手数料、返金処理や不正利用などイレギュラーな手数料・・・<br>諸々含めると、売上の1割も手数料支払いで消えることも。<br><br>クレカやペイ払いで、たしかに顧客の利便性は向上します。<br>現金払いに比べて売上を取りっぱぐれるリスクが減るため、<br>一概にデメリットばかりとは言えません。<br><br>このようなメリットを受ける対価としてコスト(手数料)を支払う事自体は、<br>何の問題もありません。資本主義の自然構造です。<br><br><span class=\"hightlight\">しかし、問題なのは、<br>カード会社やペイ払い運営会社は自分たちだけが、<br>儲かる仕組みを独占的に構築していることです。<br></span><br>彼らは、<br><span class=\"hightlight\">よりコストを抑えながら利便性を維持できる\"手段\"を知っているのに、<br>それをひた隠しにしています。<br>その\"手段\"とは、ブロックチェーンです。<br></span><br>暗号資産(仮想通貨)やNFTの文脈で語られることが多いブロックチェーン。<br>しかしその本質は、投資や投機の範疇に留まりません。<br><br>ブロックチェーンをビジネスに導入することで、<br>決済システム企業への手数料上納を回避できます。<br><br>なぜブロックチェーンが、手数料の上納を回避することにつながるのか。<br><br>この点を理解するために、<br>そもそもあなたようカード利用事業者が「手数料の上納」も含め、<br>どのような不利益を被っているのかを2つの観点から説明します。<br><div class=\"border border-black dark:border-white p-5\"><strong>《1.カード会社に支払う手数料負担》</strong><br /><br />現金を用いない電子決済ではカード会社のような「中間管理者」がカード利用事業者と ユーザーの間に必ず入り込んできます。<br>現金決済であれば、事業者はユーザーからダイレクトに売上を受け取ることができます。<br>中間の管理会社が入り込む余地はありません。<br>一方、カード決済を導入している場合、カード利用事業者は売上の数パーセントをカード会 社に必ず納めなければなりません。</div><br><div class=\"border border-black dark:border-white p-5\"><strong>《2.売掛金の着金の遅れ》</strong><br /><br />現金決済ならば、売上が発生した瞬間に、事業者は売上の全額をユーザーから直接受け 取れます。<br>常に「リアルタイムでダイレクトな着金」であり、売掛という概念すら存在しません。<br>しかし、間にカード会社が入る場合はそうはいきません。<br>ユーザーがカードで支払いをした場合、その売上はまずカード会社に計上されます。<br>その後、手数料を差し引いた上で残りの売上がカード利用事業者に着金します。 しかも、1〜2ヶ月遅れで。<br></div><br>なぜ、自社の売上がカード会社という「第三者」に一旦計上されなければならないのか?<br>なぜ、売上の着金が1〜2ヶ月遅れになるというリスクをカード利用事業者側が背負う必要が あるのか?<br><br>たしかに、これらのデメリットは利便性とのトレードオフになっています。<br>利便性のためにデメリットも同時に受け入れろと言われたらそれまでです。<br><br>ところが、<br>この仕組みを根底から変えうる技術があります。<br>それがブロックチェーンなのです。<br><br><span class=\"hightlight\">ブロックチェーンで実現できることを一言で表すらなら、<br>「インターネット上におけるダイレクトな電子商取引の実現」<br></span><br>ブロックチェーンを用いたインターネット上のやりとりには、<br>ピア・ツー・ピア(Peer to Peer:P2P)という特徴があります。<br><br>ここで言うPeerとは「対価の支払い・受け取り」に直接関わる主体、<br>つまり、<br>・支払いを受ける事業者<br>・支払いを行うエンドユーザー<br>を指します。<br><br>ブロックチェーンが提供するP2Pの仕組みにおいては、<br>Peer(エンドユーザー)からPeer(事業者)に対して、<br>カード会社のような中間管理者を介さないダイレクトな支払いが可能なのです。<br><br><span class=\"hightlight\">管理者を介さないことで取引の透明性やセキュリティが担保され、<br>手数料も安く済むことから、<br>ブロックチェーンを活用した決済方法を好むユーザーも増えてきています。<br></span><br>さらに、企業にとっても、<br>それまで接点がなかった新たなユーザーの呼び込みにつながるなどのメリッ トがあります。<br><br>クレジットカード払いやペイ払いは、<br>現時点での利便性はたしかにブロックチェーンよりも優れているかもしれません。<br><br>しかし、その利便性はあなたの会社がカード会社に<br> \"上納\" する手数料によって成り立っています。<br>もっと便利なブロックチェーンという仕組みが世の中にはあるにもかかわらず。<br><br><span class=\"hightlight\">この中世の農奴制と変わらない仕組みを理解しつつもまだ、<br>貢ぎ物やらみかじめ料を上納し続けたいでしょうか?<br><br>上に搾取される前提で、手数料を上乗せして<br>あなたも顧客から無駄に搾取し続けるのですか?<br><br>そこに、健全な競争原理はあるんでしょうか?<br>搾取の連鎖が続くだけではないでしょうか?<br></span><br>私たちは、そのことをよく理解しています。<br>だから、私たちは搾取できません。嘘もつけません。<br><br>もう、搾取も嘘も疲れませんか?<br>あなたがもし、健全で安全、<br>かつ便利な決済サービスの導入を考えているならば、<br>すぐに我々に問い合わせてください。<br>`,
+        content: `関所<br>昔の商売人は、主要な町を通過するたびに、通行料を払っていました。<br>当然、今はありません。<br><br>みかじめ料<br>暴力団に力があった頃、飲食店や小売店は用心棒代として<br>半ば強制的に金銭を徴収されていました。<br>まだ文化としては残っていますが、ほとんどなくなっています。<br>時代が経るにつれて理不尽な徴収は少なくなり、<br>商売がしやすくなっているようにも思えます。<br><br>しかし、それはあくまで目に見える世界での話です。<br><br><span class="hightlight">今、経営者たちは、常に上納をし続けています。</span><br>目には見えない<span class="hightlight">"電子決済手数料"</span>を。<br><br>当然、そんなことは意識はして商売をしていることでしょう。<br><br>大手<span data-modal='anno-02'>ペイ払いサービス</span>でも約3パーセント。<br><span data-modal='anno-03'>クレカ決済</span>ではそれ以上の手数料がかかることも。<br><br>手数料が3パーセントの場合、<br>売上10億円の企業の「上納」金額は、少なくとも3,000万円となります。<br><br><span data-modal='anno-04'>取引手数料</span>、<span data-modal='anno-05'>固定手数料</span>、返金処理や不正利用などイレギュラーな手数料・・・<br>諸々含めると、売上の1割も手数料支払いで消えることも。<br><br>クレカやペイ払いで、たしかに顧客の利便性は向上します。<br>現金払いに比べて売上を取りっぱぐれるリスクが減るため、<br>一概にデメリットばかりとは言えません。<br><br>このようなメリットを受ける対価としてコスト(手数料)を支払う事自体は、<br>何の問題もありません。資本主義の自然構造です。<br><br><span class="hightlight">しかし、問題なのは、<br>カード会社やペイ払い運営会社は自分たちだけが、<br>儲かる仕組みを独占的に構築していることです。<br></span><br>彼らは、<br><span class="hightlight">よりコストを抑えながら利便性を維持できる"手段"を知っているのに、<br>それをひた隠しにしています。<br>その"手段"とは、<span data-modal='anno-06'>ブロックチェーン</span>です。<br></span><br>暗号資産(仮想通貨)や<span data-modal='anno-08'>NFT</span>の文脈で語られることが多い<span data-modal='anno-06'>ブロックチェーン</span>。<br>しかしその本質は、投資や投機の範疇に留まりません。<br><br><span data-modal='anno-06'>ブロックチェーン</span>をビジネスに導入することで、<br>決済システム企業への手数料上納を回避できます。<br><br>なぜ<span data-modal='anno-06'>ブロックチェーン</span>が、手数料の上納を回避することにつながるのか。<br><br>この点を理解するために、<br>そもそもあなたようカード利用事業者が「手数料の上納」も含め、<br>どのような不利益を被っているのかを2つの観点から説明します。<br><br><div class="border border-black dark:border-white p-5"><strong>《1.カード会社に支払う手数料負担》</strong><br /><br />現金を用いない電子決済ではカード会社のような「<span data-modal='anno-13'>中間管理者</span>」がカード利用事業者と ユーザーの間に必ず入り込んできます。<br>現金決済であれば、事業者はユーザーからダイレクトに売上を受け取ることができます。<br>中間の管理会社が入り込む余地はありません。<br>一方、カード決済を導入している場合、カード利用事業者は売上の数パーセントをカード会 社に必ず納めなければなりません。</div><br><div class="border border-black dark:border-white p-5"><strong>《2.<span data-modal='anno-09'>売掛金</span>の<span data-modal='anno-10'>着金</span>の遅れ》</strong><br /><br />現金決済ならば、売上が発生した瞬間に、事業者は売上の全額をユーザーから直接受け 取れます。<br>常に「リアルタイムでダイレクトな<span data-modal='anno-10'>着金</span>」であり、売掛という概念すら存在しません。<br>しかし、間にカード会社が入る場合はそうはいきません。<br>ユーザーがカードで支払いをした場合、その売上はまずカード会社に計上されます。<br>その後、手数料を差し引いた上で残りの売上がカード利用事業者に<span data-modal='anno-10'>着金</span>します。 しかも、1〜2ヶ月遅れで。<br></div><br>なぜ、自社の売上がカード会社という「第三者」に一旦計上されなければならないのか?<br>なぜ、売上の<span data-modal='anno-10'>着金</span>が1〜2ヶ月遅れになるというリスクをカード利用事業者側が背負う必要が あるのか?<br><br>たしかに、これらのデメリットは利便性とのトレードオフになっています。<br>利便性のためにデメリットも同時に受け入れろと言われたらそれまでです。<br><br>ところが、<br>この仕組みを根底から変えうる技術があります。<br>それが<span data-modal='anno-06'>ブロックチェーン</span>なのです。<br><br><span class="hightlight"><span data-modal='anno-06'>ブロックチェーン</span>で実現できることを一言で表すらなら、<br>「インターネット上におけるダイレクトな電子商取引の実現」<br></span><br><span data-modal='anno-06'>ブロックチェーン</span>を用いたインターネット上のやりとりには、<br>ピア・ツー・ピア(Peer to Peer:P2P)という特徴があります。<br><br>ここで言うPeerとは「対価の支払い・受け取り」に直接関わる主体、<br>つまり、<br>・支払いを受ける事業者<br>・支払いを行う<span data-modal='anno-12'>エンドユーザー</span><br>を指します。<br><br><span data-modal='anno-06'>ブロックチェーン</span>が提供するP2Pの仕組みにおいては、<br>Peer(<span data-modal='anno-12'>エンドユーザー</span>)からPeer(事業者)に対して、<br>カード会社のような<span data-modal='anno-13'>中間管理者</span>を介さないダイレクトな支払いが可能なのです。<br><br><span class="hightlight">管理者を介さないことで取引の<span data-modal='anno-14'>透明性</span>や<span data-modal='anno-15'>セキュリティ</span>が担保され、<br>手数料も安く済むことから、<br><span data-modal='anno-06'>ブロックチェーン</span>を活用した決済方法を好むユーザーも増えてきています。<br></span><br>さらに、企業にとっても、<br>それまで接点がなかった新たなユーザーの呼び込みにつながるなどのメリッ トがあります。<br><br>クレジットカード払いやペイ払いは、<br>現時点での利便性はたしかに<span data-modal='anno-06'>ブロックチェーン</span>よりも優れているかもしれません。<br><br>しかし、その利便性はあなたの会社がカード会社に<br> "上納" する手数料によって成り立っています。<br>もっと便利な<span data-modal='anno-06'>ブロックチェーン</span>という仕組みが世の中にはあるにもかかわらず。<br><br><span class="hightlight">この中世の<span data-modal='anno-16'>農奴制</span>と変わらない仕組みを理解しつつもまだ、<br>貢ぎ物やらみかじめ料を上納し続けたいでしょうか?<br><br>上に搾取される前提で、手数料を上乗せして<br>あなたも顧客から無駄に搾取し続けるのですか?<br><br>そこに、健全な競争原理はあるんでしょうか?<br>搾取の連鎖が続くだけではないでしょうか?<br></span><br>私たちは、そのことをよく理解しています。<br>だから、私たちは搾取できません。嘘もつけません。<br><br>もう、搾取も嘘も疲れませんか?<br>あなたがもし、健全で安全、<br>かつ便利な決済サービスの導入を考えているならば、<br>すぐに我々に問い合わせてください。<br>`,
         annotations: [
-          
+          {
+            modal: "anno-01",
+            term: "電子決済手数料",
+            definition: "クレジットカードや電子マネーでの支払いの際に、決済代行会社に支払う手数料。",
+          },
+          {
+            modal: "anno-02",
+            term: "ペイ払いサービス",
+            definition: "PayPayやLINE Payなど、スマートフォンアプリを使った電子決済サービス。",
+          },
+          {
+            modal: "anno-03",
+            term: "クレカ決済",
+            definition: "クレジットカードを使った支払い方法。カード会社が一時的に代金を立て替える仕組み。",
+          },
+          {
+            modal: "anno-04",
+            term: "取引手数料",
+            definition: "商品やサービスの売買が成立した際に、仲介業者に支払う手数料。",
+          },
+          {
+            modal: "anno-05",
+            term: "固定手数料",
+            definition: "取引金額に関わらず一定額が課される手数料。月額料金などが代表例。",
+          },
+          {
+            modal: "anno-06",
+            term: "ブロックチェーン",
+            definition: "取引記録を暗号化して分散管理する技術。改ざんが困難で透明性が高い。",
+          },
+          {
+            modal: "anno-07",
+            term: "暗号資産（仮想通貨）",
+            definition: "ブロックチェーン技術を使ったデジタル通貨。ビットコインが代表例。",
+          },
+          {
+            modal: "anno-08",
+            term: "NFT",
+            definition: "ブロックチェーン上で発行される、デジタル資産の所有権を証明する仕組み。",
+          },
+          {
+            modal: "anno-09",
+            term: "売掛金",
+            definition: "商品を販売したが、まだ代金を受け取っていない債権。売上の未回収分。",
+          },
+          {
+            modal: "anno-10",
+            term: "着金",
+            definition: "銀行口座に代金が振り込まれること。売上が実際に手元に入ること。",
+          },
+          {
+            modal: "anno-11",
+            term: "ピア・ツー・ピア（P2P）",
+            definition: "中央管理者を介さず、利用者同士が直接やり取りする通信方式。",
+          },
+          {
+            modal: "anno-12",
+            term: "エンドユーザー",
+            definition: "商品やサービスを最終的に利用する消費者。最終利用者のこと。",
+          },
+          {
+            modal: "anno-13",
+            term: "中間管理者",
+            definition: "取引の仲介を行う業者。クレジットカード会社や決済代行会社など。",
+          },
+          {
+            modal: "anno-14",
+            term: "透明性",
+            definition: "取引内容や処理過程が公開され、誰でも確認できる状態。不正を防ぐ仕組み。",
+          },
+          {
+            modal: "anno-15",
+            term: "セキュリティ",
+            definition: "情報やシステムを不正アクセスや攻撃から守る安全対策。",
+          },
+          {
+            modal: "anno-16",
+            term: "農奴制",
+            definition: "中世ヨーロッパの制度で、農民が領主に労働や貢物を強制される社会システム。",
+          },
         ],
       },
       en: {
@@ -188,10 +385,6 @@ export const dataBlockChain: ArticleType[] = [
         category: "",
         content: `「赤ちゃんはよちよち歩きで不安定だから、将来はちゃんと歩けないだろう」<br>こんなことを言う人はいないでしょう。<br><br>「ビットコインは送金速度が遅いし不安定な通貨だから、将来も実務的に使えないだろう」<br>こんなことを言う人は山ほどいます。<br><br><span class=\"hightlight\">いまだ、ビットコインに対して懐疑的に見る人が今なお一定数いるようですが、<br>非常に愚かです。<br></span><br>ビットコインの送金や決済には、たしかに時間がかかります。<br><br>自動販売機での支払いにビットコインを使った結果、<br>ジュースが出てくるまでに10分かかるとしたら、悠長に待つバカはさすがにいないでしょう。<br><br>現時点において、「利便性」を最優先に考えるなら、ビットコインは間違いなく不便。<br>しかし、このことを理由に「ビットコインは無価値(無意味)だ」と非難するのだとしたら、<br>それもまたバカと言っていいでしょう。<br><br>まったくもってビットコインの本質を捉えていない、極めて的はずれな主張です。<br><br>ビットコイン不要論者たちの主張はこうです。<br><ul class=\"list-disc list-inside pl-6\"><li>ビットコインは遅い(実務に使えない)</li><li>ビットコインはボラティリティが大きい(取引通貨として不安定過ぎる)</li><li>ビットコインには裏付け資産がない(そんなものをどうやって信用しろと!?)</li></ul><br>言いたいことはわかります。<br>しかし、これらの主張はいずれもビットコインの本質に迫るものではありません。<br><br><span class=\"hightlight\">では、ビットコインの本質とは何か。<br><br>資産としては「価値の保存」<br>決済手段としては「確実性」<br><br>この2点が高度なレベルで実現していることにあります。<br><br></span>いずれもわかりにくい概念であるため、かみ砕いて説明しましょう。<br><br>ビットコインは、その希少性や安全性から「デジタルゴールド」と呼ばれています。<br>実物の金(ゴールド)、例えば金塊や金の延べ棒をイメージしてみてください。<br><br>金塊や金の延べ棒は、果たして日常の買い物に使えるでしょうか?<br>企業間の取引に使うことがあるでしょうか?<br><br>現代を生きる私たちは、金の塊で決済を行うことはありません。<br><br>私たちが金を保有する理由は<br>自身の資産を「安定した状態」で保管することにあります。<br><br>つまり「保管」や「保存」こそが金のメジャーな使い道であり、これはビットコインも同様。<br><br>すなわち、<br><span class=\"hightlight\">ビットコインの本質は、<br>「価値を安定的に保存できるデジタル資産」<br>という点にあります。<br></span><br>ところが、世界にはビットコインを決済に用いている国や地域が日々増えています。<br>ビットコインの本質が「価値の保存」にあるとすれば、<br>これを決済手段として用いるのは筋が悪いように見えるかもしれません。<br>しかし、ここで論点になるのがビットコインの本質の2つめ、<br>決済における「確実性」の問題です。<br><br>そもそも、日本人の多くがビットコインの本質を理解できないのは、<br>日本の法定通貨である円が\"ある程度の信用力\"をいまだ保持しているからです。<br><br>私たちは<br>「円で決済ができない」<br>「円で日常の買い物ができない」<br>などということは、夢にも思わないでしょう。<br><br>ゆえに、ほとんどの日本人が<br>「ビットコインなど私たちには必要ない」<br>という発想に行きつくのも、無理のないことなのかもしれません。<br><br>一方、世界にはまったく事情が異なる国があります。<br>たとえば、トルコの通貨「リラ」は、<br>過去10年で「1リラ=約50円」から「1リラ=5円未満」に急落しています。<br><br>これはトルコ人にとって、自国通貨の価値が10分の1以下に弱まったことを意味します。<br>アルゼンチンの「ペソ」に至っては、10年前の「1ペソ=約12円」から「1ペソ=0.2円未満」になっており、<br>通貨の価値はもはや100分の1。<br><br>現在のアルゼンチンは想像を絶するインフレに見舞われています。<br><br>このように、<br>自国通貨の価値が不安定化し、<br>決済に「確実に」使える保証がなくなってしまった国は何を求めるようになったか。<br><br>ビットコインです。<br><span class=\"hightlight\">ビットコインは、決済手段として「確実に」機能します。<br>特定の国の政府(通貨発行体)に依存することなく、価値を保つことができます。<br>ゆえに、世界中どこでも通貨として利用できる「確実性」が、ビットコインにはあります。<br></span><br>このように「価値の保存」と「決済における確実性」を実現できるビットコインにとって、<br><ul class=\"list-decimal list-inside pl-6\"><li>ビットコインは遅い</li><li>ビットコインはボラティリティが大きい</li><li>ビットコインには裏付け資産がない</li></ul><br>このような批判は、本質を外した主張に過ぎないのです。<br><br>さらに補足をすると、<br>上記の批判はビットコインの弱みどころか、<br>むしろ強みを強調する論点にさえなります。<br><br>実際は、次の3つが真実です。<br><ul class=\"list-decimal list-inside pl-6\"><li>ビットコインは速い</li><li>ビットコインのボラティリティは小さい</li><li>ビットコインの価値を裏付けられる資産がそもそも存在しない</li></ul><br>これが、ビットコインの真実です。<br><br><div class=\"border border-black dark:border-white p-5\"><strong>《1.ビットコインは速い》</strong><br />「ビットコインが遅い」という批判は、「あなたが持つ日本円を今すぐベトナムの銀行に送金できるのか」という問いで論破できます。<br />日本国内の取引に限れば、既存の金融システムの方がたしかにスピーディかもしれません。<br />しかし、国際送金となれば話はまったく違ってきます。<br />日本円を現地通貨に両替し、2つの国をまたいで送金するには数日かかる場合もあります。<br />一方、ビットコインは、世界中どこの国へ送ろうとも、誰が送ろうとも、おおむね数十分で着金します。どちらが「速い」のかは明らかです。</div><br /><div class=\"border border-black dark:border-white p-5\"><strong>《2.ビットコインのボラティリティは小さい》</strong><br />「ビットコインはボラティリティが大きい」という説も、誕生からわずか10数年しか経っていないビットコインの歴史を踏まえれば、浅はかな考えです。<br />ビットコインは2024年1月にようやく米国でETFが承認されたばかり。<br />つまり、まだまだ適正な評価がされていないのです。<br />今後、ビットコインの価値がより認められるようになれば価格はさらに安定します。<br />そもそも、他の暗号資産に比べればすでにボラティリティは圧倒的に小さいとさえ言えます。<br />最後に「裏付け資産がない」との批判については、そもそもビットコインの価値を裏付けられる資産がないんです。</div><br /><div class=\"border border-black dark:border-white p-5\"><strong>《3.ビットコインの価値を裏付けられる資産がそもそも存在しない》</strong><br />「ビットコインの価値の裏付け」という役割が、無限に発行可能な「円」や「ドル」に務まるでしょうか?<br />発行上限がない(=いくらでも価値が下がる可能性がある)通貨でビットコインの価値を裏付けようものなら、逆にビットコインの価値が「下げられて」しまいます。<br />採掘量が少なく、ゆえに希少性が高いとされるゴールドでさえも、実際は「人類が採掘できる量」が限られているだけであり、「埋蔵量」自体は人類の想像を遥かに超える量が存在するかもしれません。<br />「存在する量が有限である」ということ自体が、他の資産では裏付けられないビットコイン固有の価値なのです。</div><br />これでもなお、ビットコインに懐疑的な人に問いたいです。<br /><br />ユーロもドルも下がっているこの時代に、<br />そもそも未来の価値を裏付けのある確かな通貨はあるのでしょうか?<br /><br />投資商品としての批判をする人もいますが、<br />株式投資は安全で暗号資産は危険という考えもよくわかりません。<br /><br />2024年3月時点の時価総額は次のようになっています。<br />世界の株式市場:約111兆ドル<br />ゴールド(金):約14兆ドル<br />暗号資産全体:約2.8兆ドル<br />出典:<a href='https://toyokeizai.net/articles/-/742954?display=b' class=\"underline\" target='_blank' rel='noopener noreferrer'>東洋経済|株価、金、ビットコインが驚くほど高騰する事情</a> <br> <br>また、金相場の歴史を辿ってみると50年ほど前は<br>現在の暗号資産と同等の時価総額だったと考えられます(<a href='https://kinkaimasu.jp/gold/column/50_years_of_gold_market_history/' class=\"underline\" target='_blank' rel='noopener noreferrer'>リファスタ|金相場の50年史</a>より)。<br><br>さらに100年前まで辿れば、<br>そもそもの株式市場は金よりも時価総額は低いものでした。<br><br>暗号資産同様物理的に存在しない株式は<br>たった1世紀でものすごい価値に膨れ上がっています。<br><br>これらを考えてみても、<br><span class=\"hightlight\">暗号資産に信用がないとはもはや言い切れないでしょう。</span><br><br>もう少し私の持論をお伝えすると、<br>ビットコインはもはや暗号資産ですらないと思っています。<br>価格が「上がった・下がった」と常に気にかけるような投資対象でもありません<br><br><span class=\"hightlight\">ビットコインはすでに、<br>実物のゴールドと同等です。<br></span><br>つまり、<br>分散暗号化によって有限性と検証性、匿名性が確保されています。<br>ビットコインの価格が下がっている（もしくは上がっている）のではなく、<br>\"他の通貨\"がビットコインに対して上下しているのです。<br><br>そう考えると、実はビットコインの裏付け資産は「世界中の紙幣」だとも言えます。<br><br>どこかの国が紙幣を刷れば刷るほど、<br>相対的にビットコインに対する紙幣の価値は下落します。<br><span class=\"hightlight\">通貨のシェアに着目した場合も、</span><br><span class=\"hightlight\">ビットコインの優位性は揺るぎません。</span><br><br>「世界中でビットコイン（暗号資産）が使われるようになるのはいつですか？」<br><br>この問いに対する回答は、<br>「もうすでに使われています」<br><br>そして、逆に私はこう尋ねたい。<br>「では、基軸通貨とされるドルが世界中で使われるのはいつですか？（実際は\"世界中\"で利用するのは不可能）」<br><br>つまり、ビットコインが利用できる国の数はすでにドルよりも多く、<br>今後は「ビットコインはいつ世界中で使われるようになるのか？」ではなく、<br><span class=\"hightlight\">「ビットコインが世界の通貨シェアを取るのはいつか？」<br>という論点に移り変わっていくべきだと考えています。<br></span><br>そして、ここからが重要なポイントです。<br><br>世のビットコイン不要論者は、<br>ビットコインの「表面的な不便さ」だけを理由に<br>ビットコインの存在価値（および、暗号資産の存在価値）を不当に下げようとします。<br><br>「ビットコインなんて役に立たないよ！<br>そんなものより、もっと速くて便利なサービスを作ったから、<br>ぜひこれを使ってうちにお金を支払ってよ！」<br><br>と言い、自社の商品やサービスを売り込もうとします。<br>それは、自分たちだけに都合のよい詭弁です。<br>ごまかしの理論に過ぎません。<br><br>すでに述べた通り、米国ではビットコインETFが承認されています。<br><br>エルサルバドルや中央アフリカ共和国は、<br>自国の法定通貨としてビットコインを採用しています。<br><br>通貨としてのビットコインの価値は、<br>不要論者の主張に反して確実に高まっているのです。<br><br><span class=\"hightlight\">私は、ビットコインを含め、<br>それぞれの暗号資産の「本質的な価値」を正しく理解しています。<br></span><br>ビットコイン、暗号資産、伝統的な金融、そして、これらを活用した事業作り。<br><br>そのすべてを熟知しているからこそ、<br>あなたのビジネスに最適な暗号資産を選択し、<br>それをベースとしたサービスを生み出すことができます。<br><br>ここまで記事を読んで暗号資産の本質的な価値が理解できた方は、<br>暗号資産のビジネス活用について今すぐ我々に連絡をください。`,
         annotations: [
-          {
-            term: "Title",
-            definition: "Content"
-          }
         ],
       },
       en: {
@@ -200,10 +393,7 @@ export const dataBlockChain: ArticleType[] = [
         category: "",
         content: `\"Babies walk unsteadily with their first steps, so they probably won't be able to walk properly in the future.\"<br>No one would say such a thing.<br><br>\"Bitcoin has slow transfer speeds and is an unstable currency, so it probably won't be practically usable in the future either.\"<br>There are countless people who say this.<br><br><span class=\"hightlight\">There still seem to be a certain number of people who view Bitcoin skeptically,<br>but this is extremely foolish.<br></span><br>Bitcoin transfers and payments certainly take time.<br><br>If using Bitcoin for vending machine payments resulted in waiting 10 minutes for juice to come out, surely no fool would wait so leisurely.<br><br>At present, if \"convenience\" is the top priority, Bitcoin is undoubtedly inconvenient.<br>However, if you criticize \"Bitcoin as worthless (meaningless)\" for this reason,<br>that too would be foolish.<br><br>This is an extremely off-target argument that completely misses Bitcoin's essence.<br><br>Bitcoin skeptics' arguments are as follows:<br><ul class=\"list-disc list-inside pl-6\"><li>Bitcoin is slow (not practical for business)</li><li>Bitcoin has high volatility (too unstable as a transaction currency)</li><li>Bitcoin has no backing assets (how can we trust such a thing!?)</li></ul><br>I understand what they want to say.<br>However, none of these arguments approach Bitcoin's essence.<br><br><span class=\"hightlight\">So what is Bitcoin's essence?<br><br>As an asset: \"store of value\"<br>As a payment method: \"certainty\"<br><br>These two points are realized at a high level.<br><br></span>Since both are difficult concepts to understand, let me explain them in simple terms.<br><br>Bitcoin is called \"digital gold\" due to its scarcity and security.<br>Imagine physical gold, such as gold bars or gold ingots.<br><br>Can gold bars or gold ingots be used for daily shopping?<br>Are they used in business-to-business transactions?<br><br>We who live in modern times don't make payments with chunks of gold.<br><br>The reason we hold gold is<br>to store our assets in a \"stable state.\"<br><br>In other words, \"storage\" and \"preservation\" are gold's major uses, and this applies to Bitcoin as well.<br><br>That is,<br><span class=\"hightlight\">Bitcoin's essence lies in being<br>\"a digital asset that can stably store value.\"<br></span><br>However, countries and regions using Bitcoin for payments are increasing daily worldwide.<br>If Bitcoin's essence is \"store of value,\"<br>using it as a payment method might seem problematic.<br>But here the second essence of Bitcoin becomes the point of discussion:<br>the issue of \"certainty\" in payments.<br><br>The reason most Japanese people can't understand Bitcoin's essence is<br>that Japan's legal tender, the yen, still maintains \"a certain level of credibility.\"<br><br>We would never dream of<br>\"not being able to make payments with yen\"<br>or \"not being able to do daily shopping with yen.\"<br><br>Therefore, it may be natural that most Japanese people<br>arrive at the idea that<br>\"we don't need Bitcoin.\"<br><br>On the other hand, there are countries with completely different circumstances.<br>For example, Turkey's currency \"lira\"<br>has plummeted from \"1 lira = about 50 yen\" to \"1 lira = less than 5 yen\" over the past 10 years.<br><br>This means for Turkish people, their national currency's value has weakened to less than one-tenth.<br>Argentina's \"peso\" has gone from \"1 peso = about 12 yen\" 10 years ago to \"1 peso = less than 0.2 yen,\"<br>with the currency's value now one-hundredth.<br><br>Current Argentina is experiencing unimaginable inflation.<br><br>Like this,<br>what do countries seek when their national currency's value becomes unstable<br>and there's no guarantee it can be \"reliably\" used for payments?<br><br>Bitcoin.<br><span class=\"hightlight\">Bitcoin functions \"reliably\" as a payment method.<br>It can maintain value without depending on any specific country's government (currency issuer).<br>Therefore, Bitcoin has the \"certainty\" of being usable as currency anywhere in the world.<br></span><br>For Bitcoin, which can realize \"store of value\" and \"certainty in payments,\"<br><ul class=\"list-decimal list-inside pl-6\"><li>Bitcoin is slow</li><li>Bitcoin has high volatility</li><li>Bitcoin has no backing assets</li></ul><br>Such criticisms are merely arguments that miss the essence.<br><br>Furthermore, to supplement,<br>the above criticisms are not Bitcoin's weaknesses,<br>but rather points that emphasize its strengths.<br><br>Actually, the following three points are true:<br><ul class=\"list-decimal list-inside pl-6\"><li>Bitcoin is fast</li><li>Bitcoin's volatility is small</li><li>There are no assets that can back Bitcoin's value in the first place</li></ul><br>This is Bitcoin's truth.<br><br><div class=\"border border-black dark:border-white p-5\"><strong>《1. Bitcoin is fast》</strong><br />The criticism that \"Bitcoin is slow\" can be refuted with the question \"Can you transfer your Japanese yen to a Vietnamese bank right now?\"<br />Limited to domestic Japanese transactions, existing financial systems might indeed be speedier.<br />However, international remittances are a completely different story.<br />Converting Japanese yen to local currency and sending money across two countries can take several days.<br />Meanwhile, Bitcoin, no matter which country in the world you send to, no matter who sends it, generally arrives in about tens of minutes. It's clear which is \"faster.\"</div><br /><div class=\"border border-black dark:border-white p-5\"><strong>《2. Bitcoin's volatility is small》</strong><br />The theory that \"Bitcoin has high volatility\" is also shallow thinking considering Bitcoin's history of only about 10 years since its birth.<br />Bitcoin ETF was just approved in the US in January 2024.<br />In other words, it hasn't been properly evaluated yet.<br />In the future, as Bitcoin's value becomes more recognized, prices will become more stable.<br />In the first place, compared to other cryptocurrencies, Bitcoin's volatility can already be said to be overwhelmingly small.<br />Finally, regarding the criticism of \"no backing assets,\" there simply are no assets that can back Bitcoin's value.</div><br /><div class=\"border border-black dark:border-white p-5\"><strong>《3. There are no assets that can back Bitcoin's value in the first place》</strong><br />Can infinitely issuable \"yen\" or \"dollars\" serve the role of \"backing Bitcoin's value\"?<br />If you try to back Bitcoin's value with currencies that have no issuance limit (= can decrease in value indefinitely), Bitcoin's value would be \"lowered\" instead.<br />Even gold, which is said to have high scarcity due to low mining volume, is actually only limited in \"the amount humans can mine,\" and the \"reserves\" themselves might exist in amounts far beyond human imagination.<br />\"Having a finite existing amount\" itself is Bitcoin's unique value that cannot be backed by other assets.</div><br />Even so, I want to ask those still skeptical of Bitcoin.<br /><br />In this era when both the euro and dollar are declining,<br />is there any reliable currency with solid backing for future value?<br /><br />Some people criticize it as an investment product,<br />but I don't understand the thinking that stock investment is safe while cryptocurrencies are dangerous.<br /><br />Market capitalizations as of March 2024 are as follows:<br />Global stock market: approximately $111 trillion<br />Gold: approximately $14 trillion<br />Total cryptocurrencies: approximately $2.8 trillion<br />Source: <a href='https://toyokeizai.net/articles/-/742954?display=b' class=\"underline\" target='_blank' rel='noopener noreferrer'>Toyo Keizai | The surprising surge in stock prices, gold, and Bitcoin</a> <br> <br>Also, tracing the history of gold prices, about 50 years ago<br>it's thought to have had market capitalization equivalent to current cryptocurrencies (<a href='https://kinkaimasu.jp/gold/column/50_years_of_gold_market_history/' class=\"underline\" target='_blank' rel='noopener noreferrer'>Rifasta | 50-year history of gold market</a>).<br><br>Going back 100 years,<br>the stock market itself had lower market capitalization than gold.<br><br>Stocks, which like cryptocurrencies don't physically exist,<br>have inflated to tremendous value in just one century.<br><br>Considering these facts,<br><span class=\"hightlight\">we can no longer definitively say cryptocurrencies have no credibility.</span><br><br>To share a bit more of my personal theory,<br>I think Bitcoin is no longer even a cryptocurrency.<br>It's not an investment target to constantly worry about whether prices \"went up or down.\"<br><br><span class=\"hightlight\">Bitcoin is already<br>equivalent to physical gold.<br></span><br>That is,<br>finiteness, verifiability, and anonymity are ensured through distributed encryption.<br>It's not that Bitcoin's price is falling (or rising),<br>but rather \"other currencies\" are fluctuating against Bitcoin.<br><br>Thinking this way, Bitcoin's backing assets could actually be said to be \"paper money worldwide.\"<br><br>The more any country prints paper money,<br>the more the relative value of that paper money falls against Bitcoin.<br><span class=\"hightlight\">Even focusing on currency share,</span><br><span class=\"hightlight\">Bitcoin's superiority is unshakeable.</span><br><br>\"When will Bitcoin (cryptocurrency) be used worldwide?\"<br><br>The answer to this question is:<br>\"It's already being used.\"<br><br>And conversely, I want to ask:<br>\"When will the dollar, considered the reserve currency, be used worldwide? (Actually using it 'worldwide' is impossible)\"<br><br>In other words, the number of countries where Bitcoin can be used already exceeds that of the dollar,<br>and in the future, instead of \"When will Bitcoin be used worldwide?\"<br><span class=\"hightlight\">\"When will Bitcoin take global currency share?\"<br>should be the point of discussion.<br></span><br>And here's the important point.<br><br>Bitcoin skeptics in the world try to unfairly lower<br>Bitcoin's existential value (and cryptocurrency's existential value)<br>based only on Bitcoin's \"superficial inconvenience.\"<br><br>\"Bitcoin is useless!<br>Instead of that, we've created faster and more convenient services,<br>so please use this and pay us money!\"<br><br>They say this while trying to sell their company's products or services.<br>This is sophistry convenient only for themselves.<br>It's nothing but deceptive theory.<br><br>As already mentioned, Bitcoin ETF has been approved in the US.<br><br>El Salvador and the Central African Republic<br>have adopted Bitcoin as their legal tender.<br><br>Bitcoin's value as currency is<br>certainly increasing, contrary to skeptics' claims.<br><br><span class=\"hightlight\">I correctly understand the \"essential value\"<br>of each cryptocurrency, including Bitcoin.<br></span><br>Bitcoin, cryptocurrencies, traditional finance, and business creation utilizing these.<br><br>Because I'm well-versed in all of these,<br>I can select the optimal cryptocurrency for your business<br>and create services based on them.<br><br>If you've read this far and understand the essential value of cryptocurrencies,<br>please contact us immediately about business utilization of cryptocurrencies.`,
         annotations: [
-          {
-            term: "Title",
-            definition: "Content"
-          }
+          
         ],
       },
       zh: {
@@ -211,10 +401,7 @@ export const dataBlockChain: ArticleType[] = [
         category: "",
         content: `\"婴儿走路摇摇摆摆不稳定，所以将来应该走不好路吧\"<br>没有人会说这样的话。<br><br>\"比特币转账速度慢，又是不稳定的货币，所以将来在实务上也用不了吧\"<br>说这样话的人数不胜数。<br><br><span class=\"hightlight\">至今仍有一定数量的人对比特币持怀疑态度，<br>这是非常愚蠢的。<br></span><br>比特币的转账和支付确实需要时间。<br><br>如果用比特币在自动售货机付款，结果要等10分钟才能出饮料，应该没有笨蛋会悠闲地等待。<br><br>目前来说，如果将\"便利性\"放在首位考虑，比特币确实不方便。<br>但是，如果以此为理由批评\"比特币是无价值（无意义）的\"，<br>那也可以说是愚蠢的。<br><br>完全没有抓住比特币的本质，是极其偏离要点的主张。<br><br>比特币不需要论者们的主张是这样的：<br><ul class=\"list-disc list-inside pl-6\"><li>比特币很慢（实务中用不了）</li><li>比特币波动性很大（作为交易货币过于不稳定）</li><li>比特币没有支撑资产（这样的东西怎么能信任呢!?）</li></ul><br>想说的我都明白。<br>但是，这些主张都不能触及比特币的本质。<br><br><span class=\"hightlight\">那么，比特币的本质是什么呢？<br><br>作为资产是\"价值的保存\"<br>作为支付手段是\"确实性\"<br><br>这两点在高度水平上得以实现。<br><br></span>由于都是难以理解的概念，让我通俗易懂地解释一下。<br><br>比特币因其稀缺性和安全性被称为\"数字黄金\"。<br>请想象一下实物黄金，比如金块或金条。<br><br>金块或金条能用于日常购物吗？<br>能用于企业间交易吗？<br><br>生活在现代的我们不会用金块进行支付。<br><br>我们持有黄金的理由是<br>为了将自己的资产保管在\"稳定状态\"。<br><br>也就是说，\"保管\"和\"保存\"才是黄金的主要用途，比特币也是如此。<br><br>即，<br><span class=\"hightlight\">比特币的本质在于<br>\"能够稳定保存价值的数字资产\"<br>这一点。<br></span><br>然而，世界上使用比特币进行支付的国家和地区日益增加。<br>如果比特币的本质在于\"价值的保存\"，<br>将其用作支付手段可能看起来不太合适。<br>但是，这里成为论点的是比特币本质的第二点，<br>支付中\"确实性\"的问题。<br><br>首先，大多数日本人无法理解比特币本质的原因是，<br>日本的法定货币日元至今仍保持着\"一定程度的信用力\"。<br><br>我们<br>\"无法用日元支付\"<br>\"无法用日元进行日常购物\"<br>等等，做梦都不会想到这样的事情。<br><br>因此，大多数日本人<br>得出\"我们不需要比特币\"<br>这样的想法，也许是无可厚非的。<br><br>另一方面，世界上有情况完全不同的国家。<br>比如，土耳其的货币\"里拉\"<br>在过去10年里从\"1里拉=约50日元\"急跌到\"1里拉=不到5日元\"。<br><br>这对土耳其人来说，意味着本国货币的价值削弱到了十分之一以下。<br>阿根廷的\"比索\"更是从10年前的\"1比索=约12日元\"变成了\"1比索=不到0.2日元\"，<br>货币价值已经是百分之一。<br><br>现在的阿根廷正遭受着难以想象的通胀。<br><br>像这样，<br>本国货币价值不稳定，<br>无法保证能\"确实\"用于支付的国家寻求什么呢？<br><br>比特币。<br><span class=\"hightlight\">比特币作为支付手段\"确实\"发挥作用。<br>不依赖特定国家的政府（货币发行体），能够保持价值。<br>因此，比特币具有在世界任何地方都能作为货币使用的\"确实性\"。<br></span><br>对于能够实现\"价值保存\"和\"支付确实性\"的比特币来说，<br><ul class=\"list-decimal list-inside pl-6\"><li>比特币很慢</li><li>比特币波动性很大</li><li>比特币没有支撑资产</li></ul><br>这样的批评只不过是偏离本质的主张。<br><br>进一步补充的话，<br>上述批评不仅不是比特币的弱点，<br>反而可以说是强调其优点的论点。<br><br>实际上，以下三点才是真相：<br><ul class=\"list-decimal list-inside pl-6\"><li>比特币很快</li><li>比特币的波动性很小</li><li>根本不存在能够支撑比特币价值的资产</li></ul><br>这就是比特币的真相。<br><br><div class=\"border border-black dark:border-white p-5\"><strong>《1. 比特币很快》</strong><br />\"比特币很慢\"这一批评可以用\"你能立即将持有的日元汇到越南的银行吗\"这个问题来反驳。<br />仅限于日本国内交易的话，现有金融系统确实可能更快速。<br />但是，国际汇款的话情况就完全不同了。<br />将日元换成当地货币，跨越两个国家进行汇款有时需要几天时间。<br />另一方面，比特币无论汇到世界哪个国家，无论谁汇款，大约几十分钟就能到账。哪个更\"快\"是显而易见的。</div><br /><div class=\"border border-black dark:border-white p-5\"><strong>《2. 比特币的波动性很小》</strong><br />\"比特币波动性很大\"这种说法，考虑到比特币诞生仅仅10多年的历史，也是肤浅的想法。<br />比特币在2024年1月才刚刚在美国获得ETF批准。<br />也就是说，还没有得到适当的评价。<br />今后，随着比特币价值得到更多认可，价格会进一步稳定。<br />首先，与其他加密货币相比，比特币的波动性已经可以说是压倒性地小了。<br />最后关于\"没有支撑资产\"的批评，根本就不存在能够支撑比特币价值的资产。</div><br /><div class=\"border border-black dark:border-white p-5\"><strong>《3. 根本不存在能够支撑比特币价值的资产》</strong><br />可以无限发行的\"日元\"或\"美元\"能够担当\"比特币价值支撑\"的作用吗？<br />如果用没有发行上限（=价值有可能无限下跌）的货币来支撑比特币价值，反而会\"降低\"比特币的价值。<br />即使是采掘量少因而被认为稀缺性高的黄金，实际上也只是\"人类能够采掘的量\"有限，\"埋藏量\"本身可能存在远超人类想象的数量。<br />\"存在量有限\"这一点本身就是其他资产无法支撑的比特币固有价值。</div><br />即便如此，我还想问那些对比特币持怀疑态度的人。<br /><br />在欧元和美元都在下跌的这个时代，<br />究竟有什么有支撑的可靠货币能够保证未来价值呢？<br /><br />也有人作为投资商品进行批评，<br />但股票投资安全而加密货币危险的想法我也不太理解。<br /><br />2024年3月时点的市值如下：<br />世界股票市场：约111万亿美元<br />黄金：约14万亿美元<br />加密货币整体：约2.8万亿美元<br />出处：<a href='https://toyokeizai.net/articles/-/742954?display=b' class=\"underline\" target='_blank' rel='noopener noreferrer'>东洋经济|股价、黄金、比特币惊人上涨的内情</a> <br> <br>另外，追溯黄金行情的历史，大约50年前<br>被认为与现在的加密货币有同等的市值（<a href='https://kinkaimasu.jp/gold/column/50_years_of_gold_market_history/' class=\"underline\" target='_blank' rel='noopener noreferrer'>利法斯塔|黄金行情50年史</a>）。<br><br>进一步追溯到100年前，<br>股票市场本身的市值比黄金还要低。<br><br>与加密货币一样物理上不存在的股票<br>在短短一个世纪内膨胀到了惊人的价值。<br><br>考虑到这些，<br><span class=\"hightlight\">已经不能断言加密货币没有信用了。</span><br><br>再说一点我的持论，<br>我认为比特币已经不再是加密货币了。<br>也不是要时常关心价格\"涨了跌了\"的投资对象。<br><br><span class=\"hightlight\">比特币已经<br>与实物黄金等同了。<br></span><br>也就是说，<br>通过分散加密确保了有限性、可验证性、匿名性。<br>不是比特币的价格在下跌（或上涨），<br>而是\"其他货币\"相对于比特币在上下波动。<br><br>这样想的话，实际上比特币的支撑资产也可以说是\"世界各国的纸币\"。<br><br>某个国家印制的纸币越多，<br>相对于比特币，纸币的价值就越下跌。<br><span class=\"hightlight\">着眼于货币份额的话，</span><br><span class=\"hightlight\">比特币的优势地位不可动摇。</span><br><br>\"比特币（加密货币）什么时候会在世界范围内使用？\"<br><br>对这个问题的回答是：<br>\"已经在使用了\"<br><br>而且，反过来我想这样问：<br>\"那么，被视为基轴货币的美元什么时候会在世界范围内使用？（实际上在'全世界'使用是不可能的）\"<br><br>也就是说，能够使用比特币的国家数量已经超过了美元，<br>今后不应该是\"比特币什么时候会在世界范围内使用？\"，<br><span class=\"hightlight\">\"比特币什么时候会获得世界货币份额？\"<br>应该转向这样的论点。<br></span><br>而且，从这里开始是重要的要点。<br><br>世上的比特币不需要论者<br>仅以比特币的\"表面不便\"为理由<br>试图不当地贬低比特币的存在价值（以及加密货币的存在价值）。<br><br>\"比特币什么的没用！<br>比那个，我们制作了更快更便利的服务，<br>请一定要使用这个向我们付钱！\"<br><br>他们这样说，试图推销自己公司的产品或服务。<br>那是只对他们自己方便的诡辩。<br>只不过是欺骗的理论。<br><br>如前所述，美国已经批准了比特币ETF。<br><br>萨尔瓦多和中非共和国<br>采用比特币作为本国的法定货币。<br><br>比特币作为货币的价值<br>与不需要论者的主张相反，正在确实提高。<br><br><span class=\"hightlight\">我正确理解包括比特币在内的<br>各种加密货币的\"本质价值\"。<br></span><br>比特币、加密货币、传统金融，以及利用这些的事业创造。<br><br>正因为熟知所有这些，<br>才能选择最适合你业务的加密货币，<br>创造以此为基础的服务。<br><br>读到这里理解了加密货币本质价值的人，<br>请立即就加密货币的商业应用联系我们。`,
         annotations: [
-          {
-            term: "Title",
-            definition: "Content"
-          }
+         
         ],
       },
     },

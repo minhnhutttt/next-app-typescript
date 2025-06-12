@@ -1,12 +1,16 @@
 "use client";
 
+import AnnotationPopup from "@/app/components/AnnotationPopup";
 import BarCode from "@/app/components/barcode";
 import LogoDots from "@/app/components/logo-dots";
 import TitleAD from "@/app/components/titles/title-ad";
 import { ArticleContent } from "@/app/data/data";
+import { useAnnotations } from "@/app/hooks/useAnnotations";
 
 export default function SingleAd({ article }: {article: ArticleContent}) {
-
+  const { selectedAnnotation, closeAnnotation } = useAnnotations(
+    article.annotations
+  );
   return (
     <main>
       <div className="relative">
@@ -19,11 +23,6 @@ export default function SingleAd({ article }: {article: ArticleContent}) {
             </div>
 
             <div className="px-3">
-              <div className="flex py-2.5">
-                <div className="h-6 flex items-center bg-[#F97373] px-2.5 text-white text-[13px]">
-                  {article.category}
-                </div>
-              </div>
               <div className="flex justify-end py-4">
                 <TitleAD rect="md:h-[15px] h-[12px]" />
               </div>
@@ -43,7 +42,8 @@ export default function SingleAd({ article }: {article: ArticleContent}) {
           </div>
           {article.annotations && article.annotations.length > 0 && (
             <div className="max-xl:hidden w-[295px] bg-[#DBE8F0] dark:bg-[#6189B7]/[0.68] border-l border-[#3EA0FB] dark:border-white flex flex-col justify-between">
-              <div className="fade-up px-3 pt-6 sticky top-0">
+              <div className="fade-up px-3 pt-6 sticky top-0 bottom-0">
+              <div className="overflow-auto h-[calc(100vh-100px)]">
                 <figure className="pb-7">
                   <img
                     className="dark:hidden"
@@ -66,7 +66,8 @@ export default function SingleAd({ article }: {article: ArticleContent}) {
                     </p>
                   </div>
                 ))}
-                <div className="flex justify-end mt-[680px]">
+                </div>
+                <div className="flex justify-end">
                 <LogoDots color="fill-[#188FFD]" darkColor="dark:fill-[#8EBBFF]" />
                 </div>
               </div>
@@ -79,6 +80,11 @@ export default function SingleAd({ article }: {article: ArticleContent}) {
           
         </div>
       </div>
+
+      <AnnotationPopup
+        annotation={selectedAnnotation}
+        onClose={closeAnnotation}
+      />
     </main>
   );
 }
