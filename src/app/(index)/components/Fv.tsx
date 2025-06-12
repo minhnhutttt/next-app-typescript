@@ -22,8 +22,8 @@ const FV = () => {
   return (
     <section className="relative w-full max-md:pt-5 max-md:px-3 max-lg:pb-20 max-md:pb-16">
       <div data-scroll="out" className="relative w-full flex items-center justify-start px-3 lg:max-w-[1440px] max-w-[540px] mx-auto md:pt-14 md:pb-[88px] pb-10">
-      <span className="animate-fv opacity-0 translate-y-5 lg:!delay-700 !delay-200 absolute -top-5 lg:top-0 left-0 z-10 max-md:w-[200px] max-lg:w-[280px]"><img src="/assets/images/fv-deco-01.png" alt="" /></span>
-      <span className="animate-fv opacity-0 translate-y-5 lg:!delay-700 !delay-200 absolute right-0 bottom-0 z-10 max-md:w-[60px] max-lg:w-[90px]"><img src="/assets/images/fv-deco-02.png" alt="" /></span>
+      <span className="animate-fv opacity-0 translate-y-5 lg:!delay-[0.9s] !delay-500 absolute -top-5 lg:top-0 left-0 z-10 max-md:w-[200px] max-lg:w-[280px]"><img src="/assets/images/fv-deco-01.png" alt="" /></span>
+      <span className="animate-fv opacity-0 translate-y-5 lg:!delay-[0.9s] !delay-500 absolute right-0 bottom-0 z-10 max-md:w-[60px] max-lg:w-[90px]"><img src="/assets/images/fv-deco-02.png" alt="" /></span>
         <div 
           id="slider" 
           data-current-slide={currentSlide}
