@@ -41,13 +41,13 @@ const Introduction = () => {
             </div>
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="relative z-20 text-[40px] md:text-[60px] xl:text-[100px] font-extrabold text-black leading-none">
+            <h1 className="relative z-20 text-[40px] md:text-[60px] xl:text-[100px] font-extrabold  leading-none">
               コンバージョンファースト
             </h1>
           </div>
         </div>
         <div className="relative z-10">
-          <p className="text-[20] md:text-[32px] font-black text-black leading-relaxed">
+          <p className="text-[20] md:text-[32px] font-black  leading-relaxed max-md:px-5">
             埋もれたCVR(コンバージョン)を表舞台へ。
             <br />
             &ldquo;説明から誘導&rdquo;ではなく、&ldquo;目的から詳細&rdquo;へ。

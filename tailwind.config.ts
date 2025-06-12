@@ -17,6 +17,7 @@ const config: Config = {
     fontFamily: {
       mohave: ["var(--font-mohave)", "sans-serif"],
       syne: ["var(--font-syne)", "sans-serif"],
+      roboto: ["var(--font-roboto)", "sans-serif"],
     },
   },
   plugins: [],
