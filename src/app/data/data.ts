@@ -162,15 +162,127 @@ export const dataAI: ArticleType[] = [
         title:
           "The reality of customers who are deceived because they don't understand AI development and prompt development - For those of you who are so stupid that you believe it's a crab stick and a crab -",
         category: "",
-        content: `Can you explain what a 'prompt' is?<br><br>It's been over a year since generative AI like ChatGPT started gaining attention.<br>However, there are still many people who don't really understand what a 'prompt' is.<br><br><span class=\"hightlight\">If you think AI development and prompt development are the same thing,<br><br>it's like thinking candles and light bulbs are the same thing,<br>eating imitation crab thinking it's real crab,<br>or calling someone who scores high in baseball video games a baseball player.<br><br>You're making a foolish mistake.<br><br></span>We've been receiving more requests from business executives who have recognized the need for AI, saying 'We want to create AI-powered services.'<br><br>It's natural for companies to promote AI utilization given the current trends.<br>However, when we actually conduct interviews, it seems many people haven't noticed the 'word play' behind so-called AI development.<br><br>As of 2024,<br><span class=\"hightlight\">most companies claiming to do AI development are not actually doing AI development.</span><br>Much of what they call AI development is actually 'prompt development.'<br>Prompt development here refers to optimizing and refining how to give instructions to generative AI using human language rather than programming to execute tasks.<br><br>Based on the given prompts,<br>AI generates text, images, music, etc.,<br>so the quality of output is greatly influenced by the prompts provided.<br>Using coffee making as an example, it would be like this:<br><br><div class=\"border border-black dark:border-white p-5\"><strong>▼Prompt Development</strong><br />Role<br />Finding the optimal method to brew coffee<br />Main Tasks<br /><ul class=\"list-disc list-inside pl-6\"><li>Using existing coffee makers to adjust settings and procedures for brewing the best coffee</li><li>Developing optimal recipes and procedures according to different conditions and preferences</li><li>Providing specific instructions and guidelines so users can achieve optimal results</li></ul></div><br /><div class=\"border border-black dark:border-white p-5\"><strong>▼AI Development</strong><br />Role<br />Designing and building the optimal coffee maker based on optimal coffee brewing methods<br />Main Tasks<br /><ul class=\"list-disc list-inside pl-6\"><li>Understanding the conditions and procedures for brewing optimal coffee, and designing new coffee maker functions and structures based on that information</li><li>Developing technologies and algorithms to streamline the coffee extraction process</li><li>Repeatedly testing and improving the machine so it can consistently brew the best coffee</li></ul></div><br />Certainly, in a broad sense, prompt development could be considered AI development.<br />More precisely, when prompts are accompanied by systems, it becomes 'AI development = system development.'<br>As a result of this 'system' component being lost, only the term prompt development has taken precedence.<br><br>Such companies should refrain from boldly displaying 'We can do AI development!' on their landing pages.<br><br>If you're outsourcing AI development,<br>you need to determine whether the company specializes in large language models and machine learning,<br>develops deep learning,<br>or develops prompts.<br><br>Along with this, don't be fooled by the word 'engineer.'<br>With the birth of generative AI, the profession of 'prompt engineer' was born into this world.<br><br><span class=\"hightlight\">The job of prompt engineers is<br>to design and optimize instructions and questions (i.e., prompts) for AI.</span><br>Prompt engineers are undoubtedly important figures in improving the quality and accuracy of AI-generated content.<br><br>However, be careful when you hear<br>'Our engineers...'<br>from your outsourcing partners.<br><br>When someone simply calls 'prompts' 'AI' or<br>calls 'prompt engineers' 'engineers,' there are<br>three possible reasons:<br><br /><div class=\"border border-black dark:border-white p-5\">《Pattern 1: ×》<br />When they strategically use such expressions for branding and sales purposes.<br />In this case, the person you're talking to might be a salesperson rather than a technician.<br />Check whether they understand AI technology by verifying with ChatGPT at hand.</div><br /><div class=\"border border-black dark:border-white p-5\">《Pattern 2: ×》<br />When they simply use the words 'AI' and 'engineer' without thinking.<br />This case has no particular harm but no benefits either. Skip such partners.</div><br /><div class=\"border border-black dark:border-white p-5\">《Pattern 3: ◎》<br />When they deliberately use familiar terms to make it easier for customers (you) to understand.<br />Such partners should properly disclose what 'prompt,' 'AI,' and 'engineer' refer to.<br />These are partners you should work with.</div><br />What I want to say is that 'words should be used correctly.'<br><br>If you're dealing with prompts, it shouldn't be called AI development but<br>'prompt development' or 'prompt implementation.'<br><br>Instead of obscuring with the ambiguous word 'engineer,'<br>you should use appropriate titles like<br>'prompt engineer' or<br>'prompt director.'<br><br>I don't want you to misunderstand—<br>I'm not looking down on prompt development at all.<br><span class=\"hightlight\">What's important is<br>first knowing the possibility that<br>'the AI development claimed by outsourcing partners might actually be prompt development when you look into it.'</span><br><br>Not realizing this<br>is exactly like thinking a coffee maker is a coffee recipe.<br>Now you understand why I expressed it as thinking imitation crab is real crab.<br><br>If you don't want to become a duck carrying leeks on its back, understand this properly.<br><br>There's nothing wrong with imitation crab.<br>But if your wife asks you to 'buy crab' and you come home with imitation crab,<br>you can understand she'd think 'What a foolish husband.'<br><br>If you want to request prompt development, you should clearly request prompt development from your outsourcing partner.<br><br>On the other hand, if you want to request AI development<br>but realize the outsourcing partner is actually a 'prompt development company,'<br>you should request from a company that can properly do AI development.<br><br><span class=\"hightlight\">The most tragic thing is<br>ordering AI development work from a company that can only do prompt development<br>without knowing the truth explained today.</span><br><br>That outsourcing partner probably won't deliver the output you want.<br>I sense a smell similar to the old SEO days in this.<br>Unlike systems, both AI and SEO don't have clear answers and change constantly.<br><br>In that sense, prompt development is 'endless development, goalless development,'<br>yet it's being cleverly obscured by linguistic ambiguity.<br><br>Seeing companies that understand this 'linguistic ambiguity'<br>and intentionally claim 'AI development' doesn't make me feel good.<br><br>If you read this article and understand<br>the 'word play' hidden behind the term AI development,<br>you should never be deceived again.<br><br><span class=\"hightlight\">When we receive work requests,<br>we first clearly explain the difference between 'AI development' and 'prompt development.'</span>If you wish,<br>whether it's AI development or prompt development,<br>we're happy to consult with you.`,
-        annotations: [],
+        content: `Can you explain what a "<span data-modal='anno-01'>prompt</span>" is?<br><br>It's been over a year since <span data-modal='anno-03'>ChatGPT</span> and other <span data-modal='anno-02'>generative AI</span> tools started gaining attention.<br>But even now, many people still don't really understand what a "<span data-modal='anno-01'>prompt</span>" is.<br><br><span class="hightlight">If you think <span data-modal='anno-04'>AI development</span> and <span data-modal='anno-05'>prompt development</span> are the same thing,<br><br>it's like living your life thinking candles and light bulbs are the same thing,<br>continuing to eat imitation crab thinking it's real crab,<br>or calling someone who can score high in a baseball video game a baseball player—<br><br>you're making a foolish mistake.<br><br></span>We've been receiving more and more requests from business leaders who recognize the necessity of AI, saying "We want to create services using AI."<br><br>It's natural for companies to promote AI utilization given the current trends.<br>But when we actually conduct interviews, it seems many people haven't noticed the "word games" behind the term <span data-modal='anno-04'>AI development</span>.<br><br>As of 2024,<br><span class="hightlight">most companies claiming to do AI development are not actually doing AI development.</span><br>Much of what they call <span data-modal='anno-04'>AI development</span> is actually "<span data-modal='anno-05'>prompt development</span>."<br>What we mean by <span data-modal='anno-05'>prompt development</span> here refers to devising and optimizing<br>how to give instructions to <span data-modal='anno-02'>generative AI</span> to execute tasks,<br>not through programming but through human language.<br><br>Based on the given <span data-modal='anno-01'>prompt</span>,<br>AI generates text, images, music, etc.,<br>so the quality of output is greatly influenced by the <span data-modal='anno-01'>prompt</span> you provide.<br>Using coffee making as an example, it would be something like this.<br><br><div class="border border-black dark:border-white p-5"><strong>▼<span data-modal='anno-05'>Prompt Development</span></strong><br />Role<br />Find the method to brew the optimal coffee<br />Main Tasks<br /><ul class="list-disc list-inside pl-6"><li>Use existing coffee makers to adjust settings and procedures for brewing the best coffee</li><li>Develop optimal recipes and procedures according to different conditions and preferences</li><li>Provide specific instructions and guidelines for users to achieve optimal results</li></ul></div><br /><div class="border border-black dark:border-white p-5"><strong>▼<span data-modal='anno-04'>AI Development</span></strong><br />Role<br />Design and build the optimal coffee maker based on optimal coffee brewing methods<br />Main Tasks<br /><ul class="list-disc list-inside pl-6"><li>Understand the conditions and procedures for brewing optimal coffee, and design new coffee maker functions and structures based on this information</li><li>Develop technologies and <span data-modal='anno-09'>algorithms</span> to optimize the coffee extraction process</li><li>Repeatedly test and improve the machine so the product can consistently brew the best coffee</li></ul></div><br />Certainly, in a broad sense, <span data-modal='anno-05'>prompt development</span> could also be called <span data-modal='anno-04'>AI development</span>.<br />More strictly speaking, when systems accompany <span data-modal='anno-01'>prompts</span>, "<span data-modal='anno-04'>AI development</span> = system development."<br>It's because this "system" component has been dropped that only the term <span data-modal='anno-05'>prompt development</span> has taken precedence.<br><br>Such companies should refrain from boldly displaying "We can do <span data-modal='anno-04'>AI development</span>!" on their <span data-modal='anno-10'>landing pages</span>.<br><br>If you're outsourcing <span data-modal='anno-04'>AI development</span>,<br>you need to determine whether that company specializes in <span data-modal='anno-06'>large language models</span> or <span data-modal='anno-07'>machine learning</span>,<br>whether they're developing deep learning,<br>or whether they're developing <span data-modal='anno-01'>prompts</span>.<br><br>Related to this, don't be fooled by the word "engineer."<br>With the birth of <span data-modal='anno-02'>generative AI</span>, the profession of "<span data-modal='anno-08'>prompt engineer</span>" was born into this world.<br><br><span class="hightlight">The job of a <span data-modal='anno-08'>prompt engineer</span> is<br>to design and optimize instructions or questions to AI (i.e., prompts).</span><br><span data-modal='anno-08'>Prompt engineers</span> are undoubtedly important for improving the quality and accuracy of AI-generated content.<br><br>However, be careful when you hear<br>"Our engineers..."<br>from the contractors you're talking to.<br><br>When they simply call "<span data-modal='anno-01'>prompts</span>" "AI" or<br>call "<span data-modal='anno-08'>prompt engineers</span>" "engineers,"<br>there are three possible reasons:<br><br /><div class="border border-black dark:border-white p-5">《Pattern 1: ×》<br />When they strategically use such expressions for branding or sales purposes.<br />In this case, the person you're talking to might be a salesperson rather than a technical person.<br />Verify whether they understand AI technical matters by cross-checking with your <span data-modal='anno-03'>ChatGPT</span>.</div><br /><div class="border border-black dark:border-white p-5">《Pattern 2: ×》<br />When they mindlessly use words like "AI" and "engineer."<br />This case has no particular harm but no benefits either. Skip such people.</div><br /><div class="border border-black dark:border-white p-5">《Pattern 3: ◎》<br />When they deliberately use familiar terms to make it easier for customers (you) to understand.<br />Such people will properly disclose what "<span data-modal='anno-01'>prompts</span>," "AI," and "engineers" refer to.<br />They are partners you should work with.</div><br />What I want to say is, "Words should be used correctly."<br><br>If you're dealing with <span data-modal='anno-01'>prompts</span>, it shouldn't be called <span data-modal='anno-04'>AI development</span><br>but should be called "<span data-modal='anno-05'>prompt development</span>" or "<span data-modal='anno-01'>prompt</span> implementation."<br><br>Instead of obscuring things with the ambiguous word "engineer,"<br>use appropriate titles like "<span data-modal='anno-08'>prompt engineer</span>"<br>or "<span data-modal='anno-01'>prompt</span> director."<br><br>I don't want you to misunderstand—<br>I'm certainly not looking down on <span data-modal='anno-05'>prompt development</span>.<br><span class="hightlight">What's important is<br>first knowing the possibility that "the <span data-modal='anno-04'>AI development</span> your contractor claims to do<br>might actually be <span data-modal='anno-05'>prompt development</span> when you look under the hood."</span><br><br>Not noticing this is exactly like thinking a coffee maker is a coffee recipe.<br>Now you understand why I used the expression of eating imitation crab thinking it's real crab.<br><br>If you don't want to become a duck carrying green onions, understand this properly.<br><br>There's nothing wrong with imitation crab itself.<br>But if your wife tells you to "buy crab" and you come home with imitation crab,<br>you understand you'd be thought of as "what a foolish husband," right?<br><br>If you want to commission <span data-modal='anno-05'>prompt development</span>, you should clearly request <span data-modal='anno-05'>prompt development</span> from your contractor.<br><br>On the other hand, if you want to commission <span data-modal='anno-04'>AI development</span><br>but realize your contractor is actually a "<span data-modal='anno-05'>prompt development</span> company,"<br>you should commission a company that can properly do <span data-modal='anno-04'>AI development</span>.<br><br><span class="hightlight">The most tragic thing is<br>ordering AI development work from a company that can only do prompt development<br>without knowing the truth I've explained today.</span><br><br>That contractor probably won't deliver the output you want.<br>I sense something similar to the old <span data-modal='anno-11'>SEO</span> situation here.<br>Unlike systems, both AI and <span data-modal='anno-11'>SEO</span> don't have clear answers and keep changing.<br><br>In that sense, <span data-modal='anno-05'>prompt development</span> is "endless development, goalless development,"<br>yet it's cleverly obscured by linguistic ambiguity.<br><br>I don't feel good seeing companies that intentionally advertise "<span data-modal='anno-04'>AI development</span>"<br>while understanding this "linguistic ambiguity."<br><br>After reading this article, if you can understand<br>the "word games" hidden behind the term <span data-modal='anno-04'>AI development</span>,<br>you should never be deceived again.<br><br><span class="hightlight">When we receive work requests,<br>we first clearly explain the difference between "AI development" and "prompt development."</span>If you wish,<br>whether it's <span data-modal='anno-04'>AI development</span> or <span data-modal='anno-05'>prompt development</span>,<br>we can provide consultation.`,
+        annotations: [
+          {
+            modal: "anno-01",
+            term: "Prompt",
+            definition: "Instructions or questions given to AI. Text written in human language to communicate what you want the AI to do.",
+          },
+          {
+            modal: "anno-02", 
+            term: "Generative AI",
+            definition: "AI technology that automatically creates text, images, music, and other content. ChatGPT is a representative example.",
+          },
+          {
+            modal: "anno-03",
+            term: "ChatGPT", 
+            definition: "A conversational AI developed by OpenAI. It can answer questions and create written content.",
+          },
+          {
+            modal: "anno-04",
+            term: "AI Development",
+            definition: "Designing and building AI systems themselves. Technical development of machine learning models and algorithms.",
+          },
+          {
+            modal: "anno-05",
+            term: "Prompt Development", 
+            definition: "Developing methods to improve instruction-giving to existing AI systems to achieve better results.",
+          },
+          {
+            modal: "anno-06",
+            term: "Large Language Model",
+            definition: "A massive AI system trained on vast amounts of text data that can understand and generate language.",
+          },
+          {
+            modal: "anno-07",
+            term: "Machine Learning",
+            definition: "Technology that enables computers to automatically find patterns and learn from data. Deep learning is a machine learning method with multi-layered structures that mimics the neural networks of the human brain.",
+          },
+          {
+            modal: "anno-08", 
+            term: "Prompt Engineer",
+            definition: "A specialized profession that designs and optimizes instruction text for AI to maximize AI performance.",
+          },
+          {
+            modal: "anno-09",
+            term: "Algorithm",
+            definition: "Rules and procedures that define computational steps or processing methods for solving problems.",
+          },
+          {
+            modal: "anno-10",
+            term: "LP (Landing Page)",
+            definition: "A web page designed to introduce products or services. Its purpose is to encourage visitor actions.",
+          },
+          {
+            modal: "anno-11",
+            term: "SEO",
+            definition: "Search Engine Optimization. Technology to make websites more likely to appear at the top of search results on Google and other search engines.",
+          },
+        ],
       },
       zh: {
         title:
           "因为不懂AI开发和提示开发而被欺骗的客户的现实——对于那些愚蠢到相信这是蟹棒和螃蟹的人——",
         category: "",
-        content: `你能解释一下什么是"提示词"吗？<br><br>自从ChatGPT等生成式AI开始受到关注以来，已经过去了一年多时间。<br>但是直到现在，仍有很多人不太明白"提示词"到底是什么。<br><br><span class=\"hightlight\">如果你认为AI开发和提示词开发是同一回事，<br><br>那就像认为蜡烛和电灯泡是同一种东西，<br>把蟹肉棒当成螃蟹来吃，<br>或者把在棒球游戏中能拿高分的人称为棒球选手一样，<br><br>你正在犯一个愚蠢的错误。<br><br></span>从意识到AI必要性的经营者那里接到"想要制作使用AI的服务"这样的委托也越来越多了。<br><br>作为公司推进AI应用，考虑到时代潮流这是理所当然的事情。<br>但实际进行访谈时，似乎很多人没有注意到所谓AI开发这个名词背后的"文字游戏"。<br><br>截至2024年，<br><span class=\"hightlight\">声称进行AI开发的企业中，大多数实际上并没有在进行AI开发。</span><br>他们所称的AI开发，大多实际上是"提示词开发"。<br>这里所说的提示词开发，是指为了让生成式AI执行任务，不是通过编程而是通过人类语言来巧妙地指示和优化的方法。<br><br>基于给定的提示词，<br>AI会生成文本、图像、音乐等，<br>因此根据提供的提示词，输出质量会受到很大影响。<br>用制作咖啡来举例的话，就像这样：<br><br><div class=\"border border-black dark:border-white p-5\"><strong>▼提示词开发</strong><br />角色<br />找到冲泡最佳咖啡的方法<br />主要工作<br /><ul class=\"list-disc list-inside pl-6\"><li>使用现有的咖啡机，调整冲泡最佳咖啡的设置和步骤</li><li>根据不同条件和喜好开发最佳配方和步骤</li><li>为了让用户获得最佳结果，提供具体的指导和准则</li></ul></div><br /><div class=\"border border-black dark:border-white p-5\"><strong>▼AI开发</strong><br />角色<br />基于最佳咖啡冲泡方法，设计和构建最佳的咖啡机<br />主要工作<br /><ul class=\"list-disc list-inside pl-6\"><li>理解冲泡最佳咖啡的条件和步骤，基于这些信息设计新咖啡机的功能和结构</li><li>开发提高咖啡萃取过程效率的技术和算法</li><li>反复测试和改良机器，使其能够持续冲泡出最佳咖啡</li></ul></div><br />确实从广义上讲，提示词开发也可以说是AI开发。<br />更严格地说，当提示词伴随系统时，就变成了"AI开发=系统开发"。<br>由于这个"系统"部分的缺失，结果只有提示词开发这个词汇先行了。<br><br>这样的公司应该避免在着陆页上大肆宣传"我们能做AI开发！"<br><br>如果你要将AI开发外包，<br>必须判断该企业是否擅长大规模语言模型和机器学习，<br>是否在开发深度学习，<br>还是在开发提示词。<br><br>与此相关，也不要被"工程师"这个词所欺骗。<br>随着生成式AI的诞生，"提示词工程师"这个职业诞生了。<br><br><span class=\"hightlight\">提示词工程师的工作是<br>设计和优化对AI的指示和问题（即提示词）。</span><br>在提高AI生成内容的质量和精度方面，<br>提示词工程师无疑是重要的存在。<br><br>但是，当你听到委托方说<br>"我们的工程师..."<br>这样的话时要注意。<br><br>对方简单地将"提示词"称为"AI"，<br>或将"提示词工程师"称为"工程师"，<br>有以下3种模式的原因：<br><br /><div class=\"border border-black dark:border-white p-5\">《模式1：×》<br />作为品牌战略，出于营销目的使用这样的表达。<br />在这种情况下，与你交谈的对方可能不是技术人员而是销售人员。<br />要确认对方是否理解AI的技术问题，可以用手边的ChatGPT来验证。</div><br /><div class=\"border border-black dark:border-white p-5\">《模式2：×》<br />单纯不假思索地使用"AI"、"工程师"这样的词汇。<br />这种情况特别没有害处但也没有好处。这样的对方直接忽略即可。</div><br /><div class=\"border border-black dark:border-white p-5\">《模式3：◎》<br />为了让客户（即你）更容易理解，故意使用熟悉的词汇。<br />这样的对方应该会正确地披露"提示词"、"AI"、"工程师"所指的内容。<br />这是应该合作的伙伴。</div><br />我想说的是，"词汇应该正确使用"。<br><br>如果处理的是提示词，就不应该称为AI开发，<br>而应该称为"提示词开发"、"提示词实现"。<br><br>不要用"工程师"这样模糊的词汇来掩盖，<br>而应该使用<br>"提示词工程师"<br>"提示词总监"<br>这样适当的称呼。<br><br>我不希望被误解的是，<br>我绝不是在轻视提示词开发。<br><span class=\"hightlight\">重要的是，<br>首先要知道存在<br>"委托方声称的AI开发，打开盖子一看实际上是提示词开发"<br>这样的可能性。</span><br><br>没有注意到这一点，<br>正如把咖啡机当成咖啡配方一样。<br>现在你应该明白我为什么说成把蟹肉棒当成螃蟹来吃了。<br><br>如果不想沦为背着大葱的鸭子，请好好理解这一点。<br><br>蟹肉棒本身并没有什么不好。<br>但是，如果妻子说"买螃蟹回来"，你却拿蟹肉棒回家，<br>她会想"这是个多么愚蠢的丈夫啊"，这你应该能理解吧。<br><br>如果想委托提示词开发，就应该向委托方明确要求提示词开发。<br><br>另一方面，如果想委托AI开发，<br>但发现委托方实际上是"提示词开发企业"，<br>就应该委托能够正确进行AI开发的企业。<br><br><span class=\"hightlight\">最悲剧的是，<br>在不知道今天解释的这种真相的情况下，<br>向只能进行提示词开发的企业发包AI开发的工作。</span><br><br>那个委托方很可能无法提供你期望的输出。<br>对此我感到了类似过去SEO的味道。<br>与系统不同，AI和SEO都没有明确的答案且经常变化。<br><br>在这个意义上，提示词开发是"无终点的开发，无目标的开发"，<br>然而却被语言的模糊性巧妙地掩盖了。<br><br>看到那些明知这种"语言模糊性"<br>却故意声称"AI开发"的企业，我感觉不太好。<br><br>如果读了这篇文章，理解了AI开发这个词背后隐藏的<br>"文字游戏"，<br>就不应该再被欺骗了。<br><br><span class=\"hightlight\">我们在接受工作委托时，<br>首先会明确说明"AI开发"和"提示词开发"的区别。</span>如果你愿意的话，<br>无论是AI开发还是提示词开发，<br>我们都可以为你提供咨询。`,
-        annotations: [],
+        content: `你能解释一下什么是「<span data-modal='anno-01'>提示词</span>」吗？<br><br>自从<span data-modal='anno-03'>ChatGPT</span>等<span data-modal='anno-02'>生成式AI</span>开始受到关注以来，已经过去一年多了。<br>但至今仍有很多人不太明白什么是「<span data-modal='anno-01'>提示词</span>」。<br><br><span class="hightlight">如果你认为<span data-modal='anno-04'>AI开发</span>和<span data-modal='anno-05'>提示词开发</span>是同一回事的话，<br><br>就像把蜡烛和电灯泡当作同样的东西来生活，<br>把蟹肉棒当作真螃蟹一直吃下去，<br>把在棒球游戏中能取得高分的人称为棒球选手一样，<br><br>你正在犯着愚蠢的错误。<br><br></span>从意识到AI必要性的经营者那里收到「想要制作使用AI的服务」的委托也越来越多了。<br><br>作为公司推进AI活用，考虑到时代潮流是理所当然的。<br>但实际进行咨询时，似乎很多人没有注意到<span data-modal='anno-04'>AI开发</span>这个名词背后的「文字游戏」。<br><br>2024年现在，<br><span class="hightlight">声称进行AI开发的企业中，大多数实际上并没有在进行AI开发。</span><br>他们称之为<span data-modal='anno-04'>AI开发</span>的开发工作，实际上大多是「<span data-modal='anno-05'>提示词开发</span>」。<br>这里所说的<span data-modal='anno-05'>提示词开发</span>，是指为了让<span data-modal='anno-02'>生成式AI</span>执行任务，<br>不是通过程序而是通过人类语言来巧妙地给出指示，<br>并进行最优化的工作。<br><br>基于给定的<span data-modal='anno-01'>提示词</span>，<br>AI会生成文本、图像、音乐等，<br>因此根据给出的<span data-modal='anno-01'>提示词</span>不同，输出质量会有很大差异。<br>用制作咖啡来举例的话，大概是这样的感觉。<br><br><div class="border border-black dark:border-white p-5"><strong>▼<span data-modal='anno-05'>提示词开发</span></strong><br />角色<br />找到冲泡最佳咖啡的方法<br />主要工作<br /><ul class="list-disc list-inside pl-6"><li>使用现有的咖啡机，调整设定和步骤来冲泡最好的咖啡</li><li>根据不同条件和喜好开发最佳配方和步骤</li><li>为用户提供具体指示和指导原则，以获得最佳结果</li></ul></div><br /><div class="border border-black dark:border-white p-5"><strong>▼<span data-modal='anno-04'>AI开发</span></strong><br />角色<br />基于最佳咖啡冲泡方法，设计和构建最佳咖啡机<br />主要工作<br /><ul class="list-disc list-inside pl-6"><li>理解冲泡最佳咖啡的条件和步骤，基于这些信息设计新咖啡机的功能和结构</li><li>开发提高咖啡萃取过程效率的技术和<span data-modal='anno-09'>算法</span></li><li>反复测试和改良机器，使产品能够持续冲泡出最好的咖啡</li></ul></div><br />确实从广义上来说，<span data-modal='anno-05'>提示词开发</span>也可以称为<span data-modal='anno-04'>AI开发</span>。<br />更严格地说，当<span data-modal='anno-01'>提示词</span>附带系统时，「<span data-modal='anno-04'>AI开发</span>=系统开发」。<br>正是因为这个「系统」被遗漏了，所以只有<span data-modal='anno-05'>提示词开发</span>这个词先行了。<br><br>这样的公司应该避免在<span data-modal='anno-10'>落地页</span>上大张旗鼓地写着「我们能做<span data-modal='anno-04'>AI开发</span>！」。<br><br>如果你要将<span data-modal='anno-04'>AI开发</span>委托给外部，<br>必须确认那家企业是否擅长<span data-modal='anno-06'>大语言模型</span>或<span data-modal='anno-07'>机器学习</span>，<br>是否在开发深度学习，<br>还是在开发<span data-modal='anno-01'>提示词</span>，<br>必须看清这一点。<br><br>与此相关，也不要被「工程师」这个词所欺骗。<br>随着<span data-modal='anno-02'>生成式AI</span>的诞生，「<span data-modal='anno-08'>提示词工程师</span>」这个职业在这个世界上诞生了。<br><br><span class="hightlight"><span data-modal='anno-08'>提示词工程师</span>的工作是<br>设计和优化对AI的指示或问题（即提示词）。</span><br>在提高AI生成内容的质量和准确性方面，<br><span data-modal='anno-08'>提示词工程师</span>无疑是重要的存在。<br><br>但是，当你委托工作的对象口中<br>说出「我们的工程师...」<br>这样的话时要特别注意。<br><br>对方将「<span data-modal='anno-01'>提示词</span>」简单地称为「AI」，<br>或将「<span data-modal='anno-08'>提示词工程师</span>」称为「工程师」，<br>可以考虑以下3种模式的原因。<br><br /><div class="border border-black dark:border-white p-5">《模式1:×》<br />作为品牌战略性、营销性地使用这样的表达的情况。<br />在这种情况下，与你交谈的对方可能不是技术人员而是销售人员。<br />要确认对方是否理解AI的技术内容，可以用手头的<span data-modal='anno-03'>ChatGPT</span>来验证。</div><br /><div class="border border-black dark:border-white p-5">《模式2:×》<br />单纯思考停止地使用「AI」「工程师」这样的词的情况。<br />这种情况特别没有实际危害，但也没有好处。这样的对象直接忽略即可。</div><br /><div class="border border-black dark:border-white p-5">《模式3:◎》<br />为了让客户（即你）更容易理解，故意使用熟悉词汇的情况。<br />这样的对象会正确地披露「<span data-modal='anno-01'>提示词</span>」「AI」「工程师」所指的内容。<br />是应该合作的伙伴。</div><br />我想说的是，「应该正确使用词汇」。<br><br>如果处理的是<span data-modal='anno-01'>提示词</span>，就不应该叫<span data-modal='anno-04'>AI开发</span>，<br>而应该称为「<span data-modal='anno-05'>提示词开发</span>」「<span data-modal='anno-01'>提示词</span>实现」。<br><br>不要用工程师这样模糊的词来糊弄，<br>而应该使用「<span data-modal='anno-08'>提示词工程师</span>」<br>「<span data-modal='anno-01'>提示词</span>总监」<br>这样适当的称呼。<br><br>希望不要误解的是，<br>我决不是在小看<span data-modal='anno-05'>提示词开发</span>。<br><span class="hightlight">重要的是，<br>首先要知道「委托方声称的<span data-modal='anno-04'>AI开发</span>，打开一看实际上是<span data-modal='anno-05'>提示词开发</span>」<br>这种可能性。</span><br><br>没有注意到这一点，<br>正如把咖啡机当作咖啡配方一样。<br>现在你也明白我为什么用把蟹肉棒当作螃蟹吃来表达的原因了吧。<br><br>如果不想成为背着大葱的鸭子，请好好理解。<br><br>蟹肉棒本身并没有什么不好。<br>但是，如果妻子说「买螃蟹回来」，你却买蟹肉棒回家，<br>会被认为「这是个多么愚蠢的丈夫啊」，这你是明白的吧。<br><br><span data-modal='anno-05'>提示词开发</span>を頼みたいなら、委託先に対して明確に<span data-modal='anno-05'>提示词开发</span>的要求。<br><br>另一方面，如果想委托<span data-modal='anno-04'>AI开发</span>，<br>却发现委托方实际上是「<span data-modal='anno-05'>提示词开发</span>企业」的话，<br>就应该委托能够正确进行<span data-modal='anno-04'>AI开发</span>的企业。<br><br><span class="hightlight">最悲惨的是，<br>在不知道今天解说的这种真相的情况下，<br>向只能进行提示词开发的企业下达AI开发的工作订单。</span><br><br>那个委托方恐怕不会给出你想要的输出。<br>对此我感受到了类似过去<span data-modal='anno-11'>SEO</span>的味道。<br>与系统不同，AI和<span data-modal='anno-11'>SEO</span>都没有明确的答案且不断变化。<br><br>从这个意义上说，<span data-modal='anno-05'>提示词开发</span>是「无止境的开发、没有目标的开发」，<br>然而却被词汇的模糊性巧妙地糊弄过去了。<br><br>看到那些明知这种「词汇模糊性」却故意宣称「<span data-modal='anno-04'>AI开发</span>」的企业，感觉不太好。<br><br>读了这篇文章，如果你能理解<span data-modal='anno-04'>AI开发</span>这个词背后隐藏的<br>「文字游戏」，<br>就再也不会被欺骗了。<br><br><span class="hightlight">我们在接受工作委托时，<br>首先会明确说明「AI开发」和「提示词开发」的区别。</span>如果你希望的话，<br>无论是<span data-modal='anno-04'>AI开发</span>还是<span data-modal='anno-05'>提示词开发</span>，<br>我们都可以为你提供咨询。`,
+        annotations: [
+          {
+            modal: "anno-01",
+            term: "提示词",
+            definition: "向AI发出的指令或问题。用人类语言告诉AI需要做什么的文本。",
+          },
+          {
+            modal: "anno-02",
+            term: "生成式AI", 
+            definition: "自动创建文本、图像、音乐等内容的AI技术。ChatGPT是典型例子。",
+          },
+          {
+            modal: "anno-03",
+            term: "ChatGPT",
+            definition: "OpenAI公司开发的对话式AI。能够回答问题和创作文章。",
+          },
+          {
+            modal: "anno-04",
+            term: "AI开发",
+            definition: "设计和构建AI系统本身。创建机器学习模型和算法的技术开发。",
+          },
+          {
+            modal: "anno-05", 
+            term: "提示词开发",
+            definition: "优化对现有AI的指令方式，开发获得更好结果的方法。",
+          },
+          {
+            modal: "anno-06",
+            term: "大型语言模型",
+            definition: "用海量文本数据训练的、能够理解和生成语言的巨型AI系统。",
+          },
+          {
+            modal: "anno-07",
+            term: "机器学习", 
+            definition: "计算机从数据中自动发现模式并学习的技术。深度学习是模仿人脑神经回路、具有多层结构的机器学习方法。",
+          },
+          {
+            modal: "anno-08",
+            term: "提示词工程师",
+            definition: "设计和优化AI指令文本，最大化AI性能的专业职业。",
+          },
+          {
+            modal: "anno-09",
+            term: "算法",
+            definition: "解决问题的计算步骤或处理方法的规则和程序。",
+          },
+          {
+            modal: "anno-10",
+            term: "LP（着陆页）",
+            definition: "用于介绍产品或服务的网页。目的是促进访问者采取行动。",
+          },
+          {
+            modal: "anno-11",
+            term: "SEO", 
+            definition: "搜索引擎优化。使网站在谷歌等搜索结果中更容易排名靠前的技术。",
+          },
+        ],
       },
     },
   },
@@ -251,14 +363,135 @@ export const dataAI: ArticleType[] = [
         title:
           'Reiwa version of "Momotaro": Fighting against demons using AI ~The era in which the "contents" of AI determine the success or failure of a company~',
         category: "",
-        content: `<span class=\"hightlight\">If \"Momotaro\" existed in the Reiwa era, how would demon slaying work?</span><br><br>The old man said to Momotaro,<br>\"Please defeat the demons who have extorted money and goods from the village.\"<br>\"With this, you should be able to slay demons easily.\"<br><br>So saying,<br>he gave him not millet dumplings, but AI tools.<br><br>Using these AI tools,<br>he could instantly locate the demons and easily formulate strategies.<br><br>Without bringing companions like the dog, monkey, and pheasant, and without going to Demon Island,<br>he could defeat demons cost-effectively through remote operation.<br><br>However, the story doesn't end happily.<br><br>The village merchants, who had neither strength nor brains but learned of Momotaro's achievements, thought:<br>\"If it's that easy, couldn't we do the same thing?\"<br><br>And they began raising the \"banner\" of \"AI-equipped.\"<br><br>\"Our store's weapons are equipped with AI!\"<br>\"With AI power, you too can easily become a hero!\"<br><br>At first glance, they appear wrapped in high-tech as if truly AI-equipped,<br>but in reality, they're no different from the old-style approach of fighting alongside dogs, monkeys, and pheasants.<br><br>\"Just putting AI on the signboard\"<br><br>These village merchants rode the \"AI boom,\"<br>seeking out people weaker than themselves to attempt demon-like money-making.<br>Thus, demons came to dwell in the hearts of the villagers.<br><br>Indeed, in this past year, the world has perfected<br>the ultimate (simplistic) equation:<br>\"AI = somehow amazing = somehow amazing service = sells\"<br><br>Companies that discovered this equation<br>immediately began striking \"AI-equipped\" poses.<br>Put simply,<br><br><span class=\"hightlight\">Fakes that are \"just wearing AI skin\" are proliferating</span><br><br>That's the situation.<br><br>Therefore, the content of AI is \"empty.\"<br><br>However, the real battle is just beginning.<br>An era is coming where \"the 'content' of the AI being implemented\" will determine corporate superiority.<br><br><span class=\"hightlight\">Simply saying \"AI-equipped\" superficially no longer has meaning.</span><br><br>\"How 'advanced' is the AI being implemented?\"<br>\"How 'strategically' is AI being utilized?\"<br><br>Such AI \"content\" should be questioned.<br>And that \"content\" will determine the winners and losers in future business.<br>I'm convinced of this.<br><br>That said, just \"wearing AI skin\" might still generate sufficient sales for now.<br><br><span class=\"hightlight\">But relying on appearances will obviously lead to being weeded out by the times eventually.</span><br><br>To distinguish ourselves from such companies,<br><span class=\"hightlight\">we are thoroughly committed to the \"content of AI.\"</span><br><br><span class=\"hightlight\">We provide AI solutions that truly lead our clients' businesses to success.<br>We fill the world with essential services.</span><br><br>That is our mission.<br><br>If you are a virtuous businessman, let's work together to slay the demons dwelling in people's hearts.<br>If you think \"I want to truly utilize AI!\" please contact us.<br>We can't give you millet dumplings, but we'll give you a genuine AI business experience.`,
-        annotations: [],
+        content: `<span class="hightlight">If "Momotaro" existed in the Reiwa era, what would demon slaying look like?</span><br><br>The old man said to Momotaro,<br>"Please defeat the demons who have stolen money and valuables from the village"<br>"With this, you should be able to defeat demons easily"<br><br>And so,<br>instead of millet dumplings, he gave Momotaro <span data-modal='anno-01'>AI tools</span>.<br><br>Using these <span data-modal='anno-01'>AI tools</span>,<br>he could instantly locate the demons and easily formulate strategies.<br><br>Without bringing along companions like dogs, monkeys, and pheasants, and without going to Demon Island,<br>he could defeat demons with high <span data-modal='anno-11'>cost performance</span> through <span data-modal='anno-02'>remote operation</span>.<br><br>However, the story didn't end happily ever after.<br><br>The village merchants, who had neither strength nor brains, learned of Momotaro's achievements and thought:<br>"If it's that simple, couldn't we do the same thing?"<br><br>And so, they began raising the banner of "<span data-modal='anno-03'>AI-powered</span>."<br><br>"Our store's weapons are AI-powered!"<br>"With the power of AI, you too can easily become a hero!"<br><br>On the surface, they appeared to be equipped with <span data-modal='anno-12'>high-tech</span> gear that truly incorporated AI,<br>but in reality, they were no different from the old-style approach of fighting alongside dogs, monkeys, and pheasants.<br><br>"Just using AI as a signboard"<br><br>The village merchants rode the "<span data-modal='anno-04'>AI boom</span>,"<br>simply looking for people in weaker positions and trying to make money like demons.<br>Thus, demons came to dwell in the hearts of the villagers.<br><br>In fact, over this past year, the world has perfected this ultimate (short-sighted) equation:<br>"AI = something amazing = amazing service = sells well"<br><br>Companies that discovered this equation<br>immediately began striking poses saying "We're <span data-modal='anno-03'>AI-powered</span>."<br>To put it bluntly,<br><br><span class="hightlight">Fakes "just wearing AI skin" are proliferating everywhere</span><br><br>That's what's happening.<br><br>So, the content of AI is "empty."<br><br>But the real battle starts now.<br>An era is coming where "the 'content' of the AI being implemented" will determine corporate superiority.<br><br><span class="hightlight">Simply saying "AI-powered" on the surface no longer has meaning.</span><br><br>"How 'advanced' is the AI being implemented?"<br>"How '<span data-modal='anno-09'>strategically</span>' is AI being utilized?"<br><br>Such AI "content" will come to be questioned.<br>And that "content" will determine the victory or defeat of future <span data-modal='anno-07'>business</span>.<br>I'm convinced of this.<br><br>That said, just "wearing AI skin" might still generate sufficient sales for now.<br><br><span class="hightlight">But relying on appearances will inevitably lead to being weeded out by the times—that's obvious.</span><br><br>To distinguish ourselves from such companies,<br><span class="hightlight">we are completely committed to the "content of AI."</span><br><br><span class="hightlight">We provide <span data-modal='anno-05'>AI solutions</span> that truly guide our <span data-modal='anno-06'>clients</span>' <span data-modal='anno-07'>businesses</span> to success.<br>We fill the world with essential services.</span><br><br>That is our <span data-modal='anno-08'>mission</span>.<br><br>If you are an honest <span data-modal='anno-07'>business</span>person, let's work together to defeat the demons that have taken residence in people's hearts.<br>If you think "I want to truly utilize AI!" then please contact us.<br>We can't give you millet dumplings, but we'll give you a real AI <span data-modal='anno-07'>business</span> experience.`,
+        annotations: [
+          {
+            modal: "anno-01",
+            term: "AI Tools",
+            definition: "Software or applications that utilize artificial intelligence functions to improve work efficiency.",
+          },
+          {
+            modal: "anno-02",
+            term: "Remote Operation",
+            definition: "Operating computers or systems from a distant location. Remote control.",
+          },
+          {
+            modal: "anno-03",
+            term: "AI-Powered",
+            definition: "Having artificial intelligence functions integrated into products or services. State of having built-in AI.",
+          },
+          {
+            modal: "anno-04",
+            term: "AI Boom",
+            definition: "A social phenomenon where artificial intelligence technology gains widespread attention and many companies enter AI-related businesses.",
+          },
+          {
+            modal: "anno-05",
+            term: "AI Solutions",
+            definition: "General term for services or products that use artificial intelligence technology to solve corporate challenges.",
+          },
+          {
+            modal: "anno-06",
+            term: "Client",
+            definition: "Customers or principals who use services or products. Business term referring to business partners or customers.",
+          },
+          {
+            modal: "anno-07",
+            term: "Business",
+            definition: "Commercial activities or enterprises aimed at profit. Refers to commerce or corporate activities in general.",
+          },
+          {
+            modal: "anno-08",
+            term: "Mission",
+            definition: "The mission or purpose that a company or organization should fulfill. Represents the role or goals toward society.",
+          },
+          {
+            modal: "anno-09",
+            term: "Strategic",
+            definition: "Acting in a planned and effective manner to achieve long-term goals. Based on strategy.",
+          },
+          {
+            modal: "anno-10",
+            term: "Natural Selection",
+            definition: "The process where inferior things are naturally eliminated through competition, and only superior ones survive.",
+          },
+          {
+            modal: "anno-11",
+            term: "Cost Performance",
+            definition: "Abbreviation of cost performance. The ratio of effects or results to cost. Cost-effectiveness.",
+          },
+          {
+            modal: "anno-12",
+            term: "High-Tech",
+            definition: "Abbreviation of high technology. Products or services using the latest advanced technology.",
+          },
+        ],
       },
       zh: {
         title: "令和版《桃太郎》：用AI对抗恶魔～AI的“内容”将决定企业的成败～",
         category: "",
-        content: `<span class=\"hightlight\">如果「桃太郎」生活在令和时代，降妖除魔会是怎样的呢？</span><br><br>老爷爷对桃太郎说：<br>\"请去消灭那些从村子里勒索金钱财物的妖怪吧。\"<br>\"有了这个，应该就能轻松降妖除魔了。\"<br><br>说着，<br>他给桃太郎的不是黍团子，而是AI工具。<br><br>使用这个AI工具，<br>能够瞬间掌握妖怪的位置，也容易制定战略。<br><br>不用带着狗、猴子、雉鸡这些伙伴，也不用去鬼岛，<br>通过远程操作就能高性价比地降妖除魔了。<br><br>然而，故事并没有圆满结束。<br><br>得知桃太郎功绩的村里那些既无力量又无头脑的商人们这样想：<br>\"如果这么简单的话，我们不是也能做同样的事情吗？\"<br><br>于是，他们开始举起\"搭载AI\"这面\"旗帜\"。<br><br>\"本店的武器搭载了AI！\"<br>\"借助AI的力量，你也能轻松成为英雄！\"<br><br>乍一看，他们好像真的搭载了AI一样，包装得很高科技，<br>但实际上和带着狗、猴子、雉鸡一起战斗的旧式风格没有区别。<br><br>\"只是把AI当作招牌\"<br><br>村里的商人搭上\"AI热潮\"的便车，<br>专门寻找比自己更弱势的人，像妖怪一样试图赚钱。<br>就这样，妖怪在村民心中安家了。<br><br>实际上，世界在这一年里，<br>完成了\"AI = 很厉害的东西 = 很厉害的服务 = 好卖\"<br>这样的最强（短视）公式。<br><br>发现这个公式的企业，<br>立刻开始摆出\"搭载AI\"的姿态。<br>说白了，<br><br><span class=\"hightlight\">\"只是披着AI外皮\"的假货正在大量涌现</span><br><br>就是这样。<br><br>所以，AI的内容是\"空的\"。<br><br>然而，真正的较量才刚刚开始。<br>\"搭载AI的'内容'\"将决定企业优劣的时代即将到来。<br><br><span class=\"hightlight\">表面上仅仅说\"搭载AI\"已经没有意义了。</span><br><br>\"搭载了多么'高级'的AI？\"<br>\"多么'战略性地'运用AI？\"<br><br>这样的AI\"内容\"将被质疑。<br>而且，这个\"内容\"将决定今后商业的胜负。<br>我确信如此。<br><br>话虽如此，仅仅\"披上AI外皮\"现在也许还能充分带来销售额。<br><br><span class=\"hightlight\">但是，依赖外表的话，最终被时代淘汰是显而易见的。</span><br><br>为了与这样的企业划清界限，<br><span class=\"hightlight\">我们彻底坚持\"AI的内容\"。</span><br><br><span class=\"hightlight\">提供真正引导客户业务走向成功的AI解决方案。<br>用本质性的服务充实世界。</span><br><br>这就是我们的使命。<br><br>如果你是一个善良的商人，让我们一起去降伏潜藏在人心中的妖怪吧。<br>如果你想\"真正地活用AI！\"，请一定要联系我们。<br>虽然不能给你黍团子，但会让你体验真正的AI商业。`,
+        content: `<span class="hightlight">如果「桃太郎」生活在令和时代，退治鬼怪会是什么样子呢？</span><br><br>爷爷对桃太郎说，<br>「请退治从村子里掠夺金钱财物的鬼怪」<br>「有了这个，就能轻松退治鬼怪了」<br><br>说着，<br>爷爷给了桃太郎的不是黍团子，而是<span data-modal='anno-01'>AI工具</span>。<br><br>使用这个<span data-modal='anno-01'>AI工具</span>，<br>能瞬间掌握鬼怪的位置，也容易制定战略。<br><br>不用带着狗、猴子、雉鸡这些伙伴，也不用去鬼岛，<br>通过<span data-modal='anno-02'>远程操作</span>就能高<span data-modal='anno-11'>性价比</span>地完成退治鬼怪的任务。<br><br>然而，故事并没有圆满结束。<br><br>村里那些既没有力量也没有头脑的商人们知道了桃太郎的功绩后这样想：<br>「既然这么简单，我们也能做同样的事情吧？」<br><br>于是，他们开始举起「<span data-modal='anno-03'>AI搭载</span>」这面"旗帜"。<br><br>「本店的武器搭载了AI！」<br>「借助AI的力量，您也能轻松成为英雄！」<br><br>表面上看起来真的像搭载了AI的<span data-modal='anno-12'>高科技</span>装备，<br>但实际上和带着狗、猴子、雉鸡一起战斗的旧式风格没有区别。<br><br>"只是把AI当作招牌"<br><br>村里的商人们便乘着「<span data-modal='anno-04'>AI热潮</span>」，<br>只是寻找比自己弱势的人，像鬼一样试图赚钱而已。<br>就这样，鬼怪在村民心中安了家。<br><br>实际上，这一年来世界完成了这样一个最强（短视）方程式：<br>「AI = 很厉害 = 很厉害的服务 = 畅销」<br><br>发现了这个方程式的企业，<br>立刻开始摆出「我们<span data-modal='anno-03'>搭载AI</span>」的姿态。<br>说白了，<br><br><span class="hightlight">「只是披着AI外皮」的假货在大量出现</span><br><br>就是这么回事。<br><br>所以，AI的内容是「空虚」的。<br><br>但是，真正的较量从现在开始。<br>「搭载AI的"内容"」将决定企业优劣的时代即将到来。<br><br><span class="hightlight">表面上只说「搭载AI」已经没有意义了。</span><br><br>「搭载了多么"高端"的AI」<br>「如何"<span data-modal='anno-09'>战略性</span>"地活用AI」<br><br>这样的AI「内容」将会被重视。<br>而且，这个「内容」将决定今后<span data-modal='anno-07'>商业</span>的胜负。<br>我对此深信不疑。<br><br>话虽如此，现在仅仅「披着AI的外皮」也许还能有充分的销售额。<br><br><span class="hightlight">但是，依赖表面功夫的话，迟早会被时代淘汰，这是显而易见的。</span><br><br>为了与这样的企业划清界限，<br><span class="hightlight">我们坚持追求「AI的内容」。</span><br><br><span class="hightlight">提供真正能引导<span data-modal='anno-06'>客户</span><span data-modal='anno-07'>商业</span>走向成功的<span data-modal='anno-05'>AI解决方案</span>。<br>用本质性的服务来充实这个世界。</span><br><br>这就是我们的<span data-modal='anno-08'>使命</span>。<br><br>如果您是善良的<span data-modal='anno-07'>商业</span>人士，让我们一起退治人心中的鬼怪吧。<br>如果您想「用真正的AI来经营！」，请一定要联系我们。<br>虽然不能给您黍团子，但我们会让您体验真正的AI<span data-modal='anno-07'>商业</span>。`,
         annotations: [
+          {
+            modal: "anno-01",
+            term: "AI工具",
+            definition: "利用人工智能功能提高工作效率的软件或应用程序。",
+          },
+          {
+            modal: "anno-02",
+            term: "远程操作",
+            definition: "从远处操作计算机或系统。远程控制。",
+          },
+          {
+            modal: "anno-03",
+            term: "AI搭载",
+            definition: "在产品或服务中集成人工智能功能。内置AI的状态。",
+          },
+          {
+            modal: "anno-04",
+            term: "AI热潮",
+            definition: "人工智能技术受到广泛关注，众多企业进入AI相关业务的社会现象。",
+          },
+          {
+            modal: "anno-05",
+            term: "AI解决方案",
+            definition: "使用人工智能技术解决企业问题的服务或产品的总称。",
+          },
+          {
+            modal: "anno-06",
+            term: "客户",
+            definition: "使用服务或商品的顾客、委托方。指交易对象或客户的商业术语。",
+          },
+          {
+            modal: "anno-07",
+            term: "商业",
+            definition: "以营利为目的的商业活动或事业。指商业或企业活动的总称。",
+          },
+          {
+            modal: "anno-08",
+            term: "使命",
+            definition: "企业或组织应履行的使命或存在意义。表示对社会的角色或目标。",
+          },
+          {
+            modal: "anno-09",
+            term: "战略性",
+            definition: "为实现长期目标而有计划、有效地行动。基于战略的。",
+          },
+          {
+            modal: "anno-10",
+            term: "淘汰",
+            definition: "通过竞争，劣势者被自然淘汰，只有优秀者生存下来。",
+          },
+          {
+            modal: "anno-11",
+            term: "性价比",
+            definition: "成本效益比的简称。费用相对于效果或成果的比例。成本效益。",
+          },
+          {
+            modal: "anno-12",
+            term: "高科技",
+            definition: "高科技的简称。使用最新高端技术的产品或服务。",
+          },
         ],
       },
     },
@@ -362,15 +595,175 @@ export const dataBlockChain: ArticleType[] = [
         title:
           "Are 99% of Companies Aware They're Still Paying Unfair \"Protection Money\"?",
         category: "",
-        content: `Toll Gates<br>In the past, merchants had to pay tolls every time they passed through major towns.<br>Of course, these don't exist now.<br><br>Protection Money<br>When yakuza had power, restaurants and retail stores were semi-forcibly collected money as bodyguard fees.<br>While it still remains as a culture, it has mostly disappeared.<br>As time passes, unreasonable collections have decreased,<br>and it seems business has become easier.<br><br>However, this is only in the visible world.<br><br><span class=\"hightlight\">Now, business owners are constantly paying tribute.</span><br>Invisible <span class=\"hightlight\">\"electronic payment fees.\"</span><br><br>Naturally, you're probably conscious of this when doing business.<br><br>Even major payment services charge about 3 percent.<br>Credit card payments can cost even higher fees.<br><br>With a 3% fee,<br>a company with 1 billion yen in sales pays at least 30 million yen in \"tribute.\"<br><br>Transaction fees, fixed fees, refund processing and fraud-related irregular fees...<br>Including everything, up to 10% of sales can disappear in fee payments.<br><br>Credit cards and digital payments certainly improve customer convenience.<br>Compared to cash payments, the risk of missing sales is reduced,<br>so it's not all disadvantages.<br><br>Paying costs (fees) as compensation for receiving such benefits<br>is no problem at all. It's the natural structure of capitalism.<br><br><span class=\"hightlight\">However, the problem is that<br>card companies and payment service operators have monopolistically built<br>a system where only they profit.<br></span><br>They<br><span class=\"hightlight\">know of \"methods\" that can maintain convenience while reducing costs,<br>but they keep them hidden.<br>That \"method\" is blockchain.<br></span><br>Blockchain is often discussed in the context of cryptocurrencies and NFTs.<br>However, its essence is not limited to investment or speculation.<br><br>By introducing blockchain to business,<br>you can avoid paying tribute fees to payment system companies.<br><br>Why does blockchain help avoid paying tribute fees?<br><br>To understand this point,<br>let me explain from two perspectives what disadvantages<br>card-using businesses like yours face, including \"tribute fee payments.\"<br><div class=\"border border-black dark:border-white p-5\"><strong>《1. Fee Burden Paid to Card Companies》</strong><br /><br />In electronic payments that don't use cash, \"intermediary managers\" like card companies always come between card-using businesses and users.<br>With cash payments, businesses can receive sales directly from users.<br>There's no room for intermediary management companies to enter.<br>On the other hand, when card payments are introduced, card-using businesses must pay several percent of sales to card companies.</div><br><div class=\"border border-black dark:border-white p-5\"><strong>《2. Delayed Receipt of Accounts Receivable》</strong><br /><br />With cash payments, the moment sales occur, businesses can receive the full amount directly from users.<br>It's always \"real-time direct deposit,\" and the concept of accounts receivable doesn't even exist.<br>However, when card companies are involved, this isn't the case.<br>When users pay with cards, those sales are first recorded by the card company.<br>After that, the remaining sales are deposited to card-using businesses after deducting fees. Moreover, with a 1-2 month delay.<br></div><br>Why must your company's sales be temporarily recorded by a \"third party\" card company?<br>Why must card-using businesses bear the risk of sales deposits being delayed by 1-2 months?<br><br>Certainly, these disadvantages are trade-offs with convenience.<br>If you're told to accept disadvantages simultaneously for convenience, that's that.<br><br>However,<br>there is technology that can fundamentally change this system.<br>That is blockchain.<br><br><span class=\"hightlight\">If I were to express what blockchain can achieve in one phrase:<br>\"Realization of direct electronic commerce on the internet\"<br></span><br>Internet interactions using blockchain<br>have a characteristic called Peer-to-Peer (P2P).<br><br>Peer here refers to entities directly involved in \"payment and receipt of compensation,\"<br>namely:<br>• Businesses receiving payments<br>• End users making payments<br><br>In the P2P system provided by blockchain,<br>direct payments are possible from Peer (end users) to Peer (businesses)<br>without intermediary managers like card companies.<br><br><span class=\"hightlight\">By not involving managers, transaction transparency and security are ensured,<br>and fees are also cheaper,<br>so users who prefer blockchain-based payment methods are increasing.<br></span><br>Furthermore, for companies,<br>there are benefits such as attracting new users they previously had no contact with.<br><br>Credit card and digital payments<br>may indeed have better convenience than blockchain at present.<br><br>However, that convenience is sustained by the fees<br>your company pays as \"tribute\" to card companies.<br>Despite the existence of the more convenient blockchain system in the world.<br><br><span class=\"hightlight\">Understanding this system that's no different from medieval serfdom,<br>do you still want to continue paying tribute and protection money?<br><br>On the premise of being exploited from above, will you add fees<br>and continue pointlessly exploiting customers?<br><br>Is there healthy competitive principle there?<br>Won't it just continue a chain of exploitation?<br></span><br>We understand this well.<br>That's why we cannot exploit. We cannot lie either.<br><br>Aren't you tired of exploitation and lies?<br>If you're considering introducing healthy, safe,<br>and convenient payment services,<br>please contact us immediately.<br>`,
+        content: `Checkpoint Tolls<br>In the past, merchants had to pay tolls every time they passed through major towns.<br>Of course, these no longer exist today.<br><br>Protection Money<br>When organized crime groups had power, restaurants and retail stores were<br>semi-forcibly charged money as bodyguard fees.<br>While this culture still remains, it has mostly disappeared.<br>As time has passed, unreasonable collections have decreased,<br>and it seems business has become easier.<br><br>However, this is only true in the visible world.<br><br><span class="hightlight">Now, business owners are constantly paying tribute.</span><br>Invisible <span class="hightlight">"electronic payment processing fees."</span><br><br>Of course, they must be conscious of this when doing business.<br><br>Even major <span data-modal='anno-02'>mobile payment services</span> charge about 3%.<br><span data-modal='anno-03'>Credit card payments</span> sometimes charge even higher fees.<br><br>When fees are 3%,<br>a company with 1 billion yen in sales pays at least 30 million yen in "tribute."<br><br><span data-modal='anno-04'>Transaction fees</span>, <span data-modal='anno-05'>fixed fees</span>, refund processing and fraudulent use fees...<br>Including various charges, up to 10% of sales can disappear in fee payments.<br><br>Credit cards and mobile payments certainly improve customer convenience.<br>Compared to cash payments, they reduce the risk of uncollected sales,<br>so it can't be said that there are only disadvantages.<br><br>Paying costs (fees) as compensation for receiving such benefits<br>is not a problem at all. It's the natural structure of capitalism.<br><br><span class="hightlight">However, the problem is that<br>credit card companies and mobile payment operators alone<br>have monopolistically built profitable mechanisms.<br></span><br>They<br><span class="hightlight">know the "means" to maintain convenience while reducing costs,<br>but they keep it strictly hidden.<br>That "means" is <span data-modal='anno-06'>blockchain</span>.<br></span><br><span data-modal='anno-06'>Blockchain</span> is often discussed in the context of <span data-modal='anno-07'>cryptocurrency</span> and <span data-modal='anno-08'>NFTs</span>.<br>However, its essence is not limited to the realm of investment or speculation.<br><br>By introducing <span data-modal='anno-06'>blockchain</span> into business,<br>you can avoid paying tribute fees to payment system companies.<br><br>Why does <span data-modal='anno-06'>blockchain</span> help avoid paying tribute fees?<br><br>To understand this point,<br>let me explain from two perspectives what disadvantages card-using businesses like yours suffer,<br>including "fee tribute payments."<br><br><div class="border border-black dark:border-white p-5"><strong>《1. Fee burden paid to credit card companies》</strong><br /><br />In electronic payments that don't use cash, "<span data-modal='anno-13'>intermediaries</span>" like credit card companies inevitably intervene between card-using businesses and users.<br>With cash payments, businesses can receive sales revenue directly from users.<br>There's no room for intermediate management companies to intervene.<br>On the other hand, when credit card payments are introduced, card-using businesses must pay several percent of sales to credit card companies.</div><br><div class="border border-black dark:border-white p-5"><strong>《2. Delayed <span data-modal='anno-10'>fund receipt</span> of <span data-modal='anno-09'>accounts receivable</span>》</strong><br /><br />With cash payments, the moment sales occur, businesses can receive the full amount directly from users.<br>It's always "real-time direct <span data-modal='anno-10'>fund receipt</span>," and the concept of accounts receivable doesn't even exist.<br>However, when credit card companies are involved, it's different.<br>When users pay with cards, that sales revenue is first recorded with the credit card company.<br>After that, the remaining sales after deducting fees are <span data-modal='anno-10'>deposited</span> to the card-using business. Moreover, with a 1-2 month delay.<br></div><br>Why must your company's sales be first recorded with the credit card company, a "third party"?<br>Why should card-using businesses bear the risk of 1-2 month delays in sales <span data-modal='anno-10'>fund receipt</span>?<br><br>Certainly, these disadvantages are trade-offs with convenience.<br>If told to accept disadvantages simultaneously for the sake of convenience, that's that.<br><br>However,<br>there is technology that can fundamentally change this mechanism.<br>That is <span data-modal='anno-06'>blockchain</span>.<br><br><span class="hightlight">If we express what <span data-modal='anno-06'>blockchain</span> can achieve in one phrase:<br>"Realizing direct electronic commerce transactions on the internet"<br></span><br>Internet interactions using <span data-modal='anno-06'>blockchain</span><br>have the characteristic of peer-to-peer (P2P).<br><br>Peer here refers to entities directly involved in "payment and receipt of consideration,"<br>namely:<br>・Businesses receiving payments<br>・<span data-modal='anno-12'>End users</span> making payments<br><br>In the P2P mechanism provided by <span data-modal='anno-06'>blockchain</span>,<br>direct payments are possible from Peer (<span data-modal='anno-12'>end users</span>) to Peer (businesses)<br>without going through <span data-modal='anno-13'>intermediaries</span> like credit card companies.<br><br><span class="hightlight">By not going through managers, transaction <span data-modal='anno-14'>transparency</span> and <span data-modal='anno-15'>security</span> are guaranteed,<br>fees are also cheaper,<br>and users who prefer payment methods using <span data-modal='anno-06'>blockchain</span> are increasing.<br></span><br>Furthermore, for companies,<br>there are benefits such as attracting new users they previously had no contact with.<br><br>Credit card payments and mobile payments<br>may indeed currently be superior to <span data-modal='anno-06'>blockchain</span> in terms of convenience.<br><br>However, that convenience is built on the fees your company<br>pays as "tribute" to credit card companies.<br>Despite the existence of more convenient mechanisms like <span data-modal='anno-06'>blockchain</span> in the world.<br><br><span class="hightlight">Understanding this mechanism that's no different from medieval <span data-modal='anno-16'>serfdom</span>, do you still<br>want to continue paying tribute and protection money?<br><br>Under the premise of being exploited from above, adding fees<br>will you continue to needlessly exploit customers?<br><br>Is there healthy competitive principle there?<br>Isn't it just a continuation of the chain of exploitation?<br></span><br>We understand this well.<br>Therefore, we cannot exploit. We cannot lie either.<br><br>Aren't you tired of exploitation and lies?<br>If you are considering introducing healthy, safe<br>and convenient payment services,<br>please contact us immediately.`,
         annotations: [
+          {
+            modal: "anno-01",
+            term: "Electronic Payment Processing Fees",
+            definition: "Fees paid to payment processing companies when making payments with credit cards or electronic money.",
+          },
+          {
+            modal: "anno-02",
+            term: "Mobile Payment Services",
+            definition: "Electronic payment services using smartphone apps, such as PayPay and LINE Pay.",
+          },
+          {
+            modal: "anno-03",
+            term: "Credit Card Payment",
+            definition: "Payment method using credit cards. A system where the card company temporarily advances the payment.",
+          },
+          {
+            modal: "anno-04",
+            term: "Transaction Fees",
+            definition: "Fees paid to intermediary companies when the purchase or sale of goods or services is completed.",
+          },
+          {
+            modal: "anno-05",
+            term: "Fixed Fees",
+            definition: "Fees charged at a fixed amount regardless of transaction amount. Monthly fees are a typical example.",
+          },
+          {
+            modal: "anno-06",
+            term: "Blockchain",
+            definition: "Technology that encrypts and manages transaction records in a distributed manner. Difficult to tamper with and highly transparent.",
+          },
+          {
+            modal: "anno-07",
+            term: "Cryptocurrency (Virtual Currency)",
+            definition: "Digital currency using blockchain technology. Bitcoin is a representative example.",
+          },
+          {
+            modal: "anno-08",
+            term: "NFT",
+            definition: "A mechanism issued on blockchain that proves ownership of digital assets.",
+          },
+          {
+            modal: "anno-09",
+            term: "Accounts Receivable",
+            definition: "Claims for goods sold but payment not yet received. Uncollected portion of sales revenue.",
+          },
+          {
+            modal: "anno-10",
+            term: "Fund Receipt",
+            definition: "Money being deposited into a bank account. Sales revenue actually coming into hand.",
+          },
+          {
+            modal: "anno-11",
+            term: "Peer-to-Peer (P2P)",
+            definition: "Communication method where users interact directly with each other without going through a central administrator.",
+          },
+          {
+            modal: "anno-12",
+            term: "End User",
+            definition: "Consumers who ultimately use products or services. Final users.",
+          },
+          {
+            modal: "anno-13",
+            term: "Intermediary",
+            definition: "Companies that mediate transactions. Such as credit card companies or payment processing companies.",
+          },
+          {
+            modal: "anno-14",
+            term: "Transparency",
+            definition: "A state where transaction content or processing procedures are disclosed and anyone can verify them. A mechanism to prevent fraud.",
+          },
+          {
+            modal: "anno-15",
+            term: "Security",
+            definition: "Safety measures to protect information or systems from unauthorized access or attacks.",
+          },
+          {
+            modal: "anno-16",
+            term: "Serfdom",
+            definition: "A medieval European system where peasants were forced to provide labor or tribute to lords. A social system.",
+          },
         ],
       },
       zh: {
         title: "99%的企业是否意识到他们仍在支付不公平的\"保护费\"？",
         category: "",
-        content: `关卡<br>过去的商人每次经过主要城镇时，都要支付通行费。<br>当然，现在已经没有了。<br><br>保护费<br>在黑帮有势力的时候，餐厅和零售店作为保镖费<br>被半强制性地收取金钱。<br>虽然作为文化还有残留，但几乎已经消失了。<br>随着时代的推移，不合理的收费减少了，<br>做生意似乎也变得容易了。<br><br>但是，这只是在看得见的世界里的事情。<br><br><span class=\"hightlight\">现在，经营者们一直在不断上缴。</span><br>看不见的<span class=\"hightlight\">\"电子支付手续费\"</span>。<br><br>当然，做生意时应该是意识到这一点的。<br><br>即使是大型支付服务也约3%。<br>信用卡支付可能产生更高的手续费。<br><br>手续费为3%的情况下，<br>营业额10亿日元的企业的\"上缴\"金额至少为3000万日元。<br><br>交易手续费、固定手续费、退款处理和欺诈使用等不规则手续费...<br>全部加起来，营业额的一成也可能因手续费支付而消失。<br><br>信用卡和电子支付确实提高了客户的便利性。<br>与现金支付相比，减少了错失营业额的风险，<br>不能一概而论都是缺点。<br><br>作为享受这种好处的代价而支付成本（手续费）本身，<br>没有任何问题。这是资本主义的自然结构。<br><br><span class=\"hightlight\">但是，问题在于，<br>信用卡公司和支付服务运营公司只为自己<br>垄断性地构建了盈利机制。<br></span><br>他们<br><span class=\"hightlight\">明知道能够在降低成本的同时维持便利性的\"手段\"，<br>却将其隐瞒起来。<br>那个\"手段\"就是区块链。<br></span><br>区块链经常在加密货币和NFT的语境下被讨论。<br>但其本质不局限于投资或投机的范畴。<br><br>通过将区块链引入商业，<br>可以避免向支付系统企业上缴手续费。<br><br>为什么区块链能够避免手续费的上缴？<br><br>为了理解这一点，<br>首先从两个观点说明像你这样的信用卡使用事业者<br>包括\"手续费上缴\"在内遭受了什么样的不利益。<br><div class=\"border border-black dark:border-white p-5\"><strong>《1. 向信用卡公司支付的手续费负担》</strong><br /><br />在不使用现金的电子支付中，像信用卡公司这样的\"中间管理者\"必然会介入信用卡使用事业者和用户之间。<br>如果是现金支付，事业者可以直接从用户那里收到营业额。<br>中间管理公司没有介入的余地。<br>另一方面，如果引入了信用卡支付，信用卡使用事业者必须向信用卡公司上缴营业额的几个百分点。</div><br><div class=\"border border-black dark:border-white p-5\"><strong>《2. 应收账款到账的延迟》</strong><br /><br />如果是现金支付，在产生营业额的瞬间，事业者可以直接从用户那里收到营业额的全额。<br>始终是\"实时直接到账\"，甚至不存在应收账款的概念。<br>但是，如果中间有信用卡公司介入就不是这样了。<br>当用户用卡支付时，那个营业额首先被计入信用卡公司。<br>之后，扣除手续费后剩余的营业额才会到达信用卡使用事业者那里。而且，还有1～2个月的延迟。<br></div><br>为什么自己公司的营业额必须一旦被信用卡公司这个\"第三者\"计入？<br>为什么信用卡使用事业者一方需要承担营业额到账延迟1～2个月的风险？<br><br>确实，这些缺点与便利性是权衡关系。<br>如果被告知为了便利性也要同时接受缺点，那就是这样了。<br><br>然而，<br>有能够从根本上改变这个机制的技术。<br>那就是区块链。<br><br><span class=\"hightlight\">如果用一句话来表达区块链能够实现的事情，<br>\"在互联网上实现直接的电子商务交易\"<br></span><br>使用区块链的互联网交互<br>具有点对点（Peer to Peer: P2P）的特征。<br><br>这里说的Peer是指直接参与\"对价支付・接收\"的主体，<br>即：<br>・接收支付的事业者<br>・进行支付的终端用户<br><br>在区块链提供的P2P机制中，<br>可以从Peer（终端用户）向Peer（事业者）<br>进行不通过像信用卡公司这样的中间管理者的直接支付。<br><br><span class=\"hightlight\">通过不经过管理者，确保了交易的透明性和安全性，<br>手续费也便宜，<br>因此喜欢使用区块链支付方法的用户也在增加。<br></span><br>此外，对企业来说，<br>也有吸引之前没有接触过的新用户等好处。<br><br>信用卡支付和电子支付，<br>目前的便利性确实可能比区块链更优秀。<br><br>但是，那种便利性是由你的公司向信用卡公司<br>\"上缴\"的手续费来维持的。<br>尽管世界上有更便利的区块链这样的机制。<br><br><span class=\"hightlight\">理解了这个与中世纪农奴制没有区别的机制，<br>还想继续上缴贡品和保护费吗？<br><br>在被上级剥削的前提下，加上手续费<br>你也要继续无谓地剥削客户吗？<br><br>那里有健全的竞争原理吗？<br>不就是剥削的连锁在继续吗？<br></span><br>我们很好地理解这一点。<br>所以，我们不能剥削。也不能撒谎。<br><br>剥削和谎言不累吗？<br>如果你在考虑引入健全、安全<br>且便利的支付服务，<br>请立即联系我们。<br>`,
+        content: `关所<br>过去的商人每次经过主要城镇时，都要缴纳通行费。<br>当然，现在已经不存在了。<br><br>保护费<br>在暴力团有势力的时代，饮食店和零售店作为保镖费<br>被半强制性地征收金钱。<br>虽然作为文化还残留着，但几乎已经消失了。<br>随着时代的发展，不合理的征收减少了，<br>做生意似乎也变得容易了。<br><br>然而，这只是在可见世界里的情况。<br><br><span class="hightlight">现在，经营者们一直在持续上缴。</span><br>看不见的<span class="hightlight">"电子支付手续费"</span>。<br><br>当然，他们应该是有意识地在这样经营着。<br><br>大型<span data-modal='anno-02'>移动支付服务</span>也要约3%。<br><span data-modal='anno-03'>信用卡支付</span>有时会收取更高的手续费。<br><br>手续费为3%的情况下，<br>销售额10亿日元企业的「上缴」金额，至少是3000万日元。<br><br><span data-modal='anno-04'>交易手续费</span>、<span data-modal='anno-05'>固定手续费</span>、退款处理和欺诈使用等非常规手续费...<br>各种费用加起来，销售额的10%也可能在手续费支付中消失。<br><br>通过信用卡和移动支付，客户的便利性确实提高了。<br>与现金支付相比，减少了销售收不回来的风险，<br>不能一概而论都是缺点。<br><br>作为享受这些好处的代价而支付成本（手续费）本身，<br>没有任何问题。这是资本主义的自然结构。<br><br><span class="hightlight">但是，问题在于，<br>信用卡公司和移动支付运营公司只有他们自己，<br>垄断性地构建了盈利的机制。<br></span><br>他们，<br><span class="hightlight">明明知道能够在降低成本的同时维持便利性的"手段"，<br>却将其严密隐藏着。<br>那个"手段"就是<span data-modal='anno-06'>区块链</span>。<br></span><br>在<span data-modal='anno-07'>加密资产（虚拟货币）</span>和<span data-modal='anno-08'>NFT</span>的语境中经常被提及的<span data-modal='anno-06'>区块链</span>。<br>但其本质并不仅限于投资或投机的范畴。<br><br>通过在商业中导入<span data-modal='anno-06'>区块链</span>，<br>可以避免向支付系统企业上缴手续费。<br><br>为什么<span data-modal='anno-06'>区块链</span>能够避免手续费的上缴呢。<br><br>为了理解这一点，<br>首先从两个角度说明像您这样的信用卡使用事业者包括「手续费上缴」在内，<br>遭受着怎样的不利益。<br><br><div class="border border-black dark:border-white p-5"><strong>《1.向信用卡公司支付的手续费负担》</strong><br /><br />在不使用现金的电子支付中，像信用卡公司这样的「<span data-modal='anno-13'>中间管理者</span>」必然会介入信用卡使用事业者和用户之间。<br>如果是现金支付，事业者可以直接从用户那里收到销售额。<br>中间管理公司没有介入的余地。<br>另一方面，如果导入了信用卡支付，信用卡使用事业者必须向信用卡公司缴纳销售额的几个百分点。</div><br><div class="border border-black dark:border-white p-5"><strong>《2.<span data-modal='anno-09'>应收账款</span>的<span data-modal='anno-10'>到账</span>延迟》</strong><br /><br />如果是现金支付，在发生销售的瞬间，事业者可以直接从用户那里收到销售额的全部金额。<br>总是「实时直接的<span data-modal='anno-10'>到账</span>」，甚至不存在应收账款的概念。<br>但是，如果中间有信用卡公司介入就不是这样了。<br>当用户用信用卡支付时，那个销售额首先计入信用卡公司。<br>之后，扣除手续费后剩余的销售额<span data-modal='anno-10'>到账</span>给信用卡使用事业者。而且，要延迟12个月。<br></div><br>为什么自己公司的销售额必须先计入信用卡公司这个「第三方」？<br>为什么销售额的<span data-modal='anno-10'>到账</span>延迟12个月这样的风险需要由信用卡使用事业者方面承担？<br><br>确实，这些缺点是与便利性的权衡。<br>如果被说为了便利性也要同时接受缺点的话，那就这样了。<br><br>然而，<br>有能够从根本上改变这个机制的技术。<br>那就是<span data-modal='anno-06'>区块链</span>。<br><br><span class="hightlight">如果用一句话来表达<span data-modal='anno-06'>区块链</span>能实现的事情，<br>「在互联网上实现直接的电子商务交易」<br></span><br>使用<span data-modal='anno-06'>区块链</span>的互联网上的交流，<br>具有点对点（Peer to Peer：P2P）的特征。<br><br>这里所说的Peer是指直接参与「对价的支付・接收」的主体，<br>即：<br>・接受支付的事业者<br>・进行支付的<span data-modal='anno-12'>终端用户</span><br><br><span data-modal='anno-06'>区块链</span>提供的P2P机制中，<br>可以从Peer（<span data-modal='anno-12'>终端用户</span>）向Peer（事业者）进行，<br>不通过像信用卡公司这样的<span data-modal='anno-13'>中间管理者</span>的直接支付。<br><br><span class="hightlight">通过不经过管理者来保证交易的<span data-modal='anno-14'>透明度</span>和<span data-modal='anno-15'>安全性</span>，<br>手续费也便宜，<br>喜欢使用<span data-modal='anno-06'>区块链</span>支付方法的用户也在增加。<br></span><br>此外，对企业来说，<br>也有能够吸引到此前没有接触过的新用户等好处。<br><br>信用卡支付和移动支付，<br>目前的便利性确实可能比<span data-modal='anno-06'>区块链</span>更优秀。<br><br>但是，那个便利性是建立在您的公司向信用卡公司<br>"上缴"的手续费之上的。<br>尽管世界上有更便利的<span data-modal='anno-06'>区块链</span>这样的机制。<br><br><span class="hightlight">理解了这个与中世纪<span data-modal='anno-16'>农奴制</span>没有区别的机制，但仍然<br>还想继续上缴贡品和保护费吗？<br><br>在被上级剥削的前提下，加上手续费<br>您也要继续无谓地剥削客户吗？<br><br>那里有健全的竞争原理吗？<br>不就是剥削的连锁继续下去吗？<br></span><br>我们很好地理解这一点。<br>所以，我们不能剥削。也不能说谎。<br><br>剥削和谎言不累吗？<br>如果您正在考虑导入健全、安全<br>且便利的支付服务，<br>请立即联系我们。`,
         annotations: [
+          {
+            modal: "anno-01",
+            term: "电子支付手续费",
+            definition: "使用信用卡或电子货币支付时，向支付代理公司支付的手续费。",
+          },
+          {
+            modal: "anno-02",
+            term: "移动支付服务",
+            definition: "如PayPay和LINE Pay等，使用智能手机应用程序的电子支付服务。",
+          },
+          {
+            modal: "anno-03",
+            term: "信用卡支付",
+            definition: "使用信用卡的支付方式。由信用卡公司暂时垫付款项的机制。",
+          },
+          {
+            modal: "anno-04",
+            term: "交易手续费",
+            definition: "商品或服务买卖成交时，向中介机构支付的手续费。",
+          },
+          {
+            modal: "anno-05",
+            term: "固定手续费",
+            definition: "不论交易金额多少，都收取固定金额的手续费。月费等是典型例子。",
+          },
+          {
+            modal: "anno-06",
+            term: "区块链",
+            definition: "将交易记录加密并分布式管理的技术。难以篡改且透明度高。",
+          },
+          {
+            modal: "anno-07",
+            term: "加密资产（虚拟货币）",
+            definition: "使用区块链技术的数字货币。比特币是典型代表。",
+          },
+          {
+            modal: "anno-08",
+            term: "NFT",
+            definition: "在区块链上发行的，证明数字资产所有权的机制。",
+          },
+          {
+            modal: "anno-09",
+            term: "应收账款",
+            definition: "已销售商品但尚未收到款项的债权。销售收入的未回收部分。",
+          },
+          {
+            modal: "anno-10",
+            term: "到账",
+            definition: "款项汇入银行账户。销售收入实际到手。",
+          },
+          {
+            modal: "anno-11",
+            term: "点对点（P2P）",
+            definition: "不通过中央管理者，用户之间直接交互的通信方式。",
+          },
+          {
+            modal: "anno-12",
+            term: "终端用户",
+            definition: "最终使用商品或服务的消费者。最终使用者。",
+          },
+          {
+            modal: "anno-13",
+            term: "中间管理者",
+            definition: "进行交易中介的机构。如信用卡公司或支付代理公司等。",
+          },
+          {
+            modal: "anno-14",
+            term: "透明度",
+            definition: "交易内容或处理过程公开，任何人都可以确认的状态。防止不正行为的机制。",
+          },
+          {
+            modal: "anno-15",
+            term: "安全性",
+            definition: "保护信息或系统免受非法访问或攻击的安全措施。",
+          },
+          {
+            modal: "anno-16",
+            term: "农奴制",
+            definition: "中世纪欧洲的制度，农民被强制向领主提供劳动或贡物的社会体系。",
+          },
         ],
       },
     },
