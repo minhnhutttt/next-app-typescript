@@ -10,3 +10,184 @@ body {
   color: #000;
   font-family: "Noto Sans", sans-serif;
 }
+
+.animate-fv {
+  transition: opacity .6s cubic-bezier(.17,.84,.44,1),transform .6s cubic-bezier(.17,.84,.44,1);
+}
+[data-scroll="in"] .animate-fv {
+  @apply opacity-100 translate-y-0 rotate-0
+}
+
+@media only screen and (max-width: 1023px) {
+    .top-kv[data-current-slide="1"] .top-kv-item:nth-child(1) {
+        z-index:1;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .6s cubic-bezier(.17,.84,.44,1),visibility .6s;
+        animation: kf-top-kv-slide-reveal .6s cubic-bezier(.17,.84,.44,1) 0s 1 normal both
+    }
+
+    @keyframes kf-top-kv-slide-reveal {
+        0% {
+            transform: translateY(2.4rem) rotate(-1deg)
+        }
+
+        to {
+            transform: translateY(0) rotate(0)
+        }
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .top-kv:not([data-current-slide="1"]) .top-kv-item:nth-child(1) {
+        visibility:hidden;
+        opacity: 0;
+        transition: opacity .6s cubic-bezier(.17,.84,.44,1),visibility .6s;
+        animation: kf-top-kv-slide-disappear .6s cubic-bezier(.17,.84,.44,1) 0s 1 normal both
+    }
+
+    @keyframes kf-top-kv-slide-disappear {
+        0% {
+            transform: translateY(0) rotate(0)
+        }
+
+        to {
+            transform: translateY(-2.4rem) rotate(-1deg)
+        }
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .top-kv[data-current-slide="2"] .top-kv-item:nth-child(2) {
+        z-index:1;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .6s cubic-bezier(.17,.84,.44,1),visibility .6s;
+        animation: kf-top-kv-slide-reveal .6s cubic-bezier(.17,.84,.44,1) 0s 1 normal both
+    }
+
+    @keyframes kf-top-kv-slide-reveal {
+        0% {
+            transform: translateY(2.4rem) rotate(-1deg)
+        }
+
+        to {
+            transform: translateY(0) rotate(0)
+        }
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .top-kv:not([data-current-slide="2"]) .top-kv-item:nth-child(2) {
+        visibility:hidden;
+        opacity: 0;
+        transition: opacity .6s cubic-bezier(.17,.84,.44,1),visibility .6s;
+        animation: kf-top-kv-slide-disappear .6s cubic-bezier(.17,.84,.44,1) 0s 1 normal both
+    }
+
+    @keyframes kf-top-kv-slide-disappear {
+        0% {
+            transform: translateY(0) rotate(0)
+        }
+
+        to {
+            transform: translateY(-2.4rem) rotate(-1deg)
+        }
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .top-kv[data-current-slide="3"] .top-kv-item:nth-child(3) {
+        z-index:1;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .6s cubic-bezier(.17,.84,.44,1),visibility .6s;
+        animation: kf-top-kv-slide-reveal .6s cubic-bezier(.17,.84,.44,1) 0s 1 normal both
+    }
+
+    @keyframes kf-top-kv-slide-reveal {
+        0% {
+            transform: translateY(2.4rem) rotate(-1deg)
+        }
+
+        to {
+            transform: translateY(0) rotate(0)
+        }
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .top-kv:not([data-current-slide="3"]) .top-kv-item:nth-child(3) {
+        visibility:hidden;
+        opacity: 0;
+        transition: opacity .6s cubic-bezier(.17,.84,.44,1),visibility .6s;
+        animation: kf-top-kv-slide-disappear .6s cubic-bezier(.17,.84,.44,1) 0s 1 normal both
+    }
+
+    @keyframes kf-top-kv-slide-disappear {
+        0% {
+            transform: translateY(0) rotate(0)
+        }
+
+        to {
+            transform: translateY(-2.4rem) rotate(-1deg)
+        }
+    }
+}
+
+@keyframes loop {
+    0% {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes loop2 {
+    0% {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-200%);
+    }
+  }
+
+
+@keyframes opacity {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes change {
+  0%, 8% {
+    transform: translate3d(0, 0, 0);
+  }
+  12%, 20% {
+    transform: translate3d(0, -16.67%, 0);
+  }
+  24%, 32% {
+    transform: translate3d(0, -33.33%, 0);
+  }
+  36%, 44% {
+    transform: translate3d(0, -50%, 0);
+  }
+  48%, 56% {
+    transform: translate3d(0, -66.67%, 0);
+  }
+  60%, 68% {
+    transform: translate3d(0, -83.33%, 0);
+  }
+  72%, 80% {
+    transform: translate3d(0, -66.67%, 0);
+  }
+  84%, 92% {
+    transform: translate3d(0, -50%, 0);
+  }
+  96%, 100% {
+    transform: translate3d(0, -33.33%, 0);
+  }
+}

@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
-import {  Inter} from "next/font/google";
+import { Noto_Sans_JP, Inter, Mohave, Syne } from "next/font/google";
 import "./globals.scss";
-import Header from "@/components/header";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollContainer from "@/components/scrollContainer";
 
-const inter = Inter({
+const mohave = Mohave({
   subsets: ["latin"],
+  variable: '--font-mohave'
+});
+
+const noto = Noto_Sans_JP({
+  subsets: ["latin"],
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: '--font-syne'
 });
 
 export const metadata: Metadata = {
@@ -22,11 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${inter.className} bg-[#FFFEEA]`}
+        className={`${noto.className} ${mohave.variable} ${syne.variable} bg-[#EFFEF6]`}
       >
         <ScrollContainer>
-          <Header />
-          {children}
+          <div className="bg-[url(/assets/images/fv-bg.png)] bg-[size:100%_auto] bg-top bg-no-repeat">
+            <Header />
+            {children}
+          </div>
           <Footer />
         </ScrollContainer>
       </body>

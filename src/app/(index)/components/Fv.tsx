@@ -1,28 +1,71 @@
 "use client";
+import { useState, useEffect } from "react";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const FV = () => {
   const ref = useScrollAnimations();
+  const [currentSlide, setCurrentSlide] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => {
+        if (prev === 3) {
+          return 1;
+        }
+        return prev + 1;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section ref={ref} className="relative">
-      <div className="md:h-[calc(100%-120px)] h-[calc(100%-80px)] bg-[#FFB601] absolute w-full bottom-0 inset-x-0"></div>
-      <div className="bg-[url(/assets/images/fv-bg.png)] bg-cover bg-bottom absolute inset-0"></div>
-      
-      <div className="relative pt-16 md:pt-[85px] h-full flex flex-col justify-between  overflow-hidden">
-        <div className="w-full max-w-[1440px] mx-auto md:flex items-end relative z-30">
-          <h1 className="slide-skew">
-            <img src="/assets/images/fv-main.png" alt="" />
+    <section className="relative w-full max-md:pt-5 max-md:px-3 max-lg:pb-20 max-md:pb-16">
+      <div data-scroll="out" className="relative w-full flex items-center justify-start px-3 lg:max-w-[1440px] max-w-[540px] mx-auto md:pt-14 md:pb-[88px] pb-10">
+      <span className="absolute -top-5 lg:top-0 left-0 z-10 max-md:w-[200px] max-lg:w-[280px]"><img src="/assets/images/fv-deco-01.png" alt="" /></span>
+      <span className="absolute right-0 bottom-0 z-10 max-md:w-[60px] max-lg:w-[90px]"><img src="/assets/images/fv-deco-02.png" alt="" /></span>
+        <div 
+          id="slider" 
+          data-current-slide={currentSlide}
+          className="top-kv grid grid-cols-1 lg:grid-cols-3 md:gap-4 h-[calc(100svh-10.6rem)] lg:h-full w-full mx-auto"
+        >
+          <div className="top-kv-item animate-fv max-lg:absolute max-lg:inset-0 lg:opacity-0 lg:translate-y-5 lg:rotate-3 lg:delay-0 md:rounded-[30px] rounded-[20px] shadow-lg overflow-hidden md:px-4 md:py-5 p-4 bg-gradient-to-br from-[#7FF5E8] to-[#91F1AA]">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <div className="relative w-full h-full overflow-hidden md:rounded-[20px] rounded-[15px]">
+                <img className="max-lg:w-full max-lg:object-cover max-lg:h-full" src="/assets/images/fv-img-01.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="top-kv-item animate-fv max-lg:absolute max-lg:inset-0 lg:opacity-0 lg:translate-y-7 lg:-rotate-3lg: !delay-[.25s] md:rounded-[30px] rounded-[20px] shadow-lg overflow-hidden md:px-4 md:py-5 p-4 bg-gradient-to-br from-[#02D6FF] to-[#4DFEFF]">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <div className="relative w-full h-full overflow-hidden md:rounded-[20px] rounded-[15px]">
+                <img className="max-lg:w-full max-lg:object-cover max-lg:h-full" src="/assets/images/fv-img-02.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="top-kv-item animate-fv max-lg:absolute max-lg:inset-0 lg:opacity-0 lg:translate-y-5 lg:rotate-3 lg:!delay-500 md:rounded-[30px] rounded-[20px] shadow-lg overflow-hidden md:px-4 md:py-5 p-4 bg-gradient-to-br from-[#10E188] to-[#05BAEA]">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <div className="relative w-full h-full overflow-hidden md:rounded-[20px] rounded-[15px]">
+                <img className="max-lg:w-full max-lg:object-cover max-lg:h-full" src="/assets/images/fv-img-03.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute inset-0 z-30 flex md:items-center items-end max-md:pb-[20%] justify-start">
+        <div className="animate-fv opacity-0 translate-y-5 lg:!delay-700 !delay-200 flex flex-col px-2 xs:px-3 sm:px-4 ml-[3%] xs:ml-[4%] sm:ml-[5%] md:ml-[7%] lg:ml-[10%] max-w-[95%] xs:max-w-[90%] sm:max-w-[85%] items-start text-left md:space-y-[25px] space-y-2">
+          <h1 className="text-[28px] md:text-[40px] lg:text-[60px] xl:text-[80px] font-black bg-white/90 leading-none pb-2 px-2 pt-1">
+            目的直行、一直線
           </h1>
-          <div className="zoom-in max-md:absolute max-md:right-7 md:-mb-10 md:-ml-16 max-md:w-[55%] max-md:ml-auto"><img className="animate-[anim-bounce_1.6s_infinite_ease-in-out]" src="/assets/images/bubble.svg" alt="" /></div>
-        </div>
-        <div className="fade-up flex justify-center md:-mt-10 relative z-20 mt-[16%]">
-          <img className="max-md:hidden" src="/assets/images/fv-image.png" alt="" />
-          <img className="md:hidden" src="/assets/images/fv-image-sp.png" alt="" />
+          <p className="text-[14px] md:text-[20px] lg:text-[32px] xl:text-[46px] font-black bg-white/90 leading-none pb-2 px-2 pt-1">
+            迷わせない新発想ナビゲーションシステムで         
+          </p>
+          <p className="text-[14px] md:text-[20px] lg:text-[32px] xl:text-[46px] font-black bg-white/90 leading-none pb-2 px-2 pt-1">
+            離脱防止×CVRアップを「即実装・即実現」          
+          </p>
         </div>
       </div>
-      <div className="absolute bottom-[-30px] left-1/2 -translate-x-1/2 z-10">
-        <img className="" src="/assets/images/fv-arr.png" alt="" />
       </div>
+      
     </section>
   );
 };
