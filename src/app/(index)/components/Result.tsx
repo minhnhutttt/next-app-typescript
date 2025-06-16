@@ -5,13 +5,15 @@ interface ChartCardProps {
   head: string;
   text: ReactNode;
   imgSrc: string;
+  arrowUp?: boolean
 }
 
 const ChartCard = ({ 
   title,
   head,
   text,
-  imgSrc 
+  imgSrc,
+  arrowUp = false
 }: ChartCardProps) => {
   return (
     <div data-scroll className="fade-up flex flex-col justify-center items-center bg-white p-4 sm:p-6 md:p-10 rounded-[20px] [box-shadow:0px_4px_20px_0px_rgba(0,_0,_0,_0.10)] relative overflow-hidden w-full">
@@ -21,6 +23,15 @@ const ChartCard = ({
       <div className="flex justify-center">
         <div className="relative w-full">
             <img src={imgSrc} alt={title} />
+            {arrowUp ? 
+            <div className="w-[36.245%] h-[43.539%] absolute top-[8%] left-[16%] overflow-hidden">
+              <img className='animate-[arrowUp_3s_ease-in_infinite]' src="/assets/images/arrow2.svg" alt="" />
+            </div>
+            : 
+            <div className="w-[36.245%] h-[43.539%] absolute top-[8%] right-[10%] overflow-hidden">
+              <img className='animate-[arrowDown_3s_ease-in_infinite]' src="/assets/images/arrow.svg" alt="" />
+            </div>
+            }
         </div>
       </div>
       
@@ -44,7 +55,7 @@ const Result = () => {
           </div>
           
           <h3 data-scroll className="fade-up text-[32px] md:text-[36px] lg:text-[40px] xl:text-[50px] min-[1366px]:text-[64px] font-black pt-3 tracking-[0.2em]">
-            トップページ<br/>
+            トップページの<br/>
             <span className="bg-gradient-to-r from-[#CF2FF7] to-[#214BE6] text-transparent bg-clip-text">
               構造を変えるだけで
             </span><br/>
@@ -81,16 +92,16 @@ const Result = () => {
             導入後：<span className="bg-gradient-to-r from-[#CF2FF7] to-[#214BE6] text-transparent bg-clip-text font-black">4.3%</span>（ゴールに直行）
             </>)}
               imgSrc="/assets/images/chart-3.png"
+              arrowUp
             />
           </div>
           
           <div data-scroll className="fade-up flex items-center justify-center lg:justify-start p-4 sm:p-6">
-            <p className=" font-bold md:text-[32px] text-[20px] leading-relaxed text-center lg:text-left">
-              目的に直行できることで、ユーザーの
-              <br className="hidden sm:block" />
-              迷いが減り、滞在時間は短縮、離脱は
-              <br className="hidden sm:block" />
-              減少、CVRは約2.4倍になります。
+            <p className="font-bold md:text-[32px] text-[20px] leading-relaxed max-md:w-[300px] lg:w-[370px]">
+              目的に直行できることでユーザーの迷いが減り、<br />
+              ⚫︎滞在時間は短縮<br />
+              ⚫︎ページ離脱は減少<br />
+              ⚫︎CVRは約2.4倍に向上することが見込まれます。
             </p>
           </div>
         </div>

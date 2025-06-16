@@ -32,22 +32,22 @@ const Introduction = () => {
         <div data-scroll className="fade-up relative w-full ">
           <div className="flex items-center justify-center pt-5 md:pt-10">
             <div className="flex w-full overflow-hidden font-mohave leading-none">
-              <div className="flex-[0_0_auto] whitespace-nowrap text-[150px] md:text-[221px] font-bold italic overflow-hidden text-transparent [text-stroke:1px_#CAFFF7] [-webkit-text-stroke:1px_#CAFFF7] sm:[text-stroke:2px_#CAFFF7] sm:[-webkit-text-stroke:2px_#CAFFF7] animate-[loop_50s_-25s_linear_infinite]">
+              <div className="flex-[0_0_auto] text-[#E8FEF6] whitespace-nowrap text-[150px] md:text-[221px] font-bold italic overflow-hidden [filter:drop-shadow(0_0_1px_#05BAEA)] animate-[loop_50s_-25s_linear_infinite]">
                 CONVERSION&nbsp;FIRST&nbsp;CONVERSION&nbsp;FIRST&nbsp;
               </div>
-              <div className="flex-[0_0_auto] whitespace-nowrap text-[150px] md:text-[221px] font-bold italic overflow-hidden text-transparent [text-stroke:1px_#CAFFF7] [-webkit-text-stroke:1px_#CAFFF7] sm:[text-stroke:2px_#CAFFF7] sm:[-webkit-text-stroke:2px_#CAFFF7] animate-[loop2_50s_linear_infinite]">
+              <div className="flex-[0_0_auto] text-[#E8FEF6] whitespace-nowrap text-[150px] md:text-[221px] font-bold italic overflow-hidden [filter:drop-shadow(0_0_1px_#05BAEA)] animate-[loop2_50s_linear_infinite]">
                 CONVERSION&nbsp;FIRST&nbsp;CONVERSION&nbsp;FIRST&nbsp;
               </div>
             </div>
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
             <h1 className="relative z-20 text-[40px] md:text-[60px] xl:text-[100px] font-extrabold  leading-none">
-              コンバージョンファースト
+              コンバージョン<br className="md:hidden" />ファースト
             </h1>
           </div>
         </div>
         <div className="relative z-10">
-          <p data-scroll className="fade-up text-[20px] md:text-[32px] font-black  leading-relaxed max-md:px-5">
+          <p data-scroll className="fade-up text-[20px] md:text-[32px] font-black leading-relaxed max-md:px-5 max-md:text-left">
             埋もれたCVR(コンバージョン)を表舞台へ。
             <br className="max-md:hidden" />
             &ldquo;説明から誘導&rdquo;ではなく、&ldquo;目的から詳細&rdquo;へ。

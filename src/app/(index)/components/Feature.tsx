@@ -2,37 +2,66 @@ import { ReactNode } from 'react';
 
 const features = [
     {
-        icon: "/assets/images/feature-item-01.png",
+        id: "01",
         title: (<><span className="font-bold">目的別ゴール</span> (ボタン)をトップページに表示</>),
         alt: "Goal"
     },
     {
-        icon: "/assets/images/feature-item-02.png",
+        id: "02",
         title: (<>イベントごとに<span className="font-bold">ゴール変更も可能</span></>),
         alt: "Refresh"
     },
     {
-        icon: "/assets/images/feature-item-03.png",
+        id: "03",
         title: (<>目的から<span className="font-bold">直接ページ遷移</span>することができる</>),
         alt: "Target"
     },
     {
-        icon: "/assets/images/feature-item-04.png",
+        id: "04",
         title: (<>クッキーによる<span className="font-bold">訪問履歴分析</span></>),
         alt: "Cookie"
     }
 ];
 
 interface FeatureCardProps {
-    icon: string;
+    id: string;
     title: ReactNode;
     alt: string;
 }
 
-const FeatureCard = ({ icon, title,  alt }: FeatureCardProps) => (
-    <div data-scroll className="fade-up flex flex-col items-center max-w-[240px] sm:max-w-xs mx-auto">
-        <div className="rounded-full flex items-center justify-center mb-3 sm:mb-4 md:mb-6">
-            <img src={icon} alt={alt} />
+const FeatureCard = ({ id, title,  alt }: FeatureCardProps) => (
+    <div data-scroll className="fade-up group flex flex-col items-center max-w-[240px] sm:max-w-xs mx-auto">
+        <div className="rounded-full size-[230px] flex items-center justify-center mb-3 sm:mb-4 md:mb-6 bg-[#F7F7F7] border border-[#10E188] overflow-hidden">
+            { id === "01" && 
+                (
+                    <img className="animate-[wave_6s_ease-in_infinite]" src="/assets/images/feature-item-01.png" alt={alt} />
+                )
+            }
+            { id === "02" && 
+                (
+                    <img className="animate-[rotate_6s_linear_infinite]" src="/assets/images/feature-item-02.png" alt={alt} />
+                )
+            }
+            { id === "03" && 
+                (
+                    <span className='relative ml-3.5'>
+                        <img className="" src="/assets/images/feature-item-03.png" alt={alt} />
+                        <span className="absolute w-full h-full inset-0 animate-[flyToTarget_1.5s_ease-in_infinite]">
+                            <img src="/assets/images/feature-item-03-01.png" alt={alt} />
+                        </span>
+                    </span>
+                )
+            }
+            { id === "04" && 
+                (
+                    <span className='relative'>
+                        <img src="/assets/images/feature-item-04.png" alt={alt} />
+                        <span className="absolute top-14 right-20 animate-[fadeInOut_2s_ease-in-out_infinite] [animation-delay:0.3s]"><img src="/assets/images/feature-item-04-dot.png" alt="" /></span>
+                        <span className="absolute top-[92px] right-24 animate-[fadeInOut_2s_ease-in-out_infinite] [animation-delay:0.6s]"><img src="/assets/images/feature-item-04-dot.png" alt="" /></span>
+                        <span className="absolute top-[88px] right-12 animate-[fadeInOut_2s_ease-in-out_infinite] [animation-delay:0.9s]"><img src="/assets/images/feature-item-04-dot.png" alt="" /></span>
+                    </span>
+                )
+            }
         </div>
         <div className="max-w-[264px] flex flex-col items-start text-left md:text-[23px] text-[16px] font-medium">
             <p className="">
@@ -92,7 +121,7 @@ const Feature = () => {
                         </h2>
                     </div>
                     
-                    <div className="grid grid-cols-2 xl:grid-cols-4 w-full max-w-[1280px] mx-auto max-md:gap-10 gap-y-10">
+                    <div className="grid sm:grid-cols-2 xl:grid-cols-4 w-full max-w-[1280px] mx-auto max-md:gap-10 gap-y-10">
                         {features.map((feature, index) => (
                             <FeatureCard key={index} {...feature} />
                         ))}

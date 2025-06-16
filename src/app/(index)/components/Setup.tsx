@@ -22,7 +22,7 @@ const StepCard = ({ imageSrc, stepNumber, title, description, imageAlt }: StepCa
         <h3 className=" font-bold md:text-[24px]">
             {title}
         </h3>
-        <p className=" text-[14px] md:text-[18px] text-left flex-grow mt-5 max-md:text-center">
+        <p className=" text-[14px] md:text-[18px] text-left flex-grow mt-5">
             {description}
         </p>
       </div>
@@ -37,21 +37,21 @@ const steps = [
     imageAlt: "Admin Screen Setup",
     stepNumber: 1,
     title: (<>管理画面から<br />ボタン名とリンクを設定</>),
-    description: "表示するボタンのテキストとクリック後のリンク先を簡単設定"
+    description: "ポップアップに表示するボタンテキストと、クリック後のリンク先を簡単設定"
   },
   {
     imageSrc: "/assets/images/setup-2.png",
     imageAlt: "Tag Insertion and Google Analytics Integration",
     stepNumber: 2,
     title: (<>タグをサイトに貼り付け<br />Googleアナリティクス連携</>),
-    description: "自動生成されたコードをコピー＆ペーストするだけ"
+    description: "自動生成されたタグをコピー＆ペーストするだけでサイトに実装完了"
   },
   {
     imageSrc: "/assets/images/setup-3.png",
     imageAlt: "Mobile Optimization",
     stepNumber: 3,
     title: (<>モバイル最適化<br /><br className="max-md:hidden" /></>),
-    description: "ウェブサイトはトップページに表示されます",
+    description: "アクセスの9割以上であるスマートフォンからのアクセスにも追加料金なしで最適化",
   }
 ];
 
@@ -83,7 +83,7 @@ const Setup = () => {
 
         <div data-scroll className="fade-up max-w-[722px] mx-auto bg-white p-6 sm:p-8 lg:p-10 rounded-3xl shadow-xl text-left">
           <p className="font-bold text-[18px] md:text-[24px] leading-relaxed">
-            Unique Data Miningでは、ユーザー行動に基づいた設計により、導入されたウェブサイトは「成果を生む構造」へと進化します。
+            Unique Data Miningを導入したウェブサイトは、ユーザー行動に基づいた設計により「成果を生む構造」へと手軽に進化させられます。
           </p>
         </div>
       </div>

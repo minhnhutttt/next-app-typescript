@@ -84,7 +84,8 @@ const Usecase = () => {
       </div>
 
     <div data-scroll className="fade-up relative mt-12 md:mt-28 max-w-full">
-        <img className="w-full" src="/assets/images/gallery.png" alt="Business person gallery" />
+        <img className="w-full max-md:hidden" src="/assets/images/gallery.png" alt="Business person gallery" />
+        <img className="w-full md:hidden object-cover max-md:h-[190px]" src="/assets/images/gallery-sp.png" alt="Business person gallery" />
     </div>
       <div className="mx-auto w-full md:max-w-[1440px] max-w-[520px] px-5 mt-20 md:mt-[150px]">
         <div data-scroll className="fade-up border-b border-black pb-2 sm:pb-4 mb-8 sm:mb-20 mx-auto max-w-[640px]">

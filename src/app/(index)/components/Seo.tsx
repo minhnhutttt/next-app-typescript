@@ -24,7 +24,7 @@ const features = [
   {
     icon: "/assets/images/seo-icon-1.png",
     title: "Googleアナリティクスとシームレス連携",
-    description: "統計的なアクセスデータを簡単に確認できる環境です",
+    description: "ページ訪問者のデータをレポートで簡単チェック",
     alt: "Analytics Integration Icon"
   },
   {
@@ -58,8 +58,7 @@ const Seo =() => {
               <p className="text-[24px] md:text-[32px] font-bold font-syne">SEO</p>
             </div>
             <h3 data-scroll className="fade-up text-[32px] md:text-[36px] lg:text-[40px] xl:text-[50px]  min-[1366px]:text-[64px] font-black pt-3 tracking-[0.2em]">
-              CVRだけじゃない<br/>
-              SEOにも好影響
+              自然とページの<br />評価が高まるから<br />SEOにも好影響
             </h3>
           </div>
           <div data-scroll className="fade-up relative flex justify-center items-center mx-auto lg:mx-0 lg:w-1/2">
@@ -126,7 +125,7 @@ const Seo =() => {
       <div className="mx-auto flex justify-center mb-8 sm:mb-20 mt-16 md:mt-[100px]">
         <div className="border-b border-black mx-auto px-5">
           <h2 data-scroll className="fade-up md:text-[32px] text-[18px] font-bold pb-5 tracking-widest text-center">
-            強力なデータ分析で訪問者を理解する
+              データ分析機能がさらなるコンバージョンを促進
           </h2>
         </div>
       </div>
