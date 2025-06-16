@@ -2,8 +2,25 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import 'swiper/css/free-mode';
 
 const data = [
+  {
+    image: "/assets/images/slider-01.jpg",
+    text: "お母さんの誕生日に",
+  },
+  {
+    image: "/assets/images/slider-02.jpg",
+    text: "弟へ感謝の気持ち",
+  },
+  {
+    image: "/assets/images/slider-03.jpg",
+    text: "友達へありがとう",
+  },
+  {
+    image: "/assets/images/slider-04.jpg",
+    text: "息子へ何気ない気持ち",
+  },
   {
     image: "/assets/images/slider-01.jpg",
     text: "お母さんの誕生日に",
@@ -68,8 +85,10 @@ const Strength = () => {
             slidesPerView={"auto"}
             loop={true}
             modules={[Autoplay]}
+            freeMode={true}
+            speed={3500}
             autoplay={{
-              delay: 4500,
+              delay: 0,
               disableOnInteraction: false,
             }}
             className="w-full"
