@@ -37,12 +37,12 @@ const Introduction = () => {
             </div>
             <div data-scroll className="flex-1">
                 <p className="md:text-[48px] text-[24px] font-black text-white whitespace-nowrap">
-                    <span className="scale-up !delay-[.7s]">LINEでは軽すぎる。</span><br />
-                    <span className="scale-up !delay-[.8s]">メールでは味気ない。</span><br />
+                    <span className="scale-up !delay-[0.2s] md:!delay-[.7s] inline-block">LINEでは軽すぎる。</span><br />
+                    <span className="scale-up !delay-[0.4s] md:!delay-[.8s] inline-block">メールでは味気ない。</span><br />
                     <br />
-                    <span className="scale-up !delay-[.9s]"><span className="md:text-[68px] text-[32px]">本気</span>の想いを、</span><br />
-                    <span className="scale-up !delay-[1s]">“贈る”という</span><br />
-                    <span className="scale-up !delay-[1.1s]">体験で届けよう。</span>
+                    <span className="scale-up !delay-[0.6s] md:!delay-[.9s] inline-block"><span className="md:text-[68px] text-[32px]">本気</span>の想いを、</span><br />
+                    <span className="scale-up !delay-[0.8s] md:!delay-[1s] inline-block">“贈る”という</span><br />
+                    <span className="scale-up !delay-[1s] md:!delay-[1.1s] inline-block">体験で届けよう。</span>
                 </p>
             </div>
         </div>
