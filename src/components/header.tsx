@@ -18,7 +18,7 @@ const Header = () => {
       </a>
       <div className="md:mr-12">
         <a
-          href="/"
+          href="https://lin.ee/sQ5Hh6G" target="_blank"
           className="flex items-center justify-center relative w-20 md:w-[240px] h-[50px] before:bg-[#2DBF15] text-white text-[16px] gap-2 before:absolute before:-skew-x-[25deg] before:w-full before:h-full"
         >
           <img className="relative" src="/assets/images/ic-line.svg" alt="" />

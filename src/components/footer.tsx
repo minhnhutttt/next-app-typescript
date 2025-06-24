@@ -15,10 +15,10 @@ const Footer = () => {
 
       <ul className="flex flex-col items-center justify-center md:text-[16px] text-[14px] font-bold gap-[30px] pb-16 md:pb-[116px]">
         <li>
-          <a href="/" className="hover:opacity-75 duration-150 transition-opacity">利用規約</a>
+          <a href="/terms" className="hover:opacity-75 duration-150 transition-opacity">利用規約</a>
         </li>
         <li>
-          <a href="/" className="hover:opacity-75 duration-150 transition-opacity">プライバシーポリシー</a>
+          <a href="/privacy" className="hover:opacity-75 duration-150 transition-opacity">プライバシーポリシー</a>
         </li>
       </ul>
 
