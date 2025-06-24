@@ -7,35 +7,27 @@ import 'swiper/css/free-mode';
 const data = [
   {
     image: "/assets/images/slider-01.jpg",
-    text: "お母さんの誕生日に",
   },
   {
     image: "/assets/images/slider-02.jpg",
-    text: "弟へ感謝の気持ち",
   },
   {
     image: "/assets/images/slider-03.jpg",
-    text: "友達へありがとう",
   },
   {
     image: "/assets/images/slider-04.jpg",
-    text: "息子へ何気ない気持ち",
   },
   {
     image: "/assets/images/slider-01.jpg",
-    text: "お母さんの誕生日に",
   },
   {
     image: "/assets/images/slider-02.jpg",
-    text: "弟へ感謝の気持ち",
   },
   {
     image: "/assets/images/slider-03.jpg",
-    text: "友達へありがとう",
   },
   {
     image: "/assets/images/slider-04.jpg",
-    text: "息子へ何気ない気持ち",
   },
 ];
 
@@ -104,9 +96,6 @@ const Strength = () => {
                     src={item.image}
                     alt=""
                   />
-                </div>
-                <div className="md:text-[24px] text-[18px] font-bold pt-5">
-                  お母さんの誕生日に
                 </div>
               </SwiperSlide>
             ))}

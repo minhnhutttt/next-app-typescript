@@ -13,7 +13,7 @@ interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 
 const Button: React.FC<ButtonProps> = ({ 
   size = "default", 
-  href = "/", 
+  href = "https://lin.ee/sQ5Hh6G", 
   children = "メッセージを作る",
   className = "",
   ...props 
@@ -34,6 +34,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <a
       href={href}
+      target="_blank"
       className={`flex items-center justify-center relative  text-white tracking-widest bg-[linear-gradient(49deg,_#012200_2.87%,_#00320D_24.24%,_#003F18_46.58%,_#004914_52.41%,_#00650C_71.83%,_#007606_87.37%,_#007C05_100%)] ${currentSize.button} ${className}`}
       {...props}
     >

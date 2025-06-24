@@ -16,13 +16,13 @@ const Footer = () => {
         <span><img className="max-md:w-[200px]" src="/assets/images/line.png" alt="" /></span>
         <ul className="flex flex-col items-center justify-center md:text-[20px] text-[14px] font-light gap-[30px] text-center text-white">
           <li>
-            <a href="/" className="hover:opacity-75 duration-150 transition-opacity">Privacy Policy</a>
+            <a href="/privacy" className="hover:opacity-75 duration-150 transition-opacity">Privacy Policy</a>
           </li>
           <li>
-            <a href="/" className="hover:opacity-75 duration-150 transition-opacity">利用規約</a>
+            <a href="/terms" className="hover:opacity-75 duration-150 transition-opacity">利用規約</a>
           </li>
           <li>
-            <a href="/" className="hover:opacity-75 duration-150 transition-opacity">お問い合わせ </a>
+            <a href="https://lin.ee/sQ5Hh6G" target="_blank" className="hover:opacity-75 duration-150 transition-opacity">お問い合わせ </a>
           </li>
         </ul>
       </div>

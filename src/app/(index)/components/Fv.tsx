@@ -29,6 +29,12 @@ const Fv = () => {
       opacity: 1,
       duration: 0.3,
       ease: "power1.inOut",
+    })
+    .to(scrollRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power1.inOut",
     });
 
     let ctx: gsap.Context | null = null;
@@ -62,13 +68,7 @@ const Fv = () => {
             ease: "power1.inOut",
           },
           "<"
-        )
-        .to(scrollRef.current, {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power1.inOut",
-        });
+        );
 
       ScrollTrigger.refresh();
     });
