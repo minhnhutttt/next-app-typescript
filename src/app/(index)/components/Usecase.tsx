@@ -9,23 +9,6 @@ const CompanyTypeItem = ({ text }: CompanyTypeItemProps) => (
   </li>
 );
 
-interface CaseStudyCardProps {
-  imageSrc: string;
-  companyName: string;
-  description: string;
-}
-
-const CaseStudyCard = ({ imageSrc, companyName, description }: CaseStudyCardProps) => (
-  <div data-scroll className="fade-up bg-white md:rounded-[40px] rounded-[20px] [box-shadow:0px_0px_40px_0px_rgba(0,_0,_0,_0.10)] overflow-hidden flex flex-col h-full">
-    <div className="w-full flex items-center justify-center overflow-hidden">
-      <img className="w-full" src={imageSrc} alt={companyName}  />
-    </div>
-    <div className="p-4 sm:p-5 flex-grow">
-      <h3 className="font-semibold text-[20px] md:text-[28px] tracking-widest font-roboto mb-2 md:mb-2">{companyName}</h3>
-      <p className=" text-[13px] md:text-[16px]">{description}</p>
-    </div>
-  </div>
-);
 
 const companyTypes = [
   "複数サービスを扱う企業様",
@@ -33,24 +16,6 @@ const companyTypes = [
   "LPやウェブサイトが複数存在する組織",
   "説明書が多く離脱されやすい業種",
   "採用強化中の企業"
-];
-
-const caseStudies = [
-  {
-    imageSrc: "/assets/images/usecase-1.png",
-    companyName: "株式会社ABC様",
-    description: "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。"
-  },
-  {
-    imageSrc: "/assets/images/usecase-2.png",
-    companyName: "株式会社ABC様",
-    description: "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。"
-  },
-  {
-    imageSrc: "/assets/images/usecase-3.png",
-    companyName: "株式会社ABC様",
-    description: "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。"
-  }
 ];
 
 const Usecase = () => {
@@ -87,18 +52,6 @@ const Usecase = () => {
         <img className="w-full max-md:hidden" src="/assets/images/gallery.png" alt="Business person gallery" />
         <img className="w-full md:hidden object-cover max-md:h-[190px]" src="/assets/images/gallery-sp.png" alt="Business person gallery" />
     </div>
-      <div className="mx-auto w-full md:max-w-[1440px] max-w-[520px] px-5 mt-20 md:mt-[150px]">
-        <div data-scroll className="fade-up border-b border-black pb-2 sm:pb-4 mb-8 sm:mb-20 mx-auto max-w-[640px]">
-          <h2 className="text-[18px] md:text-[32px] font-extrabold text-center px-4 sm:px-6">
-            導入事例
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6">
-          {caseStudies.map((study, index) => (
-            <CaseStudyCard key={index} {...study} />
-          ))}
-        </div>
-      </div>
     </section>
   );
 };
