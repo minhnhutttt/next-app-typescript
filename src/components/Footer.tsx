@@ -11,9 +11,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-wrap justify-center md:justify-end items-center text-[20px] font-light md:divide-x divide-black max-md:flex-col max-md:gap-4">
-          <a href="#" className="whitespace-nowrap hover:opacity-75 duration-150 py-1 px-5 md:px-10 xl:px-16 md:h-10">Privacy Policy</a>
-          <a href="#" className="whitespace-nowrap hover:opacity-75 duration-150 py-1 px-5 md:px-10 xl:px-16 md:h-10">利用規約</a>
-          <a href="#" className="whitespace-nowrap hover:opacity-75 duration-150 py-1 px-5 md:px-10 xl:px-16 md:h-10">お問い合わせ</a>
+          <a href="/privacy" className="whitespace-nowrap hover:opacity-75 duration-150 py-1 px-5 md:px-10 xl:px-16 md:h-10">Privacy Policy</a>
+          <a href="/terms" className="whitespace-nowrap hover:opacity-75 duration-150 py-1 px-5 md:px-10 xl:px-16 md:h-10">利用規約</a>
+          <a href="https://lin.ee/sQ5Hh6G" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap hover:opacity-75 duration-150 py-1 px-5 md:px-10 xl:px-16 md:h-10">お問い合わせ</a>
         </div>
       </div>
       <div className="text-center font-light md:text-[14px] text-[12px] tracking-widest">
