@@ -144,7 +144,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
 
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
-    const moveFactor = 0.1;
+    const moveFactor = 0.3;
     const initialPosition = new THREE.Vector3(getTargetPosition(), 0, 0);
 
     let intersectionCheckCounter = 0;
@@ -459,14 +459,15 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         
         vec4 finalColor = vec4(textureColor.rgb, alpha);
         vec3 cursorColor = vec3(${config.particleColor.hover[0]}, ${config.particleColor.hover[1]}, ${config.particleColor.hover[2]});
-        float cursorRadius = 0.04;
+        float cursorRadius = 0.02;
         float cursorAlpha = 0.0;
         float timeSinceLastMove = iTime - iLastMoveTime;
         float fadeOutDuration = 1.5;
         float fadeFactor = 1.0;
         
         if (iIsMouseMoving < 0.5) {
-          fadeFactor = max(0.0, 1.0 - (timeSinceLastMove / fadeOutDuration));
+          float t = timeSinceLastMove / fadeOutDuration;
+  fadeFactor = smoothstep(1.0, 0.0, t);
         }
         
         float cursorDist = distance(vUv, iMouse);
@@ -484,9 +485,9 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
           float trailDist = distance(vUv, trailPos);
           
           float timeAlive = iTime - trailTime;
-          float fadeTime = 2.0;
+          float fadeTime = 3.5;
           float timeFactor = max(0.0, 1.0 - timeAlive / fadeTime);
-          float trailFactor = max(0.3, 1.0 - float(i) / 20.0);
+          float trailFactor = max(0.1, 1.0 - float(i) / 30.0);
           float trailRadius = cursorRadius * (0.5 + trailFactor * 0.5);
           
           if(trailDist < trailRadius) {
@@ -871,7 +872,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
             const now = elapsedTime;
             const lastPointTime = mouseTrail.length > 0 ? mouseTrail[0].time : 0;
             const timeSinceLastPoint = now - lastPointTime;
-            const minDistance = 0.001;
+            const minDistance = 0.0003;
 
             const lastPos =
               mouseTrail.length > 0
@@ -881,8 +882,8 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
             const distanceMoved = lastPos.distanceTo(new THREE.Vector2(uv!.x, uv!.y));
 
             if (
-              (timeSinceLastPoint > 0.05 && distanceMoved > minDistance) ||
-              timeSinceLastPoint > 0.2
+              (timeSinceLastPoint > 0.02 && distanceMoved > minDistance) || 
+              timeSinceLastPoint > 0.08 
             ) {
               uvCoords.set(uv!.x, uv!.y);
 
