@@ -55,13 +55,6 @@ const HomePage: NextPage = () => {
           className={`fade-up md:w-[30rem] text-[#FF9016] transition-opacity duration-500`}
         >
         </p>
-        <p 
-          className={` transition-opacity duration-[10s] text-[#FF9016]  ${
-            shouldStartAnimations ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          aaaaaaa
-        </p>
       </div>
     </main>
   );
