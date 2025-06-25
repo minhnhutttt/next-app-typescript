@@ -79,6 +79,7 @@ const Strength = () => {
             modules={[Autoplay]}
             freeMode={true}
             speed={3500}
+            allowTouchMove={false}
             autoplay={{
               delay: 0,
               disableOnInteraction: false,
