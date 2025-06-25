@@ -91,7 +91,8 @@ const Fv = () => {
           className="relative w-full h-full flex items-center justify-center opacity-0 max-md:py-44 max-md:px-10 scale-75"
         >
           <p>
-            <img src="/assets/images/fv-text.svg" alt="" />
+            <img className="md:hidden max-w-[400px] w-[60vw]" src="/assets/images/fv-text-sp.svg" alt="" />
+            <img className="max-md:hidden" src="/assets/images/fv-text.svg" alt="" />
           </p>
         </div>
         <div
@@ -106,7 +107,8 @@ const Fv = () => {
           ref={letterRef}
           className="absolute inset-0 w-full flex justify-center items-start origin-top"
         >
-          <img className="w-full" src="/assets/images/letter-open.png" alt="" />
+          <img className="w-full max-md:hidden" src="/assets/images/letter-open.png" alt="" />
+          <img className="h-[60vh] md:hidden" src="/assets/images/letter-open-sp.png" alt="" />
         </div>
       </div>
       <div

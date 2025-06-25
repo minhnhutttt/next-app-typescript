@@ -34,10 +34,10 @@ const Oem = () => {
                 期間限定企業のキャンペーン、ECサイトの同梱演出、ブライダルの招待状、保護者向け育児情報、会社の自己啓発など、あらゆるブランドに「感情を届ける価値」を実装することできます。
             </div>
             <div className="flex justify-center items-center md:mt-[80px] mt-12">
-                <div data-scroll className="fade-up flex items-center justify-center border-b border-black">
+                <a href="https://lin.ee/sQ5Hh6G" target="_blank" data-scroll className="fade-up flex items-center justify-center border-b border-black hover:opacity-75 duration-200">
                     <h4 className="xl:text-[200px] md:text-[120px] text-[50px] font-black tracking-[0.1em] leading-none pb-4 md:pb-10">CONTACT</h4>
                     <img className="max-md:w-[32px]" src="/assets/images/contact-arrow.png" alt="" />
-                </div>
+                </a>
             </div>
         </div>
     </section>
