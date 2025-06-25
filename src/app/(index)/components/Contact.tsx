@@ -15,7 +15,7 @@ const Contact =() => {
         </p>
         <div className="flex justify-center">
           <a
-          href="/"
+           href="https://lin.ee/sQ5Hh6G" target="_blank" rel="noopener noreferrer"
           className="w-[260px] md:w-[360px] md:h-[80px] h-16 flex items-center justify-center bg-gradient-to-r from-[#10E188] to-[#05BAEA] text-white font-semibold rounded-full transition duration-300 ease-in-out transform hover:scale-105 gap-1.5 md:gap-2.5"
         >
           <img className="max-md:w-7 md:w-9" src="/assets/images/ic_line.svg" alt="" />

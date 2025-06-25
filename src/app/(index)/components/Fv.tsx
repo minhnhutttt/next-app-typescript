@@ -52,15 +52,15 @@ const FV = () => {
           </div>
         </div>
         <div className="absolute inset-0 z-30 flex md:items-center items-end max-md:pb-[20%] justify-start">
-        <div className="animate-fv opacity-0 translate-y-5 lg:!delay-700 !delay-200 flex flex-col px-2 xs:px-3 sm:px-4 ml-[3%] xs:ml-[4%] sm:ml-[5%] md:ml-[7%] lg:ml-[10%] max-w-[95%] xs:max-w-[90%] sm:max-w-[85%] items-start text-left md:space-y-[25px] space-y-2">
-          <h1 className="text-[37px] md:text-[40px] lg:text-[60px] xl:text-[80px] font-black bg-white/90 leading-none pb-2 px-2 pt-1">
-            目的直行、一直線
+        <div className="animate-fv opacity-0 translate-y-5 lg:!delay-700 !delay-200 flex flex-col px-2 md:px-4 ml-[2.5%] xs:ml-[4%] sm:ml-[5%] md:ml-[7%] lg:ml-[10%] max-w-[95%] sm:max-w-[85%] items-start text-left md:space-y-[25px] space-y-2 max-md:w-[335px]">
+          <h1 className="text-[60px] md:text-[40px] lg:text-[60px] xl:text-[80px] font-black bg-white/90 leading-none pb-2 px-2 pt-1 max-md:w-full">
+            目的直行、<br className="md:hidden" />一直線
           </h1>
-          <p className="text-[22px] lg:text-[32px] xl:text-[46px] font-black bg-white/90 leading-snug md:leading-none pb-2 px-2 pt-1">
+          <p className="text-[15px] lg:text-[32px] xl:text-[46px] font-black bg-white/90 leading-snug md:leading-none pb-2 px-2 pt-1 max-md:w-full">
             迷わせない新発想ナビゲーションシステムで         
           </p>
-          <p className="text-[22px] lg:text-[32px] xl:text-[46px] font-black bg-white/90 leading-snug md:leading-none pb-2 px-2 pt-1">
-            離脱防止×CVRアップを「即実装・即実現」          
+          <p className="text-[26px] lg:text-[32px] xl:text-[46px] font-black bg-white/90 leading-snug md:leading-none pb-2 px-2 pt-1 max-md:w-full">
+            離脱防止×CVRアップを<br className="md:hidden" />「即実装・即実現」          
           </p>
         </div>
       </div>

@@ -9,12 +9,6 @@ export default function PrivacyPage() {
           <p>最終改定日：2025年6月24日</p>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-          <p className="text-gray-700">
-            株式会社SKALE（以下「当社」といいます）は、個人情報の重要性を深く認識し、個人情報の保護に関する法律（個人情報保護法）その他の関連する法令および規範を遵守して、個人情報を適切に取り扱います。
-          </p>
-        </div>
-
         <section>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">1. 基本方針</h2>
           <p className="text-gray-700">
