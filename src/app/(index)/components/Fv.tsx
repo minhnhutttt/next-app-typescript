@@ -91,7 +91,7 @@ const Fv = () => {
           className="relative w-full h-full flex items-center justify-center opacity-0 max-md:py-44 max-md:px-10 scale-75"
         >
           <p>
-            <img className="md:hidden max-w-[400px] w-[60vw]" src="/assets/images/fv-text-sp.svg" alt="" />
+            <img className="md:hidden max-w-[250px] w-[50vw]" src="/assets/images/fv-text-sp.svg" alt="" />
             <img className="max-md:hidden" src="/assets/images/fv-text.svg" alt="" />
           </p>
         </div>
