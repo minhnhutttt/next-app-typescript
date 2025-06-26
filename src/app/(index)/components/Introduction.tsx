@@ -3,23 +3,25 @@
 const Introduction = () => {
   return (
     <section className="relative h-full w-full px-2 sm:px-4 md:px-6 flex flex-col justify-center items-center overflow-hidden">
-      <div data-scroll className="fade-up overflow-hidden h-16 sm:h-20 md:h-[100px] xl:h-[150px] min-[1366px]:h-[180px]">
-        <div className="flex justify-center">
+      <div data-scroll className="fade-up overflow-hidden">
+        <div className="flex justify-center items-center">
           <p className="text-[24px] sm:text-[32px] md:text-[48px] xl:text-[80px] min-[1366px]:text-[100px] font-bold mt-2 xl:mt-4">
             私たちは
           </p>
-          <ul className="animate-[change_20s_infinite] px-4 md:px-6">
-            {["成果に", "改善に", "導線に", "集客に", "効果に", "早さに"].map(
-              (item, index) => (
-                <li
-                  className="text-[36px] sm:text-[42px] md:text-[58px] xl:text-[100px] min-[1366px]:text-[120px] font-bold"
-                  key={index}
-                >
-                  {item}
-                </li>
-              )
-            )}
-          </ul>
+          <div className="overflow-hidden h-12 sm:h-14 md:h-[80px] xl:h-[130px] min-[1366px]:h-[180px]">
+            <ul className="animate-[change_20s_infinite] px-3 md:px-6">
+              {["成果に", "改善に", "導線に", "集客に", "効果に", "早さに"].map(
+                (item, index) => (
+                  <li
+                    className="text-[36px] sm:text-[42px] md:text-[58px] xl:text-[100px] min-[1366px]:text-[120px] font-bold"
+                    key={index}
+                  >
+                    {item}
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
           <p className="text-[24px] sm:text-[32px] md:text-[48px] xl:text-[80px] min-[1366px]:text-[100px] font-bold mt-2 xl:mt-4">
             本気です。
           </p>
