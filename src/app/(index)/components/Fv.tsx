@@ -38,14 +38,14 @@ const Fv = () => {
     .to(textRef.current, {
       scale: 1,
       opacity: 1,
-      duration: 1,
+      duration: 0.5,
       ease: "power1.inOut",
     })
     .to(
       backgroundRef.current,
       {
         opacity: 0,
-        duration: 1,
+        duration: 0.5,
         ease: "power1.inOut",
       },
       "<"
