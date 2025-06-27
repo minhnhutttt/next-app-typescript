@@ -30,6 +30,26 @@ const Fv = () => {
       duration: 0.3,
       ease: "power1.inOut",
     })
+    .to(logo2Ref.current, {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power1.inOut",
+    }, '+=2')
+    .to(textRef.current, {
+      scale: 1,
+      opacity: 1,
+      duration: 1,
+      ease: "power1.inOut",
+    })
+    .to(
+      backgroundRef.current,
+      {
+        opacity: 0,
+        duration: 1,
+        ease: "power1.inOut",
+      },
+      "<"
+    )
     .to(scrollRef.current, {
       opacity: 1,
       y: 0,
@@ -37,46 +57,6 @@ const Fv = () => {
       ease: "power1.inOut",
     });
 
-    let ctx: gsap.Context | null = null;
-    ctx = gsap.context(() => {
-      const tl = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
-            end: "+=4000",
-            scrub: 0.9,
-            pin: true,
-          },
-        })
-        .to(logo2Ref.current, {
-          opacity: 0,
-          duration: 0.5,
-          ease: "power1.inOut",
-        })
-        .to(textRef.current, {
-          scale: 1,
-          opacity: 1,
-          duration: 1,
-          ease: "power1.inOut",
-        })
-        .to(
-          backgroundRef.current,
-          {
-            opacity: 0,
-            duration: 1,
-            ease: "power1.inOut",
-          },
-          "<"
-        );
-
-      ScrollTrigger.refresh();
-    });
-
-    return () => {
-      ctx?.revert();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
   }, []);
   return (
     <section ref={containerRef} className="h-screen relative">
