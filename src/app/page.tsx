@@ -8,9 +8,9 @@ import { useLoading } from '@/contexts/LoadingContext';
 
 const SCENE_CONFIGS: Record<string, SceneConfig> = {
   home: {
-    modelPath: '/models/models.glb',
+    modelPath: '/models/a.glb',
     texturePath: '/textures/pattern.png',
-    particleSize: 0.08,
+    particleSize: 0.03,
     particleColor: {
       hover: [1.0, 0.35, 0.05],
       normal: [0.04, 0.04, 0.04],
