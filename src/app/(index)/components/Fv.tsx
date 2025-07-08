@@ -98,6 +98,7 @@ const Fv: React.FC = () => {
             start: "top top",
             end: "center top",
             scrub: 1,
+            invalidateOnRefresh: true,
           },
         })
         .to(".preloader-global-video-wrap", {
@@ -117,7 +118,7 @@ const Fv: React.FC = () => {
       <section className="h-screen relative">
         <div className="preloader-container absolute inset-0 z-10">
           <div
-            className="w-full relative h-svh flex flex-col items-end justify-end px-[2vw] bg-white preloader-container mb-40 md:mb-0"
+            className="w-full relative h-svh flex flex-col items-end justify-end px-[2vw] bg-white preloader-container"
             data-section="white"
           >
             <img
@@ -125,7 +126,7 @@ const Fv: React.FC = () => {
               src="/assets/images/fv-img.webp"
               alt="Background"
             />
-            <div className="w-full md:text-[14vw] text-[18vw] font-bold leading-[0.85] tracking-tight text-white uppercase pb-[2vw]">
+            <div className="w-full md:text-[14vw] text-[18vw] font-bold leading-[0.85] tracking-tight text-white uppercase md:pb-[2vw] pb-[5vw]">
               <div className="full relative flex flex-col md:text-center">
                 <div className="overflow-hidden">
                   <p className="preloader-global-text">Visionary</p>
@@ -199,13 +200,13 @@ const Fv: React.FC = () => {
           </div>
         </div>
       </section>
-      <div className="flex items-center justify-center relative max-md:absolute max-md:bottom-[65vw]">
-        <div className="md:hidden text-[4vw] flex flex-col tracking-[0] mr-auto font-bold leading-none preloader-reel" aria-hidden="true">
+      <div className="flex md:items-center md:justify-center relative max-md:absolute max-md:bottom-[30vw] max-md:flex-col">
+        <div className="md:hidden text-[4vw] flex flex-col tracking-[0] mr-auto font-bold leading-none preloader-reel relative z-10 text-white max-md:pl-[3vw] max-md:mb-[4vw]">
               <span>Speaker</span>
               <span>reel (00:43)</span>
           </div>
-          <div className="aspect-video absolute md:bottom-[calc(100%+2vw)] md:left-[2vw] max-md:!bottom-0 max-md:!left-[3vw] preloader-global-video-wrap z-20 md:w-[18vw] max-md:!w-[40vw]">
-            <div className="preloader-global-video aspect-video">
+          <div className="aspect-video relative md:absolute md:bottom-[calc(100%+2vw)] md:left-[2vw] max-md:!bottom-0 max-md:!left-[3vw] preloader-global-video-wrap z-20 md:w-[18vw] max-md:!w-[40vw]">
+            <div className="preloader-global-video aspect-video max-md:w-full">
               <video
                 className="size-full object-cover absolute top-0 left-0 is-playing"
                 data-lazy-video=""
