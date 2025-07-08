@@ -8,46 +8,210 @@ html {
 body {
   color: #21012D;
 }
-
-.scale-up {
-  scale: .7;
-  opacity: 0;
-  transition: .8s all linear(0,.5737 7.6%,.8382 11.87%,.9463 14.19%,1.0292 16.54%,1.0886 18.97%,1.1258 21.53%,1.137 22.97%,1.1424 24.48%,1.1423 26.1%,1.1366 27.86%,1.1165 31.01%,1.0507 38.62%,1.0219 42.57%,.9995 46.99%,.9872 51.63%,.9842 58.77%,1.0011 81.26%,1);
+.u-link {
+  position: relative;
+}
+.u-link:before {
+    background-color: white;
+    bottom: -.1em;
+    content: "";
+    height: .0625em;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0) rotate(.001deg);
+    transform-origin: right;
+    transition: transform .735s cubic-bezier(.625,.05,0,1);
+    width: 100%;
+}
+.u-link:hover:before {
+    transform: scaleX(1) rotate(.001deg);
+    transform-origin: left;
 }
 
-[data-scroll='in'] .scale-up,
-[data-scroll='in'].scale-up {
-  scale: 1;
-  opacity: 1;
+.h1,h1 {
+    font-size: 12.2vw;
+    font-weight: 700;
+    letter-spacing: -.03em;
+    line-height: .85;
+    margin: 0;
+    text-transform: uppercase
 }
 
-.fade-up {
-  transform: translateY(30px);
-  opacity: 0;
-  transition: .8s all linear(0,.5737 7.6%,.8382 11.87%,.9463 14.19%,1.0292 16.54%,1.0886 18.97%,1.1258 21.53%,1.137 22.97%,1.1424 24.48%,1.1423 26.1%,1.1366 27.86%,1.1165 31.01%,1.0507 38.62%,1.0219 42.57%,.9995 46.99%,.9872 51.63%,.9842 58.77%,1.0011 81.26%,1);
-}
-[data-scroll='in'].fade-up {
-  transform: translate(0);
-  opacity: 1;
+@media (min-width: 650px) {
+    .h1,h1 {
+        font-size:20rem
+    }
 }
 
-@keyframes circlemove{
-  0%{bottom:160px;}
-  100%{bottom:0px;}
+.h1 .small,h1 .small {
+    line-height: 1.2
 }
 
-@keyframes circlemove-sp{
-  0%{bottom:100px;}
-  100%{bottom:0px;}
+.h1 .small .line,h1 .small .line {
+    padding-bottom: 0
 }
 
-@keyframes cirlemovehide{
-  0%{opacity:0}
-  50%{opacity:1;}
-  80%{opacity:0.9;}
-  100%{opacity:0;}
+.h1-big,h1-big {
+    font-size: 6.4rem
 }
 
-.swiper-wrapper {
-transition-timing-function: linear !important;
+@media (min-width: 650px) {
+    .h1-big,h1-big {
+        font-size:20rem
+    }
+}
+
+.h1-bigger,h1-bigger {
+    font-size: 7.4rem
+}
+
+@media (min-width: 650px) {
+    .h1-bigger,h1-bigger {
+        font-size:20rem
+    }
+}
+
+.h2,h2 {
+    font-size: 3.2rem;
+    letter-spacing: -.02em;
+    line-height: 1.14;
+    margin: 0
+}
+
+@media (min-width: 650px) {
+    .h2,h2 {
+        font-size:6.4rem;
+        line-height: 1
+    }
+}
+
+.h3,h3 {
+    font-size: 3.8rem;
+    letter-spacing: -.01em;
+    line-height: 1
+}
+
+@media (min-width: 650px) {
+    .h3,h3 {
+        font-size:6.1rem;
+        letter-spacing: -.02em;
+        line-height: 5.3rem
+    }
+}
+
+.h3.h3-big,h3.h3-big {
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.h4,h4 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: -.01rem;
+    line-height: 1
+}
+
+@media (min-width: 650px) {
+    .h4,h4 {
+        font-size:2rem;
+        line-height: 2.4rem
+    }
+}
+
+.text-testimonial p strong {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1;
+    padding-right: 2rem;
+    position: relative;
+    vertical-align: top
+}
+
+@media (min-width: 650px) {
+    .text-testimonial p strong {
+        font-size:2rem;
+        padding-right: 7rem
+    }
+}
+
+.text-testimonial p strong:before {
+    content: "";
+    display: block;
+    height: 0;
+    top: .5rem
+}
+
+.label {
+    display: inline-block;
+    display: flex;
+    font-size: 1.4rem;
+    letter-spacing: 0;
+    line-height: 1;
+    padding-right: 5rem;
+    position: relative;
+    top: .6rem;
+    vertical-align: top
+}
+
+@media (min-width: 650px) {
+    .label {
+        font-size:2rem;
+        padding-right: 22rem
+    }
+}
+
+.label.label-normal {
+    padding-right: 2rem
+}
+
+@media (min-width: 650px) {
+    .label.label-normal {
+        padding-right:7rem
+    }
+}
+
+.label:before {
+    --tw-content: "(";
+    content: "(";
+    content: var(--tw-content)
+}
+
+.label:after {
+    --tw-content: ")";
+    content: ")";
+    content: var(--tw-content)
+}
+
+.spacer {
+    display: inline-flex;
+    width: 12rem
+}
+
+@media (min-width: 650px) {
+    .spacer {
+        width:24.3rem
+    }
+
+    .spacer-big {
+        width: 36.5rem
+    }
+
+    .spacer-small {
+        width: 15rem
+    }
+}
+
+.lead {
+    font-size: 2.6rem;
+    letter-spacing: -.01em;
+    line-height: 1.14
+}
+
+@media (min-width: 650px) {
+    .lead {
+        font-size:4.6rem;
+        line-height: 4.9rem
+    }
 }
