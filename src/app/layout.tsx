@@ -4,6 +4,7 @@ import "./globals.scss";
 import ScrollContainer from "@/components/scrollContainer";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ScrollProvider } from "@/contexts/ScrollContext";
 
  const inter = Inter({ 
   weight: ['300','400','500','700'],
@@ -24,11 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} h-[20000px]`}>
-        <ScrollContainer>
-            <Header />
-            {children}
-            <Footer />
-        </ScrollContainer>
+        <ScrollProvider>
+          <ScrollContainer>
+              <Header />
+              {children}
+              <Footer />
+          </ScrollContainer>
+        </ScrollProvider>
         </body>
     </html>
   );

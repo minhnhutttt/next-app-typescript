@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScroll } from "@/contexts/ScrollContext";
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -11,6 +13,10 @@ gsap.config({
 
 const Fv: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const fvRef = useRef<HTMLElement>(null);
+  const ref = useScrollAnimations();
+  const { setIsDarkSection } = useScroll();
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.set(".preload-text", {
@@ -18,7 +24,7 @@ const Fv: React.FC = () => {
         rotate: 5,
       });
 
-      gsap.set(".preloader-global-text", {
+      gsap.set(".preloader-global-text, .preloader-global-video-text", {
         yPercent: 130,
         rotate: 5,
       });
@@ -26,7 +32,6 @@ const Fv: React.FC = () => {
       gsap.set(".preloader-global-video", {
         opacity: 0,
       });
-
 
       gsap.set(".preloader-container", {
         clipPath: "inset(50%)",
@@ -96,7 +101,7 @@ const Fv: React.FC = () => {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top top",
-            end: "center top",
+            end: "bottom top",
             scrub: 1,
             invalidateOnRefresh: true,
           },
@@ -105,17 +110,42 @@ const Fv: React.FC = () => {
           width: "60vw",
           bottom: "0",
           left: "20vw",
-        });
+        }).to(".preloader-global-video-text", {
+          yPercent: 0,
+              duration: 1.5,
+              rotate: 0,
+              ease: "power4.out",
+              stagger: 0.02,
+        }, "-=0.3");
+
+      ScrollTrigger.create({
+        trigger: fvRef.current,
+        start: "top top",
+        end: "bottom top",
+        onUpdate: (self) => {
+          if (self.progress > 0.9) {
+            setIsDarkSection(true);
+          } else {
+            setIsDarkSection(false);
+          }
+        },
+        onLeave: () => {
+          setIsDarkSection(true);
+        },
+        onEnterBack: () => {
+          setIsDarkSection(false);
+        }
+      });
 
       ScrollTrigger.refresh();
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [setIsDarkSection]);
 
   return (
-    <section ref={sectionRef}>
-      <section className="h-screen relative">
+    <section ref={sectionRef} className="bg-white relative">
+      <section ref={fvRef} className="h-screen relative">
         <div className="preloader-container absolute inset-0 z-10">
           <div
             className="w-full relative h-svh flex flex-col items-end justify-end px-[2vw] bg-white preloader-container"
@@ -200,7 +230,7 @@ const Fv: React.FC = () => {
           </div>
         </div>
       </section>
-      <div className="flex md:items-center md:justify-center relative max-md:absolute max-md:bottom-[30vw] max-md:flex-col">
+      <div className="flex md:items-center md:justify-center relative max-md:absolute max-md:bottom-[70vw] max-md:flex-col">
         <div className="md:hidden text-[4vw] flex flex-col tracking-[0] mr-auto font-bold leading-none preloader-reel relative z-10 text-white max-md:pl-[3vw] max-md:mb-[4vw]">
               <span>Speaker</span>
               <span>reel (00:43)</span>
@@ -222,11 +252,13 @@ const Fv: React.FC = () => {
               ></video>
             </div>
           </div>
-          <div className=" p-[2vw]">
-        <div className="aspect-video relative w-[60vw]">
-          
-        </div>
-        </div>
+          <div ref={ref} className="p-[2vw] flex justify-between w-full md:text-[1.2vw] font-bold max-md:hidden items-start">
+            <div className="flex-1 mt-[2vw] flex justify-start items-center">
+              <div className="overflow-hidden"><p className="preloader-global-video-text">Speaker Reel (00:43)</p></div>
+            </div>
+            <div className="aspect-video relative w-[60vw]"></div>
+            <div className="flex-1 mt-[2vw] flex justify-end items-center"><div className="overflow-hidden"><p className="preloader-global-video-text">(01)</p></div></div>
+            </div>
       </div>
     </section>
   );

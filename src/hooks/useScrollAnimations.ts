@@ -15,10 +15,11 @@ const useScrollAnimations = () => {
     const animations: { [key: string]: (el: HTMLElement) => void } = {
       "fade-up": (el: HTMLElement) =>
         gsap.from(el, {
-          autoAlpha: 0,
-          y: 30,
-          duration: 0.6,
+          yPercent: 100,
+          rotate: 5,
+          duration: 0.8,
           ease: "Power2.easeInOut",
+          transformOrigin: "top left",
           scrollTrigger: { trigger: el },
         }),
       "fade-down": (el: HTMLElement) =>

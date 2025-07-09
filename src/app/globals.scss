@@ -6,12 +6,19 @@ html {
   scroll-behavior: smooth !important;
 }
 body {
-  color: #21012D;
+  color: #000;
 }
 .u-link {
-  position: relative;
+    position: relative;
+    -webkit-text-decoration: none;
+    text-decoration: none
 }
-.u-link:before {
+
+.u-link.is-active:before {
+    transform: scaleX(1) rotate(.001deg)
+}
+
+.u-link.is-full:after,.u-link.is-full:before,.u-link:before {
     background-color: white;
     bottom: -.1em;
     content: "";
@@ -21,9 +28,36 @@ body {
     transform: scaleX(0) rotate(.001deg);
     transform-origin: right;
     transition: transform .735s cubic-bezier(.625,.05,0,1);
-    width: 100%;
+    width: 100%
+}
+.u-link.is-full:after,.u-link.is-full:before {
+    background-color: black;
 }
 .u-link:hover:before {
     transform: scaleX(1) rotate(.001deg);
+    transform-origin: left
+}
+
+.u-link.is-full:before {
+    transform: scaleX(1) rotate(.001deg);
     transform-origin: left;
+    transition-delay: .3s
+}
+
+.u-link.is-full:hover:before {
+    transform: scaleX(0) rotate(.001deg);
+    transform-origin: right;
+    transition-delay: 0s
+}
+
+.u-link.is-full:after {
+    transform: scaleX(0) rotate(.001deg);
+    transform-origin: right;
+    transition-delay: 0s
+}
+
+.u-link.is-full:hover:after {
+    transform: scaleX(1) rotate(.001deg);
+    transform-origin: left;
+    transition-delay: .3s
 }
