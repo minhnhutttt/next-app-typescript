@@ -13,44 +13,50 @@ gsap.config({
 const Signature = () => {
 
     const ref = useScrollAnimations();
-
     const signatureRef = useRef<HTMLElement>(null);
+    const signatureContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap
+
+        const tl = gsap
         .timeline({
           scrollTrigger: {
             trigger: signatureRef.current,
-            start: "top top",
-            end: "bottom top",
+            start: "top bottom",
+            end: "bottom bottom",
             scrub: 1,
             invalidateOnRefresh: true,
+            markers: true,
           },
         })
-        .to(".preloader-global-video-wrap", {
-          width: "60vw",
-          bottom: "0",
-          left: "20vw",
-        }).to(".preloader-global-video-text", {
-          yPercent: 0,
-              duration: 1.5,
-              rotate: 0,
-              ease: "power4.out",
-              stagger: 0.02,
-        }, "-=0.3");
+        .to(".js-card-inner-01", {
+            scale: 0.666667,
+            x: 0,
+            top: '100vh',
+            left: "-32.633vw",
+        }).to(".js-card-inner-02", {
+            scale: 0.666667,
+            top: '100vh',
+            left: "0",
+        }, '<').to(".js-card-inner-03", {
+            scale: 0.666667,
+            x: 0,
+            top: '100vh',
+            left: "32.633vw",
+        }, '<');
 
 
       ScrollTrigger.refresh();
-    }, signatureRef);
+    });
 
     return () => ctx.revert();
   });
 
     return (
         <section ref={ref} className="bg-white relative">
-            <div className="w-full relative px-[2rem] pb-[1rem] flex flex-col md:pb-[10rem]">
-                <div className="relative w-full">
+            <div ref={signatureContainerRef} className="w-full relative flex flex-col">
+                <div className="relative w-full px-[2vw] ">
                     <div className="relative w-full md:h-screen py-[4rem] md:py-0 flex flex-col justify-center md:sticky top-0">
                         <div className="grid w-full uppercase md:text-[14vw] text-[14vw] font-bold leading-[0.85] tracking-tight">
                             <div className="overflow-hidden">
@@ -67,67 +73,67 @@ const Signature = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="relative flex items-center justify-center flex-col w-full">
-                        <div className="trigger-01 card mb-[2rem] md:mb-0 js-card md:h-screen w-full md:sticky md:top-0 pointer-events-none flex justify-center">
-                            <div className="relative w-full max-w-[55rem]">
-                                <div className="aspect-[106.5/100]"></div>
-                                <div className="js-card-inner bg-[#fff] h-full left-[0] overflow-hidden absolute top-[0] w-full border flex items-center justify-center rounded-[0.4rem] border-grey hover:bg-[#f4f4f4] transition-colors duration-300 z-[3]">
+                    <div className="flex items-center justify-center flex-col w-full">
+                        <div className="trigger-01 card mb-[5vw] md:mb-0 js-card md:h-screen w-full md:sticky md:top-0 pointer-events-none flex justify-center items-start">
+                            <div className="relative w-full md:max-w-[45vw]">
+                                <div className="pt-[106.5%]"></div>
+                                <div className="js-card-inner-01 bg-[#fff] origin-top h-full max-md:!scale-100 max-md:!left-0 max-md:!top-0 left-[0] overflow-hidden absolute top-[0] w-full border flex items-center justify-center rounded-[0.4rem] border-grey hover:bg-[#f4f4f4] transition-colors duration-300 z-[3]">
                                     <a href="/" className="absolute top-0 left-0 size-full z-2 opacity-0 pointer-events-auto">Visionary Leadership</a>
-                                    <span className="absolute top-0 left-0 px-[3rem] font-bold pt-[2rem] text-[4rem] md:text-[8rem] leading-none js-split">
+                                    <span className="absolute top-0 left-0 px-[5vw] md:px-[2vw] font-bold pt-[5vw] md:pt-[2vw] text-[10vw] md:text-[6vw] leading-none js-split">
                                         <div className="overflow-hidden">
                                             <p className="fade-up">1</p>
                                         </div>
                                     </span>
-                                    <div className="absolute bottom-0 left-0 px-[3rem] pb-[3rem] md:pb-[6rem] w-full">
-                                        <h3 className="md:my-[3rem] my-[2rem] text-[4rem] md:text-[8rem] leading-none font-bold">
+                                    <div className="absolute bottom-0 left-0 px-[3vw] pb-[3vw] md:pb-[6vw] w-full">
+                                        <h3 className="md:my-[3vw] my-[4vw] text-[15vw] md:text-[6vw] leading-none font-bold">
                                             <div className="overflow-hidden"><p className="fade-up">Visionary </p></div>
                                             <div className="overflow-hidden"><p className="fade-up">Leadership </p></div>
                                         </h3>
-                                        <div className="overflow-hidden md:text-[2rem] text-[1.8rem] font-medium">
+                                        <div className="overflow-hidden md:text-[2vw] text-[5vw] font-medium">
                                             <p className="fade-up">How to rally people around your ideas</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="trigger-02 card mb-[2rem] md:mb-0 js-card md:h-screen w-full md:sticky md:top-0 pointer-events-none flex justify-center">
-                            <div className="relative w-full max-w-[55rem]">
-                                <div className="aspect-[106.5/100]"></div>
-                                <div className="js-card-inner bg-[#fff] h-full left-[0] overflow-hidden absolute top-[0] w-full border flex items-center justify-center rounded-[0.4rem] border-grey hover:bg-[#f4f4f4] transition-colors duration-300 z-[3]">
+                        <div className="trigger-02 card mb-[5vw] md:mb-0 js-card md:h-screen w-full md:sticky md:top-0 pointer-events-none flex justify-center items-start">
+                            <div className="relative w-full md:max-w-[45vw]">
+                                <div className="pt-[106.5%]"></div>
+                                <div className="js-card-inner-02 bg-[#fff] origin-top h-full max-md:!scale-100 max-md:!left-0 max-md:!top-0 left-[0] overflow-hidden absolute top-[0] w-full border flex items-center justify-center rounded-[0.4rem] border-grey hover:bg-[#f4f4f4] transition-colors duration-300 z-[3]">
                                     <a href="/" className="absolute top-0 left-0 size-full z-2 opacity-0 pointer-events-auto">Visionary Leadership</a>
-                                    <span className="absolute top-0 left-0 px-[3rem] font-bold pt-[2rem] text-[4rem] md:text-[8rem] leading-none js-split">
+                                    <span className="absolute top-0 left-0 px-[5vw] md:px-[2vw] font-bold pt-[5vw] md:pt-[2vw] text-[10vw] md:text-[6vw] leading-none js-split">
                                         <div className="overflow-hidden">
                                             <p className="fade-up">2</p>
                                         </div>
                                     </span>
-                                    <div className="absolute bottom-0 left-0 px-[3rem] pb-[3rem] md:pb-[6rem] w-full">
-                                        <h3 className="md:my-[3rem] my-[2rem] text-[4rem] md:text-[8rem] leading-none font-bold">
+                                    <div className="absolute bottom-0 left-0 px-[3vw] pb-[3vw] md:pb-[6vw] w-full">
+                                        <h3 className="md:my-[3vw] my-[4vw] text-[15vw] md:text-[6vw] leading-none font-bold">
                                             <div className="overflow-hidden"><p className="fade-up">Visionary </p></div>
                                             <div className="overflow-hidden"><p className="fade-up">Leadership </p></div>
                                         </h3>
-                                        <div className="overflow-hidden md:text-[2rem] text-[1.8rem] font-medium">
+                                        <div className="overflow-hidden md:text-[2vw] text-[5vw] font-medium">
                                             <p className="fade-up">How to rally people around your ideas</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="trigger-03 card mb-[2rem] md:mb-0 js-card md:h-screen w-full md:sticky md:top-0 pointer-events-none flex justify-center">
-                            <div className="relative w-full max-w-[55rem]">
-                                <div className="aspect-[106.5/100]"></div>
-                                <div className="js-card-inner bg-[#fff] h-full left-[0] overflow-hidden absolute top-[0] w-full border flex items-center justify-center rounded-[0.4rem] border-grey hover:bg-[#f4f4f4] transition-colors duration-300 z-[3]">
+                        <div className="trigger-03 card mb-[5vw] md:mb-0 js-card md:h-screen w-full md:sticky md:top-0 pointer-events-none flex justify-center items-start">
+                            <div className="relative w-full md:max-w-[45vw]">
+                                <div className="pt-[106.5%]"></div>
+                                <div className="js-card-inner-03 bg-[#fff] origin-top h-full max-md:!scale-100 max-md:!left-0 max-md:!top-0 left-[0] overflow-hidden absolute top-[0] w-full border flex items-center justify-center rounded-[0.4rem] border-grey hover:bg-[#f4f4f4] transition-colors duration-300 z-[3]">
                                     <a href="/" className="absolute top-0 left-0 size-full z-2 opacity-0 pointer-events-auto">Visionary Leadership</a>
-                                    <span className="absolute top-0 left-0 px-[3rem] font-bold pt-[2rem] text-[4rem] md:text-[8rem] leading-none js-split">
+                                    <span className="absolute top-0 left-0 px-[5vw] md:px-[2vw] font-bold pt-[5vw] md:pt-[2vw] text-[10vw] md:text-[6vw] leading-none js-split">
                                         <div className="overflow-hidden">
                                             <p className="fade-up">3</p>
                                         </div>
                                     </span>
-                                    <div className="absolute bottom-0 left-0 px-[3rem] pb-[3rem] md:pb-[6rem] w-full">
-                                        <h3 className="md:my-[3rem] my-[2rem] text-[4rem] md:text-[8rem] leading-none font-bold">
+                                    <div className="absolute bottom-0 left-0 px-[3vw] pb-[3vw] md:pb-[6vw] w-full">
+                                        <h3 className="md:my-[3vw] my-[4vw] text-[15vw] md:text-[6vw] leading-none font-bold">
                                             <div className="overflow-hidden"><p className="fade-up">Visionary </p></div>
                                             <div className="overflow-hidden"><p className="fade-up">Leadership </p></div>
                                         </h3>
-                                        <div className="overflow-hidden md:text-[2rem] text-[1.8rem] font-medium">
+                                        <div className="overflow-hidden md:text-[2vw] text-[5vw] font-medium">
                                             <p className="fade-up">How to rally people around your ideas</p>
                                         </div>
                                     </div>
@@ -136,12 +142,12 @@ const Signature = () => {
                         </div>
                     </div>
                 </div>
-                <div className="horizontal-section hidden md:block relative pointer-events-none z-3">
-                    <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] gap-x-[2rem]">
-                        <a href="/" className="js-target-position w-full col-span-12 md:col-span-8 pointer-events-auto overflow-hidden relative">
-                            <div className="aspect-[106.5/100]"></div>
-                            <div className="absolute top-[1px] left-[1px] w-[calc(100%-2px)] h-[calc(100%-2px)] overflow-hidden js-explore">
-                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none explore-cursor js-explore-trigger">
+                <section ref={signatureRef} className="horizontal-section hidden md:block relative pointer-events-none z-3">
+                    <div className="flex justify-between gap-[2vw] px-[2vw]">
+                        <a href="/" className="js-target-position w-[30vw] pointer-events-auto overflow-hidden relative">
+                            <div className="pt-[106.5%]"></div>
+                            <div className="absolute inset-0 overflow-hidden js-explore">
+                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none js-explore-trigger">
                                     <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor">
                                         <div className="flex flex-col w-full bg-grey rounded-[0.4rem] relative mb-[0.5rem] overflow-hidden">
                                             <div className="pt-[58%]"></div>
@@ -164,10 +170,10 @@ const Signature = () => {
                                 </div>
                             </div>
                         </a>
-                        <a href="/" className="js-target-position w-full col-span-12 md:col-span-8 pointer-events-auto overflow-hidden relative">
-                            <div className="aspect-[106.5/100]"></div>
-                            <div className="absolute top-[1px] left-[1px] w-[calc(100%-2px)] h-[calc(100%-2px)] overflow-hidden js-explore">
-                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none explore-cursor js-explore-trigger">
+                        <a href="/" className="js-target-position w-[30vw] pointer-events-auto overflow-hidden relative">
+                            <div className="pt-[106.5%]"></div>
+                            <div className="absolute inset-0 overflow-hidden js-explore">
+                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none js-explore-trigger">
                                     <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor">
                                         <div className="flex flex-col w-full bg-grey rounded-[0.4rem] relative mb-[0.5rem] overflow-hidden">
                                             <div className="pt-[58%]"></div>
@@ -190,10 +196,10 @@ const Signature = () => {
                                 </div>
                             </div>
                         </a>
-                        <a href="/" className="js-target-position w-full col-span-12 md:col-span-8 pointer-events-auto overflow-hidden relative">
-                            <div className="aspect-[106.5/100]"></div>
-                            <div className="absolute top-[1px] left-[1px] w-[calc(100%-2px)] h-[calc(100%-2px)] overflow-hidden js-explore">
-                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none explore-cursor js-explore-trigger">
+                        <a href="/" className="js-target-position w-[30vw] pointer-events-auto overflow-hidden relative">
+                            <div className="pt-[106.5%]"></div>
+                            <div className="absolute inset-0 overflow-hidden js-explore">
+                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none js-explore-trigger">
                                     <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor">
                                         <div className="flex flex-col w-full bg-grey rounded-[0.4rem] relative mb-[0.5rem] overflow-hidden">
                                             <div className="pt-[58%]"></div>
@@ -217,7 +223,7 @@ const Signature = () => {
                             </div>
                         </a>
                     </div>
-                </div>
+                </section>
             </div>
         </section>
     );
