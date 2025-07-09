@@ -11,51 +11,112 @@ gsap.config({
 });
 
 const Signature = () => {
-
     const ref = useScrollAnimations();
     const signatureRef = useRef<HTMLElement>(null);
     const signatureContainerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            const tl = gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: signatureRef.current,
+                        start: "top bottom",
+                        end: "bottom bottom",
+                        scrub: 1,
+                        invalidateOnRefresh: true,
+                        markers: true,
+                    },
+                })
+                .to(".js-card-inner-01", {
+                    scale: 0.666667,
+                    x: 0,
+                    top: '100vh',
+                    left: "-32.633vw",
+                }).to(".js-card-inner-02", {
+                    scale: 0.666667,
+                    top: '100vh',
+                    left: "0",
+                }, '<').to(".js-card-inner-03", {
+                    scale: 0.666667,
+                    x: 0,
+                    top: '100vh',
+                    left: "32.633vw",
+                }, '<');
 
-        const tl = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: signatureRef.current,
-            start: "top bottom",
-            end: "bottom bottom",
-            scrub: 1,
-            invalidateOnRefresh: true,
-            markers: true,
-          },
-        })
-        .to(".js-card-inner-01", {
-            scale: 0.666667,
-            x: 0,
-            top: '100vh',
-            left: "-32.633vw",
-        }).to(".js-card-inner-02", {
-            scale: 0.666667,
-            top: '100vh',
-            left: "0",
-        }, '<').to(".js-card-inner-03", {
-            scale: 0.666667,
-            x: 0,
-            top: '100vh',
-            left: "32.633vw",
-        }, '<');
+            ScrollTrigger.refresh();
+        });
 
+        return () => ctx.revert();
+    }, []);
 
-      ScrollTrigger.refresh();
-    });
+    // Mouse cursor follow effect
+    useEffect(() => {
+        const exploreCursors = document.querySelectorAll('.js-explore-cursor');
+        const exploreContainers = document.querySelectorAll('.js-explore');
+        const containers = document.querySelector('.horizontal-section');
+        
+        exploreCursors.forEach((cursor, index) => {
+            const container = exploreContainers[index];
+            if (!container || !containers) return;
 
-    return () => ctx.revert();
-  });
+            
+            // Khởi tạo vị trí cursor ở giữa container
+            gsap.set(cursor, {
+                xPercent: -50,
+                yPercent: -50,
+                scale: 0,
+                opacity: 0
+            });
+
+            const handleMouseEnter = () => {
+                gsap.to(cursor, {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            };
+
+            const handleMouseLeave = () => {
+                gsap.to(cursor, {
+                    scale: 0,
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            };
+
+            const handleMouseMove = (e) => {
+                const rect = container.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                gsap.to(cursor, {
+                    x: x,
+                    y: y,
+                    duration: 1,
+                    ease: "power2.out"
+                });
+            };
+
+            // Thêm event listeners
+            containers.addEventListener('mouseenter', handleMouseEnter);
+            containers.addEventListener('mouseleave', handleMouseLeave);
+            containers.addEventListener('mousemove', handleMouseMove);
+
+            // Cleanup function
+            return () => {
+                containers.removeEventListener('mouseenter', handleMouseEnter);
+                containers.removeEventListener('mouseleave', handleMouseLeave);
+                containers.removeEventListener('mousemove', handleMouseMove);
+            };
+        });
+    }, []);
 
     return (
         <section ref={ref} className="bg-white relative">
-            <div ref={signatureContainerRef} className="w-full relative flex flex-col">
+            <div ref={signatureContainerRef} className="explore w-full relative flex flex-col">
                 <div className="relative w-full px-[2vw] ">
                     <div className="relative w-full md:h-screen py-[4rem] md:py-0 flex flex-col justify-center md:sticky top-0">
                         <div className="grid w-full uppercase md:text-[14vw] text-[14vw] font-bold leading-[0.85] tracking-tight">
@@ -142,13 +203,13 @@ const Signature = () => {
                         </div>
                     </div>
                 </div>
-                <section ref={signatureRef} className="horizontal-section hidden md:block relative pointer-events-none z-3">
+                <section ref={signatureRef} className="horizontal-section hidden md:block relative pointer-events-auto z-3">
                     <div className="flex justify-between gap-[2vw] px-[2vw]">
                         <a href="/" className="js-target-position w-[30vw] pointer-events-auto overflow-hidden relative">
                             <div className="pt-[106.5%]"></div>
                             <div className="absolute inset-0 overflow-hidden js-explore">
                                 <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none js-explore-trigger">
-                                    <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor">
+                                    <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor opacity-0">
                                         <div className="flex flex-col w-full bg-grey rounded-[0.4rem] relative mb-[0.5rem] overflow-hidden">
                                             <div className="pt-[58%]"></div>
                                             <video
@@ -174,7 +235,7 @@ const Signature = () => {
                             <div className="pt-[106.5%]"></div>
                             <div className="absolute inset-0 overflow-hidden js-explore">
                                 <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none js-explore-trigger">
-                                    <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor">
+                                    <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor opacity-0">
                                         <div className="flex flex-col w-full bg-grey rounded-[0.4rem] relative mb-[0.5rem] overflow-hidden">
                                             <div className="pt-[58%]"></div>
                                             <video
@@ -200,7 +261,7 @@ const Signature = () => {
                             <div className="pt-[106.5%]"></div>
                             <div className="absolute inset-0 overflow-hidden js-explore">
                                 <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none js-explore-trigger">
-                                    <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor">
+                                    <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor opacity-0">
                                         <div className="flex flex-col w-full bg-grey rounded-[0.4rem] relative mb-[0.5rem] overflow-hidden">
                                             <div className="pt-[58%]"></div>
                                             <video
