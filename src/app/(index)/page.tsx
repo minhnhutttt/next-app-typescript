@@ -10,6 +10,8 @@ import type { LenisRef } from "lenis/react";
 import "lenis/dist/lenis.css";
 import { useEffect, useRef } from "react";
 import Speaking from "./components/Speaking";
+import Press from "./components/Press";
+import Author from "./components/Author";
 
 export default function Home() {
   const lenisRef = useRef<LenisRef>(null);
@@ -31,6 +33,8 @@ export default function Home() {
       <Brands />
       <Signature />
       <Speaking />
+      <Press />
+      <Author />
     </main>
   );
 }

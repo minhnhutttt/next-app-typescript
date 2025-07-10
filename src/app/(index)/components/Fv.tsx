@@ -15,7 +15,7 @@ const Fv: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const fvRef = useRef<HTMLElement>(null);
   const ref = useScrollAnimations();
-  const { setIsDarkSection } = useScroll();
+  const { setIsDarkSection, setIsLoading } = useScroll();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -38,7 +38,7 @@ const Fv: React.FC = () => {
       });
 
       setTimeout(() => {
-        const tl: gsap.core.Timeline = gsap.timeline({});
+        const tl: gsap.core.Timeline = gsap.timeline({onComplete: () => {setIsLoading(false)}});
 
         tl.to(".preload-text", {
           yPercent: 0,

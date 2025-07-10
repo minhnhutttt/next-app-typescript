@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
-import ScrollContainer from "@/components/scrollContainer";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { ScrollProvider } from "@/contexts/ScrollContext";
+import Wrapper from "@/components/Wrapper";
 
- const inter = Inter({ 
+const inter = Inter({ 
   weight: ['300','400','500','700'],
   subsets: ["latin"],
   variable: '--font-inter'
- });
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,15 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} h-[20000px]`}>
+      <body className={`${inter.variable}`}>
         <ScrollProvider>
-          <ScrollContainer>
-              <Header />
-              {children}
-              <Footer />
-          </ScrollContainer>
+          <Wrapper>
+            {children}
+          </Wrapper>
         </ScrollProvider>
-        </body>
+      </body>
     </html>
   );
 }

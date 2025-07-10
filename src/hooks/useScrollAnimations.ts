@@ -13,7 +13,7 @@ const useScrollAnimations = () => {
 
   useLayoutEffect(() => {
     const animations: { [key: string]: (el: HTMLElement) => void } = {
-      "fade-up": (el: HTMLElement) =>
+      "slide-up": (el: HTMLElement) =>
         gsap.from(el, {
           yPercent: 100,
           rotate: 5,
@@ -22,11 +22,11 @@ const useScrollAnimations = () => {
           transformOrigin: "top left",
           scrollTrigger: { trigger: el },
         }),
-      "fade-down": (el: HTMLElement) =>
+      "fade-up": (el: HTMLElement) =>
         gsap.from(el, {
           autoAlpha: 0,
-          y: -30,
-          duration: 0.5,
+          y: 30,
+          duration: 0.6,
           ease: "Power2.easeInOut",
           scrollTrigger: { trigger: el },
         }),

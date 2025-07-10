@@ -25,19 +25,21 @@ const Signature = () => {
             .timeline({
                 scrollTrigger: {
                     trigger: signatureRef.current,
-                    start: "top top",
-                    end: "center bottom",
+                    start: "top center",
+                    end: "bottom bottom",
                     scrub: 1,
                     invalidateOnRefresh: true,
                     onUpdate: (self) => {
                         if (self.progress >= 1 && self.direction > 0) {
                             gsap.to('.js-explore', {
                                 opacity: 1,
+                                delay: 0.4,
                                 duration: 0.3
                             })
                         } else if (self.progress < 1 || self.direction < 0) {
                             gsap.to('.js-explore', {
                                 opacity: 0,
+                                delay: 0.4,
                                 duration: 0.3
                             })
                         }
@@ -83,9 +85,14 @@ const Signature = () => {
                 opacity: 0
             });
 
-            const handleMouseEnter = () => {
+            const handleMouseEnter = (e: any) => {
+                const rect = container.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
                 gsap.to(cursor, {
                     opacity: 1,
+                    x: x,
+                    y: y,
                     duration: 0,
                     delay: 0.2,
                     ease: "none"
@@ -215,7 +222,7 @@ const Signature = () => {
                         </div>
                     </div>
                 </div>
-                <section ref={signatureRef} className="horizontal-section hidden md:block relative pointer-events-auto z-3 md:py-[10vw] md:-mt-[10vw]">
+                <section ref={signatureRef} className="horizontal-section hidden md:block relative pointer-events-auto z-3 md:py-[10vw] md:-mt-[10vw] opacity-0 hover:opacity-100">
                     <div className="flex justify-between gap-[2vw] px-[2vw]">
                         <a href="/" className="js-target-position w-[30vw] pointer-events-auto overflow-hidden relative">
                             <div className="pt-[106.5%]"></div>
