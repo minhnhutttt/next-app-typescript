@@ -16,41 +16,59 @@ const Signature = () => {
     const signatureContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            const tl = gsap
-                .timeline({
-                    scrollTrigger: {
-                        trigger: signatureRef.current,
-                        start: "top bottom",
-                        end: "bottom bottom",
-                        scrub: 1,
-                        invalidateOnRefresh: true,
-                        markers: true,
-                    },
-                })
-                .to(".js-card-inner-01", {
-                    scale: 0.666667,
-                    x: 0,
-                    top: '100vh',
-                    left: "-32.633vw",
-                }).to(".js-card-inner-02", {
-                    scale: 0.666667,
-                    top: '100vh',
-                    left: "0",
-                }, '<').to(".js-card-inner-03", {
-                    scale: 0.666667,
-                    x: 0,
-                    top: '100vh',
-                    left: "32.633vw",
-                }, '<');
+    const ctx = gsap.context(() => {
+        gsap.set('.js-explore', {
+            opacity: 0
+        })
+        
+        const tl = gsap
+            .timeline({
+                scrollTrigger: {
+                    trigger: signatureRef.current,
+                    start: "top top",
+                    end: "center bottom",
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                    markers: true,
+                    onUpdate: (self) => {
+                        if (self.progress >= 1 && self.direction > 0) {
+                            gsap.to('.js-explore', {
+                                opacity: 1,
+                                duration: 0.3
+                            })
+                        } else if (self.progress < 1 || self.direction < 0) {
+                            gsap.to('.js-explore', {
+                                opacity: 0,
+                                duration: 0.3
+                            })
+                        }
+                    }
+                },
+            })
+            .to(".js-card-inner-01", {
+                scale: 0.666667,
+                x: 0,
+                top: '100vh',
+                left: "-32.633vw",
+            })
+            .to(".js-card-inner-02", {
+                scale: 0.666667,
+                top: '100vh',
+                left: "0",
+            }, '<')
+            .to(".js-card-inner-03", {
+                scale: 0.666667,
+                x: 0,
+                top: '100vh',
+                left: "32.633vw",
+            }, '<');
 
-            ScrollTrigger.refresh();
-        });
+        ScrollTrigger.refresh();
+    });
 
-        return () => ctx.revert();
-    }, []);
+    return () => ctx.revert();
+}, []);
 
-    // Mouse cursor follow effect
     useEffect(() => {
         const exploreCursors = document.querySelectorAll('.js-explore-cursor');
         const exploreContainers = document.querySelectorAll('.js-explore');
@@ -59,35 +77,30 @@ const Signature = () => {
         exploreCursors.forEach((cursor, index) => {
             const container = exploreContainers[index];
             if (!container || !containers) return;
-
-            
-            // Khởi tạo vị trí cursor ở giữa container
+            const tl = gsap.timeline();
             gsap.set(cursor, {
                 xPercent: -50,
                 yPercent: -50,
-                scale: 0,
                 opacity: 0
             });
 
             const handleMouseEnter = () => {
                 gsap.to(cursor, {
-                    scale: 1,
                     opacity: 1,
-                    duration: 0.3,
-                    ease: "power2.out"
+                    duration: 0,
+                    delay: 0.2,
+                    ease: "none"
                 });
             };
 
             const handleMouseLeave = () => {
                 gsap.to(cursor, {
-                    scale: 0,
-                    opacity: 0,
                     duration: 0.3,
                     ease: "power2.out"
                 });
             };
 
-            const handleMouseMove = (e) => {
+            const handleMouseMove = (e: any) => {
                 const rect = container.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
@@ -97,7 +110,7 @@ const Signature = () => {
                     y: y,
                     duration: 1,
                     ease: "power2.out"
-                });
+                })
             };
 
             // Thêm event listeners
@@ -146,7 +159,7 @@ const Signature = () => {
                                         </div>
                                     </span>
                                     <div className="absolute bottom-0 left-0 px-[3vw] pb-[3vw] md:pb-[6vw] w-full">
-                                        <h3 className="md:my-[3vw] my-[4vw] text-[15vw] md:text-[6vw] leading-none font-bold">
+                                        <h3 className="md:my-[3vw] my-[4vw] text-[13vw] md:text-[6vw] leading-none font-bold">
                                             <div className="overflow-hidden"><p className="fade-up">Visionary </p></div>
                                             <div className="overflow-hidden"><p className="fade-up">Leadership </p></div>
                                         </h3>
@@ -168,7 +181,7 @@ const Signature = () => {
                                         </div>
                                     </span>
                                     <div className="absolute bottom-0 left-0 px-[3vw] pb-[3vw] md:pb-[6vw] w-full">
-                                        <h3 className="md:my-[3vw] my-[4vw] text-[15vw] md:text-[6vw] leading-none font-bold">
+                                        <h3 className="md:my-[3vw] my-[4vw] text-[13vw] md:text-[6vw] leading-none font-bold">
                                             <div className="overflow-hidden"><p className="fade-up">Visionary </p></div>
                                             <div className="overflow-hidden"><p className="fade-up">Leadership </p></div>
                                         </h3>
@@ -190,7 +203,7 @@ const Signature = () => {
                                         </div>
                                     </span>
                                     <div className="absolute bottom-0 left-0 px-[3vw] pb-[3vw] md:pb-[6vw] w-full">
-                                        <h3 className="md:my-[3vw] my-[4vw] text-[15vw] md:text-[6vw] leading-none font-bold">
+                                        <h3 className="md:my-[3vw] my-[4vw] text-[13vw] md:text-[6vw] leading-none font-bold">
                                             <div className="overflow-hidden"><p className="fade-up">Visionary </p></div>
                                             <div className="overflow-hidden"><p className="fade-up">Leadership </p></div>
                                         </h3>
@@ -203,12 +216,12 @@ const Signature = () => {
                         </div>
                     </div>
                 </div>
-                <section ref={signatureRef} className="horizontal-section hidden md:block relative pointer-events-auto z-3">
+                <section ref={signatureRef} className="horizontal-section hidden md:block relative pointer-events-auto z-3 md:py-[40vw] md:-mt-[40vw]">
                     <div className="flex justify-between gap-[2vw] px-[2vw]">
                         <a href="/" className="js-target-position w-[30vw] pointer-events-auto overflow-hidden relative">
                             <div className="pt-[106.5%]"></div>
                             <div className="absolute inset-0 overflow-hidden js-explore">
-                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none js-explore-trigger">
+                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[13vw] text-[1vw] pointer-events-none js-explore-trigger">
                                     <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor opacity-0">
                                         <div className="flex flex-col w-full bg-grey rounded-[0.4rem] relative mb-[0.5rem] overflow-hidden">
                                             <div className="pt-[58%]"></div>
@@ -234,7 +247,7 @@ const Signature = () => {
                         <a href="/" className="js-target-position w-[30vw] pointer-events-auto overflow-hidden relative">
                             <div className="pt-[106.5%]"></div>
                             <div className="absolute inset-0 overflow-hidden js-explore">
-                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none js-explore-trigger">
+                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[13vw] text-[1vw] pointer-events-none js-explore-trigger">
                                     <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor opacity-0">
                                         <div className="flex flex-col w-full bg-grey rounded-[0.4rem] relative mb-[0.5rem] overflow-hidden">
                                             <div className="pt-[58%]"></div>
@@ -260,7 +273,7 @@ const Signature = () => {
                         <a href="/" className="js-target-position w-[30vw] pointer-events-auto overflow-hidden relative">
                             <div className="pt-[106.5%]"></div>
                             <div className="absolute inset-0 overflow-hidden js-explore">
-                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[20rem] text-[1rem] pointer-events-none js-explore-trigger">
+                                <div className="hidden md:block z-2 top-0 left-0 absolute w-[13vw] text-[1vw] pointer-events-none js-explore-trigger">
                                     <div className="bg-white p-[0.5rem] size-full border rounded-[0.4rem] border-grey will-change-transform js-explore-cursor opacity-0">
                                         <div className="flex flex-col w-full bg-grey rounded-[0.4rem] relative mb-[0.5rem] overflow-hidden">
                                             <div className="pt-[58%]"></div>

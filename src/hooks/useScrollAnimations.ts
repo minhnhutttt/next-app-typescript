@@ -17,7 +17,7 @@ const useScrollAnimations = () => {
         gsap.from(el, {
           yPercent: 100,
           rotate: 5,
-          duration: 0.8,
+          duration: 1,
           ease: "Power2.easeInOut",
           transformOrigin: "top left",
           scrollTrigger: { trigger: el },
