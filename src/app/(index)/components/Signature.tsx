@@ -29,7 +29,6 @@ const Signature = () => {
                     end: "center bottom",
                     scrub: 1,
                     invalidateOnRefresh: true,
-                    markers: true,
                     onUpdate: (self) => {
                         if (self.progress >= 1 && self.direction > 0) {
                             gsap.to('.js-explore', {
@@ -216,7 +215,7 @@ const Signature = () => {
                         </div>
                     </div>
                 </div>
-                <section ref={signatureRef} className="horizontal-section hidden md:block relative pointer-events-auto z-3 md:py-[40vw] md:-mt-[40vw]">
+                <section ref={signatureRef} className="horizontal-section hidden md:block relative pointer-events-auto z-3 md:py-[10vw] md:-mt-[10vw]">
                     <div className="flex justify-between gap-[2vw] px-[2vw]">
                         <a href="/" className="js-target-position w-[30vw] pointer-events-auto overflow-hidden relative">
                             <div className="pt-[106.5%]"></div>
