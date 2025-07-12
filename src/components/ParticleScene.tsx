@@ -28,6 +28,31 @@ interface Sizes {
   pixelRatio: number;
 }
 
+// 新しく追加: Mouse tracking と animation の設定
+interface MouseTrackingConfig {
+  enabled: boolean;
+  intensity: {
+    x: number; // 左右の傾き強度 (0-1)
+    y: number; // 上下の傾き強度 (0-1)
+  };
+  smoothness: number; // 動きの滑らかさ (0-1, 小さいほど滑らか)
+}
+
+interface AutoRotationConfig {
+  enabled: boolean;
+  speed: {
+    x: number;
+    y: number;
+    z: number;
+  };
+}
+
+interface FloatingConfig {
+  enabled: boolean;
+  amplitude: number; // 浮遊の振幅
+  speed: number; // 浮遊の速度
+}
+
 export interface SceneConfig {
   modelPath: string;
   texturePath: string;
@@ -40,13 +65,16 @@ export interface SceneConfig {
     speed: number;
     intensity: number;
   };
-  // Thêm config cho ripple effect
   rippleEffect?: {
-    speed: number;        // Tốc độ lan truyền sóng
-    frequency: number;    // Tần suất xuất hiện sóng mới
-    width: number;        // Độ rộng của sóng
-    intensity: number;    // Cường độ màu trắng
+    speed: number;
+    frequency: number;
+    width: number;
+    intensity: number;
   };
+  // 新しく追加: アニメーション設定
+  mouseTracking?: MouseTrackingConfig;
+  autoRotation?: AutoRotationConfig;
+  floating?: FloatingConfig;
 }
 
 interface ParticleSceneProps {
@@ -71,6 +99,41 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
   const isMobileRef = useRef<boolean>(false);
   const hasMouseMovedRef = useRef<boolean>(false);
 
+  // 新しく追加: Mouse tracking と animation の状態
+  const mouseTrackingRef = useRef({ x: 0, y: 0 });
+  const targetRotationRef = useRef({ x: 0, y: 0, z: 0 });
+  const currentRotationRef = useRef({ x: 0, y: 0, z: 0 });
+  const originalRotationRef = useRef({ x: 0, y: 0, z: 0 });
+  const isMouseOverCanvasRef = useRef(false);
+  const isDraggingRef = useRef(false);
+  const clockRef = useRef(new THREE.Clock());
+  const originalPositionRef = useRef({ x: 0, y: 0, z: 0 });
+
+  // デフォルト設定
+  const defaultAnimationConfig = {
+    mouseTracking: {
+      enabled: true,
+      intensity: { x: 0.2, y: 0.15 }, // 微妙な傾き
+      smoothness: 0.05, // ゆっくりとした反応
+    },
+    autoRotation: {
+      enabled: true,
+      speed: { x: 0, y: 0.2, z: 0 },
+    },
+    floating: {
+      enabled: true,
+      amplitude: 0.1,
+      speed: 0.8,
+    },
+  };
+
+  // 設定をマージ
+  const animationConfig = {
+    mouseTracking: { ...defaultAnimationConfig.mouseTracking, ...config.mouseTracking },
+    autoRotation: { ...defaultAnimationConfig.autoRotation, ...config.autoRotation },
+    floating: { ...defaultAnimationConfig.floating, ...config.floating },
+  };
+
   const checkIsMobile = () => {
     return window.innerWidth < 768;
   };
@@ -81,6 +144,79 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       return 0;
     }
     return isLeft ? -3 : 0;
+  };
+
+  // 新しく追加: スムーズな補間関数
+  const lerp = (start: number, end: number, factor: number) => {
+    return start + (end - start) * factor;
+  };
+
+  // 新しく追加: マウス位置を正規化 (-1 to 1)
+  const normalizeMousePosition = (clientX: number, clientY: number) => {
+    if (!canvasRef.current) return { x: 0, y: 0 };
+    
+    const rect = canvasRef.current.getBoundingClientRect();
+    const x = ((clientX - rect.left) / rect.width) * 2 - 1;
+    const y = -((clientY - rect.top) / rect.height) * 2 + 1;
+    
+    return { x, y };
+  };
+
+  // 新しく追加: マウストラッキングの更新
+  const updateMouseTracking = () => {
+    const particles = particlesRef.current;
+    if (!particles || !animationConfig.mouseTracking.enabled || isDraggingRef.current) return;
+
+    const elapsedTime = clockRef.current.getElapsedTime();
+
+    // 自動回転の計算
+    let autoRotationX = originalRotationRef.current.x;
+    let autoRotationY = originalRotationRef.current.y;
+    let autoRotationZ = originalRotationRef.current.z;
+    
+    if (animationConfig.autoRotation.enabled) {
+      autoRotationX += elapsedTime * animationConfig.autoRotation.speed.x;
+      autoRotationY += elapsedTime * animationConfig.autoRotation.speed.y;
+      autoRotationZ += elapsedTime * animationConfig.autoRotation.speed.z;
+    }
+
+    // マウス追跡の計算
+    const mouseInfluenceX = mouseTrackingRef.current.x * animationConfig.mouseTracking.intensity.x;
+    const mouseInfluenceY = mouseTrackingRef.current.y * animationConfig.mouseTracking.intensity.y;
+    
+    // 目標回転を設定
+    targetRotationRef.current.x = autoRotationX + mouseInfluenceY;
+    targetRotationRef.current.y = autoRotationY + mouseInfluenceX;
+    targetRotationRef.current.z = autoRotationZ;
+    
+    // スムーズな補間
+    currentRotationRef.current.x = lerp(
+      currentRotationRef.current.x, 
+      targetRotationRef.current.x, 
+      animationConfig.mouseTracking.smoothness
+    );
+    currentRotationRef.current.y = lerp(
+      currentRotationRef.current.y, 
+      targetRotationRef.current.y, 
+      animationConfig.mouseTracking.smoothness
+    );
+    currentRotationRef.current.z = lerp(
+      currentRotationRef.current.z, 
+      targetRotationRef.current.z, 
+      animationConfig.mouseTracking.smoothness
+    );
+
+    // 浮遊アニメーションの計算
+    let floatingY = originalPositionRef.current.y;
+    if (animationConfig.floating.enabled) {
+      floatingY += Math.sin(elapsedTime * animationConfig.floating.speed) * animationConfig.floating.amplitude;
+    }
+
+    // パーティクルシステムに回転を適用
+    particles.points.rotation.x = currentRotationRef.current.x;
+    particles.points.rotation.y = currentRotationRef.current.y;
+    particles.points.rotation.z = currentRotationRef.current.z;
+    particles.points.position.y = floatingY;
   };
 
   useEffect(() => {
@@ -681,7 +817,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
           ),
           uHoverPosition: { value: new THREE.Vector3(1000, 1000, 1000) },
           uProgress: new THREE.Uniform(1),
-          // Thêm ripple uniforms
+          // Ripple uniforms
           uTime: new THREE.Uniform(0),
           uRippleSpeed: new THREE.Uniform(rippleConfig.speed),
           uRippleFrequency: new THREE.Uniform(rippleConfig.frequency),
@@ -698,6 +834,22 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       
       particles.points.userData.lastOffsetX = 0;
       particles.points.userData.lastOffsetY = 0;
+      
+      // 新しく追加: 元の位置と回転を保存
+      originalPositionRef.current = {
+        x: particles.points.position.x,
+        y: particles.points.position.y,
+        z: particles.points.position.z,
+      };
+      
+      originalRotationRef.current = {
+        x: particles.points.rotation.x,
+        y: particles.points.rotation.y,
+        z: particles.points.rotation.z,
+      };
+      
+      currentRotationRef.current = { ...originalRotationRef.current };
+      targetRotationRef.current = { ...originalRotationRef.current };
       
       scene.add(particles.points);
       pointsMesh = particles.points;
@@ -773,6 +925,7 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       scene.add(backgroundPlane);
     });
 
+    // 新しく追加: マウスイベントハンドラー
     const onMouseMove = (event: MouseEvent) => {
       hasMouseMovedRef.current = true;
       
@@ -783,8 +936,32 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       mouse.x = mouseX;
       mouse.y = mouseY;
 
+      // マウストラッキング用の正規化された座標を更新
+      if (animationConfig.mouseTracking.enabled && !isDraggingRef.current) {
+        const normalized = normalizeMousePosition(event.clientX, event.clientY);
+        mouseTrackingRef.current = normalized;
+      }
+
       lastMouseMoveTime = performance.now() * 0.001;
       isMouseMoving = true;
+    };
+
+    const onMouseEnter = () => {
+      isMouseOverCanvasRef.current = true;
+    };
+
+    const onMouseLeave = () => {
+      isMouseOverCanvasRef.current = false;
+      // マウスがキャンバスから離れたら元の位置に戻る
+      mouseTrackingRef.current = { x: 0, y: 0 };
+    };
+
+    const onMouseDown = () => {
+      isDraggingRef.current = true;
+    };
+
+    const onMouseUp = () => {
+      isDraggingRef.current = false;
     };
 
     const handleResize = () => {
@@ -805,6 +982,9 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
             duration: 0.8,
             ease: "power2.out"
           });
+          
+          // 元の位置も更新
+          originalPositionRef.current.x = targetX;
         }
       }
 
@@ -845,7 +1025,13 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       const elapsedTime = clock.getElapsedTime();
       frameCount++;
 
+      // Clock refを更新
+      clockRef.current = clock;
+
       checkIntersections();
+
+      // 新しく追加: マウストラッキングとアニメーションを更新
+      updateMouseTracking();
 
       // Update ripple effect time
       const particles = particlesRef.current;
@@ -915,7 +1101,8 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
         }
       }
 
-      if (pointsMesh && frameCount % 2 === 0) {
+      // 既存のマウスオフセット処理（mouse trackingと区別）
+      if (pointsMesh && frameCount % 2 === 0 && !animationConfig.mouseTracking.enabled) {
         const maxOffset = 1;
         let offsetX = -mouse.x * moveFactor;
         let offsetY = mouse.y * moveFactor;
@@ -937,9 +1124,17 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       animationIdRef.current = requestAnimationFrame(tick);
     };
 
+    // イベントリスナーを追加
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('resize', handleResize);
     renderer.domElement.addEventListener('mousemove', onMouseMove);
+    renderer.domElement.addEventListener('mouseenter', onMouseEnter);
+    renderer.domElement.addEventListener('mouseleave', onMouseLeave);
+    renderer.domElement.addEventListener('mousedown', onMouseDown);
+    renderer.domElement.addEventListener('mouseup', onMouseUp);
+    
+    // グローバルマウスアップイベント（ドラッグ操作のため）
+    document.addEventListener('mouseup', onMouseUp);
 
     tick();
 
@@ -950,6 +1145,11 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('resize', handleResize);
       renderer.domElement.removeEventListener('mousemove', onMouseMove);
+      renderer.domElement.removeEventListener('mouseenter', onMouseEnter);
+      renderer.domElement.removeEventListener('mouseleave', onMouseLeave);
+      renderer.domElement.removeEventListener('mousedown', onMouseDown);
+      renderer.domElement.removeEventListener('mouseup', onMouseUp);
+      document.removeEventListener('mouseup', onMouseUp);
       
       scene.traverse((object) => {
         if (object instanceof THREE.Mesh) {
