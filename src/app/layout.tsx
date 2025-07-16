@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.scss";
 import { ScrollProvider } from "@/contexts/ScrollContext";
 import Wrapper from "@/components/Wrapper";
+import ScrollContainer from "@/components/scrollContainer";
 
 const inter = Inter({ 
   weight: ['300','400','500','700'],
@@ -22,12 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable}`}>
-        <ScrollProvider>
-          <Wrapper>
-            {children}
-          </Wrapper>
-        </ScrollProvider>
+      <body className={`${inter.variable} overflow-hidden`}>
+          <ScrollProvider>
+            <Wrapper>
+              <ScrollContainer> 
+                {children}
+              </ScrollContainer>
+            </Wrapper>
+          </ScrollProvider>
       </body>
     </html>
   );

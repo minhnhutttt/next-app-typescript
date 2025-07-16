@@ -8,7 +8,7 @@ const Brands = () => {
     const ref = useScrollAnimations();
     return (
         <section ref={ref} className="bg-white relative">
-            <div className="w-full px-[2rem] pb-[10rem] md:pb-[25rem]">
+            <div className="w-full md:px-[2vw] px-[4vw] pb-[10rem] md:pb-[25rem]">
                 <div className="w-full grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] gap-x-[2rem] items-end pb-[3rem] md:pb-[6rem]">
                     <div className="col-span-12 md:col-span-6 hidden md:block md:text-[2vw] text-[4vw]">
                         <div className="overflow-hidden">

@@ -2,7 +2,8 @@ import { useLayoutEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { SplitText } from "gsap/SplitText";
+gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
   nullTargetWarn: false,
@@ -30,6 +31,17 @@ const useScrollAnimations = () => {
           ease: "Power2.easeInOut",
           scrollTrigger: { trigger: el },
         }),
+        "js-split": (el: HTMLElement) =>{
+          let mySplit = new SplitText(el, {
+            type: "lines,words", 
+            linesClass: "overflow-hidden", 
+            autoSplit: true,
+          });
+          gsap.from(mySplit.words, {
+            opacity: 0, y: 100, rotate: 5, stagger: 0.03,
+            scrollTrigger: { trigger: el },
+          })
+        },
         "fade-left": (el: HTMLElement) =>
         gsap.from(el, {
           autoAlpha: 0,
