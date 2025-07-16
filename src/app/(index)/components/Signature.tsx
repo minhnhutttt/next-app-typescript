@@ -1,7 +1,7 @@
 "use client";
 
 import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Explore from "@/components/Explore";
@@ -15,7 +15,7 @@ const Signature = () => {
     const ref = useScrollAnimations();
 
     const signatureContainerRef = useRef<HTMLDivElement>(null);
-    useEffect(() => {
+    useLayoutEffect(() => {
     const ctx = gsap.context(() => {
         gsap.set('.js-explore', {
             opacity: 0
@@ -70,12 +70,11 @@ const Signature = () => {
     return () => ctx.revert();
 }, []);
 
-    
 
     return (
         <section ref={ref} className="bg-white relative">
             <div ref={signatureContainerRef} className="explore w-full relative flex flex-col">
-                <div className="relative w-full px-[2vw] ">
+                <div className="relative w-full md:px-[2vw] px-[4vw]">
                     <div className="relative w-full md:h-screen py-[4rem] md:py-0 flex flex-col justify-center md:sticky top-0">
                         <div className="grid w-full uppercase md:text-[14vw] text-[14vw] font-bold leading-[0.85] tracking-tight">
                             <div className="overflow-hidden">

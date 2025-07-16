@@ -8,7 +8,7 @@ const Press = () => {
     const ref = useScrollAnimations();
     return (
         <section ref={ref} className="bg-white relative">
-            <div className="px-[4vw] relative overflow-hidden pb-[30vw] md:pb-[20vw]">
+            <div className="px-[4vw] md:px-[2vw] relative overflow-hidden pb-[30vw] md:pb-[20vw]">
                 <div className="grid grid-cols-12 md:items-end md:justify-end pb-[6vw]">
                     <div className="col-span-12 md:col-span-10 mb-[5vw] md:mb-0 relative">
                         <div className="label label-big !absolute top-0 left-0 js-split pt-[2vw] md:pt-[1vw] md:text-[2vw] text-[3vw] font-medium">

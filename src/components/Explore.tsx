@@ -66,7 +66,7 @@ export default function Explore() {
     }, []);
     return (
         <section ref={signatureRef} className="horizontal-section hidden md:block relative pointer-events-auto z-[3] md:py-[10vw] md:-mt-[10vw] opacity-0 hover:opacity-100">
-            <div className="flex justify-between gap-[2vw] px-[2vw]">
+            <div className="flex justify-between gap-[2vw] md:px-[2vw] px-[4vw]">
                 <a href="/" className="js-target-position w-[30vw] pointer-events-auto overflow-hidden relative">
                     <div className="pt-[106.5%]"></div>
                     <div className="absolute inset-0 overflow-hidden js-explore z-10">

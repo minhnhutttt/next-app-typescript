@@ -8,7 +8,7 @@ const About = () => {
     const ref = useScrollAnimations();
     return (
         <section ref={ref} className="bg-white relative md:pt-[8rem] pt-[2rem]">
-            <div className="w-full grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] gap-x-[2rem] px-[4vw] pb-[10rem] md:pb-[24rem]">
+            <div className="w-full grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] gap-x-[2rem] md:px-[2vw] px-[4vw] pb-[10rem] md:pb-[24rem]">
                 <div className="col-span-12 md:col-span-6 hidden md:block md:text-[6vw] leading-[0.8]">
                     <div className="overflow-hidden"><p className="slide-up">→</p></div>
                 </div>

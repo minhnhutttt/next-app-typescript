@@ -24,7 +24,7 @@ const Speaking = () => {
                 data-loaded="true"
               ></video>
             </div>
-            <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] md:gap-y-[4rem] gap-y-[2rem] md:gap-[2rem] py-[1.5rem] px-[4vw]">
+            <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] md:gap-y-[4rem] gap-y-[2rem] md:gap-[2rem] py-[1.5rem] md:px-[2vw] px-[4vw]">
                 <div className="col-span-12 md:col-span-6 hidden md:block md:text-[1.2vw] font-semibold">
                     <div className="overflow-hidden"><p className="slide-up">(Keynote Speaking)</p></div>
                 </div>
