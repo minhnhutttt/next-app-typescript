@@ -16,7 +16,7 @@ export default function PageHead({head, title, children }: { head: string, title
                 </div>
             </div>
         </div>
-        <div className="w-full md:px-[2vw] px-[4vw] overflow-hidden pb-[10vw] md:pb-[10vw] relative max-md:mt-[5vw]">
+        <div className="w-full md:px-[2vw] px-[4vw] overflow-hidden pb-[15vw] md:pb-[10vw] relative max-md:mt-[5vw]">
             <div className="relative">
                 <div className="!absolute top-[0.5vw] left-0 text-[4vw] md:text-[2vw] md:pr-[15vw] pr-[30vw]">
                     <p className="js-split">({title})</p>

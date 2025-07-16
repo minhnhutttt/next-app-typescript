@@ -31,7 +31,7 @@ const Brands = () => {
                         </div>
                     </div>
                 </div>
-                <div className="grid gap-[1.5rem] md:gap-[2rem] grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))]">
+                <div className="grid gap-[1rem] grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))]">
                     {Array(8).fill(null).map((_, index) => (
                         <div key={index} className="col-span-6 relative">
                         <div className="overflow-hidden">

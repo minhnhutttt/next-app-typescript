@@ -17,12 +17,8 @@ body {
   height: 100% !important;
 }
 
-h1 {
-    @apply font-bold tracking-[-.03em] leading-[.85] uppercase
-}
-
-.h1-big {
-    @apply text-[6.4rem] md:text-[15vw]
+.h1 {
+    @apply text-[6.4rem] md:text-[13vw]
 }
 .h1-bigger {
     @apply text-[20vw] md:text-[15vw]
@@ -35,7 +31,7 @@ h1 {
 }
 
 .h4 {
-    @apply md:text-[3vw]
+    @apply md:text-[1.35vw] text-[4.7vw]
 }
 
 .h5 {
