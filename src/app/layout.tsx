@@ -4,6 +4,7 @@ import "./globals.scss";
 import { ScrollProvider } from "@/contexts/ScrollContext";
 import Wrapper from "@/components/Wrapper";
 import ScrollContainer from "@/components/scrollContainer";
+import { ViewTransitions } from "next-view-transitions";
 
 const inter = Inter({ 
   weight: ['300','400','500','700'],
@@ -22,8 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ViewTransitions>
     <html lang="en">
-      <body className={`${inter.variable} overflow-hidden`}>
+      <body className={`${inter.variable}`}>
           <ScrollProvider>
             <Wrapper>
               <ScrollContainer> 
@@ -33,5 +35,6 @@ export default function RootLayout({
           </ScrollProvider>
       </body>
     </html>
+    </ViewTransitions>
   );
 }

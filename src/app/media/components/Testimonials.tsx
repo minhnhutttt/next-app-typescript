@@ -56,7 +56,8 @@ const Testimonials = () => {
     pagination: false,
     rewindSpeed: 1000,
     speed: 1000,
-    gap: 30
+    gap: 20,
+    arrows: false
   };
 
   useEffect(() => {
@@ -76,6 +77,18 @@ const Testimonials = () => {
   }, []);
 
   const progressPercentage = totalSlides > 0 ? ((currentSlide + 1) / totalSlides) * 100 : 0;
+
+  const goToPrevious = () => {
+    if (splideRef.current) {
+      splideRef.current.splide.go('<');
+    }
+  };
+
+  const goToNext = () => {
+    if (splideRef.current) {
+      splideRef.current.splide.go('>');
+    }
+  };
 
   return (
     <section
@@ -100,17 +113,17 @@ const Testimonials = () => {
               {data.map((slide) => (
                 <SplideSlide
                   key={slide.id}
-                  className="flex-none w-[80vw] md:w-[66vw] relative will-change-transform select-none slider-item flex items-center justify-center flex-col"
+                  className="flex-none w-[84vw] md:w-[66vw] relative will-change-transform select-none slider-item flex items-center justify-center flex-col"
                 >
                   <div className="flex flex-col gap-y-6 px-4 md:px-8 py-6 md:py-8 border border-grey overflow-hidden size-full justify-between rounded-[0.4rem]">
-                    <p className="md:text-[2.5vw] text-[4vw] pb-[6vw] md:pb-[4vw] pointer-events-none js-split">
+                    <p className="md:text-[2.5vw] text-[6vw] pb-[6vw] md:pb-[4vw] pointer-events-none js-split">
                       {slide.text}
                     </p>
-                    <div className="flex items-center gap-x-[2vw] pointer-events-none">
+                    <div className="flex items-center md:gap-x-[2vw] gap-x-[4vw] pointer-events-none">
                         <div className="flex flex-row relative overflow-hidden md:size-[6vw] size-[10vw] rounded-full">
                             <img src={slide.avatar} alt="" />
                         </div>
-                        <div className="flex flex-col gap-x-[2vw]">
+                        <div className="flex flex-col gap-x-[2vw] flex-1">
                             <p className="h4">{slide.name}</p>
                             <p className="text-black/60">{slide.position}</p>
                         </div>
@@ -122,12 +135,54 @@ const Testimonials = () => {
           </Splide>
         </div>
         
-        <div className="w-full mt-6">
-          <div className="w-full bg-gray-200 rounded-full h-0.5">
+        <div className="w-full mt-2 md:mt-6 flex items-center gap-4">
+          <div className="flex-1 bg-gray-200 rounded-full h-0.5">
             <div 
               className="bg-gray-700 h-0.5 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progressPercentage}%` }}
             />
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <button 
+              onClick={goToPrevious}
+              className="group flex items-center justify-center w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full transition-all duration-200 disabled:opacity-50"
+              disabled={currentSlide === 0}
+            >
+              <svg 
+                className="w-5 h-5 text-gray-600 group-hover:text-gray-800 transition-colors duration-200" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M15 19l-7-7 7-7" 
+                />
+              </svg>
+            </button>
+            
+            <button 
+              onClick={goToNext}
+              className="group flex items-center justify-center w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full transition-all duration-200 disabled:opacity-50"
+              disabled={currentSlide === totalSlides - 1}
+            >
+              <svg 
+                className="w-5 h-5 text-gray-600 group-hover:text-gray-800 transition-colors duration-200" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M9 5l7 7-7 7" 
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

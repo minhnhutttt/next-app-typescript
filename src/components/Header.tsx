@@ -5,6 +5,7 @@ import { useScroll } from "@/contexts/ScrollContext";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
+import { NavLink } from './NavLink';
 
 
 const Header: React.FC = () => {
@@ -111,11 +112,11 @@ const Header: React.FC = () => {
       
       <nav aria-label="Main navigation">
         <ul className="hidden md:flex gap-x-2.5 text-[24px] font-medium">
-          <li><Link href="/speaking" className={`u-link ${pathName === '/speaking' ? 'is-active' : ''}`}>Speaking,</Link></li>
-          <li><Link href="/media" className={`u-link ${pathName === '/media' ? 'is-active' : ''}`}>Media,</Link></li>
-          <li><Link href="/books" className={`u-link ${pathName === '/books' ? 'is-active' : ''}`}>Books,</Link></li>
-          <li><Link href="/downloads" className={`u-link ${pathName === '/downloads' ? 'is-active' : ''}`}>Downloads,</Link></li>
-          <li><Link href="/about" className={`u-link ${pathName === '/about' ? 'is-active' : ''}`}>About</Link></li>
+          <li><NavLink href="/speaking" className={`u-link ${pathName === '/speaking' ? 'is-active' : ''}`}>Speaking,</NavLink></li>
+          <li><NavLink href="/media" className={`u-link ${pathName === '/media' ? 'is-active' : ''}`}>Media,</NavLink></li>
+          <li><NavLink href="/books" className={`u-link ${pathName === '/books' ? 'is-active' : ''}`}>Books,</NavLink></li>
+          <li><NavLink href="/downloads" className={`u-link ${pathName === '/downloads' ? 'is-active' : ''}`}>Downloads,</NavLink></li>
+          <li><NavLink href="/about" className={`u-link ${pathName === '/about' ? 'is-active' : ''}`}>About</NavLink></li>
         </ul>
       </nav>
       

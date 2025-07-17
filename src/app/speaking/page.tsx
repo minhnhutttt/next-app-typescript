@@ -5,18 +5,21 @@ import VideoReel from "./components/VideoReel";
 import Impact from "./components/Impact";
 import Book from "./components/Book";
 import Companies from "./components/Companies";
+import PageWrapper from "@/components/PageWrapper";
 
 export default function Speaking() {
   return (
-    <main className="bg-white relative">
-        <PageHead head="Speaking/Speaking/Speaking/" title="Speaking">
-            A trusted voice on leadership and brand, Sunny delivers inspiring keynotes that reveal how leading with vision transforms culture and drives innovation.
-        </PageHead>
-        <Signature />
-        <VideoReel />
-        <Impact />
-        <Book />
-        <Companies />
-    </main>
+    <PageWrapper>
+      <main className="bg-white relative">
+          <PageHead head="Speaking/Speaking/Speaking/" title="Speaking">
+              A trusted voice on leadership and brand, Sunny delivers inspiring keynotes that reveal how leading with vision transforms culture and drives innovation.
+          </PageHead>
+          <Signature />
+          <VideoReel />
+          <Impact />
+          <Book />
+          <Companies />
+      </main>
+    </PageWrapper>
   );
 }

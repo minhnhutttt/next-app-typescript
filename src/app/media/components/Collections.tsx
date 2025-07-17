@@ -70,7 +70,7 @@ const Collections = () => {
               <button
                 key={filter}
                 onClick={() => handleFilterClick(filter)}
-                className={`px-6 mb-5 md:mb-0 py-2 rounded-full inline-block transition-colors duration-300 hover:bg-black hover:text-white js-filter-btn ${
+                className={`md:px-6 px-4 mb-5 md:mb-0 py-2 rounded-full inline-block transition-colors duration-300 hover:bg-black hover:text-white js-filter-btn ${
                   activeFilter === filter
                     ? "bg-black text-white"
                     : "bg-[#EBEBEB] text-black"
