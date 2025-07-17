@@ -4,7 +4,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode } from "react";
 
 
-const Speaking = ({ left, center, right, video }: { left: ReactNode, center: ReactNode, right: ReactNode, video: string}) => {
+const Speaking = ({ left, center, right, video }: { left: ReactNode, center: ReactNode, right: ReactNode, video: string }) => {
 
     const ref = useScrollAnimations();
     return (
@@ -25,7 +25,7 @@ const Speaking = ({ left, center, right, video }: { left: ReactNode, center: Rea
                     data-loaded="true"
                 ></video>
             </div>
-            <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] md:gap-y-[4rem] gap-y-[2rem] md:gap-[2rem] py-[1.5rem] md:px-[2vw] px-[4vw]">
+            <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] md:gap-y-[4rem] gap-y-[2vw] md:gap-[2rem] py-[1.5rem] md:px-[2vw] px-[4vw]">
                 <div className="col-span-12 md:col-span-6 hidden md:block md:text-[1.2vw] font-semibold">
                     <div className="overflow-hidden"><p className="slide-up">{left}</p></div>
                 </div>

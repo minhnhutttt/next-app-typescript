@@ -108,7 +108,7 @@ const Header: React.FC = () => {
     <>
     <header className={`fixed top-0 inset-x-0 flex justify-between items-center md:h-[100px] h-20 px-5 md:px-10 z-[99] transition-colors duration-300 text-white ${!isHomePage || isDarkSection
       ? 'mix-blend-difference' : '' }`}>
-      <Link href="/" className="md:text-[40px] text-[24px] font-bold">LOGO</Link>
+      <NavLink href="/" className="md:text-[40px] text-[24px] font-bold">LOGO</NavLink>
       
       <nav aria-label="Main navigation">
         <ul className="hidden md:flex gap-x-2.5 text-[24px] font-medium">
@@ -120,7 +120,7 @@ const Header: React.FC = () => {
         </ul>
       </nav>
       
-      <a href="/" className="u-link md:text-[40px] text-[24px] font-bold hidden md:block">Contact</a>
+      <NavLink href="/" className="u-link md:text-[40px] text-[24px] font-bold hidden md:block">Contact</NavLink>
       
       <button 
         ref={menuTriggerRef}

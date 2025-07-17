@@ -3,7 +3,7 @@ import PageHead from "@/components/pages/PageHead";
 import Introduction from "./components/Introduction";
 import Collections from "./components/Collections";
 import Outlets from "./components/Outlets";
-import Testimonials from "./components/Testimonials";
+import Testimonials from "../../components/pages/Testimonials";
 import PageWrapper from "@/components/container/PageWrapper";
 import Letter from "@/components/pages/Letter";
 

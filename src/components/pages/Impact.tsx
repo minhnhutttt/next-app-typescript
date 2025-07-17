@@ -1,27 +1,16 @@
 "use client";
 
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { ReactNode } from "react";
 
-const data = [
-    {
-        id: '01',
-        title: 'Inspiring & entertaining',
-        text: 'Dynamic storytelling, cultural insight, and rare charisma that ignite minds and move hearts.'
-    },
-    {
-        id: '02',
-        title: 'Practical & actionable',
-        text: 'Real-world tools, strategic frameworks, and bold ideas leaders can apply immediately, pulled from 20 years as a founder and CEO.'
-    },
-    {
-        id: '03',
-        title: 'Transformative & memorable',
-        text: 'Not just a keynote—an experience. Sunny leaves audiences thinking differently about leadership, vision, and what’s possible.'
-    },
-]
 
-const Impact = () => {
+export interface ImpactDataType {
+  id: string,
+  title: string,
+  text: string,
+}
 
+const Impact = ({text, data, link} : {text: ReactNode, data: ImpactDataType[], link: ReactNode}) => {
     const ref = useScrollAnimations();
     return (
         <section ref={ref} className="bg-white relative">
@@ -50,7 +39,7 @@ const Impact = () => {
                     </div>
                     <div className="h2 js-split pb-[12vw] md:pb-[10vw]">
                         <span className="inline-block md:w-[10vw] w-[25vw]"></span>
-                        Expect immersive, thoughtful, and deeply relevant insights.
+                         {text}
                     </div>
                     <div className="grid grid-cols-12 gap-x-[2vw]">
                         <div className="col-span-12 flex flex-col gap-y-[8vw] md:gap-y-[5vw] mb-[10vw] md:mb-[5vw]">
@@ -58,14 +47,14 @@ const Impact = () => {
                             <div className="grid grid-cols-12 gap-x-[2vw]" key={index}>
                                 <div className="col-span-2">({item.id})</div>
                                 <div className="col-span-10 md:max-w-[43rem] flex md:gap-y-[2vw] gap-y-[3vw] flex-col">
-                                    <p className="">Inspiring &amp; entertaining</p>
-                                    <p className="text-black/50">Dynamic storytelling, cultural insight, and rare charisma that ignite minds and move hearts.</p>
+                                    <p className="">{item.title}</p>
+                                    <p className="text-black/50">{item.text}</p>
                                 </div>
                             </div>
                         ))}
                         </div>
                         <div className="!col-start-3 col-span-10 md:col-span-6 pb-[0.25rem]">
-                            <a href="https://sunnybonnell.com/speaking" className="u-link is-full">Book Sunny to speak</a>
+                            {link}
                         </div>
                     </div>
                 </div>

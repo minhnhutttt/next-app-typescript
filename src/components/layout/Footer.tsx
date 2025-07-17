@@ -1,5 +1,7 @@
 "use client";
 
+import { NavLink } from "./NavLink";
+
 const Footer = () => {
   return (
     <footer className="pb-[3vw] md:pt-[3vw] bg-black overflow-hidden text-white js-sfoot">
@@ -11,7 +13,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="col-span-12 md:col-span-6 md:col-start-[19] contant-link">
-            <a href="httpmd://sunnybonnell.com/contact" className="ul-ink is-full md:text-[4vw] text-[8vw] font-semibold">Book Sunny</a>
+            <NavLink href="/contact" className="ul-ink is-full md:text-[4vw] text-[8vw] font-semibold">Book Sunny</NavLink>
           </div>
         </div>
         <div className="border-t border-white border-opacity-25 px-[4vw] md:px-[2vw]">
@@ -19,19 +21,19 @@ const Footer = () => {
             <div className="col-span-6 md:col-span-3">
               <p className="md:text-[2vw] text-[7vw]">Navigate</p>
               <ul className="flex flex-col md:leading-[2.6rem] leading-[2rem] pt-[4vw] md:pt-[2vw] md:text-[1.3vw] text-[5vw]">
-                <li><a href="/" className="text-white/40 transition-colors hover:text-white u-link">Speaking</a></li>
-                <li><a href="/" className="text-white/40 transition-colors hover:text-white u-link">Media</a></li>
-                <li><a href="/" className="text-white/40 transition-colors hover:text-white u-link">Books</a></li>
-                <li><a href="/" className="text-white/40 transition-colors hover:text-white u-link">About</a></li>
-                <li><a href="/" className="text-white/40 transition-colors hover:text-white u-link">Contact</a></li>
+                <li><NavLink href="/speaking" className="text-white/40 transition-colors hover:text-white u-link">Speaking</NavLink></li>
+                <li><NavLink href="/media" className="text-white/40 transition-colors hover:text-white u-link">Media</NavLink></li>
+                <li><NavLink href="/books" className="text-white/40 transition-colors hover:text-white u-link">Books</NavLink></li>
+                <li><NavLink href="/about" className="text-white/40 transition-colors hover:text-white u-link">About</NavLink></li>
+                <li><NavLink href="/contact" className="text-white/40 transition-colors hover:text-white u-link">Contact</NavLink></li>
               </ul>
             </div>
             <div className="col-span-6 md:col-span-3">
               <p className="md:text-[2vw] text-[7vw]">Talks</p>
               <ul className="flex flex-col md:leading-[2.6rem] leading-[2rem] pt-[4vw] md:pt-[2vw] md:text-[1.3vw] text-[5vw]">
-                <li><a href="/" className="text-white/40 transition-colors hover:text-white u-link">Vision</a></li>
-                <li><a href="/" className="text-white/40 transition-colors hover:text-white u-link">Culture</a></li>
-                <li><a href="/" className="text-white/40 transition-colors hover:text-white u-link">Big Ideas</a></li>
+                <li><NavLink href="/speaking/visionary-leadership" className="text-white/40 transition-colors hover:text-white u-link">Vision</NavLink></li>
+                <li><NavLink href="/speaking/culture-of-innovation" className="text-white/40 transition-colors hover:text-white u-link">Culture</NavLink></li>
+                <li><NavLink href="/speaking/brands-of-the-future" className="text-white/40 transition-colors hover:text-white u-link">Big Ideas</NavLink></li>
               </ul>
             </div>
             <div className="col-span-6 md:col-span-3">
