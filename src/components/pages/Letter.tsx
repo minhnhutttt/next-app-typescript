@@ -1,8 +1,9 @@
 "use client";
 
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { ReactNode } from "react";
 
-const Letter = () => {
+const Letter = ({ title, text, link }: { title: ReactNode, text: ReactNode, link: ReactNode}) => {
     const ref = useScrollAnimations();
     return (
         <section
@@ -13,16 +14,14 @@ const Letter = () => {
                 <div className="col-span-12 relative md:col-span-11 order-2 md:order-none">
                     <div className="relative w-full">
                         <div className="!absolute top-[0.5vw] left-0 md:pr-[15vw] pr-[30vw]">
-                            <p className="js-split">(Speaking)</p>
+                            <p className="js-split">({title})</p>
                         </div>
                         <div className="md:text-[3vw] text-[8vw] leading-none js-split">
                             <span className="inline-block md:w-[10vw] w-[25vw]"></span>
-                            Sunny Bonnell delivers unforgettable talks that do more than inspire—they equip, challenge, and transform, showing leaders how to wield vision as a force and build companies great people want to be part of.
+                            {text}
                         </div>
                         <div className="mt-10">
-                            <a href="#" className="u-link is-full">
-                                See Sunny’s signature talks
-                            </a>
+                            {link}
                         </div>
                     </div>
                 </div>

@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.scss";
 import { ScrollProvider } from "@/contexts/ScrollContext";
 import { ViewTransitions } from "next-view-transitions";
-import Wrapper from "@/layout/Wrapper";
-import ScrollContainer from "@/layout/scrollContainer";
+import Wrapper from "@/components/container/Wrapper";
+import ScrollContainer from "@/components/container/scrollContainer";
 
 const inter = Inter({ 
   weight: ['300','400','500','700'],

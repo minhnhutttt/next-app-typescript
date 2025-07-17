@@ -5,7 +5,7 @@ import { useScroll } from "@/contexts/ScrollContext";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
-import { NavLink } from '../components/NavLink';
+import { NavLink } from './NavLink';
 
 
 const Header: React.FC = () => {
@@ -152,25 +152,25 @@ const Header: React.FC = () => {
               ref={setMenuItemRef(0)}
               className="overflow-hidden border-t border-white border-opacity-10"
             >
-              <Link 
+              <a 
                 href="/speaking" 
                 className="block px-5 py-6 text-3xl font-medium hover:text-gray-300 transition-colors"
                 onClick={handleLinkClick}
               >
                 Speaking
-              </Link>
+              </a>
             </li>
             <li 
               ref={setMenuItemRef(1)}
               className="overflow-hidden border-t border-white border-opacity-10"
             >
-              <Link 
+              <a 
                 href="/media" 
                 className="block px-5 py-6 text-3xl font-medium hover:text-gray-300 transition-colors"
                 onClick={handleLinkClick}
               >
                 Media
-              </Link>
+              </a>
             </li>
             <li 
               ref={setMenuItemRef(2)}

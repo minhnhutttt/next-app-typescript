@@ -1,11 +1,11 @@
 "use client"
-import PageHead from "@/components/PageHead";
+import PageHead from "@/components/pages/PageHead";
 import Introduction from "./components/Introduction";
 import Collections from "./components/Collections";
 import Outlets from "./components/Outlets";
 import Testimonials from "./components/Testimonials";
-import Letter from "./components/Letter";
-import PageWrapper from "@/layout/PageWrapper";
+import PageWrapper from "@/components/container/PageWrapper";
+import Letter from "@/components/pages/Letter";
 
 export default function MediaPage() {
 
@@ -19,7 +19,15 @@ export default function MediaPage() {
         <Collections />
         <Outlets />
         <Testimonials />
-        <Letter />
+        <Letter
+          title="Speaking"
+          text="Sunny Bonnell delivers unforgettable talks that do more than inspire—they equip, challenge, and transform, showing leaders how to wield vision as a force and build companies great people want to be part of."
+          link={(
+            <a href="#" className="u-link is-full">
+              See Sunny’s signature talks
+            </a>
+          )}
+        />
       </main>
     </PageWrapper>
   );

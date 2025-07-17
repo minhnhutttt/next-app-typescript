@@ -1,7 +1,7 @@
 "use client";
 
 import useScrollAnimations from "@/hooks/useScrollAnimations";
-import Explore from "@/components/Explore";
+import Explore from "@/components/pages/Explore";
 
 const Signature = () => {
     const ref = useScrollAnimations();

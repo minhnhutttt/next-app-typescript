@@ -4,7 +4,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Explore from "@/components/Explore";
+import Explore from "@/components/pages/Explore";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({

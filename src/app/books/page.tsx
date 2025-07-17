@@ -1,6 +1,6 @@
 "use client"
-import PageHead from "@/components/PageHead";
-import PageWrapper from "@/layout/PageWrapper";
+import PageHead from "@/components/pages/PageHead";
+import PageWrapper from "@/components/container/PageWrapper";
 import SunnyBook from "./components/SunnyBook";
 
 export default function Bookspage() {

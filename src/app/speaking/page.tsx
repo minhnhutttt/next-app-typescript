@@ -1,11 +1,11 @@
 "use client"
-import PageHead from "@/components/PageHead";
+import PageHead from "@/components/pages/PageHead";
 import Signature from "./components/Signature";
 import VideoReel from "./components/VideoReel";
 import Impact from "./components/Impact";
 import Book from "./components/Book";
 import Companies from "./components/Companies";
-import PageWrapper from "@/layout/PageWrapper";
+import PageWrapper from "@/components/container/PageWrapper";
 
 export default function SpeakingPage() {
   return (
