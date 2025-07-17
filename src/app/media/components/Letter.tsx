@@ -2,7 +2,7 @@
 
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
-const Speaking = () => {
+const Letter = () => {
     const ref = useScrollAnimations();
     return (
         <section
@@ -41,4 +41,4 @@ const Speaking = () => {
     );
 };
 
-export default Speaking;
+export default Letter;

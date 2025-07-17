@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ComponentProps } from "react";
 import { useTransitionRouter } from "next-view-transitions";
-import { pageAnimation } from "./PageAnimation";
+import { pageAnimation } from "@/layout/PageAnimation";
 
 type NavLinkProps = Omit<ComponentProps<typeof Link>, 'href'> & {
   href: string;

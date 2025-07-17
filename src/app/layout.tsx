@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import { ScrollProvider } from "@/contexts/ScrollContext";
-import Wrapper from "@/components/Wrapper";
-import ScrollContainer from "@/components/scrollContainer";
 import { ViewTransitions } from "next-view-transitions";
+import Wrapper from "@/layout/Wrapper";
+import ScrollContainer from "@/layout/scrollContainer";
 
 const inter = Inter({ 
   weight: ['300','400','500','700'],

@@ -5,7 +5,7 @@ import { useScroll } from "@/contexts/ScrollContext";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
-import { NavLink } from './NavLink';
+import { NavLink } from '../components/NavLink';
 
 
 const Header: React.FC = () => {

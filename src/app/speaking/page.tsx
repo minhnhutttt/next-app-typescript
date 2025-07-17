@@ -5,9 +5,9 @@ import VideoReel from "./components/VideoReel";
 import Impact from "./components/Impact";
 import Book from "./components/Book";
 import Companies from "./components/Companies";
-import PageWrapper from "@/components/PageWrapper";
+import PageWrapper from "@/layout/PageWrapper";
 
-export default function Speaking() {
+export default function SpeakingPage() {
   return (
     <PageWrapper>
       <main className="bg-white relative">

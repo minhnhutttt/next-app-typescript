@@ -1,13 +1,13 @@
 "use client"
-import PageWrapper from "@/components/PageWrapper";
 import PageHead from "@/components/PageHead";
 import Introduction from "./components/Introduction";
 import Collections from "./components/Collections";
 import Outlets from "./components/Outlets";
 import Testimonials from "./components/Testimonials";
-import Speaking from "./components/Speaking";
+import Letter from "./components/Letter";
+import PageWrapper from "@/layout/PageWrapper";
 
-export default function Media() {
+export default function MediaPage() {
 
   return (
     <PageWrapper>
@@ -19,7 +19,7 @@ export default function Media() {
         <Collections />
         <Outlets />
         <Testimonials />
-        <Speaking />
+        <Letter />
       </main>
     </PageWrapper>
   );
