@@ -1,9 +1,4 @@
-"use client";
-
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode } from "react";
-
-
 export interface ImpactDataType {
   id: string,
   title: string,
@@ -11,10 +6,9 @@ export interface ImpactDataType {
 }
 
 const Impact = ({text, data, link} : {text: ReactNode, data: ImpactDataType[], link: ReactNode}) => {
-    const ref = useScrollAnimations();
     return (
-        <section ref={ref} className="bg-white relative">
-            <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] pb-[10rem] md:pb-[24rem] gap-x-[2vw] md:px-[2vw] px-[4vw]">
+        <section className="bg-white relative">
+            <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] pb-[30vw] md:pb-[20vw]  gap-x-5 md:px-[2vw] px-[4vw]">
                 <div className="col-span-12 pb-[8vw] md:mb-[3vw] md:pr-20 relative order-0 md:order-2">
                     <div className="relative w-full overflow-hidden rounded-[0.4rem] bg-grey">
                         <div className="pt-[146.25%]"></div>
@@ -41,19 +35,19 @@ const Impact = ({text, data, link} : {text: ReactNode, data: ImpactDataType[], l
                         <span className="inline-block md:w-[10vw] w-[25vw]"></span>
                          {text}
                     </div>
-                    <div className="grid grid-cols-12 gap-x-[2vw]">
+                    <div className="grid grid-cols-12  gap-x-5">
                         <div className="col-span-12 flex flex-col gap-y-[8vw] md:gap-y-[5vw] mb-[10vw] md:mb-[5vw]">
                         {data.map((item, index)=> (
-                            <div className="grid grid-cols-12 gap-x-[2vw]" key={index}>
-                                <div className="col-span-2">({item.id})</div>
+                            <div className="grid grid-cols-12  gap-x-5" key={index}>
+                                <div className="js-split col-span-2">({item.id})</div>
                                 <div className="col-span-10 md:max-w-[43rem] flex md:gap-y-[2vw] gap-y-[3vw] flex-col">
-                                    <p className="">{item.title}</p>
-                                    <p className="text-black/50">{item.text}</p>
+                                    <p className="js-split">{item.title}</p>
+                                    <p className="js-split text-black/50">{item.text}</p>
                                 </div>
                             </div>
                         ))}
                         </div>
-                        <div className="!col-start-3 col-span-10 md:col-span-6 pb-[0.25rem]">
+                        <div className="!col-start-3 col-span-10 md:col-span-6 pb-[0.25rem] js-split">
                             {link}
                         </div>
                     </div>

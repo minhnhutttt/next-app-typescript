@@ -2,14 +2,13 @@
 import PageHead from "@/components/pages/PageHead";
 import PageWrapper from "@/components/container/PageWrapper";
 import Vision from "../components/Vision";
-import Companies from "@/components/pages/Companies";
+import BrandIcon from "../components/BrandIcon";
 import Speaking from "@/components/pages/Speaking";
 import Impact, { ImpactDataType } from "@/components/pages/Impact";
 import Testimonials from "@/components/pages/Testimonials";
 import Details from "@/components/pages/Detail";
 import Ignite from "@/components/pages/Ignite";
 import Letter from "@/components/pages/Letter";
-import BrandIcon from "../components/BrandIcon";
 
 const data: ImpactDataType[] = [
   {
@@ -34,18 +33,18 @@ export default function VisionaryLeadershipPage() {
   return (
     <PageWrapper>
       <main className="bg-white relative">
-        <PageHead head="Visionary Leadership/" title="Keynote">
-          Visionary leadership shapes direction,
-          inspires action, and brings clarity to complexity. This
-          keynote explores the core traits of visionary leaders
-          and how to define a compelling vision that aligns
-          people to do big things.
+        <PageHead head="Brand/Brand/Brand/" title="Keynote">
+          The most powerful brands of the future won't
+just sell products, they’ll shape culture and lead with
+meaning. This keynote unpacks what it takes to build a
+brand that stays relevant and radically human in a
+fast-changing world.
         </PageHead>
         <Vision
           title="A clear, compelling vision serves as a catalyst for
                     innovation, strategic alignment, and a culture of
                     ownership within an organization."
-          text={(<>"Vision is the highest form <br />of leadership." - Sunny Bonnell</>)}
+          text='"Vision is the highest form of leadership." - Sunny Bonnell'
           list={[
             {
               id: '01',
@@ -60,7 +59,6 @@ export default function VisionaryLeadershipPage() {
           ]}
           link={(<a href="/contact" className="u-link is-full">Book Sunny to speak</a>)}
         />
-        <Companies text="Sunny has delivered talks for world-leading companies" />
         <BrandIcon />
         <Speaking
           video="/assets/images/01167253-2a0ecde7.mp4"

@@ -1,12 +1,6 @@
-"use client";
-
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-
 const VideoReel = () => {
-
-    const ref = useScrollAnimations();
     return (
-        <section ref={ref} className="bg-white relative max-md:pt-[20vw] pb-[30vw] md:pb-[20vw]">
+        <section className="bg-white relative max-md:pt-[20vw] pb-[30vw] md:pb-[20vw]">
             <div className="md:px-[2vw] px-[4vw]">
                 <video
                 className="size-full object-cover "

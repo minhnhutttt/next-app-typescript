@@ -1,11 +1,6 @@
-"use client";
-
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-
 const Downloads = () => {
-    const ref = useScrollAnimations();
     return (
-        <section ref={ref} className="bg-white relative pb-[30vw] md:pb-[20vw] md:px-[2vw] px-[4vw]">
+        <section className="bg-white relative pb-[30vw] md:pb-[20vw] md:px-[2vw] px-[4vw]">
            <div className="flex flex-wrap gap-5 mb-8 md:mb-10">
                 <a href="/" className="pt-2 pb-3 px-4 hover:bg-black hover:text-white transition-colors duration-300 inline-block leading-none bg-gray-200 rounded-full">
                   Speaker Pack ↓

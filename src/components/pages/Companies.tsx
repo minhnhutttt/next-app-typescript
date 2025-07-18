@@ -1,12 +1,6 @@
-"use client";
-
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-
 const Companies = ({text}: {text: string}) => {
-
-    const ref = useScrollAnimations();
     return (
-        <section ref={ref} className="bg-white relative pb-[15vw] md:pb-[10vw]">
+        <section className="bg-white relative pb-[15vw] md:pb-[10vw]">
             <div className="md:px-[2vw] px-[4vw]">
                 <div className="js-split">{text}</div>
                 <div className="overflow-hidden pb-[2vw] pt-[6vw] md:pt-[3vw] pointer-events-none w-full">

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const data = [
   {
@@ -42,7 +41,6 @@ const data = [
 ];
 
 const Collections = () => {
-  const ref = useScrollAnimations();
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filteredData = activeFilter === "All" 
@@ -56,9 +54,9 @@ const Collections = () => {
   };
 
   return (
-    <section ref={ref} className="bg-white relative">
+    <section className="bg-white relative">
       <div className="w-full md:px-[2vw] px-[4vw] pb-[30vw] md:pb-[20vw]">
-        <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] items-end md:pb-[3vw] pb-[6vw] gap-x-[2vw] ">
+        <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] items-end md:pb-[3vw] pb-[6vw]  gap-x-5 ">
           <div className="col-span-12 md:col-[span_16_/_span_16] py-[5vw] md:py-0">
             <div className="h2 js-split">
               A go-to expert for leading publications covering leadership,

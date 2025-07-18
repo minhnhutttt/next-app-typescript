@@ -1,11 +1,6 @@
-"use client";
-
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-
 const Introduction = () => {
-  const ref = useScrollAnimations();
   return (
-    <section ref={ref} className="bg-white relative pb-[30vw] md:pb-[20vw]">
+    <section className="bg-white relative pb-[30vw] md:pb-[20vw]">
       <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] gap-x-[6vw] md:gap-x-[4vw] gap-y-[15vw] md:gap-y-[10vw] md:px-[2vw] px-[4vw]">
         <div className="col-span-6 md:col-span-12">
           <a href="/" className="fade-up relative mb-[7vw] md:mb-[4vw] group">

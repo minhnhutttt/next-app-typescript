@@ -1,9 +1,9 @@
-"use client"
 import PageHead from "@/components/pages/PageHead";
 import PageWrapper from "@/components/container/PageWrapper";
 import SunnyBook from "./components/SunnyBook";
 
 export default function Bookspage() {
+
   return (
     <PageWrapper>
       <main className="bg-white relative">

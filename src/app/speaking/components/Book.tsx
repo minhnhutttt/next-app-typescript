@@ -1,12 +1,6 @@
-"use client";
-
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-
 const Book = () => {
-
-    const ref = useScrollAnimations();
     return (
-        <section ref={ref} className="bg-white relative">
+        <section className="bg-white relative">
             <div className="w-full grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] gap-x-[2rem] md:px-[2vw] px-[4vw] pb-[30vw] md:pb-[20vw]">
                 <div className="col-[span_24_/_span_24] mb-[2vw] md:col-span-9 hidden md:block">
                     <div className="js-split mb-[4vw]">(Book Buys & Signing)</div>

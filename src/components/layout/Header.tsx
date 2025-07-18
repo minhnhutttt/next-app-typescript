@@ -120,7 +120,7 @@ const Header: React.FC = () => {
         </ul>
       </nav>
       
-      <NavLink href="/" className="u-link md:text-[40px] text-[24px] font-bold hidden md:block">Contact</NavLink>
+      <NavLink href="/contact" className="u-link md:text-[40px] text-[24px] font-bold hidden md:block">Contact</NavLink>
       
       <button 
         ref={menuTriggerRef}

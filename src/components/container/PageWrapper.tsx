@@ -1,10 +1,12 @@
 "use client";
 
+import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { HTMLMotionProps, motion } from "framer-motion";
 
 const PageWrapper = (props: HTMLMotionProps<"div">) => {
+  const ref = useScrollAnimations();
   return (
-    <div className="bg-white">
+    <div ref={ref} className="bg-white">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

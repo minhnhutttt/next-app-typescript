@@ -1,13 +1,8 @@
-"use client";
-
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode } from "react";
 
 const Letter = ({ title, text, link }: { title: ReactNode, text: ReactNode, link: ReactNode}) => {
-    const ref = useScrollAnimations();
     return (
         <section
-            ref={ref}
             className="bg-white relative pb-[30vw] md:pb-[20vw] md:px-[2vw] px-[4vw]"
         >
             <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))]">
@@ -20,13 +15,13 @@ const Letter = ({ title, text, link }: { title: ReactNode, text: ReactNode, link
                             <span className="inline-block md:w-[10vw] w-[25vw]"></span>
                             {text}
                         </div>
-                        <div className="mt-10">
+                        <div className="mt-10 js-split">
                             {link}
                         </div>
                     </div>
                 </div>
                 <div className="col-span-12 md:col-span-10 md:col-start-[15] order-1 md:order-none overflow-hidden mb-10 md:mb-0">
-                    <div className="relative w-full overflow-hidden rounded-[0.4rem]">
+                    <div className="fade-up relative w-full overflow-hidden rounded-[0.4rem]">
                         <div className="pt-[149.91%]"></div>
                         <img
                             src="/assets/images/sunny.png"

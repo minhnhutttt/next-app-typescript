@@ -4,7 +4,6 @@
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import '@splidejs/react-splide/css';
 import { useRef, useEffect, useState } from "react";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const data = [
   {
@@ -45,7 +44,6 @@ const data = [
 ];
 
 const Testimonials = () => {
-  const ref = useScrollAnimations();
   const splideRef = useRef<any>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [totalSlides, setTotalSlides] = useState(data.length);
@@ -92,7 +90,6 @@ const Testimonials = () => {
 
   return (
     <section
-      ref={ref}
       className="bg-white relative pb-[30vw] md:pb-[20vw] md:px-[2vw] px-[4vw]"
     >
       <div className="js-split h1 font-bold uppercase leading-snug md:mb-5 mb-7">
@@ -119,11 +116,11 @@ const Testimonials = () => {
                     <p className="md:text-[2.5vw] text-[6vw] pb-[6vw] md:pb-[4vw] pointer-events-none js-split">
                       {slide.text}
                     </p>
-                    <div className="flex items-center md:gap-x-[2vw] gap-x-[4vw] pointer-events-none">
+                    <div className="flex items-center md:gap-x-5 gap-x-[4vw] pointer-events-none">
                         <div className="flex flex-row relative overflow-hidden md:size-[6vw] size-[10vw] rounded-full">
                             <img src={slide.avatar} alt="" />
                         </div>
-                        <div className="flex flex-col gap-x-[2vw] flex-1">
+                        <div className="fade-up flex flex-col gap-x-5 flex-1">
                             <p className="h4">{slide.name}</p>
                             <p className="text-black/60">{slide.position}</p>
                         </div>

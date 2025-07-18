@@ -1,12 +1,9 @@
-"use client";
-
 import ContactForm from "@/components/pages/ContactForm";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const Contact = () => {
-    const ref = useScrollAnimations();
+    
     return (
-        <section ref={ref} className="bg-white relative pb-[30vw] md:pb-[20vw] md:px-[2vw] px-[4vw]">
+        <section className="bg-white relative pb-[30vw] md:pb-[20vw] md:px-[2vw] px-[4vw]">
             <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] gap-5">
                 <div className="col-span-12 md:col-span-6">
                     <div className="sticky top-10">

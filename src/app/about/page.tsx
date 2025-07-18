@@ -1,4 +1,3 @@
-"use client"
 import PageHead from "@/components/pages/PageHead";
 import PageWrapper from "@/components/container/PageWrapper";
 import Speaking from "@/components/pages/Speaking";
@@ -6,10 +5,10 @@ import Message from "./components/Message";
 import Brands from "@/components/pages/Brands";
 import Letter from "@/components/pages/Letter";
 
-export default function AboutPage() {
+export default function AboutPage() {  
   return (
     <PageWrapper>
-      <main className="bg-white relative">
+      <main  className="bg-white relative">
         <PageHead head="About/About/About/" title="About">
           Sunny Bonnell is a bestselling author, a
           Thinkers50 Radar, and an international motivational
@@ -26,7 +25,7 @@ export default function AboutPage() {
             inside organizations to drive culture, brand, and innovation
             forward."
           right={(
-            <a href="" className="slide-up u-link is-full md:text-[1.2vw] text-[4vw] font-medium inline-block">Book Sunny to speak</a>
+            <a href="" className="u-link is-full md:text-[1.2vw] text-[4vw] font-medium inline-block">Book Sunny to speak</a>
           )}
         />
         <Message />
@@ -34,7 +33,7 @@ export default function AboutPage() {
           left="(02)"
           center="Delivering keynotes to world leading brands"
           right={(
-            <a href="" className="slide-up u-link is-full md:text-[1.2vw] text-[4vw] font-medium inline-block">Contact Sunny</a>
+            <a href="" className="u-link is-full md:text-[1.2vw] text-[4vw] font-medium inline-block">Contact Sunny</a>
           )}
         />
         <Letter

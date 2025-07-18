@@ -7,7 +7,7 @@ export default function PageHead({head, title, children }: { head: string, title
   return (
     <div ref={ref} className="max-md:pt-[20vw]">
         <div className="overflow-hidden">
-            <div className="fade-up flex w-full overflow-hidden marquee-collection h1-bigger will-change-transform relative font-bold uppercase pointer-events-none">
+            <div className="flex w-full overflow-hidden marquee-collection h1-bigger will-change-transform relative font-bold uppercase pointer-events-none">
                 <div className="flex-[0_0_auto] whitespace-nowrap animate-[loop_50s_-25s_linear_infinite]">
                     {head}
                 </div>

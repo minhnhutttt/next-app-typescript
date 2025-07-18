@@ -186,7 +186,7 @@ const Fv: React.FC = () => {
                 </div>
               </div>
               <div className="grid grid-cols-12 md:grid-cols-[repeat(24,_minmax(0,_1fr))] gap-x-1 relative z-4">
-                <div className="col-span-7 hidden md:grid grid-cols-12 gap-x-[2vw] z-2 will-change-transform">
+                <div className="col-span-7 hidden md:grid grid-cols-12  gap-x-5 z-2 will-change-transform">
                   <div className="col-span-8 md:mt-12 relative z-2"></div>
                   <div className="col-span-4">
                     <div className="small mt-[2.2vw] text-[1vw] flex flex-col tracking-[0] mr-auto">

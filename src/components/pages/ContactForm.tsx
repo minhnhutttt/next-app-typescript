@@ -6,21 +6,21 @@ const ContactForm = () => {
                 <div className="grid grid-cols-12 gap-5">
                     <div className="md:col-span-6 col-span-12">
                         <label htmlFor="input_1_1_1" className="mb-2 block">First Name *</label>
-                        <input type="text" name="input_1.1" id="input_1_1_1" value="" placeholder="First name here" className="w-full flex items-center leading-none rounded-lg h-16 md:h-20 p-3 border border-[#dfdfdf]"></input>
+                        <input type="text" name="input_1.1" id="input_1_1_1" placeholder="First name here" className="w-full flex items-center leading-none rounded-lg h-16 md:h-20 p-3 border border-[#dfdfdf]"></input>
                     </div>
                     <div className="md:col-span-6 col-span-12">
                         <label htmlFor="input_1_1_2" className="mb-2 block">Last Name *</label>
-                        <input type="text" name="input_1.2" id="input_1_1_2" value="" placeholder="Last name here" className="w-full flex items-center leading-none rounded-lg h-16 md:h-20 p-3 border border-[#dfdfdf]"></input>
+                        <input type="text" name="input_1.2" id="input_1_1_2" placeholder="Last name here" className="w-full flex items-center leading-none rounded-lg h-16 md:h-20 p-3 border border-[#dfdfdf]"></input>
                     </div>
                 </div>
                 <div className="grid grid-cols-12 gap-5">
                     <div className="md:col-span-6 col-span-12">
                         <label htmlFor="input_1_1_3" className="mb-2 block">Email*</label>
-                        <input type="text" name="input_1.3" id="input_1_1_3" value="" placeholder="example@provider.com" className="w-full flex items-center leading-none rounded-lg h-16 md:h-20 p-3 border border-[#dfdfdf]"></input>
+                        <input type="text" name="input_1.3" id="input_1_1_3" placeholder="example@provider.com" className="w-full flex items-center leading-none rounded-lg h-16 md:h-20 p-3 border border-[#dfdfdf]"></input>
                     </div>
                     <div className="md:col-span-6 col-span-12">
                         <label htmlFor="input_1_1_4" className="mb-2 block">Company</label>
-                        <input type="text" name="input_1.4" id="input_1_1_4" value="" placeholder="Company name" className="w-full flex items-center leading-none rounded-lg h-16 md:h-20 p-3 border border-[#dfdfdf]"></input>
+                        <input type="text" name="input_1.4" id="input_1_1_4" placeholder="Company name" className="w-full flex items-center leading-none rounded-lg h-16 md:h-20 p-3 border border-[#dfdfdf]"></input>
                     </div>
                 </div>
                 <div className="grid grid-cols-12 gap-5">

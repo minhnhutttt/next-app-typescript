@@ -1,3 +1,4 @@
+"use client"
 import About from "./components/About";
 import Fv from "./components/Fv";
 import Signature from "./components/Signature";
@@ -8,7 +9,6 @@ import Speaking from "@/components/pages/Speaking";
 import Brands from "@/components/pages/Brands";
 
 export default function Home() {
-
   return (
     <PageWrapper>
       <main className="bg-white relative">
@@ -18,7 +18,7 @@ export default function Home() {
           left="(02)"
           center="Trusted advisor for industry leading brands"
           right={(
-            <a href="" className="slide-up u-link is-full md:text-[1.2vw] text-[4vw] font-medium inline-block">Contact</a>
+            <a href="" className="u-link is-full md:text-[1.2vw] text-[4vw] font-medium inline-block">Contact</a>
           )}
         />
         <Signature />
@@ -27,7 +27,7 @@ export default function Home() {
           left="(Keynote Speaking)"
           center="Sunny Bonnell inspires leaders to rethink what it means to lead—offering clear, actionable frameworks that turn bold vision into the driving force behind culture, brand, and growth."
           right={(
-            <a href="" className="slide-up u-link is-full md:text-[1.2vw] text-[4vw] font-medium inline-block">Book Sunny to speak</a>
+            <a href="" className="u-link is-full md:text-[1.2vw] text-[4vw] font-medium inline-block">Book Sunny to speak</a>
           )}
         />
         <Press />

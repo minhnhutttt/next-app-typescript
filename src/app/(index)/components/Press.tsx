@@ -1,42 +1,22 @@
-"use client";
-
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-
-
 const Press = () => {
 
-    const ref = useScrollAnimations();
     return (
-        <section ref={ref} className="bg-white relative">
+        <section className="bg-white relative">
             <div className="px-[4vw] md:px-[2vw] relative overflow-hidden pb-[30vw] md:pb-[20vw]">
                 <div className="grid grid-cols-12 md:items-end md:justify-end pb-[6vw]">
                     <div className="col-span-12 md:col-span-10 mb-[5vw] md:mb-0 relative">
                         <div className="label label-big !absolute top-0 left-0 js-split pt-[2vw] md:pt-[1vw] md:text-[2vw] text-[3vw] font-medium">
-                            <div className="overflow-hidden"><p className="slide-up">( Press & Media )</p></div>
+                            <div className="js-split">( Press & Media )</div>
                         </div>
                         <div className="md:text-[4vw] text-[6.5vw] leading-[1.3] font-medium tracking-tighter">
-                            <div className="overflow-hidden">
-                                <p className="slide-up">
-                                    <span className="inline-block w-[25vw]"></span>Sunny's expertise
-                                </p>
-                            </div>
-                            <div className="overflow-hidden">
-                                <p className="slide-up">
-                                    and voice is spotlighted in today’s
-                                </p>
-                            </div>
-                            <div className="overflow-hidden">
-                                <p className="slide-up">
-                                    most influential media.
-                                </p>
+                            <div className="js-split">
+                                <span className="inline-block w-[25vw]"></span>Sunny's expertise and voice is spotlighted in today’s most influential media.
                             </div>
                         </div>
                     </div>
                     <div className="col-span-12 md:col-span-2 flex justify-end js-split">
-                        <div className="overflow-hidden">
-                            <div className="flex pb-[1vw]">
-                                <a href="" className="slide-up u-link is-full md:text-[1.2vw] text-[4vw] font-medium inline-block">View more Articles</a>
-                            </div>
+                        <div className="flex pb-[1vw]">
+                            <a href="" className="u-link is-full md:text-[1.2vw] text-[4vw] font-medium inline-block">View more Articles</a>
                         </div>
                     </div>
                 </div>

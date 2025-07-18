@@ -1,11 +1,6 @@
-"use client";
-
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-
 const SunnyBook = () => {
-    const ref = useScrollAnimations();
     return (
-        <section ref={ref} className="bg-white relative pb-[30vw] md:pb-[20vw] md:px-[2vw] px-[4vw]">
+        <section className="bg-white relative pb-[30vw] md:pb-[20vw] md:px-[2vw] px-[4vw]">
             <div className="grid grid-cols-12 mb-4 md:mb-7">
                 <div className="col-span-12 md:col-span-6">
                     <div className="js-split">Sunny’s books</div>
