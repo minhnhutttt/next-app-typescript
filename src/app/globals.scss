@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,15 +7,138 @@ html {
   scroll-behavior: smooth !important;
 }
 body {
-  color: #21012D;
+  color: #21012d;
 }
 
 :root {
   --swiper-pagination-bullet-size: 26px;
-  --swiper-pagination-bullet-inactive-color: #EAEAEA;
+  --swiper-pagination-bullet-inactive-color: #eaeaea;
   --swiper-pagination-bullet-inactive-opacity: 1;
-  --swiper-pagination-color: #FF7DD3;
+  --swiper-pagination-color: #ff7dd3;
 }
 .fv-container {
   container-type: inline-size;
+}
+
+/* 中心ロゴのスピーカー風「ズン」アニメーション */
+.center-logo {
+  animation: speakerBoom 12s infinite ease-out;
+}
+
+@keyframes speakerBoom {
+  0%,
+  7%,
+  22%,
+  30%,
+  47%,
+  55%,
+  72%,
+  80%,
+  97% {
+    transform: scale(1);
+  }
+  25%,
+  50%,
+  75%,
+  100% {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+  }
+  27%,
+  52%,
+  77% {
+    transform: scale(1.05);
+  }
+}
+
+/* ステップ回転コンテナ */
+.rotating-container {
+  animation: stepRotate 12s infinite ease-in-out;
+}
+
+@keyframes stepRotate {
+  0%,
+  22% {
+    transform: rotate(0deg);
+  }
+  25%,
+  47% {
+    transform: rotate(90deg);
+  }
+  50%,
+  72% {
+    transform: rotate(180deg);
+  }
+  75%,
+  97% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 各アイコンの初期位置 */
+.icon-1 {
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-2 {
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%);
+}
+
+.icon-3 {
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-4 {
+  top: 50%;
+  left: -10%;
+  transform: translateY(-50%);
+}
+
+/* 各アイコンの回転補正（常に正立を保つ） */
+.social-icon {
+  animation: counterStepRotate 12s infinite ease-in-out;
+}
+
+@keyframes counterStepRotate {
+  0%,
+  22% {
+    transform: rotate(0deg);
+  }
+  25%,
+  47% {
+    transform: rotate(-90deg);
+  }
+  50%,
+  72% {
+    transform: rotate(-180deg);
+  }
+  75%,
+  97% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* アイコンのホバー効果 */
+.social-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* より滑らかなアニメーションのための追加スタイル */
+.rotating-container,
+.social-icon,
+.center-logo {
+  will-change: transform;
 }

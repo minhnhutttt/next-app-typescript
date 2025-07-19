@@ -16,6 +16,7 @@ const config: Config = {
     },
     fontFamily: {
       mplus: ["var(--font-mplus)", "sans-serif"],
+      roboto: ["var(--font-roboto)", "sans-serif"],
     },
   },
   plugins: [],

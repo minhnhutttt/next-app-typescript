@@ -37,15 +37,13 @@ const LoadingScene = () => {
           onComplete: () => {
             completedAnimations++;
             if (completedAnimations === itemElements.length) {
-              gsap.delayedCall(0.5, () => {
-                if (sectionRef.current) {
-                  gsap.to(sectionRef.current, {
-                    opacity: 0,
-                    duration: 0.3,
-                    ease: "power1.inOut"
-                  });
-                }
-              });
+              if (sectionRef.current) {
+                gsap.to(sectionRef.current, {
+                  opacity: 0,
+                  duration: 0.3,
+                  ease: "power1.inOut"
+                });
+              }
             }
           }
         });
