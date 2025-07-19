@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Noto_Sans_JP, M_PLUS_1 } from "next/font/google";
+import "./globals.scss";
+import ScrollContainer from "@/components/scrollContainer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import LoadingScene from "./(index)/components/LoadingScene";
 
-const inter = Inter({ subsets: ["latin"] });
+const noto = Noto_Sans_JP({ 
+  weight: ['300','400','500','700','900'],
+  subsets: ["latin"]
+ });
+
+ const mplus = M_PLUS_1({ 
+  weight: ['300','400','500','700'],
+  subsets: ["latin"],
+  variable: '--font-mplus'
+ });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +29,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${noto.className} ${mplus.variable} bg-black`}>
+        <ScrollContainer>
+          <div className="fixed inset-0 [background:linear-gradient(45deg,rgba(236,157,188,1)_0%,rgba(142,129,185,.97)_48%,rgba(126,202,240,.9)_100%)] ">
+          <div className="absolute bottom-5 left-5 h-[calc(100%_-_40px)] w-[calc(100%_-_40px)] rounded-xl border-2 border-white/60 max-lg:hidden"></div>
+        </div>
+          <LoadingScene />
+          <div className="relative w-full overflow-clip bg-white mx-auto md:w-[640px]">
+          <Header />
+          {children}
+          <Footer />
+          </div>
+        </ScrollContainer>
+        </body>
     </html>
   );
 }
