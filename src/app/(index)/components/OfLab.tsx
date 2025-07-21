@@ -54,8 +54,8 @@ const OfLab: React.FC = () => {
 
                 ScrollTrigger.create({
                     trigger: item,
-                    start: "center center+=100",
-                    end: "center center-=100",
+                    start: "center center+=120",
+                    end: "center center-=120",
                     onEnter: () => {
                         gsap.to(overlay, {
                             opacity: 0,
