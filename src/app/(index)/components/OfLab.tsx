@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ReactElement } from 'react';
-// Đăng ký ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger);
 interface DataItem {
     id: string;
@@ -54,8 +54,8 @@ const OfLab: React.FC = () => {
 
                 ScrollTrigger.create({
                     trigger: item,
-                    start: "center center+=150",
-                    end: "center center-=150",
+                    start: "center center+=100",
+                    end: "center center-=100",
                     onEnter: () => {
                         gsap.to(overlay, {
                             opacity: 0,
@@ -92,7 +92,7 @@ const OfLab: React.FC = () => {
         };
     }, []);
     return (
-        <section ref={sectionRef} className="overflow-hidden sm:mt-[75px] mt-[55px] px-[15px] sm:pb-[330px]">
+        <section ref={sectionRef} className="overflow-hidden sm:mt-[75px] mt-[55px] px-[15px] sm:pb-[330px] pb-[240px]">
             <div className="flex justify-center items-center">
                 <img src="/assets/images/of-lab-title.svg" alt="オブラボ" />
             </div>

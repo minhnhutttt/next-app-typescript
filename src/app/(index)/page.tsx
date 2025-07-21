@@ -1,4 +1,5 @@
 import Account from "./components/Account";
+import Contact from "./components/Contact";
 import Download from "./components/Download";
 import Fv from "./components/Fv";
 import Introduction from "./components/Introduction";
@@ -14,6 +15,7 @@ export default function Home() {
       <Sns />
       <OfLab />
       <Download />
+      <Contact />
     </main>
   );
 }

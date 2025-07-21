@@ -12,14 +12,17 @@ gsap.config({
 const LoadingScene = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [imageSet, setImageSet] = useState<'a' | 'b'>('a');
+  const hasCountedRef = useRef(false);
 
   useEffect(() => {
-    const visitCount = parseInt(localStorage.getItem('visitCount') || '0', 10);
-    
-    const newVisitCount = visitCount + 1;
-    localStorage.setItem('visitCount', newVisitCount.toString());
-    
-    setImageSet(newVisitCount % 2 === 1 ? 'a' : 'b');
+    if (!hasCountedRef.current) {
+      const visitCount = parseInt(localStorage.getItem('visitCount') || '0', 10);
+      const newVisitCount = visitCount + 1;
+      localStorage.setItem('visitCount', newVisitCount.toString());
+      setImageSet(newVisitCount % 2 === 1 ? 'a' : 'b');
+
+      hasCountedRef.current = true;
+    }
   }, []);
 
   useEffect(() => {
@@ -43,18 +46,23 @@ const LoadingScene = () => {
                   duration: 0.3,
                   ease: "power1.inOut"
                 });
+                document.body.classList.remove('overflow-hidden');
               }
             }
           }
         });
         
         tl.from(scene, {
-          opacity: 0,
           xPercent: gsap.utils.random(-200, 200, 50),
           yPercent: gsap.utils.random(-200, 200, 50),
           duration: 0.6,
            ease: "power1.in"
         })
+        .to(scene, {
+          opacity: 1,
+          duration: 0.3,
+           ease: "power1.inOut"
+        }, '<')
         .to(scene, {
           scale: 1,
           duration: 0.3,
@@ -100,7 +108,7 @@ const LoadingScene = () => {
         {items.map((item) => (
           <div key={item.id} className={`absolute top-[60%] ${item.position}`}>
             <div className="js-item origin-center">
-              <div className="js-scene md:w-[500px] w-[200px] relative scale-[0.5] flex items-center justify-center">
+              <div className="js-scene md:w-[500px] w-[200px] relative scale-[0.5] flex items-center justify-center opacity-0">
                 <div className="js-scene-card absolute inset-0 opacity-0">
                   <img src={getImagePath('card', item.id)} />
                 </div>
