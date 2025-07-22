@@ -34,29 +34,29 @@ const Sns = () => {
         {/* 4つのソーシャルアイコン */}
         <div className="rotating-container absolute inset-0">
           {/* Instagram アイコン */}
-          <div className="social-icon absolute sm:size-[130px] size-[80px] bg-white rounded-full flex items-center justify-center shadow-lg icon-1">
-            <div className="rounded-lg flex items-center justify-center">
+          <div className="social-icon origin-center absolute sm:size-[130px] size-[80px] bg-white rounded-full flex items-center justify-center shadow-lg icon-1">
+            <div className="rounded-full flex items-center justify-center animate-[speakerBoom_12s_infinite_ease-out]">
              <img src="/assets/images/img-instagram.png" alt="" />
             </div>
           </div>
 
           {/* TikTok アイコン */}
-           <div className="social-icon absolute sm:size-[130px] size-[80px] bg-white rounded-full flex items-center justify-center shadow-lg icon-2">
-            <div className="rounded-lg flex items-center justify-center">
+           <div className="social-icon origin-center absolute sm:size-[130px] size-[80px] bg-white rounded-full flex items-center justify-center shadow-lg icon-2">
+            <div className="rounded-full flex items-center justify-center animate-[speakerBoom_12s_infinite_ease-out]">
              <img src="/assets/images/img-ticktok.png" alt="" />
             </div>
           </div>
 
           {/* X (Twitter) アイコン */}
-           <div className="social-icon absolute sm:size-[130px] size-[80px] bg-white rounded-full flex items-center justify-center shadow-lg icon-3">
-            <div className="rounded-lg flex items-center justify-center">
+           <div className="social-icon origin-center absolute sm:size-[130px] size-[80px] bg-white rounded-full flex items-center justify-center shadow-lg icon-3">
+            <div className="rounded-full flex items-center justify-center animate-[speakerBoom_12s_infinite_ease-out]">
              <img src="/assets/images/img-x.png" alt="" />
             </div>
           </div>
 
           {/* Threads アイコン */}
-           <div className="social-icon absolute sm:size-[130px] size-[80px] bg-white rounded-full flex items-center justify-center shadow-lg icon-4">
-            <div className="rounded-lg flex items-center justify-center">
+           <div className="social-icon origin-center absolute sm:size-[130px] size-[80px] bg-white rounded-full flex items-center justify-center shadow-lg icon-4">
+            <div className="rounded-full flex items-center justify-center animate-[speakerBoom_12s_infinite_ease-out]">
              <img src="/assets/images/img-thread.png" alt="" />
             </div>
           </div>

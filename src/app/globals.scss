@@ -19,7 +19,6 @@ body {
 .fv-container {
   container-type: inline-size;
 }
-
 /* 中心ロゴのスピーカー風「ズン」アニメーション */
 .center-logo {
   animation: speakerBoom 12s infinite ease-out;
@@ -57,82 +56,204 @@ body {
 }
 
 @keyframes stepRotate {
-  0%,
-  22% {
-    transform: rotate(0deg);
+  0% {
+transform: rotate(0deg);
   }
-  25%,
+  22% {
+transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
   47% {
     transform: rotate(90deg);
   }
-  50%,
+  50% {
+    transform: rotate(180deg);
+  }
   72% {
     transform: rotate(180deg);
   }
-  75%,
+  75% {
+   transform: rotate(270deg);
+  }
   97% {
     transform: rotate(270deg);
   }
   100% {
-    transform: rotate(360deg);
+     transform: rotate(360deg);
   }
 }
 
 /* 各アイコンの初期位置 */
 .icon-1 {
   top: -10%;
-  left: 50%;
+  left: 70%;
   transform: translateX(-50%);
 }
 
 .icon-2 {
-  top: 50%;
+  top: 60%;
   right: -10%;
   transform: translateY(-50%);
 }
 
 .icon-3 {
   bottom: -10%;
-  left: 50%;
+  left: 20%;
   transform: translateX(-50%);
 }
 
 .icon-4 {
-  top: 50%;
+  top: 20%;
   left: -10%;
   transform: translateY(-50%);
 }
 
-/* 各アイコンの回転補正（常に正立を保つ） */
-.social-icon {
-  animation: counterStepRotate 12s infinite ease-in-out;
+
+/* Icon 1 (Instagram) - 最初のステップで最大 */
+.icon-1 {
+  animation: icon1Scale 12s infinite ease-in-out;
 }
 
-@keyframes counterStepRotate {
-  0%,
+@keyframes icon1Scale {
+  0% {
+    transform: translateX(-50%) rotate(0deg) scale(1.2);
+  }
   22% {
-    transform: rotate(0deg);
+    transform: translateX(-50%) rotate(0deg) scale(1.2);
   }
-  25%,
+  25% {
+    transform: translateX(-50%) rotate(-90deg) scale(1);
+  }
   47% {
-    transform: rotate(-90deg);
+    transform: translateX(-50%) rotate(-90deg) scale(1);
   }
-  50%,
+  50% {
+    transform: translateX(-50%) rotate(-180deg) scale(0.7);
+  }
   72% {
-    transform: rotate(-180deg);
+    transform: translateX(-50%) rotate(-180deg) scale(0.7);
   }
-  75%,
+  75% {
+    transform: translateX(-50%) rotate(-270deg) scale(1);
+  }
   97% {
-    transform: rotate(-270deg);
+    transform: translateX(-50%) rotate(-270deg) scale(1);
   }
   100% {
-    transform: rotate(-360deg);
+    transform: translateX(-50%) rotate(-360deg) scale(1.2);
+  }
+}
+
+/* Icon 2 (TikTok) - 2番目のステップで最大 */
+.icon-2 {
+  animation: icon2Scale 12s infinite ease-in-out;
+}
+
+@keyframes icon2Scale {
+  0% {
+    transform: translateY(-50%) rotate(0deg) scale(1);
+  }
+  22% {
+    transform: translateY(-50%) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-50%) rotate(-90deg) scale(1.2);
+  }
+  47% {
+    transform: translateY(-50%) rotate(-90deg) scale(1.2);
+  }
+  50% {
+    transform: translateY(-50%) rotate(-180deg) scale(1);
+  }
+  72% {
+    transform: translateY(-50%) rotate(-180deg) scale(1);
+  }
+  75% {
+    transform: translateY(-50%) rotate(-270deg) scale(0.7);
+  }
+  97% {
+    transform: translateY(-50%) rotate(-270deg) scale(0.7);
+  }
+  100% {
+    transform: translateY(-50%) rotate(-360deg) scale(1);
+  }
+}
+
+/* Icon 3 (X/Twitter) - 3番目のステップで最大 */
+.icon-3 {
+  animation: icon3Scale 12s infinite ease-in-out;
+}
+
+@keyframes icon3Scale {
+  0% {
+    transform: translateX(-50%) rotate(0deg) scale(0.7);
+  }
+  22% {
+    transform: translateX(-50%) rotate(0deg) scale(0.7);
+  }
+  25% {
+    transform: translateX(-50%) rotate(-90deg) scale(1);
+  }
+  47% {
+    transform: translateX(-50%) rotate(-90deg) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) rotate(-180deg) scale(1.2);
+  }
+  72% {
+    transform: translateX(-50%) rotate(-180deg) scale(1.2);
+  }
+  75% {
+    transform: translateX(-50%) rotate(-270deg) scale(1);
+  }
+  97% {
+    transform: translateX(-50%) rotate(-270deg) scale(1);
+  }
+  100% {
+    transform: translateX(-50%) rotate(-360deg) scale(0.7);
+  }
+}
+
+/* Icon 4 (Threads) - 4番目のステップで最大 */
+.icon-4 {
+  animation: icon4Scale 12s infinite ease-in-out;
+}
+
+@keyframes icon4Scale {
+  0% {
+    transform: translateY(-50%) rotate(0deg) scale(1);
+  }
+  22% {
+    transform: translateY(-50%) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-50%) rotate(-90deg) scale(0.7);
+  }
+  47% {
+    transform: translateY(-50%) rotate(-90deg) scale(0.7);
+  }
+  50% {
+    transform: translateY(-50%) rotate(-180deg) scale(1);
+  }
+  72% {
+    transform: translateY(-50%) rotate(-180deg) scale(1);
+  }
+  75% {
+    transform: translateY(-50%) rotate(-270deg) scale(1.2);
+  }
+  97% {
+    transform: translateY(-50%) rotate(-270deg) scale(1.2);
+  }
+  100% {
+    transform: translateY(-50%) rotate(-360deg) scale(1);
   }
 }
 
 /* アイコンのホバー効果 */
 .social-icon:hover {
-  transform: scale(1.1);
+  animation-play-state: paused;
   transition: transform 0.2s ease;
 }
 

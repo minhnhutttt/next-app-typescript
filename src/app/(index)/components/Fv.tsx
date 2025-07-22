@@ -2,7 +2,7 @@
 
 const Fv = () => {
   return (
-    <section className="overflow-hidden">
+    <section className="overflow-hidden relative w-full bg-white mx-auto md:w-[640px]">
       <video
         className="w-full"
         data-lazy-video=""

@@ -13,88 +13,37 @@ const useScrollAnimations = () => {
 
   useLayoutEffect(() => {
     const animations: { [key: string]: (el: HTMLElement) => void } = {
-      "js-item": (el: HTMLElement) => {
-        const cardEl = el.querySelector('.js-fv-card') as HTMLElement;
-        const icEl = el.querySelector('.js-fv-ic') as HTMLElement;
-        const fvEl = el.querySelector('.js-fv') as HTMLElement;
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: el,
-            start: "top bottom",
-            end: "bottom center",
-          }
-        }).from(fvEl, {
-          xPercent: 100,
-          y: "50%",
-          duration: 0.3,
-        }).to(fvEl, {
-          scale: 1
-        }).to(cardEl, {
-          opacity: 1,
-        }).to(icEl, {
-          opacity: 0,
-        }, "<")
-        .to(el, {
-          x: gsap.utils.random(-100,0),
-          y: '-100vh',
-          rotate: gsap.utils.random(-7,7),
-          ease: "power1.inOut",
-          duration: 0.3,
-        });
+      "js-deco": (el: HTMLElement) => {
+        const deco01 = el.querySelector(".js-deco-01") as HTMLElement;
+        const deco02 = el.querySelector(".js-deco-02") as HTMLElement;
+        const deco03 = el.querySelector(".js-deco-03") as HTMLElement;
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: el,
+              start: "top bottom",
+              end: "bottom center",
+            },
+          })
+          .from(deco01, {
+            scale: 0,
+            opacity: 0,
+            duration: 0.4,
+            ease: "power1.out",
+          })
+          .from(deco02, {
+            scale: 0,
+            opacity: 0,
+            duration: 0.4,
+            ease: "power1.out",
+          },"-=0.2")
+          .from(deco03, {
+            scale: 0,
+            opacity: 0,
+            duration: 0.4,
+            ease: "power1.out",
+          },"-=0.2");
       },
-      // "js-fv-right": (el: HTMLElement) => {
-      //   const cardEl = el.querySelector('.js-fv-card') as HTMLElement;
-      //   const icEl = el.querySelector('.js-fv-ic') as HTMLElement;
-      //   gsap.timeline({
-      //     scrollTrigger: {
-      //       trigger: el,
-      //       start: "top bottom",
-      //       end: "bottom center",
-      //     }
-      //   }).from(el, {
-      //     xPercent: -100,
-      //     y: "50%",
-      //     duration: 0.3,
-      //   }).to(el, {
-      //     scale: 1
-      //   }).to(cardEl, {
-      //     opacity: 1,
-      //   }).to(icEl, {
-      //     opacity: 0,
-      //   }, "<");
-      // },
-      // "js-item-left": (el: HTMLElement) => {
-      //   gsap.timeline({
-      //     scrollTrigger: {
-      //       trigger: el,
-      //       start: "top bottom",
-      //       end: "bottom top",
-      //       scrub: 1
-      //     }
-      //   }).from(el, {
-      //     x: gsap.utils.random(0,100),
-      //     y: gsap.utils.random(0,100),
-      //     rotate: gsap.utils.random(-7,7),
-      //     ease: "power1.inOut",
-      //     duration: 0.3,
-      //   });
-      // },
-      // "js-item-right": (el: HTMLElement) => {
-      //   gsap.timeline({
-      //     scrollTrigger: {
-      //       trigger: el,
-      //       start: "top bottom",
-      //       end: "bottom top",
-      //       scrub: 1
-      //     }
-      //   }).from(el, {
-      //     x: gsap.utils.random(-100,0),
-      //     y: gsap.utils.random(0,100),
-      //     rotate: gsap.utils.random(-7,7),
-      //     ease: "power1.inOut",
-      //     duration: 0.3,
-      //   });
-      // },
     };
 
     let ctx = gsap.context(() => {

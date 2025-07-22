@@ -104,6 +104,9 @@ const OfLab: React.FC = () => {
                         <div className="js-overlay absolute inset-0 bg-[#1A0136]/[0.7] flex items-end sm:p-10 p-6 transition-opacity duration-500">
                             <p className="sm:text-[48px] text-[24px] text-[#FC5291] font-bold">{item.title}</p>
                         </div>
+                        <div className="absolute inset-0 flex items-end sm:p-10 p-6 transition-opacity duration-500">
+                            <p className="sm:text-[48px] text-[24px] text-[#FC5291] font-bold">{item.title}</p>
+                        </div>
                     </div>
                     </div>
                 ))}

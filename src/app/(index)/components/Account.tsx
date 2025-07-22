@@ -10,10 +10,10 @@ gsap.config({
 });
 
 const Account: React.FC = () => {
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const hasAnimated = useRef<boolean>(false);
 
-  const animateCountUp = (element: HTMLElement, targetValue: number, duration: number = 3000): void => {
+  const animateCountUp = (element: HTMLElement, targetValue: number, duration: number = 4000): void => {
     const startValue: number = 0;
     const startTime: number = performance.now();
     
@@ -91,7 +91,7 @@ const Account: React.FC = () => {
   }, []);
 
   return (
-    <section className="overflow-hidden px-[15px]" ref={sectionRef}>
+    <section className="overflow-hidden px-[15px]" >
       <div className="bg-[linear-gradient(158deg,_#D842D9_0%,_#9A35FC_100%)] md:rounded-[100px] rounded-[50px] py-16 md:py-[100px] px-4 text-white">
         <h2 className="sm:text-[48px] text-[24px] font-bold text-center tracking-widest">
           応援が直接届く、<br />カタチに残る新しい
@@ -106,27 +106,27 @@ const Account: React.FC = () => {
           <p className="sm:text-[36px] text-[20px] font-medium tracking-widest">ユーザー急拡大中</p>
           <img src="/assets/images/line.png" alt="" />
         </div>
-        <div className="grid grid-cols-2 sm:mt-11 mt-6 md:gap-[30px] gap-4">
+        <div ref={sectionRef} className="grid grid-cols-2 sm:mt-11 mt-6 md:gap-[20px] gap-4">
           <div className="bg-white md:rounded-[70px] rounded-[36px] flex items-center justify-center flex-col aspect-square">
-            <p className="font-roboto font-black md:text-[64px] text-[32px] text-[#771DD3] leading-tight flex items-center" data-count="700">
+            <p className="font-roboto font-black md:text-[60px] text-[32px] text-[#771DD3] leading-tight flex items-center" data-count="700">
               0<span><span className="ic-plus inline-flex"><img src="/assets/images/ic-plus.svg" alt="" className="inline-block max-md:w-5 mb-3 md:mb-4" /></span></span>
             </p>
             <p className="sm:text-[24px] text-[13px] font-medium text-black">登録FAVER総数</p>
           </div>
           <div className="bg-white md:rounded-[70px] rounded-[36px] flex items-center justify-center flex-col aspect-square">
-            <p className="font-roboto font-black md:text-[64px] text-[32px] text-[#771DD3] leading-tight flex items-center" data-count="300">
+            <p className="font-roboto font-black md:text-[60px] text-[32px] text-[#771DD3] leading-tight flex items-center" data-count="300">
               0<span><span className="ic-plus inline-flex"><img src="/assets/images/ic-plus.svg" alt="" className="inline-block max-md:w-5 mb-3 md:mb-4" /></span></span>
             </p>
             <p className="sm:text-[24px] text-[13px] font-medium text-black">発行コイン数</p>
           </div>
           <div className="bg-white md:rounded-[70px] rounded-[36px] flex items-center justify-center flex-col aspect-square">
-            <p className="font-roboto font-black md:text-[64px] text-[32px] text-[#771DD3] leading-tight flex items-center" data-count="10000">
+            <p className="font-roboto font-black md:text-[60px] text-[32px] text-[#771DD3] leading-tight flex items-center" data-count="10000">
               0<span><span className="ic-plus inline-flex"><img src="/assets/images/ic-plus.svg" alt="" className="inline-block max-md:w-5 mb-3 md:mb-4" /></span></span>
             </p>
             <p className="sm:text-[24px] text-[13px] font-medium text-black">累計コインホルダー数</p>
           </div>
           <div className="bg-white md:rounded-[70px] rounded-[36px] flex items-center justify-center flex-col aspect-square">
-            <p className="font-roboto font-black md:text-[64px] text-[32px] text-[#771DD3] leading-tight flex items-center" data-count="30000000">
+            <p className="font-roboto font-black md:text-[60px] text-[32px] text-[#771DD3] leading-tight flex items-center" data-count="30000000">
               0 <span className="ic-plus flex items-center"><span className="sm:text-[20px] text-[14px] leading-none inline-flex flex-col"><span>万</span><span>人</span></span><span><img src="/assets/images/ic-plus.svg" alt="" className="inline-block max-md:w-5 mb-2" /></span></span>
             </p>
             <p className="sm:text-[24px] text-[13px] font-medium text-black">FAVER総フォロワー数</p>

@@ -1,10 +1,17 @@
 "use client";
 
+import useScrollAnimations from "@/hooks/useScrollAnimations";
+
 const Download = () => {
+
+  const ref = useScrollAnimations();
+
   return (
-    <section className="relative">
-      <div className="absolute sm:top-[-260px] top-[-200px] right-0 z-10 max-sm:w-[240px]">
-        <img src="/assets/images/deco.png" alt="" />
+    <section ref={ref} className="relative">
+      <div className="js-deco absolute sm:top-[-260px] top-[-200px] right-0 z-10 max-sm:w-[240px]">
+        <img className="js-deco-01 absolute top-[-50px] left-[-80px]" src="/assets/images/deco-01.png" alt="" />
+        <img className="js-deco-02 absolute top-[-20px] left-[-40px]" src="/assets/images/deco-02.png" alt="" />
+        <img className="js-deco-03 origin-right" src="/assets/images/deco-03.png" alt="" />
       </div>
       <div className="relative bg-[#FFE3F0] sm:pb-[380px] pb-[280px]">
         <div className="bg-[#FF7DB8]/[0.3] flex items-center justify-center p-4 relative z-20">
@@ -81,8 +88,10 @@ const Download = () => {
           </div>
         </div>
         
-      <div className="absolute bottom-20 left-0">
-        <img className="max-sm:w-[280px]" src="/assets/images/footer-deco.png" alt="" />
+      <div className="js-deco absolute max-sm:w-[280px] bottom-20 left-0">
+        <img className="js-deco-01 absolute top-[50px] right-[-150px]" src="/assets/images/footer-deco-01.png" alt="" />
+        <img className="js-deco-02 absolute top-[80px] right-[-100px]" src="/assets/images/footer-deco-02.png" alt="" />
+        <img className="js-deco-03 origin-left" src="/assets/images/footer-deco-03.png" alt="" />
       </div>
       </div>
     </section>

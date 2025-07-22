@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Fv from "./Fv";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -11,15 +12,21 @@ gsap.config({
 
 const LoadingScene = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const fvRef = useRef<HTMLDivElement>(null);
   const [imageSet, setImageSet] = useState<'a' | 'b'>('a');
   const hasCountedRef = useRef(false);
 
   useEffect(() => {
     if (!hasCountedRef.current) {
-      const visitCount = parseInt(localStorage.getItem('visitCount') || '0', 10);
-      const newVisitCount = visitCount + 1;
-      localStorage.setItem('visitCount', newVisitCount.toString());
-      setImageSet(newVisitCount % 2 === 1 ? 'a' : 'b');
+      let visitCount = 0;
+      try {
+        visitCount = parseInt(localStorage.getItem('visitCount') || '0', 10);
+        const newVisitCount = visitCount + 1;
+        localStorage.setItem('visitCount', newVisitCount.toString());
+      } catch {
+        visitCount = Math.random() > 0.5 ? 0 : 1; 
+      }
+      setImageSet(visitCount % 2 === 1 ? 'a' : 'b');
 
       hasCountedRef.current = true;
     }
@@ -34,20 +41,14 @@ const LoadingScene = () => {
         const card = item.querySelector('.js-scene-card');
         const icon = item.querySelector('.js-scene-ic');
         const scene = item.querySelector('.js-scene');
+        const isLastItem = index === itemElements.length - 1;
         
         const tl = gsap.timeline({
           delay: index * 0.6,
           onComplete: () => {
             completedAnimations++;
             if (completedAnimations === itemElements.length) {
-              if (sectionRef.current) {
-                gsap.to(sectionRef.current, {
-                  opacity: 0,
-                  duration: 0.3,
-                  ease: "power1.inOut"
-                });
-                document.body.classList.remove('overflow-hidden');
-              }
+              document.body.classList.remove('overflow-hidden');
             }
           }
         });
@@ -85,6 +86,38 @@ const LoadingScene = () => {
           duration: 2.5,
           ease: "power1.inOut"
         }, '<');
+
+        if (isLastItem) {
+          tl.from('.js-fv', {
+            yPercent: 100,
+            xPercent: 100,
+            opacity: 0,
+            duration: 1,
+            ease: "power1.inOut"
+          }, '-=2')
+          .to('.js-fv', {
+            borderRadius: '0',
+            duration: 0.5,
+            ease: "power1.inOut"
+          })
+          .to('.js-fv', {
+            scale: 1,
+            width: '100%',
+            height: '100%',
+            duration: 1,
+            ease: "power1.inOut"
+          }, "<")
+          .to(fvRef.current, {
+            opacity: 1,
+            duration: 0.3,
+            ease: "power1.inOut"
+          })
+          .to(sectionRef.current, {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power1.inOut"
+          }, '<');
+        }
       });
 
       ScrollTrigger.refresh();
@@ -103,6 +136,7 @@ const LoadingScene = () => {
   }));
 
   return (
+    <>
     <section ref={sectionRef} className="overflow-hidden fixed inset-0 z-[99] [background:linear-gradient(45deg,rgba(236,157,188,1)_0%,rgba(142,129,185,1)_48%,rgba(126,202,240,1)_100%)] pointer-events-none">
       <div className="relative h-screen overflow-hidden scene-container">
         {items.map((item) => (
@@ -120,7 +154,13 @@ const LoadingScene = () => {
           </div>
         ))}
       </div>
+      <div ref={fvRef} className="pt-[96px] absolute inset-x-0 top-0 z-50 flex justify-center items-end">
+        <div className="js-fv scale-[0.5] overflow-hidden sm:size-[500px] size-[200px] origin-top rounded-full">
+          <Fv />
+        </div>
+      </div>
     </section>
+    </>
   );
 };
 
