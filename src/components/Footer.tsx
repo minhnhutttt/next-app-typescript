@@ -1,25 +1,27 @@
 
 const Footer = () => {
     return (
-      <footer className="pt-20 md:pt-[160px] lg:pt-[250px] pb-4 px-4 relative overflow-hidden bg-[url(/assets/images/footer-bg.png)] bg-top bg-[size:100%_auto]">
-      <div className="max-w-[1180px] mx-auto flex flex-col lg:flex-row items-center justify-between md:mb-20 mb-12">
-        <div className="max-lg:mb-12 max-md:mb-10 max-md:text-center">
-          <div className="mb-2">
-            <a href="/" className="max-md:w-[120px]">
-              <img src="/assets/images/logo2.svg" alt="" />
-            </a>
-          </div>
-        </div>
-        <div className="flex flex-wrap justify-center md:justify-end items-center text-[20px] font-light md:divide-x divide-black max-md:flex-col max-md:gap-4">
-          <a href="/privacy" className="whitespace-nowrap hover:opacity-75 duration-150 py-1 px-5 md:px-10 xl:px-16 md:h-10">Privacy Policy</a>
-          <a href="/terms" className="whitespace-nowrap hover:opacity-75 duration-150 py-1 px-5 md:px-10 xl:px-16 md:h-10">利用規約</a>
-          <a href="https://lin.ee/sQ5Hh6G" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap hover:opacity-75 duration-150 py-1 px-5 md:px-10 xl:px-16 md:h-10">お問い合わせ</a>
-        </div>
-      </div>
-      <div className="text-center font-light md:text-[14px] text-[12px] tracking-widest">
-        <p>©2025 Unique Data Mining</p>
-      </div>
-    </footer>
+      <>
+      <footer className="md:mt-[12rem] max-md:mb-[12rem]">
+            <div className="w-[90%] ml-auto mr-auto rounded-[10rem] px-32 py-12 mb-24 flex items-center justify-between [box-shadow:0_0_2rem_rgba(0,_0,_0,_0.1)] max-w-[140rem] max-md:flex-col max-md:px-[0] max-md:py-12 max-md:mb-16">
+                <a href="/" className="md:w-[25rem] w-[12rem]">
+                    <img src="/assets/img/logo_bk.svg" alt="p2p bonus" />
+                </a>
+                <ul className="flex items-center justify-center max-md:mt-[3rem] divide-x divide-[#333]">
+                    <li><a className="text-[2rem] tracking-widest px-20 py-[0] max-md:text-[1.2rem] max-md:px-4 max-md:py-[0] max-md:block" href="/privacy">個人情報保護</a></li>
+                    <li><a className="text-[2rem] tracking-widest px-20 py-[0] max-md:text-[1.2rem] max-md:px-4 max-md:py-[0] max-md:block" href="/terms">利用規約</a></li>
+                    <li><a className="text-[2rem] tracking-widest px-20 py-[0] max-md:text-[1.2rem] max-md:px-4 max-md:py-[0] max-md:block" href="/contact">お問い合わせ </a></li>
+                </ul>
+            </div>
+            <p className="text-center p-12 tracking-widest max-md:p-[2rem]">&copy;2025 PB♡X</p>
+        </footer>
+
+        <a href="/" className="fixed w-full bg-[#f63c4c] text-[#fff] md:hidden items-center justify-center gap-4 px-12 py-[1.3rem] text-[2rem] tracking-wider flex bottom-[0] max-md:left-[0] max-md:[transition:0.3s_ease-in-out] z-[99]">
+            <img className="w-[2.4rem]" src="/assets/img/ico_line.svg" alt="line" />
+                <p>お問い合わせ</p>
+                <img className="w-[0.6rem] ml-4 mt-[0.3rem]" src="/assets/img/arw-1.svg" alt="arrow" />
+        </a>
+        </>
     );
   };
   

@@ -21,12 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${noto.className} bg-[#EFFEF6]`}
+        className={`${noto.className}`}
       >
         <ScrollContainer>
           <div className="">
             <Header />
             {children}
+            <Footer />
           </div>
         </ScrollContainer>
       </body>
