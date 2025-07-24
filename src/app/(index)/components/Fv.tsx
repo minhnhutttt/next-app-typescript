@@ -53,7 +53,7 @@ export default function Fv() {
       <div className="absolute left-20 bottom-20 flex items-center gap-12 js-list max-md:flex-col max-md:left-8 max-md:right-8 max-md:bottom-16">
         <div className="js-list">
           <h2 className="flex flex-col gap-[1.8rem] text-[7.8rem] font-medium max-md:text-[3.2rem] max-md:gap-4 ">
-            <span className="bg-[#fff] w-[fit-content] px-8 py-2 max-md:p-4">p2p bonusで</span>
+            <span className="bg-[#fff] w-[fit-content] px-8 py-2 max-md:p-4">ピアボーナスで</span>
             <span className="bg-[#fff] w-[fit-content] px-8 py-2 max-md:p-4">隠れた<b className="font-medium text-[#fe1d37]">価値</b>を<b className="font-medium text-[#fe1d37]">発見</b></span>
           </h2>
           <p className="text-[2.4rem] bg-[#fff] px-8 py-4 mt-8 max-md:text-[1.8rem] max-md:leading-[1.35] max-md:p-4 max-md:mt-4">陰の功労者にトークンを、縁の下にスポットライトを</p>

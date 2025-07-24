@@ -10,12 +10,12 @@ export default function Cta() {
           alt="icon"
         />
         <div className="flex-[1] js-list">
-          <h3 className="text-[3.2rem] font-medium leading-[1.65] mb-16 max-md:text-[1.8rem] max-md:text-center max-md:mb-8">
+          <h3 className="text-[3.2rem] font-medium leading-[1.65] mb-16 max-md:text-[1.8rem] max-md:text-center max-md:mb-8 max-md:hidden">
             あなたの組織の陰の功労者に、
             <br />
             スポットライトを当てませんか？
           </h3>
-          <a href="/" className="block bg-[#f63c4c] text-[#fff] w-[fit-content] text-[3.2rem] font-medium tracking-widest mt-12 px-40 py-14 rounded-[10rem] relative [box-shadow:0_0.6rem_0.3rem_rgba(0,_0,_0,_0.3)] max-md:text-[2rem] max-md:px-8 max-md:py-[1.8rem] max-md:mt-10 max-md:w-full max-md:text-center">
+          <a href="mailto:info@p-2-p-bonus.com" className="block bg-[#f63c4c] text-[#fff] w-[fit-content] text-[3.2rem] font-medium tracking-widest mt-12 px-40 py-14 rounded-[10rem] relative [box-shadow:0_0.6rem_0.3rem_rgba(0,_0,_0,_0.3)] max-md:text-[2rem] max-md:px-8 max-md:py-[1.8rem] max-md:mt-10 max-md:w-full max-md:text-center">
             まずは無料相談
             <img className="absolute right-16 top-2/4 -translate-y-1/2 max-md:right-[2rem]" src="/assets/img/arw-1.svg" alt="arrow" />
           </a>
@@ -26,6 +26,11 @@ export default function Cta() {
             alt="その人たちに感謝トークンを。その人たちにスポットライトを。"
           />
         </div>
+        <h3 className="text-[3.2rem] font-medium leading-[1.65] mb-16 max-md:text-[1.8rem] max-md:text-center max-md:mb-8 md:hidden">
+            あなたの組織の陰の功労者に、
+            <br />
+            スポットライトを当てませんか？
+          </h3>
       </div>
     </section>
   );

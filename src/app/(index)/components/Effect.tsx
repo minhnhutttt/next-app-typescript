@@ -14,8 +14,8 @@ export default function Effect() {
           </picture>
         </h2>
         <div className="max-w-[82rem] mt-10 ml-auto mr-auto bg-[#fff] rounded-[4rem] border-[solid] border-[0.24rem] border-[#fe1d37] p-20 max-md:py-[4rem] max-md:px-[2rem] js-list">
-          <h3 className="text-center text-[3.6rem] font-medium tracking-[0.08em] mb-8 max-md:text-[2.2rem] max-md:leading-normal">
-            従来の評価<span className="text-[3.2rem] mx-[0.6rem] max-md:text-[1.8rem] max-md:leading-normal">vs</span>p2p bonus
+          <h3 className="text-center text-[3.6rem] font-medium tracking-[0.08em] mb-8 max-md:text-[2.2rem] max-md:leading-normal flex items-center justify-center">
+            従来の評価<span className="text-[3.2rem] mx-[0.6rem] max-md:text-[1.8rem] max-md:leading-normal">vs</span><img className="md:w-[20rem] w-[14rem]"  src="/assets/img/logo-black.svg" alt="p2p bonus" />
           </h3>
           <table className="w-full max-w-[64.5rem] border border-solid border-[#666]">
             <thead>
@@ -24,7 +24,7 @@ export default function Effect() {
                   従来の評価
                 </th>
                 <th className="text-[2.2rem] text-center p-8 border-[solid] border-[1px] border-[#666] bg-[#ff8f94] max-md:p-4 max-md:leading-normal max-md:text-[1.5rem]">
-                  p2p bonus
+                  <img className="md:w-[16rem] w-[12rem]" src="/assets/img/logo.svg" alt="p2p bonus" />
                 </th>
               </tr>
             </thead>

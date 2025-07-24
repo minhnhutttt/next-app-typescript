@@ -4,18 +4,18 @@ export default function Intr() {
   return (
     <section className="md:pt-32 md:pb-48 pt-24 pb-32">
       <div className="md:w-[calc(100%-10rem)] w-[calc(100%-6rem)] max-w-[140rem] ml-auto mr-auto">
-        <h3 className="w-[fit-content] ml-auto mr-auto text-[#fe1d37] md:text-[3.6rem] font-semibold tracking-widest bg-[#ffec3e] rounded-[4rem] px-12 py-6 mb-20 text-[2rem] js-list">p2p bonusを導入すると</h3>
+        <h3 className="w-[fit-content] ml-auto mr-auto text-[#fe1d37] md:text-[3.6rem] font-semibold tracking-widest bg-[#ffec3e] rounded-[4rem] px-12 py-6 mb-20 text-[2rem] flex items-center justify-center gap-2 js-list"><img src="/assets/img/logo-black.svg" alt="p2p bonus" /></h3>
         <div className="text-center mb-24 js-list flex justify-center items-center">
           <img className="md:max-w-[50%] max-w-[25%]" src="/assets/img/arw-3.svg" alt="arrow" />
         </div>
         <div className="flex flex-col items-center js-list">
-          <p className="text-[2rem] mb-8 md:text-[1.6rem] md:leading-[1.65]">
+          <p className="text-[2rem] mb-8 md:text-[1.6rem] md:leading-[1.65] leading-[1.5] max-md:text-center">
             社員から社員へ、
             <br className="md:hidden" />
-            言葉よりも気軽なトークンを送り合うから
+            言葉よりも気軽な<br className="md:hidden" />トークンを送り合うから
           </p>
-          <h4 className="w-[fit-content] px-12 py-4 text-[3.2rem] border-[solid] border-[1px] border-[#333333] max-md:p-4 max-md:text-[2.4rem] max-md:leading-[1.4] max-md:w-full">
-            組織の屋台骨となっている
+          <h4 className="w-[fit-content] px-12 py-4 text-[3.2rem] border-[solid] border-[1px] border-[#333333] max-md:p-4 max-md:text-[2.4rem] max-md:leading-[1.4] max-md:w-full max-md:text-center">
+            組織の屋台骨と<br className="md:hidden" />なっている
             <br className="md:hidden" />
             社員を発見！
           </h4>
@@ -31,9 +31,10 @@ export default function Intr() {
                 <img className="align-baseline w-auto inline" src="/assets/img/ico_folded.svg" alt="icon" />
               </p>
             </div>
-            <div className="w-[22rem] text-center max-md:w-full max-md:mt-16 max-md:mb-16 max-md:flex max-md:items-center max-md:flex-col">
+            <div className="w-[22rem] text-center max-md:w-full max-md:mt-16 max-md:mb-16 flex items-center flex-col">
               <p className="text-[1.6rem] mb-8">良いはたらきでした！</p>
-              <img src="/assets/img/token.svg" alt="token" />
+              <img className="max-md:hidden" src="/assets/img/token.svg" alt="token" />
+              <img className="md:hidden" src="/assets/img/token-sp.svg" alt="token" />
             </div>
             <div className="w-72 text-center ml-16 max-md:w-full max-md:ml-0 max-md:flex max-md:items-center max-md:justify-center">
               <img src="/assets/img/token_img-1.svg" alt="img" />
@@ -50,9 +51,10 @@ export default function Intr() {
                 <img className="align-baseline w-auto inline" src="/assets/img/ico_folded.svg" alt="icon" />
               </p>
             </div>
-            <div className="w-[22rem] text-center max-md:w-full max-md:mt-16 max-md:mb-16 max-md:flex max-md:items-center max-md:flex-col">
+            <div className="w-[22rem] text-center max-md:w-full max-md:mt-16 max-md:mb-16 flex items-center flex-col">
               <p className="text-[1.6rem] mb-8">いつもありがとう！</p>
-              <img src="/assets/img/token.svg" alt="token" />
+              <img className="max-md:hidden" src="/assets/img/token.svg" alt="token" />
+              <img className="md:hidden" src="/assets/img/token-sp.svg" alt="token" />
             </div>
             <div className="w-72 text-center ml-16 max-md:w-full max-md:ml-0 max-md:flex max-md:items-center max-md:justify-center">
               <img src="/assets/img/token_img-2.svg" alt="img" />
@@ -69,9 +71,10 @@ export default function Intr() {
                 <img className="align-baseline w-auto inline" src="/assets/img/ico_folded.svg" alt="icon" />
               </p>
             </div>
-            <div className="w-[22rem] text-center max-md:w-full max-md:mt-16 max-md:mb-16 max-md:flex max-md:items-center max-md:flex-col">
+            <div className="w-[22rem] text-center max-md:w-full max-md:mt-16 max-md:mb-16 flex items-center flex-col">
               <p className="text-[1.6rem] mb-8">助かりました！</p>
-              <img src="/assets/img/token.svg" alt="token" />
+              <img className="max-md:hidden" src="/assets/img/token.svg" alt="token" />
+              <img className="md:hidden" src="/assets/img/token-sp.svg" alt="token" />
             </div>
             <div className="w-72 text-center ml-16 max-md:w-full max-md:ml-0 max-md:flex max-md:items-center max-md:justify-center">
               <img src="/assets/img/token_img-3.svg" alt="img" />

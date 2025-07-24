@@ -15,8 +15,7 @@ export default function About() {
             縁の下の貢献に「スポットライト」を当てるシステムです。
           </p>
           <p className="md:text-[1.388vw] leading-loose text-[1.7rem] mb-[2vw] md:mb-10 last:mb-0">
-            p2p
-            bonusという、従業員同士がお互いに仕事の成果や貢献に対して賞賛したり認めたりするだけでなく、それと共に少額の報酬を送り合う仕組みをベースに開発されました。
+            ピアボーナスという、従業員同士がお互いに仕事の成果や貢献に対して賞賛したり認めたりするだけでなく、それと共に少額の報酬を送り合う仕組みをベースに開発されました。
           </p>
         </div>
       </div>
@@ -33,8 +32,8 @@ export default function About() {
           <img className="max-md:rotate-90" src="/assets/img/arw-2.svg" alt="arrow" />
         </div>
         <div className="bg-[#fff] rounded-[4rem] p-16 relative z-10 max-md:mt-48 max-md:px-12 max-md:py-16 js-list before:content-[''] before:absolute before:bottom-full before:right-12 before:w-[30rem] before:h-[17.2rem] before:[aspect-ratio:300/172] before:bg-[url(/assets/img/ico_ilst-1.svg)] before:bg-center before:bg-cover max-md:before:w-64 max-md:before:h-auto">
-          <h3 className="md:mb-14 text-center mb-10">
-            <img className="md:max-w-[25rem] max-w-[18rem]" src="/assets/img/logo_bk.svg" alt="p2p bonus" />
+          <h3 className="md:mb-14 text-center mb-10 text-[3.6rem] tracking-widest mb-14 max-md:text-[2.6rem] max-md:mb-[2.8rem]">
+            ピアボーナス
           </h3>
           <ul className="flex flex-col gap-8 font-medium">
             <li className="text-[2.4rem] font-medium flex items-center gap-[0.7rem] max-md:text-[1.8rem]">
@@ -43,7 +42,7 @@ export default function About() {
             </li>
             <li className="text-[2.4rem] font-medium flex items-center gap-[0.7rem] max-md:text-[1.8rem]">
               <img className="max-md:w-[1.8rem]" src="/assets/img/ico_check.svg" alt="check" />
-              日々のトークン送信で継続評価
+              日々互いの貢献を認め合う継続評価
             </li>
             <li className="text-[2.4rem] font-medium flex items-center gap-[0.7rem] max-md:text-[1.8rem]">
               <img className="max-md:w-[1.8rem]" src="/assets/img/ico_check.svg" alt="check" />

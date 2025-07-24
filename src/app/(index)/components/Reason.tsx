@@ -13,9 +13,7 @@ export default function Reason() {
         </div>
         <div className="md:pl-[6%] md:w-1/2 w-full pl-12 z-10 js-list">
           <h2 className="text-[2.8vw] flex items-center gap-[0.8vw] mb-[3vw] max-md:text-[2.2rem] max-md:mb-12 max-md:gap-4 md:leading-[1.4] leading-[1.6]">
-            p2p bonusが陰の功労者に
-            <br />
-            スポットライトを当てられる理由
+            ピアボーナスが陰の功労者に<br />スポットライトを当てられる理由
           </h2>
           <ul className="md:space-y-[1.4vw] space-y-[1rem]">
             {[
