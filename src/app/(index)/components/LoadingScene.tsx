@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Fv from "./Fv";
+import { useLoading } from "@/contexts/LoadingContext";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -15,6 +16,7 @@ const LoadingScene = () => {
   const fvRef = useRef<HTMLDivElement>(null);
   const [imageSet, setImageSet] = useState<'a' | 'b'>('a');
   const hasCountedRef = useRef(false);
+  const { setAnimationComplete } = useLoading();
 
   useEffect(() => {
     if (!hasCountedRef.current) {
@@ -49,6 +51,7 @@ const LoadingScene = () => {
             completedAnimations++;
             if (completedAnimations === itemElements.length) {
               document.body.classList.remove('overflow-hidden');
+              setAnimationComplete();
             }
           }
         });
@@ -115,7 +118,7 @@ const LoadingScene = () => {
           .to(sectionRef.current, {
             opacity: 0,
             duration: 0.3,
-            ease: "power1.inOut"
+            ease: "power1.inOut",
           }, '<');
         }
       });

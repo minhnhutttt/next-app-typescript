@@ -5,6 +5,7 @@ import ScrollContainer from "@/components/scrollContainer";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LoadingScene from "./(index)/components/LoadingScene";
+import { LoadingProvider } from "@/contexts/LoadingContext";
 
 const noto = Noto_Sans_JP({
   weight: ["300", "400", "500", "700", "900"],
@@ -35,12 +36,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${noto.className} ${mplus.variable} ${roboto.variable} bg-black `}>
+      <LoadingProvider>
+      <body className={`${noto.className} ${mplus.variable} ${roboto.variable} bg-black overflow-hidden`}>
         <ScrollContainer>
           <div className="fixed inset-0 [background:linear-gradient(45deg,rgba(236,157,188,1)_0%,rgba(142,129,185,.97)_48%,rgba(126,202,240,.9)_100%)] ">
             <div className="absolute bottom-5 left-5 h-[calc(100%_-_40px)] w-[calc(100%_-_40px)] rounded-xl border-2 border-white/60 max-lg:hidden"></div>
           </div>
-          {/* <LoadingScene /> */}
+          <LoadingScene />
           <div className="relative w-full overflow-clip bg-white mx-auto md:w-[640px]">
             <Header />
             {children}
@@ -48,6 +50,7 @@ export default function RootLayout({
           </div>
         </ScrollContainer>
       </body>
+      </LoadingProvider>
     </html>
   );
 }

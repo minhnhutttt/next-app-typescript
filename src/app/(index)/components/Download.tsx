@@ -40,10 +40,10 @@ const Download = () => {
               <h5><img src="/assets/images/wallet-driver-title.png" alt="" /></h5>
             </div>
             <div className="flex items-center gap-4 mt-5 max-sm:flex-col justify-center">
-              <a href="http://" target="_blank" rel="noopener noreferrer">
+              <a href="https://apps.apple.com/jp/app/diver-wallet-pro/id6739527739" target="_blank" rel="noopener noreferrer">
                 <img className="max-sm:h-14" src="/assets/images/btn-apple.png" alt="" />
               </a>
-              <a href="http://" target="_blank" rel="noopener noreferrer">
+              <a href="https://play.google.com/store/apps/details?id=com.bigant.diver.limited.wallet.pro" target="_blank" rel="noopener noreferrer">
                 <img className="max-sm:h-14" src="/assets/images/btn-google.png" alt="" />
               </a>
             </div>
@@ -59,7 +59,7 @@ const Download = () => {
             </p>
           </div>
           <div className="h-[340px] bg-[url('/assets/images/coins.png')] bg-cover bg-center flex items-center justify-center p-5">
-              <a href="" className="relative flex border-white border-2 rounded-full items-center justify-center w-[500px] md:h-[120px] h-[100px] bg-[linear-gradient(59deg,_#FFB2B8_8.73%,_#FF7DB8_19.75%,_#FA75BC_22.9%,_#ED62C7_27.62%,_#D842D9_33.13%,_#BB15F2_38.63%,_#AD00FF_41.78%,_#A711FE_48.86%,_#A41BFE_55.16%,_#9A35FC_57.52%,_#8C5DFB_62.24%,_#817EF9_66.96%,_#7897F8_71.69%,_#71A9F7_76.41%,_#6EB4F7_81.92%,_#6DB8F7_87.42%)] sm:text-[40px] text-[24px] leading-tight font-bold text-white">
+              <a href="https://www.open-fave.com/scs" target="_blank" rel="noopener noreferrer" className="relative flex border-white border-2 rounded-full items-center justify-center w-[500px] md:h-[120px] h-[100px] bg-[linear-gradient(59deg,_#FFB2B8_8.73%,_#FF7DB8_19.75%,_#FA75BC_22.9%,_#ED62C7_27.62%,_#D842D9_33.13%,_#BB15F2_38.63%,_#AD00FF_41.78%,_#A711FE_48.86%,_#A41BFE_55.16%,_#9A35FC_57.52%,_#8C5DFB_62.24%,_#817EF9_66.96%,_#7897F8_71.69%,_#71A9F7_76.41%,_#6EB4F7_81.92%,_#6DB8F7_87.42%)] sm:text-[40px] text-[24px] leading-tight font-bold text-white">
                 ETHとDWEを<br />
                 引き換えよう
                 <img src="/assets/images/arrow.svg" alt="" className="absolute right-5" />
@@ -80,15 +80,15 @@ const Download = () => {
               <h5 className="sm:text-[36px] text-[20px] font-bold">主な暗号資産取引所</h5>
             </div>
             <ul className="sm:text-[28px] text-[20px] font-bold list-disc pl-6 underline space-y-3">
-              <li>Coincheck（コインチェック）</li>
-              <li>bitFlyer（ビットフライヤー）</li>
-              <li>GMOコイン</li>
-              <li>SBI VCトレード</li>
+              <li><a href="https://coincheck.com/ja/" target="_blank" rel="noopener noreferrer">Coincheck（コインチェック）</a></li>
+              <li><a href="https://bitflyer.com/ja-jp/" target="_blank" rel="noopener noreferrer">bitFlyer（ビットフライヤー）</a></li>
+              <li><a href="https://coin.z.com/jp/" target="_blank" rel="noopener noreferrer">GMOコイン</a></li>
+              <li><a href="https://www.sbivc.co.jp/" target="_blank" rel="noopener noreferrer">SBI VCトレード</a></li>
             </ul>
           </div>
         </div>
         
-      <div className="js-deco absolute max-sm:w-[280px] bottom-20 left-0">
+      <div className="js-deco absolute max-sm:w-[200px] sm:bottom-20 bottom-16 left-0">
         <img className="js-deco-01 absolute top-[50px] right-[-150px]" src="/assets/images/footer-deco-01.png" alt="" />
         <img className="js-deco-02 absolute top-[80px] right-[-100px]" src="/assets/images/footer-deco-02.png" alt="" />
         <img className="js-deco-03 origin-left" src="/assets/images/footer-deco-03.png" alt="" />

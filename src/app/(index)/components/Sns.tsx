@@ -19,7 +19,7 @@ const Sns = () => {
         </div>
         <div className="relative sm:size-[446px] size-[300px] mx-auto mt-[60px]">
         {/* 中心のロゴ */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center z-50">
           <div className="center-logo sm:size-[280px] size-[200px] bg-white rounded-full flex items-center justify-center shadow-lg">
             <div className="text-center">
               <img src="/assets/images/img-ob.png" alt="" />
