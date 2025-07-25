@@ -8,11 +8,21 @@ const Fv = () => {
   const { isAnimationComplete } = useLoading();
 
   useEffect(() => {
-    if (isAnimationComplete && videoRef.current) {
-      videoRef.current.play().catch(error => {
+    if (!isAnimationComplete || !videoRef.current) return;
+
+    const video = videoRef.current;
+    
+    const timer = setTimeout(async () => {
+      try {
+        if (video.paused) {
+          await video.play();
+        }
+      } catch (error) {
         console.log('Video autoplay failed:', error);
-      });
-    }
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, [isAnimationComplete]);
 
   return (
@@ -20,16 +30,12 @@ const Fv = () => {
       <video
         ref={videoRef}
         className="w-full aspect-[9/16] object-cover object-center"
-        data-lazy-video=""
-        data-lazy=""
-        data-autoplay="true"
-        preload="none"
+        preload="metadata"
         loop
         muted
         src="/assets/videos/fv.mp4"
         playsInline
-        data-loaded="true"
-      ></video>
+      />
     </section>
   );
 };
