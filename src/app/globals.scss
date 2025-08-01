@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth !important;
+}
+body {
+  color: #21012D;
+}
+
+.scale-up {
+  scale: .7;
+  opacity: 0;
+  transition: .8s all linear(0,.5737 7.6%,.8382 11.87%,.9463 14.19%,1.0292 16.54%,1.0886 18.97%,1.1258 21.53%,1.137 22.97%,1.1424 24.48%,1.1423 26.1%,1.1366 27.86%,1.1165 31.01%,1.0507 38.62%,1.0219 42.57%,.9995 46.99%,.9872 51.63%,.9842 58.77%,1.0011 81.26%,1);
+}
+
+[data-scroll='in'] .scale-up,
+[data-scroll='in'].scale-up {
+  scale: 1;
+  opacity: 1;
+}
+
+.fade-up {
+  transform: translateY(30px);
+  opacity: 0;
+  transition: .8s all linear(0,.5737 7.6%,.8382 11.87%,.9463 14.19%,1.0292 16.54%,1.0886 18.97%,1.1258 21.53%,1.137 22.97%,1.1424 24.48%,1.1423 26.1%,1.1366 27.86%,1.1165 31.01%,1.0507 38.62%,1.0219 42.57%,.9995 46.99%,.9872 51.63%,.9842 58.77%,1.0011 81.26%,1);
+}
+[data-scroll='in'].fade-up {
+  transform: translate(0);
+  opacity: 1;
+}
+
+@keyframes circlemove{
+  0%{bottom:160px;}
+  100%{bottom:0px;}
+}
+
+@keyframes circlemove-sp{
+  0%{bottom:100px;}
+  100%{bottom:0px;}
+}
+
+@keyframes cirlemovehide{
+  0%{opacity:0}
+  50%{opacity:1;}
+  80%{opacity:0.9;}
+  100%{opacity:0;}
+}
+
+.swiper-wrapper {
+transition-timing-function: linear !important;
+}
