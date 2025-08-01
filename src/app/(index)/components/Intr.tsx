@@ -4,7 +4,7 @@ export default function Intr() {
   return (
     <section className="md:pt-32 md:pb-48 pt-24 pb-32">
       <div className="md:w-[calc(100%-10rem)] w-[calc(100%-6rem)] max-w-[140rem] ml-auto mr-auto">
-        <h3 className="w-[fit-content] ml-auto mr-auto text-[#fe1d37] md:text-[3.6rem] font-semibold tracking-widest bg-[#ffec3e] rounded-[4rem] px-12 py-6 mb-20 text-[2rem] flex items-center justify-center gap-2 js-list"><img src="/assets/img/logo-black.svg" alt="p2p bonus" /></h3>
+        <h3 className="w-[fit-content] ml-auto mr-auto text-[#fe1d37] md:text-[3.6rem] font-semibold tracking-widest bg-[#ffec3e] rounded-[4rem] px-12 py-6 mb-20 text-[2rem] flex items-center justify-center gap-2 js-list"><img className="max-md:w-[14rem] w-[22rem] mb-1" src="/assets/img/logo-black.svg" alt="p2p bonus" />を導入すると</h3>
         <div className="text-center mb-24 js-list flex justify-center items-center">
           <img className="md:max-w-[50%] max-w-[25%]" src="/assets/img/arw-3.svg" alt="arrow" />
         </div>

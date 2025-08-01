@@ -17,7 +17,7 @@ const Footer = () => {
         </footer>
 
         <a href="/" className="fixed w-full bg-[#f63c4c] text-[#fff] md:hidden items-center justify-center gap-4 px-12 py-[1.3rem] text-[2rem] tracking-wider flex bottom-[0] max-md:left-[0] max-md:[transition:0.3s_ease-in-out] z-[99]">
-            <img className="w-[2.4rem]" src="/assets/img/ico_line.svg" alt="line" />
+            <span className="w-[2rem]"></span>
                 <p>お問い合わせ</p>
                 <img className="w-[0.6rem] ml-4 mt-[0.3rem]" src="/assets/img/arw-1.svg" alt="arrow" />
         </a>

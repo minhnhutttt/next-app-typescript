@@ -58,16 +58,6 @@ export default function Fv() {
           </h2>
           <p className="text-[2.4rem] bg-[#fff] px-8 py-4 mt-8 max-md:text-[1.8rem] max-md:leading-[1.35] max-md:p-4 max-md:mt-4">陰の功労者にトークンを、縁の下にスポットライトを</p>
         </div>
-        <div className="bg-[rgba(249,_200,_200,_0.9)] w-[30rem] h-[30rem] rounded-[100%] flex items-center justify-center border-[solid] border-[0.4rem] border-[#ff8f94] text-center leading-[1.3] js-list max-md:w-56 max-md:h-56 max-md:absolute max-md:right-[0] max-md:bottom-[17rem]">
-          <p className="text-[3.4rem] max-md:text-[1.6rem] max-md:leading-[1.4]">
-            組織変革の<br />
-            新基軸を<br />
-            <span className="text-[4rem] font-semibold leading-[1.1] max-md:text-[1.8rem] max-md:leading-[1.2]">
-              トークンで<br />
-              <b className="text-[5.4rem] max-md:text-[2.4rem]">実現</b>
-            </span>
-          </p>
-        </div>
       </div>
     </section>
   )
