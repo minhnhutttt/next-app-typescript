@@ -7,6 +7,7 @@ import { WhatIs } from './WhatIs';
 import { Vision } from './Vision';
 import { Platform } from './Platform';
 import { Benefits } from './Benefits';
+import { Token } from './Token';
 
 interface SlideData {
   id: number;
@@ -106,6 +107,9 @@ const ContainerPage: React.FC = () => {
         </SplideSlide>
         <SplideSlide className="h-full">
           <Benefits isActive={currentSlide === 4} />
+        </SplideSlide>
+        <SplideSlide className="h-full">
+          <Token isActive={currentSlide === 5} />
         </SplideSlide>
       </Splide>
     </div>

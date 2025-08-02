@@ -4,7 +4,30 @@ import { useSlideFadeUp } from "@/hooks/useSlideFadeUp";
 import { Splide, SplideSlide } from "react-splide-ts";
 import "@splidejs/react-splide/css";
 
-const data = [
+const dataEnhancements = [
+  {
+    icon: "/assets/images/ic-inazuma.svg",
+    text: "月間交換回数に応じたボーナス",
+  },
+  {
+    icon: "/assets/images/ic-shopping-bag.svg",
+    text: "フラッシュセール、季節・地域キャンペーン",
+  },
+  {
+    icon: "/assets/images/ic-fave.svg",
+    text: (
+      <>
+        FAVERとの連携
+        <br />
+        <span className="md:text-[min(2vmin,15px)] text-[min(3vmin,20px)]">
+          ( NFTチケット、限定グッズなど）
+        </span>
+      </>
+    ),
+  },
+]
+
+const dataIncentive = [
   {
     icon: "/assets/images/ic-incentive-01.svg",
     title: "ブロンズ",
@@ -82,11 +105,10 @@ export const Benefits = ({ isActive }: { isActive: boolean }) => {
         className="w-full h-full flex justify-center flex-col md:pl-[160px] pl-14"
       >
         <div className="fade-item flex items-center justify-center md:pr-[160px] pr-14">
-          <div>
-            <h3 className="lg:text-[min(5.7vmin,48px)] text-[min(5vmin,32px)] font-black text-center tracking-wider">
-              活用方法とユーザー報酬設計
-            </h3>
-            <span className="bg-[linear-gradient(-270deg,_#F70FFF_6.79%,_rgba(18,_214,_223,_0.02)_100%)] w-full block h-1 rounded-full"></span>
+          <div className="relative flex flex-col items-center justify-center">
+              <p className="absolute font-audiowide text-[min(18.52vmin,150px)] u-text-stroke tracking-widest opacity-10 leading-none">Benefits</p>
+              <h3 className="lg:text-[min(5.7vmin,48px)] text-[min(5vmin,32px)] tracking-wider font-black text-center">活用方法とユーザー報酬設計</h3>
+              <span className="bg-[linear-gradient(-270deg,_#F70FFF_6.79%,_rgba(18,_214,_223,_0.02)_100%)] w-full block h-1 rounded-full"></span>
           </div>
         </div>
         <div className="w-full">
@@ -104,28 +126,7 @@ export const Benefits = ({ isActive }: { isActive: boolean }) => {
                 }}
                 className="w-full"
               >
-                {[
-                  {
-                    icon: "/assets/images/ic-inazuma.svg",
-                    text: "月間交換回数に応じたボーナス",
-                  },
-                  {
-                    icon: "/assets/images/ic-shopping-bag.svg",
-                    text: "フラッシュセール、季節・地域キャンペーン",
-                  },
-                  {
-                    icon: "/assets/images/ic-fave.svg",
-                    text: (
-                      <>
-                        FAVERとの連携
-                        <br />
-                        <span className="md:text-[min(2vmin,15px)] text-[min(3vmin,20px)]">
-                          ( NFTチケット、限定グッズなど）
-                        </span>
-                      </>
-                    ),
-                  },
-                ].map((item, index) => (
+                {dataEnhancements.map((item, index) => (
                   <SplideSlide key={index} className="fade-item relative !w-full md:max-w-[290px] max-w-[220px] px-4 md:py-[min(3vmin,24px)] py-[min(2vmin,17px)] md:h-[min(25vmin,200px)] rounded-[24px] bg-[rgba(255,_255,_255,_0.10)] backdrop-filter backdrop-blur-[3.5px] flex items-center justify-center">
                       <div className="relative space-y-[min(3vmin,24px)] ">
                         <p>
@@ -154,7 +155,7 @@ export const Benefits = ({ isActive }: { isActive: boolean }) => {
                 }}
                 className="w-full"
               >
-                {data.map((item, index) => (
+                {dataIncentive.map((item, index) => (
                   <SplideSlide
                     key={index}
                     className="fade-item relative aspect-square md:w-full md:max-w-[min(33.33vmin,270px)] w-[200px] h-full md:max-h-[min(33.33vmin,270px)] rounded-full bg-[#18003D]/[0.3] backdrop-filter backdrop-blur-[3.5px] py-[min(3vmin,32px)] border" style={{ borderColor: item.color }}

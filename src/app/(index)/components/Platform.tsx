@@ -19,7 +19,8 @@ export const Platform = ({ isActive }: {isActive: boolean}) => {
       >
         <div className="w-full max-w-[1200px]">
             <div className="fade-item flex items-center justify-center max-md:pr-5">
-                <div>
+                <div className="relative flex flex-col items-center justify-center">
+                    <p className="absolute font-audiowide text-[min(18.52vmin,150px)] u-text-stroke tracking-widest opacity-10 leading-none">Platform</p>
                     <h3 className="lg:text-[min(5.7vmin,48px)] text-[min(5vmin,32px)] tracking-wider font-black text-center">プラットフォームの仕組みと機能</h3>
                     <span className="bg-[linear-gradient(-270deg,_#F70FFF_6.79%,_rgba(18,_214,_223,_0.02)_100%)] w-full block h-1 rounded-full"></span>
                 </div>
