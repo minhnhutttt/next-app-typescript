@@ -16,6 +16,7 @@ const config: Config = {
     },
     fontFamily: {
       tomorrow: ["var(--font-tomorrow)", "sans-serif"],
+      audiowide: ["var(--font-audiowide)", "sans-serif"],
     },
   },
   plugins: [],

@@ -2,10 +2,9 @@
 
 const Footer = () => {
   return (
-    <footer className="px-5 md:pt-[120px] pt-20 pb-5">
-
-      <p className="md:text-[14px] text-[12px] font-light text-white text-center">
-        ©2025  THE LETTER
+    <footer className="p-3 absolute bottom-0 inset-x-0 z-30">
+      <p className="md:text-[13px] text-[11px] font-light text-white text-center">
+       Copyright © 2025 COIN TOGETHER.
       </p>
     </footer>
   );

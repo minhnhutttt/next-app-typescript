@@ -2,15 +2,11 @@
 
 import { useSlideFadeUp } from "@/hooks/useSlideFadeUp";
 
-interface Section01Props {
-  isActive: boolean;
-}
-
-export const Section02: React.FC<Section01Props> = ({ isActive }) => {
+export const WhatIs = ({ isActive }: {isActive: boolean}) => {
   const ref = useSlideFadeUp(isActive, {
     duration: 1.2,
     delay: 0.5,
-    stagger: 0.3,
+    stagger: 0.1,
     y: 100,
     triggerOnActive: true
   });

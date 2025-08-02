@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Tomorrow } from "next/font/google";
+import { Inter, Tomorrow, Audiowide } from "next/font/google";
 import "./globals.scss";
 import ScrollContainer from "@/components/scrollContainer";
 import Header from "@/components/Header";
@@ -9,6 +9,12 @@ const tomorrow = Tomorrow({
   weight: ['300','400','500','700','900'],
   subsets: ["latin"],
   variable: '--font-tomorrow'
+ });
+
+ const audiowide = Audiowide({ 
+  weight: ['400'],
+  subsets: ["latin"],
+  variable: '--font-audiowide'
  });
 
  const inter = Inter({ 
@@ -28,11 +34,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${tomorrow.variable} bg-[#010101]`}>
+      <body className={`${inter.className} ${tomorrow.variable} ${audiowide.variable} bg-[#010101]`}>
         <ScrollContainer>
             <Header />
             {children}
-            {/* <Footer /> */}
+            <Footer />
         </ScrollContainer>
         </body>
     </html>
