@@ -6,11 +6,17 @@ html {
   scroll-behavior: smooth !important;
 }
 body {
-  color: #21012D;
+  color: #fff;
 }
 
 .u-text-stroke {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
+}
+
+.u-text-gradient {
+  background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }

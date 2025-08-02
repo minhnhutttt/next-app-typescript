@@ -5,6 +5,8 @@ import '@splidejs/react-splide/css';
 import { Top } from './Top';
 import { WhatIs } from './WhatIs';
 import { Vision } from './Vision';
+import { Platform } from './Platform';
+import { Benefits } from './Benefits';
 
 interface SlideData {
   id: number;
@@ -98,6 +100,12 @@ const ContainerPage: React.FC = () => {
         </SplideSlide>
         <SplideSlide className="h-full">
           <Vision isActive={currentSlide === 2} />
+        </SplideSlide>
+        <SplideSlide className="h-full">
+          <Platform isActive={currentSlide === 3} />
+        </SplideSlide>
+        <SplideSlide className="h-full">
+          <Benefits isActive={currentSlide === 4} />
         </SplideSlide>
       </Splide>
     </div>

@@ -22,7 +22,7 @@ export const WhatIs = ({ isActive }: {isActive: boolean}) => {
             <h3 className="lg:pl-[min(21vmin,170px)] md:pl-[min(14vmin,120px)] pl-4">
               <img className="max-md:w-[300px]" src="/assets/images/tgz.svg" alt="" />
             </h3>
-            <p className="md:text-[min(2vmin,16px)] text-[11px] text-white pl-[min(8.6vmin,70px)] pr-[min(3vmin,30px)]">
+            <p className="md:text-[min(2vmin,16px)] text-[12px] text-white pl-[min(8.6vmin,70px)] pr-4 md:pr-[min(3vmin,30px)]">
               トゥギャザーコイン（TGZ）は、位置情報連動型のアクション報酬システムとNFTクーポンを組み合わせた、実店舗・イベント・地域への集客を促進するユーティリティトークンです。
             </p>
           </div>
@@ -37,9 +37,9 @@ export const WhatIs = ({ isActive }: {isActive: boolean}) => {
                 <span className="w-[160px] md:hidden">
                 <img src="/assets/images/img-enako.png" alt="" />
               </span>
-              <div className="text-[min(3vmin,24px)] font-bold pb-[min(5.8vmin,47px)]">
+              <div className="text-[14px] md:text-[min(3vmin,24px)] font-bold pb-[min(5.8vmin,47px)]">
                 <p className="">
-                  実世界の行動で<span className="text-[min(5vmin,40px)]">稼げる</span>
+                  実世界の行動で<span className="text-[16px] md:text-[min(5vmin,40px)]">稼げる</span>
                 </p>
                 <p className="">
                   「トゥギャザーコイン（TGZ）」
@@ -47,7 +47,7 @@ export const WhatIs = ({ isActive }: {isActive: boolean}) => {
               </div>
               </div>
 
-              <div className="space-y-[min(3.7vmin,30px)]">
+              <div className="space-y-[min(3.7vmin,30px)] max-md:mt-4">
                 {[
                   {
                     title: "アクション報酬",
@@ -68,7 +68,7 @@ export const WhatIs = ({ isActive }: {isActive: boolean}) => {
                 ].map((item, index) => (
                   <div className="fade-item flex items-center gap-[30px]" key={index}>
                     <div className="aspect-[247/70] text-[min(2.72vmin,22px)] bg-[url(/assets/images/frame.png)] bg-cover w-[min(29.88vmin,242px)] flex items-center justify-center">{item.title}</div>
-                    <div className="flex-1 text-[min(2.22vmin,18px)]">{item.text}</div>
+                    <div className="flex-1 text-[13px] md:text-[min(2.22vmin,18px)]">{item.text}</div>
                   </div>
                 ))}
               </div>
