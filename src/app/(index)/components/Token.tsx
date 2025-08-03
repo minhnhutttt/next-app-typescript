@@ -15,10 +15,10 @@ export const Token = ({ isActive }: {isActive: boolean}) => {
     <section className="w-full h-full overflow-hidden">
       <div 
         ref={ref}
-        className="w-full h-full flex items-center justify-center md:px-[160px] pl-10 pr-5"
+        className="w-full h-full flex items-center justify-center xl:px-[160px] md:pl-[160px] pl-10 pr-5"
       >
         <div className="w-full max-w-[1200px]">
-            <div className="fade-item flex items-center justify-center max-md:pr-5">
+            <div className="fade-item flex items-center justify-center max-md:pr-0 max-xl:pr-[160px]">
                 <div className="relative flex flex-col items-center justify-center">
               <p className="absolute font-audiowide text-[min(18.52vmin,150px)] u-text-stroke opacity-10 leading-none whitespace-nowrap">Token Economics</p>
               <h3 className="lg:text-[min(5.7vmin,48px)] text-[min(5vmin,32px)] tracking-wider font-black text-center">トークンエコノミクス</h3>
