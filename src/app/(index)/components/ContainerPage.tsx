@@ -2,7 +2,6 @@
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
-
 import React, { useRef, useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
@@ -15,11 +14,11 @@ import { Token } from './Token';
 import { Roadmap } from './Roadmap';
 import { Revenue } from './Revenue';
 
-
 const ParticlesBackground = dynamic(() => import('@/components/ParticlesBackground'), {
   ssr: false,
   loading: () => <div className="particles-loading" />
 });
+
 interface SlideData {
   id: number;
   title: string;
@@ -39,6 +38,8 @@ const slides: SlideData[] = [
 const ContainerPage: React.FC = () => {
   const splideRef = useRef<any>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  // Thêm state để theo dõi các slide đã được kích hoạt
+  const [activatedSlides, setActivatedSlides] = useState<Set<number>>(new Set([0])); // Slide đầu tiên mặc định active
 
   useEffect(() => {
     if (splideRef.current) {
@@ -46,6 +47,8 @@ const ContainerPage: React.FC = () => {
       
       splide.on('move', (newIndex: number) => {
         setCurrentSlide(newIndex);
+        // Thêm slide hiện tại vào danh sách đã kích hoạt
+        setActivatedSlides(prev => new Set(prev).add(newIndex));
       });
     }
   }, []);
@@ -58,6 +61,11 @@ const ContainerPage: React.FC = () => {
 
   const formatSlideNumber = (num: number): string => {
     return num.toString().padStart(2, '0');
+  };
+
+  // Hàm kiểm tra xem slide có đã được kích hoạt chưa
+  const isSlideActivated = (index: number): boolean => {
+    return activatedSlides.has(index);
   };
 
   return (
@@ -109,28 +117,28 @@ const ContainerPage: React.FC = () => {
         className="h-full"
       >
         <SplideSlide className="h-full">
-          <Top isActive={currentSlide === 0} />
+          <Top isActive={isSlideActivated(0)} />
         </SplideSlide>
         <SplideSlide className="h-full">
-          <WhatIs isActive={currentSlide === 1} />
+          <WhatIs isActive={isSlideActivated(1)} />
         </SplideSlide>
         <SplideSlide className="h-full">
-          <Vision isActive={currentSlide === 2} />
+          <Vision isActive={isSlideActivated(2)} />
         </SplideSlide>
         <SplideSlide className="h-full">
-          <Platform isActive={currentSlide === 3} />
+          <Platform isActive={isSlideActivated(3)} />
         </SplideSlide>
         <SplideSlide className="h-full">
-          <Benefits isActive={currentSlide === 4} />
+          <Benefits isActive={isSlideActivated(4)} />
         </SplideSlide>
         <SplideSlide className="h-full">
-          <Token isActive={currentSlide === 5} />
+          <Token isActive={isSlideActivated(5)} />
         </SplideSlide>
         <SplideSlide className="h-full">
-          <Roadmap isActive={currentSlide === 6} />
+          <Roadmap isActive={isSlideActivated(6)} />
         </SplideSlide>
         <SplideSlide className="h-full">
-          <Revenue isActive={currentSlide === 7} />
+          <Revenue isActive={isSlideActivated(7)} />
         </SplideSlide>
       </Splide>
     </div>
