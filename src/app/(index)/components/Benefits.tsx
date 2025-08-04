@@ -169,7 +169,7 @@ export const Benefits = ({ isActive }: { isActive: boolean }) => {
                   {dataEnhancements.map((item, index) => (
                     <SplideSlide 
                       key={index} 
-                      className="fade-item relative !w-full md:max-w-[290px] max-w-[220px] px-4 md:py-[min(3vmin,24px)] py-[min(2vmin,17px)] md:h-[min(25vmin,200px)] rounded-[24px] bg-[rgba(255,_255,_255,_0.10)] backdrop-filter backdrop-blur-[3.5px] flex items-center justify-center transition-all duration-1000 delay-500 ease-out hover:scale-105 cursor-pointer"
+                      className="fade-item relative !w-full md:max-w-[290px] max-w-[220px] px-4 md:py-[min(3vmin,24px)] py-[min(2vmin,17px)] md:h-[min(25vmin,200px)] rounded-[24px] bg-[rgba(255,_255,_255,_0.10)] backdrop-filter backdrop-blur-[3.5px] flex items-center justify-center transition-all duration-1000 delay-1000 ease-out hover:scale-105 cursor-pointer"
                       style={{
                         transform: !isActive ? `translateX(-${index * 80}%)` : 'translateX(0)',
                         zIndex: !isActive ? dataEnhancements.length - index : 2
@@ -218,7 +218,7 @@ export const Benefits = ({ isActive }: { isActive: boolean }) => {
                   {dataIncentive.map((item, index) => (
                     <SplideSlide
                       key={index}
-                      className="fade-item relative aspect-square md:w-full md:max-w-[min(33.33vmin,270px)] w-[200px] h-full md:max-h-[min(33.33vmin,270px)] rounded-full bg-[#18003D]/[0.3] backdrop-filter backdrop-blur-[3.5px] py-[min(3vmin,32px)] border transition-all duration-1000 delay-500 ease-out hover:scale-105 hover:shadow-lg cursor-pointer" 
+                      className="fade-item relative aspect-square md:w-full md:max-w-[min(33.33vmin,270px)] w-[200px] h-full md:max-h-[min(33.33vmin,270px)] rounded-full bg-[#18003D]/[0.3] backdrop-filter backdrop-blur-[3.5px] py-[min(3vmin,32px)] border transition-all duration-1000 delay-1000 ease-out hover:scale-105 hover:shadow-lg cursor-pointer" 
                       style={{ 
                         borderColor: item.color,
                         transform: !isActive ? `translateX(-${index * 60}%)` : 'translateX(0)',
