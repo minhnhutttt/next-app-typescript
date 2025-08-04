@@ -62,11 +62,11 @@ export const WhatIs = ({ isActive }: {isActive: boolean}) => {
                     text: "100万枚固定供給による持続可能な経済圏"
                   },
                   {
-                    title: "分散型運営",
-                    text: "DAOによるコミュニティ主導の意思決定"
+                    title: "企業運営",
+                    text: "ZEXAVERSE社による安定したプラットフォーム運営とコミュニティ参加の両立"
                   }
                 ].map((item, index) => (
-                  <div className="fade-item flex items-center gap-[30px]" key={index}>
+                  <div className="fade-item flex items-center gap-4 md:gap-[30px]" key={index}>
                     <div className="aspect-[247/70] text-[min(2.72vmin,22px)] bg-[url(/assets/images/frame.png)] bg-cover w-[min(29.88vmin,242px)] flex items-center justify-center">{item.title}</div>
                     <div className="flex-1 text-[13px] md:text-[min(2.22vmin,18px)]">{item.text}</div>
                   </div>

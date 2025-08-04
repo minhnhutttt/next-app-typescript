@@ -12,7 +12,7 @@ export const Vision = ({ isActive }: {isActive: boolean}) => {
   });
 
   return (
-    <section className="w-full h-full flex items-center justify-center md:pl-[160px] px-10">
+    <section className="w-full h-full flex items-center justify-center md:pl-[160px] px-9">
       <div 
         ref={ref}
         className="text-white w-full max-w-[1100px] md:space-y-[min(3vmin,24px)] space-y-10"
@@ -29,7 +29,7 @@ export const Vision = ({ isActive }: {isActive: boolean}) => {
                         </div>
                     </div>
                     <p className="text-center pt-[min(3vmin,24px)] md:text-[min(3vmin,24px)] text-[min(3.5vmin,24px)] font-bold tracking-wider">
-                        実世界の行動とデジタル価値を結びつけ、<br className="md:hidden" />地域経済の<br className="max-md:hidden" />活性化に貢献する分散型プラットフォーム
+                        「実世界の行動とデジタル価値を結びつけ、<br />地域経済の活性化に貢献するプラットフォーム」
                     </p>
                 </div>
             </div>

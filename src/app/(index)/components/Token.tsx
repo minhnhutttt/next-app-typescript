@@ -87,10 +87,10 @@ export const Token = ({ isActive }: {isActive: boolean}) => {
                         <td>提携企業インセンティブ</td>
                     </tr>
                     <tr>
-                        <td>DAOトレジャリー</td>
+                        <td>運営資金</td>
                         <td>10%</td>
                         <td>100,000</td>
-                        <td>コミュニティ運営資金</td>
+                        <td>プラットフォーム運営資金</td>
                     </tr>
                     <tr>
                         <td>マーケティング</td>

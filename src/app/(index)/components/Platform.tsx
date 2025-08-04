@@ -28,8 +28,7 @@ export const Platform = ({ isActive }: {isActive: boolean}) => {
             <div className="flex justify-center pt-[min(5.5vmin,44px)] pb-[min(3.7vmin,30px)] max-md:flex-col max-md:items-center">
                 <div className="fade-item flex items-center">
                     <p className="font-bold md:text-[min(2.5vmin,20px)] text-[min(4vmin,18px)] max-md:text-center">
-                        ユーザー行動で<br />
-                        得られる報酬の種類
+                        基本報酬が設定された<br />ユーザー行動でTGZを集める
                     </p>
                 </div>
                 <div className="fade-item w-full max-md:h-px md:w-px max-md:mt-2 mx-4 lg:mx-11 bg-white "></div>
@@ -37,13 +36,14 @@ export const Platform = ({ isActive }: {isActive: boolean}) => {
                     <ul className="md:text-[min(2vmin,16px)] text-[min(2.5vmin,14px)] leading-loose">
                         <li>店舗訪問（GPS認証）</li>
                         <li>購買行動（レシート提出など）</li>
-                        <li>レビュー・SNS投稿・友人紹介</li>
+                        <li>コンテンツ収集（エリアNFT取得）</li>
+                        <li>情報発信（レビュー・SNS投稿・友人紹介）</li>
                         <li>条件によるボーナス（天候・時間帯・新規店舗等）</li>
                     </ul>
                 </div>
             </div>
             <div className="w-full max-w-[810px] mx-auto">
-                <p className="fade-item text-center bg-[linear-gradient(90deg,_#2EDCFF_40.28%,_#8370D9_50.02%,_#DB00B2_60.17%)] u-text-gradient text-[min(2.22vmin,18px)] font-bold">NFTクーポン交換</p>
+                <p className="fade-item text-center bg-[linear-gradient(90deg,_#2EDCFF_40.28%,_#8370D9_50.02%,_#DB00B2_60.17%)] u-text-gradient text-[15px] md:text-[min(2.22vmin,18px)] font-bold">集めたTGZでNFTクーポンを獲得</p>
                 <table className="fade-item w-full text-[min(2.5vmin,12px)] md:text-[min(2vmin,15px)] text-center border-collapse mt-2.5 bg-[linear-gradient(180deg,_rgba(255,_255,_255,_0.00)_0%,_rgba(255,_255,_255,_0.20)_100%)] backdrop-filter backdrop-blur-[10px] border-[#2EDCFF]/[0.2] border [&_td]:border-[#2EDCFF]/[0.2] [&_td]:border-b [&_td]:py-2 md:[&_td]:py-[min(1vmin,8px)] md:[&_td]:px-3 [&_td]:px-1 [&_th]:py-2 md:[&_th]:py-[min(1vmin,8px)] md:[&_th]:px-3 [&_th]:px-1 [&_th]:font-bold [&_th]:border-[#2EDCFF]/[0.2] [&_th]:border-b">
                 <thead>
                     <tr>

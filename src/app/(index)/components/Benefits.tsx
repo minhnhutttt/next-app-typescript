@@ -1,6 +1,5 @@
 "use client";
 
-import { useSlideFadeUp } from "@/hooks/useSlideFadeUp";
 import { Splide, SplideSlide } from "react-splide-ts";
 import "@splidejs/react-splide/css";
 
@@ -90,30 +89,22 @@ const dataIncentive = [
 ];
 
 export const Benefits = ({ isActive }: { isActive: boolean }) => {
-  const ref = useSlideFadeUp(isActive, {
-    duration: 1.2,
-    delay: 0.5,
-    stagger: 0.1,
-    y: 100,
-    triggerOnActive: true,
-  });
 
   return (
     <section className="w-full h-full overflow-hidden">
       <div
-        ref={ref}
         className="w-full h-full flex justify-center flex-col md:pl-[160px] pl-14"
       >
-        <div className="fade-item flex items-center justify-center md:pr-[160px] pr-14">
+        <div className="flex items-center justify-center md:pr-[160px] pr-14">
           <div className="relative flex flex-col items-center justify-center">
               <p className="absolute font-audiowide text-[min(18.52vmin,150px)] u-text-stroke tracking-widest opacity-10 leading-none">Benefits</p>
-              <h3 className="lg:text-[min(5.7vmin,48px)] text-[min(5vmin,32px)] tracking-wider font-black text-center">活用方法とユーザー報酬設計</h3>
+              <h3 className="lg:text-[min(5.7vmin,48px)] text-[min(4vmin,28px)] tracking-wider font-black text-center">アクションを促進するメカニズム</h3>
               <span className="bg-[linear-gradient(-270deg,_#F70FFF_6.79%,_rgba(18,_214,_223,_0.02)_100%)] w-full block h-1 rounded-full"></span>
           </div>
         </div>
         <div className="w-full">
           <div className="flex w-full pt-[min(5.5vmin,44px)] pb-[min(3.7vmin,30px)] max-md:flex-col md:items-center md:space-x-[30px]">
-            <p className="fade-item md:text-[min(2.7vmin,22px)] text-[min(4vmin,30px)] max-md:pb-4 whitespace-nowrap flex-1">
+            <p className="md:text-[min(2.7vmin,22px)] text-[min(4vmin,30px)] max-md:pb-4 whitespace-nowrap flex-1">
               ユーティリティ強化
             </p>
             <div className="w-full">
@@ -128,7 +119,7 @@ export const Benefits = ({ isActive }: { isActive: boolean }) => {
               >
                 {dataEnhancements.map((item, index) => (
                   <SplideSlide key={index} className="fade-item relative !w-full md:max-w-[290px] max-w-[220px] px-4 md:py-[min(3vmin,24px)] py-[min(2vmin,17px)] md:h-[min(25vmin,200px)] rounded-[24px] bg-[rgba(255,_255,_255,_0.10)] backdrop-filter backdrop-blur-[3.5px] flex items-center justify-center">
-                      <div className="relative space-y-[min(3vmin,24px)] ">
+                      <div className="relative space-y-[min(3vmin,24px)]">
                         <p>
                           <img src={item.icon} alt="" />
                         </p>
