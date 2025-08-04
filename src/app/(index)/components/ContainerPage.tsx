@@ -1,4 +1,8 @@
 "use client"
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+
 import React, { useRef, useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
@@ -11,6 +15,11 @@ import { Token } from './Token';
 import { Roadmap } from './Roadmap';
 import { Revenue } from './Revenue';
 
+
+const ParticlesBackground = dynamic(() => import('@/components/ParticlesBackground'), {
+  ssr: false,
+  loading: () => <div className="particles-loading" />
+});
 interface SlideData {
   id: number;
   title: string;
@@ -52,7 +61,11 @@ const ContainerPage: React.FC = () => {
   };
 
   return (
+    <>
     <div className="relative w-full h-screen overflow-hidden bg-[url(/assets/images/bg-02.png)] bg-cover bg-no-repeat bg-center">
+      <Suspense fallback={<div className="particles-loading" />}>
+        <ParticlesBackground />
+      </Suspense>
       <div className="fixed left-2 md:left-[min(4vmin,32px)] top-1/2 transform -translate-y-1/2 z-20 md:space-y-4 space-y-3">
         {slides.map((slide, index) => (
           <div
@@ -121,6 +134,7 @@ const ContainerPage: React.FC = () => {
         </SplideSlide>
       </Splide>
     </div>
+    </>
   );
 };
 
