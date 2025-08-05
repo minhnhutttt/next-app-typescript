@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth !important;
+}
+body {
+  color: #21012D;
+}
+.u-text-gradient {
+  background: linear-gradient(109deg, #F20C3E 71.44%, #FFF000 85.1%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+/* styles/TextDisintegrator.module.css */
+
+.container {
+  min-height: 100vh;
+  background: black;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.controls {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.input {
+  padding: 10px 15px;
+  border: 2px solid #333;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  min-width: 200px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #ff045c;
+}
+
+.button {
+  padding: 10px 20px;
+  background: #ff045c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #e0037a;
+}
+
+.textContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.disintegratorText {
+  font-family: 'Gorditas', cursive;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: bold;
+  text-align: center;
+}
+
+.colorfulContainer {
+  margin-top: 2rem;
+}
+
+.colorfulText {
+  font-family: 'Gorditas', cursive;
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: bold;
+  text-align: center;
+}
+
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  pointer-events: none;
+}
+.td-wrapper,
+canvas {
+  transition: opacity 1s;
+}
+.td-wrapper:not(.td-hide) + canvas,
+.td-hide {
+  opacity: 0;
+}
