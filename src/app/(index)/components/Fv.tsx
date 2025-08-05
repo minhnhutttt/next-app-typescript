@@ -27,14 +27,12 @@ const Fv = () => {
         <div className="relative">
         <p className="[filter:drop-shadow(0_4px_50px_rgba(74,_0,_39,_0.20))]"><img src="/assets/images/frame.png" alt="" /></p>
         <div className="absolute inset-0 flex items-center justify-center">
-          <TextDesintegratorComponent 
+           <TextDesintegratorComponent 
             text="Hello World!"
             options={{
               padding: 160,
               density: 4,
-              duration: 2500,
-              delay: 0,
-              start: 0, // Delay 1 giây trước khi bắt đầu hiệu ứng lần đầu
+              duration: 2500
             }}
             className="text-4xl font-bold text-center mb-8"
           />

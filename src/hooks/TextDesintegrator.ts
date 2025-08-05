@@ -2,8 +2,6 @@ interface TextDesintegratorOptions {
   padding?: number;
   density?: number;
   duration?: number;
-  delay?: number; // Thêm delay option
-  start?: number; // Thêm start delay option
 }
 
 interface PixelData {
@@ -33,18 +31,12 @@ class TextDesintegrator {
   private color!: string;
   private t0: number = 0;
   private id?: number;
-  private delayTimeout?: number; // Thêm timeout cho delay
-  private isInDelay: boolean = false; // Flag để track trạng thái delay
-  private startTimeout?: number; // Thêm timeout cho start delay
-  private hasStarted: boolean = false; // Flag để track đã bắt đầu chưa
 
   constructor(el: HTMLElement, options: TextDesintegratorOptions = {}) {
     const defaultOptions: Required<TextDesintegratorOptions> = {
       padding: 160,
       density: 4,
-      duration: 2500,
-      delay: 0, // Default delay là 0
-      start: 0 // Default start delay là 0
+      duration: 2500
     };
 
     this.el = el;
@@ -59,19 +51,9 @@ class TextDesintegrator {
         this.createCanvas();
         this.fillCanvas();
         this.pixelize();
-        
-        // Nếu có start delay thì chờ, không thì chạy ngay
-        if (this.options.start > 0) {
-          this.startTimeout = window.setTimeout(() => {
-            this.hasStarted = true;
-            this.start();
-          }, this.options.start);
-        } else {
-          this.hasStarted = true;
-          setTimeout(() => {
-            this.start();
-          }, 0);
-        }
+        setTimeout(() => {
+          this.start();
+        }, 0);
       });
     }
   }
@@ -112,19 +94,12 @@ class TextDesintegrator {
 
   private start(): void {
     this.t0 = 0;
-    this.isInDelay = false;
     this.id = window.requestAnimationFrame((t) => this.render(t));
   }
 
   public stop(): void {
     if (this.id) {
       window.cancelAnimationFrame(this.id);
-    }
-    if (this.delayTimeout) {
-      clearTimeout(this.delayTimeout);
-    }
-    if (this.startTimeout) {
-      clearTimeout(this.startTimeout);
     }
   }
 
@@ -169,12 +144,6 @@ class TextDesintegrator {
   }
 
   private render(timestamp: number): void {
-    // Nếu chưa started hoặc đang trong delay thì không render
-    if (!this.hasStarted || this.isInDelay) {
-      this.id = requestAnimationFrame((t) => this.render(t));
-      return;
-    }
-
     if (!this.t0) {
       this.t0 = timestamp;
     }
@@ -207,27 +176,14 @@ class TextDesintegrator {
     
     if (elapsed > this.options.duration) {
       this.onComplete();
-    } else {
-      this.id = requestAnimationFrame((t) => this.render(t));
     }
+    
+    this.id = requestAnimationFrame((t) => this.render(t));
   }
 
   private onComplete(): void {
-    // Nếu có delay, thì tạm dừng animation
-    if (this.options.delay > 0) {
-      this.isInDelay = true;
-      this.delayTimeout = window.setTimeout(() => {
-        this.isInDelay = false;
-        this.reverse = !this.reverse;
-        this.t0 = 0;
-        this.id = requestAnimationFrame((t) => this.render(t));
-      }, this.options.delay);
-    } else {
-      // Không có delay thì chạy tiếp bình thường
-      this.reverse = !this.reverse;
-      this.t0 = 0;
-      this.id = requestAnimationFrame((t) => this.render(t));
-    }
+    this.reverse = !this.reverse;
+    this.t0 = 0;
   }
 
   private updateData(): void {

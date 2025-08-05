@@ -9,8 +9,6 @@ interface TextDesintegratorComponentProps {
     padding?: number;
     density?: number;
     duration?: number;
-    delay?: number; // Thêm delay prop
-    start?: number; // Thêm start delay prop
   };
   className?: string;
 }
