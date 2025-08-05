@@ -2,6 +2,7 @@ interface TextDesintegratorOptions {
   padding?: number;
   density?: number;
   duration?: number;
+  textVisibleDuration?: number; // Thêm option mới
 }
 
 interface PixelData {
@@ -36,7 +37,8 @@ class TextDesintegrator {
     const defaultOptions: Required<TextDesintegratorOptions> = {
       padding: 160,
       density: 4,
-      duration: 2500
+      duration: 2500,
+      textVisibleDuration: 3000 // Mặc định 3s
     };
 
     this.el = el;
@@ -48,6 +50,12 @@ class TextDesintegrator {
     // Đảm bảo fonts đã load xong trước khi tạo canvas
     if (typeof document !== 'undefined') {
       document.fonts.ready.then(() => {
+        // Kiểm tra xem đã có canvas chưa để tránh tạo duplicate
+        const existingCanvas = this.el.querySelector('canvas');
+        if (existingCanvas) {
+          existingCanvas.remove();
+        }
+        
         this.createCanvas();
         this.fillCanvas();
         this.pixelize();
@@ -100,6 +108,12 @@ class TextDesintegrator {
   public stop(): void {
     if (this.id) {
       window.cancelAnimationFrame(this.id);
+      this.id = undefined;
+    }
+    
+    // Cleanup canvas khi stop
+    if (this.canvas && this.canvas.parentNode) {
+      this.canvas.parentNode.removeChild(this.canvas);
     }
   }
 
@@ -149,41 +163,50 @@ class TextDesintegrator {
     }
     
     const elapsed = timestamp - this.t0;
+    const totalCycleDuration = this.options.textVisibleDuration + (this.options.duration * 2);
     
-    if (this.step < Math.min(500, this.options.duration * 0.5)) {
-      if (this.reverse) {
-        this.inner.classList.remove("td-hide");
+    // Tính toán giai đoạn hiện tại
+    const currentCycleTime = elapsed % totalCycleDuration;
+    
+    if (currentCycleTime < this.options.textVisibleDuration) {
+      // Giai đoạn hiển thị text gốc (3s)
+      this.inner.classList.remove("td-hide");
+      this.clearContext(); // Không vẽ pixels, chỉ hiện text gốc
+      
+    } else {
+      // Giai đoạn animation pixels (2.5s tan rã + 2.5s tái tạo = 5s)
+      const animationElapsed = currentCycleTime - this.options.textVisibleDuration;
+      
+      // Ẩn text gốc khi bắt đầu animation
+      this.inner.classList.add("td-hide");
+      
+      if (animationElapsed < this.options.duration) {
+        // Giai đoạn tan rã (0 -> duration)
+        this.step = animationElapsed;
+        this.reverse = false;
       } else {
-        this.inner.classList.add("td-hide");
+        // Giai đoạn tái tạo (duration -> 0)
+        this.step = (this.options.duration * 2) - animationElapsed;
+        this.reverse = true;
+      }
+      
+      // Cập nhật và vẽ pixels
+      this.updateData();
+      this.clearContext();
+      
+      for (const sq of this.data) {
+        this.context.globalAlpha = sq.alpha;
+        this.context.fillStyle = this.color;
+        this.context.fillRect(
+          sq.x / 2,
+          sq.y / 2,
+          this.options.density / 2,
+          this.options.density / 2
+        );
       }
     }
     
-    this.updateData();
-    this.clearContext();
-    
-    for (const sq of this.data) {
-      this.context.globalAlpha = sq.alpha;
-      this.context.fillStyle = this.color;
-      this.context.fillRect(
-        sq.x / 2,
-        sq.y / 2,
-        this.options.density / 2,
-        this.options.density / 2
-      );
-    }
-    
-    this.step = this.reverse ? this.options.duration - elapsed : elapsed;
-    
-    if (elapsed > this.options.duration) {
-      this.onComplete();
-    }
-    
     this.id = requestAnimationFrame((t) => this.render(t));
-  }
-
-  private onComplete(): void {
-    this.reverse = !this.reverse;
-    this.t0 = 0;
   }
 
   private updateData(): void {
