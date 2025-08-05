@@ -30,3 +30,10 @@ canvas {
 .td-hide {
   opacity: 0;
 }
+
+.u-text-gradient {
+  background: linear-gradient(59deg, #FFB2B8 8.73%, #FF7DB8 19.75%, #FA75BC 22.9%, #ED62C7 27.62%, #D842D9 33.13%, #BB15F2 38.63%, #AD00FF 41.78%, #A711FE 48.86%, #A41BFE 55.16%, #9A35FC 57.52%, #8C5DFB 62.24%, #817EF9 66.96%, #7897F8 71.69%, #71A9F7 76.41%, #6EB4F7 81.92%, #6DB8F7 87.42%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}

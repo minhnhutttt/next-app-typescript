@@ -26,17 +26,59 @@ const Fv = () => {
       <div className="flex items-center justify-center -mt-[240px] relative">
         <div className="relative">
         <p className="[filter:drop-shadow(0_4px_50px_rgba(74,_0,_39,_0.20))]"><img src="/assets/images/frame.png" alt="" /></p>
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center flex-col text-4xl font-bold text-center">
            <TextDesintegratorComponent  
-            text="Hello World!"
+            text="FAVERとファン"
             options={{
               padding: 160,
               density: 4,
               duration: 2500,
-              textVisibleDuration: 3000
+              textVisibleDuration: 5000
             }}
-            className="text-4xl font-bold text-center mb-8"
+            className="text-4xl font-bold text-center"
           />
+          <TextDesintegratorComponent  
+            text="が共創する"
+            options={{
+              padding: 160,
+              density: 4,
+              duration: 2500,
+              textVisibleDuration: 5000
+            }}
+            className="text-4xl font-bold text-center"
+          />
+          <TextDesintegratorComponent  
+            text="新時代の"
+            options={{
+              padding: 160,
+              density: 4,
+              duration: 2500,
+              textVisibleDuration: 5000
+            }}
+            className="text-4xl font-bold text-center"
+          />
+          <TextDesintegratorComponent  
+            text="エコシステム"
+            options={{
+              padding: 160,
+              density: 4,
+              duration: 2500,
+              textVisibleDuration: 5000
+            }}
+            className="text-4xl font-bold text-center"
+          />
+          <div className="flex">
+          <TextDesintegratorComponent  
+            text="F"
+            options={{
+              padding: 160,
+              density: 4,
+              duration: 2500,
+              textVisibleDuration: 5000
+            }}
+            className="text-red-600"
+          />
+          </div>
         </div>
         </div>
       </div>
