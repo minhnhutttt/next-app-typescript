@@ -59,7 +59,7 @@ const Header = () => {
       </div>
       </div>
       <button
-        className={`group  z-[99] md:h-10 h-8 md:w-[46px] w-[36px] ${NavOpen ? "active fixed max-sm:top-7 max-xl:top-8 max-sm:right-3 max-xl:right-[calc(50%-300px)]" : "relative"
+        className={`group xl:hidden z-[99] md:h-10 h-8 md:w-[46px] w-[36px] ${NavOpen ? "active fixed max-sm:top-7 max-xl:top-8 max-sm:right-3 max-xl:right-[calc(50%-300px)]" : "relative"
           }`}
         onClick={() => setNavOpen((prev) => !prev)}
       >
