@@ -28,7 +28,6 @@ const slides = [
   { id: 7, title: "Revenue", Component: Revenue },
 ];
 
-// Hook dùng để lấy giá trị trước đó
 function usePrevious<T>(value: T): T | undefined {
   const ref = useRef<T>();
   useEffect(() => {
@@ -43,20 +42,18 @@ const ContainerPage: React.FC = () => {
   const [activatedSlides, setActivatedSlides] = useState<Set<number>>(new Set([0]));
   const [isDesktop, setIsDesktop] = useState<boolean>(true);
 
-  // Detect screen size
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 768);
     };
 
-    handleResize(); // initial check
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const previousIsDesktop = usePrevious(isDesktop);
 
-  // Reset về slide 0 khi từ mobile → PC
   useEffect(() => {
     if (
       isDesktop &&
@@ -71,7 +68,6 @@ const ContainerPage: React.FC = () => {
     }
   }, [isDesktop, previousIsDesktop]);
 
-  // Gắn move listener khi Splide mounted
   const handleSplideMounted = () => {
     const splide = splideRef.current?.splide;
     if (!splide) return;
