@@ -4,10 +4,10 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ReactNode } from "react";
 
 const AboutItem = ({image, title, subtitle, children, color} : {image: string, title: ReactNode, subtitle: ReactNode, children: ReactNode, color: string}) => (
-    <div className="rounded-[30px] overflow-hidden [box-shadow:0_4px_30px_0_rgba(0,_0,_0,_0.25)]">
+    <div className="fade-up rounded-[30px] overflow-hidden [box-shadow:0_4px_30px_0_rgba(0,_0,_0,_0.25)]">
         <div className="flex items-center relative px-5 py-[25px] gap-4">
-            <div className="absolute inset-0 opacity-20"  style={{ backgroundColor: color}}></div>
-            <span><img className="[box-shadow:0_0_30px_0_rgba(0,_0,_0,_0.10)] rounded-full" src={image} alt="" /></span>
+            <div className="absolute inset-0 opacity-20 pointer-events-none"  style={{ backgroundColor: color}}></div>
+            <span><img className="[box-shadow:0_0_30px_0_rgba(0,_0,_0,_0.10)] rounded-full max-sm:w-[120px]" src={image} alt="" /></span>
             <div className="">
                 <p className="sm:text-[32px] text-[18px] font-bold mb-1" style={{color: color}}>{title}</p>
                 <p className="sm:text-[28px] text-[16px] font-bold">{subtitle}</p>
@@ -25,13 +25,13 @@ const About = () => {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden sm:px-[30px] px-4"
+      className="relative overflow-hidden sm:px-[30px] px-4 pb-20 sm:pb-[100px]"
     >
         <div className="relative">
-            <h3 className="sm:text-[48px] text-[28px] font-bold text-center border-b-[15px] border-[#3A86FF]">FAVEコインとは？</h3>
+            <h3 className="fade-up sm:text-[48px] text-[28px] font-bold text-center sm:border-b-[15px] border-b-[8px] border-[#3A86FF]">FAVEコインとは？</h3>
             <div className="relative pt-5 sm:pt-8 px-[15px] bg-white sm:pb-[98px] pb-12">
-                <div className="absolute bg-[url(/assets/images/bg-about.png)] bg-cover inset-0"></div>
-                <div className="relative">
+                <div className="fade-up absolute bg-[url(/assets/images/bg-about.png)] bg-cover inset-0 pointer-events-none"></div>
+                <div className="fade-up relative">
                     <p className="underline sm:underline-offset-8 underline-offset-4 decoration-[3px] decoration-[#F3D321] py-5 px-0.5 sm:text-[36px] text-[22px] leading-relaxed font-bold sm:leading-[1.35]">ファンの応援をサービスと権利に変える</p>
                     <p className="sm:text-[32px] text-[18px] mt-2">
                         FAVEコインはファンとFAVERの関係性を次の段階へ進化させるために生まれたユーティリティトークンです。 <br />
@@ -42,8 +42,8 @@ const About = () => {
             </div>
         </div>
         <div className="pt-5">
-            <p className="text-center sm:text-[36px] text-[22px] font-bold">FAVEの3つ特徴</p>
-            <div className="mt-6">
+            <p className="fade-up text-center sm:text-[36px] text-[22px] font-bold">FAVEの3つ特徴</p>
+            <div className="mt-6 space-y-[30px]">
                 <AboutItem
                     image="/assets/images/ic-access.png"
                     title="サービスアクセス権"
