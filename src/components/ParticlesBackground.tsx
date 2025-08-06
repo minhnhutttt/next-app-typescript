@@ -101,6 +101,7 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
     height: "100%",
     zIndex: -1,
     transform: "rotate(45deg)",
+    pointerEvents: 'none',
     ...style,
   };
 

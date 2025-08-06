@@ -1,6 +1,6 @@
 "use client"
 import dynamic from 'next/dynamic';
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Top } from './Top';
@@ -28,6 +28,15 @@ const slides = [
   { id: 7, title: "Revenue", Component: Revenue },
 ];
 
+// Hook dùng để lấy giá trị trước đó
+function usePrevious<T>(value: T): T | undefined {
+  const ref = useRef<T>();
+  useEffect(() => {
+    ref.current = value;
+  }, [value]);
+  return ref.current;
+}
+
 const ContainerPage: React.FC = () => {
   const splideRef = useRef<any>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -45,17 +54,36 @@ const ContainerPage: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Update activated slides on move
-  useEffect(() => {
-    if (splideRef.current) {
-      const splide = splideRef.current.splide;
+  const previousIsDesktop = usePrevious(isDesktop);
 
-      splide.on('move', (newIndex: number) => {
-        setCurrentSlide(newIndex);
-        setActivatedSlides(prev => new Set(prev).add(newIndex));
-      });
+  // Reset về slide 0 khi từ mobile → PC
+  useEffect(() => {
+    if (
+      isDesktop &&
+      previousIsDesktop === false &&
+      splideRef.current?.splide
+    ) {
+      const splide = splideRef.current.splide;
+      splide.go(0);
+      setCurrentSlide(0);
+      setActivatedSlides(new Set([0]));
+      console.log('[RESIZE → DESKTOP] Reset to slide 0');
     }
-  }, []);
+  }, [isDesktop, previousIsDesktop]);
+
+  // Gắn move listener khi Splide mounted
+  const handleSplideMounted = () => {
+    const splide = splideRef.current?.splide;
+    if (!splide) return;
+
+    const onMove = (newIndex: number) => {
+      console.log('[MOVE]', newIndex);
+      setCurrentSlide(newIndex);
+      setActivatedSlides(prev => new Set(prev).add(newIndex));
+    };
+
+    splide.on('move', onMove);
+  };
 
   const goToSlide = (index: number) => {
     if (splideRef.current) {
@@ -100,6 +128,7 @@ const ContainerPage: React.FC = () => {
       {isDesktop ? (
         <Splide
           ref={splideRef}
+          onMounted={handleSplideMounted}
           options={{
             direction: 'ttb',
             height: '100vh',
@@ -125,7 +154,7 @@ const ContainerPage: React.FC = () => {
       ) : (
         <div className="flex flex-col">
           {slides.map(({ id, Component }, index) => (
-            <div key={id} className="">
+            <div key={id}>
               <Component isActive={true} />
             </div>
           ))}

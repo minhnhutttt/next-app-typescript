@@ -65,7 +65,7 @@ const RoadmapItem: React.FC<RoadmapItemProps> = ({
             {item.list.map((listItem, listIndex) => (
               <li
                 key={listIndex}
-                className="text-[13px] lg:text-[min(2.5vmin,16px)] md:text-[min(2.5vmin,12px)] text-white/80 "
+                className="text-[14px] lg:text-[min(2.5vmin,16px)] md:text-[min(2.5vmin,12px)] text-white/80 "
               >
                 {listItem}
               </li>
@@ -90,21 +90,21 @@ export const Roadmap = ({ isActive }: { isActive: boolean }) => {
     <section className="w-full h-full overflow-hidden">
       <div
         ref={ref}
-        className="w-full h-full flex items-center justify-center xl:px-[160px] md:pl-[160px] pl-10 pr-5"
+        className="w-full h-full flex items-center justify-center xl:px-[160px] md:pl-[160px] pl-5 pr-5 max-md:py-20"
       >
         <div className="w-full md:max-w-[1200px] max-w-[400px]">
           <div className="fade-item flex items-center justify-center max-md:pr-0 max-xl:pr-[160px]">
             <div className="relative flex flex-col items-center justify-center">
-              <p className="absolute font-audiowide text-[min(18.52vmin,150px)] u-text-stroke opacity-10 leading-none whitespace-nowrap">
+              <p className="absolute font-audiowide text-[min(18.52vmin,150px)] u-text-stroke opacity-20 leading-none whitespace-nowrap">
                 Roadmap
               </p>
-              <h3 className="lg:text-[min(5.7vmin,48px)] text-[min(5vmin,32px)] tracking-wider font-black text-center">
+              <h3 className="lg:text-[min(5.7vmin,48px)] md:text-[min(5vmin,32px)] text-[20px] tracking-wider font-black text-center">
                 ロードマップ
               </h3>
               <span className="bg-[linear-gradient(-270deg,_#F70FFF_6.79%,_rgba(18,_214,_223,_0.02)_100%)] w-full block h-1 rounded-full"></span>
             </div>
           </div>
-          <div className="flex justify-center items-start w-full pt-[min(5.5vmin,44px)] pb-[min(3.7vmin,30px)] relative max-md:flex-col max-md:space-y-8">
+          <div className="flex justify-center items-start w-full pt-[min(5.5vmin,44px)] pb-[min(3.7vmin,30px)] relative max-md:flex-col max-md:space-y-12">
             <div className="fade-item max-md:hidden absolute max-md:right-0 md:left-0 top-0 md:top-[min(35vmin,290px)] w-0.5 h-full md:w-full md:h-1 bg-[#1D0379] rounded-full">
                 <span className="w-[70%] bg-[#DB00B2] h-full rounded-full absolute"></span>
             </div>

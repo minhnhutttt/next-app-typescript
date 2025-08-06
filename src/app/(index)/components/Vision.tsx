@@ -12,23 +12,23 @@ export const Vision = ({ isActive }: {isActive: boolean}) => {
   });
 
   return (
-    <section className="w-full h-full flex items-center justify-center md:pl-[160px] px-9">
+    <section className="w-full h-full flex items-center justify-center md:pl-[160px] px-5 max-md:py-24">
       <div 
         ref={ref}
-        className="text-white w-full max-w-[1100px] md:space-y-[min(3vmin,24px)] space-y-10"
+        className="text-white w-full max-w-[1100px] md:space-y-[min(3vmin,24px)] space-y-14"
       >
         <div className="fade-item flex md:justify-start justify-center">
             <div className="relative flex items-center justify-center flex-col">
                 <div className="absolute"><img className="" src="/assets/images/bg-vision.png" alt="" /></div>
                 <div className="relative">
                     <div className="relative flex items-center justify-center">
-                        <p className="font-audiowide text-[min(18.52vmin,150px)] u-text-stroke tracking-widest opacity-10 leading-none">Vision</p>
-                        <div className="absolute inset-0 text-[min(5.9vmin,48px)] flex items-center justify-center font-black flex-col">
+                        <p className="font-audiowide text-[min(18.52vmin,150px)] u-text-stroke tracking-widest opacity-20 leading-none">Vision</p>
+                        <div className="absolute inset-0 text-[32px] md:text-[min(5.9vmin,48px)] flex items-center justify-center font-black flex-col">
                             <p>ビジョン</p>
                             <span className="bg-[linear-gradient(-270deg,_#F70FFF_6.79%,_rgba(18,_214,_223,_0.02)_100%)] w-[min(45vmin,360px)] h-1 rounded-full"></span>
                         </div>
                     </div>
-                    <p className="text-center pt-[min(3vmin,24px)] md:text-[min(3vmin,24px)] text-[min(3.5vmin,24px)] font-bold tracking-wider">
+                    <p className="text-center pt-[min(3vmin,24px)] md:text-[min(3vmin,24px)] text-[14px] font-bold tracking-wider">
                         「実世界の行動とデジタル価値を結びつけ、<br />地域経済の活性化に貢献するプラットフォーム」
                     </p>
                 </div>
@@ -39,13 +39,13 @@ export const Vision = ({ isActive }: {isActive: boolean}) => {
             <div className="absolute"><img className="" src="/assets/images/bg-vision-02.png" alt="" /></div>
             <div className="relative flex flex-col items-center justify-center">
                 <div className="relative flex items-center justify-center">
-                    <p className="font-audiowide text-[min(18.52vmin,150px)] u-text-stroke tracking-widest opacity-10 leading-none">Mission</p>
-                    <div className="absolute inset-0 text-[min(5.9vmin,48px)] flex items-center justify-center font-black flex-col">
+                    <p className="font-audiowide text-[min(18.52vmin,150px)] u-text-stroke tracking-widest opacity-20 leading-none">Mission</p>
+                    <div className="absolute inset-0 text-[32px] md:text-[min(5.9vmin,48px)] flex items-center justify-center font-black flex-col">
                         <p>ミッション</p>
                         <span className="bg-[linear-gradient(-270deg,_#F70FFF_6.79%,_rgba(18,_214,_223,_0.02)_100%)] w-[min(45vmin,360px)] h-1 rounded-full"></span>
                     </div>
                 </div>
-                <ul className="pt-[min(3vmin,24px)] md:text-[min(3vmin,24px)] text-[min(3.5vmin,24px)] font-bold tracking-wider list-decimal leading-relaxed">
+                <ul className="pt-[min(3vmin,24px)] md:text-[min(3vmin,24px)] text-[14px] font-bold tracking-wider list-decimal leading-relaxed">
                     <li>実店舗・イベントの効果的な集客支援</li>
                     <li>ユーザーの日常行動に価値を付与</li>
                     <li>地域経済へのトラフィック創出</li>

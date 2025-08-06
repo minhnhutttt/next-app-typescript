@@ -12,7 +12,7 @@ export const Top = ({ isActive }: {isActive: boolean}) => {
   });
 
   return (
-    <section className="w-full h-full bg-[url(/assets/images/bg-01.png)] bg-cover bg-no-repeat bg-center flex items-center justify-center">
+    <section className="w-full h-[540px] md:h-full bg-[url(/assets/images/bg-01.png)] bg-cover bg-no-repeat bg-center flex items-center justify-center">
       <div 
         ref={ref}
         className="text-white font-black text-[min(14.8vmin,120px)] w-full max-w-[min(90vmin,1200px)]"

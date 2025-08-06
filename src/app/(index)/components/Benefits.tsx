@@ -102,7 +102,6 @@ export const Benefits = ({ isActive }: { isActive: boolean }) => {
     const containerRect = containerRef.current.parentElement!.getBoundingClientRect();
     const itemRect = event.currentTarget.getBoundingClientRect();
     
-    // Tính toán vị trí để cursor background trùng với item được hover
     const x = itemRect.left - containerRect.left + (itemRect.width / 2) - (containerRef.current.offsetWidth / 2);
     const y = itemRect.top - containerRect.top + (itemRect.height / 2) - (containerRef.current.offsetHeight / 2);
     
@@ -119,7 +118,6 @@ export const Benefits = ({ isActive }: { isActive: boolean }) => {
     const itemRect = event.currentTarget.getBoundingClientRect();
     const containerRect = event.currentTarget.parentElement!.parentElement!.getBoundingClientRect();
     
-    // Tính toán vị trí x để cursor background di chuyển đến item được hover
     const x = itemRect.left - containerRect.left;
     
     setEnhancementCursorPosition({ x });
@@ -133,18 +131,18 @@ export const Benefits = ({ isActive }: { isActive: boolean }) => {
 
   return (
     <section className="w-full h-full overflow-hidden">
-      <div className="w-full h-full flex justify-center flex-col md:pl-[160px] pl-14">
-        <div className="fade-item flex items-center justify-center md:pr-[160px] pr-14">
+      <div className="w-full h-full flex justify-center flex-col md:pl-[160px] pl-5 max-md:py-20">
+        <div className="fade-item flex items-center justify-center md:pr-[160px] pr-5">
           <div className="relative flex flex-col items-center justify-center">
             <p className="absolute font-audiowide text-[min(18.52vmin,150px)] u-text-stroke tracking-widest opacity-10 leading-none">Benefits</p>
-            <h3 className="lg:text-[min(5.7vmin,48px)] text-[min(4vmin,28px)] tracking-wider font-black text-center">アクションを促進するメカニズム</h3>
+            <h3 className="lg:text-[min(5.7vmin,48px)] md:text-[min(4vmin,28px)] text-[20px] tracking-wider font-black text-center">アクションを促進するメカニズム</h3>
             <span className="bg-[linear-gradient(-270deg,_#F70FFF_6.79%,_rgba(18,_214,_223,_0.02)_100%)] w-full block h-1 rounded-full"></span>
           </div>
         </div>
         
         <div className="w-full">
-          <div className="flex w-full pt-[min(5.5vmin,44px)] pb-[min(3.7vmin,30px)] max-md:flex-col md:items-center md:space-x-[30px]">
-            <p className="fade-item md:text-[min(2.7vmin,22px)] text-[min(4vmin,30px)] max-md:pb-4 whitespace-nowrap">
+          <div className="flex w-full pt-10 md:pt-[min(5.5vmin,44px)] pb-[min(3.7vmin,30px)] max-md:flex-col md:items-center md:space-x-[30px]">
+            <p className="fade-item md:text-[min(2.7vmin,22px)] text-[20px] max-md:pb-4 whitespace-nowrap">
               ユーティリティ強化
             </p>
             <div className="group w-full relative max-w-[918px]" onMouseLeave={handleEnhancementContainerLeave}>
@@ -178,7 +176,7 @@ export const Benefits = ({ isActive }: { isActive: boolean }) => {
                     >
                       <div className="relative space-y-[min(3vmin,24px)]">
                         <p>
-                          <img src={item.icon} alt="" />
+                          <img className="max-md:w-12" src={item.icon} alt="" />
                         </p>
                         <p className="text-[min(4vmin,18px)]">{item.text}</p>
                       </div>
@@ -191,8 +189,8 @@ export const Benefits = ({ isActive }: { isActive: boolean }) => {
         </div>
         
         <div className="w-full">
-          <div className="flex w-full pt-[min(5.5vmin,44px)] pb-[min(3.7vmin,30px)] max-md:flex-col md:items-center md:space-x-[30px]">
-            <p className="fade-item md:text-[min(2.7vmin,22px)] text-[min(4vmin,30px)] max-md:pb-4 whitespace-nowrap">
+          <div className="flex w-full pt-8 md:pt-[min(5.5vmin,44px)] pb-[min(3.7vmin,30px)] max-md:flex-col md:items-center md:space-x-[30px]">
+            <p className="fade-item md:text-[min(2.7vmin,22px)] text-[20px] max-md:pb-4 whitespace-nowrap">
               インセンティブ制度
             </p>
             <div className="group w-[calc(100%-230px)] max-md:w-full relative" onMouseLeave={handleContainerLeave}>
