@@ -2,8 +2,8 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white md:pt-[124px] pt-20 pb-6">
-      <p className="md:text-[13px] text-[12px] text-center">
+    <footer className="bg-black text-white sm:py-[138px] py-20">
+      <p className="sm:text-[24px] text-[16px] text-center font-light">
       ©2025  FAVE COIN
       </p>
     </footer>

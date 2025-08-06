@@ -8,7 +8,7 @@ const Solutions = () => {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden sm:px-[30px] px-4 pb-[110px]"
+      className="relative overflow-hidden sm:px-[30px] px-4 sm:pb-[120px] pb-20"
     >
         <div className="relative">
             <h3 className="fade-up sm:text-[48px] text-[28px] font-bold text-center sm:border-b-[15px] border-b-[8px] border-[#3A86FF]">なぜ今、FAVEなのか</h3>
