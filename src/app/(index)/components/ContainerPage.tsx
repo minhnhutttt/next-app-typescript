@@ -64,7 +64,6 @@ const ContainerPage: React.FC = () => {
       splide.go(0);
       setCurrentSlide(0);
       setActivatedSlides(new Set([0]));
-      console.log('[RESIZE → DESKTOP] Reset to slide 0');
     }
   }, [isDesktop, previousIsDesktop]);
 
@@ -73,7 +72,6 @@ const ContainerPage: React.FC = () => {
     if (!splide) return;
 
     const onMove = (newIndex: number) => {
-      console.log('[MOVE]', newIndex);
       setCurrentSlide(newIndex);
       setActivatedSlides(prev => new Set(prev).add(newIndex));
     };

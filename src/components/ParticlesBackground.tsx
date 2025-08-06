@@ -14,18 +14,13 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({
   className = "",
   style = {}
 }) => {
-  // Khởi tạo tsparticles engine
   const particlesInit = useCallback(async (engine: Engine) => {
-    // Load slim version để giảm bundle size
     await loadSlim(engine);
   }, []);
 
-  // Callback khi particles container được load
   const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    console.log("Particles container loaded", container);
   }, []);
 
-  // Configuration cho particles - tương đương với code gốc của bạn
   const particlesOptions: ISourceOptions = {
     background: {
       color: {
