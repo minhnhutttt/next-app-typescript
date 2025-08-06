@@ -23,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${noto.className}`}>
+        <ScrollContainer>
         <div className="relative min-h-screen bg-[url(/assets/images/bg.jpg)] bg-cover bg-fixed">
         <div className="w-full max-w-[640px] mx-auto bg-white relative">
           <Header />
@@ -30,6 +31,7 @@ export default function RootLayout({
           <Footer />
         </div>
         </div>
+        </ScrollContainer>
       </body>
     </html>
   );

@@ -9,6 +9,7 @@ interface Options {
 }
 
 interface Props {
+  imageSrc: string;
   startDisintegrate: boolean;
   startReintegrate: boolean;
 }
@@ -90,6 +91,8 @@ class ImageDesintegrator {
   pixelize() {
     const { density, duration } = this.options;
 
+    this.data = [];
+
     for (let y = 0; y < this.canvas.height - Math.floor(density / 2); y += density) {
       for (let x = 0; x < this.canvas.width - Math.floor(density / 2); x += density) {
         const imageData = this.context.getImageData(
@@ -161,25 +164,26 @@ class ImageDesintegrator {
 
       this.updateData(step);
 
+      // Xử lý ẩn/hiện ảnh gốc
       if (!this.visibilityHandled) {
         if (!reverse && elapsed >= 100) {
           this.image.classList.add("invisible");
           this.visibilityHandled = true;
         }
-        if (reverse && elapsed >= duration - 0) {
+        if (reverse && elapsed >= duration) {
           this.image.classList.remove("invisible");
           this.visibilityHandled = true;
         }
       }
 
       if (elapsed < duration) {
-  this.id = requestAnimationFrame(render);
-} else {
-  if (reverse) {
-    // ✅ Khi tái tạo xong → ẩn hạt bằng cách clear canvas
-    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-  }
-}
+        this.id = requestAnimationFrame(render);
+      } else {
+        // ✅ Khi tái tạo hoàn tất → clear canvas (ẩn hạt)
+        if (reverse) {
+          this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        }
+      }
     };
 
     this.id = requestAnimationFrame(render);
@@ -201,7 +205,11 @@ class ImageDesintegrator {
   }
 }
 
-export default function ImageDisintegrator({ startDisintegrate, startReintegrate }: Props) {
+export default function ImageDisintegrator({
+  imageSrc,
+  startDisintegrate,
+  startReintegrate,
+}: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const desintegratorRef = useRef<ImageDesintegrator | null>(null);
@@ -220,8 +228,9 @@ export default function ImageDisintegrator({ startDisintegrate, startReintegrate
 
     return () => {
       desintegratorRef.current?.destroy();
+      desintegratorRef.current = null;
     };
-  }, []);
+  }, [imageSrc]);
 
   useEffect(() => {
     if (startDisintegrate && desintegratorRef.current) {
@@ -237,12 +246,7 @@ export default function ImageDisintegrator({ startDisintegrate, startReintegrate
 
   return (
     <div ref={containerRef} className="relative inline-block">
-      <img
-        ref={imgRef}
-        src="/assets/images/fv-01.png"
-        alt="Logo"
-        className="invisible relative z-20"
-      />
+      <img ref={imgRef} src={imageSrc} alt="Image" className="invisible" />
     </div>
   );
 }
