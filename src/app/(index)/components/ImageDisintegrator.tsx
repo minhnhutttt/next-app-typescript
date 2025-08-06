@@ -73,7 +73,7 @@ class ImageDesintegrator {
     this.canvas.style.height = `${this.height + 2 * this.options.padding}px`;
     this.canvas.style.transform = `translate3d(${-this.options.padding}px, ${-this.options.padding}px, 0)`;
 
-    this.context = this.canvas.getContext("2d")!;
+    this.context = this.canvas.getContext("2d", { willReadFrequently: true })!;
     this.context.scale(this.scale, this.scale);
     this.el.appendChild(this.canvas);
   }

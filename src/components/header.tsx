@@ -20,31 +20,31 @@ const Header = () => {
           </div>
           <ul className="min-[1440px]:text-[24px] text-[18px] text-[#1A1A1A] py-4 px-6 leading-[1.3] font-bold divide-y divide-gray-500">
             <li>
-              <a href="/" onClick={close} className="flex p-3 sm:p-5 pr-0 items-center justify-between hover:opacity-75 duration-300">
+              <a href="/#about" onClick={close} className="flex p-3 sm:p-5 pr-0 items-center justify-between hover:opacity-75 duration-300">
                 <span>FAVEコインとは？</span>
                 <img src="/assets/images/ic-arrow.svg" alt="" />
               </a>
             </li>
             <li>
-              <a href="/" onClick={close} className="flex p-3 sm:p-5 pr-0 items-center justify-between hover:opacity-75 duration-300">
+              <a href="/#solutions" onClick={close} className="flex p-3 sm:p-5 pr-0 items-center justify-between hover:opacity-75 duration-300">
                 <span>なぜ今、FAVEなのか</span>
                 <img src="/assets/images/ic-arrow.svg" alt="" />
               </a>
             </li>
             <li>
-              <a href="/" onClick={close} className="flex p-3 sm:p-5 pr-0 items-center justify-between hover:opacity-75 duration-300">
+              <a href="/#token" onClick={close} className="flex p-3 sm:p-5 pr-0 items-center justify-between hover:opacity-75 duration-300">
                 <span>トークノミクス</span>
                 <img src="/assets/images/ic-arrow.svg" alt="" />
               </a>
             </li>
             <li>
-              <a href="/" onClick={close} className="flex p-3 sm:p-5 pr-0 items-center justify-between hover:opacity-75 duration-300">
+              <a href="/#security" onClick={close} className="flex p-3 sm:p-5 pr-0 items-center justify-between hover:opacity-75 duration-300">
                 <span>セキュリティと信頼性</span>
                 <img src="/assets/images/ic-arrow.svg" alt="" />
               </a>
             </li>
             <li>
-              <a href="/" onClick={close} className="flex p-3 sm:p-5 pr-0 items-center justify-between hover:opacity-75 duration-300">
+              <a href="/#roadmap" onClick={close} className="flex p-3 sm:p-5 pr-0 items-center justify-between hover:opacity-75 duration-300">
                 <span>ロードマップ</span>
                 <img src="/assets/images/ic-arrow.svg" alt="" />
               </a>

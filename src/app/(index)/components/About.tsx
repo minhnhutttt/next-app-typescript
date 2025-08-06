@@ -25,6 +25,7 @@ const About = () => {
   return (
     <section
       ref={ref}
+      id="about"
       className="relative overflow-hidden sm:px-[30px] px-4 pb-20 sm:pb-[100px]"
     >
         <div className="relative">

@@ -8,6 +8,7 @@ const Security = () => {
   return (
     <section
       ref={ref}
+      id="security"
       className="relative overflow-hidden sm:px-[30px] px-4 pb-20 sm:pb-[110px]"
     >
         <div className="relative">

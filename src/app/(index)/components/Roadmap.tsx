@@ -52,6 +52,7 @@ const Roadmap = () => {
   return (
     <section
       ref={ref}
+      id="roadmap"
       className="relative overflow-hidden sm:px-[30px] px-4 pb-20 sm:pb-[110px]"
     >
         <div className="relative">
@@ -62,7 +63,7 @@ const Roadmap = () => {
                 <div className="relative">
                     <div className="absolute left-1/2 -translate-x-1/2 top-[-34px] w-1 sm:w-1.5 bg-black h-full"></div>
                     {data.map((item,index) => (
-                        <div className="relative">
+                        <div key={index} className="relative">
                         <div key={index} className="bg-[#FFDAF8] rounded-[20px] p-5 sm:p-10 pb-10 sm:pb-[60px]">
                             <div className="sm:text-[36px] text-[22px] font-bold text-center">{item.phase}</div>
                             <ul className="sm:text-[26px] text-[18px] sm:mt-6 mt-4 list-disc list-inside">

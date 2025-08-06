@@ -8,6 +8,7 @@ const Solutions = () => {
   return (
     <section
       ref={ref}
+      id="solutions"
       className="relative overflow-hidden sm:px-[30px] px-4 sm:pb-[120px] pb-20"
     >
         <div className="relative">

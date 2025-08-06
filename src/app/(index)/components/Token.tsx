@@ -8,6 +8,7 @@ const Token = () => {
   return (
     <section
       ref={ref}
+      id="token"
       className="relative overflow-hidden sm:px-[30px] px-4 pb-[110px]"
     >
         <div className="relative">
@@ -17,6 +18,7 @@ const Token = () => {
             <div className="sm:pt-[52px] pt-7">
                 <div className="fade-up">
                     <table className="w-full border-collapse sm:[&_td:nth-of-type(1)]:text-[32px] [&_td:nth-of-type(1)]:text-[18px] [&_td:nth-of-type(1)]:font-bold sm:text-[36px] text-[20px] sm:[&_td]:px-5 sm:[&_td]:h-[116px] [&_td]:h-20 [&_td]:px-4 border border-gray-500 [&_td]:border [&_td]:border-gray-500">
+                        <tbody>
                         <tr>
                             <td>トークン名</td>
                             <td>FAVEコイン</td>
@@ -37,6 +39,7 @@ const Token = () => {
                             <td>トークン規格</td>
                             <td>DRC-20</td>
                         </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div className="fade-up flex items-start justify-start sm:pt-10 pt-6">
