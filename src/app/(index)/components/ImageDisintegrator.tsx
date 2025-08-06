@@ -213,7 +213,6 @@ export default function ImageDisintegrator({
   const imgRef = useRef<HTMLImageElement>(null);
   const desintegratorRef = useRef<ImageDesintegrator | null>(null);
 
-  // Khởi tạo
   useEffect(() => {
     const el = containerRef.current;
     const img = imgRef.current;
@@ -232,7 +231,6 @@ export default function ImageDisintegrator({
     };
   }, [imageSrc]);
 
-  // Resize handler
   useEffect(() => {
     const handleResize = () => {
       if (desintegratorRef.current && containerRef.current && imgRef.current) {

@@ -13,7 +13,14 @@ const Fv = () => {
   const [dis2, setDis2] = useState(false);
   const [re2, setRe2] = useState(false);
   const [isShow, setIsShow] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsShow(false);
+    };
 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   useEffect(() => {
     const interval = setInterval(() => {
       if (activeIndex === 0) {
@@ -34,7 +41,7 @@ const Fv = () => {
         }, 100);
         setActiveIndex(0);
       }
-    }, 6000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [activeIndex]);
@@ -42,7 +49,7 @@ const Fv = () => {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen bg-[url(/assets/images/bg-fv.png)] bg-cover overflow-hidden"
+      className="relative bg-[url(/assets/images/bg-fv.png)] bg-bottom overflow-hidden sm:pb-[140px] pb-20"
     >
       <div className="fade-up flex justify-center items-center pt-[130px] px-5">
         <h1>
