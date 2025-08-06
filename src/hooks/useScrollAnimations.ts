@@ -17,7 +17,34 @@ const useScrollAnimations = () => {
         gsap.from(el, {
           autoAlpha: 0,
           y: 30,
-          duration: 0.6,
+          duration: 1,
+          ease: "Power2.easeInOut",
+          scrollTrigger: { trigger: el },
+        }),
+        "fade-up-200": (el: HTMLElement) =>
+        gsap.from(el, {
+          autoAlpha: 0,
+          y: 30,
+          duration: 1,
+          delay: 0.2,
+          ease: "Power2.easeInOut",
+          scrollTrigger: { trigger: el },
+        }),
+        "fade-up-400": (el: HTMLElement) =>
+        gsap.from(el, {
+          autoAlpha: 0,
+          y: 30,
+          duration: 1,
+          delay: 0.4,
+          ease: "Power2.easeInOut",
+          scrollTrigger: { trigger: el },
+        }),
+        "fade-up-600": (el: HTMLElement) =>
+        gsap.from(el, {
+          autoAlpha: 0,
+          y: 30,
+          duration: 1,
+          delay: 0.6,
           ease: "Power2.easeInOut",
           scrollTrigger: { trigger: el },
         }),
