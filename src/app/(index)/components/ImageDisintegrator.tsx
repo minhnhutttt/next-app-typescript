@@ -57,10 +57,10 @@ class ImageDesintegrator {
   }
 
   createCanvas() {
-    this.width = this.image.naturalWidth;
-    this.height = this.image.naturalHeight;
+    const rect = this.image.getBoundingClientRect();
+    this.width = rect.width;
+    this.height = rect.height;
 
-    // ❗ Xoá canvas cũ nếu tồn tại
     const existingCanvas = this.el.querySelector("canvas");
     if (existingCanvas) {
       this.el.removeChild(existingCanvas);
@@ -138,7 +138,8 @@ class ImageDesintegrator {
   }
 
   calculatePosition(xS: number, xE: number, l: number, x: number) {
-    const expo = (l: number, x: number) => (x < l ? 1 - Math.pow(2, 10 * (x / l) - 10) : 0);
+    const expo = (l: number, x: number) =>
+      x < l ? 1 - Math.pow(2, 10 * (x / l) - 10) : 0;
     return (xS - xE) * expo(l, x) + xE;
   }
 
@@ -164,7 +165,6 @@ class ImageDesintegrator {
 
       this.updateData(step);
 
-      // Xử lý ẩn/hiện ảnh gốc
       if (!this.visibilityHandled) {
         if (!reverse && elapsed >= 100) {
           this.image.classList.add("invisible");
@@ -179,7 +179,6 @@ class ImageDesintegrator {
       if (elapsed < duration) {
         this.id = requestAnimationFrame(render);
       } else {
-        // ✅ Khi tái tạo hoàn tất → clear canvas (ẩn hạt)
         if (reverse) {
           this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         }
@@ -214,6 +213,7 @@ export default function ImageDisintegrator({
   const imgRef = useRef<HTMLImageElement>(null);
   const desintegratorRef = useRef<ImageDesintegrator | null>(null);
 
+  // Khởi tạo
   useEffect(() => {
     const el = containerRef.current;
     const img = imgRef.current;
@@ -232,6 +232,35 @@ export default function ImageDisintegrator({
     };
   }, [imageSrc]);
 
+  // Resize handler
+  useEffect(() => {
+    const handleResize = () => {
+      if (desintegratorRef.current && containerRef.current && imgRef.current) {
+        desintegratorRef.current.destroy();
+        desintegratorRef.current = new ImageDesintegrator(
+          containerRef.current,
+          imgRef.current,
+          {
+            duration: 3000,
+            density: 4,
+            padding: 100,
+          }
+        );
+      }
+    };
+
+    let resizeTimeout: NodeJS.Timeout;
+    const debounceResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(handleResize, 300);
+    };
+
+    window.addEventListener("resize", debounceResize);
+    return () => {
+      window.removeEventListener("resize", debounceResize);
+    };
+  }, []);
+
   useEffect(() => {
     if (startDisintegrate && desintegratorRef.current) {
       desintegratorRef.current.disintegrate();
@@ -245,8 +274,13 @@ export default function ImageDisintegrator({
   }, [startReintegrate]);
 
   return (
-    <div ref={containerRef} className="relative inline-block">
-      <img ref={imgRef} src={imageSrc} alt="Image" className="invisible" />
+    <div ref={containerRef} className="relative w-full h-auto">
+      <img
+        ref={imgRef}
+        src={imageSrc}
+        alt="Image"
+        className="invisible w-full h-auto"
+      />
     </div>
   );
 }

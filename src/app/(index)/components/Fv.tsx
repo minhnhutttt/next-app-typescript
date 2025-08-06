@@ -7,7 +7,6 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 const Fv = () => {
   const ref = useScrollAnimations();
 
-  // 0 = fv-01 hiện, 1 = fv-02 hiện
   const [activeIndex, setActiveIndex] = useState<0 | 1>(0);
   const [dis1, setDis1] = useState(false);
   const [re1, setRe1] = useState(false);
@@ -18,7 +17,6 @@ const Fv = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (activeIndex === 0) {
-        // Ảnh 0 -> phân rã, ảnh 1 -> tái tạo
         setDis1(true);
         setRe2(true);
         setTimeout(() => {
@@ -28,7 +26,6 @@ const Fv = () => {
         }, 100);
         setActiveIndex(1);
       } else {
-        // Ảnh 1 -> phân rã, ảnh 0 -> tái tạo
         setDis2(true);
         setRe1(true);
         setTimeout(() => {
@@ -37,7 +34,7 @@ const Fv = () => {
         }, 100);
         setActiveIndex(0);
       }
-    }, 6000); // 👈 thời gian giữa mỗi vòng, điều chỉnh tùy hiệu ứng
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [activeIndex]);
@@ -65,28 +62,30 @@ const Fv = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center -mt-[37vw] md:-mt-[240px] relative">
+      <div className="fade-up-200 flex items-center justify-center -mt-[37vw] md:-mt-[240px] relative">
         <div className="relative">
           <p className="[filter:drop-shadow(0_4px_50px_rgba(74,_0,_39,_0.20))]">
             <img src="/assets/images/frame.png" alt="" />
           </p>
 
-          {/* Layer 1 */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <ImageDisintegrator
-              imageSrc="/assets/images/fv-01.png"
-              startDisintegrate={dis1}
-              startReintegrate={re1}
-            />
+            <div className="max-md:max-w-[70vw]">
+              <ImageDisintegrator
+                imageSrc="/assets/images/fv-01.png"
+                startDisintegrate={dis1}
+                startReintegrate={re1}
+              />
+            </div>
           </div>
 
-          {/* Layer 2 */}
           <div className={`absolute inset-0 flex items-center justify-center ${isShow ? 'opacity-100' : 'opacity-0'}`}>
-            <ImageDisintegrator
-              imageSrc="/assets/images/fv-02.png"
-              startDisintegrate={dis2}
-              startReintegrate={re2}
-            />
+            <div className="max-md:max-w-[70vw]">
+              <ImageDisintegrator
+                imageSrc="/assets/images/fv-02.png"
+                startDisintegrate={dis2}
+                startReintegrate={re2}
+              />
+            </div>
           </div>
         </div>
       </div>
