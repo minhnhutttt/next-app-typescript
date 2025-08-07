@@ -35,13 +35,6 @@ export default function Fv() {
             <span className="absolute inset-0 z-[2] [border-radius:inherit] overflow-hidden [box-shadow:inset_1px_1px_0_rgba(255,_255,_255,_0.75),_inset_0_0_5px_rgba(255,_255,_255,_0.75)]"></span>
             <span className="relative z-10">WHITEPAPER</span>
           </a>
-          <svg style={{display: 'none'}}>
-            <filter id="lg-dist" x="0%" y="0%" width="100%" height="100%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.008 0.008" numOctaves="2" seed="92" result="noise" />
-              <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
-              <feDisplacementMap in="SourceGraphic" in2="blurred" scale="70" xChannelSelector="R" yChannelSelector="G" />
-            </filter>
-          </svg>
         </div>
       </div>
     </section>
