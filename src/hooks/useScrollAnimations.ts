@@ -13,11 +13,11 @@ const useScrollAnimations = () => {
 
   useLayoutEffect(() => {
     const animations: { [key: string]: (el: HTMLElement) => void } = {
-      "js-list": (el: HTMLElement) =>
+      "fade-up": (el: HTMLElement) =>
         gsap.from(el, {
           autoAlpha: 0,
-          y: 50,
-          duration: 1,
+          y: 30,
+          duration: 0.5,
           ease: "Power2.easeInOut",
           scrollTrigger: { trigger: el },
         }),
@@ -29,13 +29,11 @@ const useScrollAnimations = () => {
           ease: "Power2.easeInOut",
           scrollTrigger: { trigger: el },
         }),
-      "zoom-out": (el: HTMLElement) =>
+      "vm-animation": (el: HTMLElement) =>
         gsap.from(el, {
-          autoAlpha: 0,
-          scale: 0.8,
           duration: 0.5,
           ease: "Power2.easeInOut",
-          scrollTrigger: { trigger: el },
+          scrollTrigger: { trigger: el, onEnter: () => el.classList.add("animate-in") },
         }),
        "zoom-in": (el: HTMLElement) =>
         gsap.fromTo(

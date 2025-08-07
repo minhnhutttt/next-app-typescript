@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollContainer from "@/components/scrollContainer";
 
-const noto = Noto_Sans_JP({
+const inter = Inter({
   subsets: ["latin"],
 });
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${noto.className}`}
+        className={`${inter.className} bg-black`}
       >
         <ScrollContainer>
           <div className="">
