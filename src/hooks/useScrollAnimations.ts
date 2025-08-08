@@ -13,10 +13,10 @@ const useScrollAnimations = () => {
 
   useLayoutEffect(() => {
     const animations: { [key: string]: (el: HTMLElement) => void } = {
-      "js-list": (el: HTMLElement) =>
+      "fade-up": (el: HTMLElement) =>
         gsap.from(el, {
           autoAlpha: 0,
-          y: 50,
+          y: 30,
           duration: 1,
           ease: "Power2.easeInOut",
           scrollTrigger: { trigger: el },

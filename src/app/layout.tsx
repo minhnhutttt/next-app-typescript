@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+import { M_PLUS_1p } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollContainer from "@/components/scrollContainer";
 
-const noto = Noto_Sans_JP({
+const mplus = M_PLUS_1p({
+   weight: ["300","400","500","700","800","900"],
   subsets: ["latin"],
 });
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${noto.className}`}
+        className={`${mplus.className}`}
       >
         <ScrollContainer>
           <div className="">
