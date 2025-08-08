@@ -4,7 +4,7 @@ export default function Features() {
   return (
     <section className="relative bg-[url(/assets/images/bg-features.png)] bg-cover px-5 pt-16 md:pt-20 md:pb-[157px] pb-24">
       <div className="w-full max-w-[1210px] mx-auto">
-        <h2 className="fade-up text-center md:text-[64px] text-[30px] font-medium text-[#C8D6FF] leading-loose py-5 px-2.5 tracking-widest">Platform Features</h2>
+        <h4 className="fade-up text-center md:text-[64px] text-[30px] font-medium text-[#C8D6FF] leading-loose py-5 px-2.5 tracking-widest">Platform Features</h4>
         <div className="grid lg:grid-cols-4 grid-cols-2 gap-4 md:gap-[30px] mt-3 md:mt-5">
             {[
                 {

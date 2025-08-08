@@ -66,9 +66,9 @@ const RoadmapItem = ({phase, title, list} : {phase: string, title: string, list:
 
 export default function Roadmap() {
   return (
-    <section className="relative pt-16 md:pt-[100px] px-5 bg-[url(/assets/images/bg-roadmap.png)] bg-cover pb-32 md:pb-[230px]">
+    <section className="relative pt-16 md:pt-[100px] px-5 bg-[url(/assets/images/bg-roadmap.png)] bg-cover pb-32 md:pb-[190px]">
       <div className="w-full max-w-[1440px] mx-auto">
-        <h2 className="fade-up text-center md:text-[64px] text-[32px] font-medium text-[#C8D6FF] xl:leading-loose py-5 px-2.5 tracking-widest">Utility Design & Roadmap</h2>
+        <h4 className="fade-up text-center md:text-[64px] text-[32px] font-medium text-[#C8D6FF] xl:leading-loose py-5 px-2.5 tracking-widest">Utility Design & Roadmap</h4>
         <div className="relative md:mt-[60px] mt-10 max-md:max-w-[380px] max-md:mx-auto max-md:w-full max-md:px-6">
             <div className="absolute md:w-full w-px h-full md:h-px inset-y-0 md:inset-x-0 bg-[#688BF5] max-md:left-[4px] md:top-1/2"></div>
             <div className="flex w-full max-w-[1300px] mx-auto gap-10 md:gap-[2.34vw] xl:gap-[50px] relative @container max-md:flex-col">

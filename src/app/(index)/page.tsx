@@ -6,11 +6,16 @@ import Vm from "./components/Vm";
 import Features from "./components/Features";
 import Token from "./components/Token";
 import Roadmap from "./components/Roadmap";
+import Revenue from "./components/Revenue";
+import Incentive from "./components/Incentive";
+import Architecture from "./components/Architecture";
+import Governance from "./components/Governance";
+import Message from "./components/Message";
 export default function Home() {
 
   const ref = useScrollAnimations()
   return (
-    <main ref={ref}>
+    <main ref={ref} className="overflow-hidden">
         <Fv />
         <div className="bg-[url(/assets/images/bg.png)] bg-top bg-[size:100%_auto]">
           <Overview />
@@ -19,6 +24,11 @@ export default function Home() {
         <Features />
         <Token />
         <Roadmap />
+        <Revenue />
+        <Incentive />
+        <Architecture />
+        <Governance />
+        <Message />
     </main>
   );
 }

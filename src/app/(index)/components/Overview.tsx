@@ -4,7 +4,7 @@ export default function Overview() {
   return (
     <section className="relative pt-8 md:pt-[58px] px-5">
       <div className="w-full max-w-[1440px] mx-auto">
-        <h2 className="fade-up text-center md:text-[64px] text-[32px] font-medium text-[#C8D6FF] leading-loose py-5 px-2.5 tracking-widest">Overview</h2>
+        <h4 className="fade-up text-center md:text-[64px] text-[32px] font-medium text-[#C8D6FF] leading-loose py-5 px-2.5 tracking-widest">Overview</h4>
         <p className="fade-up w-full max-w-[800px] mx-auto font-light leading-loose md:text-[20px] text-[16px] tracking-widest">
             Storage Coin (STRG) is a utility token that enables capacity purchases, reward acquisition, and growth participation in the cloud storage service "DIVER Storage."
         </p>
