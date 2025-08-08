@@ -6,19 +6,23 @@ interface ProductItemProps {
   isSelected?: boolean;
   onToggle?: (id: string) => void;
   showCheckbox?: boolean;
+  rank?: number | null
 }
 
-export const ProductItem = ({ 
-  product, 
-  isSelected, 
-  onToggle, 
-  showCheckbox = true 
-}: ProductItemProps) => {
+export const CardItem = ({ product, isSelected, onToggle,showCheckbox = true, rank }: ProductItemProps) => {
+  
+  const getRankColor = (rank: number) => {
+    const colors = ["#EEC822", "#AAACB9", "#AF7863", "#D9D9D9"];
+    if (rank <= 3) {
+      return colors[rank - 1];
+    }
+    return colors[3];
+  };
   
   return (
-    <div className="relative">
+    <div className="relative md:max-w-[293px] max-w-[166px]">
       {showCheckbox && onToggle && (
-        <div className="absolute -top-1 md:-top-4 -left-1 md:-left-2 z-20">
+        <div className="absolute -top-1 md:-top-4 -left-1 md:-left-3 z-20">
           <label className="flex items-center cursor-pointer">
             <input
               type="checkbox"
@@ -32,21 +36,29 @@ export const ProductItem = ({
           </label>
         </div>
       )}
-      
-      <div className="rounded-[20px] overflow-hidden relative">
-        <img src={product.image} alt="" />
-        <div className="absolute inset-0 flex items-end p-2 md:p-5">
-          <p className="md:text-[24px] text-[18px] text-white font-bold">{product.name}</p>
+      {
+        rank && (
+            <div 
+              className="absolute -top-3 md:-top-4 -left-2 z-20 md:text-[40px] size-[46px] md:size-[100px] text-[14px] rounded-full flex items-center justify-center text-white font-bold"
+              style={{ backgroundColor: getRankColor(rank) }}
+            >
+                {rank}
+            </div>
+        )
+      }
+        <div className="rounded-[10px] overflow-hidden relative">
+            <img src={product.image} alt="" />
         </div>
-      </div>
-      
       <div className="md:py-3 py-2">
+            <div className="flex items-end pb-3">
+              <p className="md:text-[24px] text-[18px] font-bold">{product.name}</p>
+            </div>
         <div className="flex items-center gap-5 md:mb-3 mb-2">
           <StarRating rating={product.rating} />
           <span className="md:text-[24px] text-[18px] font-bold">{product.rating}</span>
         </div>
 
-        <p className="md:text-[24px] text-[18px] max-md:line-clamp-2">
+        <p className="md:text-[24px] text-[18px] line-clamp-2">
           {product.description}
         </p>
       </div>

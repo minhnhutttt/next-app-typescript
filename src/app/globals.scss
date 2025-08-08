@@ -8,3 +8,16 @@ html {
 body {
   color: #666;
 }
+
+ .splide__progress {
+      margin-top: 1rem; /* Adjust as needed */
+      height: 4px;
+      background-color: #eee;
+    }
+
+    .splide__progress__bar {
+      height: 100%;
+      background-color: #007bff; /* Example color */
+      width: 0%; /* Initial width */
+      transition: width 400ms linear; /* Smooth transition */
+    }

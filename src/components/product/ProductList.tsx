@@ -53,6 +53,7 @@ const ProductList = () => {
             product={product}
             isSelected={selectedItems.has(product.id)}
             onToggle={toggleItem}
+            showCheckbox={true}
           />
         ))}
       </div>

@@ -2,7 +2,9 @@
 import { Button } from "@/components/common/Button";
 import { Title } from "@/components/common/Title";
 import ProductList from "@/components/product/ProductList";
+import { dataRank } from "@/data";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { ProductSlider } from "./components/ProductSlider";
 export default function Home() {
 
   const ref = useScrollAnimations()
@@ -33,6 +35,22 @@ export default function Home() {
         <div className="flex justify-center gap-5 md:mt-8 mt-2 flex-wrap">
           <Button link="/" text="選択した商品をお問い合わせする" type={0} />
           <Button link="/" text="一覧を見る" type={1} />
+        </div>
+      </section>
+      <section className="md:mt-56 mt-20">
+        <div className="max-md:mb-4">
+          <Title title="人気ランキング" icon={<><img className="max-md:w-[34px]" src="/assets/images/ic-crown.svg" alt="" /></>} />
+        </div>
+        <div className="flex justify-center md:mt-[56px]">
+          <ProductSlider products={dataRank} rank />
+        </div>
+      </section>
+      <section className="md:mt-40 mt-20">
+        <div className="max-md:mb-4">
+          <Title title="新着の逸品" icon={<><img className="max-md:w-[24px]" src="/assets/images/ic-new.svg" alt="" /></>} />
+        </div>
+        <div className="flex justify-center md:mt-[24px]">
+          <ProductSlider products={dataRank} />
         </div>
       </section>
     </main>
