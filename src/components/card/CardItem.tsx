@@ -21,7 +21,7 @@ export const CardItem = ({ product, isSelected, onToggle,showCheckbox = true, ra
   };
   
   return (
-    <div className={`fade-up relative md:max-w-[293px] hover:!opacity-70 duration-300 ${sm ? 'max-w-[146px]' : 'max-w-[166px]'}`}>
+    <a href="/product/detail" className={`fade-up block relative md:max-w-[293px] hover:!opacity-70 duration-300 ${sm ? 'max-w-[146px]' : 'max-w-[166px]'}`}>
       {showCheckbox && onToggle && (
         <div className="absolute -top-1 md:-top-2 -left-1 md:-left-2 z-20">
           <label className="flex items-center cursor-pointer">
@@ -63,6 +63,6 @@ export const CardItem = ({ product, isSelected, onToggle,showCheckbox = true, ra
           {product.description}
         </p>
       </div>
-    </div>
+    </a>
   );
 };

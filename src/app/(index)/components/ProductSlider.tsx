@@ -1,8 +1,8 @@
 "use client";
 
+import { Splide, SplideSlide, Splide as SplideClass } from "@splidejs/react-splide";
 import { CardItem } from "@/components/card/CardItem";
 import { Product } from "@/types";
-import { Splide, SplideSlide } from "react-splide-ts";
 import "@splidejs/react-splide/css";
 import { useRef, useState, useEffect } from "react";
 

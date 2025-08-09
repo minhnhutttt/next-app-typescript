@@ -16,7 +16,7 @@ export const ProductItem = ({
 }: ProductItemProps) => {
   
   return (
-    <div className="fade-up relative hover:!opacity-70 duration-300">
+    <a href="/product/detail" className="fade-up block relative hover:!opacity-70 duration-300">
       {showCheckbox && onToggle && (
         <div className="absolute -top-1 md:-top-4 -left-1 md:-left-2 z-20">
           <label className="flex items-center cursor-pointer">
@@ -50,6 +50,6 @@ export const ProductItem = ({
           {product.description}
         </p>
       </div>
-    </div>
+    </a>
   );
 };
