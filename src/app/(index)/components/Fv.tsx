@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const Fv = () => {
