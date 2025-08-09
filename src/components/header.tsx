@@ -52,7 +52,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="xl:hidden flex items-center justify-center p-5 w-full">
-        <a href="/" onClick={close}  className="flex items-center justify-center gap-2.5 min-[1440px]:text-[26px] text-[18px] font-bold text-white w-full max-w-[500px] h-20 bg-[#6DB8F7] rounded-[10px] [box-shadow:0_4px_4px_0_rgba(0,_0,_0,_0.25)] hover:opacity-75 duration-300">
+        <a href="/assets/pdf/FAVEコイン(FAVE) ホワイトペーパー.pdf" target="_blank" onClick={close}  className="flex items-center justify-center gap-2.5 min-[1440px]:text-[26px] text-[18px] font-bold text-white w-full max-w-[500px] h-20 bg-[#6DB8F7] rounded-[10px] [box-shadow:0_4px_4px_0_rgba(0,_0,_0,_0.25)] hover:opacity-75 duration-300">
           <img src="/assets/images/ic-file.svg" alt="" />
           <span>ホワイトペーパーを読む</span>
         </a>
@@ -68,7 +68,7 @@ const Header = () => {
         <span className="absolute bottom-0 left-0 block h-[3px] w-full -translate-y-1/2 bg-black transition-transform duration-500 ease-in-out group-[.active]:top-1/2 group-[.active]:-rotate-45"></span>
       </button>
       <div className="fixed max-xl:hidden right-0 h-full top-0 bottom-0 w-[calc(50%-320px)] flex items-center justify-center p-5">
-        <a href="/" className="flex items-center justify-center gap-2.5 min-[1440px]:text-[26px] text-[18px] font-bold text-white w-full max-w-[500px] h-[100px] bg-[#6DB8F7] rounded-[10px] [box-shadow:0_4px_4px_0_rgba(0,_0,_0,_0.25)] hover:opacity-75 duration-300">
+        <a href="/assets/pdf/FAVEコイン(FAVE) ホワイトペーパー.pdf" target="_blank" className="flex items-center justify-center gap-2.5 min-[1440px]:text-[26px] text-[18px] font-bold text-white w-full max-w-[500px] h-[100px] bg-[#6DB8F7] rounded-[10px] [box-shadow:0_4px_4px_0_rgba(0,_0,_0,_0.25)] hover:opacity-75 duration-300">
           <img src="/assets/images/ic-file.svg" alt="" />
           <span>ホワイトペーパーを読む</span>
         </a>

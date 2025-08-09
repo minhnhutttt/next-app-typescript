@@ -1,50 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ImageDisintegrator from "./ImageDisintegrator";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 const Fv = () => {
   const ref = useScrollAnimations();
-
-  const [activeIndex, setActiveIndex] = useState<0 | 1>(0);
-  const [dis1, setDis1] = useState(false);
-  const [re1, setRe1] = useState(false);
-  const [dis2, setDis2] = useState(false);
-  const [re2, setRe2] = useState(false);
-  const [isShow, setIsShow] = useState(false);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsShow(false);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (activeIndex === 0) {
-        setDis1(true);
-        setRe2(true);
-        setTimeout(() => {
-          setIsShow(true)
-          setDis1(false);
-          setRe2(false);
-        }, 100);
-        setActiveIndex(1);
-      } else {
-        setDis2(true);
-        setRe1(true);
-        setTimeout(() => {
-          setDis2(false);
-          setRe1(false);
-        }, 100);
-        setActiveIndex(0);
-      }
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [activeIndex]);
 
   return (
     <section
@@ -69,30 +29,24 @@ const Fv = () => {
         </div>
       </div>
 
-      <div className="fade-up-200 flex items-center justify-center -mt-[37vw] md:-mt-[240px] relative">
+      <div className="flex items-center justify-center -mt-[37vw] md:-mt-[240px] relative">
         <div className="relative">
           <p className="[filter:drop-shadow(0_4px_50px_rgba(74,_0,_39,_0.20))]">
             <img src="/assets/images/frame.png" alt="" />
           </p>
-
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="max-md:max-w-[70vw]">
-              <ImageDisintegrator
-                imageSrc="/assets/images/fv-01.png"
-                startDisintegrate={dis1}
-                startReintegrate={re1}
-              />
-            </div>
+          <div className="fv-text-01 absolute inset-0 leading-[1.3] flex items-center justify-center flex-col text-center pt-5">
+            <p className="md:text-[46px] text-[32px] font-bold mb-2.5">FAVERとファン</p>
+            <p className="md:text-[46px] text-[32px] font-bold mb-2.5">が共創する</p>
+            <p className="md:text-[58px] text-[36px] font-bold mb-3">新時代の</p>
+            <p className="md:text-[58px] text-[36px] font-bold mb-3">エコシステム</p>
+            <p className="md:text-[68px] text-[40px] font-black u-text-gradient">FAVE コイン</p>
           </div>
-
-          <div className={`absolute inset-0 flex items-center justify-center ${isShow ? 'opacity-100' : 'opacity-0'}`}>
-            <div className="max-md:max-w-[70vw]">
-              <ImageDisintegrator
-                imageSrc="/assets/images/fv-02.png"
-                startDisintegrate={dis2}
-                startReintegrate={re2}
-              />
-            </div>
+          <div className="fv-text-02 absolute inset-0 leading-[1.3] flex items-center justify-center flex-col text-center pt-5">
+            <p className="md:text-[42px] text-[28px] font-bold mb-2.5">ファンの投げ銭が</p>
+            <p className="md:text-[52px] text-[32px] font-bold mb-2.5">FAVERのVIP</p>
+            <p className="md:text-[42px] text-[36px] font-bold mb-3">新時代の</p>
+            <p className="md:text-[36px] text-[36px] font-bold mb-3">ファンに推されて<br />実現する</p>
+            <p className="md:text-[68px] text-[40px] font-black u-text-gradient">新  体  験</p>
           </div>
         </div>
       </div>

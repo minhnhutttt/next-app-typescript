@@ -16,7 +16,7 @@ const Solutions = () => {
             <div className="fade-up mt-6">
                 <img src="/assets/images/solution-img.png" alt="" />
             </div>
-            <div className="flex gap-[20px]">
+            <div className="flex gap-[24px]">
                 <div className="w-1/2 space-y-5">
                     <p className="fade-up pt-5 pb-0 text-center sm:text-[36px] text-[22px] font-medium">現状の課題</p>
                     {[
@@ -24,9 +24,9 @@ const Solutions = () => {
                         '一方向のファンコミュニケーション',
                         '暗号資産の難解さと使いにくさ',
                     ].map((item,index)=> (
-                        <p className="fade-up px-3 sm:px-5 py-6 sm:py-[50px] sm:text-[28px] text-[16px] relative flex items-center" key={index}>
+                        <p className="fade-up px-3 sm:px-5 py-6 sm:py-[50px] sm:text-[28px] text-[16px] relative flex items-center bg-[#F6F6F7] rounded-[20px]" key={index}>
                             {item}
-                            <img className="absolute left-full max-md:w-3" src="/assets/images/ar.png" alt="" />
+                            <img className="absolute left-[calc(100%+6px)] max-md:w-3" src="/assets/images/ar.png" alt="" />
                         </p>
                     ))}
                 </div>

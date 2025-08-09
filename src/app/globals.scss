@@ -6,9 +6,11 @@
 html {
   scroll-behavior: smooth !important;
 }
+
 body {
   color: #1A1A1A;
 }
+
 canvas {
   position: absolute;
   left: 0;
@@ -16,18 +18,165 @@ canvas {
   opacity: 1;
   pointer-events: none;
 }
+
 .td-wrapper,
 canvas {
   transition: opacity 1s;
 }
-.td-wrapper:not(.td-hide) + canvas,
+
+.td-wrapper:not(.td-hide)+canvas,
 .td-hide {
   opacity: 0;
 }
 
 .u-text-gradient {
   background: linear-gradient(59deg, #FFB2B8 8.73%, #FF7DB8 19.75%, #FA75BC 22.9%, #ED62C7 27.62%, #D842D9 33.13%, #BB15F2 38.63%, #AD00FF 41.78%, #A711FE 48.86%, #A41BFE 55.16%, #9A35FC 57.52%, #8C5DFB 62.24%, #817EF9 66.96%, #7897F8 71.69%, #71A9F7 76.41%, #6EB4F7 81.92%, #6DB8F7 87.42%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+.fv-text-01, .fv-text-02 {
+            text-transform: uppercase;
+        }
+        
+        .fv-text-01 p, .fv-text-02 p {
+            width: 100%;
+            -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+            transform: translateY(-50px);
+            opacity: 0;
+            animation-timing-function: ease;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+        }
+        
+        .fv-text-01 p {
+            animation-name: titleAnimation1;
+        }
+        
+        .fv-text-01 p:first-child {
+            animation-delay: 0s;
+        }
+        
+        .fv-text-01 p:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        
+        .fv-text-01 p:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        
+        .fv-text-01 p:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+        
+        .fv-text-01 p:last-child {
+            animation-delay: 0.4s;
+        }
+        
+        .fv-text-02 {
+            top: 0;
+            position: absolute;
+        }
+        
+        .fv-text-02 p {
+            animation-name: titleAnimation2;
+        }
+        
+        .fv-text-02 p:first-child {
+            animation-delay: 0s;
+        }
+        
+        .fv-text-02 p:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        
+        .fv-text-02 p:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        
+        .fv-text-02 p:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+        
+        .fv-text-02 p:last-child {
+            animation-delay: 0.4s;
+        }
+        
+        .usechrome {
+            font-size: 10px;
+            color: #fff;
+            font-family: helvetica, arial;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            left: 0;
+        }
+        
+        @keyframes titleAnimation1 {
+            0%, 12.5% {
+                transform: translateY(-50px);
+                opacity: 0;
+                -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+                clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+            }
+            17.5% {
+                transform: translateY(0);
+                opacity: 1;
+                -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+                clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+            }
+            35% {
+                transform: translateY(0);
+                opacity: 1;
+                -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+                clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+            }
+            40% {
+                transform: translateY(50px);
+                opacity: 0;
+                -webkit-clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
+                clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
+            }
+            50%, 100% {
+                transform: translateY(-50px);
+                opacity: 0;
+                -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+                clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+            }
+        }
+        
+        @keyframes titleAnimation2 {
+            0%, 50% {
+                transform: translateY(-50px);
+                opacity: 0;
+                -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+                clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+            }
+            55% {
+                transform: translateY(0);
+                opacity: 1;
+                -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+                clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+            }
+            90% {
+                transform: translateY(0);
+                opacity: 1;
+                -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+                clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+            }
+            95% {
+                transform: translateY(50px);
+                opacity: 0;
+                -webkit-clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
+                clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
+            }
+            100% {
+                transform: translateY(-50px);
+                opacity: 0;
+                -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+                clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+            }
+        }

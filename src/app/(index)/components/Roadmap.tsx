@@ -84,10 +84,10 @@ const Roadmap = () => {
                 </div>
             </div>
             <div className="mt-20 sm:mt-[124px]">
-                <a href="/" className="relative block">
-                    <div className="absolute inset-0 flex items-center flex-col pt-6 sm:pt-[50px]">
-                        <p className=""><img src="/assets/images/ic-file.svg" alt="" /></p>
-                        <p className="sm:text-[36px] text-[22px] font-bold text-center text-white">ホワイトペーパーを読む</p>
+                <a href="/assets/pdf/FAVEコイン(FAVE) ホワイトペーパー.pdf" target="_blank" className="relative block">
+                    <div className="absolute inset-0 flex items-center flex-col pt-[7.81vw] sm:pt-[50px]">
+                        <p className=""><img className="max-md:w-[9.38vw]" src="/assets/images/file-15.svg" alt="" /></p>
+                        <p className="sm:text-[36px] text-[5.63vw] font-bold text-center text-white tracking-wider">ホワイトペーパーを読む</p>
                     </div>
                     <img src="/assets/images/bg-btn.png" alt="" />
                 </a>
