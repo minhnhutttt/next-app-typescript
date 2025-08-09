@@ -3,12 +3,13 @@ import { ReactNode } from "react";
 interface ButtonItemProps {
   link?: string;
   children: ReactNode;
+  sm?: boolean;
   onClick?: () => void;
 }
 
-export const ButtonItem = ({ link, children, onClick }: ButtonItemProps) => {
+export const ButtonItem = ({ link, children, sm = false, onClick }: ButtonItemProps) => {
   const baseClass =
-    "fade-up h-[56px] max-md:w-[172px] md:h-[78px] px-4 max-w-[224px] w-full md:px-16 flex items-center justify-center rounded-full bg-[#367F7B] shadow-[0_4px_0_0_#417370] md:text-[24px] font-bold text-[18px] text-white hover:!opacity-70 duration-300";
+    `fade-up px-3 w-full flex items-center justify-center rounded-full bg-[#367F7B] shadow-[0_4px_0_0_#417370] md:text-[24px] font-bold text-white hover:!opacity-70 duration-300 ${sm ? 'h-8 max-w-[96px] text-[18px] md:h-[56px] md:max-w-[184px] text-[16px]' : ' max-md:w-[172px] md:h-[78px] h-[56px] max-w-[224px] text-[18px]'}`;
 
   return link ? (
     <a href={link} className={baseClass}>

@@ -1,25 +1,25 @@
-import { ProductItem } from "./ProductItem";
+import { CardItem } from "./CardItem";
 import { Product } from "@/types";
 
-interface ProductListProps {
+interface CardListProps {
   products: Product[];
   showCheckbox?: boolean;
   selectedItems?: Set<string>;
   onToggleItem?: (id: string) => void;
 }
 
-const ProductList = ({ 
+const CardList = ({ 
   products, 
   showCheckbox = false, 
   selectedItems = new Set(), 
   onToggleItem 
-}: ProductListProps) => {
+}: CardListProps) => {
   return (
     <div className="px-5">
-      <div className="w-full max-w-[500px] md:max-w-[1320px] mx-auto">
-        <div className="grid lg:grid-cols-3 grid-cols-2 gap-5 md:gap-10 justify-center xl:gap-x-20 xl:gap-y-14 mt-6 md:mt-4">
+      <div className="w-full md:max-w-[1320px] max-w-[352px] mx-auto">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5 md:gap-7 justify-center xl:gap-x-9 xl:gap-y-[60px] mt-6 md:mt-4">
           {products.map((product) => (
-            <ProductItem
+            <CardItem
               key={product.id}
               product={product}
               isSelected={selectedItems.has(product.id)}
@@ -33,4 +33,4 @@ const ProductList = ({
   );
 };
 
-export default ProductList;
+export default CardList;

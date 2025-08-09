@@ -23,7 +23,7 @@ export const CardItem = ({ product, isSelected, onToggle,showCheckbox = true, ra
   return (
     <div className={`fade-up relative md:max-w-[293px] hover:!opacity-70 duration-300 ${sm ? 'max-w-[146px]' : 'max-w-[166px]'}`}>
       {showCheckbox && onToggle && (
-        <div className="absolute -top-1 md:-top-4 -left-1 md:-left-3 z-20">
+        <div className="absolute -top-1 md:-top-2 -left-1 md:-left-2 z-20">
           <label className="flex items-center cursor-pointer">
             <input
               type="checkbox"
@@ -31,8 +31,8 @@ export const CardItem = ({ product, isSelected, onToggle,showCheckbox = true, ra
               checked={isSelected}
               onChange={() => onToggle(product.id)}
             />
-            <div className="size-[21px] md:size-[50px] border border-[#666] flex items-center justify-center transition-colors duration-200 bg-white">
-              {isSelected && <img className="max-md:w-[16px]" src="/assets/images/ic-check.svg" />}
+            <div className="size-[21px] md:size-8 border border-[#666] flex items-center justify-center transition-colors duration-200 bg-white">
+              {isSelected && <img className="max-md:w-[16px] w-6" src="/assets/images/ic-check.svg" />}
             </div>
           </label>
         </div>
