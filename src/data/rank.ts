@@ -43,4 +43,32 @@ export const dataRank: Product[] = [
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/product-card-05.png',
   },
+  {
+    id: '7',
+    name: '商品名が入ります',
+    rating: 3.6,
+    description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
+    image: '/assets/images/products/product-card-05.png',
+  },
+  {
+    id: '8',
+    name: '商品名が入ります',
+    rating: 3.6,
+    description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
+    image: '/assets/images/products/product-card-05.png',
+  },
+  {
+    id: '9',
+    name: '商品名が入ります',
+    rating: 3.6,
+    description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
+    image: '/assets/images/products/product-card-05.png',
+  },
+  {
+    id: '10',
+    name: '商品名が入ります',
+    rating: 3.6,
+    description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
+    image: '/assets/images/products/product-card-05.png',
+  },
 ];

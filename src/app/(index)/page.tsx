@@ -2,12 +2,28 @@
 import { Button } from "@/components/common/Button";
 import { Title } from "@/components/common/Title";
 import ProductList from "@/components/product/ProductList";
-import { dataRank } from "@/data";
+import { dataProducts, dataRank } from "@/data";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ProductSlider } from "./components/ProductSlider";
+import { Search } from "./components/Search";
+import { useState } from "react";
+
 export default function Home() {
 
   const ref = useScrollAnimations()
+
+  const [selectedItems, setSelectedItems] = useState<Set<string>>(new Set());
+
+  const handleToggleItem = (id: string) => {
+    const newSelected = new Set(selectedItems);
+    if (newSelected.has(id)) {
+      newSelected.delete(id);
+    } else {
+      newSelected.add(id);
+    }
+    setSelectedItems(newSelected);
+  };
+
   return (
     <main ref={ref}>
       <section className="mt-8 md:mt-[50px] px-5">
@@ -28,13 +44,18 @@ export default function Home() {
         </div>
       </section>
       <section className="md:mt-8 mt-5">
-        <div className="max-md:mb-4">
+        <div className="max-md:mb-10 mb-12">
           <Title title="AIがおすすめする逸品" icon={<><img className="max-md:w-[42px]" src="/assets/images/ic-meal.svg" alt="" /></>} />
         </div>
-        <ProductList />
+        <ProductList 
+          products={dataProducts} 
+          showCheckbox={true}
+          selectedItems={selectedItems}
+          onToggleItem={handleToggleItem}
+        />
         <div className="flex justify-center gap-5 md:mt-8 mt-2 flex-wrap">
-          <Button link="/" text="選択した商品をお問い合わせする" type={0} />
-          <Button link="/" text="一覧を見る" type={1} />
+          <Button link="/" type={0}>選択した商品をお問い合わせする</Button>
+          <Button link="/" type={1}>一覧を見る</Button>
         </div>
       </section>
       <section className="md:mt-56 mt-20">
@@ -51,6 +72,72 @@ export default function Home() {
         </div>
         <div className="flex justify-center md:mt-[24px]">
           <ProductSlider products={dataRank} />
+        </div>
+      </section>
+      <section className="px-5 md:mt-44 mt-16">
+        <div className="md:space-y-[90px] space-y-5">
+          <Search title="ジャンルから探す" items={['お菓子','飲料','野菜','発酵食品','米','惣菜','調味料','レトルト']} />
+          <Search title="エリアから探す" items={['東京都','埼玉県','千葉県','神奈川県','大阪府','京都府','北海道','福岡県']} />
+          <Search title="キーワードから探す" items={['チーズ','醤油','冷凍','OEM','小売用','業務用','北海道','福岡県']} />
+        </div>
+      </section>
+      <section className="md:mt-[180px] mt-20 px-5">
+        <div className="w-full max-w-[1320px] mx-auto grid md:grid-cols-2 gap-5 md:gap-[30px]">
+          <a href="/" className="fade-up hover:opacity-70 duration-300"><img src="/assets/images/banner-01.png" alt="" /></a>
+          <a href="/" className="fade-up hover:opacity-70 duration-300"><img src="/assets/images/banner-02.png" alt="" /></a>
+        </div>
+      </section>
+      <section className="px-5 md:mt-[180px] mt-20">
+        <div className="w-full md:max-w-[1320px] max-w-[353px] mx-auto rounded-[20px] md:bg-[url(/assets/images/service-bg.png)] bg-[url(/assets/images/service-bg-sp.png)] bg-center bg-cover md:pt-[100px] py-[74px] md:pb-16">
+          <p className="fade-up text-center md:text-[72px] text-[32px] font-bold text-[#A56061] leading-none">このサービスについて</p>
+          <div className="fade-up flex justify-center max-md:items-center max-md:flex-col max-md:mt-4">
+            <span><img className="max-md:w-[155px]" src="/assets/images/pc.png" alt="" /></span>
+            <div className="md:text-[32px] text-[18px] md:pt-20 max-md:px-8">
+              <p className="relative md:-left-28 md:max-w-[410px]">
+                テキストテキストテキスト
+                テキストテキストテキスト
+                テキストテキストテキスト
+                テキストテキストテキスト
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="px-5 md:my-[180px] my-20">
+        <div className="w-full md:max-w-[1320px] max-w-[353px] mx-auto">
+          <div className="md:mb-10 mb-5">
+            <Title title="お知らせ" icon={<><img className="max-md:w-[24px]" src="/assets/images/ic-announce.svg" alt="" /></>} />
+          </div>
+          <div className="border-y border-[#666] divide-y divide-[#666]">
+            {[
+              {
+                id: '1',
+                link: '/',
+                date: '2025/06/20',
+                title: 'タイトルが入ります。タイトルが入ります。タイトルが入ります。'
+              },
+              {
+                id: '2',
+                link: '/',
+                date: '2025/06/20',
+                title: 'タイトルが入ります。タイトルが入ります。タイトルが入ります。'
+              },
+              {
+                id: '3',
+                link: '/',
+                date: '2025/06/20',
+                title: 'タイトルが入ります。タイトルが入ります。タイトルが入ります。'
+              },
+            ].map((item) => (
+              <a href={item.link} className="fade-up flex max-md:flex-col md:text-[24px] text-[18px] leading-snug md:gap-[50px] gap-5 py-5 md:py-10 md:px-[50px] px-5  hover:opacity-70 duration-300" key={item.id}>
+                <span className="font-bold">{item.date}</span>
+                <span className="">タイトルが入ります。タイトルが入ります。タイトルが入ります。</span>
+              </a>
+            ))}
+          </div>
+          <div className="fade-up flex justify-end">
+            <a href="/" className="md:text-[24px] text-[18px] font-bold hover:opacity-70 duration-300">more {`>>`}</a>
+          </div>
         </div>
       </section>
     </main>

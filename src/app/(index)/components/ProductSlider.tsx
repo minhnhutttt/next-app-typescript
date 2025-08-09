@@ -54,7 +54,7 @@ export const ProductSlider = ({
             key={index}
             className="fade-item relative px-3 md:px-[15px] pt-4"
           >
-            <CardItem product={item} rank={rank ? index + 1 : null} />
+            <CardItem product={item} rank={rank ? index + 1 : null} sm />
           </SplideSlide>
         ))}
       </Splide>

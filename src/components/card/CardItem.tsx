@@ -6,10 +6,11 @@ interface ProductItemProps {
   isSelected?: boolean;
   onToggle?: (id: string) => void;
   showCheckbox?: boolean;
-  rank?: number | null
+  rank?: number | null,
+  sm?: boolean
 }
 
-export const CardItem = ({ product, isSelected, onToggle,showCheckbox = true, rank }: ProductItemProps) => {
+export const CardItem = ({ product, isSelected, onToggle,showCheckbox = true, rank, sm = false }: ProductItemProps) => {
   
   const getRankColor = (rank: number) => {
     const colors = ["#EEC822", "#AAACB9", "#AF7863", "#D9D9D9"];
@@ -20,7 +21,7 @@ export const CardItem = ({ product, isSelected, onToggle,showCheckbox = true, ra
   };
   
   return (
-    <div className="relative md:max-w-[293px] max-w-[166px]">
+    <div className={`fade-up relative md:max-w-[293px] hover:!opacity-70 duration-300 ${sm ? 'max-w-[146px]' : 'max-w-[166px]'}`}>
       {showCheckbox && onToggle && (
         <div className="absolute -top-1 md:-top-4 -left-1 md:-left-3 z-20">
           <label className="flex items-center cursor-pointer">
