@@ -54,7 +54,7 @@ export default function Home() {
           onToggleItem={handleToggleItem}
         />
         <div className="flex justify-center gap-5 md:mt-8 mt-2 flex-wrap">
-          <Button link="/" type={0}>選択した商品をお問い合わせする</Button>
+          <Button link="/inquiry" type={0}>選択した商品をお問い合わせする</Button>
           <Button link="/" type={1}>一覧を見る</Button>
         </div>
       </section>

@@ -14,7 +14,7 @@ const Footer = () => {
               <li><a href="/">プロダクト検索</a></li>
               <li><a href="/">サービスについて</a></li>
               <li><a href="/">よくある質問</a></li>
-              <li><a href="/">お問い合わせ</a></li>
+              <li><a href="/inquiry">お問い合わせ</a></li>
             </ul>
 
             <ul className="space-y-5">

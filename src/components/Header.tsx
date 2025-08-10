@@ -16,27 +16,27 @@ const Header = () => {
         className={`flex items-center justify-center min-[1366px]:gap-20 gap-8 md:gap-5 duration-300 max-xl:fixed max-xl:inset-0 max-sm:flex-col z-[99] bg-white/90 ${NavOpen ? "" : "max-xl:invisible max-xl:opacity-0"}`}>
         <ul className="font-bold flex items-center gap-8 text-[20px] max-xl:flex-col">
           <li>
-            <a href="/#about" onClick={close} className="block hover:opacity-75 duration-300">
+            <a href="/" onClick={close} className="block hover:opacity-75 duration-300">
               <span>AIコンシェルジュ</span>
             </a>
           </li>
           <li>
-            <a href="/#about" onClick={close} className="block hover:opacity-75 duration-300">
+            <a href="/" onClick={close} className="block hover:opacity-75 duration-300">
               <span>商品紹介</span>
             </a>
           </li>
           <li>
-            <a href="/#about" onClick={close} className="block hover:opacity-75 duration-300">
+            <a href="/" onClick={close} className="block hover:opacity-75 duration-300">
               <span>FB HUBについて</span>
             </a>
           </li>
           <li>
-            <a href="/#about" onClick={close} className="block hover:opacity-75 duration-300">
+            <a href="/" onClick={close} className="block hover:opacity-75 duration-300">
               <span>よくある質問</span>
             </a>
           </li>
           <li>
-            <a href="/#about" onClick={close} className="block hover:opacity-75 duration-300">
+            <a href="/inquiry" onClick={close} className="block hover:opacity-75 duration-300">
               <span>お問い合わせ</span>
             </a>
           </li>
