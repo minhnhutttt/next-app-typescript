@@ -11,9 +11,9 @@ const Footer = () => {
           <div className="flex justify-between max-md:flex-wrap md:text-[20px] text-[18px] font-bold my-[35px] md:my-[60px] gap-[35px] md:gap-5 [&_a:hover]:opacity-70 [&_a]:duration-300">
             <ul className="space-y-5">
               <li><a href="/">AIコンシェルジュ</a></li>
-              <li><a href="/">プロダクト検索</a></li>
+              <li><a href="/search">プロダクト検索</a></li>
               <li><a href="/">サービスについて</a></li>
-              <li><a href="/">よくある質問</a></li>
+              <li><a href="/faq">よくある質問</a></li>
               <li><a href="/inquiry">お問い合わせ</a></li>
             </ul>
 

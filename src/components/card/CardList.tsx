@@ -15,7 +15,6 @@ const CardList = ({
   onToggleItem 
 }: CardListProps) => {
   return (
-    <div className="px-5">
       <div className="w-full md:max-w-[1320px] max-w-[352px] mx-auto">
         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5 md:gap-7 justify-center xl:gap-x-9 xl:gap-y-[60px] mt-6 md:mt-4">
           {products.map((product) => (
@@ -29,7 +28,6 @@ const CardList = ({
           ))}
         </div>
       </div>
-    </div>
   );
 };
 

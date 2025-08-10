@@ -31,7 +31,7 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="/" onClick={close} className="block hover:opacity-75 duration-300">
+            <a href="/faq" onClick={close} className="block hover:opacity-75 duration-300">
               <span>よくある質問</span>
             </a>
           </li>

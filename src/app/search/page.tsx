@@ -47,7 +47,7 @@ export default function Search() {
     };
     return (
         <main ref={ref}>
-            <section className="bg-[#DAE9E9] py-6 md:mt-[120px] mt-[70px]">
+            <section className="bg-[#DAE9E9] py-6 md:mt-[120px] mt-[70px] px-5">
                 <ProductList
                     products={dataProducts.slice(0, 3)}
                 />
@@ -80,7 +80,7 @@ export default function Search() {
                 </div>
             </section>
 
-            <section className="md:mt-[180px] mt-20">
+            <section className="md:mt-[180px] mt-20 px-5">
                 <ProductList
                     products={dataProducts}
                     showCheckbox={true}

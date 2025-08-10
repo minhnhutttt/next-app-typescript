@@ -15,7 +15,6 @@ const ProductList = ({
   onToggleItem 
 }: ProductListProps) => {
   return (
-    <div className="px-5">
       <div className="w-full max-w-[500px] md:max-w-[1320px] mx-auto">
         <div className="grid lg:grid-cols-3 grid-cols-2 gap-5 md:gap-10 justify-center xl:gap-x-20 xl:gap-y-14 mt-6 md:mt-4">
           {products.map((product) => (
@@ -29,7 +28,6 @@ const ProductList = ({
           ))}
         </div>
       </div>
-    </div>
   );
 };
 

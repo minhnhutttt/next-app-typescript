@@ -30,3 +30,7 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
   pointer-events: auto;
 }
+
+input::placeholder {
+  color: #ccc;
+}

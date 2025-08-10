@@ -1,6 +1,10 @@
 "use client"
+import CardList from "@/components/card/CardList";
+import { Button } from "@/components/common/Button";
 import { InquiryItem } from "@/components/mypage/InquiryItem";
+import ProductList from "@/components/product/ProductList";
 import { dataProducts } from "@/data";
+import { dataItems } from "@/data/Items";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useState } from "react";
 
@@ -40,22 +44,191 @@ export default function MyPage() {
                             </button>
                         </div>
                         <div className="md:mt-[100px] mt-20">
-                            <div className="">
+                            {tab === 0 &&
+                            <div>
                                 <p className="md:text-[40px] text-[24px] font-bold">商品問い合わせ履歴</p>
                                 <div className="">
                                     <div className="md:mt-10 mt-5">
                                         <div className="md:text-[24px] text-[18px] font-bold mb-2.5 md:mb-5">2025/07/31</div>
                                         <div className="border-y border-[#666] divide-y divide-[#666]">
-                                        <InquiryItem product={dataProducts[0]} type="inquiry" />
-                                        <InquiryItem product={dataProducts[1]} type="responses" />
+                                            <InquiryItem product={dataProducts[0]} type="inquiry" />
+                                            <InquiryItem product={dataProducts[1]} type="responses" />
                                         </div>
                                     </div>
                                     <div className="md:mt-10 mt-5">
                                         <div className="md:text-[24px] text-[18px] font-bold mb-2.5 md:mb-5">2025/01/10</div>
                                         <div className="border-y border-[#666] divide-y divide-[#666]">
-                                        <InquiryItem product={dataProducts[1]} type="completion" />
+                                            <InquiryItem product={dataProducts[1]} type="completion" />
                                         </div>
                                     </div>
+                                </div>
+                                <div className="flex justify-center md:mt-10 mt-5">
+                                    <Button link="/" sm>
+                                        <span className="flex items-center gap-2">もっと見る <img className="max-md:w-4" src="/assets/images/ic-plus.svg" alt="" /></span>
+                                    </Button>
+                                </div>
+                            </div>
+                            }
+                            {tab === 1 &&
+                            <div>
+                                <p className="md:text-[40px] text-[24px] font-bold">最近見た商品</p>
+                                <div className="">
+                                    <div className="md:mt-10 mt-5">
+                                        <div className="md:text-[24px] text-[18px] font-bold mb-2.5 md:mb-5">2025/01/10</div>
+                                        <div className="border-y border-[#666] divide-y divide-[#666]">
+                                            <InquiryItem product={dataProducts[1]} type="completion" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex justify-center md:mt-10 mt-5">
+                                    <Button link="/" sm>
+                                        <span className="flex items-center gap-2">もっと見る <img className="max-md:w-4" src="/assets/images/ic-plus.svg" alt="" /></span>
+                                    </Button>
+                                </div>
+                            </div>
+                            }
+                            {tab === 2 &&
+                            <div>
+                                <p className="md:text-[40px] text-[24px] font-bold">推し商品情報</p>
+                                <div className="">
+                                    <div className="md:mt-10 mt-5">
+                                        <div className="md:text-[24px] text-[18px] font-bold mb-2.5 md:mb-5">2025/07/31</div>
+                                        <div className="border-y border-[#666] divide-y divide-[#666]">
+                                            <InquiryItem product={dataProducts[1]} type="responses" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex justify-center md:mt-10 mt-5">
+                                    <Button link="/" sm>
+                                        <span className="flex items-center gap-2">もっと見る <img className="max-md:w-4" src="/assets/images/ic-plus.svg" alt="" /></span>
+                                    </Button>
+                                </div>
+                            </div>
+                            }
+                            {tab === 3 &&
+                            <div>
+                                <p className="md:text-[40px] text-[24px] font-bold">登録情報変更</p>
+                                <div className="">
+                                    <div className="md:mt-10 mt-5">
+                                        <div className="md:text-[24px] text-[18px] font-bold mb-2.5 md:mb-5">2025/07/31</div>
+                                        <div className="border-y border-[#666] divide-y divide-[#666]">
+                                            <InquiryItem product={dataProducts[0]} type="inquiry" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex justify-center md:mt-10 mt-5">
+                                    <Button link="/" sm>
+                                        <span className="flex items-center gap-2">もっと見る <img className="max-md:w-4" src="/assets/images/ic-plus.svg" alt="" /></span>
+                                    </Button>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                    <div className="md:mt-[200px] mt-[176px]">
+                        <p className="md:text-[40px] text-[24px] font-bold">最近見た商品</p>
+                        <div className="md:mt-10 mt-5">
+                            <CardList products={dataItems} />
+                            <div className="flex justify-center md:mt-10 mt-5">
+                                <Button link="/" sm>
+                                    <span className="flex items-center gap-2">もっと見る <img className="max-md:w-4" src="/assets/images/ic-plus.svg" alt="" /></span>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="md:mt-[180px] mt-[100px]">
+                        <p className="md:text-[40px] text-[24px] font-bold">AIコンシェルジュの最近の推し商品</p>
+                        <div className="md:mt-10 mt-5">
+                            <ProductList products={dataProducts.slice(0,3)} />
+                        </div>
+                    </div>
+                    <div className="md:mt-[180px] mt-20">
+                        <div className="w-full max-w-[500px] mx-auto">
+                            <p className="md:text-[40px] text-[24px] font-bold max-md:text-center">登録情報変更</p>
+                            <div className="w-full md:mt-10 mt-5">
+                                <div className="md:text-[24px] text-[18px] font-bold md:space-y-11 space-y-8">
+                                <div className="space-y-3">
+                                    <div className="flex">
+                                        <label htmlFor="" className="px-2 md:px-4">メールアドレス</label>
+                                    </div>
+                                    <div className=""><input type="text" className="w-full border-2 border-[#ccc] rounded-[10px] h-[50px] md:h-[60px] font-normal md:px-4 px-3" placeholder="sample@example.com" /></div>
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="flex">
+                                        <label htmlFor="" className="px-2 md:px-4">お電話番号(ハイフンなし)</label>
+                                    </div>
+                                    <div className=""><input type="text" className="w-full border-2 border-[#ccc] rounded-[10px] h-[50px] md:h-[60px] font-normal md:px-4 px-3" placeholder="00011112222" /></div>
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="flex">
+                                        <label htmlFor="" className="px-2 md:px-4">お名前</label>
+                                    </div>
+                                    <div className=""><input type="text" className="w-full border-2 border-[#ccc] rounded-[10px] h-[50px] md:h-[60px] font-normal md:px-4 px-3" placeholder="山田　太郎" /></div>
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="flex">
+                                        <label htmlFor="" className="px-2 md:px-4">会社名・屋号</label>
+                                    </div>
+                                    <div className=""><input type="text" className="w-full border-2 border-[#ccc] rounded-[10px] h-[50px] md:h-[60px] font-normal md:px-4 px-3" placeholder="株式会社ジャポリス" /></div>
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="flex">
+                                        <label htmlFor="" className="px-2 md:px-4">会社郵便番号(ハイフンなし)</label>
+                                    </div>
+                                    <div className=""><input type="text" className="w-full border-2 border-[#ccc] rounded-[10px] h-[50px] md:h-[60px] font-normal md:px-4 px-3" placeholder="0001111" /></div>
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="flex">
+                                        <label htmlFor="" className="px-2 md:px-4">会社住所</label>
+                                    </div>
+                                    <div className=""><input type="text" className="w-full border-2 border-[#ccc] rounded-[10px] h-[50px] md:h-[60px] font-normal md:px-4 px-3" placeholder="東京都千代田区丸の内1-1-1" /></div>
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="flex">
+                                        <label htmlFor="" className="px-2 md:px-4">業種・業態</label>
+                                    </div>
+                                    <div className=""><input type="text" className="w-full border-2 border-[#ccc] rounded-[10px] h-[50px] md:h-[60px] font-normal md:px-4 px-3" placeholder="飲食業" /></div>
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="flex">
+                                        <label htmlFor="" className="px-2 md:px-4">会社ホームページ</label>
+                                    </div>
+                                    <div className=""><input type="text" className="w-full border-2 border-[#ccc] rounded-[10px] h-[50px] md:h-[60px] font-normal md:px-4 px-3" placeholder="https://www" /></div>
+                                </div>
+                                <div className="">
+                                    <div className="px-2 md:px-4">
+                                        <p>ご興味のある商品ジャンル</p>
+                                        <p className="font-normal">※ご興味に基づいてご提案します</p>
+                                    </div>
+                                    <div className="grid md:grid-cols-4 grid-cols-3 md:gap-4 gap-2 mt-4">
+                                    {["商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ",].map((tag) => (
+                                        <label
+                                            key={tag}
+                                            className="cursor-pointer"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                name="tags"
+                                                value={tag}
+                                                className="peer hidden"
+                                            />
+                                            <span className="flex items-center justify-center w-[96px] md:w-[112px] h-10 rounded-full text-center text-[16px] font-bold bg-[#EBEBEB] peer-checked:bg-[#3E7976] peer-checked:text-white
+                                        ">
+                                                {tag}
+                                            </span>
+                                        </label>
+                                    ))}
+                                    </div>
+                                </div>
+                                 <div className="space-y-3">
+                                    <div className="flex">
+                                        <label htmlFor="" className="px-2 md:px-4">パスワード変更</label>
+                                    </div>
+                                    <div className=""><input type="text" className="w-full border-2 border-[#ccc] rounded-[10px] h-[50px] md:h-[60px] font-normal md:px-4 px-3" placeholder="" /></div>
+                                </div>
+                                </div>
+                                <div className="flex items-center justify-center mt-[60px] md:mt-[100px]">
+                                    <Button link="/inquiry/complete/" sm type={0}>上記の内容で登録する</Button>
                                 </div>
                             </div>
                         </div>

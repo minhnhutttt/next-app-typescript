@@ -7,6 +7,7 @@ import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { ProductSlider } from "./components/ProductSlider";
 import { Search } from "./components/Search";
 import { useState } from "react";
+import { NewItem } from "@/components/news/NewItem";
 
 export default function Home() {
 
@@ -43,7 +44,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="md:mt-8 mt-5">
+      <section className="md:mt-8 mt-5 px-5">
         <div className="max-md:mb-10 mb-12">
           <Title title="AIがおすすめする逸品" icon={<><img className="max-md:w-[42px]" src="/assets/images/ic-meal.svg" alt="" /></>} />
         </div>
@@ -129,14 +130,11 @@ export default function Home() {
                 title: 'タイトルが入ります。タイトルが入ります。タイトルが入ります。'
               },
             ].map((item) => (
-              <a href={item.link} className="fade-up flex max-md:flex-col md:text-[24px] text-[18px] leading-snug md:gap-[50px] gap-5 py-5 md:py-10 md:px-[50px] px-5  hover:opacity-70 duration-300" key={item.id}>
-                <span className="font-bold">{item.date}</span>
-                <span className="">タイトルが入ります。タイトルが入ります。タイトルが入ります。</span>
-              </a>
+              <NewItem link={item.link} date={item.date} title={item.title} key={item.id} />
             ))}
           </div>
           <div className="fade-up flex justify-end">
-            <a href="/" className="md:text-[24px] text-[18px] font-bold hover:opacity-70 duration-300">more {`>>`}</a>
+            <a href="/news" className="md:text-[24px] text-[18px] font-bold hover:opacity-70 duration-300">more {`>>`}</a>
           </div>
         </div>
       </section>
