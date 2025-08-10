@@ -41,7 +41,7 @@ const Header = () => {
             </a>
           </li>
         </ul>
-        <a href="/" className="flex items-center justify-center w-[180px] h-[62px] bg-[#3E7976] shadow-[0_4px_0_0_#2B4A49] rounded-full text-white md:text-[24px] font-bold text-[20px]">ログイン</a>
+        <a href="/login" className="flex items-center justify-center w-[180px] h-[62px] bg-[#3E7976] shadow-[0_4px_0_0_#2B4A49] rounded-full text-white md:text-[24px] font-bold text-[20px]">ログイン</a>
       </div>
       <button
         className={`group xl:hidden z-[99] md:h-7 h-5 md:w-[50px] w-10 ${NavOpen ? "active fixed right-5 md:right-8" : "relative"
