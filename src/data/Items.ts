@@ -7,6 +7,7 @@ export const dataItems: Product[] = [
     rating: 4.8,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-01.png',
+    companyName: "会社名"
   },
   {
     id: '2',
@@ -14,6 +15,7 @@ export const dataItems: Product[] = [
     rating: 3.6,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-02.png',
+    companyName: "会社名"
   },
   {
     id: '3',
@@ -21,6 +23,7 @@ export const dataItems: Product[] = [
     rating: 3.0,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-03.png',
+    companyName: "会社名"
   },
   {
     id: '4',
@@ -28,6 +31,7 @@ export const dataItems: Product[] = [
     rating: 4.8,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-04.png',
+    companyName: "会社名"
   },
   {
     id: '5',
@@ -35,6 +39,7 @@ export const dataItems: Product[] = [
     rating: 4.8,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-01.png',
+    companyName: "会社名"
   },
   {
     id: '6',
@@ -42,6 +47,7 @@ export const dataItems: Product[] = [
     rating: 3.6,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-02.png',
+    companyName: "会社名"
   },
   {
     id: '7',
@@ -49,6 +55,7 @@ export const dataItems: Product[] = [
     rating: 3.0,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-03.png',
+    companyName: "会社名"
   },
   {
     id: '8',
@@ -56,6 +63,7 @@ export const dataItems: Product[] = [
     rating: 4.8,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-04.png',
+    companyName: "会社名"
   },
   {
     id: '9',
@@ -63,6 +71,7 @@ export const dataItems: Product[] = [
     rating: 4.8,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-01.png',
+    companyName: "会社名"
   },
   {
     id: '10',
@@ -70,6 +79,7 @@ export const dataItems: Product[] = [
     rating: 3.6,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-02.png',
+    companyName: "会社名"
   },
   {
     id: '11',
@@ -77,6 +87,7 @@ export const dataItems: Product[] = [
     rating: 3.0,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-03.png',
+    companyName: "会社名"
   },
   {
     id: '12',
@@ -84,5 +95,6 @@ export const dataItems: Product[] = [
     rating: 4.8,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/item-04.png',
+    companyName: "会社名"
   },
 ];

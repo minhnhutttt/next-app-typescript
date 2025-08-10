@@ -7,6 +7,7 @@ export const dataRank: Product[] = [
     rating: 4.8,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/product-card-01.png',
+    companyName: "会社名"
   },
   {
     id: '2',
@@ -14,6 +15,7 @@ export const dataRank: Product[] = [
     rating: 3.6,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/product-card-02.png',
+    companyName: "会社名"
   },
   {
     id: '3',
@@ -21,6 +23,7 @@ export const dataRank: Product[] = [
     rating: 3.0,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/product-card-03.png',
+    companyName: "会社名"
   },
   {
     id: '4',
@@ -28,6 +31,7 @@ export const dataRank: Product[] = [
     rating: 4.8,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/product-card-04.png',
+    companyName: "会社名"
   },
   {
     id: '5',
@@ -35,6 +39,7 @@ export const dataRank: Product[] = [
     rating: 3.6,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/product-card-05.png',
+    companyName: "会社名"
   },
   {
     id: '6',
@@ -42,6 +47,7 @@ export const dataRank: Product[] = [
     rating: 3.6,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/product-card-05.png',
+    companyName: "会社名"
   },
   {
     id: '7',
@@ -49,6 +55,7 @@ export const dataRank: Product[] = [
     rating: 3.6,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/product-card-05.png',
+    companyName: "会社名"
   },
   {
     id: '8',
@@ -56,6 +63,7 @@ export const dataRank: Product[] = [
     rating: 3.6,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/product-card-05.png',
+    companyName: "会社名"
   },
   {
     id: '9',
@@ -63,6 +71,7 @@ export const dataRank: Product[] = [
     rating: 3.6,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/product-card-05.png',
+    companyName: "会社名"
   },
   {
     id: '10',
@@ -70,5 +79,6 @@ export const dataRank: Product[] = [
     rating: 3.6,
     description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     image: '/assets/images/products/product-card-05.png',
+    companyName: "会社名"
   },
 ];

@@ -1,5 +1,7 @@
 "use client"
 import { Button } from "@/components/common/Button";
+import { InquiryItem } from "@/components/mypage/InquiryItem";
+import { dataProducts } from "@/data";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 export default function Inquiry() {
@@ -26,20 +28,8 @@ export default function Inquiry() {
                         <Button link="/inquiry/certification" sm type={0}>この商品の問い合わせをする</Button>
                     </div>
                     <div className="md:mt-[140px] mt-[60px] w-full md:max-w-[918px] max-w-[400px] mx-auto border-y border-[#666] divide-y divide-[#666]">
-                        <div className="md:py-[60px] py-[68px] md:gap-20 gap-8 flex items-center max-md:flex-col">
-                            <span className="md:max-w-[50%]"><img className="rounded-[20px]" src="/assets/images/products/product-01.png" alt="" /></span>
-                            <div className="md:space-y-8 space-y-6 max-md:text-center">
-                                <p className="md:text-[40px] text-[24px] font-bold">商品名</p>
-                                <p className="md:text-[24px] text-[18px]">会社名</p>
-                            </div>
-                        </div>
-                        <div className="md:py-[60px] py-[68px] md:gap-20 gap-8 flex items-center max-md:flex-col">
-                            <span className="md:max-w-[50%]"><img className="rounded-[20px]" src="/assets/images/products/product-02.png" alt="" /></span>
-                            <div className="md:space-y-8 space-y-6 max-md:text-center">
-                                <p className="md:text-[40px] text-[24px] font-bold">商品名</p>
-                                <p className="md:text-[24px] text-[18px]">会社名</p>
-                            </div>
-                        </div>
+                        <InquiryItem product={dataProducts[0]} />
+                        <InquiryItem product={dataProducts[1]} />
                     </div>
                 </div>
             </section>
