@@ -28,14 +28,6 @@ export default function Fv() {
         <p className="fade-up w-full max-w-[390px] md:text-[18px] text-[15px] leading-loose font-extralight md:mt-10 mt-6">
           DIVER Storage Coin Innovation: Challenging the structural issues of cloud services - high costs, centralization, and insufficient rewards
         </p>
-        <div className="fade-up flex justify-center items-center md:mt-12 mt-8">
-          <a href="/" className="flex items-center justify-center w-[260px] md:w-[300px] h-16 md:h-20 md:text-[18px] text-[15px] font-medium rounded-full relative bg-transparent overflow-hidden tracking-wider">
-            <span className="absolute inset-0 z-0 backdrop-filter backdrop-blur-[0px] [filter:url(#lg-dist)] isolate"></span>
-            <span className="absolute inset-0 z-[1] bg-[#00021C]/[0.2]"></span>
-            <span className="absolute inset-0 z-[2] [border-radius:inherit] overflow-hidden [box-shadow:inset_1px_1px_0_rgba(255,_255,_255,_0.75),_inset_0_0_5px_rgba(255,_255,_255,_0.75)]"></span>
-            <span className="relative z-10">WHITEPAPER</span>
-          </a>
-        </div>
       </div>
     </section>
   )

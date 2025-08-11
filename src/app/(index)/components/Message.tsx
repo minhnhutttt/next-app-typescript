@@ -2,7 +2,7 @@
 
 export default function Message() {
   return (
-    <section className="relative py-40 md:py-[495px] px-5 flex items-center justify-center flex-col">
+    <section className="relative py-40 md:pt-[495px] md:pb-[400px] px-5 flex items-center justify-center flex-col">
         <div className="absolute bg-cover bg-center w-full z-10 pointer-events-none flex justify-center">
         <img className="w-full md:min-w-[1440px] min-w-[100px] object-center" src="/assets/images/deco-center.png" alt="" /></div>
       <div className="w-full relative max-w-[1250px] mx-auto">
