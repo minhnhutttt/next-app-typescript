@@ -26,8 +26,8 @@ const Footer = () => {
             </ul>
 
             <ul className="space-y-5">
-              <li><a href="/">利用規約</a></li>
-              <li><a href="/">プライバシーポリシー</a></li>
+              <li><a href="/terms-of-service">利用規約</a></li>
+              <li><a href="/privacy-policy">プライバシーポリシー</a></li>
               <li><a href="/">運営会社</a></li>
               <li><a href="/">試食BAR アサクサ</a></li>
             </ul>

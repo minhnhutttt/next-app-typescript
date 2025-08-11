@@ -23,8 +23,8 @@ export default function Search() {
     const [enabledEven, setEnabledEven] = useState(false);
     const [enabledExport, setEnabledExport] = useState(false);
 
-    const [minValue, setMinValue] = useState(20);
-    const [maxValue, setMaxValue] = useState(80);
+    const [minValue, setMinValue] = useState(1000);
+    const [maxValue, setMaxValue] = useState(7000);
 
     const handleToggleProduct = (id: string) => {
         const newSelected = new Set(selectedProduct);
