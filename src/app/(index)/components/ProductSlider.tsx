@@ -39,7 +39,7 @@ export const ProductSlider = ({
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full pl-5 md:pl-[60px]">
       <Splide
         options={{
           pagination: false,

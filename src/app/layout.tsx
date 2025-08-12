@@ -4,6 +4,7 @@ import "./globals.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollContainer from "@/components/scrollContainer";
+import { AuthProvider } from "@/context/AuthContext";
 
 const mplus = M_PLUS_1p({
    weight: ["300","400","500","700","800","900"],
@@ -25,11 +26,13 @@ export default function RootLayout({
         className={`${mplus.className}`}
       >
         <ScrollContainer>
-          <div className="">
-            <Header />
-            {children}
-            <Footer />
-          </div>
+          <AuthProvider>
+            <div className="">
+              <Header />
+              {children}
+              <Footer />
+            </div>
+          </AuthProvider>
         </ScrollContainer>
       </body>
     </html>

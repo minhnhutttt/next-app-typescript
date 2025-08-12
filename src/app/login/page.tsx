@@ -1,11 +1,27 @@
 "use client"
 import { Button } from "@/components/common/Button";
+import { useAuth } from "@/context/AuthContext";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Login() {
 
     const ref = useScrollAnimations()
+const router = useRouter();
+  const { isLoggedIn, login } = useAuth();
 
+  // Nếu đã login thì redirect
+  useEffect(() => {
+    if (isLoggedIn) {
+      router.replace("/mypage");
+    }
+  }, [isLoggedIn, router]);
+
+  const handleLogin = () => {
+    login();
+    router.push("/mypage");
+  };
     return (
         <main ref={ref}>
             <section className="md:my-[180px] my-20 px-5">
@@ -27,7 +43,7 @@ export default function Login() {
                                 </div>
                     </div>
                     <div className="flex justify-center max-md:flex-col-reverse items-center md:gap-11 gap-2 md:mt-10 mt-5">
-                        <Button link="/mypage" sm type={0}>ログイン</Button>
+                        <Button onClick={handleLogin} sm type={0}>ログイン</Button>
                     </div>
                 </div>
             </section>

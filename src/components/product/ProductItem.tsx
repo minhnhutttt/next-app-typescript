@@ -26,7 +26,7 @@ export const ProductItem = ({
               checked={isSelected}
               onChange={() => onToggle(product.id)}
             />
-            <div className="size-[21px] md:size-[50px] border border-[#666] flex items-center justify-center transition-colors duration-200 bg-white">
+            <div className="size-[21px] md:size-[50px] border border-[#666] flex items-center justify-center transition-colors duration-200 bg-white rounded md:rounded-lg">
               {isSelected && <img className="max-md:w-[16px]" src="/assets/images/ic-check.svg" />}
             </div>
           </label>

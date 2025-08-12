@@ -31,7 +31,7 @@ export const CardItem = ({ product, isSelected, onToggle,showCheckbox = true, ra
               checked={isSelected}
               onChange={() => onToggle(product.id)}
             />
-            <div className="size-[21px] md:size-8 border border-[#666] flex items-center justify-center transition-colors duration-200 bg-white">
+            <div className="size-[21px] md:size-8 border border-[#666] flex items-center justify-center transition-colors duration-200 bg-white rounded md:rounded-lg">
               {isSelected && <img className="max-md:w-[16px] w-6" src="/assets/images/ic-check.svg" />}
             </div>
           </label>

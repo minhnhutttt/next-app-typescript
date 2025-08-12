@@ -56,7 +56,7 @@ export default function Home() {
         />
         <div className="flex justify-center gap-5 md:mt-8 mt-2 flex-wrap">
           <Button link="/inquiry" type={0}>選択した商品をお問い合わせする</Button>
-          <Button link="/" type={1}>一覧を見る</Button>
+          <Button link="/search" type={1}>一覧を見る</Button>
         </div>
       </section>
       <section className="md:mt-56 mt-20">
@@ -77,19 +77,19 @@ export default function Home() {
       </section>
       <section className="px-5 md:mt-44 mt-16">
         <div className="md:space-y-[90px] space-y-5">
-          <Search title="ジャンルから探す" items={['お菓子','飲料','野菜','発酵食品','米','惣菜','調味料','レトルト']} />
-          <Search title="エリアから探す" items={['東京都','埼玉県','千葉県','神奈川県','大阪府','京都府','北海道','福岡県']} />
-          <Search title="キーワードから探す" items={['チーズ','醤油','冷凍','OEM','小売用','業務用','北海道','福岡県']} />
+          <Search title="ジャンルから探す" items={['お菓子','飲料','野菜','発酵食品','米','惣菜','調味料','レトルト','お菓子','飲料','野菜','発酵食品','米','惣菜','調味料','レトルト']} />
+          <Search title="エリアから探す" items={['東京都','埼玉県','千葉県','神奈川県','大阪府','京都府','北海道','福岡県','東京都','埼玉県','千葉県','神奈川県','大阪府','京都府','北海道','福岡県']} />
+          <Search title="キーワードから探す" items={['チーズ','醤油','冷凍','OEM','小売用','業務用','北海道','福岡県','チーズ','醤油','冷凍','OEM','小売用','業務用','北海道','福岡県']} />
         </div>
       </section>
       <section className="md:mt-[180px] mt-20 px-5">
         <div className="w-full max-w-[1320px] mx-auto grid md:grid-cols-2 gap-5 md:gap-[30px]">
-          <a href="/" className="fade-up hover:opacity-70 duration-300"><img src="/assets/images/banner-01.png" alt="" /></a>
-          <a href="/" className="fade-up hover:opacity-70 duration-300"><img src="/assets/images/banner-02.png" alt="" /></a>
+          <a href="/" className="fade-up hover:!opacity-70 duration-300"><img src="/assets/images/banner-01.png" alt="" /></a>
+          <a href="/" className="fade-up hover:!opacity-70 duration-300"><img src="/assets/images/banner-02.png" alt="" /></a>
         </div>
       </section>
       <section className="px-5 md:mt-[180px] mt-20">
-        <div className="w-full md:max-w-[1320px] max-w-[353px] mx-auto rounded-[20px] md:bg-[url(/assets/images/service-bg.png)] bg-[url(/assets/images/service-bg-sp.png)] bg-center bg-cover md:pt-[100px] py-[74px] md:pb-16">
+        <a href="/" className="w-full block hover:!opacity-70 duration-300 md:max-w-[1320px] max-w-[353px] mx-auto rounded-[20px] md:bg-[url(/assets/images/service-bg.png)] bg-[url(/assets/images/service-bg-sp.png)] bg-center bg-cover md:pt-[100px] py-[74px] md:pb-16">
           <p className="fade-up text-center md:text-[72px] text-[32px] font-bold text-[#A56061] leading-none">このサービスについて</p>
           <div className="fade-up flex justify-center max-md:items-center max-md:flex-col max-md:mt-4">
             <span><img className="max-md:w-[155px]" src="/assets/images/pc.png" alt="" /></span>
@@ -102,7 +102,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </a>
       </section>
       <section className="px-5 md:my-[180px] my-20">
         <div className="w-full md:max-w-[1320px] max-w-[353px] mx-auto">

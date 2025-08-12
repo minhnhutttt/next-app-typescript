@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import '@splidejs/react-splide/css';
 import { ButtonItem } from "@/components/common/ButtonItem";
 import { Button } from "@/components/common/Button";
+import { useAuth } from "@/context/AuthContext";
 
 interface Slide {
     src: string;
@@ -25,6 +26,8 @@ const slides: Slide[] = [
 export default function Detail() {
 
     const ref = useScrollAnimations()
+
+    const { isLoggedIn } = useAuth();
 
     const mainRef = useRef<any>(null);
     const thumbsRef = useRef<any>(null);
@@ -82,14 +85,14 @@ export default function Detail() {
         <main ref={ref}>
             <section className="md:my-[180px] my-20 px-5">
                 <div className="w-full md:max-w-[1220px] max-w-[500px] mx-auto ">
-                    <div className="flex gap-11 lg:gap-[100px] max-lg:flex-col max-lg:items-center">
-                        <div className="md:w-[500px] w-full">
+                    <div className="flex gap-11 lg:gap-[100px] max-lg:flex-col max-lg:items-center max-md:px-4">
+                        <div className="md:w-[500px] w-[355px]">
                             <Splide
                                 options={mainOptions}
                                 aria-label="Main Slider"
                                 ref={mainRef}>
                                 {slides.map((slide) => (
-                                    <SplideSlide key={slide.src}>
+                                    <SplideSlide key={slide.src} className="!w-[355px] md:!w-[500px] md:!h-[500px] !aspect-square rounded-[20px]">
                                         <img src={slide.src} alt={slide.alt} className="w-full h-full object-cover" />
                                     </SplideSlide>
                                 ))}
@@ -101,7 +104,7 @@ export default function Detail() {
                                 ref={thumbsRef}
                                 className="mt-4">
                                 {slides.map((slide) => (
-                                    <SplideSlide key={slide.src}>
+                                    <SplideSlide key={slide.src} className="rounded-[10px]" >
                                         <img src={slide.src} alt={slide.alt} />
                                     </SplideSlide>
                                 ))}
@@ -128,9 +131,11 @@ export default function Detail() {
                                     <p className="md:text-[24px] text-[18px]">希望小売価格・上代</p>
                                     <p className="font-bold text-[24px]">〇〇円</p>
                                 </div>
+                                {!isLoggedIn &&
                                 <div className="max-md:flex max-md:justify-center">
-                                    <button className="fade-up px-3 w-full flex items-center justify-center rounded-full bg-[#367F7B] shadow-[0_4px_0_0_#417370] md:text-[24px] font-bold text-white hover:!opacity-70 duration-300 text-[18px] h-[56px]">ログインして価格を見る</button>
+                                    <button className="fade-up px-6 w-full flex items-center justify-center rounded-full bg-[#367F7B] shadow-[0_4px_0_0_#417370] md:text-[24px] font-bold text-white hover:!opacity-70 duration-300 text-[18px] h-[56px]">ログインして価格を見る</button>
                                 </div>
+                                }
                             </div>
                             <div className="max-md:flex max-md:justify-center">
                                 <Button sm type={0}>この商品の問い合わせをする</Button>
