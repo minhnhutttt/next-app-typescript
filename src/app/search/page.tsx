@@ -19,8 +19,6 @@ export default function Search() {
 
     const [isOpen, setIsOpen] = useState(false);
     const [enabledPBOEM, setEnabledPBOEM] = useState(false);
-    const [enabledFarm, setEnabledFarm] = useState(false);
-    const [enabledEven, setEnabledEven] = useState(false);
     const [enabledExport, setEnabledExport] = useState(false);
 
     const [minValue, setMinValue] = useState(1000);
@@ -102,10 +100,21 @@ export default function Search() {
                         </div>
                     </div>
                     <div className="flex flex-wrap md:gap-5 gap-3 md:my-10 my-8 max-md:max-w-[312px] mx-auto">
-                        {["商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ",].map((item, index) => (
-                            <ButtonItem key={index} sm>
-                                {item}
-                            </ButtonItem>
+                        {["商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ",].map((tag, index) => (
+                            <label  key={index}
+                                className="cursor-pointer"
+                            >
+                                <input
+                                    type="checkbox"
+                                    name="tags"
+                                    value={tag}
+                                    className="peer hidden"
+                                />
+                                <span className="flex items-center justify-center w-[96px] h-8 md:w-[184px] md:h-[56px] rounded-full text-center text-[16px] font-bold bg-[#EBEBEB] peer-checked:bg-[#3E7976] duration-300 hover:opacity-70 peer-checked:text-white
+                            ">
+                                    {tag}
+                                </span>
+                            </label>
                         ))}
                     </div>
                     <div className="flex justify-center gap-5 md:gap-10">
@@ -158,16 +167,6 @@ export default function Search() {
                                     setEnabled={setEnabledPBOEM}
                                 />
                                 <ToggleButton
-                                    title="産直対応"
-                                    enabled={enabledFarm}
-                                    setEnabled={setEnabledFarm}
-                                />
-                                <ToggleButton
-                                    title="催事対応"
-                                    enabled={enabledEven}
-                                    setEnabled={setEnabledEven}
-                                />
-                                <ToggleButton
                                     title="輸出対応"
                                     enabled={enabledExport}
                                     setEnabled={setEnabledExport}
@@ -191,11 +190,13 @@ export default function Search() {
                     <div className="md:mt-[100px] mt-10">
                         <CardList products={dataItems} showCheckbox={true} selectedItems={selectedItems} onToggleItem={handleToggleItem} />
                     </div>
-                    <div className="flex justify-center md:my-[180px] my-20">
-                        <Button type={1}>選択した商品を一括問い合わせする</Button>
-                    </div>
                 </div>
+                
+            <div className="flex justify-center md:my-[180px] my-20 sticky bottom-10">
+                <Button disable={selectedItems.size === 0} type={1}>選択した商品を一括問い合わせする</Button>
             </div>
+            </div>
+            
         </main>
     );
 }

@@ -25,7 +25,7 @@ export default function Inquiry() {
                     </div>
                     <div className="flex justify-center max-md:flex-col-reverse items-center md:gap-11 gap-2 md:mt-20 mt-10">
                         <a href="/" className="md:text-[24px] text-[18px] font-bold">キャンセル</a>
-                        <Button link="/inquiry/certification" sm type={0}>この商品の問い合わせをする</Button>
+                        <Button link="/inquiry/complete" sm type={0}>下記の商品をお問い合わせする</Button>
                     </div>
                     <div className="md:mt-[140px] mt-[60px] w-full md:max-w-[918px] max-w-[400px] mx-auto border-y border-[#666] divide-y divide-[#666]">
                         <InquiryItem product={dataProducts[0]} />

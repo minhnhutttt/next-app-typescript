@@ -34,3 +34,21 @@ input[type="range"]::-moz-range-thumb {
 input::placeholder {
   color: #ccc;
 }
+
+.pagination-bar {
+  display: flex;
+  height: 6px;
+  background: rgba(242, 242, 242, 1);
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.pagination-bar div {
+  background: rgba(242, 242, 242, 1);
+  transition: background 0.3s;
+}
+
+.pagination-bar div.active,
+.pagination-segment.active {
+  background: rgba(62, 121, 118, 1);
+}

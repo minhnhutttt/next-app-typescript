@@ -50,10 +50,11 @@ export default function RangeSlider({
 
       <div className="flex justify-between mt-4">
         <span className="md:text-[18px] text-[16px] font-bold">
-          {minValue}円以下
+          
+          {minValue === 0 ? '下限なし' : `${minValue}円以上`}
         </span>
         <span className="md:text-[18px] text-[16px] font-bold">
-          {maxValue}円以上
+          {maxValue === sliderMax ? '上限なし' : `${maxValue}円以下`}
         </span>
       </div>
     </div>

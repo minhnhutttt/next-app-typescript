@@ -75,7 +75,7 @@ export default function InquiryCertification() {
                                                 value={tag}
                                                 className="peer hidden"
                                             />
-                                            <span className="flex items-center justify-center w-[96px] md:w-[112px] h-10 rounded-full text-center text-[16px] font-bold bg-[#EBEBEB] peer-checked:bg-[#3E7976] peer-checked:text-white
+                                            <span className="flex items-center justify-center w-[96px] md:w-[112px] h-10 rounded-full text-center text-[16px] font-bold bg-[#EBEBEB] peer-checked:bg-[#3E7976] peer-checked:text-white  duration-300 hover:opacity-70
                                         ">
                                                 {tag}
                                             </span>

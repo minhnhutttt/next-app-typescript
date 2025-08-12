@@ -1,10 +1,10 @@
 "use client";
 
-import { Splide, SplideSlide, Splide as SplideClass } from "@splidejs/react-splide";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import { CardItem } from "@/components/card/CardItem";
 import { Product } from "@/types";
 import "@splidejs/react-splide/css";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 interface ProductSliderProps {
   products: Product[];
@@ -16,56 +16,98 @@ export const ProductSlider = ({
   rank = false,
 }: ProductSliderProps) => {
   const splideRef = useRef<any>(null);
-  const [progress, setProgress] = useState(0);
+  const paginationRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const splide = splideRef.current?.splide;
+    const paginationEl = paginationRef.current;
+    if (!splide || !paginationEl) return;
 
-    if (!splide) return;
+    // renderPagination và updateActive được định nghĩa ở ngoài handler để có thể off()
+    const renderPagination = () => {
+      const slidesCount = splide.length ?? 0;
+      if (!slidesCount) {
+        paginationEl.innerHTML = "";
+        return;
+      }
 
-    const updateProgress = () => {
-      const total = splide.length;
-      const index = splide.index + 1;
-      const ratio = index / total;
-      setProgress(ratio * 100);
+      const percent = 100 / slidesCount;
+      // reset
+      paginationEl.innerHTML = "";
+
+      for (let i = 0; i < slidesCount; i++) {
+        // Dùng button để accessible và dễ focus
+        const segment = document.createElement("button");
+        segment.type = "button";
+        segment.className = "pagination-segment";
+        segment.style.width = `${percent}%`;
+        segment.style.height = "100%";
+        segment.setAttribute("aria-label", `Go to slide ${i + 1}`);
+        segment.dataset.index = String(i);
+
+        if (i === splide.index) segment.classList.add("active");
+
+        // khi click -> chuyển slide
+        segment.addEventListener("click", () => splide.go(i));
+        paginationEl.appendChild(segment);
+      }
     };
 
-    splide.on("mounted move", updateProgress);
-    updateProgress();
+    const moveHandler = (newIndex: number) => {
+      const segments = Array.from(paginationEl.children);
+      segments.forEach((seg, idx) => {
+        seg.classList.toggle("active", idx === newIndex);
+      });
+    };
+
+    const mountedHandler = () => {
+      renderPagination();
+    };
+
+    if (splide.root) {
+      renderPagination();
+    } else {
+      splide.on("mounted", mountedHandler);
+    }
+
+    splide.on("move", moveHandler);
+
+    const onResize = () => {
+      renderPagination();
+    };
+    window.addEventListener("resize", onResize);
 
     return () => {
-      splide.off("mounted move", updateProgress);
+      window.removeEventListener("resize", onResize);
+      splide.off("move", moveHandler);
+      splide.off("mounted", mountedHandler);
     };
-  }, []);
+  }, [products.length]);
 
   return (
     <div className="w-full pl-5 md:pl-[60px]">
       <Splide
         options={{
+          type: "loop",
           pagination: false,
           arrows: false,
           autoWidth: true,
+           perMove: 1,
         }}
         className="w-full"
         ref={splideRef}
+        hasTrack={false}
       >
-        {products.map((item, index) => (
-          <SplideSlide
-            key={index}
-            className="fade-item relative px-3 md:px-[15px] pt-4"
-          >
-            <CardItem product={item} rank={rank ? index + 1 : null} sm />
-          </SplideSlide>
-        ))}
+        <SplideTrack>
+          {products.map((item, index) => (
+            <SplideSlide key={index} className="fade-item relative px-3 md:px-[15px] pt-4">
+              <CardItem product={item} rank={rank ? index + 1 : null} sm />
+            </SplideSlide>
+          ))}
+        </SplideTrack>
+
+        <div ref={paginationRef} className="custom-pagination pagination-bar mt-5 md:mt-8" />
       </Splide>
-      <div className="px-5 mt-3 md:mt-4">
-        <div className="w-full bg-[#F2F2F2] h-[5px] mb-2 relative overflow-hidden rounded max-w-[1000px] mx-auto">
-            <div
-            className="bg-[#3E7976] h-full transition-all duration-300"
-            style={{ width: `${progress}%` }}
-            />
-        </div>
-      </div>
     </div>
   );
 };

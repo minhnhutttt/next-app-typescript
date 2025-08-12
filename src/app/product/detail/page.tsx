@@ -1,6 +1,6 @@
 "use client"
 import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import { Options } from '@splidejs/splide';
 import React, { useEffect, useRef, useState } from 'react';
 import '@splidejs/react-splide/css';
@@ -61,25 +61,56 @@ export default function Detail() {
         arrows: false
     };
 
-    useEffect(() => {
-        const splide = thumbsRef.current?.splide;
+   useEffect(() => {
+  const splide = thumbsRef.current?.splide;
+  const paginationContainer = document.getElementById('custom-pagination');
 
-        if (!splide) return;
+  if (!splide || !paginationContainer) return;
 
-        const updateProgress = () => {
-            const total = splide.length;
-            const index = splide.index + 1;
-            const ratio = index / total;
-            setProgress(ratio * 100);
-        };
+  const renderPagination = () => {
+    const slidesCount = splide.length;
+    if (!slidesCount) return;
 
-        splide.on("mounted move", updateProgress);
-        updateProgress();
+    const percent = 100 / slidesCount;
+    paginationContainer.innerHTML = '';
 
-        return () => {
-            splide.off("mounted move", updateProgress);
-        };
-    }, []);
+    for (let i = 0; i < slidesCount; i++) {
+      const segment = document.createElement('div');
+      segment.className = 'pagination-segment';
+      segment.style.width = `${percent}%`;
+      segment.style.height = '100%';
+      if (i === splide.index) segment.classList.add('active');
+
+      segment.addEventListener('click', () => splide.go(i));
+      paginationContainer.appendChild(segment);
+    }
+  };
+
+  const updateActive = (newIndex?: number) => {
+    const idx = typeof newIndex === 'number' ? newIndex : splide.index;
+    const segments = Array.from(paginationContainer.children);
+    segments.forEach((seg, sIdx) => {
+      seg.classList.toggle('active', sIdx === idx);
+    });
+  };
+
+  if (splide.root) {
+    renderPagination();
+  } else {
+    splide.on('mounted', renderPagination);
+  }
+
+  splide.on('move', (newIndex: number) => updateActive(newIndex));
+
+  const onResize = () => renderPagination();
+  window.addEventListener('resize', onResize);
+
+  return () => {
+    window.removeEventListener('resize', onResize);
+    splide.off('move');
+    splide.off('mounted', renderPagination);
+  };
+}, []);
 
     return (
         <main ref={ref}>
@@ -102,21 +133,18 @@ export default function Detail() {
                                 options={thumbsOptions}
                                 aria-label="Thumbnail Slider"
                                 ref={thumbsRef}
+                                hasTrack={ false }
                                 className="mt-4">
+                                    <SplideTrack>
                                 {slides.map((slide) => (
                                     <SplideSlide key={slide.src} className="rounded-[10px]" >
                                         <img src={slide.src} alt={slide.alt} />
                                     </SplideSlide>
                                 ))}
+                                </SplideTrack>
+                                <div id="custom-pagination" className="pagination-bar mt-5 md:mt-8"></div>
+
                             </Splide>
-                            <div className="px-5 mt-3 md:mt-4">
-                                <div className="w-full bg-[#F2F2F2] h-[5px] mb-2 relative overflow-hidden rounded max-w-[1000px] mx-auto">
-                                    <div
-                                        className="bg-[#3E7976] h-full transition-all duration-300"
-                                        style={{ width: `${progress}%` }}
-                                    />
-                                </div>
-                            </div>
                         </div>
                         <div className="flex-1 max-md:text-center">
                             <p className="md:text-[40px] text-[24px] font-bold mb-6 md:mb-8">商品名</p>
@@ -138,7 +166,7 @@ export default function Detail() {
                                 }
                             </div>
                             <div className="max-md:flex max-md:justify-center">
-                                <Button sm type={0}>この商品の問い合わせをする</Button>
+                                <Button link="/inquiry" sm type={0}>この商品の問い合わせをする</Button>
                             </div>
                             <p className="md:text-[24px] text-[18px] text-left md:pt-[88px] pt-11">
                                 紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。
@@ -165,7 +193,7 @@ export default function Detail() {
                     </div>
                     <div className="md:mt-[180px] mt-20">
                         <div className="flex justify-center md:gap-6 gap-4 max-md:flex-col items-center">
-                            <div className="w-[283px] h-20 md:h-[100px] border border-[#EEC822] flex items-center justify-center rounded-[10px] md:text-[24px] text-[18px] font-bold text-center p-1 gap-1">
+                            <div className="w-[283px] h-20 md:h-[100px] border-2 border-[#EEC822] flex items-center justify-center rounded-[10px] md:text-[24px] text-[18px] font-bold text-center p-1 gap-1">
                                 <span><img src="/assets/images/ic-hand.svg" alt="" /></span>
                                 <span>試食BAR アサクサ<br />リアルレビュー</span>
                             </div>
