@@ -8,12 +8,14 @@ import { ProductSlider } from "./components/ProductSlider";
 import { Search } from "./components/Search";
 import { useState } from "react";
 import { NewItem } from "@/components/news/NewItem";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
 
   const ref = useScrollAnimations()
 
   const [selectedItems, setSelectedItems] = useState<Set<string>>(new Set());
+  const router = useRouter();
 
   const handleToggleItem = (id: string) => {
     const newSelected = new Set(selectedItems);
@@ -24,6 +26,12 @@ export default function Home() {
     }
     setSelectedItems(newSelected);
   };
+
+  const handleInquiryClick = () => {
+    const ids = Array.from(selectedItems).join(",");
+    router.push(`/inquiry?ids=${ids}`);
+  };
+
 
   return (
     <main ref={ref}>
@@ -55,7 +63,7 @@ export default function Home() {
           onToggleItem={handleToggleItem}
         />
         <div className="flex justify-center gap-5 md:mt-8 mt-2 flex-wrap">
-          <Button link="/inquiry" type={0}>選択した商品をお問い合わせする</Button>
+          <Button onClick={handleInquiryClick} type={0}>選択した商品をお問い合わせする</Button>
           <Button link="/search" type={1}>一覧を見る</Button>
         </div>
       </section>

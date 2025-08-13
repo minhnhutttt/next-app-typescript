@@ -23,7 +23,6 @@ export const ProductSlider = ({
     const paginationEl = paginationRef.current;
     if (!splide || !paginationEl) return;
 
-    // renderPagination và updateActive được định nghĩa ở ngoài handler để có thể off()
     const renderPagination = () => {
       const slidesCount = splide.length ?? 0;
       if (!slidesCount) {
@@ -32,11 +31,9 @@ export const ProductSlider = ({
       }
 
       const percent = 100 / slidesCount;
-      // reset
       paginationEl.innerHTML = "";
 
       for (let i = 0; i < slidesCount; i++) {
-        // Dùng button để accessible và dễ focus
         const segment = document.createElement("button");
         segment.type = "button";
         segment.className = "pagination-segment";
@@ -47,7 +44,6 @@ export const ProductSlider = ({
 
         if (i === splide.index) segment.classList.add("active");
 
-        // khi click -> chuyển slide
         segment.addEventListener("click", () => splide.go(i));
         paginationEl.appendChild(segment);
       }

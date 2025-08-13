@@ -1,7 +1,6 @@
 "use client"
 import CardList from "@/components/card/CardList";
 import { Button } from "@/components/common/Button";
-import { ButtonItem } from "@/components/common/ButtonItem";
 import RangeSlider from "@/components/common/RangeSlider";
 import { Title } from "@/components/common/Title";
 import ToggleButton from "@/components/common/ToggleButton";
@@ -10,6 +9,7 @@ import { dataProducts } from "@/data";
 import { dataItems } from "@/data/Items";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useState } from "react";
+import { TagList } from "./components/TagList";
 export default function Search() {
 
     const ref = useScrollAnimations()
@@ -99,25 +99,13 @@ export default function Search() {
                             </button>
                         </div>
                     </div>
-                    <div className="flex flex-wrap md:gap-5 gap-3 md:my-10 my-8 max-md:max-w-[312px] mx-auto">
-                        {["商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ",].map((tag, index) => (
-                            <label  key={index}
-                                className="cursor-pointer"
-                            >
-                                <input
-                                    type="checkbox"
-                                    name="tags"
-                                    value={tag}
-                                    className="peer hidden"
-                                />
-                                <span className="flex items-center justify-center w-[96px] h-8 md:w-[184px] md:h-[56px] rounded-full text-center text-[16px] font-bold bg-[#EBEBEB] peer-checked:bg-[#3E7976] duration-300 hover:opacity-70 peer-checked:text-white
-                            ">
-                                    {tag}
-                                </span>
-                            </label>
-                        ))}
-                    </div>
-                    <div className="flex justify-center gap-5 md:gap-10">
+                    <TagList
+                        tags={[
+                            "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ",
+                            "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ", "商品タグ",
+                        ]}
+                        />
+                    <div className="flex justify-center gap-5 md:gap-10 max-md:mt-5">
                         <div className="fade-up relative w-[150px] md:w-[308px]">
                             <select
                                 name=""

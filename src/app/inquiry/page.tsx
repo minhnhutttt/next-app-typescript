@@ -3,10 +3,16 @@ import { Button } from "@/components/common/Button";
 import { InquiryItem } from "@/components/mypage/InquiryItem";
 import { dataProducts } from "@/data";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
+import { useSearchParams } from "next/navigation";
 
 export default function Inquiry() {
 
     const ref = useScrollAnimations()
+
+    const searchParams = useSearchParams();
+    const ids = searchParams.get("ids")?.split(",") || [];
+
+    const selectedProducts = dataProducts.filter((p) => ids.includes(p.id));
 
     return (
         <main ref={ref}>
@@ -28,8 +34,13 @@ export default function Inquiry() {
                         <Button link="/inquiry/complete" sm type={0}>下記の商品をお問い合わせする</Button>
                     </div>
                     <div className="md:mt-[140px] mt-[60px] w-full md:max-w-[918px] max-w-[400px] mx-auto border-y border-[#666] divide-y divide-[#666]">
-                        <InquiryItem product={dataProducts[0]} />
-                        <InquiryItem product={dataProducts[1]} />
+                        {selectedProducts.length > 0 ? (
+                        selectedProducts.map((product) => (
+                            <InquiryItem key={product.id} product={product} />
+                        ))
+                        ) : (
+                        <p className="text-center py-5">商品が選択されていません</p>
+                        )}
                     </div>
                 </div>
             </section>

@@ -39,14 +39,14 @@ export const Search = ({ title, items }: SearchProps) => {
         {title}
       </div>
 
-      <div className="max-md:grid-cols-3 max-sm:grid-cols-2 grid md:flex items-center flex-wrap md:gap-x-[50px] md:gap-y-10 gap-y-6 gap-x-1 md:mt-9 mt-5">
+      <div className="flex items-center flex-wrap md:gap-x-[50px] md:gap-y-10 gap-y-6 gap-x-1 md:mt-9 mt-5">
         {initialItems.map((item, index) => (
           <ButtonItem key={index}>{item}</ButtonItem>
         ))}
 
         {showAll &&
           extraItems.map((item, index) => (
-            <div className="max-w-[224px] w-full"
+            <div className=""
               key={item}
               ref={(el) => {
                 if (el) extraRefs.current[index] = el;

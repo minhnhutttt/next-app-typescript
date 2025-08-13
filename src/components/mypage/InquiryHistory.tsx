@@ -22,31 +22,7 @@ export const InquiryHistory = ({ data }: InquiryHistoryProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const prevCountRef = useRef(LOAD_MORE_COUNT);
 
-  useEffect(() => {
-    if (!containerRef.current) return;
 
-    const newItems = Array.from(containerRef.current.children).slice(
-      prevCountRef.current,
-      visibleCount
-    );
-
-    if (newItems.length > 0) {
-      gsap.fromTo(
-        newItems,
-        { height: 0, opacity: 0, y: -20 },
-        {
-          height: "auto",
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "power2.out",
-          stagger: 0.1,
-        }
-      );
-    }
-
-    prevCountRef.current = visibleCount;
-  }, [visibleCount]);
 
   const handleShowMore = () => {
     setVisibleCount((prev) => Math.min(prev + LOAD_MORE_COUNT, data.length));
@@ -54,11 +30,9 @@ export const InquiryHistory = ({ data }: InquiryHistoryProps) => {
 
   return (
     <div>
-      <p className="md:text-[40px] text-[24px] font-bold">商品問い合わせ履歴</p>
-
       <div ref={containerRef}>
-        {data.slice(0, visibleCount).map((group) => (
-          <div key={group.date} className="md:mt-10 mt-5 overflow-hidden">
+        {data.slice(0, visibleCount).map((group, index) => (
+          <div key={index} className="md:mt-10 mt-5 overflow-hidden">
             <div className="md:text-[24px] text-[18px] font-bold mb-2.5 md:mb-5">
               {group.date}
             </div>

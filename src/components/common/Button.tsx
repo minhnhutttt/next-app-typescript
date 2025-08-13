@@ -17,7 +17,7 @@ export const Button = ({ link, children, type = 1, sm = false, disable = false, 
   } ${sm ? 'min-w-[178px] md:min-w-[215px] max-md:w-full max-md:max-w-[306px] h-[43px] md:h-[62px]' : 'min-w-[244px] h-[56px] md:h-[62px] '} ${disable ? ' pointer-events-none bg-[#ebebeb] text-opacity-50' : ''}`;
 
   return (
-    <div className={`fade-up overflow-hidden flex ${sm ? 'h-[47px] md:h-[66px]' : 'md:h-[66px] h-[60px]'}`}>
+    <div className={`overflow-hidden flex ${sm ? 'h-[47px] md:h-[66px]' : 'md:h-[66px] h-[60px]'}`}>
       {link ? (
         <a href={link} className={baseClass}>
           {children}
