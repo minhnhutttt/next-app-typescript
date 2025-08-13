@@ -1,16 +1,16 @@
-"use client";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
-import { ReactNode, useEffect, useRef } from "react";
+'use client'
+import useScrollAnimations from '@/hooks/useScrollAnimations'
+import { ReactNode, useEffect, useRef } from 'react'
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Button from "@/components/button";
-import UnderlineText from "@/components/underlineText";
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Button from '@/components/button'
+import UnderlineText from '@/components/underlineText'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 gsap.config({
   nullTargetWarn: false,
-});
+})
 
 const Item = ({
   step,
@@ -19,25 +19,25 @@ const Item = ({
   children,
   rect,
 }: {
-  step: string;
-  title: string;
-  list: string[];
-  children: ReactNode;
-  rect?: string;
+  step: string
+  title: string
+  list: string[]
+  children: ReactNode
+  rect?: string
 }) => (
   <div
-    className={`${rect} step-item absolute inset-0 w-[300px] md:w-[657px] md:h-[434px] h-[400px] max-md:flex-col bg-white border border-black rounded-[51px] pt-5 md:pt-[34px] md:pb-[42px] pb-6 flex`}
+    className={`${rect} step-item absolute inset-0 flex h-[400px] w-[300px] rounded-[51px] border border-black bg-white pb-6 pt-5 max-md:flex-col md:h-[434px] md:w-[657px] md:pb-[42px] md:pt-[34px]`}
   >
-    <div className="md:w-[225px] md:border-r border-black flex items-center justify-center">
+    <div className="flex items-center justify-center border-black md:w-[225px] md:border-r">
       <img className="max-md:h-20" src={step} alt="" />
     </div>
-    <div className="flex-1 pr-4 md:pr-8 pl-4 flex flex-col justify-between">
+    <div className="flex flex-1 flex-col justify-between pl-4 pr-4 md:pr-8">
       <div className="">
-        <h5 className="md:text-[26px] text-[16px] font-bold">{title}</h5>
+        <h5 className="text-[16px] font-bold md:text-[26px]">{title}</h5>
         <div className="mt-2">
           {list.map((item, index) => (
             <p
-              className="flex md:text-[19px] text-[13px] font-medium"
+              className="flex text-[13px] font-medium md:text-[19px]"
               key={index}
             >
               <span>・</span>
@@ -50,39 +50,39 @@ const Item = ({
       <div className="flex justify-end">{children}</div>
     </div>
   </div>
-);
+)
 
 const Steps = () => {
-  const ref = useScrollAnimations();
-  const stepsRef = useRef<HTMLDivElement | null>(null);
-  const bgRef = useRef<HTMLDivElement | null>(null);
-  const buttonRef = useRef<HTMLDivElement | null>(null);
+  const ref = useScrollAnimations()
+  const stepsRef = useRef<HTMLDivElement | null>(null)
+  const bgRef = useRef<HTMLDivElement | null>(null)
+  const buttonRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
     let ctx = gsap.context(() => {
       if (stepsRef.current) {
-        const stepItems = stepsRef.current.querySelectorAll(".step-item");
+        const stepItems = stepsRef.current.querySelectorAll('.step-item')
 
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: stepsRef.current,
             pin: true,
-            start: "top top",
-            end: "+=4000",
+            start: 'top top',
+            end: '+=4000',
             scrub: true,
           },
-        });
+        })
 
         stepItems.forEach((item, index) => {
           tl.to(
             item,
             {
-              y: "-130%",
-              rotate: "-3deg",
+              y: '-130%',
+              rotate: '-3deg',
               duration: 1,
             },
             index * 0.5
-          );
-        });
+          )
+        })
         tl.from(bgRef.current, {
           autoAlpha: 0,
           y: 30,
@@ -95,36 +95,39 @@ const Steps = () => {
           duration: 1.3,
         })
       }
-    });
+    })
 
-    return () => ctx.revert();
-  }, []);
+    return () => ctx.revert()
+  }, [])
   return (
-    <section ref={ref} className="relative bg-[#C5E1E5] overflow-hidden ">
-      <div className="w-full mx-auto md:pt-[84px] pt-[60px] overflow-hidden ">
-        <div className="w-full max-w-[834px] flex justify-center mx-auto px-5">
+    <section ref={ref} className="relative overflow-hidden bg-[#C5E1E5] ">
+      <div className="mx-auto w-full overflow-hidden pt-[60px] md:pt-[84px] ">
+        <div className="mx-auto flex w-full max-w-[834px] justify-center px-5">
           <div>
-          <h3 className="fade-up md:text-[42px] text-[22px] font-black leading-[1.3] relative tracking-[-0.018em]">
-            7ステップ、<UnderlineText>10クリックで広告出稿。</UnderlineText>
-          </h3>
-          <p className="fade-up text-[16px] md:text-[23px] font-bold mt-2">
-            用意するのはLPのURLとGoogle広告アカウントだけ。
-          </p>
+            <h3 className="fade-up relative text-[22px] font-black leading-[1.3] tracking-[-0.018em] md:text-[42px]">
+              7ステップ、<UnderlineText>10クリックで広告出稿。</UnderlineText>
+            </h3>
+            <p className="fade-up mt-2 text-[16px] font-bold md:text-[23px]">
+              用意するのはLPのURLとGoogle広告アカウントだけ。
+            </p>
           </div>
         </div>
         <div
           ref={stepsRef}
-          className="md:py-24 pb-14 pt-24 w-full h-screen  max-md:px-5 flex flex-col justify-center"
+          className="flex h-screen w-full flex-col justify-center  pb-14 pt-24 max-md:px-5 md:py-24"
         >
           <div className="relative pb-4">
-            <span ref={bgRef} className="absolute bg-[url('/assets/images/step-bg.svg')] max-md:bg-[length:100%_100%] bg-no-repeat bg-center inset-0"></span>
-            <div className="relative w-[320px] md:w-[657px] h-[434px] mx-auto">
+            <span
+              ref={bgRef}
+              className="absolute inset-0 bg-[url('/assets/images/step-bg.svg')] bg-center bg-no-repeat max-md:bg-[length:100%_100%]"
+            ></span>
+            <div className="relative mx-auto h-[434px] w-[320px] md:w-[657px]">
               <Item
                 rect="z-[10] rotate-[2deg]"
                 step="/assets/images/step-01.svg"
                 title="Google広告アカウント連携"
                 list={[
-                  "ボタン「Googleアカウント連携」をクリックしてください。",
+                  'ボタン「Googleアカウント連携」をクリックしてください。',
                 ]}
               >
                 <img src="/assets/images/step-img-01.png" alt="" />
@@ -134,8 +137,8 @@ const Steps = () => {
                 step="/assets/images/step-02.svg"
                 title="広告運用の基本方針を選択"
                 list={[
-                  "好きな基本方針をクリックしてください。",
-                  "ボタン「次へ」をクリックしてください。",
+                  '好きな基本方針をクリックしてください。',
+                  'ボタン「次へ」をクリックしてください。',
                 ]}
               >
                 <img src="/assets/images/step-img-02.png" alt="" />
@@ -145,8 +148,8 @@ const Steps = () => {
                 step="/assets/images/step-03.svg"
                 title="広告を出したLPのURLを貼り付ける"
                 list={[
-                  "URL入力欄にLPのURLを貼りけてください。",
-                  "ボタン「次へ」をクリックしてください。",
+                  'URL入力欄にLPのURLを貼りけてください。',
+                  'ボタン「次へ」をクリックしてください。',
                 ]}
               >
                 <img src="/assets/images/step-img-03.png" alt="" />
@@ -154,10 +157,10 @@ const Steps = () => {
               <Item
                 rect="z-[7] rotate-[3deg]"
                 step="/assets/images/step-04.svg"
-                title="あなたの正解広告エージェントが誕生！"
+                title="あなたのSEIKAI広告エージェントが誕生！"
                 list={[
-                  "URL入力欄にLPのURLを貼りけてください。",
-                  "ボタン「次へ」をクリックしてください。",
+                  'エージェントからのメッセージを確認してください。',
+                  'ボタン「次へ」をクリックしてください。',
                 ]}
               >
                 <img src="/assets/images/step-img-04.png" alt="" />
@@ -167,8 +170,8 @@ const Steps = () => {
                 step="/assets/images/step-05.svg"
                 title="広告予算と出稿期間を設定"
                 list={[
-                  "広告予算と出稿期間を設定してください。",
-                  "ボタン「次へ」をクリックしてください。",
+                  '広告予算と出稿期間を設定してください。',
+                  'ボタン「次へ」をクリックしてください。',
                 ]}
               >
                 <img src="/assets/images/step-img-05.png" alt="" />
@@ -178,8 +181,8 @@ const Steps = () => {
                 step="/assets/images/step-06.svg"
                 title="広告審査"
                 list={[
-                  "設定情報をもとにAIが複雑な広告設定を完了。",
-                  "審査中はあなたのLPの内容をフィードバック。",
+                  '設定情報をもとにAIが複雑な広告設定を完了。',
+                  '審査中はあなたのLPの内容をフィードバック。',
                 ]}
               >
                 <img src="/assets/images/step-img-06.png" alt="" />
@@ -189,22 +192,22 @@ const Steps = () => {
                 step="/assets/images/step-07.svg"
                 title="おめでとうございます！"
                 list={[
-                  "たったこれだけで広告出稿スタート。",
-                  "24時間365日体制で本物のコンバージョンをあなたにもたらせるよう頑張ります！",
-                  "ところでお客様が押し寄せる準備はできていますか？",
+                  'たったこれだけで広告出稿スタート。',
+                  '24時間365日体制で本物のコンバージョンをあなたにもたらせるよう頑張ります！',
+                  'ところでお客様が押し寄せる準備はできていますか？',
                 ]}
               >
                 <img src="/assets/images/step-img-07.png" alt="" />
               </Item>
             </div>
           </div>
-          <div ref={buttonRef} className="flex justify-center md:mt-20 mt-12">
+          <div ref={buttonRef} className="mt-12 flex justify-center md:mt-20">
             <Button href="/">ステップ4で待ってます</Button>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Steps;
+export default Steps
