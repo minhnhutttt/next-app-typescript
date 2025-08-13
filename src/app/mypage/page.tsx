@@ -1,12 +1,49 @@
 "use client"
-import CardList from "@/components/card/CardList";
 import { Button } from "@/components/common/Button";
-import { InquiryItem } from "@/components/mypage/InquiryItem";
+import { InquiryGroup, InquiryHistory } from "@/components/mypage/InquiryHistory";
+import { InquiryItemCardList } from "@/components/mypage/InquiryItemCardList";
 import ProductList from "@/components/product/ProductList";
 import { dataProducts } from "@/data";
 import { dataItems } from "@/data/Items";
 import useScrollAnimations from "@/hooks/useScrollAnimations";
 import { useState } from "react";
+
+const inquiryData: InquiryGroup[] = [
+  {
+    date: "2025/07/31",
+    items: [
+      { product: dataProducts[0], type: "inquiry" },
+      { product: dataProducts[1], type: "responses" },
+    ],
+  },
+  {
+    date: "2025/01/10",
+    items: [{ product: dataProducts[1], type: "completion" }],
+  },
+  {
+    date: "2024/12/05",
+    items: [
+      { product: dataProducts[2], type: "inquiry" },
+      { product: dataProducts[3], type: "responses" },
+    ],
+  },
+  {
+    date: "2024/11/20",
+    items: [{ product: dataProducts[4], type: "completion" }],
+  },
+  {
+    date: "2024/12/05",
+    items: [
+      { product: dataProducts[2], type: "inquiry" },
+      { product: dataProducts[3], type: "responses" },
+    ],
+  },
+  {
+    date: "2024/11/20",
+    items: [{ product: dataProducts[4], type: "completion" }],
+  },
+];
+
 
 export default function MyPage() {
 
@@ -45,95 +82,35 @@ export default function MyPage() {
                         </div>
                         <div className="md:mt-[100px] mt-20">
                             {tab === 0 &&
-                            <div>
-                                <p className="md:text-[40px] text-[24px] font-bold">商品問い合わせ履歴</p>
-                                <div className="">
-                                    <div className="md:mt-10 mt-5">
-                                        <div className="md:text-[24px] text-[18px] font-bold mb-2.5 md:mb-5">2025/07/31</div>
-                                        <div className="border-y border-[#666] divide-y divide-[#666]">
-                                            <InquiryItem product={dataProducts[0]} type="inquiry" />
-                                            <InquiryItem product={dataProducts[1]} type="responses" />
-                                        </div>
-                                    </div>
-                                    <div className="md:mt-10 mt-5">
-                                        <div className="md:text-[24px] text-[18px] font-bold mb-2.5 md:mb-5">2025/01/10</div>
-                                        <div className="border-y border-[#666] divide-y divide-[#666]">
-                                            <InquiryItem product={dataProducts[1]} type="completion" />
-                                        </div>
-                                    </div>
+                                <div>
+                                    <p className="md:text-[40px] text-[24px] font-bold">商品問い合わせ履歴</p>
+                                    <InquiryHistory data={inquiryData} />
                                 </div>
-                                <div className="flex justify-center md:mt-10 mt-5">
-                                    <Button link="/" sm>
-                                        <span className="flex items-center gap-2">もっと見る <img className="max-md:w-4" src="/assets/images/ic-plus.svg" alt="" /></span>
-                                    </Button>
-                                </div>
-                            </div>
                             }
                             {tab === 1 &&
-                            <div>
-                                <p className="md:text-[40px] text-[24px] font-bold">最近見た商品</p>
-                                <div className="">
-                                    <div className="md:mt-10 mt-5">
-                                        <div className="md:text-[24px] text-[18px] font-bold mb-2.5 md:mb-5">2025/01/10</div>
-                                        <div className="border-y border-[#666] divide-y divide-[#666]">
-                                            <InquiryItem product={dataProducts[1]} type="completion" />
-                                        </div>
-                                    </div>
+                                <div>
+                                    <p className="md:text-[40px] text-[24px] font-bold">最近見た商品</p>
+                                    <InquiryHistory data={inquiryData} />
                                 </div>
-                                <div className="flex justify-center md:mt-10 mt-5">
-                                    <Button link="/" sm>
-                                        <span className="flex items-center gap-2">もっと見る <img className="max-md:w-4" src="/assets/images/ic-plus.svg" alt="" /></span>
-                                    </Button>
-                                </div>
-                            </div>
                             }
                             {tab === 2 &&
                             <div>
-                                <p className="md:text-[40px] text-[24px] font-bold">推し商品情報</p>
-                                <div className="">
-                                    <div className="md:mt-10 mt-5">
-                                        <div className="md:text-[24px] text-[18px] font-bold mb-2.5 md:mb-5">2025/07/31</div>
-                                        <div className="border-y border-[#666] divide-y divide-[#666]">
-                                            <InquiryItem product={dataProducts[1]} type="responses" />
-                                        </div>
-                                    </div>
+                                    <p className="md:text-[40px] text-[24px] font-bold">推し商品情報</p>
+                                    <InquiryHistory data={inquiryData} />
                                 </div>
-                                <div className="flex justify-center md:mt-10 mt-5">
-                                    <Button link="/" sm>
-                                        <span className="flex items-center gap-2">もっと見る <img className="max-md:w-4" src="/assets/images/ic-plus.svg" alt="" /></span>
-                                    </Button>
-                                </div>
-                            </div>
                             }
                             {tab === 3 &&
                             <div>
-                                <p className="md:text-[40px] text-[24px] font-bold">登録情報変更</p>
-                                <div className="">
-                                    <div className="md:mt-10 mt-5">
-                                        <div className="md:text-[24px] text-[18px] font-bold mb-2.5 md:mb-5">2025/07/31</div>
-                                        <div className="border-y border-[#666] divide-y divide-[#666]">
-                                            <InquiryItem product={dataProducts[0]} type="inquiry" />
-                                        </div>
-                                    </div>
+                                    <p className="md:text-[40px] text-[24px] font-bold">登録情報変更</p>
+                                    <InquiryHistory data={inquiryData} />
                                 </div>
-                                <div className="flex justify-center md:mt-10 mt-5">
-                                    <Button link="/" sm>
-                                        <span className="flex items-center gap-2">もっと見る <img className="max-md:w-4" src="/assets/images/ic-plus.svg" alt="" /></span>
-                                    </Button>
-                                </div>
-                            </div>
                             }
                         </div>
                     </div>
                     <div className="md:mt-[200px] mt-[176px]">
                         <p className="md:text-[40px] text-[24px] font-bold">最近見た商品</p>
                         <div className="md:mt-10 mt-5">
-                            <CardList products={dataItems} />
-                            <div className="flex justify-center md:mt-10 mt-5">
-                                <Button link="/" sm>
-                                    <span className="flex items-center gap-2">もっと見る <img className="max-md:w-4" src="/assets/images/ic-plus.svg" alt="" /></span>
-                                </Button>
-                            </div>
+                            <InquiryItemCardList products={dataItems} />
                         </div>
                     </div>
                     <div className="md:mt-[180px] mt-[100px]">

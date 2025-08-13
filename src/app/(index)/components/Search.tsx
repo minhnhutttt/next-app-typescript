@@ -34,7 +34,7 @@ export const Search = ({ title, items }: SearchProps) => {
   }, [showAll]);
 
   return (
-    <div className="w-full px-5 md:px-[60px] mx-auto">
+    <div className="w-full md:px-10 mx-auto">
       <div className="fade-up md:text-[40px] text-[24px] font-bold max-md:text-center">
         {title}
       </div>

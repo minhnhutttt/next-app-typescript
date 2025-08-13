@@ -15,7 +15,7 @@ const Header = () => {
         <img className="max-md:w-[143px]" src="/assets/images/logo.svg" alt="" />
       </a>
       <div
-        className={`flex items-center justify-center min-[1366px]:gap-20 gap-8 md:gap-5 duration-300 max-xl:fixed max-xl:inset-0 max-sm:flex-col z-[99] bg-white/90 ${NavOpen ? "" : "max-xl:invisible max-xl:opacity-0"}`}>
+        className={`flex items-center justify-center min-[1366px]:gap-20 gap-8 md:gap-5 duration-500 max-xl:fixed max-xl:inset-0 max-sm:flex-col z-[99] bg-white/90 ${NavOpen ? "" : "max-xl:invisible max-xl:opacity-0"}`}>
         <ul className="font-bold flex items-center gap-8 text-[20px] max-xl:flex-col">
           <li>
             <a href="/" onClick={close} className="block hover:opacity-75 duration-300">
@@ -58,9 +58,9 @@ const Header = () => {
           }`}
         onClick={() => setNavOpen((prev) => !prev)}
       >
-        <span className="absolute left-0 top-0 block h-0.5 rounded-full w-full -translate-y-1/2 bg-[#3E7976] transition-transform duration-500 ease-in-out group-[.active]:top-1/2 group-[.active]:rotate-45"></span>
-        <span className="absolute top-[9px] md:top-[13px] left-0 block h-0.5 rounded-full w-full -translate-y-1/2 bg-[#3E7976] transition-transform duration-500 ease-in-out group-[.active]:opacity-0"></span>
-        <span className="absolute bottom-0 left-0 block h-0.5 rounded-full w-full -translate-y-1/2 bg-[#3E7976] transition-transform duration-500 ease-in-out group-[.active]:top-1/2 group-[.active]:-rotate-45"></span>
+        <span className="absolute left-0 top-0 block h-0.5 rounded-full w-full -translate-y-1/2 bg-[#3E7976] transition-all duration-500 ease-in-out group-[.active]:top-1/2 group-[.active]:rotate-45"></span>
+        <span className="absolute top-[9px] md:top-[13px] left-0 block h-0.5 rounded-full w-full -translate-y-1/2 bg-[#3E7976] transition-all duration-500 ease-in-out group-[.active]:opacity-0"></span>
+        <span className="absolute bottom-0 left-0 block h-0.5 rounded-full w-full -translate-y-1/2 bg-[#3E7976] transition-all duration-500 ease-in-out group-[.active]:top-1/2 group-[.active]:-rotate-45"></span>
       </button>
     </header>
   );
