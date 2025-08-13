@@ -1,0 +1,175 @@
+{
+   "Fv": {
+    "heading": "実用的なストレージトークン\n利用が増えるにつれて\n価値が上昇",
+    "description": "DIVER ストレージコインの革新: 高コスト、中央集権化、不十分な報酬といったWeb3ストレージサービスの構造的課題に挑戦"
+  },
+  "Architecture": {
+    "title": "システムアーキテクチャ",
+    "blockchain": "ブロックチェーン",
+    "blockchain_value": "DIVERチェーン（高速・手数料無料）",
+    "token_standard": "トークン規格",
+    "token_standard_value": "DRC-20（Ethereum互換）",
+    "nft_extension": "NFT拡張",
+    "nft_extension_value": "DRC-1155（プレミアム機能向け）",
+    "wallet": "ウォレット",
+    "wallet_value": "DIVERウォレットPro"
+  },
+  "Features": {
+    "heading": "プラットフォームの特長",
+
+    "starter_title": "スターター",
+    "starter_data": "2GB",
+    "starter_text": "エントリーレベル、試用に最適",
+
+    "basic_title": "ベーシック",
+    "basic_data": "100GB",
+    "basic_text": "個人利用向けのベーシックプラン",
+
+    "standard_title": "スタンダード",
+    "standard_data": "500GB",
+    "standard_text": "最も人気のあるスタンダードプラン",
+
+    "pro_title": "プロ",
+    "pro_data": "2TB",
+    "pro_text": "大容量のプロ向けプラン",
+
+    "agent_title": "エージェント制度",
+    "agent_text": "段階的な報酬体系（ブロンズ、シルバー、ゴールド）",
+
+    "premium_title": "プレミアム機能",
+    "premium_text": "API、自動化、セキュリティ強化、冗長ストレージ等",
+
+    "note": "※注記：各プランのSTRG価格は、市況およびコミュニティガバナンスに基づいて決定されます。すべてのプランは一括購入で、ウォレット認証により真のデータ所有権を保証し、無期限（99年）で利用できます。"
+  },
+  "Governance": {
+    "heading": "ガバナンスとリスク管理",
+    "description": "Storage Coin（STRG）はユーザー中心の分散型ガバナンス（DAO）を採用しています。トークン保有量に応じて意思決定に参加でき、エージェント報酬率やプレミアム機能の拡張などの議題に対する投票権を持ちます。提案はコミュニティ内で議論され、過半数の賛成により可決され、透明性と柔軟性の高い運営を実現します。",
+
+    "regulatory_title": "規制リスク",
+    "regulatory_item_1": "各国の規制への継続的な準拠",
+    "regulatory_item_2": "ユーティリティトークンとしての明確な位置付け",
+    "regulatory_item_3": "リーガルアドバイザリー体制",
+
+    "technical_title": "技術的リスク",
+    "technical_item_1": "段階的なシステム拡張",
+    "technical_item_2": "冗長性を備えたインフラ設計",
+    "technical_item_3": "24時間365日の監視体制",
+
+    "market_title": "市場リスク",
+    "market_item_1": "多様な需要創出メカニズム",
+    "market_item_2": "コミュニティ主導の改善",
+    "market_item_3": "柔軟な報酬調整機能"
+  },
+   "Incentive": {
+    "heading": "インセンティブ制度",
+
+    "initial_heading": "初回利用促進",
+    "first_purchase": "初回購入ボーナス",
+    "first_purchase_detail": "購入額に応じたSTRG報酬",
+    "friend_referral": "友達紹介",
+    "friend_referral_detail": "紹介者・被紹介者双方へのインセンティブ",
+
+    "continuous_heading": "継続利用インセンティブ",
+    "monthly_usage_improve": "月間利用量に応じた報酬率の向上",
+    "consecutive_days_bonus": "連続利用日数に対するボーナス",
+    "community_contribution": "コミュニティ貢献報酬"
+  },
+  "Message": {
+    "body": "これらの取り組みにより、Storage Coinは信頼性とスケーラビリティを兼ね備えた、持続可能なクラウドストレージ基盤を目指します。"
+  },
+  "Overview": {
+    "heading": "概要",
+    "description": "Storage Coin（STRG）は、Web3ストレージサービス「DIVER Storage」において、容量の購入、報酬の獲得、成長への参画を可能にするユーティリティトークンです。",
+
+    "card1_title": "買い切り型の容量購入",
+    "card1_content": "サブスクリプションから脱却した永久利用モデル",
+
+    "card2_title": "エージェント報酬",
+    "card2_content": "紹介活動による段階的な報酬獲得",
+
+    "card3_title": "多層的ユーティリティ",
+    "card3_content": "ステーキング、プレミアム機能、分散型参加",
+
+    "card4_title": "買い切り型の容量購入",
+    "card4_content": "コミュニティ主導の意思決定"
+  },
+  "Revenue": {
+    "heading": "収益モデル",
+    "characteristics_label": "特長",
+
+    "card1_title": "ストレージ購入",
+    "card1_subtitle": "（一般ユーザー）",
+    "card1_text": "容量に応じたSTRGでの支払い",
+    "card1_characteristics": "容量に応じたユーティリティ支払いによる安定需要",
+
+    "card2_title": "エージェント報酬",
+    "card2_subtitle": "（紹介者）",
+    "card2_text": "成果に応じたSTRG報酬",
+    "card2_characteristics": "トークン循環による拡大",
+
+    "card3_title": "ステーキング",
+    "card3_subtitle": "（長期保有者）",
+    "card3_text": "容量に応じたSTRGでの支払い",
+    "card3_characteristics": "売り圧の抑制",
+
+    "card4_title": "プレミアム機能",
+    "card4_subtitle": "（上級ユーザー）",
+    "card4_text": "容量に応じたSTRGでの支払い",
+    "card4_characteristics": "高付加価値の需要"
+  },
+  "Roadmap": {
+    "heading": "ユーティリティ設計とロードマップ",
+
+    "phase1_phase": "フェーズ1",
+    "phase1_title": "基盤構築",
+    "phase1_item1": "容量購入システムの実装",
+    "phase1_item2": "エージェント報酬プログラムの開始",
+    "phase1_item3": "初期インセンティブメカニズム",
+    "phase1_item4": "STRGトークンの発行と容量販売",
+
+    "phase2_phase": "フェーズ2",
+    "phase2_title": "プラットフォーム強化",
+    "phase2_item1": "ステーキング機構の導入",
+    "phase2_item2": "プレミアム機能の展開",
+    "phase2_item3": "エンタープライズ向けソリューションの開発",
+    "phase2_item4": "強化されたエージェント制度（ブロンズ、シルバー、ゴールド階層）",
+
+    "phase3_phase": "フェーズ3",
+    "phase3_title": "エコシステム拡張",
+    "phase3_item1": "分散型ストレージネットワーク",
+    "phase3_item2": "AI統合とデータ活用",
+    "phase3_item3": "DAO投票システムの稼働",
+    "phase3_item4": "データ経済の発展",
+
+    "phase4_phase": "フェーズ4",
+    "phase4_title": "グローバル展開",
+    "phase4_item1": "国際展開",
+    "phase4_item2": "マルチチェーン対応",
+    "phase4_item3": "完全なDAOガバナンスへの移行",
+    "phase4_item4": "高度なデータ分析とAI機能"
+  },
+   "Token": {
+    "heading": "トークンエコノミクス",
+    "name_label": "トークン名",
+    "name_value": "ストレージコイン（ストレージトークン）",
+    "symbol_label": "シンボル",
+    "symbol_value": "STRG",
+    "supply_label": "総供給量",
+    "supply_value": "1,000,000 STRG",
+    "blockchain_label": "ブロックチェーン",
+    "blockchain_value": "DIVERチェーン",
+    "standard_label": "規格",
+    "standard_value": "DRC-20"
+  },
+   "Vm": {
+    "vision_heading": "ビジョン",
+    "vision_text": "実用性とコミュニティ主導のスケーラビリティを備えた、持続可能なWeb3ストレージ経済圏",
+
+    "mission_heading": "ミッション",
+    "mission_item_1": "サブスクリプション依存からの解放",
+    "mission_item_2": "ユーザー貢献の適切な評価と報酬",
+    "mission_item_3": "分散型ストレージエコシステムの構築",
+    "mission_item_4": "透明性あるDAOガバナンスの実装",
+    "mission_item_5": "Web3技術による真のデータ主権の確立"
+  }
+}

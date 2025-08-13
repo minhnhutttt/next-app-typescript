@@ -1,6 +1,10 @@
-'use client'
+'use client';
+
+import { useTranslations } from "next-intl";
 
 export default function Fv() {
+  const t = useTranslations('Fv');
+
   return (
     <section className="relative z-10 min-h-[550px] md:min-h-[800px] flex justify-center pt-[150px] md:pt-[170px]">
       <div className="absolute inset-0">
@@ -20,13 +24,13 @@ export default function Fv() {
         ></video>
       </div>
       <div className="w-full max-w-[500px] md:max-w-[1440px] md:px-[60px] px-5 relative z-20">
-        <h1 className="fade-up md:text-[80px] text-[28px] font-bold text-[#C8D6FF] text-shadow-[0_4px_100px_#000] leading-[1.3]">
-          A Practical Storage Token <br />
-          Value Increases<br />
-          As Usage Grows
+        <h1
+          className="fade-up md:text-[80px] text-[28px] font-bold text-[#C8D6FF] text-shadow-[0_4px_100px_#000] leading-[1.3] whitespace-pre-line"
+        >
+          {t('heading')}
         </h1>
         <p className="fade-up w-full max-w-[390px] md:text-[18px] text-[15px] leading-loose font-extralight md:mt-10 mt-6">
-          DIVER Storage Coin Innovation: Challenging the structural issues of cloud services - high costs, centralization, and insufficient rewards
+          {t('description')}
         </p>
       </div>
     </section>

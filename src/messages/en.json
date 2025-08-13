@@ -1,0 +1,175 @@
+{
+  "Fv": {
+    "heading": "A Practical Storage Token\nValue Increases\nAs Usage Grows",
+    "description": "DIVER Storage Coin Innovation: Challenging the structural issues of Web3 storage services - high costs, centralization, and insufficient rewards"
+  },
+  "Architecture": {
+    "title": "System Architecture",
+    "blockchain": "Blockchain",
+    "blockchain_value": "DIVER Chain (high-speed, no transaction fees)",
+    "token_standard": "Token Standard",
+    "token_standard_value": "DRC-20 (Ethereum compatible)",
+    "nft_extension": "NFT Extension",
+    "nft_extension_value": "DRC-1155 (for premium features)",
+    "wallet": "Wallet",
+    "wallet_value": "DIVER Wallet Pro"
+  },
+  "Features": {
+    "heading": "Platform Features",
+
+    "starter_title": "Starter",
+    "starter_data": "2GB",
+    "starter_text": "Entry level,\nperfect for trial\nuse",
+
+    "basic_title": "Basic",
+    "basic_data": "100GB",
+    "basic_text": "Basic plan for\npersonal use",
+
+    "standard_title": "Standard",
+    "standard_data": "500GB",
+    "standard_text": "Most popular\nstandard plan",
+
+    "pro_title": "Pro",
+    "pro_data": "2TB",
+    "pro_text": "Large capacity\nplan for\nprofessionals",
+
+    "agent_title": "Agent System",
+    "agent_text": "Tiered reward structure (Bronze, Silver, Gold)",
+
+    "premium_title": "Premium Features",
+    "premium_text": "API, automation, security enhancement, redundant storage, etc.",
+
+    "note": "*Note: The STRG price for each plan is determined based on market conditions and community governance. All plans are purchased in bulk and can be used indefinitely (99 years) with wallet authentication, which guarantees true ownership of your data."
+  },
+  "Governance": {
+    "heading": "Governance and Risk Management",
+    "description": "Storage Coin (STRG) adopts user-centric decentralized governance (DAO). Token holders can participate in decision-making according to their token holdings and have voting rights on matters such as agent reward rates and premium feature expansions. Proposals are discussed within the community and passed by majority vote, enabling transparent and flexible operations.",
+
+    "regulatory_title": "Regulatory Risk",
+    "regulatory_item_1": "Continuous compliance with regulations in various countries",
+    "regulatory_item_2": "Clear positioning as a utility token",
+    "regulatory_item_3": "Legal advisory framework",
+
+    "technical_title": "Technical Risks",
+    "technical_item_1": "Phased system expansion",
+    "technical_item_2": "Infrastructure design with redundancy",
+    "technical_item_3": "24/7 monitoring system",
+
+    "market_title": "Market Risk",
+    "market_item_1": "Diverse demand creation mechanisms",
+    "market_item_2": "Community-driven improvements",
+    "market_item_3": "Flexible reward adjustment features"
+  },
+  "Incentive": {
+    "heading": "Incentive System",
+
+    "initial_heading": "Initial Usage Promotion",
+    "first_purchase": "First purchase bonus",
+    "first_purchase_detail": "STRG rewards based on purchase amount",
+    "friend_referral": "Friend referral",
+    "friend_referral_detail": "Incentives for both referrer and referee",
+
+    "continuous_heading": "Continuous Usage Incentives",
+    "monthly_usage_improve": "Reward rate improvement based on monthly usage",
+    "consecutive_days_bonus": "Bonuses for consecutive usage days",
+    "community_contribution": "Community contribution rewards"
+  },
+  "Message": {
+    "body": "Through these measures, Storage Coin aims to be a sustainable cloud storage infrastructure that combines reliability and scalability."
+  },
+  "Overview": {
+    "heading": "Overview",
+    "description": "Storage Coin (STRG) is a utility token that enables capacity purchases, reward acquisition, and growth participation in the Web3 storage service \"DIVER Storage.\"",
+
+    "card1_title": "One-time Capacity Purchase",
+    "card1_content": "A perpetual usage model breaking away from subscription-based systems",
+
+    "card2_title": "Agent rewards",
+    "card2_content": "Graduated reward acquisition through referral activities",
+
+    "card3_title": "Multi-layered utility",
+    "card3_content": "Staking, premium features, distributed participation",
+
+    "card4_title": "One-time Capacity Purchase",
+    "card4_content": "Community-driven decision making"
+  },
+  "Revenue": {
+    "heading": "Revenue Model",
+    "characteristics_label": "Characteristics",
+
+    "card1_title": "Storage Purchase",
+    "card1_subtitle": "( General users )",
+    "card1_text": "STRG payment based on capacity",
+    "card1_characteristics": "STRG stable demand based on utility payment according to capacity",
+
+    "card2_title": "Agent Rewards",
+    "card2_subtitle": "( Referrers )",
+    "card2_text": "STRG rewards based on performance",
+    "card2_characteristics": "Expansion through token circulation",
+
+    "card3_title": "Staking",
+    "card3_subtitle": "( Long-term holders )",
+    "card3_text": "STRG payment based on capacity",
+    "card3_characteristics": "Selling pressure suppression",
+
+    "card4_title": "Premium Features",
+    "card4_subtitle": "( Advanced users )",
+    "card4_text": "STRG payment based on capacity",
+    "card4_characteristics": "High-value demand"
+  },
+  "Roadmap": {
+    "heading": "Utility Design & Roadmap",
+
+    "phase1_phase": "Phase 1",
+    "phase1_title": "Foundation",
+    "phase1_item1": "Capacity purchase system implementation",
+    "phase1_item2": "Agent reward program launch",
+    "phase1_item3": "Initial incentive mechanisms",
+    "phase1_item4": "STRG token issuance and capacity sales",
+
+    "phase2_phase": "Phase 2",
+    "phase2_title": "Platform Enhancement",
+    "phase2_item1": "Staking mechanism introduction",
+    "phase2_item2": "Premium features rollout",
+    "phase2_item3": "Enterprise solutions development",
+    "phase2_item4": "Enhanced agent system (Bronze, Silver, Gold tiers)",
+
+    "phase3_phase": "Phase 3",
+    "phase3_title": "Ecosystem Expansion",
+    "phase3_item1": "Distributed storage network",
+    "phase3_item2": "AI integration and data utilization",
+    "phase3_item3": "DAO voting system activation",
+    "phase3_item4": "Data economy development",
+
+    "phase4_phase": "Phase 4",
+    "phase4_title": "Global Scale",
+    "phase4_item1": "International expansion",
+    "phase4_item2": "Multi-chain compatibility",
+    "phase4_item3": "Complete DAO governance transition",
+    "phase4_item4": "Advanced data analytics and AI features"
+  },
+  "Token": {
+    "heading": "Token Economics",
+    "name_label": "Token Name",
+    "name_value": "Storage Coin (Storage Token)",
+    "symbol_label": "Symbol",
+    "symbol_value": "STRG",
+    "supply_label": "Total Supply",
+    "supply_value": "1,000,000 STRG",
+    "blockchain_label": "Blockchain",
+    "blockchain_value": "DIVER Chain",
+    "standard_label": "Standard",
+    "standard_value": "DRC-20"
+  },
+  "Vm": {
+    "vision_heading": "Vision",
+    "vision_text": "A sustainable Web3 storage economic ecosystem with practical utility and community-driven scalability",
+
+    "mission_heading": "Mission",
+    "mission_item_1": "Liberation from subscription dependency",
+    "mission_item_2": "Appropriate evaluation and rewards for user contributions",
+    "mission_item_3": "Construction of a decentralized storage ecosystem",
+    "mission_item_4": "Implementation of transparent DAO governance",
+    "mission_item_5": "Establishing true data sovereignty through Web3 technology"
+  }
+}
