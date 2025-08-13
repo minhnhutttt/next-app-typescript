@@ -8,19 +8,19 @@ const data = [
     image: '/assets/images/price-img-01.png',
     title: (
       <>
-        エージェントとしての<UnderlineText>手数料ゼロ。</UnderlineText>
+        エージェント<UnderlineText>手数料が半分以下。</UnderlineText>
       </>
     ),
-    text: '広告代理店が当たり前に徴収する広告費×20％の重い労働費用がSEIKAI広告エージェントなら一切不要。',
+    text: '広告代理店が当たり前に徴収する広告費×20％の重い労働費用がSEIKAIなら半分以下の9%。',
   },
   {
-    image: '/assets/images/price-img-02.png',
+    image: '/assets/images/price-img-02.jpeg',
     title: (
       <>
-        <UnderlineText>AIの限界維持費用3.99％</UnderlineText>
+        <UnderlineText>利用手数料は「完全後払い」でキャッシュフローに優しい設計</UnderlineText>
       </>
     ),
-    text: 'SEIKAI広告エージェントの質や機能性を維持向上するための限界費用です。文字通り限界まで抑えました。',
+    text: '初期費用、月額固定費もゼロだからキャッシュフローを気にせず気軽に試せます。',
   },
 ]
 
@@ -63,9 +63,7 @@ const Prices = () => {
         <div className="relative flex justify-center pt-24 max-md:mt-6 md:mt-12 md:pt-28">
           <div className="fade-up absolute right-[6%] top-0 aspect-[302/110] w-[240px] bg-[url('/assets/images/bubble-2.png')] bg-cover md:w-[302px]">
             <p className="pl-4 pt-3 text-[15px] font-bold md:pl-5 md:pt-4 md:text-[19px]">
-              将来値上がりしても、
-              <br />
-              契約時の価格が維持されます。{' '}
+              さぁ、AI時代の広告運用をライバルより先に始めましょう。
             </p>
           </div>
           <Button href="/">今すぐ試すのが正解</Button>

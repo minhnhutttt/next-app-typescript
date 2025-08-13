@@ -67,7 +67,7 @@ const Steps = () => {
             trigger: stepsRef.current,
             pin: true,
             start: 'top top',
-            end: '+=4000',
+            end: '+=9000',
             scrub: true,
           },
         })
@@ -80,7 +80,7 @@ const Steps = () => {
               rotate: '-3deg',
               duration: 1,
             },
-            index * 0.5
+            index * 1
           )
         })
         tl.from(bgRef.current, {

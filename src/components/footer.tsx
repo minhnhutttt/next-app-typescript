@@ -12,12 +12,12 @@ const Footer = () => {
         <div className="mt-28 flex items-end gap-10 max-md:flex-col-reverse md:mt-[165px] md:justify-between">
           <ul className="flex gap-10 text-[15px] font-medium text-white/80 md:text-[19px]">
             <li>
-              <a href="/" className="block p-4">
+              <a href="/terms-of-service" className="block p-4">
                 利用規約
               </a>
             </li>
             <li>
-              <a href="/" className="block p-4">
+              <a href="/privacy-policy" className="block p-4">
                 プライバシーポリシー
               </a>
             </li>

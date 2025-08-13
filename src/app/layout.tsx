@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Noto_Sans, Poppins, Inter } from 'next/font/google'
 
 import Footer from '@/components/footer'
+import Header from '@/components/header'
 import ScrollContainer from '@/components/scrollContainer'
 
 import {
@@ -58,6 +59,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
         className={`${noto.className} ${poppins.variable} ${inter.variable}  text-black/80`}
       >
         <ScrollContainer>
+          <Header />
           {children}
           <Footer />
         </ScrollContainer>

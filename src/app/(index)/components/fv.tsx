@@ -218,15 +218,7 @@ const FV = () => {
   return (
     <section ref={ref} className="relative pr-2 md:pr-5">
       <div className="rounded-r-[45px] bg-[url('/assets/images/bg-01.png')] bg-[length:100%_100%] py-16 md:py-24">
-        <div className="absolute left-7 top-3 flex items-start">
-          <a href="/" className="relative block duration-150 hover:opacity-75">
-            <img
-              className="max-md:w-[120px]"
-              src="/assets/images/logo.svg"
-              alt=""
-            />
-          </a>
-        </div>
+        
         <div className="relative z-30 mx-auto h-full w-full  max-w-[1440px]">
           <div className="pointer-events-none absolute left-[354px] top-2 z-10">
             <img
