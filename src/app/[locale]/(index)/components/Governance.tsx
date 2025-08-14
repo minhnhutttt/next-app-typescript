@@ -42,7 +42,7 @@ export default function Governance() {
       </div>
 
       <div className="w-full relative max-w-[1250px] mx-auto md:rounded-[100px] rounded-[40px] bg-[radial-gradient(50%_50%_at_50%_50%,_#353354_0%,_#0A0C2C_100%)] [box-shadow:0_4px_4px_0_rgba(0,_0,_0,_0.30)] md:pt-[70px] pt-10 md:pb-[60px] pb-8 px-5">
-        <h4 className="fade-up text-center md:text-[48px] text-[24px] font-medium text-[#C8D6FF] leading-none lg:leading-normal py-5 px-2.5 tracking-widest">
+        <h4 className="fade-up text-center md:text-[48px] text-[22px] font-medium text-[#C8D6FF] leading-none lg:leading-normal py-5 px-2.5 tracking-widest">
           {t('heading')}
         </h4>
 

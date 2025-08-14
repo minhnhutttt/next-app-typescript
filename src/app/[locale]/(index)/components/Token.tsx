@@ -7,7 +7,7 @@ export default function Token() {
 
   return (
     <section className="relative bg-[url(/assets/images/bg-token.png)] md:bg-[size:100%_auto] bg-top bg-no-repeat px-5 md:mt-[120px] md:pt-[110px] pt-16 md:pb-[100px] pb-16">
-      <h4 className="fade-up text-center md:text-[64px] text-[30px] font-medium text-[#C8D6FF] leading-loose py-5 px-2.5 tracking-widest">
+      <h4 className="fade-up text-center md:text-[64px] text-[28px] font-medium text-[#C8D6FF] leading-loose py-5 px-2.5 tracking-widest">
         {t('heading')}
       </h4>
 

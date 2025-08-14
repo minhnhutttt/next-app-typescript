@@ -1,7 +1,7 @@
 {
   "Fv": {
-    "heading": "A Practical Storage Token\nValue Increases\nAs Usage Grows",
-    "description": "DIVER Storage Coin Innovation: Challenging the structural issues of Web3 storage services - high costs, centralization, and insufficient rewards"
+    "heading": "The Practical Web3 Storage Token\nBuy Storage, Earn Rewards,Build Together",
+    "description": "One-time purchase, lifetime ownership. \n Join the community revolutionizing Web3 storage."
   },
   "Architecture": {
     "title": "System Architecture",
@@ -100,7 +100,7 @@
     "card1_title": "Storage Purchase",
     "card1_subtitle": "( General users )",
     "card1_text": "STRG payment based on capacity",
-    "card1_characteristics": "STRG stable demand based on utility payment according to capacity",
+    "card1_characteristics": "Stable demand based on utility",
 
     "card2_title": "Agent Rewards",
     "card2_subtitle": "( Referrers )",
@@ -109,12 +109,12 @@
 
     "card3_title": "Staking",
     "card3_subtitle": "( Long-term holders )",
-    "card3_text": "STRG payment based on capacity",
+    "card3_text": "Holding for discount privileges",
     "card3_characteristics": "Selling pressure suppression",
 
     "card4_title": "Premium Features",
     "card4_subtitle": "( Advanced users )",
-    "card4_text": "STRG payment based on capacity",
+    "card4_text": "STRG payment for additional features",
     "card4_characteristics": "High-value demand"
   },
   "Roadmap": {
@@ -128,7 +128,7 @@
     "phase1_item4": "STRG token issuance and capacity sales",
 
     "phase2_phase": "Phase 2",
-    "phase2_title": "Platform Enhancement",
+    "phase2_title": "Platform \nEnhancement",
     "phase2_item1": "Staking mechanism introduction",
     "phase2_item2": "Premium features rollout",
     "phase2_item3": "Enterprise solutions development",

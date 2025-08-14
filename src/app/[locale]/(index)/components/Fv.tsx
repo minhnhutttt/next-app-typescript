@@ -25,11 +25,11 @@ export default function Fv() {
       </div>
       <div className="w-full max-w-[500px] md:max-w-[1440px] md:px-[60px] px-5 relative z-20">
         <h1
-          className="fade-up md:text-[80px] text-[28px] font-bold text-[#C8D6FF] text-shadow-[0_4px_100px_#000] leading-[1.3] whitespace-pre-line"
+          className="fade-up md:text-[78px] text-[28px] font-bold text-[#C8D6FF] text-shadow-[0_4px_100px_#000] leading-[1.3] whitespace-pre-line"
         >
           {t('heading')}
         </h1>
-        <p className="fade-up w-full max-w-[390px] md:text-[18px] text-[15px] leading-loose font-extralight md:mt-10 mt-6">
+        <p className="fade-up w-full max-w-[500px] md:text-[18px] text-[15px] leading-loose font-extralight md:mt-10 mt-6 whitespace-pre-line">
           {t('description')}
         </p>
       </div>

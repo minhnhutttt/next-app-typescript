@@ -1,7 +1,7 @@
 {
    "Fv": {
-    "heading": "実用的なストレージトークン\n利用が増えるにつれて\n価値が上昇",
-    "description": "DIVER ストレージコインの革新: 高コスト、中央集権化、不十分な報酬といったWeb3ストレージサービスの構造的課題に挑戦"
+    "heading": "実用的なWeb3ストレージトークン\nストレージを購入し、報酬を得て、共に築く",
+    "description": "一度の購入で生涯所有。\nWeb3ストレージを革新するコミュニティに参加しよう。"
   },
   "Architecture": {
     "title": "システムアーキテクチャ",
@@ -100,7 +100,7 @@
     "card1_title": "ストレージ購入",
     "card1_subtitle": "（一般ユーザー）",
     "card1_text": "容量に応じたSTRGでの支払い",
-    "card1_characteristics": "容量に応じたユーティリティ支払いによる安定需要",
+    "card1_characteristics": "ユーティリティに基づく安定した需要",
 
     "card2_title": "エージェント報酬",
     "card2_subtitle": "（紹介者）",
@@ -109,12 +109,12 @@
 
     "card3_title": "ステーキング",
     "card3_subtitle": "（長期保有者）",
-    "card3_text": "容量に応じたSTRGでの支払い",
+    "card3_text": "割引特典のための保有",
     "card3_characteristics": "売り圧の抑制",
 
     "card4_title": "プレミアム機能",
     "card4_subtitle": "（上級ユーザー）",
-    "card4_text": "容量に応じたSTRGでの支払い",
+    "card4_text": "追加機能のためのSTRG支払い",
     "card4_characteristics": "高付加価値の需要"
   },
   "Roadmap": {
