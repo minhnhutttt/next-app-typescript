@@ -38,8 +38,8 @@ export function LocaleSwitcher() {
             className={[
               'px-3 py-1.5 text-sm transition',
               active
-                ? 'bg-black text-white cursor-default'
-                : 'bg-white hover:bg-gray-100 text-gray-700',
+                ? 'bg-white hover:bg-gray-100 text-gray-700'
+                : 'bg-black text-white ',
               code === 'en' ? 'border-r' : ''
             ].join(' ')}
           >
