@@ -1,13 +1,9 @@
 "use client"
 import { Term } from "@/components/common/Term";
-import useScrollAnimations from "@/hooks/useScrollAnimations";
 
 export default function TermsOfService() {
-
-    const ref = useScrollAnimations()
-
     return (
-        <main ref={ref}>
+        <main >
             <section className="md:my-[180px] my-20 px-5">
                 <div className="w-full max-w-[1320px] mx-auto md:space-y-20 space-y-10">
                     <Term title="利用規約">
