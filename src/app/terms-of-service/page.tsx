@@ -12,7 +12,7 @@ const TermsContent: React.FC = () => {
                         <section className="mb-8">
                             <h2 className="text-2xl font-semibold text-gray-800 mb-4">第1条（定義）</h2>
                             <ol className="space-y-2 text-gray-700">
-                                <li>1. 「本サービス」とは、AIS Holdings Group Inc.（以下「当社」という）が提供するSEIKAI広告エージェントサービスをいいます。</li>
+                                <li>1. 「本サービス」とは、AIS Japan株式会社（以下「当社」という）が提供するSEIKAI広告エージェントサービスをいいます。</li>
                                 <li>2. 「利用者」とは、本サービスを利用する個人または法人をいいます。</li>
                                 <li>3. 「利用契約」とは、本規約に同意の上で利用者が本サービスの利用を開始することにより成立する契約をいいます。</li>
                             </ol>

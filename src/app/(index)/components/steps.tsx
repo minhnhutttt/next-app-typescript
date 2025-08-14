@@ -202,7 +202,7 @@ const Steps = () => {
             </div>
           </div>
           <div ref={buttonRef} className="mt-12 flex justify-center md:mt-20">
-            <Button href="/">ステップ4で待ってます</Button>
+            <Button href="mailto:info@cv-agent.ai">ステップ4で待ってます</Button>
           </div>
         </div>
       </div>

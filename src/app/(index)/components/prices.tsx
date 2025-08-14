@@ -17,7 +17,7 @@ const data = [
     image: '/assets/images/price-img-02.jpeg',
     title: (
       <>
-        <UnderlineText>利用手数料は「完全後払い」でキャッシュフローに優しい設計</UnderlineText>
+        利用手数料は<UnderlineText>「完全後払い」</UnderlineText>でキャッシュフローに優しい設計
       </>
     ),
     text: '初期費用、月額固定費もゼロだからキャッシュフローを気にせず気軽に試せます。',
@@ -66,7 +66,7 @@ const Prices = () => {
               さぁ、AI時代の広告運用をライバルより先に始めましょう。
             </p>
           </div>
-          <Button href="/">今すぐ試すのが正解</Button>
+          <Button href="mailto:info@cv-agent.ai">今すぐ試すのが正解</Button>
         </div>
       </div>
     </section>

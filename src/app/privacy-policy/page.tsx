@@ -6,7 +6,7 @@ const PrivacyContent: React.FC = () => {
     <div className="prose prose-lg max-w-none">
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">プライバシーポリシー</h1>
-        <p className="text-gray-700">AIS Holdings Group Inc.（以下「当社」）は、SEIKAI広告エージェントサービス（以下「本サービス」）の提供にあたり、利用者の個人情報を以下の通り取り扱います。</p>
+        <p className="text-gray-700 text-left">AIS Japan株式会社（以下「当社」）は、SEIKAI広告エージェントサービス（以下「本サービス」）の提供にあたり、利用者の個人情報を以下の通り取り扱います。</p>
       </div>
 
       <section className="mb-8">
@@ -106,7 +106,7 @@ const PrivacyContent: React.FC = () => {
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">8. お問い合わせ窓口</h2>
         <p className="text-gray-700">個人情報の取扱いに関するお問い合わせは、下記までご連絡ください：</p>
         <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-          <p className="font-semibold text-gray-800">AIS Holdings Group Inc.</p>
+          <p className="font-semibold text-gray-800">SEIKAI お問い合わせ窓口</p>
           <p className="text-gray-700">Email: <a href="mailto:info@cv-agent.ai" className="text-blue-600 hover:text-blue-800 underline">info@cv-agent.ai</a></p>
         </div>
       </section>

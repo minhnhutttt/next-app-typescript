@@ -331,7 +331,7 @@ const FV = () => {
                       />
                     </figure>
                     <span className="flex-1">
-                      専門知識・手数料不要!!
+                      専門知識・初期費用・固定コスト不要!!
                       <span className="group ml-1 inline-flex size-6 cursor-default items-center justify-center rounded-full leading-[0] ">
                         ℹ️
                         <span className="absolute bottom-full right-0 hidden rounded-lg bg-white p-2 text-[14px] leading-[1.5] text-black group-hover:block">
@@ -418,7 +418,7 @@ const FV = () => {
             </div>
           </div>
           <div className="relative z-30 mt-10 flex justify-center md:mt-16">
-            <Button href="/">SEIKAIで真の成果を狙う</Button>
+            <Button href="mailto:info@cv-agent.ai">SEIKAIで真の成果を狙う</Button>
           </div>
         </div>
       </div>

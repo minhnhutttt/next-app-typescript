@@ -63,7 +63,7 @@ const Aim = () => {
                   広告の正解はここに。
                 </p>
               </div>
-              <Button href="/">売上を伸ばす</Button>
+              <Button href="mailto:info@cv-agent.ai">売上を伸ばす</Button>
             </div>
           </div>
         </div>
