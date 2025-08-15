@@ -26,16 +26,16 @@ export default function About() {
             </div>
             <div className="w-full max-w-[400px] md:max-w-[1240px] mx-auto mt-[88px] ">
                 <div className="flex justify-between gap-5 max-md:flex-col">
-                    <AboutItem ic="/assets/images/ic-about-01.png" title={<>Tiered Fee Discounts</>} text={<>Tiered trading fee discounts and VIP status based on holdings</>} classname="md:size-[380px] md:ml-8" />
-                    <AboutItem ic="/assets/images/ic-about-02.png" title={<>Premium Feature <br />Access</>} text={<>Priority access to limited <br className="max-md:hidden" />liquidity pools and newly listed tokens</>} classname="md:mt-[110px] md:size-[400px] md:mr-6 lg:mr-16" />
+                    <AboutItem ic="/assets/images/ic-about-01.png" title={<>Tiered Fee Discounts</>} text={<>Tiered trading fee discounts and VIP status based on holdings</>} classname="lg:size-[380px] md:ml-8" />
+                    <AboutItem ic="/assets/images/ic-about-02.png" title={<>Premium Feature <br />Access</>} text={<>Priority access to limited <br className="max-md:hidden" />liquidity pools and newly listed tokens</>} classname="md:mt-[110px] lg:size-[400px] md:mr-6 lg:mr-16" />
                 </div>
                 <div className="flex lg:ml-[320px] md:ml-[120px] mt-5">
                     <AboutItem ic="/assets/images/ic-about-03.png" title={<>Stability of stablecoin infrastructure</>} text={<>Based on USDT, it reduces the risk of sudden price fluctuations</>} classname="md:size-[435px] md:px-7" />
                 </div>
                 <div className="flex justify-between gap-5 max-md:flex-col max-md:mt-5">
-                    <AboutItem ic="/assets/images/ic-about-04.png" title={<>Governance <br />Participation Rights</>} text={<>Participation in key protocol decisions</>} classname="md:size-[380px] md:mt-10" />
-                    <AboutItem ic="/assets/images/ic-about-05.png" title={<>Long-term retention incentives</>} text={<>Additional benefits and revenue sharing through the veUGTC system</>} classname="md:size-[365px] md:mt-5 md:mr-5" />
-                </div>
+                    <AboutItem ic="/assets/images/ic-about-04.png" title={<>Governance <br />Participation Rights</>} text={<>Participation in key protocol decisions</>} classname="lg:size-[380px] md:mt-10" />
+                    <AboutItem ic="/assets/images/ic-about-05.png" title={<>Long-term retention incentives</>} text={<>Additional benefits and revenue sharing through the veUGTC system</>} classname="lg:size-[365px] md:mt-5 md:mr-5 xl:mr-24" />
+                </div> 
             </div>
         </div>
     </section>

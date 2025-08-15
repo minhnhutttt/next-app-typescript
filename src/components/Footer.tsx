@@ -2,8 +2,8 @@
 const Footer = () => {
     return (
       <>
-      <footer className="md:mt-[12rem] max-md:mb-[12rem]">
-            <p className="text-center p-12 tracking-widest max-md:p-[2rem]">&</p>
+      <footer className="md:p-10 px-5">
+            <p className="text-center text-[12px] font-light">© Copyright 2025 GATE Coin.</p>
         </footer>
         </>
     );

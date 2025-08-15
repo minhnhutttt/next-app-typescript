@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Outfit, Poppins } from "next/font/google";
 import "./globals.scss";
 import Footer from "@/components/Footer";
 import ScrollContainer from "@/components/scrollContainer";
 
 const outfit = Outfit({
   subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  weight: ['400','500'],
+  subsets: ["latin"],
+  variable: "--font-poppins"
 });
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${outfit.className} bg-black text-white`}
+        className={`${outfit.className} ${poppins.variable} bg-black text-white`}
       >
         <ScrollContainer>
           <div>
