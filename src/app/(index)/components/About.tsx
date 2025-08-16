@@ -16,7 +16,7 @@ const AboutItem = ({ic, title, text, classname}: {ic: string, title: ReactNode, 
 
 export default function About() {
   return (
-    <section className="relative px-5 bg-[url(/assets/images/bg.png)] bg-cover pb-20 md:pb-[122px]">
+    <section className="relative px-5 bg-[url(/assets/images/bg.png)] bg-cover bg-bottom pb-20 md:pb-[122px]">
         <div className="w-full max-w-[1440px] mx-auto">
             <div className="w-full max-w-[800px] mx-auto">
                 <h2 className="fade-up md:text-[64px] text-[32px] text-center tracking-wide">About UGTC</h2>

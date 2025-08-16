@@ -25,7 +25,7 @@ const data = [
 
 export default function Disclaimer() {
     return (
-        <section className="relative pt-[120px] md:pt-[250px] px-5">
+        <section className="relative px-5">
             <div className="absolute bg-[url(/assets/images/disclaimer-bg.png)] bg-cover inset-0 mix-blend-hard-light"></div>
             <div className="w-full md:max-w-[1096px] max-w-[400px] mx-auto relative">
                 <h5 className="fade-up md:text-[64px] text-[32px] text-center">Multi-layered defense system</h5>

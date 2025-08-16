@@ -4,7 +4,7 @@ export default function Fv() {
   return (
     <section className="relative h-[700px] md:h-[1008px] px-5">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url(/assets/images/fv-bg.png)] bg-cover bg-center z-10"></div>
+        <div className="absolute inset-0 bg-[url(/assets/images/fv-bg.png)] bg-cover bg-bottom z-10"></div>
         <video
           className="w-full h-full object-cover relative opacity-60"
           data-lazy-video=""
