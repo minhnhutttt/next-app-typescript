@@ -1,8 +1,9 @@
-"use client"
+"use client";
 import dynamic from 'next/dynamic';
 import React, { useRef, useState, useEffect } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+
 import { Top } from './Top';
 import { WhatIs } from './WhatIs';
 import { Vision } from './Vision';
@@ -14,7 +15,7 @@ import { Revenue } from './Revenue';
 
 const ParticlesBackground = dynamic(() => import('@/components/ParticlesBackground'), {
   ssr: false,
-  loading: () => <div className="particles-loading" />
+  loading: () => <div className="particles-loading" />,
 });
 
 const slides = [
@@ -68,15 +69,18 @@ const ContainerPage: React.FC = () => {
   }, [isDesktop, previousIsDesktop]);
 
   const handleSplideMounted = () => {
-    const splide = splideRef.current?.splide;
-    if (!splide) return;
+    setTimeout(() => {
+      const splide = splideRef.current?.splide;
+      if (!splide) return;
 
-    const onMove = (newIndex: number) => {
-      setCurrentSlide(newIndex);
-      setActivatedSlides(prev => new Set(prev).add(newIndex));
-    };
+      const onMove = (newIndex: number) => {
+        setCurrentSlide(newIndex);
+        setActivatedSlides(prev => new Set(prev).add(newIndex));
+      };
 
-    splide.on('move', onMove);
+      splide.on('move', onMove);
+      splide.go(0);
+    }, 200); 
   };
 
   const goToSlide = (index: number) => {
@@ -147,7 +151,7 @@ const ContainerPage: React.FC = () => {
         </Splide>
       ) : (
         <div className="flex flex-col">
-          {slides.map(({ id, Component }, index) => (
+          {slides.map(({ id, Component }) => (
             <div key={id}>
               <Component isActive={true} />
             </div>
