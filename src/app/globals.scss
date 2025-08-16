@@ -8,3 +8,40 @@ html {
 body {
   color: #000;
 }
+
+.u-gradient-01 {
+  background: linear-gradient(103deg, rgba(49, 219, 34, 0.80) 1.04%, rgba(188, 255, 4, 0.80) 51.67%, rgba(255, 255, 1, 0.80) 106.34%);
+}
+.u-text-gradient-01 {
+  background: linear-gradient(103deg, rgba(49, 219, 34, 0.80) 1.04%, rgba(188, 255, 4, 0.80) 51.67%, rgba(255, 255, 1, 0.80) 106.34%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Beam Animation */
+.beam {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Beam Animation Keyframes */
+@keyframes beamMove {
+  0% {
+    left: 0;
+    width: 0;
+    opacity: 0.8;
+  }
+  25% {
+    width: 100%;
+    opacity: 1;
+  }
+  50% {
+    left: 100%;
+    width: 0;
+    opacity: 0.8;
+  }
+  100% {
+    left: 0;
+    width: 0;
+    opacity: 0;
+  }
+}
