@@ -15,7 +15,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      solaris: ["Solaris", "sans-serif"],
+      atkinson: ["var(--font-atkinson)", "sans-serif"],
     },
   },
   plugins: [],

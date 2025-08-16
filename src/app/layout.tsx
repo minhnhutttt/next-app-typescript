@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import { Lato, Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,6 +8,11 @@ import ScrollContainer from "@/components/scrollContainer";
 const lato = Lato({
   weight: ["100", "300", "400", "700", "900"],
   subsets: ["latin"],
+});
+const atkinson = Atkinson_Hyperlegible({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-atkinson",
 });
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body
-        className={`${lato.className} text-white bg-black`}
+        className={`${lato.className} ${atkinson.variable} text-white bg-black`}
       >
         <ScrollContainer>
           <div className="">
