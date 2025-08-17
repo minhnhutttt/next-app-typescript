@@ -2,8 +2,8 @@
 const Footer = () => {
     return (
       <>
-      <footer className="md:mt-[12rem] max-md:mb-[12rem]">
-            <p className="text-center p-12 tracking-widest max-md:p-[2rem]">&</p>
+      <footer className="p-5">
+            <p className="text-center text-[12px]">© Copyright 2025 TEX Coin.</p>
         </footer>
         </>
     );
