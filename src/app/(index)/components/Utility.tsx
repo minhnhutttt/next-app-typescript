@@ -76,7 +76,7 @@ export default function Utility() {
                     </div>
                 </div>
             </UtilityItem>
-            <UtilityItem title="Access to premium features" text="There are special features and services available exclusively to UGTC holders." className="md:pb-16">
+            <UtilityItem title="Features that take advantage of stablecoins" text="By being based on USDT, it offers stability and convenience not found in traditional cryptocurrencies." className="md:pb-16">
                 <div className="space-y-12 md:-mr-[60px] max-w-[520px] xl:w-[520px]">
                     <div className="rounded-[10px] bg-black/80 md:p-10 p-5 md:space-y-[30px] space-y-4 leading-loose border border-white/20">
                         <p className="md:text-[24px] text-[18px] font-semibold">

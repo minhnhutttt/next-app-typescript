@@ -48,7 +48,7 @@ export default function Roadmap() {
             <div className="w-full">
                 <h5 className="md:text-[64px] text-[32px] text-center">Development Roadmap</h5>
                 <div className="md:mt-[45px] mt-8 relative pb-[120px] md:pb-[250px] md:pt-[220px] pt-10">
-                    <div className="absolute w-1/2 top-0 right-0 bottom-0 bg-[url(/assets/images/roadmap-bg.png)] bg-cover max-md:hidden"></div>
+                    <div className="absolute w-1/2 top-0 right-0 bottom-0 bg-[url(/assets/images/roadmap-bg.png)] bg-[size:100%_100%] max-md:hidden"></div>
                     <div className="relative md:space-y-[100px] space-y-16 w-full max-w-[440px] md:max-w-[1240px] mx-auto px-5">
                     {data.map((road) => (
                         <div key={road.id} className="fade-up flex items-center justify-center gap-5 relative max-md:flex-wrap">
