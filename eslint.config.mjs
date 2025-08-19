@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname
+  baseDirectory: __dirname,
 });
 
 export default [
@@ -21,12 +21,12 @@ export default [
 
   // React & Hooks (for good DX in client components)
   {
-    plugins: { 'react': eslintPluginReact, 'react-hooks': eslintPluginReactHooks },
+    plugins: { react: eslintPluginReact, 'react-hooks': eslintPluginReactHooks },
     rules: {
       'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn'
+      'react-hooks/exhaustive-deps': 'warn',
     },
-    settings: { react: { version: 'detect' } }
+    settings: { react: { version: 'detect' } },
   },
 
   // TypeScript (type-aware)
@@ -34,11 +34,14 @@ export default [
   {
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.json']
-      }
+        project: ['./tsconfig.json'],
+      },
     },
     rules: {
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }]
-    }
-  }
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
+    },
+  },
 ];
