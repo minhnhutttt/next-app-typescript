@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Noto_Sans_JP, Inter } from 'next/font/google';
+import { Noto_Sans_JP, Hind, Inter, Arimo } from 'next/font/google';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import './globals.css';
@@ -12,6 +12,17 @@ const noto = Noto_Sans_JP({
 
 const inter = Inter({
   variable: '--font-inter',
+  subsets: ['latin'],
+});
+
+const arimo = Arimo({
+  variable: '--font-arimo',
+  subsets: ['latin'],
+});
+
+const hind = Hind({
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-hind',
   subsets: ['latin'],
 });
 
@@ -41,7 +52,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${noto.className} ${inter.variable} antialiased`}>
+      <body
+        className={`${noto.className} ${inter.variable} ${hind.variable} ${arimo.variable} antialiased`}
+      >
         <Header />
         {children}
         <Footer />

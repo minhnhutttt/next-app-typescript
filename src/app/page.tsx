@@ -1,24 +1,22 @@
 'use client';
-import { Button } from '@/components/ui/Button';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
 import Fv from './(index)/components/Fv';
+import Introduction from './(index)/components/Introduction';
+import About from './(index)/components/About';
+import Product from './(index)/components/Product';
+import Business from './(index)/components/Business';
+import Contact from './(index)/components/Contact';
 
 export default function Home() {
   const ref = useScrollAnimations();
   return (
-    <div ref={ref} className="py-[2000px]">
+    <main ref={ref}>
       <Fv />
-      <div className="fade-up space-x-2 bg-red-300">
-        <Button intent="primary" size="sm">
-          Primary
-        </Button>
-        <Button intent="secondary" size="md">
-          Secondary
-        </Button>
-        <Button intent="danger" size="lg">
-          Danger
-        </Button>
-      </div>
-    </div>
+      <Introduction />
+      <About />
+      <Product />
+      <Business />
+      <Contact />
+    </main>
   );
 }
