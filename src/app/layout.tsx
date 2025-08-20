@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import { Figtree, Inter } from 'next/font/google';
+import { Noto_Sans_JP, Inter } from 'next/font/google';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import './globals.css';
-import '../styles/styles.scss';
 
 import { SITE_URL, SITE_NAME, DEFAULT_DESCRIPTION, OG, TWITTER } from '@/config/constants';
 
-const figtree = Figtree({
+const noto = Noto_Sans_JP({
   subsets: ['latin'],
 });
 
@@ -42,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${figtree.className} ${inter.variable} antialiased`}>
+      <body className={`${noto.className} ${inter.variable} antialiased`}>
         <Header />
         {children}
         <Footer />
