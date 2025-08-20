@@ -26,7 +26,7 @@ const Header = () => {
   }, [open]);
 
   return (
-    <header className="p-4">
+    <header className="absolute inset-x-0 top-0 w-full bg-white/5 p-4">
       <div className="mx-auto flex w-full max-w-[1320px] items-center justify-between">
         <Link href="/" className="block" onClick={close}>
           <img src="/assets/images/logo.svg" alt="" />

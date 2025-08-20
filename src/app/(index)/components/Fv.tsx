@@ -1,7 +1,7 @@
 export default function Fv() {
   return (
-    <section className="relative z-10 flex min-h-[550px] justify-center px-5 pt-[130px] md:h-[800px] md:pt-[140px]">
-      <div className="relative mx-auto w-full max-w-[1320px]">
+    <section className="relative z-10 flex min-h-[550px] justify-center px-5 md:h-[800px]">
+      <div className="relative mx-auto w-full max-w-[1320px] pt-[140px] md:pt-[220px]">
         <div className="relative z-10">
           <h1 className="text-[40px] leading-[1.1] font-medium md:text-[80px]">
             DEMOCRATIZING <br />
@@ -18,7 +18,7 @@ export default function Fv() {
             Building the future of accessible marketing technology for businesses
           </p>
         </div>
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 flex items-center justify-end">
           <div className="orb"></div>
         </div>
       </div>

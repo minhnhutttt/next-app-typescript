@@ -43,9 +43,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${figtree.className} ${inter.variable} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <div className="bg-[url(/assets/images/bg.webp)] bg-[size:100%_auto] bg-bottom">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
