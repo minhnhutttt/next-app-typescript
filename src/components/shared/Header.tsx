@@ -29,7 +29,6 @@ const Header = () => {
     };
   }, [open]);
 
-  // Xác định màu chữ dựa theo pathname
   const textColor = pathname === '/' ? 'text-white' : 'text-black';
 
   return (
@@ -47,7 +46,7 @@ const Header = () => {
           aria-label="Main"
           className={`md:static md:block ${
             open
-              ? 'max-md:pointer-events-auto max-md:opacity-100'
+              ? 'text-white max-md:pointer-events-auto max-md:opacity-100'
               : 'max-md:pointer-events-none max-md:opacity-0'
           } z-[99] transition-opacity duration-300 max-md:fixed max-md:inset-0 max-md:bg-[#FF884B]/90`}
           aria-hidden={!open}
@@ -89,13 +88,13 @@ const Header = () => {
           } `}
         >
           <span
-            className={`absolute top-0 left-0 block h-0.5 w-full -translate-y-1/2 rounded-full bg-white transition-all duration-300 ease-in-out group-data-[open=true]:top-1/2 group-data-[open=true]:rotate-45`}
+            className={`absolute top-0 left-0 block h-0.5 w-full -translate-y-1/2 rounded-full transition-all duration-300 ease-in-out group-data-[open=true]:top-1/2 group-data-[open=true]:rotate-45 group-data-[open=true]:bg-white ${pathname === '/' ? 'bg-white' : 'bg-black'}`}
           />
           <span
-            className={`absolute top-[9px] left-0 block h-0.5 w-full -translate-y-1/2 rounded-full bg-white transition-opacity duration-200 group-data-[open=true]:opacity-0 md:top-[14px]`}
+            className={`absolute top-[9px] left-0 block h-0.5 w-full -translate-y-1/2 rounded-full transition-opacity duration-200 group-data-[open=true]:bg-white group-data-[open=true]:opacity-0 md:top-[14px] ${pathname === '/' ? 'bg-white' : 'bg-black'}`}
           />
           <span
-            className={`absolute bottom-0 left-0 block h-0.5 w-full translate-y-1/2 rounded-full bg-white transition-all duration-300 ease-in-out group-data-[open=true]:top-1/2 group-data-[open=true]:translate-y-[-50%] group-data-[open=true]:-rotate-45`}
+            className={`absolute bottom-0 left-0 block h-0.5 w-full translate-y-1/2 rounded-full transition-all duration-300 ease-in-out group-data-[open=true]:top-1/2 group-data-[open=true]:translate-y-[-50%] group-data-[open=true]:-rotate-45 group-data-[open=true]:bg-white ${pathname === '/' ? 'bg-white' : 'bg-black'}`}
           />
         </button>
       </div>

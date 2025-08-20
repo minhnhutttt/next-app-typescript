@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #000;
-  --foreground: #fff;
+  --background: #fff;
+  --foreground: #000;
 }
 
 @theme inline {
@@ -12,13 +12,6 @@
   --font-mono: var(--font-inter);
   --font-hind: var(--font-hind);
   --font-arimo: var(--font-arimo);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #fff;
-    --foreground: #000;
-  }
 }
 
 html {
@@ -32,6 +25,14 @@ body {
 
 .u-gradient {
   background: linear-gradient(90deg, rgba(255, 136, 75, 0.2) 0%, rgba(239, 56, 190, 0.2) 100%);
+}
+
+.u-gradient-02 {
+  background: linear-gradient(
+    154deg,
+    rgba(255, 136, 75, 0.3) 11.49%,
+    rgba(239, 56, 190, 0.3) 83.76%
+  );
 }
 
 .u-text-gradient-01 {

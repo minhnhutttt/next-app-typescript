@@ -10,9 +10,9 @@ export default function Business() {
           <p className="fade-up text-[20px] font-bold md:text-[40px]">
             時間をかけずに、成果を最大化
           </p>
-          <h3 className="fade-up relative text-[44px] leading-[1.2] font-black tracking-tight md:text-[90px] lg:text-[130px]">
-            <p className="">忙しい経営者に</p>
-            <p className="ml-[10%] xl:ml-[350px]">選ばれています</p>
+          <h3 className="fade-up relative z-10 text-[44px] leading-[1.2] font-black tracking-tight md:text-[90px] lg:text-[130px]">
+            <p className="relative">忙しい経営者に</p>
+            <p className="relative ml-[10%] xl:ml-[350px]">選ばれています</p>
           </h3>
           <div className="-mt-6 flex gap-6 max-md:flex-col md:-mt-16 lg:-mt-28 xl:gap-[140px]">
             <div className="fade-up max-lg:w-1/2 max-md:w-full">
