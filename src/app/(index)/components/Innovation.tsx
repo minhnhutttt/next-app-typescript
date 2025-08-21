@@ -26,7 +26,7 @@ const InnovationContent = ({
   return (
     <div
       onClick={() => setActiveId(id)}
-      className={`fade-up relative h-[360px] cursor-pointer overflow-hidden bg-cover bg-center bg-no-repeat text-center [box-shadow:18px_0_16px_0_rgba(0,_0,_0,_0.70)] transition-all duration-500 md:h-[683px] md:!flex-1 ${isActive ? 'w-[61%]' : 'w-[13%]'} `}
+      className={`relative h-[360px] cursor-pointer overflow-hidden bg-cover bg-center bg-no-repeat text-center [box-shadow:18px_0_16px_0_rgba(0,_0,_0,_0.70)] transition-all duration-500 md:h-[683px] md:!flex-1 ${isActive ? 'w-[61%]' : 'w-[13%]'} `}
       style={{ backgroundImage: `url(${bg})`, zIndex: 5 - id }}
     >
       <div className="pt-5">
@@ -48,7 +48,7 @@ export default function Innovation() {
   return (
     <section className="relative z-10 pb-20 md:pb-[165px]">
       <div className="relative mx-auto w-full max-w-[1440px] pt-20 md:pt-60">
-        <div className="text-center">
+        <div className="fade-up text-center">
           <h3 className="text-[28px] leading-[1.3] font-bold tracking-wider md:text-[46px]">
             INNOVATION AT OUR CORE
           </h3>
@@ -56,7 +56,7 @@ export default function Innovation() {
             Pioneering Technologies That Matter
           </p>
         </div>
-        <div className="flex gap-2 pt-10 md:pt-20">
+        <div className="fade-up flex gap-2 pt-10 md:pt-20">
           <InnovationContent
             id={1}
             number="/assets/images/innovation-number-01.png"

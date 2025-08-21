@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="px-5">
-      <div className="mx-auto flex w-full max-w-[1200px] items-center gap-10 py-15 max-md:flex-col md:py-25 xl:gap-22">
+    <footer className="border-t border-[#00B70C]/[0.2] px-5">
+      <div className="mx-auto flex w-full max-w-[1200px] gap-10 py-15 max-md:flex-col max-md:items-center md:py-25 xl:gap-22">
         <div className="flex">
           <Link href="/">
             <img className="max-md:w-[180px]" src="/assets/images/logo-footer.svg" alt="" />

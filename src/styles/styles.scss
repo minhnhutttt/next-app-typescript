@@ -92,3 +92,49 @@
     --angle: 360deg;
   }
 }
+
+.u-gradient-animation {
+  background-image: linear-gradient(90deg, #ff884b 0%, #ef38be 33.5%, #ff884b 59.5%, #ef38be 89.5%);
+  background-size: 300% !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: Gradient 5s ease infinite !important;
+  -moz-animation: Gradient 5s ease infinite !important;
+  animation: Gradient 5s ease infinite !important;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

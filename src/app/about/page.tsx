@@ -3,6 +3,7 @@ import { PageHead } from '@/components/shared/PageHead';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
 import Philosophy from './components/Philosophy';
 import Leader from './components/Leader';
+import Contact from '@/components/shared/Contact';
 
 export default function About() {
   const ref = useScrollAnimations();
@@ -16,6 +17,7 @@ export default function About() {
       />
       <Philosophy />
       <Leader />
+      <Contact />
     </main>
   );
 }
