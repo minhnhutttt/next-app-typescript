@@ -25,13 +25,20 @@ export default function Contact() {
               まずは無料相談から
             </h5>
             <p className="fade-up mt-10 text-center text-[20px] font-bold md:mt-20 md:text-[38px]">
-              「本当に何もしなくていいの？」「うちの業界でも効果ある？」
+              「本当に何もしなくていいの？」
+              <br />
+              「うちの業界でも効果ある？」
               <br />
               そんな疑問にお答えします。
               <br />
-              SEIKAIの自動化の仕組み、成約報告による改善効果など、
               <br />
-              ご利用前の不明点解消にお役立てください。
+              SEIKAIの自動化の仕組み、
+              <br />
+              成約報告による改善効果など、
+              <br />
+              ご利用前の不明点解消に
+              <br />
+              お役立てください。
             </p>
             <div className="fade-up mt-15 flex items-center justify-center gap-5 max-md:flex-col md:mt-24 md:gap-9">
               <Link

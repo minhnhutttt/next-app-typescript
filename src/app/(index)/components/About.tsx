@@ -22,7 +22,9 @@ export default function About() {
             プロ級の広告運用を
           </h5>
           <p className="mt-10 text-[20px] leading-relaxed font-bold tracking-tight md:mt-16 md:text-[38px]">
-            私たちAIS Japanは、米国AIS Holdings Groupの日本法人として、
+            私たちAIS Japanは、
+            <br />
+            米国AIS Holdings Groupの日本法人として、
             <br />
             AIマーケティングソリューションを提供しています。
             <br />
@@ -31,7 +33,7 @@ export default function About() {
             そんな課題を、最先端のAIテクノロジーで解決します。
           </p>
           <div className="fade-up mt-5 flex justify-end md:mt-7">
-            <Button link="#">詳しく見る</Button>
+            <Button link="#">About Us</Button>
           </div>
         </div>
       </div>

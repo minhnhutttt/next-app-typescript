@@ -4,7 +4,7 @@ import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
 
 const ProcessItem = ({ ic, title, text }: { ic: string; title: string; text: string }) => (
-  <div className="u-gradient-02 h-[300px] w-[320px] md:h-[355px] md:w-[360px]">
+  <div className="fade-up u-gradient-02 h-[300px] w-[320px] md:h-[355px] md:w-[360px]">
     <div className="flex h-full flex-col items-center px-2 pt-14 md:pt-20">
       <div className="mb-3 flex h-[100px] items-center md:h-[130px]">
         <img src={ic} alt="" className="max-md:max-w-[100px]" />
@@ -33,46 +33,47 @@ export default function Product() {
         <section className="px-5 pt-16 md:pt-24">
           <div className="mx-auto w-full max-w-[480px] md:max-w-[1250px]">
             <div>
-              <p className="text-right text-[20px] font-thin md:text-[32px]">
+              <p className="fade-up text-right text-[20px] font-thin md:text-[32px]">
                 {`<`} <span className="font-bold">Product</span> {`>`}
               </p>
-              <h3 className="mt-3 text-center text-[33px] leading-[1.3] font-black md:mt-4 md:text-[80px] lg:text-[105px]">
-                完全自動化 <span className="font-thin">+</span> <br />
-                成約フィードバックで
+              <h3 className="fade-up mt-3 text-center text-[33px] leading-[1.3] font-black md:mt-4 md:text-[80px] lg:text-[105px]">
+                AIによる自動化
                 <br />
-                加速する成長
+                <span className="font-thin">+</span>成約フィードバック
+                <br />
+                で加速する成長
               </h3>
-              <p className="mt-3 text-center text-[20px] font-semibold md:mt-6 md:text-[40px]">
-                AIによる完全自動運用
+              <p className="fade-up mt-3 text-center text-[20px] font-semibold md:mt-6 md:text-[40px]">
+                SEIKAIが全事業者の悩みを解消
               </p>
               <div className="mt-6 flex justify-between gap-10 max-lg:flex-col md:mt-32 md:gap-15 lg:gap-5">
                 <div className="space-y-10 md:space-y-15 lg:w-[280px] lg:space-y-30">
-                  <div className="space-y-3 md:space-y-5">
-                    <p className="text-[20px] font-bold md:text-[40px]">
+                  <div className="fade-up space-y-3 md:space-y-5">
+                    <p className="fade-up text-[20px] font-bold md:text-[40px]">
                       AIによる
                       <br className="max-md:hidden" />
                       完全自動運用
                     </p>
-                    <p className="text-[16px] font-medium md:text-[24px]">
+                    <p className="fade-up text-[16px] font-medium md:text-[24px]">
                       Google Ads
-                      の設定、入札調整、キーワード選定、広告文作成、予算配分、すべてをAIが自動で実行。あなたは何もする必要がありません。専門知識も、運用時間も不要。それがSEIKAIの基本機能です。
+                      の設定、入札調整、キーワード選定、広告文作成、予算配分、すべてをAIが自動で実行。あなたは何もする必要がありません。専門知識も、運用時間も不要。
                     </p>
                   </div>
-                  <div className="space-y-3 md:space-y-5">
-                    <p className="text-[20px] font-bold md:text-[40px]">
+                  <div className="fade-up space-y-3 md:space-y-5">
+                    <p className="fade-up text-[20px] font-bold md:text-[40px]">
                       LP更新で
                       <br className="max-md:hidden" />
                       市場変化にも
                       <br className="max-md:hidden" />
                       即座に対応
                     </p>
-                    <p className="text-[16px] font-medium md:text-[24px]">
-                      競合の動き、季節変動、トレンドの変化など、あなたが察知した市場の変化をLPに反映。そのURLをSEIKAIに送信すれば、AIがページ内容をスキャン・解析し、広告も自動的に市場環境に最適化されます。「ビジネス判断は人間、実行はAI」の理想的な協働を実現。
+                    <p className="fade-up text-[16px] font-medium md:text-[24px]">
+                      競合の動き、季節変動、トレンドの変化など、あなたが察知した市場の変化をLPに反映しましょう。そのURLをSEIKAIに送信するだけで広告を自動最適化。
                     </p>
                   </div>
                 </div>
                 <div className="flex flex-col gap-10 max-lg:order-3 md:gap-22">
-                  <div className="flex w-full gap-2 lg:mx-auto lg:max-w-[380px] lg:flex-col">
+                  <div className="fade-up flex w-full gap-2 lg:mx-auto lg:max-w-[380px] lg:flex-col">
                     <span>
                       <img src="/assets/images/product-01.png" alt="" />
                     </span>
@@ -83,32 +84,30 @@ export default function Product() {
                       <img src="/assets/images/product-03.png" alt="" />
                     </span>
                   </div>
-                  <div className="flex justify-center">
+                  <div className="fade-up flex justify-center">
                     <Button link="/">無料相談で詳しく聞く</Button>
                   </div>
                 </div>
                 <div className="space-y-10 md:space-y-15 lg:w-[280px] lg:space-y-30">
-                  <div className="space-y-3 md:space-y-5">
-                    <p className="text-[20px] font-bold md:text-[40px]">
+                  <div className="fade-up space-y-3 md:space-y-5">
+                    <p className="fade-up text-[20px] font-bold md:text-[40px]">
                       成約報告で
                       <br className="max-md:hidden" />
                       加速する最適化
                     </p>
-                    <p className="text-[16px] font-medium tracking-tighter md:text-[24px]">
-                      時間があるときに、実際の成約情報を簡単なフォームで報告（1分で完了）。
-                      <br />
-                      この情報がAIの学習を劇的に加速させ、「クリックする人」ではなく「買う人」を見つける精度が向上。報告すればするほど、広告効果が改善されます。
+                    <p className="fade-up text-[16px] font-medium tracking-tighter md:text-[24px]">
+                      時間があるときに成約情報を報告してください。AIの学習を劇的に加速させ、クリックする人ではなく買う人を見つける精度が向上します。報告すればするほど広告効果が改善されます。
                     </p>
                   </div>
-                  <div className="space-y-3 md:space-y-5">
-                    <p className="text-[20px] font-bold md:text-[40px]">
+                  <div className="fade-up space-y-3 md:space-y-5">
+                    <p className="fade-up text-[20px] font-bold md:text-[40px]">
                       Human + <br className="max-md:hidden" />
                       AI協働モデル
                       <br className="max-md:hidden" />
                       の真価
                     </p>
-                    <p className="text-[16px] font-medium tracking-tighter md:text-[24px]">
-                      外部環境の変化を読み取るのは人間の得意分野。その判断をLPに反映し、SEIKAIに伝えるだけで、複雑な広告調整はAIが瞬時に実行。市場の変化に素早く対応できる、これが次世代の広告運用です。
+                    <p className="fade-up text-[16px] font-medium tracking-tighter md:text-[24px]">
+                      環境の変化を読み取るのは人間の得意分野。複雑な広告調整はAIが瞬時に実行。把握はHuman、実行はAIの理想的な協働を実現。これが次世代のAI活用モデルとして真価を発揮します。
                     </p>
                   </div>
                 </div>
@@ -119,7 +118,7 @@ export default function Product() {
         <section className="mt-40 md:mt-90">
           <div className="mx-auto w-full max-w-[1440px] max-md:px-5 md:pl-10 xl:pl-22">
             <div className="flex justify-between pr-10 max-xl:flex-col xl:pr-25">
-              <p className="text-left text-[20px] font-thin md:text-[32px]">
+              <p className="fade-up text-left text-[20px] font-thin md:text-[32px]">
                 {`<`} <span className="font-bold">Platforms</span> {`>`}
               </p>
               <h3 className="mt-3 text-right text-[33px] leading-[1.2] font-black tracking-tighter md:mt-4 md:text-[80px] lg:text-[105px]">
@@ -145,7 +144,7 @@ export default function Product() {
                       text: 'Yahoo!広告、LINE広告、TikTok広告など、主要プラットフォームへの対応を計画中。統合的な広告運用を実現します。',
                     },
                   ].map((item, index) => (
-                    <div className="space-y-3 md:space-y-5" key={index}>
+                    <div className="fade-up space-y-3 md:space-y-5" key={index}>
                       <p className="text-[20px] font-bold md:text-[40px]">{item.title}</p>
                       <p className="text-[16px] font-medium tracking-tighter md:text-[24px]">
                         {item.text}
@@ -153,11 +152,11 @@ export default function Product() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-12 flex md:mt-24">
+                <div className="fade-up mt-12 flex md:mt-24">
                   <Button link="/">今すぐGoogle Adsで始める</Button>
                 </div>
               </div>
-              <div className="">
+              <div className="fade-up">
                 <img src="/assets/images/product-platforms.png" alt="" />
               </div>
             </div>
@@ -166,11 +165,13 @@ export default function Product() {
         <section className="mt-30 px-5 md:mt-60">
           <div className="mx-auto w-full max-w-[1250px]">
             <div className="">
-              <p className="text-center text-[20px] font-thin md:text-[32px]">
+              <p className="fade-up text-center text-[20px] font-thin md:text-[32px]">
                 {`<`} <span className="font-bold">features</span> {`>`}
               </p>
-              <h3 className="mt-7 text-center text-[32px] leading-[1.3] font-black md:mt-11 md:text-[80px] lg:text-[105px]">
-                SEIKAIが選ばれる理由
+              <h3 className="fade-up mt-7 text-center text-[32px] leading-[1.3] font-black md:mt-11 md:text-[80px] lg:text-[105px]">
+                SEIKAIが
+                <br />
+                選ばれる理由
               </h3>
               <div className="mx-auto mt-10 w-full max-w-[600px] space-y-6 md:mt-16 md:space-y-10">
                 {[
@@ -180,7 +181,7 @@ export default function Product() {
                   },
                   {
                     title: '市場変化への機敏な対応力',
-                    text: '競合が値下げした、新しいトレンドが生まれた、季節需要が変わった。そんな変化をLPに反映してURLを送信するだけで、広告戦略も自動的にアップデート。市場の最前線にいる事業者の判断を、即座に広告運用に反映できます。',
+                    text: '変化をLPに反映してURLを送信するだけで、広告戦略も自動的にアップデート。市場の最前線にいる事業者の判断を、即座に広告運用に反映できます。',
                   },
                   {
                     title: '成約報告でターボチャージ',
@@ -191,18 +192,18 @@ export default function Product() {
                     text: '業界最安水準の手数料率。一般的な代理店の20-30%と比較して、広告予算を最大限活用できます。',
                   },
                 ].map((item, index) => (
-                  <div className="space-y-3 md:space-y-5" key={index}>
+                  <div className="fade-up space-y-3 md:space-y-5" key={index}>
                     <p className="text-[26px] font-bold md:text-[40px]">{item.title}</p>
                     <p className="text-[16px] font-medium md:text-[24px]">{item.text}</p>
                   </div>
                 ))}
               </div>
-              <div className="mt-12 flex justify-center md:mt-18">
+              <div className="fade-up mt-12 flex justify-center md:mt-18">
                 <Button link="/">料金・導入の流れを確認</Button>
               </div>
             </div>
             <div className="mt-40 md:mt-70">
-              <div className="flex justify-between">
+              <div className="fade-up flex justify-between">
                 <h3 className="mt-3 text-left text-[33px] leading-[1.2] font-black tracking-tighter md:mt-4 md:text-[80px] lg:text-[105px]">
                   導入企業様の声
                 </h3>
@@ -229,7 +230,7 @@ export default function Product() {
                     text: '「最初は完全お任せでスタート。2週間後から成約報告を始めたら、リード品質が劇的に向上。手間はほぼゼロなのに、CPAが60%も改善しました。」',
                   },
                 ].map((item, index) => (
-                  <div className="space-y-3 md:space-y-5" key={index}>
+                  <div className="fade-up space-y-3 md:space-y-5" key={index}>
                     <p className="text-[20px] font-thin md:text-[32px]">
                       {`<`} <span className="font-bold">{item.title}</span> {`>`}
                     </p>
@@ -237,7 +238,7 @@ export default function Product() {
                   </div>
                 ))}
               </div>
-              <div className="mt-12 flex justify-center md:mt-18">
+              <div className="fade-up mt-12 flex justify-center md:mt-18">
                 <Button link="/" className="max-md:text-[22px]">
                   あなたも始めてみませんか？
                 </Button>
@@ -245,22 +246,24 @@ export default function Product() {
             </div>
             <div className="mt-40 md:mt-50">
               <div className="flex justify-between max-md:flex-col-reverse">
-                <h3 className="mt-3 text-left text-[33px] leading-[1.2] font-black tracking-tighter md:mt-4 md:text-[60px] xl:text-[105px]">
-                  シンプルな料金と、
+                <h3 className="fade-up mt-3 text-left text-[33px] leading-[1.2] font-black tracking-tighter md:mt-4 md:text-[60px] xl:text-[105px]">
+                  シンプルな料金設定。
                   <br />
-                  もっとシンプルな運用
+                  事業者のことを考えた
+                  <br />
+                  完全後払い。
                 </h3>
-                <p className="text-right text-[20px] font-thin md:text-[32px]">
+                <p className="fade-up text-right text-[20px] font-thin md:text-[32px]">
                   {`<`} <span className="font-bold">pricing</span> {`>`}
                 </p>
               </div>
-              <div className="mt-10 grid grid-cols-2 gap-10 md:mt-17 md:gap-x-[144px]">
+              <div className="fade-up mt-10 grid grid-cols-2 gap-10 md:mt-17 md:gap-x-[144px]">
                 {[
                   {
-                    text: 'シンプルな料金と、もっとシンプルな運用',
+                    text: '月間広告費用の9%だけ。完全後払いだから気軽に運用。',
                   },
                   {
-                    text: '初期費用、月額固定費なし最低利用期間なし',
+                    text: '初期費用なし。固定費なし。最低利用期間もなし。',
                   },
                 ].map((item, index) => (
                   <div key={index}>
@@ -270,7 +273,9 @@ export default function Product() {
               </div>
             </div>
             <div className="mt-40 mb-24 md:mt-50 md:mb-[160px]">
-              <p className="text-center text-[32px] font-black md:text-[64px]">導入の流れ</p>
+              <p className="fade-up text-center text-[32px] font-black md:text-[64px]">
+                導入の流れ
+              </p>
               <div className="mt-7 flex flex-wrap items-center justify-center gap-5 max-md:flex-col md:mt-14 md:gap-x-10 md:gap-y-7 xl:gap-x-20 xl:gap-y-[51px]">
                 <ProcessItem
                   ic="/assets/images/process-01.svg"
@@ -290,26 +295,26 @@ export default function Product() {
                 <ProcessItem
                   ic="/assets/images/process-04.svg"
                   title="AI自動設定"
-                  text="24時間以内に完了"
+                  text="完了後は即Googleの審査へ"
                 />
                 <ProcessItem
                   ic="/assets/images/process-05.svg"
                   title="運用スタート"
-                  text="完全自動"
+                  text="AIが24/365体制で働きます"
                 />
                 <div className="space-y-8 md:space-y-10">
-                  <div className="">
+                  <div className="fade-up">
                     <p className="-ml-5 text-[18px] font-bold tracking-tighter md:text-[24px]">
-                      【必要時】LP更新をSEIKAIに通知
+                      LPの内容が変わったらSEIKAIに通知
                     </p>
                     <ul className="mt-2 list-disc pl-5 text-[16px] font-medium md:text-[20px]">
                       <li>更新したらURLを送信するだけ</li>
                       <li>AIが内容を解析して広告を自動調整</li>
                     </ul>
                   </div>
-                  <div className="">
+                  <div className="fade-up">
                     <p className="-ml-5 text-[18px] font-bold tracking-tighter md:text-[24px]">
-                      【オプション】成約報告で効果倍増
+                      広告経由の成約報告で効果倍増
                     </p>
                     <ul className="mt-2 list-disc pl-5 text-[16px] font-medium md:text-[20px]">
                       <li>時間があるときに1分で報告</li>
