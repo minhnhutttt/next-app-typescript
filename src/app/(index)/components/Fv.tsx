@@ -15,7 +15,8 @@ export default function Fv() {
             INNOVATION
           </h2>
           <p className="mt-5 text-[15px] leading-none font-light tracking-wide md:mt-10 md:text-[20px]">
-            Building the future of accessible marketing technology for businesses
+            The world's first AI sales company building accessible marketing technology without
+            human employees
           </p>
         </div>
         <div className="absolute inset-0 flex items-center justify-end">

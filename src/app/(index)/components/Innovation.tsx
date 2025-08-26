@@ -65,7 +65,7 @@ export default function Innovation() {
             activeId={activeId}
             setActiveId={setActiveId}
           >
-            AI-powered automation for complex marketing operations
+            AI agent teams conducting all business operations autonomously
           </InnovationContent>
           <InnovationContent
             id={2}
@@ -75,7 +75,7 @@ export default function Innovation() {
             activeId={activeId}
             setActiveId={setActiveId}
           >
-            Business outcome-based optimization through client feedback
+            AI-powered automation for complex marketing operations
           </InnovationContent>
           <InnovationContent
             id={3}
@@ -85,7 +85,7 @@ export default function Innovation() {
             activeId={activeId}
             setActiveId={setActiveId}
           >
-            Natural language processing for content understanding
+            Business outcome-based optimization through client feedback
           </InnovationContent>
           <InnovationContent
             id={4}
@@ -95,7 +95,7 @@ export default function Innovation() {
             activeId={activeId}
             setActiveId={setActiveId}
           >
-            Predictive analytics for real conversion optimization
+            Building the infrastructure for the world's first fully AI-operated public company
           </InnovationContent>
         </div>
       </div>

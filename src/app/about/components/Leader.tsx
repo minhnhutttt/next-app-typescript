@@ -12,9 +12,11 @@ export default function Leader() {
         </div>
         <div className="mt-5 md:mt-8">
           <p className="fade-up mx-auto w-full max-w-[710px] md:text-[21px]">
-            Our leadership team combines decades of experience in technology, marketing, and
-            business development. United by a shared vision of democratizing marketing excellence,
-            we&apos;re building the next generation of accessible marketing infrastructure
+            In a revolutionary approach to corporate governance, AIS Holdings operates with zero
+            full-time executives, instead leveraging AI agent teams that combine decades of embedded
+            knowledge in technology, marketing, and business development. This AI-first structure
+            enables us to build the next generation of accessible marketing infrastructure with
+            unprecedented efficiency.
           </p>
           <div className="fade-up -mx-5 mt-10 md:mt-14">
             <img src="/assets/images/images.png" alt="" />

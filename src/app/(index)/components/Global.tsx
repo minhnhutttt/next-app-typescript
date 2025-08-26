@@ -22,7 +22,7 @@ export default function Global() {
                 </span>
                 HEADQUARTERS
               </div>
-              <p className="mt-1">United States - Strategic leadership and innovation center</p>
+              <p className="mt-1">United States - AI operations and innovation center</p>
             </div>
             <div className="text-[15px] font-light md:text-[18px]">
               <div className="flex gap-2 font-bold">
@@ -33,6 +33,16 @@ export default function Global() {
               </div>
               <p className="mt-1">Tokyo - Asia-Pacific operations and product development</p>
             </div>
+            <p className="text-[15px] font-light md:text-[18px]">
+              <a
+                href="https://www.wsj.com/market-data/quotes/AIDG"
+                target="_blank"
+                className="underline"
+                rel="noopener noreferrer"
+              >
+                ※Stock Information: Track AIDG on WSJ
+              </a>
+            </p>
           </div>
         </div>
       </div>

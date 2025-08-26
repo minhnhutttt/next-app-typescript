@@ -13,7 +13,12 @@ export default function About() {
         bg="/assets/images/about-head.png"
         title="About AIS Holdings Group"
         subtitle="Building the Infrastructure for Accessible Marketing Technology"
-        text="AIS Holdings Group Inc. is a marketing technology holding company that creates and scales innovative solutions for the global marketplace. We believe that the disparity in marketing capabilities between large enterprises and smaller businesses represents one of the greatest inefficiencies in modern commerce. Our mission is to eliminate this gap through strategic investments in AI-driven marketing platforms that deliver professional results at revolutionary economics."
+        text="AIS Holdings Group Inc. is the world's first AI-powered sales company with zero full-time 
+executives and zero full-time employees, operating entirely through AI agent teams while 
+pursuing a US IPO. We believe that the disparity in marketing capabilities between large 
+enterprises and smaller businesses represents one of the greatest inefficiencies in modern 
+commerce. Our mission is to eliminate this gap through AI-driven marketing platforms that 
+deliver professional results at revolutionary economics."
       />
       <Philosophy />
       <Leader />
