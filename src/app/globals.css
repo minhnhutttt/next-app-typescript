@@ -47,3 +47,121 @@ body {
     transform: scale(1) !important;
   }
 }
+
+.vm-animation {
+  position: relative;
+}
+.vm-animation .vm-animation-inner {
+  opacity: 0;
+}
+.vm-animation.animate-in .vm-animation-inner {
+  animation: textHidden 0.1s 1.3s forwards;
+}
+.vm-animation.animate-in.delay-1 .vm-animation-inner {
+  animation-delay: 1.5s !important;
+}
+.vm-animation.animate-in.delay-2 .vm-animation-inner {
+  animation-delay: 1.7s !important;
+}
+.vm-animation.animate-in:before,
+.vm-animation.animate-in:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 10;
+  transform-origin: left;
+}
+.vm-animation.animate-in:before {
+  background-color: rgba(255, 136, 75, 0.2);
+}
+.vm-animation.animate-in:after {
+  background-color: color-mix(in oklab, rgba(255, 136, 75, 0.2) 40%, rgba(239, 56, 190, 0.2));
+  animation-delay: 0.5s;
+}
+.vm-animation.animation-ltr.animate-in:before {
+  animation: revealLTR 1.8s ease;
+}
+.vm-animation.animation-ltr.delay-1.animate-in:before {
+  animation-delay: 0.2s !important;
+}
+.vm-animation.animation-ltr.delay-2.animate-in:before {
+  animation-delay: 0.4s !important;
+}
+.vm-animation.animation-ltr.animate-in:after {
+  animation: revealLTR 1s 0.6s ease;
+}
+.vm-animation.animation-ltr.delay-1.animate-in:after {
+  animation-delay: 0.8s !important;
+}
+.vm-animation.animation-ltr.delay-2.animate-in:after {
+  animation-delay: 1s !important;
+}
+
+.vm-animation.animation-rtl.animate-in:before {
+  animation: revealRTL 1.8s ease;
+}
+.vm-animation.animation-rtl.animate-in:after {
+  animation: revealRTL 1s 0.6s ease;
+}
+
+@keyframes revealRTL {
+  0% {
+    width: 0;
+    right: 0;
+  }
+  65% {
+    width: 100%;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    right: 100%;
+  }
+}
+@keyframes revealLTR {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  65% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes textHidden {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.linear-wipe {
+  text-align: left;
+  background: linear-gradient(to right, #fff 20%, #000 40%, #000 60%, #fff 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: shine 5s linear infinite;
+  animation: shine 5s linear infinite;
+}
+@-webkit-keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}

@@ -21,7 +21,7 @@ export default function About() {
             <br />
             プロ級の広告運用を
           </h5>
-          <p className="mt-10 text-[20px] leading-relaxed font-bold tracking-tight md:mt-16 md:text-[38px]">
+          <p className="scroll-text mt-10 text-[20px] leading-relaxed font-bold tracking-tight md:mt-16 md:text-[38px]">
             私たちAIS Japanは、
             <br />
             米国AIS Holdings Groupの日本法人として、

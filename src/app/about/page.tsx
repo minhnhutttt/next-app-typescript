@@ -2,41 +2,18 @@
 import { Button } from '@/components/ui/Button';
 import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitText from 'gsap/SplitText';
+import { useSplitTextScroll } from '@/hooks/useSplitTextScroll';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function About() {
   const ref = useScrollAnimations();
   useInfiniteScroll();
-
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const els = gsap.utils.toArray<HTMLElement>('.scroll-text');
-      els.forEach((el) => {
-        const split = new SplitText(el, { type: 'chars' });
-
-        gsap.set(split.chars, { opacity: 0.1 });
-
-        gsap.to(split.chars, {
-          opacity: 1,
-          stagger: 0.05,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 70%',
-            end: 'bottom 70%',
-            scrub: true,
-          },
-        });
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
+  useSplitTextScroll();
 
   return (
     <main ref={ref} className="overflow-hidden">
@@ -79,14 +56,18 @@ export default function About() {
               </p>
               <div className="mt-3 flex justify-end md:mt-6">
                 <div className="w-full max-w-[920px]">
-                  <h3 className="fade-up mt-3 text-[36px] leading-[1.3] font-black tracking-tighter md:mt-4 md:text-[80px] lg:text-[105px]">
-                    広告運用を、
-                    <br />
-                    もっとシンプルに、
-                    <br />
-                    もっと効果的に
-                  </h3>
-                  <p className="scroll-text fade-up mt-8 text-[17px] leading-[1.6] font-bold tracking-tighter md:mt-12 md:text-[38px]">
+                  <div className="mt-3 text-[36px] leading-[1.3] font-black tracking-tighter md:mt-4 md:text-[80px] lg:text-[105px]">
+                    <div className="vm-animation animation-ltr">
+                      <p className="vm-animation-inner">広告運用を、</p>
+                    </div>
+                    <div className="vm-animation animation-ltr delay-1">
+                      <p className="vm-animation-inner">もっとシンプルに、</p>
+                    </div>
+                    <div className="vm-animation animation-ltr delay-2">
+                      <p className="vm-animation-inner">もっと効果的に</p>
+                    </div>
+                  </div>
+                  <p className="scroll-text mt-8 text-[17px] leading-[1.6] font-bold tracking-tighter md:mt-12 md:text-[38px]">
                     広告運用は複雑で時間がかかる作業でした。
                     <br />
                     専門知識がないと、その恩恵が受けられませんでした。
@@ -155,14 +136,18 @@ export default function About() {
               </p>
               <div className="mt-3 flex md:mt-6">
                 <div className="w-full">
-                  <h3 className="fade-up mt-3 text-[36px] leading-[1.3] font-black tracking-tighter md:mt-4 md:text-[80px] lg:text-[105px]">
-                    グローバルな視点、
-                    <br />
-                    ローカルな実行、
-                    <br />
-                    AIが推進。
-                  </h3>
-                  <p className="fade-up mt-8 text-[17px] leading-[1.6] font-bold tracking-tighter md:mt-12 md:text-[38px]">
+                  <div className="fade-up mt-3 text-[36px] leading-[1.3] font-black tracking-tighter md:mt-4 md:text-[80px] lg:text-[105px]">
+                    <div className="vm-animation animation-ltr">
+                      <p className="vm-animation-inner">グローバルな視点、</p>
+                    </div>
+                    <div className="vm-animation animation-ltr delay-1">
+                      <p className="vm-animation-inner">ローカルな実行、</p>
+                    </div>
+                    <div className="vm-animation animation-ltr delay-2">
+                      <p className="vm-animation-inner">AIが推進。</p>
+                    </div>
+                  </div>
+                  <p className="scroll-text mt-8 text-[17px] leading-[1.6] font-bold tracking-tighter md:mt-12 md:text-[38px]">
                     AIS Holdings Group Inc.は米国に本社を置く、
                     <br className="max-md:hidden" />
                     常勤の役員/社員ゼロ、働くAIエージェントチームだけで

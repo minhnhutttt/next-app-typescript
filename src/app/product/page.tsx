@@ -121,11 +121,14 @@ export default function Product() {
               <p className="fade-up text-left text-[20px] font-thin md:text-[32px]">
                 {`<`} <span className="font-bold">Platforms</span> {`>`}
               </p>
-              <h3 className="mt-3 text-right text-[33px] leading-[1.2] font-black tracking-tighter md:mt-4 md:text-[80px] lg:text-[105px]">
-                主要広告プラット
-                <br />
-                フォームに順次対応
-              </h3>
+              <div className="mt-3 text-right text-[33px] leading-[1.2] font-black tracking-tighter md:mt-4 md:text-[80px] lg:text-[105px]">
+                <div className="vm-animation animation-ltr">
+                  <p className="vm-animation-inner">主要広告プラット</p>
+                </div>
+                <div className="vm-animation animation-ltr delay-1">
+                  <p className="vm-animation-inner">フォームに順次対応</p>
+                </div>
+              </div>
             </div>
             <div className="mt-5 flex justify-between gap-5 max-md:flex-col-reverse md:mt-20 md:gap-10">
               <div className="md:w-[660px]">
@@ -168,11 +171,14 @@ export default function Product() {
               <p className="fade-up text-center text-[20px] font-thin md:text-[32px]">
                 {`<`} <span className="font-bold">features</span> {`>`}
               </p>
-              <h3 className="fade-up mt-7 text-center text-[32px] leading-[1.3] font-black md:mt-11 md:text-[80px] lg:text-[105px]">
-                SEIKAIが
-                <br />
-                選ばれる理由
-              </h3>
+              <div className="fade-up mt-7 text-center text-[32px] leading-[1.3] font-black md:mt-11 md:text-[80px] lg:text-[105px]">
+                <div className="vm-animation animation-ltr">
+                  <p className="vm-animation-inner">SEIKAIが</p>
+                </div>
+                <div className="vm-animation animation-ltr delay-1">
+                  <p className="vm-animation-inner">選ばれる理由</p>
+                </div>
+              </div>
               <div className="mx-auto mt-10 w-full max-w-[600px] space-y-6 md:mt-16 md:space-y-10">
                 {[
                   {
@@ -204,9 +210,9 @@ export default function Product() {
             </div>
             <div className="mt-40 md:mt-70">
               <div className="fade-up flex justify-between">
-                <h3 className="mt-3 text-left text-[33px] leading-[1.2] font-black tracking-tighter md:mt-4 md:text-[80px] lg:text-[105px]">
-                  導入企業様の声
-                </h3>
+                <div className="vm-animation animation-ltr mt-3 text-left text-[33px] leading-[1.2] font-black tracking-tighter delay-1 md:mt-4 md:text-[80px] lg:text-[105px]">
+                  <h3 className="vm-animation-inner">導入企業様の声</h3>
+                </div>
                 <p className="text-left text-[20px] font-thin md:text-[32px]">
                   {`<`} <span className="font-bold">cases</span> {`>`}
                 </p>
@@ -246,13 +252,17 @@ export default function Product() {
             </div>
             <div className="mt-40 md:mt-50">
               <div className="flex justify-between max-md:flex-col-reverse">
-                <h3 className="fade-up mt-3 text-left text-[33px] leading-[1.2] font-black tracking-tighter md:mt-4 md:text-[60px] xl:text-[105px]">
-                  シンプルな料金設定。
-                  <br />
-                  事業者のことを考えた
-                  <br />
-                  完全後払い。
-                </h3>
+                <div className="fade-up mt-3 text-left text-[33px] leading-[1.2] font-black tracking-tighter md:mt-4 md:text-[60px] xl:text-[105px]">
+                  <div className="vm-animation animation-ltr">
+                    <p className="vm-animation-inner">シンプルな料金設定。</p>
+                  </div>
+                  <div className="vm-animation animation-ltr delay-1">
+                    <p className="vm-animation-inner">事業者のことを考えた</p>
+                  </div>
+                  <div className="vm-animation animation-ltr delay-2">
+                    <p className="vm-animation-inner">完全後払い。</p>
+                  </div>
+                </div>
                 <p className="fade-up text-right text-[20px] font-thin md:text-[32px]">
                   {`<`} <span className="font-bold">pricing</span> {`>`}
                 </p>
@@ -260,10 +270,24 @@ export default function Product() {
               <div className="fade-up mt-10 grid grid-cols-2 gap-10 md:mt-17 md:gap-x-[144px]">
                 {[
                   {
-                    text: '月間広告費用の9%だけ。完全後払いだから気軽に運用。',
+                    text: (
+                      <>
+                        月間広告費用の9%だけ。
+                        <br />
+                        完全後払いだから気軽に運用。
+                      </>
+                    ),
                   },
                   {
-                    text: '初期費用なし。固定費なし。最低利用期間もなし。',
+                    text: (
+                      <>
+                        初期費用なし。
+                        <br />
+                        固定費なし。
+                        <br />
+                        最低利用期間もなし。
+                      </>
+                    ),
                   },
                 ].map((item, index) => (
                   <div key={index}>

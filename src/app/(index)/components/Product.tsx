@@ -74,6 +74,7 @@ const ProductItem = ({ image, title }: { image: string; title: React.ReactNode }
 const Product = () => {
   const productContainerRef = useRef<HTMLDivElement>(null);
   useInfiniteScroll();
+
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap
@@ -159,13 +160,11 @@ const Product = () => {
       </div>
       <div className="mx-auto mt-8 w-full max-w-[440px] px-5 sm:max-w-[1380px] md:mt-12">
         <div className="md:px-5 xl:px-12">
-          <p className="fade-up text-[20px] font-bold md:text-[40px]">
-            完全自動<span className="font-hind text-[24px] md:text-[55px]">AI</span>広告運用
-          </p>
-          <h3 className="fade-up font-hind text-[110px] leading-none font-bold md:text-[250px]">
-            SEIKAI
+          <p className="fade-up text-[20px] font-bold md:text-[40px]">開発プロダクト</p>
+          <h3 className="vm-animation animation-ltr font-hind text-[110px] leading-none font-bold md:text-[250px]">
+            <div className="vm-animation-inner flex items-center pt-6">SEIKAI</div>
           </h3>
-          <div className="flex flex-wrap justify-end gap-4">
+          <div className="mt-3 flex flex-wrap justify-end gap-4 md:mt-5">
             <div className="fade-up relative min-h-15 bg-[#E0E0E0] pr-3 pl-20 text-[18px] font-semibold max-md:w-full max-md:max-w-[340px] md:pr-5 md:text-[28px]">
               <img
                 className="absolute -top-3 left-0 max-md:max-w-[70px]"
@@ -191,10 +190,9 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div ref={productContainerRef} className="explore relative flex w-full flex-col">
+      <div ref={productContainerRef} className="explore relative mt-10 flex w-full flex-col">
         <div className="relative w-full">
-          <div className="relative top-0 flex w-full flex-col justify-center py-[4rem] md:sticky md:min-h-screen md:pt-0 md:pb-10"></div>
-          <div className="flex w-full flex-col items-center justify-center px-[4vw] md:px-[2vw]">
+          <div className="flex w-full flex-col items-center justify-center px-[4vw] md:gap-[40vw] md:px-[2vw]">
             <div className="trigger-01 card js-card pointer-events-none mb-[5vw] flex w-full items-start justify-center md:sticky md:top-0 md:mb-0 md:h-screen">
               <div className="relative w-full md:max-w-[45vw]">
                 <div className="pt-[106.5%]"></div>

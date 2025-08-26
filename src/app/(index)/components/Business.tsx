@@ -10,8 +10,10 @@ export default function Business() {
           <p className="fade-up text-[20px] font-bold md:text-[40px]">
             時間をかけずに、成果を最大化
           </p>
-          <h3 className="fade-up relative z-10 text-[44px] leading-[1.2] font-black tracking-tight md:text-[90px] lg:text-[130px]">
-            <p className="relative">忙しい事業者様に</p>
+          <h3 className="fade-up relative z-10 text-[42px] leading-[1.2] font-black tracking-tight md:text-[90px] lg:text-[130px]">
+            <div className="vm-animation animation-ltr relative">
+              <p className="vm-animation-inner">忙しい事業者様に</p>
+            </div>
             <p className="relative ml-[10%] xl:ml-[350px]">選ばれています</p>
           </h3>
           <div className="-mt-6 flex gap-6 max-md:flex-col md:-mt-16 lg:-mt-28 xl:gap-[120px]">
@@ -19,7 +21,7 @@ export default function Business() {
               <img src="/assets/images/business.png" alt="" />
             </div>
             <div className="fade-up flex-1 md:mt-32 lg:mt-48">
-              <p className="text-[20px] leading-relaxed font-bold tracking-tighter md:text-[38px]">
+              <p className="scroll-text text-[20px] leading-relaxed font-bold tracking-tighter md:text-[38px]">
                 「広告運用に時間を割けない」
                 <br />
                 「でも成果は欲しい」

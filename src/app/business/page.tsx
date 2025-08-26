@@ -2,10 +2,12 @@
 import { Button } from '@/components/ui/Button';
 import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
+import { useSplitTextScroll } from '@/hooks/useSplitTextScroll';
 
 export default function Business() {
   const ref = useScrollAnimations();
   useInfiniteScroll();
+  useSplitTextScroll();
   return (
     <main ref={ref} className="overflow-hidden">
       <div className="pt-15 md:pt-20">
@@ -31,7 +33,7 @@ export default function Business() {
               </p>
               <div className="mt-6 flex justify-end md:mt-16">
                 <div className="w-full max-w-[920px]">
-                  <p className="fade-up text-[18px] leading-[1.6] font-bold tracking-tighter md:text-[38px]">
+                  <p className="scroll-text text-[18px] leading-[1.6] font-bold tracking-tighter md:text-[38px]">
                     AIS Japanは、AI技術を活用した
                     <br className="max-md:hidden" />
                     マーケティングソリューションの
@@ -56,14 +58,18 @@ export default function Business() {
             <div className="my-20 md:my-82">
               <div className="flex justify-end">
                 <div className="fade-up w-full max-w-[920px]">
-                  <p className="text-[20px] font-semibold md:text-[40px]">AI広告運用サービス</p>
-                  <h3 className="font-hind text-[80px] leading-[1.1] font-bold md:text-[150px] lg:text-[250px]">
-                    SEIKAI
+                  <div className="text-[20px] font-semibold md:text-[40px]">
+                    <div className="vm-animation animation-ltr">
+                      <p className="vm-animation-inner">AI広告運用サービス</p>
+                    </div>
+                  </div>
+                  <h3 className="vm-animation animation-ltr font-hind text-[80px] leading-[1.1] font-bold delay-1 md:text-[150px] lg:text-[250px]">
+                    <p className="vm-animation-inner">SEIKAI</p>
                   </h3>
                 </div>
               </div>
               <div className="flex">
-                <div className="fade-up mt-4 text-[17px] leading-[1.6] font-bold tracking-tighter md:mt-7 md:text-[38px]">
+                <div className="scroll-text mt-4 text-[17px] leading-[1.6] font-bold tracking-tighter md:mt-7 md:text-[38px]">
                   SEIKAIは、
                   <br />
                   オンライン広告と実際のビジネス成果を <br className="max-md:hidden" />

@@ -28,6 +28,13 @@ const useScrollAnimations = () => {
           scrollTrigger: { trigger: el },
         });
       },
+      'vm-animation': (el: HTMLElement) => {
+        void gsap.from(el, {
+          duration: 0.5,
+          ease: 'Power2.easeInOut',
+          scrollTrigger: { trigger: el, onEnter: () => el.classList.add('animate-in') },
+        });
+      },
     };
 
     const ctx = gsap.context(() => {

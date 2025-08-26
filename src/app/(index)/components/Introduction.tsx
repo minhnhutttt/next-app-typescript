@@ -1,11 +1,17 @@
+'use client';
 import { Button } from '@/components/ui/Button';
+import React, { useLayoutEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SplitText from 'gsap/SplitText';
 
+gsap.registerPlugin(ScrollTrigger, SplitText);
 export default function Introduction() {
   return (
     <section className="relative px-5 pt-40 md:pt-55">
       <div className="mx-auto flex w-full max-w-[1250px] justify-end">
         <div className="w-full max-w-[925px]">
-          <p className="fade-up text-[24px] leading-[1.6] font-bold md:text-[38px]">
+          <p className="scroll-text text-[24px] leading-[1.6] font-bold md:text-[38px]">
             AIS
             Japanが提供するAIプロダクト「SEIKAI」は広告運用を自動化するAI広告プラットフォームです。
             <br />
