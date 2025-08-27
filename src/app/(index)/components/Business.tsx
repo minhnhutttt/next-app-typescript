@@ -14,7 +14,9 @@ export default function Business() {
             <div className="vm-animation animation-ltr relative">
               <p className="vm-animation-inner">忙しい事業者様に</p>
             </div>
-            <p className="relative ml-[10%] xl:ml-[350px]">選ばれています</p>
+            <div className="vm-animation animation-ltr relative ml-[10%] delay-1 xl:ml-[350px]">
+              <p className="vm-animation-inner relative">選ばれています</p>
+            </div>
           </h3>
           <div className="-mt-6 flex gap-6 max-md:flex-col md:-mt-16 lg:-mt-28 xl:gap-[120px]">
             <div className="fade-up max-lg:w-1/2 max-md:w-full">
@@ -29,7 +31,7 @@ export default function Business() {
                 そんな企業様に選ばれています。基本は完全自動、余裕があるときに成約報告をするだけで、AIがどんどん賢くなり、広告効果が向上し続けます。
               </p>
               <div className="mt-6 flex md:mt-8">
-                <Button link="#">導入事例を見る</Button>
+                <Button link="/product/#case">導入事例を見る</Button>
               </div>
             </div>
           </div>

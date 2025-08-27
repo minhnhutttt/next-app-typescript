@@ -24,7 +24,7 @@ export default function About() {
         >
           <span className="shrink-0">about／</span>
         </h3>
-        <section className="px-5 pt-16 md:pt-24">
+        <section id="company-profile" className="px-5 pt-16 md:pt-24">
           <div className="mx-auto w-full max-w-[480px] md:max-w-[1250px]">
             <div>
               <p className="fade-up text-right text-[20px] font-thin md:text-[32px]">
@@ -44,13 +44,13 @@ export default function About() {
                     親会社：AIS Holdings Group Inc.（米国）
                   </p>
                   <div className="fade-up mt-8 flex flex-wrap gap-x-10 gap-y-5 md:mt-18 md:gap-18">
-                    <Button link="#">事業内容の詳細</Button>
-                    <Button link="#">SEIKAIについて</Button>
+                    <Button link="/business/#business">事業内容の詳細</Button>
+                    <Button link="/business/#ai">SEIKAIについて</Button>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="mt-20 md:mt-57">
+            <div id="corporate-message" className="mt-20 md:mt-57">
               <p className="fade-up text-[20px] font-thin md:text-[32px]">
                 {`<`} <span className="font-bold">Corporate Message</span> {`>`}
               </p>
@@ -90,13 +90,10 @@ export default function About() {
                     <br />
                     常に変化する市場で最高の広告成果を得られる世界を当たりまえにします。
                   </p>
-                  <div className="fade-up mt-8 flex flex-wrap gap-x-10 gap-y-5 md:mt-12 md:gap-18">
-                    <Button link="/business">私たちのソリューション</Button>
-                  </div>
                 </div>
               </div>
             </div>
-            <div className="mt-20 md:mt-57">
+            <div id="mission-vision" className="mt-20 md:mt-57">
               <h3 className="fade-up text-center text-[36px] leading-snug font-black tracking-tighter md:text-[105px]">
                 Mission & Vision
               </h3>
@@ -126,13 +123,10 @@ export default function About() {
                   </p>
                 </div>
               </div>
-              <div className="fade-up mt-12 flex flex-wrap justify-end gap-x-10 gap-y-5 md:mt-22 md:gap-18">
-                <Button link="#">ビジョンを実現するSEIKAI</Button>
-              </div>
             </div>
-            <div className="my-20 md:my-57">
+            <div id="about-ais-holdings-group" className="my-20 md:my-57">
               <p className="fade-up text-[20px] font-thin md:text-[32px]">
-                {`<`} <span className="font-bold">About AIS Holdings Group</span> {`>`}
+                {`<`} <span className="font-bold">About AIS Holdings Group inc.</span> {`>`}
               </p>
               <div className="mt-3 flex md:mt-6">
                 <div className="w-full">

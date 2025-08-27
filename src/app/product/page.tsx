@@ -200,7 +200,7 @@ export default function Product() {
             </div>
           </div>
         </section>
-        <section className="mt-40 md:mt-90">
+        <section id="platforms" className="mt-40 md:mt-90">
           <div className="mx-auto w-full max-w-[1440px] max-md:px-5 md:pl-10 xl:pl-22">
             <div className="flex justify-between pr-10 max-xl:flex-col xl:pr-25">
               <p className="fade-up text-left text-[20px] font-thin md:text-[32px]">
@@ -241,7 +241,7 @@ export default function Product() {
                   ))}
                 </div>
                 <div className="fade-up mt-12 flex md:mt-24">
-                  <Button link="/">今すぐGoogle Adsで始める</Button>
+                  <Button link="/contact">今すぐGoogle Adsで始める</Button>
                 </div>
               </div>
               <div className="fade-up">
@@ -250,7 +250,7 @@ export default function Product() {
             </div>
           </div>
         </section>
-        <section className="mt-30 px-5 md:mt-60">
+        <section id="features" className="mt-30 px-5 md:mt-60">
           <div className="mx-auto w-full max-w-[1250px]">
             <div className="">
               <p className="fade-up text-center text-[20px] font-thin md:text-[32px]">
@@ -289,11 +289,8 @@ export default function Product() {
                   </div>
                 ))}
               </div>
-              <div className="fade-up mt-12 flex justify-center md:mt-18">
-                <Button link="/">料金・導入の流れを確認</Button>
-              </div>
             </div>
-            <div className="mt-40 md:mt-70">
+            <div className="mt-40 md:mt-70" id="case">
               <div className="fade-up flex justify-between">
                 <div className="vm-animation animation-ltr mt-3 text-left text-[33px] leading-[1.2] font-black tracking-tighter delay-1 md:mt-4 md:text-[80px] lg:text-[105px]">
                   <h3 className="vm-animation-inner">導入企業様の声</h3>
@@ -330,12 +327,12 @@ export default function Product() {
                 ))}
               </div>
               <div className="fade-up mt-12 flex justify-center md:mt-18">
-                <Button link="/" className="max-md:text-[22px]">
+                <Button link="/contact" className="max-md:text-[22px]">
                   あなたも始めてみませんか？
                 </Button>
               </div>
             </div>
-            <div className="mt-40 md:mt-50">
+            <div className="mt-40 md:mt-50" id="price">
               <div className="flex justify-between max-md:flex-col-reverse">
                 <div className="fade-up mt-3 text-left text-[33px] leading-[1.2] font-black tracking-tighter md:mt-4 md:text-[60px] xl:text-[105px]">
                   <div className="vm-animation animation-ltr">
@@ -493,8 +490,7 @@ export default function Product() {
             </div>
           </div>
           <div className="fade-up flex flex-wrap justify-center gap-x-10 gap-y-5 max-md:mt-10 md:gap-18">
-            <Button link="#">今すぐ始める</Button>
-            <Button link="#">無料相談を予約</Button>
+            <Button link="/contact">今すぐ始める</Button>
           </div>
         </div>
       </div>

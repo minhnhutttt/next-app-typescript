@@ -63,12 +63,12 @@ const data = [
 ];
 
 const ProductItem = ({ image, title }: { image: string; title: React.ReactNode }) => (
-  <Link href="/" className="fade-up relative block aspect-[40/41] w-full">
+  <a href="/" className="fade-up relative block aspect-[40/41] w-full">
     <img src={image} className="w-full" />
     <div className="absolute inset-0 flex items-end bg-[#1E1E1E]/[0.6] p-6 md:px-[2vw] md:py-[4vw]">
       <h4 className="font-hind text-[24px] font-bold text-white md:text-[2.5vw]">{title}</h4>
     </div>
-  </Link>
+  </a>
 );
 
 const Product = () => {
@@ -246,47 +246,47 @@ const Product = () => {
       </div>
       <div className="horizontal-section pointer-events-auto relative z-[3] hidden opacity-0 hover:opacity-100 md:-mt-[10vw] md:block md:py-[10vw]">
         <div className="flex flex-wrap justify-between gap-[2vw] px-[4vw] md:px-[2vw]">
-          <Link
+          <a
             href="/"
             className="js-target-position pointer-events-auto relative aspect-[40/41] w-[30vw] overflow-hidden"
           >
             <div className="pt-[106.5%]"></div>
-          </Link>
-          <Link
+          </a>
+          <a
             href="/"
             className="js-target-position pointer-events-auto relative aspect-[40/41] w-[30vw] overflow-hidden"
           >
             <div className="pt-[106.5%]"></div>
-          </Link>
-          <Link
+          </a>
+          <a
             href="/"
             className="js-target-position pointer-events-auto relative aspect-[40/41] w-[30vw] overflow-hidden"
           >
             <div className="pt-[106.5%]"></div>
-          </Link>
-          <Link
+          </a>
+          <a
             href="/"
             className="js-target-position pointer-events-auto relative aspect-[40/41] w-[30vw] overflow-hidden"
           >
             <div className="pt-[106.5%]"></div>
-          </Link>
-          <Link
+          </a>
+          <a
             href="/"
             className="js-target-position pointer-events-auto relative aspect-[40/41] w-[30vw] overflow-hidden"
           >
             <div className="pt-[106.5%]"></div>
-          </Link>
-          <Link
+          </a>
+          <a
             href="/"
             className="js-target-position pointer-events-auto relative aspect-[40/41] w-[30vw] overflow-hidden"
           >
             <div className="pt-[106.5%]"></div>
-          </Link>
+          </a>
         </div>
       </div>
       <div className="fade-up flex flex-wrap justify-end gap-x-10 gap-y-5 px-5 md:gap-18 md:px-[50px]">
-        <Button link="#">SEIKAIを詳しく見る</Button>
-        <Button link="#">料金を確認</Button>
+        <Button link="/product">SEIKAIを詳しく見る</Button>
+        <Button link="/product/#price">料金を確認</Button>
       </div>
     </section>
   );

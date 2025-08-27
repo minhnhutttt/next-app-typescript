@@ -17,7 +17,7 @@ export default function Business() {
         >
           <span className="shrink-0">busines／</span>
         </h3>
-        <section className="px-5 pt-16 md:pt-24">
+        <section id="business" className="px-5 pt-16 md:pt-24">
           <div className="mx-auto w-full max-w-[480px] md:max-w-[1250px]">
             <div>
               <p className="fade-up text-left text-[20px] font-thin md:text-[32px]">
@@ -55,7 +55,7 @@ export default function Business() {
                 </div>
               </div>
             </div>
-            <div className="my-20 md:my-82">
+            <div id="ai" className="my-20 md:my-82">
               <div className="flex justify-end">
                 <div className="fade-up w-full max-w-[920px]">
                   <div className="text-[20px] font-semibold md:text-[40px]">
@@ -83,7 +83,7 @@ export default function Business() {
                   <br className="max-md:hidden" />
                   真のROIを実現します。
                   <div className="fade-up mt-8 flex flex-wrap justify-end gap-x-10 gap-y-5 md:mt-10 md:gap-18 xl:pr-5">
-                    <Button link="#">SEIKAIの詳細を見る</Button>
+                    <Button link="/product">SEIKAIの詳細を見る</Button>
                   </div>
                 </div>
               </div>

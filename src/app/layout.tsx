@@ -3,6 +3,7 @@ import { Noto_Sans_JP, Hind, Inter, Arimo } from 'next/font/google';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import './globals.css';
+import '@/styles/styles.css';
 
 import { SITE_URL, SITE_NAME, DEFAULT_DESCRIPTION, OG, TWITTER } from '@/config/constants';
 

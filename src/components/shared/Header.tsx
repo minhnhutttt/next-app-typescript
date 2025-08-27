@@ -36,9 +36,9 @@ const Header = () => {
       className={`absolute inset-x-0 top-0 z-50 flex items-center justify-between p-5 ${textColor}`}
     >
       <div className="mx-auto flex w-full max-w-[1240px] items-center gap-12 py-2 max-md:justify-between md:py-4 lg:gap-36">
-        <Link href="/" className="block text-[20px] font-black md:text-[26px]" onClick={close}>
+        <a href="/" className="block text-[20px] font-black md:text-[26px]" onClick={close}>
           AIS Japan
-        </Link>
+        </a>
 
         {/* NAV */}
         <nav
@@ -59,7 +59,7 @@ const Header = () => {
 
                 return (
                   <li key={`${item.href}-${item.label}`}>
-                    <Link
+                    <a
                       href={item.href}
                       onClick={close}
                       className={`block transition-opacity duration-200 hover:opacity-75 ${
@@ -67,7 +67,7 @@ const Header = () => {
                       }`}
                     >
                       <span>{item.label}</span>
-                    </Link>
+                    </a>
                   </li>
                 );
               })}

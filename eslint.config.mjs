@@ -44,4 +44,11 @@ export default [
       ],
     },
   },
+
+  // ⬇️ Turn off the Next.js anchor rule globally
+  {
+    rules: {
+      '@next/next/no-html-link-for-pages': 'off',
+    },
+  },
 ];
