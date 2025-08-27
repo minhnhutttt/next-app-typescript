@@ -2,10 +2,18 @@
 import { Button } from '@/components/ui/Button';
 import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
+import { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.config({
+  nullTargetWarn: false,
+});
 
 const ProcessItem = ({ ic, title, text }: { ic: string; title: string; text: string }) => (
-  <div className="fade-up u-gradient-02 h-[300px] w-[320px] md:h-[355px] md:w-[360px]">
-    <div className="flex h-full flex-col items-center px-2 pt-14 md:pt-20">
+  <div className="u-gradient-02 relative aspect-[355/360] w-full">
+    <div className="flex h-full flex-col items-center justify-center px-2">
       <div className="mb-3 flex h-[100px] items-center md:h-[130px]">
         <img src={ic} alt="" className="max-md:max-w-[100px]" />
       </div>
@@ -19,17 +27,94 @@ const ProcessItem = ({ ic, title, text }: { ic: string; title: string; text: str
 
 export default function Product() {
   const ref = useScrollAnimations();
+  const productContainerRef = useRef<HTMLDivElement>(null);
+
   useInfiniteScroll();
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: '.horizontal-section',
+            start: 'top +=150%',
+            end: 'bottom 150%',
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+        })
+        .to('.js-card-inner-01', {
+          scale: 0.666667,
+          x: 0,
+          top: '100vh',
+          left: '-32.633vw',
+        })
+        .to(
+          '.js-card-inner-02',
+          {
+            scale: 0.666667,
+            top: '100vh',
+            left: '0',
+          },
+          '<',
+        )
+        .to(
+          '.js-card-inner-03',
+          {
+            scale: 0.666667,
+            x: 0,
+            top: '100vh',
+            left: '32.633vw',
+          },
+          '<',
+        )
+        .to(
+          '.js-card-inner-04',
+          {
+            scale: 0.666667,
+            x: 0,
+            top: 'calc(100vh + 33vw)',
+            left: '-32.633vw',
+          },
+          '<',
+        )
+        .to(
+          '.js-card-inner-05',
+          {
+            scale: 0.666667,
+            top: 'calc(100vh + 33vw)',
+            left: '0',
+          },
+          '<',
+        )
+        .to(
+          '.js-card-inner-06',
+          {
+            scale: 0.666667,
+            x: 0,
+            top: 'calc(100vh + 33vw)',
+            left: '32.633vw',
+          },
+          '<',
+        );
+
+      ScrollTrigger.refresh();
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <main ref={ref} className="overflow-hidden">
+    <main ref={ref} className="">
       <div className="pt-15 md:pt-20">
-        <h3
-          data-infinite-scroll="4:10s"
-          className="font-arimo u-text-gradient-01 flex w-max text-[100px] font-bold whitespace-nowrap italic md:text-[250px]"
-        >
-          <span className="shrink-0">product／</span>
-        </h3>
+        <div className="overflow-hidden">
+          <h3
+            data-infinite-scroll="4:10s"
+            className="font-arimo u-text-gradient-01 flex w-max text-[100px] font-bold whitespace-nowrap italic md:text-[250px]"
+          >
+            <span className="shrink-0">product／</span>
+          </h3>
+        </div>
         <section className="px-5 pt-16 md:pt-24">
           <div className="mx-auto w-full max-w-[480px] md:max-w-[1250px]">
             <div>
@@ -296,67 +381,122 @@ export default function Product() {
                 ))}
               </div>
             </div>
-            <div className="mt-40 mb-24 md:mt-50 md:mb-[160px]">
-              <p className="fade-up text-center text-[32px] font-black md:text-[64px]">
-                導入の流れ
-              </p>
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-5 max-md:flex-col md:mt-14 md:gap-x-10 md:gap-y-7 xl:gap-x-20 xl:gap-y-[51px]">
-                <ProcessItem
-                  ic="/assets/images/process-01.svg"
-                  title="無料相談"
-                  text="メールにてお問い合わせ"
-                />
-                <ProcessItem
-                  ic="/assets/images/process-02.svg"
-                  title="アカウント連携"
-                  text="5分で完了"
-                />
-                <ProcessItem
-                  ic="/assets/images/process-03.svg"
-                  title="LP登録・初回スキャン"
-                  text="URLを送信"
-                />
-                <ProcessItem
-                  ic="/assets/images/process-04.svg"
-                  title="AI自動設定"
-                  text="完了後は即Googleの審査へ"
-                />
-                <ProcessItem
-                  ic="/assets/images/process-05.svg"
-                  title="運用スタート"
-                  text="AIが24/365体制で働きます"
-                />
-                <div className="space-y-8 md:space-y-10">
-                  <div className="fade-up">
-                    <p className="-ml-5 text-[18px] font-bold tracking-tighter md:text-[24px]">
-                      LPの内容が変わったらSEIKAIに通知
-                    </p>
-                    <ul className="mt-2 list-disc pl-5 text-[16px] font-medium md:text-[20px]">
-                      <li>更新したらURLを送信するだけ</li>
-                      <li>AIが内容を解析して広告を自動調整</li>
-                    </ul>
+          </div>
+        </section>
+
+        <div className="mt-40 mb-24 md:mt-50 md:mb-[160px]">
+          <p className="fade-up text-center text-[32px] font-black md:text-[64px]">導入の流れ</p>
+          <div ref={productContainerRef} className="explore relative mt-10 flex w-full flex-col">
+            <div className="relative w-full">
+              <div className="flex w-full flex-col items-center justify-center px-[4vw] md:gap-[40vw] md:px-[2vw]">
+                <div className="trigger-01 card js-card pointer-events-none mb-[5vw] flex w-full items-start justify-center md:sticky md:top-0 md:mb-0 md:h-screen">
+                  <div className="relative w-full md:max-w-[45vw]">
+                    <div className="pt-[106.5%]"></div>
+                    <div className="js-card-inner-01 scale-sp absolute top-[0] left-[0] z-[3] flex h-full w-full origin-top items-center justify-center overflow-hidden bg-white max-md:!top-0 max-md:!left-0">
+                      <ProcessItem
+                        ic="/assets/images/process-01.svg"
+                        title="無料相談"
+                        text="メールにてお問い合わせ"
+                      />
+                    </div>
                   </div>
-                  <div className="fade-up">
-                    <p className="-ml-5 text-[18px] font-bold tracking-tighter md:text-[24px]">
-                      広告経由の成約報告で効果倍増
-                    </p>
-                    <ul className="mt-2 list-disc pl-5 text-[16px] font-medium md:text-[20px]">
-                      <li>時間があるときに1分で報告</li>
-                      <li>AIが学習して自動的に改善</li>
-                      <li>報告すればするほど賢くなる</li>
-                      <li>LP単位でAI広告エージェントを育成</li>
-                      <li>最大効率の広告運用を実現</li>
-                    </ul>
+                </div>
+                <div className="trigger-02 card js-card pointer-events-none mb-[5vw] flex w-full items-start justify-center md:sticky md:top-0 md:mb-0 md:h-screen">
+                  <div className="relative w-full md:max-w-[45vw]">
+                    <div className="pt-[106.5%]"></div>
+                    <div className="js-card-inner-02 scale-sp absolute top-[0] left-[0] z-[3] flex h-full w-full origin-top items-center justify-center overflow-hidden bg-white max-md:!top-0 max-md:!left-0">
+                      <ProcessItem
+                        ic="/assets/images/process-02.svg"
+                        title="アカウント連携"
+                        text="5分で完了"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="trigger-03 card js-card pointer-events-none mb-[5vw] flex w-full items-start justify-center md:sticky md:top-0 md:mb-0 md:h-screen">
+                  <div className="relative w-full md:max-w-[45vw]">
+                    <div className="pt-[106.5%]"></div>
+                    <div className="js-card-inner-03 scale-sp absolute top-[0] left-[0] z-[3] flex h-full w-full origin-top items-center justify-center overflow-hidden bg-white max-md:!top-0 max-md:!left-0">
+                      <ProcessItem
+                        ic="/assets/images/process-03.svg"
+                        title="LP登録・初回スキャン"
+                        text="URLを送信"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="trigger-04 card js-card pointer-events-none mb-[5vw] flex w-full items-start justify-center md:sticky md:top-0 md:mb-0 md:h-screen">
+                  <div className="relative w-full md:max-w-[45vw]">
+                    <div className="pt-[106.5%]"></div>
+                    <div className="js-card-inner-04 scale-sp absolute top-[0] left-[0] z-[3] flex h-full w-full origin-top items-center justify-center overflow-hidden bg-white max-md:!top-0 max-md:!left-0">
+                      <ProcessItem
+                        ic="/assets/images/process-04.svg"
+                        title="AI自動設定"
+                        text="完了後は即Googleの審査へ"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="trigger-05 card js-card pointer-events-none mb-[5vw] flex w-full items-start justify-center md:sticky md:top-0 md:mb-0 md:h-screen">
+                  <div className="relative w-full md:max-w-[45vw]">
+                    <div className="pt-[106.5%]"></div>
+                    <div className="js-card-inner-05 scale-sp absolute top-[0] left-[0] z-[3] flex h-full w-full origin-top items-center justify-center overflow-hidden bg-white max-md:!top-0 max-md:!left-0">
+                      <ProcessItem
+                        ic="/assets/images/process-05.svg"
+                        title="運用スタート"
+                        text="AIが24/365体制で働きます"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="trigger-06 card js-card pointer-events-none mb-[5vw] flex w-full items-start justify-center md:sticky md:top-0 md:mb-0 md:h-screen">
+                  <div className="relative w-full md:max-w-[45vw]">
+                    <div className="pt-[106.5%]"></div>
+                    <div className="js-card-inner-06 scale-sp absolute top-[0] left-[0] z-[3] flex h-full w-full origin-top items-center justify-center overflow-hidden bg-white max-md:!top-0 max-md:!left-0">
+                      <div className="space-y-8 md:space-y-10">
+                        <div className="fade-up">
+                          <p className="-ml-5 text-[18px] font-bold tracking-tighter md:text-[24px]">
+                            LPの内容が変わったらSEIKAIに通知
+                          </p>
+                          <ul className="mt-2 list-disc pl-5 text-[16px] font-medium md:text-[20px]">
+                            <li>更新したらURLを送信するだけ</li>
+                            <li>AIが内容を解析して広告を自動調整</li>
+                          </ul>
+                        </div>
+                        <div className="fade-up">
+                          <p className="-ml-5 text-[18px] font-bold tracking-tighter md:text-[24px]">
+                            広告経由の成約報告で効果倍増
+                          </p>
+                          <ul className="mt-2 list-disc pl-5 text-[16px] font-medium md:text-[20px]">
+                            <li>時間があるときに1分で報告</li>
+                            <li>AIが学習して自動的に改善</li>
+                            <li>報告すればするほど賢くなる</li>
+                            <li>LP単位でAI広告エージェントを育成</li>
+                            <li>最大効率の広告運用を実現</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="fade-up mt-20 flex flex-wrap justify-center gap-x-10 gap-y-5 md:mt-31 md:gap-18">
-                <Button link="#">今すぐ始める</Button>
-                <Button link="#">無料相談を予約</Button>
-              </div>
             </div>
           </div>
-        </section>
+          <div className="horizontal-section pointer-events-auto relative z-[3] hidden opacity-0 hover:opacity-100 md:-mt-[10vw] md:block md:py-[10vw]">
+            <div className="flex flex-wrap justify-between gap-[2vw] px-[4vw] md:px-[2vw]">
+              <div className="js-target-position pointer-events-auto relative aspect-[355/360] w-[30vw] overflow-hidden"></div>
+              <div className="js-target-position pointer-events-auto relative aspect-[355/360] w-[30vw] overflow-hidden"></div>
+              <div className="js-target-position pointer-events-auto relative aspect-[355/360] w-[30vw] overflow-hidden"></div>
+              <div className="js-target-position pointer-events-auto relative aspect-[355/360] w-[30vw] overflow-hidden"></div>
+              <div className="js-target-position pointer-events-auto relative aspect-[355/360] w-[30vw] overflow-hidden"></div>
+              <div className="js-target-position pointer-events-auto relative aspect-[355/360] w-[30vw] overflow-hidden"></div>
+            </div>
+          </div>
+          <div className="fade-up flex flex-wrap justify-center gap-x-10 gap-y-5 max-md:mt-10 md:gap-18">
+            <Button link="#">今すぐ始める</Button>
+            <Button link="#">無料相談を予約</Button>
+          </div>
+        </div>
       </div>
     </main>
   );
