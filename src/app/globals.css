@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-inter);
+  --font-audiowide: var(--font-audiowide);
+  --font-tomorrow: var(--font-tomorrow);
 }
 
 html {

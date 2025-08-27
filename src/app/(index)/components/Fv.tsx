@@ -1,10 +1,10 @@
 export default function Fv() {
   return (
-    <section className="relative z-10 flex min-h-[550px] justify-center pt-[150px] md:min-h-[800px] md:pt-[170px]">
+    <section className="relative z-10 md:h-[880px]">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 z-10 bg-[url(/assets/images/fv-bg.png)] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-[url(/assets/images/bg-fv.png)] bg-cover bg-center"></div>
         <video
-          className="relative h-full w-full opacity-40 max-xl:object-cover"
+          className="relative z-10 h-full w-full opacity-40 max-xl:object-cover"
           data-lazy-video=""
           data-lazy=""
           data-autoplay="true"
@@ -16,6 +16,24 @@ export default function Fv() {
           playsInline
           data-loaded="true"
         ></video>
+      </div>
+      <div className="relative z-20 h-full">
+        <div className="relative mx-auto flex h-full w-full max-w-[1440px] max-md:flex-col md:pl-5">
+          <div className="relative z-10 pt-25 md:w-[50%] md:pt-[120px] xl:w-[717px]">
+            <h1 className="flex items-center justify-center">
+              <img src="/assets/images/fv-text.svg" alt="" />
+            </h1>
+            <div className="-mt-5 flex justify-center">
+              <img src="/assets/images/fv-phones.png" alt="" />
+            </div>
+          </div>
+
+          <div className="inset-0 flex items-end justify-end md:absolute md:pt-15">
+            <span className="md:max-xl:w-[70%]">
+              <img src="/assets/images/chara-box.png" alt="" />
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );

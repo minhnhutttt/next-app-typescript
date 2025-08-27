@@ -1,17 +1,25 @@
 import type { Metadata } from 'next';
-import { Noto_Sans_JP, Inter } from 'next/font/google';
+import { Audiowide, Inter, Tomorrow } from 'next/font/google';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import './globals.css';
+import '@/styles/styles.scss';
 
 import { SITE_URL, SITE_NAME, DEFAULT_DESCRIPTION, OG, TWITTER } from '@/config/constants';
 
-const noto = Noto_Sans_JP({
+const audiowide = Audiowide({
+  weight: '400',
   subsets: ['latin'],
+  variable: '--font-audiowide',
+});
+
+const tomorrow = Tomorrow({
+  weight: '600',
+  subsets: ['latin'],
+  variable: '--font-tomorrow',
 });
 
 const inter = Inter({
-  variable: '--font-inter',
   subsets: ['latin'],
 });
 
@@ -41,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${noto.className} ${inter.variable} antialiased`}>
+      <body className={`${inter.className} ${audiowide.variable} ${tomorrow.variable} antialiased`}>
         <Header />
         {children}
         <Footer />
