@@ -8,17 +8,19 @@ import SplitText from 'gsap/SplitText';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const StrategyContent = ({
+  id,
   video,
   title,
   subtitle,
   children,
 }: {
+  id: string;
   video: string;
   title: React.ReactNode;
   subtitle: React.ReactNode;
   children: React.ReactNode;
 }) => (
-  <div className="fade-up group flex items-start max-md:flex-col md:even:flex-row-reverse">
+  <div id={id} className="fade-up group flex items-start max-md:flex-col md:even:flex-row-reverse">
     <div className="md:w-[950px]">
       <div className="relative">
         <video
@@ -73,6 +75,7 @@ export default function Strategy() {
     <section className="relative z-10 mt-20 pb-25 md:mt-40 md:pb-50">
       <div className="relative mx-auto w-full max-w-[440px] space-y-30 md:max-w-[1440px] md:space-y-60">
         <StrategyContent
+          id="marketing-technology-innovation"
           video="/assets/videos/b2.mp4"
           title={
             <>
@@ -87,6 +90,7 @@ export default function Strategy() {
           creates solutions that deliver superior results with minimal human intervention.
         </StrategyContent>
         <StrategyContent
+          id="ai-powered-automation"
           video="/assets/videos/b2.mp4"
           title={<>AI-Powered Automation</>}
           subtitle="Intelligence That Scales"
@@ -97,6 +101,7 @@ export default function Strategy() {
           improves performance.
         </StrategyContent>
         <StrategyContent
+          id="strategic-global-expansion"
           video="/assets/videos/b3.mp4"
           title={<>Strategic Global Expansion</>}
           subtitle="Bringing Innovation to Every Market"
@@ -107,6 +112,7 @@ export default function Strategy() {
           marketing excellence.
         </StrategyContent>
         <StrategyContent
+          id="investment-philosophy"
           video="/assets/videos/b4.mp4"
           title={<> Investment Philosophy</>}
           subtitle="Creating Value Through Accessibility"

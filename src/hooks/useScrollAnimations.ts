@@ -28,6 +28,15 @@ const useScrollAnimations = () => {
           scrollTrigger: { trigger: el },
         });
       },
+      'contact-up': (el: HTMLElement) => {
+        void gsap.from(el, {
+          autoAlpha: 0,
+          yPercent: 100,
+          duration: 1,
+          ease: 'power2.inOut',
+          scrollTrigger: { trigger: el },
+        });
+      },
     };
 
     const ctx = gsap.context(() => {

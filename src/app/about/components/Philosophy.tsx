@@ -28,7 +28,10 @@ const data = [
 export default function Philosophy() {
   return (
     <section className="relative z-10 px-5">
-      <div className="relative mx-auto w-full max-w-[1400px] pt-25 md:pt-50">
+      <div
+        id="our-purpose-and-principles"
+        className="relative mx-auto w-full max-w-[1400px] pt-25 md:pt-50"
+      >
         <div className="fade-up border-b border-white pb-8 md:pb-[60px]">
           <h2 className="text-center text-[28px] leading-[1.3] font-bold tracking-wider md:text-[46px]">
             Our Purpose and Principles

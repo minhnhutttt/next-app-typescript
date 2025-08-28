@@ -1,6 +1,6 @@
 export default function Leader() {
   return (
-    <section className="relative z-10 px-5">
+    <section id="leadership" className="relative z-10 px-5">
       <div className="relative mx-auto w-full max-w-[1400px] pt-25 pb-28 md:pt-40 md:pb-45">
         <div className="fade-up border-b border-white pb-8 md:pb-[60px]">
           <h2 className="text-center text-[28px] leading-[1.3] font-bold tracking-wider md:text-[46px]">

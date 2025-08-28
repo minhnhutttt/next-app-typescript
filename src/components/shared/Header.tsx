@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useCallback, useEffect, useId, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -30,9 +29,9 @@ const Header = () => {
   return (
     <header className="absolute inset-x-0 top-0 w-full bg-white/5 p-4">
       <div className="mx-auto flex w-full max-w-[1320px] items-center justify-between">
-        <Link href="/" className="block" onClick={close}>
+        <a href="/" className="block" onClick={close}>
           <img src="/assets/images/logo.svg" alt="" />
-        </Link>
+        </a>
 
         {/* NAV */}
         <nav
@@ -51,7 +50,7 @@ const Header = () => {
                 const isActive = pathname === item.href;
                 return (
                   <li key={`${item.href}-${item.label}`}>
-                    <Link
+                    <a
                       href={item.href}
                       onClick={close}
                       className={`block border-b-2 transition-opacity duration-200 hover:opacity-75 ${
@@ -59,19 +58,19 @@ const Header = () => {
                       }`}
                     >
                       <span>{item.label}</span>
-                    </Link>
+                    </a>
                   </li>
                 );
               })}
             </ul>
-            <Link
-              href="/"
+            <a
+              href="mailto:info@ais-holdings-group.ai"
               className="flex h-12 w-[160px] justify-center rounded-full bg-[linear-gradient(135deg,_#00B70C_0%,_#00D1C3_49.04%,_#2500C8_100%)] p-0.5"
             >
               <span className="flex h-full w-full items-center justify-center rounded-full bg-black text-[13px] md:text-[16px]">
                 CONTACT
               </span>
-            </Link>
+            </a>
           </div>
         </nav>
 
