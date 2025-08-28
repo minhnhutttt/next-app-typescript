@@ -64,12 +64,6 @@ export default function Philosophy() {
             <p className="fade-up text-[21vw] leading-[0.9] font-extrabold text-[#552F44]/[0.3] uppercase italic md:-ml-20 md:text-[340px]">
               CORE
             </p>
-            <div className="fade-up inset-0 flex items-center px-5 text-[18px] tracking-wider max-md:-mt-[9vw] md:absolute md:px-24 md:text-[24px]">
-              <p className="max-w-[940px]">
-                A world where sophisticated marketing capabilities are fundamental business
-                infrastructure, accessible to all companies competing in the digital economy.
-              </p>
-            </div>
           </div>
           <div className="relative">
             <p className="fade-up text-right text-[21vw] leading-[0.9] font-extrabold text-[#552F44]/[0.3] uppercase italic md:-mt-13 md:pb-24 md:text-[340px]">

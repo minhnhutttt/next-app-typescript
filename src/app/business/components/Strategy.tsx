@@ -76,7 +76,7 @@ export default function Strategy() {
       <div className="relative mx-auto w-full max-w-[440px] space-y-30 md:max-w-[1440px] md:space-y-60">
         <StrategyContent
           id="marketing-technology-innovation"
-          video="/assets/videos/b2.mp4"
+          video="/assets/videos/b1.mp4"
           title={
             <>
               Marketing Technology <br />
