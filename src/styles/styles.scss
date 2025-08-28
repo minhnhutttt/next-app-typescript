@@ -1,3 +1,9 @@
+.u-text-gradient {
+  background: linear-gradient(90deg, #1a68b0 1.04%, #76d4ff 96.45%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .cybr-btn {
   --primary: #01ffaa;
   --shadow-primary: #ff3f1f;

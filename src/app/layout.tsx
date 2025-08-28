@@ -50,9 +50,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${audiowide.variable} ${tomorrow.variable} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <div className="bg-[url(/assets/images/css-bg.png)]">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
