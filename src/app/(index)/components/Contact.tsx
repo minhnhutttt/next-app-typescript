@@ -15,18 +15,9 @@ export default function Contact() {
             href="/"
             className="flex h-16 w-[330px] items-center justify-center rounded-[45px] bg-[#090920] text-[28px] font-bold text-white md:h-[98px] md:w-[370px] md:rounded-[45px] md:text-[38px]"
           >
-            SEIKAI無料相談
-          </a>
-          <a
-            href="/"
-            className="flex h-16 w-[330px] items-center justify-center rounded-[45px] bg-[#090920] text-[28px] font-bold text-white md:h-[98px] md:w-[370px] md:rounded-[45px] md:text-[38px]"
-          >
             お問い合わせ
           </a>
         </div>
-        <p className="fade-up mt-3 text-center text-[22px] font-semibold md:mt-5 md:text-[40px]">
-          まずはお気軽にご相談ください
-        </p>
       </div>
     </section>
   );

@@ -160,8 +160,12 @@ const Product = () => {
       </div>
       <div className="mx-auto mt-8 w-full max-w-[440px] px-5 sm:max-w-[1380px] md:mt-12">
         <div className="md:px-5 xl:px-12">
-          <p className="fade-up text-[20px] font-bold md:text-[40px]">開発プロダクト</p>
-          <h3 className="vm-animation animation-ltr font-hind text-[110px] leading-none font-bold md:text-[250px]">
+          <div className="vm-animation animation-ltr">
+            <p className="vm-animation-inner text-[20px] font-bold md:text-[40px]">
+              開発プロダクト
+            </p>
+          </div>
+          <h3 className="vm-animation animation-ltr font-hind text-[110px] leading-none font-bold delay-1 md:text-[250px]">
             <div className="vm-animation-inner flex items-center pt-6">SEIKAI</div>
           </h3>
           <div className="mt-3 flex flex-wrap justify-end gap-4 md:mt-5">

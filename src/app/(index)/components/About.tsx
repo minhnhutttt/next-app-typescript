@@ -13,9 +13,11 @@ export default function About() {
       </h3>
       <div className="mx-auto flex w-full max-w-[1290px] justify-end px-5 pt-5">
         <div className="fade-up w-full text-right leading-snug">
-          <p className="text-[20px] font-bold tracking-tight md:text-[40px]">
-            AIの力で、広告運用の民主化を実現
-          </p>
+          <div className="vm-animation animation-ltr">
+            <p className="vm-animation-inner text-[20px] font-bold tracking-tight md:text-[40px]">
+              AIの力で、広告運用の民主化を実現
+            </p>
+          </div>
           <div className="mt-2 text-[38px] font-black tracking-tight md:text-[105px]">
             <h3 className="vm-animation animation-ltr">
               <div className="vm-animation-inner">すべての事業者に</div>

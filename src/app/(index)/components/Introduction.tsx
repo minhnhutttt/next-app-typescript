@@ -26,7 +26,7 @@ export default function Introduction() {
           </p>
           <div className="fade-up mt-8 flex flex-wrap gap-x-10 gap-y-5 md:mt-12 md:gap-18">
             <Button link="/product">SEIKAIを詳しく見る</Button>
-            <Button link="#">無料相談</Button>
+            <Button link="/contact">無料相談</Button>
           </div>
         </div>
       </div>

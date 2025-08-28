@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-[1240px]">
         <div>
           <a href="/" className="text-[28px] font-bold text-white md:text-[48px]">
-            AIS Japan
+            <img className="w-[200px] md:w-[280px]" src="/assets/images/logo.png" alt="AIS Japan" />
           </a>
         </div>
         <div className="mt-10 grid grid-cols-2 gap-6 gap-y-10 md:mt-16 md:grid-cols-2 md:gap-4 lg:grid-cols-4">

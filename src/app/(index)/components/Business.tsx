@@ -7,10 +7,12 @@ export default function Business() {
     <section className="relative overflow-hidden pt-32 md:pt-99">
       <div className="mx-auto w-full max-w-[440px] px-5 sm:max-w-[1280px]">
         <div className="">
-          <p className="fade-up text-[20px] font-bold md:text-[40px]">
-            時間をかけずに、成果を最大化
-          </p>
-          <h3 className="fade-up relative z-10 text-[42px] leading-[1.2] font-black tracking-tight md:text-[90px] lg:text-[130px]">
+          <div className="vm-animation animation-ltr">
+            <p className="vm-animation-inner text-[20px] font-bold md:text-[40px]">
+              時間をかけずに、成果を最大化
+            </p>
+          </div>
+          <h3 className="relative z-10 text-[42px] leading-[1.2] font-black tracking-tight md:text-[90px] lg:text-[130px]">
             <div className="vm-animation animation-ltr relative">
               <p className="vm-animation-inner">忙しい事業者様に</p>
             </div>
