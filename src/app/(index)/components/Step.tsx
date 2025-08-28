@@ -33,10 +33,18 @@ const StepItem = ({
         <p className="text-[15px] md:text-[18px]">{text}</p>
         {buttons && (
           <div className="mt-6 flex flex-col items-center justify-center gap-2.5 md:mt-10">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://apps.apple.com/jp/app/diver-wallet-pro/id6739527739"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img className="max-md:w-[220px]" src="/assets/images/btn-apple.png" alt="" />
             </a>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.bigant.diver.limited.wallet.pro"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img className="max-md:w-[220px]" src="/assets/images/btn-google.png" alt="" />
             </a>
           </div>

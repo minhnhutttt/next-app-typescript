@@ -7,6 +7,8 @@ import Step from './(index)/components/Step';
 import Howto from './(index)/components/Howto';
 import Himitsu from './(index)/components/Himitsu';
 import Exchange from './(index)/components/Exchange';
+import Begin from './(index)/components/Begin';
+import FAQ from './(index)/components/faq/faq';
 
 export default function Home() {
   const ref = useScrollAnimations();
@@ -19,6 +21,8 @@ export default function Home() {
       <Howto />
       <Himitsu />
       <Exchange />
+      <Begin />
+      <FAQ />
     </div>
   );
 }

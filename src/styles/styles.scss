@@ -4,6 +4,19 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.u-text-gradient-01 {
+  background: linear-gradient(180deg, #01ffaa 23.98%, #1a68b0 79.59%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.u-text-stroke {
+  text-shadow: 0 0 40px #00fcff;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #1a68b0;
+}
 .cybr-btn {
   --primary: #01ffaa;
   --shadow-primary: #ff3f1f;

@@ -1,41 +1,14 @@
-import { cn } from '@/utils/cn';
-
-type ButtonProps = {
-  children: React.ReactNode;
-  size?: 'sm' | 'md' | 'lg';
-  intent?: 'primary' | 'secondary' | 'danger';
-  className?: string;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
-
-export function Button({
-  children,
-  size = 'md',
-  intent = 'primary',
-  className,
-  ...props
-}: ButtonProps) {
+export function ButtonOfficial() {
   return (
-    <button
-      className={cn(
-        // base style
-        'inline-flex items-center justify-center rounded font-semibold transition-colors',
-        // size variants
-        {
-          sm: 'px-2 py-1 text-sm',
-          md: 'px-4 py-2 text-base',
-          lg: 'px-6 py-3 text-lg',
-        }[size],
-        // intent variants
-        {
-          primary: 'bg-blue-600 text-white hover:bg-blue-700',
-          secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300',
-          danger: 'bg-red-600 text-white hover:bg-red-700',
-        }[intent],
-        className,
-      )}
-      {...props}
+    <a
+      href="/"
+      className="cybr-btn font-tomorrow flex h-12 w-[160px] items-center justify-center gap-1 text-[15px] font-semibold text-black md:h-16 md:w-[248px] md:text-[18px] md:tracking-[0.2em]"
     >
-      {children}
-    </button>
+      Official LINE{' '}
+      <span className="">
+        <img src="/assets/images/ic-arrow.svg" alt="" />
+      </span>
+      <span className="cybr-btn__glitch flex items-center justify-center">Official LINE</span>
+    </a>
   );
 }
