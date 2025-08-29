@@ -1,14 +1,13 @@
-import Link from 'next/link';
 import { ButtonOfficial } from '../ui/Button';
 
 const Footer = () => {
   return (
-    <footer className="border-t border-[#01FFAA] px-5">
+    <footer className="relative border-t border-[#01FFAA] px-5">
       <div className="mx-auto flex w-full max-w-[1012px] justify-center gap-10 py-20 max-lg:flex-col max-lg:items-center md:gap-20 md:py-[160px] lg:gap-[120px]">
         <div className="flex flex-1 justify-end">
-          <Link href="/">
+          <a href="/">
             <img className="max-md:w-[240px]" src="/assets/images/logo.svg" alt="" />
-          </Link>
+          </a>
         </div>
         <div className="flex-1">
           <div className="max-lg:flex max-lg:justify-center">
