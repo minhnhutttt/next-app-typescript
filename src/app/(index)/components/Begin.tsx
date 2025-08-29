@@ -78,7 +78,9 @@ export default function Begin() {
           または、このQRコードを読み取ってね！
         </p>
         <div className="mt-5 flex items-center justify-center md:mt-7">
-          <div className="size-[300px] rounded-2xl bg-white"></div>
+          <div className="size-[300px] rounded-2xl bg-white">
+            <img src="/assets/images/qr.png" alt="" />
+          </div>
         </div>
       </div>
     </section>
