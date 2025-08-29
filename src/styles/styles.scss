@@ -213,3 +213,76 @@
     clip-path: var(--clip-four);
   }
 }
+
+.p-docs {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.4;
+  margin-top: 16rem;
+  padding: 0 4rem 20rem;
+}
+@media screen and (max-width: 767px) {
+  .p-docs {
+    font-size: 16px;
+    margin-top: 10rem;
+    padding: 0 2rem 10rem;
+  }
+}
+.p-docs h1 {
+  font-size: 3.2rem;
+}
+@media screen and (max-width: 767px) {
+  .p-docs h1 {
+    font-size: 2.4rem;
+  }
+}
+.p-docs h2,
+.p-docs h3 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-top: 8rem;
+  margin-bottom: 3rem;
+}
+@media screen and (max-width: 767px) {
+  .p-docs h2,
+  .p-docs h3 {
+    font-size: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+  }
+}
+.p-docs p {
+  margin-bottom: 2.4rem;
+}
+.p-docs ul {
+  list-style: disc;
+  margin-bottom: 2.4rem;
+  padding-left: 1.2em;
+  line-height: 1.8;
+}
+.p-docs ul li {
+  margin-bottom: 0.5em;
+}
+.p-docs a {
+  color: #0000ff;
+}
+.p-docs__wrap {
+  max-width: 1000px;
+  margin: auto;
+}
+.p-docs__ttl {
+  font-size: 3.6rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+  text-align: center;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .p-docs__ttl {
+    font-size: 3.2rem;
+  }
+}

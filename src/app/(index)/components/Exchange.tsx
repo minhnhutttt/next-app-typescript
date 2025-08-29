@@ -77,7 +77,7 @@ export default function Exchange() {
               </div>
               <div className="fade-up mt-10 flex justify-center md:mt-14">
                 <a
-                  href="http://"
+                  href="https://dwu-gate.io/ja"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-14 w-[250px] items-center justify-center rounded-lg bg-[#1A68B0] text-[18px] font-semibold tracking-widest [box-shadow:0_10px_27px_0_rgba(0,_0,_0,_0.25)] md:h-[74px] md:w-[378px] md:text-[24px]"
