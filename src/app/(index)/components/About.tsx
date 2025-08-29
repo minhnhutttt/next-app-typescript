@@ -7,7 +7,7 @@ export default function About() {
             <img src="/assets/images/bg-logo.png" alt="" />
           </span>
         </div>
-        <div className="relative bg-[url(/assets/images/bg-elements.png)] bg-cover bg-center px-5">
+        <div className="relative px-5">
           <h2 className="fade-up font-audiowide text-center text-[36px] leading-none font-bold tracking-widest text-[#01FFAA] md:text-[75px] lg:text-[100px]">
             <p>COIN</p>
             <p className="md:ml-16 lg:ml-30">

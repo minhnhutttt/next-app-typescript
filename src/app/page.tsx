@@ -9,12 +9,14 @@ import Himitsu from './(index)/components/Himitsu';
 import Exchange from './(index)/components/Exchange';
 import Begin from './(index)/components/Begin';
 import FAQ from './(index)/components/faq/faq';
+import ParticlesBackground from '@/components/shared/ParticlesBackground';
 
 export default function Home() {
   const ref = useScrollAnimations();
   return (
     <div ref={ref}>
       <Fv />
+      <ParticlesBackground />
       <About />
       <Introduction />
       <Step />
