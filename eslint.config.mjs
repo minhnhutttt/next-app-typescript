@@ -25,7 +25,6 @@ export default [
     rules: {
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      'react/no-unescaped-entities': 'off',
     },
     settings: { react: { version: 'detect' } },
   },
@@ -43,6 +42,13 @@ export default [
         'warn',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
+    },
+  },
+
+  // ⬇️ Turn off the Next.js anchor rule globally
+  {
+    rules: {
+      '@next/next/no-html-link-for-pages': 'off',
     },
   },
 ];
