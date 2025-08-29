@@ -49,11 +49,21 @@ export default function Benefits() {
         <div className="mt-8 flex flex-wrap gap-10 md:mt-13 md:gap-x-5 md:gap-y-10">
           {data.map((item) => (
             <div className="relative md:w-[400px]" key={item.id}>
-              <div className="u-text-stroke-8 absolute inset-x-0 top-0 z-10 text-center text-[50px] leading-none font-black text-[#0046B8] md:text-[98px]">
+              <div className="u-text-stroke-8 absolute inset-x-0 -top-13 z-10 text-center text-[50px] leading-none font-black text-[#0046B8] md:text-[98px]">
                 {item.id}
               </div>
               <div className="relative">
-                <img src={item.image} alt="" />
+                <img className="rounded-t-[50px] md:rounded-t-[80px]" src={item.image} alt="" />
+              </div>
+              <div className="px-4">
+                <h5 className="mt-4 mb-5 text-[18px] font-bold md:mt-6 md:mb-7 md:text-[20px]">
+                  {item.title}
+                </h5>
+                <div className="flex justify-center">
+                  <span className="flex h-[38px] w-[56px] items-center justify-center rounded-[10px] bg-[#959497] text-[15px] leading-[1.1] font-medium text-white md:text-[18px]">
+                    従来
+                  </span>
+                </div>
               </div>
             </div>
           ))}
