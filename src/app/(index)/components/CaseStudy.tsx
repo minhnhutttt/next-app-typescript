@@ -1,7 +1,7 @@
 'use client';
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -38,45 +38,66 @@ const data01 = [
   },
 ];
 export default function CaseStudy() {
-  const pathRef = useRef<SVGPathElement | null>(null);
-  const defaultCurveValue = 350;
-  const curveRate = 3;
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const curveRef = useRef<SVGPathElement | null>(null);
 
-  useEffect(() => {
-    const path = pathRef.current;
-    if (!path) return;
+  const defaultCurveValue = 400;
 
-    // Tạo một tween “ảo” chỉ để lắng nghe giá trị scroll
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    const curve = curveRef.current;
+    if (!section || !curve) return;
+
+    const setPath = (curveY: number) => {
+      const y = Math.max(0, Math.min(defaultCurveValue, curveY));
+      const d = `M 800 300 Q 400 ${y} 0 300 L 0 0 L 800 0 L 800 300 Z`;
+      gsap.set(curve, { attr: { d } });
+    };
+
+    setPath(defaultCurveValue);
     const st = ScrollTrigger.create({
-      trigger: document.body, // hoặc 1 element cụ thể
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: 1,
+      trigger: section,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true,
       onUpdate: (self) => {
-        const scrollPos = self.scroll();
-        if (scrollPos >= 0 && scrollPos < defaultCurveValue) {
-          const curveValue = defaultCurveValue - scrollPos / curveRate;
-          path.setAttribute('d', `M 800 300 Q 400 ${curveValue} 0 300 L 0 0 L 800 0 L 800 300 Z`);
-        }
+        const curveY = defaultCurveValue * (1 - self.progress);
+        setPath(curveY);
       },
+      onEnter: () => setPath(defaultCurveValue),
+      onLeave: () => setPath(0),
+      onEnterBack: () => setPath(0),
+      onLeaveBack: () => setPath(defaultCurveValue),
+      invalidateOnRefresh: true,
     });
 
-    return () => {
-      st.kill();
-    };
+    return () => st.kill();
   }, []);
   return (
-    <section className="relative bg-[#0046B8] pt-30 md:pt-50">
-      <div className="pl-5 md:pl-[85px]">
+    <section className="relative bg-[#E7F0FB] pt-30 pb-20 md:pt-50 md:pb-88">
+      <section className="absolute inset-0 flex flex-col">
+        <div className="flex-1 bg-[#0046B8]"></div>
+        <div ref={sectionRef} className="">
+          <svg viewBox="0 0 800 400" preserveAspectRatio="none" className="w-full">
+            <path
+              ref={curveRef}
+              id="curve"
+              fill="#0046B8"
+              d="M 100 75 Q 50 87.5 0 75 L 0 0 L 100 0 L 100 75 Z"
+            />
+          </svg>
+        </div>
+      </section>
+      <div className="relative pl-5 md:pl-[85px]">
         <h4 className="max-w-[800px] text-[24px] font-bold tracking-wider text-white md:text-[48px]">
           あなたの業界では、どんな変化が起きるでしょう？
         </h4>
         <div className="fade-up mt-7 w-full md:mt-12">
           <Splide
             options={{
-              pagination: false,
-              arrows: false,
               autoWidth: true,
+              type: 'loop',
+              paginationDirection: 'ltr',
             }}
             aria-label=""
             hasTrack={false}
@@ -129,6 +150,15 @@ export default function CaseStudy() {
                 </SplideSlide>
               ))}
             </SplideTrack>
+            <div className="splide__arrows flex items-center justify-end">
+              <button className="splide__arrow--prev">Prev</button>
+              <ul
+                className="splide__pagination splide__pagination--ltr !relative"
+                role="tablist"
+                aria-label="Select a slide to show"
+              ></ul>
+              <button className="splide__arrow--next">Next</button>
+            </div>
           </Splide>
         </div>
       </div>

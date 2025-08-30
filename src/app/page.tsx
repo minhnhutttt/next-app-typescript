@@ -6,6 +6,7 @@ import Benefits from './(index)/components/Benefits';
 import Experience from './(index)/components/Experience';
 import Step from './(index)/components/Step';
 import CaseStudy from './(index)/components/CaseStudy';
+import Voice from './(index)/components/Voice';
 
 export default function Home() {
   const ref = useScrollAnimations();
@@ -17,6 +18,7 @@ export default function Home() {
       <Experience />
       <Step />
       <CaseStudy />
+      <Voice />
     </div>
   );
 }
