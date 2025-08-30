@@ -5,7 +5,7 @@ export default function Introduction() {
   return (
     <section className="relative pt-6 pb-10 md:pb-[50px]">
       <div className="overflow-hidden">
-        <h3 data-infinite-scroll="2:10s" className="flex w-max gap-10">
+        <h3 data-infinite-scroll="2:15s" className="flex w-max gap-10">
           <span className="shrink-0">
             <img className="max-md:h-16" src="/assets/images/dwu-action.svg" alt="" />
           </span>
